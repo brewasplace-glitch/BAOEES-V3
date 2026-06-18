@@ -1,0 +1,2 @@
+bron_id,bron_type,naam,url,bestand,datum_tijd,doel,status
+1,SYSTEEM,Setup Script,,setup_brewster.py,2026-06-18T18:56:35,Initiële projectstructuur,BEVESTIGD

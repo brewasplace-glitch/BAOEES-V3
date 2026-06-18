@@ -1,0 +1,32 @@
+{
+  "product": "BREWSTER ENGINEERING WIZARD",
+  "version": "1.0",
+  "deployment_mode": "local",
+  "storage": {
+    "local": true,
+    "nas": false,
+    "cloud_backup": false
+  },
+  "default_countries": [
+    "Nederland",
+    "Suriname",
+    "Nederlandse Cariben"
+  ],
+  "data_statuses": [
+    "AANNAME",
+    "GEACTUALISEERD",
+    "BEVESTIGD"
+  ],
+  "standard_report_output": [
+    "PDF",
+    "DOCX",
+    "XLSX"
+  ],
+  "standard_drawing_output": [
+    "SKP",
+    "DWG",
+    "DXF",
+    "IFC",
+    "STEP"
+  ]
+}

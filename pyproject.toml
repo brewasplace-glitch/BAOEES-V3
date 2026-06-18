@@ -1,0 +1,12 @@
+[project]
+name = "brewster-engineering-wizard"
+version = "0.1.0"
+description = "BREWSTER ENGINEERING WIZARD 1.0 prototype"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "python-docx",
+    "reportlab",
+]
