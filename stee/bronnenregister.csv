@@ -1,2 +1,3 @@
 bron_id,bron_type,naam,url,bestand,datum_tijd,doel,status
 1,SYSTEEM,Setup Script,,setup_brewster.py,2026-06-18T18:56:35,Initiële projectstructuur,BEVESTIGD
+2026-06-19T14:04:08,BREWSTER,SYSTEM,BREWSTER v1.2 Runtime Upgrade,Projectopslag en Digital Twin endpoints toegevoegd,AANGEMAAKT
