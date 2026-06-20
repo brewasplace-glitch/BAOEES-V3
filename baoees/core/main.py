@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -31,13 +33,13 @@ class BAOEESCore:
         )
 
         print("Project Analyzer resultaat:")
-        print(project_result)
+        pprint(project_result)
         print("")
 
         aaie_result = self.aaie.infer_missing_parameters(project_result)
 
         print("AAIE resultaat:")
-        print(aaie_result)
+        pprint(aaie_result)
         print("")
 
         variant_result = self.variant.generate_variants(
@@ -46,7 +48,7 @@ class BAOEESCore:
         )
 
         print("Variant Engine resultaat:")
-        print(variant_result)
+        pprint(variant_result)
         print("")
 
         digital_twin_result = self.digital_twin.create_project_twin(
@@ -72,12 +74,29 @@ class BAOEESCore:
                 purpose=source_record["purpose"]
             )
 
+        workflow_result = self.workflow.create_workflow(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            variant_result=variant_result,
+            stee_result=stee_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="workflow",
+            name="BAOEES automatische projectworkflow",
+            data=workflow_result
+        )
+
         print("STEE resultaat:")
-        print(stee_result)
+        pprint(stee_result)
+        print("")
+
+        print("Workflow Engine resultaat:")
+        pprint(workflow_result)
         print("")
 
         print("Digital Twin resultaat:")
-        print(self.digital_twin.get_project_data())
+        pprint(self.digital_twin.get_project_data())
         print("")
 
         self.aaie.run()
