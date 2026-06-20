@@ -5,6 +5,7 @@ from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
 from baoees.geo_engine.main import GeoEngine
 from baoees.structural_engine.main import StructuralEngine
+from baoees.permit_engine.main import PermitEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
 from baoees.stee.main import STEEEngine
@@ -20,6 +21,7 @@ class BAOEESCore:
         self.variant = VariantEngine()
         self.geo = GeoEngine()
         self.structural = StructuralEngine()
+        self.permit = PermitEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
@@ -74,6 +76,18 @@ class BAOEESCore:
         pprint(structural_result)
         print("")
 
+        permit_result = self.permit.prepare_permit_strategy(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            variant_result=variant_result
+        )
+
+        print("Permit Engine resultaat:")
+        pprint(permit_result)
+        print("")
+
         digital_twin_result = self.digital_twin.create_project_twin(
             project_result=project_result,
             aaie_result=aaie_result
@@ -96,6 +110,12 @@ class BAOEESCore:
             object_type="structural_analysis",
             name="BAOEES Structural Engine analyse",
             data=structural_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="permit_strategy",
+            name="BAOEES Permit Engine vergunningstrategie",
+            data=permit_result
         )
 
         stee_result = self.stee.register_project_sources(
@@ -138,6 +158,7 @@ class BAOEESCore:
         self.variant.run()
         self.geo.run()
         self.structural.run()
+        self.permit.run()
         self.digital_twin.run()
         self.workflow.run()
         self.stee.run()
