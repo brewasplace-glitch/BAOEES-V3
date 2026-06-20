@@ -3,6 +3,7 @@ from pprint import pprint
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
+from baoees.geo_engine.main import GeoEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
 from baoees.stee.main import STEEEngine
@@ -16,6 +17,7 @@ class BAOEESCore:
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
         self.variant = VariantEngine()
+        self.geo = GeoEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
@@ -51,6 +53,15 @@ class BAOEESCore:
         pprint(variant_result)
         print("")
 
+        geo_result = self.geo.analyze_geotechnics(
+            project_result=project_result,
+            aaie_result=aaie_result
+        )
+
+        print("Geo Engine resultaat:")
+        pprint(geo_result)
+        print("")
+
         digital_twin_result = self.digital_twin.create_project_twin(
             project_result=project_result,
             aaie_result=aaie_result
@@ -62,6 +73,12 @@ class BAOEESCore:
                 name=f"Variant {variant['variant']} - {variant['name']}",
                 data=variant
             )
+
+        self.digital_twin.add_object(
+            object_type="geo_analysis",
+            name="BAOEES Geo Engine analyse",
+            data=geo_result
+        )
 
         stee_result = self.stee.register_project_sources(
             project_result=project_result,
@@ -101,6 +118,7 @@ class BAOEESCore:
 
         self.aaie.run()
         self.variant.run()
+        self.geo.run()
         self.digital_twin.run()
         self.workflow.run()
         self.stee.run()
