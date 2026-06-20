@@ -45,8 +45,23 @@ class BAOEESCore:
             aaie_result=aaie_result
         )
 
+        stee_result = self.stee.register_project_sources(
+            project_result=project_result,
+            aaie_result=aaie_result
+        )
+
+        for source_record in stee_result["source_register"]:
+            self.digital_twin.add_source(
+                source=source_record["source"],
+                purpose=source_record["purpose"]
+            )
+
+        print("STEE resultaat:")
+        print(stee_result)
+        print("")
+
         print("Digital Twin resultaat:")
-        print(digital_twin_result)
+        print(self.digital_twin.get_project_data())
         print("")
 
         self.aaie.run()
