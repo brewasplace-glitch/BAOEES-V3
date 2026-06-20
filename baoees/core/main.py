@@ -40,6 +40,15 @@ class BAOEESCore:
         print(aaie_result)
         print("")
 
+        digital_twin_result = self.digital_twin.create_project_twin(
+            project_result=project_result,
+            aaie_result=aaie_result
+        )
+
+        print("Digital Twin resultaat:")
+        print(digital_twin_result)
+        print("")
+
         self.aaie.run()
         self.variant.run()
         self.digital_twin.run()
