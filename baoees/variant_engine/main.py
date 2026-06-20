@@ -7,3 +7,8 @@ class VariantEngine:
             {"code": "D", "name": "Hoogste opbrengst"},
             {"code": "E", "name": "Beste ruimtelijke kwaliteit"}
         ]
+
+class VariantEngine:
+
+    def run(self):
+        print("Variant Engine actief")

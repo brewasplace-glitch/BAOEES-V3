@@ -17,9 +17,4 @@ class AAIE:
         return {
             "foundation_types": ["strokenfundering", "paalfundering"],
             "status": "TE_VERGELIJKEN"
-        } 
-
-class AAIEEngine:
-
-    def run(self):
-        print("AAIE Engine actief")
+        }

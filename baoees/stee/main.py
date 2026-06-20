@@ -5,3 +5,8 @@ class STEE:
             "purpose": purpose,
             "status": "GEREGISTREERD"
         }
+
+class STEEEngine:
+
+    def run(self):
+        print("STEE Bronregistratie actief")

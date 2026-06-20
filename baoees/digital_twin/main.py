@@ -5,3 +5,8 @@ class DigitalTwin:
             "status": "CONCEPT",
             "project": project or {}
         }
+
+class DigitalTwin:
+
+    def run(self):
+        print("Digital Twin actief")

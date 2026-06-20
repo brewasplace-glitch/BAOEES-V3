@@ -21,3 +21,8 @@ class WorkflowEngine:
                 "QA/QC"
             ]
         }
+
+class WorkflowEngine:
+
+    def run(self):
+        print("Workflow Engine actief")
