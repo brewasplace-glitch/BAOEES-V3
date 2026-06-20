@@ -40,10 +40,26 @@ class BAOEESCore:
         print(aaie_result)
         print("")
 
+        variant_result = self.variant.generate_variants(
+            project_result=project_result,
+            aaie_result=aaie_result
+        )
+
+        print("Variant Engine resultaat:")
+        print(variant_result)
+        print("")
+
         digital_twin_result = self.digital_twin.create_project_twin(
             project_result=project_result,
             aaie_result=aaie_result
         )
+
+        for variant in variant_result["variants"]:
+            self.digital_twin.add_object(
+                object_type="design_variant",
+                name=f"Variant {variant['variant']} - {variant['name']}",
+                data=variant
+            )
 
         stee_result = self.stee.register_project_sources(
             project_result=project_result,
