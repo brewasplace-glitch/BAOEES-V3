@@ -1,3 +1,4 @@
+from baoees.project_export_engine.main import ProjectExportEngine
 from pprint import pprint
 
 from baoees.project_analyzer.main import ProjectAnalyzer
@@ -24,6 +25,7 @@ class BAOEESCore:
         self.structural = StructuralEngine()
         self.permit = PermitEngine()
         self.reporting = ReportingEngine()
+        self.project_export = ProjectExportEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
