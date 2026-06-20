@@ -1,22 +1,8 @@
-# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.env
 .venv/
 venv/
-.env
-
-# Node
-node_modules/
-.next/
-dist/
-build/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# BREWSTER generated output
-projects/*/exports/
-projects/*/temp/
-exports/
-*.zip
+.pytest_cache/
