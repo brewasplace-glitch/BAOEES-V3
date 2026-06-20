@@ -6,6 +6,7 @@ from baoees.variant_engine.main import VariantEngine
 from baoees.geo_engine.main import GeoEngine
 from baoees.structural_engine.main import StructuralEngine
 from baoees.permit_engine.main import PermitEngine
+from baoees.reporting_engine.main import ReportingEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
 from baoees.stee.main import STEEEngine
@@ -22,6 +23,7 @@ class BAOEESCore:
         self.geo = GeoEngine()
         self.structural = StructuralEngine()
         self.permit = PermitEngine()
+        self.reporting = ReportingEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
@@ -142,12 +144,34 @@ class BAOEESCore:
             data=workflow_result
         )
 
+        reporting_result = self.reporting.generate_report_structure(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            variant_result=variant_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            stee_result=stee_result,
+            workflow_result=workflow_result,
+            digital_twin_data=self.digital_twin.get_project_data()
+        )
+
+        self.digital_twin.add_object(
+            object_type="reporting_output",
+            name="BAOEES Reporting Engine rapportstructuur",
+            data=reporting_result
+        )
+
         print("STEE resultaat:")
         pprint(stee_result)
         print("")
 
         print("Workflow Engine resultaat:")
         pprint(workflow_result)
+        print("")
+
+        print("Reporting Engine resultaat:")
+        pprint(reporting_result)
         print("")
 
         print("Digital Twin resultaat:")
@@ -159,6 +183,7 @@ class BAOEESCore:
         self.geo.run()
         self.structural.run()
         self.permit.run()
+        self.reporting.run()
         self.digital_twin.run()
         self.workflow.run()
         self.stee.run()
