@@ -1,4 +1,3 @@
-from baoees.project_export_engine.main import ProjectExportEngine
 from pprint import pprint
 
 from baoees.project_analyzer.main import ProjectAnalyzer
@@ -8,6 +7,8 @@ from baoees.geo_engine.main import GeoEngine
 from baoees.structural_engine.main import StructuralEngine
 from baoees.permit_engine.main import PermitEngine
 from baoees.reporting_engine.main import ReportingEngine
+from baoees.project_export_engine.main import ProjectExportEngine
+from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
 from baoees.stee.main import STEEEngine
@@ -26,6 +27,7 @@ class BAOEESCore:
         self.permit = PermitEngine()
         self.reporting = ReportingEngine()
         self.project_export = ProjectExportEngine()
+        self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
@@ -164,6 +166,29 @@ class BAOEESCore:
             data=reporting_result
         )
 
+        export_result = self.project_export.create_project_export(
+            project_result=project_result,
+            digital_twin_data=self.digital_twin.get_project_data(),
+            reporting_result=reporting_result,
+            stee_result=stee_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_export",
+            name="BAOEES Project Export Engine exportpakket",
+            data=export_result
+        )
+
+        zip_result = self.project_zip.create_project_zip(
+            export_result=export_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_zip",
+            name="BAOEES Project ZIP Engine zipbestand",
+            data=zip_result
+        )
+
         print("STEE resultaat:")
         pprint(stee_result)
         print("")
@@ -176,6 +201,14 @@ class BAOEESCore:
         pprint(reporting_result)
         print("")
 
+        print("Project Export Engine resultaat:")
+        pprint(export_result)
+        print("")
+
+        print("Project ZIP Engine resultaat:")
+        pprint(zip_result)
+        print("")
+
         print("Digital Twin resultaat:")
         pprint(self.digital_twin.get_project_data())
         print("")
@@ -186,6 +219,8 @@ class BAOEESCore:
         self.structural.run()
         self.permit.run()
         self.reporting.run()
+        self.project_export.run()
+        self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
         self.stee.run()
