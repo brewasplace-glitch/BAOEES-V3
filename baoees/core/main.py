@@ -34,6 +34,12 @@ class BAOEESCore:
         print(project_result)
         print("")
 
+        aaie_result = self.aaie.infer_missing_parameters(project_result)
+
+        print("AAIE resultaat:")
+        print(aaie_result)
+        print("")
+
         self.aaie.run()
         self.variant.run()
         self.digital_twin.run()

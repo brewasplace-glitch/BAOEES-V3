@@ -1,28 +1,30 @@
-from baoees.aaie.main import AAIE
-from baoees.variant_engine.main import VariantEngine
-from baoees.digital_twin.main import DigitalTwin
+"""
+BAOEES Workflow Engine v1.0
+
+Doel:
+- centrale projectworkflow aansturen
+- benodigde engines in logische volgorde activeren
+"""
+
 
 class WorkflowEngine:
-    def start_projectanalyse(self, project=None):
+
+    def create_workflow(self, project_result=None, aaie_result=None):
         return {
-            "status": "PROJECTANALYSE_GESTART",
-            "aaie": AAIE().infer_missing_parameters(project),
-            "variants": VariantEngine().generate(),
-            "digital_twin": DigitalTwin().create(project),
-            "next_steps": [
-                "GeoTwin",
-                "Structural Twin",
-                "MEP Twin",
-                "Parking",
-                "Drainage",
-                "AERIUS",
-                "Permit",
-                "Reporting",
-                "QA/QC"
+            "engine": "WorkflowEngine",
+            "status": "WORKFLOW_AANGEMAAKT",
+            "workflow_steps": [
+                "Project Analyzer",
+                "AAIE",
+                "STEE",
+                "Digital Twin",
+                "Variant Engine",
+                "Geo Engine",
+                "Structural Engine",
+                "Permit Engine",
+                "Reporting Engine"
             ]
         }
-
-class WorkflowEngine:
 
     def run(self):
         print("Workflow Engine actief")

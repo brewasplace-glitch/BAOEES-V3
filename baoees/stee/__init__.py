@@ -1,1 +1,1 @@
-from .main import STEE
+from .main import STEEEngine
