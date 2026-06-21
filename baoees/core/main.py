@@ -11,6 +11,7 @@ from baoees.project_export_engine.main import ProjectExportEngine
 from baoees.document_export_engine.main import DocumentExportEngine
 from baoees.drawing_export_engine.main import DrawingExportEngine
 from baoees.cad_export_engine.main import CADExportEngine
+from baoees.cost_engine.main import CostEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -33,6 +34,7 @@ class BAOEESCore:
         self.document_export = DocumentExportEngine()
         self.drawing_export = DrawingExportEngine()
         self.cad_export = CADExportEngine()
+        self.cost = CostEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -225,6 +227,23 @@ class BAOEESCore:
             data=cad_result
         )
 
+        cost_result = self.cost.estimate_costs(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            reporting_result=reporting_result,
+            drawing_result=drawing_result,
+            cad_result=cad_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="cost_estimate",
+            name="BAOEES Cost Estimate Engine kostenraming",
+            data=cost_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -263,6 +282,10 @@ class BAOEESCore:
         pprint(cad_result)
         print("")
 
+        print("Cost Estimate Engine resultaat:")
+        pprint(cost_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -281,6 +304,7 @@ class BAOEESCore:
         self.document_export.run()
         self.drawing_export.run()
         self.cad_export.run()
+        self.cost.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
