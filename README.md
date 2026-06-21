@@ -1,51 +1,29 @@
-# BREWSTER ENGINEERING WIZARD 1.0
+# BAOEES V3 - BREWSTER Autonomous Engineering System
 
-## Autonomous Open Engineering Ecosystem
+BAOEES V3 is de basisversie van het BREWSTER Autonomous Engineering System.
 
-BREWSTER ENGINEERING WIZARD is een autonoom engineeringplatform voor bouw, civiel, infra, gebiedsontwikkeling, Suriname, Nederland en de Nederlandse Cariben.
+Het doel van BAOEES is om bouwkundige, civiele en infrastructurele projecten automatisch te analyseren, structureren, verrijken, documenteren en exporteren.
 
-## Kernmodules
+Deze versie bevat een werkende autonome projectanalyseketen met:
 
-- Living Digital Twin
-- Knowledge Graph
-- Knowledge Vault
-- Project Parameter Database
-- ADAE – Autonomous Data Acquisition Engine
-- AAIE – Autonomous Assumption & Inference Engine
-- GECE – Global Environmental Compliance Engine
-- Structural Agent: OpenSees + CalculiX + FreeCAD FEM
-- Geo Agent
-- MEP Agent
-- Infrastructure Agent
-- Permit Agent
-- Cost Agent
-- Asset Agent
-- SketchUp Integration Module
-- Unified Drawing Engine
-- Production Engine
-- STEE – Source Traceability & Evidence Engine
-- Deployment & Storage Module
+- projectanalyse
+- automatische aannames
+- ontwerpvarianten
+- geotechnische basisanalyse
+- constructieve basisanalyse
+- vergunningstrategie
+- rapportstructuur
+- documentexport
+- tekeningexport
+- projectexport
+- ZIP-export
+- Digital Twin opslag
+- bronregistratie
 
-## Standaard output
+---
 
-Rapporten:
-- PDF
-- DOCX
-- XLSX
+## Huidige versie
 
-Tekeningen/modellen:
-- SKP
-- DWG
-- DXF
-- IFC
-- STEP
-- FreeCAD
-- OpenSees
-- CalculiX
-
-## Deployment standaard
-
-- Lokaal
-- Eigen opslag
-- NAS optioneel
-- Cloud-backup optioneel
+```text
+BAOEES V3.1 Stabilisatie
+Branch: baoees-v3
