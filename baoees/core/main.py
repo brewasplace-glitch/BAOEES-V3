@@ -12,6 +12,7 @@ from baoees.document_export_engine.main import DocumentExportEngine
 from baoees.drawing_export_engine.main import DrawingExportEngine
 from baoees.cad_export_engine.main import CADExportEngine
 from baoees.cost_engine.main import CostEngine
+from baoees.planning_engine.main import PlanningEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -35,6 +36,7 @@ class BAOEESCore:
         self.drawing_export = DrawingExportEngine()
         self.cad_export = CADExportEngine()
         self.cost = CostEngine()
+        self.planning = PlanningEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -244,6 +246,23 @@ class BAOEESCore:
             data=cost_result
         )
 
+        planning_result = self.planning.create_planning(
+            project_result=project_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            reporting_result=reporting_result,
+            drawing_result=drawing_result,
+            cad_result=cad_result,
+            cost_result=cost_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="planning",
+            name="BAOEES Planning Engine projectplanning",
+            data=planning_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -286,6 +305,10 @@ class BAOEESCore:
         pprint(cost_result)
         print("")
 
+        print("Planning Engine resultaat:")
+        pprint(planning_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -305,6 +328,7 @@ class BAOEESCore:
         self.drawing_export.run()
         self.cad_export.run()
         self.cost.run()
+        self.planning.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
