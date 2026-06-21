@@ -17,6 +17,7 @@ from baoees.traffic_parking_engine.main import TrafficParkingEngine
 from baoees.drainage_sewerage_engine.main import DrainageSewerageEngine
 from baoees.aerius_engine.main import AERIUSEngine
 from baoees.gis_map_engine.main import GISMapEngine
+from baoees.validation_engine.main import ValidationEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -45,6 +46,7 @@ class BAOEESCore:
         self.drainage_sewerage = DrainageSewerageEngine()
         self.aerius = AERIUSEngine()
         self.gis_map = GISMapEngine()
+        self.validation = ValidationEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -330,6 +332,35 @@ class BAOEESCore:
             data=gis_result
         )
 
+        validation_result = self.validation.validate_project(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            variant_result=variant_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            reporting_result=reporting_result,
+            export_result=export_result,
+            document_result=document_result,
+            drawing_result=drawing_result,
+            cad_result=cad_result,
+            cost_result=cost_result,
+            planning_result=planning_result,
+            traffic_parking_result=traffic_parking_result,
+            drainage_result=drainage_result,
+            aerius_result=aerius_result,
+            gis_result=gis_result,
+            stee_result=stee_result,
+            workflow_result=workflow_result,
+            digital_twin_data=self.digital_twin.get_project_data()
+        )
+
+        self.digital_twin.add_object(
+            object_type="validation_qa_qc",
+            name="BAOEES Validation & QA/QC Engine controle",
+            data=validation_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -392,6 +423,10 @@ class BAOEESCore:
         pprint(gis_result)
         print("")
 
+        print("Validation & QA/QC Engine resultaat:")
+        pprint(validation_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -416,6 +451,7 @@ class BAOEESCore:
         self.drainage_sewerage.run()
         self.aerius.run()
         self.gis_map.run()
+        self.validation.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
