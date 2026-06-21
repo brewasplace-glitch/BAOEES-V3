@@ -13,6 +13,7 @@ from baoees.drawing_export_engine.main import DrawingExportEngine
 from baoees.cad_export_engine.main import CADExportEngine
 from baoees.cost_engine.main import CostEngine
 from baoees.planning_engine.main import PlanningEngine
+from baoees.traffic_parking_engine.main import TrafficParkingEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -37,6 +38,7 @@ class BAOEESCore:
         self.cad_export = CADExportEngine()
         self.cost = CostEngine()
         self.planning = PlanningEngine()
+        self.traffic_parking = TrafficParkingEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -263,6 +265,20 @@ class BAOEESCore:
             data=planning_result
         )
 
+        traffic_parking_result = self.traffic_parking.analyze_traffic_and_parking(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            permit_result=permit_result,
+            planning_result=planning_result,
+            cost_result=cost_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="traffic_parking",
+            name="BAOEES Traffic & Parking Engine verkeers- en parkeeranalyse",
+            data=traffic_parking_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -309,6 +325,10 @@ class BAOEESCore:
         pprint(planning_result)
         print("")
 
+        print("Traffic & Parking Engine resultaat:")
+        pprint(traffic_parking_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -329,6 +349,7 @@ class BAOEESCore:
         self.cad_export.run()
         self.cost.run()
         self.planning.run()
+        self.traffic_parking.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
