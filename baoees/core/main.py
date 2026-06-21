@@ -1,5 +1,6 @@
 from pprint import pprint
 
+from baoees.document_export_engine.main import DocumentExportEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -8,6 +9,7 @@ from baoees.structural_engine.main import StructuralEngine
 from baoees.permit_engine.main import PermitEngine
 from baoees.reporting_engine.main import ReportingEngine
 from baoees.project_export_engine.main import ProjectExportEngine
+from baoees.document_export_engine.main import DocumentExportEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -27,6 +29,7 @@ class BAOEESCore:
         self.permit = PermitEngine()
         self.reporting = ReportingEngine()
         self.project_export = ProjectExportEngine()
+        self.document_export = DocumentExportEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -179,6 +182,18 @@ class BAOEESCore:
             data=export_result
         )
 
+        document_result = self.document_export.create_documents(
+            project_result=project_result,
+            reporting_result=reporting_result,
+            export_result=export_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="document_export",
+            name="BAOEES PDF/DOCX Export Engine documenten",
+            data=document_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -205,6 +220,10 @@ class BAOEESCore:
         pprint(export_result)
         print("")
 
+        print("PDF/DOCX Export Engine resultaat:")
+        pprint(document_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -220,6 +239,7 @@ class BAOEESCore:
         self.permit.run()
         self.reporting.run()
         self.project_export.run()
+        self.document_export.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
