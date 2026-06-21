@@ -10,6 +10,7 @@ from baoees.reporting_engine.main import ReportingEngine
 from baoees.project_export_engine.main import ProjectExportEngine
 from baoees.document_export_engine.main import DocumentExportEngine
 from baoees.drawing_export_engine.main import DrawingExportEngine
+from baoees.cad_export_engine.main import CADExportEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -31,6 +32,7 @@ class BAOEESCore:
         self.project_export = ProjectExportEngine()
         self.document_export = DocumentExportEngine()
         self.drawing_export = DrawingExportEngine()
+        self.cad_export = CADExportEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -209,6 +211,20 @@ class BAOEESCore:
             data=drawing_result
         )
 
+        cad_result = self.cad_export.create_cad_exports(
+            project_result=project_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            drawing_result=drawing_result,
+            export_result=export_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="cad_export",
+            name="BAOEES CAD/DXF Export Engine CAD-bestanden",
+            data=cad_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -243,6 +259,10 @@ class BAOEESCore:
         pprint(drawing_result)
         print("")
 
+        print("CAD/DXF Export Engine resultaat:")
+        pprint(cad_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -260,6 +280,7 @@ class BAOEESCore:
         self.project_export.run()
         self.document_export.run()
         self.drawing_export.run()
+        self.cad_export.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
