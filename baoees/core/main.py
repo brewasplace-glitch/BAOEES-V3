@@ -1,6 +1,5 @@
 from pprint import pprint
 
-from baoees.document_export_engine.main import DocumentExportEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -10,6 +9,7 @@ from baoees.permit_engine.main import PermitEngine
 from baoees.reporting_engine.main import ReportingEngine
 from baoees.project_export_engine.main import ProjectExportEngine
 from baoees.document_export_engine.main import DocumentExportEngine
+from baoees.drawing_export_engine.main import DrawingExportEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -30,6 +30,7 @@ class BAOEESCore:
         self.reporting = ReportingEngine()
         self.project_export = ProjectExportEngine()
         self.document_export = DocumentExportEngine()
+        self.drawing_export = DrawingExportEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -194,6 +195,20 @@ class BAOEESCore:
             data=document_result
         )
 
+        drawing_result = self.drawing_export.create_drawings(
+            project_result=project_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            export_result=export_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="drawing_export",
+            name="BAOEES Drawing Export Engine tekeningen",
+            data=drawing_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -224,6 +239,10 @@ class BAOEESCore:
         pprint(document_result)
         print("")
 
+        print("Drawing Export Engine resultaat:")
+        pprint(drawing_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -240,6 +259,7 @@ class BAOEESCore:
         self.reporting.run()
         self.project_export.run()
         self.document_export.run()
+        self.drawing_export.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
