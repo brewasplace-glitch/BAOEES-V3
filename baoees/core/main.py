@@ -14,6 +14,7 @@ from baoees.cad_export_engine.main import CADExportEngine
 from baoees.cost_engine.main import CostEngine
 from baoees.planning_engine.main import PlanningEngine
 from baoees.traffic_parking_engine.main import TrafficParkingEngine
+from baoees.drainage_sewerage_engine.main import DrainageSewerageEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -39,6 +40,7 @@ class BAOEESCore:
         self.cost = CostEngine()
         self.planning = PlanningEngine()
         self.traffic_parking = TrafficParkingEngine()
+        self.drainage_sewerage = DrainageSewerageEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -279,6 +281,21 @@ class BAOEESCore:
             data=traffic_parking_result
         )
 
+        drainage_result = self.drainage_sewerage.design_drainage_and_sewerage(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            traffic_parking_result=traffic_parking_result,
+            cost_result=cost_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="drainage_sewerage",
+            name="BAOEES Drainage & Sewerage Engine riolering en afwatering",
+            data=drainage_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -329,6 +346,10 @@ class BAOEESCore:
         pprint(traffic_parking_result)
         print("")
 
+        print("Drainage & Sewerage Engine resultaat:")
+        pprint(drainage_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -350,6 +371,7 @@ class BAOEESCore:
         self.cost.run()
         self.planning.run()
         self.traffic_parking.run()
+        self.drainage_sewerage.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
