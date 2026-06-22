@@ -23,6 +23,7 @@ from baoees.specification_engine.main import SpecificationEngine
 from baoees.tender_engine.main import TenderEngine
 from baoees.contract_engine.main import ContractEngine
 from baoees.construction_execution_engine.main import ConstructionExecutionEngine
+from baoees.site_monitoring_engine.main import SiteMonitoringEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -57,6 +58,7 @@ class BAOEESCore:
         self.tender = TenderEngine()
         self.contract = ContractEngine()
         self.construction_execution = ConstructionExecutionEngine()
+        self.site_monitoring = SiteMonitoringEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -461,6 +463,20 @@ class BAOEESCore:
             data=construction_execution_result
         )
 
+        site_monitoring_result = self.site_monitoring.create_monitoring_plan(
+            project_result=project_result,
+            planning_result=planning_result,
+            construction_execution_result=construction_execution_result,
+            contract_result=contract_result,
+            validation_result=validation_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="site_monitoring_progress",
+            name="BAOEES Site Monitoring / Progress Engine bouwplaatsbewaking",
+            data=site_monitoring_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -547,6 +563,10 @@ class BAOEESCore:
         pprint(construction_execution_result)
         print("")
 
+        print("Site Monitoring / Progress Engine resultaat:")
+        pprint(site_monitoring_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -577,6 +597,7 @@ class BAOEESCore:
         self.tender.run()
         self.contract.run()
         self.construction_execution.run()
+        self.site_monitoring.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
