@@ -18,6 +18,7 @@ from baoees.drainage_sewerage_engine.main import DrainageSewerageEngine
 from baoees.aerius_engine.main import AERIUSEngine
 from baoees.gis_map_engine.main import GISMapEngine
 from baoees.validation_engine.main import ValidationEngine
+from baoees.quantity_engine.main import QuantityEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -47,6 +48,7 @@ class BAOEESCore:
         self.aerius = AERIUSEngine()
         self.gis_map = GISMapEngine()
         self.validation = ValidationEngine()
+        self.quantity = QuantityEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -332,6 +334,23 @@ class BAOEESCore:
             data=gis_result
         )
 
+        quantity_result = self.quantity.generate_quantities(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            drainage_result=drainage_result,
+            traffic_parking_result=traffic_parking_result,
+            drawing_result=drawing_result,
+            cad_result=cad_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="quantity_boq",
+            name="BAOEES Quantity / BOQ Engine hoeveelhedenstaat",
+            data=quantity_result
+        )
+
         validation_result = self.validation.validate_project(
             project_result=project_result,
             aaie_result=aaie_result,
@@ -423,6 +442,10 @@ class BAOEESCore:
         pprint(gis_result)
         print("")
 
+        print("Quantity / BOQ Engine resultaat:")
+        pprint(quantity_result)
+        print("")
+
         print("Validation & QA/QC Engine resultaat:")
         pprint(validation_result)
         print("")
@@ -451,6 +474,7 @@ class BAOEESCore:
         self.drainage_sewerage.run()
         self.aerius.run()
         self.gis_map.run()
+        self.quantity.run()
         self.validation.run()
         self.project_zip.run()
         self.digital_twin.run()
