@@ -27,6 +27,7 @@ from baoees.site_monitoring_engine.main import SiteMonitoringEngine
 from baoees.as_built_engine.main import AsBuiltEngine
 from baoees.asset_management_engine.main import AssetManagementEngine
 from baoees.sustainability_engine.main import SustainabilityEngine
+from baoees.global_codes_engine.main import GlobalCodesEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -65,6 +66,7 @@ class BAOEESCore:
         self.as_built = AsBuiltEngine()
         self.asset_management = AssetManagementEngine()
         self.sustainability = SustainabilityEngine()
+        self.global_codes = GlobalCodesEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -530,6 +532,23 @@ class BAOEESCore:
             data=sustainability_result
         )
 
+        codes_result = self.global_codes.analyze_codes_and_standards(
+            project_result=project_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            drainage_result=drainage_result,
+            traffic_parking_result=traffic_parking_result,
+            sustainability_result=sustainability_result,
+            validation_result=validation_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="global_codes_standards",
+            name="BAOEES Global Codes / Standards Engine normen en regelgeving",
+            data=codes_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -632,6 +651,10 @@ class BAOEESCore:
         pprint(sustainability_result)
         print("")
 
+        print("Global Codes / Standards Engine resultaat:")
+        pprint(codes_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -666,6 +689,7 @@ class BAOEESCore:
         self.as_built.run()
         self.asset_management.run()
         self.sustainability.run()
+        self.global_codes.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
