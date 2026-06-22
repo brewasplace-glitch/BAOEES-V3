@@ -19,6 +19,7 @@ from baoees.aerius_engine.main import AERIUSEngine
 from baoees.gis_map_engine.main import GISMapEngine
 from baoees.validation_engine.main import ValidationEngine
 from baoees.quantity_engine.main import QuantityEngine
+from baoees.specification_engine.main import SpecificationEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -49,6 +50,7 @@ class BAOEESCore:
         self.gis_map = GISMapEngine()
         self.validation = ValidationEngine()
         self.quantity = QuantityEngine()
+        self.specification = SpecificationEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -116,7 +118,7 @@ class BAOEESCore:
         pprint(permit_result)
         print("")
 
-        digital_twin_result = self.digital_twin.create_project_twin(
+        self.digital_twin.create_project_twin(
             project_result=project_result,
             aaie_result=aaie_result
         )
@@ -380,6 +382,25 @@ class BAOEESCore:
             data=validation_result
         )
 
+        specification_result = self.specification.generate_specification(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            drainage_result=drainage_result,
+            traffic_parking_result=traffic_parking_result,
+            quantity_result=quantity_result,
+            drawing_result=drawing_result,
+            cad_result=cad_result,
+            validation_result=validation_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="specification_bestek",
+            name="BAOEES Specification / Bestek Engine werkbeschrijving",
+            data=specification_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -450,6 +471,10 @@ class BAOEESCore:
         pprint(validation_result)
         print("")
 
+        print("Specification / Bestek Engine resultaat:")
+        pprint(specification_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -476,6 +501,7 @@ class BAOEESCore:
         self.gis_map.run()
         self.quantity.run()
         self.validation.run()
+        self.specification.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
