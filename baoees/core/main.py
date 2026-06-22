@@ -22,6 +22,7 @@ from baoees.quantity_engine.main import QuantityEngine
 from baoees.specification_engine.main import SpecificationEngine
 from baoees.tender_engine.main import TenderEngine
 from baoees.contract_engine.main import ContractEngine
+from baoees.construction_execution_engine.main import ConstructionExecutionEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -55,6 +56,7 @@ class BAOEESCore:
         self.specification = SpecificationEngine()
         self.tender = TenderEngine()
         self.contract = ContractEngine()
+        self.construction_execution = ConstructionExecutionEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -440,6 +442,25 @@ class BAOEESCore:
             data=contract_result
         )
 
+        construction_execution_result = self.construction_execution.prepare_execution_plan(
+            project_result=project_result,
+            planning_result=planning_result,
+            contract_result=contract_result,
+            specification_result=specification_result,
+            quantity_result=quantity_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            drainage_result=drainage_result,
+            traffic_parking_result=traffic_parking_result,
+            validation_result=validation_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="construction_execution",
+            name="BAOEES Construction Execution Engine uitvoeringsplan",
+            data=construction_execution_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -522,6 +543,10 @@ class BAOEESCore:
         pprint(contract_result)
         print("")
 
+        print("Construction Execution Engine resultaat:")
+        pprint(construction_execution_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -551,6 +576,7 @@ class BAOEESCore:
         self.specification.run()
         self.tender.run()
         self.contract.run()
+        self.construction_execution.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
