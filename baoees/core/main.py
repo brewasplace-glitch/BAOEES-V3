@@ -25,6 +25,7 @@ from baoees.contract_engine.main import ContractEngine
 from baoees.construction_execution_engine.main import ConstructionExecutionEngine
 from baoees.site_monitoring_engine.main import SiteMonitoringEngine
 from baoees.as_built_engine.main import AsBuiltEngine
+from baoees.asset_management_engine.main import AssetManagementEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -61,6 +62,7 @@ class BAOEESCore:
         self.construction_execution = ConstructionExecutionEngine()
         self.site_monitoring = SiteMonitoringEngine()
         self.as_built = AsBuiltEngine()
+        self.asset_management = AssetManagementEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -495,6 +497,20 @@ class BAOEESCore:
             data=as_built_result
         )
 
+        asset_result = self.asset_management.prepare_asset_management_plan(
+            project_result=project_result,
+            as_built_result=as_built_result,
+            contract_result=contract_result,
+            site_monitoring_result=site_monitoring_result,
+            validation_result=validation_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="asset_management_maintenance",
+            name="BAOEES Asset Management / Maintenance Engine beheerdossier",
+            data=asset_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -589,6 +605,10 @@ class BAOEESCore:
         pprint(as_built_result)
         print("")
 
+        print("Asset Management / Maintenance Engine resultaat:")
+        pprint(asset_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -621,6 +641,7 @@ class BAOEESCore:
         self.construction_execution.run()
         self.site_monitoring.run()
         self.as_built.run()
+        self.asset_management.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
