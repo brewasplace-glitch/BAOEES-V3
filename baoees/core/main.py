@@ -28,6 +28,7 @@ from baoees.as_built_engine.main import AsBuiltEngine
 from baoees.asset_management_engine.main import AssetManagementEngine
 from baoees.sustainability_engine.main import SustainabilityEngine
 from baoees.global_codes_engine.main import GlobalCodesEngine
+from baoees.learning_engine.main import LearningEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -67,6 +68,7 @@ class BAOEESCore:
         self.asset_management = AssetManagementEngine()
         self.sustainability = SustainabilityEngine()
         self.global_codes = GlobalCodesEngine()
+        self.learning = LearningEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -549,6 +551,21 @@ class BAOEESCore:
             data=codes_result
         )
 
+        learning_result = self.learning.analyze_project_learning(
+            project_result=project_result,
+            aaie_result=aaie_result,
+            validation_result=validation_result,
+            codes_result=codes_result,
+            stee_result=stee_result,
+            digital_twin_data=self.digital_twin.get_project_data()
+        )
+
+        self.digital_twin.add_object(
+            object_type="autonomous_learning_knowledge",
+            name="BAOEES Autonomous Learning / Knowledge Engine leeranalyse",
+            data=learning_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -655,6 +672,10 @@ class BAOEESCore:
         pprint(codes_result)
         print("")
 
+        print("Autonomous Learning / Knowledge Engine resultaat:")
+        pprint(learning_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -690,6 +711,7 @@ class BAOEESCore:
         self.asset_management.run()
         self.sustainability.run()
         self.global_codes.run()
+        self.learning.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
