@@ -21,6 +21,7 @@ from baoees.validation_engine.main import ValidationEngine
 from baoees.quantity_engine.main import QuantityEngine
 from baoees.specification_engine.main import SpecificationEngine
 from baoees.tender_engine.main import TenderEngine
+from baoees.contract_engine.main import ContractEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -53,6 +54,7 @@ class BAOEESCore:
         self.quantity = QuantityEngine()
         self.specification = SpecificationEngine()
         self.tender = TenderEngine()
+        self.contract = ContractEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -420,6 +422,24 @@ class BAOEESCore:
             data=tender_result
         )
 
+        contract_result = self.contract.prepare_contract_package(
+            project_result=project_result,
+            cost_result=cost_result,
+            planning_result=planning_result,
+            quantity_result=quantity_result,
+            specification_result=specification_result,
+            tender_result=tender_result,
+            validation_result=validation_result,
+            drawing_result=drawing_result,
+            cad_result=cad_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="contract_agreement",
+            name="BAOEES Contract / Agreement Engine contractpakket",
+            data=contract_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -498,6 +518,10 @@ class BAOEESCore:
         pprint(tender_result)
         print("")
 
+        print("Contract / Agreement Engine resultaat:")
+        pprint(contract_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -526,6 +550,7 @@ class BAOEESCore:
         self.validation.run()
         self.specification.run()
         self.tender.run()
+        self.contract.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
