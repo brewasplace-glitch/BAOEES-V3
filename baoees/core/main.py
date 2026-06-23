@@ -1,5 +1,6 @@
 from pprint import pprint
 
+from baoees.project_config_engine.main import ProjectConfigEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -41,6 +42,7 @@ class BAOEESCore:
     def __init__(self):
         print("BAOEES Core gestart")
 
+        self.project_config = ProjectConfigEngine()
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
         self.variant = VariantEngine()
@@ -80,12 +82,19 @@ class BAOEESCore:
 
         print("\n=== START PROJECTANALYSE ===\n")
 
+        config_result = self.project_config.load_project_config()
+        project_config = config_result["project_config"]
+
+        print("Project Configuration / Input Engine resultaat:")
+        pprint(config_result)
+        print("")
+
         project_result = self.project_analyzer.analyze(
-            project_name="Plutostraat met BAOEES V3",
-            project_description="Vrijstaande woning met fundering, constructie, geotechniek en SketchUp-integratie.",
-            location="Plutostraat, Paramaribo",
-            country="Suriname",
-            project_type="Bouw"
+            project_name=project_config["project_name"],
+            project_description=project_config["project_description"],
+            location=project_config["location"],
+            country=project_config["country"],
+            project_type=project_config["project_type"]
         )
 
         print("Project Analyzer resultaat:")
@@ -141,6 +150,12 @@ class BAOEESCore:
         self.digital_twin.create_project_twin(
             project_result=project_result,
             aaie_result=aaie_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_configuration",
+            name="BAOEES Project Configuration / Input Engine projectinvoer",
+            data=config_result
         )
 
         for variant in variant_result["variants"]:
@@ -569,6 +584,7 @@ class BAOEESCore:
         )
 
         engine_results = {
+            "project_config": config_result,
             "project": project_result,
             "aaie": aaie_result,
             "variant": variant_result,
@@ -736,6 +752,7 @@ class BAOEESCore:
         pprint(self.digital_twin.get_project_data())
         print("")
 
+        self.project_config.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
