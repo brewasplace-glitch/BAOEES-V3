@@ -29,6 +29,7 @@ from baoees.asset_management_engine.main import AssetManagementEngine
 from baoees.sustainability_engine.main import SustainabilityEngine
 from baoees.global_codes_engine.main import GlobalCodesEngine
 from baoees.learning_engine.main import LearningEngine
+from baoees.runtime_engine.main import RuntimeEngine
 from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
@@ -69,6 +70,7 @@ class BAOEESCore:
         self.sustainability = SustainabilityEngine()
         self.global_codes = GlobalCodesEngine()
         self.learning = LearningEngine()
+        self.runtime = RuntimeEngine()
         self.project_zip = ProjectZipEngine()
         self.digital_twin = DigitalTwin()
         self.workflow = WorkflowEngine()
@@ -566,6 +568,52 @@ class BAOEESCore:
             data=learning_result
         )
 
+        engine_results = {
+            "project": project_result,
+            "aaie": aaie_result,
+            "variant": variant_result,
+            "geo": geo_result,
+            "structural": structural_result,
+            "permit": permit_result,
+            "stee": stee_result,
+            "workflow": workflow_result,
+            "reporting": reporting_result,
+            "project_export": export_result,
+            "document_export": document_result,
+            "drawing_export": drawing_result,
+            "cad_export": cad_result,
+            "cost": cost_result,
+            "planning": planning_result,
+            "traffic_parking": traffic_parking_result,
+            "drainage_sewerage": drainage_result,
+            "aerius": aerius_result,
+            "gis": gis_result,
+            "quantity": quantity_result,
+            "validation": validation_result,
+            "specification": specification_result,
+            "tender": tender_result,
+            "contract": contract_result,
+            "construction_execution": construction_execution_result,
+            "site_monitoring": site_monitoring_result,
+            "as_built": as_built_result,
+            "asset_management": asset_result,
+            "sustainability": sustainability_result,
+            "global_codes": codes_result,
+            "learning": learning_result
+        }
+
+        runtime_result = self.runtime.create_runtime_log(
+            project_result=project_result,
+            engine_results=engine_results,
+            digital_twin_data=self.digital_twin.get_project_data()
+        )
+
+        self.digital_twin.add_object(
+            object_type="runtime_orchestration",
+            name="BAOEES Runtime / Orchestration Engine runtime-log",
+            data=runtime_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -676,6 +724,10 @@ class BAOEESCore:
         pprint(learning_result)
         print("")
 
+        print("Runtime / Orchestration Engine resultaat:")
+        pprint(runtime_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -712,6 +764,7 @@ class BAOEESCore:
         self.sustainability.run()
         self.global_codes.run()
         self.learning.run()
+        self.runtime.run()
         self.project_zip.run()
         self.digital_twin.run()
         self.workflow.run()
