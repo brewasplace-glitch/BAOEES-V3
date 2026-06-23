@@ -3,6 +3,7 @@ from pprint import pprint
 from baoees.project_selector_engine.main import ProjectSelectorEngine
 from baoees.project_config_engine.main import ProjectConfigEngine
 from baoees.project_storage_engine.main import ProjectStorageEngine
+from baoees.project_file_writer_engine.main import ProjectFileWriterEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -47,6 +48,7 @@ class BAOEESCore:
         self.project_selector = ProjectSelectorEngine()
         self.project_config = ProjectConfigEngine()
         self.project_storage = ProjectStorageEngine()
+        self.project_file_writer = ProjectFileWriterEngine()
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
         self.variant = VariantEngine()
@@ -675,6 +677,23 @@ class BAOEESCore:
             data=runtime_result
         )
 
+        file_writer_result = self.project_file_writer.write_project_files(
+            project_result=project_result,
+            storage_result=storage_result,
+            config_result=config_result,
+            selector_result=selector_result,
+            digital_twin_data=self.digital_twin.get_project_data(),
+            stee_result=stee_result,
+            runtime_result=runtime_result,
+            validation_result=validation_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_file_writer",
+            name="BAOEES Project File Writer / JSON Export Engine bestanden",
+            data=file_writer_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result
         )
@@ -789,6 +808,10 @@ class BAOEESCore:
         pprint(runtime_result)
         print("")
 
+        print("Project File Writer / JSON Export Engine resultaat:")
+        pprint(file_writer_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -800,6 +823,7 @@ class BAOEESCore:
         self.project_selector.run()
         self.project_config.run()
         self.project_storage.run()
+        self.project_file_writer.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
