@@ -1,0 +1,131 @@
+{
+    "engine": "ProjectConfigEngine",
+    "version": "1.1",
+    "status": "PROJECT_CONFIG_GELADEN",
+    "calculation_level": "centrale projectinvoer met JSON-ondersteuning",
+    "config_path": "configs/projects/plutostraat.json",
+    "project_config": {
+        "project_name": "Plutostraat met BAOEES V3",
+        "project_description": "Vrijstaande woning met fundering, constructie, geotechniek en SketchUp-integratie.",
+        "location": "Plutostraat, Paramaribo",
+        "country": "Suriname",
+        "project_type": "Bouw",
+        "client": "Brewster Engineering",
+        "project_phase": "concept projectanalyse",
+        "input_mode": "json_project_config",
+        "autonomous_project_mode": "volledig autonoom met QA/QC-controle",
+        "requested_outputs": [
+            "projectanalyse",
+            "ontwerpvarianten",
+            "geotechniek",
+            "constructie",
+            "vergunningstrategie",
+            "rapportage",
+            "tekeningen",
+            "CAD/DXF",
+            "kostenraming",
+            "planning",
+            "verkeer en parkeren",
+            "riolering en afwatering",
+            "AERIUS/stikstof",
+            "GIS/kaartanalyse",
+            "hoeveelhedenstaat",
+            "bestek",
+            "aanbesteding",
+            "contract",
+            "uitvoeringsplan",
+            "bouwplaatsmonitoring",
+            "as-built/oplevering",
+            "asset management",
+            "duurzaamheid",
+            "normenregister",
+            "autonomous learning",
+            "runtime orchestration",
+            "project ZIP"
+        ],
+        "data_completeness_mode": "Bekende gegevens + Open Data + AI-aannames",
+        "geo_input_mode": "grondwaterstand en geo-informatie automatisch genereren",
+        "foundation_mode": "funderingstypen automatisch onderzoeken en vergelijken",
+        "default_groundwater_level_m": -0.5,
+        "_json_status": "JSON_CONFIG_GELADEN",
+        "_json_path": "configs\\projects\\plutostraat.json"
+    },
+    "validation": {
+        "status": "PROJECT_CONFIG_VALID",
+        "required_fields": [
+            "project_name",
+            "project_description",
+            "location",
+            "country",
+            "project_type"
+        ],
+        "missing_fields": [],
+        "is_valid": true,
+        "json_status": "JSON_CONFIG_GELADEN",
+        "json_path": "configs\\projects\\plutostraat.json"
+    },
+    "input_sources": {
+        "status": "INPUTBRONNEN_CONCEPT",
+        "current_sources": [
+            "default Python config",
+            "optionele config_data dictionary",
+            "JSON projectconfig"
+        ],
+        "future_sources": [
+            "Excel projectinvoer",
+            "PDF projectomschrijving",
+            "DWG/DXF/SKP upload",
+            "Google Maps locatie",
+            "satellietfoto / kaartuitsnede",
+            "spraakinvoer",
+            "startscherm formulier",
+            "projectbibliotheek"
+        ]
+    },
+    "future_input_modes": {
+        "status": "TOEKOMSTIGE_INVOERMODI_CONCEPT",
+        "modes": [
+            {
+                "mode": "manual_form",
+                "description": "projectgegevens invoeren via startscherm"
+            },
+            {
+                "mode": "file_upload",
+                "description": "projectomschrijving en tekeningen uploaden"
+            },
+            {
+                "mode": "json_project_config",
+                "description": "projectgegevens lezen uit JSON-projectbestand"
+            },
+            {
+                "mode": "speech_input",
+                "description": "projectopdracht via spraak invoeren"
+            },
+            {
+                "mode": "map_selection",
+                "description": "locatie bepalen via kaartvlak of Google Maps uitsnede"
+            },
+            {
+                "mode": "autonomous_project_mode",
+                "description": "BAOEES vult ontbrekende gegevens automatisch aan"
+            }
+        ]
+    },
+    "warnings": [
+        "Geen kritieke projectconfiguratie-waarschuwingen."
+    ],
+    "recommendation": {
+        "status": "PROJECT_CONFIG_ADVIES",
+        "advice": "Gebruik deze engine als centrale ingang voor alle projectgegevens. Projecten kunnen nu via JSON worden geladen, waardoor BAOEES meerdere projectprofielen kan ondersteunen.",
+        "next_steps": [
+            "meerdere JSON-projectprofielen toevoegen",
+            "Moskee Bunschoten als JSON-project toevoegen",
+            "Bruynzeel Waterfront als JSON-project toevoegen",
+            "projectkeuze vanuit startscherm voorbereiden",
+            "upload-invoer koppelen aan JSON-generator",
+            "projectbibliotheek koppelen"
+        ]
+    },
+    "created_at": "2026-06-24T01:19:50",
+    "disclaimer": "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
+}

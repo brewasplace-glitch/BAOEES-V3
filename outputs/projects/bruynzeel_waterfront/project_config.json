@@ -1,0 +1,156 @@
+{
+    "engine": "ProjectConfigEngine",
+    "version": "1.1",
+    "status": "PROJECT_CONFIG_GELADEN",
+    "calculation_level": "centrale projectinvoer met JSON-ondersteuning",
+    "config_path": "configs/projects/bruynzeel_waterfront.json",
+    "project_config": {
+        "project_name": "Bruynzeel Waterfront District",
+        "project_description": "Gebiedsontwikkeling van het Bruynzeel-terrein te Paramaribo tot Waterfront District, inclusief masterplan, kavels, GLIS-percelen, verkeer, parkeren, GREX, financiële haalbaarheid, ontwikkelscenario's, investeerdersmemorandum en professionele rapportage.",
+        "location": "Paramaribo, Suriname",
+        "country": "Suriname",
+        "project_type": "Gebiedsontwikkeling",
+        "client": "Brewster Engineering",
+        "project_phase": "masterplan / haalbaarheid",
+        "input_mode": "json_project_config",
+        "autonomous_project_mode": "volledig autonoom met QA/QC-controle",
+        "requested_outputs": [
+            "projectanalyse",
+            "masterplan",
+            "ontwerpvarianten",
+            "GLIS-kaarten",
+            "kavelanalyse",
+            "verkeershoofdstuk",
+            "parkeerhoofdstuk",
+            "GREX",
+            "financiële haalbaarheidsanalyse",
+            "SWOT-analyse",
+            "ontwikkelscenario A",
+            "ontwikkelscenario B",
+            "ontwikkelscenario C",
+            "investeerdersmemorandum",
+            "GIS/kaartanalyse",
+            "kostenraming",
+            "planning",
+            "rapportage",
+            "PDF/DOCX",
+            "kaarten en legenda's",
+            "project ZIP",
+            "bronvermelding"
+        ],
+        "data_completeness_mode": "Bekende gegevens + Open Data + AI-aannames",
+        "geo_input_mode": "grondwaterstand en geo-informatie automatisch genereren",
+        "foundation_mode": "niet primair / afhankelijk per deelproject",
+        "default_groundwater_level_m": -0.5,
+        "known_project_data": {
+            "program_office_m2_bvo": 10000,
+            "program_multifunctional_m2_bvo": 2000,
+            "total_program_m2_bvo": 12000,
+            "auditorium_max_visitors": 2400,
+            "development_period": "2027-2040",
+            "main_parcels": [
+                {
+                    "parcel": "177a",
+                    "area_m2": 60601
+                },
+                {
+                    "parcel": "778",
+                    "area_m2": null
+                },
+                {
+                    "parcel": "1145",
+                    "area_m2": 5646
+                },
+                {
+                    "parcel": "1146",
+                    "area_m2": null
+                }
+            ],
+            "location_options": [
+                "A - hoofdweg",
+                "B - Saramaccakanaal",
+                "C - rivierzijde"
+            ]
+        },
+        "_json_status": "JSON_CONFIG_GELADEN",
+        "_json_path": "configs\\projects\\bruynzeel_waterfront.json"
+    },
+    "validation": {
+        "status": "PROJECT_CONFIG_VALID",
+        "required_fields": [
+            "project_name",
+            "project_description",
+            "location",
+            "country",
+            "project_type"
+        ],
+        "missing_fields": [],
+        "is_valid": true,
+        "json_status": "JSON_CONFIG_GELADEN",
+        "json_path": "configs\\projects\\bruynzeel_waterfront.json"
+    },
+    "input_sources": {
+        "status": "INPUTBRONNEN_CONCEPT",
+        "current_sources": [
+            "default Python config",
+            "optionele config_data dictionary",
+            "JSON projectconfig"
+        ],
+        "future_sources": [
+            "Excel projectinvoer",
+            "PDF projectomschrijving",
+            "DWG/DXF/SKP upload",
+            "Google Maps locatie",
+            "satellietfoto / kaartuitsnede",
+            "spraakinvoer",
+            "startscherm formulier",
+            "projectbibliotheek"
+        ]
+    },
+    "future_input_modes": {
+        "status": "TOEKOMSTIGE_INVOERMODI_CONCEPT",
+        "modes": [
+            {
+                "mode": "manual_form",
+                "description": "projectgegevens invoeren via startscherm"
+            },
+            {
+                "mode": "file_upload",
+                "description": "projectomschrijving en tekeningen uploaden"
+            },
+            {
+                "mode": "json_project_config",
+                "description": "projectgegevens lezen uit JSON-projectbestand"
+            },
+            {
+                "mode": "speech_input",
+                "description": "projectopdracht via spraak invoeren"
+            },
+            {
+                "mode": "map_selection",
+                "description": "locatie bepalen via kaartvlak of Google Maps uitsnede"
+            },
+            {
+                "mode": "autonomous_project_mode",
+                "description": "BAOEES vult ontbrekende gegevens automatisch aan"
+            }
+        ]
+    },
+    "warnings": [
+        "Geen kritieke projectconfiguratie-waarschuwingen."
+    ],
+    "recommendation": {
+        "status": "PROJECT_CONFIG_ADVIES",
+        "advice": "Gebruik deze engine als centrale ingang voor alle projectgegevens. Projecten kunnen nu via JSON worden geladen, waardoor BAOEES meerdere projectprofielen kan ondersteunen.",
+        "next_steps": [
+            "meerdere JSON-projectprofielen toevoegen",
+            "Moskee Bunschoten als JSON-project toevoegen",
+            "Bruynzeel Waterfront als JSON-project toevoegen",
+            "projectkeuze vanuit startscherm voorbereiden",
+            "upload-invoer koppelen aan JSON-generator",
+            "projectbibliotheek koppelen"
+        ]
+    },
+    "created_at": "2026-06-24T01:20:36",
+    "disclaimer": "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
+}

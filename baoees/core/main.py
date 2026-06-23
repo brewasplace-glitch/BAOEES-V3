@@ -49,6 +49,7 @@ class BAOEESCore:
         self.project_config = ProjectConfigEngine()
         self.project_storage = ProjectStorageEngine()
         self.project_file_writer = ProjectFileWriterEngine()
+
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
         self.variant = VariantEngine()
@@ -91,6 +92,7 @@ class BAOEESCore:
         selector_result = self.project_selector.select_project(
             project_id=project_id
         )
+
         selected_config_path = selector_result["selected_config_path"]
 
         print("Project Selector / Project Library Engine resultaat:")
@@ -100,6 +102,7 @@ class BAOEESCore:
         config_result = self.project_config.load_project_config(
             config_path=selected_config_path
         )
+
         project_config = config_result["project_config"]
 
         print("Project Configuration / Input Engine resultaat:")
@@ -115,7 +118,9 @@ class BAOEESCore:
         )
 
         project_result["runtime_mode"] = runtime_mode
-        project_result["selected_project_id"] = selector_result.get("selected_project", {}).get("project_id")
+        project_result["selected_project_id"] = selector_result.get(
+            "selected_project", {}
+        ).get("project_id")
 
         print("Project Analyzer resultaat:")
         pprint(project_result)
@@ -695,7 +700,9 @@ class BAOEESCore:
         )
 
         zip_result = self.project_zip.create_project_zip(
-            export_result=export_result
+            export_result=export_result,
+            storage_result=storage_result,
+            file_writer_result=file_writer_result
         )
 
         self.digital_twin.add_object(

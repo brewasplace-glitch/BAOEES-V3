@@ -1,0 +1,414 @@
+{
+    "engine": "RuntimeEngine",
+    "version": "1.0",
+    "status": "RUNTIME_ORCHESTRATION_LOG_GEREED",
+    "project_name": "Plutostraat met BAOEES V3",
+    "location": "Plutostraat, Paramaribo",
+    "country": "Suriname",
+    "calculation_level": "concept runtime en orchestration",
+    "project_basis": {
+        "project_name": "Plutostraat met BAOEES V3",
+        "project_type": "Bouw",
+        "location": "Plutostraat, Paramaribo",
+        "country": "Suriname",
+        "description": "",
+        "runtime_phase": "concept autonome workflow-aansturing",
+        "status": "CONCEPT"
+    },
+    "engine_sequence": {
+        "status": "ENGINE_SEQUENCE_GEREGISTREERD",
+        "total_engines": 34,
+        "sequence": [
+            {
+                "order": 1,
+                "engine_key": "project_selector",
+                "engine_name": "ProjectSelectorEngine",
+                "status": "PROJECT_SELECTIE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 2,
+                "engine_key": "project_config",
+                "engine_name": "ProjectConfigEngine",
+                "status": "PROJECT_CONFIG_GELADEN",
+                "executed": true
+            },
+            {
+                "order": 3,
+                "engine_key": "project_storage",
+                "engine_name": "ProjectStorageEngine",
+                "status": "PROJECT_STORAGE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 4,
+                "engine_key": "project",
+                "engine_name": "project",
+                "status": "PROJECT_ANALYSE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 5,
+                "engine_key": "aaie",
+                "engine_name": "AAIE",
+                "status": "AAIE_ANALYSE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 6,
+                "engine_key": "variant",
+                "engine_name": "VariantEngine",
+                "status": "VARIANTEN_AANGEMAAKT",
+                "executed": true
+            },
+            {
+                "order": 7,
+                "engine_key": "geo",
+                "engine_name": "GeoEngine",
+                "status": "GEO_ANALYSE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 8,
+                "engine_key": "structural",
+                "engine_name": "StructuralEngine",
+                "status": "STRUCTURAL_ANALYSE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 9,
+                "engine_key": "permit",
+                "engine_name": "PermitEngine",
+                "status": "VERGUNNINGSTRATEGIE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 10,
+                "engine_key": "stee",
+                "engine_name": "STEE",
+                "status": "BRONREGISTER_AANGEMAAKT",
+                "executed": true
+            },
+            {
+                "order": 11,
+                "engine_key": "workflow",
+                "engine_name": "WorkflowEngine",
+                "status": "WORKFLOW_AANGEMAAKT",
+                "executed": true
+            },
+            {
+                "order": 12,
+                "engine_key": "reporting",
+                "engine_name": "ReportingEngine",
+                "status": "RAPPORTSTRUCTUUR_GEREED",
+                "executed": true
+            },
+            {
+                "order": 13,
+                "engine_key": "project_export",
+                "engine_name": "ProjectExportEngine",
+                "status": "PROJECT_EXPORT_GEREED",
+                "executed": true
+            },
+            {
+                "order": 14,
+                "engine_key": "document_export",
+                "engine_name": "DocumentExportEngine",
+                "status": "DOCUMENT_EXPORT_GEREED",
+                "executed": true
+            },
+            {
+                "order": 15,
+                "engine_key": "drawing_export",
+                "engine_name": "DrawingExportEngine",
+                "status": "DRAWING_EXPORT_GEREED",
+                "executed": true
+            },
+            {
+                "order": 16,
+                "engine_key": "cad_export",
+                "engine_name": "CADExportEngine",
+                "status": "CAD_EXPORT_GEREED",
+                "executed": true
+            },
+            {
+                "order": 17,
+                "engine_key": "cost",
+                "engine_name": "CostEngine",
+                "status": "COST_ESTIMATE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 18,
+                "engine_key": "planning",
+                "engine_name": "PlanningEngine",
+                "status": "PLANNING_GEREED",
+                "executed": true
+            },
+            {
+                "order": 19,
+                "engine_key": "traffic_parking",
+                "engine_name": "TrafficParkingEngine",
+                "status": "TRAFFIC_PARKING_ANALYSE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 20,
+                "engine_key": "drainage_sewerage",
+                "engine_name": "DrainageSewerageEngine",
+                "status": "DRAINAGE_SEWERAGE_DESIGN_GEREED",
+                "executed": true
+            },
+            {
+                "order": 21,
+                "engine_key": "aerius",
+                "engine_name": "AERIUSEngine",
+                "status": "AERIUS_VOORBEREIDING_GEREED",
+                "executed": true
+            },
+            {
+                "order": 22,
+                "engine_key": "gis",
+                "engine_name": "GISMapEngine",
+                "status": "GIS_MAP_ANALYSE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 23,
+                "engine_key": "quantity",
+                "engine_name": "QuantityEngine",
+                "status": "QUANTITY_TAKEOFF_GEREED",
+                "executed": true
+            },
+            {
+                "order": 24,
+                "engine_key": "validation",
+                "engine_name": "ValidationEngine",
+                "status": "VALIDATION_GEREED",
+                "executed": true
+            },
+            {
+                "order": 25,
+                "engine_key": "specification",
+                "engine_name": "SpecificationEngine",
+                "status": "SPECIFICATION_GEREED",
+                "executed": true
+            },
+            {
+                "order": 26,
+                "engine_key": "tender",
+                "engine_name": "TenderEngine",
+                "status": "TENDER_PACKAGE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 27,
+                "engine_key": "contract",
+                "engine_name": "ContractEngine",
+                "status": "CONTRACT_PACKAGE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 28,
+                "engine_key": "construction_execution",
+                "engine_name": "ConstructionExecutionEngine",
+                "status": "EXECUTION_PLAN_GEREED",
+                "executed": true
+            },
+            {
+                "order": 29,
+                "engine_key": "site_monitoring",
+                "engine_name": "SiteMonitoringEngine",
+                "status": "SITE_MONITORING_PLAN_GEREED",
+                "executed": true
+            },
+            {
+                "order": 30,
+                "engine_key": "as_built",
+                "engine_name": "AsBuiltEngine",
+                "status": "AS_BUILT_PACKAGE_GEREED",
+                "executed": true
+            },
+            {
+                "order": 31,
+                "engine_key": "asset_management",
+                "engine_name": "AssetManagementEngine",
+                "status": "ASSET_MANAGEMENT_PLAN_GEREED",
+                "executed": true
+            },
+            {
+                "order": 32,
+                "engine_key": "sustainability",
+                "engine_name": "SustainabilityEngine",
+                "status": "SUSTAINABILITY_ANALYSIS_GEREED",
+                "executed": true
+            },
+            {
+                "order": 33,
+                "engine_key": "global_codes",
+                "engine_name": "GlobalCodesEngine",
+                "status": "GLOBAL_CODES_ANALYSIS_GEREED",
+                "executed": true
+            },
+            {
+                "order": 34,
+                "engine_key": "learning",
+                "engine_name": "LearningEngine",
+                "status": "PROJECT_LEARNING_GEREED",
+                "executed": true
+            }
+        ]
+    },
+    "status_summary": {
+        "status": "ENGINE_STATUS_SUMMARY_GEREED",
+        "runtime_status": "RUNTIME_FLOW_MET_AANDACHTSPUNTEN",
+        "total_engines": 34,
+        "completed_engines": 30,
+        "unknown_status_engines": 0,
+        "warning_status_engines": 4,
+        "completion_percent": 88.2,
+        "engine_statuses": {
+            "project_selector": "PROJECT_SELECTIE_GEREED",
+            "project_config": "PROJECT_CONFIG_GELADEN",
+            "project_storage": "PROJECT_STORAGE_GEREED",
+            "project": "PROJECT_ANALYSE_GEREED",
+            "aaie": "AAIE_ANALYSE_GEREED",
+            "variant": "VARIANTEN_AANGEMAAKT",
+            "geo": "GEO_ANALYSE_GEREED",
+            "structural": "STRUCTURAL_ANALYSE_GEREED",
+            "permit": "VERGUNNINGSTRATEGIE_GEREED",
+            "stee": "BRONREGISTER_AANGEMAAKT",
+            "workflow": "WORKFLOW_AANGEMAAKT",
+            "reporting": "RAPPORTSTRUCTUUR_GEREED",
+            "project_export": "PROJECT_EXPORT_GEREED",
+            "document_export": "DOCUMENT_EXPORT_GEREED",
+            "drawing_export": "DRAWING_EXPORT_GEREED",
+            "cad_export": "CAD_EXPORT_GEREED",
+            "cost": "COST_ESTIMATE_GEREED",
+            "planning": "PLANNING_GEREED",
+            "traffic_parking": "TRAFFIC_PARKING_ANALYSE_GEREED",
+            "drainage_sewerage": "DRAINAGE_SEWERAGE_DESIGN_GEREED",
+            "aerius": "AERIUS_VOORBEREIDING_GEREED",
+            "gis": "GIS_MAP_ANALYSE_GEREED",
+            "quantity": "QUANTITY_TAKEOFF_GEREED",
+            "validation": "VALIDATION_GEREED",
+            "specification": "SPECIFICATION_GEREED",
+            "tender": "TENDER_PACKAGE_GEREED",
+            "contract": "CONTRACT_PACKAGE_GEREED",
+            "construction_execution": "EXECUTION_PLAN_GEREED",
+            "site_monitoring": "SITE_MONITORING_PLAN_GEREED",
+            "as_built": "AS_BUILT_PACKAGE_GEREED",
+            "asset_management": "ASSET_MANAGEMENT_PLAN_GEREED",
+            "sustainability": "SUSTAINABILITY_ANALYSIS_GEREED",
+            "global_codes": "GLOBAL_CODES_ANALYSIS_GEREED",
+            "learning": "PROJECT_LEARNING_GEREED"
+        }
+    },
+    "runtime_checks": {
+        "status": "RUNTIME_CHECKS_GEREED",
+        "digital_twin_object_count": 35,
+        "digital_twin_source_count": 3,
+        "checks": [
+            {
+                "check": "projectanalyse gestart",
+                "status": "OK"
+            },
+            {
+                "check": "Digital Twin bevat objecten",
+                "status": "OK"
+            },
+            {
+                "check": "STEE bronregistratie aanwezig",
+                "status": "OK"
+            },
+            {
+                "check": "QA/QC controle aanwezig",
+                "status": "OK"
+            },
+            {
+                "check": "projectexport aanwezig",
+                "status": "OK"
+            },
+            {
+                "check": "oplever- en beheerfase aanwezig",
+                "status": "OK"
+            }
+        ]
+    },
+    "error_handling_plan": {
+        "status": "FOUTAFHANDELING_CONCEPT",
+        "rules": [
+            {
+                "error_type": "missing_input",
+                "action": "AAIE inschakelen om ontbrekende gegevens als aanname te markeren"
+            },
+            {
+                "error_type": "engine_failure",
+                "action": "engine-status op FOUT zetten en workflow niet definitief vrijgeven"
+            },
+            {
+                "error_type": "validation_warning",
+                "action": "waarschuwing opnemen in QA/QC en projectdossier"
+            },
+            {
+                "error_type": "missing_source",
+                "action": "STEE bronregistratie aanvullen of bron als ontbrekend markeren"
+            },
+            {
+                "error_type": "export_failure",
+                "action": "export opnieuw proberen en fout opnemen in runtime-log"
+            }
+        ]
+    },
+    "autonomous_mode": {
+        "status": "AUTONOMOUS_MODE_CONCEPT",
+        "mode": "semi-autonoom / volledig autonoom voorbereid",
+        "supported_modes": [
+            "assistentmodus",
+            "semi-autonoom",
+            "volledig autonoom met QA/QC-blokkades"
+        ],
+        "control_points": [
+            "na projectanalyse",
+            "na ontwerpvarianten",
+            "na constructie/geotechniek",
+            "na vergunningstrategie",
+            "na kosten/planning",
+            "na bestek/contract",
+            "voor uitvoering",
+            "voor oplevering"
+        ]
+    },
+    "next_runtime_steps": {
+        "status": "VOLGENDE_RUNTIME_STAPPEN_CONCEPT",
+        "runtime_status": "RUNTIME_FLOW_MET_AANDACHTSPUNTEN",
+        "next_steps": [
+            "engine-resultaten standaardiseren",
+            "centrale pipeline-configuratie maken",
+            "runtime-log exporteren naar projectmap",
+            "foutafhandeling per engine afdwingen",
+            "QA/QC-blokkades koppelen aan workflow",
+            "autonome modus instelbaar maken vanaf startscherm",
+            "projectanalyse laten draaien via Runtime Engine in plaats van losse core-aanroep"
+        ]
+    },
+    "warnings": [
+        "Niet alle engines lijken volledig gereed volgens de runtime-statussamenvatting."
+    ],
+    "recommendation": {
+        "status": "RUNTIME_ADVIES_CONCEPT",
+        "advice": "Gebruik deze Runtime Engine als centrale controlelaag boven de BAOEES workflow. De volgende stap is om alle engine-aanroepen via één gestandaardiseerde pipeline te laten lopen met logging, foutafhandeling en QA/QC-blokkades.",
+        "next_steps": [
+            "runtime pipeline-configuratie toevoegen",
+            "engine-statusmodel standaardiseren",
+            "fouten en waarschuwingen centraal loggen",
+            "workflow automatisch stoppen bij kritieke QA/QC-fouten",
+            "runtime-log toevoegen aan projectexport",
+            "autonome modus koppelen aan startscherm"
+        ]
+    },
+    "created_at": "2026-06-24T01:19:50",
+    "disclaimer": "Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.",
+    "runtime_mode": "autonomous",
+    "launcher_project_id": null
+}

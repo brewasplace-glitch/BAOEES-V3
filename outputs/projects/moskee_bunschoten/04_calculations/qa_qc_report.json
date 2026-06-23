@@ -1,0 +1,350 @@
+{
+    "engine": "ValidationEngine",
+    "version": "1.0",
+    "status": "VALIDATION_GEREED",
+    "project_name": "Moskee Bunschoten",
+    "location": "Bikkersweg 88, Bunschoten",
+    "country": "Nederland",
+    "calculation_level": "automatische QA/QC controle",
+    "completeness": {
+        "required_engine_count": 19,
+        "available_engine_count": 19,
+        "missing_engine_count": 0,
+        "available_engines": [
+            "project_analyzer",
+            "aaie",
+            "variant_engine",
+            "geo_engine",
+            "structural_engine",
+            "permit_engine",
+            "reporting_engine",
+            "project_export_engine",
+            "document_export_engine",
+            "drawing_export_engine",
+            "cad_export_engine",
+            "cost_engine",
+            "planning_engine",
+            "traffic_parking_engine",
+            "drainage_sewerage_engine",
+            "aerius_engine",
+            "gis_map_engine",
+            "stee",
+            "workflow_engine"
+        ],
+        "missing_engines": [],
+        "completeness_percent": 100.0,
+        "status": "VOLLEDIG"
+    },
+    "status_check": {
+        "overall_status": "ALLE_ENGINES_GEREED",
+        "not_ready_count": 0,
+        "not_ready": [],
+        "engine_statuses": [
+            {
+                "engine": "project_analyzer",
+                "status": "PROJECT_ANALYSE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "aaie",
+                "status": "AAIE_ANALYSE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "variant_engine",
+                "status": "VARIANTEN_AANGEMAAKT",
+                "ready": true
+            },
+            {
+                "engine": "geo_engine",
+                "status": "GEO_ANALYSE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "structural_engine",
+                "status": "STRUCTURAL_ANALYSE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "permit_engine",
+                "status": "VERGUNNINGSTRATEGIE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "reporting_engine",
+                "status": "RAPPORTSTRUCTUUR_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "project_export_engine",
+                "status": "PROJECT_EXPORT_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "document_export_engine",
+                "status": "DOCUMENT_EXPORT_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "drawing_export_engine",
+                "status": "DRAWING_EXPORT_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "cad_export_engine",
+                "status": "CAD_EXPORT_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "cost_engine",
+                "status": "COST_ESTIMATE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "planning_engine",
+                "status": "PLANNING_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "traffic_parking_engine",
+                "status": "TRAFFIC_PARKING_ANALYSE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "drainage_sewerage_engine",
+                "status": "DRAINAGE_SEWERAGE_DESIGN_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "aerius_engine",
+                "status": "AERIUS_VOORBEREIDING_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "gis_map_engine",
+                "status": "GIS_MAP_ANALYSE_GEREED",
+                "ready": true
+            },
+            {
+                "engine": "stee",
+                "status": "BRONREGISTER_AANGEMAAKT",
+                "ready": true
+            },
+            {
+                "engine": "workflow_engine",
+                "status": "WORKFLOW_AANGEMAAKT",
+                "ready": true
+            }
+        ]
+    },
+    "warning_check": {
+        "status": "WAARSCHUWINGEN_HOOG",
+        "total_warnings": 11,
+        "critical_warning_count": 8,
+        "warnings_by_engine": [
+            {
+                "engine": "project_analyzer",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "aaie",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "variant_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "geo_engine",
+                "warning_count": 1,
+                "critical_warning_count": 0,
+                "warnings": [
+                    "Zetting is een aandachtspunt. Controleer met echte sonderingen en samendrukkingsparameters."
+                ]
+            },
+            {
+                "engine": "structural_engine",
+                "warning_count": 2,
+                "critical_warning_count": 2,
+                "warnings": [
+                    "Dakconstructie voldoet indicatief niet of vraagt controle.",
+                    "Fundering vraagt nadere controle op basis van Geo Engine-resultaten."
+                ]
+            },
+            {
+                "engine": "permit_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "reporting_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "project_export_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "document_export_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "drawing_export_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "cad_export_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "cost_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "planning_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "traffic_parking_engine",
+                "warning_count": 1,
+                "critical_warning_count": 1,
+                "warnings": [
+                    "Geen kritieke verkeers- of parkeerwaarschuwingen op basis van deze indicatieve analyse."
+                ]
+            },
+            {
+                "engine": "drainage_sewerage_engine",
+                "warning_count": 1,
+                "critical_warning_count": 1,
+                "warnings": [
+                    "Grondwaterstand is hoog. Infiltratievoorziening moet nader worden gecontroleerd."
+                ]
+            },
+            {
+                "engine": "aerius_engine",
+                "warning_count": 3,
+                "critical_warning_count": 3,
+                "warnings": [
+                    "AERIUS-berekening is indicatief nodig omdat het project in Nederlandse context valt.",
+                    "Bouwfase NOx-emissie is indicatief verhoogd. Controleer elektrisch materieel of schonere emissieklasse.",
+                    "Gebruiksfase NOx-emissie is indicatief verhoogd. Controleer verkeersgeneratie en gebouwinstallaties."
+                ]
+            },
+            {
+                "engine": "gis_map_engine",
+                "warning_count": 3,
+                "critical_warning_count": 1,
+                "warnings": [
+                    "Water- en rioleringsaspecten moeten op kaart worden gecontroleerd.",
+                    "Ontsluiting en parkeeraanbod moeten op kaart worden onderbouwd.",
+                    "Afstand tot Natura 2000 moet met echte GIS-data worden bepaald."
+                ]
+            },
+            {
+                "engine": "stee",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            },
+            {
+                "engine": "workflow_engine",
+                "warning_count": 0,
+                "critical_warning_count": 0,
+                "warnings": []
+            }
+        ]
+    },
+    "consistency_check": {
+        "status": "CONSISTENTIE_AANDACHTSPUNTEN",
+        "issue_count": 1,
+        "issues": [
+            "Afwatering/infiltratie geeft aandachtspunt aan."
+        ]
+    },
+    "risk_check": {
+        "status": "PROJECTRISICO_HOOG",
+        "risk_count": 6,
+        "high_risk_count": 1,
+        "medium_risk_count": 4,
+        "low_risk_count": 1,
+        "risks": [
+            {
+                "domain": "geotechniek",
+                "risk": "Funderingsrisico of aanvullend geotechnisch onderzoek nodig.",
+                "level": "middel"
+            },
+            {
+                "domain": "constructie",
+                "risk": "Constructieve aandachtspunten aanwezig.",
+                "level": "middel"
+            },
+            {
+                "domain": "riolering en afwatering",
+                "risk": "Infiltratie mogelijk beperkt door hoge grondwaterstand.",
+                "level": "middel"
+            },
+            {
+                "domain": "stikstof / AERIUS",
+                "risk": "Stikstofwaarschuwingen aanwezig.",
+                "level": "middel"
+            },
+            {
+                "domain": "GIS / locatie",
+                "risk": "Exacte coördinaten ontbreken nog.",
+                "level": "laag"
+            },
+            {
+                "domain": "algemeen",
+                "risk": "Meerdere kritieke waarschuwingen aanwezig.",
+                "level": "hoog"
+            }
+        ]
+    },
+    "quality_score": {
+        "score": 42.0,
+        "quality_level": "ONVOLDOENDE",
+        "status": "PROJECTKWALITEIT_BEREKEND"
+    },
+    "go_no_go_advice": {
+        "decision": "NO_GO",
+        "advice": "Projectoutput is onvoldoende betrouwbaar voor vervolgstap.",
+        "status": "GO_NO_GO_ADVIES_GEREED"
+    },
+    "recommendation": {
+        "status": "QA_QC_ADVIES_CONCEPT",
+        "summary": "Projectkwaliteitsscore: 42.0 / 100 (ONVOLDOENDE). Besluit: NO_GO.",
+        "next_steps": [
+            "controleer alle hoge risico’s",
+            "vervang placeholders door projectspecifieke gegevens",
+            "controleer geotechniek met echte sondering",
+            "controleer constructie met definitieve normberekening",
+            "controleer parkeren, water, AERIUS en GIS met officiële bronnen",
+            "werk rapporten en tekeningen op definitief niveau uit",
+            "laat formele stukken controleren door bevoegd deskundige"
+        ],
+        "risk_count": 6
+    },
+    "created_at": "2026-06-24T01:20:13",
+    "disclaimer": "Deze Validation & QA/QC Engine voert een automatische controle uit op volledigheid, statussen, waarschuwingen en interne consistentie. Dit vervangt geen menselijke eindcontrole door bevoegde deskundigen."
+}
