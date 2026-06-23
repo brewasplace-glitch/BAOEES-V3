@@ -80,11 +80,13 @@ class BAOEESCore:
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
 
-    def start_projectanalyse(self):
+    def start_projectanalyse(self, project_id=None, runtime_mode="autonomous"):
 
         print("\n=== START PROJECTANALYSE ===\n")
 
-        selector_result = self.project_selector.select_project()
+        selector_result = self.project_selector.select_project(
+            project_id=project_id
+        )
         selected_config_path = selector_result["selected_config_path"]
 
         print("Project Selector / Project Library Engine resultaat:")
@@ -107,6 +109,9 @@ class BAOEESCore:
             country=project_config["country"],
             project_type=project_config["project_type"]
         )
+
+        project_result["runtime_mode"] = runtime_mode
+        project_result["selected_project_id"] = selector_result.get("selected_project", {}).get("project_id")
 
         print("Project Analyzer resultaat:")
         pprint(project_result)
@@ -641,6 +646,9 @@ class BAOEESCore:
             engine_results=engine_results,
             digital_twin_data=self.digital_twin.get_project_data()
         )
+
+        runtime_result["runtime_mode"] = runtime_mode
+        runtime_result["launcher_project_id"] = project_id
 
         self.digital_twin.add_object(
             object_type="runtime_orchestration",
