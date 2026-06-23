@@ -1,5 +1,6 @@
 from pprint import pprint
 
+from baoees.project_selector_engine.main import ProjectSelectorEngine
 from baoees.project_config_engine.main import ProjectConfigEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
@@ -42,6 +43,7 @@ class BAOEESCore:
     def __init__(self):
         print("BAOEES Core gestart")
 
+        self.project_selector = ProjectSelectorEngine()
         self.project_config = ProjectConfigEngine()
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -82,7 +84,16 @@ class BAOEESCore:
 
         print("\n=== START PROJECTANALYSE ===\n")
 
-        config_result = self.project_config.load_project_config()
+        selector_result = self.project_selector.select_project()
+        selected_config_path = selector_result["selected_config_path"]
+
+        print("Project Selector / Project Library Engine resultaat:")
+        pprint(selector_result)
+        print("")
+
+        config_result = self.project_config.load_project_config(
+            config_path=selected_config_path
+        )
         project_config = config_result["project_config"]
 
         print("Project Configuration / Input Engine resultaat:")
@@ -150,6 +161,12 @@ class BAOEESCore:
         self.digital_twin.create_project_twin(
             project_result=project_result,
             aaie_result=aaie_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_selector",
+            name="BAOEES Project Selector / Project Library Engine projectkeuze",
+            data=selector_result
         )
 
         self.digital_twin.add_object(
@@ -584,6 +601,7 @@ class BAOEESCore:
         )
 
         engine_results = {
+            "project_selector": selector_result,
             "project_config": config_result,
             "project": project_result,
             "aaie": aaie_result,
@@ -752,6 +770,7 @@ class BAOEESCore:
         pprint(self.digital_twin.get_project_data())
         print("")
 
+        self.project_selector.run()
         self.project_config.run()
         self.aaie.run()
         self.variant.run()

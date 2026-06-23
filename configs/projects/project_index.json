@@ -1,0 +1,35 @@
+{
+    "active_project_id": "plutostraat",
+    "projects": [
+        {
+            "project_id": "plutostraat",
+            "project_name": "Plutostraat met BAOEES V3",
+            "project_type": "Bouw",
+            "location": "Plutostraat, Paramaribo",
+            "country": "Suriname",
+            "config_path": "configs/projects/plutostraat.json",
+            "status": "actief",
+            "description": "Vrijstaande woning met fundering, constructie, geotechniek en SketchUp-integratie."
+        },
+        {
+            "project_id": "moskee_bunschoten",
+            "project_name": "Moskee Bunschoten",
+            "project_type": "Bouw / vergunning",
+            "location": "Bikkersweg 88, Bunschoten",
+            "country": "Nederland",
+            "config_path": "configs/projects/moskee_bunschoten.json",
+            "status": "voorbereid",
+            "description": "Uitbreiding moskee circa 20 m2, gevelaanpassing, vergunningtraject, parkeren, participatie en AERIUS."
+        },
+        {
+            "project_id": "bruynzeel_waterfront",
+            "project_name": "Bruynzeel Waterfront District",
+            "project_type": "Gebiedsontwikkeling",
+            "location": "Paramaribo, Suriname",
+            "country": "Suriname",
+            "config_path": "configs/projects/bruynzeel_waterfront.json",
+            "status": "voorbereid",
+            "description": "Masterplan, kavels, waterfrontontwikkeling, GREX, verkeer, parkeren en investeerdersmemorandum."
+        }
+    ]
+}
