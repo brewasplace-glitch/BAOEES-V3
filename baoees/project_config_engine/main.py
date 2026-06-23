@@ -1,4 +1,6 @@
+import json
 from datetime import datetime
+from pathlib import Path
 
 
 class ProjectConfigEngine:
@@ -6,33 +8,65 @@ class ProjectConfigEngine:
     def __init__(self):
         self.config_result = {}
 
-    def load_project_config(self, config_data=None):
+    def load_project_config(self, config_data=None, config_path=None):
         config_data = config_data or {}
 
         default_config = self.build_default_config()
-        merged_config = self.merge_config(default_config, config_data)
+        json_config = self.load_json_config(config_path)
+
+        merged_config = self.merge_config(default_config, json_config)
+        merged_config = self.merge_config(merged_config, config_data)
+
         validation = self.validate_config(merged_config)
 
         self.config_result = {
             "engine": "ProjectConfigEngine",
-            "version": "1.0",
+            "version": "1.1",
             "status": "PROJECT_CONFIG_GELADEN",
-            "calculation_level": "centrale projectinvoer",
+            "calculation_level": "centrale projectinvoer met JSON-ondersteuning",
+            "config_path": str(config_path) if config_path else "configs/projects/plutostraat.json",
             "project_config": merged_config,
             "validation": validation,
             "input_sources": self.build_input_sources(),
             "future_input_modes": self.build_future_input_modes(),
-            "warnings": self.build_warnings(validation),
+            "warnings": self.build_warnings(validation, json_config),
             "recommendation": self.build_recommendation(),
             "created_at": datetime.now().isoformat(timespec="seconds"),
             "disclaimer": (
-                "Deze Project Configuration Engine v1.0 gebruikt nu nog standaardconfiguratie "
-                "en optionele handmatige config_data. Later kan dit worden gekoppeld aan JSON, "
-                "upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
+                "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, "
+                "optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld "
+                "aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
             )
         }
 
         return self.config_result
+
+    def load_json_config(self, config_path=None):
+        if config_path is None:
+            config_path = Path("configs/projects/plutostraat.json")
+        else:
+            config_path = Path(config_path)
+
+        if not config_path.exists():
+            return {
+                "_json_status": "JSON_CONFIG_NIET_GEVONDEN",
+                "_json_path": str(config_path)
+            }
+
+        try:
+            with open(config_path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+
+            data["_json_status"] = "JSON_CONFIG_GELADEN"
+            data["_json_path"] = str(config_path)
+            return data
+
+        except json.JSONDecodeError as error:
+            return {
+                "_json_status": "JSON_CONFIG_FOUT",
+                "_json_path": str(config_path),
+                "_json_error": str(error)
+            }
 
     def build_default_config(self):
         return {
@@ -89,11 +123,13 @@ class ProjectConfigEngine:
             "default_groundwater_level_m": -0.50
         }
 
-    def merge_config(self, default_config, config_data):
-        merged = default_config.copy()
+    def merge_config(self, base_config, override_config):
+        merged = base_config.copy()
 
-        for key, value in config_data.items():
-            if value is not None and value != "":
+        for key, value in override_config.items():
+            if key.startswith("_"):
+                merged[key] = value
+            elif value is not None and value != "":
                 merged[key] = value
 
         return merged
@@ -123,7 +159,9 @@ class ProjectConfigEngine:
             "status": status,
             "required_fields": required_fields,
             "missing_fields": missing_fields,
-            "is_valid": len(missing_fields) == 0
+            "is_valid": len(missing_fields) == 0,
+            "json_status": project_config.get("_json_status", "ONBEKEND"),
+            "json_path": project_config.get("_json_path", "")
         }
 
     def build_input_sources(self):
@@ -131,10 +169,10 @@ class ProjectConfigEngine:
             "status": "INPUTBRONNEN_CONCEPT",
             "current_sources": [
                 "default Python config",
-                "optionele config_data dictionary"
+                "optionele config_data dictionary",
+                "JSON projectconfig"
             ],
             "future_sources": [
-                "JSON projectbestand",
                 "Excel projectinvoer",
                 "PDF projectomschrijving",
                 "DWG/DXF/SKP upload",
@@ -159,6 +197,10 @@ class ProjectConfigEngine:
                     "description": "projectomschrijving en tekeningen uploaden"
                 },
                 {
+                    "mode": "json_project_config",
+                    "description": "projectgegevens lezen uit JSON-projectbestand"
+                },
+                {
                     "mode": "speech_input",
                     "description": "projectopdracht via spraak invoeren"
                 },
@@ -173,12 +215,24 @@ class ProjectConfigEngine:
             ]
         }
 
-    def build_warnings(self, validation):
+    def build_warnings(self, validation, json_config):
         warnings = []
 
         if validation.get("status") != "PROJECT_CONFIG_VALID":
             warnings.append(
                 "Projectconfiguratie is onvolledig; ontbrekende velden moeten worden aangevuld."
+            )
+
+        json_status = json_config.get("_json_status")
+
+        if json_status == "JSON_CONFIG_NIET_GEVONDEN":
+            warnings.append(
+                "JSON-projectconfig niet gevonden; BAOEES gebruikt fallback standaardconfiguratie."
+            )
+
+        if json_status == "JSON_CONFIG_FOUT":
+            warnings.append(
+                "JSON-projectconfig bevat een fout; BAOEES gebruikt fallback standaardconfiguratie."
             )
 
         if not warnings:
@@ -191,15 +245,15 @@ class ProjectConfigEngine:
             "status": "PROJECT_CONFIG_ADVIES",
             "advice": (
                 "Gebruik deze engine als centrale ingang voor alle projectgegevens. "
-                "De volgende stap is om core/main.py niet meer hardcoded projectdata te laten gebruiken, "
-                "maar de project_config uit deze engine."
+                "Projecten kunnen nu via JSON worden geladen, waardoor BAOEES meerdere "
+                "projectprofielen kan ondersteunen."
             ),
             "next_steps": [
-                "ProjectConfigEngine koppelen aan BAOEES Core",
-                "hardcoded projectnaam uit core/main.py vervangen",
-                "JSON-configbestand toevoegen",
-                "startscherm-invoer voorbereiden",
-                "meerdere projectprofielen mogelijk maken",
+                "meerdere JSON-projectprofielen toevoegen",
+                "Moskee Bunschoten als JSON-project toevoegen",
+                "Bruynzeel Waterfront als JSON-project toevoegen",
+                "projectkeuze vanuit startscherm voorbereiden",
+                "upload-invoer koppelen aan JSON-generator",
                 "projectbibliotheek koppelen"
             ]
         }
