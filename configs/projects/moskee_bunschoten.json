@@ -1,0 +1,79 @@
+{
+    "project_name": "Moskee Bunschoten",
+    "project_description": "Uitbreiding van de moskee aan de Bikkersweg 88 te Bunschoten met circa 20 m2, inclusief gevelaanpassing, ruimtelijke onderbouwing, BOPA/omgevingsvergunning, participatie, parkeren, verkeer, AERIUS/stikstof, tekeningen en projectdossier.",
+    "location": "Bikkersweg 88, Bunschoten",
+    "country": "Nederland",
+    "project_type": "Bouw / vergunning",
+    "client": "Moskee Bunschoten",
+    "project_phase": "vergunningvoorbereiding",
+    "input_mode": "json_project_config",
+    "autonomous_project_mode": "volledig autonoom met QA/QC-controle",
+    "requested_outputs": [
+        "projectanalyse",
+        "ontwerpvarianten",
+        "situatietekening",
+        "plattegronden bestaand en nieuw",
+        "geveltekeningen",
+        "doorsneden",
+        "3D-impressies",
+        "ruimtelijke onderbouwing",
+        "BOPA",
+        "omgevingsvergunning",
+        "participatieplan",
+        "parkeeronderzoek",
+        "parkeerbalans",
+        "advies parkeerregime",
+        "verkeersanalyse",
+        "AERIUS/stikstof",
+        "riolering en afwatering",
+        "GIS/kaartanalyse",
+        "kostenraming",
+        "planning",
+        "rapportage",
+        "PDF/DOCX",
+        "DWG/DXF/SKP",
+        "project ZIP",
+        "bronvermelding"
+    ],
+    "data_completeness_mode": "Bekende gegevens + Open Data + AI-aannames",
+    "geo_input_mode": "grondwaterstand en geo-informatie automatisch genereren",
+    "foundation_mode": "funderingstypen automatisch onderzoeken en vergelijken",
+    "default_groundwater_level_m": -0.5,
+    "known_project_data": {
+        "address": "Bikkersweg 88, Bunschoten",
+        "extension_area_m2": 20,
+        "facade_change": true,
+        "parking_public_spaces_reference": 300,
+        "parking_context": [
+            {
+                "area": "Zwembad De Duker",
+                "estimated_public_spaces": 100
+            },
+            {
+                "area": "CGV Agilitas en omliggende voorzieningen",
+                "estimated_public_spaces": 50
+            },
+            {
+                "area": "Denksportcentrum en omgeving",
+                "estimated_public_spaces": 30
+            },
+            {
+                "area": "Openbare parkeerstroken",
+                "estimated_public_spaces": 50
+            },
+            {
+                "area": "Overige openbare parkeerplaatsen",
+                "estimated_public_spaces": 70
+            }
+        ],
+        "permit_focus": [
+            "ruimtelijke onderbouwing",
+            "BOPA",
+            "omgevingsvergunning",
+            "participatie",
+            "parkeren",
+            "verkeer",
+            "AERIUS/stikstof"
+        ]
+    }
+}

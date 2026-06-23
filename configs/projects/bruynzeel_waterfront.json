@@ -1,0 +1,69 @@
+{
+    "project_name": "Bruynzeel Waterfront District",
+    "project_description": "Gebiedsontwikkeling van het Bruynzeel-terrein te Paramaribo tot Waterfront District, inclusief masterplan, kavels, GLIS-percelen, verkeer, parkeren, GREX, financiële haalbaarheid, ontwikkelscenario's, investeerdersmemorandum en professionele rapportage.",
+    "location": "Paramaribo, Suriname",
+    "country": "Suriname",
+    "project_type": "Gebiedsontwikkeling",
+    "client": "Brewster Engineering",
+    "project_phase": "masterplan / haalbaarheid",
+    "input_mode": "json_project_config",
+    "autonomous_project_mode": "volledig autonoom met QA/QC-controle",
+    "requested_outputs": [
+        "projectanalyse",
+        "masterplan",
+        "ontwerpvarianten",
+        "GLIS-kaarten",
+        "kavelanalyse",
+        "verkeershoofdstuk",
+        "parkeerhoofdstuk",
+        "GREX",
+        "financiële haalbaarheidsanalyse",
+        "SWOT-analyse",
+        "ontwikkelscenario A",
+        "ontwikkelscenario B",
+        "ontwikkelscenario C",
+        "investeerdersmemorandum",
+        "GIS/kaartanalyse",
+        "kostenraming",
+        "planning",
+        "rapportage",
+        "PDF/DOCX",
+        "kaarten en legenda's",
+        "project ZIP",
+        "bronvermelding"
+    ],
+    "data_completeness_mode": "Bekende gegevens + Open Data + AI-aannames",
+    "geo_input_mode": "grondwaterstand en geo-informatie automatisch genereren",
+    "foundation_mode": "niet primair / afhankelijk per deelproject",
+    "default_groundwater_level_m": -0.5,
+    "known_project_data": {
+        "program_office_m2_bvo": 10000,
+        "program_multifunctional_m2_bvo": 2000,
+        "total_program_m2_bvo": 12000,
+        "auditorium_max_visitors": 2400,
+        "development_period": "2027-2040",
+        "main_parcels": [
+            {
+                "parcel": "177a",
+                "area_m2": 60601
+            },
+            {
+                "parcel": "778",
+                "area_m2": null
+            },
+            {
+                "parcel": "1145",
+                "area_m2": 5646
+            },
+            {
+                "parcel": "1146",
+                "area_m2": null
+            }
+        ],
+        "location_options": [
+            "A - hoofdweg",
+            "B - Saramaccakanaal",
+            "C - rivierzijde"
+        ]
+    }
+}
