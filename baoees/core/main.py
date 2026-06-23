@@ -2,6 +2,7 @@ from pprint import pprint
 
 from baoees.project_selector_engine.main import ProjectSelectorEngine
 from baoees.project_config_engine.main import ProjectConfigEngine
+from baoees.project_storage_engine.main import ProjectStorageEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -45,6 +46,7 @@ class BAOEESCore:
 
         self.project_selector = ProjectSelectorEngine()
         self.project_config = ProjectConfigEngine()
+        self.project_storage = ProjectStorageEngine()
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
         self.variant = VariantEngine()
@@ -117,6 +119,16 @@ class BAOEESCore:
         pprint(project_result)
         print("")
 
+        storage_result = self.project_storage.prepare_project_storage(
+            project_result=project_result,
+            selector_result=selector_result,
+            config_result=config_result
+        )
+
+        print("Project Storage / Output Folder Engine resultaat:")
+        pprint(storage_result)
+        print("")
+
         aaie_result = self.aaie.infer_missing_parameters(project_result)
 
         print("AAIE resultaat:")
@@ -178,6 +190,12 @@ class BAOEESCore:
             object_type="project_configuration",
             name="BAOEES Project Configuration / Input Engine projectinvoer",
             data=config_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_storage",
+            name="BAOEES Project Storage / Output Folder Engine projectmap",
+            data=storage_result
         )
 
         for variant in variant_result["variants"]:
@@ -608,6 +626,7 @@ class BAOEESCore:
         engine_results = {
             "project_selector": selector_result,
             "project_config": config_result,
+            "project_storage": storage_result,
             "project": project_result,
             "aaie": aaie_result,
             "variant": variant_result,
@@ -780,6 +799,7 @@ class BAOEESCore:
 
         self.project_selector.run()
         self.project_config.run()
+        self.project_storage.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
