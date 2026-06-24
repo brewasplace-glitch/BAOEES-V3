@@ -12,6 +12,7 @@ from baoees.project_csv_excel_export_engine.main import ProjectCsvExcelExportEng
 from baoees.project_xlsx_export_engine.main import ProjectXlsxExportEngine
 from baoees.project_html_dashboard_export_engine.main import ProjectHtmlDashboardExportEngine
 from baoees.project_index_startpage_engine.main import ProjectIndexStartpageEngine
+from baoees.project_audit_trail_engine.main import ProjectAuditTrailEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -65,6 +66,7 @@ class BAOEESCore:
         self.project_xlsx_export = ProjectXlsxExportEngine()
         self.project_html_dashboard_export = ProjectHtmlDashboardExportEngine()
         self.project_index_startpage = ProjectIndexStartpageEngine()
+        self.project_audit_trail = ProjectAuditTrailEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -828,6 +830,17 @@ class BAOEESCore:
             data=html_dashboard_result
         )
 
+        index_result = self.project_index_startpage.create_project_index(
+            projects_root="outputs/projects",
+            project_index_path="configs/projects/project_index.json"
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_index_startpage",
+            name="BAOEES Project Index / Startpage Engine centrale startpagina",
+            data=index_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result,
             storage_result=storage_result,
@@ -840,15 +853,41 @@ class BAOEESCore:
             data=zip_result
         )
 
-        index_result = self.project_index_startpage.create_project_index(
-            projects_root="outputs/projects",
-            project_index_path="configs/projects/project_index.json"
+        audit_result = self.project_audit_trail.register_project_run(
+            project_result=project_result,
+            storage_result=storage_result,
+            selector_result=selector_result,
+            config_result=config_result,
+            runtime_result=runtime_result,
+            validation_result=validation_result,
+            file_writer_result=file_writer_result,
+            report_writer_result=report_writer_result,
+            pdf_docx_result=pdf_docx_result,
+            dxf_writer_result=dxf_writer_result,
+            drawing_pdf_result=drawing_pdf_result,
+            csv_excel_result=csv_excel_result,
+            xlsx_result=xlsx_result,
+            html_dashboard_result=html_dashboard_result,
+            zip_result=zip_result,
+            index_result=index_result
         )
 
         self.digital_twin.add_object(
-            object_type="project_index_startpage",
-            name="BAOEES Project Index / Startpage Engine centrale startpagina",
-            data=index_result
+            object_type="project_audit_trail",
+            name="BAOEES Project Run Log / Audit Trail Engine runregistratie",
+            data=audit_result
+        )
+
+        final_zip_result = self.project_zip.create_project_zip(
+            export_result=export_result,
+            storage_result=storage_result,
+            file_writer_result=file_writer_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_final_zip",
+            name="BAOEES Project ZIP Engine finale zip inclusief audit trail",
+            data=final_zip_result
         )
 
         print("STEE resultaat:")
@@ -987,12 +1026,20 @@ class BAOEESCore:
         pprint(html_dashboard_result)
         print("")
 
+        print("Project Index / Startpage Engine resultaat:")
+        pprint(index_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
 
-        print("Project Index / Startpage Engine resultaat:")
-        pprint(index_result)
+        print("Project Run Log / Audit Trail Engine resultaat:")
+        pprint(audit_result)
+        print("")
+
+        print("Finale Project ZIP Engine resultaat inclusief audit trail:")
+        pprint(final_zip_result)
         print("")
 
         print("Digital Twin resultaat:")
@@ -1011,6 +1058,7 @@ class BAOEESCore:
         self.project_xlsx_export.run()
         self.project_html_dashboard_export.run()
         self.project_index_startpage.run()
+        self.project_audit_trail.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()

@@ -131,7 +131,7 @@
                         "projectbibliotheek uitbreiden met status, datum, opdrachtgever en revisie"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:17",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project Selector Engine v1.0 kiest een project uit een lokale JSON-projectindex. Later kan deze selectie worden gekoppeld aan het BAOEES startscherm, gebruikersprofielen, projectbibliotheek, uploadmap en cloudopslag."
             }
         },
@@ -291,7 +291,7 @@
                         "projectbibliotheek koppelen"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:17",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
             }
         },
@@ -411,7 +411,7 @@
                         "Project ZIP Engine koppelen aan project_output_dir"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:17",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project Storage Engine v1.0 maakt alleen de projectmapstructuur. In vervolgstappen kunnen rapporten, tekeningen, logs, Digital Twin-data, bronvermelding en ZIP-bestanden fysiek naar deze mappen worden geschreven."
             }
         },
@@ -624,7 +624,7 @@
                 "warnings": [
                     "Zetting is een aandachtspunt. Controleer met echte sonderingen en samendrukkingsparameters."
                 ],
-                "created_at": "2026-06-24T18:47:17",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Geo Engine v1.1 maakt een indicatieve geotechnische basisberekening. Voor definitief ontwerp zijn sonderingen, grondonderzoek, normtoetsing en controle door een geotechnisch deskundige noodzakelijk."
             }
         },
@@ -753,7 +753,7 @@
                     "Dakconstructie voldoet indicatief niet of vraagt controle.",
                     "Fundering vraagt nadere controle op basis van Geo Engine-resultaten."
                 ],
-                "created_at": "2026-06-24T18:47:17",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Structural Engine v1.1 maakt een indicatieve constructieve basisberekening. Voor definitief ontwerp zijn projectspecifieke belastingen, materiaalgegevens, normtoetsing en controle door een bevoegd constructeur noodzakelijk."
             }
         },
@@ -1299,7 +1299,7 @@
                                     "source_type": "project_input",
                                     "reliability": "BEVESTIGD",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T18:47:17"
+                                    "registered_at": "2026-06-24T23:26:12"
                                 },
                                 {
                                     "source": "BAOEES AAIE standaard fallback grondwaterstand P = -0,50 m",
@@ -1308,7 +1308,7 @@
                                     "source_type": "system_rule",
                                     "reliability": "AANNAME",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T18:47:17"
+                                    "registered_at": "2026-06-24T23:26:12"
                                 },
                                 {
                                     "source": "BAOEES funderingsmodule - vergelijking strokenfundering en paalfundering",
@@ -1317,7 +1317,7 @@
                                     "source_type": "system_rule",
                                     "reliability": "TE_VERGELIJKEN",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T18:47:17"
+                                    "registered_at": "2026-06-24T23:26:12"
                                 }
                             ]
                         }
@@ -1388,26 +1388,26 @@
             "data": {
                 "engine": "ProjectExportEngine",
                 "status": "PROJECT_EXPORT_GEREED",
-                "export_folder": "exports\\bruynzeel_waterfront_district_20260624_184717",
+                "export_folder": "exports\\bruynzeel_waterfront_district_20260624_232612",
                 "exported_files": [
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\project_summary.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\project_summary.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\digital_twin_export.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\digital_twin_export.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\report_structure.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\report_structure.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\source_register.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\source_register.json",
                         "status": "AANGEMAAKT"
                     }
                 ],
-                "exported_at": "2026-06-24T18:47:17",
+                "exported_at": "2026-06-24T23:26:12",
                 "next_steps": [
                     "PDF-export toevoegen",
                     "DOCX-export toevoegen",
@@ -1424,30 +1424,30 @@
                 "engine": "DocumentExportEngine",
                 "version": "1.1",
                 "status": "DOCUMENT_EXPORT_GEREED",
-                "export_folder": "exports\\bruynzeel_waterfront_district_20260624_184717",
+                "export_folder": "exports\\bruynzeel_waterfront_district_20260624_232612",
                 "documents": [
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\projectrapport.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\projectrapport.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\projectrapport_documentdata.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\projectrapport_documentdata.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\projectrapport.docx",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\projectrapport.docx",
                         "format": "DOCX",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\projectrapport.pdf",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\projectrapport.pdf",
                         "format": "PDF",
                         "status": "AANGEMAAKT"
                     }
                 ],
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "note": "Professionele basis DOCX/PDF-export aangemaakt met titelblad, hoofdstukken en metadata."
             }
         },
@@ -1457,36 +1457,36 @@
             "data": {
                 "engine": "DrawingExportEngine",
                 "status": "DRAWING_EXPORT_GEREED",
-                "drawings_folder": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen",
+                "drawings_folder": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen",
                 "drawing_count": 6,
                 "files": [
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen\\01_situatietekening.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen\\01_situatietekening.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen\\02_plattegrond.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen\\02_plattegrond.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen\\03_funderingsschema.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen\\03_funderingsschema.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen\\04_constructieschema.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen\\04_constructieschema.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen\\tekeningregister.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen\\tekeningregister.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\tekeningen\\basis_tekening_placeholder.dxf",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\tekeningen\\basis_tekening_placeholder.dxf",
                         "format": "DXF",
                         "status": "AANGEMAAKT"
                     }
@@ -1534,9 +1534,9 @@
                     "geo_basis": "GEO_ANALYSE_GEREED",
                     "structural_basis": "STRUCTURAL_ANALYSE_GEREED",
                     "permit_basis": "VERGUNNINGSTRATEGIE_GEREED",
-                    "created_at": "2026-06-24T18:47:18"
+                    "created_at": "2026-06-24T23:26:12"
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "note": "Basis tekeningexport aangemaakt. Professionele maatvoering, schaal, CAD-layers en echte geometrie volgen in volgende versies."
             }
         },
@@ -1547,30 +1547,30 @@
                 "engine": "CADExportEngine",
                 "version": "1.0",
                 "status": "CAD_EXPORT_GEREED",
-                "cad_folder": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports",
+                "cad_folder": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports",
                 "files": [
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports\\BAOEES_basis_cad_export.dxf",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports\\BAOEES_basis_cad_export.dxf",
                         "format": "DXF",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports\\cad_export_metadata.json",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports\\cad_export_metadata.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports\\BAOEES_DWG_placeholder.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports\\BAOEES_DWG_placeholder.txt",
                         "format": "DWG",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports\\BAOEES_SKP_placeholder.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports\\BAOEES_SKP_placeholder.txt",
                         "format": "SKP",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports\\BAOEES_IFC_placeholder.txt",
+                        "file": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports\\BAOEES_IFC_placeholder.txt",
                         "format": "IFC",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     }
@@ -1582,7 +1582,7 @@
                     "country": "Suriname",
                     "engine": "CADExportEngine",
                     "version": "1.0",
-                    "main_dxf": "exports\\bruynzeel_waterfront_district_20260624_184717\\cad_exports\\BAOEES_basis_cad_export.dxf",
+                    "main_dxf": "exports\\bruynzeel_waterfront_district_20260624_232612\\cad_exports\\BAOEES_basis_cad_export.dxf",
                     "units": "meter",
                     "drawing_status": "CONCEPT",
                     "layers": [
@@ -1610,9 +1610,9 @@
                     "geo_status": "GEO_ANALYSE_GEREED",
                     "structural_status": "STRUCTURAL_ANALYSE_GEREED",
                     "drawing_export_status": "DRAWING_EXPORT_GEREED",
-                    "created_at": "2026-06-24T18:47:18"
+                    "created_at": "2026-06-24T23:26:12"
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "note": "CAD/DXF basisexport aangemaakt. DWG/SKP/IFC zijn voorbereid als placeholders voor latere koppeling."
             }
         },
@@ -1671,7 +1671,7 @@
                         "later DWG-export via externe converter toevoegen"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project DXF Writer Engine v1.0 schrijft eenvoudige basis-DXF-bestanden. De tekeningen zijn schematisch en moeten later worden uitgebreid met echte geometrie, schaal, maatvoering, lagen, blokken, legenda en projectdata uit BIM/Digital Twin."
             }
         },
@@ -1728,7 +1728,7 @@
                         "per projecttype aparte tekeningsets maken"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project Drawing PDF Writer Engine v1.0 maakt eenvoudige schematische PDF-tekeningen. De tekeningen zijn nog geen officiële maatvaste vergunningstekeningen. Latere versies moeten schaal, maatvoering, legenda, lagen, stempels en echte geometrie uit de Digital Twin toevoegen."
             }
         },
@@ -1808,7 +1808,7 @@
                     ],
                     "uncertainty_band": "-10.0% / +45.0%"
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze kostenraming is indicatief. Voor aanbesteding, financiering of formele besluitvorming is een projectspecifieke begroting met hoeveelhedenstaat, marktprijzen, offertes en risicoanalyse nodig."
             }
         },
@@ -2214,7 +2214,7 @@
                     ],
                     "critical_task_count": 13
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze planning is indicatief. Voor contractuele planning, uitvoering of aanbesteding moet de planning projectspecifiek worden gecontroleerd met echte beschikbaarheid, vergunningstermijnen, levertijden en uitvoeringsmethode."
             }
         },
@@ -2360,7 +2360,7 @@
                         "parkeerregime-advies opnemen in ruimtelijke onderbouwing"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze analyse is indicatief. Voor formele vergunning, ruimtelijke onderbouwing of verkeerskundig advies zijn projectspecifieke tellingen, CROW-kencijfers, gemeentelijk parkeerbeleid en lokale verkeersgegevens noodzakelijk."
             }
         },
@@ -2481,7 +2481,7 @@
                     ],
                     "warning_count": 2
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Drainage & Sewerage Engine v1.0 maakt een indicatief ontwerp. Voor definitief ontwerp zijn lokale neerslagdata, waterschapseisen, gemeentelijke aansluitvoorwaarden, peilen, maaiveldhoogtes en hydraulische berekeningen nodig."
             }
         },
@@ -2625,7 +2625,7 @@
                         "uitkomst opnemen in vergunningdossier"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze AERIUS Engine v1.0 maakt alleen een indicatieve voorbereiding. Voor formele indiening moet altijd de actuele AERIUS Calculator worden gebruikt met projectspecifieke invoer, actuele emissiefactoren, locatiecoördinaten, bouwmaterieel, verkeersroutes en Natura 2000-gegevens."
             }
         },
@@ -2850,7 +2850,7 @@
                     "warning_count": 2,
                     "distance_check_status": "AFSTANDSCONTROLES_PLACEHOLDER"
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze GIS / Map Engine v1.0 maakt een indicatieve kaart- en locatieanalyse. Voor formele vergunningstukken zijn exacte coördinaten, kadastrale gegevens, gevalideerde GIS-lagen, actuele kaartbronnen en lokale overheidsdata nodig."
             }
         },
@@ -3012,7 +3012,7 @@
                         "bestekposten genereren"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Quantity Engine v1.0 maakt een indicatieve hoeveelhedenstaat. Voor bestek, aanbesteding of uitvoering zijn maatvaste tekeningen, definitieve constructieberekeningen en projectspecifieke hoeveelheden noodzakelijk."
             }
         },
@@ -3359,7 +3359,7 @@
                     ],
                     "risk_count": 5
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Validation & QA/QC Engine voert een automatische controle uit op volledigheid, statussen, waarschuwingen en interne consistentie. Dit vervangt geen menselijke eindcontrole door bevoegde deskundigen."
             }
         },
@@ -3694,7 +3694,7 @@
                         "definitief bestek laten controleren"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Specification Engine v1.0 maakt een concept-bestek. Voor aanbesteding of uitvoering moet het bestek worden gecontroleerd door een deskundige en worden aangevuld met projectspecifieke normen, details, contractvoorwaarden en definitieve tekeningen."
             }
         },
@@ -3954,7 +3954,7 @@
                         "contractstukken definitief maken"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Tender Engine v1.0 maakt een concept-aanbestedingspakket. Voor formele aanbesteding moeten juridische voorwaarden, contractvorm, selectiecriteria en gunningscriteria door opdrachtgever en deskundigen worden gecontroleerd."
             }
         },
@@ -4293,7 +4293,7 @@
                         "opdrachtbrief ondertekenen"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Contract Engine v1.0 maakt een concept-contractpakket. Voor ondertekening moeten juridische voorwaarden, aansprakelijkheid, verzekeringen, garanties, planning, prijs en scope door opdrachtgever, aannemer en juridisch/technisch deskundigen worden gecontroleerd."
             }
         },
@@ -4630,7 +4630,7 @@
                         "bouwlogboek openen"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Construction Execution Engine v1.0 maakt een concept-uitvoeringsplan. Voor werkelijke uitvoering moeten bouwplaatsinrichting, veiligheid, planning, vergunningen, werkmethoden en uitvoeringsrisico’s door aannemer en deskundigen definitief worden gecontroleerd."
             }
         },
@@ -5011,7 +5011,7 @@
                         "opleverdossier voorbereiden"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Site Monitoring Engine v1.0 maakt een concept-monitoringsplan. Werkelijke bouwplaatsbewaking vereist actuele dagrapporten, inspecties, foto's, metingen, veiligheidsregistraties en goedkeuringen door bevoegde personen."
             }
         },
@@ -5271,7 +5271,7 @@
                         "project formeel afsluiten"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze As-Built Engine v1.0 maakt een concept oplever- en revisiedossier. Werkelijke oplevering vereist definitieve revisietekeningen, inspecties, certificaten, garanties, goedkeuringen en ondertekende opleverdocumenten."
             }
         },
@@ -5546,7 +5546,7 @@
                         "beheerlogboek openen"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Asset Management Engine v1.0 maakt een concept beheer- en onderhoudsplan. Voor werkelijk beheer moeten definitieve as-built gegevens, garanties, certificaten, inspecties, leveranciersinformatie en onderhoudsvoorschriften worden toegevoegd."
             }
         },
@@ -5716,7 +5716,7 @@
                         "beheerfase koppelen aan Digital Twin"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Sustainability Engine v1.0 maakt een conceptuele duurzaamheids- en klimaatadaptatiescan. Voor formele beoordeling zijn projectspecifieke energiegegevens, materiaaldata, MPG-/LCA-berekeningen, waternormen en lokale klimaatdata noodzakelijk."
             }
         },
@@ -5885,7 +5885,7 @@
                         "QA/QC laten hercontroleren"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Global Codes Engine v1.0 maakt een conceptueel normen- en regelgevingsregister. Voor formele toetsing moeten actuele wetgeving, lokale bouwregels, normen, vergunningseisen en projectspecifieke voorwaarden door bevoegde deskundigen worden gecontroleerd."
             }
         },
@@ -5984,7 +5984,7 @@
                         "menselijke controle toevoegen voordat leerregels definitief worden"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Learning Engine v1.0 maakt een conceptuele projectleeranalyse. Werkelijke autonome verbetering vereist gecontroleerde opslag, validatie, versiebeheer en menselijke goedkeuring van leerregels."
             }
         },
@@ -6416,7 +6416,7 @@
                         "autonome modus koppelen aan startscherm"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.",
                 "runtime_mode": "autonomous",
                 "launcher_project_id": "bruynzeel_waterfront"
@@ -6500,7 +6500,7 @@
                         "Excel-dashboard per project genereren"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project CSV/Excel Export Engine v1.0 maakt CSV-bestanden die direct in Excel geopend kunnen worden. In een volgende versie kan echte XLSX-export met meerdere werkbladen, opmaak, filters en formules worden toegevoegd."
             }
         },
@@ -6553,7 +6553,7 @@
                         "grafieken toevoegen"
                     ]
                 },
-                "created_at": "2026-06-24T18:47:18",
+                "created_at": "2026-06-24T23:26:12",
                 "disclaimer": "Deze Project XLSX Export Engine v1.0 maakt een echte basis-XLSX als Office Open XML zip-bestand. De volgende versie kan worden uitgebreid met professionele opmaak, filters, kolombreedtes, formules, grafieken en dashboards."
             }
         }
