@@ -1,0 +1,9 @@
+﻿Kostenpost;Omschrijving;Bedrag;Eenheid;Status
+Voorbereiding;Conceptuele projectvoorbereiding;0;EUR;CONCEPT
+Ontwerp;Conceptueel ontwerp en engineering;0;EUR;CONCEPT
+Vergunningen;Vergunningvoorbereiding;0;EUR;CONCEPT
+Uitvoering;Uitvoeringskosten nader te bepalen;0;EUR;CONCEPT
+Onvoorzien;Risicoreservering nader te bepalen;0;EUR;CONCEPT
+
+Engine status;COST_ESTIMATE_GEREED
+Advies;{'status': 'KOSTENADVIES_CONCEPT', 'main_cost_driver': 'construction', 'advice': 'Gebruik deze raming als eerste conceptbudget. Werk de raming later uit met hoeveelheden, eenheidsprijzen, offertes en risicoreservering.', 'next_steps': ['hoeveelhedenstaat genereren', 'materiaal- en arbeidstarieven projectspecifiek maken', 'fundering en constructie definitief dimensioneren', 'offertes of marktprijzen toevoegen', 'risicodossier en onzekerheidsmarge actualiseren'], 'uncertainty_band': '-10.0% / +45.0%'}

@@ -1,0 +1,11 @@
+﻿Post;Omschrijving;Hoeveelheid;Eenheid;Status
+01;Grondwerk;0;m3;CONCEPT
+02;Fundering;0;m1/m3;CONCEPT
+03;Constructie;0;kg/m3/m2;CONCEPT
+04;Gevels;0;m2;CONCEPT
+05;Dak;0;m2;CONCEPT
+06;Riolering en afwatering;0;m1/st;CONCEPT
+07;Terrein en verharding;0;m2;CONCEPT
+
+Engine status;QUANTITY_TAKEOFF_GEREED
+Advies;{'status': 'HOEVEELHEDEN_ADVIES_CONCEPT', 'advice': 'Gebruik deze hoeveelhedenstaat als eerste basis voor kostenraming en bestek. Werk hoeveelheden later bij op basis van maatvaste tekeningen, definitieve berekeningen en CAD/BIM-model.', 'next_steps': ['maatvaste plattegronden koppelen', 'funderingsdetails definitief maken', 'constructieve hoeveelheden koppelen aan berekening', 'rioleringstracé op tekening zetten', 'hoeveelheden exporteren naar kostenraming', 'bestekposten genereren']}

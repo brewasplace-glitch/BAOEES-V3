@@ -1,0 +1,10 @@
+﻿Controlepunt;Resultaat;Status;Opmerking
+Projectinvoer aanwezig;Te controleren;CONCEPT;
+Digital Twin gevuld;Te controleren;CONCEPT;
+Bronregister aanwezig;Te controleren;CONCEPT;
+Rapporten gegenereerd;Te controleren;CONCEPT;
+Tekeningen gegenereerd;Te controleren;CONCEPT;
+ZIP-export aanwezig;Te controleren;CONCEPT;
+
+Engine status;VALIDATION_GEREED
+Go/No-Go advies;{'decision': 'NO_GO', 'advice': 'Projectoutput is onvoldoende betrouwbaar voor vervolgstap.', 'status': 'GO_NO_GO_ADVIES_GEREED'}

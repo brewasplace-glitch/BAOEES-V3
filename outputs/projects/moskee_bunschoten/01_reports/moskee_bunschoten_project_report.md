@@ -8,7 +8,7 @@
 - Locatie: Bikkersweg 88, Bunschoten
 - Land: Nederland
 - Runtime mode: autonomous
-- Rapportdatum: 2026-06-24T14:52:20
+- Rapportdatum: 2026-06-24T17:39:49
 
 ## 2. Projectselectie en invoer
 
