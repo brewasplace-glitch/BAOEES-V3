@@ -423,7 +423,7 @@
             "autonome modus koppelen aan startscherm"
         ]
     },
-    "created_at": "2026-06-24T18:08:13",
+    "created_at": "2026-06-24T18:47:18",
     "disclaimer": "Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.",
     "runtime_mode": "autonomous",
     "launcher_project_id": "bruynzeel_waterfront"

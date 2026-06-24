@@ -11,6 +11,7 @@ from baoees.project_drawing_pdf_writer_engine.main import ProjectDrawingPdfWrite
 from baoees.project_csv_excel_export_engine.main import ProjectCsvExcelExportEngine
 from baoees.project_xlsx_export_engine.main import ProjectXlsxExportEngine
 from baoees.project_html_dashboard_export_engine.main import ProjectHtmlDashboardExportEngine
+from baoees.project_index_startpage_engine.main import ProjectIndexStartpageEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -63,6 +64,7 @@ class BAOEESCore:
         self.project_csv_excel_export = ProjectCsvExcelExportEngine()
         self.project_xlsx_export = ProjectXlsxExportEngine()
         self.project_html_dashboard_export = ProjectHtmlDashboardExportEngine()
+        self.project_index_startpage = ProjectIndexStartpageEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -838,6 +840,17 @@ class BAOEESCore:
             data=zip_result
         )
 
+        index_result = self.project_index_startpage.create_project_index(
+            projects_root="outputs/projects",
+            project_index_path="configs/projects/project_index.json"
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_index_startpage",
+            name="BAOEES Project Index / Startpage Engine centrale startpagina",
+            data=index_result
+        )
+
         print("STEE resultaat:")
         pprint(stee_result)
         print("")
@@ -978,6 +991,10 @@ class BAOEESCore:
         pprint(zip_result)
         print("")
 
+        print("Project Index / Startpage Engine resultaat:")
+        pprint(index_result)
+        print("")
+
         print("Digital Twin resultaat:")
         pprint(self.digital_twin.get_project_data())
         print("")
@@ -993,6 +1010,7 @@ class BAOEESCore:
         self.project_csv_excel_export.run()
         self.project_xlsx_export.run()
         self.project_html_dashboard_export.run()
+        self.project_index_startpage.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()

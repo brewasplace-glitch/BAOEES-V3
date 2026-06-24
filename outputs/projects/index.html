@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <title>BAOEES Project Index</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #020617;
+            color: #e5e7eb;
+        }
+
+        header {
+            padding: 34px;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        .card h2 {
+            margin: 0 0 12px 0;
+            color: #93c5fd;
+            font-size: 20px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+        }
+
+        .project-card h2 {
+            margin: 0 0 10px 0;
+            color: #bfdbfe;
+        }
+
+        .small {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #064e3b;
+            color: #d1fae5;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 8px 0 12px 0;
+        }
+
+        .status.warning {
+            background: #78350f;
+            color: #ffedd5;
+        }
+
+        a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin: 10px 0 0 0;
+            padding-left: 18px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        footer {
+            padding: 24px 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BAOEES Project Index</h1>
+        <p>Centrale startpagina voor alle BAOEES V3-projecten</p>
+    </header>
+
+    <main>
+        <section class="summary">
+            <div class="card">
+                <h2>Projecten</h2>
+                <p><strong>Aantal:</strong> 3</p>
+            </div>
+
+            <div class="card">
+                <h2>Projectmap</h2>
+                <p class="small">outputs\projects</p>
+            </div>
+
+            <div class="card">
+                <h2>Projectindex config</h2>
+                <p class="small">configs\projects\project_index.json</p>
+            </div>
+
+            <div class="card">
+                <h2>Gegenereerd</h2>
+                <p>2026-06-24T18:47:18</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projectdashboards</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <h2>Plutostraat met BAOEES V3</h2>
+                    <span class="status">PROJECT EXPORT GEREED</span>
+                    <p><strong>Project-ID:</strong> plutostraat</p>
+                    <p><strong>Type:</strong> Bouw</p>
+                    <p><strong>Locatie:</strong> Plutostraat, Paramaribo, Suriname</p>
+                    <ul>
+                        <li><a href="plutostraat/09_exports/plutostraat_dashboard.html">Open projectdashboard</a></li>
+                        <li><a href="plutostraat/10_zip/plutostraat_project_export.zip">Open project-ZIP</a></li>
+                        <li><a href="plutostraat/01_reports/plutostraat_project_report.pdf">Open PDF-rapport</a></li>
+                        <li><a href="plutostraat/09_exports/plutostraat_project_tables.xlsx">Open Excel-werkboek</a></li>
+                    </ul>
+                </div>
+                
+
+                <div class="project-card">
+                    <h2>Moskee Bunschoten</h2>
+                    <span class="status">PROJECT EXPORT GEREED</span>
+                    <p><strong>Project-ID:</strong> moskee_bunschoten</p>
+                    <p><strong>Type:</strong> Bouw / vergunning</p>
+                    <p><strong>Locatie:</strong> Bikkersweg 88, Bunschoten, Nederland</p>
+                    <ul>
+                        <li><a href="moskee_bunschoten/09_exports/moskee_bunschoten_dashboard.html">Open projectdashboard</a></li>
+                        <li><a href="moskee_bunschoten/10_zip/moskee_bunschoten_project_export.zip">Open project-ZIP</a></li>
+                        <li><a href="moskee_bunschoten/01_reports/moskee_bunschoten_project_report.pdf">Open PDF-rapport</a></li>
+                        <li><a href="moskee_bunschoten/09_exports/moskee_bunschoten_project_tables.xlsx">Open Excel-werkboek</a></li>
+                    </ul>
+                </div>
+                
+
+                <div class="project-card">
+                    <h2>Bruynzeel Waterfront District</h2>
+                    <span class="status">PROJECT EXPORT GEREED</span>
+                    <p><strong>Project-ID:</strong> bruynzeel_waterfront</p>
+                    <p><strong>Type:</strong> Gebiedsontwikkeling</p>
+                    <p><strong>Locatie:</strong> Paramaribo, Suriname, Suriname</p>
+                    <ul>
+                        <li><a href="bruynzeel_waterfront/09_exports/bruynzeel_waterfront_dashboard.html">Open projectdashboard</a></li>
+                        <li><a href="bruynzeel_waterfront/10_zip/bruynzeel_waterfront_project_export.zip">Open project-ZIP</a></li>
+                        <li><a href="bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.pdf">Open PDF-rapport</a></li>
+                        <li><a href="bruynzeel_waterfront/09_exports/bruynzeel_waterfront_project_tables.xlsx">Open Excel-werkboek</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        BAOEES V3 Project Index / Startpage Engine v1.0 — automatisch gegenereerd.
+    </footer>
+</body>
+</html>
