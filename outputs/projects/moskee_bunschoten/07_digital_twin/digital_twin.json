@@ -133,7 +133,7 @@
                         "projectbibliotheek uitbreiden met status, datum, opdrachtgever en revisie"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:12",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Project Selector Engine v1.0 kiest een project uit een lokale JSON-projectindex. Later kan deze selectie worden gekoppeld aan het BAOEES startscherm, gebruikersprofielen, projectbibliotheek, uploadmap en cloudopslag."
             }
         },
@@ -303,7 +303,7 @@
                         "projectbibliotheek koppelen"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:12",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
             }
         },
@@ -423,7 +423,7 @@
                         "Project ZIP Engine koppelen aan project_output_dir"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:12",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Project Storage Engine v1.0 maakt alleen de projectmapstructuur. In vervolgstappen kunnen rapporten, tekeningen, logs, Digital Twin-data, bronvermelding en ZIP-bestanden fysiek naar deze mappen worden geschreven."
             }
         },
@@ -636,7 +636,7 @@
                 "warnings": [
                     "Zetting is een aandachtspunt. Controleer met echte sonderingen en samendrukkingsparameters."
                 ],
-                "created_at": "2026-06-24T01:20:12",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Geo Engine v1.1 maakt een indicatieve geotechnische basisberekening. Voor definitief ontwerp zijn sonderingen, grondonderzoek, normtoetsing en controle door een geotechnisch deskundige noodzakelijk."
             }
         },
@@ -765,7 +765,7 @@
                     "Dakconstructie voldoet indicatief niet of vraagt controle.",
                     "Fundering vraagt nadere controle op basis van Geo Engine-resultaten."
                 ],
-                "created_at": "2026-06-24T01:20:12",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Structural Engine v1.1 maakt een indicatieve constructieve basisberekening. Voor definitief ontwerp zijn projectspecifieke belastingen, materiaalgegevens, normtoetsing en controle door een bevoegd constructeur noodzakelijk."
             }
         },
@@ -1337,7 +1337,7 @@
                                     "source_type": "project_input",
                                     "reliability": "BEVESTIGD",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T01:20:12"
+                                    "registered_at": "2026-06-24T13:08:26"
                                 },
                                 {
                                     "source": "BAOEES AAIE standaard fallback grondwaterstand P = -0,50 m",
@@ -1346,7 +1346,7 @@
                                     "source_type": "system_rule",
                                     "reliability": "AANNAME",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T01:20:12"
+                                    "registered_at": "2026-06-24T13:08:26"
                                 },
                                 {
                                     "source": "BAOEES funderingsmodule - vergelijking strokenfundering en paalfundering",
@@ -1355,7 +1355,7 @@
                                     "source_type": "system_rule",
                                     "reliability": "TE_VERGELIJKEN",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T01:20:12"
+                                    "registered_at": "2026-06-24T13:08:26"
                                 }
                             ]
                         }
@@ -1426,26 +1426,26 @@
             "data": {
                 "engine": "ProjectExportEngine",
                 "status": "PROJECT_EXPORT_GEREED",
-                "export_folder": "exports\\moskee_bunschoten_20260624_012012",
+                "export_folder": "exports\\moskee_bunschoten_20260624_130826",
                 "exported_files": [
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\project_summary.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\project_summary.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\digital_twin_export.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\digital_twin_export.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\report_structure.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\report_structure.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\source_register.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\source_register.json",
                         "status": "AANGEMAAKT"
                     }
                 ],
-                "exported_at": "2026-06-24T01:20:12",
+                "exported_at": "2026-06-24T13:08:26",
                 "next_steps": [
                     "PDF-export toevoegen",
                     "DOCX-export toevoegen",
@@ -1462,30 +1462,30 @@
                 "engine": "DocumentExportEngine",
                 "version": "1.1",
                 "status": "DOCUMENT_EXPORT_GEREED",
-                "export_folder": "exports\\moskee_bunschoten_20260624_012012",
+                "export_folder": "exports\\moskee_bunschoten_20260624_130826",
                 "documents": [
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\projectrapport.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\projectrapport.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\projectrapport_documentdata.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\projectrapport_documentdata.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\projectrapport.docx",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\projectrapport.docx",
                         "format": "DOCX",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\projectrapport.pdf",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\projectrapport.pdf",
                         "format": "PDF",
                         "status": "AANGEMAAKT"
                     }
                 ],
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "note": "Professionele basis DOCX/PDF-export aangemaakt met titelblad, hoofdstukken en metadata."
             }
         },
@@ -1495,36 +1495,36 @@
             "data": {
                 "engine": "DrawingExportEngine",
                 "status": "DRAWING_EXPORT_GEREED",
-                "drawings_folder": "exports\\moskee_bunschoten_20260624_012012\\tekeningen",
+                "drawings_folder": "exports\\moskee_bunschoten_20260624_130826\\tekeningen",
                 "drawing_count": 6,
                 "files": [
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\tekeningen\\01_situatietekening.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\tekeningen\\01_situatietekening.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\tekeningen\\02_plattegrond.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\tekeningen\\02_plattegrond.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\tekeningen\\03_funderingsschema.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\tekeningen\\03_funderingsschema.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\tekeningen\\04_constructieschema.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\tekeningen\\04_constructieschema.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\tekeningen\\tekeningregister.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\tekeningen\\tekeningregister.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\tekeningen\\basis_tekening_placeholder.dxf",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\tekeningen\\basis_tekening_placeholder.dxf",
                         "format": "DXF",
                         "status": "AANGEMAAKT"
                     }
@@ -1572,9 +1572,9 @@
                     "geo_basis": "GEO_ANALYSE_GEREED",
                     "structural_basis": "STRUCTURAL_ANALYSE_GEREED",
                     "permit_basis": "VERGUNNINGSTRATEGIE_GEREED",
-                    "created_at": "2026-06-24T01:20:13"
+                    "created_at": "2026-06-24T13:08:26"
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "note": "Basis tekeningexport aangemaakt. Professionele maatvoering, schaal, CAD-layers en echte geometrie volgen in volgende versies."
             }
         },
@@ -1585,30 +1585,30 @@
                 "engine": "CADExportEngine",
                 "version": "1.0",
                 "status": "CAD_EXPORT_GEREED",
-                "cad_folder": "exports\\moskee_bunschoten_20260624_012012\\cad_exports",
+                "cad_folder": "exports\\moskee_bunschoten_20260624_130826\\cad_exports",
                 "files": [
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\cad_exports\\BAOEES_basis_cad_export.dxf",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\cad_exports\\BAOEES_basis_cad_export.dxf",
                         "format": "DXF",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\cad_exports\\cad_export_metadata.json",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\cad_exports\\cad_export_metadata.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\cad_exports\\BAOEES_DWG_placeholder.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\cad_exports\\BAOEES_DWG_placeholder.txt",
                         "format": "DWG",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\cad_exports\\BAOEES_SKP_placeholder.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\cad_exports\\BAOEES_SKP_placeholder.txt",
                         "format": "SKP",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\moskee_bunschoten_20260624_012012\\cad_exports\\BAOEES_IFC_placeholder.txt",
+                        "file": "exports\\moskee_bunschoten_20260624_130826\\cad_exports\\BAOEES_IFC_placeholder.txt",
                         "format": "IFC",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     }
@@ -1620,7 +1620,7 @@
                     "country": "Nederland",
                     "engine": "CADExportEngine",
                     "version": "1.0",
-                    "main_dxf": "exports\\moskee_bunschoten_20260624_012012\\cad_exports\\BAOEES_basis_cad_export.dxf",
+                    "main_dxf": "exports\\moskee_bunschoten_20260624_130826\\cad_exports\\BAOEES_basis_cad_export.dxf",
                     "units": "meter",
                     "drawing_status": "CONCEPT",
                     "layers": [
@@ -1648,9 +1648,9 @@
                     "geo_status": "GEO_ANALYSE_GEREED",
                     "structural_status": "STRUCTURAL_ANALYSE_GEREED",
                     "drawing_export_status": "DRAWING_EXPORT_GEREED",
-                    "created_at": "2026-06-24T01:20:13"
+                    "created_at": "2026-06-24T13:08:26"
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "note": "CAD/DXF basisexport aangemaakt. DWG/SKP/IFC zijn voorbereid als placeholders voor latere koppeling."
             }
         },
@@ -1730,7 +1730,7 @@
                     ],
                     "uncertainty_band": "-10.0% / +45.0%"
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze kostenraming is indicatief. Voor aanbesteding, financiering of formele besluitvorming is een projectspecifieke begroting met hoeveelhedenstaat, marktprijzen, offertes en risicoanalyse nodig."
             }
         },
@@ -2136,7 +2136,7 @@
                     ],
                     "critical_task_count": 13
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze planning is indicatief. Voor contractuele planning, uitvoering of aanbesteding moet de planning projectspecifiek worden gecontroleerd met echte beschikbaarheid, vergunningstermijnen, levertijden en uitvoeringsmethode."
             }
         },
@@ -2282,7 +2282,7 @@
                         "parkeerregime-advies opnemen in ruimtelijke onderbouwing"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze analyse is indicatief. Voor formele vergunning, ruimtelijke onderbouwing of verkeerskundig advies zijn projectspecifieke tellingen, CROW-kencijfers, gemeentelijk parkeerbeleid en lokale verkeersgegevens noodzakelijk."
             }
         },
@@ -2402,7 +2402,7 @@
                     ],
                     "warning_count": 1
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Drainage & Sewerage Engine v1.0 maakt een indicatief ontwerp. Voor definitief ontwerp zijn lokale neerslagdata, waterschapseisen, gemeentelijke aansluitvoorwaarden, peilen, maaiveldhoogtes en hydraulische berekeningen nodig."
             }
         },
@@ -2548,7 +2548,7 @@
                         "uitkomst opnemen in vergunningdossier"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze AERIUS Engine v1.0 maakt alleen een indicatieve voorbereiding. Voor formele indiening moet altijd de actuele AERIUS Calculator worden gebruikt met projectspecifieke invoer, actuele emissiefactoren, locatiecoördinaten, bouwmaterieel, verkeersroutes en Natura 2000-gegevens."
             }
         },
@@ -2795,7 +2795,7 @@
                     "warning_count": 3,
                     "distance_check_status": "AFSTANDSCONTROLES_PLACEHOLDER"
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze GIS / Map Engine v1.0 maakt een indicatieve kaart- en locatieanalyse. Voor formele vergunningstukken zijn exacte coördinaten, kadastrale gegevens, gevalideerde GIS-lagen, actuele kaartbronnen en lokale overheidsdata nodig."
             }
         },
@@ -2957,7 +2957,7 @@
                         "bestekposten genereren"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Quantity Engine v1.0 maakt een indicatieve hoeveelhedenstaat. Voor bestek, aanbesteding of uitvoering zijn maatvaste tekeningen, definitieve constructieberekeningen en projectspecifieke hoeveelheden noodzakelijk."
             }
         },
@@ -3311,7 +3311,7 @@
                     ],
                     "risk_count": 6
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Validation & QA/QC Engine voert een automatische controle uit op volledigheid, statussen, waarschuwingen en interne consistentie. Dit vervangt geen menselijke eindcontrole door bevoegde deskundigen."
             }
         },
@@ -3646,7 +3646,7 @@
                         "definitief bestek laten controleren"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Specification Engine v1.0 maakt een concept-bestek. Voor aanbesteding of uitvoering moet het bestek worden gecontroleerd door een deskundige en worden aangevuld met projectspecifieke normen, details, contractvoorwaarden en definitieve tekeningen."
             }
         },
@@ -3911,7 +3911,7 @@
                         "contractstukken definitief maken"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Tender Engine v1.0 maakt een concept-aanbestedingspakket. Voor formele aanbesteding moeten juridische voorwaarden, contractvorm, selectiecriteria en gunningscriteria door opdrachtgever en deskundigen worden gecontroleerd."
             }
         },
@@ -4255,7 +4255,7 @@
                         "opdrachtbrief ondertekenen"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Contract Engine v1.0 maakt een concept-contractpakket. Voor ondertekening moeten juridische voorwaarden, aansprakelijkheid, verzekeringen, garanties, planning, prijs en scope door opdrachtgever, aannemer en juridisch/technisch deskundigen worden gecontroleerd."
             }
         },
@@ -4597,7 +4597,7 @@
                         "bouwlogboek openen"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Construction Execution Engine v1.0 maakt een concept-uitvoeringsplan. Voor werkelijke uitvoering moeten bouwplaatsinrichting, veiligheid, planning, vergunningen, werkmethoden en uitvoeringsrisico’s door aannemer en deskundigen definitief worden gecontroleerd."
             }
         },
@@ -5000,7 +5000,7 @@
                         "opleverdossier voorbereiden"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Site Monitoring Engine v1.0 maakt een concept-monitoringsplan. Werkelijke bouwplaatsbewaking vereist actuele dagrapporten, inspecties, foto's, metingen, veiligheidsregistraties en goedkeuringen door bevoegde personen."
             }
         },
@@ -5271,7 +5271,7 @@
                         "project formeel afsluiten"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze As-Built Engine v1.0 maakt een concept oplever- en revisiedossier. Werkelijke oplevering vereist definitieve revisietekeningen, inspecties, certificaten, garanties, goedkeuringen en ondertekende opleverdocumenten."
             }
         },
@@ -5561,7 +5561,7 @@
                         "beheerlogboek openen"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Asset Management Engine v1.0 maakt een concept beheer- en onderhoudsplan. Voor werkelijk beheer moeten definitieve as-built gegevens, garanties, certificaten, inspecties, leveranciersinformatie en onderhoudsvoorschriften worden toegevoegd."
             }
         },
@@ -5731,7 +5731,7 @@
                         "beheerfase koppelen aan Digital Twin"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Sustainability Engine v1.0 maakt een conceptuele duurzaamheids- en klimaatadaptatiescan. Voor formele beoordeling zijn projectspecifieke energiegegevens, materiaaldata, MPG-/LCA-berekeningen, waternormen en lokale klimaatdata noodzakelijk."
             }
         },
@@ -5911,7 +5911,7 @@
                         "QA/QC laten hercontroleren"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Global Codes Engine v1.0 maakt een conceptueel normen- en regelgevingsregister. Voor formele toetsing moeten actuele wetgeving, lokale bouwregels, normen, vergunningseisen en projectspecifieke voorwaarden door bevoegde deskundigen worden gecontroleerd."
             }
         },
@@ -5955,8 +5955,8 @@
                     "status": "BRONNEN_LEERLOG_GEREED",
                     "source_count": 3,
                     "source_types": [
-                        "project_input",
-                        "system_rule"
+                        "system_rule",
+                        "project_input"
                     ],
                     "lesson": "Projectbronnen moeten per discipline traceerbaar blijven."
                 },
@@ -6010,7 +6010,7 @@
                         "menselijke controle toevoegen voordat leerregels definitief worden"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Learning Engine v1.0 maakt een conceptuele projectleeranalyse. Werkelijke autonome verbetering vereist gecontroleerde opslag, validatie, versiebeheer en menselijke goedkeuring van leerregels."
             }
         },
@@ -6426,7 +6426,7 @@
                         "autonome modus koppelen aan startscherm"
                     ]
                 },
-                "created_at": "2026-06-24T01:20:13",
+                "created_at": "2026-06-24T13:08:26",
                 "disclaimer": "Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.",
                 "runtime_mode": "autonomous",
                 "launcher_project_id": "moskee_bunschoten"

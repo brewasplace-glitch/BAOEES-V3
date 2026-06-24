@@ -5,6 +5,7 @@ from baoees.project_config_engine.main import ProjectConfigEngine
 from baoees.project_storage_engine.main import ProjectStorageEngine
 from baoees.project_file_writer_engine.main import ProjectFileWriterEngine
 from baoees.project_report_writer_engine.main import ProjectReportWriterEngine
+from baoees.project_pdf_docx_writer_engine.main import ProjectPdfDocxWriterEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -51,6 +52,7 @@ class BAOEESCore:
         self.project_storage = ProjectStorageEngine()
         self.project_file_writer = ProjectFileWriterEngine()
         self.project_report_writer = ProjectReportWriterEngine()
+        self.project_pdf_docx_writer = ProjectPdfDocxWriterEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -718,6 +720,20 @@ class BAOEESCore:
             data=report_writer_result
         )
 
+        pdf_docx_result = self.project_pdf_docx_writer.write_pdf_docx_reports(
+            project_result=project_result,
+            storage_result=storage_result,
+            report_writer_result=report_writer_result,
+            validation_result=validation_result,
+            runtime_result=runtime_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_pdf_docx_writer",
+            name="BAOEES PDF/DOCX Report Export Engine rapportbestanden",
+            data=pdf_docx_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result,
             storage_result=storage_result,
@@ -842,6 +858,10 @@ class BAOEESCore:
         pprint(report_writer_result)
         print("")
 
+        print("PDF/DOCX Report Export Engine resultaat:")
+        pprint(pdf_docx_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -855,6 +875,7 @@ class BAOEESCore:
         self.project_storage.run()
         self.project_file_writer.run()
         self.project_report_writer.run()
+        self.project_pdf_docx_writer.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
