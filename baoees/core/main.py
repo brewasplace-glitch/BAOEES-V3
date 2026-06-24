@@ -13,6 +13,8 @@ from baoees.project_xlsx_export_engine.main import ProjectXlsxExportEngine
 from baoees.project_html_dashboard_export_engine.main import ProjectHtmlDashboardExportEngine
 from baoees.project_index_startpage_engine.main import ProjectIndexStartpageEngine
 from baoees.project_audit_trail_engine.main import ProjectAuditTrailEngine
+from baoees.project_checksum_engine.main import ProjectChecksumEngine
+
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -67,6 +69,7 @@ class BAOEESCore:
         self.project_html_dashboard_export = ProjectHtmlDashboardExportEngine()
         self.project_index_startpage = ProjectIndexStartpageEngine()
         self.project_audit_trail = ProjectAuditTrailEngine()
+        self.project_checksum = ProjectChecksumEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -103,25 +106,24 @@ class BAOEESCore:
         self.workflow = WorkflowEngine()
         self.stee = STEEEngine()
 
+    def print_result(self, title, result):
+        print(title)
+        pprint(result)
+        print("")
+
     def start_projectanalyse(self, project_id=None, runtime_mode="autonomous"):
 
         print("\n=== START PROJECTANALYSE ===\n")
 
         selector_result = self.project_selector.select_project(project_id=project_id)
         selected_config_path = selector_result["selected_config_path"]
-
-        print("Project Selector / Project Library Engine resultaat:")
-        pprint(selector_result)
-        print("")
+        self.print_result("Project Selector / Project Library Engine resultaat:", selector_result)
 
         config_result = self.project_config.load_project_config(
             config_path=selected_config_path
         )
         project_config = config_result["project_config"]
-
-        print("Project Configuration / Input Engine resultaat:")
-        pprint(config_result)
-        print("")
+        self.print_result("Project Configuration / Input Engine resultaat:", config_result)
 
         project_result = self.project_analyzer.analyze(
             project_name=project_config["project_name"],
@@ -136,53 +138,36 @@ class BAOEESCore:
             "selected_project", {}
         ).get("project_id")
 
-        print("Project Analyzer resultaat:")
-        pprint(project_result)
-        print("")
+        self.print_result("Project Analyzer resultaat:", project_result)
 
         storage_result = self.project_storage.prepare_project_storage(
             project_result=project_result,
             selector_result=selector_result,
             config_result=config_result
         )
-
-        print("Project Storage / Output Folder Engine resultaat:")
-        pprint(storage_result)
-        print("")
+        self.print_result("Project Storage / Output Folder Engine resultaat:", storage_result)
 
         aaie_result = self.aaie.infer_missing_parameters(project_result)
-
-        print("AAIE resultaat:")
-        pprint(aaie_result)
-        print("")
+        self.print_result("AAIE resultaat:", aaie_result)
 
         variant_result = self.variant.generate_variants(
             project_result=project_result,
             aaie_result=aaie_result
         )
-
-        print("Variant Engine resultaat:")
-        pprint(variant_result)
-        print("")
+        self.print_result("Variant Engine resultaat:", variant_result)
 
         geo_result = self.geo.analyze_geotechnics(
             project_result=project_result,
             aaie_result=aaie_result
         )
-
-        print("Geo Engine resultaat:")
-        pprint(geo_result)
-        print("")
+        self.print_result("Geo Engine resultaat:", geo_result)
 
         structural_result = self.structural.analyze_structure(
             project_result=project_result,
             geo_result=geo_result,
             aaie_result=aaie_result
         )
-
-        print("Structural Engine resultaat:")
-        pprint(structural_result)
-        print("")
+        self.print_result("Structural Engine resultaat:", structural_result)
 
         permit_result = self.permit.prepare_permit_strategy(
             project_result=project_result,
@@ -191,10 +176,7 @@ class BAOEESCore:
             structural_result=structural_result,
             variant_result=variant_result
         )
-
-        print("Permit Engine resultaat:")
-        pprint(permit_result)
-        print("")
+        self.print_result("Permit Engine resultaat:", permit_result)
 
         self.digital_twin.create_project_twin(
             project_result=project_result,
@@ -878,6 +860,18 @@ class BAOEESCore:
             data=audit_result
         )
 
+        checksum_result = self.project_checksum.create_file_manifest(
+            project_result=project_result,
+            storage_result=storage_result,
+            audit_result=audit_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_checksum_file_integrity",
+            name="BAOEES Project Checksum / File Integrity Engine file manifest",
+            data=checksum_result
+        )
+
         final_zip_result = self.project_zip.create_project_zip(
             export_result=export_result,
             storage_result=storage_result,
@@ -886,165 +880,50 @@ class BAOEESCore:
 
         self.digital_twin.add_object(
             object_type="project_final_zip",
-            name="BAOEES Project ZIP Engine finale zip inclusief audit trail",
+            name="BAOEES Project ZIP Engine finale zip inclusief audit trail en file manifest",
             data=final_zip_result
         )
 
-        print("STEE resultaat:")
-        pprint(stee_result)
-        print("")
-
-        print("Workflow Engine resultaat:")
-        pprint(workflow_result)
-        print("")
-
-        print("Reporting Engine resultaat:")
-        pprint(reporting_result)
-        print("")
-
-        print("Project Export Engine resultaat:")
-        pprint(export_result)
-        print("")
-
-        print("PDF/DOCX Export Engine resultaat:")
-        pprint(document_result)
-        print("")
-
-        print("Drawing Export Engine resultaat:")
-        pprint(drawing_result)
-        print("")
-
-        print("CAD/DXF Export Engine resultaat:")
-        pprint(cad_result)
-        print("")
-
-        print("Project DXF Writer Engine resultaat:")
-        pprint(dxf_writer_result)
-        print("")
-
-        print("Project Drawing PDF Writer Engine resultaat:")
-        pprint(drawing_pdf_result)
-        print("")
-
-        print("Cost Estimate Engine resultaat:")
-        pprint(cost_result)
-        print("")
-
-        print("Planning Engine resultaat:")
-        pprint(planning_result)
-        print("")
-
-        print("Traffic & Parking Engine resultaat:")
-        pprint(traffic_parking_result)
-        print("")
-
-        print("Drainage & Sewerage Engine resultaat:")
-        pprint(drainage_result)
-        print("")
-
-        print("AERIUS / Stikstof Engine resultaat:")
-        pprint(aerius_result)
-        print("")
-
-        print("GIS / Map Engine resultaat:")
-        pprint(gis_result)
-        print("")
-
-        print("Quantity / BOQ Engine resultaat:")
-        pprint(quantity_result)
-        print("")
-
-        print("Validation & QA/QC Engine resultaat:")
-        pprint(validation_result)
-        print("")
-
-        print("Specification / Bestek Engine resultaat:")
-        pprint(specification_result)
-        print("")
-
-        print("Tender / Procurement Engine resultaat:")
-        pprint(tender_result)
-        print("")
-
-        print("Contract / Agreement Engine resultaat:")
-        pprint(contract_result)
-        print("")
-
-        print("Construction Execution Engine resultaat:")
-        pprint(construction_execution_result)
-        print("")
-
-        print("Site Monitoring / Progress Engine resultaat:")
-        pprint(site_monitoring_result)
-        print("")
-
-        print("As-Built / Oplever Engine resultaat:")
-        pprint(as_built_result)
-        print("")
-
-        print("Asset Management / Maintenance Engine resultaat:")
-        pprint(asset_result)
-        print("")
-
-        print("Sustainability / Climate Engine resultaat:")
-        pprint(sustainability_result)
-        print("")
-
-        print("Global Codes / Standards Engine resultaat:")
-        pprint(codes_result)
-        print("")
-
-        print("Autonomous Learning / Knowledge Engine resultaat:")
-        pprint(learning_result)
-        print("")
-
-        print("Runtime / Orchestration Engine resultaat:")
-        pprint(runtime_result)
-        print("")
-
-        print("Project CSV/Excel Export Engine resultaat:")
-        pprint(csv_excel_result)
-        print("")
-
-        print("Project XLSX Export Engine resultaat:")
-        pprint(xlsx_result)
-        print("")
-
-        print("Project File Writer / JSON Export Engine resultaat:")
-        pprint(file_writer_result)
-        print("")
-
-        print("Project Report Writer Engine resultaat:")
-        pprint(report_writer_result)
-        print("")
-
-        print("PDF/DOCX Report Export Engine resultaat:")
-        pprint(pdf_docx_result)
-        print("")
-
-        print("Project HTML Dashboard Export Engine resultaat:")
-        pprint(html_dashboard_result)
-        print("")
-
-        print("Project Index / Startpage Engine resultaat:")
-        pprint(index_result)
-        print("")
-
-        print("Project ZIP Engine resultaat:")
-        pprint(zip_result)
-        print("")
-
-        print("Project Run Log / Audit Trail Engine resultaat:")
-        pprint(audit_result)
-        print("")
-
-        print("Finale Project ZIP Engine resultaat inclusief audit trail:")
-        pprint(final_zip_result)
-        print("")
-
-        print("Digital Twin resultaat:")
-        pprint(self.digital_twin.get_project_data())
-        print("")
+        self.print_result("STEE resultaat:", stee_result)
+        self.print_result("Workflow Engine resultaat:", workflow_result)
+        self.print_result("Reporting Engine resultaat:", reporting_result)
+        self.print_result("Project Export Engine resultaat:", export_result)
+        self.print_result("PDF/DOCX Export Engine resultaat:", document_result)
+        self.print_result("Drawing Export Engine resultaat:", drawing_result)
+        self.print_result("CAD/DXF Export Engine resultaat:", cad_result)
+        self.print_result("Project DXF Writer Engine resultaat:", dxf_writer_result)
+        self.print_result("Project Drawing PDF Writer Engine resultaat:", drawing_pdf_result)
+        self.print_result("Cost Estimate Engine resultaat:", cost_result)
+        self.print_result("Planning Engine resultaat:", planning_result)
+        self.print_result("Traffic & Parking Engine resultaat:", traffic_parking_result)
+        self.print_result("Drainage & Sewerage Engine resultaat:", drainage_result)
+        self.print_result("AERIUS / Stikstof Engine resultaat:", aerius_result)
+        self.print_result("GIS / Map Engine resultaat:", gis_result)
+        self.print_result("Quantity / BOQ Engine resultaat:", quantity_result)
+        self.print_result("Validation & QA/QC Engine resultaat:", validation_result)
+        self.print_result("Specification / Bestek Engine resultaat:", specification_result)
+        self.print_result("Tender / Procurement Engine resultaat:", tender_result)
+        self.print_result("Contract / Agreement Engine resultaat:", contract_result)
+        self.print_result("Construction Execution Engine resultaat:", construction_execution_result)
+        self.print_result("Site Monitoring / Progress Engine resultaat:", site_monitoring_result)
+        self.print_result("As-Built / Oplever Engine resultaat:", as_built_result)
+        self.print_result("Asset Management / Maintenance Engine resultaat:", asset_result)
+        self.print_result("Sustainability / Climate Engine resultaat:", sustainability_result)
+        self.print_result("Global Codes / Standards Engine resultaat:", codes_result)
+        self.print_result("Autonomous Learning / Knowledge Engine resultaat:", learning_result)
+        self.print_result("Runtime / Orchestration Engine resultaat:", runtime_result)
+        self.print_result("Project CSV/Excel Export Engine resultaat:", csv_excel_result)
+        self.print_result("Project XLSX Export Engine resultaat:", xlsx_result)
+        self.print_result("Project File Writer / JSON Export Engine resultaat:", file_writer_result)
+        self.print_result("Project Report Writer Engine resultaat:", report_writer_result)
+        self.print_result("PDF/DOCX Report Export Engine resultaat:", pdf_docx_result)
+        self.print_result("Project HTML Dashboard Export Engine resultaat:", html_dashboard_result)
+        self.print_result("Project Index / Startpage Engine resultaat:", index_result)
+        self.print_result("Project ZIP Engine resultaat:", zip_result)
+        self.print_result("Project Run Log / Audit Trail Engine resultaat:", audit_result)
+        self.print_result("Project Checksum / File Integrity Engine resultaat:", checksum_result)
+        self.print_result("Finale Project ZIP Engine resultaat inclusief audit trail en file manifest:", final_zip_result)
+        self.print_result("Digital Twin resultaat:", self.digital_twin.get_project_data())
 
         self.project_selector.run()
         self.project_config.run()
@@ -1059,6 +938,8 @@ class BAOEESCore:
         self.project_html_dashboard_export.run()
         self.project_index_startpage.run()
         self.project_audit_trail.run()
+        self.project_checksum.run()
+
         self.aaie.run()
         self.variant.run()
         self.geo.run()
