@@ -8,6 +8,7 @@ from baoees.project_report_writer_engine.main import ProjectReportWriterEngine
 from baoees.project_pdf_docx_writer_engine.main import ProjectPdfDocxWriterEngine
 from baoees.project_dxf_writer_engine.main import ProjectDxfWriterEngine
 from baoees.project_drawing_pdf_writer_engine.main import ProjectDrawingPdfWriterEngine
+from baoees.project_csv_excel_export_engine.main import ProjectCsvExcelExportEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -57,6 +58,7 @@ class BAOEESCore:
         self.project_pdf_docx_writer = ProjectPdfDocxWriterEngine()
         self.project_dxf_writer = ProjectDxfWriterEngine()
         self.project_drawing_pdf_writer = ProjectDrawingPdfWriterEngine()
+        self.project_csv_excel_export = ProjectCsvExcelExportEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -716,6 +718,22 @@ class BAOEESCore:
             data=runtime_result
         )
 
+        csv_excel_result = self.project_csv_excel_export.export_project_tables(
+            project_result=project_result,
+            storage_result=storage_result,
+            cost_result=cost_result,
+            planning_result=planning_result,
+            quantity_result=quantity_result,
+            validation_result=validation_result,
+            runtime_result=runtime_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_csv_excel_export",
+            name="BAOEES Project CSV/Excel Export Engine projecttabellen",
+            data=csv_excel_result
+        )
+
         file_writer_result = self.project_file_writer.write_project_files(
             project_result=project_result,
             storage_result=storage_result,
@@ -892,6 +910,10 @@ class BAOEESCore:
         pprint(runtime_result)
         print("")
 
+        print("Project CSV/Excel Export Engine resultaat:")
+        pprint(csv_excel_result)
+        print("")
+
         print("Project File Writer / JSON Export Engine resultaat:")
         pprint(file_writer_result)
         print("")
@@ -920,6 +942,7 @@ class BAOEESCore:
         self.project_pdf_docx_writer.run()
         self.project_dxf_writer.run()
         self.project_drawing_pdf_writer.run()
+        self.project_csv_excel_export.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
