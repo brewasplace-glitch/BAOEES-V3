@@ -14,6 +14,7 @@ from baoees.project_html_dashboard_export_engine.main import ProjectHtmlDashboar
 from baoees.project_index_startpage_engine.main import ProjectIndexStartpageEngine
 from baoees.project_audit_trail_engine.main import ProjectAuditTrailEngine
 from baoees.project_checksum_engine.main import ProjectChecksumEngine
+from baoees.project_git_evidence_engine.main import ProjectGitEvidenceEngine
 
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
@@ -70,6 +71,7 @@ class BAOEESCore:
         self.project_index_startpage = ProjectIndexStartpageEngine()
         self.project_audit_trail = ProjectAuditTrailEngine()
         self.project_checksum = ProjectChecksumEngine()
+        self.project_git_evidence = ProjectGitEvidenceEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -872,6 +874,20 @@ class BAOEESCore:
             data=checksum_result
         )
 
+        git_evidence_result = self.project_git_evidence.create_git_evidence(
+            project_result=project_result,
+            storage_result=storage_result,
+            audit_result=audit_result,
+            checksum_result=checksum_result,
+            repo_root="."
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_git_evidence",
+            name="BAOEES Project Version / Git Evidence Engine codeversiebewijs",
+            data=git_evidence_result
+        )
+
         final_zip_result = self.project_zip.create_project_zip(
             export_result=export_result,
             storage_result=storage_result,
@@ -880,7 +896,7 @@ class BAOEESCore:
 
         self.digital_twin.add_object(
             object_type="project_final_zip",
-            name="BAOEES Project ZIP Engine finale zip inclusief audit trail en file manifest",
+            name="BAOEES Project ZIP Engine finale zip inclusief audit trail, file manifest en Git evidence",
             data=final_zip_result
         )
 
@@ -922,7 +938,8 @@ class BAOEESCore:
         self.print_result("Project ZIP Engine resultaat:", zip_result)
         self.print_result("Project Run Log / Audit Trail Engine resultaat:", audit_result)
         self.print_result("Project Checksum / File Integrity Engine resultaat:", checksum_result)
-        self.print_result("Finale Project ZIP Engine resultaat inclusief audit trail en file manifest:", final_zip_result)
+        self.print_result("Project Version / Git Evidence Engine resultaat:", git_evidence_result)
+        self.print_result("Finale Project ZIP Engine resultaat inclusief audit trail, file manifest en Git evidence:", final_zip_result)
         self.print_result("Digital Twin resultaat:", self.digital_twin.get_project_data())
 
         self.project_selector.run()
@@ -939,6 +956,7 @@ class BAOEESCore:
         self.project_index_startpage.run()
         self.project_audit_trail.run()
         self.project_checksum.run()
+        self.project_git_evidence.run()
 
         self.aaie.run()
         self.variant.run()

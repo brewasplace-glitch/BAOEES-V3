@@ -8,7 +8,7 @@
 - Locatie: Paramaribo, Suriname
 - Land: Suriname
 - Runtime mode: autonomous
-- Rapportdatum: 2026-06-24T23:26:12
+- Rapportdatum: 2026-06-25T00:16:12
 
 ## 2. Projectselectie en invoer
 
