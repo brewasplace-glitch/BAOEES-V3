@@ -58,7 +58,7 @@
                 "status": "PROJECT_SELECTIE_GEREED",
                 "calculation_level": "projectbibliotheek en projectselectie",
                 "index_path": "configs\\projects\\project_index.json",
-                "requested_project_id": "plutostraat",
+                "requested_project_id": null,
                 "active_project_id": "plutostraat",
                 "selected_project": {
                     "project_id": "plutostraat",
@@ -134,7 +134,7 @@
                         "projectbibliotheek uitbreiden met status, datum, opdrachtgever en revisie"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:45",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Project Selector Engine v1.0 kiest een project uit een lokale JSON-projectindex. Later kan deze selectie worden gekoppeld aan het BAOEES startscherm, gebruikersprofielen, projectbibliotheek, uploadmap en cloudopslag."
             }
         },
@@ -269,7 +269,7 @@
                         "projectbibliotheek koppelen"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:45",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
             }
         },
@@ -389,7 +389,7 @@
                         "Project ZIP Engine koppelen aan project_output_dir"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:45",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Project Storage Engine v1.0 maakt alleen de projectmapstructuur. In vervolgstappen kunnen rapporten, tekeningen, logs, Digital Twin-data, bronvermelding en ZIP-bestanden fysiek naar deze mappen worden geschreven."
             }
         },
@@ -602,7 +602,7 @@
                 "warnings": [
                     "Zetting is een aandachtspunt. Controleer met echte sonderingen en samendrukkingsparameters."
                 ],
-                "created_at": "2026-06-24T13:13:45",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Geo Engine v1.1 maakt een indicatieve geotechnische basisberekening. Voor definitief ontwerp zijn sonderingen, grondonderzoek, normtoetsing en controle door een geotechnisch deskundige noodzakelijk."
             }
         },
@@ -731,7 +731,7 @@
                     "Dakconstructie voldoet indicatief niet of vraagt controle.",
                     "Fundering vraagt nadere controle op basis van Geo Engine-resultaten."
                 ],
-                "created_at": "2026-06-24T13:13:45",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Structural Engine v1.1 maakt een indicatieve constructieve basisberekening. Voor definitief ontwerp zijn projectspecifieke belastingen, materiaalgegevens, normtoetsing en controle door een bevoegd constructeur noodzakelijk."
             }
         },
@@ -1316,7 +1316,7 @@
                                     "source_type": "project_input",
                                     "reliability": "BEVESTIGD",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T13:13:45"
+                                    "registered_at": "2026-06-24T14:52:17"
                                 },
                                 {
                                     "source": "BAOEES AAIE standaard fallback grondwaterstand P = -0,50 m",
@@ -1325,7 +1325,7 @@
                                     "source_type": "system_rule",
                                     "reliability": "AANNAME",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T13:13:45"
+                                    "registered_at": "2026-06-24T14:52:17"
                                 },
                                 {
                                     "source": "BAOEES funderingsmodule - vergelijking strokenfundering en paalfundering",
@@ -1334,7 +1334,7 @@
                                     "source_type": "system_rule",
                                     "reliability": "TE_VERGELIJKEN",
                                     "status": "GEREGISTREERD",
-                                    "registered_at": "2026-06-24T13:13:45"
+                                    "registered_at": "2026-06-24T14:52:17"
                                 }
                             ]
                         }
@@ -1405,26 +1405,26 @@
             "data": {
                 "engine": "ProjectExportEngine",
                 "status": "PROJECT_EXPORT_GEREED",
-                "export_folder": "exports\\plutostraat_met_baoees_v3_20260624_131345",
+                "export_folder": "exports\\plutostraat_met_baoees_v3_20260624_145217",
                 "exported_files": [
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\project_summary.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\project_summary.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\digital_twin_export.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\digital_twin_export.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\report_structure.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\report_structure.json",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\source_register.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\source_register.json",
                         "status": "AANGEMAAKT"
                     }
                 ],
-                "exported_at": "2026-06-24T13:13:45",
+                "exported_at": "2026-06-24T14:52:17",
                 "next_steps": [
                     "PDF-export toevoegen",
                     "DOCX-export toevoegen",
@@ -1441,30 +1441,30 @@
                 "engine": "DocumentExportEngine",
                 "version": "1.1",
                 "status": "DOCUMENT_EXPORT_GEREED",
-                "export_folder": "exports\\plutostraat_met_baoees_v3_20260624_131345",
+                "export_folder": "exports\\plutostraat_met_baoees_v3_20260624_145217",
                 "documents": [
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\projectrapport.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\projectrapport.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\projectrapport_documentdata.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\projectrapport_documentdata.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\projectrapport.docx",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\projectrapport.docx",
                         "format": "DOCX",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\projectrapport.pdf",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\projectrapport.pdf",
                         "format": "PDF",
                         "status": "AANGEMAAKT"
                     }
                 ],
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "note": "Professionele basis DOCX/PDF-export aangemaakt met titelblad, hoofdstukken en metadata."
             }
         },
@@ -1474,36 +1474,36 @@
             "data": {
                 "engine": "DrawingExportEngine",
                 "status": "DRAWING_EXPORT_GEREED",
-                "drawings_folder": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen",
+                "drawings_folder": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen",
                 "drawing_count": 6,
                 "files": [
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen\\01_situatietekening.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen\\01_situatietekening.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen\\02_plattegrond.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen\\02_plattegrond.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen\\03_funderingsschema.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen\\03_funderingsschema.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen\\04_constructieschema.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen\\04_constructieschema.txt",
                         "format": "TXT",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen\\tekeningregister.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen\\tekeningregister.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\tekeningen\\basis_tekening_placeholder.dxf",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\tekeningen\\basis_tekening_placeholder.dxf",
                         "format": "DXF",
                         "status": "AANGEMAAKT"
                     }
@@ -1551,9 +1551,9 @@
                     "geo_basis": "GEO_ANALYSE_GEREED",
                     "structural_basis": "STRUCTURAL_ANALYSE_GEREED",
                     "permit_basis": "VERGUNNINGSTRATEGIE_GEREED",
-                    "created_at": "2026-06-24T13:13:46"
+                    "created_at": "2026-06-24T14:52:17"
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "note": "Basis tekeningexport aangemaakt. Professionele maatvoering, schaal, CAD-layers en echte geometrie volgen in volgende versies."
             }
         },
@@ -1564,30 +1564,30 @@
                 "engine": "CADExportEngine",
                 "version": "1.0",
                 "status": "CAD_EXPORT_GEREED",
-                "cad_folder": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports",
+                "cad_folder": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports",
                 "files": [
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports\\BAOEES_basis_cad_export.dxf",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports\\BAOEES_basis_cad_export.dxf",
                         "format": "DXF",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports\\cad_export_metadata.json",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports\\cad_export_metadata.json",
                         "format": "JSON",
                         "status": "AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports\\BAOEES_DWG_placeholder.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports\\BAOEES_DWG_placeholder.txt",
                         "format": "DWG",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports\\BAOEES_SKP_placeholder.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports\\BAOEES_SKP_placeholder.txt",
                         "format": "SKP",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     },
                     {
-                        "file": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports\\BAOEES_IFC_placeholder.txt",
+                        "file": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports\\BAOEES_IFC_placeholder.txt",
                         "format": "IFC",
                         "status": "PLACEHOLDER_AANGEMAAKT"
                     }
@@ -1599,7 +1599,7 @@
                     "country": "Suriname",
                     "engine": "CADExportEngine",
                     "version": "1.0",
-                    "main_dxf": "exports\\plutostraat_met_baoees_v3_20260624_131345\\cad_exports\\BAOEES_basis_cad_export.dxf",
+                    "main_dxf": "exports\\plutostraat_met_baoees_v3_20260624_145217\\cad_exports\\BAOEES_basis_cad_export.dxf",
                     "units": "meter",
                     "drawing_status": "CONCEPT",
                     "layers": [
@@ -1627,10 +1627,69 @@
                     "geo_status": "GEO_ANALYSE_GEREED",
                     "structural_status": "STRUCTURAL_ANALYSE_GEREED",
                     "drawing_export_status": "DRAWING_EXPORT_GEREED",
-                    "created_at": "2026-06-24T13:13:46"
+                    "created_at": "2026-06-24T14:52:17"
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "note": "CAD/DXF basisexport aangemaakt. DWG/SKP/IFC zijn voorbereid als placeholders voor latere koppeling."
+            }
+        },
+        {
+            "object_type": "project_dxf_writer",
+            "name": "BAOEES Project DXF Writer Engine tekenbestanden",
+            "data": {
+                "engine": "ProjectDxfWriterEngine",
+                "version": "1.0",
+                "status": "PROJECT_DXF_FILES_OPGESLAGEN",
+                "calculation_level": "basis DXF tekeningen export",
+                "project_id": "plutostraat",
+                "project_name": "Plutostraat met BAOEES V3",
+                "cad_dir": "outputs\\projects\\plutostraat\\03_cad",
+                "written_files": [
+                    {
+                        "drawing_type": "situatie",
+                        "path": "outputs\\projects\\plutostraat\\03_cad\\plutostraat_situatie.dxf",
+                        "status": "OPGESLAGEN",
+                        "exists": true,
+                        "size_bytes": 1875
+                    },
+                    {
+                        "drawing_type": "plattegrond",
+                        "path": "outputs\\projects\\plutostraat\\03_cad\\plutostraat_plattegrond.dxf",
+                        "status": "OPGESLAGEN",
+                        "exists": true,
+                        "size_bytes": 1902
+                    },
+                    {
+                        "drawing_type": "doorsnede",
+                        "path": "outputs\\projects\\plutostraat\\03_cad\\plutostraat_doorsnede.dxf",
+                        "status": "OPGESLAGEN",
+                        "exists": true,
+                        "size_bytes": 1707
+                    }
+                ],
+                "written_file_count": 3,
+                "drawing_engine_status": "DRAWING_EXPORT_GEREED",
+                "cad_engine_status": "CAD_EXPORT_GEREED",
+                "geo_engine_status": "GEO_ANALYSE_GEREED",
+                "structural_engine_status": "STRUCTURAL_ANALYSE_GEREED",
+                "warnings": [
+                    "Geen kritieke DXF-exportwaarschuwingen."
+                ],
+                "recommendation": {
+                    "status": "PROJECT_DXF_WRITER_ADVIES",
+                    "advice": "Gebruik deze engine als eerste echte CAD/DXF-exportlaag. De volgende stap is om echte geometrie, maatvoering en lagen uit de Digital Twin te genereren.",
+                    "next_steps": [
+                        "ProjectDxfWriterEngine koppelen aan BAOEES Core",
+                        "DXF-bestanden opnemen in ZIP-export",
+                        "maatvoering toevoegen",
+                        "lagenstructuur professionaliseren",
+                        "geometrie uit Digital Twin lezen",
+                        "per projecttype specifieke tekeningen genereren",
+                        "later DWG-export via externe converter toevoegen"
+                    ]
+                },
+                "created_at": "2026-06-24T14:52:17",
+                "disclaimer": "Deze Project DXF Writer Engine v1.0 schrijft eenvoudige basis-DXF-bestanden. De tekeningen zijn schematisch en moeten later worden uitgebreid met echte geometrie, schaal, maatvoering, lagen, blokken, legenda en projectdata uit BIM/Digital Twin."
             }
         },
         {
@@ -1709,7 +1768,7 @@
                     ],
                     "uncertainty_band": "-10.0% / +45.0%"
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze kostenraming is indicatief. Voor aanbesteding, financiering of formele besluitvorming is een projectspecifieke begroting met hoeveelhedenstaat, marktprijzen, offertes en risicoanalyse nodig."
             }
         },
@@ -2115,7 +2174,7 @@
                     ],
                     "critical_task_count": 13
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze planning is indicatief. Voor contractuele planning, uitvoering of aanbesteding moet de planning projectspecifiek worden gecontroleerd met echte beschikbaarheid, vergunningstermijnen, levertijden en uitvoeringsmethode."
             }
         },
@@ -2261,7 +2320,7 @@
                         "parkeerregime-advies opnemen in ruimtelijke onderbouwing"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze analyse is indicatief. Voor formele vergunning, ruimtelijke onderbouwing of verkeerskundig advies zijn projectspecifieke tellingen, CROW-kencijfers, gemeentelijk parkeerbeleid en lokale verkeersgegevens noodzakelijk."
             }
         },
@@ -2382,7 +2441,7 @@
                     ],
                     "warning_count": 2
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Drainage & Sewerage Engine v1.0 maakt een indicatief ontwerp. Voor definitief ontwerp zijn lokale neerslagdata, waterschapseisen, gemeentelijke aansluitvoorwaarden, peilen, maaiveldhoogtes en hydraulische berekeningen nodig."
             }
         },
@@ -2526,7 +2585,7 @@
                         "uitkomst opnemen in vergunningdossier"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze AERIUS Engine v1.0 maakt alleen een indicatieve voorbereiding. Voor formele indiening moet altijd de actuele AERIUS Calculator worden gebruikt met projectspecifieke invoer, actuele emissiefactoren, locatiecoördinaten, bouwmaterieel, verkeersroutes en Natura 2000-gegevens."
             }
         },
@@ -2751,7 +2810,7 @@
                     "warning_count": 2,
                     "distance_check_status": "AFSTANDSCONTROLES_PLACEHOLDER"
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze GIS / Map Engine v1.0 maakt een indicatieve kaart- en locatieanalyse. Voor formele vergunningstukken zijn exacte coördinaten, kadastrale gegevens, gevalideerde GIS-lagen, actuele kaartbronnen en lokale overheidsdata nodig."
             }
         },
@@ -2913,7 +2972,7 @@
                         "bestekposten genereren"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Quantity Engine v1.0 maakt een indicatieve hoeveelhedenstaat. Voor bestek, aanbesteding of uitvoering zijn maatvaste tekeningen, definitieve constructieberekeningen en projectspecifieke hoeveelheden noodzakelijk."
             }
         },
@@ -3260,7 +3319,7 @@
                     ],
                     "risk_count": 5
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Validation & QA/QC Engine voert een automatische controle uit op volledigheid, statussen, waarschuwingen en interne consistentie. Dit vervangt geen menselijke eindcontrole door bevoegde deskundigen."
             }
         },
@@ -3595,7 +3654,7 @@
                         "definitief bestek laten controleren"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Specification Engine v1.0 maakt een concept-bestek. Voor aanbesteding of uitvoering moet het bestek worden gecontroleerd door een deskundige en worden aangevuld met projectspecifieke normen, details, contractvoorwaarden en definitieve tekeningen."
             }
         },
@@ -3855,7 +3914,7 @@
                         "contractstukken definitief maken"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Tender Engine v1.0 maakt een concept-aanbestedingspakket. Voor formele aanbesteding moeten juridische voorwaarden, contractvorm, selectiecriteria en gunningscriteria door opdrachtgever en deskundigen worden gecontroleerd."
             }
         },
@@ -4194,7 +4253,7 @@
                         "opdrachtbrief ondertekenen"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Contract Engine v1.0 maakt een concept-contractpakket. Voor ondertekening moeten juridische voorwaarden, aansprakelijkheid, verzekeringen, garanties, planning, prijs en scope door opdrachtgever, aannemer en juridisch/technisch deskundigen worden gecontroleerd."
             }
         },
@@ -4531,7 +4590,7 @@
                         "bouwlogboek openen"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Construction Execution Engine v1.0 maakt een concept-uitvoeringsplan. Voor werkelijke uitvoering moeten bouwplaatsinrichting, veiligheid, planning, vergunningen, werkmethoden en uitvoeringsrisico’s door aannemer en deskundigen definitief worden gecontroleerd."
             }
         },
@@ -4912,7 +4971,7 @@
                         "opleverdossier voorbereiden"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Site Monitoring Engine v1.0 maakt een concept-monitoringsplan. Werkelijke bouwplaatsbewaking vereist actuele dagrapporten, inspecties, foto's, metingen, veiligheidsregistraties en goedkeuringen door bevoegde personen."
             }
         },
@@ -5172,7 +5231,7 @@
                         "project formeel afsluiten"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze As-Built Engine v1.0 maakt een concept oplever- en revisiedossier. Werkelijke oplevering vereist definitieve revisietekeningen, inspecties, certificaten, garanties, goedkeuringen en ondertekende opleverdocumenten."
             }
         },
@@ -5447,7 +5506,7 @@
                         "beheerlogboek openen"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Asset Management Engine v1.0 maakt een concept beheer- en onderhoudsplan. Voor werkelijk beheer moeten definitieve as-built gegevens, garanties, certificaten, inspecties, leveranciersinformatie en onderhoudsvoorschriften worden toegevoegd."
             }
         },
@@ -5617,7 +5676,7 @@
                         "beheerfase koppelen aan Digital Twin"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Sustainability Engine v1.0 maakt een conceptuele duurzaamheids- en klimaatadaptatiescan. Voor formele beoordeling zijn projectspecifieke energiegegevens, materiaaldata, MPG-/LCA-berekeningen, waternormen en lokale klimaatdata noodzakelijk."
             }
         },
@@ -5786,7 +5845,7 @@
                         "QA/QC laten hercontroleren"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Global Codes Engine v1.0 maakt een conceptueel normen- en regelgevingsregister. Voor formele toetsing moeten actuele wetgeving, lokale bouwregels, normen, vergunningseisen en projectspecifieke voorwaarden door bevoegde deskundigen worden gecontroleerd."
             }
         },
@@ -5837,7 +5896,7 @@
                 },
                 "digital_twin_learning": {
                     "status": "DIGITAL_TWIN_LEERLOG_GEREED",
-                    "object_count": 34,
+                    "object_count": 35,
                     "source_count": 3,
                     "lesson": "Alle engine-resultaten moeten als object in de Digital Twin worden opgeslagen."
                 },
@@ -5885,7 +5944,7 @@
                         "menselijke controle toevoegen voordat leerregels definitief worden"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Learning Engine v1.0 maakt een conceptuele projectleeranalyse. Werkelijke autonome verbetering vereist gecontroleerde opslag, validatie, versiebeheer en menselijke goedkeuring van leerregels."
             }
         },
@@ -5911,7 +5970,7 @@
                 },
                 "engine_sequence": {
                     "status": "ENGINE_SEQUENCE_GEREGISTREERD",
-                    "total_engines": 34,
+                    "total_engines": 35,
                     "sequence": [
                         {
                             "order": 1,
@@ -6027,125 +6086,132 @@
                         },
                         {
                             "order": 17,
+                            "engine_key": "dxf_writer",
+                            "engine_name": "ProjectDxfWriterEngine",
+                            "status": "PROJECT_DXF_FILES_OPGESLAGEN",
+                            "executed": true
+                        },
+                        {
+                            "order": 18,
                             "engine_key": "cost",
                             "engine_name": "CostEngine",
                             "status": "COST_ESTIMATE_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 18,
+                            "order": 19,
                             "engine_key": "planning",
                             "engine_name": "PlanningEngine",
                             "status": "PLANNING_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 19,
+                            "order": 20,
                             "engine_key": "traffic_parking",
                             "engine_name": "TrafficParkingEngine",
                             "status": "TRAFFIC_PARKING_ANALYSE_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 20,
+                            "order": 21,
                             "engine_key": "drainage_sewerage",
                             "engine_name": "DrainageSewerageEngine",
                             "status": "DRAINAGE_SEWERAGE_DESIGN_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 21,
+                            "order": 22,
                             "engine_key": "aerius",
                             "engine_name": "AERIUSEngine",
                             "status": "AERIUS_VOORBEREIDING_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 22,
+                            "order": 23,
                             "engine_key": "gis",
                             "engine_name": "GISMapEngine",
                             "status": "GIS_MAP_ANALYSE_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 23,
+                            "order": 24,
                             "engine_key": "quantity",
                             "engine_name": "QuantityEngine",
                             "status": "QUANTITY_TAKEOFF_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 24,
+                            "order": 25,
                             "engine_key": "validation",
                             "engine_name": "ValidationEngine",
                             "status": "VALIDATION_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 25,
+                            "order": 26,
                             "engine_key": "specification",
                             "engine_name": "SpecificationEngine",
                             "status": "SPECIFICATION_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 26,
+                            "order": 27,
                             "engine_key": "tender",
                             "engine_name": "TenderEngine",
                             "status": "TENDER_PACKAGE_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 27,
+                            "order": 28,
                             "engine_key": "contract",
                             "engine_name": "ContractEngine",
                             "status": "CONTRACT_PACKAGE_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 28,
+                            "order": 29,
                             "engine_key": "construction_execution",
                             "engine_name": "ConstructionExecutionEngine",
                             "status": "EXECUTION_PLAN_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 29,
+                            "order": 30,
                             "engine_key": "site_monitoring",
                             "engine_name": "SiteMonitoringEngine",
                             "status": "SITE_MONITORING_PLAN_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 30,
+                            "order": 31,
                             "engine_key": "as_built",
                             "engine_name": "AsBuiltEngine",
                             "status": "AS_BUILT_PACKAGE_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 31,
+                            "order": 32,
                             "engine_key": "asset_management",
                             "engine_name": "AssetManagementEngine",
                             "status": "ASSET_MANAGEMENT_PLAN_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 32,
+                            "order": 33,
                             "engine_key": "sustainability",
                             "engine_name": "SustainabilityEngine",
                             "status": "SUSTAINABILITY_ANALYSIS_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 33,
+                            "order": 34,
                             "engine_key": "global_codes",
                             "engine_name": "GlobalCodesEngine",
                             "status": "GLOBAL_CODES_ANALYSIS_GEREED",
                             "executed": true
                         },
                         {
-                            "order": 34,
+                            "order": 35,
                             "engine_key": "learning",
                             "engine_name": "LearningEngine",
                             "status": "PROJECT_LEARNING_GEREED",
@@ -6156,11 +6222,11 @@
                 "status_summary": {
                     "status": "ENGINE_STATUS_SUMMARY_GEREED",
                     "runtime_status": "RUNTIME_FLOW_MET_AANDACHTSPUNTEN",
-                    "total_engines": 34,
+                    "total_engines": 35,
                     "completed_engines": 30,
                     "unknown_status_engines": 0,
-                    "warning_status_engines": 4,
-                    "completion_percent": 88.2,
+                    "warning_status_engines": 5,
+                    "completion_percent": 85.7,
                     "engine_statuses": {
                         "project_selector": "PROJECT_SELECTIE_GEREED",
                         "project_config": "PROJECT_CONFIG_GELADEN",
@@ -6178,6 +6244,7 @@
                         "document_export": "DOCUMENT_EXPORT_GEREED",
                         "drawing_export": "DRAWING_EXPORT_GEREED",
                         "cad_export": "CAD_EXPORT_GEREED",
+                        "dxf_writer": "PROJECT_DXF_FILES_OPGESLAGEN",
                         "cost": "COST_ESTIMATE_GEREED",
                         "planning": "PLANNING_GEREED",
                         "traffic_parking": "TRAFFIC_PARKING_ANALYSE_GEREED",
@@ -6200,7 +6267,7 @@
                 },
                 "runtime_checks": {
                     "status": "RUNTIME_CHECKS_GEREED",
-                    "digital_twin_object_count": 35,
+                    "digital_twin_object_count": 36,
                     "digital_twin_source_count": 3,
                     "checks": [
                         {
@@ -6301,10 +6368,10 @@
                         "autonome modus koppelen aan startscherm"
                     ]
                 },
-                "created_at": "2026-06-24T13:13:46",
+                "created_at": "2026-06-24T14:52:17",
                 "disclaimer": "Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.",
                 "runtime_mode": "autonomous",
-                "launcher_project_id": "plutostraat"
+                "launcher_project_id": null
             }
         }
     ],

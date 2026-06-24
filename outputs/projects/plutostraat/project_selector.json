@@ -4,7 +4,7 @@
     "status": "PROJECT_SELECTIE_GEREED",
     "calculation_level": "projectbibliotheek en projectselectie",
     "index_path": "configs\\projects\\project_index.json",
-    "requested_project_id": "plutostraat",
+    "requested_project_id": null,
     "active_project_id": "plutostraat",
     "selected_project": {
         "project_id": "plutostraat",
@@ -80,6 +80,6 @@
             "projectbibliotheek uitbreiden met status, datum, opdrachtgever en revisie"
         ]
     },
-    "created_at": "2026-06-24T13:13:45",
+    "created_at": "2026-06-24T14:52:17",
     "disclaimer": "Deze Project Selector Engine v1.0 kiest een project uit een lokale JSON-projectindex. Later kan deze selectie worden gekoppeld aan het BAOEES startscherm, gebruikersprofielen, projectbibliotheek, uploadmap en cloudopslag."
 }

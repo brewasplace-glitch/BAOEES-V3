@@ -17,7 +17,7 @@
     },
     "engine_sequence": {
         "status": "ENGINE_SEQUENCE_GEREGISTREERD",
-        "total_engines": 34,
+        "total_engines": 35,
         "sequence": [
             {
                 "order": 1,
@@ -133,125 +133,132 @@
             },
             {
                 "order": 17,
+                "engine_key": "dxf_writer",
+                "engine_name": "ProjectDxfWriterEngine",
+                "status": "PROJECT_DXF_FILES_OPGESLAGEN",
+                "executed": true
+            },
+            {
+                "order": 18,
                 "engine_key": "cost",
                 "engine_name": "CostEngine",
                 "status": "COST_ESTIMATE_GEREED",
                 "executed": true
             },
             {
-                "order": 18,
+                "order": 19,
                 "engine_key": "planning",
                 "engine_name": "PlanningEngine",
                 "status": "PLANNING_GEREED",
                 "executed": true
             },
             {
-                "order": 19,
+                "order": 20,
                 "engine_key": "traffic_parking",
                 "engine_name": "TrafficParkingEngine",
                 "status": "TRAFFIC_PARKING_ANALYSE_GEREED",
                 "executed": true
             },
             {
-                "order": 20,
+                "order": 21,
                 "engine_key": "drainage_sewerage",
                 "engine_name": "DrainageSewerageEngine",
                 "status": "DRAINAGE_SEWERAGE_DESIGN_GEREED",
                 "executed": true
             },
             {
-                "order": 21,
+                "order": 22,
                 "engine_key": "aerius",
                 "engine_name": "AERIUSEngine",
                 "status": "AERIUS_VOORBEREIDING_GEREED",
                 "executed": true
             },
             {
-                "order": 22,
+                "order": 23,
                 "engine_key": "gis",
                 "engine_name": "GISMapEngine",
                 "status": "GIS_MAP_ANALYSE_GEREED",
                 "executed": true
             },
             {
-                "order": 23,
+                "order": 24,
                 "engine_key": "quantity",
                 "engine_name": "QuantityEngine",
                 "status": "QUANTITY_TAKEOFF_GEREED",
                 "executed": true
             },
             {
-                "order": 24,
+                "order": 25,
                 "engine_key": "validation",
                 "engine_name": "ValidationEngine",
                 "status": "VALIDATION_GEREED",
                 "executed": true
             },
             {
-                "order": 25,
+                "order": 26,
                 "engine_key": "specification",
                 "engine_name": "SpecificationEngine",
                 "status": "SPECIFICATION_GEREED",
                 "executed": true
             },
             {
-                "order": 26,
+                "order": 27,
                 "engine_key": "tender",
                 "engine_name": "TenderEngine",
                 "status": "TENDER_PACKAGE_GEREED",
                 "executed": true
             },
             {
-                "order": 27,
+                "order": 28,
                 "engine_key": "contract",
                 "engine_name": "ContractEngine",
                 "status": "CONTRACT_PACKAGE_GEREED",
                 "executed": true
             },
             {
-                "order": 28,
+                "order": 29,
                 "engine_key": "construction_execution",
                 "engine_name": "ConstructionExecutionEngine",
                 "status": "EXECUTION_PLAN_GEREED",
                 "executed": true
             },
             {
-                "order": 29,
+                "order": 30,
                 "engine_key": "site_monitoring",
                 "engine_name": "SiteMonitoringEngine",
                 "status": "SITE_MONITORING_PLAN_GEREED",
                 "executed": true
             },
             {
-                "order": 30,
+                "order": 31,
                 "engine_key": "as_built",
                 "engine_name": "AsBuiltEngine",
                 "status": "AS_BUILT_PACKAGE_GEREED",
                 "executed": true
             },
             {
-                "order": 31,
+                "order": 32,
                 "engine_key": "asset_management",
                 "engine_name": "AssetManagementEngine",
                 "status": "ASSET_MANAGEMENT_PLAN_GEREED",
                 "executed": true
             },
             {
-                "order": 32,
+                "order": 33,
                 "engine_key": "sustainability",
                 "engine_name": "SustainabilityEngine",
                 "status": "SUSTAINABILITY_ANALYSIS_GEREED",
                 "executed": true
             },
             {
-                "order": 33,
+                "order": 34,
                 "engine_key": "global_codes",
                 "engine_name": "GlobalCodesEngine",
                 "status": "GLOBAL_CODES_ANALYSIS_GEREED",
                 "executed": true
             },
             {
-                "order": 34,
+                "order": 35,
                 "engine_key": "learning",
                 "engine_name": "LearningEngine",
                 "status": "PROJECT_LEARNING_GEREED",
@@ -262,11 +269,11 @@
     "status_summary": {
         "status": "ENGINE_STATUS_SUMMARY_GEREED",
         "runtime_status": "RUNTIME_FLOW_MET_AANDACHTSPUNTEN",
-        "total_engines": 34,
+        "total_engines": 35,
         "completed_engines": 30,
         "unknown_status_engines": 0,
-        "warning_status_engines": 4,
-        "completion_percent": 88.2,
+        "warning_status_engines": 5,
+        "completion_percent": 85.7,
         "engine_statuses": {
             "project_selector": "PROJECT_SELECTIE_GEREED",
             "project_config": "PROJECT_CONFIG_GELADEN",
@@ -284,6 +291,7 @@
             "document_export": "DOCUMENT_EXPORT_GEREED",
             "drawing_export": "DRAWING_EXPORT_GEREED",
             "cad_export": "CAD_EXPORT_GEREED",
+            "dxf_writer": "PROJECT_DXF_FILES_OPGESLAGEN",
             "cost": "COST_ESTIMATE_GEREED",
             "planning": "PLANNING_GEREED",
             "traffic_parking": "TRAFFIC_PARKING_ANALYSE_GEREED",
@@ -306,7 +314,7 @@
     },
     "runtime_checks": {
         "status": "RUNTIME_CHECKS_GEREED",
-        "digital_twin_object_count": 35,
+        "digital_twin_object_count": 36,
         "digital_twin_source_count": 3,
         "checks": [
             {
@@ -407,7 +415,7 @@
             "autonome modus koppelen aan startscherm"
         ]
     },
-    "created_at": "2026-06-24T13:08:38",
+    "created_at": "2026-06-24T14:52:29",
     "disclaimer": "Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.",
     "runtime_mode": "autonomous",
     "launcher_project_id": "bruynzeel_waterfront"

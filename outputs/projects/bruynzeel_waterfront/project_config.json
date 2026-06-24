@@ -151,6 +151,6 @@
             "projectbibliotheek koppelen"
         ]
     },
-    "created_at": "2026-06-24T13:08:38",
+    "created_at": "2026-06-24T14:52:29",
     "disclaimer": "Deze Project Configuration Engine v1.1 ondersteunt standaardconfiguratie, optionele config_data en projectinvoer via JSON. Later kan dit worden gekoppeld aan upload, kaartselectie, formulierinvoer, spraakinvoer en projectbibliotheek."
 }
