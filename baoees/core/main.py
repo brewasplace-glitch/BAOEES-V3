@@ -4,6 +4,7 @@ from baoees.project_selector_engine.main import ProjectSelectorEngine
 from baoees.project_config_engine.main import ProjectConfigEngine
 from baoees.project_storage_engine.main import ProjectStorageEngine
 from baoees.project_file_writer_engine.main import ProjectFileWriterEngine
+from baoees.project_report_writer_engine.main import ProjectReportWriterEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -49,6 +50,7 @@ class BAOEESCore:
         self.project_config = ProjectConfigEngine()
         self.project_storage = ProjectStorageEngine()
         self.project_file_writer = ProjectFileWriterEngine()
+        self.project_report_writer = ProjectReportWriterEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -89,10 +91,7 @@ class BAOEESCore:
 
         print("\n=== START PROJECTANALYSE ===\n")
 
-        selector_result = self.project_selector.select_project(
-            project_id=project_id
-        )
-
+        selector_result = self.project_selector.select_project(project_id=project_id)
         selected_config_path = selector_result["selected_config_path"]
 
         print("Project Selector / Project Library Engine resultaat:")
@@ -102,7 +101,6 @@ class BAOEESCore:
         config_result = self.project_config.load_project_config(
             config_path=selected_config_path
         )
-
         project_config = config_result["project_config"]
 
         print("Project Configuration / Input Engine resultaat:")
@@ -699,6 +697,27 @@ class BAOEESCore:
             data=file_writer_result
         )
 
+        report_writer_result = self.project_report_writer.write_project_report(
+            project_result=project_result,
+            storage_result=storage_result,
+            config_result=config_result,
+            selector_result=selector_result,
+            reporting_result=reporting_result,
+            geo_result=geo_result,
+            structural_result=structural_result,
+            permit_result=permit_result,
+            cost_result=cost_result,
+            planning_result=planning_result,
+            validation_result=validation_result,
+            runtime_result=runtime_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_report_writer",
+            name="BAOEES Project Report Writer Engine rapportbestanden",
+            data=report_writer_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result,
             storage_result=storage_result,
@@ -819,6 +838,10 @@ class BAOEESCore:
         pprint(file_writer_result)
         print("")
 
+        print("Project Report Writer Engine resultaat:")
+        pprint(report_writer_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -831,6 +854,7 @@ class BAOEESCore:
         self.project_config.run()
         self.project_storage.run()
         self.project_file_writer.run()
+        self.project_report_writer.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
