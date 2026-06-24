@@ -10,6 +10,7 @@ from baoees.project_dxf_writer_engine.main import ProjectDxfWriterEngine
 from baoees.project_drawing_pdf_writer_engine.main import ProjectDrawingPdfWriterEngine
 from baoees.project_csv_excel_export_engine.main import ProjectCsvExcelExportEngine
 from baoees.project_xlsx_export_engine.main import ProjectXlsxExportEngine
+from baoees.project_html_dashboard_export_engine.main import ProjectHtmlDashboardExportEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -61,6 +62,7 @@ class BAOEESCore:
         self.project_drawing_pdf_writer = ProjectDrawingPdfWriterEngine()
         self.project_csv_excel_export = ProjectCsvExcelExportEngine()
         self.project_xlsx_export = ProjectXlsxExportEngine()
+        self.project_html_dashboard_export = ProjectHtmlDashboardExportEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -805,6 +807,25 @@ class BAOEESCore:
             data=pdf_docx_result
         )
 
+        html_dashboard_result = self.project_html_dashboard_export.export_project_dashboard(
+            project_result=project_result,
+            storage_result=storage_result,
+            report_writer_result=report_writer_result,
+            pdf_docx_result=pdf_docx_result,
+            dxf_writer_result=dxf_writer_result,
+            drawing_pdf_result=drawing_pdf_result,
+            csv_excel_result=csv_excel_result,
+            xlsx_result=xlsx_result,
+            validation_result=validation_result,
+            runtime_result=runtime_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_html_dashboard_export",
+            name="BAOEES Project HTML Dashboard Export Engine dashboard",
+            data=html_dashboard_result
+        )
+
         zip_result = self.project_zip.create_project_zip(
             export_result=export_result,
             storage_result=storage_result,
@@ -949,6 +970,10 @@ class BAOEESCore:
         pprint(pdf_docx_result)
         print("")
 
+        print("Project HTML Dashboard Export Engine resultaat:")
+        pprint(html_dashboard_result)
+        print("")
+
         print("Project ZIP Engine resultaat:")
         pprint(zip_result)
         print("")
@@ -967,6 +992,7 @@ class BAOEESCore:
         self.project_drawing_pdf_writer.run()
         self.project_csv_excel_export.run()
         self.project_xlsx_export.run()
+        self.project_html_dashboard_export.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()

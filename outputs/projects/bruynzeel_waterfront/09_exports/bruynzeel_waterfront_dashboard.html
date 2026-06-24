@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <title>BAOEES Dashboard - Bruynzeel Waterfront District</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+        }
+
+        header {
+            padding: 32px;
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 8px 0 0 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            padding: 28px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        .card h2 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            color: #93c5fd;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #064e3b;
+            color: #d1fae5;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status.unknown {
+            background: #78350f;
+            color: #ffedd5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #334155;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #1f2937;
+            color: #bfdbfe;
+        }
+
+        a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .small {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        footer {
+            padding: 24px 28px;
+            color: #94a3b8;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BAOEES Projectdashboard</h1>
+        <p>Bruynzeel Waterfront District | Project-ID: bruynzeel_waterfront</p>
+    </header>
+
+    <main>
+        <section class="grid">
+            <div class="card">
+                <h2>Project</h2>
+                <p><strong>Naam:</strong> Bruynzeel Waterfront District</p>
+                <p><strong>Type:</strong> Gebiedsontwikkeling</p>
+                <p><strong>Locatie:</strong> Paramaribo, Suriname</p>
+                <p><strong>Land:</strong> Suriname</p>
+            </div>
+
+            <div class="card">
+                <h2>Runtime</h2>
+                <p><strong>Mode:</strong> autonomous</p>
+                <p><strong>Status:</strong> RUNTIME_ORCHESTRATION_LOG_GEREED</p>
+                <p><strong>Datum:</strong> 2026-06-24T18:08:13</p>
+            </div>
+
+            <div class="card">
+                <h2>QA/QC</h2>
+                <p><strong>Status:</strong> VALIDATION_GEREED</p>
+                <p><strong>Go/No-Go:</strong> {&#x27;decision&#x27;: &#x27;NO_GO_EERST_HERSTELLEN&#x27;, &#x27;advice&#x27;: &#x27;Projectoutput bevat te veel aandachtspunten. Los eerst ontbrekende data en risico’s op.&#x27;, &#x27;status&#x27;: &#x27;GO_NO_GO_ADVIES_GEREED&#x27;}</p>
+            </div>
+
+            <div class="card">
+                <h2>Projectmap</h2>
+                <p class="small">outputs\projects\bruynzeel_waterfront</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Engine status</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h2>Markdown/TXT rapport</h2>
+                    <span class="status">PROJECT_REPORT_FILES_OPGESLAGEN</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>PDF/DOCX rapport</h2>
+                    <span class="status">PDF_DOCX_REPORTS_OPGESLAGEN</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>DXF tekeningen</h2>
+                    <span class="status">PROJECT_DXF_FILES_OPGESLAGEN</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>PDF tekeningen</h2>
+                    <span class="status">PROJECT_DRAWING_PDF_FILES_OPGESLAGEN</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>CSV/Excel-tabellen</h2>
+                    <span class="status">PROJECT_CSV_EXCEL_FILES_OPGESLAGEN</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>XLSX werkboek</h2>
+                    <span class="status">PROJECT_XLSX_FILE_OPGESLAGEN</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>QA/QC validatie</h2>
+                    <span class="status">VALIDATION_GEREED</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>Runtime log</h2>
+                    <span class="status">RUNTIME_ORCHESTRATION_LOG_GEREED</span>
+                </div>
+                
+
+                <div class="card">
+                    <h2>ZIP export</h2>
+                    <span class="status unknown">ONBEKEND</span>
+                </div>
+                
+            </div>
+        </section>
+
+        <section>
+            <h2>Projectbestanden openen</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categorie</th>
+                        <th>Bestand</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr>
+                    <td>Rapport</td>
+                    <td>bruynzeel_waterfront_project_report.md</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.md">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>Rapport</td>
+                    <td>bruynzeel_waterfront_project_report.txt</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.txt">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>Rapport</td>
+                    <td>bruynzeel_waterfront_project_report.pdf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.pdf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>Rapport</td>
+                    <td>bruynzeel_waterfront_project_report.docx</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.docx">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>PDF-tekening</td>
+                    <td>bruynzeel_waterfront_situatie.pdf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_situatie.pdf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>PDF-tekening</td>
+                    <td>bruynzeel_waterfront_plattegrond.pdf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_plattegrond.pdf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>PDF-tekening</td>
+                    <td>bruynzeel_waterfront_doorsnede.pdf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_doorsnede.pdf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>DXF</td>
+                    <td>bruynzeel_waterfront_situatie.dxf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_situatie.dxf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>DXF</td>
+                    <td>bruynzeel_waterfront_plattegrond.dxf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_plattegrond.dxf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>DXF</td>
+                    <td>bruynzeel_waterfront_doorsnede.dxf</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_doorsnede.dxf">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>CSV</td>
+                    <td>bruynzeel_waterfront_project_summary.csv</td>
+                    <td><a href="bruynzeel_waterfront_project_summary.csv">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>CSV</td>
+                    <td>bruynzeel_waterfront_cost_estimate.csv</td>
+                    <td><a href="bruynzeel_waterfront_cost_estimate.csv">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>CSV</td>
+                    <td>bruynzeel_waterfront_planning.csv</td>
+                    <td><a href="bruynzeel_waterfront_planning.csv">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>CSV</td>
+                    <td>bruynzeel_waterfront_quantity_boq.csv</td>
+                    <td><a href="bruynzeel_waterfront_quantity_boq.csv">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>CSV</td>
+                    <td>bruynzeel_waterfront_qa_qc.csv</td>
+                    <td><a href="bruynzeel_waterfront_qa_qc.csv">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>XLSX</td>
+                    <td>bruynzeel_waterfront_project_tables.xlsx</td>
+                    <td><a href="bruynzeel_waterfront_project_tables.xlsx">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>JSON</td>
+                    <td>digital_twin.json</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/07_digital_twin/digital_twin.json">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>JSON</td>
+                    <td>source_register.json</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/06_sources/source_register.json">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>JSON</td>
+                    <td>runtime_log.json</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/08_runtime_logs/runtime_log.json">Openen</a></td>
+                </tr>
+                
+
+                <tr>
+                    <td>ZIP</td>
+                    <td>bruynzeel_waterfront_project_export.zip</td>
+                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/10_zip/bruynzeel_waterfront_project_export.zip">Openen</a></td>
+                </tr>
+                
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        BAOEES V3 HTML Dashboard Export Engine v1.0 — automatisch gegenereerd dashboard.
+    </footer>
+</body>
+</html>
