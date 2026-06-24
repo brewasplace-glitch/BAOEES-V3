@@ -7,6 +7,7 @@ from baoees.project_file_writer_engine.main import ProjectFileWriterEngine
 from baoees.project_report_writer_engine.main import ProjectReportWriterEngine
 from baoees.project_pdf_docx_writer_engine.main import ProjectPdfDocxWriterEngine
 from baoees.project_dxf_writer_engine.main import ProjectDxfWriterEngine
+from baoees.project_drawing_pdf_writer_engine.main import ProjectDrawingPdfWriterEngine
 from baoees.project_analyzer.main import ProjectAnalyzer
 from baoees.aaie.main import AAIEEngine
 from baoees.variant_engine.main import VariantEngine
@@ -55,6 +56,7 @@ class BAOEESCore:
         self.project_report_writer = ProjectReportWriterEngine()
         self.project_pdf_docx_writer = ProjectPdfDocxWriterEngine()
         self.project_dxf_writer = ProjectDxfWriterEngine()
+        self.project_drawing_pdf_writer = ProjectDrawingPdfWriterEngine()
 
         self.project_analyzer = ProjectAnalyzer()
         self.aaie = AAIEEngine()
@@ -340,6 +342,19 @@ class BAOEESCore:
             object_type="project_dxf_writer",
             name="BAOEES Project DXF Writer Engine tekenbestanden",
             data=dxf_writer_result
+        )
+
+        drawing_pdf_result = self.project_drawing_pdf_writer.write_drawing_pdfs(
+            project_result=project_result,
+            storage_result=storage_result,
+            drawing_result=drawing_result,
+            dxf_writer_result=dxf_writer_result
+        )
+
+        self.digital_twin.add_object(
+            object_type="project_drawing_pdf_writer",
+            name="BAOEES Project Drawing PDF Writer Engine tekening-PDF-bestanden",
+            data=drawing_pdf_result
         )
 
         cost_result = self.cost.estimate_costs(
@@ -665,6 +680,7 @@ class BAOEESCore:
             "drawing_export": drawing_result,
             "cad_export": cad_result,
             "dxf_writer": dxf_writer_result,
+            "drawing_pdf_writer": drawing_pdf_result,
             "cost": cost_result,
             "planning": planning_result,
             "traffic_parking": traffic_parking_result,
@@ -796,6 +812,10 @@ class BAOEESCore:
         pprint(dxf_writer_result)
         print("")
 
+        print("Project Drawing PDF Writer Engine resultaat:")
+        pprint(drawing_pdf_result)
+        print("")
+
         print("Cost Estimate Engine resultaat:")
         pprint(cost_result)
         print("")
@@ -899,6 +919,7 @@ class BAOEESCore:
         self.project_report_writer.run()
         self.project_pdf_docx_writer.run()
         self.project_dxf_writer.run()
+        self.project_drawing_pdf_writer.run()
         self.aaie.run()
         self.variant.run()
         self.geo.run()
