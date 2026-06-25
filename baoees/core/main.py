@@ -113,6 +113,13 @@ class BAOEESCore:
         pprint(result)
         print("")
 
+    def add_to_digital_twin(self, object_type, name, data):
+        self.digital_twin.add_object(
+            object_type=object_type,
+            name=name,
+            data=data
+        )
+
     def start_projectanalyse(self, project_id=None, runtime_mode="autonomous"):
 
         print("\n=== START PROJECTANALYSE ===\n")
@@ -185,47 +192,47 @@ class BAOEESCore:
             aaie_result=aaie_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_selector",
-            name="BAOEES Project Selector / Project Library Engine projectkeuze",
-            data=selector_result
+        self.add_to_digital_twin(
+            "project_selector",
+            "BAOEES Project Selector / Project Library Engine projectkeuze",
+            selector_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_configuration",
-            name="BAOEES Project Configuration / Input Engine projectinvoer",
-            data=config_result
+        self.add_to_digital_twin(
+            "project_configuration",
+            "BAOEES Project Configuration / Input Engine projectinvoer",
+            config_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_storage",
-            name="BAOEES Project Storage / Output Folder Engine projectmap",
-            data=storage_result
+        self.add_to_digital_twin(
+            "project_storage",
+            "BAOEES Project Storage / Output Folder Engine projectmap",
+            storage_result
         )
 
         for variant in variant_result["variants"]:
-            self.digital_twin.add_object(
-                object_type="design_variant",
-                name=f"Variant {variant['variant']} - {variant['name']}",
-                data=variant
+            self.add_to_digital_twin(
+                "design_variant",
+                f"Variant {variant['variant']} - {variant['name']}",
+                variant
             )
 
-        self.digital_twin.add_object(
-            object_type="geo_analysis",
-            name="BAOEES Geo Engine analyse",
-            data=geo_result
+        self.add_to_digital_twin(
+            "geo_analysis",
+            "BAOEES Geo Engine analyse",
+            geo_result
         )
 
-        self.digital_twin.add_object(
-            object_type="structural_analysis",
-            name="BAOEES Structural Engine analyse",
-            data=structural_result
+        self.add_to_digital_twin(
+            "structural_analysis",
+            "BAOEES Structural Engine analyse",
+            structural_result
         )
 
-        self.digital_twin.add_object(
-            object_type="permit_strategy",
-            name="BAOEES Permit Engine vergunningstrategie",
-            data=permit_result
+        self.add_to_digital_twin(
+            "permit_strategy",
+            "BAOEES Permit Engine vergunningstrategie",
+            permit_result
         )
 
         stee_result = self.stee.register_project_sources(
@@ -246,10 +253,10 @@ class BAOEESCore:
             stee_result=stee_result
         )
 
-        self.digital_twin.add_object(
-            object_type="workflow",
-            name="BAOEES automatische projectworkflow",
-            data=workflow_result
+        self.add_to_digital_twin(
+            "workflow",
+            "BAOEES automatische projectworkflow",
+            workflow_result
         )
 
         reporting_result = self.reporting.generate_report_structure(
@@ -264,10 +271,10 @@ class BAOEESCore:
             digital_twin_data=self.digital_twin.get_project_data()
         )
 
-        self.digital_twin.add_object(
-            object_type="reporting_output",
-            name="BAOEES Reporting Engine rapportstructuur",
-            data=reporting_result
+        self.add_to_digital_twin(
+            "reporting_output",
+            "BAOEES Reporting Engine rapportstructuur",
+            reporting_result
         )
 
         export_result = self.project_export.create_project_export(
@@ -277,10 +284,10 @@ class BAOEESCore:
             stee_result=stee_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_export",
-            name="BAOEES Project Export Engine exportpakket",
-            data=export_result
+        self.add_to_digital_twin(
+            "project_export",
+            "BAOEES Project Export Engine exportpakket",
+            export_result
         )
 
         document_result = self.document_export.create_documents(
@@ -289,10 +296,10 @@ class BAOEESCore:
             export_result=export_result
         )
 
-        self.digital_twin.add_object(
-            object_type="document_export",
-            name="BAOEES PDF/DOCX Export Engine documenten",
-            data=document_result
+        self.add_to_digital_twin(
+            "document_export",
+            "BAOEES PDF/DOCX Export Engine documenten",
+            document_result
         )
 
         drawing_result = self.drawing_export.create_drawings(
@@ -303,10 +310,10 @@ class BAOEESCore:
             export_result=export_result
         )
 
-        self.digital_twin.add_object(
-            object_type="drawing_export",
-            name="BAOEES Drawing Export Engine tekeningen",
-            data=drawing_result
+        self.add_to_digital_twin(
+            "drawing_export",
+            "BAOEES Drawing Export Engine tekeningen",
+            drawing_result
         )
 
         cad_result = self.cad_export.create_cad_exports(
@@ -317,10 +324,10 @@ class BAOEESCore:
             export_result=export_result
         )
 
-        self.digital_twin.add_object(
-            object_type="cad_export",
-            name="BAOEES CAD/DXF Export Engine CAD-bestanden",
-            data=cad_result
+        self.add_to_digital_twin(
+            "cad_export",
+            "BAOEES CAD/DXF Export Engine CAD-bestanden",
+            cad_result
         )
 
         dxf_writer_result = self.project_dxf_writer.write_project_dxfs(
@@ -332,10 +339,10 @@ class BAOEESCore:
             structural_result=structural_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_dxf_writer",
-            name="BAOEES Project DXF Writer Engine tekenbestanden",
-            data=dxf_writer_result
+        self.add_to_digital_twin(
+            "project_dxf_writer",
+            "BAOEES Project DXF Writer Engine tekenbestanden",
+            dxf_writer_result
         )
 
         drawing_pdf_result = self.project_drawing_pdf_writer.write_drawing_pdfs(
@@ -345,10 +352,10 @@ class BAOEESCore:
             dxf_writer_result=dxf_writer_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_drawing_pdf_writer",
-            name="BAOEES Project Drawing PDF Writer Engine tekening-PDF-bestanden",
-            data=drawing_pdf_result
+        self.add_to_digital_twin(
+            "project_drawing_pdf_writer",
+            "BAOEES Project Drawing PDF Writer Engine tekening-PDF-bestanden",
+            drawing_pdf_result
         )
 
         cost_result = self.cost.estimate_costs(
@@ -362,10 +369,10 @@ class BAOEESCore:
             cad_result=cad_result
         )
 
-        self.digital_twin.add_object(
-            object_type="cost_estimate",
-            name="BAOEES Cost Estimate Engine kostenraming",
-            data=cost_result
+        self.add_to_digital_twin(
+            "cost_estimate",
+            "BAOEES Cost Estimate Engine kostenraming",
+            cost_result
         )
 
         planning_result = self.planning.create_planning(
@@ -379,10 +386,10 @@ class BAOEESCore:
             cost_result=cost_result
         )
 
-        self.digital_twin.add_object(
-            object_type="planning",
-            name="BAOEES Planning Engine projectplanning",
-            data=planning_result
+        self.add_to_digital_twin(
+            "planning",
+            "BAOEES Planning Engine projectplanning",
+            planning_result
         )
 
         traffic_parking_result = self.traffic_parking.analyze_traffic_and_parking(
@@ -393,10 +400,10 @@ class BAOEESCore:
             cost_result=cost_result
         )
 
-        self.digital_twin.add_object(
-            object_type="traffic_parking",
-            name="BAOEES Traffic & Parking Engine verkeers- en parkeeranalyse",
-            data=traffic_parking_result
+        self.add_to_digital_twin(
+            "traffic_parking",
+            "BAOEES Traffic & Parking Engine verkeers- en parkeeranalyse",
+            traffic_parking_result
         )
 
         drainage_result = self.drainage_sewerage.design_drainage_and_sewerage(
@@ -408,10 +415,10 @@ class BAOEESCore:
             cost_result=cost_result
         )
 
-        self.digital_twin.add_object(
-            object_type="drainage_sewerage",
-            name="BAOEES Drainage & Sewerage Engine riolering en afwatering",
-            data=drainage_result
+        self.add_to_digital_twin(
+            "drainage_sewerage",
+            "BAOEES Drainage & Sewerage Engine riolering en afwatering",
+            drainage_result
         )
 
         aerius_result = self.aerius.prepare_aerius_assessment(
@@ -423,10 +430,10 @@ class BAOEESCore:
             drainage_result=drainage_result
         )
 
-        self.digital_twin.add_object(
-            object_type="aerius_stikstof",
-            name="BAOEES AERIUS / Stikstof Engine voorbereiding",
-            data=aerius_result
+        self.add_to_digital_twin(
+            "aerius_stikstof",
+            "BAOEES AERIUS / Stikstof Engine voorbereiding",
+            aerius_result
         )
 
         gis_result = self.gis_map.analyze_location_and_maps(
@@ -438,10 +445,10 @@ class BAOEESCore:
             aerius_result=aerius_result
         )
 
-        self.digital_twin.add_object(
-            object_type="gis_map",
-            name="BAOEES GIS / Map Engine locatie- en kaartanalyse",
-            data=gis_result
+        self.add_to_digital_twin(
+            "gis_map",
+            "BAOEES GIS / Map Engine locatie- en kaartanalyse",
+            gis_result
         )
 
         quantity_result = self.quantity.generate_quantities(
@@ -455,10 +462,10 @@ class BAOEESCore:
             cad_result=cad_result
         )
 
-        self.digital_twin.add_object(
-            object_type="quantity_boq",
-            name="BAOEES Quantity / BOQ Engine hoeveelhedenstaat",
-            data=quantity_result
+        self.add_to_digital_twin(
+            "quantity_boq",
+            "BAOEES Quantity / BOQ Engine hoeveelhedenstaat",
+            quantity_result
         )
 
         validation_result = self.validation.validate_project(
@@ -484,10 +491,10 @@ class BAOEESCore:
             digital_twin_data=self.digital_twin.get_project_data()
         )
 
-        self.digital_twin.add_object(
-            object_type="validation_qa_qc",
-            name="BAOEES Validation & QA/QC Engine controle",
-            data=validation_result
+        self.add_to_digital_twin(
+            "validation_qa_qc",
+            "BAOEES Validation & QA/QC Engine controle",
+            validation_result
         )
 
         specification_result = self.specification.generate_specification(
@@ -503,10 +510,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="specification_bestek",
-            name="BAOEES Specification / Bestek Engine werkbeschrijving",
-            data=specification_result
+        self.add_to_digital_twin(
+            "specification_bestek",
+            "BAOEES Specification / Bestek Engine werkbeschrijving",
+            specification_result
         )
 
         tender_result = self.tender.prepare_tender_package(
@@ -520,10 +527,10 @@ class BAOEESCore:
             cad_result=cad_result
         )
 
-        self.digital_twin.add_object(
-            object_type="tender_procurement",
-            name="BAOEES Tender / Procurement Engine aanbestedingspakket",
-            data=tender_result
+        self.add_to_digital_twin(
+            "tender_procurement",
+            "BAOEES Tender / Procurement Engine aanbestedingspakket",
+            tender_result
         )
 
         contract_result = self.contract.prepare_contract_package(
@@ -538,10 +545,10 @@ class BAOEESCore:
             cad_result=cad_result
         )
 
-        self.digital_twin.add_object(
-            object_type="contract_agreement",
-            name="BAOEES Contract / Agreement Engine contractpakket",
-            data=contract_result
+        self.add_to_digital_twin(
+            "contract_agreement",
+            "BAOEES Contract / Agreement Engine contractpakket",
+            contract_result
         )
 
         construction_execution_result = self.construction_execution.prepare_execution_plan(
@@ -557,10 +564,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="construction_execution",
-            name="BAOEES Construction Execution Engine uitvoeringsplan",
-            data=construction_execution_result
+        self.add_to_digital_twin(
+            "construction_execution",
+            "BAOEES Construction Execution Engine uitvoeringsplan",
+            construction_execution_result
         )
 
         site_monitoring_result = self.site_monitoring.create_monitoring_plan(
@@ -571,10 +578,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="site_monitoring_progress",
-            name="BAOEES Site Monitoring / Progress Engine bouwplaatsbewaking",
-            data=site_monitoring_result
+        self.add_to_digital_twin(
+            "site_monitoring_progress",
+            "BAOEES Site Monitoring / Progress Engine bouwplaatsbewaking",
+            site_monitoring_result
         )
 
         as_built_result = self.as_built.prepare_as_built_package(
@@ -587,10 +594,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="as_built_delivery",
-            name="BAOEES As-Built / Oplever Engine opleverdossier",
-            data=as_built_result
+        self.add_to_digital_twin(
+            "as_built_delivery",
+            "BAOEES As-Built / Oplever Engine opleverdossier",
+            as_built_result
         )
 
         asset_result = self.asset_management.prepare_asset_management_plan(
@@ -601,10 +608,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="asset_management_maintenance",
-            name="BAOEES Asset Management / Maintenance Engine beheerdossier",
-            data=asset_result
+        self.add_to_digital_twin(
+            "asset_management_maintenance",
+            "BAOEES Asset Management / Maintenance Engine beheerdossier",
+            asset_result
         )
 
         sustainability_result = self.sustainability.analyze_sustainability(
@@ -618,10 +625,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="sustainability_climate",
-            name="BAOEES Sustainability / Climate Engine duurzaamheid en klimaat",
-            data=sustainability_result
+        self.add_to_digital_twin(
+            "sustainability_climate",
+            "BAOEES Sustainability / Climate Engine duurzaamheid en klimaat",
+            sustainability_result
         )
 
         codes_result = self.global_codes.analyze_codes_and_standards(
@@ -635,10 +642,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="global_codes_standards",
-            name="BAOEES Global Codes / Standards Engine normen en regelgeving",
-            data=codes_result
+        self.add_to_digital_twin(
+            "global_codes_standards",
+            "BAOEES Global Codes / Standards Engine normen en regelgeving",
+            codes_result
         )
 
         learning_result = self.learning.analyze_project_learning(
@@ -650,10 +657,10 @@ class BAOEESCore:
             digital_twin_data=self.digital_twin.get_project_data()
         )
 
-        self.digital_twin.add_object(
-            object_type="autonomous_learning_knowledge",
-            name="BAOEES Autonomous Learning / Knowledge Engine leeranalyse",
-            data=learning_result
+        self.add_to_digital_twin(
+            "autonomous_learning_knowledge",
+            "BAOEES Autonomous Learning / Knowledge Engine leeranalyse",
+            learning_result
         )
 
         engine_results = {
@@ -704,10 +711,10 @@ class BAOEESCore:
         runtime_result["runtime_mode"] = runtime_mode
         runtime_result["launcher_project_id"] = project_id
 
-        self.digital_twin.add_object(
-            object_type="runtime_orchestration",
-            name="BAOEES Runtime / Orchestration Engine runtime-log",
-            data=runtime_result
+        self.add_to_digital_twin(
+            "runtime_orchestration",
+            "BAOEES Runtime / Orchestration Engine runtime-log",
+            runtime_result
         )
 
         csv_excel_result = self.project_csv_excel_export.export_project_tables(
@@ -720,10 +727,10 @@ class BAOEESCore:
             runtime_result=runtime_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_csv_excel_export",
-            name="BAOEES Project CSV/Excel Export Engine projecttabellen",
-            data=csv_excel_result
+        self.add_to_digital_twin(
+            "project_csv_excel_export",
+            "BAOEES Project CSV/Excel Export Engine projecttabellen",
+            csv_excel_result
         )
 
         xlsx_result = self.project_xlsx_export.export_project_xlsx(
@@ -737,10 +744,10 @@ class BAOEESCore:
             csv_excel_result=csv_excel_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_xlsx_export",
-            name="BAOEES Project XLSX Export Engine Excel-werkboek",
-            data=xlsx_result
+        self.add_to_digital_twin(
+            "project_xlsx_export",
+            "BAOEES Project XLSX Export Engine Excel-werkboek",
+            xlsx_result
         )
 
         file_writer_result = self.project_file_writer.write_project_files(
@@ -754,10 +761,10 @@ class BAOEESCore:
             validation_result=validation_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_file_writer",
-            name="BAOEES Project File Writer / JSON Export Engine bestanden",
-            data=file_writer_result
+        self.add_to_digital_twin(
+            "project_file_writer",
+            "BAOEES Project File Writer / JSON Export Engine bestanden",
+            file_writer_result
         )
 
         report_writer_result = self.project_report_writer.write_project_report(
@@ -775,10 +782,10 @@ class BAOEESCore:
             runtime_result=runtime_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_report_writer",
-            name="BAOEES Project Report Writer Engine rapportbestanden",
-            data=report_writer_result
+        self.add_to_digital_twin(
+            "project_report_writer",
+            "BAOEES Project Report Writer Engine rapportbestanden",
+            report_writer_result
         )
 
         pdf_docx_result = self.project_pdf_docx_writer.write_pdf_docx_reports(
@@ -789,40 +796,10 @@ class BAOEESCore:
             runtime_result=runtime_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_pdf_docx_writer",
-            name="BAOEES PDF/DOCX Report Export Engine rapportbestanden",
-            data=pdf_docx_result
-        )
-
-        html_dashboard_result = self.project_html_dashboard_export.export_project_dashboard(
-            project_result=project_result,
-            storage_result=storage_result,
-            report_writer_result=report_writer_result,
-            pdf_docx_result=pdf_docx_result,
-            dxf_writer_result=dxf_writer_result,
-            drawing_pdf_result=drawing_pdf_result,
-            csv_excel_result=csv_excel_result,
-            xlsx_result=xlsx_result,
-            validation_result=validation_result,
-            runtime_result=runtime_result
-        )
-
-        self.digital_twin.add_object(
-            object_type="project_html_dashboard_export",
-            name="BAOEES Project HTML Dashboard Export Engine dashboard",
-            data=html_dashboard_result
-        )
-
-        index_result = self.project_index_startpage.create_project_index(
-            projects_root="outputs/projects",
-            project_index_path="configs/projects/project_index.json"
-        )
-
-        self.digital_twin.add_object(
-            object_type="project_index_startpage",
-            name="BAOEES Project Index / Startpage Engine centrale startpagina",
-            data=index_result
+        self.add_to_digital_twin(
+            "project_pdf_docx_writer",
+            "BAOEES PDF/DOCX Report Export Engine rapportbestanden",
+            pdf_docx_result
         )
 
         zip_result = self.project_zip.create_project_zip(
@@ -831,10 +808,10 @@ class BAOEESCore:
             file_writer_result=file_writer_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_zip",
-            name="BAOEES Project ZIP Engine zipbestand",
-            data=zip_result
+        self.add_to_digital_twin(
+            "project_zip",
+            "BAOEES Project ZIP Engine eerste zipbestand",
+            zip_result
         )
 
         audit_result = self.project_audit_trail.register_project_run(
@@ -851,15 +828,15 @@ class BAOEESCore:
             drawing_pdf_result=drawing_pdf_result,
             csv_excel_result=csv_excel_result,
             xlsx_result=xlsx_result,
-            html_dashboard_result=html_dashboard_result,
+            html_dashboard_result={},
             zip_result=zip_result,
-            index_result=index_result
+            index_result={}
         )
 
-        self.digital_twin.add_object(
-            object_type="project_audit_trail",
-            name="BAOEES Project Run Log / Audit Trail Engine runregistratie",
-            data=audit_result
+        self.add_to_digital_twin(
+            "project_audit_trail",
+            "BAOEES Project Run Log / Audit Trail Engine runregistratie",
+            audit_result
         )
 
         checksum_result = self.project_checksum.create_file_manifest(
@@ -868,10 +845,10 @@ class BAOEESCore:
             audit_result=audit_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_checksum_file_integrity",
-            name="BAOEES Project Checksum / File Integrity Engine file manifest",
-            data=checksum_result
+        self.add_to_digital_twin(
+            "project_checksum_file_integrity",
+            "BAOEES Project Checksum / File Integrity Engine file manifest",
+            checksum_result
         )
 
         git_evidence_result = self.project_git_evidence.create_git_evidence(
@@ -882,10 +859,69 @@ class BAOEESCore:
             repo_root="."
         )
 
-        self.digital_twin.add_object(
-            object_type="project_git_evidence",
-            name="BAOEES Project Version / Git Evidence Engine codeversiebewijs",
-            data=git_evidence_result
+        self.add_to_digital_twin(
+            "project_git_evidence",
+            "BAOEES Project Version / Git Evidence Engine codeversiebewijs",
+            git_evidence_result
+        )
+
+        html_dashboard_result = self.project_html_dashboard_export.export_project_dashboard(
+            project_result=project_result,
+            storage_result=storage_result,
+            report_writer_result=report_writer_result,
+            pdf_docx_result=pdf_docx_result,
+            dxf_writer_result=dxf_writer_result,
+            drawing_pdf_result=drawing_pdf_result,
+            csv_excel_result=csv_excel_result,
+            xlsx_result=xlsx_result,
+            validation_result=validation_result,
+            runtime_result=runtime_result,
+            zip_result=zip_result,
+            audit_result=audit_result,
+            checksum_result=checksum_result,
+            git_evidence_result=git_evidence_result,
+            index_result={}
+        )
+
+        self.add_to_digital_twin(
+            "project_html_dashboard_export",
+            "BAOEES Project HTML Dashboard Export Engine v1.1 bewijsdashboard",
+            html_dashboard_result
+        )
+
+        index_result = self.project_index_startpage.create_project_index(
+            projects_root="outputs/projects",
+            project_index_path="configs/projects/project_index.json"
+        )
+
+        self.add_to_digital_twin(
+            "project_index_startpage",
+            "BAOEES Project Index / Startpage Engine centrale startpagina",
+            index_result
+        )
+
+        html_dashboard_result = self.project_html_dashboard_export.export_project_dashboard(
+            project_result=project_result,
+            storage_result=storage_result,
+            report_writer_result=report_writer_result,
+            pdf_docx_result=pdf_docx_result,
+            dxf_writer_result=dxf_writer_result,
+            drawing_pdf_result=drawing_pdf_result,
+            csv_excel_result=csv_excel_result,
+            xlsx_result=xlsx_result,
+            validation_result=validation_result,
+            runtime_result=runtime_result,
+            zip_result=zip_result,
+            audit_result=audit_result,
+            checksum_result=checksum_result,
+            git_evidence_result=git_evidence_result,
+            index_result=index_result
+        )
+
+        self.add_to_digital_twin(
+            "project_html_dashboard_export_final",
+            "BAOEES Project HTML Dashboard Export Engine v1.1 finale bewijsdashboard",
+            html_dashboard_result
         )
 
         final_zip_result = self.project_zip.create_project_zip(
@@ -894,10 +930,10 @@ class BAOEESCore:
             file_writer_result=file_writer_result
         )
 
-        self.digital_twin.add_object(
-            object_type="project_final_zip",
-            name="BAOEES Project ZIP Engine finale zip inclusief audit trail, file manifest en Git evidence",
-            data=final_zip_result
+        self.add_to_digital_twin(
+            "project_final_zip",
+            "BAOEES Project ZIP Engine finale zip inclusief dashboard v1.1, audit trail, file manifest en Git evidence",
+            final_zip_result
         )
 
         self.print_result("STEE resultaat:", stee_result)
@@ -933,13 +969,13 @@ class BAOEESCore:
         self.print_result("Project File Writer / JSON Export Engine resultaat:", file_writer_result)
         self.print_result("Project Report Writer Engine resultaat:", report_writer_result)
         self.print_result("PDF/DOCX Report Export Engine resultaat:", pdf_docx_result)
-        self.print_result("Project HTML Dashboard Export Engine resultaat:", html_dashboard_result)
-        self.print_result("Project Index / Startpage Engine resultaat:", index_result)
-        self.print_result("Project ZIP Engine resultaat:", zip_result)
+        self.print_result("Project ZIP Engine eerste resultaat:", zip_result)
         self.print_result("Project Run Log / Audit Trail Engine resultaat:", audit_result)
         self.print_result("Project Checksum / File Integrity Engine resultaat:", checksum_result)
         self.print_result("Project Version / Git Evidence Engine resultaat:", git_evidence_result)
-        self.print_result("Finale Project ZIP Engine resultaat inclusief audit trail, file manifest en Git evidence:", final_zip_result)
+        self.print_result("Project HTML Dashboard Export Engine v1.1 resultaat:", html_dashboard_result)
+        self.print_result("Project Index / Startpage Engine resultaat:", index_result)
+        self.print_result("Finale Project ZIP Engine resultaat inclusief dashboard v1.1, audit trail, file manifest en Git evidence:", final_zip_result)
         self.print_result("Digital Twin resultaat:", self.digital_twin.get_project_data())
 
         self.project_selector.run()
