@@ -1,0 +1,343 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix AAIE BIB Assumption Loader",
+  "engine_version": "v3.9",
+  "generated_at": "2026-06-27T00:36:16",
+  "purpose": "AAIE automatisch voeden met aannames uit de BIB-context.",
+  "context_status": {
+    "status": "AANWEZIG",
+    "message": "Project Analyzer BIB-context bestond al.",
+    "path": "outputs\\projects\\project_analyzer_bib_context.json"
+  },
+  "context_path": "outputs\\projects\\project_analyzer_bib_context.json",
+  "project_output_root": "outputs\\projects",
+  "assumption_count": 13,
+  "assumptions": [
+    {
+      "code": "AAIE-BIB-001",
+      "name": "Digital Twin First",
+      "value": true,
+      "discipline": "system",
+      "reason": "BIB-regel: alle projectoutputs moeten uit dezelfde centrale projectdata komen.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.digital_twin_first"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-002",
+      "name": "AAIE actief",
+      "value": true,
+      "discipline": "system",
+      "reason": "Ontbrekende projectgegevens moeten automatisch worden aangevuld met aannameslog.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.aaie_enabled"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-003",
+      "name": "STEE actief",
+      "value": true,
+      "discipline": "source_evidence",
+      "reason": "Bronnen, fallbacks en aannames moeten traceerbaar zijn.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.stee_enabled"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-004",
+      "name": "QA/QC verplicht",
+      "value": true,
+      "discipline": "quality",
+      "reason": "Geen volledige projectexport zonder QA/QC-controle.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.qa_qc_required"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-005",
+      "name": "Automatische grondwaterdetectie",
+      "value": true,
+      "discipline": "geotechniek",
+      "reason": "BAOEES moet grondwaterstand automatisch proberen te bepalen uit locatie, kaart, bodemdata en projectcontext.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.automatic_groundwater_detection"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "middel",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-006",
+      "name": "Fallback grondwaterstand",
+      "value": "P = -0,50 m",
+      "discipline": "geotechniek",
+      "reason": "Wanneer projectdata ontbreken, gebruikt AAIE de BIB fallback grondwaterstand.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.groundwater_fallback"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "middel",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-007",
+      "name": "Status fallback grondwaterstand",
+      "value": "AAIE fallback assumption",
+      "discipline": "geotechniek",
+      "reason": "Fallbackwaarde moet zichtbaar als AAIE-aanname worden gemarkeerd.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.groundwater_fallback_status"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-008",
+      "name": "Automatisch geo-profiel",
+      "value": true,
+      "discipline": "geotechniek",
+      "reason": "BAOEES moet een voorlopig geo-profiel kunnen maken op basis van beschikbare locatie- en bodemgegevens.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.automatic_geo_profile"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "middel",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-009",
+      "name": "Funderingsvarianten verplicht",
+      "value": true,
+      "discipline": "fundering",
+      "reason": "Voor bouwprojecten moeten minimaal F1 strokenfundering en F2 paalfundering worden vergeleken.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.foundation_variants_required"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-F01",
+      "name": "Funderingsvariant F1 - Strokenfundering",
+      "value": {
+        "code": "F1",
+        "name": "Strokenfundering",
+        "description": "Fundering op staal met stroken onder dragende wanden en kolommen.",
+        "checks": [
+          "draagkracht",
+          "zetting",
+          "grondwaterinvloed",
+          "uitvoerbaarheid",
+          "kosten",
+          "bouwrisico"
+        ],
+        "default_dimensions": {
+          "strookbreedte": "150 cm tot 200 cm",
+          "strookhoogte": "40 cm",
+          "funderingsbalk": "50 cm x 60 cm",
+          "ligging_balk": "hart van strook"
+        }
+      },
+      "discipline": "fundering",
+      "reason": "Funderingsvariant overgenomen uit BIB Project Analyzer Context.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.foundation_variants"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-F02",
+      "name": "Funderingsvariant F2 - Paalfundering",
+      "value": {
+        "code": "F2",
+        "name": "Paalfundering",
+        "description": "Diepe fundering op palen bij slappe bodem, onvoldoende draagkracht of verhoogd zettingsrisico.",
+        "checks": [
+          "paallengte",
+          "paaltype",
+          "draagkracht per paal",
+          "paalbelasting",
+          "paalafstand",
+          "kosten",
+          "uitvoerbaarheid"
+        ],
+        "default_dimensions": {}
+      },
+      "discipline": "fundering",
+      "reason": "Funderingsvariant overgenomen uit BIB Project Analyzer Context.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.foundation_variants"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-010",
+      "name": "Standaard projectoutputs",
+      "value": [
+        "projectanalyse",
+        "Digital Twin JSON",
+        "aannameslog",
+        "bronregister",
+        "5 ontwerpvarianten A t/m E",
+        "funderingsvarianten F1 en F2",
+        "projectrapport PDF",
+        "projectrapport DOCX",
+        "tekeningen",
+        "CAD/DXF",
+        "QA/QC rapport",
+        "HTML dashboard",
+        "project-ZIP",
+        "Git Evidence"
+      ],
+      "discipline": "output",
+      "reason": "BAOEES moet standaard projectanalyse, rapporten, tekeningen, QA/QC, dashboard, ZIP en Git Evidence voorbereiden.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.default_outputs"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    },
+    {
+      "code": "AAIE-BIB-011",
+      "name": "Verplichte Project Analyzer regels",
+      "value": [
+        {
+          "rule": "Digital Twin First",
+          "description": "Alle rapporten, tekeningen, berekeningen, vergunningstukken, kosten en exports moeten voortkomen uit dezelfde centrale projectdata.",
+          "required": true
+        },
+        {
+          "rule": "AAIE assumptions visible",
+          "description": "Alle automatisch gegenereerde waarden moeten zichtbaar in het aannameslog komen.",
+          "required": true
+        },
+        {
+          "rule": "STEE source evidence required",
+          "description": "Elke bron of fallback moet herleidbaar zijn via STEE of als AAIE fallback assumption worden gemarkeerd.",
+          "required": true
+        },
+        {
+          "rule": "Foundation variants required",
+          "description": "Voor bouwprojecten standaard F1 strokenfundering en F2 paalfundering genereren en vergelijken.",
+          "required": true
+        },
+        {
+          "rule": "No final export without QA/QC",
+          "description": "Een projectexport is pas volledig als QA/QC is uitgevoerd.",
+          "required": true
+        }
+      ],
+      "discipline": "system",
+      "reason": "Project Analyzer moet de verplichte BIB-regels gebruiken als basiscontrole.",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_analyzer_context.mandatory_project_analyzer_rules"
+      },
+      "method": "automatic_from_bib_context",
+      "confidence": "hoog",
+      "status": "ACTIVE",
+      "editable_by_user": true,
+      "registered_at": "2026-06-27T00:36:16"
+    }
+  ],
+  "assumption_register": {
+    "status": "GEREED",
+    "total": 13,
+    "by_discipline": {
+      "system": 3,
+      "source_evidence": 1,
+      "quality": 1,
+      "geotechniek": 4,
+      "fundering": 3,
+      "output": 1
+    },
+    "must_be_written_to_project": true,
+    "must_be_visible_in_reports": true,
+    "must_be_linked_to_stee": true
+  },
+  "warnings": [
+    "Geen kritieke AAIE BIB assumption-waarschuwingen."
+  ],
+  "recommendation": {
+    "status": "AAIE_BIB_ASSUMPTION_ADVIES",
+    "advice": [
+      "Open aaie_bib_assumptions.html en controleer de aannames.",
+      "Gebruik aaie_bib_assumptions.json in v4.0 voor Geo/Fundering integratie.",
+      "Laat ieder project deze aannames als start-aannames laden.",
+      "Zorg dat iedere aanname later zichtbaar is in rapport, dashboard en STEE-register."
+    ]
+  },
+  "outputs": {
+    "json_path": "outputs\\projects\\aaie_bib_assumptions.json",
+    "html_path": "outputs\\projects\\aaie_bib_assumptions.html"
+  },
+  "extra_results": {}
+}
