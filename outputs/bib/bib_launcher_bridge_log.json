@@ -1,0 +1,81 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix BIB Launcher Bridge",
+  "engine_version": "v3.2",
+  "project_index_path": "outputs\\projects\\index.html",
+  "bib_output_root": "outputs\\bib",
+  "generated_at": "2026-06-26T19:50:04",
+  "extra_results": {},
+  "bib_links_count": 7,
+  "bib_outputs": [
+    {
+      "label": "Open BIB Dashboard",
+      "path": "outputs\\bib\\bib_dashboard.html",
+      "href": "../bib/bib_dashboard.html",
+      "description": "HTML knowledge dashboard van de BIB.",
+      "exists": true,
+      "size_bytes": 11573
+    },
+    {
+      "label": "Open BIB DOCX",
+      "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
+      "href": "../bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
+      "description": "Word-export van de volledige BIB.",
+      "exists": true,
+      "size_bytes": 23846
+    },
+    {
+      "label": "Open BIB PDF",
+      "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf",
+      "href": "../bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf",
+      "description": "PDF-export van de volledige BIB.",
+      "exists": true,
+      "size_bytes": 168686
+    },
+    {
+      "label": "Open BIB ZIP",
+      "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
+      "href": "../bib/PROJECT_PHOENIX_BIB_EXPORT.zip",
+      "description": "Basis ZIP-export met BIB-bestanden en exports.",
+      "exists": true,
+      "size_bytes": 60835
+    },
+    {
+      "label": "Open BIB Full ZIP",
+      "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
+      "href": "../bib/PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
+      "description": "Volledige ZIP-export met BIB en exportbestanden.",
+      "exists": false,
+      "size_bytes": 0
+    },
+    {
+      "label": "Open BIB Manifest",
+      "path": "outputs\\bib\\bib_manifest.json",
+      "href": "../bib/bib_manifest.json",
+      "description": "Manifest met alle BIB-bestanden, categorieën en checksums.",
+      "exists": true,
+      "size_bytes": 10145
+    },
+    {
+      "label": "Open BIB Full Export Log",
+      "path": "outputs\\bib\\bib_full_export_log.json",
+      "href": "../bib/bib_full_export_log.json",
+      "description": "Logbestand van de volledige BIB-export.",
+      "exists": false,
+      "size_bytes": 0
+    }
+  ],
+  "warnings": [
+    "BIB-output ontbreekt: outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
+    "BIB-output ontbreekt: outputs\\bib\\bib_full_export_log.json"
+  ],
+  "recommendation": {
+    "status": "BIB_LAUNCHER_BRIDGE_ADVIES",
+    "advice": [
+      "Open outputs/projects/index.html en controleer de BIB-sectie.",
+      "Controleer of BIB Dashboard, DOCX, PDF en ZIP openen.",
+      "Draai bij nieuwe BIB-exports opnieuw deze bridge.",
+      "Koppel deze bridge later aan de Project Phoenix hoofdworkflow."
+    ]
+  }
+}
