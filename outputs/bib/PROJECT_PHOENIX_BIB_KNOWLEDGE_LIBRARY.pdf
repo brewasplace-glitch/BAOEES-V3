@@ -1,0 +1,3839 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R 32 0 R 34 0 R 36 0 R 38 0 R 40 0 R 42 0 R 44 0 R 46 0 R 48 0 R 50 0 R 52 0 R 54 0 R 56 0 R 58 0 R 60 0 R 62 0 R 64 0 R 66 0 R 68 0 R 70 0 R 72 0 R 74 0 R 76 0 R 78 0 R 80 0 R 82 0 R 84 0 R 86 0 R 88 0 R 90 0 R 92 0 R 94 0 R 96 0 R 98 0 R 100 0 R 102 0 R 104 0 R 106 0 R 108 0 R 110 0 R 112 0 R 114 0 R 116 0 R 118 0 R 120 0 R 122 0 R 124 0 R 126 0 R 128 0 R 130 0 R 132 0 R 134 0 R 136 0 R 138 0 R 140 0 R 142 0 R 144 0 R 146 0 R 148 0 R 150 0 R 152 0 R 154 0 R 156 0 R 158 0 R 160 0 R 162 0 R 164 0 R 166 0 R 168 0 R 170 0 R 172 0 R 174 0 R 176 0 R 178 0 R 180 0 R ] /Count 89 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2614 >>
+stream
+BT /F1 18 Tf 50 790 Td (PROJECT PHOENIX BIB KNOWLEDGE LIBRARY) Tj ET
+BT /F1 13 Tf 50 767 Td (Brewster Integrated Bibliotheek) Tj ET
+BT /F1 10 Tf 50 749 Td () Tj ET
+BT /F1 10 Tf 50 734 Td (Exportdatum: 2026-06-26T19:36:56) Tj ET
+BT /F1 10 Tf 50 719 Td (Branch: baoees-v3) Tj ET
+BT /F1 10 Tf 50 704 Td (Commit: 232da22) Tj ET
+BT /F1 10 Tf 50 689 Td (Working tree clean: False) Tj ET
+BT /F1 10 Tf 50 674 Td (Aantal Markdown-bestanden: 30) Tj ET
+BT /F1 10 Tf 50 659 Td () Tj ET
+BT /F1 14 Tf 50 644 Td (INHOUD) Tj ET
+BT /F1 9 Tf 50 625 Td (- 00_BIB_INDEX.md) Tj ET
+BT /F1 9 Tf 50 611 Td (- 01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md) Tj ET
+BT /F1 9 Tf 50 597 Td (- 01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 583 Td (- 01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md) Tj ET
+BT /F1 9 Tf 50 569 Td (- 01_MASTER_KNOWLEDGE/README.md) Tj ET
+BT /F1 9 Tf 50 555 Td (- 02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 541 Td (- 02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 527 Td (- 02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 513 Td (- 02_PROJECTS/README.md) Tj ET
+BT /F1 9 Tf 50 499 Td (- 03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 485 Td (- 03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md) Tj ET
+BT /F1 9 Tf 50 471 Td (- 03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 457 Td (- 03_ENGINES/README.md) Tj ET
+BT /F1 9 Tf 50 443 Td (- 03_ENGINES/STEE_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 9 Tf 50 429 Td (- 04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md) Tj ET
+BT /F1 9 Tf 50 415 Td (- 04_STANDARDS_AND_RULES/README.md) Tj ET
+BT /F1 9 Tf 50 401 Td (- 05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md) Tj ET
+BT /F1 9 Tf 50 387 Td (- 05_TEMPLATES/README.md) Tj ET
+BT /F1 9 Tf 50 373 Td (- 05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md) Tj ET
+BT /F1 9 Tf 50 359 Td (- 06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md) Tj ET
+BT /F1 9 Tf 50 345 Td (- 06_WORKFLOWS/README.md) Tj ET
+BT /F1 9 Tf 50 331 Td (- 07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md) Tj ET
+BT /F1 9 Tf 50 317 Td (- 07_LESSONS_LEARNED/README.md) Tj ET
+BT /F1 9 Tf 50 303 Td (- 08_SOURCE_EVIDENCE/README.md) Tj ET
+BT /F1 9 Tf 50 289 Td (- 08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md) Tj ET
+BT /F1 9 Tf 50 275 Td (- 09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md) Tj ET
+BT /F1 9 Tf 50 261 Td (- 09_ASSUMPTIONS/README.md) Tj ET
+BT /F1 9 Tf 50 247 Td (- 10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md) Tj ET
+BT /F1 9 Tf 50 233 Td (- 10_EXPORTS/BIB_EXPORT_PLAN.md) Tj ET
+BT /F1 9 Tf 50 219 Td (- 10_EXPORTS/README.md) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1953 >>
+stream
+BT /F1 15 Tf 50 790 Td (00_BIB_INDEX.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (PROJECT PHOENIX BIB) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (BIB = Brewster Integrated Bibliotheek.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 10 Tf 50 690 Td (Status: centrale kennisbibliotheek voor Project Phoenix / BAOEES V3 / Brewster Engineering) Tj ET
+BT /F1 10 Tf 50 675 Td (Wizard.) Tj ET
+BT /F1 10 Tf 50 660 Td () Tj ET
+BT /F1 13 Tf 50 645 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 627 Td () Tj ET
+BT /F1 10 Tf 50 612 Td (De BIB bewaart alle vaste kennis van Project Phoenix zodat deze niet verloren gaat.) Tj ET
+BT /F1 10 Tf 50 597 Td () Tj ET
+BT /F1 10 Tf 50 582 Td (De BIB bevat:) Tj ET
+BT /F1 10 Tf 50 567 Td () Tj ET
+BT /F1 10 Tf 50 552 Td (* masterkennis;) Tj ET
+BT /F1 10 Tf 50 537 Td (* projectkennis;) Tj ET
+BT /F1 10 Tf 50 522 Td (* enginekennis;) Tj ET
+BT /F1 10 Tf 50 507 Td (* standaarden;) Tj ET
+BT /F1 10 Tf 50 492 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 477 Td (* workflows;) Tj ET
+BT /F1 10 Tf 50 462 Td (* templates;) Tj ET
+BT /F1 10 Tf 50 447 Td (* lessons learned;) Tj ET
+BT /F1 10 Tf 50 432 Td (* source evidence;) Tj ET
+BT /F1 10 Tf 50 417 Td (* exportplannen.) Tj ET
+BT /F1 10 Tf 50 402 Td () Tj ET
+BT /F1 13 Tf 50 387 Td (2. Hoofdindeling) Tj ET
+BT /F1 10 Tf 50 369 Td () Tj ET
+BT /F1 10 Tf 50 354 Td () Tj ET
+BT /F1 10 Tf 50 339 Td (bib/) Tj ET
+BT /F1 10 Tf 50 324 Td (00_BIB_INDEX.md) Tj ET
+BT /F1 10 Tf 50 309 Td (01_MASTER_KNOWLEDGE/) Tj ET
+BT /F1 10 Tf 50 294 Td (02_PROJECTS/) Tj ET
+BT /F1 10 Tf 50 279 Td (03_ENGINES/) Tj ET
+BT /F1 10 Tf 50 264 Td (04_STANDARDS_AND_RULES/) Tj ET
+BT /F1 10 Tf 50 249 Td (05_TEMPLATES/) Tj ET
+BT /F1 10 Tf 50 234 Td (06_WORKFLOWS/) Tj ET
+BT /F1 10 Tf 50 219 Td (07_LESSONS_LEARNED/) Tj ET
+BT /F1 10 Tf 50 204 Td (08_SOURCE_EVIDENCE/) Tj ET
+BT /F1 10 Tf 50 189 Td (09_ASSUMPTIONS/) Tj ET
+BT /F1 10 Tf 50 174 Td (10_EXPORTS/) Tj ET
+BT /F1 10 Tf 50 159 Td () Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1758 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 13 Tf 50 775 Td (3. Master Knowledge) Tj ET
+BT /F1 10 Tf 50 757 Td () Tj ET
+BT /F1 10 Tf 50 742 Td (Map:) Tj ET
+BT /F1 10 Tf 50 727 Td () Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (bib/01_MASTER_KNOWLEDGE/) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td (PROJECT_PHOENIX_CORE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 592 Td (README.md) Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td (Inhoud:) Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 10 Tf 50 517 Td (* Project Phoenix hoofdkennis;) Tj ET
+BT /F1 10 Tf 50 502 Td (* Digital Twin First;) Tj ET
+BT /F1 10 Tf 50 487 Td (* AAIE;) Tj ET
+BT /F1 10 Tf 50 472 Td (* STEE;) Tj ET
+BT /F1 10 Tf 50 457 Td (* Project Launcher;) Tj ET
+BT /F1 10 Tf 50 442 Td (* HTML Dashboard;) Tj ET
+BT /F1 10 Tf 50 427 Td (* Git Evidence;) Tj ET
+BT /F1 10 Tf 50 412 Td (* QA/QC;) Tj ET
+BT /F1 10 Tf 50 397 Td (* softwarebaseline v1.3 t/m v1.8.) Tj ET
+BT /F1 10 Tf 50 382 Td () Tj ET
+BT /F1 13 Tf 50 367 Td (4. Projects) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (Map:) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td () Tj ET
+BT /F1 10 Tf 50 289 Td (bib/02_PROJECTS/) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 10 Tf 50 259 Td () Tj ET
+BT /F1 10 Tf 50 244 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 229 Td () Tj ET
+BT /F1 10 Tf 50 214 Td () Tj ET
+BT /F1 10 Tf 50 199 Td (PLUTOSTRAAT_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 184 Td (MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 169 Td (BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1898 >>
+stream
+BT /F1 10 Tf 50 790 Td (README.md) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 10 Tf 50 745 Td (Projecten:) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 10 Tf 50 715 Td (* Plutostraat, Paramaribo;) Tj ET
+BT /F1 10 Tf 50 700 Td (* Moskee Bunschoten, Bikkersweg 88;) Tj ET
+BT /F1 10 Tf 50 685 Td (* Bruynzeel Waterfront District, Paramaribo.) Tj ET
+BT /F1 10 Tf 50 670 Td () Tj ET
+BT /F1 13 Tf 50 655 Td (5. Engines) Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td (Map:) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td (bib/03_ENGINES/) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 10 Tf 50 532 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 10 Tf 50 502 Td () Tj ET
+BT /F1 10 Tf 50 487 Td (BAOEES_V3_ENGINE_REGISTER.md) Tj ET
+BT /F1 10 Tf 50 472 Td (AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md) Tj ET
+BT /F1 10 Tf 50 457 Td (AAIE_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 442 Td (STEE_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 427 Td (README.md) Tj ET
+BT /F1 10 Tf 50 412 Td () Tj ET
+BT /F1 10 Tf 50 397 Td () Tj ET
+BT /F1 10 Tf 50 382 Td (Belangrijke engines:) Tj ET
+BT /F1 10 Tf 50 367 Td () Tj ET
+BT /F1 10 Tf 50 352 Td (* Project Analyzer;) Tj ET
+BT /F1 10 Tf 50 337 Td (* AAIE;) Tj ET
+BT /F1 10 Tf 50 322 Td (* STEE;) Tj ET
+BT /F1 10 Tf 50 307 Td (* Digital Twin;) Tj ET
+BT /F1 10 Tf 50 292 Td (* Geo Engine;) Tj ET
+BT /F1 10 Tf 50 277 Td (* Structural Engine;) Tj ET
+BT /F1 10 Tf 50 262 Td (* Automatic Groundwater & Foundation Variant Engine;) Tj ET
+BT /F1 10 Tf 50 247 Td (* Permit Engine;) Tj ET
+BT /F1 10 Tf 50 232 Td (* Traffic and Parking Engine;) Tj ET
+BT /F1 10 Tf 50 217 Td (* AERIUS Engine;) Tj ET
+BT /F1 10 Tf 50 202 Td (* Reporting Engine;) Tj ET
+BT /F1 10 Tf 50 187 Td (* Dashboard Engine;) Tj ET
+BT /F1 10 Tf 50 172 Td (* ZIP Engine;) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 1877 >>
+stream
+BT /F1 10 Tf 50 790 Td (* Git Evidence Engine;) Tj ET
+BT /F1 10 Tf 50 775 Td (* QA/QC Engine.) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 13 Tf 50 745 Td (6. Standards and Rules) Tj ET
+BT /F1 10 Tf 50 727 Td () Tj ET
+BT /F1 10 Tf 50 712 Td (Map:) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (bib/04_STANDARDS_AND_RULES/) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td (PROJECT_PHOENIX_STANDARDS.md) Tj ET
+BT /F1 10 Tf 50 562 Td (README.md) Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 10 Tf 50 517 Td (Vaste regels:) Tj ET
+BT /F1 10 Tf 50 502 Td () Tj ET
+BT /F1 10 Tf 50 487 Td (* Digital Twin First;) Tj ET
+BT /F1 10 Tf 50 472 Td (* automatische grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 457 Td (* fallback grondwaterstand P = -0,50 m;) Tj ET
+BT /F1 10 Tf 50 442 Td (* automatisch geo-profiel;) Tj ET
+BT /F1 10 Tf 50 427 Td (* funderingsvarianten F1 stroken en F2 palen;) Tj ET
+BT /F1 10 Tf 50 412 Td (* standaard strokenfundering 150?200 cm;) Tj ET
+BT /F1 10 Tf 50 397 Td (* funderingsbalk 50 x 60 cm;) Tj ET
+BT /F1 10 Tf 50 382 Td (* vijf ontwerpvarianten A t/m E;) Tj ET
+BT /F1 10 Tf 50 367 Td (* bronvermelding via STEE;) Tj ET
+BT /F1 10 Tf 50 352 Td (* aannames via AAIE;) Tj ET
+BT /F1 10 Tf 50 337 Td (* outputformaten;) Tj ET
+BT /F1 10 Tf 50 322 Td (* Git-werkwijze.) Tj ET
+BT /F1 10 Tf 50 307 Td () Tj ET
+BT /F1 13 Tf 50 292 Td (7. Templates) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 10 Tf 50 259 Td (Map:) Tj ET
+BT /F1 10 Tf 50 244 Td () Tj ET
+BT /F1 10 Tf 50 229 Td () Tj ET
+BT /F1 10 Tf 50 214 Td (bib/05_TEMPLATES/) Tj ET
+BT /F1 10 Tf 50 199 Td () Tj ET
+BT /F1 10 Tf 50 184 Td () Tj ET
+BT /F1 10 Tf 50 169 Td (Bestanden:) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 1766 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (PROJECT_INPUT_TEMPLATE.md) Tj ET
+BT /F1 10 Tf 50 745 Td (REPORT_OUTPUT_TEMPLATE.md) Tj ET
+BT /F1 10 Tf 50 730 Td (README.md) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 10 Tf 50 685 Td (Templates:) Tj ET
+BT /F1 10 Tf 50 670 Td () Tj ET
+BT /F1 10 Tf 50 655 Td (* projectinvoer;) Tj ET
+BT /F1 10 Tf 50 640 Td (* gewenste output;) Tj ET
+BT /F1 10 Tf 50 625 Td (* geotechniek;) Tj ET
+BT /F1 10 Tf 50 610 Td (* vergunning;) Tj ET
+BT /F1 10 Tf 50 595 Td (* parkeren;) Tj ET
+BT /F1 10 Tf 50 580 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 565 Td (* projectmodus;) Tj ET
+BT /F1 10 Tf 50 550 Td (* rapportstructuur.) Tj ET
+BT /F1 10 Tf 50 535 Td () Tj ET
+BT /F1 13 Tf 50 520 Td (8. Workflows) Tj ET
+BT /F1 10 Tf 50 502 Td () Tj ET
+BT /F1 10 Tf 50 487 Td (Map:) Tj ET
+BT /F1 10 Tf 50 472 Td () Tj ET
+BT /F1 10 Tf 50 457 Td () Tj ET
+BT /F1 10 Tf 50 442 Td (bib/06_WORKFLOWS/) Tj ET
+BT /F1 10 Tf 50 427 Td () Tj ET
+BT /F1 10 Tf 50 412 Td () Tj ET
+BT /F1 10 Tf 50 397 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 382 Td () Tj ET
+BT /F1 10 Tf 50 367 Td () Tj ET
+BT /F1 10 Tf 50 352 Td (AUTONOMOUS_PROJECT_WORKFLOW.md) Tj ET
+BT /F1 10 Tf 50 337 Td (GITKRAKEN_WORKFLOW.md) Tj ET
+BT /F1 10 Tf 50 322 Td (README.md) Tj ET
+BT /F1 10 Tf 50 307 Td () Tj ET
+BT /F1 10 Tf 50 292 Td () Tj ET
+BT /F1 10 Tf 50 277 Td (Workflows:) Tj ET
+BT /F1 10 Tf 50 262 Td () Tj ET
+BT /F1 10 Tf 50 247 Td (* autonome projectverwerking;) Tj ET
+BT /F1 10 Tf 50 232 Td (* AAIE-aanvulling;) Tj ET
+BT /F1 10 Tf 50 217 Td (* STEE-bronvermelding;) Tj ET
+BT /F1 10 Tf 50 202 Td (* Digital Twin First;) Tj ET
+BT /F1 10 Tf 50 187 Td (* varianten;) Tj ET
+BT /F1 10 Tf 50 172 Td (* engineering engines;) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 1808 >>
+stream
+BT /F1 10 Tf 50 790 Td (* projectoutput;) Tj ET
+BT /F1 10 Tf 50 775 Td (* QA/QC;) Tj ET
+BT /F1 10 Tf 50 760 Td (* Git Evidence;) Tj ET
+BT /F1 10 Tf 50 745 Td (* GitKraken werkwijze.) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 13 Tf 50 715 Td (9. Lessons Learned) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (Map:) Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (bib/07_LESSONS_LEARNED/) Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td (DASHBOARD_ENGINE_FIXES.md) Tj ET
+BT /F1 10 Tf 50 532 Td (README.md) Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 10 Tf 50 502 Td () Tj ET
+BT /F1 10 Tf 50 487 Td (Lessen:) Tj ET
+BT /F1 10 Tf 50 472 Td () Tj ET
+BT /F1 10 Tf 50 457 Td (* HTML Dashboard Export Engine v1.6;) Tj ET
+BT /F1 10 Tf 50 442 Td (* audit_result fout;) Tj ET
+BT /F1 10 Tf 50 427 Td (* storage_result fout;) Tj ET
+BT /F1 10 Tf 50 412 Td (* ontbrekende run-methode;) Tj ET
+BT /F1 10 Tf 50 397 Td (* PowerShell continuation prompt;) Tj ET
+BT /F1 10 Tf 50 382 Td (* veilig herstellen met git restore;) Tj ET
+BT /F1 10 Tf 50 367 Td (* geen Stage All Changes bij verdachte codewijzigingen.) Tj ET
+BT /F1 10 Tf 50 352 Td () Tj ET
+BT /F1 13 Tf 50 337 Td (10. Source Evidence) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (Map:) Tj ET
+BT /F1 10 Tf 50 289 Td () Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 10 Tf 50 259 Td (bib/08_SOURCE_EVIDENCE/) Tj ET
+BT /F1 10 Tf 50 244 Td () Tj ET
+BT /F1 10 Tf 50 229 Td () Tj ET
+BT /F1 10 Tf 50 214 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 199 Td () Tj ET
+BT /F1 10 Tf 50 184 Td () Tj ET
+BT /F1 10 Tf 50 169 Td (GIT_EVIDENCE_BASELINE.md) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 1866 >>
+stream
+BT /F1 10 Tf 50 790 Td (SOURCE_EVIDENCE_RULES.md) Tj ET
+BT /F1 10 Tf 50 775 Td (README.md) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 10 Tf 50 730 Td (Evidence-regels:) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (* Git Evidence;) Tj ET
+BT /F1 10 Tf 50 685 Td (* source register;) Tj ET
+BT /F1 10 Tf 50 670 Td (* STEE;) Tj ET
+BT /F1 10 Tf 50 655 Td (* runtime logs;) Tj ET
+BT /F1 10 Tf 50 640 Td (* audit trail;) Tj ET
+BT /F1 10 Tf 50 625 Td (* checksum;) Tj ET
+BT /F1 10 Tf 50 610 Td (* clean working tree;) Tj ET
+BT /F1 10 Tf 50 595 Td (* geen projectexport zonder evidence.) Tj ET
+BT /F1 10 Tf 50 580 Td () Tj ET
+BT /F1 13 Tf 50 565 Td (11. Assumptions) Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 10 Tf 50 532 Td (Map:) Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 10 Tf 50 502 Td () Tj ET
+BT /F1 10 Tf 50 487 Td (bib/09_ASSUMPTIONS/) Tj ET
+BT /F1 10 Tf 50 472 Td () Tj ET
+BT /F1 10 Tf 50 457 Td () Tj ET
+BT /F1 10 Tf 50 442 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 427 Td () Tj ET
+BT /F1 10 Tf 50 412 Td () Tj ET
+BT /F1 10 Tf 50 397 Td (PROJECT_PHOENIX_ASSUMPTIONS.md) Tj ET
+BT /F1 10 Tf 50 382 Td (README.md) Tj ET
+BT /F1 10 Tf 50 367 Td () Tj ET
+BT /F1 10 Tf 50 352 Td () Tj ET
+BT /F1 10 Tf 50 337 Td (Aannames:) Tj ET
+BT /F1 10 Tf 50 322 Td () Tj ET
+BT /F1 10 Tf 50 307 Td (* grondwaterstand P = -0,50 m;) Tj ET
+BT /F1 10 Tf 50 292 Td (* automatische bepaling grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 277 Td (* automatisch geo-profiel;) Tj ET
+BT /F1 10 Tf 50 262 Td (* F1 strokenfundering;) Tj ET
+BT /F1 10 Tf 50 247 Td (* F2 paalfundering;) Tj ET
+BT /F1 10 Tf 50 232 Td (* automatische funderingsvergelijking;) Tj ET
+BT /F1 10 Tf 50 217 Td (* aannameslog;) Tj ET
+BT /F1 10 Tf 50 202 Td (* bronkoppeling;) Tj ET
+BT /F1 10 Tf 50 187 Td (* gebruiker kan aannames aanpassen.) Tj ET
+BT /F1 10 Tf 50 172 Td () Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 1889 >>
+stream
+BT /F1 13 Tf 50 790 Td (12. Exports) Tj ET
+BT /F1 10 Tf 50 772 Td () Tj ET
+BT /F1 10 Tf 50 757 Td (Map:) Tj ET
+BT /F1 10 Tf 50 742 Td () Tj ET
+BT /F1 10 Tf 50 727 Td () Tj ET
+BT /F1 10 Tf 50 712 Td (bib/10_EXPORTS/) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (Bestanden:) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td (BIB_EXPORT_PLAN.md) Tj ET
+BT /F1 10 Tf 50 607 Td (README.md) Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td (Exportdoelen:) Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 10 Tf 50 532 Td (* DOCX;) Tj ET
+BT /F1 10 Tf 50 517 Td (* PDF;) Tj ET
+BT /F1 10 Tf 50 502 Td (* ZIP;) Tj ET
+BT /F1 10 Tf 50 487 Td (* HTML knowledge dashboard;) Tj ET
+BT /F1 10 Tf 50 472 Td (* projectkoppeling met Master Specification.) Tj ET
+BT /F1 10 Tf 50 457 Td () Tj ET
+BT /F1 13 Tf 50 442 Td (13. BIB-mijlpalen) Tj ET
+BT /F1 10 Tf 50 424 Td () Tj ET
+BT /F1 10 Tf 50 409 Td () Tj ET
+BT /F1 10 Tf 50 394 Td (v1.8 = BIB structuur) Tj ET
+BT /F1 10 Tf 50 379 Td (v1.9 = Core Knowledge) Tj ET
+BT /F1 10 Tf 50 364 Td (v2.0 = Project Knowledge) Tj ET
+BT /F1 10 Tf 50 349 Td (v2.1 = Standards & Assumptions) Tj ET
+BT /F1 10 Tf 50 334 Td (v2.2 = Engine Knowledge) Tj ET
+BT /F1 10 Tf 50 319 Td (v2.3 = Workflows & Templates) Tj ET
+BT /F1 10 Tf 50 304 Td (v2.4 = Lessons Learned & Source Evidence) Tj ET
+BT /F1 10 Tf 50 289 Td (v2.5 = BIB Index & Export Plan) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 10 Tf 50 259 Td () Tj ET
+BT /F1 13 Tf 50 244 Td (14. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 226 Td () Tj ET
+BT /F1 10 Tf 50 211 Td (De BIB is de centrale kennislaag van Project Phoenix.) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 10 Tf 50 181 Td (Kennis die in de BIB staat, moet later kunnen worden gebruikt voor:) Tj ET
+BT /F1 10 Tf 50 166 Td () Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 471 >>
+stream
+BT /F1 10 Tf 50 790 Td (* automatische projectanalyse;) Tj ET
+BT /F1 10 Tf 50 775 Td (* rapportgeneratie;) Tj ET
+BT /F1 10 Tf 50 760 Td (* engine-aansturing;) Tj ET
+BT /F1 10 Tf 50 745 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 730 Td (* bronvermelding;) Tj ET
+BT /F1 10 Tf 50 715 Td (* QA/QC;) Tj ET
+BT /F1 10 Tf 50 700 Td (* dashboards;) Tj ET
+BT /F1 10 Tf 50 685 Td (* Master Specification updates;) Tj ET
+BT /F1 10 Tf 50 670 Td (* toekomstige softwareontwikkeling.) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 25 0 R >>
+endobj
+25 0 obj
+<< /Length 2385 >>
+stream
+BT /F1 15 Tf 50 790 Td (01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (BREWSTER ENGINEERING WIZARD LIFEVISION) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: hoofdvisie / levenswerk voor Project Phoenix.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (De Brewster Engineering Wizard is bedoeld als autonoom engineeringplatform dat bouw-, civiel-,) Tj ET
+BT /F1 10 Tf 50 642 Td (infra-, vergunning- en gebiedsontwikkelingsprojecten kan begeleiden van eerste idee tot) Tj ET
+BT /F1 10 Tf 50 627 Td (volledig projectdossier.) Tj ET
+BT /F1 10 Tf 50 612 Td () Tj ET
+BT /F1 10 Tf 50 597 Td (Het systeem moet kennis bewaren, projecten analyseren, varianten genereren, rapporten maken,) Tj ET
+BT /F1 10 Tf 50 582 Td (tekeningen genereren, berekeningen ondersteunen, vergunningstukken voorbereiden en alle output) Tj ET
+BT /F1 10 Tf 50 567 Td (controleerbaar opslaan.) Tj ET
+BT /F1 10 Tf 50 552 Td () Tj ET
+BT /F1 13 Tf 50 537 Td (2. Project Phoenix) Tj ET
+BT /F1 10 Tf 50 519 Td () Tj ET
+BT /F1 10 Tf 50 504 Td (Project Phoenix is de herbouw en bundeling van:) Tj ET
+BT /F1 10 Tf 50 489 Td () Tj ET
+BT /F1 10 Tf 50 474 Td (? BEOS;) Tj ET
+BT /F1 10 Tf 50 459 Td (? BREWAS;) Tj ET
+BT /F1 10 Tf 50 444 Td (? BAOEES;) Tj ET
+BT /F1 10 Tf 50 429 Td (? Brewster Engineering Wizard;) Tj ET
+BT /F1 10 Tf 50 414 Td (? projectworkflows;) Tj ET
+BT /F1 10 Tf 50 399 Td (? kennisbibliotheek;) Tj ET
+BT /F1 10 Tf 50 384 Td (? Digital Twin;) Tj ET
+BT /F1 10 Tf 50 369 Td (? open engineering engines;) Tj ET
+BT /F1 10 Tf 50 354 Td (? automatische rapportage;) Tj ET
+BT /F1 10 Tf 50 339 Td (? automatische bronvermelding;) Tj ET
+BT /F1 10 Tf 50 324 Td (? automatische aannames.) Tj ET
+BT /F1 10 Tf 50 309 Td () Tj ET
+BT /F1 13 Tf 50 294 Td (3. Hoofdprincipe) Tj ET
+BT /F1 10 Tf 50 276 Td () Tj ET
+BT /F1 10 Tf 50 261 Td (Project Phoenix werkt volgens het principe:) Tj ET
+BT /F1 10 Tf 50 246 Td () Tj ET
+BT /F1 10 Tf 50 231 Td (Digital Twin First.) Tj ET
+BT /F1 10 Tf 50 216 Td () Tj ET
+BT /F1 10 Tf 50 201 Td (Alle onderdelen van een project moeten terug te leiden zijn naar dezelfde centrale projectdata.) Tj ET
+BT /F1 10 Tf 50 186 Td () Tj ET
+BT /F1 10 Tf 50 171 Td (Dit geldt voor:) Tj ET
+BT /F1 10 Tf 50 156 Td () Tj ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 27 0 R >>
+endobj
+27 0 obj
+<< /Length 1967 >>
+stream
+BT /F1 10 Tf 50 790 Td (? rapporten;) Tj ET
+BT /F1 10 Tf 50 775 Td (? tekeningen;) Tj ET
+BT /F1 10 Tf 50 760 Td (? berekeningen;) Tj ET
+BT /F1 10 Tf 50 745 Td (? vergunningstukken;) Tj ET
+BT /F1 10 Tf 50 730 Td (? kostenramingen;) Tj ET
+BT /F1 10 Tf 50 715 Td (? planningen;) Tj ET
+BT /F1 10 Tf 50 700 Td (? dashboards;) Tj ET
+BT /F1 10 Tf 50 685 Td (? bronvermelding;) Tj ET
+BT /F1 10 Tf 50 670 Td (? aannameslog;) Tj ET
+BT /F1 10 Tf 50 655 Td (? project-ZIP.) Tj ET
+BT /F1 10 Tf 50 640 Td () Tj ET
+BT /F1 13 Tf 50 625 Td (4. Autonoom werken) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td (Het systeem moet kunnen starten met minimale invoer:) Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td (? korte tekst;) Tj ET
+BT /F1 10 Tf 50 547 Td (? gesproken opdracht;) Tj ET
+BT /F1 10 Tf 50 532 Td (? PDF;) Tj ET
+BT /F1 10 Tf 50 517 Td (? tekening;) Tj ET
+BT /F1 10 Tf 50 502 Td (? foto;) Tj ET
+BT /F1 10 Tf 50 487 Td (? kaartuitsnede;) Tj ET
+BT /F1 10 Tf 50 472 Td (? Google Maps- of satellietbeeld;) Tj ET
+BT /F1 10 Tf 50 457 Td (? projectconfiguratie;) Tj ET
+BT /F1 10 Tf 50 442 Td (? bestaande projectmap.) Tj ET
+BT /F1 10 Tf 50 427 Td () Tj ET
+BT /F1 10 Tf 50 412 Td (Daarna moet het systeem automatisch bepalen:) Tj ET
+BT /F1 10 Tf 50 397 Td () Tj ET
+BT /F1 10 Tf 50 382 Td (? projecttype;) Tj ET
+BT /F1 10 Tf 50 367 Td (? locatie;) Tj ET
+BT /F1 10 Tf 50 352 Td (? benodigde disciplines;) Tj ET
+BT /F1 10 Tf 50 337 Td (? ontbrekende gegevens;) Tj ET
+BT /F1 10 Tf 50 322 Td (? benodigde bronnen;) Tj ET
+BT /F1 10 Tf 50 307 Td (? aannames;) Tj ET
+BT /F1 10 Tf 50 292 Td (? varianten;) Tj ET
+BT /F1 10 Tf 50 277 Td (? output;) Tj ET
+BT /F1 10 Tf 50 262 Td (? risico?s;) Tj ET
+BT /F1 10 Tf 50 247 Td (? vervolgstappen.) Tj ET
+BT /F1 10 Tf 50 232 Td () Tj ET
+BT /F1 13 Tf 50 217 Td (5. Centrale kennis) Tj ET
+BT /F1 10 Tf 50 199 Td () Tj ET
+BT /F1 10 Tf 50 184 Td (De BIB is de centrale kennisbibliotheek.) Tj ET
+BT /F1 10 Tf 50 169 Td () Tj ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 29 0 R >>
+endobj
+29 0 obj
+<< /Length 2153 >>
+stream
+BT /F1 10 Tf 50 790 Td (Kennis uit chats, projecten, documenten, Git, rapporten, tekeningen, fouten, fixes en workflows) Tj ET
+BT /F1 10 Tf 50 775 Td (moet hierin worden opgeslagen zodat niets verloren gaat.) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 13 Tf 50 745 Td (6. Open engines) Tj ET
+BT /F1 10 Tf 50 727 Td () Tj ET
+BT /F1 10 Tf 50 712 Td (Project Phoenix moet vendor-onafhankelijk werken.) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (Voorkeursrichting:) Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td (? Python;) Tj ET
+BT /F1 10 Tf 50 637 Td (? FreeCAD;) Tj ET
+BT /F1 10 Tf 50 622 Td (? OpenSees;) Tj ET
+BT /F1 10 Tf 50 607 Td (? CalculiX;) Tj ET
+BT /F1 10 Tf 50 592 Td (? open data;) Tj ET
+BT /F1 10 Tf 50 577 Td (? JSON;) Tj ET
+BT /F1 10 Tf 50 562 Td (? Markdown;) Tj ET
+BT /F1 10 Tf 50 547 Td (? HTML;) Tj ET
+BT /F1 10 Tf 50 532 Td (? PDF;) Tj ET
+BT /F1 10 Tf 50 517 Td (? DOCX;) Tj ET
+BT /F1 10 Tf 50 502 Td (? XLSX;) Tj ET
+BT /F1 10 Tf 50 487 Td (? DXF;) Tj ET
+BT /F1 10 Tf 50 472 Td (? IFC;) Tj ET
+BT /F1 10 Tf 50 457 Td (? ZIP.) Tj ET
+BT /F1 10 Tf 50 442 Td () Tj ET
+BT /F1 13 Tf 50 427 Td (7. Transparantie) Tj ET
+BT /F1 10 Tf 50 409 Td () Tj ET
+BT /F1 10 Tf 50 394 Td (Alles wat automatisch wordt gegenereerd moet zichtbaar blijven.) Tj ET
+BT /F1 10 Tf 50 379 Td () Tj ET
+BT /F1 10 Tf 50 364 Td (Project Phoenix moet altijd tonen:) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (? wat zeker is;) Tj ET
+BT /F1 10 Tf 50 319 Td (? wat brondata is;) Tj ET
+BT /F1 10 Tf 50 304 Td (? wat automatisch is aangenomen;) Tj ET
+BT /F1 10 Tf 50 289 Td (? wat door AAIE is gegenereerd;) Tj ET
+BT /F1 10 Tf 50 274 Td (? welke bron via STEE is gebruikt;) Tj ET
+BT /F1 10 Tf 50 259 Td (? wat nog gecontroleerd moet worden;) Tj ET
+BT /F1 10 Tf 50 244 Td (? welke Git-versie de output heeft gemaakt.) Tj ET
+BT /F1 10 Tf 50 229 Td () Tj ET
+BT /F1 13 Tf 50 214 Td (8. Belangrijk einddoel) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 10 Tf 50 181 Td (Het einddoel is een systeem dat niet alleen documenten maakt, maar een volledig controleerbaar) Tj ET
+BT /F1 10 Tf 50 166 Td (projectdossier opbouwt.) Tj ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 31 0 R >>
+endobj
+31 0 obj
+<< /Length 2351 >>
+stream
+BT /F1 15 Tf 50 790 Td (01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (PROJECT PHOENIX CORE KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: officiële hoofdkennis van Brewster Engineering Wizard / BAOEES / Project Phoenix.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Project Phoenix is het centrale masterplatform voor Brewster Engineering.) Tj ET
+BT /F1 10 Tf 50 642 Td () Tj ET
+BT /F1 10 Tf 50 627 Td (Het systeem combineert BEOS, BREWAS, BAOEES en de Brewster Engineering Wizard tot één autonome) Tj ET
+BT /F1 10 Tf 50 612 Td (engineeringomgeving.) Tj ET
+BT /F1 10 Tf 50 597 Td () Tj ET
+BT /F1 13 Tf 50 582 Td (2. Kernprincipe) Tj ET
+BT /F1 10 Tf 50 564 Td () Tj ET
+BT /F1 10 Tf 50 549 Td (Digital Twin First: alle rapporten, tekeningen, berekeningen, vergunningstukken, kosten en) Tj ET
+BT /F1 10 Tf 50 534 Td (projectexports moeten voortkomen uit dezelfde projectdata.) Tj ET
+BT /F1 10 Tf 50 519 Td () Tj ET
+BT /F1 13 Tf 50 504 Td (3. Vaste onderdelen) Tj ET
+BT /F1 10 Tf 50 486 Td () Tj ET
+BT /F1 10 Tf 50 471 Td (? Living Digital Twin) Tj ET
+BT /F1 10 Tf 50 456 Td (? Knowledge Graph) Tj ET
+BT /F1 10 Tf 50 441 Td (? AI Orchestrator) Tj ET
+BT /F1 10 Tf 50 426 Td (? AAIE: Autonomous Assumption and Inference Engine) Tj ET
+BT /F1 10 Tf 50 411 Td (? STEE: Source Traceability and Evidence Engine) Tj ET
+BT /F1 10 Tf 50 396 Td (? Project Launcher) Tj ET
+BT /F1 10 Tf 50 381 Td (? Project HTML Dashboard) Tj ET
+BT /F1 10 Tf 50 366 Td (? Project ZIP Export) Tj ET
+BT /F1 10 Tf 50 351 Td (? Git Evidence) Tj ET
+BT /F1 10 Tf 50 336 Td (? QA/QC Engine) Tj ET
+BT /F1 10 Tf 50 321 Td () Tj ET
+BT /F1 13 Tf 50 306 Td (4. Standaard workflow) Tj ET
+BT /F1 10 Tf 50 288 Td () Tj ET
+BT /F1 10 Tf 50 273 Td (1. Projectopdracht invoeren) Tj ET
+BT /F1 10 Tf 50 258 Td (2. Project analyseren) Tj ET
+BT /F1 10 Tf 50 243 Td (3. Ontbrekende gegevens aanvullen) Tj ET
+BT /F1 10 Tf 50 228 Td (4. Aannames vastleggen) Tj ET
+BT /F1 10 Tf 50 213 Td (5. Bronnen registreren) Tj ET
+BT /F1 10 Tf 50 198 Td (6. Digital Twin opbouwen) Tj ET
+BT /F1 10 Tf 50 183 Td (7. Varianten genereren) Tj ET
+BT /F1 10 Tf 50 168 Td (8. Berekenen) Tj ET
+BT /F1 10 Tf 50 153 Td (9. Rapporteren) Tj ET
+endstream
+endobj
+32 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 33 0 R >>
+endobj
+33 0 obj
+<< /Length 1190 >>
+stream
+BT /F1 10 Tf 50 790 Td (10. Tekenen) Tj ET
+BT /F1 10 Tf 50 775 Td (11. Exporteren) Tj ET
+BT /F1 10 Tf 50 760 Td (12. QA/QC uitvoeren) Tj ET
+BT /F1 10 Tf 50 745 Td (13. Dashboard en ZIP genereren) Tj ET
+BT /F1 10 Tf 50 730 Td (14. Git evidence vastleggen) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 13 Tf 50 700 Td (5. Huidige softwarebaseline) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (? Branch: baoees-v3) Tj ET
+BT /F1 10 Tf 50 652 Td (? v1.3: Clean Git Baseline) Tj ET
+BT /F1 10 Tf 50 637 Td (? v1.4: Project Phoenix Start Dashboard) Tj ET
+BT /F1 10 Tf 50 622 Td (? v1.5: Rebrand Project Phoenix Launcher) Tj ET
+BT /F1 10 Tf 50 607 Td (? v1.6: HTML Dashboard Export Engine herbouwd en werkend) Tj ET
+BT /F1 10 Tf 50 592 Td (? v1.7: Master Specification Engine Sync) Tj ET
+BT /F1 10 Tf 50 577 Td (? v1.8: BIB bibliotheekstructuur aangemaakt) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 13 Tf 50 547 Td (6. Belangrijk uitgangspunt) Tj ET
+BT /F1 10 Tf 50 529 Td () Tj ET
+BT /F1 10 Tf 50 514 Td (Deze BIB is de centrale kennisbibliotheek. Informatie die hier staat, geldt als gestructureerde) Tj ET
+BT /F1 10 Tf 50 499 Td (projectkennis voor toekomstige versies.) Tj ET
+endstream
+endobj
+34 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 35 0 R >>
+endobj
+35 0 obj
+<< /Length 1979 >>
+stream
+BT /F1 15 Tf 50 790 Td (01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (PROJECT PHOENIX SYSTEM ARCHITECTURE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: systeemarchitectuur voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Hoofdarchitectuur) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Project Phoenix bestaat uit vijf hoofdlagen:) Tj ET
+BT /F1 10 Tf 50 642 Td () Tj ET
+BT /F1 10 Tf 50 627 Td (1. Phoenix Core) Tj ET
+BT /F1 10 Tf 50 612 Td (2. Project Input Layer) Tj ET
+BT /F1 10 Tf 50 597 Td (3. Engineering Engine Layer) Tj ET
+BT /F1 10 Tf 50 582 Td (4. Output and Evidence Layer) Tj ET
+BT /F1 10 Tf 50 567 Td (5. BIB Knowledge Layer) Tj ET
+BT /F1 10 Tf 50 552 Td () Tj ET
+BT /F1 13 Tf 50 537 Td (2. Phoenix Core) Tj ET
+BT /F1 10 Tf 50 519 Td () Tj ET
+BT /F1 10 Tf 50 504 Td (Phoenix Core bestaat uit:) Tj ET
+BT /F1 10 Tf 50 489 Td () Tj ET
+BT /F1 10 Tf 50 474 Td (? Living Digital Twin;) Tj ET
+BT /F1 10 Tf 50 459 Td (? Knowledge Graph;) Tj ET
+BT /F1 10 Tf 50 444 Td (? AI Orchestrator;) Tj ET
+BT /F1 10 Tf 50 429 Td (? AAIE;) Tj ET
+BT /F1 10 Tf 50 414 Td (? STEE;) Tj ET
+BT /F1 10 Tf 50 399 Td (? Workflow Engine;) Tj ET
+BT /F1 10 Tf 50 384 Td (? Runtime Engine;) Tj ET
+BT /F1 10 Tf 50 369 Td (? QA/QC Engine;) Tj ET
+BT /F1 10 Tf 50 354 Td (? Export Engine.) Tj ET
+BT /F1 10 Tf 50 339 Td () Tj ET
+BT /F1 13 Tf 50 324 Td (3. Project Input Layer) Tj ET
+BT /F1 10 Tf 50 306 Td () Tj ET
+BT /F1 10 Tf 50 291 Td (De inputlaag accepteert:) Tj ET
+BT /F1 10 Tf 50 276 Td () Tj ET
+BT /F1 10 Tf 50 261 Td (? tekst;) Tj ET
+BT /F1 10 Tf 50 246 Td (? spraak;) Tj ET
+BT /F1 10 Tf 50 231 Td (? PDF;) Tj ET
+BT /F1 10 Tf 50 216 Td (? foto;) Tj ET
+BT /F1 10 Tf 50 201 Td (? tekening;) Tj ET
+BT /F1 10 Tf 50 186 Td (? kaartuitsnede;) Tj ET
+BT /F1 10 Tf 50 171 Td (? satellietbeeld;) Tj ET
+BT /F1 10 Tf 50 156 Td (? DXF;) Tj ET
+endstream
+endobj
+36 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 37 0 R >>
+endobj
+37 0 obj
+<< /Length 1998 >>
+stream
+BT /F1 10 Tf 50 790 Td (? DWG;) Tj ET
+BT /F1 10 Tf 50 775 Td (? SKP;) Tj ET
+BT /F1 10 Tf 50 760 Td (? IFC;) Tj ET
+BT /F1 10 Tf 50 745 Td (? JSON;) Tj ET
+BT /F1 10 Tf 50 730 Td (? bestaande projectmap.) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 13 Tf 50 700 Td (4. Engineering Engine Layer) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (De engine-laag bevat:) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (? Project Analyzer;) Tj ET
+BT /F1 10 Tf 50 622 Td (? Geo Engine;) Tj ET
+BT /F1 10 Tf 50 607 Td (? Automatic Groundwater and Foundation Variant Engine;) Tj ET
+BT /F1 10 Tf 50 592 Td (? Structural Engine;) Tj ET
+BT /F1 10 Tf 50 577 Td (? Drainage and Sewerage Engine;) Tj ET
+BT /F1 10 Tf 50 562 Td (? Traffic and Parking Engine;) Tj ET
+BT /F1 10 Tf 50 547 Td (? Permit Engine;) Tj ET
+BT /F1 10 Tf 50 532 Td (? AERIUS Engine;) Tj ET
+BT /F1 10 Tf 50 517 Td (? GIS Map Engine;) Tj ET
+BT /F1 10 Tf 50 502 Td (? Cost Engine;) Tj ET
+BT /F1 10 Tf 50 487 Td (? Planning Engine;) Tj ET
+BT /F1 10 Tf 50 472 Td (? Reporting Engine;) Tj ET
+BT /F1 10 Tf 50 457 Td (? Drawing Engine;) Tj ET
+BT /F1 10 Tf 50 442 Td (? CAD/DXF Engine;) Tj ET
+BT /F1 10 Tf 50 427 Td (? Dashboard Engine;) Tj ET
+BT /F1 10 Tf 50 412 Td (? ZIP Engine;) Tj ET
+BT /F1 10 Tf 50 397 Td (? Git Evidence Engine.) Tj ET
+BT /F1 10 Tf 50 382 Td () Tj ET
+BT /F1 13 Tf 50 367 Td (5. Output and Evidence Layer) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (De outputlaag genereert:) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (? projectrapporten;) Tj ET
+BT /F1 10 Tf 50 289 Td (? tekeningen;) Tj ET
+BT /F1 10 Tf 50 274 Td (? CAD/DXF;) Tj ET
+BT /F1 10 Tf 50 259 Td (? Digital Twin JSON;) Tj ET
+BT /F1 10 Tf 50 244 Td (? source register;) Tj ET
+BT /F1 10 Tf 50 229 Td (? assumptions log;) Tj ET
+BT /F1 10 Tf 50 214 Td (? QA/QC rapport;) Tj ET
+BT /F1 10 Tf 50 199 Td (? runtime log;) Tj ET
+BT /F1 10 Tf 50 184 Td (? audit trail;) Tj ET
+BT /F1 10 Tf 50 169 Td (? checksum;) Tj ET
+endstream
+endobj
+38 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 39 0 R >>
+endobj
+39 0 obj
+<< /Length 2136 >>
+stream
+BT /F1 10 Tf 50 790 Td (? git evidence;) Tj ET
+BT /F1 10 Tf 50 775 Td (? dashboard;) Tj ET
+BT /F1 10 Tf 50 760 Td (? project-ZIP.) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 13 Tf 50 730 Td (6. BIB Knowledge Layer) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (De BIB bevat:) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (? masterkennis;) Tj ET
+BT /F1 10 Tf 50 652 Td (? projectkennis;) Tj ET
+BT /F1 10 Tf 50 637 Td (? enginekennis;) Tj ET
+BT /F1 10 Tf 50 622 Td (? standaarden;) Tj ET
+BT /F1 10 Tf 50 607 Td (? aannames;) Tj ET
+BT /F1 10 Tf 50 592 Td (? workflows;) Tj ET
+BT /F1 10 Tf 50 577 Td (? templates;) Tj ET
+BT /F1 10 Tf 50 562 Td (? lessons learned;) Tj ET
+BT /F1 10 Tf 50 547 Td (? source evidence;) Tj ET
+BT /F1 10 Tf 50 532 Td (? exportplannen.) Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 13 Tf 50 502 Td (7. Dataflow) Tj ET
+BT /F1 10 Tf 50 484 Td () Tj ET
+BT /F1 10 Tf 50 469 Td (Standaard dataflow:) Tj ET
+BT /F1 10 Tf 50 454 Td () Tj ET
+BT /F1 10 Tf 50 439 Td (1. projectopdracht komt binnen;) Tj ET
+BT /F1 10 Tf 50 424 Td (2. Project Analyzer bepaalt projecttype en scope;) Tj ET
+BT /F1 10 Tf 50 409 Td (3. AAIE vult ontbrekende gegevens aan;) Tj ET
+BT /F1 10 Tf 50 394 Td (4. STEE registreert bronnen;) Tj ET
+BT /F1 10 Tf 50 379 Td (5. Digital Twin wordt opgebouwd;) Tj ET
+BT /F1 10 Tf 50 364 Td (6. engines voeren analyses uit;) Tj ET
+BT /F1 10 Tf 50 349 Td (7. varianten worden gegenereerd;) Tj ET
+BT /F1 10 Tf 50 334 Td (8. rapporten en tekeningen worden gemaakt;) Tj ET
+BT /F1 10 Tf 50 319 Td (9. QA/QC controleert output;) Tj ET
+BT /F1 10 Tf 50 304 Td (10. dashboard en ZIP worden gemaakt;) Tj ET
+BT /F1 10 Tf 50 289 Td (11. Git Evidence wordt vastgelegd;) Tj ET
+BT /F1 10 Tf 50 274 Td (12. BIB kan kennis bijwerken.) Tj ET
+BT /F1 10 Tf 50 259 Td () Tj ET
+BT /F1 13 Tf 50 244 Td (8. Belangrijk architectuurprincipe) Tj ET
+BT /F1 10 Tf 50 226 Td () Tj ET
+BT /F1 10 Tf 50 211 Td (Geen losse documenten zonder centrale projectdata.) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 10 Tf 50 181 Td (Geen automatische aannames zonder aannameslog.) Tj ET
+BT /F1 10 Tf 50 166 Td () Tj ET
+endstream
+endobj
+40 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 41 0 R >>
+endobj
+41 0 obj
+<< /Length 182 >>
+stream
+BT /F1 10 Tf 50 790 Td (Geen eindrapport zonder bronvermelding.) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (Geen projectexport zonder QA/QC en Git Evidence.) Tj ET
+endstream
+endobj
+42 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 43 0 R >>
+endobj
+43 0 obj
+<< /Length 153 >>
+stream
+BT /F1 15 Tf 50 790 Td (01_MASTER_KNOWLEDGE/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Project Phoenix hoofdkennis.) Tj ET
+endstream
+endobj
+44 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 45 0 R >>
+endobj
+45 0 obj
+<< /Length 2208 >>
+stream
+BT /F1 15 Tf 50 790 Td (02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (BRUYNZEEL WATERFRONT PROJECT KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: projectkennis voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Project) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Projectnaam: Bruynzeel Waterfront District) Tj ET
+BT /F1 10 Tf 50 642 Td (Locatie: Paramaribo, Suriname) Tj ET
+BT /F1 10 Tf 50 627 Td (Type: gebiedsontwikkeling / masterplan / waterfrontontwikkeling.) Tj ET
+BT /F1 10 Tf 50 612 Td () Tj ET
+BT /F1 13 Tf 50 597 Td (2. Doel) Tj ET
+BT /F1 10 Tf 50 579 Td () Tj ET
+BT /F1 10 Tf 50 564 Td (Het Bruynzeel Waterfront-project wordt gebruikt als referentieproject voor:) Tj ET
+BT /F1 10 Tf 50 549 Td () Tj ET
+BT /F1 10 Tf 50 534 Td (? masterplanning;) Tj ET
+BT /F1 10 Tf 50 519 Td (? gebiedsontwikkeling;) Tj ET
+BT /F1 10 Tf 50 504 Td (? kavelanalyse;) Tj ET
+BT /F1 10 Tf 50 489 Td (? programmaontwikkeling;) Tj ET
+BT /F1 10 Tf 50 474 Td (? verkeers- en parkeeranalyse;) Tj ET
+BT /F1 10 Tf 50 459 Td (? financiële haalbaarheid;) Tj ET
+BT /F1 10 Tf 50 444 Td (? GREX / grondexploitatie;) Tj ET
+BT /F1 10 Tf 50 429 Td (? investeerdersmemorandum;) Tj ET
+BT /F1 10 Tf 50 414 Td (? fasering;) Tj ET
+BT /F1 10 Tf 50 399 Td (? plankaarten;) Tj ET
+BT /F1 10 Tf 50 384 Td (? dashboards;) Tj ET
+BT /F1 10 Tf 50 369 Td (? projectrapportage.) Tj ET
+BT /F1 10 Tf 50 354 Td () Tj ET
+BT /F1 13 Tf 50 339 Td (3. Bekende percelen) Tj ET
+BT /F1 10 Tf 50 321 Td () Tj ET
+BT /F1 10 Tf 50 306 Td (Eerder genoemde GLIS-percelen:) Tj ET
+BT /F1 10 Tf 50 291 Td () Tj ET
+BT /F1 10 Tf 50 276 Td (? perceel 177a: circa 60.601 m²;) Tj ET
+BT /F1 10 Tf 50 261 Td (? perceel 778;) Tj ET
+BT /F1 10 Tf 50 246 Td (? perceel 1145: circa 5.646 m²;) Tj ET
+BT /F1 10 Tf 50 231 Td (? perceel 1146.) Tj ET
+BT /F1 10 Tf 50 216 Td () Tj ET
+BT /F1 10 Tf 50 201 Td (Deze percelen moeten in het masterplan als samenhangend ontwikkelgebied kunnen worden verwerkt.) Tj ET
+BT /F1 10 Tf 50 186 Td () Tj ET
+BT /F1 13 Tf 50 171 Td (4. Programma) Tj ET
+BT /F1 10 Tf 50 153 Td () Tj ET
+endstream
+endobj
+46 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 47 0 R >>
+endobj
+47 0 obj
+<< /Length 2244 >>
+stream
+BT /F1 10 Tf 50 790 Td (Eerder uitgangspunt:) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (? kantoorprogramma: circa 10.000 m² BVO;) Tj ET
+BT /F1 10 Tf 50 745 Td (? circa 1.000 werknemers;) Tj ET
+BT /F1 10 Tf 50 730 Td (? multifunctioneel programma: circa 2.000 m²;) Tj ET
+BT /F1 10 Tf 50 715 Td (? totaal programma: circa 12.000 m²;) Tj ET
+BT /F1 10 Tf 50 700 Td (? auditorium: maximaal 2.400 bezoekers, buiten spits.) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 13 Tf 50 670 Td (5. Locatievarianten) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (Eerder benoemde ontwikkelopties:) Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td (? optie A: hoofdweg;) Tj ET
+BT /F1 10 Tf 50 592 Td (? optie B: Saramaccakanaal;) Tj ET
+BT /F1 10 Tf 50 577 Td (? optie C: rivierzijde.) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td (Project Phoenix moet automatisch varianten kunnen genereren en toetsen op:) Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 10 Tf 50 517 Td (? ruimtelijke kwaliteit;) Tj ET
+BT /F1 10 Tf 50 502 Td (? opbrengst;) Tj ET
+BT /F1 10 Tf 50 487 Td (? duurzaamheid;) Tj ET
+BT /F1 10 Tf 50 472 Td (? vergunningkans;) Tj ET
+BT /F1 10 Tf 50 457 Td (? kosten;) Tj ET
+BT /F1 10 Tf 50 442 Td (? verkeer en parkeren;) Tj ET
+BT /F1 10 Tf 50 427 Td (? investeringswaarde.) Tj ET
+BT /F1 10 Tf 50 412 Td () Tj ET
+BT /F1 13 Tf 50 397 Td (6. Gewenste rapportage) Tj ET
+BT /F1 10 Tf 50 379 Td () Tj ET
+BT /F1 10 Tf 50 364 Td (Voor Bruynzeel Waterfront moet Project Phoenix kunnen genereren:) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (? definitief masterplan;) Tj ET
+BT /F1 10 Tf 50 319 Td (? managementsamenvatting;) Tj ET
+BT /F1 10 Tf 50 304 Td (? GLIS-kaarten;) Tj ET
+BT /F1 10 Tf 50 289 Td (? dronefoto-inpassing;) Tj ET
+BT /F1 10 Tf 50 274 Td (? Google Maps-ondergrond;) Tj ET
+BT /F1 10 Tf 50 259 Td (? perceelanalyses per kavel;) Tj ET
+BT /F1 10 Tf 50 244 Td (? verkeers- en parkeerhoofdstuk;) Tj ET
+BT /F1 10 Tf 50 229 Td (? GREX;) Tj ET
+BT /F1 10 Tf 50 214 Td (? financiële haalbaarheidsanalyse;) Tj ET
+BT /F1 10 Tf 50 199 Td (? SWOT-analyse;) Tj ET
+BT /F1 10 Tf 50 184 Td (? ontwikkelscenario?s A/B/C;) Tj ET
+BT /F1 10 Tf 50 169 Td (? investeerdersmemorandum;) Tj ET
+endstream
+endobj
+48 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 49 0 R >>
+endobj
+49 0 obj
+<< /Length 386 >>
+stream
+BT /F1 10 Tf 50 790 Td (? professionele kaarten en legenda?s.) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 13 Tf 50 760 Td (7. Status in Project Phoenix) Tj ET
+BT /F1 10 Tf 50 742 Td () Tj ET
+BT /F1 10 Tf 50 727 Td (Bruynzeel Waterfront geldt als referentieproject voor grootschalige gebiedsontwikkeling,) Tj ET
+BT /F1 10 Tf 50 712 Td (masterplanning en investeerdersrapportage.) Tj ET
+endstream
+endobj
+50 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 51 0 R >>
+endobj
+51 0 obj
+<< /Length 2254 >>
+stream
+BT /F1 15 Tf 50 790 Td (02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (MOSKEE BUNSCHOTEN PROJECT KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: projectkennis voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Project) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Projectnaam: Moskee Bunschoten) Tj ET
+BT /F1 10 Tf 50 642 Td (Adres: Bikkersweg 88, Bunschoten, Nederland) Tj ET
+BT /F1 10 Tf 50 627 Td (Type: Bouw / vergunning / maatschappelijke en religieuze voorziening) Tj ET
+BT /F1 10 Tf 50 612 Td (Project: uitbreiding van circa 20 m² en aanpassing gevelaanzicht.) Tj ET
+BT /F1 10 Tf 50 597 Td () Tj ET
+BT /F1 13 Tf 50 582 Td (2. Doel) Tj ET
+BT /F1 10 Tf 50 564 Td () Tj ET
+BT /F1 10 Tf 50 549 Td (Het Moskee Bunschoten-project wordt gebruikt als referentieproject voor:) Tj ET
+BT /F1 10 Tf 50 534 Td () Tj ET
+BT /F1 10 Tf 50 519 Td (? ruimtelijke onderbouwing;) Tj ET
+BT /F1 10 Tf 50 504 Td (? BOPA / omgevingsvergunning;) Tj ET
+BT /F1 10 Tf 50 489 Td (? bouwkundige tekeningen;) Tj ET
+BT /F1 10 Tf 50 474 Td (? participatie;) Tj ET
+BT /F1 10 Tf 50 459 Td (? parkeren;) Tj ET
+BT /F1 10 Tf 50 444 Td (? AERIUS / stikstof;) Tj ET
+BT /F1 10 Tf 50 429 Td (? vergunningstrategie;) Tj ET
+BT /F1 10 Tf 50 414 Td (? projectdashboard;) Tj ET
+BT /F1 10 Tf 50 399 Td (? project-ZIP.) Tj ET
+BT /F1 10 Tf 50 384 Td () Tj ET
+BT /F1 13 Tf 50 369 Td (3. Gewenste output) Tj ET
+BT /F1 10 Tf 50 351 Td () Tj ET
+BT /F1 10 Tf 50 336 Td (Voor dit project moeten standaard kunnen worden gegenereerd:) Tj ET
+BT /F1 10 Tf 50 321 Td () Tj ET
+BT /F1 10 Tf 50 306 Td (? situatietekening;) Tj ET
+BT /F1 10 Tf 50 291 Td (? plattegronden bestaand en nieuw;) Tj ET
+BT /F1 10 Tf 50 276 Td (? begane grond;) Tj ET
+BT /F1 10 Tf 50 261 Td (? verdieping;) Tj ET
+BT /F1 10 Tf 50 246 Td (? gevels;) Tj ET
+BT /F1 10 Tf 50 231 Td (? doorsneden;) Tj ET
+BT /F1 10 Tf 50 216 Td (? 3D-impressies;) Tj ET
+BT /F1 10 Tf 50 201 Td (? projectomschrijving;) Tj ET
+BT /F1 10 Tf 50 186 Td (? ruimtelijke onderbouwing;) Tj ET
+BT /F1 10 Tf 50 171 Td (? BOPA / omgevingsvergunning;) Tj ET
+BT /F1 10 Tf 50 156 Td (? participatieplan;) Tj ET
+endstream
+endobj
+52 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 53 0 R >>
+endobj
+53 0 obj
+<< /Length 2116 >>
+stream
+BT /F1 10 Tf 50 790 Td (? parkeeronderzoek;) Tj ET
+BT /F1 10 Tf 50 775 Td (? AERIUS-berekening;) Tj ET
+BT /F1 10 Tf 50 760 Td (? constructieve uitgangspunten;) Tj ET
+BT /F1 10 Tf 50 745 Td (? projectrapport PDF en DOCX.) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 13 Tf 50 715 Td (4. Programma van ruimten) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (Begane grond:) Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td (? entree;) Tj ET
+BT /F1 10 Tf 50 637 Td (? gebedsruimte heren;) Tj ET
+BT /F1 10 Tf 50 622 Td (? conferentie- / ontmoetingsruimte;) Tj ET
+BT /F1 10 Tf 50 607 Td (? rituele wasruimte;) Tj ET
+BT /F1 10 Tf 50 592 Td (? toiletten;) Tj ET
+BT /F1 10 Tf 50 577 Td (? trappen.) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td (Verdieping:) Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 10 Tf 50 517 Td (? gebedsruimte dames;) Tj ET
+BT /F1 10 Tf 50 502 Td (? vide;) Tj ET
+BT /F1 10 Tf 50 487 Td (? kantine;) Tj ET
+BT /F1 10 Tf 50 472 Td (? leslokaal 1;) Tj ET
+BT /F1 10 Tf 50 457 Td (? leslokaal 2;) Tj ET
+BT /F1 10 Tf 50 442 Td (? opslag;) Tj ET
+BT /F1 10 Tf 50 427 Td (? rituele wasruimte;) Tj ET
+BT /F1 10 Tf 50 412 Td (? toiletten.) Tj ET
+BT /F1 10 Tf 50 397 Td () Tj ET
+BT /F1 13 Tf 50 382 Td (5. Parkeren) Tj ET
+BT /F1 10 Tf 50 364 Td () Tj ET
+BT /F1 10 Tf 50 349 Td (Eerder uitgangspunt voor parkeeromgeving:) Tj ET
+BT /F1 10 Tf 50 334 Td () Tj ET
+BT /F1 10 Tf 50 319 Td (? Zwembad De Duker: 100 openbare parkeerplaatsen;) Tj ET
+BT /F1 10 Tf 50 304 Td (? CGV Agilitas en omgeving: 50 parkeerplaatsen;) Tj ET
+BT /F1 10 Tf 50 289 Td (? Denksportcentrum en omgeving: 30 parkeerplaatsen;) Tj ET
+BT /F1 10 Tf 50 274 Td (? openbare parkeerstroken: 50 parkeerplaatsen;) Tj ET
+BT /F1 10 Tf 50 259 Td (? overige openbare parkeerplaatsen: 70 parkeerplaatsen.) Tj ET
+BT /F1 10 Tf 50 244 Td () Tj ET
+BT /F1 10 Tf 50 229 Td (Totaal indicatief openbaar beschikbaar: 300 parkeerplaatsen.) Tj ET
+BT /F1 10 Tf 50 214 Td () Tj ET
+BT /F1 10 Tf 50 199 Td (Parkeermodule moet kunnen genereren:) Tj ET
+BT /F1 10 Tf 50 184 Td () Tj ET
+BT /F1 10 Tf 50 169 Td (? parkeerbalans;) Tj ET
+endstream
+endobj
+54 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 55 0 R >>
+endobj
+55 0 obj
+<< /Length 2051 >>
+stream
+BT /F1 10 Tf 50 790 Td (? parkeerdruk;) Tj ET
+BT /F1 10 Tf 50 775 Td (? bezettingsgraad op meerdere meetmomenten;) Tj ET
+BT /F1 10 Tf 50 760 Td (? advies parkeerregime;) Tj ET
+BT /F1 10 Tf 50 745 Td (? fysieke parkeerinventarisatie;) Tj ET
+BT /F1 10 Tf 50 730 Td (? automatische analyse van kaartgebied.) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 13 Tf 50 700 Td (6. Vergunning en onderzoek) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (Belangrijke onderdelen:) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (? ruimtelijke onderbouwing;) Tj ET
+BT /F1 10 Tf 50 622 Td (? BOPA;) Tj ET
+BT /F1 10 Tf 50 607 Td (? omgevingsvergunning;) Tj ET
+BT /F1 10 Tf 50 592 Td (? participatie;) Tj ET
+BT /F1 10 Tf 50 577 Td (? AERIUS / stikstof;) Tj ET
+BT /F1 10 Tf 50 562 Td (? verkeer en parkeren;) Tj ET
+BT /F1 10 Tf 50 547 Td (? waterparagraaf;) Tj ET
+BT /F1 10 Tf 50 532 Td (? milieuparagraaf;) Tj ET
+BT /F1 10 Tf 50 517 Td (? brandveiligheid;) Tj ET
+BT /F1 10 Tf 50 502 Td (? bouwtechnische toets.) Tj ET
+BT /F1 10 Tf 50 487 Td () Tj ET
+BT /F1 13 Tf 50 472 Td (7. Bureaus en offerteworkflow) Tj ET
+BT /F1 10 Tf 50 454 Td () Tj ET
+BT /F1 10 Tf 50 439 Td (Eerder genoemde partijen:) Tj ET
+BT /F1 10 Tf 50 424 Td () Tj ET
+BT /F1 10 Tf 50 409 Td (? Antea Group;) Tj ET
+BT /F1 10 Tf 50 394 Td (? Goudappel;) Tj ET
+BT /F1 10 Tf 50 379 Td (? TAUW;) Tj ET
+BT /F1 10 Tf 50 364 Td (? BVR Adviseurs RO;) Tj ET
+BT /F1 10 Tf 50 349 Td (? SAB Adviseurs RO;) Tj ET
+BT /F1 10 Tf 50 334 Td (? stikstofberekenen.nl.) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (Goudappel kan parkeeronderzoek en participatie combineren.) Tj ET
+BT /F1 10 Tf 50 289 Td (BVR kan worden gebruikt voor omgevingsvergunning / ruimtelijke onderbouwing.) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 13 Tf 50 259 Td (8. Status in Project Phoenix) Tj ET
+BT /F1 10 Tf 50 241 Td () Tj ET
+BT /F1 10 Tf 50 226 Td (Moskee Bunschoten geldt als referentieproject voor Nederlandse vergunningprojecten binnen) Tj ET
+BT /F1 10 Tf 50 211 Td (Project Phoenix.) Tj ET
+endstream
+endobj
+56 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 57 0 R >>
+endobj
+57 0 obj
+<< /Length 2347 >>
+stream
+BT /F1 15 Tf 50 790 Td (02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (PLUTOSTRAAT PROJECT KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: projectkennis voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Project) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Projectnaam: Plutostraat met BAOEES V3) Tj ET
+BT /F1 10 Tf 50 642 Td (Locatie: Plutostraat, Paramaribo, Suriname) Tj ET
+BT /F1 10 Tf 50 627 Td (Type: Bouw / woning / fundering / constructie) Tj ET
+BT /F1 10 Tf 50 612 Td (Gebruik: testproject voor BAOEES V3 en Project Phoenix.) Tj ET
+BT /F1 10 Tf 50 597 Td () Tj ET
+BT /F1 13 Tf 50 582 Td (2. Doel) Tj ET
+BT /F1 10 Tf 50 564 Td () Tj ET
+BT /F1 10 Tf 50 549 Td (Het Plutostraat-project wordt gebruikt als technisch testproject voor:) Tj ET
+BT /F1 10 Tf 50 534 Td () Tj ET
+BT /F1 10 Tf 50 519 Td (? projectanalyse;) Tj ET
+BT /F1 10 Tf 50 504 Td (? geotechnische analyse;) Tj ET
+BT /F1 10 Tf 50 489 Td (? funderingsadvies;) Tj ET
+BT /F1 10 Tf 50 474 Td (? constructieve toets;) Tj ET
+BT /F1 10 Tf 50 459 Td (? rapportgeneratie;) Tj ET
+BT /F1 10 Tf 50 444 Td (? tekeningen;) Tj ET
+BT /F1 10 Tf 50 429 Td (? Digital Twin;) Tj ET
+BT /F1 10 Tf 50 414 Td (? QA/QC;) Tj ET
+BT /F1 10 Tf 50 399 Td (? projectdashboard;) Tj ET
+BT /F1 10 Tf 50 384 Td (? project-ZIP;) Tj ET
+BT /F1 10 Tf 50 369 Td (? Git evidence.) Tj ET
+BT /F1 10 Tf 50 354 Td () Tj ET
+BT /F1 13 Tf 50 339 Td (3. Bekende uitgangspunten) Tj ET
+BT /F1 10 Tf 50 321 Td () Tj ET
+BT /F1 10 Tf 50 306 Td (? Maaiveld: P = 0,00 m.) Tj ET
+BT /F1 10 Tf 50 291 Td (? Terreinophoging: circa +0,50 m.) Tj ET
+BT /F1 10 Tf 50 276 Td (? Vloerniveau woning: circa +0,15 m boven huidig maaiveld.) Tj ET
+BT /F1 10 Tf 50 261 Td (? Standaard grondwaterstand: P = -0,50 m.) Tj ET
+BT /F1 10 Tf 50 246 Td (? Funderingstype: strokenfundering als voorkeurskeuze.) Tj ET
+BT /F1 10 Tf 50 231 Td (? Standaard Brewster-fundering: strook 150?200 cm breed en 40 cm hoog, met funderingsbalk 50 x) Tj ET
+BT /F1 10 Tf 50 216 Td (60 cm in het hart van de strook.) Tj ET
+BT /F1 10 Tf 50 201 Td () Tj ET
+BT /F1 13 Tf 50 186 Td (4. Bodemopbouw concept) Tj ET
+BT /F1 10 Tf 50 168 Td () Tj ET
+BT /F1 10 Tf 50 153 Td (Laag 1: 0,00 m tot -0,50 m: zandopvulling.) Tj ET
+endstream
+endobj
+58 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 59 0 R >>
+endobj
+59 0 obj
+<< /Length 2316 >>
+stream
+BT /F1 10 Tf 50 790 Td (Laag 2: -0,50 m tot -1,00 m: vaste klei.) Tj ET
+BT /F1 10 Tf 50 775 Td (Laag 3: -1,00 m tot -2,20 m: slappe klei.) Tj ET
+BT /F1 10 Tf 50 760 Td (Laag 4: -2,20 m tot -3,70 m: zand.) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 13 Tf 50 730 Td (5. BAOEES-output) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (Voor Plutostraat zijn in de repository projectoutputs aanwezig:) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (? projectrapport DOCX, PDF, MD en TXT;) Tj ET
+BT /F1 10 Tf 50 652 Td (? tekeningen PDF;) Tj ET
+BT /F1 10 Tf 50 637 Td (? DXF/CAD-bestanden;) Tj ET
+BT /F1 10 Tf 50 622 Td (? calculatie-index CSV;) Tj ET
+BT /F1 10 Tf 50 607 Td (? QA/QC JSON;) Tj ET
+BT /F1 10 Tf 50 592 Td (? source register JSON;) Tj ET
+BT /F1 10 Tf 50 577 Td (? Digital Twin JSON;) Tj ET
+BT /F1 10 Tf 50 562 Td (? audit trail JSON;) Tj ET
+BT /F1 10 Tf 50 547 Td (? file manifest JSON;) Tj ET
+BT /F1 10 Tf 50 532 Td (? git evidence JSON;) Tj ET
+BT /F1 10 Tf 50 517 Td (? runtime log JSON;) Tj ET
+BT /F1 10 Tf 50 502 Td (? project summary CSV;) Tj ET
+BT /F1 10 Tf 50 487 Td (? project tables XLSX;) Tj ET
+BT /F1 10 Tf 50 472 Td (? project ZIP.) Tj ET
+BT /F1 10 Tf 50 457 Td () Tj ET
+BT /F1 13 Tf 50 442 Td (6. Belangrijke lessen) Tj ET
+BT /F1 10 Tf 50 424 Td () Tj ET
+BT /F1 10 Tf 50 409 Td (? Plutostraat is het belangrijkste testproject voor de volledige BAOEES V3 workflow.) Tj ET
+BT /F1 10 Tf 50 394 Td (? De outputbestanden worden gebruikt om dashboard, projectindex, QA/QC en Git evidence te) Tj ET
+BT /F1 10 Tf 50 379 Td (testen.) Tj ET
+BT /F1 10 Tf 50 364 Td (? Elke run moet eindigen met een schone Git-status.) Tj ET
+BT /F1 10 Tf 50 349 Td (? Projectresultaten moeten herleidbaar zijn naar bronnen, aannames en Digital Twin-data.) Tj ET
+BT /F1 10 Tf 50 334 Td () Tj ET
+BT /F1 13 Tf 50 319 Td (7. Status in Project Phoenix) Tj ET
+BT /F1 10 Tf 50 301 Td () Tj ET
+BT /F1 10 Tf 50 286 Td (Plutostraat geldt als eerste volledige referentieproject voor:) Tj ET
+BT /F1 10 Tf 50 271 Td () Tj ET
+BT /F1 10 Tf 50 256 Td (? BAOEES V3 engine stack;) Tj ET
+BT /F1 10 Tf 50 241 Td (? Project Phoenix launcher;) Tj ET
+BT /F1 10 Tf 50 226 Td (? HTML dashboard export;) Tj ET
+BT /F1 10 Tf 50 211 Td (? BIB-koppeling;) Tj ET
+BT /F1 10 Tf 50 196 Td (? Digital Twin First workflow.) Tj ET
+endstream
+endobj
+60 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 61 0 R >>
+endobj
+61 0 obj
+<< /Length 185 >>
+stream
+BT /F1 15 Tf 50 790 Td (02_PROJECTS/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Projectkennis: Plutostraat, Moskee Bunschoten, Bruynzeel Waterfront.) Tj ET
+endstream
+endobj
+62 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 63 0 R >>
+endobj
+63 0 obj
+<< /Length 2164 >>
+stream
+BT /F1 15 Tf 50 790 Td (03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (AAIE ENGINE KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 740 Td () Tj ET
+BT /F1 10 Tf 50 725 Td (AAIE = Autonomous Assumption and Inference Engine.) Tj ET
+BT /F1 10 Tf 50 710 Td () Tj ET
+BT /F1 10 Tf 50 695 Td (Status: officiële engine-kennis voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 680 Td () Tj ET
+BT /F1 10 Tf 50 665 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 650 Td () Tj ET
+BT /F1 10 Tf 50 635 Td (AAIE vult ontbrekende projectgegevens automatisch aan wanneer de gebruiker of brondata niet) Tj ET
+BT /F1 10 Tf 50 620 Td (volledig is.) Tj ET
+BT /F1 10 Tf 50 605 Td () Tj ET
+BT /F1 10 Tf 50 590 Td (AAIE mag gegevens genereren, maar nooit verborgen toepassen.) Tj ET
+BT /F1 10 Tf 50 575 Td () Tj ET
+BT /F1 10 Tf 50 560 Td (Alle automatisch gegenereerde waarden moeten zichtbaar worden opgeslagen in het aannameslog.) Tj ET
+BT /F1 10 Tf 50 545 Td () Tj ET
+BT /F1 10 Tf 50 530 Td (2. Wat AAIE mag aanvullen) Tj ET
+BT /F1 10 Tf 50 515 Td () Tj ET
+BT /F1 10 Tf 50 500 Td (AAIE mag conceptueel aanvullen:) Tj ET
+BT /F1 10 Tf 50 485 Td () Tj ET
+BT /F1 10 Tf 50 470 Td (projecttype;) Tj ET
+BT /F1 10 Tf 50 455 Td (locatiegegevens;) Tj ET
+BT /F1 10 Tf 50 440 Td (maaiveldniveau;) Tj ET
+BT /F1 10 Tf 50 425 Td (grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 410 Td (bodemprofiel;) Tj ET
+BT /F1 10 Tf 50 395 Td (funderingskeuze;) Tj ET
+BT /F1 10 Tf 50 380 Td (constructieve uitgangspunten;) Tj ET
+BT /F1 10 Tf 50 365 Td (parkeeruitgangspunten;) Tj ET
+BT /F1 10 Tf 50 350 Td (vergunninguitgangspunten;) Tj ET
+BT /F1 10 Tf 50 335 Td (kostenkengetallen;) Tj ET
+BT /F1 10 Tf 50 320 Td (planning;) Tj ET
+BT /F1 10 Tf 50 305 Td (risico?s;) Tj ET
+BT /F1 10 Tf 50 290 Td (ontbrekende rapportonderdelen.) Tj ET
+BT /F1 10 Tf 50 275 Td (3. Verplichte registratie per aanname) Tj ET
+BT /F1 10 Tf 50 260 Td () Tj ET
+BT /F1 10 Tf 50 245 Td (Elke aanname moet minimaal bevatten:) Tj ET
+BT /F1 10 Tf 50 230 Td () Tj ET
+BT /F1 10 Tf 50 215 Td (naam;) Tj ET
+BT /F1 10 Tf 50 200 Td (waarde;) Tj ET
+BT /F1 10 Tf 50 185 Td (discipline;) Tj ET
+BT /F1 10 Tf 50 170 Td (reden;) Tj ET
+endstream
+endobj
+64 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 65 0 R >>
+endobj
+65 0 obj
+<< /Length 2093 >>
+stream
+BT /F1 10 Tf 50 790 Td (bron;) Tj ET
+BT /F1 10 Tf 50 775 Td (methode;) Tj ET
+BT /F1 10 Tf 50 760 Td (betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 745 Td (datum/tijd;) Tj ET
+BT /F1 10 Tf 50 730 Td (status;) Tj ET
+BT /F1 10 Tf 50 715 Td (gebruiker kan wijzigen: ja/nee.) Tj ET
+BT /F1 10 Tf 50 700 Td (4. Betrouwbaarheid) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 10 Tf 50 670 Td (AAIE moet betrouwbaarheid aangeven als:) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 10 Tf 50 640 Td (hoog;) Tj ET
+BT /F1 10 Tf 50 625 Td (middel;) Tj ET
+BT /F1 10 Tf 50 610 Td (laag;) Tj ET
+BT /F1 10 Tf 50 595 Td (onbekend.) Tj ET
+BT /F1 10 Tf 50 580 Td () Tj ET
+BT /F1 10 Tf 50 565 Td (Wanneer betrouwbaarheid laag of onbekend is, moet het systeem een waarschuwing geven.) Tj ET
+BT /F1 10 Tf 50 550 Td () Tj ET
+BT /F1 10 Tf 50 535 Td (5. Fallbacks) Tj ET
+BT /F1 10 Tf 50 520 Td () Tj ET
+BT /F1 10 Tf 50 505 Td (Vaste fallback voor grondwaterstand:) Tj ET
+BT /F1 10 Tf 50 490 Td () Tj ET
+BT /F1 10 Tf 50 475 Td (P = -0,50 m) Tj ET
+BT /F1 10 Tf 50 460 Td () Tj ET
+BT /F1 10 Tf 50 445 Td (Vaste fallback voor funderingsonderzoek:) Tj ET
+BT /F1 10 Tf 50 430 Td () Tj ET
+BT /F1 10 Tf 50 415 Td (altijd strokenfundering en paalfundering als varianten genereren;) Tj ET
+BT /F1 10 Tf 50 400 Td (automatisch vergelijken;) Tj ET
+BT /F1 10 Tf 50 385 Td (geen definitieve funderingskeuze zonder toetsing.) Tj ET
+BT /F1 10 Tf 50 370 Td (6. Koppeling met Digital Twin) Tj ET
+BT /F1 10 Tf 50 355 Td () Tj ET
+BT /F1 10 Tf 50 340 Td (AAIE-resultaten moeten naar de Digital Twin worden geschreven.) Tj ET
+BT /F1 10 Tf 50 325 Td () Tj ET
+BT /F1 10 Tf 50 310 Td (Elk automatisch gegenereerd gegeven moet herkenbaar blijven als:) Tj ET
+BT /F1 10 Tf 50 295 Td () Tj ET
+BT /F1 10 Tf 50 280 Td (AAIE-generated) Tj ET
+BT /F1 10 Tf 50 265 Td () Tj ET
+BT /F1 10 Tf 50 250 Td (7. Koppeling met rapporten) Tj ET
+BT /F1 10 Tf 50 235 Td () Tj ET
+BT /F1 10 Tf 50 220 Td (Rapporten moeten onderscheid maken tussen:) Tj ET
+BT /F1 10 Tf 50 205 Td () Tj ET
+BT /F1 10 Tf 50 190 Td (bekende gegevens;) Tj ET
+BT /F1 10 Tf 50 175 Td (brongegevens;) Tj ET
+endstream
+endobj
+66 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 67 0 R >>
+endobj
+67 0 obj
+<< /Length 895 >>
+stream
+BT /F1 10 Tf 50 790 Td (aannames;) Tj ET
+BT /F1 10 Tf 50 775 Td (automatische inferenties;) Tj ET
+BT /F1 10 Tf 50 760 Td (nog te controleren punten.) Tj ET
+BT /F1 10 Tf 50 745 Td (8. Gebruikerscontrole) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 10 Tf 50 715 Td (De gebruiker moet aannames kunnen:) Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 10 Tf 50 685 Td (accepteren;) Tj ET
+BT /F1 10 Tf 50 670 Td (aanpassen;) Tj ET
+BT /F1 10 Tf 50 655 Td (verwijderen;) Tj ET
+BT /F1 10 Tf 50 640 Td (vervangen door handmatige waarde;) Tj ET
+BT /F1 10 Tf 50 625 Td (markeren als definitief;) Tj ET
+BT /F1 10 Tf 50 610 Td (markeren als voorlopig.) Tj ET
+BT /F1 10 Tf 50 595 Td (9. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 580 Td () Tj ET
+BT /F1 10 Tf 50 565 Td (AAIE is bedoeld om Project Phoenix autonoom te laten werken, maar altijd controleerbaar en) Tj ET
+BT /F1 10 Tf 50 550 Td (transparant.) Tj ET
+endstream
+endobj
+68 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 69 0 R >>
+endobj
+69 0 obj
+<< /Length 2340 >>
+stream
+BT /F1 15 Tf 50 790 Td (03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (AUTOMATIC GROUNDWATER & FOUNDATION VARIANT ENGINE) Tj ET
+BT /F1 10 Tf 50 740 Td () Tj ET
+BT /F1 10 Tf 50 725 Td (Status: officiële engine-kennis voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 710 Td () Tj ET
+BT /F1 10 Tf 50 695 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 680 Td () Tj ET
+BT /F1 10 Tf 50 665 Td (Deze engine bepaalt automatisch de geotechnische uitgangspunten voor een project en genereert) Tj ET
+BT /F1 10 Tf 50 650 Td (minimaal twee funderingsvarianten:) Tj ET
+BT /F1 10 Tf 50 635 Td () Tj ET
+BT /F1 10 Tf 50 620 Td (F1: strokenfundering;) Tj ET
+BT /F1 10 Tf 50 605 Td (F2: paalfundering.) Tj ET
+BT /F1 10 Tf 50 590 Td () Tj ET
+BT /F1 10 Tf 50 575 Td (De engine werkt samen met:) Tj ET
+BT /F1 10 Tf 50 560 Td () Tj ET
+BT /F1 10 Tf 50 545 Td (AAIE: Autonomous Assumption and Inference Engine;) Tj ET
+BT /F1 10 Tf 50 530 Td (STEE: Source Traceability and Evidence Engine;) Tj ET
+BT /F1 10 Tf 50 515 Td (Geo Engine;) Tj ET
+BT /F1 10 Tf 50 500 Td (Structural Engine;) Tj ET
+BT /F1 10 Tf 50 485 Td (Digital Twin;) Tj ET
+BT /F1 10 Tf 50 470 Td (QA/QC Engine.) Tj ET
+BT /F1 10 Tf 50 455 Td (2. Automatische grondwaterstand) Tj ET
+BT /F1 10 Tf 50 440 Td () Tj ET
+BT /F1 10 Tf 50 425 Td (De engine moet automatisch proberen de grondwaterstand te bepalen op basis van:) Tj ET
+BT /F1 10 Tf 50 410 Td () Tj ET
+BT /F1 10 Tf 50 395 Td (projectlocatie;) Tj ET
+BT /F1 10 Tf 50 380 Td (kaartuitsnede;) Tj ET
+BT /F1 10 Tf 50 365 Td (Google Maps- of satellietbeeld;) Tj ET
+BT /F1 10 Tf 50 350 Td (maaiveldinformatie;) Tj ET
+BT /F1 10 Tf 50 335 Td (bodemgegevens;) Tj ET
+BT /F1 10 Tf 50 320 Td (nabijheid van oppervlaktewater;) Tj ET
+BT /F1 10 Tf 50 305 Td (eerdere projectdata;) Tj ET
+BT /F1 10 Tf 50 290 Td (open data;) Tj ET
+BT /F1 10 Tf 50 275 Td (handmatige gebruikersinput;) Tj ET
+BT /F1 10 Tf 50 260 Td (AAIE-inferentie.) Tj ET
+BT /F1 10 Tf 50 245 Td () Tj ET
+BT /F1 10 Tf 50 230 Td (Wanneer geen betrouwbare projectinformatie beschikbaar is, gebruikt de engine de fallback:) Tj ET
+BT /F1 10 Tf 50 215 Td () Tj ET
+BT /F1 10 Tf 50 200 Td (Grondwaterstand: P = -0,50 m) Tj ET
+BT /F1 10 Tf 50 185 Td () Tj ET
+BT /F1 10 Tf 50 170 Td (Deze fallback moet altijd worden opgeslagen als aanname.) Tj ET
+endstream
+endobj
+70 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 71 0 R >>
+endobj
+71 0 obj
+<< /Length 2110 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (3. Automatisch geo-profiel) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 10 Tf 50 745 Td (De engine moet een concept-geo-profiel kunnen genereren met:) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 10 Tf 50 715 Td (maaiveldniveau;) Tj ET
+BT /F1 10 Tf 50 700 Td (grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 685 Td (globale bodemopbouw;) Tj ET
+BT /F1 10 Tf 50 670 Td (grondsoort per laag;) Tj ET
+BT /F1 10 Tf 50 655 Td (draagkrachtindicatie;) Tj ET
+BT /F1 10 Tf 50 640 Td (zettingsgevoeligheid;) Tj ET
+BT /F1 10 Tf 50 625 Td (risico-indicatie;) Tj ET
+BT /F1 10 Tf 50 610 Td (advies vervolgonderzoek;) Tj ET
+BT /F1 10 Tf 50 595 Td (betrouwbaarheid per onderdeel.) Tj ET
+BT /F1 10 Tf 50 580 Td (4. Funderingsvariant F1: strokenfundering) Tj ET
+BT /F1 10 Tf 50 565 Td () Tj ET
+BT /F1 10 Tf 50 550 Td (Conceptuitgangspunt:) Tj ET
+BT /F1 10 Tf 50 535 Td () Tj ET
+BT /F1 10 Tf 50 520 Td (fundering op staal;) Tj ET
+BT /F1 10 Tf 50 505 Td (aaneengesloten strokenfundering;) Tj ET
+BT /F1 10 Tf 50 490 Td (breedte: 150 cm tot 200 cm;) Tj ET
+BT /F1 10 Tf 50 475 Td (hoogte: 40 cm;) Tj ET
+BT /F1 10 Tf 50 460 Td (funderingsbalk: 50 cm breed en 60 cm hoog;) Tj ET
+BT /F1 10 Tf 50 445 Td (balk in hart van strook;) Tj ET
+BT /F1 10 Tf 50 430 Td (toepassen onder dragende wanden en kolommen.) Tj ET
+BT /F1 10 Tf 50 415 Td () Tj ET
+BT /F1 10 Tf 50 400 Td (Te toetsen:) Tj ET
+BT /F1 10 Tf 50 385 Td () Tj ET
+BT /F1 10 Tf 50 370 Td (draagkracht;) Tj ET
+BT /F1 10 Tf 50 355 Td (zetting;) Tj ET
+BT /F1 10 Tf 50 340 Td (grondwaterinvloed;) Tj ET
+BT /F1 10 Tf 50 325 Td (strookbreedte;) Tj ET
+BT /F1 10 Tf 50 310 Td (uitvoerbaarheid;) Tj ET
+BT /F1 10 Tf 50 295 Td (kosten;) Tj ET
+BT /F1 10 Tf 50 280 Td (bouwrisico;) Tj ET
+BT /F1 10 Tf 50 265 Td (constructieve haalbaarheid.) Tj ET
+BT /F1 10 Tf 50 250 Td (5. Funderingsvariant F2: paalfundering) Tj ET
+BT /F1 10 Tf 50 235 Td () Tj ET
+BT /F1 10 Tf 50 220 Td (Conceptuitgangspunt:) Tj ET
+BT /F1 10 Tf 50 205 Td () Tj ET
+BT /F1 10 Tf 50 190 Td (diepe fundering op palen;) Tj ET
+BT /F1 10 Tf 50 175 Td (toepassen bij slappe bodem;) Tj ET
+endstream
+endobj
+72 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 73 0 R >>
+endobj
+73 0 obj
+<< /Length 2240 >>
+stream
+BT /F1 10 Tf 50 790 Td (toepassen bij onvoldoende draagkracht;) Tj ET
+BT /F1 10 Tf 50 775 Td (toepassen bij verhoogd zettingsrisico;) Tj ET
+BT /F1 10 Tf 50 760 Td (toepassen bij hogere belasting;) Tj ET
+BT /F1 10 Tf 50 745 Td (toepassen wanneer strokenfundering niet verantwoord is.) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 10 Tf 50 715 Td (Te toetsen:) Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 10 Tf 50 685 Td (paallengte;) Tj ET
+BT /F1 10 Tf 50 670 Td (paaltype;) Tj ET
+BT /F1 10 Tf 50 655 Td (draagkracht per paal;) Tj ET
+BT /F1 10 Tf 50 640 Td (paalbelasting;) Tj ET
+BT /F1 10 Tf 50 625 Td (paalafstand;) Tj ET
+BT /F1 10 Tf 50 610 Td (paalkop;) Tj ET
+BT /F1 10 Tf 50 595 Td (funderingsbalk;) Tj ET
+BT /F1 10 Tf 50 580 Td (uitvoerbaarheid;) Tj ET
+BT /F1 10 Tf 50 565 Td (kosten;) Tj ET
+BT /F1 10 Tf 50 550 Td (risico.) Tj ET
+BT /F1 10 Tf 50 535 Td (6. Automatische vergelijking) Tj ET
+BT /F1 10 Tf 50 520 Td () Tj ET
+BT /F1 10 Tf 50 505 Td (De engine moet F1 en F2 vergelijken op:) Tj ET
+BT /F1 10 Tf 50 490 Td () Tj ET
+BT /F1 10 Tf 50 475 Td (Aspect F1 Strokenfundering F2 Paalfundering) Tj ET
+BT /F1 10 Tf 50 460 Td (Draagkracht toetsen toetsen) Tj ET
+BT /F1 10 Tf 50 445 Td (Zetting toetsen toetsen) Tj ET
+BT /F1 10 Tf 50 430 Td (Kosten vergelijken vergelijken) Tj ET
+BT /F1 10 Tf 50 415 Td (Bouwtijd vergelijken vergelijken) Tj ET
+BT /F1 10 Tf 50 400 Td (Risico vergelijken vergelijken) Tj ET
+BT /F1 10 Tf 50 385 Td (Bodemgeschiktheid beoordelen beoordelen) Tj ET
+BT /F1 10 Tf 50 370 Td (Grondwaterinvloed beoordelen beoordelen) Tj ET
+BT /F1 10 Tf 50 355 Td (Constructieve haalbaarheid beoordelen beoordelen) Tj ET
+BT /F1 10 Tf 50 340 Td (Vergunning / acceptatie beoordelen beoordelen) Tj ET
+BT /F1 10 Tf 50 325 Td (7. Output) Tj ET
+BT /F1 10 Tf 50 310 Td () Tj ET
+BT /F1 10 Tf 50 295 Td (De engine moet minimaal leveren:) Tj ET
+BT /F1 10 Tf 50 280 Td () Tj ET
+BT /F1 10 Tf 50 265 Td (geotechnische uitgangspunten;) Tj ET
+BT /F1 10 Tf 50 250 Td (grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 235 Td (bodemprofiel;) Tj ET
+BT /F1 10 Tf 50 220 Td (funderingsvariant F1;) Tj ET
+BT /F1 10 Tf 50 205 Td (funderingsvariant F2;) Tj ET
+BT /F1 10 Tf 50 190 Td (vergelijkingstabel;) Tj ET
+BT /F1 10 Tf 50 175 Td (aanbevolen fundering;) Tj ET
+endstream
+endobj
+74 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 75 0 R >>
+endobj
+75 0 obj
+<< /Length 1193 >>
+stream
+BT /F1 10 Tf 50 790 Td (aannameslog;) Tj ET
+BT /F1 10 Tf 50 775 Td (bronvermelding;) Tj ET
+BT /F1 10 Tf 50 760 Td (QA/QC-status;) Tj ET
+BT /F1 10 Tf 50 745 Td (export naar rapport, dashboard en Digital Twin.) Tj ET
+BT /F1 10 Tf 50 730 Td (8. Gebruikerskeuze) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (De gebruiker moet kunnen kiezen:) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 10 Tf 50 670 Td (automatisch beste fundering kiezen;) Tj ET
+BT /F1 10 Tf 50 655 Td (strokenfundering vastzetten;) Tj ET
+BT /F1 10 Tf 50 640 Td (paalfundering vastzetten;) Tj ET
+BT /F1 10 Tf 50 625 Td (beide varianten volledig rapporteren;) Tj ET
+BT /F1 10 Tf 50 610 Td (handmatig funderingstype aanpassen.) Tj ET
+BT /F1 10 Tf 50 595 Td (9. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 580 Td () Tj ET
+BT /F1 10 Tf 50 565 Td (Automatisch genereren mag, maar Project Phoenix moet altijd zichtbaar maken:) Tj ET
+BT /F1 10 Tf 50 550 Td () Tj ET
+BT /F1 10 Tf 50 535 Td (wat uit brondata komt;) Tj ET
+BT /F1 10 Tf 50 520 Td (wat door AAIE is aangenomen;) Tj ET
+BT /F1 10 Tf 50 505 Td (wat projectspecifiek berekend is;) Tj ET
+BT /F1 10 Tf 50 490 Td (wat nog handmatig gecontroleerd moet worden.) Tj ET
+endstream
+endobj
+76 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 77 0 R >>
+endobj
+77 0 obj
+<< /Length 2215 >>
+stream
+BT /F1 15 Tf 50 790 Td (03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (BIB EXPORT ENGINE KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: enginekennis voor de toekomstige Project Phoenix BIB Export Engine.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (De BIB Export Engine is verantwoordelijk voor het omzetten van de Brewster Integrated) Tj ET
+BT /F1 10 Tf 50 642 Td (Bibliotheek naar professionele exports.) Tj ET
+BT /F1 10 Tf 50 627 Td () Tj ET
+BT /F1 10 Tf 50 612 Td (De engine vormt de brug tussen:) Tj ET
+BT /F1 10 Tf 50 597 Td () Tj ET
+BT /F1 10 Tf 50 582 Td (* BIB Markdown-bestanden;) Tj ET
+BT /F1 10 Tf 50 567 Td (* Master Specification;) Tj ET
+BT /F1 10 Tf 50 552 Td (* DOCX/PDF-rapportage;) Tj ET
+BT /F1 10 Tf 50 537 Td (* HTML knowledge dashboard;) Tj ET
+BT /F1 10 Tf 50 522 Td (* ZIP-archief;) Tj ET
+BT /F1 10 Tf 50 507 Td (* Git Evidence.) Tj ET
+BT /F1 10 Tf 50 492 Td () Tj ET
+BT /F1 13 Tf 50 477 Td (2. Rol binnen Project Phoenix) Tj ET
+BT /F1 10 Tf 50 459 Td () Tj ET
+BT /F1 10 Tf 50 444 Td (De engine hoort bij de Output and Evidence Layer van Project Phoenix.) Tj ET
+BT /F1 10 Tf 50 429 Td () Tj ET
+BT /F1 10 Tf 50 414 Td (Relaties:) Tj ET
+BT /F1 10 Tf 50 399 Td () Tj ET
+BT /F1 10 Tf 50 384 Td (* leest BIB Knowledge Layer;) Tj ET
+BT /F1 10 Tf 50 369 Td (* gebruikt STEE voor bron- en evidenceprincipes;) Tj ET
+BT /F1 10 Tf 50 354 Td (* gebruikt Git Evidence voor versieherleidbaarheid;) Tj ET
+BT /F1 10 Tf 50 339 Td (* gebruikt QA/QC voor exportcontrole;) Tj ET
+BT /F1 10 Tf 50 324 Td (* levert output aan Master Specification Sync.) Tj ET
+BT /F1 10 Tf 50 309 Td () Tj ET
+BT /F1 13 Tf 50 294 Td (3. Engine-input) Tj ET
+BT /F1 10 Tf 50 276 Td () Tj ET
+BT /F1 10 Tf 50 261 Td (Input:) Tj ET
+BT /F1 10 Tf 50 246 Td () Tj ET
+BT /F1 10 Tf 50 231 Td (* `bib/` hoofdmap;) Tj ET
+BT /F1 10 Tf 50 216 Td (* Markdown-bestanden;) Tj ET
+BT /F1 10 Tf 50 201 Td (* README-bestanden;) Tj ET
+BT /F1 10 Tf 50 186 Td (* projectkennis;) Tj ET
+BT /F1 10 Tf 50 171 Td (* enginekennis;) Tj ET
+BT /F1 10 Tf 50 156 Td (* standaarden;) Tj ET
+endstream
+endobj
+78 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 79 0 R >>
+endobj
+79 0 obj
+<< /Length 2028 >>
+stream
+BT /F1 10 Tf 50 790 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 775 Td (* workflows;) Tj ET
+BT /F1 10 Tf 50 760 Td (* templates;) Tj ET
+BT /F1 10 Tf 50 745 Td (* lessons learned;) Tj ET
+BT /F1 10 Tf 50 730 Td (* source evidence.) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 13 Tf 50 700 Td (4. Engine-output) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (Output:) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (* Word-document;) Tj ET
+BT /F1 10 Tf 50 622 Td (* PDF-document;) Tj ET
+BT /F1 10 Tf 50 607 Td (* ZIP-bestand;) Tj ET
+BT /F1 10 Tf 50 592 Td (* HTML-dashboard;) Tj ET
+BT /F1 10 Tf 50 577 Td (* JSON-manifest;) Tj ET
+BT /F1 10 Tf 50 562 Td (* exportlog;) Tj ET
+BT /F1 10 Tf 50 547 Td (* Git Evidence-bestand.) Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 13 Tf 50 517 Td (5. Verplichte methode) Tj ET
+BT /F1 10 Tf 50 499 Td () Tj ET
+BT /F1 10 Tf 50 484 Td (De engine moet een `run\(\)` methode hebben.) Tj ET
+BT /F1 10 Tf 50 469 Td () Tj ET
+BT /F1 10 Tf 50 454 Td (Dit voorkomt dezelfde fout als eerder bij de HTML Dashboard Export Engine:) Tj ET
+BT /F1 10 Tf 50 439 Td () Tj ET
+BT /F1 10 Tf 50 424 Td (`AttributeError: object has no attribute run`) Tj ET
+BT /F1 10 Tf 50 409 Td () Tj ET
+BT /F1 13 Tf 50 394 Td (6. Robuuste parameters) Tj ET
+BT /F1 10 Tf 50 376 Td () Tj ET
+BT /F1 10 Tf 50 361 Td (De engine moet toekomstige extra parameters kunnen accepteren via:) Tj ET
+BT /F1 10 Tf 50 346 Td () Tj ET
+BT /F1 10 Tf 50 331 Td (`**extra_results`) Tj ET
+BT /F1 10 Tf 50 316 Td () Tj ET
+BT /F1 10 Tf 50 301 Td (Daarmee blijft de engine compatibel met BAOEES Core wanneer later extra resultaten worden) Tj ET
+BT /F1 10 Tf 50 286 Td (meegegeven.) Tj ET
+BT /F1 10 Tf 50 271 Td () Tj ET
+BT /F1 13 Tf 50 256 Td (7. Standaard result-structuur) Tj ET
+BT /F1 10 Tf 50 238 Td () Tj ET
+BT /F1 10 Tf 50 223 Td (Elke run moet teruggeven:) Tj ET
+BT /F1 10 Tf 50 208 Td () Tj ET
+BT /F1 10 Tf 50 193 Td (* status;) Tj ET
+BT /F1 10 Tf 50 178 Td (* engine;) Tj ET
+BT /F1 10 Tf 50 163 Td (* engine_version;) Tj ET
+endstream
+endobj
+80 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 81 0 R >>
+endobj
+81 0 obj
+<< /Length 2056 >>
+stream
+BT /F1 10 Tf 50 790 Td (* output_paths;) Tj ET
+BT /F1 10 Tf 50 775 Td (* file_count;) Tj ET
+BT /F1 10 Tf 50 760 Td (* warnings;) Tj ET
+BT /F1 10 Tf 50 745 Td (* recommendation;) Tj ET
+BT /F1 10 Tf 50 730 Td (* generated_at;) Tj ET
+BT /F1 10 Tf 50 715 Td (* git_evidence.) Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 13 Tf 50 685 Td (8. Warnings) Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td (De engine moet waarschuwingen geven wanneer:) Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td (* BIB-index ontbreekt;) Tj ET
+BT /F1 10 Tf 50 607 Td (* categorie leeg is;) Tj ET
+BT /F1 10 Tf 50 592 Td (* README ontbreekt;) Tj ET
+BT /F1 10 Tf 50 577 Td (* projectkennis ontbreekt;) Tj ET
+BT /F1 10 Tf 50 562 Td (* assumptions ontbreken;) Tj ET
+BT /F1 10 Tf 50 547 Td (* source evidence ontbreekt;) Tj ET
+BT /F1 10 Tf 50 532 Td (* Git-status niet clean is.) Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 13 Tf 50 502 Td (9. Recommendation) Tj ET
+BT /F1 10 Tf 50 484 Td () Tj ET
+BT /F1 10 Tf 50 469 Td (De engine moet aanbevelingen geven voor:) Tj ET
+BT /F1 10 Tf 50 454 Td () Tj ET
+BT /F1 10 Tf 50 439 Td (* ontbrekende kennis;) Tj ET
+BT /F1 10 Tf 50 424 Td (* verouderde hoofdstukken;) Tj ET
+BT /F1 10 Tf 50 409 Td (* ontbrekende exports;) Tj ET
+BT /F1 10 Tf 50 394 Td (* QA/QC-aandachtspunten;) Tj ET
+BT /F1 10 Tf 50 379 Td (* volgende BIB-versie.) Tj ET
+BT /F1 10 Tf 50 364 Td () Tj ET
+BT /F1 13 Tf 50 349 Td (10. Toekomstige koppeling) Tj ET
+BT /F1 10 Tf 50 331 Td () Tj ET
+BT /F1 10 Tf 50 316 Td (De BIB Export Engine moet later gekoppeld worden aan:) Tj ET
+BT /F1 10 Tf 50 301 Td () Tj ET
+BT /F1 10 Tf 50 286 Td (* Project Phoenix Launcher;) Tj ET
+BT /F1 10 Tf 50 271 Td (* Master Specification Sync;) Tj ET
+BT /F1 10 Tf 50 256 Td (* HTML dashboard;) Tj ET
+BT /F1 10 Tf 50 241 Td (* Project ZIP Engine;) Tj ET
+BT /F1 10 Tf 50 226 Td (* Document Export Engine;) Tj ET
+BT /F1 10 Tf 50 211 Td (* QA/QC Engine.) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 13 Tf 50 181 Td (11. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 163 Td () Tj ET
+endstream
+endobj
+82 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 83 0 R >>
+endobj
+83 0 obj
+<< /Length 236 >>
+stream
+BT /F1 10 Tf 50 790 Td (De BIB Export Engine mag geen kennis verzinnen.) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (De engine mag alleen bestaande BIB-inhoud verzamelen, structureren, exporteren en controleren.) Tj ET
+endstream
+endobj
+84 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 85 0 R >>
+endobj
+85 0 obj
+<< /Length 142 >>
+stream
+BT /F1 15 Tf 50 790 Td (03_ENGINES/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?BAOEES V3 engine register.) Tj ET
+endstream
+endobj
+86 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 87 0 R >>
+endobj
+87 0 obj
+<< /Length 2077 >>
+stream
+BT /F1 15 Tf 50 790 Td (03_ENGINES/STEE_ENGINE_KNOWLEDGE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (STEE ENGINE KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (STEE = Source Traceability and Evidence Engine.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 10 Tf 50 690 Td (Status: officiële engine-kennis voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 675 Td () Tj ET
+BT /F1 13 Tf 50 660 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 642 Td () Tj ET
+BT /F1 10 Tf 50 627 Td (STEE registreert alle bronnen, bewijsstukken en herleidbaarheid binnen Project Phoenix.) Tj ET
+BT /F1 10 Tf 50 612 Td () Tj ET
+BT /F1 10 Tf 50 597 Td (Elke projectoutput moet kunnen worden teruggeleid naar:) Tj ET
+BT /F1 10 Tf 50 582 Td () Tj ET
+BT /F1 10 Tf 50 567 Td (* projectinput;) Tj ET
+BT /F1 10 Tf 50 552 Td (* brondata;) Tj ET
+BT /F1 10 Tf 50 537 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 522 Td (* berekeningen;) Tj ET
+BT /F1 10 Tf 50 507 Td (* Digital Twin-data;) Tj ET
+BT /F1 10 Tf 50 492 Td (* runtime logs;) Tj ET
+BT /F1 10 Tf 50 477 Td (* Git evidence.) Tj ET
+BT /F1 10 Tf 50 462 Td () Tj ET
+BT /F1 13 Tf 50 447 Td (2. Bronregistratie) Tj ET
+BT /F1 10 Tf 50 429 Td () Tj ET
+BT /F1 10 Tf 50 414 Td (Per bron moet minimaal worden vastgelegd:) Tj ET
+BT /F1 10 Tf 50 399 Td () Tj ET
+BT /F1 10 Tf 50 384 Td (* bronnaam;) Tj ET
+BT /F1 10 Tf 50 369 Td (* bronbestand of URL;) Tj ET
+BT /F1 10 Tf 50 354 Td (* type bron;) Tj ET
+BT /F1 10 Tf 50 339 Td (* discipline;) Tj ET
+BT /F1 10 Tf 50 324 Td (* projectonderdeel;) Tj ET
+BT /F1 10 Tf 50 309 Td (* datum/tijd;) Tj ET
+BT /F1 10 Tf 50 294 Td (* betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 279 Td (* gebruikte waarde;) Tj ET
+BT /F1 10 Tf 50 264 Td (* relatie met rapport, tekening of berekening.) Tj ET
+BT /F1 10 Tf 50 249 Td () Tj ET
+BT /F1 13 Tf 50 234 Td (3. Bronmap) Tj ET
+BT /F1 10 Tf 50 216 Td () Tj ET
+BT /F1 10 Tf 50 201 Td (Elke projectrun moet een bronmap hebben:) Tj ET
+BT /F1 10 Tf 50 186 Td () Tj ET
+BT /F1 10 Tf 50 171 Td (**Bronvermelding_van_dit_project**) Tj ET
+BT /F1 10 Tf 50 156 Td () Tj ET
+endstream
+endobj
+88 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 89 0 R >>
+endobj
+89 0 obj
+<< /Length 2179 >>
+stream
+BT /F1 10 Tf 50 790 Td (of binnen BAOEES-output:) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (**06_sources/source_register.json**) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 13 Tf 50 730 Td (4. Relatie met AAIE) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (Als AAIE een aanname maakt op basis van een bron, moet STEE die bron koppelen aan de aanname.) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (Als geen bron beschikbaar is, moet de aanname worden gemarkeerd als:) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (**AAIE fallback assumption**) Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 13 Tf 50 607 Td (5. Relatie met Git Evidence) Tj ET
+BT /F1 10 Tf 50 589 Td () Tj ET
+BT /F1 10 Tf 50 574 Td (STEE moet samenwerken met Git Evidence zodat zichtbaar is:) Tj ET
+BT /F1 10 Tf 50 559 Td () Tj ET
+BT /F1 10 Tf 50 544 Td (* welke commit bij een projectrun hoort;) Tj ET
+BT /F1 10 Tf 50 529 Td (* welke bestanden zijn gegenereerd;) Tj ET
+BT /F1 10 Tf 50 514 Td (* welke output bij welke codeversie hoort;) Tj ET
+BT /F1 10 Tf 50 499 Td (* of de working tree clean was.) Tj ET
+BT /F1 10 Tf 50 484 Td () Tj ET
+BT /F1 13 Tf 50 469 Td (6. Relatie met QA/QC) Tj ET
+BT /F1 10 Tf 50 451 Td () Tj ET
+BT /F1 10 Tf 50 436 Td (QA/QC moet controleren of belangrijke rapportonderdelen een bron of aanname hebben.) Tj ET
+BT /F1 10 Tf 50 421 Td () Tj ET
+BT /F1 10 Tf 50 406 Td (Ontbrekende bronvermelding moet als waarschuwing worden opgenomen.) Tj ET
+BT /F1 10 Tf 50 391 Td () Tj ET
+BT /F1 13 Tf 50 376 Td (7. Output) Tj ET
+BT /F1 10 Tf 50 358 Td () Tj ET
+BT /F1 10 Tf 50 343 Td (STEE moet kunnen exporteren naar:) Tj ET
+BT /F1 10 Tf 50 328 Td () Tj ET
+BT /F1 10 Tf 50 313 Td (* JSON;) Tj ET
+BT /F1 10 Tf 50 298 Td (* CSV;) Tj ET
+BT /F1 10 Tf 50 283 Td (* XLSX;) Tj ET
+BT /F1 10 Tf 50 268 Td (* PDF;) Tj ET
+BT /F1 10 Tf 50 253 Td (* DOCX;) Tj ET
+BT /F1 10 Tf 50 238 Td (* HTML dashboard;) Tj ET
+BT /F1 10 Tf 50 223 Td (* project-ZIP.) Tj ET
+BT /F1 10 Tf 50 208 Td () Tj ET
+BT /F1 13 Tf 50 193 Td (8. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 175 Td () Tj ET
+BT /F1 10 Tf 50 160 Td (Geen eindrapport zonder bronvermelding.) Tj ET
+endstream
+endobj
+90 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 91 0 R >>
+endobj
+91 0 obj
+<< /Length 207 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (Geen automatische aanname zonder aannameslog.) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 10 Tf 50 745 Td (Geen projectexport zonder evidence.) Tj ET
+endstream
+endobj
+92 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 93 0 R >>
+endobj
+93 0 obj
+<< /Length 2474 >>
+stream
+BT /F1 15 Tf 50 790 Td (04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (PROJECT PHOENIX STANDARDS) Tj ET
+BT /F1 10 Tf 50 740 Td () Tj ET
+BT /F1 10 Tf 50 725 Td (Status: vaste standaarden en systeemregels voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 710 Td () Tj ET
+BT /F1 10 Tf 50 695 Td (1. Digital Twin First) Tj ET
+BT /F1 10 Tf 50 680 Td () Tj ET
+BT /F1 10 Tf 50 665 Td (Alle projectinformatie moet worden vastgelegd in de Living Digital Twin.) Tj ET
+BT /F1 10 Tf 50 650 Td () Tj ET
+BT /F1 10 Tf 50 635 Td (Rapporten, tekeningen, berekeningen, kostenramingen, vergunningstukken, dashboards en exports) Tj ET
+BT /F1 10 Tf 50 620 Td (moeten voortkomen uit dezelfde centrale projectdata.) Tj ET
+BT /F1 10 Tf 50 605 Td () Tj ET
+BT /F1 10 Tf 50 590 Td (2. Automatische grondwaterstand) Tj ET
+BT /F1 10 Tf 50 575 Td () Tj ET
+BT /F1 10 Tf 50 560 Td (Project Phoenix moet de grondwaterstand automatisch kunnen bepalen of schatten.) Tj ET
+BT /F1 10 Tf 50 545 Td () Tj ET
+BT /F1 10 Tf 50 530 Td (De geotechnische module moet hiervoor gebruik kunnen maken van:) Tj ET
+BT /F1 10 Tf 50 515 Td () Tj ET
+BT /F1 10 Tf 50 500 Td (projectlocatie;) Tj ET
+BT /F1 10 Tf 50 485 Td (kaartuitsnede;) Tj ET
+BT /F1 10 Tf 50 470 Td (Google Maps- of satellietbeeld;) Tj ET
+BT /F1 10 Tf 50 455 Td (beschikbare geo-informatie;) Tj ET
+BT /F1 10 Tf 50 440 Td (open data;) Tj ET
+BT /F1 10 Tf 50 425 Td (eerdere projecten;) Tj ET
+BT /F1 10 Tf 50 410 Td (bodemtype;) Tj ET
+BT /F1 10 Tf 50 395 Td (maaiveldniveau;) Tj ET
+BT /F1 10 Tf 50 380 Td (AAIE-inferentie;) Tj ET
+BT /F1 10 Tf 50 365 Td (handmatige invoer van de gebruiker.) Tj ET
+BT /F1 10 Tf 50 350 Td () Tj ET
+BT /F1 10 Tf 50 335 Td (Wanneer geen betrouwbare projectspecifieke grondwaterstand beschikbaar is, geldt als fallback:) Tj ET
+BT /F1 10 Tf 50 320 Td () Tj ET
+BT /F1 10 Tf 50 305 Td (Grondwaterstand: P = -0,50 m) Tj ET
+BT /F1 10 Tf 50 290 Td () Tj ET
+BT /F1 10 Tf 50 275 Td (Deze waarde moet altijd als aanname worden geregistreerd in het aannameslog.) Tj ET
+BT /F1 10 Tf 50 260 Td () Tj ET
+BT /F1 10 Tf 50 245 Td (3. Automatisch genereren geo-informatie) Tj ET
+BT /F1 10 Tf 50 230 Td () Tj ET
+BT /F1 10 Tf 50 215 Td (Project Phoenix moet geo-informatie automatisch kunnen genereren op basis van locatie en) Tj ET
+BT /F1 10 Tf 50 200 Td (beschikbare gegevens.) Tj ET
+BT /F1 10 Tf 50 185 Td () Tj ET
+BT /F1 10 Tf 50 170 Td (Minimaal te genereren gegevens:) Tj ET
+endstream
+endobj
+94 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 95 0 R >>
+endobj
+95 0 obj
+<< /Length 2323 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (maaiveldniveau;) Tj ET
+BT /F1 10 Tf 50 760 Td (grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 745 Td (globale bodemopbouw;) Tj ET
+BT /F1 10 Tf 50 730 Td (bodemrisico?s;) Tj ET
+BT /F1 10 Tf 50 715 Td (draagkrachtindicatie;) Tj ET
+BT /F1 10 Tf 50 700 Td (zettingsgevoeligheid;) Tj ET
+BT /F1 10 Tf 50 685 Td (grondsoortindicatie;) Tj ET
+BT /F1 10 Tf 50 670 Td (funderingsadvies;) Tj ET
+BT /F1 10 Tf 50 655 Td (betrouwbaarheid per aanname;) Tj ET
+BT /F1 10 Tf 50 640 Td (bronvermelding per gebruikt gegeven.) Tj ET
+BT /F1 10 Tf 50 625 Td (4. Automatische funderingsvarianten) Tj ET
+BT /F1 10 Tf 50 610 Td () Tj ET
+BT /F1 10 Tf 50 595 Td (Voor elk bouwproject moet Project Phoenix standaard minimaal twee funderingsvarianten) Tj ET
+BT /F1 10 Tf 50 580 Td (genereren:) Tj ET
+BT /F1 10 Tf 50 565 Td () Tj ET
+BT /F1 10 Tf 50 550 Td (Variant Naam Omschrijving) Tj ET
+BT /F1 10 Tf 50 535 Td (F1 Strokenfundering Fundering op staal met stroken onder wanden/kolommen) Tj ET
+BT /F1 10 Tf 50 520 Td (F2 Paalfundering Diepe fundering op palen bij onvoldoende draagkracht of zettingsrisico) Tj ET
+BT /F1 10 Tf 50 505 Td () Tj ET
+BT /F1 10 Tf 50 490 Td (Beide varianten moeten automatisch worden getoetst op:) Tj ET
+BT /F1 10 Tf 50 475 Td () Tj ET
+BT /F1 10 Tf 50 460 Td (draagkracht;) Tj ET
+BT /F1 10 Tf 50 445 Td (zetting;) Tj ET
+BT /F1 10 Tf 50 430 Td (bodemgeschiktheid;) Tj ET
+BT /F1 10 Tf 50 415 Td (grondwaterinvloed;) Tj ET
+BT /F1 10 Tf 50 400 Td (uitvoerbaarheid;) Tj ET
+BT /F1 10 Tf 50 385 Td (kosten;) Tj ET
+BT /F1 10 Tf 50 370 Td (risico;) Tj ET
+BT /F1 10 Tf 50 355 Td (bouwtijd;) Tj ET
+BT /F1 10 Tf 50 340 Td (constructieve haalbaarheid;) Tj ET
+BT /F1 10 Tf 50 325 Td (vergunningstechnische haalbaarheid.) Tj ET
+BT /F1 10 Tf 50 310 Td (5. Standaard strokenfundering) Tj ET
+BT /F1 10 Tf 50 295 Td () Tj ET
+BT /F1 10 Tf 50 280 Td (Voor conceptontwerp geldt als standaard Brewster-uitgangspunt:) Tj ET
+BT /F1 10 Tf 50 265 Td () Tj ET
+BT /F1 10 Tf 50 250 Td (aaneengesloten strokenfundering;) Tj ET
+BT /F1 10 Tf 50 235 Td (breedte: 150 cm tot 200 cm;) Tj ET
+BT /F1 10 Tf 50 220 Td (hoogte: 40 cm;) Tj ET
+BT /F1 10 Tf 50 205 Td (funderingsbalk: 50 cm breed en 60 cm hoog;) Tj ET
+BT /F1 10 Tf 50 190 Td (funderingsbalk in het hart van de strook.) Tj ET
+BT /F1 10 Tf 50 175 Td () Tj ET
+endstream
+endobj
+96 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 97 0 R >>
+endobj
+97 0 obj
+<< /Length 2436 >>
+stream
+BT /F1 10 Tf 50 790 Td (Deze standaard is een conceptbasis en moet projectspecifiek worden gecontroleerd.) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (6. Paalfundering als tweede variant) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 10 Tf 50 730 Td (Paalfundering moet automatisch worden toegevoegd als tweede funderingsvariant wanneer:) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (slappe bodemlagen aanwezig zijn;) Tj ET
+BT /F1 10 Tf 50 685 Td (zettingsrisico verhoogd is;) Tj ET
+BT /F1 10 Tf 50 670 Td (draagkracht van fundering op staal onzeker is;) Tj ET
+BT /F1 10 Tf 50 655 Td (grondwaterstand invloedrijk is;) Tj ET
+BT /F1 10 Tf 50 640 Td (projectbelasting hoog is;) Tj ET
+BT /F1 10 Tf 50 625 Td (fundering op staal economisch of technisch ongunstig lijkt.) Tj ET
+BT /F1 10 Tf 50 610 Td (7. Keuzeopties voor gebruiker) Tj ET
+BT /F1 10 Tf 50 595 Td () Tj ET
+BT /F1 10 Tf 50 580 Td (De gebruiker moet kunnen kiezen uit:) Tj ET
+BT /F1 10 Tf 50 565 Td () Tj ET
+BT /F1 10 Tf 50 550 Td (strokenfundering gebruiken;) Tj ET
+BT /F1 10 Tf 50 535 Td (paalfundering gebruiken;) Tj ET
+BT /F1 10 Tf 50 520 Td (automatisch beste fundering kiezen;) Tj ET
+BT /F1 10 Tf 50 505 Td (beide varianten rapporteren;) Tj ET
+BT /F1 10 Tf 50 490 Td (handmatig funderingstype vastzetten.) Tj ET
+BT /F1 10 Tf 50 475 Td (8. Ontwerpvarianten) Tj ET
+BT /F1 10 Tf 50 460 Td () Tj ET
+BT /F1 10 Tf 50 445 Td (Project Phoenix moet standaard vijf ontwerpvarianten genereren:) Tj ET
+BT /F1 10 Tf 50 430 Td () Tj ET
+BT /F1 10 Tf 50 415 Td (Variant Doel) Tj ET
+BT /F1 10 Tf 50 400 Td (A Laagste kosten) Tj ET
+BT /F1 10 Tf 50 385 Td (B Hoogste vergunningkans) Tj ET
+BT /F1 10 Tf 50 370 Td (C Meest duurzaam) Tj ET
+BT /F1 10 Tf 50 355 Td (D Hoogste opbrengst) Tj ET
+BT /F1 10 Tf 50 340 Td (E Beste ruimtelijke kwaliteit) Tj ET
+BT /F1 10 Tf 50 325 Td () Tj ET
+BT /F1 10 Tf 50 310 Td (Funderingsvarianten F1 en F2 worden aanvullend binnen de technische/geotechnische module) Tj ET
+BT /F1 10 Tf 50 295 Td (gegenereerd.) Tj ET
+BT /F1 10 Tf 50 280 Td () Tj ET
+BT /F1 10 Tf 50 265 Td (9. Bronvermelding) Tj ET
+BT /F1 10 Tf 50 250 Td () Tj ET
+BT /F1 10 Tf 50 235 Td (Alle bronnen moeten worden geregistreerd via STEE: Source Traceability and Evidence Engine.) Tj ET
+BT /F1 10 Tf 50 220 Td () Tj ET
+BT /F1 10 Tf 50 205 Td (Per bron moet minimaal worden vastgelegd:) Tj ET
+BT /F1 10 Tf 50 190 Td () Tj ET
+BT /F1 10 Tf 50 175 Td (bronnaam;) Tj ET
+endstream
+endobj
+98 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 99 0 R >>
+endobj
+99 0 obj
+<< /Length 2023 >>
+stream
+BT /F1 10 Tf 50 790 Td (type bron;) Tj ET
+BT /F1 10 Tf 50 775 Td (datum/tijd;) Tj ET
+BT /F1 10 Tf 50 760 Td (gebruikt projectonderdeel;) Tj ET
+BT /F1 10 Tf 50 745 Td (betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 730 Td (relatie met rapport, tekening, berekening of aanname.) Tj ET
+BT /F1 10 Tf 50 715 Td (10. Aannames) Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 10 Tf 50 685 Td (Alle automatisch gegenereerde gegevens moeten worden vastgelegd via AAIE: Autonomous Assumption) Tj ET
+BT /F1 10 Tf 50 670 Td (and Inference Engine.) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 10 Tf 50 640 Td (Per aanname moet minimaal worden vastgelegd:) Tj ET
+BT /F1 10 Tf 50 625 Td () Tj ET
+BT /F1 10 Tf 50 610 Td (waarde;) Tj ET
+BT /F1 10 Tf 50 595 Td (discipline;) Tj ET
+BT /F1 10 Tf 50 580 Td (reden;) Tj ET
+BT /F1 10 Tf 50 565 Td (bron;) Tj ET
+BT /F1 10 Tf 50 550 Td (betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 535 Td (status;) Tj ET
+BT /F1 10 Tf 50 520 Td (gebruiker kan goedkeuren of aanpassen.) Tj ET
+BT /F1 10 Tf 50 505 Td (11. Outputformaten) Tj ET
+BT /F1 10 Tf 50 490 Td () Tj ET
+BT /F1 10 Tf 50 475 Td (Project Phoenix moet standaard kunnen exporteren naar:) Tj ET
+BT /F1 10 Tf 50 460 Td () Tj ET
+BT /F1 10 Tf 50 445 Td (PDF;) Tj ET
+BT /F1 10 Tf 50 430 Td (DOCX;) Tj ET
+BT /F1 10 Tf 50 415 Td (MD;) Tj ET
+BT /F1 10 Tf 50 400 Td (TXT;) Tj ET
+BT /F1 10 Tf 50 385 Td (XLSX;) Tj ET
+BT /F1 10 Tf 50 370 Td (CSV;) Tj ET
+BT /F1 10 Tf 50 355 Td (DXF;) Tj ET
+BT /F1 10 Tf 50 340 Td (DWG indien beschikbaar;) Tj ET
+BT /F1 10 Tf 50 325 Td (SKP indien beschikbaar;) Tj ET
+BT /F1 10 Tf 50 310 Td (IFC indien beschikbaar;) Tj ET
+BT /F1 10 Tf 50 295 Td (FreeCAD-bestand indien beschikbaar;) Tj ET
+BT /F1 10 Tf 50 280 Td (JSON;) Tj ET
+BT /F1 10 Tf 50 265 Td (HTML dashboard;) Tj ET
+BT /F1 10 Tf 50 250 Td (ZIP projectpakket.) Tj ET
+BT /F1 10 Tf 50 235 Td (12. Git-werkwijze) Tj ET
+BT /F1 10 Tf 50 220 Td () Tj ET
+BT /F1 10 Tf 50 205 Td (Geen commit zonder test.) Tj ET
+BT /F1 10 Tf 50 190 Td () Tj ET
+BT /F1 10 Tf 50 175 Td (Standaardvolgorde:) Tj ET
+endstream
+endobj
+100 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 101 0 R >>
+endobj
+101 0 obj
+<< /Length 656 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (git status) Tj ET
+BT /F1 10 Tf 50 760 Td (bestand aanpassen) Tj ET
+BT /F1 10 Tf 50 745 Td (test uitvoeren) Tj ET
+BT /F1 10 Tf 50 730 Td (output controleren) Tj ET
+BT /F1 10 Tf 50 715 Td (git status) Tj ET
+BT /F1 10 Tf 50 700 Td (git add) Tj ET
+BT /F1 10 Tf 50 685 Td (git commit) Tj ET
+BT /F1 10 Tf 50 670 Td (git push) Tj ET
+BT /F1 10 Tf 50 655 Td (git status) Tj ET
+BT /F1 10 Tf 50 640 Td () Tj ET
+BT /F1 10 Tf 50 625 Td (Bij verdachte grote verwijderingen in codebestanden: nooit Stage All Changes gebruiken, maar) Tj ET
+BT /F1 10 Tf 50 610 Td (eerst diff controleren of bestand herstellen.) Tj ET
+endstream
+endobj
+102 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 103 0 R >>
+endobj
+103 0 obj
+<< /Length 175 >>
+stream
+BT /F1 15 Tf 50 790 Td (04_STANDARDS_AND_RULES/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Normen, regels, uitgangspunten en vaste keuzes.) Tj ET
+endstream
+endobj
+104 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 105 0 R >>
+endobj
+105 0 obj
+<< /Length 2177 >>
+stream
+BT /F1 15 Tf 50 790 Td (05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (PROJECT INPUT TEMPLATE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: standaard invoertemplate voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Projectidentificatie) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Projectnaam:) Tj ET
+BT /F1 10 Tf 50 642 Td (Projectcode:) Tj ET
+BT /F1 10 Tf 50 627 Td (Locatie:) Tj ET
+BT /F1 10 Tf 50 612 Td (Adres:) Tj ET
+BT /F1 10 Tf 50 597 Td (Land:) Tj ET
+BT /F1 10 Tf 50 582 Td (Projecttype:) Tj ET
+BT /F1 10 Tf 50 567 Td (Opdrachtgever:) Tj ET
+BT /F1 10 Tf 50 552 Td (Datum:) Tj ET
+BT /F1 10 Tf 50 537 Td () Tj ET
+BT /F1 13 Tf 50 522 Td (2. Korte projectopdracht) Tj ET
+BT /F1 10 Tf 50 504 Td () Tj ET
+BT /F1 10 Tf 50 489 Td (Beschrijf het project in één of enkele zinnen.) Tj ET
+BT /F1 10 Tf 50 474 Td () Tj ET
+BT /F1 10 Tf 50 459 Td (Voorbeeld:) Tj ET
+BT /F1 10 Tf 50 444 Td () Tj ET
+BT /F1 10 Tf 50 429 Td (Ontwerp een uitbreiding van 20 m² voor een bestaand gebouw, inclusief vergunning, parkeren,) Tj ET
+BT /F1 10 Tf 50 414 Td (constructie, fundering, tekeningen, rapportage en project-ZIP.) Tj ET
+BT /F1 10 Tf 50 399 Td () Tj ET
+BT /F1 13 Tf 50 384 Td (3. Gewenste output) Tj ET
+BT /F1 10 Tf 50 366 Td () Tj ET
+BT /F1 10 Tf 50 351 Td (Aanvinken wat gegenereerd moet worden:) Tj ET
+BT /F1 10 Tf 50 336 Td () Tj ET
+BT /F1 10 Tf 50 321 Td (* [ ] Projectanalyse) Tj ET
+BT /F1 10 Tf 50 306 Td (* [ ] Digital Twin) Tj ET
+BT /F1 10 Tf 50 291 Td (* [ ] 5 ontwerpvarianten) Tj ET
+BT /F1 10 Tf 50 276 Td (* [ ] Geotechnische analyse) Tj ET
+BT /F1 10 Tf 50 261 Td (* [ ] Funderingsvarianten stroken en palen) Tj ET
+BT /F1 10 Tf 50 246 Td (* [ ] Constructieve uitgangspunten) Tj ET
+BT /F1 10 Tf 50 231 Td (* [ ] Bouwkundige tekeningen) Tj ET
+BT /F1 10 Tf 50 216 Td (* [ ] Civiel / infra ontwerp) Tj ET
+BT /F1 10 Tf 50 201 Td (* [ ] Riolering en afwatering) Tj ET
+BT /F1 10 Tf 50 186 Td (* [ ] Verkeer en parkeren) Tj ET
+BT /F1 10 Tf 50 171 Td (* [ ] Vergunningdossier) Tj ET
+BT /F1 10 Tf 50 156 Td (* [ ] AERIUS / stikstof) Tj ET
+endstream
+endobj
+106 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 107 0 R >>
+endobj
+107 0 obj
+<< /Length 2003 >>
+stream
+BT /F1 10 Tf 50 790 Td (* [ ] Kostenraming) Tj ET
+BT /F1 10 Tf 50 775 Td (* [ ] Planning) Tj ET
+BT /F1 10 Tf 50 760 Td (* [ ] Projectrapport PDF) Tj ET
+BT /F1 10 Tf 50 745 Td (* [ ] Projectrapport DOCX) Tj ET
+BT /F1 10 Tf 50 730 Td (* [ ] CAD/DXF) Tj ET
+BT /F1 10 Tf 50 715 Td (* [ ] HTML-dashboard) Tj ET
+BT /F1 10 Tf 50 700 Td (* [ ] Project-ZIP) Tj ET
+BT /F1 10 Tf 50 685 Td (* [ ] Bronvermelding) Tj ET
+BT /F1 10 Tf 50 670 Td (* [ ] Aannameslog) Tj ET
+BT /F1 10 Tf 50 655 Td (* [ ] QA/QC) Tj ET
+BT /F1 10 Tf 50 640 Td () Tj ET
+BT /F1 13 Tf 50 625 Td (4. Beschikbare invoer) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td (Beschikbare documenten:) Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td (* [ ] PDF-tekeningen) Tj ET
+BT /F1 10 Tf 50 547 Td (* [ ] Foto?s) Tj ET
+BT /F1 10 Tf 50 532 Td (* [ ] Kaartuitsnede) Tj ET
+BT /F1 10 Tf 50 517 Td (* [ ] Google Maps- of satellietbeeld) Tj ET
+BT /F1 10 Tf 50 502 Td (* [ ] DWG/DXF) Tj ET
+BT /F1 10 Tf 50 487 Td (* [ ] SKP) Tj ET
+BT /F1 10 Tf 50 472 Td (* [ ] IFC) Tj ET
+BT /F1 10 Tf 50 457 Td (* [ ] Grondonderzoek) Tj ET
+BT /F1 10 Tf 50 442 Td (* [ ] Parkeeronderzoek) Tj ET
+BT /F1 10 Tf 50 427 Td (* [ ] Vergunningstukken) Tj ET
+BT /F1 10 Tf 50 412 Td (* [ ] Bestaande rapporten) Tj ET
+BT /F1 10 Tf 50 397 Td (* [ ] Handmatige tekstinput) Tj ET
+BT /F1 10 Tf 50 382 Td () Tj ET
+BT /F1 13 Tf 50 367 Td (5. Geotechniek) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (Bekende gegevens:) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (Maaiveld:) Tj ET
+BT /F1 10 Tf 50 289 Td (Grondwaterstand:) Tj ET
+BT /F1 10 Tf 50 274 Td (Bodemprofiel:) Tj ET
+BT /F1 10 Tf 50 259 Td (Sondering aanwezig: ja/nee) Tj ET
+BT /F1 10 Tf 50 244 Td (Funderingstype gewenst:) Tj ET
+BT /F1 10 Tf 50 229 Td () Tj ET
+BT /F1 10 Tf 50 214 Td (Als gegevens ontbreken:) Tj ET
+BT /F1 10 Tf 50 199 Td () Tj ET
+BT /F1 10 Tf 50 184 Td (* automatisch grondwaterstand bepalen;) Tj ET
+BT /F1 10 Tf 50 169 Td (* fallback P = -0,50 m;) Tj ET
+endstream
+endobj
+108 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 109 0 R >>
+endobj
+109 0 obj
+<< /Length 2129 >>
+stream
+BT /F1 10 Tf 50 790 Td (* automatisch geo-profiel genereren;) Tj ET
+BT /F1 10 Tf 50 775 Td (* automatisch strokenfundering en paalfundering vergelijken.) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 13 Tf 50 745 Td (6. Vergunning) Tj ET
+BT /F1 10 Tf 50 727 Td () Tj ET
+BT /F1 10 Tf 50 712 Td (Benodigde vergunningproducten:) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (* [ ] Ruimtelijke onderbouwing) Tj ET
+BT /F1 10 Tf 50 667 Td (* [ ] BOPA) Tj ET
+BT /F1 10 Tf 50 652 Td (* [ ] Omgevingsvergunning) Tj ET
+BT /F1 10 Tf 50 637 Td (* [ ] Participatieplan) Tj ET
+BT /F1 10 Tf 50 622 Td (* [ ] AERIUS-berekening) Tj ET
+BT /F1 10 Tf 50 607 Td (* [ ] Parkeerparagraaf) Tj ET
+BT /F1 10 Tf 50 592 Td (* [ ] Waterparagraaf) Tj ET
+BT /F1 10 Tf 50 577 Td (* [ ] Milieuparagraaf) Tj ET
+BT /F1 10 Tf 50 562 Td (* [ ] Constructieve onderbouwing) Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 13 Tf 50 532 Td (7. Parkeren en verkeer) Tj ET
+BT /F1 10 Tf 50 514 Td () Tj ET
+BT /F1 10 Tf 50 499 Td (Bekende parkeerplaatsen:) Tj ET
+BT /F1 10 Tf 50 484 Td (Parkeernorm:) Tj ET
+BT /F1 10 Tf 50 469 Td (Meetmomenten:) Tj ET
+BT /F1 10 Tf 50 454 Td (Gebied:) Tj ET
+BT /F1 10 Tf 50 439 Td (Advies parkeerregime nodig: ja/nee) Tj ET
+BT /F1 10 Tf 50 424 Td () Tj ET
+BT /F1 10 Tf 50 409 Td (Als gegevens ontbreken:) Tj ET
+BT /F1 10 Tf 50 394 Td () Tj ET
+BT /F1 10 Tf 50 379 Td (* automatische kaartanalyse;) Tj ET
+BT /F1 10 Tf 50 364 Td (* fysieke parkeerinfo verwerken;) Tj ET
+BT /F1 10 Tf 50 349 Td (* parkeerbalans genereren;) Tj ET
+BT /F1 10 Tf 50 334 Td (* bezettingsgraad berekenen;) Tj ET
+BT /F1 10 Tf 50 319 Td (* advies parkeerregime maken.) Tj ET
+BT /F1 10 Tf 50 304 Td () Tj ET
+BT /F1 13 Tf 50 289 Td (8. Aannames) Tj ET
+BT /F1 10 Tf 50 271 Td () Tj ET
+BT /F1 10 Tf 50 256 Td (Automatisch aanvullen toegestaan: ja/nee) Tj ET
+BT /F1 10 Tf 50 241 Td (Aannameslog verplicht: ja) Tj ET
+BT /F1 10 Tf 50 226 Td (Bronvermelding verplicht: ja) Tj ET
+BT /F1 10 Tf 50 211 Td (Gebruiker moet aannames kunnen goedkeuren: ja) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 13 Tf 50 181 Td (9. Projectmodus) Tj ET
+BT /F1 10 Tf 50 163 Td () Tj ET
+endstream
+endobj
+110 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 111 0 R >>
+endobj
+111 0 obj
+<< /Length 412 >>
+stream
+BT /F1 10 Tf 50 790 Td (Kies projectmodus:) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (* [ ] Assistent) Tj ET
+BT /F1 10 Tf 50 745 Td (* [ ] Semi-autonoom) Tj ET
+BT /F1 10 Tf 50 730 Td (* [ ] Volledig autonoom) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (Standaard Project Phoenix-keuze:) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 10 Tf 50 670 Td (Volledig autonoom.) Tj ET
+endstream
+endobj
+112 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 113 0 R >>
+endobj
+113 0 obj
+<< /Length 179 >>
+stream
+BT /F1 15 Tf 50 790 Td (05_TEMPLATES/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Templates voor rapporten, vergunningen, workflows en exports.) Tj ET
+endstream
+endobj
+114 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 115 0 R >>
+endobj
+115 0 obj
+<< /Length 1875 >>
+stream
+BT /F1 15 Tf 50 790 Td (05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (REPORT OUTPUT TEMPLATE) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: standaard rapportstructuur voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Titelpagina) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Projectnaam) Tj ET
+BT /F1 10 Tf 50 642 Td (Projectcode) Tj ET
+BT /F1 10 Tf 50 627 Td (Locatie) Tj ET
+BT /F1 10 Tf 50 612 Td (Opdrachtgever) Tj ET
+BT /F1 10 Tf 50 597 Td (Datum) Tj ET
+BT /F1 10 Tf 50 582 Td (Versie) Tj ET
+BT /F1 10 Tf 50 567 Td (Status) Tj ET
+BT /F1 10 Tf 50 552 Td () Tj ET
+BT /F1 13 Tf 50 537 Td (2. Managementsamenvatting) Tj ET
+BT /F1 10 Tf 50 519 Td () Tj ET
+BT /F1 10 Tf 50 504 Td (Korte samenvatting van:) Tj ET
+BT /F1 10 Tf 50 489 Td () Tj ET
+BT /F1 10 Tf 50 474 Td (* projectdoel;) Tj ET
+BT /F1 10 Tf 50 459 Td (* locatie;) Tj ET
+BT /F1 10 Tf 50 444 Td (* gekozen aanpak;) Tj ET
+BT /F1 10 Tf 50 429 Td (* belangrijkste conclusies;) Tj ET
+BT /F1 10 Tf 50 414 Td (* risico?s;) Tj ET
+BT /F1 10 Tf 50 399 Td (* aanbevelingen;) Tj ET
+BT /F1 10 Tf 50 384 Td (* benodigde vervolgstappen.) Tj ET
+BT /F1 10 Tf 50 369 Td () Tj ET
+BT /F1 13 Tf 50 354 Td (3. Projectomschrijving) Tj ET
+BT /F1 10 Tf 50 336 Td () Tj ET
+BT /F1 10 Tf 50 321 Td (Beschrijving van:) Tj ET
+BT /F1 10 Tf 50 306 Td () Tj ET
+BT /F1 10 Tf 50 291 Td (* bestaand project;) Tj ET
+BT /F1 10 Tf 50 276 Td (* gewenste ontwikkeling;) Tj ET
+BT /F1 10 Tf 50 261 Td (* programma;) Tj ET
+BT /F1 10 Tf 50 246 Td (* scope;) Tj ET
+BT /F1 10 Tf 50 231 Td (* uitgangspunten;) Tj ET
+BT /F1 10 Tf 50 216 Td (* beperkingen.) Tj ET
+BT /F1 10 Tf 50 201 Td () Tj ET
+BT /F1 13 Tf 50 186 Td (4. Bronnen en bewijs) Tj ET
+BT /F1 10 Tf 50 168 Td () Tj ET
+BT /F1 10 Tf 50 153 Td (Opnemen:) Tj ET
+endstream
+endobj
+116 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 117 0 R >>
+endobj
+117 0 obj
+<< /Length 1894 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (* bronregister;) Tj ET
+BT /F1 10 Tf 50 760 Td (* gebruikte documenten;) Tj ET
+BT /F1 10 Tf 50 745 Td (* gebruikte kaarten;) Tj ET
+BT /F1 10 Tf 50 730 Td (* gebruikte normen;) Tj ET
+BT /F1 10 Tf 50 715 Td (* datum/tijd brongebruik;) Tj ET
+BT /F1 10 Tf 50 700 Td (* betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 685 Td (* koppeling met rapportonderdelen.) Tj ET
+BT /F1 10 Tf 50 670 Td () Tj ET
+BT /F1 13 Tf 50 655 Td (5. Aannameslog) Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td (* automatische aannames;) Tj ET
+BT /F1 10 Tf 50 577 Td (* handmatige aannames;) Tj ET
+BT /F1 10 Tf 50 562 Td (* fallbackwaarden;) Tj ET
+BT /F1 10 Tf 50 547 Td (* AAIE-generated gegevens;) Tj ET
+BT /F1 10 Tf 50 532 Td (* betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 517 Td (* status;) Tj ET
+BT /F1 10 Tf 50 502 Td (* goedkeuring gebruiker.) Tj ET
+BT /F1 10 Tf 50 487 Td () Tj ET
+BT /F1 13 Tf 50 472 Td (6. Digital Twin) Tj ET
+BT /F1 10 Tf 50 454 Td () Tj ET
+BT /F1 10 Tf 50 439 Td (Samenvatting van:) Tj ET
+BT /F1 10 Tf 50 424 Td () Tj ET
+BT /F1 10 Tf 50 409 Td (* projectdata;) Tj ET
+BT /F1 10 Tf 50 394 Td (* objecten;) Tj ET
+BT /F1 10 Tf 50 379 Td (* locatie;) Tj ET
+BT /F1 10 Tf 50 364 Td (* geometrie;) Tj ET
+BT /F1 10 Tf 50 349 Td (* constructie;) Tj ET
+BT /F1 10 Tf 50 334 Td (* fundering;) Tj ET
+BT /F1 10 Tf 50 319 Td (* infra;) Tj ET
+BT /F1 10 Tf 50 304 Td (* vergunning;) Tj ET
+BT /F1 10 Tf 50 289 Td (* kosten;) Tj ET
+BT /F1 10 Tf 50 274 Td (* planning.) Tj ET
+BT /F1 10 Tf 50 259 Td () Tj ET
+BT /F1 13 Tf 50 244 Td (7. Varianten) Tj ET
+BT /F1 10 Tf 50 226 Td () Tj ET
+BT /F1 10 Tf 50 211 Td (Beschrijven:) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 10 Tf 50 181 Td (* Variant A: laagste kosten;) Tj ET
+BT /F1 10 Tf 50 166 Td (* Variant B: hoogste vergunningkans;) Tj ET
+endstream
+endobj
+118 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 119 0 R >>
+endobj
+119 0 obj
+<< /Length 1918 >>
+stream
+BT /F1 10 Tf 50 790 Td (* Variant C: meest duurzaam;) Tj ET
+BT /F1 10 Tf 50 775 Td (* Variant D: hoogste opbrengst;) Tj ET
+BT /F1 10 Tf 50 760 Td (* Variant E: beste ruimtelijke kwaliteit.) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 10 Tf 50 730 Td (Voor fundering:) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (* F1: strokenfundering;) Tj ET
+BT /F1 10 Tf 50 685 Td (* F2: paalfundering;) Tj ET
+BT /F1 10 Tf 50 670 Td (* vergelijking en advies.) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 13 Tf 50 640 Td (8. Geotechniek en fundering) Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td (* maaiveld;) Tj ET
+BT /F1 10 Tf 50 562 Td (* grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 547 Td (* bodemprofiel;) Tj ET
+BT /F1 10 Tf 50 532 Td (* draagkracht;) Tj ET
+BT /F1 10 Tf 50 517 Td (* zetting;) Tj ET
+BT /F1 10 Tf 50 502 Td (* risico?s;) Tj ET
+BT /F1 10 Tf 50 487 Td (* funderingsvariant F1;) Tj ET
+BT /F1 10 Tf 50 472 Td (* funderingsvariant F2;) Tj ET
+BT /F1 10 Tf 50 457 Td (* aanbevolen fundering;) Tj ET
+BT /F1 10 Tf 50 442 Td (* vervolgonderzoek.) Tj ET
+BT /F1 10 Tf 50 427 Td () Tj ET
+BT /F1 13 Tf 50 412 Td (9. Constructie) Tj ET
+BT /F1 10 Tf 50 394 Td () Tj ET
+BT /F1 10 Tf 50 379 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 364 Td () Tj ET
+BT /F1 10 Tf 50 349 Td (* constructief systeem;) Tj ET
+BT /F1 10 Tf 50 334 Td (* belastingen;) Tj ET
+BT /F1 10 Tf 50 319 Td (* materiaalkeuze;) Tj ET
+BT /F1 10 Tf 50 304 Td (* funderingskoppeling;) Tj ET
+BT /F1 10 Tf 50 289 Td (* globale toets;) Tj ET
+BT /F1 10 Tf 50 274 Td (* risico?s;) Tj ET
+BT /F1 10 Tf 50 259 Td (* aanbevelingen.) Tj ET
+BT /F1 10 Tf 50 244 Td () Tj ET
+BT /F1 13 Tf 50 229 Td (10. Civiel, infra en afwatering) Tj ET
+BT /F1 10 Tf 50 211 Td () Tj ET
+BT /F1 10 Tf 50 196 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 181 Td () Tj ET
+BT /F1 10 Tf 50 166 Td (* terrein;) Tj ET
+endstream
+endobj
+120 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 121 0 R >>
+endobj
+121 0 obj
+<< /Length 1851 >>
+stream
+BT /F1 10 Tf 50 790 Td (* riolering;) Tj ET
+BT /F1 10 Tf 50 775 Td (* hemelwater;) Tj ET
+BT /F1 10 Tf 50 760 Td (* vuilwater;) Tj ET
+BT /F1 10 Tf 50 745 Td (* infiltratie;) Tj ET
+BT /F1 10 Tf 50 730 Td (* verharding;) Tj ET
+BT /F1 10 Tf 50 715 Td (* kabels en leidingen;) Tj ET
+BT /F1 10 Tf 50 700 Td (* aansluitingen.) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 13 Tf 50 670 Td (11. Verkeer en parkeren) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td (* verkeersgeneratie;) Tj ET
+BT /F1 10 Tf 50 592 Td (* parkeerbehoefte;) Tj ET
+BT /F1 10 Tf 50 577 Td (* parkeerbalans;) Tj ET
+BT /F1 10 Tf 50 562 Td (* parkeerdruk;) Tj ET
+BT /F1 10 Tf 50 547 Td (* bezettingsgraad;) Tj ET
+BT /F1 10 Tf 50 532 Td (* advies parkeerregime;) Tj ET
+BT /F1 10 Tf 50 517 Td (* conclusies.) Tj ET
+BT /F1 10 Tf 50 502 Td () Tj ET
+BT /F1 13 Tf 50 487 Td (12. Vergunning) Tj ET
+BT /F1 10 Tf 50 469 Td () Tj ET
+BT /F1 10 Tf 50 454 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 439 Td () Tj ET
+BT /F1 10 Tf 50 424 Td (* ruimtelijke onderbouwing;) Tj ET
+BT /F1 10 Tf 50 409 Td (* BOPA;) Tj ET
+BT /F1 10 Tf 50 394 Td (* omgevingsvergunning;) Tj ET
+BT /F1 10 Tf 50 379 Td (* participatie;) Tj ET
+BT /F1 10 Tf 50 364 Td (* AERIUS / stikstof;) Tj ET
+BT /F1 10 Tf 50 349 Td (* milieu;) Tj ET
+BT /F1 10 Tf 50 334 Td (* water;) Tj ET
+BT /F1 10 Tf 50 319 Td (* parkeren;) Tj ET
+BT /F1 10 Tf 50 304 Td (* brandveiligheid;) Tj ET
+BT /F1 10 Tf 50 289 Td (* bouwtechnische toets.) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 13 Tf 50 259 Td (13. Kosten en planning) Tj ET
+BT /F1 10 Tf 50 241 Td () Tj ET
+BT /F1 10 Tf 50 226 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 211 Td () Tj ET
+BT /F1 10 Tf 50 196 Td (* kostenraming;) Tj ET
+BT /F1 10 Tf 50 181 Td (* hoeveelheden;) Tj ET
+BT /F1 10 Tf 50 166 Td (* planning;) Tj ET
+endstream
+endobj
+122 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 123 0 R >>
+endobj
+123 0 obj
+<< /Length 1288 >>
+stream
+BT /F1 10 Tf 50 790 Td (* fasering;) Tj ET
+BT /F1 10 Tf 50 775 Td (* risicoreservering;) Tj ET
+BT /F1 10 Tf 50 760 Td (* scenario?s.) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 13 Tf 50 730 Td (14. QA/QC) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (Opnemen:) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (* controlelijst;) Tj ET
+BT /F1 10 Tf 50 652 Td (* ontbrekende gegevens;) Tj ET
+BT /F1 10 Tf 50 637 Td (* waarschuwingen;) Tj ET
+BT /F1 10 Tf 50 622 Td (* consistentiecontrole;) Tj ET
+BT /F1 10 Tf 50 607 Td (* broncontrole;) Tj ET
+BT /F1 10 Tf 50 592 Td (* exportcontrole;) Tj ET
+BT /F1 10 Tf 50 577 Td (* advies vervolgactie.) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 13 Tf 50 547 Td (15. Bijlagen) Tj ET
+BT /F1 10 Tf 50 529 Td () Tj ET
+BT /F1 10 Tf 50 514 Td (Bijlagen:) Tj ET
+BT /F1 10 Tf 50 499 Td () Tj ET
+BT /F1 10 Tf 50 484 Td (* tekeningen;) Tj ET
+BT /F1 10 Tf 50 469 Td (* berekeningen;) Tj ET
+BT /F1 10 Tf 50 454 Td (* bronregister;) Tj ET
+BT /F1 10 Tf 50 439 Td (* aannameslog;) Tj ET
+BT /F1 10 Tf 50 424 Td (* Digital Twin JSON;) Tj ET
+BT /F1 10 Tf 50 409 Td (* QA/QC-rapport;) Tj ET
+BT /F1 10 Tf 50 394 Td (* runtime log;) Tj ET
+BT /F1 10 Tf 50 379 Td (* Git evidence;) Tj ET
+BT /F1 10 Tf 50 364 Td (* project-ZIP overzicht.) Tj ET
+endstream
+endobj
+124 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 125 0 R >>
+endobj
+125 0 obj
+<< /Length 2120 >>
+stream
+BT /F1 15 Tf 50 790 Td (06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (AUTONOMOUS PROJECT WORKFLOW) Tj ET
+BT /F1 10 Tf 50 740 Td () Tj ET
+BT /F1 10 Tf 50 725 Td (Status: standaard workflow voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 710 Td () Tj ET
+BT /F1 10 Tf 50 695 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 680 Td () Tj ET
+BT /F1 10 Tf 50 665 Td (Deze workflow beschrijft hoe Project Phoenix autonoom een project moet verwerken vanaf eerste) Tj ET
+BT /F1 10 Tf 50 650 Td (opdracht tot volledig projectpakket.) Tj ET
+BT /F1 10 Tf 50 635 Td () Tj ET
+BT /F1 10 Tf 50 620 Td (De workflow geldt voor:) Tj ET
+BT /F1 10 Tf 50 605 Td () Tj ET
+BT /F1 10 Tf 50 590 Td (bouwprojecten;) Tj ET
+BT /F1 10 Tf 50 575 Td (civiele projecten;) Tj ET
+BT /F1 10 Tf 50 560 Td (infraprojecten;) Tj ET
+BT /F1 10 Tf 50 545 Td (vergunningprojecten;) Tj ET
+BT /F1 10 Tf 50 530 Td (gebiedsontwikkeling;) Tj ET
+BT /F1 10 Tf 50 515 Td (constructieve en geotechnische analyses.) Tj ET
+BT /F1 10 Tf 50 500 Td (2. Start) Tj ET
+BT /F1 10 Tf 50 485 Td () Tj ET
+BT /F1 10 Tf 50 470 Td (Een project mag starten met minimale invoer, bijvoorbeeld:) Tj ET
+BT /F1 10 Tf 50 455 Td () Tj ET
+BT /F1 10 Tf 50 440 Td (tekstuele projectopdracht;) Tj ET
+BT /F1 10 Tf 50 425 Td (gesproken opdracht;) Tj ET
+BT /F1 10 Tf 50 410 Td (PDF;) Tj ET
+BT /F1 10 Tf 50 395 Td (foto;) Tj ET
+BT /F1 10 Tf 50 380 Td (tekening;) Tj ET
+BT /F1 10 Tf 50 365 Td (kaartuitsnede;) Tj ET
+BT /F1 10 Tf 50 350 Td (Google Maps- of satellietbeeld;) Tj ET
+BT /F1 10 Tf 50 335 Td (bestaande projectmap;) Tj ET
+BT /F1 10 Tf 50 320 Td (projectconfiguratie JSON.) Tj ET
+BT /F1 10 Tf 50 305 Td (3. Projectanalyse) Tj ET
+BT /F1 10 Tf 50 290 Td () Tj ET
+BT /F1 10 Tf 50 275 Td (Project Phoenix bepaalt automatisch:) Tj ET
+BT /F1 10 Tf 50 260 Td () Tj ET
+BT /F1 10 Tf 50 245 Td (projecttype;) Tj ET
+BT /F1 10 Tf 50 230 Td (locatie;) Tj ET
+BT /F1 10 Tf 50 215 Td (discipline;) Tj ET
+BT /F1 10 Tf 50 200 Td (benodigde engines;) Tj ET
+BT /F1 10 Tf 50 185 Td (ontbrekende gegevens;) Tj ET
+BT /F1 10 Tf 50 170 Td (benodigde bronnen;) Tj ET
+endstream
+endobj
+126 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 127 0 R >>
+endobj
+127 0 obj
+<< /Length 2099 >>
+stream
+BT /F1 10 Tf 50 790 Td (benodigde aannames;) Tj ET
+BT /F1 10 Tf 50 775 Td (gewenste output;) Tj ET
+BT /F1 10 Tf 50 760 Td (risico?s;) Tj ET
+BT /F1 10 Tf 50 745 Td (vervolgacties.) Tj ET
+BT /F1 10 Tf 50 730 Td (4. AAIE-aanvulling) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (AAIE vult ontbrekende gegevens aan, maar markeert alles als aanname.) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 10 Tf 50 670 Td (Voorbeelden:) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 10 Tf 50 640 Td (grondwaterstand;) Tj ET
+BT /F1 10 Tf 50 625 Td (bodemprofiel;) Tj ET
+BT /F1 10 Tf 50 610 Td (funderingstype;) Tj ET
+BT /F1 10 Tf 50 595 Td (parkeerbehoefte;) Tj ET
+BT /F1 10 Tf 50 580 Td (vergunningstrategie;) Tj ET
+BT /F1 10 Tf 50 565 Td (kostenkengetallen;) Tj ET
+BT /F1 10 Tf 50 550 Td (planning;) Tj ET
+BT /F1 10 Tf 50 535 Td (constructieve uitgangspunten.) Tj ET
+BT /F1 10 Tf 50 520 Td (5. STEE-bronvermelding) Tj ET
+BT /F1 10 Tf 50 505 Td () Tj ET
+BT /F1 10 Tf 50 490 Td (STEE registreert alle gebruikte bronnen.) Tj ET
+BT /F1 10 Tf 50 475 Td () Tj ET
+BT /F1 10 Tf 50 460 Td (Elke bron moet gekoppeld worden aan:) Tj ET
+BT /F1 10 Tf 50 445 Td () Tj ET
+BT /F1 10 Tf 50 430 Td (rapporttekst;) Tj ET
+BT /F1 10 Tf 50 415 Td (berekening;) Tj ET
+BT /F1 10 Tf 50 400 Td (tekening;) Tj ET
+BT /F1 10 Tf 50 385 Td (aanname;) Tj ET
+BT /F1 10 Tf 50 370 Td (Digital Twin-object;) Tj ET
+BT /F1 10 Tf 50 355 Td (dashboard;) Tj ET
+BT /F1 10 Tf 50 340 Td (projectexport.) Tj ET
+BT /F1 10 Tf 50 325 Td (6. Digital Twin First) Tj ET
+BT /F1 10 Tf 50 310 Td () Tj ET
+BT /F1 10 Tf 50 295 Td (Alle projectdata worden opgeslagen in de Living Digital Twin.) Tj ET
+BT /F1 10 Tf 50 280 Td () Tj ET
+BT /F1 10 Tf 50 265 Td (Rapporten, tekeningen, berekeningen, kosten, planning, vergunningstukken en dashboards moeten) Tj ET
+BT /F1 10 Tf 50 250 Td (uit dezelfde projectdata voortkomen.) Tj ET
+BT /F1 10 Tf 50 235 Td () Tj ET
+BT /F1 10 Tf 50 220 Td (7. Varianten) Tj ET
+BT /F1 10 Tf 50 205 Td () Tj ET
+BT /F1 10 Tf 50 190 Td (Project Phoenix genereert standaard vijf ontwerpvarianten:) Tj ET
+BT /F1 10 Tf 50 175 Td () Tj ET
+endstream
+endobj
+128 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 129 0 R >>
+endobj
+129 0 obj
+<< /Length 2089 >>
+stream
+BT /F1 10 Tf 50 790 Td (A: laagste kosten;) Tj ET
+BT /F1 10 Tf 50 775 Td (B: hoogste vergunningkans;) Tj ET
+BT /F1 10 Tf 50 760 Td (C: meest duurzaam;) Tj ET
+BT /F1 10 Tf 50 745 Td (D: hoogste opbrengst;) Tj ET
+BT /F1 10 Tf 50 730 Td (E: beste ruimtelijke kwaliteit.) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 10 Tf 50 700 Td (Voor funderingen worden aanvullend minimaal twee technische varianten gegenereerd:) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 10 Tf 50 670 Td (F1: strokenfundering;) Tj ET
+BT /F1 10 Tf 50 655 Td (F2: paalfundering.) Tj ET
+BT /F1 10 Tf 50 640 Td (8. Engineering) Tj ET
+BT /F1 10 Tf 50 625 Td () Tj ET
+BT /F1 10 Tf 50 610 Td (De relevante engines worden automatisch aangeroepen:) Tj ET
+BT /F1 10 Tf 50 595 Td () Tj ET
+BT /F1 10 Tf 50 580 Td (Geo Engine;) Tj ET
+BT /F1 10 Tf 50 565 Td (Structural Engine;) Tj ET
+BT /F1 10 Tf 50 550 Td (Drainage and Sewerage Engine;) Tj ET
+BT /F1 10 Tf 50 535 Td (Traffic and Parking Engine;) Tj ET
+BT /F1 10 Tf 50 520 Td (Permit Engine;) Tj ET
+BT /F1 10 Tf 50 505 Td (AERIUS Engine;) Tj ET
+BT /F1 10 Tf 50 490 Td (Cost Engine;) Tj ET
+BT /F1 10 Tf 50 475 Td (Planning Engine;) Tj ET
+BT /F1 10 Tf 50 460 Td (QA/QC Engine.) Tj ET
+BT /F1 10 Tf 50 445 Td (9. Output) Tj ET
+BT /F1 10 Tf 50 430 Td () Tj ET
+BT /F1 10 Tf 50 415 Td (Per project moet minimaal kunnen worden gegenereerd:) Tj ET
+BT /F1 10 Tf 50 400 Td () Tj ET
+BT /F1 10 Tf 50 385 Td (projectrapport;) Tj ET
+BT /F1 10 Tf 50 370 Td (tekeningen;) Tj ET
+BT /F1 10 Tf 50 355 Td (CAD/DXF;) Tj ET
+BT /F1 10 Tf 50 340 Td (berekeningen;) Tj ET
+BT /F1 10 Tf 50 325 Td (Digital Twin JSON;) Tj ET
+BT /F1 10 Tf 50 310 Td (bronregister;) Tj ET
+BT /F1 10 Tf 50 295 Td (aannameslog;) Tj ET
+BT /F1 10 Tf 50 280 Td (QA/QC-rapport;) Tj ET
+BT /F1 10 Tf 50 265 Td (HTML-dashboard;) Tj ET
+BT /F1 10 Tf 50 250 Td (project-ZIP.) Tj ET
+BT /F1 10 Tf 50 235 Td (10. Controle) Tj ET
+BT /F1 10 Tf 50 220 Td () Tj ET
+BT /F1 10 Tf 50 205 Td (Voor elke projectrun moet Project Phoenix controleren:) Tj ET
+BT /F1 10 Tf 50 190 Td () Tj ET
+BT /F1 10 Tf 50 175 Td (zijn verplichte bronnen aanwezig;) Tj ET
+endstream
+endobj
+130 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 131 0 R >>
+endobj
+131 0 obj
+<< /Length 1516 >>
+stream
+BT /F1 10 Tf 50 790 Td (zijn aannames zichtbaar;) Tj ET
+BT /F1 10 Tf 50 775 Td (zijn rapport en tekeningen consistent;) Tj ET
+BT /F1 10 Tf 50 760 Td (is de Digital Twin bijgewerkt;) Tj ET
+BT /F1 10 Tf 50 745 Td (zijn exports aangemaakt;) Tj ET
+BT /F1 10 Tf 50 730 Td (is QA/QC uitgevoerd;) Tj ET
+BT /F1 10 Tf 50 715 Td (is Git Evidence aanwezig.) Tj ET
+BT /F1 10 Tf 50 700 Td (11. Git-evidence) Tj ET
+BT /F1 10 Tf 50 685 Td () Tj ET
+BT /F1 10 Tf 50 670 Td (Na een geldige projectrun moet worden vastgelegd:) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 10 Tf 50 640 Td (branch;) Tj ET
+BT /F1 10 Tf 50 625 Td (commit;) Tj ET
+BT /F1 10 Tf 50 610 Td (status working tree;) Tj ET
+BT /F1 10 Tf 50 595 Td (gegenereerde bestanden;) Tj ET
+BT /F1 10 Tf 50 580 Td (runtime log;) Tj ET
+BT /F1 10 Tf 50 565 Td (audit trail;) Tj ET
+BT /F1 10 Tf 50 550 Td (checksum;) Tj ET
+BT /F1 10 Tf 50 535 Td (Git evidence JSON.) Tj ET
+BT /F1 10 Tf 50 520 Td (12. Eindstatus) Tj ET
+BT /F1 10 Tf 50 505 Td () Tj ET
+BT /F1 10 Tf 50 490 Td (Een projectrun is pas volledig wanneer:) Tj ET
+BT /F1 10 Tf 50 475 Td () Tj ET
+BT /F1 10 Tf 50 460 Td (rapporten zijn aangemaakt;) Tj ET
+BT /F1 10 Tf 50 445 Td (tekeningen zijn aangemaakt;) Tj ET
+BT /F1 10 Tf 50 430 Td (dashboard werkt;) Tj ET
+BT /F1 10 Tf 50 415 Td (project-ZIP bestaat;) Tj ET
+BT /F1 10 Tf 50 400 Td (bronregister bestaat;) Tj ET
+BT /F1 10 Tf 50 385 Td (aannameslog bestaat;) Tj ET
+BT /F1 10 Tf 50 370 Td (QA/QC is uitgevoerd;) Tj ET
+BT /F1 10 Tf 50 355 Td (Git-status clean is.) Tj ET
+endstream
+endobj
+132 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 133 0 R >>
+endobj
+133 0 obj
+<< /Length 161 >>
+stream
+BT /F1 15 Tf 50 790 Td (06_WORKFLOWS/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Standaard workflows en GitKraken werkwijze.) Tj ET
+endstream
+endobj
+134 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 135 0 R >>
+endobj
+135 0 obj
+<< /Length 2336 >>
+stream
+BT /F1 15 Tf 50 790 Td (07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (DASHBOARD ENGINE FIXES) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: lessons learned voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Context) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Tijdens de ontwikkeling van Project Phoenix v1.6 is de Project HTML Dashboard Export Engine) Tj ET
+BT /F1 10 Tf 50 642 Td (herbouwd.) Tj ET
+BT /F1 10 Tf 50 627 Td () Tj ET
+BT /F1 10 Tf 50 612 Td (De fout ontstond doordat BAOEES Core extra engine-resultaten doorgaf aan de dashboard engine,) Tj ET
+BT /F1 10 Tf 50 597 Td (terwijl de dashboard engine deze parameters nog niet accepteerde.) Tj ET
+BT /F1 10 Tf 50 582 Td () Tj ET
+BT /F1 13 Tf 50 567 Td (2. Gevonden fouten) Tj ET
+BT /F1 10 Tf 50 549 Td () Tj ET
+BT /F1 10 Tf 50 534 Td (Belangrijke fouten:) Tj ET
+BT /F1 10 Tf 50 519 Td () Tj ET
+BT /F1 10 Tf 50 504 Td (* unexpected keyword argument audit_result;) Tj ET
+BT /F1 10 Tf 50 489 Td (* storage_result zonder lokale waarde;) Tj ET
+BT /F1 10 Tf 50 474 Td (* missing run method;) Tj ET
+BT /F1 10 Tf 50 459 Td (* object has no attribute run;) Tj ET
+BT /F1 10 Tf 50 444 Td (* grote ongewenste codeverwijdering in main.py;) Tj ET
+BT /F1 10 Tf 50 429 Td (* verwarring tussen GitKraken Terminal en Kladblok;) Tj ET
+BT /F1 10 Tf 50 414 Td (* PowerShell continuation prompt `>>`.) Tj ET
+BT /F1 10 Tf 50 399 Td () Tj ET
+BT /F1 13 Tf 50 384 Td (3. Belangrijkste oplossing) Tj ET
+BT /F1 10 Tf 50 366 Td () Tj ET
+BT /F1 10 Tf 50 351 Td (De HTML Dashboard Export Engine moet robuust zijn en minimaal accepteren:) Tj ET
+BT /F1 10 Tf 50 336 Td () Tj ET
+BT /F1 10 Tf 50 321 Td (* project_result;) Tj ET
+BT /F1 10 Tf 50 306 Td (* report_result;) Tj ET
+BT /F1 10 Tf 50 291 Td (* drawing_result;) Tj ET
+BT /F1 10 Tf 50 276 Td (* cad_result;) Tj ET
+BT /F1 10 Tf 50 261 Td (* calculation_result;) Tj ET
+BT /F1 10 Tf 50 246 Td (* source_result;) Tj ET
+BT /F1 10 Tf 50 231 Td (* digital_twin_result;) Tj ET
+BT /F1 10 Tf 50 216 Td (* qa_qc_result;) Tj ET
+BT /F1 10 Tf 50 201 Td (* export_result;) Tj ET
+BT /F1 10 Tf 50 186 Td (* zip_result;) Tj ET
+BT /F1 10 Tf 50 171 Td (* storage_result;) Tj ET
+BT /F1 10 Tf 50 156 Td (* audit_result;) Tj ET
+endstream
+endobj
+136 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 137 0 R >>
+endobj
+137 0 obj
+<< /Length 2338 >>
+stream
+BT /F1 10 Tf 50 790 Td (* checksum_result;) Tj ET
+BT /F1 10 Tf 50 775 Td (* git_evidence_result;) Tj ET
+BT /F1 10 Tf 50 760 Td (* index_result;) Tj ET
+BT /F1 10 Tf 50 745 Td (* extra future keyword arguments via `**extra_results`.) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 13 Tf 50 715 Td (4. Run compatibility) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (Elke engine die door BAOEES Core kan worden aangeroepen, moet een `run\(\)` methode hebben.) Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td (Dit voorkomt:) Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td (`AttributeError: object has no attribute run`) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 13 Tf 50 592 Td (5. Veilig werken met main.py) Tj ET
+BT /F1 10 Tf 50 574 Td () Tj ET
+BT /F1 10 Tf 50 559 Td (Bij grote wijzigingen in codebestanden:) Tj ET
+BT /F1 10 Tf 50 544 Td () Tj ET
+BT /F1 10 Tf 50 529 Td (1. nooit direct Stage All Changes gebruiken;) Tj ET
+BT /F1 10 Tf 50 514 Td (2. eerst `git diff` bekijken;) Tj ET
+BT /F1 10 Tf 50 499 Td (3. verdachte grote deletions controleren;) Tj ET
+BT /F1 10 Tf 50 484 Td (4. indien nodig bestand herstellen met `git restore`;) Tj ET
+BT /F1 10 Tf 50 469 Td (5. pas committen na succesvolle test.) Tj ET
+BT /F1 10 Tf 50 454 Td () Tj ET
+BT /F1 13 Tf 50 439 Td (6. Testregel) Tj ET
+BT /F1 10 Tf 50 421 Td () Tj ET
+BT /F1 10 Tf 50 406 Td (Geen commit zonder:) Tj ET
+BT /F1 10 Tf 50 391 Td () Tj ET
+BT /F1 10 Tf 50 376 Td (* `python -m py_compile`;) Tj ET
+BT /F1 10 Tf 50 361 Td (* `python run_baoees_v3.py`;) Tj ET
+BT /F1 10 Tf 50 346 Td (* visuele controle van `outputs/projects/index.html`;) Tj ET
+BT /F1 10 Tf 50 331 Td (* `git status`.) Tj ET
+BT /F1 10 Tf 50 316 Td () Tj ET
+BT /F1 13 Tf 50 301 Td (7. Belangrijke les) Tj ET
+BT /F1 10 Tf 50 283 Td () Tj ET
+BT /F1 10 Tf 50 268 Td (Project Phoenix moet fouttolerante engines krijgen.) Tj ET
+BT /F1 10 Tf 50 253 Td (Een engine mag niet crashen doordat een andere engine extra informatie meestuurt.) Tj ET
+BT /F1 10 Tf 50 238 Td () Tj ET
+BT /F1 10 Tf 50 223 Td (Daarom moeten toekomstige engines bij voorkeur werken met:) Tj ET
+BT /F1 10 Tf 50 208 Td () Tj ET
+BT /F1 10 Tf 50 193 Td (* expliciete kernparameters;) Tj ET
+BT /F1 10 Tf 50 178 Td (* optionele parameters;) Tj ET
+BT /F1 10 Tf 50 163 Td (* `**kwargs` of `**extra_results`;) Tj ET
+endstream
+endobj
+138 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 139 0 R >>
+endobj
+139 0 obj
+<< /Length 427 >>
+stream
+BT /F1 10 Tf 50 790 Td (* duidelijke status-output;) Tj ET
+BT /F1 10 Tf 50 775 Td (* warnings;) Tj ET
+BT /F1 10 Tf 50 760 Td (* recommendation;) Tj ET
+BT /F1 10 Tf 50 745 Td (* evidence output.) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 13 Tf 50 715 Td (8. Status) Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (De HTML Dashboard Export Engine is herbouwd en werkend vastgelegd in Project Phoenix v1.6.) Tj ET
+endstream
+endobj
+140 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 141 0 R >>
+endobj
+141 0 obj
+<< /Length 161 >>
+stream
+BT /F1 15 Tf 50 790 Td (07_LESSONS_LEARNED/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Lessen uit fouten, fixes en testruns.) Tj ET
+endstream
+endobj
+142 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 143 0 R >>
+endobj
+143 0 obj
+<< /Length 182 >>
+stream
+BT /F1 15 Tf 50 790 Td (08_SOURCE_EVIDENCE/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Bronvermelding, STEE, Git evidence en repository baseline.) Tj ET
+endstream
+endobj
+144 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 145 0 R >>
+endobj
+145 0 obj
+<< /Length 1951 >>
+stream
+BT /F1 15 Tf 50 790 Td (08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (SOURCE EVIDENCE RULES) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: bron- en bewijsregels voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (Project Phoenix moet alle bronnen, aannames en bewijsstukken systematisch vastleggen.) Tj ET
+BT /F1 10 Tf 50 642 Td () Tj ET
+BT /F1 10 Tf 50 627 Td (Elke output moet herleidbaar zijn naar:) Tj ET
+BT /F1 10 Tf 50 612 Td () Tj ET
+BT /F1 10 Tf 50 597 Td (* projectinput;) Tj ET
+BT /F1 10 Tf 50 582 Td (* brondata;) Tj ET
+BT /F1 10 Tf 50 567 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 552 Td (* berekeningen;) Tj ET
+BT /F1 10 Tf 50 537 Td (* Digital Twin;) Tj ET
+BT /F1 10 Tf 50 522 Td (* runtime logs;) Tj ET
+BT /F1 10 Tf 50 507 Td (* Git Evidence.) Tj ET
+BT /F1 10 Tf 50 492 Td () Tj ET
+BT /F1 13 Tf 50 477 Td (2. STEE) Tj ET
+BT /F1 10 Tf 50 459 Td () Tj ET
+BT /F1 10 Tf 50 444 Td (STEE betekent:) Tj ET
+BT /F1 10 Tf 50 429 Td () Tj ET
+BT /F1 10 Tf 50 414 Td (Source Traceability and Evidence Engine.) Tj ET
+BT /F1 10 Tf 50 399 Td () Tj ET
+BT /F1 10 Tf 50 384 Td (STEE registreert:) Tj ET
+BT /F1 10 Tf 50 369 Td () Tj ET
+BT /F1 10 Tf 50 354 Td (* documenten;) Tj ET
+BT /F1 10 Tf 50 339 Td (* kaarten;) Tj ET
+BT /F1 10 Tf 50 324 Td (* normen;) Tj ET
+BT /F1 10 Tf 50 309 Td (* websites;) Tj ET
+BT /F1 10 Tf 50 294 Td (* gebruikersinput;) Tj ET
+BT /F1 10 Tf 50 279 Td (* projectbestanden;) Tj ET
+BT /F1 10 Tf 50 264 Td (* AI-aannames;) Tj ET
+BT /F1 10 Tf 50 249 Td (* berekeningen;) Tj ET
+BT /F1 10 Tf 50 234 Td (* gegenereerde outputs.) Tj ET
+BT /F1 10 Tf 50 219 Td () Tj ET
+BT /F1 13 Tf 50 204 Td (3. Bronregister) Tj ET
+BT /F1 10 Tf 50 186 Td () Tj ET
+BT /F1 10 Tf 50 171 Td (Elk project krijgt minimaal:) Tj ET
+BT /F1 10 Tf 50 156 Td () Tj ET
+endstream
+endobj
+146 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 147 0 R >>
+endobj
+147 0 obj
+<< /Length 2114 >>
+stream
+BT /F1 10 Tf 50 790 Td (`06_sources/source_register.json`) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (Daarnaast kan worden geëxporteerd naar:) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 10 Tf 50 730 Td (* CSV;) Tj ET
+BT /F1 10 Tf 50 715 Td (* XLSX;) Tj ET
+BT /F1 10 Tf 50 700 Td (* PDF;) Tj ET
+BT /F1 10 Tf 50 685 Td (* DOCX;) Tj ET
+BT /F1 10 Tf 50 670 Td (* HTML dashboard;) Tj ET
+BT /F1 10 Tf 50 655 Td (* project ZIP.) Tj ET
+BT /F1 10 Tf 50 640 Td () Tj ET
+BT /F1 13 Tf 50 625 Td (4. Verplichte velden per bron) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td (Per bron moet minimaal worden vastgelegd:) Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td (* bron-ID;) Tj ET
+BT /F1 10 Tf 50 547 Td (* bronnaam;) Tj ET
+BT /F1 10 Tf 50 532 Td (* brontype;) Tj ET
+BT /F1 10 Tf 50 517 Td (* bestandsnaam of URL;) Tj ET
+BT /F1 10 Tf 50 502 Td (* datum/tijd;) Tj ET
+BT /F1 10 Tf 50 487 Td (* discipline;) Tj ET
+BT /F1 10 Tf 50 472 Td (* gebruikt projectonderdeel;) Tj ET
+BT /F1 10 Tf 50 457 Td (* betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 442 Td (* gebruikte waarde;) Tj ET
+BT /F1 10 Tf 50 427 Td (* koppeling met aanname;) Tj ET
+BT /F1 10 Tf 50 412 Td (* koppeling met rapport;) Tj ET
+BT /F1 10 Tf 50 397 Td (* koppeling met Digital Twin.) Tj ET
+BT /F1 10 Tf 50 382 Td () Tj ET
+BT /F1 13 Tf 50 367 Td (5. Relatie met AAIE) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (Als AAIE automatisch gegevens genereert, moet duidelijk worden vastgelegd:) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (* welke waarde is gegenereerd;) Tj ET
+BT /F1 10 Tf 50 289 Td (* waarom deze waarde is gekozen;) Tj ET
+BT /F1 10 Tf 50 274 Td (* welke bron of fallback is gebruikt;) Tj ET
+BT /F1 10 Tf 50 259 Td (* hoe betrouwbaar de waarde is;) Tj ET
+BT /F1 10 Tf 50 244 Td (* of gebruiker de waarde heeft goedgekeurd.) Tj ET
+BT /F1 10 Tf 50 229 Td () Tj ET
+BT /F1 13 Tf 50 214 Td (6. Fallback zonder bron) Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 10 Tf 50 181 Td (Als geen bron beschikbaar is, wordt de waarde gemarkeerd als:) Tj ET
+BT /F1 10 Tf 50 166 Td () Tj ET
+endstream
+endobj
+148 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 149 0 R >>
+endobj
+149 0 obj
+<< /Length 1480 >>
+stream
+BT /F1 10 Tf 50 790 Td (`AAIE fallback assumption`) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (Voorbeeld:) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 10 Tf 50 730 Td (`Grondwaterstand P = -0,50 m`) Tj ET
+BT /F1 10 Tf 50 715 Td () Tj ET
+BT /F1 13 Tf 50 700 Td (7. Relatie met rapportage) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (Rapporten moeten onderscheid maken tussen:) Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (* bekende gegevens;) Tj ET
+BT /F1 10 Tf 50 622 Td (* brongegevens;) Tj ET
+BT /F1 10 Tf 50 607 Td (* automatische aannames;) Tj ET
+BT /F1 10 Tf 50 592 Td (* handmatige aannames;) Tj ET
+BT /F1 10 Tf 50 577 Td (* nog te controleren gegevens.) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 13 Tf 50 547 Td (8. Relatie met QA/QC) Tj ET
+BT /F1 10 Tf 50 529 Td () Tj ET
+BT /F1 10 Tf 50 514 Td (QA/QC moet controleren of belangrijke onderdelen bronvermelding of aannameslog hebben.) Tj ET
+BT /F1 10 Tf 50 499 Td () Tj ET
+BT /F1 10 Tf 50 484 Td (Ontbrekende bronvermelding moet als waarschuwing worden opgenomen.) Tj ET
+BT /F1 10 Tf 50 469 Td () Tj ET
+BT /F1 13 Tf 50 454 Td (9. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 436 Td () Tj ET
+BT /F1 10 Tf 50 421 Td (Geen eindrapport zonder bronvermelding.) Tj ET
+BT /F1 10 Tf 50 406 Td () Tj ET
+BT /F1 10 Tf 50 391 Td (Geen automatische aanname zonder aannameslog.) Tj ET
+BT /F1 10 Tf 50 376 Td () Tj ET
+BT /F1 10 Tf 50 361 Td (Geen project-ZIP zonder evidence.) Tj ET
+endstream
+endobj
+150 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 151 0 R >>
+endobj
+151 0 obj
+<< /Length 2295 >>
+stream
+BT /F1 15 Tf 50 790 Td (09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (PROJECT PHOENIX ASSUMPTIONS) Tj ET
+BT /F1 10 Tf 50 740 Td () Tj ET
+BT /F1 10 Tf 50 725 Td (Status: vaste aannames en automatische inferentieregels voor Project Phoenix / BAOEES V3.) Tj ET
+BT /F1 10 Tf 50 710 Td () Tj ET
+BT /F1 10 Tf 50 695 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 680 Td () Tj ET
+BT /F1 10 Tf 50 665 Td (Dit bestand legt vast welke aannames Project Phoenix automatisch mag gebruiken wanneer) Tj ET
+BT /F1 10 Tf 50 650 Td (projectspecifieke gegevens ontbreken.) Tj ET
+BT /F1 10 Tf 50 635 Td () Tj ET
+BT /F1 10 Tf 50 620 Td (Alle aannames moeten zichtbaar blijven voor de gebruiker en mogen nooit verborgen worden) Tj ET
+BT /F1 10 Tf 50 605 Td (toegepast.) Tj ET
+BT /F1 10 Tf 50 590 Td () Tj ET
+BT /F1 10 Tf 50 575 Td (2. Grondwaterstand) Tj ET
+BT /F1 10 Tf 50 560 Td () Tj ET
+BT /F1 10 Tf 50 545 Td (Standaard fallback:) Tj ET
+BT /F1 10 Tf 50 530 Td () Tj ET
+BT /F1 10 Tf 50 515 Td (P = -0,50 m) Tj ET
+BT /F1 10 Tf 50 500 Td () Tj ET
+BT /F1 10 Tf 50 485 Td (Deze waarde wordt gebruikt wanneer geen projectspecifieke grondwaterstand beschikbaar is.) Tj ET
+BT /F1 10 Tf 50 470 Td () Tj ET
+BT /F1 10 Tf 50 455 Td (Status:) Tj ET
+BT /F1 10 Tf 50 440 Td () Tj ET
+BT /F1 10 Tf 50 425 Td (type: automatische aanname;) Tj ET
+BT /F1 10 Tf 50 410 Td (discipline: geotechniek;) Tj ET
+BT /F1 10 Tf 50 395 Td (bron: Brewster / BAOEES standaard;) Tj ET
+BT /F1 10 Tf 50 380 Td (betrouwbaarheid: middel;) Tj ET
+BT /F1 10 Tf 50 365 Td (gebruiker mag overschrijven: ja.) Tj ET
+BT /F1 10 Tf 50 350 Td (3. Automatische bepaling grondwaterstand) Tj ET
+BT /F1 10 Tf 50 335 Td () Tj ET
+BT /F1 10 Tf 50 320 Td (Project Phoenix moet eerst proberen de grondwaterstand automatisch te bepalen op basis van:) Tj ET
+BT /F1 10 Tf 50 305 Td () Tj ET
+BT /F1 10 Tf 50 290 Td (locatie;) Tj ET
+BT /F1 10 Tf 50 275 Td (kaartuitsnede;) Tj ET
+BT /F1 10 Tf 50 260 Td (satellietbeeld;) Tj ET
+BT /F1 10 Tf 50 245 Td (maaiveldinformatie;) Tj ET
+BT /F1 10 Tf 50 230 Td (bodemdata;) Tj ET
+BT /F1 10 Tf 50 215 Td (omgevingstype;) Tj ET
+BT /F1 10 Tf 50 200 Td (oppervlaktewater in de nabijheid;) Tj ET
+BT /F1 10 Tf 50 185 Td (eerdere projectgegevens;) Tj ET
+BT /F1 10 Tf 50 170 Td (open data;) Tj ET
+endstream
+endobj
+152 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 153 0 R >>
+endobj
+153 0 obj
+<< /Length 2145 >>
+stream
+BT /F1 10 Tf 50 790 Td (gebruikersinput.) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (Wanneer de automatische bepaling onvoldoende betrouwbaar is, gebruikt het systeem P = -0,50 m) Tj ET
+BT /F1 10 Tf 50 745 Td (als fallback.) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 10 Tf 50 715 Td (4. Geo-informatie) Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 10 Tf 50 685 Td (Wanneer geen volledig grondonderzoek beschikbaar is, mag AAIE een concept-bodemprofiel) Tj ET
+BT /F1 10 Tf 50 670 Td (genereren.) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 10 Tf 50 640 Td (Het gegenereerde profiel moet altijd als concept worden gemarkeerd.) Tj ET
+BT /F1 10 Tf 50 625 Td () Tj ET
+BT /F1 10 Tf 50 610 Td (Minimale output:) Tj ET
+BT /F1 10 Tf 50 595 Td () Tj ET
+BT /F1 10 Tf 50 580 Td (laagopbouw;) Tj ET
+BT /F1 10 Tf 50 565 Td (grondsoort per laag;) Tj ET
+BT /F1 10 Tf 50 550 Td (indicatieve draagkracht;) Tj ET
+BT /F1 10 Tf 50 535 Td (indicatieve zettingsgevoeligheid;) Tj ET
+BT /F1 10 Tf 50 520 Td (risico-inschatting;) Tj ET
+BT /F1 10 Tf 50 505 Td (advies vervolgonderzoek.) Tj ET
+BT /F1 10 Tf 50 490 Td (5. Fundering) Tj ET
+BT /F1 10 Tf 50 475 Td () Tj ET
+BT /F1 10 Tf 50 460 Td (Project Phoenix moet standaard twee funderingsvarianten genereren:) Tj ET
+BT /F1 10 Tf 50 445 Td () Tj ET
+BT /F1 10 Tf 50 430 Td (F1 Strokenfundering) Tj ET
+BT /F1 10 Tf 50 415 Td () Tj ET
+BT /F1 10 Tf 50 400 Td (Conceptuitgangspunt:) Tj ET
+BT /F1 10 Tf 50 385 Td () Tj ET
+BT /F1 10 Tf 50 370 Td (strookbreedte: 150 cm tot 200 cm;) Tj ET
+BT /F1 10 Tf 50 355 Td (strookhoogte: 40 cm;) Tj ET
+BT /F1 10 Tf 50 340 Td (funderingsbalk: 50 cm x 60 cm;) Tj ET
+BT /F1 10 Tf 50 325 Td (funderingsbalk in hart strook;) Tj ET
+BT /F1 10 Tf 50 310 Td (toepassen onder dragende wanden en kolommen.) Tj ET
+BT /F1 10 Tf 50 295 Td () Tj ET
+BT /F1 10 Tf 50 280 Td (Te toetsen op:) Tj ET
+BT /F1 10 Tf 50 265 Td () Tj ET
+BT /F1 10 Tf 50 250 Td (draagkracht;) Tj ET
+BT /F1 10 Tf 50 235 Td (zetting;) Tj ET
+BT /F1 10 Tf 50 220 Td (grondwater;) Tj ET
+BT /F1 10 Tf 50 205 Td (uitvoerbaarheid;) Tj ET
+BT /F1 10 Tf 50 190 Td (kosten;) Tj ET
+BT /F1 10 Tf 50 175 Td (bouwrisico.) Tj ET
+endstream
+endobj
+154 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 155 0 R >>
+endobj
+155 0 obj
+<< /Length 2289 >>
+stream
+BT /F1 10 Tf 50 790 Td (F2 Paalfundering) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (Conceptuitgangspunt:) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 10 Tf 50 730 Td (toepassen bij onvoldoende draagkracht;) Tj ET
+BT /F1 10 Tf 50 715 Td (toepassen bij slappe lagen;) Tj ET
+BT /F1 10 Tf 50 700 Td (toepassen bij verhoogd zettingsrisico;) Tj ET
+BT /F1 10 Tf 50 685 Td (toepassen bij hogere belastingen;) Tj ET
+BT /F1 10 Tf 50 670 Td (toepassen wanneer fundering op staal niet verantwoord is.) Tj ET
+BT /F1 10 Tf 50 655 Td () Tj ET
+BT /F1 10 Tf 50 640 Td (Te toetsen op:) Tj ET
+BT /F1 10 Tf 50 625 Td () Tj ET
+BT /F1 10 Tf 50 610 Td (paallengte;) Tj ET
+BT /F1 10 Tf 50 595 Td (draagkracht per paal;) Tj ET
+BT /F1 10 Tf 50 580 Td (paaltype;) Tj ET
+BT /F1 10 Tf 50 565 Td (paalafstand;) Tj ET
+BT /F1 10 Tf 50 550 Td (paalbelasting;) Tj ET
+BT /F1 10 Tf 50 535 Td (paalkop / funderingsbalk;) Tj ET
+BT /F1 10 Tf 50 520 Td (kosten;) Tj ET
+BT /F1 10 Tf 50 505 Td (uitvoerbaarheid.) Tj ET
+BT /F1 10 Tf 50 490 Td (6. Automatische funderingsvergelijking) Tj ET
+BT /F1 10 Tf 50 475 Td () Tj ET
+BT /F1 10 Tf 50 460 Td (Project Phoenix moet F1 en F2 automatisch vergelijken op:) Tj ET
+BT /F1 10 Tf 50 445 Td () Tj ET
+BT /F1 10 Tf 50 430 Td (Aspect F1 Strokenfundering F2 Paalfundering) Tj ET
+BT /F1 10 Tf 50 415 Td (Draagkracht toetsen toetsen) Tj ET
+BT /F1 10 Tf 50 400 Td (Zetting toetsen toetsen) Tj ET
+BT /F1 10 Tf 50 385 Td (Kosten vergelijken vergelijken) Tj ET
+BT /F1 10 Tf 50 370 Td (Risico vergelijken vergelijken) Tj ET
+BT /F1 10 Tf 50 355 Td (Bouwtijd vergelijken vergelijken) Tj ET
+BT /F1 10 Tf 50 340 Td (Bodemgeschiktheid beoordelen beoordelen) Tj ET
+BT /F1 10 Tf 50 325 Td (Vergunning / constructie beoordelen beoordelen) Tj ET
+BT /F1 10 Tf 50 310 Td () Tj ET
+BT /F1 10 Tf 50 295 Td (De beste variant mag automatisch worden geadviseerd, maar beide varianten moeten rapportabel) Tj ET
+BT /F1 10 Tf 50 280 Td (blijven.) Tj ET
+BT /F1 10 Tf 50 265 Td () Tj ET
+BT /F1 10 Tf 50 250 Td (7. Gebruikerskeuze) Tj ET
+BT /F1 10 Tf 50 235 Td () Tj ET
+BT /F1 10 Tf 50 220 Td (De gebruiker moet kunnen kiezen uit:) Tj ET
+BT /F1 10 Tf 50 205 Td () Tj ET
+BT /F1 10 Tf 50 190 Td (automatisch beste fundering kiezen;) Tj ET
+BT /F1 10 Tf 50 175 Td (alleen strokenfundering uitwerken;) Tj ET
+endstream
+endobj
+156 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 157 0 R >>
+endobj
+157 0 obj
+<< /Length 1885 >>
+stream
+BT /F1 10 Tf 50 790 Td (alleen paalfundering uitwerken;) Tj ET
+BT /F1 10 Tf 50 775 Td (beide varianten volledig rapporteren;) Tj ET
+BT /F1 10 Tf 50 760 Td (handmatig aangepaste funderingsvariant gebruiken.) Tj ET
+BT /F1 10 Tf 50 745 Td (8. Aannameslog) Tj ET
+BT /F1 10 Tf 50 730 Td () Tj ET
+BT /F1 10 Tf 50 715 Td (Elke automatische aanname moet worden opgenomen in het aannameslog.) Tj ET
+BT /F1 10 Tf 50 700 Td () Tj ET
+BT /F1 10 Tf 50 685 Td (Per aanname:) Tj ET
+BT /F1 10 Tf 50 670 Td () Tj ET
+BT /F1 10 Tf 50 655 Td (naam;) Tj ET
+BT /F1 10 Tf 50 640 Td (waarde;) Tj ET
+BT /F1 10 Tf 50 625 Td (discipline;) Tj ET
+BT /F1 10 Tf 50 610 Td (reden;) Tj ET
+BT /F1 10 Tf 50 595 Td (bron;) Tj ET
+BT /F1 10 Tf 50 580 Td (betrouwbaarheid;) Tj ET
+BT /F1 10 Tf 50 565 Td (status;) Tj ET
+BT /F1 10 Tf 50 550 Td (datum/tijd;) Tj ET
+BT /F1 10 Tf 50 535 Td (gebruiker-goedkeuring.) Tj ET
+BT /F1 10 Tf 50 520 Td (9. Bronkoppeling) Tj ET
+BT /F1 10 Tf 50 505 Td () Tj ET
+BT /F1 10 Tf 50 490 Td (Elke aanname moet worden gekoppeld aan STEE-bronvermelding wanneer er een bron beschikbaar is.) Tj ET
+BT /F1 10 Tf 50 475 Td () Tj ET
+BT /F1 10 Tf 50 460 Td (Wanneer er geen bron beschikbaar is, moet de aanname worden gemarkeerd als:) Tj ET
+BT /F1 10 Tf 50 445 Td () Tj ET
+BT /F1 10 Tf 50 430 Td (AAIE fallback assumption) Tj ET
+BT /F1 10 Tf 50 415 Td () Tj ET
+BT /F1 10 Tf 50 400 Td (10. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 385 Td () Tj ET
+BT /F1 10 Tf 50 370 Td (Automatisch genereren is toegestaan, maar Project Phoenix moet altijd duidelijk tonen:) Tj ET
+BT /F1 10 Tf 50 355 Td () Tj ET
+BT /F1 10 Tf 50 340 Td (wat zeker is;) Tj ET
+BT /F1 10 Tf 50 325 Td (wat aangenomen is;) Tj ET
+BT /F1 10 Tf 50 310 Td (wat automatisch is gegenereerd;) Tj ET
+BT /F1 10 Tf 50 295 Td (wat nog handmatig gecontroleerd moet worden;) Tj ET
+BT /F1 10 Tf 50 280 Td (wat projectspecifiek berekend moet worden.) Tj ET
+endstream
+endobj
+158 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 159 0 R >>
+endobj
+159 0 obj
+<< /Length 161 >>
+stream
+BT /F1 15 Tf 50 790 Td (09_ASSUMPTIONS/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Aannameslog en standaard projectdefaults.) Tj ET
+endstream
+endobj
+160 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 161 0 R >>
+endobj
+161 0 obj
+<< /Length 2069 >>
+stream
+BT /F1 15 Tf 50 790 Td (10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (BIB EXPORT ENGINE DESIGN) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: ontwerpdocument voor de toekomstige Project Phoenix BIB Export Engine.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (De BIB Export Engine moet de volledige Brewster Integrated Bibliotheek automatisch kunnen) Tj ET
+BT /F1 10 Tf 50 642 Td (exporteren naar professionele eindproducten.) Tj ET
+BT /F1 10 Tf 50 627 Td () Tj ET
+BT /F1 10 Tf 50 612 Td (De engine moet de map `bib/` scannen, alle kennisbestanden verzamelen, sorteren, combineren en) Tj ET
+BT /F1 10 Tf 50 597 Td (exporteren.) Tj ET
+BT /F1 10 Tf 50 582 Td () Tj ET
+BT /F1 13 Tf 50 567 Td (2. Gewenste output) Tj ET
+BT /F1 10 Tf 50 549 Td () Tj ET
+BT /F1 10 Tf 50 534 Td (De engine moet minimaal kunnen genereren:) Tj ET
+BT /F1 10 Tf 50 519 Td () Tj ET
+BT /F1 10 Tf 50 504 Td (* DOCX kennisbibliotheek;) Tj ET
+BT /F1 10 Tf 50 489 Td (* PDF kennisbibliotheek;) Tj ET
+BT /F1 10 Tf 50 474 Td (* ZIP-export van de volledige BIB;) Tj ET
+BT /F1 10 Tf 50 459 Td (* HTML knowledge dashboard;) Tj ET
+BT /F1 10 Tf 50 444 Td (* exportmanifest;) Tj ET
+BT /F1 10 Tf 50 429 Td (* Git Evidence;) Tj ET
+BT /F1 10 Tf 50 414 Td (* checksum;) Tj ET
+BT /F1 10 Tf 50 399 Td (* QA/QC-controle.) Tj ET
+BT /F1 10 Tf 50 384 Td () Tj ET
+BT /F1 13 Tf 50 369 Td (3. Voorgestelde engine-map) Tj ET
+BT /F1 10 Tf 50 351 Td () Tj ET
+BT /F1 10 Tf 50 336 Td () Tj ET
+BT /F1 10 Tf 50 321 Td (baoees/bib_export_engine/) Tj ET
+BT /F1 10 Tf 50 306 Td (__init__.py) Tj ET
+BT /F1 10 Tf 50 291 Td (main.py) Tj ET
+BT /F1 10 Tf 50 276 Td () Tj ET
+BT /F1 10 Tf 50 261 Td () Tj ET
+BT /F1 13 Tf 50 246 Td (4. Input) Tj ET
+BT /F1 10 Tf 50 228 Td () Tj ET
+BT /F1 10 Tf 50 213 Td (De engine leest:) Tj ET
+BT /F1 10 Tf 50 198 Td () Tj ET
+BT /F1 10 Tf 50 183 Td () Tj ET
+BT /F1 10 Tf 50 168 Td (bib/) Tj ET
+BT /F1 10 Tf 50 153 Td (00_BIB_INDEX.md) Tj ET
+endstream
+endobj
+162 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 163 0 R >>
+endobj
+163 0 obj
+<< /Length 1986 >>
+stream
+BT /F1 10 Tf 50 790 Td (01_MASTER_KNOWLEDGE/) Tj ET
+BT /F1 10 Tf 50 775 Td (02_PROJECTS/) Tj ET
+BT /F1 10 Tf 50 760 Td (03_ENGINES/) Tj ET
+BT /F1 10 Tf 50 745 Td (04_STANDARDS_AND_RULES/) Tj ET
+BT /F1 10 Tf 50 730 Td (05_TEMPLATES/) Tj ET
+BT /F1 10 Tf 50 715 Td (06_WORKFLOWS/) Tj ET
+BT /F1 10 Tf 50 700 Td (07_LESSONS_LEARNED/) Tj ET
+BT /F1 10 Tf 50 685 Td (08_SOURCE_EVIDENCE/) Tj ET
+BT /F1 10 Tf 50 670 Td (09_ASSUMPTIONS/) Tj ET
+BT /F1 10 Tf 50 655 Td (10_EXPORTS/) Tj ET
+BT /F1 10 Tf 50 640 Td () Tj ET
+BT /F1 10 Tf 50 625 Td () Tj ET
+BT /F1 13 Tf 50 610 Td (5. Outputmap) Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td (Voorgestelde output:) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 10 Tf 50 532 Td (outputs/bib/) Tj ET
+BT /F1 10 Tf 50 517 Td (PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx) Tj ET
+BT /F1 10 Tf 50 502 Td (PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf) Tj ET
+BT /F1 10 Tf 50 487 Td (PROJECT_PHOENIX_BIB_EXPORT.zip) Tj ET
+BT /F1 10 Tf 50 472 Td (bib_dashboard.html) Tj ET
+BT /F1 10 Tf 50 457 Td (bib_manifest.json) Tj ET
+BT /F1 10 Tf 50 442 Td (bib_export_log.json) Tj ET
+BT /F1 10 Tf 50 427 Td (bib_git_evidence.json) Tj ET
+BT /F1 10 Tf 50 412 Td () Tj ET
+BT /F1 10 Tf 50 397 Td () Tj ET
+BT /F1 13 Tf 50 382 Td (6. Basisfuncties) Tj ET
+BT /F1 10 Tf 50 364 Td () Tj ET
+BT /F1 10 Tf 50 349 Td (De BIB Export Engine moet minimaal bevatten:) Tj ET
+BT /F1 10 Tf 50 334 Td () Tj ET
+BT /F1 10 Tf 50 319 Td (* scan_bib_files;) Tj ET
+BT /F1 10 Tf 50 304 Td (* read_markdown_files;) Tj ET
+BT /F1 10 Tf 50 289 Td (* build_bib_manifest;) Tj ET
+BT /F1 10 Tf 50 274 Td (* build_docx_export;) Tj ET
+BT /F1 10 Tf 50 259 Td (* build_pdf_export;) Tj ET
+BT /F1 10 Tf 50 244 Td (* build_html_dashboard;) Tj ET
+BT /F1 10 Tf 50 229 Td (* build_zip_export;) Tj ET
+BT /F1 10 Tf 50 214 Td (* build_git_evidence;) Tj ET
+BT /F1 10 Tf 50 199 Td (* run_quality_check;) Tj ET
+BT /F1 10 Tf 50 184 Td (* export_all.) Tj ET
+BT /F1 10 Tf 50 169 Td () Tj ET
+endstream
+endobj
+164 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 165 0 R >>
+endobj
+165 0 obj
+<< /Length 2023 >>
+stream
+BT /F1 13 Tf 50 790 Td (7. Sorteervolgorde) Tj ET
+BT /F1 10 Tf 50 772 Td () Tj ET
+BT /F1 10 Tf 50 757 Td (De engine moet bestanden sorteren volgens vaste BIB-volgorde:) Tj ET
+BT /F1 10 Tf 50 742 Td () Tj ET
+BT /F1 10 Tf 50 727 Td (1. 00_BIB_INDEX.md) Tj ET
+BT /F1 10 Tf 50 712 Td (2. 01_MASTER_KNOWLEDGE) Tj ET
+BT /F1 10 Tf 50 697 Td (3. 02_PROJECTS) Tj ET
+BT /F1 10 Tf 50 682 Td (4. 03_ENGINES) Tj ET
+BT /F1 10 Tf 50 667 Td (5. 04_STANDARDS_AND_RULES) Tj ET
+BT /F1 10 Tf 50 652 Td (6. 05_TEMPLATES) Tj ET
+BT /F1 10 Tf 50 637 Td (7. 06_WORKFLOWS) Tj ET
+BT /F1 10 Tf 50 622 Td (8. 07_LESSONS_LEARNED) Tj ET
+BT /F1 10 Tf 50 607 Td (9. 08_SOURCE_EVIDENCE) Tj ET
+BT /F1 10 Tf 50 592 Td (10. 09_ASSUMPTIONS) Tj ET
+BT /F1 10 Tf 50 577 Td (11. 10_EXPORTS) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 13 Tf 50 547 Td (8. DOCX-export) Tj ET
+BT /F1 10 Tf 50 529 Td () Tj ET
+BT /F1 10 Tf 50 514 Td (De DOCX-export moet bevatten:) Tj ET
+BT /F1 10 Tf 50 499 Td () Tj ET
+BT /F1 10 Tf 50 484 Td (* titelpagina;) Tj ET
+BT /F1 10 Tf 50 469 Td (* versiegegevens;) Tj ET
+BT /F1 10 Tf 50 454 Td (* exportdatum;) Tj ET
+BT /F1 10 Tf 50 439 Td (* repositorygegevens;) Tj ET
+BT /F1 10 Tf 50 424 Td (* inhoudsopgave;) Tj ET
+BT /F1 10 Tf 50 409 Td (* alle BIB-hoofdstukken;) Tj ET
+BT /F1 10 Tf 50 394 Td (* duidelijke koppen;) Tj ET
+BT /F1 10 Tf 50 379 Td (* tabellen waar mogelijk;) Tj ET
+BT /F1 10 Tf 50 364 Td (* bijlagenoverzicht.) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 13 Tf 50 334 Td (9. PDF-export) Tj ET
+BT /F1 10 Tf 50 316 Td () Tj ET
+BT /F1 10 Tf 50 301 Td (De PDF-export moet worden gemaakt vanuit de DOCX of rechtstreeks vanuit HTML/Markdown.) Tj ET
+BT /F1 10 Tf 50 286 Td () Tj ET
+BT /F1 10 Tf 50 271 Td (Doel:) Tj ET
+BT /F1 10 Tf 50 256 Td () Tj ET
+BT /F1 10 Tf 50 241 Td (* archivering;) Tj ET
+BT /F1 10 Tf 50 226 Td (* delen met derden;) Tj ET
+BT /F1 10 Tf 50 211 Td (* projectverantwoording;) Tj ET
+BT /F1 10 Tf 50 196 Td (* kennisborging.) Tj ET
+BT /F1 10 Tf 50 181 Td () Tj ET
+BT /F1 13 Tf 50 166 Td (10. ZIP-export) Tj ET
+endstream
+endobj
+166 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 167 0 R >>
+endobj
+167 0 obj
+<< /Length 1915 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (De ZIP-export moet bevatten:) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 10 Tf 50 745 Td (* alle originele Markdown-bestanden;) Tj ET
+BT /F1 10 Tf 50 730 Td (* README-bestanden;) Tj ET
+BT /F1 10 Tf 50 715 Td (* DOCX-export;) Tj ET
+BT /F1 10 Tf 50 700 Td (* PDF-export;) Tj ET
+BT /F1 10 Tf 50 685 Td (* HTML-dashboard;) Tj ET
+BT /F1 10 Tf 50 670 Td (* manifest;) Tj ET
+BT /F1 10 Tf 50 655 Td (* exportlog;) Tj ET
+BT /F1 10 Tf 50 640 Td (* Git Evidence.) Tj ET
+BT /F1 10 Tf 50 625 Td () Tj ET
+BT /F1 13 Tf 50 610 Td (11. HTML Knowledge Dashboard) Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td (Het dashboard moet tonen:) Tj ET
+BT /F1 10 Tf 50 562 Td () Tj ET
+BT /F1 10 Tf 50 547 Td (* hoofdindex;) Tj ET
+BT /F1 10 Tf 50 532 Td (* projectkennis;) Tj ET
+BT /F1 10 Tf 50 517 Td (* enginekennis;) Tj ET
+BT /F1 10 Tf 50 502 Td (* standaarden;) Tj ET
+BT /F1 10 Tf 50 487 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 472 Td (* workflows;) Tj ET
+BT /F1 10 Tf 50 457 Td (* templates;) Tj ET
+BT /F1 10 Tf 50 442 Td (* lessons learned;) Tj ET
+BT /F1 10 Tf 50 427 Td (* source evidence;) Tj ET
+BT /F1 10 Tf 50 412 Td (* exportstatus;) Tj ET
+BT /F1 10 Tf 50 397 Td (* links naar alle bestanden.) Tj ET
+BT /F1 10 Tf 50 382 Td () Tj ET
+BT /F1 13 Tf 50 367 Td (12. Manifest) Tj ET
+BT /F1 10 Tf 50 349 Td () Tj ET
+BT /F1 10 Tf 50 334 Td (Het manifest moet per bestand vastleggen:) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (* bestandsnaam;) Tj ET
+BT /F1 10 Tf 50 289 Td (* relatief pad;) Tj ET
+BT /F1 10 Tf 50 274 Td (* categorie;) Tj ET
+BT /F1 10 Tf 50 259 Td (* grootte;) Tj ET
+BT /F1 10 Tf 50 244 Td (* extensie;) Tj ET
+BT /F1 10 Tf 50 229 Td (* datum/tijd export;) Tj ET
+BT /F1 10 Tf 50 214 Td (* checksum indien beschikbaar.) Tj ET
+BT /F1 10 Tf 50 199 Td () Tj ET
+BT /F1 13 Tf 50 184 Td (13. Git Evidence) Tj ET
+BT /F1 10 Tf 50 166 Td () Tj ET
+endstream
+endobj
+168 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 169 0 R >>
+endobj
+169 0 obj
+<< /Length 1548 >>
+stream
+BT /F1 10 Tf 50 790 Td (De engine moet vastleggen:) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 10 Tf 50 760 Td (* branch;) Tj ET
+BT /F1 10 Tf 50 745 Td (* laatste commit;) Tj ET
+BT /F1 10 Tf 50 730 Td (* commit message;) Tj ET
+BT /F1 10 Tf 50 715 Td (* remote status;) Tj ET
+BT /F1 10 Tf 50 700 Td (* working tree status;) Tj ET
+BT /F1 10 Tf 50 685 Td (* exportdatum;) Tj ET
+BT /F1 10 Tf 50 670 Td (* exportpad;) Tj ET
+BT /F1 10 Tf 50 655 Td (* aantal bestanden.) Tj ET
+BT /F1 10 Tf 50 640 Td () Tj ET
+BT /F1 13 Tf 50 625 Td (14. QA/QC) Tj ET
+BT /F1 10 Tf 50 607 Td () Tj ET
+BT /F1 10 Tf 50 592 Td (Voor export moet worden gecontroleerd:) Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td (* bestaat `bib/00_BIB_INDEX.md`;) Tj ET
+BT /F1 10 Tf 50 547 Td (* bestaan alle hoofdmap-README?s;) Tj ET
+BT /F1 10 Tf 50 532 Td (* bestaan projectkennisbestanden;) Tj ET
+BT /F1 10 Tf 50 517 Td (* bestaat engine-register;) Tj ET
+BT /F1 10 Tf 50 502 Td (* bestaan standards en assumptions;) Tj ET
+BT /F1 10 Tf 50 487 Td (* bestaan workflows en templates;) Tj ET
+BT /F1 10 Tf 50 472 Td (* bestaan lessons learned;) Tj ET
+BT /F1 10 Tf 50 457 Td (* bestaan source evidence rules;) Tj ET
+BT /F1 10 Tf 50 442 Td (* bestaat exportplan.) Tj ET
+BT /F1 10 Tf 50 427 Td () Tj ET
+BT /F1 13 Tf 50 412 Td (15. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 394 Td () Tj ET
+BT /F1 10 Tf 50 379 Td (De BIB Export Engine maakt van de BIB een officiële kennisbibliotheek die leesbaar, deelbaar,) Tj ET
+BT /F1 10 Tf 50 364 Td (exporteerbaar en controleerbaar is.) Tj ET
+endstream
+endobj
+170 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 171 0 R >>
+endobj
+171 0 obj
+<< /Length 1974 >>
+stream
+BT /F1 15 Tf 50 790 Td (10_EXPORTS/BIB_EXPORT_PLAN.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 15 Tf 50 755 Td (BIB EXPORT PLAN) Tj ET
+BT /F1 10 Tf 50 735 Td () Tj ET
+BT /F1 10 Tf 50 720 Td (Status: exportplan voor Project Phoenix BIB.) Tj ET
+BT /F1 10 Tf 50 705 Td () Tj ET
+BT /F1 13 Tf 50 690 Td (1. Doel) Tj ET
+BT /F1 10 Tf 50 672 Td () Tj ET
+BT /F1 10 Tf 50 657 Td (De BIB moet niet alleen in losse Markdown-bestanden bestaan, maar ook kunnen worden) Tj ET
+BT /F1 10 Tf 50 642 Td (geëxporteerd naar professionele eindproducten.) Tj ET
+BT /F1 10 Tf 50 627 Td () Tj ET
+BT /F1 10 Tf 50 612 Td (Doelproducten:) Tj ET
+BT /F1 10 Tf 50 597 Td () Tj ET
+BT /F1 10 Tf 50 582 Td (* DOCX;) Tj ET
+BT /F1 10 Tf 50 567 Td (* PDF;) Tj ET
+BT /F1 10 Tf 50 552 Td (* ZIP;) Tj ET
+BT /F1 10 Tf 50 537 Td (* HTML knowledge dashboard;) Tj ET
+BT /F1 10 Tf 50 522 Td (* koppeling met Project Phoenix Master Specification.) Tj ET
+BT /F1 10 Tf 50 507 Td () Tj ET
+BT /F1 13 Tf 50 492 Td (2. Exportvormen) Tj ET
+BT /F1 10 Tf 50 474 Td () Tj ET
+BT /F1 13 Tf 50 459 Td (2.1 DOCX) Tj ET
+BT /F1 10 Tf 50 441 Td () Tj ET
+BT /F1 10 Tf 50 426 Td (De BIB moet kunnen worden samengevoegd tot één Word-document:) Tj ET
+BT /F1 10 Tf 50 411 Td () Tj ET
+BT /F1 10 Tf 50 396 Td () Tj ET
+BT /F1 10 Tf 50 381 Td (PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx) Tj ET
+BT /F1 10 Tf 50 366 Td () Tj ET
+BT /F1 10 Tf 50 351 Td () Tj ET
+BT /F1 10 Tf 50 336 Td (Inhoud:) Tj ET
+BT /F1 10 Tf 50 321 Td () Tj ET
+BT /F1 10 Tf 50 306 Td (* titelpagina;) Tj ET
+BT /F1 10 Tf 50 291 Td (* inhoudsopgave;) Tj ET
+BT /F1 10 Tf 50 276 Td (* masterkennis;) Tj ET
+BT /F1 10 Tf 50 261 Td (* projectkennis;) Tj ET
+BT /F1 10 Tf 50 246 Td (* enginekennis;) Tj ET
+BT /F1 10 Tf 50 231 Td (* standaarden;) Tj ET
+BT /F1 10 Tf 50 216 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 201 Td (* workflows;) Tj ET
+BT /F1 10 Tf 50 186 Td (* templates;) Tj ET
+BT /F1 10 Tf 50 171 Td (* lessons learned;) Tj ET
+BT /F1 10 Tf 50 156 Td (* source evidence;) Tj ET
+endstream
+endobj
+172 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 173 0 R >>
+endobj
+173 0 obj
+<< /Length 1842 >>
+stream
+BT /F1 10 Tf 50 790 Td (* exportplan.) Tj ET
+BT /F1 10 Tf 50 775 Td () Tj ET
+BT /F1 13 Tf 50 760 Td (2.2 PDF) Tj ET
+BT /F1 10 Tf 50 742 Td () Tj ET
+BT /F1 10 Tf 50 727 Td (De BIB moet kunnen worden geëxporteerd naar:) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td () Tj ET
+BT /F1 10 Tf 50 682 Td (PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf) Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td () Tj ET
+BT /F1 10 Tf 50 637 Td (Doel:) Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td (* archivering;) Tj ET
+BT /F1 10 Tf 50 592 Td (* delen met derden;) Tj ET
+BT /F1 10 Tf 50 577 Td (* projectverantwoording;) Tj ET
+BT /F1 10 Tf 50 562 Td (* naslagwerk.) Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 13 Tf 50 532 Td (2.3 ZIP) Tj ET
+BT /F1 10 Tf 50 514 Td () Tj ET
+BT /F1 10 Tf 50 499 Td (De volledige BIB moet kunnen worden verpakt als:) Tj ET
+BT /F1 10 Tf 50 484 Td () Tj ET
+BT /F1 10 Tf 50 469 Td () Tj ET
+BT /F1 10 Tf 50 454 Td (PROJECT_PHOENIX_BIB_EXPORT.zip) Tj ET
+BT /F1 10 Tf 50 439 Td () Tj ET
+BT /F1 10 Tf 50 424 Td () Tj ET
+BT /F1 10 Tf 50 409 Td (Inhoud:) Tj ET
+BT /F1 10 Tf 50 394 Td () Tj ET
+BT /F1 10 Tf 50 379 Td (* alle Markdown-bestanden;) Tj ET
+BT /F1 10 Tf 50 364 Td (* alle README-bestanden;) Tj ET
+BT /F1 10 Tf 50 349 Td (* export DOCX;) Tj ET
+BT /F1 10 Tf 50 334 Td (* export PDF;) Tj ET
+BT /F1 10 Tf 50 319 Td (* exportlog;) Tj ET
+BT /F1 10 Tf 50 304 Td (* manifest;) Tj ET
+BT /F1 10 Tf 50 289 Td (* Git Evidence.) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 13 Tf 50 259 Td (2.4 HTML Knowledge Dashboard) Tj ET
+BT /F1 10 Tf 50 241 Td () Tj ET
+BT /F1 10 Tf 50 226 Td (De BIB moet later een eigen HTML-dashboard krijgen:) Tj ET
+BT /F1 10 Tf 50 211 Td () Tj ET
+BT /F1 10 Tf 50 196 Td () Tj ET
+BT /F1 10 Tf 50 181 Td (bib/10_EXPORTS/bib_dashboard.html) Tj ET
+BT /F1 10 Tf 50 166 Td () Tj ET
+endstream
+endobj
+174 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 175 0 R >>
+endobj
+175 0 obj
+<< /Length 2258 >>
+stream
+BT /F1 10 Tf 50 790 Td () Tj ET
+BT /F1 10 Tf 50 775 Td (Het dashboard moet tonen:) Tj ET
+BT /F1 10 Tf 50 760 Td () Tj ET
+BT /F1 10 Tf 50 745 Td (* hoofdindex;) Tj ET
+BT /F1 10 Tf 50 730 Td (* projectkennis;) Tj ET
+BT /F1 10 Tf 50 715 Td (* enginekennis;) Tj ET
+BT /F1 10 Tf 50 700 Td (* aannames;) Tj ET
+BT /F1 10 Tf 50 685 Td (* standaarden;) Tj ET
+BT /F1 10 Tf 50 670 Td (* workflows;) Tj ET
+BT /F1 10 Tf 50 655 Td (* templates;) Tj ET
+BT /F1 10 Tf 50 640 Td (* lessons learned;) Tj ET
+BT /F1 10 Tf 50 625 Td (* evidence;) Tj ET
+BT /F1 10 Tf 50 610 Td (* zoekbare structuur;) Tj ET
+BT /F1 10 Tf 50 595 Td (* links naar bestanden.) Tj ET
+BT /F1 10 Tf 50 580 Td () Tj ET
+BT /F1 13 Tf 50 565 Td (3. Relatie met Master Specification) Tj ET
+BT /F1 10 Tf 50 547 Td () Tj ET
+BT /F1 10 Tf 50 532 Td (De BIB moet kunnen worden gebruikt om de Master Specification automatisch bij te werken.) Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 10 Tf 50 502 Td (Belangrijke koppelingen:) Tj ET
+BT /F1 10 Tf 50 487 Td () Tj ET
+BT /F1 10 Tf 50 472 Td (* BIB Core Knowledge ? Master Specification hoofdstuk systeemdefinitie;) Tj ET
+BT /F1 10 Tf 50 457 Td (* Project Knowledge ? referentieprojecten;) Tj ET
+BT /F1 10 Tf 50 442 Td (* Engine Knowledge ? technische architectuur;) Tj ET
+BT /F1 10 Tf 50 427 Td (* Standards ? systeemeisen;) Tj ET
+BT /F1 10 Tf 50 412 Td (* Assumptions ? AAIE-regels;) Tj ET
+BT /F1 10 Tf 50 397 Td (* Workflows ? proceshoofdstukken;) Tj ET
+BT /F1 10 Tf 50 382 Td (* Source Evidence ? STEE en Git Evidence;) Tj ET
+BT /F1 10 Tf 50 367 Td (* Lessons Learned ? QA/QC en ontwikkelregels.) Tj ET
+BT /F1 10 Tf 50 352 Td () Tj ET
+BT /F1 13 Tf 50 337 Td (4. Relatie met BAOEES V3) Tj ET
+BT /F1 10 Tf 50 319 Td () Tj ET
+BT /F1 10 Tf 50 304 Td (De BIB moet later door BAOEES V3 kunnen worden ingelezen als kennisbron.) Tj ET
+BT /F1 10 Tf 50 289 Td () Tj ET
+BT /F1 10 Tf 50 274 Td (Mogelijke toepassingen:) Tj ET
+BT /F1 10 Tf 50 259 Td () Tj ET
+BT /F1 10 Tf 50 244 Td (* automatische prompts;) Tj ET
+BT /F1 10 Tf 50 229 Td (* projectanalyse;) Tj ET
+BT /F1 10 Tf 50 214 Td (* engine-aansturing;) Tj ET
+BT /F1 10 Tf 50 199 Td (* standaarduitgangspunten;) Tj ET
+BT /F1 10 Tf 50 184 Td (* rapporttemplates;) Tj ET
+BT /F1 10 Tf 50 169 Td (* kwaliteitscontrole;) Tj ET
+endstream
+endobj
+176 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 177 0 R >>
+endobj
+177 0 obj
+<< /Length 1946 >>
+stream
+BT /F1 10 Tf 50 790 Td (* aannameslog;) Tj ET
+BT /F1 10 Tf 50 775 Td (* bronvermelding;) Tj ET
+BT /F1 10 Tf 50 760 Td (* dashboardteksten.) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 13 Tf 50 730 Td (5. Export-engine) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (Een toekomstige engine kan worden toegevoegd:) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td () Tj ET
+BT /F1 10 Tf 50 652 Td (baoees/bib_export_engine/) Tj ET
+BT /F1 10 Tf 50 637 Td () Tj ET
+BT /F1 10 Tf 50 622 Td () Tj ET
+BT /F1 10 Tf 50 607 Td (Mogelijke bestanden:) Tj ET
+BT /F1 10 Tf 50 592 Td () Tj ET
+BT /F1 10 Tf 50 577 Td () Tj ET
+BT /F1 10 Tf 50 562 Td (baoees/bib_export_engine/__init__.py) Tj ET
+BT /F1 10 Tf 50 547 Td (baoees/bib_export_engine/main.py) Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 10 Tf 50 517 Td () Tj ET
+BT /F1 10 Tf 50 502 Td (Taken van de engine:) Tj ET
+BT /F1 10 Tf 50 487 Td () Tj ET
+BT /F1 10 Tf 50 472 Td (* BIB-map scannen;) Tj ET
+BT /F1 10 Tf 50 457 Td (* Markdown-bestanden verzamelen;) Tj ET
+BT /F1 10 Tf 50 442 Td (* inhoud sorteren;) Tj ET
+BT /F1 10 Tf 50 427 Td (* DOCX genereren;) Tj ET
+BT /F1 10 Tf 50 412 Td (* PDF genereren;) Tj ET
+BT /F1 10 Tf 50 397 Td (* ZIP genereren;) Tj ET
+BT /F1 10 Tf 50 382 Td (* HTML-dashboard genereren;) Tj ET
+BT /F1 10 Tf 50 367 Td (* manifest maken;) Tj ET
+BT /F1 10 Tf 50 352 Td (* Git Evidence koppelen.) Tj ET
+BT /F1 10 Tf 50 337 Td () Tj ET
+BT /F1 13 Tf 50 322 Td (6. Verplichte exportmetadata) Tj ET
+BT /F1 10 Tf 50 304 Td () Tj ET
+BT /F1 10 Tf 50 289 Td (Elke BIB-export moet bevatten:) Tj ET
+BT /F1 10 Tf 50 274 Td () Tj ET
+BT /F1 10 Tf 50 259 Td (* exportdatum;) Tj ET
+BT /F1 10 Tf 50 244 Td (* repository;) Tj ET
+BT /F1 10 Tf 50 229 Td (* branch;) Tj ET
+BT /F1 10 Tf 50 214 Td (* laatste commit;) Tj ET
+BT /F1 10 Tf 50 199 Td (* working tree status;) Tj ET
+BT /F1 10 Tf 50 184 Td (* aantal bestanden;) Tj ET
+BT /F1 10 Tf 50 169 Td (* lijst met bestanden;) Tj ET
+endstream
+endobj
+178 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 179 0 R >>
+endobj
+179 0 obj
+<< /Length 1959 >>
+stream
+BT /F1 10 Tf 50 790 Td (* exportformaat;) Tj ET
+BT /F1 10 Tf 50 775 Td (* exportpad;) Tj ET
+BT /F1 10 Tf 50 760 Td (* checksums indien beschikbaar.) Tj ET
+BT /F1 10 Tf 50 745 Td () Tj ET
+BT /F1 13 Tf 50 730 Td (7. QA/QC voor BIB) Tj ET
+BT /F1 10 Tf 50 712 Td () Tj ET
+BT /F1 10 Tf 50 697 Td (Voor export moet worden gecontroleerd:) Tj ET
+BT /F1 10 Tf 50 682 Td () Tj ET
+BT /F1 10 Tf 50 667 Td (* bestaat `00_BIB_INDEX.md`;) Tj ET
+BT /F1 10 Tf 50 652 Td (* bestaan alle hoofdmap-README?s;) Tj ET
+BT /F1 10 Tf 50 637 Td (* zijn projectkennisbestanden aanwezig;) Tj ET
+BT /F1 10 Tf 50 622 Td (* is engine-register aanwezig;) Tj ET
+BT /F1 10 Tf 50 607 Td (* zijn assumptions aanwezig;) Tj ET
+BT /F1 10 Tf 50 592 Td (* zijn source evidence rules aanwezig;) Tj ET
+BT /F1 10 Tf 50 577 Td (* zijn workflows aanwezig;) Tj ET
+BT /F1 10 Tf 50 562 Td (* is exportplan aanwezig;) Tj ET
+BT /F1 10 Tf 50 547 Td (* is Git-status clean.) Tj ET
+BT /F1 10 Tf 50 532 Td () Tj ET
+BT /F1 13 Tf 50 517 Td (8. Roadmap) Tj ET
+BT /F1 10 Tf 50 499 Td () Tj ET
+BT /F1 10 Tf 50 484 Td () Tj ET
+BT /F1 10 Tf 50 469 Td (v2.5 = BIB Index & Export Plan) Tj ET
+BT /F1 10 Tf 50 454 Td (v2.6 = BIB Project Phoenix Master Knowledge uitbreiden) Tj ET
+BT /F1 10 Tf 50 439 Td (v2.7 = BIB export engine ontwerpen) Tj ET
+BT /F1 10 Tf 50 424 Td (v2.8 = BIB export engine bouwen) Tj ET
+BT /F1 10 Tf 50 409 Td (v2.9 = BIB DOCX/PDF/ZIP export testen) Tj ET
+BT /F1 10 Tf 50 394 Td (v3.0 = BIB koppelen aan Project Phoenix Launcher) Tj ET
+BT /F1 10 Tf 50 379 Td () Tj ET
+BT /F1 10 Tf 50 364 Td () Tj ET
+BT /F1 13 Tf 50 349 Td (9. Belangrijk principe) Tj ET
+BT /F1 10 Tf 50 331 Td () Tj ET
+BT /F1 10 Tf 50 316 Td (De BIB is geen losse documentmap.) Tj ET
+BT /F1 10 Tf 50 301 Td () Tj ET
+BT /F1 10 Tf 50 286 Td (De BIB is de centrale kennisbank van Project Phoenix en moet later automatisch door de software) Tj ET
+BT /F1 10 Tf 50 271 Td (kunnen worden gelezen, gebruikt, gecontroleerd en geëxporteerd.) Tj ET
+endstream
+endobj
+180 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 181 0 R >>
+endobj
+181 0 obj
+<< /Length 165 >>
+stream
+BT /F1 15 Tf 50 790 Td (10_EXPORTS/README.md) Tj ET
+BT /F1 10 Tf 50 770 Td () Tj ET
+BT /F1 10 Tf 50 755 Td (?Exports van de bibliotheek naar DOCX, PDF en ZIP.) Tj ET
+endstream
+endobj
+xref
+0 182
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000779 00000 n 
+0000000849 00000 n 
+0000000975 00000 n 
+0000003641 00000 n 
+0000003767 00000 n 
+0000005772 00000 n 
+0000005898 00000 n 
+0000007708 00000 n 
+0000007836 00000 n 
+0000009787 00000 n 
+0000009915 00000 n 
+0000011845 00000 n 
+0000011973 00000 n 
+0000013792 00000 n 
+0000013920 00000 n 
+0000015781 00000 n 
+0000015909 00000 n 
+0000017828 00000 n 
+0000017956 00000 n 
+0000019898 00000 n 
+0000020026 00000 n 
+0000020549 00000 n 
+0000020677 00000 n 
+0000023115 00000 n 
+0000023243 00000 n 
+0000025263 00000 n 
+0000025391 00000 n 
+0000027597 00000 n 
+0000027725 00000 n 
+0000030129 00000 n 
+0000030257 00000 n 
+0000031500 00000 n 
+0000031628 00000 n 
+0000033660 00000 n 
+0000033788 00000 n 
+0000035839 00000 n 
+0000035967 00000 n 
+0000038156 00000 n 
+0000038284 00000 n 
+0000038518 00000 n 
+0000038646 00000 n 
+0000038851 00000 n 
+0000038979 00000 n 
+0000041240 00000 n 
+0000041368 00000 n 
+0000043665 00000 n 
+0000043793 00000 n 
+0000044231 00000 n 
+0000044359 00000 n 
+0000046666 00000 n 
+0000046794 00000 n 
+0000048963 00000 n 
+0000049091 00000 n 
+0000051195 00000 n 
+0000051323 00000 n 
+0000053723 00000 n 
+0000053851 00000 n 
+0000056220 00000 n 
+0000056348 00000 n 
+0000056585 00000 n 
+0000056713 00000 n 
+0000058930 00000 n 
+0000059058 00000 n 
+0000061204 00000 n 
+0000061332 00000 n 
+0000062279 00000 n 
+0000062407 00000 n 
+0000064800 00000 n 
+0000064928 00000 n 
+0000067091 00000 n 
+0000067219 00000 n 
+0000069512 00000 n 
+0000069640 00000 n 
+0000070886 00000 n 
+0000071014 00000 n 
+0000073282 00000 n 
+0000073410 00000 n 
+0000075491 00000 n 
+0000075619 00000 n 
+0000077728 00000 n 
+0000077856 00000 n 
+0000078144 00000 n 
+0000078272 00000 n 
+0000078466 00000 n 
+0000078594 00000 n 
+0000080724 00000 n 
+0000080852 00000 n 
+0000083084 00000 n 
+0000083212 00000 n 
+0000083471 00000 n 
+0000083599 00000 n 
+0000086126 00000 n 
+0000086254 00000 n 
+0000088630 00000 n 
+0000088758 00000 n 
+0000091247 00000 n 
+0000091375 00000 n 
+0000093451 00000 n 
+0000093581 00000 n 
+0000094290 00000 n 
+0000094420 00000 n 
+0000094648 00000 n 
+0000094778 00000 n 
+0000097009 00000 n 
+0000097139 00000 n 
+0000099196 00000 n 
+0000099326 00000 n 
+0000101509 00000 n 
+0000101639 00000 n 
+0000102104 00000 n 
+0000102234 00000 n 
+0000102466 00000 n 
+0000102596 00000 n 
+0000104525 00000 n 
+0000104655 00000 n 
+0000106603 00000 n 
+0000106733 00000 n 
+0000108705 00000 n 
+0000108835 00000 n 
+0000110740 00000 n 
+0000110870 00000 n 
+0000112212 00000 n 
+0000112342 00000 n 
+0000114516 00000 n 
+0000114646 00000 n 
+0000116799 00000 n 
+0000116929 00000 n 
+0000119072 00000 n 
+0000119202 00000 n 
+0000120772 00000 n 
+0000120902 00000 n 
+0000121116 00000 n 
+0000121246 00000 n 
+0000123636 00000 n 
+0000123766 00000 n 
+0000126158 00000 n 
+0000126288 00000 n 
+0000126768 00000 n 
+0000126898 00000 n 
+0000127112 00000 n 
+0000127242 00000 n 
+0000127477 00000 n 
+0000127607 00000 n 
+0000129612 00000 n 
+0000129742 00000 n 
+0000131910 00000 n 
+0000132040 00000 n 
+0000133574 00000 n 
+0000133704 00000 n 
+0000136053 00000 n 
+0000136183 00000 n 
+0000138382 00000 n 
+0000138512 00000 n 
+0000140855 00000 n 
+0000140985 00000 n 
+0000142924 00000 n 
+0000143054 00000 n 
+0000143268 00000 n 
+0000143398 00000 n 
+0000145521 00000 n 
+0000145651 00000 n 
+0000147691 00000 n 
+0000147821 00000 n 
+0000149898 00000 n 
+0000150028 00000 n 
+0000151997 00000 n 
+0000152127 00000 n 
+0000153729 00000 n 
+0000153859 00000 n 
+0000155887 00000 n 
+0000156017 00000 n 
+0000157913 00000 n 
+0000158043 00000 n 
+0000160355 00000 n 
+0000160485 00000 n 
+0000162485 00000 n 
+0000162615 00000 n 
+0000164628 00000 n 
+0000164758 00000 n 
+trailer
+<< /Size 182 /Root 1 0 R >>
+startxref
+164976
+%%EOF

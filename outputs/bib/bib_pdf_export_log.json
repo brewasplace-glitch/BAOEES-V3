@@ -1,0 +1,70 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix BIB PDF Export Engine",
+  "engine_version": "v3.0",
+  "bib_root": "bib",
+  "output_root": "outputs\\bib",
+  "pdf_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf",
+  "pdf_exists": true,
+  "pdf_size_bytes": 168686,
+  "markdown_file_count": 30,
+  "markdown_files": [
+    "00_BIB_INDEX.md",
+    "01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+    "01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+    "01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+    "01_MASTER_KNOWLEDGE/README.md",
+    "02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+    "02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+    "02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+    "02_PROJECTS/README.md",
+    "03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md",
+    "03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+    "03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+    "03_ENGINES/README.md",
+    "03_ENGINES/STEE_ENGINE_KNOWLEDGE.md",
+    "04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md",
+    "04_STANDARDS_AND_RULES/README.md",
+    "05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md",
+    "05_TEMPLATES/README.md",
+    "05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md",
+    "06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md",
+    "06_WORKFLOWS/README.md",
+    "07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md",
+    "07_LESSONS_LEARNED/README.md",
+    "08_SOURCE_EVIDENCE/README.md",
+    "08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md",
+    "09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md",
+    "09_ASSUMPTIONS/README.md",
+    "10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md",
+    "10_EXPORTS/BIB_EXPORT_PLAN.md",
+    "10_EXPORTS/README.md"
+  ],
+  "page_count": 89,
+  "git_evidence": {
+    "status": "DIRTY",
+    "repository": "BREWSTER-ENGINEERING-WIZARD",
+    "branch": "baoees-v3",
+    "remote_tracking_branch": "origin/baoees-v3",
+    "commit": "232da22",
+    "commit_full": "232da22a519a504c5decebaa0308cec5202554d2",
+    "commit_message": "feat: add Project Phoenix BIB DOCX export v2.9",
+    "working_tree_clean": false,
+    "git_status_short": "?? baoees/bib_export_engine/pdf_export.py",
+    "generated_at": "2026-06-26T19:36:56"
+  },
+  "extra_results": {},
+  "generated_at": "2026-06-26T19:36:56",
+  "warnings": [
+    "Git working tree was niet clean tijdens PDF-export."
+  ],
+  "recommendation": {
+    "status": "BIB_PDF_EXPORT_ADVIES",
+    "advice": [
+      "Open de PDF visueel en controleer of de inhoud leesbaar is.",
+      "Gebruik deze v3.0 PDF als basisexport.",
+      "Maak later een professionele PDF op basis van DOCX of HTML styling.",
+      "Koppel deze PDF-export in een volgende versie aan BibExportEngine.run()."
+    ]
+  }
+}
