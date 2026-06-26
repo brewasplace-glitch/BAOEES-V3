@@ -2,7 +2,7 @@
   "status": "WARNING",
   "engine": "Project Phoenix BIB Full Export Runner",
   "engine_version": "v3.4",
-  "generated_at": "2026-06-26T23:27:07",
+  "generated_at": "2026-06-26T23:41:07",
   "output_root": "outputs\\bib",
   "bib_export": {
     "status": "OPGESLAGEN",
@@ -20,9 +20,10 @@
     "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
     "docx_status": "OPGESLAGEN",
     "zip_file_count": 34,
-    "generated_at": "2026-06-26T23:27:07",
+    "generated_at": "2026-06-26T23:41:06",
     "warnings": [
-      "Verplicht BIB-bestand ontbreekt: bib\\03_ENGINES\\BAOEES_V3_ENGINE_REGISTER.md"
+      "Verplicht BIB-bestand ontbreekt: bib\\03_ENGINES\\BAOEES_V3_ENGINE_REGISTER.md",
+      "Git working tree is niet clean tijdens BIB-export."
     ],
     "recommendation": {
       "status": "BIB_EXPORT_ADVIES",
@@ -33,7 +34,7 @@
         "Controleer PROJECT_PHOENIX_BIB_EXPORT.zip.",
         "Voeg in v3.0 PDF-export toe."
       ],
-      "warnings_count": 1
+      "warnings_count": 2
     }
   },
   "pdf_export": {
@@ -84,15 +85,15 @@
       "repository": "BREWSTER-ENGINEERING-WIZARD",
       "branch": "baoees-v3",
       "remote_tracking_branch": "origin/baoees-v3",
-      "commit": "ad88bee",
-      "commit_full": "ad88bee49efa3fae5483a263fcf77a26fc66f06e",
+      "commit": "7a7c6b5",
+      "commit_full": "7a7c6b5b42e6e4aa806b3aa226cd9768052c490f",
       "commit_message": "feat: integrate BIB QA QC in full export runner v3.4",
       "working_tree_clean": false,
-      "git_status_short": "M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_manifest.json",
-      "generated_at": "2026-06-26T23:27:07"
+      "git_status_short": "M baoees/bib_export_engine/__init__.py\n M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_FULL_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_full_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_launcher_bridge_log.json\n M outputs/bib/bib_manifest.json\n M outputs/bib/bib_pdf_export_log.json\n M outputs/bib/bib_qa_qc_report.json\n M outputs/projects/index.html\n?? baoees/bib_export_engine/run_bib_workflow.py\n?? outputs/bib/bib_workflow_log.json",
+      "generated_at": "2026-06-26T23:41:07"
     },
     "extra_results": {},
-    "generated_at": "2026-06-26T23:27:07",
+    "generated_at": "2026-06-26T23:41:07",
     "warnings": [
       "Git working tree was niet clean tijdens PDF-export."
     ],
@@ -111,7 +112,7 @@
     "status": "FAILED",
     "engine": "Project Phoenix BIB QA/QC Engine",
     "engine_version": "v3.3",
-    "generated_at": "2026-06-26T23:27:07",
+    "generated_at": "2026-06-26T23:41:07",
     "bib_root": "bib",
     "output_root": "outputs\\bib",
     "summary": {
@@ -650,8 +651,8 @@
   "full_zip": {
     "status": "OPGESLAGEN",
     "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
-    "file_count": 42,
-    "size_bytes": 159192
+    "file_count": 43,
+    "size_bytes": 163850
   },
   "full_export_log_path": "outputs\\bib\\bib_full_export_log.json",
   "warnings": [

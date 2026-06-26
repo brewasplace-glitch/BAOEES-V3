@@ -4,7 +4,7 @@
   "engine_version": "v3.2",
   "project_index_path": "outputs\\projects\\index.html",
   "bib_output_root": "outputs\\bib",
-  "generated_at": "2026-06-26T19:50:04",
+  "generated_at": "2026-06-26T23:41:07",
   "extra_results": {},
   "bib_links_count": 7,
   "bib_outputs": [
@@ -38,15 +38,15 @@
       "href": "../bib/PROJECT_PHOENIX_BIB_EXPORT.zip",
       "description": "Basis ZIP-export met BIB-bestanden en exports.",
       "exists": true,
-      "size_bytes": 60835
+      "size_bytes": 60915
     },
     {
       "label": "Open BIB Full ZIP",
       "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
       "href": "../bib/PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
       "description": "Volledige ZIP-export met BIB en exportbestanden.",
-      "exists": false,
-      "size_bytes": 0
+      "exists": true,
+      "size_bytes": 163850
     },
     {
       "label": "Open BIB Manifest",
@@ -61,13 +61,12 @@
       "path": "outputs\\bib\\bib_full_export_log.json",
       "href": "../bib/bib_full_export_log.json",
       "description": "Logbestand van de volledige BIB-export.",
-      "exists": false,
-      "size_bytes": 0
+      "exists": true,
+      "size_bytes": 24263
     }
   ],
   "warnings": [
-    "BIB-output ontbreekt: outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
-    "BIB-output ontbreekt: outputs\\bib\\bib_full_export_log.json"
+    "Geen kritieke BIB launcher bridge-waarschuwingen."
   ],
   "recommendation": {
     "status": "BIB_LAUNCHER_BRIDGE_ADVIES",

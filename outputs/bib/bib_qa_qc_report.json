@@ -2,7 +2,7 @@
   "status": "FAILED",
   "engine": "Project Phoenix BIB QA/QC Engine",
   "engine_version": "v3.3",
-  "generated_at": "2026-06-26T23:27:07",
+  "generated_at": "2026-06-26T23:41:07",
   "bib_root": "bib",
   "output_root": "outputs\\bib",
   "summary": {
