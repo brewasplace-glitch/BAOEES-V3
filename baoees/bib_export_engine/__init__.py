@@ -4,6 +4,7 @@ from .launcher_bridge import BibLauncherBridge
 from .bib_qa_qc import BibQaQcEngine
 from .run_full_export import BibFullExportRunner
 from .run_bib_workflow import BibWorkflowRunner
+from .bib_knowledge_source import BibKnowledgeSourceEngine
 
 __all__ = [
     "BibExportEngine",
@@ -12,4 +13,5 @@ __all__ = [
     "BibQaQcEngine",
     "BibFullExportRunner",
     "BibWorkflowRunner",
+    "BibKnowledgeSourceEngine",
 ]
