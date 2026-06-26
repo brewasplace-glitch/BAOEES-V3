@@ -1,0 +1,1 @@
+﻿Aannameslog en standaard projectdefaults.
