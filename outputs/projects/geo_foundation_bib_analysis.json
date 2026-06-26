@@ -1,0 +1,388 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Geo/Foundation BIB Engine",
+  "engine_version": "v4.0",
+  "generated_at": "2026-06-27T00:54:01",
+  "purpose": "Geo- en funderingsanalyse voorbereiden vanuit BIB en AAIE.",
+  "project_context": {
+    "project_name": "Default Geo/Foundation BIB Analysis",
+    "project_type": "bouw",
+    "purpose": "Automatische geo- en funderingsanalyse vanuit BIB en AAIE.",
+    "location": "nog niet opgegeven",
+    "groundwater": null,
+    "soil_profile": null
+  },
+  "assumptions_status": {
+    "status": "AANWEZIG",
+    "message": "AAIE BIB assumptions bestonden al.",
+    "path": "outputs\\projects\\aaie_bib_assumptions.json"
+  },
+  "assumptions_path": "outputs\\projects\\aaie_bib_assumptions.json",
+  "geo_defaults": {
+    "status": "GEREED",
+    "automatic_groundwater_detection": true,
+    "automatic_geo_profile": true,
+    "groundwater_level": "P = -0,50 m",
+    "groundwater_source": "AAIE-BIB fallback",
+    "fallback_groundwater_level": "P = -0,50 m",
+    "fallback_status": "AAIE fallback assumption",
+    "minimum_geo_profile": [
+      {
+        "field": "maaiveldniveau",
+        "default": "P = 0,00 m",
+        "source": "project_context of AAIE fallback"
+      },
+      {
+        "field": "grondwaterstand",
+        "default": "P = -0,50 m",
+        "source": "AAIE-BIB fallback"
+      },
+      {
+        "field": "globale bodemopbouw",
+        "default": "automatisch genereren op basis van locatie/kaart/bodemdata of handmatige invoer",
+        "source": "AAIE + STEE"
+      },
+      {
+        "field": "grondsoort per laag",
+        "default": "voorlopig onbekend totdat bodemdata/sondering beschikbaar zijn",
+        "source": "AAIE assumption"
+      },
+      {
+        "field": "draagkrachtindicatie",
+        "default": "voorlopige indicatie; definitief na grondonderzoek",
+        "source": "engineering rule"
+      },
+      {
+        "field": "zettingsgevoeligheid",
+        "default": "voorlopige risico-inschatting",
+        "source": "engineering rule"
+      },
+      {
+        "field": "advies vervolgonderzoek",
+        "default": "sondering/grondonderzoek vereist voor definitief funderingsadvies",
+        "source": "QA/QC rule"
+      }
+    ],
+    "data_sources_to_check": [
+      "projectlocatie",
+      "kaartuitsnede",
+      "Google Maps of satellietbeeld",
+      "bodemkaart",
+      "hoogtekaart / maaiveld",
+      "oppervlaktewater in omgeving",
+      "eerdere projectkennis uit BIB",
+      "handmatige invoer gebruiker",
+      "sondering of geotechnisch rapport"
+    ],
+    "aaie_required": true,
+    "stee_required": true,
+    "qa_qc_required": true
+  },
+  "foundation_variants": [
+    {
+      "code": "F1",
+      "name": "Strokenfundering",
+      "type": "fundering_op_staal",
+      "description": "Fundering op staal met stroken onder dragende wanden en kolommen.",
+      "default_dimensions": {
+        "strookbreedte": "150 cm tot 200 cm",
+        "strookhoogte": "40 cm",
+        "funderingsbalk": "50 cm x 60 cm",
+        "ligging_balk": "hart van strook"
+      },
+      "checks": [
+        "draagkracht",
+        "zetting",
+        "grondwaterinvloed",
+        "uitvoerbaarheid",
+        "kosten",
+        "bouwrisico"
+      ],
+      "initial_assessment": {
+        "cost_level": "laag tot middel",
+        "construction_speed": "snel",
+        "risk_level": "laag bij draagkrachtige bodem, hoger bij slappe bodem",
+        "suitable_when": [
+          "voldoende draagkrachtige bovenlaag",
+          "beperkte zettingsgevoeligheid",
+          "laagbouw of beperkte belasting",
+          "grondwater beheersbaar"
+        ],
+        "not_suitable_when": [
+          "slappe klei/veen",
+          "hoge zettingsgevoeligheid",
+          "grote kolomlasten",
+          "hoge of variabele grondwaterstand zonder maatregelen"
+        ]
+      },
+      "source": "BIB + AAIE"
+    },
+    {
+      "code": "F2",
+      "name": "Paalfundering",
+      "type": "diepe_fundering",
+      "description": "Diepe fundering op palen bij slappe bodem, onvoldoende draagkracht of verhoogd zettingsrisico.",
+      "default_dimensions": {},
+      "checks": [
+        "paallengte",
+        "paaltype",
+        "draagkracht per paal",
+        "paalbelasting",
+        "paalafstand",
+        "kosten",
+        "uitvoerbaarheid"
+      ],
+      "initial_assessment": {
+        "cost_level": "middel tot hoog",
+        "construction_speed": "middel",
+        "risk_level": "lager bij slappe bodem, afhankelijk van paaltype en grondonderzoek",
+        "suitable_when": [
+          "slappe of samendrukbare bovenlagen",
+          "grote lasten",
+          "zetting moet sterk worden beperkt",
+          "draagkrachtige laag ligt dieper"
+        ],
+        "not_suitable_when": [
+          "klein project met voldoende draagkrachtige bovenlaag",
+          "kosten niet proportioneel",
+          "trillingsgevoelige omgeving zonder passende paaltechniek"
+        ]
+      },
+      "source": "BIB + AAIE"
+    }
+  ],
+  "foundation_comparison": [
+    {
+      "code": "F2",
+      "name": "Paalfundering",
+      "scores": {
+        "draagkracht": {
+          "score": 5,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "zetting": {
+          "score": 5,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "kosten": {
+          "score": 2,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "bouwtijd": {
+          "score": 3,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "risico": {
+          "score": 4,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "bodemgeschiktheid": {
+          "score": 4,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "grondwaterinvloed": {
+          "score": 4,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "constructieve haalbaarheid": {
+          "score": 5,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "vergunning / acceptatie": {
+          "score": 4,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        }
+      },
+      "remarks": [
+        "Paalfundering is robuuster bij slappe bodem en zettingsrisico.",
+        "Duurder en vraagt meer geotechnisch detailonderzoek.",
+        "Grondwaterstand voorlopig: P = -0,50 m.",
+        "Paaltype en paallengte pas definitief na sondering/grondonderzoek."
+      ],
+      "total_score": 36
+    },
+    {
+      "code": "F1",
+      "name": "Strokenfundering",
+      "scores": {
+        "draagkracht": {
+          "score": 3,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "zetting": {
+          "score": 3,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "kosten": {
+          "score": 5,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "bouwtijd": {
+          "score": 5,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "risico": {
+          "score": 3,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "bodemgeschiktheid": {
+          "score": 3,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "grondwaterinvloed": {
+          "score": 3,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "constructieve haalbaarheid": {
+          "score": 4,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        },
+        "vergunning / acceptatie": {
+          "score": 4,
+          "scale": "1=ongunstig, 5=gunstig",
+          "note": "Voorlopige BIB/AAIE-score."
+        }
+      },
+      "remarks": [
+        "Strokenfundering is standaard goedkoop en snel uitvoerbaar.",
+        "Definitieve keuze afhankelijk van draagkracht en zettingsberekening.",
+        "Grondwaterstand voorlopig: P = -0,50 m.",
+        "Bij slappe bodem of hoge zettingsgevoeligheid F2 serieus onderzoeken."
+      ],
+      "total_score": 33
+    }
+  ],
+  "foundation_recommendation": {
+    "status": "VOORLOPIG",
+    "preferred_variant_by_score": {
+      "code": "F2",
+      "name": "Paalfundering",
+      "total_score": 36
+    },
+    "important_note": "Dit is een automatische voorlopige BIB/AAIE-beoordeling. Definitieve funderingskeuze vereist projectlasten, bodemonderzoek en constructieve berekening.",
+    "required_before_final_design": [
+      "projectlocatie bevestigen",
+      "maaiveldpeil bepalen",
+      "grondwaterstand verifiëren",
+      "bodemopbouw/sondering invoeren",
+      "belastingen bepalen",
+      "zettingscontrole uitvoeren",
+      "draagkrachtcontrole uitvoeren",
+      "QA/QC uitvoeren"
+    ]
+  },
+  "aaie_assumption_links": [
+    {
+      "code": "AAIE-BIB-005",
+      "name": "Automatische grondwaterdetectie",
+      "discipline": "geotechniek",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.automatic_groundwater_detection"
+      }
+    },
+    {
+      "code": "AAIE-BIB-006",
+      "name": "Fallback grondwaterstand",
+      "discipline": "geotechniek",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.groundwater_fallback"
+      }
+    },
+    {
+      "code": "AAIE-BIB-007",
+      "name": "Status fallback grondwaterstand",
+      "discipline": "geotechniek",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.groundwater_fallback_status"
+      }
+    },
+    {
+      "code": "AAIE-BIB-008",
+      "name": "Automatisch geo-profiel",
+      "discipline": "geotechniek",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.automatic_geo_profile"
+      }
+    },
+    {
+      "code": "AAIE-BIB-009",
+      "name": "Funderingsvarianten verplicht",
+      "discipline": "fundering",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.foundation_variants_required"
+      }
+    },
+    {
+      "code": "AAIE-BIB-F01",
+      "name": "Funderingsvariant F1 - Strokenfundering",
+      "discipline": "fundering",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.foundation_variants"
+      }
+    },
+    {
+      "code": "AAIE-BIB-F02",
+      "name": "Funderingsvariant F2 - Paalfundering",
+      "discipline": "fundering",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.foundation_variants"
+      }
+    },
+    {
+      "code": "AAIE-BIB-010",
+      "name": "Standaard projectoutputs",
+      "discipline": "output",
+      "source": {
+        "type": "BIB Project Analyzer Context",
+        "path": "outputs\\projects\\project_analyzer_bib_context.json",
+        "field": "project_input_defaults.default_outputs"
+      }
+    }
+  ],
+  "warnings": [
+    "Geen kritieke Geo/Foundation BIB-waarschuwingen."
+  ],
+  "outputs": {
+    "json_path": "outputs\\projects\\geo_foundation_bib_analysis.json",
+    "html_path": "outputs\\projects\\geo_foundation_bib_analysis.html"
+  },
+  "next_steps": [
+    "Koppel deze engine in v4.1 aan de projectrapportage.",
+    "Gebruik geo_defaults voor automatisch geo-profiel.",
+    "Gebruik foundation_variants voor F1/F2 ontwerpstart.",
+    "Gebruik foundation_comparison voor rapporttabel.",
+    "Registreer alle aannames in AAIE en bronnen/fallbacks in STEE."
+  ],
+  "extra_results": {}
+}
