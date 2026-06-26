@@ -8,7 +8,7 @@
 - Locatie: Plutostraat, Paramaribo
 - Land: Suriname
 - Runtime mode: autonomous
-- Rapportdatum: 2026-06-25T16:05:03
+- Rapportdatum: 2026-06-26T13:51:10
 
 ## 2. Projectselectie en invoer
 
