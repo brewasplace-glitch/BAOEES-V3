@@ -1,0 +1,28 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix BIB Export Engine",
+  "engine_version": "v2.8",
+  "generated_at": "2026-06-26T19:17:58",
+  "bib_file_count": 30,
+  "dashboard_path": "outputs\\bib\\bib_dashboard.html",
+  "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
+  "zip_result": {
+    "status": "OPGESLAGEN",
+    "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
+    "file_count": 33,
+    "size_bytes": 36853
+  },
+  "git_evidence": {
+    "status": "DIRTY",
+    "repository": "BREWSTER-ENGINEERING-WIZARD",
+    "branch": "baoees-v3",
+    "remote_tracking_branch": "origin/baoees-v3",
+    "commit": "0077c68",
+    "commit_full": "0077c6885ac08d9754b4b444d108f257ea284f42",
+    "commit_message": "docs: design Project Phoenix BIB export engine v2.7",
+    "working_tree_clean": false,
+    "git_status_short": "?? baoees/bib_export_engine/",
+    "generated_at": "2026-06-26T19:17:58"
+  },
+  "extra_results": {}
+}

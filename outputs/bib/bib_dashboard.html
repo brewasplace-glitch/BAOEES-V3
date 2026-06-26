@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Project Phoenix BIB Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050816;
+      color: #f8fafc;
+      line-height: 1.5;
+    }
+    header {
+      padding: 34px 42px;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      border-bottom: 1px solid #334155;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+    header p {
+      margin: 8px 0 0;
+      color: #dbeafe;
+    }
+    main {
+      padding: 30px 38px 50px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 12px;
+      border: 1px solid #334155;
+    }
+    .ok {
+      background: rgba(16, 185, 129, 0.16);
+      color: #86efac;
+      border-color: rgba(16, 185, 129, 0.45);
+    }
+    .warn {
+      background: rgba(245, 158, 11, 0.16);
+      color: #fcd34d;
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111827;
+      border: 1px solid #334155;
+      margin-top: 18px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #334155;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #0f172a;
+      color: #bfdbfe;
+    }
+    a {
+      color: #93c5fd;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      color: #cbd5e1;
+      font-size: 12px;
+    }
+    footer {
+      padding: 22px 38px;
+      border-top: 1px solid #334155;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PROJECT PHOENIX BIB</h1>
+    <p>Brewster Integrated Bibliotheek — HTML Knowledge Dashboard</p>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card">
+        <h3>Status</h3>
+        <p><span class="badge ok">OPGESLAGEN</span></p>
+      </div>
+      <div class="card">
+        <h3>Bestanden</h3>
+        <p><strong>30</strong> BIB-bestanden</p>
+      </div>
+      <div class="card">
+        <h3>Git</h3>
+        <p><span class="badge warn">WORKING TREE DIRTY</span></p>
+        <p>Branch: baoees-v3</p>
+        <p>Commit: 0077c68</p>
+      </div>
+      <div class="card">
+        <h3>Exportdatum</h3>
+        <p>2026-06-26T19:17:58</p>
+      </div>
+    </section>
+
+    <h2>Categorieën</h2>
+    <section class="grid">
+      <div class='card'><h3>00_INDEX</h3><p><strong>1</strong> bestanden</p><p>5213 bytes</p></div><div class='card'><h3>01_MASTER_KNOWLEDGE</h3><p><strong>4</strong> bestanden</p><p>6751 bytes</p></div><div class='card'><h3>02_PROJECTS</h3><p><strong>4</strong> bestanden</p><p>7094 bytes</p></div><div class='card'><h3>03_ENGINES</h3><p><strong>5</strong> bestanden</p><p>10003 bytes</p></div><div class='card'><h3>04_STANDARDS_AND_RULES</h3><p><strong>2</strong> bestanden</p><p>4478 bytes</p></div><div class='card'><h3>05_TEMPLATES</h3><p><strong>3</strong> bestanden</p><p>5666 bytes</p></div><div class='card'><h3>06_WORKFLOWS</h3><p><strong>2</strong> bestanden</p><p>3147 bytes</p></div><div class='card'><h3>07_LESSONS_LEARNED</h3><p><strong>2</strong> bestanden</p><p>2360 bytes</p></div><div class='card'><h3>08_SOURCE_EVIDENCE</h3><p><strong>2</strong> bestanden</p><p>2204 bytes</p></div><div class='card'><h3>09_ASSUMPTIONS</h3><p><strong>2</strong> bestanden</p><p>3778 bytes</p></div><div class='card'><h3>10_EXPORTS</h3><p><strong>3</strong> bestanden</p><p>7758 bytes</p></div>
+    </section>
+
+    <h2>Bestandsmanifest</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Categorie</th>
+          <th>Bestand</th>
+          <th>Type</th>
+          <th>Bytes</th>
+          <th>SHA256</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>00_INDEX</td><td><a href='../../bib/00_BIB_INDEX.md'>00_BIB_INDEX.md</a></td><td>.md</td><td>5213</td><td><code>cd9d1724d6b7d640ac78922b45f488f6dec2d08e14e0869104e467e3754bc8c5</code></td></tr><tr><td>01_MASTER_KNOWLEDGE</td><td><a href='../../bib/01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md'>BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md</a></td><td>.md</td><td>2683</td><td><code>efa6c036ff997b230b0e68a480469fad8e3462d481d251199234c5e42821b074</code></td></tr><tr><td>01_MASTER_KNOWLEDGE</td><td><a href='../../bib/01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md'>PROJECT_PHOENIX_CORE_KNOWLEDGE.md</a></td><td>.md</td><td>1644</td><td><code>7185767330d433c36c53daf88f3c98b0f77de4e5eeea3b9ffc844b434c2dfedc</code></td></tr><tr><td>01_MASTER_KNOWLEDGE</td><td><a href='../../bib/01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md'>PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md</a></td><td>.md</td><td>2391</td><td><code>e741a6f28cfebac44f779ee8c59ab31a51351ca8b540593669e9e00438c4bff8</code></td></tr><tr><td>01_MASTER_KNOWLEDGE</td><td><a href='../../bib/01_MASTER_KNOWLEDGE/README.md'>README.md</a></td><td>.md</td><td>33</td><td><code>ada25448f654c40741e29e1cb058e91db9a29a91b2c896b800af07d1c88496f6</code></td></tr><tr><td>02_PROJECTS</td><td><a href='../../bib/02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md'>BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md</a></td><td>.md</td><td>2119</td><td><code>5b25fda2b0d41abf71866d56b5d1a898ad80b51a0f1460324a281c4bab33b8bf</code></td></tr><tr><td>02_PROJECTS</td><td><a href='../../bib/02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md'>MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md</a></td><td>.md</td><td>2712</td><td><code>e7132c61359c129f47e5389af855df46d28abab7192a6385586c97325bc1a6c8</code></td></tr><tr><td>02_PROJECTS</td><td><a href='../../bib/02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md'>PLUTOSTRAAT_PROJECT_KNOWLEDGE.md</a></td><td>.md</td><td>2190</td><td><code>faea55599ded905f3de7aecbe545ce4709d8817fc8dfd936f0f068beb699d8a5</code></td></tr><tr><td>02_PROJECTS</td><td><a href='../../bib/02_PROJECTS/README.md'>README.md</a></td><td>.md</td><td>73</td><td><code>a6770bfa725317035868b84380f5b4c12eeb43b08a22655b54277391eeb96791</code></td></tr><tr><td>03_ENGINES</td><td><a href='../../bib/03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md'>AAIE_ENGINE_KNOWLEDGE.md</a></td><td>.md</td><td>2085</td><td><code>13692595d177c62d0e611b530e59b1d1b92a7cc76a794a766fc006717cd3144f</code></td></tr><tr><td>03_ENGINES</td><td><a href='../../bib/03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md'>AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md</a></td><td>.md</td><td>3418</td><td><code>2d23ec809c3b1f1ead36145026874cc2e1cdde078cb1dc306f0d1107ab0ba324</code></td></tr><tr><td>03_ENGINES</td><td><a href='../../bib/03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md'>BIB_EXPORT_ENGINE_KNOWLEDGE.md</a></td><td>.md</td><td>2655</td><td><code>377c39a0023f6562617f01762085fb3fdf73e8013f02c19ed2be52278527eb39</code></td></tr><tr><td>03_ENGINES</td><td><a href='../../bib/03_ENGINES/README.md'>README.md</a></td><td>.md</td><td>31</td><td><code>6afbed7285af20d1951a5aec6e9bdc50111451d4a5b7e80008de010b4ee8adc6</code></td></tr><tr><td>03_ENGINES</td><td><a href='../../bib/03_ENGINES/STEE_ENGINE_KNOWLEDGE.md'>STEE_ENGINE_KNOWLEDGE.md</a></td><td>.md</td><td>1814</td><td><code>3ec983d2f257c941a314d5bfa94392735636374993080f394f07556258b5f44a</code></td></tr><tr><td>04_STANDARDS_AND_RULES</td><td><a href='../../bib/04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md'>PROJECT_PHOENIX_STANDARDS.md</a></td><td>.md</td><td>4426</td><td><code>3652d695377986cbae62c0d529fccd69bc1b03bbc24f19e7f38c7bde94bff02c</code></td></tr><tr><td>04_STANDARDS_AND_RULES</td><td><a href='../../bib/04_STANDARDS_AND_RULES/README.md'>README.md</a></td><td>.md</td><td>52</td><td><code>df45ddaf3fae3cd2a535feb5f37f440e8893b8db8254f29a49e13e2cd121d184</code></td></tr><tr><td>05_TEMPLATES</td><td><a href='../../bib/05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md'>PROJECT_INPUT_TEMPLATE.md</a></td><td>.md</td><td>2666</td><td><code>e37f2377dfb2d885e064a6205b65738e8791cbeef2c0cf570db66b7b2aec03d4</code></td></tr><tr><td>05_TEMPLATES</td><td><a href='../../bib/05_TEMPLATES/README.md'>README.md</a></td><td>.md</td><td>66</td><td><code>a057565fca98e486551f3236237822c2ce3d9c3f403c124dec8974a476ee943d</code></td></tr><tr><td>05_TEMPLATES</td><td><a href='../../bib/05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md'>REPORT_OUTPUT_TEMPLATE.md</a></td><td>.md</td><td>2934</td><td><code>e6168d9b2937a8da58084e998ce1af86aee442a50ada8197557352acfae7be3c</code></td></tr><tr><td>06_WORKFLOWS</td><td><a href='../../bib/06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md'>AUTONOMOUS_PROJECT_WORKFLOW.md</a></td><td>.md</td><td>3099</td><td><code>15e369f60f20d68d69c9028f50b7cb32a59334d2a8b6375ff6b771d6541f803f</code></td></tr><tr><td>06_WORKFLOWS</td><td><a href='../../bib/06_WORKFLOWS/README.md'>README.md</a></td><td>.md</td><td>48</td><td><code>59523e6eef45c83e949c13b61d8831e85b77ab8b46e2d730a7b04487919843a1</code></td></tr><tr><td>07_LESSONS_LEARNED</td><td><a href='../../bib/07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md'>DASHBOARD_ENGINE_FIXES.md</a></td><td>.md</td><td>2318</td><td><code>dfdd37eb24c287ed08b9dcadcfb7ef05fce6b132eaf58e267c9aad1eba095f86</code></td></tr><tr><td>07_LESSONS_LEARNED</td><td><a href='../../bib/07_LESSONS_LEARNED/README.md'>README.md</a></td><td>.md</td><td>42</td><td><code>65b00b39d0dd0f716684f4f4516f995af66961b2e6ea14723c58a6617cdc0545</code></td></tr><tr><td>08_SOURCE_EVIDENCE</td><td><a href='../../bib/08_SOURCE_EVIDENCE/README.md'>README.md</a></td><td>.md</td><td>63</td><td><code>5520082616e96c3d06528374e5dfd98ffed87dadc198fd203c4541694be35e51</code></td></tr><tr><td>08_SOURCE_EVIDENCE</td><td><a href='../../bib/08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md'>SOURCE_EVIDENCE_RULES.md</a></td><td>.md</td><td>2141</td><td><code>b7789f136db6bc53b10f4abd24429c62890d77a785a0da55cf2f34d267b4f3b8</code></td></tr><tr><td>09_ASSUMPTIONS</td><td><a href='../../bib/09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md'>PROJECT_PHOENIX_ASSUMPTIONS.md</a></td><td>.md</td><td>3732</td><td><code>7e97d70e55a5c3611be7086c104225bbdf54e3f0daf3f44554f0645423599fbf</code></td></tr><tr><td>09_ASSUMPTIONS</td><td><a href='../../bib/09_ASSUMPTIONS/README.md'>README.md</a></td><td>.md</td><td>46</td><td><code>2fbdb9fb35229eff911bd487c0b53089fa487997a68930784e123409e8bda96a</code></td></tr><tr><td>10_EXPORTS</td><td><a href='../../bib/10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md'>BIB_EXPORT_ENGINE_DESIGN.md</a></td><td>.md</td><td>3711</td><td><code>042ea0b12423112e2cf0ff1f840a66ed35326b58c88fa8856a0a01b969d64918</code></td></tr><tr><td>10_EXPORTS</td><td><a href='../../bib/10_EXPORTS/BIB_EXPORT_PLAN.md'>BIB_EXPORT_PLAN.md</a></td><td>.md</td><td>3993</td><td><code>05fd8b2b8049c458952cc6c85bf5f1fe505440e4037cd85dd7b82ee143953c8c</code></td></tr><tr><td>10_EXPORTS</td><td><a href='../../bib/10_EXPORTS/README.md'>README.md</a></td><td>.md</td><td>54</td><td><code>aa7709014dc3220cac4ef5e0c578462833d30350aaefc5f22d86ef449be7ca35</code></td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    Project Phoenix BIB Export Engine v2.8
+  </footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "status": "DIRTY",
+  "repository": "BREWSTER-ENGINEERING-WIZARD",
+  "branch": "baoees-v3",
+  "remote_tracking_branch": "origin/baoees-v3",
+  "commit": "0077c68",
+  "commit_full": "0077c6885ac08d9754b4b444d108f257ea284f42",
+  "commit_message": "docs: design Project Phoenix BIB export engine v2.7",
+  "working_tree_clean": false,
+  "git_status_short": "?? baoees/bib_export_engine/",
+  "generated_at": "2026-06-26T19:17:58"
+}

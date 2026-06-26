@@ -1,0 +1,307 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix BIB Export Engine",
+  "engine_version": "v2.8",
+  "bib_root": "bib",
+  "generated_at": "2026-06-26T19:17:58",
+  "file_count": 30,
+  "categories": [
+    {
+      "category": "00_INDEX",
+      "file_count": 1,
+      "size_bytes": 5213
+    },
+    {
+      "category": "01_MASTER_KNOWLEDGE",
+      "file_count": 4,
+      "size_bytes": 6751
+    },
+    {
+      "category": "02_PROJECTS",
+      "file_count": 4,
+      "size_bytes": 7094
+    },
+    {
+      "category": "03_ENGINES",
+      "file_count": 5,
+      "size_bytes": 10003
+    },
+    {
+      "category": "04_STANDARDS_AND_RULES",
+      "file_count": 2,
+      "size_bytes": 4478
+    },
+    {
+      "category": "05_TEMPLATES",
+      "file_count": 3,
+      "size_bytes": 5666
+    },
+    {
+      "category": "06_WORKFLOWS",
+      "file_count": 2,
+      "size_bytes": 3147
+    },
+    {
+      "category": "07_LESSONS_LEARNED",
+      "file_count": 2,
+      "size_bytes": 2360
+    },
+    {
+      "category": "08_SOURCE_EVIDENCE",
+      "file_count": 2,
+      "size_bytes": 2204
+    },
+    {
+      "category": "09_ASSUMPTIONS",
+      "file_count": 2,
+      "size_bytes": 3778
+    },
+    {
+      "category": "10_EXPORTS",
+      "file_count": 3,
+      "size_bytes": 7758
+    }
+  ],
+  "files": [
+    {
+      "name": "00_BIB_INDEX.md",
+      "relative_path": "00_BIB_INDEX.md",
+      "category": "00_INDEX",
+      "suffix": ".md",
+      "size_bytes": 5213,
+      "sha256": "cd9d1724d6b7d640ac78922b45f488f6dec2d08e14e0869104e467e3754bc8c5"
+    },
+    {
+      "name": "BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+      "relative_path": "01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+      "category": "01_MASTER_KNOWLEDGE",
+      "suffix": ".md",
+      "size_bytes": 2683,
+      "sha256": "efa6c036ff997b230b0e68a480469fad8e3462d481d251199234c5e42821b074"
+    },
+    {
+      "name": "PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+      "relative_path": "01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+      "category": "01_MASTER_KNOWLEDGE",
+      "suffix": ".md",
+      "size_bytes": 1644,
+      "sha256": "7185767330d433c36c53daf88f3c98b0f77de4e5eeea3b9ffc844b434c2dfedc"
+    },
+    {
+      "name": "PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+      "relative_path": "01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+      "category": "01_MASTER_KNOWLEDGE",
+      "suffix": ".md",
+      "size_bytes": 2391,
+      "sha256": "e741a6f28cfebac44f779ee8c59ab31a51351ca8b540593669e9e00438c4bff8"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "01_MASTER_KNOWLEDGE/README.md",
+      "category": "01_MASTER_KNOWLEDGE",
+      "suffix": ".md",
+      "size_bytes": 33,
+      "sha256": "ada25448f654c40741e29e1cb058e91db9a29a91b2c896b800af07d1c88496f6"
+    },
+    {
+      "name": "BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+      "relative_path": "02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+      "category": "02_PROJECTS",
+      "suffix": ".md",
+      "size_bytes": 2119,
+      "sha256": "5b25fda2b0d41abf71866d56b5d1a898ad80b51a0f1460324a281c4bab33b8bf"
+    },
+    {
+      "name": "MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+      "relative_path": "02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+      "category": "02_PROJECTS",
+      "suffix": ".md",
+      "size_bytes": 2712,
+      "sha256": "e7132c61359c129f47e5389af855df46d28abab7192a6385586c97325bc1a6c8"
+    },
+    {
+      "name": "PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+      "relative_path": "02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+      "category": "02_PROJECTS",
+      "suffix": ".md",
+      "size_bytes": 2190,
+      "sha256": "faea55599ded905f3de7aecbe545ce4709d8817fc8dfd936f0f068beb699d8a5"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "02_PROJECTS/README.md",
+      "category": "02_PROJECTS",
+      "suffix": ".md",
+      "size_bytes": 73,
+      "sha256": "a6770bfa725317035868b84380f5b4c12eeb43b08a22655b54277391eeb96791"
+    },
+    {
+      "name": "AAIE_ENGINE_KNOWLEDGE.md",
+      "relative_path": "03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md",
+      "category": "03_ENGINES",
+      "suffix": ".md",
+      "size_bytes": 2085,
+      "sha256": "13692595d177c62d0e611b530e59b1d1b92a7cc76a794a766fc006717cd3144f"
+    },
+    {
+      "name": "AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+      "relative_path": "03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+      "category": "03_ENGINES",
+      "suffix": ".md",
+      "size_bytes": 3418,
+      "sha256": "2d23ec809c3b1f1ead36145026874cc2e1cdde078cb1dc306f0d1107ab0ba324"
+    },
+    {
+      "name": "BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+      "relative_path": "03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+      "category": "03_ENGINES",
+      "suffix": ".md",
+      "size_bytes": 2655,
+      "sha256": "377c39a0023f6562617f01762085fb3fdf73e8013f02c19ed2be52278527eb39"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "03_ENGINES/README.md",
+      "category": "03_ENGINES",
+      "suffix": ".md",
+      "size_bytes": 31,
+      "sha256": "6afbed7285af20d1951a5aec6e9bdc50111451d4a5b7e80008de010b4ee8adc6"
+    },
+    {
+      "name": "STEE_ENGINE_KNOWLEDGE.md",
+      "relative_path": "03_ENGINES/STEE_ENGINE_KNOWLEDGE.md",
+      "category": "03_ENGINES",
+      "suffix": ".md",
+      "size_bytes": 1814,
+      "sha256": "3ec983d2f257c941a314d5bfa94392735636374993080f394f07556258b5f44a"
+    },
+    {
+      "name": "PROJECT_PHOENIX_STANDARDS.md",
+      "relative_path": "04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md",
+      "category": "04_STANDARDS_AND_RULES",
+      "suffix": ".md",
+      "size_bytes": 4426,
+      "sha256": "3652d695377986cbae62c0d529fccd69bc1b03bbc24f19e7f38c7bde94bff02c"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "04_STANDARDS_AND_RULES/README.md",
+      "category": "04_STANDARDS_AND_RULES",
+      "suffix": ".md",
+      "size_bytes": 52,
+      "sha256": "df45ddaf3fae3cd2a535feb5f37f440e8893b8db8254f29a49e13e2cd121d184"
+    },
+    {
+      "name": "PROJECT_INPUT_TEMPLATE.md",
+      "relative_path": "05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md",
+      "category": "05_TEMPLATES",
+      "suffix": ".md",
+      "size_bytes": 2666,
+      "sha256": "e37f2377dfb2d885e064a6205b65738e8791cbeef2c0cf570db66b7b2aec03d4"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "05_TEMPLATES/README.md",
+      "category": "05_TEMPLATES",
+      "suffix": ".md",
+      "size_bytes": 66,
+      "sha256": "a057565fca98e486551f3236237822c2ce3d9c3f403c124dec8974a476ee943d"
+    },
+    {
+      "name": "REPORT_OUTPUT_TEMPLATE.md",
+      "relative_path": "05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md",
+      "category": "05_TEMPLATES",
+      "suffix": ".md",
+      "size_bytes": 2934,
+      "sha256": "e6168d9b2937a8da58084e998ce1af86aee442a50ada8197557352acfae7be3c"
+    },
+    {
+      "name": "AUTONOMOUS_PROJECT_WORKFLOW.md",
+      "relative_path": "06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md",
+      "category": "06_WORKFLOWS",
+      "suffix": ".md",
+      "size_bytes": 3099,
+      "sha256": "15e369f60f20d68d69c9028f50b7cb32a59334d2a8b6375ff6b771d6541f803f"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "06_WORKFLOWS/README.md",
+      "category": "06_WORKFLOWS",
+      "suffix": ".md",
+      "size_bytes": 48,
+      "sha256": "59523e6eef45c83e949c13b61d8831e85b77ab8b46e2d730a7b04487919843a1"
+    },
+    {
+      "name": "DASHBOARD_ENGINE_FIXES.md",
+      "relative_path": "07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md",
+      "category": "07_LESSONS_LEARNED",
+      "suffix": ".md",
+      "size_bytes": 2318,
+      "sha256": "dfdd37eb24c287ed08b9dcadcfb7ef05fce6b132eaf58e267c9aad1eba095f86"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "07_LESSONS_LEARNED/README.md",
+      "category": "07_LESSONS_LEARNED",
+      "suffix": ".md",
+      "size_bytes": 42,
+      "sha256": "65b00b39d0dd0f716684f4f4516f995af66961b2e6ea14723c58a6617cdc0545"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "08_SOURCE_EVIDENCE/README.md",
+      "category": "08_SOURCE_EVIDENCE",
+      "suffix": ".md",
+      "size_bytes": 63,
+      "sha256": "5520082616e96c3d06528374e5dfd98ffed87dadc198fd203c4541694be35e51"
+    },
+    {
+      "name": "SOURCE_EVIDENCE_RULES.md",
+      "relative_path": "08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md",
+      "category": "08_SOURCE_EVIDENCE",
+      "suffix": ".md",
+      "size_bytes": 2141,
+      "sha256": "b7789f136db6bc53b10f4abd24429c62890d77a785a0da55cf2f34d267b4f3b8"
+    },
+    {
+      "name": "PROJECT_PHOENIX_ASSUMPTIONS.md",
+      "relative_path": "09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md",
+      "category": "09_ASSUMPTIONS",
+      "suffix": ".md",
+      "size_bytes": 3732,
+      "sha256": "7e97d70e55a5c3611be7086c104225bbdf54e3f0daf3f44554f0645423599fbf"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "09_ASSUMPTIONS/README.md",
+      "category": "09_ASSUMPTIONS",
+      "suffix": ".md",
+      "size_bytes": 46,
+      "sha256": "2fbdb9fb35229eff911bd487c0b53089fa487997a68930784e123409e8bda96a"
+    },
+    {
+      "name": "BIB_EXPORT_ENGINE_DESIGN.md",
+      "relative_path": "10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md",
+      "category": "10_EXPORTS",
+      "suffix": ".md",
+      "size_bytes": 3711,
+      "sha256": "042ea0b12423112e2cf0ff1f840a66ed35326b58c88fa8856a0a01b969d64918"
+    },
+    {
+      "name": "BIB_EXPORT_PLAN.md",
+      "relative_path": "10_EXPORTS/BIB_EXPORT_PLAN.md",
+      "category": "10_EXPORTS",
+      "suffix": ".md",
+      "size_bytes": 3993,
+      "sha256": "05fd8b2b8049c458952cc6c85bf5f1fe505440e4037cd85dd7b82ee143953c8c"
+    },
+    {
+      "name": "README.md",
+      "relative_path": "10_EXPORTS/README.md",
+      "category": "10_EXPORTS",
+      "suffix": ".md",
+      "size_bytes": 54,
+      "sha256": "aa7709014dc3220cac4ef5e0c578462833d30350aaefc5f22d86ef449be7ca35"
+    }
+  ]
+}
