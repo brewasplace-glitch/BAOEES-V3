@@ -46,15 +46,15 @@
     "repository": "BREWSTER-ENGINEERING-WIZARD",
     "branch": "baoees-v3",
     "remote_tracking_branch": "origin/baoees-v3",
-    "commit": "25f9553",
-    "commit_full": "25f9553b26c80de9ec6f7654492bde426774b0bc",
-    "commit_message": "feat: add Project Phoenix BIB QA QC engine v3.3",
+    "commit": "ad88bee",
+    "commit_full": "ad88bee49efa3fae5483a263fcf77a26fc66f06e",
+    "commit_message": "feat: integrate BIB QA QC in full export runner v3.4",
     "working_tree_clean": false,
-    "git_status_short": "M baoees/bib_export_engine/run_full_export.py\n M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_manifest.json",
-    "generated_at": "2026-06-26T23:17:19"
+    "git_status_short": "M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_manifest.json",
+    "generated_at": "2026-06-26T23:27:07"
   },
   "extra_results": {},
-  "generated_at": "2026-06-26T23:17:19",
+  "generated_at": "2026-06-26T23:27:07",
   "warnings": [
     "Git working tree was niet clean tijdens PDF-export."
   ],

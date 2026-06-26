@@ -2,7 +2,7 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix BIB Export Engine",
   "engine_version": "v2.9",
-  "generated_at": "2026-06-26T23:17:19",
+  "generated_at": "2026-06-26T23:27:07",
   "bib_file_count": 30,
   "dashboard_path": "outputs\\bib\\bib_dashboard.html",
   "docx_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
@@ -11,26 +11,26 @@
     "status": "OPGESLAGEN",
     "docx_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
     "markdown_file_count": 30,
-    "size_bytes": 23846,
-    "generated_at": "2026-06-26T23:17:19"
+    "size_bytes": 23843,
+    "generated_at": "2026-06-26T23:27:06"
   },
   "zip_result": {
     "status": "OPGESLAGEN",
     "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
     "file_count": 34,
-    "size_bytes": 60743
+    "size_bytes": 60667
   },
   "git_evidence": {
-    "status": "DIRTY",
+    "status": "CLEAN",
     "repository": "BREWSTER-ENGINEERING-WIZARD",
     "branch": "baoees-v3",
     "remote_tracking_branch": "origin/baoees-v3",
-    "commit": "25f9553",
-    "commit_full": "25f9553b26c80de9ec6f7654492bde426774b0bc",
-    "commit_message": "feat: add Project Phoenix BIB QA QC engine v3.3",
-    "working_tree_clean": false,
-    "git_status_short": "M baoees/bib_export_engine/run_full_export.py",
-    "generated_at": "2026-06-26T23:17:19"
+    "commit": "ad88bee",
+    "commit_full": "ad88bee49efa3fae5483a263fcf77a26fc66f06e",
+    "commit_message": "feat: integrate BIB QA QC in full export runner v3.4",
+    "working_tree_clean": true,
+    "git_status_short": "",
+    "generated_at": "2026-06-26T23:27:06"
   },
   "extra_results": {}
 }

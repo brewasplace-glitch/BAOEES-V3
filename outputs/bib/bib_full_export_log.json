@@ -2,7 +2,7 @@
   "status": "WARNING",
   "engine": "Project Phoenix BIB Full Export Runner",
   "engine_version": "v3.4",
-  "generated_at": "2026-06-26T23:17:20",
+  "generated_at": "2026-06-26T23:27:07",
   "output_root": "outputs\\bib",
   "bib_export": {
     "status": "OPGESLAGEN",
@@ -20,10 +20,9 @@
     "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
     "docx_status": "OPGESLAGEN",
     "zip_file_count": 34,
-    "generated_at": "2026-06-26T23:17:19",
+    "generated_at": "2026-06-26T23:27:07",
     "warnings": [
-      "Verplicht BIB-bestand ontbreekt: bib\\03_ENGINES\\BAOEES_V3_ENGINE_REGISTER.md",
-      "Git working tree is niet clean tijdens BIB-export."
+      "Verplicht BIB-bestand ontbreekt: bib\\03_ENGINES\\BAOEES_V3_ENGINE_REGISTER.md"
     ],
     "recommendation": {
       "status": "BIB_EXPORT_ADVIES",
@@ -34,7 +33,7 @@
         "Controleer PROJECT_PHOENIX_BIB_EXPORT.zip.",
         "Voeg in v3.0 PDF-export toe."
       ],
-      "warnings_count": 2
+      "warnings_count": 1
     }
   },
   "pdf_export": {
@@ -85,15 +84,15 @@
       "repository": "BREWSTER-ENGINEERING-WIZARD",
       "branch": "baoees-v3",
       "remote_tracking_branch": "origin/baoees-v3",
-      "commit": "25f9553",
-      "commit_full": "25f9553b26c80de9ec6f7654492bde426774b0bc",
-      "commit_message": "feat: add Project Phoenix BIB QA QC engine v3.3",
+      "commit": "ad88bee",
+      "commit_full": "ad88bee49efa3fae5483a263fcf77a26fc66f06e",
+      "commit_message": "feat: integrate BIB QA QC in full export runner v3.4",
       "working_tree_clean": false,
-      "git_status_short": "M baoees/bib_export_engine/run_full_export.py\n M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_manifest.json",
-      "generated_at": "2026-06-26T23:17:19"
+      "git_status_short": "M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_manifest.json",
+      "generated_at": "2026-06-26T23:27:07"
     },
     "extra_results": {},
-    "generated_at": "2026-06-26T23:17:19",
+    "generated_at": "2026-06-26T23:27:07",
     "warnings": [
       "Git working tree was niet clean tijdens PDF-export."
     ],
@@ -112,13 +111,13 @@
     "status": "FAILED",
     "engine": "Project Phoenix BIB QA/QC Engine",
     "engine_version": "v3.3",
-    "generated_at": "2026-06-26T23:17:19",
+    "generated_at": "2026-06-26T23:27:07",
     "bib_root": "bib",
     "output_root": "outputs\\bib",
     "summary": {
       "total_checks": 73,
-      "passed": 65,
-      "warnings": 5,
+      "passed": 67,
+      "warnings": 3,
       "failed": 3
     },
     "checks": [
@@ -383,10 +382,10 @@
       },
       {
         "name": "Export bestaat: PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
-        "status": "WARNING",
+        "status": "OK",
         "required": false,
         "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
-        "message": "Ontbreekt."
+        "message": "Aanwezig."
       },
       {
         "name": "Export bestaat: bib_manifest.json",
@@ -411,10 +410,10 @@
       },
       {
         "name": "Export bestaat: bib_full_export_log.json",
-        "status": "WARNING",
+        "status": "OK",
         "required": false,
         "path": "outputs\\bib\\bib_full_export_log.json",
-        "message": "Ontbreekt."
+        "message": "Aanwezig."
       },
       {
         "name": "Minimum aantal Markdown-bestanden",
@@ -641,7 +640,7 @@
         "Controleer ontbrekende of waarschuwinggevende BIB-onderdelen.",
         "Vul ontbrekende kennisbestanden aan voordat BIB als volledige kennisbron wordt gebruikt.",
         "3 verplichte controles zijn mislukt.",
-        "5 waarschuwingen gevonden.",
+        "3 waarschuwingen gevonden.",
         "Koppel deze QA/QC-check in v3.4 aan de Full Export Runner."
       ]
     },
@@ -652,7 +651,7 @@
     "status": "OPGESLAGEN",
     "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
     "file_count": 42,
-    "size_bytes": 159410
+    "size_bytes": 159192
   },
   "full_export_log_path": "outputs\\bib\\bib_full_export_log.json",
   "warnings": [

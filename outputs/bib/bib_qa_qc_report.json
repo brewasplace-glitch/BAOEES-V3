@@ -2,13 +2,13 @@
   "status": "FAILED",
   "engine": "Project Phoenix BIB QA/QC Engine",
   "engine_version": "v3.3",
-  "generated_at": "2026-06-26T23:17:19",
+  "generated_at": "2026-06-26T23:27:07",
   "bib_root": "bib",
   "output_root": "outputs\\bib",
   "summary": {
     "total_checks": 73,
-    "passed": 65,
-    "warnings": 5,
+    "passed": 67,
+    "warnings": 3,
     "failed": 3
   },
   "checks": [
@@ -273,10 +273,10 @@
     },
     {
       "name": "Export bestaat: PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
-      "status": "WARNING",
+      "status": "OK",
       "required": false,
       "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
-      "message": "Ontbreekt."
+      "message": "Aanwezig."
     },
     {
       "name": "Export bestaat: bib_manifest.json",
@@ -301,10 +301,10 @@
     },
     {
       "name": "Export bestaat: bib_full_export_log.json",
-      "status": "WARNING",
+      "status": "OK",
       "required": false,
       "path": "outputs\\bib\\bib_full_export_log.json",
-      "message": "Ontbreekt."
+      "message": "Aanwezig."
     },
     {
       "name": "Minimum aantal Markdown-bestanden",
@@ -531,7 +531,7 @@
       "Controleer ontbrekende of waarschuwinggevende BIB-onderdelen.",
       "Vul ontbrekende kennisbestanden aan voordat BIB als volledige kennisbron wordt gebruikt.",
       "3 verplichte controles zijn mislukt.",
-      "5 waarschuwingen gevonden.",
+      "3 waarschuwingen gevonden.",
       "Koppel deze QA/QC-check in v3.4 aan de Full Export Runner."
     ]
   }
