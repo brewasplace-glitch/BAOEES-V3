@@ -565,8 +565,114 @@
         "source_register_json": "outputs\\projects\\plutostraat\\06_sources\\source_register.json",
         "runtime_log_json": "outputs\\projects\\plutostraat\\08_runtime_logs\\runtime_log.json"
       }
+    },
+    {
+      "run_id": "plutostraat_20260626_140620",
+      "run_timestamp": "2026-06-26T14:06:20",
+      "project_id": "plutostraat",
+      "project_name": "Plutostraat met BAOEES V3",
+      "project_type": "Bouw",
+      "location": "Plutostraat, Paramaribo",
+      "country": "Suriname",
+      "runtime_mode": "autonomous",
+      "selected_project_id": "plutostraat",
+      "project_output_dir": "outputs\\projects\\plutostraat",
+      "config_path": "configs/projects/plutostraat.json",
+      "selector_status": "PROJECT_SELECTIE_GEREED",
+      "runtime_status": "RUNTIME_ORCHESTRATION_LOG_GEREED",
+      "validation_status": "VALIDATION_GEREED",
+      "go_no_go_advice": {
+        "decision": "NO_GO_EERST_HERSTELLEN",
+        "advice": "Projectoutput bevat te veel aandachtspunten. Los eerst ontbrekende data en risico’s op.",
+        "status": "GO_NO_GO_ADVIES_GEREED"
+      },
+      "exports": {
+        "json_files": {
+          "engine": "ProjectFileWriterEngine",
+          "status": "PROJECT_FILES_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "written_file_count": 7
+        },
+        "markdown_txt_report": {
+          "engine": "ProjectReportWriterEngine",
+          "status": "PROJECT_REPORT_FILES_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "written_file_count": 2
+        },
+        "pdf_docx_report": {
+          "engine": "ProjectPdfDocxWriterEngine",
+          "status": "PDF_DOCX_REPORTS_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1
+        },
+        "dxf_drawings": {
+          "engine": "ProjectDxfWriterEngine",
+          "status": "PROJECT_DXF_FILES_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "written_file_count": 3
+        },
+        "drawing_pdfs": {
+          "engine": "ProjectDrawingPdfWriterEngine",
+          "status": "PROJECT_DRAWING_PDF_FILES_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "written_file_count": 3
+        },
+        "csv_excel": {
+          "engine": "ProjectCsvExcelExportEngine",
+          "status": "PROJECT_CSV_EXCEL_FILES_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "written_file_count": 6
+        },
+        "xlsx": {
+          "engine": "ProjectXlsxExportEngine",
+          "status": "PROJECT_XLSX_FILE_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "worksheet_count": 6,
+          "xlsx_file": {
+            "path": "outputs\\projects\\plutostraat\\09_exports\\plutostraat_project_tables.xlsx",
+            "status": "OPGESLAGEN",
+            "exists": true,
+            "size_bytes": 7073
+          }
+        },
+        "html_dashboard": {
+          "engine": "ONBEKEND",
+          "status": "ONBEKEND",
+          "created_at": "",
+          "warning_count": 0
+        },
+        "zip_export": {
+          "engine": "ProjectZipEngine",
+          "status": "PROJECT_ZIP_OPGESLAGEN",
+          "created_at": "2026-06-26T14:06:20",
+          "warning_count": 1,
+          "zip_file_path": "outputs\\projects\\plutostraat\\10_zip\\plutostraat_project_export.zip"
+        },
+        "index_startpage": {
+          "engine": "ONBEKEND",
+          "status": "ONBEKEND",
+          "created_at": "",
+          "warning_count": 0
+        }
+      },
+      "important_paths": {
+        "project_report_pdf": "outputs\\projects\\plutostraat\\01_reports\\plutostraat_project_report.pdf",
+        "project_report_docx": "outputs\\projects\\plutostraat\\01_reports\\plutostraat_project_report.docx",
+        "project_dashboard_html": "outputs\\projects\\plutostraat\\09_exports\\plutostraat_dashboard.html",
+        "project_tables_xlsx": "outputs\\projects\\plutostraat\\09_exports\\plutostraat_project_tables.xlsx",
+        "project_zip": "outputs\\projects\\plutostraat\\10_zip\\plutostraat_project_export.zip",
+        "digital_twin_json": "outputs\\projects\\plutostraat\\07_digital_twin\\digital_twin.json",
+        "source_register_json": "outputs\\projects\\plutostraat\\06_sources\\source_register.json",
+        "runtime_log_json": "outputs\\projects\\plutostraat\\08_runtime_logs\\runtime_log.json"
+      }
     }
   ],
-  "record_count": 5,
-  "last_updated": "2026-06-26T13:51:10"
+  "record_count": 6,
+  "last_updated": "2026-06-26T14:06:20"
 }
