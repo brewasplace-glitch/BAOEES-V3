@@ -1,0 +1,674 @@
+{
+  "status": "WARNING",
+  "engine": "Project Phoenix BIB Full Export Runner",
+  "engine_version": "v3.4",
+  "generated_at": "2026-06-26T23:17:20",
+  "output_root": "outputs\\bib",
+  "bib_export": {
+    "status": "OPGESLAGEN",
+    "engine": "Project Phoenix BIB Export Engine",
+    "engine_version": "v2.9",
+    "bib_root": "bib",
+    "output_root": "outputs\\bib",
+    "file_count": 30,
+    "markdown_file_count": 30,
+    "manifest_path": "outputs\\bib\\bib_manifest.json",
+    "export_log_path": "outputs\\bib\\bib_export_log.json",
+    "git_evidence_path": "outputs\\bib\\bib_git_evidence.json",
+    "dashboard_path": "outputs\\bib\\bib_dashboard.html",
+    "docx_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
+    "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
+    "docx_status": "OPGESLAGEN",
+    "zip_file_count": 34,
+    "generated_at": "2026-06-26T23:17:19",
+    "warnings": [
+      "Verplicht BIB-bestand ontbreekt: bib\\03_ENGINES\\BAOEES_V3_ENGINE_REGISTER.md",
+      "Git working tree is niet clean tijdens BIB-export."
+    ],
+    "recommendation": {
+      "status": "BIB_EXPORT_ADVIES",
+      "advice": [
+        "Controleer bib_dashboard.html visueel.",
+        "Open PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx in Word.",
+        "Controleer bib_manifest.json op volledigheid.",
+        "Controleer PROJECT_PHOENIX_BIB_EXPORT.zip.",
+        "Voeg in v3.0 PDF-export toe."
+      ],
+      "warnings_count": 2
+    }
+  },
+  "pdf_export": {
+    "status": "OPGESLAGEN",
+    "engine": "Project Phoenix BIB PDF Export Engine",
+    "engine_version": "v3.0",
+    "bib_root": "bib",
+    "output_root": "outputs\\bib",
+    "pdf_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf",
+    "pdf_exists": true,
+    "pdf_size_bytes": 168686,
+    "markdown_file_count": 30,
+    "markdown_files": [
+      "00_BIB_INDEX.md",
+      "01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+      "01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+      "01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+      "01_MASTER_KNOWLEDGE/README.md",
+      "02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+      "02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+      "02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+      "02_PROJECTS/README.md",
+      "03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md",
+      "03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+      "03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+      "03_ENGINES/README.md",
+      "03_ENGINES/STEE_ENGINE_KNOWLEDGE.md",
+      "04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md",
+      "04_STANDARDS_AND_RULES/README.md",
+      "05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md",
+      "05_TEMPLATES/README.md",
+      "05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md",
+      "06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md",
+      "06_WORKFLOWS/README.md",
+      "07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md",
+      "07_LESSONS_LEARNED/README.md",
+      "08_SOURCE_EVIDENCE/README.md",
+      "08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md",
+      "09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md",
+      "09_ASSUMPTIONS/README.md",
+      "10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md",
+      "10_EXPORTS/BIB_EXPORT_PLAN.md",
+      "10_EXPORTS/README.md"
+    ],
+    "page_count": 89,
+    "git_evidence": {
+      "status": "DIRTY",
+      "repository": "BREWSTER-ENGINEERING-WIZARD",
+      "branch": "baoees-v3",
+      "remote_tracking_branch": "origin/baoees-v3",
+      "commit": "25f9553",
+      "commit_full": "25f9553b26c80de9ec6f7654492bde426774b0bc",
+      "commit_message": "feat: add Project Phoenix BIB QA QC engine v3.3",
+      "working_tree_clean": false,
+      "git_status_short": "M baoees/bib_export_engine/run_full_export.py\n M outputs/bib/PROJECT_PHOENIX_BIB_EXPORT.zip\n M outputs/bib/PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx\n M outputs/bib/bib_dashboard.html\n M outputs/bib/bib_export_log.json\n M outputs/bib/bib_git_evidence.json\n M outputs/bib/bib_manifest.json",
+      "generated_at": "2026-06-26T23:17:19"
+    },
+    "extra_results": {},
+    "generated_at": "2026-06-26T23:17:19",
+    "warnings": [
+      "Git working tree was niet clean tijdens PDF-export."
+    ],
+    "recommendation": {
+      "status": "BIB_PDF_EXPORT_ADVIES",
+      "advice": [
+        "Open de PDF visueel en controleer of de inhoud leesbaar is.",
+        "Gebruik deze v3.0 PDF als basisexport.",
+        "Maak later een professionele PDF op basis van DOCX of HTML styling.",
+        "Koppel deze PDF-export in een volgende versie aan BibExportEngine.run()."
+      ]
+    },
+    "export_log_path": "outputs\\bib\\bib_pdf_export_log.json"
+  },
+  "qa_qc_export": {
+    "status": "FAILED",
+    "engine": "Project Phoenix BIB QA/QC Engine",
+    "engine_version": "v3.3",
+    "generated_at": "2026-06-26T23:17:19",
+    "bib_root": "bib",
+    "output_root": "outputs\\bib",
+    "summary": {
+      "total_checks": 73,
+      "passed": 65,
+      "warnings": 5,
+      "failed": 3
+    },
+    "checks": [
+      {
+        "name": "Bestand bestaat: 00_BIB_INDEX.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\00_BIB_INDEX.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 01_MASTER_KNOWLEDGE/BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 01_MASTER_KNOWLEDGE/PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 02_PROJECTS/PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\02_PROJECTS\\PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 02_PROJECTS/MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\02_PROJECTS\\MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 02_PROJECTS/BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\02_PROJECTS\\BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 03_ENGINES/BAOEES_V3_ENGINE_REGISTER.md",
+        "status": "FAILED",
+        "required": true,
+        "path": "bib\\03_ENGINES\\BAOEES_V3_ENGINE_REGISTER.md",
+        "message": "Ontbreekt."
+      },
+      {
+        "name": "Bestand bestaat: 03_ENGINES/AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\03_ENGINES\\AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 03_ENGINES/AAIE_ENGINE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\03_ENGINES\\AAIE_ENGINE_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 03_ENGINES/STEE_ENGINE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\03_ENGINES\\STEE_ENGINE_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 03_ENGINES/BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\03_ENGINES\\BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 04_STANDARDS_AND_RULES/PROJECT_PHOENIX_STANDARDS.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\04_STANDARDS_AND_RULES\\PROJECT_PHOENIX_STANDARDS.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 05_TEMPLATES/PROJECT_INPUT_TEMPLATE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\05_TEMPLATES\\PROJECT_INPUT_TEMPLATE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 05_TEMPLATES/REPORT_OUTPUT_TEMPLATE.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\05_TEMPLATES\\REPORT_OUTPUT_TEMPLATE.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 06_WORKFLOWS/AUTONOMOUS_PROJECT_WORKFLOW.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\06_WORKFLOWS\\AUTONOMOUS_PROJECT_WORKFLOW.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 06_WORKFLOWS/GITKRAKEN_WORKFLOW.md",
+        "status": "FAILED",
+        "required": true,
+        "path": "bib\\06_WORKFLOWS\\GITKRAKEN_WORKFLOW.md",
+        "message": "Ontbreekt."
+      },
+      {
+        "name": "Bestand bestaat: 07_LESSONS_LEARNED/DASHBOARD_ENGINE_FIXES.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\07_LESSONS_LEARNED\\DASHBOARD_ENGINE_FIXES.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 08_SOURCE_EVIDENCE/GIT_EVIDENCE_BASELINE.md",
+        "status": "FAILED",
+        "required": true,
+        "path": "bib\\08_SOURCE_EVIDENCE\\GIT_EVIDENCE_BASELINE.md",
+        "message": "Ontbreekt."
+      },
+      {
+        "name": "Bestand bestaat: 08_SOURCE_EVIDENCE/SOURCE_EVIDENCE_RULES.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\08_SOURCE_EVIDENCE\\SOURCE_EVIDENCE_RULES.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 09_ASSUMPTIONS/PROJECT_PHOENIX_ASSUMPTIONS.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\09_ASSUMPTIONS\\PROJECT_PHOENIX_ASSUMPTIONS.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 10_EXPORTS/BIB_EXPORT_PLAN.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\10_EXPORTS\\BIB_EXPORT_PLAN.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Bestand bestaat: 10_EXPORTS/BIB_EXPORT_ENGINE_DESIGN.md",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\10_EXPORTS\\BIB_EXPORT_ENGINE_DESIGN.md",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 01_MASTER_KNOWLEDGE",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\01_MASTER_KNOWLEDGE",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 02_PROJECTS",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\02_PROJECTS",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 03_ENGINES",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\03_ENGINES",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 04_STANDARDS_AND_RULES",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\04_STANDARDS_AND_RULES",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 05_TEMPLATES",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\05_TEMPLATES",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 06_WORKFLOWS",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\06_WORKFLOWS",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 07_LESSONS_LEARNED",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\07_LESSONS_LEARNED",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 08_SOURCE_EVIDENCE",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\08_SOURCE_EVIDENCE",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 09_ASSUMPTIONS",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\09_ASSUMPTIONS",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Directory bestaat: 10_EXPORTS",
+        "status": "OK",
+        "required": true,
+        "path": "bib\\10_EXPORTS",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: bib_dashboard.html",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\bib_dashboard.html",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: PROJECT_PHOENIX_BIB_EXPORT.zip",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_EXPORT.zip",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
+        "status": "WARNING",
+        "required": false,
+        "path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
+        "message": "Ontbreekt."
+      },
+      {
+        "name": "Export bestaat: bib_manifest.json",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\bib_manifest.json",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: bib_export_log.json",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\bib_export_log.json",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: bib_pdf_export_log.json",
+        "status": "OK",
+        "required": false,
+        "path": "outputs\\bib\\bib_pdf_export_log.json",
+        "message": "Aanwezig."
+      },
+      {
+        "name": "Export bestaat: bib_full_export_log.json",
+        "status": "WARNING",
+        "required": false,
+        "path": "outputs\\bib\\bib_full_export_log.json",
+        "message": "Ontbreekt."
+      },
+      {
+        "name": "Minimum aantal Markdown-bestanden",
+        "status": "OK",
+        "required": false,
+        "path": "bib",
+        "message": "30 Markdown-bestanden gevonden. Streefwaarde: minimaal 20."
+      },
+      {
+        "name": "Inhoud aanwezig: 00_BIB_INDEX.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\00_BIB_INDEX.md",
+        "message": "609 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\BREWSTER_ENGINEERING_WIZARD_LIFEVISION.md",
+        "message": "361 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\PROJECT_PHOENIX_CORE_KNOWLEDGE.md",
+        "message": "220 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\PROJECT_PHOENIX_SYSTEM_ARCHITECTURE.md",
+        "message": "345 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "WARNING",
+        "required": false,
+        "path": "bib\\01_MASTER_KNOWLEDGE\\README.md",
+        "message": "3 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\02_PROJECTS\\BRUYNZEEL_WATERFRONT_PROJECT_KNOWLEDGE.md",
+        "message": "251 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\02_PROJECTS\\MOSKEE_BUNSCHOTEN_PROJECT_KNOWLEDGE.md",
+        "message": "332 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\02_PROJECTS\\PLUTOSTRAAT_PROJECT_KNOWLEDGE.md",
+        "message": "321 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\02_PROJECTS\\README.md",
+        "message": "6 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: AAIE_ENGINE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\03_ENGINES\\AAIE_ENGINE_KNOWLEDGE.md",
+        "message": "231 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\03_ENGINES\\AUTOMATIC_GROUNDWATER_FOUNDATION_ENGINE.md",
+        "message": "366 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\03_ENGINES\\BIB_EXPORT_ENGINE_KNOWLEDGE.md",
+        "message": "353 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "WARNING",
+        "required": false,
+        "path": "bib\\03_ENGINES\\README.md",
+        "message": "4 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: STEE_ENGINE_KNOWLEDGE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\03_ENGINES\\STEE_ENGINE_KNOWLEDGE.md",
+        "message": "248 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: PROJECT_PHOENIX_STANDARDS.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\04_STANDARDS_AND_RULES\\PROJECT_PHOENIX_STANDARDS.md",
+        "message": "496 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\04_STANDARDS_AND_RULES\\README.md",
+        "message": "6 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: PROJECT_INPUT_TEMPLATE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\05_TEMPLATES\\PROJECT_INPUT_TEMPLATE.md",
+        "message": "386 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\05_TEMPLATES\\README.md",
+        "message": "7 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: REPORT_OUTPUT_TEMPLATE.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\05_TEMPLATES\\REPORT_OUTPUT_TEMPLATE.md",
+        "message": "369 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: AUTONOMOUS_PROJECT_WORKFLOW.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\06_WORKFLOWS\\AUTONOMOUS_PROJECT_WORKFLOW.md",
+        "message": "337 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\06_WORKFLOWS\\README.md",
+        "message": "5 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: DASHBOARD_ENGINE_FIXES.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\07_LESSONS_LEARNED\\DASHBOARD_ENGINE_FIXES.md",
+        "message": "305 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\07_LESSONS_LEARNED\\README.md",
+        "message": "6 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\08_SOURCE_EVIDENCE\\README.md",
+        "message": "7 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: SOURCE_EVIDENCE_RULES.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\08_SOURCE_EVIDENCE\\SOURCE_EVIDENCE_RULES.md",
+        "message": "289 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: PROJECT_PHOENIX_ASSUMPTIONS.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\09_ASSUMPTIONS\\PROJECT_PHOENIX_ASSUMPTIONS.md",
+        "message": "418 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "WARNING",
+        "required": false,
+        "path": "bib\\09_ASSUMPTIONS\\README.md",
+        "message": "4 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: BIB_EXPORT_ENGINE_DESIGN.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\10_EXPORTS\\BIB_EXPORT_ENGINE_DESIGN.md",
+        "message": "429 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: BIB_EXPORT_PLAN.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\10_EXPORTS\\BIB_EXPORT_PLAN.md",
+        "message": "517 woorden gevonden."
+      },
+      {
+        "name": "Inhoud aanwezig: README.md",
+        "status": "OK",
+        "required": false,
+        "path": "bib\\10_EXPORTS\\README.md",
+        "message": "9 woorden gevonden."
+      }
+    ],
+    "extra_results": {},
+    "recommendation": {
+      "status": "BIB_QA_QC_ADVIES",
+      "advice": [
+        "Controleer ontbrekende of waarschuwinggevende BIB-onderdelen.",
+        "Vul ontbrekende kennisbestanden aan voordat BIB als volledige kennisbron wordt gebruikt.",
+        "3 verplichte controles zijn mislukt.",
+        "5 waarschuwingen gevonden.",
+        "Koppel deze QA/QC-check in v3.4 aan de Full Export Runner."
+      ]
+    },
+    "json_path": "outputs\\bib\\bib_qa_qc_report.json",
+    "html_path": "outputs\\bib\\bib_qa_qc_report.html"
+  },
+  "full_zip": {
+    "status": "OPGESLAGEN",
+    "zip_path": "outputs\\bib\\PROJECT_PHOENIX_BIB_FULL_EXPORT.zip",
+    "file_count": 42,
+    "size_bytes": 159410
+  },
+  "full_export_log_path": "outputs\\bib\\bib_full_export_log.json",
+  "warnings": [
+    "BIB QA/QC heeft verplichte fouten gevonden."
+  ],
+  "recommendation": {
+    "status": "BIB_FULL_EXPORT_ADVIES",
+    "qa_qc_status": "FAILED",
+    "advice": [
+      "Los eerst de BIB QA/QC fouten op.",
+      "Open bib_dashboard.html.",
+      "Open PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx.",
+      "Open PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.pdf.",
+      "Open bib_qa_qc_report.html.",
+      "Controleer PROJECT_PHOENIX_BIB_FULL_EXPORT.zip.",
+      "Koppel deze full export in v3.5 aan de Project Phoenix Launcher of hoofdworkflow."
+    ]
+  }
+}
