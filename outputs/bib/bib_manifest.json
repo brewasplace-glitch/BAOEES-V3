@@ -1,9 +1,9 @@
 {
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix BIB Export Engine",
-  "engine_version": "v2.8",
+  "engine_version": "v2.9",
   "bib_root": "bib",
-  "generated_at": "2026-06-26T19:17:58",
+  "generated_at": "2026-06-26T19:31:11",
   "file_count": 30,
   "categories": [
     {

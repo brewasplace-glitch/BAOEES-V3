@@ -3,17 +3,19 @@ from __future__ import annotations
 import hashlib
 import html
 import json
+import re
 import subprocess
 import zipfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from xml.sax.saxutils import escape as xml_escape
 
 
 class BibExportEngine:
     """
     PROJECT PHOENIX / BAOEES V3
-    BIB Export Engine v2.8
+    BIB Export Engine v2.9
 
     Doel:
     - Scan de Brewster Integrated Bibliotheek in bib/
@@ -21,11 +23,12 @@ class BibExportEngine:
     - Maak exportlog JSON
     - Maak HTML knowledge dashboard
     - Maak ZIP-export
+    - Maak DOCX-export zonder externe dependency
     - Leg basis Git Evidence vast
     """
 
     ENGINE_NAME = "Project Phoenix BIB Export Engine"
-    ENGINE_VERSION = "v2.8"
+    ENGINE_VERSION = "v2.9"
 
     CATEGORY_ORDER = [
         "00_BIB_INDEX.md",
@@ -52,14 +55,13 @@ class BibExportEngine:
     def run(self, **extra_results: Any) -> Dict[str, Any]:
         """
         Compatibility runner voor BAOEES Core.
-
-        Deze methode moet bestaan zodat de engine later veilig vanuit de
-        orchestrator kan worden aangeroepen.
         """
 
         self.output_root.mkdir(parents=True, exist_ok=True)
 
         scanned_files = self.scan_bib_files()
+        markdown_files = [path for path in scanned_files if path.suffix.lower() == ".md"]
+
         manifest = self.build_manifest(scanned_files)
         git_evidence = self.build_git_evidence()
 
@@ -67,6 +69,7 @@ class BibExportEngine:
         export_log_path = self.output_root / "bib_export_log.json"
         git_evidence_path = self.output_root / "bib_git_evidence.json"
         dashboard_path = self.output_root / "bib_dashboard.html"
+        docx_path = self.output_root / "PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx"
         zip_path = self.output_root / "PROJECT_PHOENIX_BIB_EXPORT.zip"
 
         self.write_json(manifest_path, manifest)
@@ -75,26 +78,37 @@ class BibExportEngine:
         dashboard_html = self.build_html_dashboard(
             manifest=manifest,
             git_evidence=git_evidence,
+            docx_path=docx_path,
+            zip_path=zip_path,
         )
         dashboard_path.write_text(dashboard_html, encoding="utf-8")
+
+        docx_result = self.build_docx_export(
+            markdown_files=markdown_files,
+            docx_path=docx_path,
+            manifest=manifest,
+            git_evidence=git_evidence,
+        )
 
         zip_result = self.build_zip_export(
             files=scanned_files,
             zip_path=zip_path,
-            extra_files=[manifest_path, git_evidence_path, dashboard_path],
+            extra_files=[manifest_path, git_evidence_path, dashboard_path, docx_path],
         )
 
         export_log = self.build_export_log(
             manifest=manifest,
             git_evidence=git_evidence,
             dashboard_path=dashboard_path,
+            docx_path=docx_path,
             zip_path=zip_path,
+            docx_result=docx_result,
             zip_result=zip_result,
             extra_results=extra_results,
         )
         self.write_json(export_log_path, export_log)
 
-        warnings = self.build_warnings(manifest, git_evidence)
+        warnings = self.build_warnings(manifest, git_evidence, docx_result)
 
         return {
             "status": "OPGESLAGEN",
@@ -103,11 +117,14 @@ class BibExportEngine:
             "bib_root": str(self.bib_root),
             "output_root": str(self.output_root),
             "file_count": len(scanned_files),
+            "markdown_file_count": len(markdown_files),
             "manifest_path": str(manifest_path),
             "export_log_path": str(export_log_path),
             "git_evidence_path": str(git_evidence_path),
             "dashboard_path": str(dashboard_path),
+            "docx_path": str(docx_path),
             "zip_path": str(zip_path),
+            "docx_status": docx_result.get("status"),
             "zip_file_count": zip_result.get("file_count", 0),
             "generated_at": datetime.now().isoformat(timespec="seconds"),
             "warnings": warnings,
@@ -128,7 +145,6 @@ class BibExportEngine:
     def sort_key(self, path: Path) -> tuple:
         rel = self.safe_relative(path, self.bib_root)
         parts = Path(rel).parts
-
         first = parts[0] if parts else rel
 
         try:
@@ -140,8 +156,8 @@ class BibExportEngine:
 
     def build_manifest(self, files: List[Path]) -> Dict[str, Any]:
         categories: Dict[str, Dict[str, Any]] = {}
-
         records = []
+
         for path in files:
             rel = self.safe_relative(path, self.bib_root)
             category = self.category_for(path)
@@ -201,10 +217,183 @@ class BibExportEngine:
             "generated_at": datetime.now().isoformat(timespec="seconds"),
         }
 
+    def build_docx_export(
+        self,
+        markdown_files: List[Path],
+        docx_path: Path,
+        manifest: Dict[str, Any],
+        git_evidence: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        """
+        Bouwt een eenvoudige geldige DOCX met alleen Python standaardbibliotheek.
+        Geen python-docx dependency nodig.
+        """
+
+        docx_path.parent.mkdir(parents=True, exist_ok=True)
+
+        paragraphs: List[str] = []
+
+        paragraphs.append(self.docx_paragraph("PROJECT PHOENIX BIB KNOWLEDGE LIBRARY", style="Title"))
+        paragraphs.append(self.docx_paragraph("Brewster Integrated Bibliotheek", style="Subtitle"))
+        paragraphs.append(self.docx_paragraph(f"Exportdatum: {datetime.now().isoformat(timespec='seconds')}"))
+        paragraphs.append(self.docx_paragraph(f"Branch: {git_evidence.get('branch', '')}"))
+        paragraphs.append(self.docx_paragraph(f"Commit: {git_evidence.get('commit', '')}"))
+        paragraphs.append(self.docx_paragraph(f"Working tree clean: {git_evidence.get('working_tree_clean', False)}"))
+        paragraphs.append(self.docx_paragraph(""))
+
+        paragraphs.append(self.docx_paragraph("INHOUD", style="Heading1"))
+        for file_path in markdown_files:
+            rel = self.safe_relative(file_path, self.bib_root)
+            paragraphs.append(self.docx_paragraph(rel, style="ListParagraph"))
+
+        paragraphs.append(self.docx_paragraph(""))
+
+        for file_path in markdown_files:
+            rel = self.safe_relative(file_path, self.bib_root)
+            text = self.read_text_file(file_path)
+
+            paragraphs.append(self.docx_paragraph(rel, style="Heading1"))
+
+            for line in text.splitlines():
+                paragraphs.append(self.markdown_line_to_docx_paragraph(line))
+
+        document_xml = self.build_document_xml("".join(paragraphs))
+
+        with zipfile.ZipFile(docx_path, "w", compression=zipfile.ZIP_DEFLATED) as docx:
+            docx.writestr("[Content_Types].xml", self.docx_content_types_xml())
+            docx.writestr("_rels/.rels", self.docx_root_rels_xml())
+            docx.writestr("word/document.xml", document_xml)
+            docx.writestr("word/styles.xml", self.docx_styles_xml())
+
+        return {
+            "status": "OPGESLAGEN",
+            "docx_path": str(docx_path),
+            "markdown_file_count": len(markdown_files),
+            "size_bytes": docx_path.stat().st_size if docx_path.exists() else 0,
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+        }
+
+    def markdown_line_to_docx_paragraph(self, line: str) -> str:
+        stripped = line.strip()
+
+        if stripped == "":
+            return self.docx_paragraph("")
+
+        if stripped.startswith("# "):
+            return self.docx_paragraph(stripped[2:].strip(), style="Heading1")
+
+        if stripped.startswith("## "):
+            return self.docx_paragraph(stripped[3:].strip(), style="Heading2")
+
+        if stripped.startswith("### "):
+            return self.docx_paragraph(stripped[4:].strip(), style="Heading3")
+
+        if stripped.startswith("- "):
+            return self.docx_paragraph(stripped[2:].strip(), style="ListParagraph")
+
+        if re.match(r"^\d+\.\s+", stripped):
+            return self.docx_paragraph(stripped, style="ListParagraph")
+
+        if stripped.startswith("|") and stripped.endswith("|"):
+            return self.docx_paragraph(stripped)
+
+        return self.docx_paragraph(stripped)
+
+    def docx_paragraph(self, text: str, style: Optional[str] = None) -> str:
+        safe_text = xml_escape(text)
+
+        style_xml = ""
+        if style:
+            style_xml = f'<w:pPr><w:pStyle w:val="{xml_escape(style)}"/></w:pPr>'
+
+        return (
+            "<w:p>"
+            f"{style_xml}"
+            "<w:r>"
+            f"<w:t xml:space=\"preserve\">{safe_text}</w:t>"
+            "</w:r>"
+            "</w:p>"
+        )
+
+    def build_document_xml(self, body_xml: str) -> str:
+        return f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    {body_xml}
+    <w:sectPr>
+      <w:pgSz w:w="11906" w:h="16838"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+    </w:sectPr>
+  </w:body>
+</w:document>
+"""
+
+    def docx_content_types_xml(self) -> str:
+        return """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+  <Default Extension="xml" ContentType="application/xml"/>
+  <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+  <Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
+</Types>
+"""
+
+    def docx_root_rels_xml(self) -> str:
+        return """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+</Relationships>
+"""
+
+    def docx_styles_xml(self) -> str:
+        return """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:style w:type="paragraph" w:styleId="Normal">
+    <w:name w:val="Normal"/>
+    <w:qFormat/>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Title">
+    <w:name w:val="Title"/>
+    <w:qFormat/>
+    <w:rPr><w:b/><w:sz w:val="36"/></w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Subtitle">
+    <w:name w:val="Subtitle"/>
+    <w:qFormat/>
+    <w:rPr><w:i/><w:sz w:val="24"/></w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Heading1">
+    <w:name w:val="heading 1"/>
+    <w:qFormat/>
+    <w:pPr><w:spacing w:before="240" w:after="120"/></w:pPr>
+    <w:rPr><w:b/><w:sz w:val="28"/></w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Heading2">
+    <w:name w:val="heading 2"/>
+    <w:qFormat/>
+    <w:pPr><w:spacing w:before="200" w:after="100"/></w:pPr>
+    <w:rPr><w:b/><w:sz w:val="24"/></w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="Heading3">
+    <w:name w:val="heading 3"/>
+    <w:qFormat/>
+    <w:pPr><w:spacing w:before="160" w:after="80"/></w:pPr>
+    <w:rPr><w:b/><w:sz w:val="22"/></w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="ListParagraph">
+    <w:name w:val="List Paragraph"/>
+    <w:qFormat/>
+    <w:pPr><w:ind w:left="720"/></w:pPr>
+  </w:style>
+</w:styles>
+"""
+
     def build_html_dashboard(
         self,
         manifest: Dict[str, Any],
         git_evidence: Dict[str, Any],
+        docx_path: Path,
+        zip_path: Path,
     ) -> str:
         file_rows = []
         for item in manifest.get("files", []):
@@ -349,8 +538,9 @@ class BibExportEngine:
         <p>Commit: {self.esc(git_evidence.get("commit", ""))}</p>
       </div>
       <div class="card">
-        <h3>Exportdatum</h3>
-        <p>{self.esc(manifest.get("generated_at", ""))}</p>
+        <h3>Exports</h3>
+        <p><a href="{self.esc(docx_path.name)}">Open DOCX export</a></p>
+        <p><a href="{self.esc(zip_path.name)}">Open ZIP export</a></p>
       </div>
     </section>
 
@@ -390,7 +580,6 @@ class BibExportEngine:
         extra_files: Optional[List[Path]] = None,
     ) -> Dict[str, Any]:
         extra_files = extra_files or []
-
         zip_path.parent.mkdir(parents=True, exist_ok=True)
 
         file_count = 0
@@ -419,7 +608,9 @@ class BibExportEngine:
         manifest: Dict[str, Any],
         git_evidence: Dict[str, Any],
         dashboard_path: Path,
+        docx_path: Path,
         zip_path: Path,
+        docx_result: Dict[str, Any],
         zip_result: Dict[str, Any],
         extra_results: Dict[str, Any],
     ) -> Dict[str, Any]:
@@ -430,7 +621,9 @@ class BibExportEngine:
             "generated_at": datetime.now().isoformat(timespec="seconds"),
             "bib_file_count": manifest.get("file_count", 0),
             "dashboard_path": str(dashboard_path),
+            "docx_path": str(docx_path),
             "zip_path": str(zip_path),
+            "docx_result": docx_result,
             "zip_result": zip_result,
             "git_evidence": git_evidence,
             "extra_results": extra_results,
@@ -440,6 +633,7 @@ class BibExportEngine:
         self,
         manifest: Dict[str, Any],
         git_evidence: Dict[str, Any],
+        docx_result: Dict[str, Any],
     ) -> List[str]:
         warnings = []
 
@@ -465,6 +659,9 @@ class BibExportEngine:
         if not git_evidence.get("working_tree_clean", False):
             warnings.append("Git working tree is niet clean tijdens BIB-export.")
 
+        if docx_result.get("status") != "OPGESLAGEN":
+            warnings.append("DOCX-export is niet opgeslagen.")
+
         if not warnings:
             warnings.append("Geen kritieke BIB-exportwaarschuwingen.")
 
@@ -475,9 +672,9 @@ class BibExportEngine:
             "status": "BIB_EXPORT_ADVIES",
             "advice": [
                 "Controleer bib_dashboard.html visueel.",
+                "Open PROJECT_PHOENIX_BIB_KNOWLEDGE_LIBRARY.docx in Word.",
                 "Controleer bib_manifest.json op volledigheid.",
                 "Controleer PROJECT_PHOENIX_BIB_EXPORT.zip.",
-                "Voeg in v2.9 DOCX-export toe.",
                 "Voeg in v3.0 PDF-export toe.",
             ],
             "warnings_count": len(warnings),
@@ -522,6 +719,14 @@ class BibExportEngine:
             json.dumps(data, ensure_ascii=False, indent=2, default=str),
             encoding="utf-8",
         )
+
+    def read_text_file(self, path: Path) -> str:
+        try:
+            return path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            return path.read_text(encoding="utf-8-sig", errors="replace")
+        except Exception as exc:
+            return f"[Kon bestand niet lezen: {path} — {exc}]"
 
     def safe_relative(self, path: Path, start: Path) -> str:
         try:
