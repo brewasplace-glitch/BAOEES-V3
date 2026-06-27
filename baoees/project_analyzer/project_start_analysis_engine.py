@@ -20,7 +20,7 @@ from baoees.project_analyzer.project_analyzer_launcher_bridge import ProjectAnal
 class ProjectStartAnalysisEngine:
     """
     PROJECT PHOENIX / BAOEES
-    Project Start Analysis Engine v4.8
+    Project Start Analysis Engine v5.0
 
     Doel:
     - Vormt het centrale startpunt voor START PROJECTANALYSE.
@@ -28,10 +28,11 @@ class ProjectStartAnalysisEngine:
     - Genereert rapportage, DOCX/PDF, Project ZIP, manifest en evidence dashboard via de workflow.
     - Werkt daarna de Project Phoenix Launcher bij.
     - Maakt een startlog en startdashboard.
+    - Print console-output veilig in Windows/GitKraken.
     """
 
     ENGINE_NAME = "Project Phoenix Start Analysis Engine"
-    ENGINE_VERSION = "v4.8"
+    ENGINE_VERSION = "v5.0"
 
     def __init__(
         self,
@@ -298,7 +299,7 @@ class ProjectStartAnalysisEngine:
 <body>
   <header>
     <h1>START PROJECTANALYSE DASHBOARD</h1>
-    <p>Project Phoenix / BAOEES centrale run-engine v4.8.</p>
+    <p>Project Phoenix / BAOEES centrale run-engine v5.0.</p>
   </header>
 
   <main>
@@ -364,17 +365,38 @@ class ProjectStartAnalysisEngine:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2, default=str),
-            encoding="utf-8",
+            encoding="utf-8-sig",
         )
 
     def esc(self, value: Any) -> str:
         return html.escape(str(value), quote=True)
 
 
+def configure_console_output() -> None:
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+
+        if stream is None:
+            continue
+
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
+
+def safe_print_json(data: Dict[str, Any]) -> None:
+    try:
+        print(json.dumps(data, ensure_ascii=False, indent=2, default=str))
+    except UnicodeEncodeError:
+        print(json.dumps(data, ensure_ascii=True, indent=2, default=str))
+
+
 def main() -> None:
+    configure_console_output()
     engine = ProjectStartAnalysisEngine()
     result = engine.run()
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    safe_print_json(result)
 
 
 if __name__ == "__main__":
