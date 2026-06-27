@@ -1,112 +1,237 @@
 {
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Analyzer Launcher Bridge",
-  "engine_version": "v4.4",
-  "generated_at": "2026-06-27T14:36:00",
-  "purpose": "Project Analyzer Workflow koppelen aan de Project Phoenix Launcher.",
+  "engine_version": "v4.7",
+  "generated_at": "2026-06-27T16:00:44",
+  "purpose": "Centrale Project Analyzer Workflow koppelen aan de Project Phoenix Launcher.",
   "launcher_path": "outputs\\projects\\index.html",
   "project_output_root": "outputs\\projects",
   "bridge_log_path": "outputs\\projects\\project_analyzer_launcher_bridge_log.json",
   "outputs": [
     {
+      "category": "01 Centrale workflow",
       "label": "Open Project Analyzer Workflow Dashboard",
       "filename": "project_analyzer_workflow_dashboard.html",
       "path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
       "href": "project_analyzer_workflow_dashboard.html",
-      "description": "Hoofddashboard van de volledige Project Analyzer workflow.",
+      "description": "Hoofddashboard van de volledige centrale Project Analyzer Workflow v4.6/v4.7.",
       "type": "HTML dashboard",
+      "required": true,
       "exists": true,
-      "size_bytes": 4009
+      "size_bytes": 6095,
+      "modified_at": "2026-06-27T15:42:11"
     },
     {
+      "category": "01 Centrale workflow",
       "label": "Open Project Analyzer Workflow Log",
       "filename": "project_analyzer_workflow_log.json",
       "path": "outputs\\projects\\project_analyzer_workflow_log.json",
       "href": "project_analyzer_workflow_log.json",
-      "description": "JSON-log van de volledige Project Analyzer workflow.",
+      "description": "JSON-log van de volledige centrale workflow.",
       "type": "JSON log",
+      "required": true,
       "exists": true,
-      "size_bytes": 178864
+      "size_bytes": 6112492,
+      "modified_at": "2026-06-27T15:42:11"
     },
     {
+      "category": "02 Project Package Evidence",
+      "label": "Open Project Package Evidence Dashboard",
+      "filename": "project_package_evidence_dashboard.html",
+      "path": "outputs\\projects\\project_package_evidence_dashboard.html",
+      "href": "project_package_evidence_dashboard.html",
+      "description": "Dashboard van het Project ZIP / Evidence pakket.",
+      "type": "HTML dashboard",
+      "required": true,
+      "exists": true,
+      "size_bytes": 6185,
+      "modified_at": "2026-06-27T15:42:11"
+    },
+    {
+      "category": "02 Project Package Evidence",
+      "label": "Open Project Package Manifest",
+      "filename": "project_package_manifest.json",
+      "path": "outputs\\projects\\project_package_manifest.json",
+      "href": "project_package_manifest.json",
+      "description": "Manifest met bestandscontrole, categorieën, hashes en ontbrekende bestanden.",
+      "type": "JSON manifest",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9417,
+      "modified_at": "2026-06-27T15:42:11"
+    },
+    {
+      "category": "02 Project Package Evidence",
+      "label": "Open Project Package Evidence Log",
+      "filename": "project_package_evidence_log.json",
+      "path": "outputs\\projects\\project_package_evidence_log.json",
+      "href": "project_package_evidence_log.json",
+      "description": "Evidence log van het gegenereerde projectpakket.",
+      "type": "JSON evidence log",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2915058,
+      "modified_at": "2026-06-27T15:42:11"
+    },
+    {
+      "category": "02 Project Package Evidence",
+      "label": "Download Project ZIP pakket",
+      "filename": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "href": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "description": "Officieel Project Phoenix projectpakket met rapporten, logs, dashboards en evidencebestanden.",
+      "type": "ZIP pakket",
+      "required": true,
+      "exists": true,
+      "size_bytes": 359108,
+      "modified_at": "2026-06-27T15:42:11"
+    },
+    {
+      "category": "03 Rapportage",
       "label": "Open Projectrapport DOCX",
       "filename": "project_report_bib_report.docx",
       "path": "outputs\\projects\\project_report_bib_report.docx",
       "href": "project_report_bib_report.docx",
       "description": "Word-export van het automatisch gegenereerde projectrapport.",
       "type": "DOCX rapport",
+      "required": true,
       "exists": true,
-      "size_bytes": 3595
+      "size_bytes": 3590,
+      "modified_at": "2026-06-27T15:42:10"
     },
     {
+      "category": "03 Rapportage",
       "label": "Open Projectrapport PDF",
       "filename": "project_report_bib_report.pdf",
       "path": "outputs\\projects\\project_report_bib_report.pdf",
       "href": "project_report_bib_report.pdf",
       "description": "PDF-export van het automatisch gegenereerde projectrapport.",
       "type": "PDF rapport",
+      "required": true,
       "exists": true,
-      "size_bytes": 9195
+      "size_bytes": 9200,
+      "modified_at": "2026-06-27T15:42:10"
     },
     {
+      "category": "03 Rapportage",
       "label": "Open Project Report Export Dashboard",
       "filename": "project_report_export_dashboard.html",
       "path": "outputs\\projects\\project_report_export_dashboard.html",
       "href": "project_report_export_dashboard.html",
       "description": "Dashboard met controle van DOCX/PDF-export.",
       "type": "HTML dashboard",
+      "required": true,
       "exists": true,
-      "size_bytes": 2837
+      "size_bytes": 2840,
+      "modified_at": "2026-06-27T15:42:10"
     },
     {
+      "category": "03 Rapportage",
+      "label": "Open Projectrapport Package JSON",
+      "filename": "project_report_bib_package.json",
+      "path": "outputs\\projects\\project_report_bib_package.json",
+      "href": "project_report_bib_package.json",
+      "description": "JSON-bronpakket van het projectrapport.",
+      "type": "JSON pakket",
+      "required": true,
+      "exists": true,
+      "size_bytes": 654602,
+      "modified_at": "2026-06-27T15:42:10"
+    },
+    {
+      "category": "04 Analyse",
       "label": "Open Geo/Foundation Analyse",
       "filename": "geo_foundation_bib_analysis.html",
       "path": "outputs\\projects\\geo_foundation_bib_analysis.html",
       "href": "geo_foundation_bib_analysis.html",
-      "description": "Geo- en funderingsanalyse met F1/F2 vergelijking.",
+      "description": "Geo- en funderingsanalyse met funderingsvarianten en uitgangspunten.",
       "type": "HTML analyse",
+      "required": false,
       "exists": true,
-      "size_bytes": 5308
+      "size_bytes": 5308,
+      "modified_at": "2026-06-27T15:42:10"
     },
     {
+      "category": "04 Analyse",
+      "label": "Open Geo/Foundation Analyse JSON",
+      "filename": "geo_foundation_bib_analysis.json",
+      "path": "outputs\\projects\\geo_foundation_bib_analysis.json",
+      "href": "geo_foundation_bib_analysis.json",
+      "description": "JSON-bronbestand van de geo- en funderingsanalyse.",
+      "type": "JSON analyse",
+      "required": true,
+      "exists": true,
+      "size_bytes": 310221,
+      "modified_at": "2026-06-27T15:42:10"
+    },
+    {
+      "category": "05 AAIE en BIB",
       "label": "Open AAIE-aannames",
       "filename": "aaie_bib_assumptions.html",
       "path": "outputs\\projects\\aaie_bib_assumptions.html",
       "href": "aaie_bib_assumptions.html",
       "description": "AAIE-aannames die automatisch uit de BIB-context komen.",
       "type": "HTML aannames",
+      "required": false,
       "exists": true,
-      "size_bytes": 7993
+      "size_bytes": 7471,
+      "modified_at": "2026-06-27T15:42:10"
     },
     {
+      "category": "05 AAIE en BIB",
+      "label": "Open AAIE-aannames JSON",
+      "filename": "aaie_bib_assumptions.json",
+      "path": "outputs\\projects\\aaie_bib_assumptions.json",
+      "href": "aaie_bib_assumptions.json",
+      "description": "JSON-bronbestand met AAIE-aannames.",
+      "type": "JSON aannames",
+      "required": true,
+      "exists": true,
+      "size_bytes": 145468,
+      "modified_at": "2026-06-27T15:42:10"
+    },
+    {
+      "category": "05 AAIE en BIB",
       "label": "Open BIB Project Analyzer Context",
       "filename": "project_analyzer_bib_context.html",
       "path": "outputs\\projects\\project_analyzer_bib_context.html",
       "href": "project_analyzer_bib_context.html",
       "description": "BIB-context die de Project Analyzer als basis gebruikt.",
       "type": "HTML context",
+      "required": false,
       "exists": true,
-      "size_bytes": 5381
+      "size_bytes": 5381,
+      "modified_at": "2026-06-27T15:42:10"
     },
     {
-      "label": "Open Projectrapport pakket JSON",
-      "filename": "project_report_bib_package.json",
-      "path": "outputs\\projects\\project_report_bib_package.json",
-      "href": "project_report_bib_package.json",
-      "description": "JSON-bronpakket van het projectrapport.",
-      "type": "JSON pakket",
+      "category": "05 AAIE en BIB",
+      "label": "Open BIB Project Analyzer Context JSON",
+      "filename": "project_analyzer_bib_context.json",
+      "path": "outputs\\projects\\project_analyzer_bib_context.json",
+      "href": "project_analyzer_bib_context.json",
+      "description": "JSON-bronbestand van de BIB-context.",
+      "type": "JSON context",
+      "required": true,
       "exists": true,
-      "size_bytes": 9261
+      "size_bytes": 116146,
+      "modified_at": "2026-06-27T15:42:10"
     }
   ],
+  "summary": {
+    "total_outputs": 16,
+    "required_outputs": 13,
+    "existing_outputs": 16,
+    "missing_required_outputs": 0,
+    "status": "GEREED"
+  },
   "warnings": [
     "Geen kritieke Project Analyzer Launcher Bridge-waarschuwingen."
   ],
   "next_steps": [
     "Open outputs/projects/index.html.",
     "Controleer de sectie PROJECT ANALYZER WORKFLOW.",
-    "Controleer of dashboard, log, DOCX en PDF openen.",
-    "Koppel deze bridge later aan de centrale Project Phoenix workflow."
+    "Controleer workflowdashboard, evidence dashboard, manifest, logs, rapporten en ZIP-pakket.",
+    "Koppel deze bridge later aan de echte Project Phoenix startknop."
   ],
   "extra_results": {}
 }
