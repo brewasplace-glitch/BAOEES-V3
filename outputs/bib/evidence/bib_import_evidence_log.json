@@ -1,0 +1,15 @@
+﻿{
+  "status": "GEREGISTREERD",
+  "engine": "Project Phoenix BIB Import Wizard",
+  "engine_version": "v5.4",
+  "generated_at": "2026-06-28T00:38:47",
+  "source_note": "Eerste lokale BIB Import Wizard run",
+  "evidence_type": "BIB intake evidence",
+  "items_count": 0,
+  "items": [],
+  "limitations": [
+    "Nieuwe ChatGPT-chats worden nog niet automatisch naar deze lokale BIB geschreven.",
+    "Kennis moet in deze fase nog handmatig in intake-mappen worden geplaatst.",
+    "Automatische verwerking van uploads en levenswerk-mappen volgt in latere versies."
+  ]
+}

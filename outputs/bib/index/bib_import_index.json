@@ -1,0 +1,23 @@
+﻿{
+  "status": "GEREED",
+  "engine": "Project Phoenix BIB Import Wizard",
+  "engine_version": "v5.4",
+  "generated_at": "2026-06-28T00:38:47",
+  "bib_root": "outputs\\bib",
+  "total_items": 0,
+  "categories": {},
+  "items": [],
+  "known_intake_routes": {
+    "chats": "outputs\\bib\\intake\\chats",
+    "uploads": "outputs\\bib\\intake\\uploads",
+    "manual": "outputs\\bib\\intake\\manual",
+    "lifework": "outputs\\bib\\intake\\lifework"
+  },
+  "future_extensions": [
+    "Automatische samenvatting per chatbestand.",
+    "Projectherkenning per kennisitem.",
+    "Koppeling met STEE-bronregistratie.",
+    "Koppeling met START PROJECTANALYSE.",
+    "Zoekindex voor BAOEES modules."
+  ]
+}

@@ -1,0 +1,30 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix BIB Import Wizard",
+  "engine_version": "v5.4",
+  "generated_at": "2026-06-28T00:38:47",
+  "purpose": "Eerste lokale BIB Import Wizard / Chat Knowledge Intake structuur.",
+  "bib_root": "outputs\\bib",
+  "intake_root": "outputs\\bib\\intake",
+  "chat_intake_root": "outputs\\bib\\intake\\chats",
+  "upload_intake_root": "outputs\\bib\\intake\\uploads",
+  "manual_intake_root": "outputs\\bib\\intake\\manual",
+  "lifework_intake_root": "outputs\\bib\\intake\\lifework",
+  "processed_root": "outputs\\bib\\processed",
+  "index_root": "outputs\\bib\\index",
+  "evidence_root": "outputs\\bib\\evidence",
+  "logs_root": "outputs\\bib\\logs",
+  "imported_items_count": 0,
+  "index_path": "outputs\\bib\\index\\bib_import_index.json",
+  "evidence_path": "outputs\\bib\\evidence\\bib_import_evidence_log.json",
+  "dashboard_path": "outputs\\bib\\bib_import_dashboard.html",
+  "run_log_path": "outputs\\bib\\logs\\bib_import_wizard_log.json",
+  "next_steps": [
+    "Nieuwe chatkennis handmatig opslaan in outputs/bib/intake/chats.",
+    "Handmatige kennis opslaan in outputs/bib/intake/manual.",
+    "Uploads registreren in outputs/bib/intake/uploads.",
+    "Levenswerk-bestanden voorbereiden in outputs/bib/intake/lifework.",
+    "Daarna BIB Import Wizard opnieuw draaien.",
+    "Later koppelen aan START PROJECTANALYSE."
+  ]
+}
