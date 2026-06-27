@@ -16,10 +16,11 @@ if str(PROJECT_ROOT) not in sys.path:
 class ProjectAnalyzerLauncherBridge:
     """
     PROJECT PHOENIX / BAOEES
-    Project Analyzer Launcher Bridge v4.9
+    Project Analyzer Launcher Bridge v5.1
 
     Doel:
     - Koppelt START PROJECTANALYSE zichtbaar aan outputs/projects/index.html.
+    - Toont duidelijke instructies voor START_PROJECTANALYSE.bat.
     - Toont startdashboard, startlog, workflowdashboard, evidence dashboard, manifest, logs, rapporten en ZIP-pakket.
     - Voegt een veilige HTML-sectie toe met vaste markers.
     - Maakt een JSON-logbestand.
@@ -27,12 +28,15 @@ class ProjectAnalyzerLauncherBridge:
     """
 
     ENGINE_NAME = "Project Phoenix Project Analyzer Launcher Bridge"
-    ENGINE_VERSION = "v4.9"
+    ENGINE_VERSION = "v5.1"
 
     START_MARKER = "<!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_START -->"
     END_MARKER = "<!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_END -->"
 
     START_COMMAND = "python -m baoees.project_analyzer.project_start_analysis_engine"
+    BAT_COMMAND = ".\\START_PROJECTANALYSE.bat"
+    BAT_FILE = "START_PROJECTANALYSE.bat"
+    PS1_FILE = "START_PROJECTANALYSE.ps1"
 
     def __init__(
         self,
@@ -85,19 +89,23 @@ class ProjectAnalyzerLauncherBridge:
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
             "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "START PROJECTANALYSE zichtbaar koppelen aan de Project Phoenix Launcher.",
+            "purpose": "START PROJECTANALYSE en START_PROJECTANALYSE.bat zichtbaar koppelen aan de Project Phoenix Launcher.",
             "launcher_path": str(self.launcher_path),
             "project_output_root": str(self.project_output_root),
             "bridge_log_path": str(bridge_log_path),
             "start_command": self.START_COMMAND,
+            "bat_command": self.BAT_COMMAND,
+            "bat_file": str(PROJECT_ROOT / self.BAT_FILE),
+            "ps1_file": str(PROJECT_ROOT / self.PS1_FILE),
             "outputs": outputs,
             "summary": self.build_summary(outputs),
             "warnings": self.build_warnings(outputs),
             "next_steps": [
                 "Open outputs/projects/index.html.",
                 "Controleer de duidelijke START PROJECTANALYSE-sectie.",
+                "Controleer de instructie: dubbelklik START_PROJECTANALYSE.bat.",
                 "Controleer Start Dashboard, Start Log, Workflow Dashboard, Evidence Dashboard en Project ZIP.",
-                "Gebruik het startcommando later als basis voor de echte Project Phoenix startknop.",
+                "Gebruik START_PROJECTANALYSE.bat als lokale Windows-startknop.",
             ],
             "extra_results": extra_results,
         }
@@ -108,9 +116,31 @@ class ProjectAnalyzerLauncherBridge:
     def collect_project_analyzer_outputs(self) -> List[Dict[str, Any]]:
         files = [
             {
+                "category": "00 Lokale startbestanden",
+                "label": "START_PROJECTANALYSE.bat",
+                "filename": "START_PROJECTANALYSE.bat",
+                "path": PROJECT_ROOT / "START_PROJECTANALYSE.bat",
+                "href": "../../START_PROJECTANALYSE.bat",
+                "description": "Dubbelklikbaar Windows-startbestand voor START PROJECTANALYSE.",
+                "type": "Windows BAT startbestand",
+                "required": True,
+            },
+            {
+                "category": "00 Lokale startbestanden",
+                "label": "START_PROJECTANALYSE.ps1",
+                "filename": "START_PROJECTANALYSE.ps1",
+                "path": PROJECT_ROOT / "START_PROJECTANALYSE.ps1",
+                "href": "../../START_PROJECTANALYSE.ps1",
+                "description": "PowerShell-startscript dat de Python-engine uitvoert en dashboards opent.",
+                "type": "PowerShell startscript",
+                "required": True,
+            },
+            {
                 "category": "00 START PROJECTANALYSE",
                 "label": "Open Start Projectanalyse Dashboard",
                 "filename": "project_start_analysis_dashboard.html",
+                "path": self.project_output_root / "project_start_analysis_dashboard.html",
+                "href": "project_start_analysis_dashboard.html",
                 "description": "Hoofddashboard van de centrale START PROJECTANALYSE-run.",
                 "type": "HTML startdashboard",
                 "required": True,
@@ -119,14 +149,28 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "00 START PROJECTANALYSE",
                 "label": "Open Start Projectanalyse Log",
                 "filename": "project_start_analysis_log.json",
+                "path": self.project_output_root / "project_start_analysis_log.json",
+                "href": "project_start_analysis_log.json",
                 "description": "JSON-log van de centrale START PROJECTANALYSE-run.",
                 "type": "JSON startlog",
                 "required": True,
             },
             {
+                "category": "00 START PROJECTANALYSE",
+                "label": "Open lokale run-log",
+                "filename": "START_PROJECTANALYSE_LOCAL_RUN_LOG.txt",
+                "path": self.project_output_root / "START_PROJECTANALYSE_LOCAL_RUN_LOG.txt",
+                "href": "START_PROJECTANALYSE_LOCAL_RUN_LOG.txt",
+                "description": "Lokale BAT/PowerShell-runlog van START PROJECTANALYSE.",
+                "type": "TXT run-log",
+                "required": False,
+            },
+            {
                 "category": "01 Centrale workflow",
                 "label": "Open Project Analyzer Workflow Dashboard",
                 "filename": "project_analyzer_workflow_dashboard.html",
+                "path": self.project_output_root / "project_analyzer_workflow_dashboard.html",
+                "href": "project_analyzer_workflow_dashboard.html",
                 "description": "Hoofddashboard van de volledige centrale Project Analyzer Workflow.",
                 "type": "HTML dashboard",
                 "required": True,
@@ -135,6 +179,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "01 Centrale workflow",
                 "label": "Open Project Analyzer Workflow Log",
                 "filename": "project_analyzer_workflow_log.json",
+                "path": self.project_output_root / "project_analyzer_workflow_log.json",
+                "href": "project_analyzer_workflow_log.json",
                 "description": "JSON-log van de volledige centrale workflow.",
                 "type": "JSON log",
                 "required": True,
@@ -143,6 +189,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "02 Project Package Evidence",
                 "label": "Open Project Package Evidence Dashboard",
                 "filename": "project_package_evidence_dashboard.html",
+                "path": self.project_output_root / "project_package_evidence_dashboard.html",
+                "href": "project_package_evidence_dashboard.html",
                 "description": "Dashboard van het Project ZIP / Evidence pakket.",
                 "type": "HTML dashboard",
                 "required": True,
@@ -151,6 +199,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "02 Project Package Evidence",
                 "label": "Open Project Package Manifest",
                 "filename": "project_package_manifest.json",
+                "path": self.project_output_root / "project_package_manifest.json",
+                "href": "project_package_manifest.json",
                 "description": "Manifest met bestandscontrole, categorieën, hashes en ontbrekende bestanden.",
                 "type": "JSON manifest",
                 "required": True,
@@ -159,6 +209,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "02 Project Package Evidence",
                 "label": "Open Project Package Evidence Log",
                 "filename": "project_package_evidence_log.json",
+                "path": self.project_output_root / "project_package_evidence_log.json",
+                "href": "project_package_evidence_log.json",
                 "description": "Evidence log van het gegenereerde projectpakket.",
                 "type": "JSON evidence log",
                 "required": True,
@@ -167,6 +219,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "02 Project Package Evidence",
                 "label": "Download Project ZIP pakket",
                 "filename": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+                "path": self.project_output_root / "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+                "href": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
                 "description": "Officieel Project Phoenix projectpakket met rapporten, logs, dashboards en evidencebestanden.",
                 "type": "ZIP pakket",
                 "required": True,
@@ -175,6 +229,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "03 Rapportage",
                 "label": "Open Projectrapport DOCX",
                 "filename": "project_report_bib_report.docx",
+                "path": self.project_output_root / "project_report_bib_report.docx",
+                "href": "project_report_bib_report.docx",
                 "description": "Word-export van het automatisch gegenereerde projectrapport.",
                 "type": "DOCX rapport",
                 "required": True,
@@ -183,6 +239,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "03 Rapportage",
                 "label": "Open Projectrapport PDF",
                 "filename": "project_report_bib_report.pdf",
+                "path": self.project_output_root / "project_report_bib_report.pdf",
+                "href": "project_report_bib_report.pdf",
                 "description": "PDF-export van het automatisch gegenereerde projectrapport.",
                 "type": "PDF rapport",
                 "required": True,
@@ -191,6 +249,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "03 Rapportage",
                 "label": "Open Project Report Export Dashboard",
                 "filename": "project_report_export_dashboard.html",
+                "path": self.project_output_root / "project_report_export_dashboard.html",
+                "href": "project_report_export_dashboard.html",
                 "description": "Dashboard met controle van DOCX/PDF-export.",
                 "type": "HTML dashboard",
                 "required": True,
@@ -199,6 +259,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "03 Rapportage",
                 "label": "Open Projectrapport Package JSON",
                 "filename": "project_report_bib_package.json",
+                "path": self.project_output_root / "project_report_bib_package.json",
+                "href": "project_report_bib_package.json",
                 "description": "JSON-bronpakket van het projectrapport.",
                 "type": "JSON pakket",
                 "required": True,
@@ -207,6 +269,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "04 Analyse",
                 "label": "Open Geo/Foundation Analyse",
                 "filename": "geo_foundation_bib_analysis.html",
+                "path": self.project_output_root / "geo_foundation_bib_analysis.html",
+                "href": "geo_foundation_bib_analysis.html",
                 "description": "Geo- en funderingsanalyse met funderingsvarianten en uitgangspunten.",
                 "type": "HTML analyse",
                 "required": False,
@@ -215,6 +279,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "04 Analyse",
                 "label": "Open Geo/Foundation Analyse JSON",
                 "filename": "geo_foundation_bib_analysis.json",
+                "path": self.project_output_root / "geo_foundation_bib_analysis.json",
+                "href": "geo_foundation_bib_analysis.json",
                 "description": "JSON-bronbestand van de geo- en funderingsanalyse.",
                 "type": "JSON analyse",
                 "required": True,
@@ -223,6 +289,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "05 AAIE en BIB",
                 "label": "Open AAIE-aannames",
                 "filename": "aaie_bib_assumptions.html",
+                "path": self.project_output_root / "aaie_bib_assumptions.html",
+                "href": "aaie_bib_assumptions.html",
                 "description": "AAIE-aannames die automatisch uit de BIB-context komen.",
                 "type": "HTML aannames",
                 "required": False,
@@ -231,6 +299,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "05 AAIE en BIB",
                 "label": "Open AAIE-aannames JSON",
                 "filename": "aaie_bib_assumptions.json",
+                "path": self.project_output_root / "aaie_bib_assumptions.json",
+                "href": "aaie_bib_assumptions.json",
                 "description": "JSON-bronbestand met AAIE-aannames.",
                 "type": "JSON aannames",
                 "required": True,
@@ -239,6 +309,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "05 AAIE en BIB",
                 "label": "Open BIB Project Analyzer Context",
                 "filename": "project_analyzer_bib_context.html",
+                "path": self.project_output_root / "project_analyzer_bib_context.html",
+                "href": "project_analyzer_bib_context.html",
                 "description": "BIB-context die de Project Analyzer als basis gebruikt.",
                 "type": "HTML context",
                 "required": False,
@@ -247,6 +319,8 @@ class ProjectAnalyzerLauncherBridge:
                 "category": "05 AAIE en BIB",
                 "label": "Open BIB Project Analyzer Context JSON",
                 "filename": "project_analyzer_bib_context.json",
+                "path": self.project_output_root / "project_analyzer_bib_context.json",
+                "href": "project_analyzer_bib_context.json",
                 "description": "JSON-bronbestand van de BIB-context.",
                 "type": "JSON context",
                 "required": True,
@@ -256,7 +330,7 @@ class ProjectAnalyzerLauncherBridge:
         result = []
 
         for item in files:
-            path = self.project_output_root / item["filename"]
+            path = Path(item["path"])
             exists = path.exists() and path.is_file()
 
             result.append(
@@ -265,7 +339,8 @@ class ProjectAnalyzerLauncherBridge:
                     "label": item["label"],
                     "filename": item["filename"],
                     "path": str(path),
-                    "href": item["filename"],
+                    "relative_path": self.safe_relative(path),
+                    "href": item["href"],
                     "description": item["description"],
                     "type": item["type"],
                     "required": item["required"],
@@ -326,6 +401,7 @@ class ProjectAnalyzerLauncherBridge:
                   <p class="muted">{self.esc(item.get("description", ""))}</p>
                   <p class="muted"><strong>Type:</strong> {self.esc(item.get("type", ""))}</p>
                   <p class="muted"><strong>Bestand:</strong> <code>{self.esc(item.get("filename", ""))}</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>{self.esc(item.get("relative_path", ""))}</code></p>
                   <p class="muted"><strong>Bytes:</strong> {self.esc(item.get("size_bytes", 0))}</p>
                 </div>
                 """
@@ -351,17 +427,32 @@ class ProjectAnalyzerLauncherBridge:
 
   <div class="grid">
     <div class="card" style="border: 2px solid #38bdf8;">
-      <h3>START PROJECTANALYSE</h3>
+      <h3>1. Normaal gebruik</h3>
       <p>
-        <a href="project_start_analysis_dashboard.html"
-           style="display:inline-block;padding:12px 18px;border-radius:10px;background:#2563eb;color:#ffffff;text-decoration:none;font-weight:bold;">
-          OPEN START DASHBOARD
-        </a>
+        Dubbelklik in Windows Verkenner op:
       </p>
+      <p><code>{self.esc(self.BAT_FILE)}</code></p>
       <p class="muted">
-        Statisch HTML kan Python niet rechtstreeks starten. Gebruik voorlopig dit commando in GitKraken Terminal:
+        Dit start automatisch de volledige projectanalyse en opent daarna het Start Dashboard en de Launcher.
       </p>
+    </div>
+
+    <div class="card" style="border: 2px solid #22c55e;">
+      <h3>2. Via GitKraken Terminal</h3>
+      <p>Voer uit:</p>
+      <p><code>{self.esc(self.BAT_COMMAND)}</code></p>
+      <p class="muted">
+        Dit is dezelfde lokale startlaag als dubbelklikken op het BAT-bestand.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>3. Python direct</h3>
+      <p>Hoofdcommando:</p>
       <p><code>{self.esc(self.START_COMMAND)}</code></p>
+      <p class="muted">
+        Gebruik dit vooral voor technische controle of debugging.
+      </p>
     </div>
 
     <div class="card">
@@ -375,11 +466,27 @@ class ProjectAnalyzerLauncherBridge:
       <h3>Belangrijkste outputs</h3>
       <p><a href="project_start_analysis_dashboard.html">Start Projectanalyse Dashboard</a></p>
       <p><a href="project_start_analysis_log.json">Start Projectanalyse Log</a></p>
+      <p><a href="START_PROJECTANALYSE_LOCAL_RUN_LOG.txt">Lokale run-log</a></p>
       <p><a href="project_analyzer_workflow_dashboard.html">Project Analyzer Workflow Dashboard</a></p>
       <p><a href="project_package_evidence_dashboard.html">Project Package Evidence Dashboard</a></p>
       <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>
     </div>
   </div>
+
+  <section style="margin-top:24px;">
+    <h3>Gebruik in de praktijk</h3>
+    <div class="card">
+      <p><strong>Stap 1:</strong> Open de projectmap <code>{self.esc(PROJECT_ROOT)}</code>.</p>
+      <p><strong>Stap 2:</strong> Dubbelklik op <code>{self.esc(self.BAT_FILE)}</code>.</p>
+      <p><strong>Stap 3:</strong> Wacht tot de run klaar is.</p>
+      <p><strong>Stap 4:</strong> Het Start Dashboard en de Launcher openen automatisch.</p>
+      <p><strong>Stap 5:</strong> Controleer rapporten, evidence dashboard, manifest en Project ZIP.</p>
+      <p class="muted">
+        Let op: een gewone HTML-pagina kan om veiligheidsredenen niet zelfstandig Python starten.
+        Daarom is het BAT-bestand de lokale Windows-startknop.
+      </p>
+    </div>
+  </section>
 
   {category_sections}
 </section>
@@ -428,11 +535,17 @@ class ProjectAnalyzerLauncherBridge:
 
         return warnings
 
+    def safe_relative(self, path: Path) -> str:
+        try:
+            return path.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
+        except Exception:
+            return path.as_posix()
+
     def write_json(self, path: Path, data: Dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2, default=str),
-            encoding="utf-8",
+            encoding="utf-8-sig",
         )
 
     def esc(self, value: Any) -> str:
@@ -442,7 +555,7 @@ class ProjectAnalyzerLauncherBridge:
 def main() -> None:
     bridge = ProjectAnalyzerLauncherBridge()
     result = bridge.run()
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
 
 
 if __name__ == "__main__":

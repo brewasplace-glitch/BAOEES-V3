@@ -280,6 +280,7 @@
 
 
 
+
 <!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_START -->
 <section style="margin-top:34px;">
   <h2>START PROJECTANALYSE</h2>
@@ -291,23 +292,38 @@
 
   <div class="grid">
     <div class="card" style="border: 2px solid #38bdf8;">
-      <h3>START PROJECTANALYSE</h3>
+      <h3>1. Normaal gebruik</h3>
       <p>
-        <a href="project_start_analysis_dashboard.html"
-           style="display:inline-block;padding:12px 18px;border-radius:10px;background:#2563eb;color:#ffffff;text-decoration:none;font-weight:bold;">
-          OPEN START DASHBOARD
-        </a>
+        Dubbelklik in Windows Verkenner op:
       </p>
+      <p><code>START_PROJECTANALYSE.bat</code></p>
       <p class="muted">
-        Statisch HTML kan Python niet rechtstreeks starten. Gebruik voorlopig dit commando in GitKraken Terminal:
+        Dit start automatisch de volledige projectanalyse en opent daarna het Start Dashboard en de Launcher.
       </p>
+    </div>
+
+    <div class="card" style="border: 2px solid #22c55e;">
+      <h3>2. Via GitKraken Terminal</h3>
+      <p>Voer uit:</p>
+      <p><code>.\START_PROJECTANALYSE.bat</code></p>
+      <p class="muted">
+        Dit is dezelfde lokale startlaag als dubbelklikken op het BAT-bestand.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>3. Python direct</h3>
+      <p>Hoofdcommando:</p>
       <p><code>python -m baoees.project_analyzer.project_start_analysis_engine</code></p>
+      <p class="muted">
+        Gebruik dit vooral voor technische controle of debugging.
+      </p>
     </div>
 
     <div class="card">
       <h3>Workflow status</h3>
       <p><span class="badge ok">GEREED</span></p>
-      <p class="muted">Aanwezige outputs: 18 / 18</p>
+      <p class="muted">Aanwezige outputs: 21 / 21</p>
       <p class="muted">Ontbrekende verplichte outputs: 0</p>
     </div>
 
@@ -315,13 +331,56 @@
       <h3>Belangrijkste outputs</h3>
       <p><a href="project_start_analysis_dashboard.html">Start Projectanalyse Dashboard</a></p>
       <p><a href="project_start_analysis_log.json">Start Projectanalyse Log</a></p>
+      <p><a href="START_PROJECTANALYSE_LOCAL_RUN_LOG.txt">Lokale run-log</a></p>
       <p><a href="project_analyzer_workflow_dashboard.html">Project Analyzer Workflow Dashboard</a></p>
       <p><a href="project_package_evidence_dashboard.html">Project Package Evidence Dashboard</a></p>
       <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>
     </div>
   </div>
 
+  <section style="margin-top:24px;">
+    <h3>Gebruik in de praktijk</h3>
+    <div class="card">
+      <p><strong>Stap 1:</strong> Open de projectmap <code>C:\BREWSTER-ENGINEERING-WIZARD</code>.</p>
+      <p><strong>Stap 2:</strong> Dubbelklik op <code>START_PROJECTANALYSE.bat</code>.</p>
+      <p><strong>Stap 3:</strong> Wacht tot de run klaar is.</p>
+      <p><strong>Stap 4:</strong> Het Start Dashboard en de Launcher openen automatisch.</p>
+      <p><strong>Stap 5:</strong> Controleer rapporten, evidence dashboard, manifest en Project ZIP.</p>
+      <p class="muted">
+        Let op: een gewone HTML-pagina kan om veiligheidsredenen niet zelfstandig Python starten.
+        Daarom is het BAT-bestand de lokale Windows-startknop.
+      </p>
+    </div>
+  </section>
+
   
+            <section style="margin-top:24px;">
+              <h3>00 Lokale startbestanden</h3>
+              <div class="grid">
+                
+                <div class="card">
+                  <h3><a href="../../START_PROJECTANALYSE.bat">START_PROJECTANALYSE.bat</a></h3>
+                  <p><span class="badge ok">AANWEZIG</span></p>
+                  <p class="muted">Dubbelklikbaar Windows-startbestand voor START PROJECTANALYSE.</p>
+                  <p class="muted"><strong>Type:</strong> Windows BAT startbestand</p>
+                  <p class="muted"><strong>Bestand:</strong> <code>START_PROJECTANALYSE.bat</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>START_PROJECTANALYSE.bat</code></p>
+                  <p class="muted"><strong>Bytes:</strong> 1093</p>
+                </div>
+                
+                <div class="card">
+                  <h3><a href="../../START_PROJECTANALYSE.ps1">START_PROJECTANALYSE.ps1</a></h3>
+                  <p><span class="badge ok">AANWEZIG</span></p>
+                  <p class="muted">PowerShell-startscript dat de Python-engine uitvoert en dashboards opent.</p>
+                  <p class="muted"><strong>Type:</strong> PowerShell startscript</p>
+                  <p class="muted"><strong>Bestand:</strong> <code>START_PROJECTANALYSE.ps1</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>START_PROJECTANALYSE.ps1</code></p>
+                  <p class="muted"><strong>Bytes:</strong> 5455</p>
+                </div>
+                
+              </div>
+            </section>
+            
             <section style="margin-top:24px;">
               <h3>00 START PROJECTANALYSE</h3>
               <div class="grid">
@@ -332,6 +391,7 @@
                   <p class="muted">Hoofddashboard van de centrale START PROJECTANALYSE-run.</p>
                   <p class="muted"><strong>Type:</strong> HTML startdashboard</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_start_analysis_dashboard.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_start_analysis_dashboard.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 5191</p>
                 </div>
                 
@@ -341,7 +401,18 @@
                   <p class="muted">JSON-log van de centrale START PROJECTANALYSE-run.</p>
                   <p class="muted"><strong>Type:</strong> JSON startlog</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_start_analysis_log.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_start_analysis_log.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 13818104</p>
+                </div>
+                
+                <div class="card">
+                  <h3><a href="START_PROJECTANALYSE_LOCAL_RUN_LOG.txt">Open lokale run-log</a></h3>
+                  <p><span class="badge ok">AANWEZIG</span></p>
+                  <p class="muted">Lokale BAT/PowerShell-runlog van START PROJECTANALYSE.</p>
+                  <p class="muted"><strong>Type:</strong> TXT run-log</p>
+                  <p class="muted"><strong>Bestand:</strong> <code>START_PROJECTANALYSE_LOCAL_RUN_LOG.txt</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/START_PROJECTANALYSE_LOCAL_RUN_LOG.txt</code></p>
+                  <p class="muted"><strong>Bytes:</strong> 358</p>
                 </div>
                 
               </div>
@@ -357,6 +428,7 @@
                   <p class="muted">Hoofddashboard van de volledige centrale Project Analyzer Workflow.</p>
                   <p class="muted"><strong>Type:</strong> HTML dashboard</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_analyzer_workflow_dashboard.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_analyzer_workflow_dashboard.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 6095</p>
                 </div>
                 
@@ -366,6 +438,7 @@
                   <p class="muted">JSON-log van de volledige centrale workflow.</p>
                   <p class="muted"><strong>Type:</strong> JSON log</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_analyzer_workflow_log.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_analyzer_workflow_log.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 6112505</p>
                 </div>
                 
@@ -382,6 +455,7 @@
                   <p class="muted">Dashboard van het Project ZIP / Evidence pakket.</p>
                   <p class="muted"><strong>Type:</strong> HTML dashboard</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_package_evidence_dashboard.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_package_evidence_dashboard.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 6193</p>
                 </div>
                 
@@ -391,6 +465,7 @@
                   <p class="muted">Manifest met bestandscontrole, categorieën, hashes en ontbrekende bestanden.</p>
                   <p class="muted"><strong>Type:</strong> JSON manifest</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_package_manifest.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_package_manifest.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 9425</p>
                 </div>
                 
@@ -400,6 +475,7 @@
                   <p class="muted">Evidence log van het gegenereerde projectpakket.</p>
                   <p class="muted"><strong>Type:</strong> JSON evidence log</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_package_evidence_log.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_package_evidence_log.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 2915071</p>
                 </div>
                 
@@ -409,7 +485,8 @@
                   <p class="muted">Officieel Project Phoenix projectpakket met rapporten, logs, dashboards en evidencebestanden.</p>
                   <p class="muted"><strong>Type:</strong> ZIP pakket</p>
                   <p class="muted"><strong>Bestand:</strong> <code>PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></p>
-                  <p class="muted"><strong>Bytes:</strong> 1525947</p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></p>
+                  <p class="muted"><strong>Bytes:</strong> 1525906</p>
                 </div>
                 
               </div>
@@ -425,6 +502,7 @@
                   <p class="muted">Word-export van het automatisch gegenereerde projectrapport.</p>
                   <p class="muted"><strong>Type:</strong> DOCX rapport</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_report_bib_report.docx</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_report_bib_report.docx</code></p>
                   <p class="muted"><strong>Bytes:</strong> 3591</p>
                 </div>
                 
@@ -434,6 +512,7 @@
                   <p class="muted">PDF-export van het automatisch gegenereerde projectrapport.</p>
                   <p class="muted"><strong>Type:</strong> PDF rapport</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_report_bib_report.pdf</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_report_bib_report.pdf</code></p>
                   <p class="muted"><strong>Bytes:</strong> 9200</p>
                 </div>
                 
@@ -443,6 +522,7 @@
                   <p class="muted">Dashboard met controle van DOCX/PDF-export.</p>
                   <p class="muted"><strong>Type:</strong> HTML dashboard</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_report_export_dashboard.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_report_export_dashboard.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 2840</p>
                 </div>
                 
@@ -452,6 +532,7 @@
                   <p class="muted">JSON-bronpakket van het projectrapport.</p>
                   <p class="muted"><strong>Type:</strong> JSON pakket</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_report_bib_package.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_report_bib_package.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 654602</p>
                 </div>
                 
@@ -468,6 +549,7 @@
                   <p class="muted">Geo- en funderingsanalyse met funderingsvarianten en uitgangspunten.</p>
                   <p class="muted"><strong>Type:</strong> HTML analyse</p>
                   <p class="muted"><strong>Bestand:</strong> <code>geo_foundation_bib_analysis.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/geo_foundation_bib_analysis.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 5308</p>
                 </div>
                 
@@ -477,6 +559,7 @@
                   <p class="muted">JSON-bronbestand van de geo- en funderingsanalyse.</p>
                   <p class="muted"><strong>Type:</strong> JSON analyse</p>
                   <p class="muted"><strong>Bestand:</strong> <code>geo_foundation_bib_analysis.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/geo_foundation_bib_analysis.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 310221</p>
                 </div>
                 
@@ -493,6 +576,7 @@
                   <p class="muted">AAIE-aannames die automatisch uit de BIB-context komen.</p>
                   <p class="muted"><strong>Type:</strong> HTML aannames</p>
                   <p class="muted"><strong>Bestand:</strong> <code>aaie_bib_assumptions.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/aaie_bib_assumptions.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 7471</p>
                 </div>
                 
@@ -502,6 +586,7 @@
                   <p class="muted">JSON-bronbestand met AAIE-aannames.</p>
                   <p class="muted"><strong>Type:</strong> JSON aannames</p>
                   <p class="muted"><strong>Bestand:</strong> <code>aaie_bib_assumptions.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/aaie_bib_assumptions.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 145468</p>
                 </div>
                 
@@ -511,6 +596,7 @@
                   <p class="muted">BIB-context die de Project Analyzer als basis gebruikt.</p>
                   <p class="muted"><strong>Type:</strong> HTML context</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_analyzer_bib_context.html</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_analyzer_bib_context.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 5381</p>
                 </div>
                 
@@ -520,6 +606,7 @@
                   <p class="muted">JSON-bronbestand van de BIB-context.</p>
                   <p class="muted"><strong>Type:</strong> JSON context</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_analyzer_bib_context.json</code></p>
+                  <p class="muted"><strong>Pad:</strong> <code>outputs/projects/project_analyzer_bib_context.json</code></p>
                   <p class="muted"><strong>Bytes:</strong> 116146</p>
                 </div>
                 
@@ -528,6 +615,7 @@
             
 </section>
 <!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_END -->
+
 
 
 
