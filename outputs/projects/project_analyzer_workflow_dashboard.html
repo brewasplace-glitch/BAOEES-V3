@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Project Analyzer Workflow Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050816;
+      color: #f8fafc;
+      line-height: 1.5;
+    }
+    header {
+      padding: 34px 42px;
+      background: #0f172a;
+      border-bottom: 1px solid #334155;
+    }
+    main {
+      padding: 30px 38px 50px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111827;
+      border: 1px solid #334155;
+      margin-top: 18px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #334155;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #0f172a;
+      color: #bfdbfe;
+    }
+    .muted {
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PROJECT ANALYZER WORKFLOW DASHBOARD</h1>
+    <p>Project Phoenix / BAOEES hoofdworkflow v4.3.</p>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card">
+        <h3>Status</h3>
+        <p>OPGESLAGEN</p>
+      </div>
+      <div class="card">
+        <h3>Engine</h3>
+        <p>Project Phoenix Project Analyzer Workflow</p>
+      </div>
+      <div class="card">
+        <h3>Versie</h3>
+        <p>v4.3</p>
+      </div>
+      <div class="card">
+        <h3>Project output</h3>
+        <p class="muted">outputs\projects</p>
+      </div>
+    </section>
+
+    <h2>Workflow stappen</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Stap</th>
+          <th>Naam</th>
+          <th>Engine</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>BIB-context laden</td><td>Project Phoenix Project Analyzer BIB Context Loader</td><td>GEREED</td></tr><tr><td>2</td><td>AAIE-aannames laden</td><td>Project Phoenix AAIE BIB Assumption Loader</td><td>OPGESLAGEN</td></tr><tr><td>3</td><td>Geo/Fundering analyse</td><td>Project Phoenix Geo/Foundation BIB Engine</td><td>OPGESLAGEN</td></tr><tr><td>4</td><td>Projectrapport opbouwen</td><td>Project Phoenix Project Report BIB Engine</td><td>OPGESLAGEN</td></tr><tr><td>5</td><td>Projectrapport exporteren</td><td>Project Phoenix Project Report Export Engine</td><td>OPGESLAGEN</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Outputs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Naam</th>
+          <th>Pad</th>
+          <th>Bestaat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>workflow_log_path</td><td>outputs\projects\project_analyzer_workflow_log.json</td><td>True</td></tr><tr><td>workflow_dashboard_path</td><td>outputs\projects\project_analyzer_workflow_dashboard.html</td><td>False</td></tr><tr><td>bib_context</td><td>outputs\projects\project_analyzer_bib_context.json</td><td>True</td></tr><tr><td>aaie_assumptions</td><td>outputs\projects\aaie_bib_assumptions.json</td><td>True</td></tr><tr><td>geo_foundation_analysis</td><td>outputs\projects\geo_foundation_bib_analysis.json</td><td>True</td></tr><tr><td>project_report_package</td><td>outputs\projects\project_report_bib_package.json</td><td>True</td></tr><tr><td>project_report_docx</td><td>outputs\projects\project_report_bib_report.docx</td><td>True</td></tr><tr><td>project_report_pdf</td><td>outputs\projects\project_report_bib_report.pdf</td><td>True</td></tr><tr><td>project_report_export_dashboard</td><td>outputs\projects\project_report_export_dashboard.html</td><td>True</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Waarschuwingen</h2>
+    <ul>
+      <li>Geen kritieke Project Analyzer Workflow-waarschuwingen.</li>
+    </ul>
+  </main>
+</body>
+</html>
