@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Project Phoenix Projectrapport BIB</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050816;
+      color: #f8fafc;
+      line-height: 1.5;
+    }
+    header {
+      padding: 34px 42px;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      border-bottom: 1px solid #334155;
+    }
+    main {
+      padding: 30px 38px 50px;
+      display: grid;
+      gap: 18px;
+    }
+    .card {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 20px;
+    }
+    h2 {
+      color: #bfdbfe;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .muted {
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PROJECT PHOENIX / BAOEES PROJECTRAPPORT</h1>
+    <p>Automatisch rapport-startpakket vanuit BIB, AAIE en Geo/Foundation.</p>
+  </header>
+  <main>
+    
+                <section class="card">
+                  <h2>1. Managementsamenvatting</h2>
+                  <ul>
+                    <li>Dit rapport is automatisch voorbereid vanuit Project Phoenix / BAOEES.</li><li>De rapportage gebruikt BIB-kennis, AAIE-aannames en de Geo/Foundation BIB Engine.</li><li>De fundering wordt voorlopig beoordeeld met minimaal F1 strokenfundering en F2 paalfundering.</li><li>Definitieve engineering vereist projectlasten, bodemonderzoek, berekening en QA/QC.</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>2. Projectgegevens</h2>
+                  <ul>
+                    <li>project_name: Default Project Phoenix Report</li><li>project_type: bouw</li><li>purpose: Automatisch projectrapport-startpakket vanuit BIB.</li><li>location: nog niet opgegeven</li><li>phase: concept</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>3. BIB, AAIE en STEE uitgangspunten</h2>
+                  <ul>
+                    <li>Digital Twin First: alle projectoutputs moeten uit dezelfde centrale projectdata komen.</li><li>AAIE: ontbrekende gegevens worden automatisch aangevuld en geregistreerd als aanname.</li><li>STEE: bronnen, fallbacks en aannames moeten herleidbaar worden vastgelegd.</li><li>QA/QC: geen volledige projectexport zonder controle.</li><li>Groundwater fallback: P = -0,50 m als projectgegevens ontbreken.</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>4. Geo-profiel startwaarden</h2>
+                  <ul>
+                    <li>Status: GEREED</li><li>Grondwaterstand: P = -0,50 m</li><li>Bron grondwaterstand: AAIE-BIB fallback</li><li>Fallback grondwaterstand: P = -0,50 m</li><li>Automatische grondwaterdetectie: True</li><li>Automatisch geo-profiel: True</li><li>maaiveldniveau: P = 0,00 m — bron: project_context of AAIE fallback</li><li>grondwaterstand: P = -0,50 m — bron: AAIE-BIB fallback</li><li>globale bodemopbouw: automatisch genereren op basis van locatie/kaart/bodemdata of handmatige invoer — bron: AAIE + STEE</li><li>grondsoort per laag: voorlopig onbekend totdat bodemdata/sondering beschikbaar zijn — bron: AAIE assumption</li><li>draagkrachtindicatie: voorlopige indicatie; definitief na grondonderzoek — bron: engineering rule</li><li>zettingsgevoeligheid: voorlopige risico-inschatting — bron: engineering rule</li><li>advies vervolgonderzoek: sondering/grondonderzoek vereist voor definitief funderingsadvies — bron: QA/QC rule</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>5. Funderingsvarianten</h2>
+                  <ul>
+                    <li>F1 — Strokenfundering</li><li>Type: fundering_op_staal</li><li>Omschrijving: Fundering op staal met stroken onder dragende wanden en kolommen.</li><li>Standaard dimensies: {&quot;strookbreedte&quot;: &quot;150 cm tot 200 cm&quot;, &quot;strookhoogte&quot;: &quot;40 cm&quot;, &quot;funderingsbalk&quot;: &quot;50 cm x 60 cm&quot;, &quot;ligging_balk&quot;: &quot;hart van strook&quot;}</li><li>Checks: draagkracht, zetting, grondwaterinvloed, uitvoerbaarheid, kosten, bouwrisico</li><li></li><li>F2 — Paalfundering</li><li>Type: diepe_fundering</li><li>Omschrijving: Diepe fundering op palen bij slappe bodem, onvoldoende draagkracht of verhoogd zettingsrisico.</li><li>Checks: paallengte, paaltype, draagkracht per paal, paalbelasting, paalafstand, kosten, uitvoerbaarheid</li><li></li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>6. Funderingsvergelijking</h2>
+                  <ul>
+                    <li>F2 — Paalfundering: totaalscore 36</li><li>- draagkracht: 5/5 — Voorlopige BIB/AAIE-score.</li><li>- zetting: 5/5 — Voorlopige BIB/AAIE-score.</li><li>- kosten: 2/5 — Voorlopige BIB/AAIE-score.</li><li>- bouwtijd: 3/5 — Voorlopige BIB/AAIE-score.</li><li>- risico: 4/5 — Voorlopige BIB/AAIE-score.</li><li>- bodemgeschiktheid: 4/5 — Voorlopige BIB/AAIE-score.</li><li>- grondwaterinvloed: 4/5 — Voorlopige BIB/AAIE-score.</li><li>- constructieve haalbaarheid: 5/5 — Voorlopige BIB/AAIE-score.</li><li>- vergunning / acceptatie: 4/5 — Voorlopige BIB/AAIE-score.</li><li>Opmerking: Paalfundering is robuuster bij slappe bodem en zettingsrisico.</li><li>Opmerking: Duurder en vraagt meer geotechnisch detailonderzoek.</li><li>Opmerking: Grondwaterstand voorlopig: P = -0,50 m.</li><li>Opmerking: Paaltype en paallengte pas definitief na sondering/grondonderzoek.</li><li></li><li>F1 — Strokenfundering: totaalscore 33</li><li>- draagkracht: 3/5 — Voorlopige BIB/AAIE-score.</li><li>- zetting: 3/5 — Voorlopige BIB/AAIE-score.</li><li>- kosten: 5/5 — Voorlopige BIB/AAIE-score.</li><li>- bouwtijd: 5/5 — Voorlopige BIB/AAIE-score.</li><li>- risico: 3/5 — Voorlopige BIB/AAIE-score.</li><li>- bodemgeschiktheid: 3/5 — Voorlopige BIB/AAIE-score.</li><li>- grondwaterinvloed: 3/5 — Voorlopige BIB/AAIE-score.</li><li>- constructieve haalbaarheid: 4/5 — Voorlopige BIB/AAIE-score.</li><li>- vergunning / acceptatie: 4/5 — Voorlopige BIB/AAIE-score.</li><li>Opmerking: Strokenfundering is standaard goedkoop en snel uitvoerbaar.</li><li>Opmerking: Definitieve keuze afhankelijk van draagkracht en zettingsberekening.</li><li>Opmerking: Grondwaterstand voorlopig: P = -0,50 m.</li><li>Opmerking: Bij slappe bodem of hoge zettingsgevoeligheid F2 serieus onderzoeken.</li><li></li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>7. Voorlopige funderingsaanbeveling</h2>
+                  <ul>
+                    <li>Status: VOORLOPIG</li><li>Voorlopige voorkeursvariant: F2 — Paalfundering</li><li>Totaalscore: 36</li><li>Dit is een automatische voorlopige BIB/AAIE-beoordeling. Definitieve funderingskeuze vereist projectlasten, bodemonderzoek en constructieve berekening.</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>8. AAIE-aannames gekoppeld aan rapport</h2>
+                  <ul>
+                    <li>AAIE-BIB-005 — Automatische grondwaterdetectie — discipline: geotechniek</li><li>AAIE-BIB-006 — Fallback grondwaterstand — discipline: geotechniek</li><li>AAIE-BIB-007 — Status fallback grondwaterstand — discipline: geotechniek</li><li>AAIE-BIB-008 — Automatisch geo-profiel — discipline: geotechniek</li><li>AAIE-BIB-009 — Funderingsvarianten verplicht — discipline: fundering</li><li>AAIE-BIB-F01 — Funderingsvariant F1 - Strokenfundering — discipline: fundering</li><li>AAIE-BIB-F02 — Funderingsvariant F2 - Paalfundering — discipline: fundering</li><li>AAIE-BIB-010 — Standaard projectoutputs — discipline: output</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>9. Benodigd voor definitieve rapportage</h2>
+                  <ul>
+                    <li>projectlocatie bevestigen</li><li>maaiveldpeil bepalen</li><li>grondwaterstand verifiëren</li><li>bodemopbouw/sondering invoeren</li><li>belastingen bepalen</li><li>zettingscontrole uitvoeren</li><li>draagkrachtcontrole uitvoeren</li><li>QA/QC uitvoeren</li>
+                  </ul>
+                </section>
+                
+                <section class="card">
+                  <h2>10. Standaard outputpakket</h2>
+                  <ul>
+                    <li>Projectrapport PDF.</li><li>Projectrapport DOCX.</li><li>HTML dashboard.</li><li>Digital Twin JSON.</li><li>AAIE aannameslog.</li><li>STEE bronregister.</li><li>Geo/Foundation analyse.</li><li>Funderingsvarianten F1/F2.</li><li>QA/QC rapport.</li><li>Project-ZIP.</li><li>Git Evidence.</li>
+                  </ul>
+                </section>
+                
+  </main>
+</body>
+</html>
