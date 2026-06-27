@@ -1,0 +1,224 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2784 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+(PROJECT PHOENIX / BAOEES PROJECTRAPPORT) Tj
+0 -14 Td (Automatisch rapport vanuit BIB, AAIE en Geo/Foundation) Tj
+0 -14 Td (Automatisch gegenereerd: 2026-06-27T11:42:59) Tj
+0 -14 Td () Tj
+0 -14 Td (Concept startpakket. Definitieve engineering vereist projectdata, controle en goedkeuring.) Tj
+0 -14 Td () Tj
+0 -14 Td (1. Managementsamenvatting) Tj
+0 -14 Td () Tj
+0 -14 Td (- Dit rapport is automatisch voorbereid vanuit Project Phoenix / BAOEES.) Tj
+0 -14 Td (- De rapportage gebruikt BIB-kennis, AAIE-aannames en de Geo/Foundation BIB Engine.) Tj
+0 -14 Td (- De fundering wordt voorlopig beoordeeld met minimaal F1 strokenfundering en F2 paalfundering.) Tj
+0 -14 Td (- Definitieve engineering vereist projectlasten, bodemonderzoek, berekening en QA/QC.) Tj
+0 -14 Td () Tj
+0 -14 Td (2. Projectgegevens) Tj
+0 -14 Td () Tj
+0 -14 Td (- project_name: Default Project Phoenix Report) Tj
+0 -14 Td (- project_type: bouw) Tj
+0 -14 Td (- purpose: Automatisch projectrapport-startpakket vanuit BIB.) Tj
+0 -14 Td (- location: nog niet opgegeven) Tj
+0 -14 Td (- phase: concept) Tj
+0 -14 Td () Tj
+0 -14 Td (3. BIB, AAIE en STEE uitgangspunten) Tj
+0 -14 Td () Tj
+0 -14 Td (- Digital Twin First: alle projectoutputs moeten uit dezelfde centrale projectdata komen.) Tj
+0 -14 Td (- AAIE: ontbrekende gegevens worden automatisch aangevuld en geregistreerd als aanname.) Tj
+0 -14 Td (- STEE: bronnen, fallbacks en aannames moeten herleidbaar worden vastgelegd.) Tj
+0 -14 Td (- QA/QC: geen volledige projectexport zonder controle.) Tj
+0 -14 Td (- Groundwater fallback: P = -0,50 m als projectgegevens ontbreken.) Tj
+0 -14 Td () Tj
+0 -14 Td (4. Geo-profiel startwaarden) Tj
+0 -14 Td () Tj
+0 -14 Td (- Status: GEREED) Tj
+0 -14 Td (- Grondwaterstand: P = -0,50 m) Tj
+0 -14 Td (- Bron grondwaterstand: AAIE-BIB fallback) Tj
+0 -14 Td (- Fallback grondwaterstand: P = -0,50 m) Tj
+0 -14 Td (- Automatische grondwaterdetectie: True) Tj
+0 -14 Td (- Automatisch geo-profiel: True) Tj
+0 -14 Td (- maaiveldniveau: P = 0,00 m ? bron: project_context of AAIE fallback) Tj
+0 -14 Td (- grondwaterstand: P = -0,50 m ? bron: AAIE-BIB fallback) Tj
+0 -14 Td (- globale bodemopbouw: automatisch genereren op basis van locatie/kaart/bodemdata of handmatige) Tj
+0 -14 Td (invoer ? bron: AAIE + STEE) Tj
+0 -14 Td (- grondsoort per laag: voorlopig onbekend totdat bodemdata/sondering beschikbaar zijn ? bron:) Tj
+0 -14 Td (AAIE assumption) Tj
+0 -14 Td (- draagkrachtindicatie: voorlopige indicatie; definitief na grondonderzoek ? bron: engineering) Tj
+0 -14 Td (rule) Tj
+0 -14 Td (- zettingsgevoeligheid: voorlopige risico-inschatting ? bron: engineering rule) Tj
+0 -14 Td (- advies vervolgonderzoek: sondering/grondonderzoek vereist voor definitief funderingsadvies ?) Tj
+0 -14 Td (bron: QA/QC rule) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2890 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+() Tj
+0 -14 Td (5. Funderingsvarianten) Tj
+0 -14 Td () Tj
+0 -14 Td (- F1 ? Strokenfundering) Tj
+0 -14 Td (- Type: fundering_op_staal) Tj
+0 -14 Td (- Omschrijving: Fundering op staal met stroken onder dragende wanden en kolommen.) Tj
+0 -14 Td (- Standaard dimensies: {"strookbreedte": "150 cm tot 200 cm", "strookhoogte": "40 cm",) Tj
+0 -14 Td ("funderingsbalk": "50 cm x 60 cm", "ligging_balk": "hart van strook"}) Tj
+0 -14 Td (- Checks: draagkracht, zetting, grondwaterinvloed, uitvoerbaarheid, kosten, bouwrisico) Tj
+0 -14 Td (-) Tj
+0 -14 Td (- F2 ? Paalfundering) Tj
+0 -14 Td (- Type: diepe_fundering) Tj
+0 -14 Td (- Omschrijving: Diepe fundering op palen bij slappe bodem, onvoldoende draagkracht of verhoogd) Tj
+0 -14 Td (zettingsrisico.) Tj
+0 -14 Td (- Checks: paallengte, paaltype, draagkracht per paal, paalbelasting, paalafstand, kosten,) Tj
+0 -14 Td (uitvoerbaarheid) Tj
+0 -14 Td (-) Tj
+0 -14 Td () Tj
+0 -14 Td (6. Funderingsvergelijking) Tj
+0 -14 Td () Tj
+0 -14 Td (- F2 ? Paalfundering: totaalscore 36) Tj
+0 -14 Td (- - draagkracht: 5/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - zetting: 5/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - kosten: 2/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - bouwtijd: 3/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - risico: 4/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - bodemgeschiktheid: 4/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - grondwaterinvloed: 4/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - constructieve haalbaarheid: 5/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - vergunning / acceptatie: 4/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- Opmerking: Paalfundering is robuuster bij slappe bodem en zettingsrisico.) Tj
+0 -14 Td (- Opmerking: Duurder en vraagt meer geotechnisch detailonderzoek.) Tj
+0 -14 Td (- Opmerking: Grondwaterstand voorlopig: P = -0,50 m.) Tj
+0 -14 Td (- Opmerking: Paaltype en paallengte pas definitief na sondering/grondonderzoek.) Tj
+0 -14 Td (-) Tj
+0 -14 Td (- F1 ? Strokenfundering: totaalscore 33) Tj
+0 -14 Td (- - draagkracht: 3/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - zetting: 3/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - kosten: 5/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - bouwtijd: 5/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - risico: 3/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - bodemgeschiktheid: 3/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - grondwaterinvloed: 3/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - constructieve haalbaarheid: 4/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- - vergunning / acceptatie: 4/5 ? Voorlopige BIB/AAIE-score.) Tj
+0 -14 Td (- Opmerking: Strokenfundering is standaard goedkoop en snel uitvoerbaar.) Tj
+0 -14 Td (- Opmerking: Definitieve keuze afhankelijk van draagkracht en zettingsberekening.) Tj
+0 -14 Td (- Opmerking: Grondwaterstand voorlopig: P = -0,50 m.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2201 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+(- Opmerking: Bij slappe bodem of hoge zettingsgevoeligheid F2 serieus onderzoeken.) Tj
+0 -14 Td (-) Tj
+0 -14 Td () Tj
+0 -14 Td (7. Voorlopige funderingsaanbeveling) Tj
+0 -14 Td () Tj
+0 -14 Td (- Status: VOORLOPIG) Tj
+0 -14 Td (- Voorlopige voorkeursvariant: F2 ? Paalfundering) Tj
+0 -14 Td (- Totaalscore: 36) Tj
+0 -14 Td (- Dit is een automatische voorlopige BIB/AAIE-beoordeling. Definitieve funderingskeuze vereist) Tj
+0 -14 Td (projectlasten, bodemonderzoek en constructieve berekening.) Tj
+0 -14 Td () Tj
+0 -14 Td (8. AAIE-aannames gekoppeld aan rapport) Tj
+0 -14 Td () Tj
+0 -14 Td (- AAIE-BIB-005 ? Automatische grondwaterdetectie ? discipline: geotechniek) Tj
+0 -14 Td (- AAIE-BIB-006 ? Fallback grondwaterstand ? discipline: geotechniek) Tj
+0 -14 Td (- AAIE-BIB-007 ? Status fallback grondwaterstand ? discipline: geotechniek) Tj
+0 -14 Td (- AAIE-BIB-008 ? Automatisch geo-profiel ? discipline: geotechniek) Tj
+0 -14 Td (- AAIE-BIB-009 ? Funderingsvarianten verplicht ? discipline: fundering) Tj
+0 -14 Td (- AAIE-BIB-F01 ? Funderingsvariant F1 - Strokenfundering ? discipline: fundering) Tj
+0 -14 Td (- AAIE-BIB-F02 ? Funderingsvariant F2 - Paalfundering ? discipline: fundering) Tj
+0 -14 Td (- AAIE-BIB-010 ? Standaard projectoutputs ? discipline: output) Tj
+0 -14 Td () Tj
+0 -14 Td (9. Benodigd voor definitieve rapportage) Tj
+0 -14 Td () Tj
+0 -14 Td (- projectlocatie bevestigen) Tj
+0 -14 Td (- maaiveldpeil bepalen) Tj
+0 -14 Td (- grondwaterstand verifiÎren) Tj
+0 -14 Td (- bodemopbouw/sondering invoeren) Tj
+0 -14 Td (- belastingen bepalen) Tj
+0 -14 Td (- zettingscontrole uitvoeren) Tj
+0 -14 Td (- draagkrachtcontrole uitvoeren) Tj
+0 -14 Td (- QA/QC uitvoeren) Tj
+0 -14 Td () Tj
+0 -14 Td (10. Standaard outputpakket) Tj
+0 -14 Td () Tj
+0 -14 Td (- Projectrapport PDF.) Tj
+0 -14 Td (- Projectrapport DOCX.) Tj
+0 -14 Td (- HTML dashboard.) Tj
+0 -14 Td (- Digital Twin JSON.) Tj
+0 -14 Td (- AAIE aannameslog.) Tj
+0 -14 Td (- STEE bronregister.) Tj
+0 -14 Td (- Geo/Foundation analyse.) Tj
+0 -14 Td (- Funderingsvarianten F1/F2.) Tj
+0 -14 Td (- QA/QC rapport.) Tj
+0 -14 Td (- Project-ZIP.) Tj
+0 -14 Td (- Git Evidence.) Tj
+0 -14 Td () Tj
+0 -14 Td (WAARSCHUWINGEN) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 96 >>
+stream
+BT
+/F1 10 Tf
+50 800 Td
+() Tj
+0 -14 Td (- Geen kritieke Project Report BIB-waarschuwingen.) Tj
+ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000210 00000 n 
+0000000336 00000 n 
+0000003172 00000 n 
+0000003298 00000 n 
+0000006240 00000 n 
+0000006366 00000 n 
+0000008619 00000 n 
+0000008747 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+8894
+%%EOF

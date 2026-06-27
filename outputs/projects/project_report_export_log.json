@@ -1,0 +1,58 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Project Report Export Engine",
+  "engine_version": "v4.2",
+  "generated_at": "2026-06-27T11:42:59",
+  "purpose": "Projectrapport exporteren naar DOCX en PDF.",
+  "project_context": {
+    "project_name": "Default Project Phoenix Report Export",
+    "project_type": "bouw",
+    "purpose": "Automatische DOCX/PDF-export vanuit Project Report BIB Engine.",
+    "phase": "concept"
+  },
+  "report_status": {
+    "status": "AANWEZIG",
+    "message": "Project Report BIB package bestond al.",
+    "path": "outputs\\projects\\project_report_bib_package.json"
+  },
+  "report_package_path": "outputs\\projects\\project_report_bib_package.json",
+  "section_count": 10,
+  "outputs": {
+    "docx_path": "outputs\\projects\\project_report_bib_report.docx",
+    "pdf_path": "outputs\\projects\\project_report_bib_report.pdf",
+    "log_path": "outputs\\projects\\project_report_export_log.json",
+    "dashboard_path": "outputs\\projects\\project_report_export_dashboard.html"
+  },
+  "warnings": [
+    "Geen kritieke Project Report Export-waarschuwingen."
+  ],
+  "file_checks": [
+    {
+      "path": "outputs\\projects\\project_report_bib_report.docx",
+      "exists": true,
+      "size_bytes": 3591
+    },
+    {
+      "path": "outputs\\projects\\project_report_bib_report.pdf",
+      "exists": true,
+      "size_bytes": 9200
+    },
+    {
+      "path": "outputs\\projects\\project_report_export_log.json",
+      "exists": true,
+      "size_bytes": 1515
+    },
+    {
+      "path": "outputs\\projects\\project_report_export_dashboard.html",
+      "exists": true,
+      "size_bytes": 2835
+    }
+  ],
+  "next_steps": [
+    "Koppel deze export-engine in v4.3 aan de Project Analyzer hoofdworkflow.",
+    "Laat ieder projectrapport standaard DOCX en PDF genereren.",
+    "Voeg later professionele opmaak, inhoudsopgave, paginanummers en bijlagen toe.",
+    "Laat STEE-bronnenregister en AAIE-aannameslog als vaste bijlagen opnemen."
+  ],
+  "extra_results": {}
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Project Report Export Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050816;
+      color: #f8fafc;
+      line-height: 1.5;
+    }
+    header {
+      padding: 34px 42px;
+      background: #0f172a;
+      border-bottom: 1px solid #334155;
+    }
+    main {
+      padding: 30px 38px 50px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 18px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111827;
+      border: 1px solid #334155;
+      margin-top: 18px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #334155;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #0f172a;
+      color: #bfdbfe;
+    }
+    a {
+      color: #93c5fd;
+    }
+    .muted {
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PROJECT REPORT EXPORT DASHBOARD</h1>
+    <p>DOCX- en PDF-export van het Project Phoenix / BAOEES projectrapport.</p>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card">
+        <h3>Status</h3>
+        <p>OPGESLAGEN</p>
+      </div>
+      <div class="card">
+        <h3>DOCX</h3>
+        <p><a href="project_report_bib_report.docx">Open DOCX</a></p>
+        <p class="muted">outputs\projects\project_report_bib_report.docx</p>
+      </div>
+      <div class="card">
+        <h3>PDF</h3>
+        <p><a href="project_report_bib_report.pdf">Open PDF</a></p>
+        <p class="muted">outputs\projects\project_report_bib_report.pdf</p>
+      </div>
+      <div class="card">
+        <h3>Bronpakket</h3>
+        <p class="muted">outputs\projects\project_report_bib_package.json</p>
+      </div>
+    </section>
+
+    <h2>Bestandscontrole</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Pad</th>
+          <th>Bestaat</th>
+          <th>Grootte bytes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>outputs\projects\project_report_bib_report.docx</td><td>True</td><td>3591</td></tr><tr><td>outputs\projects\project_report_bib_report.pdf</td><td>True</td><td>9200</td></tr><tr><td>outputs\projects\project_report_export_log.json</td><td>True</td><td>1515</td></tr><tr><td>outputs\projects\project_report_export_dashboard.html</td><td>False</td><td>0</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Waarschuwingen</h2>
+    <ul>
+      <li>Geen kritieke Project Report Export-waarschuwingen.</li>
+    </ul>
+  </main>
+</body>
+</html>
