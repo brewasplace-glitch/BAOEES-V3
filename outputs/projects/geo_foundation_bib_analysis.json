@@ -2,15 +2,13 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Geo/Foundation BIB Engine",
   "engine_version": "v4.0",
-  "generated_at": "2026-06-27T00:54:01",
+  "generated_at": "2026-06-27T12:58:02",
   "purpose": "Geo- en funderingsanalyse voorbereiden vanuit BIB en AAIE.",
   "project_context": {
-    "project_name": "Default Geo/Foundation BIB Analysis",
+    "project_name": "Default Project Phoenix Analyzer Workflow",
     "project_type": "bouw",
-    "purpose": "Automatische geo- en funderingsanalyse vanuit BIB en AAIE.",
-    "location": "nog niet opgegeven",
-    "groundwater": null,
-    "soil_profile": null
+    "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
+    "phase": "concept"
   },
   "assumptions_status": {
     "status": "AANWEZIG",

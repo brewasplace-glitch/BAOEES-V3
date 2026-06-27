@@ -2,12 +2,13 @@
   "status": "GEREED",
   "engine": "Project Phoenix Project Analyzer BIB Context Loader",
   "engine_version": "v3.8",
-  "generated_at": "2026-06-27T00:26:32",
+  "generated_at": "2026-06-27T12:58:02",
   "purpose": "BAOEES Project Analyzer automatisch voeden met BIB-context.",
   "bridge_status": {
-    "status": "AANWEZIG",
-    "message": "BIB Project Analyzer Bridge bestond al.",
-    "path": "outputs\\bib\\bib_project_analyzer_bridge.json"
+    "status": "GEGENEREERD",
+    "message": "BIB Project Analyzer Bridge is gegenereerd of vernieuwd.",
+    "path": "outputs\\bib\\bib_project_analyzer_bridge.json",
+    "bridge_result_status": "OPGESLAGEN"
   },
   "bridge_path": "outputs\\bib\\bib_project_analyzer_bridge.json",
   "project_output_root": "outputs\\projects",
@@ -214,20 +215,12 @@
   "project_analyzer_context": {
     "status": "GEREED",
     "for_engine": "BAOEES Project Analyzer",
-    "generated_at": "2026-06-27T00:11:38",
+    "generated_at": "2026-06-27T12:58:02",
     "project_context": {
-      "project_name": "Default Project Phoenix Analysis Context",
-      "purpose": "Standaard context voor het testen van de BIB Project Analyzer Bridge.",
-      "project_type": "generic",
-      "requires": [
-        "projectanalyse",
-        "AAIE",
-        "STEE",
-        "Digital Twin",
-        "grondwaterstand",
-        "funderingsvarianten",
-        "QA/QC"
-      ]
+      "project_name": "Default Project Phoenix Analyzer Workflow",
+      "project_type": "bouw",
+      "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
+      "phase": "concept"
     },
     "core_bib_sections": [
       {
@@ -2723,7 +2716,7 @@
         "vergunning": false,
         "gebiedsontwikkeling": false,
         "infra": false,
-        "geotechniek": true
+        "geotechniek": false
       },
       "recommendation": "Gebruik deze hints als eerste classificatie, daarna project_analyzer laten bevestigen."
     },

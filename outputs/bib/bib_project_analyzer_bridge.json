@@ -2,21 +2,13 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix BIB Project Analyzer Bridge",
   "engine_version": "v3.7",
-  "generated_at": "2026-06-27T00:11:38",
+  "generated_at": "2026-06-27T12:58:02",
   "purpose": "BIB-context geschikt maken voor BAOEES Project Analyzer.",
   "project_context": {
-    "project_name": "Default Project Phoenix Analysis Context",
-    "purpose": "Standaard context voor het testen van de BIB Project Analyzer Bridge.",
-    "project_type": "generic",
-    "requires": [
-      "projectanalyse",
-      "AAIE",
-      "STEE",
-      "Digital Twin",
-      "grondwaterstand",
-      "funderingsvarianten",
-      "QA/QC"
-    ]
+    "project_name": "Default Project Phoenix Analyzer Workflow",
+    "project_type": "bouw",
+    "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
+    "phase": "concept"
   },
   "knowledge_source_result": {
     "status": "AANWEZIG",
@@ -27,20 +19,12 @@
   "project_analyzer_context": {
     "status": "GEREED",
     "for_engine": "BAOEES Project Analyzer",
-    "generated_at": "2026-06-27T00:11:38",
+    "generated_at": "2026-06-27T12:58:02",
     "project_context": {
-      "project_name": "Default Project Phoenix Analysis Context",
-      "purpose": "Standaard context voor het testen van de BIB Project Analyzer Bridge.",
-      "project_type": "generic",
-      "requires": [
-        "projectanalyse",
-        "AAIE",
-        "STEE",
-        "Digital Twin",
-        "grondwaterstand",
-        "funderingsvarianten",
-        "QA/QC"
-      ]
+      "project_name": "Default Project Phoenix Analyzer Workflow",
+      "project_type": "bouw",
+      "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
+      "phase": "concept"
     },
     "core_bib_sections": [
       {
@@ -2536,7 +2520,7 @@
         "vergunning": false,
         "gebiedsontwikkeling": false,
         "infra": false,
-        "geotechniek": true
+        "geotechniek": false
       },
       "recommendation": "Gebruik deze hints als eerste classificatie, daarna project_analyzer laten bevestigen."
     },

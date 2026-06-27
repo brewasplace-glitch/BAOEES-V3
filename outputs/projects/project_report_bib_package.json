@@ -2,13 +2,12 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Report BIB Engine",
   "engine_version": "v4.1",
-  "generated_at": "2026-06-27T10:57:03",
+  "generated_at": "2026-06-27T12:58:02",
   "purpose": "Projectrapportage-startpakket genereren vanuit BIB, AAIE en Geo/Foundation.",
   "project_context": {
-    "project_name": "Default Project Phoenix Report",
+    "project_name": "Default Project Phoenix Analyzer Workflow",
     "project_type": "bouw",
-    "purpose": "Automatisch projectrapport-startpakket vanuit BIB.",
-    "location": "nog niet opgegeven",
+    "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
     "phase": "concept"
   },
   "geo_status": {
@@ -34,10 +33,9 @@
       "title": "Projectgegevens",
       "type": "project_context",
       "content": [
-        "project_name: Default Project Phoenix Report",
+        "project_name: Default Project Phoenix Analyzer Workflow",
         "project_type: bouw",
-        "purpose: Automatisch projectrapport-startpakket vanuit BIB.",
-        "location: nog niet opgegeven",
+        "purpose: Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
         "phase: concept"
       ]
     },

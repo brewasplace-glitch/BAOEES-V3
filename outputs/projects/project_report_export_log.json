@@ -2,12 +2,12 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Report Export Engine",
   "engine_version": "v4.2",
-  "generated_at": "2026-06-27T11:42:59",
+  "generated_at": "2026-06-27T12:58:02",
   "purpose": "Projectrapport exporteren naar DOCX en PDF.",
   "project_context": {
-    "project_name": "Default Project Phoenix Report Export",
+    "project_name": "Default Project Phoenix Analyzer Workflow",
     "project_type": "bouw",
-    "purpose": "Automatische DOCX/PDF-export vanuit Project Report BIB Engine.",
+    "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
     "phase": "concept"
   },
   "report_status": {
@@ -30,22 +30,22 @@
     {
       "path": "outputs\\projects\\project_report_bib_report.docx",
       "exists": true,
-      "size_bytes": 3591
+      "size_bytes": 3595
     },
     {
       "path": "outputs\\projects\\project_report_bib_report.pdf",
       "exists": true,
-      "size_bytes": 9200
+      "size_bytes": 9195
     },
     {
       "path": "outputs\\projects\\project_report_export_log.json",
       "exists": true,
-      "size_bytes": 1515
+      "size_bytes": 1536
     },
     {
       "path": "outputs\\projects\\project_report_export_dashboard.html",
       "exists": true,
-      "size_bytes": 2835
+      "size_bytes": 2837
     }
   ],
   "next_steps": [

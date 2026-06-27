@@ -1,6 +1,6 @@
 # PROJECT PHOENIX / BAOEES PROJECTRAPPORT
 
-Automatisch gegenereerd: 2026-06-27T10:57:03
+Automatisch gegenereerd: 2026-06-27T12:58:02
 
 > Concept startpakket. Definitieve engineering vereist projectdata, controle en goedkeuring.
 
@@ -13,10 +13,9 @@ Automatisch gegenereerd: 2026-06-27T10:57:03
 
 ## 2. Projectgegevens
 
-- project_name: Default Project Phoenix Report
+- project_name: Default Project Phoenix Analyzer Workflow
 - project_type: bouw
-- purpose: Automatisch projectrapport-startpakket vanuit BIB.
-- location: nog niet opgegeven
+- purpose: Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.
 - phase: concept
 
 ## 3. BIB, AAIE en STEE uitgangspunten

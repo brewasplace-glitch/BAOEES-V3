@@ -13,14 +13,14 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 2784 >>
+<< /Length 2794 >>
 stream
 BT
 /F1 10 Tf
 50 800 Td
 (PROJECT PHOENIX / BAOEES PROJECTRAPPORT) Tj
 0 -14 Td (Automatisch rapport vanuit BIB, AAIE en Geo/Foundation) Tj
-0 -14 Td (Automatisch gegenereerd: 2026-06-27T11:42:59) Tj
+0 -14 Td (Automatisch gegenereerd: 2026-06-27T12:58:02) Tj
 0 -14 Td () Tj
 0 -14 Td (Concept startpakket. Definitieve engineering vereist projectdata, controle en goedkeuring.) Tj
 0 -14 Td () Tj
@@ -33,10 +33,9 @@ BT
 0 -14 Td () Tj
 0 -14 Td (2. Projectgegevens) Tj
 0 -14 Td () Tj
-0 -14 Td (- project_name: Default Project Phoenix Report) Tj
+0 -14 Td (- project_name: Default Project Phoenix Analyzer Workflow) Tj
 0 -14 Td (- project_type: bouw) Tj
-0 -14 Td (- purpose: Automatisch projectrapport-startpakket vanuit BIB.) Tj
-0 -14 Td (- location: nog niet opgegeven) Tj
+0 -14 Td (- purpose: Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.) Tj
 0 -14 Td (- phase: concept) Tj
 0 -14 Td () Tj
 0 -14 Td (3. BIB, AAIE en STEE uitgangspunten) Tj
@@ -66,6 +65,7 @@ BT
 0 -14 Td (- zettingsgevoeligheid: voorlopige risico-inschatting ? bron: engineering rule) Tj
 0 -14 Td (- advies vervolgonderzoek: sondering/grondonderzoek vereist voor definitief funderingsadvies ?) Tj
 0 -14 Td (bron: QA/QC rule) Tj
+0 -14 Td () Tj
 ET
 endstream
 endobj
@@ -73,13 +73,12 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 2890 >>
+<< /Length 2972 >>
 stream
 BT
 /F1 10 Tf
 50 800 Td
-() Tj
-0 -14 Td (5. Funderingsvarianten) Tj
+(5. Funderingsvarianten) Tj
 0 -14 Td () Tj
 0 -14 Td (- F1 ? Strokenfundering) Tj
 0 -14 Td (- Type: fundering_op_staal) Tj
@@ -126,6 +125,7 @@ BT
 0 -14 Td (- Opmerking: Strokenfundering is standaard goedkoop en snel uitvoerbaar.) Tj
 0 -14 Td (- Opmerking: Definitieve keuze afhankelijk van draagkracht en zettingsberekening.) Tj
 0 -14 Td (- Opmerking: Grondwaterstand voorlopig: P = -0,50 m.) Tj
+0 -14 Td (- Opmerking: Bij slappe bodem of hoge zettingsgevoeligheid F2 serieus onderzoeken.) Tj
 ET
 endstream
 endobj
@@ -133,13 +133,12 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 2201 >>
+<< /Length 2119 >>
 stream
 BT
 /F1 10 Tf
 50 800 Td
-(- Opmerking: Bij slappe bodem of hoge zettingsgevoeligheid F2 serieus onderzoeken.) Tj
-0 -14 Td (-) Tj
+(-) Tj
 0 -14 Td () Tj
 0 -14 Td (7. Voorlopige funderingsaanbeveling) Tj
 0 -14 Td () Tj
@@ -186,6 +185,7 @@ BT
 0 -14 Td (- Git Evidence.) Tj
 0 -14 Td () Tj
 0 -14 Td (WAARSCHUWINGEN) Tj
+0 -14 Td () Tj
 ET
 endstream
 endobj
@@ -193,13 +193,12 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
 endobj
 11 0 obj
-<< /Length 96 >>
+<< /Length 81 >>
 stream
 BT
 /F1 10 Tf
 50 800 Td
-() Tj
-0 -14 Td (- Geen kritieke Project Report BIB-waarschuwingen.) Tj
+(- Geen kritieke Project Report BIB-waarschuwingen.) Tj
 ET
 endstream
 endobj
@@ -211,14 +210,14 @@ xref
 0000000140 00000 n 
 0000000210 00000 n 
 0000000336 00000 n 
-0000003172 00000 n 
-0000003298 00000 n 
-0000006240 00000 n 
-0000006366 00000 n 
-0000008619 00000 n 
-0000008747 00000 n 
+0000003182 00000 n 
+0000003308 00000 n 
+0000006332 00000 n 
+0000006458 00000 n 
+0000008629 00000 n 
+0000008757 00000 n 
 trailer
 << /Size 12 /Root 1 0 R >>
 startxref
-8894
+8889
 %%EOF
