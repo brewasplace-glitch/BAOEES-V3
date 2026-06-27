@@ -16,21 +16,23 @@ if str(PROJECT_ROOT) not in sys.path:
 class ProjectAnalyzerLauncherBridge:
     """
     PROJECT PHOENIX / BAOEES
-    Project Analyzer Launcher Bridge v4.7
+    Project Analyzer Launcher Bridge v4.9
 
     Doel:
-    - Koppelt de centrale Project Analyzer Workflow aan outputs/projects/index.html.
-    - Toont workflowdashboard, evidence dashboard, manifest, logs, rapporten en ZIP-pakket.
+    - Koppelt START PROJECTANALYSE zichtbaar aan outputs/projects/index.html.
+    - Toont startdashboard, startlog, workflowdashboard, evidence dashboard, manifest, logs, rapporten en ZIP-pakket.
     - Voegt een veilige HTML-sectie toe met vaste markers.
     - Maakt een JSON-logbestand.
     - Wijzigt de launcher zonder bestaande inhoud te verwijderen.
     """
 
     ENGINE_NAME = "Project Phoenix Project Analyzer Launcher Bridge"
-    ENGINE_VERSION = "v4.7"
+    ENGINE_VERSION = "v4.9"
 
     START_MARKER = "<!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_START -->"
     END_MARKER = "<!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_END -->"
+
+    START_COMMAND = "python -m baoees.project_analyzer.project_start_analysis_engine"
 
     def __init__(
         self,
@@ -64,7 +66,7 @@ class ProjectAnalyzerLauncherBridge:
                 "launcher_path": str(self.launcher_path),
                 "bridge_log_path": str(bridge_log_path),
                 "warnings": [
-                    f"Kan Project Analyzer Workflow niet koppelen, bestand ontbreekt: {self.launcher_path}"
+                    f"Kan START PROJECTANALYSE niet koppelen, bestand ontbreekt: {self.launcher_path}"
                 ],
                 "extra_results": extra_results,
             }
@@ -83,18 +85,19 @@ class ProjectAnalyzerLauncherBridge:
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
             "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "Centrale Project Analyzer Workflow koppelen aan de Project Phoenix Launcher.",
+            "purpose": "START PROJECTANALYSE zichtbaar koppelen aan de Project Phoenix Launcher.",
             "launcher_path": str(self.launcher_path),
             "project_output_root": str(self.project_output_root),
             "bridge_log_path": str(bridge_log_path),
+            "start_command": self.START_COMMAND,
             "outputs": outputs,
             "summary": self.build_summary(outputs),
             "warnings": self.build_warnings(outputs),
             "next_steps": [
                 "Open outputs/projects/index.html.",
-                "Controleer de sectie PROJECT ANALYZER WORKFLOW.",
-                "Controleer workflowdashboard, evidence dashboard, manifest, logs, rapporten en ZIP-pakket.",
-                "Koppel deze bridge later aan de echte Project Phoenix startknop.",
+                "Controleer de duidelijke START PROJECTANALYSE-sectie.",
+                "Controleer Start Dashboard, Start Log, Workflow Dashboard, Evidence Dashboard en Project ZIP.",
+                "Gebruik het startcommando later als basis voor de echte Project Phoenix startknop.",
             ],
             "extra_results": extra_results,
         }
@@ -105,10 +108,26 @@ class ProjectAnalyzerLauncherBridge:
     def collect_project_analyzer_outputs(self) -> List[Dict[str, Any]]:
         files = [
             {
+                "category": "00 START PROJECTANALYSE",
+                "label": "Open Start Projectanalyse Dashboard",
+                "filename": "project_start_analysis_dashboard.html",
+                "description": "Hoofddashboard van de centrale START PROJECTANALYSE-run.",
+                "type": "HTML startdashboard",
+                "required": True,
+            },
+            {
+                "category": "00 START PROJECTANALYSE",
+                "label": "Open Start Projectanalyse Log",
+                "filename": "project_start_analysis_log.json",
+                "description": "JSON-log van de centrale START PROJECTANALYSE-run.",
+                "type": "JSON startlog",
+                "required": True,
+            },
+            {
                 "category": "01 Centrale workflow",
                 "label": "Open Project Analyzer Workflow Dashboard",
                 "filename": "project_analyzer_workflow_dashboard.html",
-                "description": "Hoofddashboard van de volledige centrale Project Analyzer Workflow v4.6/v4.7.",
+                "description": "Hoofddashboard van de volledige centrale Project Analyzer Workflow.",
                 "type": "HTML dashboard",
                 "required": True,
             },
@@ -323,22 +342,39 @@ class ProjectAnalyzerLauncherBridge:
         return f"""
 {self.START_MARKER}
 <section style="margin-top:34px;">
-  <h2>PROJECT ANALYZER WORKFLOW</h2>
+  <h2>START PROJECTANALYSE</h2>
   <p class="muted">
-    Centrale Project Phoenix / BAOEES workflow met BIB-context, AAIE-aannames,
-    Geo/Foundation analyse, projectrapportage, DOCX/PDF-export, Project ZIP,
-    manifest en evidence dashboard.
+    Centrale Project Phoenix / BAOEES startknop voor volledige projectanalyse,
+    inclusief BIB-context, AAIE-aannames, Geo/Foundation analyse, projectrapportage,
+    DOCX/PDF-export, Project ZIP, manifest, evidence dashboard en launcher-update.
   </p>
 
   <div class="grid">
+    <div class="card" style="border: 2px solid #38bdf8;">
+      <h3>START PROJECTANALYSE</h3>
+      <p>
+        <a href="project_start_analysis_dashboard.html"
+           style="display:inline-block;padding:12px 18px;border-radius:10px;background:#2563eb;color:#ffffff;text-decoration:none;font-weight:bold;">
+          OPEN START DASHBOARD
+        </a>
+      </p>
+      <p class="muted">
+        Statisch HTML kan Python niet rechtstreeks starten. Gebruik voorlopig dit commando in GitKraken Terminal:
+      </p>
+      <p><code>{self.esc(self.START_COMMAND)}</code></p>
+    </div>
+
     <div class="card">
       <h3>Workflow status</h3>
       <p><span class="badge ok">{self.esc(summary.get("status", ""))}</span></p>
       <p class="muted">Aanwezige outputs: {self.esc(summary.get("existing_outputs", 0))} / {self.esc(summary.get("total_outputs", 0))}</p>
       <p class="muted">Ontbrekende verplichte outputs: {self.esc(summary.get("missing_required_outputs", 0))}</p>
     </div>
+
     <div class="card">
-      <h3>Belangrijkste startpunten</h3>
+      <h3>Belangrijkste outputs</h3>
+      <p><a href="project_start_analysis_dashboard.html">Start Projectanalyse Dashboard</a></p>
+      <p><a href="project_start_analysis_log.json">Start Projectanalyse Log</a></p>
       <p><a href="project_analyzer_workflow_dashboard.html">Project Analyzer Workflow Dashboard</a></p>
       <p><a href="project_package_evidence_dashboard.html">Project Package Evidence Dashboard</a></p>
       <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>

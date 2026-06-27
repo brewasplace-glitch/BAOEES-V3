@@ -2,7 +2,7 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix AAIE BIB Assumption Loader",
   "engine_version": "v3.9",
-  "generated_at": "2026-06-27T16:18:21",
+  "generated_at": "2026-06-27T17:04:12",
   "purpose": "AAIE automatisch voeden met aannames uit de BIB-context.",
   "context_status": {
     "status": "AANWEZIG",
@@ -28,7 +28,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-002",
@@ -45,7 +45,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-003",
@@ -62,7 +62,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-004",
@@ -79,7 +79,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-005",
@@ -96,7 +96,7 @@
       "confidence": "middel",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-006",
@@ -113,7 +113,7 @@
       "confidence": "middel",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-007",
@@ -130,7 +130,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-008",
@@ -147,7 +147,7 @@
       "confidence": "middel",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-009",
@@ -164,7 +164,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-F01",
@@ -199,7 +199,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-F02",
@@ -230,7 +230,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-010",
@@ -262,7 +262,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     },
     {
       "code": "AAIE-BIB-011",
@@ -305,7 +305,7 @@
       "confidence": "hoog",
       "status": "ACTIVE",
       "editable_by_user": true,
-      "registered_at": "2026-06-27T16:18:21"
+      "registered_at": "2026-06-27T17:04:12"
     }
   ],
   "assumption_register": {
@@ -344,13 +344,13 @@
       "step_key": "bib_context",
       "step_name": "BIB-context laden",
       "status": "GEREED",
-      "started_at": "2026-06-27T16:18:21",
-      "finished_at": "2026-06-27T16:18:21",
+      "started_at": "2026-06-27T17:04:12",
+      "finished_at": "2026-06-27T17:04:12",
       "output": {
         "status": "GEREED",
         "engine": "Project Phoenix Project Analyzer BIB Context Loader",
         "engine_version": "v3.8",
-        "generated_at": "2026-06-27T16:18:21",
+        "generated_at": "2026-06-27T17:04:12",
         "purpose": "BAOEES Project Analyzer automatisch voeden met BIB-context.",
         "bridge_status": {
           "status": "AANWEZIG",

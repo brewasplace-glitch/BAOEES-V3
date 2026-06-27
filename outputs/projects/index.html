@@ -269,24 +269,42 @@
 
 
 
+
 <!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_START -->
 <section style="margin-top:34px;">
-  <h2>PROJECT ANALYZER WORKFLOW</h2>
+  <h2>START PROJECTANALYSE</h2>
   <p class="muted">
-    Centrale Project Phoenix / BAOEES workflow met BIB-context, AAIE-aannames,
-    Geo/Foundation analyse, projectrapportage, DOCX/PDF-export, Project ZIP,
-    manifest en evidence dashboard.
+    Centrale Project Phoenix / BAOEES startknop voor volledige projectanalyse,
+    inclusief BIB-context, AAIE-aannames, Geo/Foundation analyse, projectrapportage,
+    DOCX/PDF-export, Project ZIP, manifest, evidence dashboard en launcher-update.
   </p>
 
   <div class="grid">
+    <div class="card" style="border: 2px solid #38bdf8;">
+      <h3>START PROJECTANALYSE</h3>
+      <p>
+        <a href="project_start_analysis_dashboard.html"
+           style="display:inline-block;padding:12px 18px;border-radius:10px;background:#2563eb;color:#ffffff;text-decoration:none;font-weight:bold;">
+          OPEN START DASHBOARD
+        </a>
+      </p>
+      <p class="muted">
+        Statisch HTML kan Python niet rechtstreeks starten. Gebruik voorlopig dit commando in GitKraken Terminal:
+      </p>
+      <p><code>python -m baoees.project_analyzer.project_start_analysis_engine</code></p>
+    </div>
+
     <div class="card">
       <h3>Workflow status</h3>
       <p><span class="badge ok">GEREED</span></p>
-      <p class="muted">Aanwezige outputs: 16 / 16</p>
+      <p class="muted">Aanwezige outputs: 18 / 18</p>
       <p class="muted">Ontbrekende verplichte outputs: 0</p>
     </div>
+
     <div class="card">
-      <h3>Belangrijkste startpunten</h3>
+      <h3>Belangrijkste outputs</h3>
+      <p><a href="project_start_analysis_dashboard.html">Start Projectanalyse Dashboard</a></p>
+      <p><a href="project_start_analysis_log.json">Start Projectanalyse Log</a></p>
       <p><a href="project_analyzer_workflow_dashboard.html">Project Analyzer Workflow Dashboard</a></p>
       <p><a href="project_package_evidence_dashboard.html">Project Package Evidence Dashboard</a></p>
       <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>
@@ -295,13 +313,38 @@
 
   
             <section style="margin-top:24px;">
+              <h3>00 START PROJECTANALYSE</h3>
+              <div class="grid">
+                
+                <div class="card">
+                  <h3><a href="project_start_analysis_dashboard.html">Open Start Projectanalyse Dashboard</a></h3>
+                  <p><span class="badge ok">AANWEZIG</span></p>
+                  <p class="muted">Hoofddashboard van de centrale START PROJECTANALYSE-run.</p>
+                  <p class="muted"><strong>Type:</strong> HTML startdashboard</p>
+                  <p class="muted"><strong>Bestand:</strong> <code>project_start_analysis_dashboard.html</code></p>
+                  <p class="muted"><strong>Bytes:</strong> 5191</p>
+                </div>
+                
+                <div class="card">
+                  <h3><a href="project_start_analysis_log.json">Open Start Projectanalyse Log</a></h3>
+                  <p><span class="badge ok">AANWEZIG</span></p>
+                  <p class="muted">JSON-log van de centrale START PROJECTANALYSE-run.</p>
+                  <p class="muted"><strong>Type:</strong> JSON startlog</p>
+                  <p class="muted"><strong>Bestand:</strong> <code>project_start_analysis_log.json</code></p>
+                  <p class="muted"><strong>Bytes:</strong> 13816779</p>
+                </div>
+                
+              </div>
+            </section>
+            
+            <section style="margin-top:24px;">
               <h3>01 Centrale workflow</h3>
               <div class="grid">
                 
                 <div class="card">
                   <h3><a href="project_analyzer_workflow_dashboard.html">Open Project Analyzer Workflow Dashboard</a></h3>
                   <p><span class="badge ok">AANWEZIG</span></p>
-                  <p class="muted">Hoofddashboard van de volledige centrale Project Analyzer Workflow v4.6/v4.7.</p>
+                  <p class="muted">Hoofddashboard van de volledige centrale Project Analyzer Workflow.</p>
                   <p class="muted"><strong>Type:</strong> HTML dashboard</p>
                   <p class="muted"><strong>Bestand:</strong> <code>project_analyzer_workflow_dashboard.html</code></p>
                   <p class="muted"><strong>Bytes:</strong> 6095</p>
@@ -356,7 +399,7 @@
                   <p class="muted">Officieel Project Phoenix projectpakket met rapporten, logs, dashboards en evidencebestanden.</p>
                   <p class="muted"><strong>Type:</strong> ZIP pakket</p>
                   <p class="muted"><strong>Bestand:</strong> <code>PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></p>
-                  <p class="muted"><strong>Bytes:</strong> 1525339</p>
+                  <p class="muted"><strong>Bytes:</strong> 1525303</p>
                 </div>
                 
               </div>
@@ -475,6 +518,7 @@
             
 </section>
 <!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_END -->
+
 
 
 
