@@ -1,0 +1,112 @@
+{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Project Analyzer Launcher Bridge",
+  "engine_version": "v4.4",
+  "generated_at": "2026-06-27T14:36:00",
+  "purpose": "Project Analyzer Workflow koppelen aan de Project Phoenix Launcher.",
+  "launcher_path": "outputs\\projects\\index.html",
+  "project_output_root": "outputs\\projects",
+  "bridge_log_path": "outputs\\projects\\project_analyzer_launcher_bridge_log.json",
+  "outputs": [
+    {
+      "label": "Open Project Analyzer Workflow Dashboard",
+      "filename": "project_analyzer_workflow_dashboard.html",
+      "path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
+      "href": "project_analyzer_workflow_dashboard.html",
+      "description": "Hoofddashboard van de volledige Project Analyzer workflow.",
+      "type": "HTML dashboard",
+      "exists": true,
+      "size_bytes": 4009
+    },
+    {
+      "label": "Open Project Analyzer Workflow Log",
+      "filename": "project_analyzer_workflow_log.json",
+      "path": "outputs\\projects\\project_analyzer_workflow_log.json",
+      "href": "project_analyzer_workflow_log.json",
+      "description": "JSON-log van de volledige Project Analyzer workflow.",
+      "type": "JSON log",
+      "exists": true,
+      "size_bytes": 178864
+    },
+    {
+      "label": "Open Projectrapport DOCX",
+      "filename": "project_report_bib_report.docx",
+      "path": "outputs\\projects\\project_report_bib_report.docx",
+      "href": "project_report_bib_report.docx",
+      "description": "Word-export van het automatisch gegenereerde projectrapport.",
+      "type": "DOCX rapport",
+      "exists": true,
+      "size_bytes": 3595
+    },
+    {
+      "label": "Open Projectrapport PDF",
+      "filename": "project_report_bib_report.pdf",
+      "path": "outputs\\projects\\project_report_bib_report.pdf",
+      "href": "project_report_bib_report.pdf",
+      "description": "PDF-export van het automatisch gegenereerde projectrapport.",
+      "type": "PDF rapport",
+      "exists": true,
+      "size_bytes": 9195
+    },
+    {
+      "label": "Open Project Report Export Dashboard",
+      "filename": "project_report_export_dashboard.html",
+      "path": "outputs\\projects\\project_report_export_dashboard.html",
+      "href": "project_report_export_dashboard.html",
+      "description": "Dashboard met controle van DOCX/PDF-export.",
+      "type": "HTML dashboard",
+      "exists": true,
+      "size_bytes": 2837
+    },
+    {
+      "label": "Open Geo/Foundation Analyse",
+      "filename": "geo_foundation_bib_analysis.html",
+      "path": "outputs\\projects\\geo_foundation_bib_analysis.html",
+      "href": "geo_foundation_bib_analysis.html",
+      "description": "Geo- en funderingsanalyse met F1/F2 vergelijking.",
+      "type": "HTML analyse",
+      "exists": true,
+      "size_bytes": 5308
+    },
+    {
+      "label": "Open AAIE-aannames",
+      "filename": "aaie_bib_assumptions.html",
+      "path": "outputs\\projects\\aaie_bib_assumptions.html",
+      "href": "aaie_bib_assumptions.html",
+      "description": "AAIE-aannames die automatisch uit de BIB-context komen.",
+      "type": "HTML aannames",
+      "exists": true,
+      "size_bytes": 7993
+    },
+    {
+      "label": "Open BIB Project Analyzer Context",
+      "filename": "project_analyzer_bib_context.html",
+      "path": "outputs\\projects\\project_analyzer_bib_context.html",
+      "href": "project_analyzer_bib_context.html",
+      "description": "BIB-context die de Project Analyzer als basis gebruikt.",
+      "type": "HTML context",
+      "exists": true,
+      "size_bytes": 5381
+    },
+    {
+      "label": "Open Projectrapport pakket JSON",
+      "filename": "project_report_bib_package.json",
+      "path": "outputs\\projects\\project_report_bib_package.json",
+      "href": "project_report_bib_package.json",
+      "description": "JSON-bronpakket van het projectrapport.",
+      "type": "JSON pakket",
+      "exists": true,
+      "size_bytes": 9261
+    }
+  ],
+  "warnings": [
+    "Geen kritieke Project Analyzer Launcher Bridge-waarschuwingen."
+  ],
+  "next_steps": [
+    "Open outputs/projects/index.html.",
+    "Controleer de sectie PROJECT ANALYZER WORKFLOW.",
+    "Controleer of dashboard, log, DOCX en PDF openen.",
+    "Koppel deze bridge later aan de centrale Project Phoenix workflow."
+  ],
+  "extra_results": {}
+}
