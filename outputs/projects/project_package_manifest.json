@@ -1,0 +1,271 @@
+{
+  "status": "GEREED",
+  "engine": "Project Phoenix Project Package Evidence Engine",
+  "engine_version": "v4.5",
+  "generated_at": "2026-06-27T15:21:43",
+  "summary": {
+    "total_files": 18,
+    "existing_files": 18,
+    "missing_required_files": 0,
+    "total_size_bytes": 516486
+  },
+  "categories": [
+    {
+      "category": "workflow",
+      "total": 2,
+      "existing": 2,
+      "missing": 0,
+      "size_bytes": 182873
+    },
+    {
+      "category": "report",
+      "total": 5,
+      "existing": 5,
+      "missing": 0,
+      "size_bytes": 37263
+    },
+    {
+      "category": "export",
+      "total": 2,
+      "existing": 2,
+      "missing": 0,
+      "size_bytes": 4909
+    },
+    {
+      "category": "geo_foundation",
+      "total": 2,
+      "existing": 2,
+      "missing": 0,
+      "size_bytes": 18218
+    },
+    {
+      "category": "aaie",
+      "total": 2,
+      "existing": 2,
+      "missing": 0,
+      "size_bytes": 21486
+    },
+    {
+      "category": "bib_context",
+      "total": 2,
+      "existing": 2,
+      "missing": 0,
+      "size_bytes": 121590
+    },
+    {
+      "category": "launcher",
+      "total": 2,
+      "existing": 2,
+      "missing": 0,
+      "size_bytes": 19343
+    },
+    {
+      "category": "bib_bridge",
+      "total": 1,
+      "existing": 1,
+      "missing": 0,
+      "size_bytes": 110804
+    }
+  ],
+  "files": [
+    {
+      "category": "workflow",
+      "label": "Project Analyzer Workflow Dashboard",
+      "path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
+      "relative_path": "outputs/projects/project_analyzer_workflow_dashboard.html",
+      "required": true,
+      "exists": true,
+      "size_bytes": 4009,
+      "sha256": "ac9ac54c2116e696dbedee93514a72a44d569b10e2d573009a934f44930b7b2a",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "workflow",
+      "label": "Project Analyzer Workflow Log",
+      "path": "outputs\\projects\\project_analyzer_workflow_log.json",
+      "relative_path": "outputs/projects/project_analyzer_workflow_log.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 178864,
+      "sha256": "af02bc58712369ece82f9e1335be7b77997730fc77b6990b5dc850092ee99a2f",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "report",
+      "label": "Projectrapport DOCX",
+      "path": "outputs\\projects\\project_report_bib_report.docx",
+      "relative_path": "outputs/projects/project_report_bib_report.docx",
+      "required": true,
+      "exists": true,
+      "size_bytes": 3595,
+      "sha256": "32dc3a946a09b3a2274f51d3db8d76138a5751b0c167276f01621e0d67ba031a",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "report",
+      "label": "Projectrapport PDF",
+      "path": "outputs\\projects\\project_report_bib_report.pdf",
+      "relative_path": "outputs/projects/project_report_bib_report.pdf",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9195,
+      "sha256": "2b73f503f754e98808cba989f1282a97edf4e37dfa3899cc106d132262f3254f",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "report",
+      "label": "Projectrapport HTML",
+      "path": "outputs\\projects\\project_report_bib_report.html",
+      "relative_path": "outputs/projects/project_report_bib_report.html",
+      "required": false,
+      "exists": true,
+      "size_bytes": 9198,
+      "sha256": "a23f8bd7242e3e02248b04768b4b55802a070a89ddf92e7a45cde29765c255bf",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "report",
+      "label": "Projectrapport Markdown",
+      "path": "outputs\\projects\\project_report_bib_report.md",
+      "relative_path": "outputs/projects/project_report_bib_report.md",
+      "required": false,
+      "exists": true,
+      "size_bytes": 6014,
+      "sha256": "223a9164a932c00222a1895be31df39ffdf19de261651c787a805f94d85f300d",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "report",
+      "label": "Projectrapport Package JSON",
+      "path": "outputs\\projects\\project_report_bib_package.json",
+      "relative_path": "outputs/projects/project_report_bib_package.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 9261,
+      "sha256": "ac3e869e1fc6025fc796129c7800d6faecbd93c074c48cd51f931ca2024c78dc",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "export",
+      "label": "Project Report Export Dashboard",
+      "path": "outputs\\projects\\project_report_export_dashboard.html",
+      "relative_path": "outputs/projects/project_report_export_dashboard.html",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2837,
+      "sha256": "5238238d55660787118066fc2e361e4038b6ffe45f94f4dace0b639e83c0594c",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "export",
+      "label": "Project Report Export Log",
+      "path": "outputs\\projects\\project_report_export_log.json",
+      "relative_path": "outputs/projects/project_report_export_log.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 2072,
+      "sha256": "7032a42adf3fac806ad5580352a5bc23113e8bd15d642c6e928fc281bebbe67f",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "geo_foundation",
+      "label": "Geo/Foundation Analyse HTML",
+      "path": "outputs\\projects\\geo_foundation_bib_analysis.html",
+      "relative_path": "outputs/projects/geo_foundation_bib_analysis.html",
+      "required": false,
+      "exists": true,
+      "size_bytes": 5308,
+      "sha256": "fe307e8bbb3da9986b8ab880f250f6227aba082013ce0304024ff8f745baad8d",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "geo_foundation",
+      "label": "Geo/Foundation Analyse JSON",
+      "path": "outputs\\projects\\geo_foundation_bib_analysis.json",
+      "relative_path": "outputs/projects/geo_foundation_bib_analysis.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 12910,
+      "sha256": "8e7483e90d15ab6987afb12d38df3403a44b5b5d24a381a7823a7f35870ee74b",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "aaie",
+      "label": "AAIE BIB Assumptions HTML",
+      "path": "outputs\\projects\\aaie_bib_assumptions.html",
+      "relative_path": "outputs/projects/aaie_bib_assumptions.html",
+      "required": false,
+      "exists": true,
+      "size_bytes": 7993,
+      "sha256": "3fd879fead34155d6ae4b261201881b0a9fe90016f8330cdaf9334d98b518735",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "aaie",
+      "label": "AAIE BIB Assumptions JSON",
+      "path": "outputs\\projects\\aaie_bib_assumptions.json",
+      "relative_path": "outputs/projects/aaie_bib_assumptions.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 13493,
+      "sha256": "fbad30f0aadad340924b0f260235f5f771aebb947092f8a1bff170b4e2567902",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "bib_context",
+      "label": "Project Analyzer BIB Context HTML",
+      "path": "outputs\\projects\\project_analyzer_bib_context.html",
+      "relative_path": "outputs/projects/project_analyzer_bib_context.html",
+      "required": false,
+      "exists": true,
+      "size_bytes": 5381,
+      "sha256": "5081d089e323e4b11141072b6026fa15d9925cfbb14bbad63f35372f56181f43",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "bib_context",
+      "label": "Project Analyzer BIB Context JSON",
+      "path": "outputs\\projects\\project_analyzer_bib_context.json",
+      "relative_path": "outputs/projects/project_analyzer_bib_context.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 116209,
+      "sha256": "db4ded06baf7d490112b9704f0994dc61ffe3cfaedd04c2f633d814e40fac8a8",
+      "modified_at": "2026-06-27T12:58:02"
+    },
+    {
+      "category": "launcher",
+      "label": "Project Phoenix Launcher",
+      "path": "outputs\\projects\\index.html",
+      "relative_path": "outputs/projects/index.html",
+      "required": true,
+      "exists": true,
+      "size_bytes": 14917,
+      "sha256": "7f2fed4f9905a5cb61d9ef4dae2f747cb1de992fb6a481869dfe1d467635c45f",
+      "modified_at": "2026-06-27T14:36:00"
+    },
+    {
+      "category": "launcher",
+      "label": "Project Analyzer Launcher Bridge Log",
+      "path": "outputs\\projects\\project_analyzer_launcher_bridge_log.json",
+      "relative_path": "outputs/projects/project_analyzer_launcher_bridge_log.json",
+      "required": true,
+      "exists": true,
+      "size_bytes": 4426,
+      "sha256": "e654b288cfeaaad4adf147bcac009dfc000d9b42ef3a003f1cfdaca3844bc10e",
+      "modified_at": "2026-06-27T14:36:00"
+    },
+    {
+      "category": "bib_bridge",
+      "label": "BIB Project Analyzer Bridge",
+      "path": "outputs\\bib\\bib_project_analyzer_bridge.json",
+      "relative_path": "outputs/bib/bib_project_analyzer_bridge.json",
+      "required": false,
+      "exists": true,
+      "size_bytes": 110804,
+      "sha256": "985d94c713d9d4279242a314c661507f163412108dbda8ae4d475779eae979dc",
+      "modified_at": "2026-06-27T12:58:02"
+    }
+  ],
+  "missing_required_files": []
+}

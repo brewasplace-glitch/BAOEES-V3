@@ -5,6 +5,7 @@ from .project_report_bib_engine import ProjectReportBibEngine
 from .project_report_export_engine import ProjectReportExportEngine
 from .project_analyzer_workflow import ProjectAnalyzerWorkflow
 from .project_analyzer_launcher_bridge import ProjectAnalyzerLauncherBridge
+from .project_package_evidence_engine import ProjectPackageEvidenceEngine
 
 __all__ = [
     "ProjectAnalyzerBibContextLoader",
@@ -14,4 +15,5 @@ __all__ = [
     "ProjectReportExportEngine",
     "ProjectAnalyzerWorkflow",
     "ProjectAnalyzerLauncherBridge",
+    "ProjectPackageEvidenceEngine",
 ]
