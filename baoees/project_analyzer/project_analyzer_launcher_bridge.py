@@ -16,20 +16,23 @@ if str(PROJECT_ROOT) not in sys.path:
 class ProjectAnalyzerLauncherBridge:
     """
     PROJECT PHOENIX / BAOEES
-    Project Analyzer Launcher Bridge v5.2
+    Project Analyzer Launcher Bridge v5.3
 
     Doel:
     - Maakt van de launcher een professioneler Home Dashboard.
     - Zet START PROJECTANALYSE bovenaan als hoofdactie.
+    - Toont projectstatus, laatste run-informatie en huidig project.
     - Toont duidelijke instructies voor START_PROJECTANALYSE.bat.
-    - Toont startdashboard, startlog, workflowdashboard, evidence dashboard, manifest, rapporten en ZIP-pakket.
+    - Toont startdashboard, startlog, workflowdashboard, evidence dashboard,
+      manifest, rapporten en ZIP-pakket.
+    - Bereidt de latere BIB Import Wizard / Knowledge Library Builder voor.
     - Voegt een veilige HTML-sectie toe met vaste markers.
     - Maakt een JSON-logbestand.
     - Wijzigt de launcher zonder bestaande inhoud te verwijderen.
     """
 
     ENGINE_NAME = "Project Phoenix Project Analyzer Launcher Bridge"
-    ENGINE_VERSION = "v5.2"
+    ENGINE_VERSION = "v5.3"
 
     START_MARKER = "<!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_START -->"
     END_MARKER = "<!-- PROJECT_ANALYZER_WORKFLOW_LAUNCHER_END -->"
@@ -79,8 +82,19 @@ class ProjectAnalyzerLauncherBridge:
             return result
 
         outputs = self.collect_project_analyzer_outputs()
+        summary = self.build_summary(outputs)
+        latest_run = self.build_latest_run_info()
+        current_project = self.build_current_project_info()
+        next_phase = self.build_next_phase_info()
+
         launcher_html = self.launcher_path.read_text(encoding="utf-8")
-        launcher_section = self.build_launcher_section(outputs)
+        launcher_section = self.build_launcher_section(
+            outputs=outputs,
+            summary=summary,
+            latest_run=latest_run,
+            current_project=current_project,
+            next_phase=next_phase,
+        )
         updated_html = self.insert_or_replace_section(launcher_html, launcher_section)
 
         self.launcher_path.write_text(updated_html, encoding="utf-8")
@@ -90,7 +104,7 @@ class ProjectAnalyzerLauncherBridge:
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
             "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "Launcher/Home Dashboard professioneler maken met START PROJECTANALYSE als hoofdactie.",
+            "purpose": "Launcher/Home Dashboard professionaliseren met projectstatus, laatste run en huidig project.",
             "launcher_path": str(self.launcher_path),
             "project_output_root": str(self.project_output_root),
             "bridge_log_path": str(bridge_log_path),
@@ -98,15 +112,19 @@ class ProjectAnalyzerLauncherBridge:
             "bat_command": self.BAT_COMMAND,
             "bat_file": str(PROJECT_ROOT / self.BAT_FILE),
             "ps1_file": str(PROJECT_ROOT / self.PS1_FILE),
+            "summary": summary,
+            "latest_run": latest_run,
+            "current_project": current_project,
+            "next_phase": next_phase,
             "outputs": outputs,
-            "summary": self.build_summary(outputs),
             "warnings": self.build_warnings(outputs),
             "next_steps": [
                 "Open outputs/projects/index.html.",
                 "Controleer dat START PROJECTANALYSE bovenaan als hoofdactie zichtbaar is.",
-                "Controleer de instructie: dubbelklik START_PROJECTANALYSE.bat.",
+                "Controleer projectstatus, laatste run-informatie en huidig project.",
                 "Controleer snelle links naar dashboard, rapporten, evidence en Project ZIP.",
                 "Gebruik START_PROJECTANALYSE.bat als lokale Windows-startknop.",
+                "Bereid daarna de BIB Import Wizard / Knowledge Library Builder voor.",
             ],
             "extra_results": extra_results,
         }
@@ -405,12 +423,97 @@ class ProjectAnalyzerLauncherBridge:
             "status": "GEREED" if not missing_required else "WARNING",
         }
 
-    def build_launcher_section(self, outputs: List[Dict[str, Any]]) -> str:
-        summary = self.build_summary(outputs)
+    def build_latest_run_info(self) -> Dict[str, Any]:
+        start_log_path = self.project_output_root / "project_start_analysis_log.json"
+        workflow_log_path = self.project_output_root / "project_analyzer_workflow_log.json"
+        evidence_log_path = self.project_output_root / "project_package_evidence_log.json"
+        local_run_log_path = self.project_output_root / "START_PROJECTANALYSE_LOCAL_RUN_LOG.txt"
+
+        start_log = self.read_json(start_log_path)
+        workflow_log = self.read_json(workflow_log_path)
+        evidence_log = self.read_json(evidence_log_path)
+
+        latest_run = {
+            "status": start_log.get("status") or workflow_log.get("status") or "ONBEKEND",
+            "engine_version": start_log.get("engine_version") or workflow_log.get("engine_version") or "ONBEKEND",
+            "started_at": start_log.get("started_at") or workflow_log.get("started_at") or "",
+            "finished_at": start_log.get("finished_at") or workflow_log.get("finished_at") or "",
+            "workflow_status": workflow_log.get("status", "ONBEKEND"),
+            "evidence_status": evidence_log.get("status", "ONBEKEND"),
+            "local_run_log_exists": local_run_log_path.exists(),
+            "local_run_log_path": str(local_run_log_path),
+            "local_run_log_modified_at": (
+                datetime.fromtimestamp(local_run_log_path.stat().st_mtime).isoformat(timespec="seconds")
+                if local_run_log_path.exists()
+                else ""
+            ),
+        }
+
+        return latest_run
+
+    def build_current_project_info(self) -> Dict[str, Any]:
+        context_path = self.project_output_root / "project_analyzer_bib_context.json"
+        package_path = self.project_output_root / "project_report_bib_package.json"
+
+        context_data = self.read_json(context_path)
+        package_data = self.read_json(package_path)
+
+        project_name = (
+            self.find_first_value(context_data, ["project_name", "project", "naam", "title"])
+            or self.find_first_value(package_data, ["project_name", "project", "naam", "title"])
+            or "Project Phoenix / BAOEES Projectanalyse"
+        )
+
+        project_type = (
+            self.find_first_value(context_data, ["project_type", "type", "category"])
+            or self.find_first_value(package_data, ["project_type", "type", "category"])
+            or "Projectanalyse / Engineering workflow"
+        )
+
+        location = (
+            self.find_first_value(context_data, ["location", "locatie", "address", "adres"])
+            or self.find_first_value(package_data, ["location", "locatie", "address", "adres"])
+            or "Nog niet projectspecifiek vastgelegd"
+        )
+
+        return {
+            "project_name": str(project_name),
+            "project_type": str(project_type),
+            "location": str(location),
+            "context_file": str(context_path),
+            "context_exists": context_path.exists(),
+            "package_file": str(package_path),
+            "package_exists": package_path.exists(),
+        }
+
+    def build_next_phase_info(self) -> Dict[str, Any]:
+        return {
+            "next_phase": "BIB Import Wizard / Knowledge Library Builder",
+            "purpose": "Bestaande kennis, oude chats, uploads en levenswerk-mappen systematisch importeren in de lokale BIB.",
+            "status": "VOORBEREID",
+            "candidate_version": "v5.4 of v6.0",
+            "main_targets": [
+                "Chats en samenvattingen structureren",
+                "Bestanden en uploads inventariseren",
+                "Projectkennis normaliseren",
+                "BIB-indexen maken",
+                "Bronnen/evidence vastleggen",
+                "Kennis later herbruikbaar maken in START PROJECTANALYSE",
+            ],
+        }
+
+    def build_launcher_section(
+        self,
+        outputs: List[Dict[str, Any]],
+        summary: Dict[str, Any],
+        latest_run: Dict[str, Any],
+        current_project: Dict[str, Any],
+        next_phase: Dict[str, Any],
+    ) -> str:
         grouped_outputs = self.group_outputs_by_category(outputs)
+        quick_links = self.build_quick_links(outputs)
 
         category_sections = ""
-        quick_links = self.build_quick_links(outputs)
 
         for category, items in grouped_outputs.items():
             cards = ""
@@ -456,7 +559,7 @@ class ProjectAnalyzerLauncherBridge:
     <p style="margin:0 0 8px 0;color:#bfdbfe;font-weight:bold;letter-spacing:0.08em;">PROJECT PHOENIX / BAOEES</p>
     <h1 style="margin:0;font-size:36px;line-height:1.1;">START PROJECTANALYSE</h1>
     <p style="max-width:980px;color:#dbeafe;font-size:16px;">
-      Centrale startomgeving voor volledige projectanalyse, inclusief BIB-context,
+      Professioneel Home Dashboard voor volledige projectanalyse, inclusief BIB-context,
       AAIE-aannames, Geo/Foundation analyse, projectrapportage, DOCX/PDF-export,
       Project ZIP, manifest, evidence dashboard en launcher-update.
     </p>
@@ -486,16 +589,44 @@ class ProjectAnalyzerLauncherBridge:
   </div>
 
   <section style="margin-top:24px;">
-    <h2>Home Dashboard</h2>
+    <h2>Projectstatus</h2>
     <div class="grid">
       <div class="card">
-        <h3>Workflow status</h3>
+        <h3>Huidig project</h3>
+        <p><strong>{self.esc(current_project.get("project_name", ""))}</strong></p>
+        <p class="muted">Type: {self.esc(current_project.get("project_type", ""))}</p>
+        <p class="muted">Locatie: {self.esc(current_project.get("location", ""))}</p>
+      </div>
+
+      <div class="card">
+        <h3>Laatste run</h3>
+        <p><strong>Status:</strong> {self.esc(latest_run.get("status", ""))}</p>
+        <p class="muted">Engine: {self.esc(latest_run.get("engine_version", ""))}</p>
+        <p class="muted">Start: {self.esc(latest_run.get("started_at", ""))}</p>
+        <p class="muted">Einde: {self.esc(latest_run.get("finished_at", ""))}</p>
+      </div>
+
+      <div class="card">
+        <h3>Workflowcontrole</h3>
+        <p><strong>Workflow:</strong> {self.esc(latest_run.get("workflow_status", ""))}</p>
+        <p><strong>Evidence:</strong> {self.esc(latest_run.get("evidence_status", ""))}</p>
+        <p class="muted">Lokale run-log: {self.esc(latest_run.get("local_run_log_exists", ""))}</p>
+        <p class="muted">Run-log datum: {self.esc(latest_run.get("local_run_log_modified_at", ""))}</p>
+      </div>
+
+      <div class="card">
+        <h3>Outputstatus</h3>
         <p><span class="badge ok">{self.esc(summary.get("status", ""))}</span></p>
         <p class="muted">Aanwezige outputs: {self.esc(summary.get("existing_outputs", 0))} / {self.esc(summary.get("total_outputs", 0))}</p>
         <p class="muted">Belangrijke outputs: {self.esc(summary.get("existing_high_priority_outputs", 0))} / {self.esc(summary.get("high_priority_outputs", 0))}</p>
         <p class="muted">Ontbrekende verplichte outputs: {self.esc(summary.get("missing_required_outputs", 0))}</p>
       </div>
+    </div>
+  </section>
 
+  <section style="margin-top:28px;">
+    <h2>Snelle controle</h2>
+    <div class="grid">
       <div class="card">
         <h3>Snelle start</h3>
         <p><strong>1.</strong> Open projectmap: <code>{self.esc(PROJECT_ROOT)}</code></p>
@@ -508,6 +639,14 @@ class ProjectAnalyzerLauncherBridge:
         <h3>Belangrijkste links</h3>
         {quick_links}
       </div>
+
+      <div class="card">
+        <h3>Volgende fase</h3>
+        <p><strong>{self.esc(next_phase.get("next_phase", ""))}</strong></p>
+        <p class="muted">{self.esc(next_phase.get("purpose", ""))}</p>
+        <p class="muted">Status: {self.esc(next_phase.get("status", ""))}</p>
+        <p class="muted">Kandidaatversie: {self.esc(next_phase.get("candidate_version", ""))}</p>
+      </div>
     </div>
   </section>
 
@@ -518,6 +657,7 @@ class ProjectAnalyzerLauncherBridge:
       <p><strong>Waarom niet direct vanuit HTML?</strong> Een gewone HTML-pagina kan om veiligheidsredenen niet zelfstandig Python starten.</p>
       <p><strong>Daarom:</strong> het BAT-bestand is de lokale Windows-startknop. De launcher is het overzichts- en controlepaneel.</p>
       <p><strong>Na de run:</strong> controleer Start Dashboard, Workflow Dashboard, Evidence Dashboard, Project ZIP en rapporten.</p>
+      <p><strong>Bibliotheekopbouw:</strong> de latere BIB Import Wizard gaat bestaande kennis, oude chats, uploads en levenswerk-mappen systematisch importeren.</p>
     </div>
   </section>
 
@@ -599,6 +739,37 @@ class ProjectAnalyzerLauncherBridge:
             warnings.append("Geen kritieke Project Analyzer Launcher Bridge-waarschuwingen.")
 
         return warnings
+
+    def read_json(self, path: Path) -> Dict[str, Any]:
+        if not path.exists():
+            return {}
+
+        try:
+            return json.loads(path.read_text(encoding="utf-8-sig"))
+        except Exception:
+            try:
+                return json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                return {}
+
+    def find_first_value(self, data: Any, candidate_keys: List[str]) -> Optional[Any]:
+        if isinstance(data, dict):
+            for key in candidate_keys:
+                if key in data and data[key]:
+                    return data[key]
+
+            for value in data.values():
+                result = self.find_first_value(value, candidate_keys)
+                if result:
+                    return result
+
+        if isinstance(data, list):
+            for item in data:
+                result = self.find_first_value(item, candidate_keys)
+                if result:
+                    return result
+
+        return None
 
     def safe_relative(self, path: Path) -> str:
         try:
