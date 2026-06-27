@@ -21,7 +21,7 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 16px;
     }
     .card {
@@ -30,22 +30,12 @@
       border-radius: 14px;
       padding: 18px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #334155;
-      margin-top: 18px;
+    a {
+      color: #93c5fd;
     }
-    th, td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #334155;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: #0f172a;
-      color: #bfdbfe;
+    code {
+      color: #cbd5e1;
+      word-break: break-all;
     }
     .muted {
       color: #cbd5e1;
@@ -55,7 +45,7 @@
 <body>
   <header>
     <h1>PROJECT ANALYZER WORKFLOW DASHBOARD</h1>
-    <p>Project Phoenix / BAOEES hoofdworkflow v4.3.</p>
+    <p>Project Phoenix / BAOEES centrale workflow v4.6.</p>
   </header>
 
   <main>
@@ -67,49 +57,86 @@
       <div class="card">
         <h3>Engine</h3>
         <p>Project Phoenix Project Analyzer Workflow</p>
+        <p class="muted">v4.6</p>
       </div>
       <div class="card">
-        <h3>Versie</h3>
-        <p>v4.3</p>
+        <h3>Evidence Dashboard</h3>
+        <p><a href="project_package_evidence_dashboard.html">project_package_evidence_dashboard.html</a></p>
       </div>
       <div class="card">
-        <h3>Project output</h3>
-        <p class="muted">outputs\projects</p>
+        <h3>Project ZIP</h3>
+        <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>
       </div>
     </section>
 
     <h2>Workflow stappen</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Stap</th>
-          <th>Naam</th>
-          <th>Engine</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>BIB-context laden</td><td>Project Phoenix Project Analyzer BIB Context Loader</td><td>GEREED</td></tr><tr><td>2</td><td>AAIE-aannames laden</td><td>Project Phoenix AAIE BIB Assumption Loader</td><td>OPGESLAGEN</td></tr><tr><td>3</td><td>Geo/Fundering analyse</td><td>Project Phoenix Geo/Foundation BIB Engine</td><td>OPGESLAGEN</td></tr><tr><td>4</td><td>Projectrapport opbouwen</td><td>Project Phoenix Project Report BIB Engine</td><td>OPGESLAGEN</td></tr><tr><td>5</td><td>Projectrapport exporteren</td><td>Project Phoenix Project Report Export Engine</td><td>OPGESLAGEN</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Outputs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Naam</th>
-          <th>Pad</th>
-          <th>Bestaat</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>workflow_log_path</td><td>outputs\projects\project_analyzer_workflow_log.json</td><td>True</td></tr><tr><td>workflow_dashboard_path</td><td>outputs\projects\project_analyzer_workflow_dashboard.html</td><td>False</td></tr><tr><td>bib_context</td><td>outputs\projects\project_analyzer_bib_context.json</td><td>True</td></tr><tr><td>aaie_assumptions</td><td>outputs\projects\aaie_bib_assumptions.json</td><td>True</td></tr><tr><td>geo_foundation_analysis</td><td>outputs\projects\geo_foundation_bib_analysis.json</td><td>True</td></tr><tr><td>project_report_package</td><td>outputs\projects\project_report_bib_package.json</td><td>True</td></tr><tr><td>project_report_docx</td><td>outputs\projects\project_report_bib_report.docx</td><td>True</td></tr><tr><td>project_report_pdf</td><td>outputs\projects\project_report_bib_report.pdf</td><td>True</td></tr><tr><td>project_report_export_dashboard</td><td>outputs\projects\project_report_export_dashboard.html</td><td>True</td></tr>
-      </tbody>
-    </table>
+    <section class="grid">
+      
+            <div class="card">
+              <h3>BIB-context laden</h3>
+              <p><strong>Status:</strong> GEREED</p>
+              <p><strong>Start:</strong> 2026-06-27T15:42:10</p>
+              <p><strong>Einde:</strong> 2026-06-27T15:42:10</p>
+              <ul>
+                <li><strong>json_path</strong>: <code>outputs\projects\project_analyzer_bib_context.json</code></li><li><strong>html_path</strong>: <code>outputs\projects\project_analyzer_bib_context.html</code></li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>AAIE-aannames genereren</h3>
+              <p><strong>Status:</strong> OPGESLAGEN</p>
+              <p><strong>Start:</strong> 2026-06-27T15:42:10</p>
+              <p><strong>Einde:</strong> 2026-06-27T15:42:10</p>
+              <ul>
+                <li><strong>json_path</strong>: <code>outputs\projects\aaie_bib_assumptions.json</code></li><li><strong>html_path</strong>: <code>outputs\projects\aaie_bib_assumptions.html</code></li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>Geo/Foundation analyse genereren</h3>
+              <p><strong>Status:</strong> OPGESLAGEN</p>
+              <p><strong>Start:</strong> 2026-06-27T15:42:10</p>
+              <p><strong>Einde:</strong> 2026-06-27T15:42:10</p>
+              <ul>
+                <li><strong>json_path</strong>: <code>outputs\projects\geo_foundation_bib_analysis.json</code></li><li><strong>html_path</strong>: <code>outputs\projects\geo_foundation_bib_analysis.html</code></li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>Projectrapport genereren</h3>
+              <p><strong>Status:</strong> OPGESLAGEN</p>
+              <p><strong>Start:</strong> 2026-06-27T15:42:10</p>
+              <p><strong>Einde:</strong> 2026-06-27T15:42:10</p>
+              <ul>
+                <li>Geen extra details.</li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>Projectrapport exporteren naar DOCX/PDF</h3>
+              <p><strong>Status:</strong> OPGESLAGEN</p>
+              <p><strong>Start:</strong> 2026-06-27T15:42:10</p>
+              <p><strong>Einde:</strong> 2026-06-27T15:42:10</p>
+              <ul>
+                <li><strong>docx_path</strong>: <code>outputs\projects\project_report_bib_report.docx</code></li><li><strong>pdf_path</strong>: <code>outputs\projects\project_report_bib_report.pdf</code></li><li><strong>log_path</strong>: <code>outputs\projects\project_report_export_log.json</code></li><li><strong>dashboard_path</strong>: <code>outputs\projects\project_report_export_dashboard.html</code></li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>Project ZIP / Evidence pakket genereren</h3>
+              <p><strong>Status:</strong> OPGESLAGEN</p>
+              <p><strong>Start:</strong> 2026-06-27T15:42:10</p>
+              <p><strong>Einde:</strong> 2026-06-27T15:42:11</p>
+              <ul>
+                <li><strong>manifest_path</strong>: <code>outputs\projects\project_package_manifest.json</code></li><li><strong>evidence_log_path</strong>: <code>outputs\projects\project_package_evidence_log.json</code></li><li><strong>dashboard_path</strong>: <code>outputs\projects\project_package_evidence_dashboard.html</code></li><li><strong>zip_path</strong>: <code>outputs\projects\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></li>
+              </ul>
+            </div>
+            
+    </section>
 
     <h2>Waarschuwingen</h2>
     <ul>
-      <li>Geen kritieke Project Analyzer Workflow-waarschuwingen.</li>
+      <li>BIB-context laden: Geen kritieke Project Analyzer BIB Context-waarschuwingen.</li><li>AAIE-aannames genereren: Geen kritieke AAIE BIB assumption-waarschuwingen.</li><li>Geo/Foundation analyse genereren: Geen kritieke Geo/Foundation BIB-waarschuwingen.</li><li>Projectrapport genereren: Geen kritieke Project Report BIB-waarschuwingen.</li><li>Projectrapport exporteren naar DOCX/PDF: Geen kritieke Project Report Export-waarschuwingen.</li><li>Project ZIP / Evidence pakket genereren: Geen kritieke Project Package Evidence-waarschuwingen.</li>
     </ul>
   </main>
 </body>

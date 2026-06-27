@@ -1,44 +1,47 @@
 from __future__ import annotations
 
-import html
 import json
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+
 from baoees.project_analyzer.bib_context_loader import ProjectAnalyzerBibContextLoader
 from baoees.project_analyzer.aaie_bib_assumption_loader import AaieBibAssumptionLoader
 from baoees.project_analyzer.geo_foundation_bib_engine import GeoFoundationBibEngine
 from baoees.project_analyzer.project_report_bib_engine import ProjectReportBibEngine
 from baoees.project_analyzer.project_report_export_engine import ProjectReportExportEngine
+from baoees.project_analyzer.project_package_evidence_engine import ProjectPackageEvidenceEngine
 
 
 class ProjectAnalyzerWorkflow:
     """
     PROJECT PHOENIX / BAOEES
-    Project Analyzer Workflow v4.3
+    Project Analyzer Workflow v4.6
 
     Doel:
-    - BIB-context laden.
-    - AAIE-aannames laden.
-    - Geo/Fundering analyse draaien.
-    - Projectrapport opbouwen.
-    - Projectrapport exporteren naar DOCX/PDF.
-    - Workflow-log en HTML-dashboard maken.
+    - Centrale workflow voor Project Analyzer.
+    - Laadt BIB-context.
+    - Genereert AAIE-aannames.
+    - Genereert Geo/Foundation analyse.
+    - Genereert projectrapport.
+    - Exporteert DOCX/PDF.
+    - Genereert Project ZIP / Evidence pakket.
     """
 
     ENGINE_NAME = "Project Phoenix Project Analyzer Workflow"
-    ENGINE_VERSION = "v4.3"
+    ENGINE_VERSION = "v4.6"
 
     def __init__(
         self,
         project_output_root: Optional[str | Path] = None,
+        bib_output_root: Optional[str | Path] = None,
     ) -> None:
         self.project_output_root = (
             Path(project_output_root)
@@ -46,128 +49,134 @@ class ProjectAnalyzerWorkflow:
             else Path("outputs") / "projects"
         )
 
-    def run(
-        self,
-        project_context: Optional[Dict[str, Any]] = None,
-        force_refresh: bool = False,
-        **extra_results: Any,
-    ) -> Dict[str, Any]:
+        self.bib_output_root = (
+            Path(bib_output_root)
+            if bib_output_root
+            else Path("outputs") / "bib"
+        )
+
+    def run(self) -> Dict[str, Any]:
         self.project_output_root.mkdir(parents=True, exist_ok=True)
-
-        project_context = project_context or self.default_project_context()
-
-        started_at = datetime.now().isoformat(timespec="seconds")
-
-        bib_context_result = ProjectAnalyzerBibContextLoader(
-            project_output_root=self.project_output_root
-        ).run(
-            project_context=project_context,
-            force_refresh_bridge=force_refresh,
-        )
-
-        aaie_result = AaieBibAssumptionLoader(
-            project_output_root=self.project_output_root
-        ).run(
-            project_context=project_context,
-            force_refresh_context=force_refresh,
-        )
-
-        geo_result = GeoFoundationBibEngine(
-            project_output_root=self.project_output_root
-        ).run(
-            project_context=project_context,
-            force_refresh_assumptions=force_refresh,
-        )
-
-        report_result = ProjectReportBibEngine(
-            project_output_root=self.project_output_root
-        ).run(
-            project_context=project_context,
-            force_refresh_geo=force_refresh,
-        )
-
-        export_result = ProjectReportExportEngine(
-            project_output_root=self.project_output_root
-        ).run(
-            project_context=project_context,
-            force_refresh_report=force_refresh,
-        )
+        self.bib_output_root.mkdir(parents=True, exist_ok=True)
 
         workflow_log_path = self.project_output_root / "project_analyzer_workflow_log.json"
         workflow_dashboard_path = self.project_output_root / "project_analyzer_workflow_dashboard.html"
 
-        result = {
-            "status": self.determine_status(
-                [
-                    bib_context_result,
-                    aaie_result,
-                    geo_result,
-                    report_result,
-                    export_result,
-                ]
+        started_at = datetime.now().isoformat(timespec="seconds")
+
+        steps: Dict[str, Any] = {}
+
+        bib_context_result = self.run_step(
+            step_key="bib_context",
+            step_name="BIB-context laden",
+            runner=lambda: ProjectAnalyzerBibContextLoader(
+                project_output_root=self.project_output_root,
+                bib_output_root=self.bib_output_root,
+            ).run(),
+        )
+        steps["bib_context"] = bib_context_result
+
+        aaie_result = self.run_step(
+            step_key="aaie_assumptions",
+            step_name="AAIE-aannames genereren",
+            runner=lambda: AaieBibAssumptionLoader(
+                project_output_root=self.project_output_root,
+            ).run(
+                bib_context_result=bib_context_result,
             ),
+        )
+        steps["aaie_assumptions"] = aaie_result
+
+        geo_foundation_result = self.run_step(
+            step_key="geo_foundation",
+            step_name="Geo/Foundation analyse genereren",
+            runner=lambda: GeoFoundationBibEngine(
+                project_output_root=self.project_output_root,
+            ).run(
+                bib_context_result=bib_context_result,
+                aaie_result=aaie_result,
+            ),
+        )
+        steps["geo_foundation"] = geo_foundation_result
+
+        report_result = self.run_step(
+            step_key="project_report",
+            step_name="Projectrapport genereren",
+            runner=lambda: ProjectReportBibEngine(
+                project_output_root=self.project_output_root,
+            ).run(
+                bib_context_result=bib_context_result,
+                aaie_result=aaie_result,
+                geo_foundation_result=geo_foundation_result,
+            ),
+        )
+        steps["project_report"] = report_result
+
+        export_result = self.run_step(
+            step_key="project_report_export",
+            step_name="Projectrapport exporteren naar DOCX/PDF",
+            runner=lambda: ProjectReportExportEngine(
+                project_output_root=self.project_output_root,
+            ).run(
+                bib_context_result=bib_context_result,
+                aaie_result=aaie_result,
+                geo_foundation_result=geo_foundation_result,
+                report_result=report_result,
+            ),
+        )
+        steps["project_report_export"] = export_result
+
+        package_evidence_result = self.run_step(
+            step_key="project_package_evidence",
+            step_name="Project ZIP / Evidence pakket genereren",
+            runner=lambda: ProjectPackageEvidenceEngine(
+                project_output_root=self.project_output_root,
+                bib_output_root=self.bib_output_root,
+            ).run(
+                bib_context_result=bib_context_result,
+                aaie_result=aaie_result,
+                geo_foundation_result=geo_foundation_result,
+                report_result=report_result,
+                export_result=export_result,
+            ),
+        )
+        steps["project_package_evidence"] = package_evidence_result
+
+        finished_at = datetime.now().isoformat(timespec="seconds")
+
+        result = {
+            "status": self.determine_workflow_status(steps),
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
             "started_at": started_at,
-            "finished_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "Volledige Project Analyzer hoofdworkflow draaien.",
-            "project_context": project_context,
+            "finished_at": finished_at,
             "project_output_root": str(self.project_output_root),
-            "workflow_steps": [
-                {
-                    "step": 1,
-                    "name": "BIB-context laden",
-                    "result": bib_context_result,
-                },
-                {
-                    "step": 2,
-                    "name": "AAIE-aannames laden",
-                    "result": aaie_result,
-                },
-                {
-                    "step": 3,
-                    "name": "Geo/Fundering analyse",
-                    "result": geo_result,
-                },
-                {
-                    "step": 4,
-                    "name": "Projectrapport opbouwen",
-                    "result": report_result,
-                },
-                {
-                    "step": 5,
-                    "name": "Projectrapport exporteren",
-                    "result": export_result,
-                },
-            ],
+            "bib_output_root": str(self.bib_output_root),
             "outputs": {
                 "workflow_log_path": str(workflow_log_path),
                 "workflow_dashboard_path": str(workflow_dashboard_path),
-                "bib_context": str(self.project_output_root / "project_analyzer_bib_context.json"),
-                "aaie_assumptions": str(self.project_output_root / "aaie_bib_assumptions.json"),
-                "geo_foundation_analysis": str(self.project_output_root / "geo_foundation_bib_analysis.json"),
-                "project_report_package": str(self.project_output_root / "project_report_bib_package.json"),
-                "project_report_docx": str(self.project_output_root / "project_report_bib_report.docx"),
-                "project_report_pdf": str(self.project_output_root / "project_report_bib_report.pdf"),
-                "project_report_export_dashboard": str(self.project_output_root / "project_report_export_dashboard.html"),
+                "project_package_evidence_dashboard": str(
+                    self.project_output_root / "project_package_evidence_dashboard.html"
+                ),
+                "project_package_manifest": str(
+                    self.project_output_root / "project_package_manifest.json"
+                ),
+                "project_package_evidence_log": str(
+                    self.project_output_root / "project_package_evidence_log.json"
+                ),
+                "project_zip": str(
+                    self.project_output_root / "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip"
+                ),
             },
-            "warnings": self.build_warnings(
-                [
-                    bib_context_result,
-                    aaie_result,
-                    geo_result,
-                    report_result,
-                    export_result,
-                ]
-            ),
+            "steps": steps,
+            "warnings": self.collect_warnings(steps),
             "next_steps": [
-                "Koppel deze workflow in v4.4 aan de Project Phoenix Launcher.",
-                "Laat ieder nieuw project standaard via deze workflow starten.",
-                "Voeg later project-specifieke input toe via locatie, tekst, kaartuitsnede of upload.",
-                "Voeg later professionele rapportopmaak en bijlagen toe.",
-                "Voeg later Project ZIP en Git Evidence automatisch toe.",
+                "Open project_analyzer_workflow_dashboard.html.",
+                "Open project_package_evidence_dashboard.html.",
+                "Controleer PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip.",
+                "Controleer of centrale workflow, rapportage, export en evidencepakket aanwezig zijn.",
+                "Koppel deze volledige workflow later aan de Project Phoenix launcher of startknop.",
             ],
-            "extra_results": extra_results,
         }
 
         self.write_json(workflow_log_path, result)
@@ -178,49 +187,64 @@ class ProjectAnalyzerWorkflow:
 
         return result
 
-    def determine_status(self, step_results: List[Dict[str, Any]]) -> str:
-        failed_statuses = {"FAILED", "FOUT", "ERROR"}
-        warning_statuses = {"WARNING", "WAARSCHUWING"}
+    def run_step(self, step_key: str, step_name: str, runner: Any) -> Dict[str, Any]:
+        started_at = datetime.now().isoformat(timespec="seconds")
 
-        for result in step_results:
-            if result.get("status") in failed_statuses:
-                return "FAILED"
+        try:
+            output = runner()
+            status = output.get("status", "OPGESLAGEN") if isinstance(output, dict) else "OPGESLAGEN"
 
-        for result in step_results:
-            if result.get("status") in warning_statuses:
-                return "WARNING"
+            return {
+                "step_key": step_key,
+                "step_name": step_name,
+                "status": status,
+                "started_at": started_at,
+                "finished_at": datetime.now().isoformat(timespec="seconds"),
+                "output": output,
+            }
+
+        except Exception as error:
+            return {
+                "step_key": step_key,
+                "step_name": step_name,
+                "status": "FAILED",
+                "started_at": started_at,
+                "finished_at": datetime.now().isoformat(timespec="seconds"),
+                "error_type": type(error).__name__,
+                "error_message": str(error),
+            }
+
+    def determine_workflow_status(self, steps: Dict[str, Any]) -> str:
+        statuses = [
+            str(step.get("status", "")).upper()
+            for step in steps.values()
+        ]
+
+        if any(status == "FAILED" for status in statuses):
+            return "FAILED"
+
+        if any(status == "FOUT" for status in statuses):
+            return "FAILED"
+
+        if any(status == "WARNING" for status in statuses):
+            return "WARNING"
 
         return "OPGESLAGEN"
 
-    def build_warnings(self, step_results: List[Dict[str, Any]]) -> List[str]:
-        warnings: List[str] = []
+    def collect_warnings(self, steps: Dict[str, Any]) -> list[str]:
+        warnings = []
 
-        for result in step_results:
-            engine = result.get("engine", "onbekende engine")
-            status = result.get("status", "onbekend")
+        for step in steps.values():
+            output = step.get("output")
 
-            if status not in {"OPGESLAGEN", "GEREED"}:
-                warnings.append(f"{engine}: status is {status}")
+            if isinstance(output, dict):
+                for warning in output.get("warnings", []):
+                    warnings.append(f"{step.get('step_name')}: {warning}")
 
-            for warning in result.get("warnings", []):
-                warning_text = str(warning)
-
-                if "Geen kritieke" not in warning_text:
-                    warnings.append(f"{engine}: {warning_text}")
-
-        required_outputs = [
-            self.project_output_root / "project_analyzer_bib_context.json",
-            self.project_output_root / "aaie_bib_assumptions.json",
-            self.project_output_root / "geo_foundation_bib_analysis.json",
-            self.project_output_root / "project_report_bib_package.json",
-            self.project_output_root / "project_report_bib_report.docx",
-            self.project_output_root / "project_report_bib_report.pdf",
-            self.project_output_root / "project_report_export_dashboard.html",
-        ]
-
-        for path in required_outputs:
-            if not path.exists():
-                warnings.append(f"Verplichte workflow-output ontbreekt: {path}")
+            if step.get("status") == "FAILED":
+                warnings.append(
+                    f"{step.get('step_name')}: {step.get('error_type')} - {step.get('error_message')}"
+                )
 
         if not warnings:
             warnings.append("Geen kritieke Project Analyzer Workflow-waarschuwingen.")
@@ -228,34 +252,51 @@ class ProjectAnalyzerWorkflow:
         return warnings
 
     def build_html_dashboard(self, result: Dict[str, Any]) -> str:
-        step_rows = ""
+        step_cards = ""
 
-        for step in result.get("workflow_steps", []):
-            step_result = step.get("result", {})
-            step_rows += (
-                "<tr>"
-                f"<td>{self.esc(step.get('step', ''))}</td>"
-                f"<td>{self.esc(step.get('name', ''))}</td>"
-                f"<td>{self.esc(step_result.get('engine', ''))}</td>"
-                f"<td>{self.esc(step_result.get('status', ''))}</td>"
-                "</tr>"
-            )
+        for step in result.get("steps", {}).values():
+            status = str(step.get("status", ""))
+            output = step.get("output", {})
+            error_message = step.get("error_message", "")
 
-        output_rows = ""
+            details = ""
 
-        for name, path in result.get("outputs", {}).items():
-            output_rows += (
-                "<tr>"
-                f"<td>{self.esc(name)}</td>"
-                f"<td>{self.esc(path)}</td>"
-                f"<td>{self.esc(Path(path).exists())}</td>"
-                "</tr>"
-            )
+            if isinstance(output, dict):
+                outputs = output.get("outputs", {})
+                if isinstance(outputs, dict):
+                    for label, path in outputs.items():
+                        details += f"<li><strong>{self.esc(label)}</strong>: <code>{self.esc(path)}</code></li>"
+
+            if error_message:
+                details += f"<li><strong>Fout</strong>: {self.esc(error_message)}</li>"
+
+            if not details:
+                details = "<li>Geen extra details.</li>"
+
+            step_cards += f"""
+            <div class="card">
+              <h3>{self.esc(step.get("step_name", ""))}</h3>
+              <p><strong>Status:</strong> {self.esc(status)}</p>
+              <p><strong>Start:</strong> {self.esc(step.get("started_at", ""))}</p>
+              <p><strong>Einde:</strong> {self.esc(step.get("finished_at", ""))}</p>
+              <ul>
+                {details}
+              </ul>
+            </div>
+            """
 
         warning_items = ""
 
         for warning in result.get("warnings", []):
             warning_items += f"<li>{self.esc(warning)}</li>"
+
+        project_package_dashboard = Path(
+            result.get("outputs", {}).get("project_package_evidence_dashboard", "")
+        ).name
+
+        project_zip = Path(
+            result.get("outputs", {}).get("project_zip", "")
+        ).name
 
         return f"""<!doctype html>
 <html lang="nl">
@@ -280,7 +321,7 @@ class ProjectAnalyzerWorkflow:
     }}
     .grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 16px;
     }}
     .card {{
@@ -289,22 +330,12 @@ class ProjectAnalyzerWorkflow:
       border-radius: 14px;
       padding: 18px;
     }}
-    table {{
-      width: 100%;
-      border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #334155;
-      margin-top: 18px;
+    a {{
+      color: #93c5fd;
     }}
-    th, td {{
-      padding: 10px 12px;
-      border-bottom: 1px solid #334155;
-      text-align: left;
-      vertical-align: top;
-    }}
-    th {{
-      background: #0f172a;
-      color: #bfdbfe;
+    code {{
+      color: #cbd5e1;
+      word-break: break-all;
     }}
     .muted {{
       color: #cbd5e1;
@@ -314,7 +345,7 @@ class ProjectAnalyzerWorkflow:
 <body>
   <header>
     <h1>PROJECT ANALYZER WORKFLOW DASHBOARD</h1>
-    <p>Project Phoenix / BAOEES hoofdworkflow v4.3.</p>
+    <p>Project Phoenix / BAOEES centrale workflow v4.6.</p>
   </header>
 
   <main>
@@ -326,45 +357,22 @@ class ProjectAnalyzerWorkflow:
       <div class="card">
         <h3>Engine</h3>
         <p>{self.esc(result.get("engine", ""))}</p>
+        <p class="muted">{self.esc(result.get("engine_version", ""))}</p>
       </div>
       <div class="card">
-        <h3>Versie</h3>
-        <p>{self.esc(result.get("engine_version", ""))}</p>
+        <h3>Evidence Dashboard</h3>
+        <p><a href="{self.esc(project_package_dashboard)}">{self.esc(project_package_dashboard)}</a></p>
       </div>
       <div class="card">
-        <h3>Project output</h3>
-        <p class="muted">{self.esc(result.get("project_output_root", ""))}</p>
+        <h3>Project ZIP</h3>
+        <p><a href="{self.esc(project_zip)}">{self.esc(project_zip)}</a></p>
       </div>
     </section>
 
     <h2>Workflow stappen</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Stap</th>
-          <th>Naam</th>
-          <th>Engine</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {step_rows}
-      </tbody>
-    </table>
-
-    <h2>Outputs</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Naam</th>
-          <th>Pad</th>
-          <th>Bestaat</th>
-        </tr>
-      </thead>
-      <tbody>
-        {output_rows}
-      </tbody>
-    </table>
+    <section class="grid">
+      {step_cards}
+    </section>
 
     <h2>Waarschuwingen</h2>
     <ul>
@@ -375,14 +383,6 @@ class ProjectAnalyzerWorkflow:
 </html>
 """
 
-    def default_project_context(self) -> Dict[str, Any]:
-        return {
-            "project_name": "Default Project Phoenix Analyzer Workflow",
-            "project_type": "bouw",
-            "purpose": "Volledige BAOEES projectanalyse via BIB, AAIE, Geo/Foundation en rapportexport.",
-            "phase": "concept",
-        }
-
     def write_json(self, path: Path, data: Dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
@@ -391,6 +391,8 @@ class ProjectAnalyzerWorkflow:
         )
 
     def esc(self, value: Any) -> str:
+        import html
+
         return html.escape(str(value), quote=True)
 
 
