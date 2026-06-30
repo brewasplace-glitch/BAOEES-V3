@@ -2,27 +2,34 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8">
-  <title>AAIE BIB Assumptions</title>
+  <title>Project Phoenix AAIE BIB Assumptions v5.8</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050816;
-      color: #f8fafc;
-      line-height: 1.5;
-    }
-    header {
-      padding: 34px 42px;
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
-      border-bottom: 1px solid #334155;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
     }
     main {
-      padding: 30px 38px 50px;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    h1, h2, h3 {
+      color: #f8fafc;
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      border: 1px solid #38bdf8;
+      margin-bottom: 26px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 16px;
+      margin: 18px 0;
     }
     .card {
       background: #111827;
@@ -30,143 +37,168 @@
       border-radius: 14px;
       padding: 18px;
     }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #14532d;
+      color: #bbf7d0;
+      font-weight: bold;
+    }
+    .muted {
+      color: #94a3b8;
+    }
+    code {
+      color: #bfdbfe;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #334155;
       margin-top: 18px;
+      background: #111827;
+      font-size: 14px;
     }
     th, td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #334155;
+      border: 1px solid #334155;
+      padding: 10px;
       text-align: left;
       vertical-align: top;
     }
     th {
-      background: #0f172a;
-      color: #bfdbfe;
-    }
-    .muted {
-      color: #cbd5e1;
-    }
-    code {
-      color: #cbd5e1;
-      white-space: pre-wrap;
+      background: #1e293b;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>AAIE BIB ASSUMPTIONS</h1>
-    <p>Autonomous Assumption & Inference Engine gevoed vanuit de Brewster Integrated Bibliotheek.</p>
-  </header>
+<main>
+  <section class="hero">
+    <p class="muted">PROJECT PHOENIX / BAOEES</p>
+    <h1>AAIE BIB Assumption Loader v5.8</h1>
+    <p>AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.</p>
+    <p><span class="badge">OPGESLAGEN</span></p>
+  </section>
 
-  <main>
-    <section class="grid">
+  <section>
+    <h2>BIB-status</h2>
+    <div class="grid">
       <div class="card">
-        <h3>Status</h3>
-        <p>OPGESLAGEN</p>
+        <h3>BIB lookup</h3>
+        <p><span class="badge">BIB_GEVONDEN</span></p>
+      </div>
+      <div class="card">
+        <h3>Inhoudelijk herkend</h3>
+        <p>1</p>
+      </div>
+      <div class="card">
+        <h3>Besluiten</h3>
+        <p>0</p>
+      </div>
+      <div class="card">
+        <h3>Kennisitems</h3>
+        <p>0</p>
+      </div>
+      <div class="card">
+        <h3>Acties</h3>
+        <p>0</p>
       </div>
       <div class="card">
         <h3>Aannames</h3>
-        <p>13</p>
+        <p>7</p>
       </div>
-      <div class="card">
-        <h3>Context</h3>
-        <p class="muted">outputs\projects\project_analyzer_bib_context.json</p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <h2>Aannames per discipline</h2>
+  <section>
+    <h2>Bronvolgorde</h2>
+    <div class="card">
+      <p>1. Lokale BIB-kennisindex</p>
+      <p>2. Eerder bevestigde Project Phoenix / BAOEES kennis</p>
+      <p>3. Standaard engineeringregels</p>
+      <p>4. AAIE-aanvullende aannames</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>AAIE-aannames</h2>
     <table>
       <thead>
         <tr>
-          <th>Discipline</th>
-          <th>Aantal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>system</td><td>3</td></tr><tr><td>source_evidence</td><td>1</td></tr><tr><td>quality</td><td>1</td></tr><tr><td>geotechniek</td><td>4</td></tr><tr><td>fundering</td><td>3</td></tr><tr><td>output</td><td>1</td></tr>
-      </tbody>
-    </table>
-
-    <h2>AAIE-aannames uit BIB</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Naam</th>
-          <th>Discipline</th>
+          <th>Sleutel</th>
           <th>Waarde</th>
+          <th>Bronsoort</th>
           <th>Betrouwbaarheid</th>
-          <th>Reden</th>
+          <th>Methode</th>
+          <th>Toelichting</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>AAIE-BIB-001</td><td>Digital Twin First</td><td>system</td><td>True</td><td>hoog</td><td>BIB-regel: alle projectoutputs moeten uit dezelfde centrale projectdata komen.</td></tr><tr><td>AAIE-BIB-002</td><td>AAIE actief</td><td>system</td><td>True</td><td>hoog</td><td>Ontbrekende projectgegevens moeten automatisch worden aangevuld met aannameslog.</td></tr><tr><td>AAIE-BIB-003</td><td>STEE actief</td><td>source_evidence</td><td>True</td><td>hoog</td><td>Bronnen, fallbacks en aannames moeten traceerbaar zijn.</td></tr><tr><td>AAIE-BIB-004</td><td>QA/QC verplicht</td><td>quality</td><td>True</td><td>hoog</td><td>Geen volledige projectexport zonder QA/QC-controle.</td></tr><tr><td>AAIE-BIB-005</td><td>Automatische grondwaterdetectie</td><td>geotechniek</td><td>True</td><td>middel</td><td>BAOEES moet grondwaterstand automatisch proberen te bepalen uit locatie, kaart, bodemdata en projectcontext.</td></tr><tr><td>AAIE-BIB-006</td><td>Fallback grondwaterstand</td><td>geotechniek</td><td>P = -0,50 m</td><td>middel</td><td>Wanneer projectdata ontbreken, gebruikt AAIE de BIB fallback grondwaterstand.</td></tr><tr><td>AAIE-BIB-007</td><td>Status fallback grondwaterstand</td><td>geotechniek</td><td>AAIE fallback assumption</td><td>hoog</td><td>Fallbackwaarde moet zichtbaar als AAIE-aanname worden gemarkeerd.</td></tr><tr><td>AAIE-BIB-008</td><td>Automatisch geo-profiel</td><td>geotechniek</td><td>True</td><td>middel</td><td>BAOEES moet een voorlopig geo-profiel kunnen maken op basis van beschikbare locatie- en bodemgegevens.</td></tr><tr><td>AAIE-BIB-009</td><td>Funderingsvarianten verplicht</td><td>fundering</td><td>True</td><td>hoog</td><td>Voor bouwprojecten moeten minimaal F1 strokenfundering en F2 paalfundering worden vergeleken.</td></tr><tr><td>AAIE-BIB-F01</td><td>Funderingsvariant F1 - Strokenfundering</td><td>fundering</td><td>{
-  &quot;code&quot;: &quot;F1&quot;,
-  &quot;name&quot;: &quot;Strokenfundering&quot;,
-  &quot;description&quot;: &quot;Fundering op staal met stroken onder dragende wanden en kolommen.&quot;,
-  &quot;checks&quot;: [
-    &quot;draagkracht&quot;,
-    &quot;zetting&quot;,
-    &quot;grondwaterinvloed&quot;,
-    &quot;uitvoerbaarheid&quot;,
-    &quot;kosten&quot;,
-    &quot;bouwrisico&quot;
-  ],
-  &quot;default_dimensions&quot;: {
-    &quot;strookbreedte&quot;: &quot;150 cm tot 200 cm&quot;,
-    &quot;strookhoogte&quot;: &quot;40 cm&quot;,
-    &quot;funderingsbalk&quot;: &quot;50 cm x 60 cm&quot;,
-    &quot;ligging_balk&quot;: &quot;hart van strook&quot;
-  }
-}</td><td>hoog</td><td>Funderingsvariant overgenomen uit BIB Project Analyzer Context.</td></tr><tr><td>AAIE-BIB-F02</td><td>Funderingsvariant F2 - Paalfundering</td><td>fundering</td><td>{
-  &quot;code&quot;: &quot;F2&quot;,
-  &quot;name&quot;: &quot;Paalfundering&quot;,
-  &quot;description&quot;: &quot;Diepe fundering op palen bij slappe bodem, onvoldoende draagkracht of verhoogd zettingsrisico.&quot;,
-  &quot;checks&quot;: [
-    &quot;paallengte&quot;,
-    &quot;paaltype&quot;,
-    &quot;draagkracht per paal&quot;,
-    &quot;paalbelasting&quot;,
-    &quot;paalafstand&quot;,
-    &quot;kosten&quot;,
-    &quot;uitvoerbaarheid&quot;
-  ],
-  &quot;default_dimensions&quot;: {}
-}</td><td>hoog</td><td>Funderingsvariant overgenomen uit BIB Project Analyzer Context.</td></tr><tr><td>AAIE-BIB-010</td><td>Standaard projectoutputs</td><td>output</td><td>[
-  &quot;projectanalyse&quot;,
-  &quot;Digital Twin JSON&quot;,
-  &quot;aannameslog&quot;,
-  &quot;bronregister&quot;,
-  &quot;5 ontwerpvarianten A t/m E&quot;,
-  &quot;funderingsvarianten F1 en F2&quot;,
-  &quot;projectrapport PDF&quot;,
-  &quot;projectrapport DOCX&quot;,
-  &quot;tekeningen&quot;,
-  &quot;CAD/DXF&quot;,
-  &quot;QA/QC rapport&quot;,
-  &quot;HTML dashboard&quot;,
-  &quot;project-ZIP&quot;,
-  &quot;Git Evidence&quot;
-]</td><td>hoog</td><td>BAOEES moet standaard projectanalyse, rapporten, tekeningen, QA/QC, dashboard, ZIP en Git Evidence voorbereiden.</td></tr><tr><td>AAIE-BIB-011</td><td>Verplichte Project Analyzer regels</td><td>system</td><td>[
-  {
-    &quot;rule&quot;: &quot;Digital Twin First&quot;,
-    &quot;description&quot;: &quot;Alle rapporten, tekeningen, berekeningen, vergunningstukken, kosten en exports moeten voortkomen uit dezelfde centrale projectdata.&quot;,
-    &quot;required&quot;: true
-  },
-  {
-    &quot;rule&quot;: &quot;AAIE assumptions visible&quot;,
-    &quot;description&quot;: &quot;Alle automatisch gegenereerde waarden moeten zichtbaar in het aannameslog komen.&quot;,
-    &quot;required&quot;: true
-  },
-  {
-    &quot;rule&quot;: &quot;STEE source evidence required&quot;,
-    &quot;description&quot;: &quot;Elke bron of fallback moet herleidbaar</td><td>hoog</td><td>Project Analyzer moet de verplichte BIB-regels gebruiken als basiscontrole.</td></tr>
+        
+            <tr>
+              <td>bib_first_policy</td>
+              <td>AAIE gebruikt eerst lokale BIB-kennis voordat nieuwe aannames worden gemaakt.</td>
+              <td>bib_knowledge_index</td>
+              <td>hoog</td>
+              <td>bib_lookup_first</td>
+              <td>Dit is de centrale wijziging van v5.8.</td>
+            </tr>
+            
+            <tr>
+              <td>recognized_technical_topics</td>
+              <td>BAOEES, BEOS, BREWAS, Digital Twin, AAIE, STEE, BIB, START PROJECTANALYSE, FreeCAD, OpenSees, CalculiX, Geotechniek, Fundering, Strokenfundering, Paalfundering, AERIUS, Omgevingswet, CROW, Parkeren, Riolering, Afwatering, Vergunning, BOPA, DOCX, PDF, DWG, DXF, SKP, IFC</td>
+              <td>bib_knowledge_index</td>
+              <td>hoog</td>
+              <td>bib_topic_recognition</td>
+              <td>Technische onderwerpen zijn uit de BIB gehaald.</td>
+            </tr>
+            
+            <tr>
+              <td>default_groundwater_level</td>
+              <td>P = -0,50 m, tenzij projectspecifieke gegevens anders aangeven.</td>
+              <td>project_standard</td>
+              <td>middel</td>
+              <td>standard_engineering_rule</td>
+              <td>Bekende Brewster Engineering standaard voor geotechniek.</td>
+            </tr>
+            
+            <tr>
+              <td>default_foundation_concept</td>
+              <td>Strokenfundering 150 cm breed en 40 cm hoog met funderingsbalk 50 x 60 cm in het hart van de strook.</td>
+              <td>project_standard</td>
+              <td>middel</td>
+              <td>standard_engineering_rule</td>
+              <td>Bekend standaard concept-funderingsplan voor BEOS/Brewster Engineering.</td>
+            </tr>
+            
+            <tr>
+              <td>default_output_formats</td>
+              <td>Rapporten standaard PDF/DOCX; tekeningen standaard SKP/DWG/DXF; waar relevant IFC, STEP, FreeCAD, OpenSees, CalculiX, Excel/CSV.</td>
+              <td>project_standard</td>
+              <td>hoog</td>
+              <td>confirmed_project_preference</td>
+              <td>Door gebruiker herhaald als vaste outputwens.</td>
+            </tr>
+            
+            <tr>
+              <td>autonomous_project_mode</td>
+              <td>Volledig autonoom als standaardmodus, met controleerbare output en evidence.</td>
+              <td>project_standard</td>
+              <td>hoog</td>
+              <td>confirmed_project_preference</td>
+              <td>Vaste wens voor BAOEES / Project Phoenix.</td>
+            </tr>
+            
+            <tr>
+              <td>five_design_variants</td>
+              <td>Automatisch 5 ontwerpvarianten: laagste kosten, hoogste vergunningkans, duurzaamste, hoogste opbrengst, beste ruimtelijke kwaliteit.</td>
+              <td>project_standard</td>
+              <td>hoog</td>
+              <td>confirmed_project_preference</td>
+              <td>Vaste eis voor BAOEES variantenmodule.</td>
+            </tr>
+            
       </tbody>
     </table>
-  </main>
+  </section>
+</main>
 </body>
 </html>
