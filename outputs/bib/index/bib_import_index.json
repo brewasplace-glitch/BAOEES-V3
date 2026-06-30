@@ -2,11 +2,23 @@
   "status": "GEREED",
   "engine": "Project Phoenix BIB Import Wizard",
   "engine_version": "v5.4",
-  "generated_at": "2026-06-28T00:38:47",
+  "generated_at": "2026-06-30T16:32:34",
   "bib_root": "outputs\\bib",
-  "total_items": 0,
-  "categories": {},
-  "items": [],
+  "total_items": 1,
+  "categories": {
+    "chats": 1
+  },
+  "items": [
+    {
+      "category": "chats",
+      "filename": "chat_knowledge_intake_template.md",
+      "path": "outputs\\bib\\intake\\chats\\chat_knowledge_intake_template.md",
+      "relative_path": "outputs/bib/intake/chats/chat_knowledge_intake_template.md",
+      "suffix": ".md",
+      "size_bytes": 17615,
+      "modified_at": "2026-06-30T16:00:31"
+    }
+  ],
   "known_intake_routes": {
     "chats": "outputs\\bib\\intake\\chats",
     "uploads": "outputs\\bib\\intake\\uploads",

@@ -2,11 +2,21 @@
   "status": "GEREGISTREERD",
   "engine": "Project Phoenix BIB Import Wizard",
   "engine_version": "v5.4",
-  "generated_at": "2026-06-28T00:38:47",
+  "generated_at": "2026-06-30T16:32:34",
   "source_note": "Eerste lokale BIB Import Wizard run",
   "evidence_type": "BIB intake evidence",
-  "items_count": 0,
-  "items": [],
+  "items_count": 1,
+  "items": [
+    {
+      "category": "chats",
+      "filename": "chat_knowledge_intake_template.md",
+      "path": "outputs\\bib\\intake\\chats\\chat_knowledge_intake_template.md",
+      "relative_path": "outputs/bib/intake/chats/chat_knowledge_intake_template.md",
+      "suffix": ".md",
+      "size_bytes": 17615,
+      "modified_at": "2026-06-30T16:00:31"
+    }
+  ],
   "limitations": [
     "Nieuwe ChatGPT-chats worden nog niet automatisch naar deze lokale BIB geschreven.",
     "Kennis moet in deze fase nog handmatig in intake-mappen worden geplaatst.",
