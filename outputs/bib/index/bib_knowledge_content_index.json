@@ -3,13 +3,9 @@
   "engine": "Project Phoenix BIB Import Wizard",
   "engine_version": "v5.6",
   "generated_at": "2026-06-30T16:48:03",
-  "bib_root": "outputs\\bib",
-  "total_items": 1,
   "recognized_text_items_count": 1,
-  "categories": {
-    "chats": 1
-  },
-  "knowledge_categories": {},
+  "projects": [],
+  "categories": {},
   "technical_topics": {
     "BAOEES": 1,
     "BEOS": 1,
@@ -41,8 +37,10 @@
     "SKP": 1,
     "IFC": 1
   },
-  "projects": [],
-  "items": [
+  "decisions_count": 0,
+  "knowledge_items_count": 0,
+  "actions_count": 0,
+  "recognized_items": [
     {
       "category": "chats",
       "filename": "chat_knowledge_intake_template.md",
@@ -103,19 +101,5 @@
         "character_count": 17573
       }
     }
-  ],
-  "known_intake_routes": {
-    "chats": "outputs\\bib\\intake\\chats",
-    "uploads": "outputs\\bib\\intake\\uploads",
-    "manual": "outputs\\bib\\intake\\manual",
-    "lifework": "outputs\\bib\\intake\\lifework"
-  },
-  "future_extensions": [
-    "Automatische samenvatting per chatbestand uitbreiden.",
-    "Projectherkenning verder verfijnen.",
-    "Koppeling met STEE-bronregistratie uitbreiden.",
-    "Koppeling met START PROJECTANALYSE.",
-    "Zoekindex voor BAOEES modules.",
-    "Automatische projectdossiers per project."
   ]
 }
