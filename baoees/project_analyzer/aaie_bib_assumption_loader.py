@@ -9,293 +9,369 @@ from typing import Any, Dict, List, Optional
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from baoees.project_analyzer.bib_context_loader import ProjectAnalyzerBibContextLoader
 
-
-class AaieBibAssumptionLoader:
+class AAIEBibAssumptionLoader:
     """
-    PROJECT PHOENIX / BAOEES V3
-    AAIE BIB Assumption Loader v3.9
+    PROJECT PHOENIX / BAOEES
+    AAIE BIB Assumption Loader v5.8
 
     Doel:
-    - Leest de Project Analyzer BIB-context.
-    - Zet BIB-regels om naar AAIE-aannames.
-    - Legt standaardwaarden vast voor grondwater, geo, fundering, QA/QC, STEE en outputs.
-    - Maakt JSON- en HTML-output voor controle.
+    - AAIE laat eerst de lokale BIB-kennisindex zoeken.
+    - Bestaande BIB-kennis krijgt voorrang boven nieuwe aannames.
+    - Nieuwe aannames worden alleen aanvullend gemaakt.
+    - Elke aanname krijgt bronstatus, betrouwbaarheid en herkomst.
+    - Output wordt geschreven naar:
+      outputs/projects/aaie_bib_assumptions.json
+      outputs/projects/aaie_bib_assumptions.html
     """
 
     ENGINE_NAME = "Project Phoenix AAIE BIB Assumption Loader"
-    ENGINE_VERSION = "v3.9"
+    ENGINE_VERSION = "v5.8"
 
     def __init__(
         self,
         project_output_root: Optional[str | Path] = None,
-        context_path: Optional[str | Path] = None,
+        bib_root: Optional[str | Path] = None,
     ) -> None:
         self.project_output_root = (
             Path(project_output_root)
             if project_output_root
-            else Path("outputs") / "projects"
+            else PROJECT_ROOT / "outputs" / "projects"
         )
 
-        self.context_path = (
-            Path(context_path)
-            if context_path
-            else self.project_output_root / "project_analyzer_bib_context.json"
+        self.bib_root = (
+            Path(bib_root)
+            if bib_root
+            else PROJECT_ROOT / "outputs" / "bib"
         )
 
-    def run(
-        self,
-        project_context: Optional[Dict[str, Any]] = None,
-        force_refresh_context: bool = False,
-        **extra_results: Any,
-    ) -> Dict[str, Any]:
+        self.bib_knowledge_index_path = self.bib_root / "index" / "bib_knowledge_content_index.json"
+        self.output_json_path = self.project_output_root / "aaie_bib_assumptions.json"
+        self.output_html_path = self.project_output_root / "aaie_bib_assumptions.html"
+
+    def run(self, project_context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         self.project_output_root.mkdir(parents=True, exist_ok=True)
 
-        context_status = self.ensure_project_analyzer_context(
-            project_context=project_context,
-            force_refresh_context=force_refresh_context,
-        )
-
-        context_data = self.read_json(self.context_path)
-        defaults = context_data.get("project_input_defaults", {})
-        analyzer_context = context_data.get("project_analyzer_context", {})
-
-        assumptions = self.build_assumptions(
-            defaults=defaults,
-            analyzer_context=analyzer_context,
-            project_context=project_context or {},
-        )
-
-        output_json_path = self.project_output_root / "aaie_bib_assumptions.json"
-        output_html_path = self.project_output_root / "aaie_bib_assumptions.html"
+        project_context = project_context or {}
+        bib_data = self.load_bib_knowledge_index()
+        bib_lookup = self.build_bib_lookup(bib_data)
+        assumptions = self.build_assumptions(project_context, bib_lookup)
 
         result = {
             "status": "OPGESLAGEN",
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
             "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "AAIE automatisch voeden met aannames uit de BIB-context.",
-            "context_status": context_status,
-            "context_path": str(self.context_path),
+            "purpose": "AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.",
+            "project_root": str(PROJECT_ROOT),
             "project_output_root": str(self.project_output_root),
-            "assumption_count": len(assumptions),
+            "bib_root": str(self.bib_root),
+            "bib_knowledge_index_path": str(self.bib_knowledge_index_path),
+            "bib_status": bib_lookup.get("status", "ONBEKEND"),
+            "bib_lookup": bib_lookup,
             "assumptions": assumptions,
-            "assumption_register": self.build_assumption_register(assumptions),
-            "warnings": self.build_warnings(assumptions, defaults),
-            "recommendation": self.build_recommendation(),
-            "outputs": {
-                "json_path": str(output_json_path),
-                "html_path": str(output_html_path),
-            },
-            "extra_results": extra_results,
+            "assumption_count": len(assumptions),
+            "source_priority": [
+                "1. Lokale BIB-kennisindex",
+                "2. Eerder bevestigde Project Phoenix / BAOEES kennis",
+                "3. Standaard engineeringregels",
+                "4. AAIE-aanvullende aannames",
+            ],
+            "next_steps": [
+                "Controleer outputs/projects/aaie_bib_assumptions.html.",
+                "Controleer of BIB-kennis als bron wordt weergegeven.",
+                "Koppel deze AAIE-output verder aan Project Analyzer en rapportage.",
+                "Laat toekomstige modules eerst BIB-kennis raadplegen voordat nieuwe aannames worden gemaakt.",
+            ],
         }
 
-        self.write_json(output_json_path, result)
-        output_html_path.write_text(
-            self.build_html_report(result),
-            encoding="utf-8",
-        )
+        self.write_json(self.output_json_path, result)
+        self.write_html(self.output_html_path, self.build_dashboard(result))
 
         return result
 
-    def ensure_project_analyzer_context(
-        self,
-        project_context: Optional[Dict[str, Any]],
-        force_refresh_context: bool,
-    ) -> Dict[str, Any]:
-        if self.context_path.exists() and not force_refresh_context and not project_context:
+    def load_bib_knowledge_index(self) -> Dict[str, Any]:
+        if not self.bib_knowledge_index_path.exists():
             return {
-                "status": "AANWEZIG",
-                "message": "Project Analyzer BIB-context bestond al.",
-                "path": str(self.context_path),
+                "status": "ONTBREEKT",
+                "message": "BIB-kennisindex is nog niet aanwezig.",
+                "path": str(self.bib_knowledge_index_path),
+                "recognized_text_items_count": 0,
+                "projects": [],
+                "categories": {},
+                "technical_topics": {},
+                "decisions_count": 0,
+                "knowledge_items_count": 0,
+                "actions_count": 0,
+                "recognized_items": [],
             }
 
-        loader = ProjectAnalyzerBibContextLoader(project_output_root=self.project_output_root)
-        loader_result = loader.run(
-            project_context=project_context or self.default_project_context(),
-            force_refresh_bridge=force_refresh_context,
-        )
+        try:
+            return json.loads(self.bib_knowledge_index_path.read_text(encoding="utf-8-sig"))
+        except Exception:
+            try:
+                return json.loads(self.bib_knowledge_index_path.read_text(encoding="utf-8"))
+            except Exception as error:
+                return {
+                    "status": "FOUT",
+                    "message": f"BIB-kennisindex kon niet worden gelezen: {error}",
+                    "path": str(self.bib_knowledge_index_path),
+                    "recognized_text_items_count": 0,
+                    "projects": [],
+                    "categories": {},
+                    "technical_topics": {},
+                    "decisions_count": 0,
+                    "knowledge_items_count": 0,
+                    "actions_count": 0,
+                    "recognized_items": [],
+                }
+
+    def build_bib_lookup(self, bib_data: Dict[str, Any]) -> Dict[str, Any]:
+        recognized_items = bib_data.get("recognized_items", [])
+        projects = bib_data.get("projects", [])
+        categories = bib_data.get("categories", {})
+        technical_topics = bib_data.get("technical_topics", {})
+
+        decisions: List[str] = []
+        knowledge_items: List[str] = []
+        actions: List[str] = []
+
+        for item in recognized_items:
+            analysis = item.get("content_analysis", {})
+            decisions.extend(analysis.get("decisions", []))
+            knowledge_items.extend(analysis.get("knowledge_items", []))
+            actions.extend(analysis.get("actions", []))
+
+        if bib_data.get("status") in ["GEREED", "GELEZEN"]:
+            status = "BIB_GEVONDEN"
+        elif bib_data.get("status") == "ONTBREEKT":
+            status = "BIB_ONTBREEKT"
+        elif bib_data.get("status") == "FOUT":
+            status = "BIB_FOUT"
+        else:
+            status = "BIB_ONBEKEND"
 
         return {
-            "status": "GEGENEREERD",
-            "message": "Project Analyzer BIB-context is gegenereerd of vernieuwd.",
-            "path": str(self.context_path),
-            "loader_result_status": loader_result.get("status"),
+            "status": status,
+            "source": str(self.bib_knowledge_index_path),
+            "raw_status": bib_data.get("status", ""),
+            "generated_at": bib_data.get("generated_at", ""),
+            "recognized_text_items_count": bib_data.get("recognized_text_items_count", 0),
+            "projects": projects,
+            "categories": categories,
+            "technical_topics": technical_topics,
+            "decisions_count": len(decisions),
+            "knowledge_items_count": len(knowledge_items),
+            "actions_count": len(actions),
+            "decisions": decisions,
+            "knowledge_items": knowledge_items,
+            "actions": actions,
         }
 
     def build_assumptions(
         self,
-        defaults: Dict[str, Any],
-        analyzer_context: Dict[str, Any],
         project_context: Dict[str, Any],
+        bib_lookup: Dict[str, Any],
     ) -> List[Dict[str, Any]]:
         assumptions: List[Dict[str, Any]] = []
 
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-001",
-                name="Digital Twin First",
-                value=defaults.get("digital_twin_first", True),
-                discipline="system",
-                reason="BIB-regel: alle projectoutputs moeten uit dezelfde centrale projectdata komen.",
-                confidence="hoog",
-                source_field="project_input_defaults.digital_twin_first",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-002",
-                name="AAIE actief",
-                value=defaults.get("aaie_enabled", True),
-                discipline="system",
-                reason="Ontbrekende projectgegevens moeten automatisch worden aangevuld met aannameslog.",
-                confidence="hoog",
-                source_field="project_input_defaults.aaie_enabled",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-003",
-                name="STEE actief",
-                value=defaults.get("stee_enabled", True),
-                discipline="source_evidence",
-                reason="Bronnen, fallbacks en aannames moeten traceerbaar zijn.",
-                confidence="hoog",
-                source_field="project_input_defaults.stee_enabled",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-004",
-                name="QA/QC verplicht",
-                value=defaults.get("qa_qc_required", True),
-                discipline="quality",
-                reason="Geen volledige projectexport zonder QA/QC-controle.",
-                confidence="hoog",
-                source_field="project_input_defaults.qa_qc_required",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-005",
-                name="Automatische grondwaterdetectie",
-                value=defaults.get("automatic_groundwater_detection", True),
-                discipline="geotechniek",
-                reason="BAOEES moet grondwaterstand automatisch proberen te bepalen uit locatie, kaart, bodemdata en projectcontext.",
-                confidence="middel",
-                source_field="project_input_defaults.automatic_groundwater_detection",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-006",
-                name="Fallback grondwaterstand",
-                value=defaults.get("groundwater_fallback", "P = -0,50 m"),
-                discipline="geotechniek",
-                reason="Wanneer projectdata ontbreken, gebruikt AAIE de BIB fallback grondwaterstand.",
-                confidence="middel",
-                source_field="project_input_defaults.groundwater_fallback",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-007",
-                name="Status fallback grondwaterstand",
-                value=defaults.get("groundwater_fallback_status", "AAIE fallback assumption"),
-                discipline="geotechniek",
-                reason="Fallbackwaarde moet zichtbaar als AAIE-aanname worden gemarkeerd.",
-                confidence="hoog",
-                source_field="project_input_defaults.groundwater_fallback_status",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-008",
-                name="Automatisch geo-profiel",
-                value=defaults.get("automatic_geo_profile", True),
-                discipline="geotechniek",
-                reason="BAOEES moet een voorlopig geo-profiel kunnen maken op basis van beschikbare locatie- en bodemgegevens.",
-                confidence="middel",
-                source_field="project_input_defaults.automatic_geo_profile",
-            )
-        )
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-009",
-                name="Funderingsvarianten verplicht",
-                value=defaults.get("foundation_variants_required", True),
-                discipline="fundering",
-                reason="Voor bouwprojecten moeten minimaal F1 strokenfundering en F2 paalfundering worden vergeleken.",
-                confidence="hoog",
-                source_field="project_input_defaults.foundation_variants_required",
-            )
-        )
-
-        foundation_variants = defaults.get("foundation_variants", [])
-
-        for index, variant in enumerate(foundation_variants, start=1):
+        if bib_lookup.get("status") == "BIB_GEVONDEN":
+            assumptions.extend(self.build_bib_based_assumptions(bib_lookup))
+        else:
             assumptions.append(
                 self.make_assumption(
-                    code=f"AAIE-BIB-F{index:02d}",
-                    name=f"Funderingsvariant {variant.get('code', index)} - {variant.get('name', '')}",
-                    value=variant,
-                    discipline="fundering",
-                    reason="Funderingsvariant overgenomen uit BIB Project Analyzer Context.",
-                    confidence="hoog",
-                    source_field="project_input_defaults.foundation_variants",
+                    key="bib_status",
+                    value="Geen bruikbare BIB-kennisindex gevonden.",
+                    source="AAIE v5.8 controle",
+                    source_type="system_check",
+                    reliability="laag",
+                    method="fallback",
+                    note="AAIE kan nog niet eerst uit BIB putten omdat de BIB-kennisindex ontbreekt of niet leesbaar is.",
                 )
             )
 
-        default_outputs = defaults.get("default_outputs", [])
+        assumptions.extend(self.build_standard_project_assumptions(bib_lookup))
+        assumptions.extend(self.build_context_assumptions(project_context))
+
+        return assumptions
+
+    def build_bib_based_assumptions(self, bib_lookup: Dict[str, Any]) -> List[Dict[str, Any]]:
+        assumptions: List[Dict[str, Any]] = []
+
+        projects = bib_lookup.get("projects", [])
+        categories = bib_lookup.get("categories", {})
+        technical_topics = bib_lookup.get("technical_topics", {})
+        decisions = bib_lookup.get("decisions", [])
+        knowledge_items = bib_lookup.get("knowledge_items", [])
+        actions = bib_lookup.get("actions", [])
 
         assumptions.append(
             self.make_assumption(
-                code="AAIE-BIB-010",
-                name="Standaard projectoutputs",
-                value=default_outputs,
-                discipline="output",
-                reason="BAOEES moet standaard projectanalyse, rapporten, tekeningen, QA/QC, dashboard, ZIP en Git Evidence voorbereiden.",
-                confidence="hoog",
-                source_field="project_input_defaults.default_outputs",
+                key="bib_first_policy",
+                value="AAIE gebruikt eerst lokale BIB-kennis voordat nieuwe aannames worden gemaakt.",
+                source=bib_lookup.get("source", ""),
+                source_type="bib_knowledge_index",
+                reliability="hoog",
+                method="bib_lookup_first",
+                note="Dit is de centrale wijziging van v5.8.",
             )
         )
 
-        mandatory_rules = analyzer_context.get("mandatory_project_analyzer_rules", [])
-
-        assumptions.append(
-            self.make_assumption(
-                code="AAIE-BIB-011",
-                name="Verplichte Project Analyzer regels",
-                value=mandatory_rules,
-                discipline="system",
-                reason="Project Analyzer moet de verplichte BIB-regels gebruiken als basiscontrole.",
-                confidence="hoog",
-                source_field="project_analyzer_context.mandatory_project_analyzer_rules",
-            )
-        )
-
-        if project_context:
+        if projects:
             assumptions.append(
                 self.make_assumption(
-                    code="AAIE-BIB-012",
-                    name="Projectcontext ontvangen",
-                    value=project_context,
-                    discipline="project",
-                    reason="Specifieke projectcontext is meegegeven en wordt opgenomen in het aannamesregister.",
-                    confidence="hoog",
-                    source_field="runtime.project_context",
+                    key="recognized_projects",
+                    value=", ".join(projects),
+                    source=bib_lookup.get("source", ""),
+                    source_type="bib_knowledge_index",
+                    reliability="hoog",
+                    method="bib_project_recognition",
+                    note="Projectnamen zijn uit de BIB-kennisindex gehaald.",
+                )
+            )
+
+        if categories:
+            assumptions.append(
+                self.make_assumption(
+                    key="recognized_bib_categories",
+                    value=", ".join(categories.keys()),
+                    source=bib_lookup.get("source", ""),
+                    source_type="bib_knowledge_index",
+                    reliability="hoog",
+                    method="bib_category_recognition",
+                    note="BIB-categorieën zijn uit intakebestanden herkend.",
+                )
+            )
+
+        if technical_topics:
+            assumptions.append(
+                self.make_assumption(
+                    key="recognized_technical_topics",
+                    value=", ".join(technical_topics.keys()),
+                    source=bib_lookup.get("source", ""),
+                    source_type="bib_knowledge_index",
+                    reliability="hoog",
+                    method="bib_topic_recognition",
+                    note="Technische onderwerpen zijn uit de BIB gehaald.",
+                )
+            )
+
+        if decisions:
+            assumptions.append(
+                self.make_assumption(
+                    key="bib_decisions_available",
+                    value=f"{len(decisions)} besluit(en) gevonden in de BIB.",
+                    source=bib_lookup.get("source", ""),
+                    source_type="bib_knowledge_index",
+                    reliability="hoog",
+                    method="bib_decision_reuse",
+                    note="Deze besluiten moeten voorrang krijgen boven nieuwe aannames.",
+                )
+            )
+
+        if knowledge_items:
+            assumptions.append(
+                self.make_assumption(
+                    key="bib_knowledge_items_available",
+                    value=f"{len(knowledge_items)} kennisitem(s) gevonden in de BIB.",
+                    source=bib_lookup.get("source", ""),
+                    source_type="bib_knowledge_index",
+                    reliability="hoog",
+                    method="bib_knowledge_reuse",
+                    note="Deze kennisitems kunnen gebruikt worden door Project Analyzer, AAIE en rapportage.",
+                )
+            )
+
+        if actions:
+            assumptions.append(
+                self.make_assumption(
+                    key="bib_actions_available",
+                    value=f"{len(actions)} actiepunt(en) gevonden in de BIB.",
+                    source=bib_lookup.get("source", ""),
+                    source_type="bib_knowledge_index",
+                    reliability="middel",
+                    method="bib_action_reuse",
+                    note="Acties zijn bruikbaar voor planning en vervolgstappen.",
+                )
+            )
+
+        return assumptions
+
+    def build_standard_project_assumptions(self, bib_lookup: Dict[str, Any]) -> List[Dict[str, Any]]:
+        source = (
+            bib_lookup.get("source", "")
+            if bib_lookup.get("status") == "BIB_GEVONDEN"
+            else "Project Phoenix standaardkennis"
+        )
+
+        return [
+            self.make_assumption(
+                key="default_groundwater_level",
+                value="P = -0,50 m, tenzij projectspecifieke gegevens anders aangeven.",
+                source=source,
+                source_type="project_standard",
+                reliability="middel",
+                method="standard_engineering_rule",
+                note="Bekende Brewster Engineering standaard voor geotechniek.",
+            ),
+            self.make_assumption(
+                key="default_foundation_concept",
+                value="Strokenfundering 150 cm breed en 40 cm hoog met funderingsbalk 50 x 60 cm in het hart van de strook.",
+                source=source,
+                source_type="project_standard",
+                reliability="middel",
+                method="standard_engineering_rule",
+                note="Bekend standaard concept-funderingsplan voor BEOS/Brewster Engineering.",
+            ),
+            self.make_assumption(
+                key="default_output_formats",
+                value="Rapporten standaard PDF/DOCX; tekeningen standaard SKP/DWG/DXF; waar relevant IFC, STEP, FreeCAD, OpenSees, CalculiX, Excel/CSV.",
+                source=source,
+                source_type="project_standard",
+                reliability="hoog",
+                method="confirmed_project_preference",
+                note="Door gebruiker herhaald als vaste outputwens.",
+            ),
+            self.make_assumption(
+                key="autonomous_project_mode",
+                value="Volledig autonoom als standaardmodus, met controleerbare output en evidence.",
+                source=source,
+                source_type="project_standard",
+                reliability="hoog",
+                method="confirmed_project_preference",
+                note="Vaste wens voor BAOEES / Project Phoenix.",
+            ),
+            self.make_assumption(
+                key="five_design_variants",
+                value="Automatisch 5 ontwerpvarianten: laagste kosten, hoogste vergunningkans, duurzaamste, hoogste opbrengst, beste ruimtelijke kwaliteit.",
+                source=source,
+                source_type="project_standard",
+                reliability="hoog",
+                method="confirmed_project_preference",
+                note="Vaste eis voor BAOEES variantenmodule.",
+            ),
+        ]
+
+    def build_context_assumptions(self, project_context: Dict[str, Any]) -> List[Dict[str, Any]]:
+        assumptions: List[Dict[str, Any]] = []
+
+        for key, value in project_context.items():
+            if value is None or value == "":
+                continue
+
+            assumptions.append(
+                self.make_assumption(
+                    key=f"context_{key}",
+                    value=value,
+                    source="project_context",
+                    source_type="runtime_context",
+                    reliability="hoog",
+                    method="provided_context",
+                    note="Waarde is meegegeven aan AAIE vanuit de projectcontext.",
                 )
             )
 
@@ -303,158 +379,76 @@ class AaieBibAssumptionLoader:
 
     def make_assumption(
         self,
-        code: str,
-        name: str,
+        key: str,
         value: Any,
-        discipline: str,
-        reason: str,
-        confidence: str,
-        source_field: str,
+        source: str,
+        source_type: str,
+        reliability: str,
+        method: str,
+        note: str,
     ) -> Dict[str, Any]:
         return {
-            "code": code,
-            "name": name,
+            "key": key,
             "value": value,
-            "discipline": discipline,
-            "reason": reason,
-            "source": {
-                "type": "BIB Project Analyzer Context",
-                "path": str(self.context_path),
-                "field": source_field,
-            },
-            "method": "automatic_from_bib_context",
-            "confidence": confidence,
-            "status": "ACTIVE",
-            "editable_by_user": True,
-            "registered_at": datetime.now().isoformat(timespec="seconds"),
+            "source": source,
+            "source_type": source_type,
+            "reliability": reliability,
+            "method": method,
+            "note": note,
+            "created_at": datetime.now().isoformat(timespec="seconds"),
+            "aaie_version": self.ENGINE_VERSION,
         }
 
-    def build_assumption_register(self, assumptions: List[Dict[str, Any]]) -> Dict[str, Any]:
-        by_discipline: Dict[str, int] = {}
-
-        for assumption in assumptions:
-            discipline = assumption.get("discipline", "unknown")
-            by_discipline[discipline] = by_discipline.get(discipline, 0) + 1
-
-        return {
-            "status": "GEREED",
-            "total": len(assumptions),
-            "by_discipline": by_discipline,
-            "must_be_written_to_project": True,
-            "must_be_visible_in_reports": True,
-            "must_be_linked_to_stee": True,
-        }
-
-    def build_warnings(
-        self,
-        assumptions: List[Dict[str, Any]],
-        defaults: Dict[str, Any],
-    ) -> List[str]:
-        warnings = []
-
-        if not assumptions:
-            warnings.append("Geen AAIE BIB-aannames opgebouwd.")
-
-        if not defaults:
-            warnings.append("Project input defaults ontbreken.")
-
-        required_names = [
-            "Fallback grondwaterstand",
-            "Funderingsvarianten verplicht",
-            "AAIE actief",
-            "STEE actief",
-            "QA/QC verplicht",
-        ]
-
-        assumption_names = [item.get("name") for item in assumptions]
-
-        for name in required_names:
-            if name not in assumption_names:
-                warnings.append(f"Verplichte AAIE-aanname ontbreekt: {name}")
-
-        if not warnings:
-            warnings.append("Geen kritieke AAIE BIB assumption-waarschuwingen.")
-
-        return warnings
-
-    def build_recommendation(self) -> Dict[str, Any]:
-        return {
-            "status": "AAIE_BIB_ASSUMPTION_ADVIES",
-            "advice": [
-                "Open aaie_bib_assumptions.html en controleer de aannames.",
-                "Gebruik aaie_bib_assumptions.json in v4.0 voor Geo/Fundering integratie.",
-                "Laat ieder project deze aannames als start-aannames laden.",
-                "Zorg dat iedere aanname later zichtbaar is in rapport, dashboard en STEE-register.",
-            ],
-        }
-
-    def default_project_context(self) -> Dict[str, Any]:
-        return {
-            "project_name": "Default AAIE BIB Assumption Context",
-            "project_type": "generic",
-            "purpose": "Testen van automatische AAIE-aannames vanuit BIB.",
-        }
-
-    def build_html_report(self, result: Dict[str, Any]) -> str:
+    def build_dashboard(self, result: Dict[str, Any]) -> str:
+        bib_lookup = result.get("bib_lookup", {})
         assumptions = result.get("assumptions", [])
-        register = result.get("assumption_register", {})
 
-        rows = []
+        rows = ""
 
         for assumption in assumptions:
-            value = assumption.get("value")
-
-            if isinstance(value, (dict, list)):
-                value_text = json.dumps(value, ensure_ascii=False, indent=2, default=str)
-            else:
-                value_text = str(value)
-
-            rows.append(
-                "<tr>"
-                f"<td>{self.esc(assumption.get('code', ''))}</td>"
-                f"<td>{self.esc(assumption.get('name', ''))}</td>"
-                f"<td>{self.esc(assumption.get('discipline', ''))}</td>"
-                f"<td>{self.esc(value_text[:500])}</td>"
-                f"<td>{self.esc(assumption.get('confidence', ''))}</td>"
-                f"<td>{self.esc(assumption.get('reason', ''))}</td>"
-                "</tr>"
-            )
-
-        discipline_rows = []
-
-        for discipline, count in register.get("by_discipline", {}).items():
-            discipline_rows.append(
-                "<tr>"
-                f"<td>{self.esc(discipline)}</td>"
-                f"<td>{self.esc(count)}</td>"
-                "</tr>"
-            )
+            rows += f"""
+            <tr>
+              <td>{self.esc(assumption.get("key", ""))}</td>
+              <td>{self.esc(assumption.get("value", ""))}</td>
+              <td>{self.esc(assumption.get("source_type", ""))}</td>
+              <td>{self.esc(assumption.get("reliability", ""))}</td>
+              <td>{self.esc(assumption.get("method", ""))}</td>
+              <td>{self.esc(assumption.get("note", ""))}</td>
+            </tr>
+            """
 
         return f"""<!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
-  <title>AAIE BIB Assumptions</title>
+  <title>Project Phoenix AAIE BIB Assumptions v5.8</title>
   <style>
     body {{
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050816;
-      color: #f8fafc;
-      line-height: 1.5;
-    }}
-    header {{
-      padding: 34px 42px;
-      background: linear-gradient(135deg, #0f172a, #1d4ed8);
-      border-bottom: 1px solid #334155;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
     }}
     main {{
-      padding: 30px 38px 50px;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px;
+    }}
+    h1, h2, h3 {{
+      color: #f8fafc;
+    }}
+    .hero {{
+      padding: 30px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      border: 1px solid #38bdf8;
+      margin-bottom: 26px;
     }}
     .grid {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 16px;
+      margin: 18px 0;
     }}
     .card {{
       background: #111827;
@@ -462,111 +456,134 @@ class AaieBibAssumptionLoader:
       border-radius: 14px;
       padding: 18px;
     }}
+    .badge {{
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #14532d;
+      color: #bbf7d0;
+      font-weight: bold;
+    }}
+    .muted {{
+      color: #94a3b8;
+    }}
+    code {{
+      color: #bfdbfe;
+    }}
     table {{
       width: 100%;
       border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #334155;
       margin-top: 18px;
+      background: #111827;
+      font-size: 14px;
     }}
     th, td {{
-      padding: 10px 12px;
-      border-bottom: 1px solid #334155;
+      border: 1px solid #334155;
+      padding: 10px;
       text-align: left;
       vertical-align: top;
     }}
     th {{
-      background: #0f172a;
-      color: #bfdbfe;
-    }}
-    .muted {{
-      color: #cbd5e1;
-    }}
-    code {{
-      color: #cbd5e1;
-      white-space: pre-wrap;
+      background: #1e293b;
     }}
   </style>
 </head>
 <body>
-  <header>
-    <h1>AAIE BIB ASSUMPTIONS</h1>
-    <p>Autonomous Assumption & Inference Engine gevoed vanuit de Brewster Integrated Bibliotheek.</p>
-  </header>
+<main>
+  <section class="hero">
+    <p class="muted">PROJECT PHOENIX / BAOEES</p>
+    <h1>AAIE BIB Assumption Loader v5.8</h1>
+    <p>AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.</p>
+    <p><span class="badge">{self.esc(result.get("status", ""))}</span></p>
+  </section>
 
-  <main>
-    <section class="grid">
+  <section>
+    <h2>BIB-status</h2>
+    <div class="grid">
       <div class="card">
-        <h3>Status</h3>
-        <p>{self.esc(result.get("status", ""))}</p>
+        <h3>BIB lookup</h3>
+        <p><span class="badge">{self.esc(bib_lookup.get("status", ""))}</span></p>
+      </div>
+      <div class="card">
+        <h3>Inhoudelijk herkend</h3>
+        <p>{self.esc(bib_lookup.get("recognized_text_items_count", 0))}</p>
+      </div>
+      <div class="card">
+        <h3>Besluiten</h3>
+        <p>{self.esc(bib_lookup.get("decisions_count", 0))}</p>
+      </div>
+      <div class="card">
+        <h3>Kennisitems</h3>
+        <p>{self.esc(bib_lookup.get("knowledge_items_count", 0))}</p>
+      </div>
+      <div class="card">
+        <h3>Acties</h3>
+        <p>{self.esc(bib_lookup.get("actions_count", 0))}</p>
       </div>
       <div class="card">
         <h3>Aannames</h3>
         <p>{self.esc(result.get("assumption_count", 0))}</p>
       </div>
-      <div class="card">
-        <h3>Context</h3>
-        <p class="muted">{self.esc(result.get("context_path", ""))}</p>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <h2>Aannames per discipline</h2>
+  <section>
+    <h2>Bronvolgorde</h2>
+    <div class="card">
+      <p>1. Lokale BIB-kennisindex</p>
+      <p>2. Eerder bevestigde Project Phoenix / BAOEES kennis</p>
+      <p>3. Standaard engineeringregels</p>
+      <p>4. AAIE-aanvullende aannames</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>AAIE-aannames</h2>
     <table>
       <thead>
         <tr>
-          <th>Discipline</th>
-          <th>Aantal</th>
-        </tr>
-      </thead>
-      <tbody>
-        {''.join(discipline_rows)}
-      </tbody>
-    </table>
-
-    <h2>AAIE-aannames uit BIB</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Naam</th>
-          <th>Discipline</th>
+          <th>Sleutel</th>
           <th>Waarde</th>
+          <th>Bronsoort</th>
           <th>Betrouwbaarheid</th>
-          <th>Reden</th>
+          <th>Methode</th>
+          <th>Toelichting</th>
         </tr>
       </thead>
       <tbody>
-        {''.join(rows)}
+        {rows}
       </tbody>
     </table>
-  </main>
+  </section>
+</main>
 </body>
 </html>
 """
-
-    def read_json(self, path: Path) -> Dict[str, Any]:
-        try:
-            if path.exists():
-                return json.loads(path.read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-        return {}
 
     def write_json(self, path: Path, data: Dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2, default=str),
-            encoding="utf-8",
+            encoding="utf-8-sig",
         )
+
+    def write_html(self, path: Path, content: str) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
 
     def esc(self, value: Any) -> str:
         return html.escape(str(value), quote=True)
 
 
+AaieBibAssumptionLoader = AAIEBibAssumptionLoader
+AAIEBibAssumptionEngine = AAIEBibAssumptionLoader
+AaieBibAssumptionEngine = AAIEBibAssumptionLoader
+
+
 def main() -> None:
-    loader = AaieBibAssumptionLoader()
+    loader = AAIEBibAssumptionLoader()
     result = loader.run()
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(json.dumps(result, ensure_ascii=True, indent=2, default=str))
 
 
 if __name__ == "__main__":
