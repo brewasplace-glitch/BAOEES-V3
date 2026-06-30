@@ -2,12 +2,12 @@
   "status": "GEREED",
   "engine": "Project Phoenix Project Package Evidence Engine",
   "engine_version": "v4.5",
-  "generated_at": "2026-06-27T23:43:26",
+  "generated_at": "2026-06-30T17:32:03",
   "summary": {
     "total_files": 18,
     "existing_files": 18,
     "missing_required_files": 0,
-    "total_size_bytes": 15433935
+    "total_size_bytes": 15436925
   },
   "categories": [
     {
@@ -22,7 +22,7 @@
       "total": 5,
       "existing": 5,
       "missing": 0,
-      "size_bytes": 682594
+      "size_bytes": 682593
     },
     {
       "category": "export",
@@ -57,7 +57,7 @@
       "total": 2,
       "existing": 2,
       "missing": 0,
-      "size_bytes": 6552732
+      "size_bytes": 6555723
     },
     {
       "category": "bib_bridge",
@@ -76,8 +76,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 6095,
-      "sha256": "fbb7029fa9ee3f13ede87d93e85da39ca09d017c9126b692ba88377420528f58",
-      "modified_at": "2026-06-27T22:53:38"
+      "sha256": "538a4659862809890122c71777dcd9b6ca4b68a62e38c58d57fea007c032dec9",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "workflow",
@@ -87,8 +87,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 6112505,
-      "sha256": "8d3c03df01ba210d40a9e2bc8ae1c0850402a0b3c202d7fbfbf5b93a3dccfe31",
-      "modified_at": "2026-06-27T22:53:38"
+      "sha256": "d743f6525777de33137ecfb439484044f5d5a1ca76bbd2f358c615761064f2b8",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "report",
@@ -97,9 +97,9 @@
       "relative_path": "outputs/projects/project_report_bib_report.docx",
       "required": true,
       "exists": true,
-      "size_bytes": 3591,
-      "sha256": "2fdcbadb10cc959d90a0f845e5a30e09f7539ccdffe7bd5bf53f72be59f98d5f",
-      "modified_at": "2026-06-27T23:43:25"
+      "size_bytes": 3590,
+      "sha256": "da361e67ebcf0756e2c38ff67b0044cddc6bfd9f04e0149ba86a201fdfa64b47",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "report",
@@ -109,8 +109,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 9200,
-      "sha256": "766f15a33188a413db50865d67b65f1c0c46f80955f57cc8b8c1862a36c09ff8",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "d0f9f170c9966ba649f954da8a774300c3198d65be46dd79eccd381a6c859102",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "report",
@@ -121,7 +121,7 @@
       "exists": true,
       "size_bytes": 9195,
       "sha256": "7548f7f37b86a17e1e6a415a67e91c02f0bfe13a4e4b294ad4de1d40abeaa71a",
-      "modified_at": "2026-06-27T23:43:25"
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "report",
@@ -131,8 +131,8 @@
       "required": false,
       "exists": true,
       "size_bytes": 6006,
-      "sha256": "56561e3149d49df1a841310d3091ff883866ce57f6d1b19e464b7b5081b9cc02",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "da150fa16f138fb3088e5a8a7efea036f7cbb2c1f0289003d646c89dc851cf0c",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "report",
@@ -142,8 +142,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 654602,
-      "sha256": "754029bc37f1e764789b24be52bcaf7e271db74ec2d4385c701346cc6d319016",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "32c64c3f440afd94cc8031299f669091e90bc938b70331ff3a0dde4da0fe46f3",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "export",
@@ -153,8 +153,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 2840,
-      "sha256": "b69463b49321b90460a6224c66129ae19f153c32dbb32fea36bd5bf0cfd5cb05",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "58eb84298231acab7b76f2b284d57137c9e713de593c311348c03113be9dba3b",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "export",
@@ -164,8 +164,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 1376370,
-      "sha256": "01deb5f18a1367054c77c60232619a5267b5428a0fafef0ce705ba00cb6f0b68",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "b3530eb5315f42ed090543d7e8c4231fd2e9a9d400a0ca72c2dfb452805be6a1",
+      "modified_at": "2026-06-30T17:32:02"
     },
     {
       "category": "geo_foundation",
@@ -176,7 +176,7 @@
       "exists": true,
       "size_bytes": 5308,
       "sha256": "fe307e8bbb3da9986b8ab880f250f6227aba082013ce0304024ff8f745baad8d",
-      "modified_at": "2026-06-27T23:43:25"
+      "modified_at": "2026-06-30T17:32:01"
     },
     {
       "category": "geo_foundation",
@@ -186,8 +186,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 310221,
-      "sha256": "a6151bf5fc57f6b7425b4fe3fefbd1b69cf68d96eea175755dccab5f06804ccb",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "fae024607ce59db9c6f78c2766b62bbcf54eda46626e79f5daaed5aa63fbd721",
+      "modified_at": "2026-06-30T17:32:01"
     },
     {
       "category": "aaie",
@@ -198,7 +198,7 @@
       "exists": true,
       "size_bytes": 7471,
       "sha256": "d087e00f60010b7464b7f8b0663d56ba078751a37dd0775d0610b100e2c1cc00",
-      "modified_at": "2026-06-27T23:43:25"
+      "modified_at": "2026-06-30T17:32:01"
     },
     {
       "category": "aaie",
@@ -208,8 +208,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 145468,
-      "sha256": "e21ec5db1910b2cc29384a3a21cfbb8312b45f001e50ccbd37f6e4c835d68fab",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "346e9b02f4161ec96115cb4f2266b8928d61d78156aba2f8bc5ea4702507e161",
+      "modified_at": "2026-06-30T17:32:01"
     },
     {
       "category": "bib_context",
@@ -220,7 +220,7 @@
       "exists": true,
       "size_bytes": 5381,
       "sha256": "5081d089e323e4b11141072b6026fa15d9925cfbb14bbad63f35372f56181f43",
-      "modified_at": "2026-06-27T23:43:25"
+      "modified_at": "2026-06-30T17:32:01"
     },
     {
       "category": "bib_context",
@@ -230,8 +230,8 @@
       "required": true,
       "exists": true,
       "size_bytes": 116146,
-      "sha256": "86fb4b57cf922615ce0f8e4d0faaef37b1ed3db19708058562b416addf3edbad",
-      "modified_at": "2026-06-27T23:43:25"
+      "sha256": "bf35fc92cb06dab570db0999e48842bf38d54c63907745599ca0afccdf7d6d33",
+      "modified_at": "2026-06-30T17:32:01"
     },
     {
       "category": "launcher",
@@ -240,9 +240,9 @@
       "relative_path": "outputs/projects/index.html",
       "required": true,
       "exists": true,
-      "size_bytes": 31136,
-      "sha256": "76c6d8ad165235c3b6a776a97d1e98ffaaf24fcf3b4579dca4d4172a4f6119f6",
-      "modified_at": "2026-06-27T22:53:38"
+      "size_bytes": 32660,
+      "sha256": "d30e5c3731f82e0eb242a9b3ef9fd126193669d2f1cf1dfac42c6e63e021814e",
+      "modified_at": "2026-06-30T17:04:41"
     },
     {
       "category": "launcher",
@@ -251,9 +251,9 @@
       "relative_path": "outputs/projects/project_analyzer_launcher_bridge_log.json",
       "required": true,
       "exists": true,
-      "size_bytes": 6521596,
-      "sha256": "84e1339894d589bd67119826ef09537f945bb978b2dcde1a192ed87bea8768a8",
-      "modified_at": "2026-06-27T22:53:38"
+      "size_bytes": 6523063,
+      "sha256": "b98f56b46b9eac5086a5d301d47fe7554c13b2f3b3a53655d537b2d172b3e399",
+      "modified_at": "2026-06-30T17:04:41"
     },
     {
       "category": "bib_bridge",

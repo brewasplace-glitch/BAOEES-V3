@@ -2,27 +2,34 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8">
-  <title>Project Start Analysis Dashboard</title>
+  <title>Project Phoenix START PROJECTANALYSE v5.7</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050816;
-      color: #f8fafc;
-      line-height: 1.5;
-    }
-    header {
-      padding: 34px 42px;
+      font-family: Arial, sans-serif;
       background: #0f172a;
-      border-bottom: 1px solid #334155;
+      color: #e5e7eb;
     }
     main {
-      padding: 30px 38px 50px;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+    h1, h2, h3 {
+      color: #f8fafc;
+    }
+    .hero {
+      padding: 30px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      border: 1px solid #38bdf8;
+      margin-bottom: 26px;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 16px;
+      margin: 18px 0;
     }
     .card {
       background: #111827;
@@ -30,98 +37,298 @@
       border-radius: 14px;
       padding: 18px;
     }
-    a {
-      color: #93c5fd;
-    }
-    code {
-      color: #cbd5e1;
-      word-break: break-all;
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #14532d;
+      color: #bbf7d0;
+      font-weight: bold;
     }
     .muted {
-      color: #cbd5e1;
+      color: #94a3b8;
+    }
+    code {
+      color: #bfdbfe;
+    }
+    a {
+      color: #93c5fd;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>START PROJECTANALYSE DASHBOARD</h1>
-    <p>Project Phoenix / BAOEES centrale run-engine v5.0.</p>
-  </header>
+<main>
+  <section class="hero">
+    <p class="muted">PROJECT PHOENIX / BAOEES</p>
+    <h1>START PROJECTANALYSE v5.7</h1>
+    <p>Centrale projectstart met koppeling naar de lokale BIB-kennisindex.</p>
+    <p><span class="badge">OPGESLAGEN</span></p>
+  </section>
 
-  <main>
-    <section class="grid">
-      <div class="card">
-        <h3>Status</h3>
-        <p>OPGESLAGEN</p>
-      </div>
+  <section>
+    <h2>Startanalyse</h2>
+    <div class="grid">
       <div class="card">
         <h3>Engine</h3>
-        <p>Project Phoenix Start Analysis Engine</p>
-        <p class="muted">v5.0</p>
+        <p>Project Phoenix START PROJECTANALYSE Engine</p>
+        <p class="muted">v5.7</p>
       </div>
       <div class="card">
-        <h3>Startcommando</h3>
-        <p><code>python -m baoees.project_analyzer.project_start_analysis_engine</code></p>
+        <h3>Start</h3>
+        <p>2026-06-30T17:32:01</p>
       </div>
-    </section>
+      <div class="card">
+        <h3>Einde</h3>
+        <p>2026-06-30T17:32:03</p>
+      </div>
+      <div class="card">
+        <h3>Projectmap</h3>
+        <p><code>C:\BREWSTER-ENGINEERING-WIZARD</code></p>
+      </div>
+    </div>
+  </section>
 
-    <h2>Belangrijkste outputs</h2>
-    <section class="grid">
+  <section>
+    <h2>BIB-status</h2>
+    <div class="grid">
       <div class="card">
-        <h3>Launcher</h3>
-        <p><a href="index.html">index.html</a></p>
+        <h3>BIB-index</h3>
+        <p><span class="badge">GEREED</span></p>
+        <p class="muted"><code>outputs\bib\index\bib_knowledge_content_index.json</code></p>
       </div>
       <div class="card">
-        <h3>Start Dashboard</h3>
-        <p><a href="project_start_analysis_dashboard.html">project_start_analysis_dashboard.html</a></p>
+        <h3>Inhoudelijk herkend</h3>
+        <p>1</p>
       </div>
       <div class="card">
-        <h3>Workflow Dashboard</h3>
-        <p><a href="project_analyzer_workflow_dashboard.html">project_analyzer_workflow_dashboard.html</a></p>
+        <h3>Besluiten</h3>
+        <p>0</p>
       </div>
       <div class="card">
-        <h3>Evidence Dashboard</h3>
-        <p><a href="project_package_evidence_dashboard.html">project_package_evidence_dashboard.html</a></p>
+        <h3>Kennisitems</h3>
+        <p>0</p>
       </div>
       <div class="card">
-        <h3>Project ZIP</h3>
-        <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>
+        <h3>Acties</h3>
+        <p>0</p>
       </div>
       <div class="card">
-        <h3>Start Log</h3>
-        <p><a href="project_start_analysis_log.json">project_start_analysis_log.json</a></p>
+        <h3>Projecten</h3>
+        <p>Nog geen projecten herkend.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <h2>Run-stappen</h2>
-    <section class="grid">
+  <section>
+    <h2>BIB-kenniscategorieën</h2>
+    <div class="grid">
       
             <div class="card">
-              <h3>Centrale Project Analyzer Workflow draaien</h3>
-              <p><strong>Status:</strong> OPGESLAGEN</p>
-              <p><strong>Start:</strong> 2026-06-27T23:43:25</p>
-              <p><strong>Einde:</strong> 2026-06-27T23:43:26</p>
-              <ul>
-                <li><strong>workflow_log_path</strong>: <code>outputs\projects\project_analyzer_workflow_log.json</code></li><li><strong>workflow_dashboard_path</strong>: <code>outputs\projects\project_analyzer_workflow_dashboard.html</code></li><li><strong>project_package_evidence_dashboard</strong>: <code>outputs\projects\project_package_evidence_dashboard.html</code></li><li><strong>project_package_manifest</strong>: <code>outputs\projects\project_package_manifest.json</code></li><li><strong>project_package_evidence_log</strong>: <code>outputs\projects\project_package_evidence_log.json</code></li><li><strong>project_zip</strong>: <code>outputs\projects\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></li>
-              </ul>
+              <h3>Geen items</h3>
+              <p>Nog geen BIB-categorieën herkend.</p>
+            </div>
+            
+    </div>
+  </section>
+
+  <section>
+    <h2>Technische onderwerpen uit BIB</h2>
+    <div class="grid">
+      
+            <div class="card">
+              <h3>BAOEES</h3>
+              <p>1 item(s)</p>
             </div>
             
             <div class="card">
-              <h3>Project Phoenix Launcher bijwerken</h3>
-              <p><strong>Status:</strong> OPGESLAGEN</p>
-              <p><strong>Start:</strong> 2026-06-27T23:43:26</p>
-              <p><strong>Einde:</strong> 2026-06-27T23:43:26</p>
-              <ul>
-                <li>Geen extra details.</li>
-              </ul>
+              <h3>BEOS</h3>
+              <p>1 item(s)</p>
             </div>
             
-    </section>
+            <div class="card">
+              <h3>BREWAS</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Digital Twin</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>AAIE</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>STEE</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>BIB</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>START PROJECTANALYSE</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>FreeCAD</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>OpenSees</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>CalculiX</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Geotechniek</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Fundering</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Strokenfundering</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Paalfundering</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>AERIUS</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Omgevingswet</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>CROW</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Parkeren</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Riolering</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Afwatering</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>Vergunning</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>BOPA</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>DOCX</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>PDF</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>DWG</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>DXF</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>SKP</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+            <div class="card">
+              <h3>IFC</h3>
+              <p>1 item(s)</p>
+            </div>
+            
+    </div>
+  </section>
 
-    <h2>Waarschuwingen</h2>
-    <ul>
-      <li>Centrale Project Analyzer Workflow draaien: BIB-context laden: Geen kritieke Project Analyzer BIB Context-waarschuwingen.</li><li>Centrale Project Analyzer Workflow draaien: AAIE-aannames genereren: Geen kritieke AAIE BIB assumption-waarschuwingen.</li><li>Centrale Project Analyzer Workflow draaien: Geo/Foundation analyse genereren: Geen kritieke Geo/Foundation BIB-waarschuwingen.</li><li>Centrale Project Analyzer Workflow draaien: Projectrapport genereren: Geen kritieke Project Report BIB-waarschuwingen.</li><li>Centrale Project Analyzer Workflow draaien: Projectrapport exporteren naar DOCX/PDF: Geen kritieke Project Report Export-waarschuwingen.</li><li>Centrale Project Analyzer Workflow draaien: Project ZIP / Evidence pakket genereren: Geen kritieke Project Package Evidence-waarschuwingen.</li><li>Project Phoenix Launcher bijwerken: Geen kritieke Project Analyzer Launcher Bridge-waarschuwingen.</li>
-    </ul>
-  </main>
+  <section>
+    <h2>Uitgevoerde engines</h2>
+    <div class="grid">
+      
+            <div class="card">
+              <h3>Centrale Project Analyzer workflow</h3>
+              <p><span class="badge">UITGEVOERD</span></p>
+              <p class="muted"></p>
+              <p class="muted"><code>baoees.project_analyzer.project_analyzer_workflow</code></p>
+            </div>
+            
+            <div class="card">
+              <h3>Project Package Evidence Engine</h3>
+              <p><span class="badge">UITGEVOERD</span></p>
+              <p class="muted"></p>
+              <p class="muted"><code>baoees.project_analyzer.project_package_evidence_engine</code></p>
+            </div>
+            
+            <div class="card">
+              <h3>Project Analyzer Launcher Bridge</h3>
+              <p><span class="badge">UITGEVOERD</span></p>
+              <p class="muted"></p>
+              <p class="muted"><code>baoees.project_analyzer.project_analyzer_launcher_bridge</code></p>
+            </div>
+            
+    </div>
+  </section>
+
+  <section>
+    <h2>Belangrijke links</h2>
+    <div class="card">
+      <p><a href="index.html">Open Home Dashboard / Launcher</a></p>
+      <p><a href="../../outputs/bib/bib_import_dashboard.html">Open BIB Import Dashboard</a></p>
+      <p><a href="../../outputs/bib/index/bib_knowledge_content_index.json">Open BIB Knowledge Content Index</a></p>
+      <p><a href="project_analyzer_workflow_dashboard.html">Open Project Analyzer Workflow Dashboard</a></p>
+      <p><a href="project_package_evidence_dashboard.html">Open Project Package Evidence Dashboard</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Volgende stap</h2>
+    <div class="card">
+      <p>De BIB wordt nu zichtbaar gekoppeld aan START PROJECTANALYSE.</p>
+      <p>De volgende stap is om AAIE en Project Analyzer inhoudelijk eerst in de BIB te laten zoeken voordat nieuwe aannames worden gemaakt.</p>
+    </div>
+  </section>
+</main>
 </body>
 </html>
