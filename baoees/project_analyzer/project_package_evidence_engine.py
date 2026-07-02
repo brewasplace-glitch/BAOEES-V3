@@ -1,596 +1,617 @@
 from __future__ import annotations
 
-import hashlib
 import html
 import json
 import sys
 import zipfile
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
 class ProjectPackageEvidenceEngine:
-    """
-    PROJECT PHOENIX / BAOEES
-    Project Package Evidence Engine v4.5
-
-    Doel:
-    - Verzamelt Project Analyzer outputs.
-    - Maakt een projectmanifest.
-    - Maakt een evidence log.
-    - Maakt een HTML evidence dashboard.
-    - Maakt een officieel Project ZIP-pakket.
-    """
-
     ENGINE_NAME = "Project Phoenix Project Package Evidence Engine"
-    ENGINE_VERSION = "v4.5"
+    ENGINE_VERSION = "v6.2"
 
     def __init__(
         self,
-        project_output_root: Optional[str | Path] = None,
-        bib_output_root: Optional[str | Path] = None,
+        project_output_root: Optional[Union[str, Path]] = None,
     ) -> None:
-        self.project_output_root = (
-            Path(project_output_root)
-            if project_output_root
-            else Path("outputs") / "projects"
+        if project_output_root:
+            self.project_output_root = Path(project_output_root)
+        else:
+            self.project_output_root = PROJECT_ROOT / "outputs" / "projects"
+
+        self.bib_root = PROJECT_ROOT / "outputs" / "bib"
+
+        self.bron_root = (
+            self.project_output_root
+            / "Bronvermelding_van_dit_project"
         )
 
-        self.bib_output_root = (
-            Path(bib_output_root)
-            if bib_output_root
-            else Path("outputs") / "bib"
+        self.project_report_package_path = (
+            self.project_output_root
+            / "project_report_bib_package.json"
         )
 
-    def run(self, **extra_results: Any) -> Dict[str, Any]:
+        self.project_report_docx_path = (
+            self.project_output_root
+            / "project_report_bib_report.docx"
+        )
+
+        self.project_report_pdf_path = (
+            self.project_output_root
+            / "project_report_bib_report.pdf"
+        )
+
+        self.project_report_export_log_path = (
+            self.project_output_root
+            / "project_report_export_log.json"
+        )
+
+        self.project_report_export_dashboard_path = (
+            self.project_output_root
+            / "project_report_export_dashboard.html"
+        )
+
+        self.workflow_log_path = (
+            self.project_output_root
+            / "project_analyzer_workflow_log.json"
+        )
+
+        self.workflow_dashboard_path = (
+            self.project_output_root
+            / "project_analyzer_workflow_dashboard.html"
+        )
+
+        self.aaie_bib_assumptions_path = (
+            self.project_output_root
+            / "aaie_bib_assumptions.json"
+        )
+
+        self.bib_knowledge_index_path = (
+            self.bib_root
+            / "index"
+            / "bib_knowledge_content_index.json"
+        )
+
+        self.package_manifest_path = (
+            self.project_output_root
+            / "project_package_manifest.json"
+        )
+
+        self.evidence_log_path = (
+            self.project_output_root
+            / "project_package_evidence_log.json"
+        )
+
+        self.evidence_dashboard_path = (
+            self.project_output_root
+            / "project_package_evidence_dashboard.html"
+        )
+
+        self.bronvermelding_log_path = (
+            self.bron_root
+            / "bronvermelding_log.json"
+        )
+
+        self.bronvermelding_readme_path = (
+            self.bron_root
+            / "README_Bronvermelding_van_dit_project.txt"
+        )
+
+        self.package_zip_path = (
+            self.project_output_root
+            / "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip"
+        )
+
+    def run(
+        self,
+        project_context: Optional[Dict[str, Any]] = None,
+    ) -> Dict[str, Any]:
         self.project_output_root.mkdir(parents=True, exist_ok=True)
+        self.bron_root.mkdir(parents=True, exist_ok=True)
 
-        manifest_path = self.project_output_root / "project_package_manifest.json"
-        evidence_log_path = self.project_output_root / "project_package_evidence_log.json"
-        dashboard_path = self.project_output_root / "project_package_evidence_dashboard.html"
-        zip_path = self.project_output_root / "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip"
+        started_at = datetime.now().isoformat(timespec="seconds")
 
-        package_files = self.collect_package_files()
-        manifest = self.build_manifest(package_files)
+        first_files = self.collect_package_files()
+        first_evidence_items = self.build_evidence_items(first_files)
 
-        initial_result = {
-            "status": "RUNNING",
-            "engine": self.ENGINE_NAME,
-            "engine_version": self.ENGINE_VERSION,
-            "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "Project Analyzer outputs bundelen in Project ZIP en evidencepakket.",
-            "project_output_root": str(self.project_output_root),
-            "bib_output_root": str(self.bib_output_root),
-            "manifest_path": str(manifest_path),
-            "evidence_log_path": str(evidence_log_path),
-            "dashboard_path": str(dashboard_path),
-            "zip_path": str(zip_path),
-            "manifest": manifest,
-            "warnings": self.build_warnings(manifest),
-            "extra_results": extra_results,
-        }
+        self.write_json(
+            self.bronvermelding_log_path,
+            self.build_bronvermelding_log(
+                first_evidence_items,
+                started_at,
+            ),
+        )
 
-        self.write_json(manifest_path, manifest)
-        self.write_json(evidence_log_path, initial_result)
-        dashboard_path.write_text(
-            self.build_html_dashboard(initial_result),
-            encoding="utf-8",
+        self.write_text(
+            self.bronvermelding_readme_path,
+            self.build_bronvermelding_readme(first_evidence_items),
+        )
+
+        files = self.collect_package_files()
+        evidence_items = self.build_evidence_items(files)
+        manifest = self.build_manifest(
+            files,
+            evidence_items,
+            started_at,
+        )
+
+        self.write_json(self.package_manifest_path, manifest)
+
+        self.write_json(
+            self.evidence_log_path,
+            self.build_evidence_log(
+                evidence_items,
+                started_at,
+            ),
+        )
+
+        self.write_text(
+            self.evidence_dashboard_path,
+            self.build_dashboard(
+                manifest,
+                evidence_items,
+            ),
         )
 
         final_files = self.collect_package_files()
-        zip_result = self.build_zip_package(zip_path, final_files)
-        final_manifest = self.build_manifest(self.collect_package_files())
+        final_evidence_items = self.build_evidence_items(final_files)
+        final_manifest = self.build_manifest(
+            final_files,
+            final_evidence_items,
+            started_at,
+        )
+
+        self.write_json(self.package_manifest_path, final_manifest)
+
+        zip_status = self.write_project_zip(final_files)
+
+        finished_at = datetime.now().isoformat(timespec="seconds")
 
         result = {
-            "status": self.determine_status(final_manifest, zip_result),
+            "status": "OPGESLAGEN",
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
-            "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "purpose": "Project Analyzer outputs gebundeld in Project ZIP en evidencepakket.",
+            "started_at": started_at,
+            "finished_at": finished_at,
+            "project_root": str(PROJECT_ROOT),
             "project_output_root": str(self.project_output_root),
-            "bib_output_root": str(self.bib_output_root),
-            "outputs": {
-                "manifest_path": str(manifest_path),
-                "evidence_log_path": str(evidence_log_path),
-                "dashboard_path": str(dashboard_path),
-                "zip_path": str(zip_path),
-            },
-            "zip_result": zip_result,
-            "manifest": final_manifest,
-            "warnings": self.build_warnings(final_manifest),
+            "bronvermelding_root": str(self.bron_root),
+            "package_manifest_path": str(self.package_manifest_path),
+            "evidence_log_path": str(self.evidence_log_path),
+            "evidence_dashboard_path": str(self.evidence_dashboard_path),
+            "bronvermelding_log_path": str(self.bronvermelding_log_path),
+            "bronvermelding_readme_path": str(self.bronvermelding_readme_path),
+            "package_zip_path": str(self.package_zip_path),
+            "zip_status": zip_status,
+            "file_count": len(final_files),
+            "evidence_count": len(final_evidence_items),
+            "files": final_files,
+            "evidence_items": final_evidence_items,
             "next_steps": [
-                "Open project_package_evidence_dashboard.html.",
+                "Controleer project_package_evidence_dashboard.html.",
+                "Controleer project_package_manifest.json.",
+                "Controleer Bronvermelding_van_dit_project.",
                 "Controleer PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip.",
-                "Controleer of DOCX, PDF, workflow-log en dashboards in het ZIP-pakket zitten.",
-                "Koppel deze engine later aan de centrale Project Phoenix workflow.",
+                "Koppel dit pakket daarna aan het centrale START PROJECTANALYSE dashboard.",
             ],
-            "extra_results": extra_results,
         }
 
-        self.write_json(manifest_path, final_manifest)
-        self.write_json(evidence_log_path, result)
-        dashboard_path.write_text(
-            self.build_html_dashboard(result),
-            encoding="utf-8",
-        )
+        self.write_json(self.evidence_log_path, result)
 
         return result
 
     def collect_package_files(self) -> List[Dict[str, Any]]:
-        file_specs = [
-            {
-                "category": "workflow",
-                "label": "Project Analyzer Workflow Dashboard",
-                "path": self.project_output_root / "project_analyzer_workflow_dashboard.html",
-                "required": True,
-            },
-            {
-                "category": "workflow",
-                "label": "Project Analyzer Workflow Log",
-                "path": self.project_output_root / "project_analyzer_workflow_log.json",
-                "required": True,
-            },
-            {
-                "category": "report",
-                "label": "Projectrapport DOCX",
-                "path": self.project_output_root / "project_report_bib_report.docx",
-                "required": True,
-            },
-            {
-                "category": "report",
-                "label": "Projectrapport PDF",
-                "path": self.project_output_root / "project_report_bib_report.pdf",
-                "required": True,
-            },
-            {
-                "category": "report",
-                "label": "Projectrapport HTML",
-                "path": self.project_output_root / "project_report_bib_report.html",
-                "required": False,
-            },
-            {
-                "category": "report",
-                "label": "Projectrapport Markdown",
-                "path": self.project_output_root / "project_report_bib_report.md",
-                "required": False,
-            },
-            {
-                "category": "report",
-                "label": "Projectrapport Package JSON",
-                "path": self.project_output_root / "project_report_bib_package.json",
-                "required": True,
-            },
-            {
-                "category": "export",
-                "label": "Project Report Export Dashboard",
-                "path": self.project_output_root / "project_report_export_dashboard.html",
-                "required": True,
-            },
-            {
-                "category": "export",
-                "label": "Project Report Export Log",
-                "path": self.project_output_root / "project_report_export_log.json",
-                "required": True,
-            },
-            {
-                "category": "geo_foundation",
-                "label": "Geo/Foundation Analyse HTML",
-                "path": self.project_output_root / "geo_foundation_bib_analysis.html",
-                "required": False,
-            },
-            {
-                "category": "geo_foundation",
-                "label": "Geo/Foundation Analyse JSON",
-                "path": self.project_output_root / "geo_foundation_bib_analysis.json",
-                "required": True,
-            },
-            {
-                "category": "aaie",
-                "label": "AAIE BIB Assumptions HTML",
-                "path": self.project_output_root / "aaie_bib_assumptions.html",
-                "required": False,
-            },
-            {
-                "category": "aaie",
-                "label": "AAIE BIB Assumptions JSON",
-                "path": self.project_output_root / "aaie_bib_assumptions.json",
-                "required": True,
-            },
-            {
-                "category": "bib_context",
-                "label": "Project Analyzer BIB Context HTML",
-                "path": self.project_output_root / "project_analyzer_bib_context.html",
-                "required": False,
-            },
-            {
-                "category": "bib_context",
-                "label": "Project Analyzer BIB Context JSON",
-                "path": self.project_output_root / "project_analyzer_bib_context.json",
-                "required": True,
-            },
-            {
-                "category": "launcher",
-                "label": "Project Phoenix Launcher",
-                "path": self.project_output_root / "index.html",
-                "required": True,
-            },
-            {
-                "category": "launcher",
-                "label": "Project Analyzer Launcher Bridge Log",
-                "path": self.project_output_root / "project_analyzer_launcher_bridge_log.json",
-                "required": True,
-            },
-            {
-                "category": "bib_bridge",
-                "label": "BIB Project Analyzer Bridge",
-                "path": self.bib_output_root / "bib_project_analyzer_bridge.json",
-                "required": False,
-            },
+        candidate_paths = [
+            self.project_report_package_path,
+            self.project_report_docx_path,
+            self.project_report_pdf_path,
+            self.project_report_export_log_path,
+            self.project_report_export_dashboard_path,
+            self.workflow_log_path,
+            self.workflow_dashboard_path,
+            self.aaie_bib_assumptions_path,
+            self.bib_knowledge_index_path,
+            self.package_manifest_path,
+            self.evidence_log_path,
+            self.evidence_dashboard_path,
+            self.bronvermelding_log_path,
+            self.bronvermelding_readme_path,
+            self.package_zip_path,
         ]
 
-        result = []
+        files: List[Dict[str, Any]] = []
 
-        for spec in file_specs:
-            path = Path(spec["path"])
-            exists = path.exists() and path.is_file()
+        for path in candidate_paths:
+            files.append(self.describe_file(path))
 
-            result.append(
+        return files
+
+    def describe_file(self, path: Path) -> Dict[str, Any]:
+        exists = path.exists()
+
+        if exists:
+            stat = path.stat()
+            size_bytes = stat.st_size
+            modified_at = datetime.fromtimestamp(stat.st_mtime).isoformat(
+                timespec="seconds"
+            )
+        else:
+            size_bytes = 0
+            modified_at = ""
+
+        return {
+            "name": path.name,
+            "path": str(path),
+            "relative_path": self.safe_relative_path(path),
+            "exists": exists,
+            "size_bytes": size_bytes,
+            "modified_at": modified_at,
+            "category": self.detect_category(path),
+        }
+
+    def detect_category(self, path: Path) -> str:
+        name = path.name.lower()
+        suffix = path.suffix.lower()
+
+        if suffix in [".docx", ".pdf"] and "report" in name:
+            return "rapportage_export"
+
+        if "export" in name:
+            return "export_log"
+
+        if "workflow" in name:
+            return "workflow"
+
+        if "aaie" in name:
+            return "aaie"
+
+        if "bib" in name:
+            return "bib"
+
+        if "evidence" in name:
+            return "evidence"
+
+        if "manifest" in name:
+            return "manifest"
+
+        if "bronvermelding" in name or "readme" in name:
+            return "bronvermelding"
+
+        if suffix == ".zip":
+            return "project_package"
+
+        return "overig"
+
+    def build_evidence_items(
+        self,
+        files: List[Dict[str, Any]],
+    ) -> List[Dict[str, Any]]:
+        evidence_items: List[Dict[str, Any]] = []
+
+        for index, file_item in enumerate(files, start=1):
+            evidence_items.append(
                 {
-                    "category": spec["category"],
-                    "label": spec["label"],
-                    "path": str(path),
-                    "relative_path": self.safe_relative(path),
-                    "required": spec["required"],
-                    "exists": exists,
-                    "size_bytes": path.stat().st_size if exists else 0,
-                    "sha256": self.sha256(path) if exists else None,
-                    "modified_at": (
-                        datetime.fromtimestamp(path.stat().st_mtime).isoformat(timespec="seconds")
-                        if exists
-                        else None
+                    "evidence_id": f"EV-{index:03d}",
+                    "name": file_item.get("name", ""),
+                    "category": file_item.get("category", ""),
+                    "path": file_item.get("path", ""),
+                    "relative_path": file_item.get("relative_path", ""),
+                    "exists": file_item.get("exists", False),
+                    "size_bytes": file_item.get("size_bytes", 0),
+                    "modified_at": file_item.get("modified_at", ""),
+                    "source_type": self.source_type_for_category(
+                        file_item.get("category", "")
                     ),
+                    "reliability": self.reliability_for_file(file_item),
+                    "included_in_package": bool(file_item.get("exists", False)),
                 }
             )
 
-        return result
+        return evidence_items
 
-    def build_manifest(self, files: List[Dict[str, Any]]) -> Dict[str, Any]:
-        existing_files = [item for item in files if item.get("exists")]
-        missing_required = [
-            item for item in files
-            if item.get("required") and not item.get("exists")
-        ]
+    def source_type_for_category(self, category: str) -> str:
+        mapping = {
+            "rapportage_export": "gegenereerd_rapport",
+            "export_log": "systeemlog_export",
+            "workflow": "workflow_output",
+            "aaie": "aaie_aannames",
+            "bib": "bib_kennisindex",
+            "evidence": "evidence_log",
+            "manifest": "project_manifest",
+            "bronvermelding": "bronvermelding",
+            "project_package": "project_zip",
+        }
 
-        categories: Dict[str, Dict[str, Any]] = {}
+        return mapping.get(category, "projectbestand")
 
-        for item in files:
-            category = item.get("category", "unknown")
+    def reliability_for_file(self, file_item: Dict[str, Any]) -> str:
+        if not file_item.get("exists", False):
+            return "ontbreekt"
 
-            if category not in categories:
-                categories[category] = {
-                    "category": category,
-                    "total": 0,
-                    "existing": 0,
-                    "missing": 0,
-                    "size_bytes": 0,
-                }
+        category = file_item.get("category", "")
 
-            categories[category]["total"] += 1
+        if category in [
+            "rapportage_export",
+            "workflow",
+            "aaie",
+            "bib",
+            "evidence",
+            "manifest",
+        ]:
+            return "hoog"
 
-            if item.get("exists"):
-                categories[category]["existing"] += 1
-                categories[category]["size_bytes"] += int(item.get("size_bytes") or 0)
-            else:
-                categories[category]["missing"] += 1
+        if category in [
+            "export_log",
+            "bronvermelding",
+            "project_package",
+        ]:
+            return "middel"
+
+        return "basis"
+
+    def build_manifest(
+        self,
+        files: List[Dict[str, Any]],
+        evidence_items: List[Dict[str, Any]],
+        started_at: str,
+    ) -> Dict[str, Any]:
+        existing_files = [item for item in files if item.get("exists", False)]
+        missing_files = [item for item in files if not item.get("exists", False)]
 
         return {
-            "status": "GEREED" if not missing_required else "WARNING",
+            "status": "OPGESLAGEN",
             "engine": self.ENGINE_NAME,
             "engine_version": self.ENGINE_VERSION,
             "generated_at": datetime.now().isoformat(timespec="seconds"),
-            "summary": {
-                "total_files": len(files),
-                "existing_files": len(existing_files),
-                "missing_required_files": len(missing_required),
-                "total_size_bytes": sum(
-                    int(item.get("size_bytes") or 0)
-                    for item in existing_files
-                ),
-            },
-            "categories": list(categories.values()),
+            "started_at": started_at,
+            "project_root": str(PROJECT_ROOT),
+            "project_output_root": str(self.project_output_root),
+            "bronvermelding_root": str(self.bron_root),
+            "package_zip_path": str(self.package_zip_path),
+            "file_count": len(files),
+            "existing_file_count": len(existing_files),
+            "missing_file_count": len(missing_files),
+            "evidence_count": len(evidence_items),
             "files": files,
-            "missing_required_files": missing_required,
+            "evidence_items": evidence_items,
+            "package_policy": {
+                "include_reports": True,
+                "include_export_logs": True,
+                "include_workflow_logs": True,
+                "include_bib_index": True,
+                "include_aaie_assumptions": True,
+                "include_evidence_logs": True,
+                "include_bronvermelding": True,
+                "include_project_zip": True,
+            },
         }
 
-    def build_zip_package(
+    def build_evidence_log(
         self,
-        zip_path: Path,
-        files: List[Dict[str, Any]],
+        evidence_items: List[Dict[str, Any]],
+        started_at: str,
     ) -> Dict[str, Any]:
-        zip_path.parent.mkdir(parents=True, exist_ok=True)
+        return {
+            "status": "OPGESLAGEN",
+            "engine": self.ENGINE_NAME,
+            "engine_version": self.ENGINE_VERSION,
+            "started_at": started_at,
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "purpose": "STEE / Evidence-log voor Project Phoenix projectpakket.",
+            "evidence_count": len(evidence_items),
+            "evidence_items": evidence_items,
+        }
 
-        included = []
-        skipped = []
+    def build_bronvermelding_log(
+        self,
+        evidence_items: List[Dict[str, Any]],
+        started_at: str,
+    ) -> Dict[str, Any]:
+        sources: List[Dict[str, Any]] = []
 
-        with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as package_zip:
-            for item in files:
-                path = Path(item["path"])
-
-                if not item.get("exists"):
-                    skipped.append(
-                        {
-                            "path": str(path),
-                            "reason": "bestand ontbreekt",
-                        }
-                    )
-                    continue
-
-                if path.resolve() == zip_path.resolve():
-                    skipped.append(
-                        {
-                            "path": str(path),
-                            "reason": "ZIP-bestand zelf wordt niet toegevoegd",
-                        }
-                    )
-                    continue
-
-                archive_name = Path("project_package") / item.get("category", "misc") / path.name
-                package_zip.write(path, archive_name.as_posix())
-
-                included.append(
+        for item in evidence_items:
+            if item.get("exists", False):
+                sources.append(
                     {
-                        "source_path": str(path),
-                        "archive_name": archive_name.as_posix(),
-                        "size_bytes": path.stat().st_size,
-                        "sha256": self.sha256(path),
+                        "bron_id": item.get("evidence_id", ""),
+                        "naam": item.get("name", ""),
+                        "type": item.get("source_type", ""),
+                        "bestand": item.get("relative_path", ""),
+                        "datum_tijd": item.get("modified_at", ""),
+                        "betrouwbaarheid": item.get("reliability", ""),
                     }
                 )
 
         return {
             "status": "OPGESLAGEN",
-            "zip_path": str(zip_path),
-            "exists": zip_path.exists(),
-            "size_bytes": zip_path.stat().st_size if zip_path.exists() else 0,
-            "included_count": len(included),
-            "skipped_count": len(skipped),
-            "included_files": included,
-            "skipped_files": skipped,
+            "engine": self.ENGINE_NAME,
+            "engine_version": self.ENGINE_VERSION,
+            "started_at": started_at,
+            "generated_at": datetime.now().isoformat(timespec="seconds"),
+            "map": str(self.bron_root),
+            "bron_count": len(sources),
+            "bronnen": sources,
         }
 
-    def determine_status(
+    def build_bronvermelding_readme(
         self,
-        manifest: Dict[str, Any],
-        zip_result: Dict[str, Any],
+        evidence_items: List[Dict[str, Any]],
     ) -> str:
-        if zip_result.get("status") != "OPGESLAGEN":
-            return "FAILED"
+        lines: List[str] = []
 
-        if not zip_result.get("exists"):
-            return "FAILED"
+        lines.append("BRONVERMELDING VAN DIT PROJECT")
+        lines.append("PROJECT PHOENIX / BAOEES")
+        lines.append(f"Versie: {self.ENGINE_VERSION}")
+        lines.append("")
+        lines.append(
+            "Deze map bevat de bronvermelding, evidence-log en verwijzingen naar projectbestanden."
+        )
+        lines.append("")
+        lines.append("Bronnen en bestanden:")
+        lines.append("")
 
-        if manifest.get("status") == "WARNING":
-            return "WARNING"
+        for item in evidence_items:
+            if item.get("exists", False):
+                lines.append(
+                    f"- {item.get('evidence_id', '')}: {item.get('relative_path', '')}"
+                )
+                lines.append(f"  Type: {item.get('source_type', '')}")
+                lines.append(f"  Betrouwbaarheid: {item.get('reliability', '')}")
+                lines.append(f"  Gewijzigd: {item.get('modified_at', '')}")
+                lines.append("")
+
+        if len(lines) <= 8:
+            lines.append("Er zijn nog geen bestaande projectbestanden gevonden.")
+
+        return "\n".join(lines)
+
+    def write_project_zip(self, files: List[Dict[str, Any]]) -> str:
+        self.package_zip_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with zipfile.ZipFile(
+            self.package_zip_path,
+            "w",
+            zipfile.ZIP_DEFLATED,
+        ) as package_zip:
+            for file_item in files:
+                if not file_item.get("exists", False):
+                    continue
+
+                path = Path(file_item.get("path", ""))
+
+                if not path.exists():
+                    continue
+
+                if path.resolve() == self.package_zip_path.resolve():
+                    continue
+
+                archive_name = file_item.get("relative_path", path.name)
+                package_zip.write(path, archive_name)
 
         return "OPGESLAGEN"
 
-    def build_warnings(self, manifest: Dict[str, Any]) -> List[str]:
-        warnings = []
+    def build_dashboard(
+        self,
+        manifest: Dict[str, Any],
+        evidence_items: List[Dict[str, Any]],
+    ) -> str:
+        rows: List[str] = []
 
-        for item in manifest.get("missing_required_files", []):
-            warnings.append(f"Verplicht bestand ontbreekt: {item.get('path')}")
-
-        if not warnings:
-            warnings.append("Geen kritieke Project Package Evidence-waarschuwingen.")
-
-        return warnings
-
-    def build_html_dashboard(self, result: Dict[str, Any]) -> str:
-        manifest = result.get("manifest", {})
-        summary = manifest.get("summary", {})
-        zip_result = result.get("zip_result", {})
-        outputs = result.get("outputs", {})
-        files = manifest.get("files", [])
-        categories = manifest.get("categories", [])
-        warnings = result.get("warnings", [])
-
-        category_rows = ""
-
-        for category in categories:
-            category_rows += (
+        for item in evidence_items:
+            rows.append(
                 "<tr>"
-                f"<td>{self.esc(category.get('category', ''))}</td>"
-                f"<td>{self.esc(category.get('total', ''))}</td>"
-                f"<td>{self.esc(category.get('existing', ''))}</td>"
-                f"<td>{self.esc(category.get('missing', ''))}</td>"
-                f"<td>{self.esc(category.get('size_bytes', ''))}</td>"
-                "</tr>"
-            )
-
-        file_rows = ""
-
-        for item in files:
-            file_rows += (
-                "<tr>"
+                f"<td>{self.esc(item.get('evidence_id', ''))}</td>"
+                f"<td>{self.esc(item.get('name', ''))}</td>"
                 f"<td>{self.esc(item.get('category', ''))}</td>"
-                f"<td>{self.esc(item.get('label', ''))}</td>"
-                f"<td>{self.esc(item.get('exists', ''))}</td>"
-                f"<td>{self.esc(item.get('size_bytes', ''))}</td>"
-                f"<td><code>{self.esc(item.get('relative_path', ''))}</code></td>"
+                f"<td>{self.esc(item.get('exists', False))}</td>"
+                f"<td>{self.esc(item.get('reliability', ''))}</td>"
                 "</tr>"
             )
 
-        warning_items = ""
+        rows_text = "\n".join(rows)
 
-        for warning in warnings:
-            warning_items += f"<li>{self.esc(warning)}</li>"
+        html_parts = [
+            "<!doctype html>",
+            "<html lang=\"nl\">",
+            "<head>",
+            "  <meta charset=\"utf-8\">",
+            "  <title>Project Phoenix Evidence v6.2</title>",
+            "  <style>",
+            "    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; }",
+            "    main { max-width: 1180px; margin: 0 auto; padding: 32px; }",
+            "    section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; }",
+            "    h1, h2 { color: #f8fafc; }",
+            "    table { width: 100%; border-collapse: collapse; }",
+            "    td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; }",
+            "    th { background: #1e293b; }",
+            "    code { color: #bfdbfe; }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "<main>",
+            "  <section>",
+            "    <h1>Project Phoenix Evidence v6.2</h1>",
+            f"    <p>Status: {self.esc(manifest.get('status', ''))}</p>",
+            "    <p>Bronvermelding en bijlagenpakket zijn gekoppeld aan de projectexport.</p>",
+            "  </section>",
+            "  <section>",
+            "    <h2>Project package</h2>",
+            f"    <p>Bestanden totaal: {self.esc(manifest.get('file_count', 0))}</p>",
+            f"    <p>Bestaande bestanden: {self.esc(manifest.get('existing_file_count', 0))}</p>",
+            f"    <p>Ontbrekende bestanden: {self.esc(manifest.get('missing_file_count', 0))}</p>",
+            f"    <p>ZIP: <code>{self.esc(manifest.get('package_zip_path', ''))}</code></p>",
+            "  </section>",
+            "  <section>",
+            "    <h2>Evidence-items</h2>",
+            "    <table>",
+            "      <tr>",
+            "        <th>ID</th>",
+            "        <th>Bestand</th>",
+            "        <th>Categorie</th>",
+            "        <th>Aanwezig</th>",
+            "        <th>Betrouwbaarheid</th>",
+            "      </tr>",
+            f"      {rows_text}",
+            "    </table>",
+            "  </section>",
+            "</main>",
+            "</body>",
+            "</html>",
+        ]
 
-        zip_path = outputs.get("zip_path") or zip_result.get("zip_path", "")
-        zip_name = Path(zip_path).name if zip_path else ""
+        return "\n".join(html_parts)
 
-        return f"""<!doctype html>
-<html lang="nl">
-<head>
-  <meta charset="utf-8">
-  <title>Project Package Evidence Dashboard</title>
-  <style>
-    body {{
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050816;
-      color: #f8fafc;
-      line-height: 1.5;
-    }}
-    header {{
-      padding: 34px 42px;
-      background: #0f172a;
-      border-bottom: 1px solid #334155;
-    }}
-    main {{
-      padding: 30px 38px 50px;
-    }}
-    .grid {{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }}
-    .card {{
-      background: #111827;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 18px;
-    }}
-    table {{
-      width: 100%;
-      border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #334155;
-      margin-top: 18px;
-    }}
-    th, td {{
-      padding: 10px 12px;
-      border-bottom: 1px solid #334155;
-      text-align: left;
-      vertical-align: top;
-    }}
-    th {{
-      background: #0f172a;
-      color: #bfdbfe;
-    }}
-    a {{
-      color: #93c5fd;
-    }}
-    code {{
-      color: #cbd5e1;
-    }}
-    .muted {{
-      color: #cbd5e1;
-    }}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>PROJECT PACKAGE EVIDENCE DASHBOARD</h1>
-    <p>Project Phoenix / BAOEES Project ZIP, manifest en evidence log.</p>
-  </header>
+    def read_json(self, path: Path) -> Dict[str, Any]:
+        if not path.exists():
+            return {}
 
-  <main>
-    <section class="grid">
-      <div class="card">
-        <h3>Status</h3>
-        <p>{self.esc(result.get("status", ""))}</p>
-      </div>
-      <div class="card">
-        <h3>Bestanden</h3>
-        <p>{self.esc(summary.get("existing_files", 0))} aanwezig / {self.esc(summary.get("total_files", 0))} totaal</p>
-      </div>
-      <div class="card">
-        <h3>Project ZIP</h3>
-        <p><a href="{self.esc(zip_name)}">{self.esc(zip_name)}</a></p>
-        <p class="muted">{self.esc(zip_result.get("size_bytes", 0))} bytes</p>
-      </div>
-      <div class="card">
-        <h3>Manifest</h3>
-        <p class="muted">{self.esc(outputs.get("manifest_path", ""))}</p>
-      </div>
-    </section>
-
-    <h2>Categorieën</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Categorie</th>
-          <th>Totaal</th>
-          <th>Aanwezig</th>
-          <th>Ontbreekt</th>
-          <th>Bytes</th>
-        </tr>
-      </thead>
-      <tbody>
-        {category_rows}
-      </tbody>
-    </table>
-
-    <h2>Bestanden</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Categorie</th>
-          <th>Label</th>
-          <th>Bestaat</th>
-          <th>Bytes</th>
-          <th>Pad</th>
-        </tr>
-      </thead>
-      <tbody>
-        {file_rows}
-      </tbody>
-    </table>
-
-    <h2>Waarschuwingen</h2>
-    <ul>
-      {warning_items}
-    </ul>
-  </main>
-</body>
-</html>
-"""
-
-    def sha256(self, path: Path) -> str:
-        digest = hashlib.sha256()
-
-        with path.open("rb") as file:
-            for chunk in iter(lambda: file.read(1024 * 1024), b""):
-                digest.update(chunk)
-
-        return digest.hexdigest()
-
-    def safe_relative(self, path: Path) -> str:
         try:
-            return path.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
+            return json.loads(path.read_text(encoding="utf-8-sig"))
         except Exception:
-            return path.as_posix()
+            try:
+                return json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                return {}
 
     def write_json(self, path: Path, data: Dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2, default=str),
-            encoding="utf-8",
+            encoding="utf-8-sig",
         )
+
+    def write_text(self, path: Path, text: str) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+
+    def safe_relative_path(self, path: Path) -> str:
+        try:
+            return str(path.resolve().relative_to(PROJECT_ROOT))
+        except Exception:
+            return str(path)
 
     def esc(self, value: Any) -> str:
         return html.escape(str(value), quote=True)
 
 
+ProjectPackageEvidence = ProjectPackageEvidenceEngine
+ProjectEvidenceEngine = ProjectPackageEvidenceEngine
+ProjectPackageEngine = ProjectPackageEvidenceEngine
+
+
 def main() -> None:
     engine = ProjectPackageEvidenceEngine()
     result = engine.run()
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(json.dumps(result, ensure_ascii=True, indent=2, default=str))
 
 
 if __name__ == "__main__":

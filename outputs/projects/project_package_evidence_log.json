@@ -1,415 +1,360 @@
-{
+﻿{
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Package Evidence Engine",
-  "engine_version": "v4.5",
-  "generated_at": "2026-06-30T17:32:03",
-  "purpose": "Project Analyzer outputs gebundeld in Project ZIP en evidencepakket.",
-  "project_output_root": "outputs\\projects",
-  "bib_output_root": "outputs\\bib",
-  "outputs": {
-    "manifest_path": "outputs\\projects\\project_package_manifest.json",
-    "evidence_log_path": "outputs\\projects\\project_package_evidence_log.json",
-    "dashboard_path": "outputs\\projects\\project_package_evidence_dashboard.html",
-    "zip_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip"
-  },
-  "zip_result": {
-    "status": "OPGESLAGEN",
-    "zip_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
-    "exists": true,
-    "size_bytes": 1528416,
-    "included_count": 18,
-    "skipped_count": 0,
-    "included_files": [
-      {
-        "source_path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
-        "archive_name": "project_package/workflow/project_analyzer_workflow_dashboard.html",
-        "size_bytes": 6095,
-        "sha256": "538a4659862809890122c71777dcd9b6ca4b68a62e38c58d57fea007c032dec9"
-      },
-      {
-        "source_path": "outputs\\projects\\project_analyzer_workflow_log.json",
-        "archive_name": "project_package/workflow/project_analyzer_workflow_log.json",
-        "size_bytes": 6112505,
-        "sha256": "d743f6525777de33137ecfb439484044f5d5a1ca76bbd2f358c615761064f2b8"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_bib_report.docx",
-        "archive_name": "project_package/report/project_report_bib_report.docx",
-        "size_bytes": 3590,
-        "sha256": "da361e67ebcf0756e2c38ff67b0044cddc6bfd9f04e0149ba86a201fdfa64b47"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_bib_report.pdf",
-        "archive_name": "project_package/report/project_report_bib_report.pdf",
-        "size_bytes": 9200,
-        "sha256": "d0f9f170c9966ba649f954da8a774300c3198d65be46dd79eccd381a6c859102"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_bib_report.html",
-        "archive_name": "project_package/report/project_report_bib_report.html",
-        "size_bytes": 9195,
-        "sha256": "7548f7f37b86a17e1e6a415a67e91c02f0bfe13a4e4b294ad4de1d40abeaa71a"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_bib_report.md",
-        "archive_name": "project_package/report/project_report_bib_report.md",
-        "size_bytes": 6006,
-        "sha256": "da150fa16f138fb3088e5a8a7efea036f7cbb2c1f0289003d646c89dc851cf0c"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_bib_package.json",
-        "archive_name": "project_package/report/project_report_bib_package.json",
-        "size_bytes": 654602,
-        "sha256": "32c64c3f440afd94cc8031299f669091e90bc938b70331ff3a0dde4da0fe46f3"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_export_dashboard.html",
-        "archive_name": "project_package/export/project_report_export_dashboard.html",
-        "size_bytes": 2840,
-        "sha256": "58eb84298231acab7b76f2b284d57137c9e713de593c311348c03113be9dba3b"
-      },
-      {
-        "source_path": "outputs\\projects\\project_report_export_log.json",
-        "archive_name": "project_package/export/project_report_export_log.json",
-        "size_bytes": 1376370,
-        "sha256": "b3530eb5315f42ed090543d7e8c4231fd2e9a9d400a0ca72c2dfb452805be6a1"
-      },
-      {
-        "source_path": "outputs\\projects\\geo_foundation_bib_analysis.html",
-        "archive_name": "project_package/geo_foundation/geo_foundation_bib_analysis.html",
-        "size_bytes": 5308,
-        "sha256": "fe307e8bbb3da9986b8ab880f250f6227aba082013ce0304024ff8f745baad8d"
-      },
-      {
-        "source_path": "outputs\\projects\\geo_foundation_bib_analysis.json",
-        "archive_name": "project_package/geo_foundation/geo_foundation_bib_analysis.json",
-        "size_bytes": 310221,
-        "sha256": "fae024607ce59db9c6f78c2766b62bbcf54eda46626e79f5daaed5aa63fbd721"
-      },
-      {
-        "source_path": "outputs\\projects\\aaie_bib_assumptions.html",
-        "archive_name": "project_package/aaie/aaie_bib_assumptions.html",
-        "size_bytes": 7471,
-        "sha256": "d087e00f60010b7464b7f8b0663d56ba078751a37dd0775d0610b100e2c1cc00"
-      },
-      {
-        "source_path": "outputs\\projects\\aaie_bib_assumptions.json",
-        "archive_name": "project_package/aaie/aaie_bib_assumptions.json",
-        "size_bytes": 145468,
-        "sha256": "346e9b02f4161ec96115cb4f2266b8928d61d78156aba2f8bc5ea4702507e161"
-      },
-      {
-        "source_path": "outputs\\projects\\project_analyzer_bib_context.html",
-        "archive_name": "project_package/bib_context/project_analyzer_bib_context.html",
-        "size_bytes": 5381,
-        "sha256": "5081d089e323e4b11141072b6026fa15d9925cfbb14bbad63f35372f56181f43"
-      },
-      {
-        "source_path": "outputs\\projects\\project_analyzer_bib_context.json",
-        "archive_name": "project_package/bib_context/project_analyzer_bib_context.json",
-        "size_bytes": 116146,
-        "sha256": "bf35fc92cb06dab570db0999e48842bf38d54c63907745599ca0afccdf7d6d33"
-      },
-      {
-        "source_path": "outputs\\projects\\index.html",
-        "archive_name": "project_package/launcher/index.html",
-        "size_bytes": 32660,
-        "sha256": "d30e5c3731f82e0eb242a9b3ef9fd126193669d2f1cf1dfac42c6e63e021814e"
-      },
-      {
-        "source_path": "outputs\\projects\\project_analyzer_launcher_bridge_log.json",
-        "archive_name": "project_package/launcher/project_analyzer_launcher_bridge_log.json",
-        "size_bytes": 6523063,
-        "sha256": "b98f56b46b9eac5086a5d301d47fe7554c13b2f3b3a53655d537b2d172b3e399"
-      },
-      {
-        "source_path": "outputs\\bib\\bib_project_analyzer_bridge.json",
-        "archive_name": "project_package/bib_bridge/bib_project_analyzer_bridge.json",
-        "size_bytes": 110804,
-        "sha256": "985d94c713d9d4279242a314c661507f163412108dbda8ae4d475779eae979dc"
-      }
-    ],
-    "skipped_files": []
-  },
-  "manifest": {
-    "status": "GEREED",
-    "engine": "Project Phoenix Project Package Evidence Engine",
-    "engine_version": "v4.5",
-    "generated_at": "2026-06-30T17:32:03",
-    "summary": {
-      "total_files": 18,
-      "existing_files": 18,
-      "missing_required_files": 0,
-      "total_size_bytes": 15436925
+  "engine_version": "v6.2",
+  "started_at": "2026-07-02T13:09:10",
+  "finished_at": "2026-07-02T13:09:11",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
+  "bronvermelding_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project",
+  "package_manifest_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_manifest.json",
+  "evidence_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_log.json",
+  "evidence_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_dashboard.html",
+  "bronvermelding_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+  "bronvermelding_readme_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+  "package_zip_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+  "zip_status": "OPGESLAGEN",
+  "file_count": 15,
+  "evidence_count": 15,
+  "files": [
+    {
+      "name": "project_report_bib_package.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_package.json",
+      "relative_path": "outputs\\projects\\project_report_bib_package.json",
+      "exists": true,
+      "size_bytes": 654602,
+      "modified_at": "2026-06-30T17:32:02",
+      "category": "bib"
     },
-    "categories": [
-      {
-        "category": "workflow",
-        "total": 2,
-        "existing": 2,
-        "missing": 0,
-        "size_bytes": 6118600
-      },
-      {
-        "category": "report",
-        "total": 5,
-        "existing": 5,
-        "missing": 0,
-        "size_bytes": 682593
-      },
-      {
-        "category": "export",
-        "total": 2,
-        "existing": 2,
-        "missing": 0,
-        "size_bytes": 1379210
-      },
-      {
-        "category": "geo_foundation",
-        "total": 2,
-        "existing": 2,
-        "missing": 0,
-        "size_bytes": 315529
-      },
-      {
-        "category": "aaie",
-        "total": 2,
-        "existing": 2,
-        "missing": 0,
-        "size_bytes": 152939
-      },
-      {
-        "category": "bib_context",
-        "total": 2,
-        "existing": 2,
-        "missing": 0,
-        "size_bytes": 121527
-      },
-      {
-        "category": "launcher",
-        "total": 2,
-        "existing": 2,
-        "missing": 0,
-        "size_bytes": 6555723
-      },
-      {
-        "category": "bib_bridge",
-        "total": 1,
-        "existing": 1,
-        "missing": 0,
-        "size_bytes": 110804
-      }
-    ],
-    "files": [
-      {
-        "category": "workflow",
-        "label": "Project Analyzer Workflow Dashboard",
-        "path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
-        "relative_path": "outputs/projects/project_analyzer_workflow_dashboard.html",
-        "required": true,
-        "exists": true,
-        "size_bytes": 6095,
-        "sha256": "538a4659862809890122c71777dcd9b6ca4b68a62e38c58d57fea007c032dec9",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "workflow",
-        "label": "Project Analyzer Workflow Log",
-        "path": "outputs\\projects\\project_analyzer_workflow_log.json",
-        "relative_path": "outputs/projects/project_analyzer_workflow_log.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 6112505,
-        "sha256": "d743f6525777de33137ecfb439484044f5d5a1ca76bbd2f358c615761064f2b8",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "report",
-        "label": "Projectrapport DOCX",
-        "path": "outputs\\projects\\project_report_bib_report.docx",
-        "relative_path": "outputs/projects/project_report_bib_report.docx",
-        "required": true,
-        "exists": true,
-        "size_bytes": 3590,
-        "sha256": "da361e67ebcf0756e2c38ff67b0044cddc6bfd9f04e0149ba86a201fdfa64b47",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "report",
-        "label": "Projectrapport PDF",
-        "path": "outputs\\projects\\project_report_bib_report.pdf",
-        "relative_path": "outputs/projects/project_report_bib_report.pdf",
-        "required": true,
-        "exists": true,
-        "size_bytes": 9200,
-        "sha256": "d0f9f170c9966ba649f954da8a774300c3198d65be46dd79eccd381a6c859102",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "report",
-        "label": "Projectrapport HTML",
-        "path": "outputs\\projects\\project_report_bib_report.html",
-        "relative_path": "outputs/projects/project_report_bib_report.html",
-        "required": false,
-        "exists": true,
-        "size_bytes": 9195,
-        "sha256": "7548f7f37b86a17e1e6a415a67e91c02f0bfe13a4e4b294ad4de1d40abeaa71a",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "report",
-        "label": "Projectrapport Markdown",
-        "path": "outputs\\projects\\project_report_bib_report.md",
-        "relative_path": "outputs/projects/project_report_bib_report.md",
-        "required": false,
-        "exists": true,
-        "size_bytes": 6006,
-        "sha256": "da150fa16f138fb3088e5a8a7efea036f7cbb2c1f0289003d646c89dc851cf0c",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "report",
-        "label": "Projectrapport Package JSON",
-        "path": "outputs\\projects\\project_report_bib_package.json",
-        "relative_path": "outputs/projects/project_report_bib_package.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 654602,
-        "sha256": "32c64c3f440afd94cc8031299f669091e90bc938b70331ff3a0dde4da0fe46f3",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "export",
-        "label": "Project Report Export Dashboard",
-        "path": "outputs\\projects\\project_report_export_dashboard.html",
-        "relative_path": "outputs/projects/project_report_export_dashboard.html",
-        "required": true,
-        "exists": true,
-        "size_bytes": 2840,
-        "sha256": "58eb84298231acab7b76f2b284d57137c9e713de593c311348c03113be9dba3b",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "export",
-        "label": "Project Report Export Log",
-        "path": "outputs\\projects\\project_report_export_log.json",
-        "relative_path": "outputs/projects/project_report_export_log.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 1376370,
-        "sha256": "b3530eb5315f42ed090543d7e8c4231fd2e9a9d400a0ca72c2dfb452805be6a1",
-        "modified_at": "2026-06-30T17:32:02"
-      },
-      {
-        "category": "geo_foundation",
-        "label": "Geo/Foundation Analyse HTML",
-        "path": "outputs\\projects\\geo_foundation_bib_analysis.html",
-        "relative_path": "outputs/projects/geo_foundation_bib_analysis.html",
-        "required": false,
-        "exists": true,
-        "size_bytes": 5308,
-        "sha256": "fe307e8bbb3da9986b8ab880f250f6227aba082013ce0304024ff8f745baad8d",
-        "modified_at": "2026-06-30T17:32:01"
-      },
-      {
-        "category": "geo_foundation",
-        "label": "Geo/Foundation Analyse JSON",
-        "path": "outputs\\projects\\geo_foundation_bib_analysis.json",
-        "relative_path": "outputs/projects/geo_foundation_bib_analysis.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 310221,
-        "sha256": "fae024607ce59db9c6f78c2766b62bbcf54eda46626e79f5daaed5aa63fbd721",
-        "modified_at": "2026-06-30T17:32:01"
-      },
-      {
-        "category": "aaie",
-        "label": "AAIE BIB Assumptions HTML",
-        "path": "outputs\\projects\\aaie_bib_assumptions.html",
-        "relative_path": "outputs/projects/aaie_bib_assumptions.html",
-        "required": false,
-        "exists": true,
-        "size_bytes": 7471,
-        "sha256": "d087e00f60010b7464b7f8b0663d56ba078751a37dd0775d0610b100e2c1cc00",
-        "modified_at": "2026-06-30T17:32:01"
-      },
-      {
-        "category": "aaie",
-        "label": "AAIE BIB Assumptions JSON",
-        "path": "outputs\\projects\\aaie_bib_assumptions.json",
-        "relative_path": "outputs/projects/aaie_bib_assumptions.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 145468,
-        "sha256": "346e9b02f4161ec96115cb4f2266b8928d61d78156aba2f8bc5ea4702507e161",
-        "modified_at": "2026-06-30T17:32:01"
-      },
-      {
-        "category": "bib_context",
-        "label": "Project Analyzer BIB Context HTML",
-        "path": "outputs\\projects\\project_analyzer_bib_context.html",
-        "relative_path": "outputs/projects/project_analyzer_bib_context.html",
-        "required": false,
-        "exists": true,
-        "size_bytes": 5381,
-        "sha256": "5081d089e323e4b11141072b6026fa15d9925cfbb14bbad63f35372f56181f43",
-        "modified_at": "2026-06-30T17:32:01"
-      },
-      {
-        "category": "bib_context",
-        "label": "Project Analyzer BIB Context JSON",
-        "path": "outputs\\projects\\project_analyzer_bib_context.json",
-        "relative_path": "outputs/projects/project_analyzer_bib_context.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 116146,
-        "sha256": "bf35fc92cb06dab570db0999e48842bf38d54c63907745599ca0afccdf7d6d33",
-        "modified_at": "2026-06-30T17:32:01"
-      },
-      {
-        "category": "launcher",
-        "label": "Project Phoenix Launcher",
-        "path": "outputs\\projects\\index.html",
-        "relative_path": "outputs/projects/index.html",
-        "required": true,
-        "exists": true,
-        "size_bytes": 32660,
-        "sha256": "d30e5c3731f82e0eb242a9b3ef9fd126193669d2f1cf1dfac42c6e63e021814e",
-        "modified_at": "2026-06-30T17:04:41"
-      },
-      {
-        "category": "launcher",
-        "label": "Project Analyzer Launcher Bridge Log",
-        "path": "outputs\\projects\\project_analyzer_launcher_bridge_log.json",
-        "relative_path": "outputs/projects/project_analyzer_launcher_bridge_log.json",
-        "required": true,
-        "exists": true,
-        "size_bytes": 6523063,
-        "sha256": "b98f56b46b9eac5086a5d301d47fe7554c13b2f3b3a53655d537b2d172b3e399",
-        "modified_at": "2026-06-30T17:04:41"
-      },
-      {
-        "category": "bib_bridge",
-        "label": "BIB Project Analyzer Bridge",
-        "path": "outputs\\bib\\bib_project_analyzer_bridge.json",
-        "relative_path": "outputs/bib/bib_project_analyzer_bridge.json",
-        "required": false,
-        "exists": true,
-        "size_bytes": 110804,
-        "sha256": "985d94c713d9d4279242a314c661507f163412108dbda8ae4d475779eae979dc",
-        "modified_at": "2026-06-27T12:58:02"
-      }
-    ],
-    "missing_required_files": []
-  },
-  "warnings": [
-    "Geen kritieke Project Package Evidence-waarschuwingen."
+    {
+      "name": "project_report_bib_report.docx",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_report.docx",
+      "relative_path": "outputs\\projects\\project_report_bib_report.docx",
+      "exists": true,
+      "size_bytes": 3668,
+      "modified_at": "2026-07-02T12:29:29",
+      "category": "rapportage_export"
+    },
+    {
+      "name": "project_report_bib_report.pdf",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_report.pdf",
+      "relative_path": "outputs\\projects\\project_report_bib_report.pdf",
+      "exists": true,
+      "size_bytes": 1955,
+      "modified_at": "2026-07-02T12:29:29",
+      "category": "rapportage_export"
+    },
+    {
+      "name": "project_report_export_log.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_log.json",
+      "relative_path": "outputs\\projects\\project_report_export_log.json",
+      "exists": true,
+      "size_bytes": 1251,
+      "modified_at": "2026-07-02T12:29:29",
+      "category": "export_log"
+    },
+    {
+      "name": "project_report_export_dashboard.html",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_dashboard.html",
+      "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
+      "exists": true,
+      "size_bytes": 1364,
+      "modified_at": "2026-07-02T12:29:29",
+      "category": "export_log"
+    },
+    {
+      "name": "project_analyzer_workflow_log.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_analyzer_workflow_log.json",
+      "relative_path": "outputs\\projects\\project_analyzer_workflow_log.json",
+      "exists": true,
+      "size_bytes": 1635,
+      "modified_at": "2026-07-01T22:09:03",
+      "category": "workflow"
+    },
+    {
+      "name": "project_analyzer_workflow_dashboard.html",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_analyzer_workflow_dashboard.html",
+      "relative_path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
+      "exists": true,
+      "size_bytes": 1705,
+      "modified_at": "2026-07-01T22:09:03",
+      "category": "workflow"
+    },
+    {
+      "name": "aaie_bib_assumptions.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
+      "relative_path": "outputs\\projects\\aaie_bib_assumptions.json",
+      "exists": true,
+      "size_bytes": 6248,
+      "modified_at": "2026-06-30T18:24:39",
+      "category": "aaie"
+    },
+    {
+      "name": "bib_knowledge_content_index.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+      "relative_path": "outputs\\bib\\index\\bib_knowledge_content_index.json",
+      "exists": true,
+      "size_bytes": 37721,
+      "modified_at": "2026-06-30T16:48:03",
+      "category": "bib"
+    },
+    {
+      "name": "project_package_manifest.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_manifest.json",
+      "relative_path": "outputs\\projects\\project_package_manifest.json",
+      "exists": true,
+      "size_bytes": 14746,
+      "modified_at": "2026-07-02T13:09:10",
+      "category": "manifest"
+    },
+    {
+      "name": "project_package_evidence_log.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_log.json",
+      "relative_path": "outputs\\projects\\project_package_evidence_log.json",
+      "exists": true,
+      "size_bytes": 8237,
+      "modified_at": "2026-07-02T13:09:10",
+      "category": "evidence"
+    },
+    {
+      "name": "project_package_evidence_dashboard.html",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_dashboard.html",
+      "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
+      "exists": true,
+      "size_bytes": 3140,
+      "modified_at": "2026-07-02T13:09:10",
+      "category": "evidence"
+    },
+    {
+      "name": "bronvermelding_log.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+      "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+      "exists": true,
+      "size_bytes": 4001,
+      "modified_at": "2026-07-02T13:09:10",
+      "category": "bronvermelding"
+    },
+    {
+      "name": "README_Bronvermelding_van_dit_project.txt",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+      "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+      "exists": true,
+      "size_bytes": 2121,
+      "modified_at": "2026-07-02T13:09:10",
+      "category": "bronvermelding"
+    },
+    {
+      "name": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "relative_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "exists": true,
+      "size_bytes": 1528416,
+      "modified_at": "2026-06-30T17:32:02",
+      "category": "project_package"
+    }
+  ],
+  "evidence_items": [
+    {
+      "evidence_id": "EV-001",
+      "name": "project_report_bib_package.json",
+      "category": "bib",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_package.json",
+      "relative_path": "outputs\\projects\\project_report_bib_package.json",
+      "exists": true,
+      "size_bytes": 654602,
+      "modified_at": "2026-06-30T17:32:02",
+      "source_type": "bib_kennisindex",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-002",
+      "name": "project_report_bib_report.docx",
+      "category": "rapportage_export",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_report.docx",
+      "relative_path": "outputs\\projects\\project_report_bib_report.docx",
+      "exists": true,
+      "size_bytes": 3668,
+      "modified_at": "2026-07-02T12:29:29",
+      "source_type": "gegenereerd_rapport",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-003",
+      "name": "project_report_bib_report.pdf",
+      "category": "rapportage_export",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_report.pdf",
+      "relative_path": "outputs\\projects\\project_report_bib_report.pdf",
+      "exists": true,
+      "size_bytes": 1955,
+      "modified_at": "2026-07-02T12:29:29",
+      "source_type": "gegenereerd_rapport",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-004",
+      "name": "project_report_export_log.json",
+      "category": "export_log",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_log.json",
+      "relative_path": "outputs\\projects\\project_report_export_log.json",
+      "exists": true,
+      "size_bytes": 1251,
+      "modified_at": "2026-07-02T12:29:29",
+      "source_type": "systeemlog_export",
+      "reliability": "middel",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-005",
+      "name": "project_report_export_dashboard.html",
+      "category": "export_log",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_dashboard.html",
+      "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
+      "exists": true,
+      "size_bytes": 1364,
+      "modified_at": "2026-07-02T12:29:29",
+      "source_type": "systeemlog_export",
+      "reliability": "middel",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-006",
+      "name": "project_analyzer_workflow_log.json",
+      "category": "workflow",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_analyzer_workflow_log.json",
+      "relative_path": "outputs\\projects\\project_analyzer_workflow_log.json",
+      "exists": true,
+      "size_bytes": 1635,
+      "modified_at": "2026-07-01T22:09:03",
+      "source_type": "workflow_output",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-007",
+      "name": "project_analyzer_workflow_dashboard.html",
+      "category": "workflow",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_analyzer_workflow_dashboard.html",
+      "relative_path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
+      "exists": true,
+      "size_bytes": 1705,
+      "modified_at": "2026-07-01T22:09:03",
+      "source_type": "workflow_output",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-008",
+      "name": "aaie_bib_assumptions.json",
+      "category": "aaie",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
+      "relative_path": "outputs\\projects\\aaie_bib_assumptions.json",
+      "exists": true,
+      "size_bytes": 6248,
+      "modified_at": "2026-06-30T18:24:39",
+      "source_type": "aaie_aannames",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-009",
+      "name": "bib_knowledge_content_index.json",
+      "category": "bib",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+      "relative_path": "outputs\\bib\\index\\bib_knowledge_content_index.json",
+      "exists": true,
+      "size_bytes": 37721,
+      "modified_at": "2026-06-30T16:48:03",
+      "source_type": "bib_kennisindex",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-010",
+      "name": "project_package_manifest.json",
+      "category": "manifest",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_manifest.json",
+      "relative_path": "outputs\\projects\\project_package_manifest.json",
+      "exists": true,
+      "size_bytes": 14746,
+      "modified_at": "2026-07-02T13:09:10",
+      "source_type": "project_manifest",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-011",
+      "name": "project_package_evidence_log.json",
+      "category": "evidence",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_log.json",
+      "relative_path": "outputs\\projects\\project_package_evidence_log.json",
+      "exists": true,
+      "size_bytes": 8237,
+      "modified_at": "2026-07-02T13:09:10",
+      "source_type": "evidence_log",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-012",
+      "name": "project_package_evidence_dashboard.html",
+      "category": "evidence",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_dashboard.html",
+      "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
+      "exists": true,
+      "size_bytes": 3140,
+      "modified_at": "2026-07-02T13:09:10",
+      "source_type": "evidence_log",
+      "reliability": "hoog",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-013",
+      "name": "bronvermelding_log.json",
+      "category": "bronvermelding",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+      "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+      "exists": true,
+      "size_bytes": 4001,
+      "modified_at": "2026-07-02T13:09:10",
+      "source_type": "bronvermelding",
+      "reliability": "middel",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-014",
+      "name": "README_Bronvermelding_van_dit_project.txt",
+      "category": "bronvermelding",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+      "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+      "exists": true,
+      "size_bytes": 2121,
+      "modified_at": "2026-07-02T13:09:10",
+      "source_type": "bronvermelding",
+      "reliability": "middel",
+      "included_in_package": true
+    },
+    {
+      "evidence_id": "EV-015",
+      "name": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "category": "project_package",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "relative_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "exists": true,
+      "size_bytes": 1528416,
+      "modified_at": "2026-06-30T17:32:02",
+      "source_type": "project_zip",
+      "reliability": "middel",
+      "included_in_package": true
+    }
   ],
   "next_steps": [
-    "Open project_package_evidence_dashboard.html.",
+    "Controleer project_package_evidence_dashboard.html.",
+    "Controleer project_package_manifest.json.",
+    "Controleer Bronvermelding_van_dit_project.",
     "Controleer PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip.",
-    "Controleer of DOCX, PDF, workflow-log en dashboards in het ZIP-pakket zitten.",
-    "Koppel deze engine later aan de centrale Project Phoenix workflow."
-  ],
-  "extra_results": {}
+    "Koppel dit pakket daarna aan het centrale START PROJECTANALYSE dashboard."
+  ]
 }

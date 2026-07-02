@@ -2,125 +2,59 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8">
-  <title>Project Package Evidence Dashboard</title>
+  <title>Project Phoenix Evidence v6.2</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050816;
-      color: #f8fafc;
-      line-height: 1.5;
-    }
-    header {
-      padding: 34px 42px;
-      background: #0f172a;
-      border-bottom: 1px solid #334155;
-    }
-    main {
-      padding: 30px 38px 50px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: #111827;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 18px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #334155;
-      margin-top: 18px;
-    }
-    th, td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #334155;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: #0f172a;
-      color: #bfdbfe;
-    }
-    a {
-      color: #93c5fd;
-    }
-    code {
-      color: #cbd5e1;
-    }
-    .muted {
-      color: #cbd5e1;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; }
+    main { max-width: 1180px; margin: 0 auto; padding: 32px; }
+    section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; }
+    h1, h2 { color: #f8fafc; }
+    table { width: 100%; border-collapse: collapse; }
+    td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #1e293b; }
+    code { color: #bfdbfe; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>PROJECT PACKAGE EVIDENCE DASHBOARD</h1>
-    <p>Project Phoenix / BAOEES Project ZIP, manifest en evidence log.</p>
-  </header>
-
-  <main>
-    <section class="grid">
-      <div class="card">
-        <h3>Status</h3>
-        <p>OPGESLAGEN</p>
-      </div>
-      <div class="card">
-        <h3>Bestanden</h3>
-        <p>18 aanwezig / 18 totaal</p>
-      </div>
-      <div class="card">
-        <h3>Project ZIP</h3>
-        <p><a href="PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip">PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</a></p>
-        <p class="muted">1528416 bytes</p>
-      </div>
-      <div class="card">
-        <h3>Manifest</h3>
-        <p class="muted">outputs\projects\project_package_manifest.json</p>
-      </div>
-    </section>
-
-    <h2>Categorieën</h2>
+<main>
+  <section>
+    <h1>Project Phoenix Evidence v6.2</h1>
+    <p>Status: OPGESLAGEN</p>
+    <p>Bronvermelding en bijlagenpakket zijn gekoppeld aan de projectexport.</p>
+  </section>
+  <section>
+    <h2>Project package</h2>
+    <p>Bestanden totaal: 15</p>
+    <p>Bestaande bestanden: 15</p>
+    <p>Ontbrekende bestanden: 0</p>
+    <p>ZIP: <code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\projects\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></p>
+  </section>
+  <section>
+    <h2>Evidence-items</h2>
     <table>
-      <thead>
-        <tr>
-          <th>Categorie</th>
-          <th>Totaal</th>
-          <th>Aanwezig</th>
-          <th>Ontbreekt</th>
-          <th>Bytes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>workflow</td><td>2</td><td>2</td><td>0</td><td>6118600</td></tr><tr><td>report</td><td>5</td><td>5</td><td>0</td><td>682593</td></tr><tr><td>export</td><td>2</td><td>2</td><td>0</td><td>1379210</td></tr><tr><td>geo_foundation</td><td>2</td><td>2</td><td>0</td><td>315529</td></tr><tr><td>aaie</td><td>2</td><td>2</td><td>0</td><td>152939</td></tr><tr><td>bib_context</td><td>2</td><td>2</td><td>0</td><td>121527</td></tr><tr><td>launcher</td><td>2</td><td>2</td><td>0</td><td>6555723</td></tr><tr><td>bib_bridge</td><td>1</td><td>1</td><td>0</td><td>110804</td></tr>
-      </tbody>
+      <tr>
+        <th>ID</th>
+        <th>Bestand</th>
+        <th>Categorie</th>
+        <th>Aanwezig</th>
+        <th>Betrouwbaarheid</th>
+      </tr>
+      <tr><td>EV-001</td><td>project_report_bib_package.json</td><td>bib</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-002</td><td>project_report_bib_report.docx</td><td>rapportage_export</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-003</td><td>project_report_bib_report.pdf</td><td>rapportage_export</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-004</td><td>project_report_export_log.json</td><td>export_log</td><td>True</td><td>middel</td></tr>
+<tr><td>EV-005</td><td>project_report_export_dashboard.html</td><td>export_log</td><td>True</td><td>middel</td></tr>
+<tr><td>EV-006</td><td>project_analyzer_workflow_log.json</td><td>workflow</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-007</td><td>project_analyzer_workflow_dashboard.html</td><td>workflow</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-008</td><td>aaie_bib_assumptions.json</td><td>aaie</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-009</td><td>bib_knowledge_content_index.json</td><td>bib</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-010</td><td>project_package_manifest.json</td><td>manifest</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-011</td><td>project_package_evidence_log.json</td><td>evidence</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-012</td><td>project_package_evidence_dashboard.html</td><td>evidence</td><td>True</td><td>hoog</td></tr>
+<tr><td>EV-013</td><td>bronvermelding_log.json</td><td>bronvermelding</td><td>True</td><td>middel</td></tr>
+<tr><td>EV-014</td><td>README_Bronvermelding_van_dit_project.txt</td><td>bronvermelding</td><td>True</td><td>middel</td></tr>
+<tr><td>EV-015</td><td>PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</td><td>project_package</td><td>True</td><td>middel</td></tr>
     </table>
-
-    <h2>Bestanden</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Categorie</th>
-          <th>Label</th>
-          <th>Bestaat</th>
-          <th>Bytes</th>
-          <th>Pad</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>workflow</td><td>Project Analyzer Workflow Dashboard</td><td>True</td><td>6095</td><td><code>outputs/projects/project_analyzer_workflow_dashboard.html</code></td></tr><tr><td>workflow</td><td>Project Analyzer Workflow Log</td><td>True</td><td>6112505</td><td><code>outputs/projects/project_analyzer_workflow_log.json</code></td></tr><tr><td>report</td><td>Projectrapport DOCX</td><td>True</td><td>3590</td><td><code>outputs/projects/project_report_bib_report.docx</code></td></tr><tr><td>report</td><td>Projectrapport PDF</td><td>True</td><td>9200</td><td><code>outputs/projects/project_report_bib_report.pdf</code></td></tr><tr><td>report</td><td>Projectrapport HTML</td><td>True</td><td>9195</td><td><code>outputs/projects/project_report_bib_report.html</code></td></tr><tr><td>report</td><td>Projectrapport Markdown</td><td>True</td><td>6006</td><td><code>outputs/projects/project_report_bib_report.md</code></td></tr><tr><td>report</td><td>Projectrapport Package JSON</td><td>True</td><td>654602</td><td><code>outputs/projects/project_report_bib_package.json</code></td></tr><tr><td>export</td><td>Project Report Export Dashboard</td><td>True</td><td>2840</td><td><code>outputs/projects/project_report_export_dashboard.html</code></td></tr><tr><td>export</td><td>Project Report Export Log</td><td>True</td><td>1376370</td><td><code>outputs/projects/project_report_export_log.json</code></td></tr><tr><td>geo_foundation</td><td>Geo/Foundation Analyse HTML</td><td>True</td><td>5308</td><td><code>outputs/projects/geo_foundation_bib_analysis.html</code></td></tr><tr><td>geo_foundation</td><td>Geo/Foundation Analyse JSON</td><td>True</td><td>310221</td><td><code>outputs/projects/geo_foundation_bib_analysis.json</code></td></tr><tr><td>aaie</td><td>AAIE BIB Assumptions HTML</td><td>True</td><td>7471</td><td><code>outputs/projects/aaie_bib_assumptions.html</code></td></tr><tr><td>aaie</td><td>AAIE BIB Assumptions JSON</td><td>True</td><td>145468</td><td><code>outputs/projects/aaie_bib_assumptions.json</code></td></tr><tr><td>bib_context</td><td>Project Analyzer BIB Context HTML</td><td>True</td><td>5381</td><td><code>outputs/projects/project_analyzer_bib_context.html</code></td></tr><tr><td>bib_context</td><td>Project Analyzer BIB Context JSON</td><td>True</td><td>116146</td><td><code>outputs/projects/project_analyzer_bib_context.json</code></td></tr><tr><td>launcher</td><td>Project Phoenix Launcher</td><td>True</td><td>32660</td><td><code>outputs/projects/index.html</code></td></tr><tr><td>launcher</td><td>Project Analyzer Launcher Bridge Log</td><td>True</td><td>6523063</td><td><code>outputs/projects/project_analyzer_launcher_bridge_log.json</code></td></tr><tr><td>bib_bridge</td><td>BIB Project Analyzer Bridge</td><td>True</td><td>110804</td><td><code>outputs/bib/bib_project_analyzer_bridge.json</code></td></tr>
-      </tbody>
-    </table>
-
-    <h2>Waarschuwingen</h2>
-    <ul>
-      <li>Geen kritieke Project Package Evidence-waarschuwingen.</li>
-    </ul>
-  </main>
+  </section>
+</main>
 </body>
 </html>
