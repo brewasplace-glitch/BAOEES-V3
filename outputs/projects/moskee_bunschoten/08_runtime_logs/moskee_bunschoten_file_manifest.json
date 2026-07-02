@@ -6,16 +6,16 @@
   "project_id": "moskee_bunschoten",
   "project_name": "Moskee Bunschoten",
   "project_output_dir": "outputs\\projects\\moskee_bunschoten",
-  "file_count": 27,
+  "file_count": 29,
   "files": [
     {
       "relative_path": "01_reports/moskee_bunschoten_project_report.docx",
       "absolute_path": "outputs\\projects\\moskee_bunschoten\\01_reports\\moskee_bunschoten_project_report.docx",
       "filename": "moskee_bunschoten_project_report.docx",
       "extension": ".docx",
-      "size_bytes": 1976,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "686f17a4df48c786d2f8a4e922a45ac72b5d62ec216c3ef6536c91e67bd0d050",
+      "size_bytes": 1977,
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "8b59e045f1484d54f11ff7139a1596860505c9f21294ff839b5d799c91724d85",
       "category": "rapport"
     },
     {
@@ -24,8 +24,8 @@
       "filename": "moskee_bunschoten_project_report.md",
       "extension": ".md",
       "size_bytes": 2042,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "00f63c8ed51fddb96fd985f66a5b918e2b30444d2407eb9adc5538e34916accb",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "689b7372232c454ce13275052643fe2b0b71db1989a5fd289f32ec0b0abc74b6",
       "category": "rapport"
     },
     {
@@ -34,8 +34,8 @@
       "filename": "moskee_bunschoten_project_report.pdf",
       "extension": ".pdf",
       "size_bytes": 2257,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "a615e7d2daec408dbe6736b9ef5419471125a603d73dcd9a316fa7cf3d096b1c",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "5741def7f600ebb147cba44999fcb4c41a11aa82b7bb5921a1eb23bf0e24fb81",
       "category": "rapport"
     },
     {
@@ -44,8 +44,8 @@
       "filename": "moskee_bunschoten_project_report.txt",
       "extension": ".txt",
       "size_bytes": 2042,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "00f63c8ed51fddb96fd985f66a5b918e2b30444d2407eb9adc5538e34916accb",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "689b7372232c454ce13275052643fe2b0b71db1989a5fd289f32ec0b0abc74b6",
       "category": "rapport"
     },
     {
@@ -54,7 +54,7 @@
       "filename": "moskee_bunschoten_doorsnede.pdf",
       "extension": ".pdf",
       "size_bytes": 1133,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "32a9a00a633ca2b1431c4ef4e057f255fce73f71290ac962ca12c0531ad2a64d",
       "category": "pdf_tekening"
     },
@@ -64,7 +64,7 @@
       "filename": "moskee_bunschoten_plattegrond.pdf",
       "extension": ".pdf",
       "size_bytes": 1152,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "16570cd5777971285d470b00e9ad6b952d29e71b88e77a8f3aa00a1b58aebc3e",
       "category": "pdf_tekening"
     },
@@ -74,7 +74,7 @@
       "filename": "moskee_bunschoten_situatie.pdf",
       "extension": ".pdf",
       "size_bytes": 1110,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "e9e1ca0a47ff431e084cda5d7ad9946f9606efb9cdf028bed2b29c951c65521e",
       "category": "pdf_tekening"
     },
@@ -84,7 +84,7 @@
       "filename": "moskee_bunschoten_doorsnede.dxf",
       "extension": ".dxf",
       "size_bytes": 1707,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "f6752b42d38242a2220262809e76ce3cb005625a1b40bcaaca4b2224d9750f42",
       "category": "cad_dxf"
     },
@@ -94,7 +94,7 @@
       "filename": "moskee_bunschoten_plattegrond.dxf",
       "extension": ".dxf",
       "size_bytes": 1902,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "1102dd3ed82f1745983a3bf8beec0da6f66eaa05a0c815735a016789521bc1a5",
       "category": "cad_dxf"
     },
@@ -104,7 +104,7 @@
       "filename": "moskee_bunschoten_situatie.dxf",
       "extension": ".dxf",
       "size_bytes": 1875,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "8cdcc1e07d28816f8f08e8fb9a5695c834debc83ccab1ae459431ac65bbb87ae",
       "category": "cad_dxf"
     },
@@ -114,8 +114,8 @@
       "filename": "moskee_bunschoten_calculation_index.csv",
       "extension": ".csv",
       "size_bytes": 431,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "59856ff10892c1d66cf01735bb301bd72544dbbc656a8f575d7f9504a407237a",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "6b0fcbbde178a52114e635db9be0251f9a5fc0c563c22409467d2911c0eeea90",
       "category": "berekening"
     },
     {
@@ -124,8 +124,8 @@
       "filename": "qa_qc_report.json",
       "extension": ".json",
       "size_bytes": 12317,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "16df1df236e4dc369da37ab9f696794ff06998ac0597855020e0f99e7a355311",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "3730f933d70af33a8857b0f67e623d6a9b930fca6aadf7c50a7fdb8104d1e041",
       "category": "berekening"
     },
     {
@@ -134,8 +134,8 @@
       "filename": "source_register.json",
       "extension": ".json",
       "size_bytes": 1260,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "3f2c8d8878d08ac00a424b5eabdbb2982ba9da71993d41ff75af48eb3c5195e4",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "67247126b16874a3cf37e5fff74d485bda82fc8ab7deee2f80a4cdb624226008",
       "category": "bronregistratie"
     },
     {
@@ -144,8 +144,8 @@
       "filename": "digital_twin.json",
       "extension": ".json",
       "size_bytes": 338459,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "8bf4c5fa9fb88cdefbd96852601bb18b82664d9ea5782e161741fb728525723a",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "55f4d9280b5c6d0e413f28091b6367f38c08cbda5c2b8e671c48f2c405df1c5b",
       "category": "digital_twin"
     },
     {
@@ -153,9 +153,29 @@
       "absolute_path": "outputs\\projects\\moskee_bunschoten\\08_runtime_logs\\moskee_bunschoten_audit_trail.json",
       "filename": "moskee_bunschoten_audit_trail.json",
       "extension": ".json",
-      "size_bytes": 10334,
+      "size_bytes": 14879,
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "2026694d0e895d61094c5d78309cfc1eeb09694fee998b534ef9675c2fd00562",
+      "category": "runtime_log"
+    },
+    {
+      "relative_path": "08_runtime_logs/moskee_bunschoten_file_manifest.json",
+      "absolute_path": "outputs\\projects\\moskee_bunschoten\\08_runtime_logs\\moskee_bunschoten_file_manifest.json",
+      "filename": "moskee_bunschoten_file_manifest.json",
+      "extension": ".json",
+      "size_bytes": 12996,
       "modified_at": "2026-06-25T00:16:00",
-      "sha256": "788200ce505cf1de5fd1540b179c7c6835eff269ba21f75fbefe0cd78ab0fec7",
+      "sha256": "9fa583ef38a28ef6767611cb9feed4c549bf9083576b418ee9a1772894220daf",
+      "category": "runtime_log"
+    },
+    {
+      "relative_path": "08_runtime_logs/moskee_bunschoten_git_evidence.json",
+      "absolute_path": "outputs\\projects\\moskee_bunschoten\\08_runtime_logs\\moskee_bunschoten_git_evidence.json",
+      "filename": "moskee_bunschoten_git_evidence.json",
+      "extension": ".json",
+      "size_bytes": 8276,
+      "modified_at": "2026-06-25T00:16:01",
+      "sha256": "d69876035abdad27b10d4eca6a3d7ddf25a1d1b517b80fca290eb286532990e2",
       "category": "runtime_log"
     },
     {
@@ -164,8 +184,8 @@
       "filename": "runtime_log.json",
       "extension": ".json",
       "size_bytes": 16273,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "9dc9ae2b6458d75a360a2bcfc6ba036d56c1ae4de97fc121b0acef0d042723f1",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "c65038eb47b128f5ae73806f22a65af5dff0684d7901d624a69dd9230a138361",
       "category": "runtime_log"
     },
     {
@@ -174,7 +194,7 @@
       "filename": "moskee_bunschoten_cost_estimate.csv",
       "extension": ".csv",
       "size_bytes": 895,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "6c4da4eb5bc57cb5fda7d0e3ba07441ce96b24ad0b30857b33400e1d27962062",
       "category": "export"
     },
@@ -194,8 +214,8 @@
       "filename": "moskee_bunschoten_planning.csv",
       "extension": ".csv",
       "size_bytes": 1313,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "3f07f4ed5088c0e562a8503bb38aa53c14c0a9c0315dd1bd09fb344ba8b6035a",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "2368e95c39b2bba1acbd45bbd8ebc2db626b89fd50fe9b48f69f596ecf911163",
       "category": "export"
     },
     {
@@ -204,8 +224,8 @@
       "filename": "moskee_bunschoten_project_summary.csv",
       "extension": ".csv",
       "size_bytes": 325,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "5361754fbe9cc1bc8789c271f0a6f7b034ef26659b6749970a32ca77d01fa4ec",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "90fbc4de21ee5ff523976da7af20a3720ef75baa3279b2354c9243242a36ccfb",
       "category": "export"
     },
     {
@@ -213,9 +233,9 @@
       "absolute_path": "outputs\\projects\\moskee_bunschoten\\09_exports\\moskee_bunschoten_project_tables.xlsx",
       "filename": "moskee_bunschoten_project_tables.xlsx",
       "extension": ".xlsx",
-      "size_bytes": 7044,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "911e03d199ba7f7f79893236ba72c5afc8103935b6745f91c2a8f28a75c31963",
+      "size_bytes": 7037,
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "c7723f9e3245761739e5b1c6483d8fcc9a5a7362ae657960c1317daeb24aaffc",
       "category": "export"
     },
     {
@@ -224,7 +244,7 @@
       "filename": "moskee_bunschoten_qa_qc.csv",
       "extension": ".csv",
       "size_bytes": 506,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "0a48b7da5cca324f46d0128911c3fc392a33c8c20bdd7fe811f9a5c2fe8f6377",
       "category": "export"
     },
@@ -234,7 +254,7 @@
       "filename": "moskee_bunschoten_quantity_boq.csv",
       "extension": ".csv",
       "size_bytes": 810,
-      "modified_at": "2026-06-25T00:16:00",
+      "modified_at": "2026-07-02T23:05:59",
       "sha256": "3fae3b48c63223bb1c60eeb65baa06f8c04e681eef72200ad9c5b459740de60f",
       "category": "export"
     },
@@ -243,9 +263,9 @@
       "absolute_path": "outputs\\projects\\moskee_bunschoten\\10_zip\\moskee_bunschoten_project_export.zip",
       "filename": "moskee_bunschoten_project_export.zip",
       "extension": ".zip",
-      "size_bytes": 75591,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "857c57cafe9f3b1dadd778f54b5fb5c2d5c1f19c80477593506cd7f09a05b23c",
+      "size_bytes": 79892,
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "9589307d55a83431524224b53c7035a96b71b51e52e69d556445597cc958abbf",
       "category": "zip"
     },
     {
@@ -254,8 +274,8 @@
       "filename": "project_config.json",
       "extension": ".json",
       "size_bytes": 6578,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "700f1b1d197dca4ebbb0a9cb348aee13dda2e3bf8e10b0621f3e1bbc74f2c786",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "6ded7807df0b0da6b991ae94e98e320bac16f552d14ea9b5c988b5feb576c75e",
       "category": "json"
     },
     {
@@ -264,8 +284,8 @@
       "filename": "project_selector.json",
       "extension": ".json",
       "size_bytes": 3886,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "f0616608bc7ccff284f67cf64646abeda9388087d8f641f291e39b5a58bf507a",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "4aa42a8be764e4111a4fee8aaf75e8bef33813588f0c3b13dac64731faf8c5f2",
       "category": "json"
     },
     {
@@ -274,12 +294,12 @@
       "filename": "project_summary.json",
       "extension": ".json",
       "size_bytes": 1018,
-      "modified_at": "2026-06-25T00:16:00",
-      "sha256": "765c92edc835f5fef209d7022819d83a03dac3dbc5b040496036653ecc51d94f",
+      "modified_at": "2026-07-02T23:05:59",
+      "sha256": "be9b357e60c59c178f40c1d699b671c8ae824da3a8c3fb0e7d615f7b5efb0c07",
       "category": "json"
     }
   ],
   "audit_status": "PROJECT_AUDIT_TRAIL_OPGESLAGEN",
-  "created_at": "2026-06-25T00:16:00",
+  "created_at": "2026-07-02T23:05:59",
   "disclaimer": "Dit file manifest registreert SHA256-checksums, bestandsgrootte en wijzigingsdatum van projectoutput. Hiermee kan later worden gecontroleerd of bestanden gewijzigd zijn."
 }

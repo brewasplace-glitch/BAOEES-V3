@@ -6,16 +6,16 @@
   "project_id": "bruynzeel_waterfront",
   "project_name": "Bruynzeel Waterfront District",
   "project_output_dir": "outputs\\projects\\bruynzeel_waterfront",
-  "file_count": 27,
+  "file_count": 29,
   "files": [
     {
       "relative_path": "01_reports/bruynzeel_waterfront_project_report.docx",
       "absolute_path": "outputs\\projects\\bruynzeel_waterfront\\01_reports\\bruynzeel_waterfront_project_report.docx",
       "filename": "bruynzeel_waterfront_project_report.docx",
       "extension": ".docx",
-      "size_bytes": 1984,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "4c8115d8c42e591bdc3a293b2f6d754c985f52eafe05625175bedead2cba8942",
+      "size_bytes": 1985,
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "b8287a31a4d5d054ca4478e667e50f6365584c502e5ec29b01598595a971e078",
       "category": "rapport"
     },
     {
@@ -24,8 +24,8 @@
       "filename": "bruynzeel_waterfront_project_report.md",
       "extension": ".md",
       "size_bytes": 2107,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "9f7a626ba93af0328c1814941d7d40fcafb0d5ca5fc690985bd9f4527caadf2f",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "53bdafd6f69a7f3bbb9a021a5288d0e588d347d42840c6d76be96333067ec7a6",
       "category": "rapport"
     },
     {
@@ -34,8 +34,8 @@
       "filename": "bruynzeel_waterfront_project_report.pdf",
       "extension": ".pdf",
       "size_bytes": 2283,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "04fd23ac6e4708d0efae5e4cd7ec2c2335209414878987d6cd6855194c50475c",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "3b28cc9395501321dba88e0c24a59ca5ed941d85a2aa6e4d4b3e7a220385da9a",
       "category": "rapport"
     },
     {
@@ -44,8 +44,8 @@
       "filename": "bruynzeel_waterfront_project_report.txt",
       "extension": ".txt",
       "size_bytes": 2107,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "9f7a626ba93af0328c1814941d7d40fcafb0d5ca5fc690985bd9f4527caadf2f",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "53bdafd6f69a7f3bbb9a021a5288d0e588d347d42840c6d76be96333067ec7a6",
       "category": "rapport"
     },
     {
@@ -54,7 +54,7 @@
       "filename": "bruynzeel_waterfront_doorsnede.pdf",
       "extension": ".pdf",
       "size_bytes": 1153,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "568deec35e5d5e1dbb84b4f6eb7d91a8c5caa461f677dd8498d77f757f4bd817",
       "category": "pdf_tekening"
     },
@@ -64,7 +64,7 @@
       "filename": "bruynzeel_waterfront_plattegrond.pdf",
       "extension": ".pdf",
       "size_bytes": 1172,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "5d7b970cbf728182902eaa8e8324cde35c8af484ce103f99ff4d0dbeb0648dc7",
       "category": "pdf_tekening"
     },
@@ -74,7 +74,7 @@
       "filename": "bruynzeel_waterfront_situatie.pdf",
       "extension": ".pdf",
       "size_bytes": 1130,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "493b095faf5649fa161c358471a86032b370b1519258261862a9641770fa30fa",
       "category": "pdf_tekening"
     },
@@ -84,7 +84,7 @@
       "filename": "bruynzeel_waterfront_doorsnede.dxf",
       "extension": ".dxf",
       "size_bytes": 1727,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "4f6328a4bf7113698542508b5bab2cc45989902b2f8498f8d215a577bf130671",
       "category": "cad_dxf"
     },
@@ -94,7 +94,7 @@
       "filename": "bruynzeel_waterfront_plattegrond.dxf",
       "extension": ".dxf",
       "size_bytes": 1922,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "531ff050e01018ed375674a6055780c2d1eb788c2c09058273c4d03a8c575237",
       "category": "cad_dxf"
     },
@@ -104,7 +104,7 @@
       "filename": "bruynzeel_waterfront_situatie.dxf",
       "extension": ".dxf",
       "size_bytes": 1895,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "38cd23acbc1eca653c39d5d6f45343e455b8c90c009579044008e5e39f3c1d14",
       "category": "cad_dxf"
     },
@@ -114,8 +114,8 @@
       "filename": "bruynzeel_waterfront_calculation_index.csv",
       "extension": ".csv",
       "size_bytes": 431,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "7c19443c58682511700b32ffff9a2b6979143d25c44890cd67285e1b960159ab",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "21a58ee373642c6c23f14d31d362e851ae88f4fcbb868f6c8a0ce523313c6760",
       "category": "berekening"
     },
     {
@@ -124,8 +124,8 @@
       "filename": "qa_qc_report.json",
       "extension": ".json",
       "size_bytes": 11997,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "48efbf41184e9926e332b673d8790271df369a37833446df20f5533bf814d65c",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "c1ea9f3d6e1f10bedfc1c0fe1375fd1b35e6d9716120b00901c6b2f544d11630",
       "category": "berekening"
     },
     {
@@ -134,8 +134,8 @@
       "filename": "source_register.json",
       "extension": ".json",
       "size_bytes": 1260,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "2ce15438bc4b9603b6da54cb1bfac0a139eb8bd6ac3c6906f6947cea28fb2a0b",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "2b480dde7950a8193111458477a5cb7a072fa0cf19290b679ec27c23a425ed88",
       "category": "bronregistratie"
     },
     {
@@ -144,8 +144,8 @@
       "filename": "digital_twin.json",
       "extension": ".json",
       "size_bytes": 332398,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "4afddc7f6752aa11866e787e052bf47335d88211e6210be83b2b0a2fda11e159",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "a207e4262fe00df32baf9ae10fe9ed44fd2910bdc3bfc0acf0c593a2b63f9c23",
       "category": "digital_twin"
     },
     {
@@ -153,9 +153,29 @@
       "absolute_path": "outputs\\projects\\bruynzeel_waterfront\\08_runtime_logs\\bruynzeel_waterfront_audit_trail.json",
       "filename": "bruynzeel_waterfront_audit_trail.json",
       "extension": ".json",
-      "size_bytes": 10590,
+      "size_bytes": 15257,
+      "modified_at": "2026-07-02T23:06:21",
+      "sha256": "5f5d4dd636f85482ab06c77e62aab365a78bd297fa579c1444737f52aff4185d",
+      "category": "runtime_log"
+    },
+    {
+      "relative_path": "08_runtime_logs/bruynzeel_waterfront_file_manifest.json",
+      "absolute_path": "outputs\\projects\\bruynzeel_waterfront\\08_runtime_logs\\bruynzeel_waterfront_file_manifest.json",
+      "filename": "bruynzeel_waterfront_file_manifest.json",
+      "extension": ".json",
+      "size_bytes": 13275,
       "modified_at": "2026-06-25T00:16:13",
-      "sha256": "498c99dacd3dc0033bb1e65b4b2c8b34f9b15be243b4f1deef54c051bb5b14bd",
+      "sha256": "15ba292d81810899f514cf3817e5c7bae322ff5776749e8901941d8836d0a04a",
+      "category": "runtime_log"
+    },
+    {
+      "relative_path": "08_runtime_logs/bruynzeel_waterfront_git_evidence.json",
+      "absolute_path": "outputs\\projects\\bruynzeel_waterfront\\08_runtime_logs\\bruynzeel_waterfront_git_evidence.json",
+      "filename": "bruynzeel_waterfront_git_evidence.json",
+      "extension": ".json",
+      "size_bytes": 11892,
+      "modified_at": "2026-06-25T00:16:13",
+      "sha256": "35ef992e6dfc8432b11c80cccca99f68181a1ccd122ff5d59c6aefadc8f8c8d5",
       "category": "runtime_log"
     },
     {
@@ -164,8 +184,8 @@
       "filename": "runtime_log.json",
       "extension": ".json",
       "size_bytes": 16290,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "8f04aaadc319c4a7f42ba8c3992ea6ab4d873fc6ad87ffe870950c6f7223ac55",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "2a5c92f583bc479c05e64e7ffc3f1cf170c895e3142228bd64655f9b32e98a81",
       "category": "runtime_log"
     },
     {
@@ -174,7 +194,7 @@
       "filename": "bruynzeel_waterfront_cost_estimate.csv",
       "extension": ".csv",
       "size_bytes": 895,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "6c4da4eb5bc57cb5fda7d0e3ba07441ce96b24ad0b30857b33400e1d27962062",
       "category": "export"
     },
@@ -194,8 +214,8 @@
       "filename": "bruynzeel_waterfront_planning.csv",
       "extension": ".csv",
       "size_bytes": 1313,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "3f07f4ed5088c0e562a8503bb38aa53c14c0a9c0315dd1bd09fb344ba8b6035a",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "2368e95c39b2bba1acbd45bbd8ebc2db626b89fd50fe9b48f69f596ecf911163",
       "category": "export"
     },
     {
@@ -204,8 +224,8 @@
       "filename": "bruynzeel_waterfront_project_summary.csv",
       "extension": ".csv",
       "size_bytes": 339,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "feb4e1c83a036b44756e7017ddd0ff81cfd9b53ce051a0c67ab367ee0c675b34",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "2c6c523957877ce08d87b2eacac0bda4e998a247fa1ee10595fe5fb24724b9e1",
       "category": "export"
     },
     {
@@ -213,9 +233,9 @@
       "absolute_path": "outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_project_tables.xlsx",
       "filename": "bruynzeel_waterfront_project_tables.xlsx",
       "extension": ".xlsx",
-      "size_bytes": 7089,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "0d8887bf1efddc3b1d0276387d9b53ef13bd3829f351477b69e4ec8fba5cfb5e",
+      "size_bytes": 7081,
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "9ad03cf2d2c360566a7a4ae91ae94c1200c8b57d443ffb63fce89a03de85cbf4",
       "category": "export"
     },
     {
@@ -224,7 +244,7 @@
       "filename": "bruynzeel_waterfront_qa_qc.csv",
       "extension": ".csv",
       "size_bytes": 554,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "facaec1b17540fc549371039f035d6ee2b01a408f3fc53b76dd50d5955df0a50",
       "category": "export"
     },
@@ -234,7 +254,7 @@
       "filename": "bruynzeel_waterfront_quantity_boq.csv",
       "extension": ".csv",
       "size_bytes": 810,
-      "modified_at": "2026-06-25T00:16:12",
+      "modified_at": "2026-07-02T23:06:20",
       "sha256": "3fae3b48c63223bb1c60eeb65baa06f8c04e681eef72200ad9c5b459740de60f",
       "category": "export"
     },
@@ -243,9 +263,9 @@
       "absolute_path": "outputs\\projects\\bruynzeel_waterfront\\10_zip\\bruynzeel_waterfront_project_export.zip",
       "filename": "bruynzeel_waterfront_project_export.zip",
       "extension": ".zip",
-      "size_bytes": 75628,
-      "modified_at": "2026-06-25T00:16:13",
-      "sha256": "9ea08adf2e678d5194be106081ab3ce43e4f7de62deec15623280e4236fa3e7e",
+      "size_bytes": 80173,
+      "modified_at": "2026-07-02T23:06:21",
+      "sha256": "84faabedbfa66838dca489418c2da6582ce6b7238e864462aa624d1a8d777f27",
       "category": "zip"
     },
     {
@@ -254,8 +274,8 @@
       "filename": "project_config.json",
       "extension": ".json",
       "size_bytes": 6144,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "a1ba5c9fac78fc67dae72f5600312682d85b3947fe82aa810733184cb3b214ca",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "622b7f9b23d5a7b5217304ec47182a547de6fbce1acd9e4789dd5d6e9d072f59",
       "category": "json"
     },
     {
@@ -264,8 +284,8 @@
       "filename": "project_selector.json",
       "extension": ".json",
       "size_bytes": 3903,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "638d512cbf0d773d88a09c0863d1f49c92aad41ebfc132afd0f3bb2eefecdc74",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "51d6460e6acdcf2c0237af44808fb1e9b8fc19d2f79af4f1e42e090a0ebb464a",
       "category": "json"
     },
     {
@@ -274,12 +294,12 @@
       "filename": "project_summary.json",
       "extension": ".json",
       "size_bytes": 1040,
-      "modified_at": "2026-06-25T00:16:12",
-      "sha256": "54dd183921872956d4fb6985e38ae7d22c2b1e922a78bce0b5278fbc9585e2a8",
+      "modified_at": "2026-07-02T23:06:20",
+      "sha256": "5309db8bc43fb8bf3df69455ebcda57f7b2142b684b443b31a582006f41ef03c",
       "category": "json"
     }
   ],
   "audit_status": "PROJECT_AUDIT_TRAIL_OPGESLAGEN",
-  "created_at": "2026-06-25T00:16:13",
+  "created_at": "2026-07-02T23:06:21",
   "disclaimer": "Dit file manifest registreert SHA256-checksums, bestandsgrootte en wijzigingsdatum van projectoutput. Hiermee kan later worden gecontroleerd of bestanden gewijzigd zijn."
 }

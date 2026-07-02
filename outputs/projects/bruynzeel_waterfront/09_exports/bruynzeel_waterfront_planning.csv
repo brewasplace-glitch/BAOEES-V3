@@ -1,20 +1,20 @@
 ﻿Fase;Omschrijving;Start;Einde;Duur;Status
-initiatief;;2026-06-25;2026-06-26;;GEPLAND
-analyse;;2026-06-27;2026-06-29;;GEPLAND
-engineering;;2026-06-30;2026-07-04;;GEPLAND
-engineering;;2026-07-05;2026-07-10;;GEPLAND
-ontwerp;;2026-06-30;2026-07-03;;GEPLAND
-vergunning;;2026-07-11;2026-07-22;;GEPLAND
-documentatie;;2026-07-23;2026-07-29;;GEPLAND
-tekeningen;;2026-07-11;2026-07-14;;GEPLAND
-kosten;;2026-07-15;2026-07-17;;GEPLAND
-vergunning;;2026-07-30;2026-08-02;;GEPLAND
-vergunning;;2026-08-03;2026-08-03;;GEPLAND
-vergunning;;2026-08-04;2026-09-28;;GEPLAND
-aanbesteding;;2026-08-03;2026-08-12;;GEPLAND
-voorbereiding;;2026-09-29;2026-10-08;;GEPLAND
-uitvoering;;2026-10-09;2026-11-27;;GEPLAND
-oplevering;;2026-11-28;2026-12-02;;GEPLAND
+initiatief;;2026-07-02;2026-07-03;;GEPLAND
+analyse;;2026-07-04;2026-07-06;;GEPLAND
+engineering;;2026-07-07;2026-07-11;;GEPLAND
+engineering;;2026-07-12;2026-07-17;;GEPLAND
+ontwerp;;2026-07-07;2026-07-10;;GEPLAND
+vergunning;;2026-07-18;2026-07-29;;GEPLAND
+documentatie;;2026-07-30;2026-08-05;;GEPLAND
+tekeningen;;2026-07-18;2026-07-21;;GEPLAND
+kosten;;2026-07-22;2026-07-24;;GEPLAND
+vergunning;;2026-08-06;2026-08-09;;GEPLAND
+vergunning;;2026-08-10;2026-08-10;;GEPLAND
+vergunning;;2026-08-11;2026-10-05;;GEPLAND
+aanbesteding;;2026-08-10;2026-08-19;;GEPLAND
+voorbereiding;;2026-10-06;2026-10-15;;GEPLAND
+uitvoering;;2026-10-16;2026-12-04;;GEPLAND
+oplevering;;2026-12-05;2026-12-09;;GEPLAND
 
 Engine status;PLANNING_GEREED
 Advies;{'status': 'PLANNINGADVIES_CONCEPT', 'planning_risk': 'middel', 'advice': 'Gebruik deze planning als eerste projectplanning. Werk de planning later uit met echte vergunningstermijnen, leveranciers, uitvoeringsmethode en capaciteit.', 'next_steps': ['planning valideren met opdrachtgever', 'vergunningstermijnen projectspecifiek controleren', 'kritieke pad-stappen controleren', 'aanbestedingsplanning toevoegen', 'uitvoeringsplanning detailleren', 'mijlpalen koppelen aan budget en documenten'], 'critical_task_count': 13}

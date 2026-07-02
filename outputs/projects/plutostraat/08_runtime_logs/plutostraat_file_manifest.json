@@ -13,9 +13,9 @@
       "absolute_path": "outputs\\projects\\plutostraat\\01_reports\\plutostraat_project_report.docx",
       "filename": "plutostraat_project_report.docx",
       "extension": ".docx",
-      "size_bytes": 1961,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "a68df666d79b2178542a63442d5ad816a9c899b9740799b3458f89df31a1ac14",
+      "size_bytes": 1962,
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "7b03ea1801541e633a2521dad3af7398201898419e4acc2f2eee32eb3c22a009",
       "category": "rapport"
     },
     {
@@ -24,8 +24,8 @@
       "filename": "plutostraat_project_report.md",
       "extension": ".md",
       "size_bytes": 2064,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "a477a47c7a861acb9736c0fd4719378e837f59accf015bf0f72083db4fdaeb2e",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "1b2dd84bf6696280552fcc88b42f68d8ef328e0ed2fc43f485db621593015a90",
       "category": "rapport"
     },
     {
@@ -34,8 +34,8 @@
       "filename": "plutostraat_project_report.pdf",
       "extension": ".pdf",
       "size_bytes": 2245,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "52e9770ed8e6e81279d2b98044330bdcbe779c0b274f771dfb29994690f8bc6f",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "3f33bb658ca2d142ba207460f8b42ed8f8a9424b16dc97cb4236b982f60db0f5",
       "category": "rapport"
     },
     {
@@ -44,8 +44,8 @@
       "filename": "plutostraat_project_report.txt",
       "extension": ".txt",
       "size_bytes": 2064,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "a477a47c7a861acb9736c0fd4719378e837f59accf015bf0f72083db4fdaeb2e",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "1b2dd84bf6696280552fcc88b42f68d8ef328e0ed2fc43f485db621593015a90",
       "category": "rapport"
     },
     {
@@ -54,7 +54,7 @@
       "filename": "plutostraat_doorsnede.pdf",
       "extension": ".pdf",
       "size_bytes": 1133,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "5ad96b7e8f143ecbba522e4de39974f57d93c6bd30b055fa64078fb4f6a8329f",
       "category": "pdf_tekening"
     },
@@ -64,7 +64,7 @@
       "filename": "plutostraat_plattegrond.pdf",
       "extension": ".pdf",
       "size_bytes": 1152,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "603f09f6e07be9c2340a23de5ffdc6d32d2589f665ec0c8c5fff212a23169d12",
       "category": "pdf_tekening"
     },
@@ -74,7 +74,7 @@
       "filename": "plutostraat_situatie.pdf",
       "extension": ".pdf",
       "size_bytes": 1110,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "7792de2c48f47fde09b5e9bd6238ff28c2c55a3a22f6b3f922917f3d44dedec0",
       "category": "pdf_tekening"
     },
@@ -84,7 +84,7 @@
       "filename": "plutostraat_doorsnede.dxf",
       "extension": ".dxf",
       "size_bytes": 1707,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "222bc1eea9ffc951b65863c6fe8875fd71fc3a5c54afb70dad53f98f9104b2a2",
       "category": "cad_dxf"
     },
@@ -94,7 +94,7 @@
       "filename": "plutostraat_plattegrond.dxf",
       "extension": ".dxf",
       "size_bytes": 1902,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "0ffbd36aaada48b63c4d6d59f816477118196ae934996b161fdccfeb92214bcc",
       "category": "cad_dxf"
     },
@@ -104,7 +104,7 @@
       "filename": "plutostraat_situatie.dxf",
       "extension": ".dxf",
       "size_bytes": 1875,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "e43933f176632801b1abdf4c5c81f61a15bebbc5d6589728c577666eb63ddadb",
       "category": "cad_dxf"
     },
@@ -114,8 +114,8 @@
       "filename": "plutostraat_calculation_index.csv",
       "extension": ".csv",
       "size_bytes": 431,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "1c14a84cf996976f877b0d5cf6f5f57578ea75e1dcee57e12b12942782732111",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "1b7ec6d3f755b3d4b59d5635fa05fb0492fd0e721eea79c0f03ede02e90b6a6a",
       "category": "berekening"
     },
     {
@@ -124,8 +124,8 @@
       "filename": "qa_qc_report.json",
       "extension": ".json",
       "size_bytes": 11996,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "4f3ec55dbf62c4b96bcc1034ae08e1eb7a0e604fd848613e91aeeb8edaa869e4",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "278fe2701db82931a7672515607f90294ca440ecfca3e2df7bc198f6c99f5d54",
       "category": "berekening"
     },
     {
@@ -134,8 +134,8 @@
       "filename": "source_register.json",
       "extension": ".json",
       "size_bytes": 1260,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "e09cc21108195decedd1136c92a1a9a37bc4bffb69e7032806a4c3b1640ac6a1",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "fdf3d84a0916fb7d262ad6cc2e6a8a9734a20f6744d5e3f0a9e7d04f15c435d7",
       "category": "bronregistratie"
     },
     {
@@ -144,8 +144,8 @@
       "filename": "digital_twin.json",
       "extension": ".json",
       "size_bytes": 332061,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "8060c9ea92b6da788498398a49e2e3faf52d326a16bc20615e5cb807956a359c",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "9abe80478d6f672403958089835083071adb74e0fd448ac63674be49eca8c42f",
       "category": "digital_twin"
     },
     {
@@ -153,9 +153,9 @@
       "absolute_path": "outputs\\projects\\plutostraat\\08_runtime_logs\\plutostraat_audit_trail.json",
       "filename": "plutostraat_audit_trail.json",
       "extension": ".json",
-      "size_bytes": 46315,
-      "modified_at": "2026-06-26T15:11:01",
-      "sha256": "1567026b3b949b6f71089a993ba5d0eaaeb2233d723cdf0cd84cf617a96b890d",
+      "size_bytes": 50768,
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "0b64aa3fc4becf2a15e2bf85a7635361b43fea636ca46d1131ee4c2ab63aca30",
       "category": "runtime_log"
     },
     {
@@ -164,8 +164,8 @@
       "filename": "plutostraat_file_manifest.json",
       "extension": ".json",
       "size_bytes": 13403,
-      "modified_at": "2026-06-26T14:26:57",
-      "sha256": "2e90c2c359caf918ac8d19c9ebbe2fe54f9db555a8a9087cf51ceb9069935119",
+      "modified_at": "2026-06-26T15:11:01",
+      "sha256": "11f2747a1c43bdb4e9e1a5aaee7c4a327e612182d4185d2829a290b0c30c35ab",
       "category": "runtime_log"
     },
     {
@@ -173,9 +173,9 @@
       "absolute_path": "outputs\\projects\\plutostraat\\08_runtime_logs\\plutostraat_git_evidence.json",
       "filename": "plutostraat_git_evidence.json",
       "extension": ".json",
-      "size_bytes": 4577,
-      "modified_at": "2026-06-26T14:26:58",
-      "sha256": "3c1aa8631d2064ee30a597c21396d10e65a669c50c0fbae14c33faf58b5166e3",
+      "size_bytes": 4805,
+      "modified_at": "2026-06-26T15:11:01",
+      "sha256": "b3a5114d61a73eb1f571c8eab361f7fd763a0c4dd1d7ad8df437c983be7eae8b",
       "category": "runtime_log"
     },
     {
@@ -184,8 +184,8 @@
       "filename": "runtime_log.json",
       "extension": ".json",
       "size_bytes": 16255,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "f46afd42da150e325e25d83c5f0f98b98b638fba1d87bd267528b9b722075f8f",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "f6f0101cb1a39642b76006d9f161e06fead1380f20809e59b9dd75115c30a654",
       "category": "runtime_log"
     },
     {
@@ -194,7 +194,7 @@
       "filename": "plutostraat_cost_estimate.csv",
       "extension": ".csv",
       "size_bytes": 895,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "6c4da4eb5bc57cb5fda7d0e3ba07441ce96b24ad0b30857b33400e1d27962062",
       "category": "export"
     },
@@ -203,9 +203,9 @@
       "absolute_path": "outputs\\projects\\plutostraat\\09_exports\\plutostraat_dashboard.html",
       "filename": "plutostraat_dashboard.html",
       "extension": ".html",
-      "size_bytes": 75774,
-      "modified_at": "2026-06-26T14:26:58",
-      "sha256": "bb32a1339ca634f1f7388de3d8084438b54d1a8d0f988d415e4986a27c011534",
+      "size_bytes": 75629,
+      "modified_at": "2026-06-26T15:11:01",
+      "sha256": "cbe471989baafe62a55a7521702f36be9174fc6895cdb41f70d0f9c37db70bb1",
       "category": "export"
     },
     {
@@ -214,8 +214,8 @@
       "filename": "plutostraat_planning.csv",
       "extension": ".csv",
       "size_bytes": 1313,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "1a46688f957e100b7c9ef812e9a0246df585e046384dd1dbebee45154d43ad2a",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "2368e95c39b2bba1acbd45bbd8ebc2db626b89fd50fe9b48f69f596ecf911163",
       "category": "export"
     },
     {
@@ -224,8 +224,8 @@
       "filename": "plutostraat_project_summary.csv",
       "extension": ".csv",
       "size_bytes": 305,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "984665d85999c6b93963a604d228d11422fffacb45ae844e4ad6112c4787a85c",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "476ff166a1f215dc96e89a124e21cc6f5e2961a5f8abe3bdc203e540fb886b77",
       "category": "export"
     },
     {
@@ -233,9 +233,9 @@
       "absolute_path": "outputs\\projects\\plutostraat\\09_exports\\plutostraat_project_tables.xlsx",
       "filename": "plutostraat_project_tables.xlsx",
       "extension": ".xlsx",
-      "size_bytes": 7073,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "c614418244c3e70b8d7163da37c6e333545769e62c66b5f173446367b2e25f59",
+      "size_bytes": 7064,
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "9a0925f6ba079c7fc710cd96f8820e0135e6fdfcb33555689d2f1e58e843e5f0",
       "category": "export"
     },
     {
@@ -244,7 +244,7 @@
       "filename": "plutostraat_qa_qc.csv",
       "extension": ".csv",
       "size_bytes": 554,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "facaec1b17540fc549371039f035d6ee2b01a408f3fc53b76dd50d5955df0a50",
       "category": "export"
     },
@@ -254,7 +254,7 @@
       "filename": "plutostraat_quantity_boq.csv",
       "extension": ".csv",
       "size_bytes": 810,
-      "modified_at": "2026-06-26T15:11:00",
+      "modified_at": "2026-07-02T23:02:32",
       "sha256": "3fae3b48c63223bb1c60eeb65baa06f8c04e681eef72200ad9c5b459740de60f",
       "category": "export"
     },
@@ -263,9 +263,9 @@
       "absolute_path": "outputs\\projects\\plutostraat\\10_zip\\plutostraat_project_export.zip",
       "filename": "plutostraat_project_export.zip",
       "extension": ".zip",
-      "size_bytes": 88792,
-      "modified_at": "2026-06-26T15:11:01",
-      "sha256": "1b84718f36e1ca790629d6b1fb27043c7c8580846ee5c5a5fc66e5e8ad52b11c",
+      "size_bytes": 88847,
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "61578cc536359a18b4dfd0c6a869efc71d2e25b1c40e5d48666e30b399fc5d36",
       "category": "zip"
     },
     {
@@ -274,8 +274,8 @@
       "filename": "project_config.json",
       "extension": ".json",
       "size_bytes": 5135,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "32e4078ee121192da24b687da72dcfe86e88dbb43e2e766010f3c2f011464185",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "adc7c6a9145907fe6fc80496cb63542fe0142c870179089fd3f30afd992caab3",
       "category": "json"
     },
     {
@@ -284,8 +284,8 @@
       "filename": "project_selector.json",
       "extension": ".json",
       "size_bytes": 3816,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "89ba9f2a576c90fc14e146b751c889e7cf604ffe2f64aeec45919e2e01c33066",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "8a14d05cfd2d092afc3edf6ea4fd001d299e209745c5580b9b345394471fef51",
       "category": "json"
     },
     {
@@ -294,12 +294,12 @@
       "filename": "project_summary.json",
       "extension": ".json",
       "size_bytes": 955,
-      "modified_at": "2026-06-26T15:11:00",
-      "sha256": "45dd5565ef2ae48276af8d907bff467c19078ec944f387c440c7341d233e0318",
+      "modified_at": "2026-07-02T23:02:32",
+      "sha256": "670f0684ec4a2e1b91d899dbab817dd438f3b3b2f160ae723e6e903d0f9e9003",
       "category": "json"
     }
   ],
   "audit_status": "PROJECT_AUDIT_TRAIL_OPGESLAGEN",
-  "created_at": "2026-06-26T15:11:01",
+  "created_at": "2026-07-02T23:02:33",
   "disclaimer": "Dit file manifest registreert SHA256-checksums, bestandsgrootte en wijzigingsdatum van projectoutput. Hiermee kan later worden gecontroleerd of bestanden gewijzigd zijn."
 }

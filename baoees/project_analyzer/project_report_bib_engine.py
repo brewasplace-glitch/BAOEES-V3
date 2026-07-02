@@ -1,1 +1,255 @@
-# PROJECT PHOENIX v6.0 — AAIE/BIB-output koppelen aan Projectrapportage ## BLOK 4 HERSTEL — Volledig bestand opnieuw met goed eerste stuk **Doel:** Je hebt gelijk: zonder kopieervak gaat het eerste stuk visueel kapot, vooral bij: `__future__` `__file__` `__name__` en Python-inspringingen. Daarom geef ik het bestand nu in een schoon kopieervak, zonder `id="..."`. **Actie:** Doe in Notepad: `Ctrl + A` `Delete` Gebruik daarna het copy-icoon van het onderstaande blok en plak de inhoud in Notepad. **Volledige inhoud:** ``` from __future__ import annotations import html import json import sys from datetime import datetime from pathlib import Path from typing import Any, Dict, List, Optional PROJECT_ROOT = Path(__file__).resolve().parents[2] if str(PROJECT_ROOT) not in sys.path: sys.path.insert(0, str(PROJECT_ROOT)) class ProjectReportBibEngine: ENGINE_NAME = "Project Phoenix Project Report BIB Engine" ENGINE_VERSION = "v6.0" def __init__(self, project_output_root: Optional[str | Path] = None) -> None: if project_output_root: self.project_output_root = Path(project_output_root) else: self.project_output_root = PROJECT_ROOT / "outputs" / "projects" self.workflow_log_path = ( self.project_output_root / "project_analyzer_workflow_log.json" ) self.bib_index_path = ( PROJECT_ROOT / "outputs" / "bib" / "index" / "bib_knowledge_content_index.json" ) self.aaie_path = ( self.project_output_root / "aaie_bib_assumptions.json" ) self.report_package_path = ( self.project_output_root / "project_report_bib_package.json" ) self.report_dashboard_path = ( self.project_output_root / "project_report_bib_dashboard.html" ) def run(self, project_context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]: self.project_output_root.mkdir(parents=True, exist_ok=True) started_at = datetime.now().isoformat(timespec="seconds") workflow_log = self.read_json(self.workflow_log_path) bib_index = self.read_json(self.bib_index_path) aaie_output = self.read_json(self.aaie_path) report_sections = self.build_report_sections( workflow_log=workflow_log, bib_index=bib_index, aaie_output=aaie_output, ) result = { "status": "OPGESLAGEN", "engine": self.ENGINE_NAME, "engine_version": self.ENGINE_VERSION, "started_at": started_at, "finished_at": datetime.now().isoformat(timespec="seconds"), "project_root": str(PROJECT_ROOT), "project_output_root": str(self.project_output_root), "workflow_log_path": str(self.workflow_log_path), "bib_index_path": str(self.bib_index_path), "aaie_bib_assumptions_path": str(self.aaie_path), "report_package_path": str(self.report_package_path), "report_dashboard_path": str(self.report_dashboard_path), "workflow_summary": self.build_workflow_summary(workflow_log), "bib_summary": self.build_bib_summary(bib_index), "aaie_summary": self.build_aaie_summary(aaie_output), "report_sections": report_sections, "next_steps": [ "Gebruik project_report_bib_package.json als bron voor DOCX/PDF-export.", "Laat project_report_export_engine.py deze rapportagepackage exporteren.", "Koppel daarna bronvermelding en bijlagenpakket aan het projectrapport.", ], } self.write_json(self.report_package_path, result) self.write_text(self.report_dashboard_path, self.build_dashboard(result)) return result def build_report_sections( self, workflow_log: Dict[str, Any], bib_index: Dict[str, Any], aaie_output: Dict[str, Any], ) -> List[Dict[str, Any]]: return [ { "number": "1", "title": "Projectrapportage v6.0", "status": "GEREED", "content": [ "Deze rapportage is gekoppeld aan de Project Analyzer Workflow.", "De rapportage gebruikt BIB, AAIE en workflow-output als centrale informatiebronnen.", ], }, { "number": "2", "title": "Workflowkoppeling", "status": "GEKOPPELD" if workflow_log else "ONTBREEKT", "content": self.workflow_content(workflow_log), }, { "number": "3", "title": "BIB-kennisbasis", "status": "GELEZEN" if bib_index else "ONTBREEKT", "content": self.bib_content(bib_index), }, { "number": "4", "title": "AAIE/BIB-aannames", "status": "GELEZEN" if aaie_output else "ONTBREEKT", "content": self.aaie_content(aaie_output), }, { "number": "5", "title": "Rapportageconclusie", "status": "GEREED", "content": [ "De projectrapportage is voorbereid om automatisch te putten uit de centrale workflow-output.", "De volgende stap is koppeling aan de DOCX/PDF-export-engine.", ], }, ] def workflow_content(self, workflow_log: Dict[str, Any]) -> List[str]: if not workflow_log: return [ "Project Analyzer Workflow-log ontbreekt nog.", "Voer eerst project_analyzer_workflow_engine.py uit.", ] content = [ f"Workflow engine: {workflow_log.get('engine', '')}", f"Workflow versie: {workflow_log.get('engine_version', '')}", f"Workflow status: {workflow_log.get('status', '')}", ] workflow_steps = workflow_log.get("workflow_steps", []) for step in workflow_steps: if isinstance(step, dict): label = step.get("step") or step.get("label") or "Onbekende stap" status = step.get("status", "ONBEKEND") content.append(f"{label}: {status}") return content def bib_content(self, bib_index: Dict[str, Any]) -> List[str]: if not bib_index: return [ "BIB-kennisindex ontbreekt nog.", "Voer eerst de BIB Import Wizard uit.", ] return [ f"BIB status: {bib_index.get('status', '')}", f"BIB engine-versie: {bib_index.get('engine_version', '')}", f"Inhoudelijk herkend: {bib_index.get('recognized_text_items_count', 0)}", f"Besluiten: {bib_index.get('decisions_count', 0)}", f"Kennisitems: {bib_index.get('knowledge_items_count', 0)}", f"Acties: {bib_index.get('actions_count', 0)}", ] def aaie_content(self, aaie_output: Dict[str, Any]) -> List[str]: if not aaie_output: return [ "AAIE/BIB-output ontbreekt nog.", "Voer eerst aaie_bib_assumption_loader.py of de Project Analyzer Workflow uit.", ] assumptions = aaie_output.get("assumptions", []) content = [ f"AAIE status: {aaie_output.get('status', '')}", f"AAIE engine-versie: {aaie_output.get('engine_version', '')}", f"Aantal aannames: {aaie_output.get('assumption_count', len(assumptions))}", ] source_priority = aaie_output.get("source_priority", []) if source_priority: content.append("Bronvolgorde:") for source in source_priority: content.append(f"- {source}") if assumptions: content.append("Belangrijkste aannames:") for assumption in assumptions[:10]: if isinstance(assumption, dict): key = assumption.get("key", "onbekend") value = assumption.get("value", "") source_type = assumption.get("source_type", "") reliability = assumption.get("reliability", "") content.append( f"- {key}: {value} | bron: {source_type} | betrouwbaarheid: {reliability}" ) return content def build_workflow_summary(self, workflow_log: Dict[str, Any]) -> Dict[str, Any]: if not workflow_log: return { "status": "ONTBREEKT", "engine_version": "", "workflow_steps_count": 0, } workflow_steps = workflow_log.get("workflow_steps", []) return { "status": workflow_log.get("status", "GELEZEN"), "engine_version": workflow_log.get("engine_version", ""), "workflow_steps_count": len(workflow_steps), } def build_bib_summary(self, bib_index: Dict[str, Any]) -> Dict[str, Any]: if not bib_index: return { "status": "ONTBREEKT", "engine_version": "", "recognized_text_items_count": 0, "decisions_count": 0, "knowledge_items_count": 0, "actions_count": 0, } return { "status": bib_index.get("status", "GELEZEN"), "engine_version": bib_index.get("engine_version", ""), "recognized_text_items_count": bib_index.get( "recognized_text_items_count", 0, ), "decisions_count": bib_index.get("decisions_count", 0), "knowledge_items_count": bib_index.get("knowledge_items_count", 0), "actions_count": bib_index.get("actions_count", 0), } def build_aaie_summary(self, aaie_output: Dict[str, Any]) -> Dict[str, Any]: if not aaie_output: return { "status": "ONTBREEKT", "engine_version": "", "assumption_count": 0, } assumptions = aaie_output.get("assumptions", []) return { "status": aaie_output.get("status", "GELEZEN"), "engine_version": aaie_output.get("engine_version", ""), "assumption_count": aaie_output.get( "assumption_count", len(assumptions), ), } def build_dashboard(self, result: Dict[str, Any]) -> str: workflow = result["workflow_summary"] bib = result["bib_summary"] aaie = result["aaie_summary"] sections = result["report_sections"] section_rows: List[str] = [] for section in sections: section_rows.append( "<tr>" f"<td>{self.esc(section.get('number', ''))}</td>" f"<td>{self.esc(section.get('title', ''))}</td>" f"<td>{self.esc(section.get('status', ''))}</td>" "</tr>" ) rows = "\n".join(section_rows) html_parts = [ "<!doctype html>", "<html lang=\"nl\">", "<head>", " <meta charset=\"utf-8\">", " <title>Project Phoenix Projectrapportage v6.0</title>", " <style>", " body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; }", " main { max-width: 1120px; margin: 0 auto; padding: 32px; }", " section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; }", " h1, h2 { color: #f8fafc; }", " table { width: 100%; border-collapse: collapse; }", " td, th { border: 1px solid #334155; padding: 10px; text-align: left; }", " th { background: #1e293b; }", " </style>", "</head>", "<body>", "<main>", " <section>", " <h1>Project Phoenix Projectrapportage v6.0</h1>", f" <p>Status: {self.esc(result.get('status', ''))}</p>", " <p>De projectrapportage is gekoppeld aan de Project Analyzer Workflow, BIB en AAIE.</p>", " </section>", " <section>", " <h2>Workflow</h2>", f" <p>Status: {self.esc(workflow.get('status', ''))}</p>", f" <p>Aantal workflowstappen: {self.esc(workflow.get('workflow_steps_count', 0))}</p>", " </section>", " <section>", " <h2>BIB samenvatting</h2>", f" <p>Status: {self.esc(bib.get('status', ''))}</p>", f" <p>Besluiten: {self.esc(bib.get('decisions_count', 0))}</p>", f" <p>Kennisitems: {self.esc(bib.get('knowledge_items_count', 0))}</p>", f" <p>Acties: {self.esc(bib.get('actions_count', 0))}</p>", " </section>", " <section>", " <h2>AAIE samenvatting</h2>", f" <p>Status: {self.esc(aaie.get('status', ''))}</p>", f" <p>Aannames: {self.esc(aaie.get('assumption_count', 0))}</p>", " </section>", " <section>", " <h2>Rapportagehoofdstukken</h2>", " <table>", " <tr>", " <th>Nr.</th>", " <th>Hoofdstuk</th>", " <th>Status</th>", " </tr>", f" {rows}", " </table>", " </section>", "</main>", "</body>", "</html>", ] return "\n".join(html_parts) def read_json(self, path: Path) -> Dict[str, Any]: if not path.exists(): return {} try: return json.loads(path.read_text(encoding="utf-8-sig")) except Exception: try: return json.loads(path.read_text(encoding="utf-8")) except Exception: return {} def write_json(self, path: Path, data: Dict[str, Any]) -> None: path.parent.mkdir(parents=True, exist_ok=True) path.write_text( json.dumps(data, ensure_ascii=False, indent=2, default=str), encoding="utf-8-sig", ) def write_text(self, path: Path, text: str) -> None: path.parent.mkdir(parents=True, exist_ok=True) path.write_text(text, encoding="utf-8") def esc(self, value: Any) -> str: return html.escape(str(value), quote=True) ProjectReportEngine = ProjectReportBibEngine ProjectReportBIBEngine = ProjectReportBibEngine def main() -> None: engine = ProjectReportBibEngine() result = engine.run() print(json.dumps(result, ensure_ascii=True, indent=2, default=str)) if __name__ == "__main__": main()
+from datetime import datetime
+
+
+class ProjectReportBibEngine:
+
+    def __init__(self):
+        self.project_report_bib_result = {}
+
+    def create_project_report_bib(
+        self,
+        project_result=None,
+        project_analyzer_result=None,
+        aaie_bib_result=None,
+        bib_knowledge_result=None,
+        report_result=None,
+        output_result=None,
+        *args,
+        **kwargs
+    ):
+        project_result = project_result or {}
+        project_analyzer_result = project_analyzer_result or {}
+        aaie_bib_result = aaie_bib_result or {}
+        bib_knowledge_result = bib_knowledge_result or {}
+        report_result = report_result or {}
+        output_result = output_result or {}
+
+        project_name = project_result.get(
+            "project_name",
+            project_analyzer_result.get("project_name", "Onbekend project")
+        )
+
+        project_id = project_result.get(
+            "project_id",
+            project_analyzer_result.get("project_id", "unknown_project")
+        )
+
+        bib_items = self.collect_bib_items(
+            aaie_bib_result=aaie_bib_result,
+            bib_knowledge_result=bib_knowledge_result,
+            kwargs=kwargs
+        )
+
+        report_sections = self.build_report_sections(
+            project_name=project_name,
+            project_id=project_id,
+            bib_items=bib_items
+        )
+
+        self.project_report_bib_result = {
+            "engine": "ProjectReportBibEngine",
+            "version": "1.0",
+            "status": "PROJECT_REPORT_BIB_ENGINE_GEREED",
+            "project_id": project_id,
+            "project_name": project_name,
+            "bib_item_count": len(bib_items),
+            "bib_items": bib_items,
+            "report_sections": report_sections,
+            "warnings": self.build_warnings(bib_items),
+            "recommendation": self.build_recommendation(),
+            "created_at": datetime.now().isoformat(timespec="seconds"),
+            "disclaimer": (
+                "Deze Project Report BIB Engine koppelt beschikbare BIB-/kennisdata "
+                "aan de projectrapportage. Ontbrekende kennisdata wordt veilig als "
+                "waarschuwing vastgelegd en blokkeert de projectrun niet."
+            )
+        }
+
+        return self.project_report_bib_result
+
+    def build_project_report_bib(self, *args, **kwargs):
+        return self.create_project_report_bib(*args, **kwargs)
+
+    def generate_project_report_bib(self, *args, **kwargs):
+        return self.create_project_report_bib(*args, **kwargs)
+
+    def connect_bib_to_project_report(self, *args, **kwargs):
+        return self.create_project_report_bib(*args, **kwargs)
+
+    def create_report_bib(self, *args, **kwargs):
+        return self.create_project_report_bib(*args, **kwargs)
+
+    def generate_report_bib(self, *args, **kwargs):
+        return self.create_project_report_bib(*args, **kwargs)
+
+    def collect_bib_items(
+        self,
+        aaie_bib_result=None,
+        bib_knowledge_result=None,
+        kwargs=None
+    ):
+        aaie_bib_result = aaie_bib_result or {}
+        bib_knowledge_result = bib_knowledge_result or {}
+        kwargs = kwargs or {}
+
+        bib_items = []
+
+        self.add_items_from_source(
+            bib_items=bib_items,
+            source_name="aaie_bib_result",
+            source_data=aaie_bib_result
+        )
+
+        self.add_items_from_source(
+            bib_items=bib_items,
+            source_name="bib_knowledge_result",
+            source_data=bib_knowledge_result
+        )
+
+        for key, value in kwargs.items():
+            if "bib" in str(key).lower() or "knowledge" in str(key).lower():
+                self.add_items_from_source(
+                    bib_items=bib_items,
+                    source_name=str(key),
+                    source_data=value
+                )
+
+        return bib_items
+
+    def add_items_from_source(self, bib_items, source_name, source_data):
+        if not source_data:
+            return
+
+        if isinstance(source_data, list):
+            for item in source_data:
+                bib_items.append(
+                    self.normalize_bib_item(
+                        source_name=source_name,
+                        item=item
+                    )
+                )
+
+            return
+
+        if isinstance(source_data, dict):
+            possible_lists = [
+                "bib_items",
+                "knowledge_items",
+                "sources",
+                "records",
+                "items",
+                "assumptions",
+                "references"
+            ]
+
+            found_list = False
+
+            for key in possible_lists:
+                value = source_data.get(key)
+
+                if isinstance(value, list):
+                    found_list = True
+
+                    for item in value:
+                        bib_items.append(
+                            self.normalize_bib_item(
+                                source_name=f"{source_name}.{key}",
+                                item=item
+                            )
+                        )
+
+            if not found_list:
+                bib_items.append(
+                    self.normalize_bib_item(
+                        source_name=source_name,
+                        item=source_data
+                    )
+                )
+
+            return
+
+        bib_items.append({
+            "source": source_name,
+            "type": "tekst",
+            "title": str(source_data),
+            "description": "",
+            "confidence": "onbekend"
+        })
+
+    def normalize_bib_item(self, source_name, item):
+        if isinstance(item, dict):
+            return {
+                "source": source_name,
+                "type": item.get("type", item.get("category", "kennisitem")),
+                "title": item.get("title", item.get("name", item.get("key", "Onbenoemd kennisitem"))),
+                "description": item.get("description", item.get("value", item.get("summary", ""))),
+                "confidence": item.get("confidence", item.get("reliability", "onbekend")),
+                "raw": item
+            }
+
+        return {
+            "source": source_name,
+            "type": "tekst",
+            "title": str(item),
+            "description": "",
+            "confidence": "onbekend",
+            "raw": item
+        }
+
+    def build_report_sections(self, project_name, project_id, bib_items):
+        return [
+            {
+                "section_id": "bib_project_context",
+                "title": "Projectkennis en uitgangspunten",
+                "content": (
+                    f"Voor project {project_name} ({project_id}) zijn "
+                    f"{len(bib_items)} BIB-/kennisitems gekoppeld aan de rapportage."
+                )
+            },
+            {
+                "section_id": "bib_traceability",
+                "title": "Herleidbaarheid kennisbronnen",
+                "content": (
+                    "De gekoppelde kennisitems worden gebruikt als projectcontext, "
+                    "aannames of broninformatie voor verdere analyse."
+                )
+            }
+        ]
+
+    def build_warnings(self, bib_items):
+        warnings = []
+
+        if not bib_items:
+            warnings.append(
+                "Geen BIB-/kennisitems gevonden. Projectrun gaat door met standaard uitgangspunten."
+            )
+
+        if not warnings:
+            warnings.append(
+                "Geen kritieke BIB-koppelingwaarschuwingen."
+            )
+
+        return warnings
+
+    def build_recommendation(self):
+        return {
+            "status": "PROJECT_REPORT_BIB_ADVIES",
+            "advice": (
+                "Gebruik deze engine als veilige koppellaag tussen BIB-kennis, "
+                "AAIE-aannames en projectrapportage. De volgende stap is verdieping "
+                "met projectspecifieke bronverwijzingen en rapportparagrafen."
+            ),
+            "next_steps": [
+                "BIB-kennisitems koppelen aan rapporthoofdstukken",
+                "bronverwijzingen tonen in PDF/DOCX",
+                "AAIE-aannames herleidbaar maken",
+                "projectkennis opnemen in Digital Twin",
+                "waarschuwingen tonen in dashboard"
+            ]
+        }
+
+    def get_project_report_bib_result(self):
+        return self.project_report_bib_result
+
+    def run(self, *args, **kwargs):
+        return self.create_project_report_bib(*args, **kwargs)

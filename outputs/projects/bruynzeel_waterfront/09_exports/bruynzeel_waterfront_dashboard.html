@@ -1,368 +1,1489 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-    <meta charset="utf-8">
-    <title>BAOEES Dashboard - Bruynzeel Waterfront District</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0f172a;
-            color: #e5e7eb;
-        }
-
-        header {
-            padding: 32px;
-            background: linear-gradient(135deg, #111827, #1e3a8a);
-            border-bottom: 1px solid #334155;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
-
-        header p {
-            margin: 8px 0 0 0;
-            color: #cbd5e1;
-        }
-
-        main {
-            padding: 28px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-            margin-bottom: 28px;
-        }
-
-        .card {
-            background: #111827;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            padding: 18px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
-        }
-
-        .card h2 {
-            margin: 0 0 12px 0;
-            font-size: 18px;
-            color: #93c5fd;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: #064e3b;
-            color: #d1fae5;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .status.unknown {
-            background: #78350f;
-            color: #ffedd5;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #111827;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #334155;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        th {
-            background: #1f2937;
-            color: #bfdbfe;
-        }
-
-        a {
-            color: #93c5fd;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .small {
-            color: #94a3b8;
-            font-size: 13px;
-        }
-
-        footer {
-            padding: 24px 28px;
-            color: #94a3b8;
-            border-top: 1px solid #334155;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bruynzeel Waterfront District — Project Phoenix Dashboard</title>
+  <style>
+    :root {
+      --bg: #050816;
+      --panel: #111827;
+      --panel2: #0f172a;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: #334155;
+      --blue: #60a5fa;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 34px 40px;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      border-bottom: 1px solid var(--line);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+      letter-spacing: -0.03em;
+    }
+    header p {
+      margin: 8px 0 0;
+      color: #dbeafe;
+      font-size: 16px;
+    }
+    main {
+      padding: 30px 36px 50px;
+    }
+    h2 {
+      margin-top: 34px;
+      margin-bottom: 14px;
+      font-size: 23px;
+    }
+    h3 {
+      margin: 0 0 10px;
+      color: #bfdbfe;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      min-height: 110px;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      margin: 4px 6px 4px 0;
+      background: #1e293b;
+      border: 1px solid var(--line);
+    }
+    .ok {
+      background: rgba(16, 185, 129, 0.16);
+      color: #86efac;
+      border-color: rgba(16, 185, 129, 0.45);
+    }
+    .warn {
+      background: rgba(245, 158, 11, 0.16);
+      color: #fcd34d;
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+    .bad {
+      background: rgba(239, 68, 68, 0.16);
+      color: #fca5a5;
+      border-color: rgba(239, 68, 68, 0.45);
+    }
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--panel2);
+      color: #bfdbfe;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #020617;
+      border: 1px solid var(--line);
+      padding: 14px;
+      border-radius: 12px;
+      color: #e2e8f0;
+      max-height: 420px;
+      overflow: auto;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 36px;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>BAOEES Projectdashboard</h1>
-        <p>Bruynzeel Waterfront District | Project-ID: bruynzeel_waterfront</p>
-    </header>
+  <header>
+    <h1>PROJECT PHOENIX</h1>
+    <p>Brewster Engineering Wizard — projectdashboard voor Bruynzeel Waterfront District</p>
+  </header>
 
-    <main>
-        <section class="grid">
-            <div class="card">
-                <h2>Project</h2>
-                <p><strong>Naam:</strong> Bruynzeel Waterfront District</p>
-                <p><strong>Type:</strong> Gebiedsontwikkeling</p>
-                <p><strong>Locatie:</strong> Paramaribo, Suriname</p>
-                <p><strong>Land:</strong> Suriname</p>
-            </div>
+  <main>
+    <section class="grid">
+      <div class="card">
+        <h3>Project</h3>
+        <p><strong>Bruynzeel Waterfront District</strong></p>
+        <p class="muted">Project-ID: bruynzeel_waterfront</p>
+      </div>
+      <div class="card">
+        <h3>Type</h3>
+        <p>Gebiedsontwikkeling</p>
+      </div>
+      <div class="card">
+        <h3>Locatie</h3>
+        <p>Paramaribo, Suriname</p>
+      </div>
+      <div class="card">
+        <h3>Gegenereerd</h3>
+        <p>2026-07-02T23:06:21</p>
+      </div>
+    </section>
 
-            <div class="card">
-                <h2>Runtime</h2>
-                <p><strong>Mode:</strong> autonomous</p>
-                <p><strong>Status:</strong> RUNTIME_ORCHESTRATION_LOG_GEREED</p>
-                <p><strong>Datum:</strong> 2026-06-25T00:16:12</p>
-            </div>
+    <h2>Projectstatus</h2>
+    
+<section class="grid">
+  <div class="card">
+    <h3>QA/QC</h3>
+    <p><span class="badge ok">VALIDATION_GEREED</span></p>
+    <p class="muted">Score/status: VALIDATION_GEREED</p>
+  </div>
+  <div class="card">
+    <h3>Digital Twin</h3>
+    <p><span class="badge ok">DIGITAL TWIN BESCHIKBAAR</span></p>
+  </div>
+  <div class="card">
+    <h3>Bronnenregister</h3>
+    <p><span class="badge ok">BRONNEN: 3</span></p>
+  </div>
+  <div class="card">
+    <h3>Runtime / Audit / Git</h3>
+    <p><span class="badge ok">RUNTIME LOG BESCHIKBAAR</span></p>
+    <p><span class="badge ok">AUDIT TRAIL BESCHIKBAAR</span></p>
+    <p><span class="badge ok">GIT EVIDENCE BESCHIKBAAR</span></p>
+  </div>
+</section>
 
-            <div class="card">
-                <h2>QA/QC</h2>
-                <p><strong>Status:</strong> VALIDATION_GEREED</p>
-                <p><strong>Go/No-Go:</strong> {&#x27;decision&#x27;: &#x27;NO_GO_EERST_HERSTELLEN&#x27;, &#x27;advice&#x27;: &#x27;Projectoutput bevat te veel aandachtspunten. Los eerst ontbrekende data en risico’s op.&#x27;, &#x27;status&#x27;: &#x27;GO_NO_GO_ADVIES_GEREED&#x27;}</p>
-            </div>
 
-            <div class="card">
-                <h2>Projectmap</h2>
-                <p class="small">outputs\projects\bruynzeel_waterfront</p>
-            </div>
-        </section>
+    <h2>Projectlinks</h2>
+    
+<table>
+  <thead>
+    <tr>
+      <th>Onderdeel</th>
+      <th>Status</th>
+      <th>Pad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.pdf">PDF-rapport</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.pdf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.docx">DOCX-rapport</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.docx</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.md">Markdown-rapport</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.md</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.txt">Tekst-rapport</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.txt</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_situatie.pdf">Situatietekening PDF</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_situatie.pdf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_plattegrond.pdf">Plattegrond PDF</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_plattegrond.pdf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_doorsnede.pdf">Doorsnede PDF</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_doorsnede.pdf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_situatie.dxf">Situatie DXF</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_situatie.dxf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_plattegrond.dxf">Plattegrond DXF</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_plattegrond.dxf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_doorsnede.dxf">Doorsnede DXF</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_doorsnede.dxf</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/04_calculations/bruynzeel_waterfront_calculation_index.csv">Berekeningen CSV</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/04_calculations/bruynzeel_waterfront_calculation_index.csv</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/04_calculations/qa_qc_report.json">QA/QC JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/04_calculations/qa_qc_report.json</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/06_sources/source_register.json">Bronnenregister JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/06_sources/source_register.json</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/07_digital_twin/digital_twin.json">Digital Twin JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/07_digital_twin/digital_twin.json</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/08_runtime_logs/runtime_log.json">Runtime log JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/08_runtime_logs/runtime_log.json</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_audit_trail.json">Audit trail JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_audit_trail.json</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_file_manifest.json">File manifest JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_file_manifest.json</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_git_evidence.json">Git evidence JSON</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_git_evidence.json</td></tr><tr><td><a href="bruynzeel_waterfront_cost_estimate.csv">Kostenraming CSV</a></td><td><span class="badge ok">AANWEZIG</span></td><td>bruynzeel_waterfront_cost_estimate.csv</td></tr><tr><td><a href="bruynzeel_waterfront_planning.csv">Planning CSV</a></td><td><span class="badge ok">AANWEZIG</span></td><td>bruynzeel_waterfront_planning.csv</td></tr><tr><td><a href="bruynzeel_waterfront_project_summary.csv">Project summary CSV</a></td><td><span class="badge ok">AANWEZIG</span></td><td>bruynzeel_waterfront_project_summary.csv</td></tr><tr><td><a href="bruynzeel_waterfront_project_tables.xlsx">Excel-werkboek</a></td><td><span class="badge ok">AANWEZIG</span></td><td>bruynzeel_waterfront_project_tables.xlsx</td></tr><tr><td><a href="outputs/projects/bruynzeel_waterfront/10_zip/bruynzeel_waterfront_project_export.zip">Project ZIP</a></td><td><span class="badge ok">AANWEZIG</span></td><td>outputs/projects/bruynzeel_waterfront/10_zip/bruynzeel_waterfront_project_export.zip</td></tr>
+  </tbody>
+</table>
 
-        <section>
-            <h2>Engine status</h2>
-            <div class="grid">
-                
-                <div class="card">
-                    <h2>Markdown/TXT rapport</h2>
-                    <span class="status">PROJECT_REPORT_FILES_OPGESLAGEN</span>
-                </div>
-                
 
-                <div class="card">
-                    <h2>PDF/DOCX rapport</h2>
-                    <span class="status">PDF_DOCX_REPORTS_OPGESLAGEN</span>
-                </div>
-                
+    <h2>Projectsamenvatting</h2>
+    <pre>{
+  &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+  &quot;project_type&quot;: &quot;Gebiedsontwikkeling&quot;,
+  &quot;location&quot;: &quot;Paramaribo, Suriname&quot;,
+  &quot;country&quot;: &quot;Suriname&quot;,
+  &quot;missing_data&quot;: [],
+  &quot;required_engines&quot;: [
+    &quot;aaie&quot;,
+    &quot;stee&quot;,
+    &quot;digital_twin&quot;,
+    &quot;workflow_engine&quot;,
+    &quot;variant_engine&quot;,
+    &quot;parking_engine&quot;
+  ],
+  &quot;status&quot;: &quot;PROJECT_ANALYSE_GEREED&quot;,
+  &quot;runtime_mode&quot;: &quot;autonomous&quot;,
+  &quot;selected_project_id&quot;: &quot;bruynzeel_waterfront&quot;
+}</pre>
 
-                <div class="card">
-                    <h2>DXF tekeningen</h2>
-                    <span class="status">PROJECT_DXF_FILES_OPGESLAGEN</span>
-                </div>
-                
+    <h2>Varianten</h2>
+    <p class="muted">Geen varianten gevonden in projectresultaat.</p>
 
-                <div class="card">
-                    <h2>PDF tekeningen</h2>
-                    <span class="status">PROJECT_DRAWING_PDF_FILES_OPGESLAGEN</span>
-                </div>
-                
+    <h2>Evidence / Engine-resultaten</h2>
+    
+<table>
+  <thead>
+    <tr>
+      <th>Engine</th>
+      <th>Status</th>
+      <th>Resultaat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Rapportage</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>Tekeningen</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>CAD / DXF</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>Berekeningen</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>Bronnenregister</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>Digital Twin</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>QA/QC</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>Exports</td><td><span class="badge warn">ONTBREEKT</span></td><td><pre>-</pre></td></tr><tr><td>ZIP</td><td><span class="badge ok">PROJECT_ZIP_OPGESLAGEN</span></td><td><pre>{
+  &quot;status&quot;: &quot;PROJECT_ZIP_OPGESLAGEN&quot;,
+  &quot;engine&quot;: &quot;ProjectZipEngine&quot;,
+  &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+  &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+  &quot;warnings&quot;: [
+    &quot;Geen kritieke ZIP-exportwaarschuwingen.&quot;
+  ],
+  &quot;recommendation&quot;: {
+    &quot;status&quot;: &quot;PROJECT_ZIP_ADVIES&quot;,
+    &quot;advice&quot;: &quot;Gebruik deze ZIP-export als downloadbaar projectdossier. De volgende stap is om ook echte PDF/DOCX/DXF-bestanden en rapportages naar de projectmap te schrijven, zodat de ZIP een volledig projectpakket wordt.&quot;,
+    &quot;next_steps&quot;: [
+      &quot;Project ZIP Engine koppelen aan storage_result&quot;,
+      &quot;ZIP-pad tonen in project_summary.json&quot;,
+      &quot;PDF/DOCX-rapporten fysiek genereren&quot;,
+      &quot;CAD/DXF-bestanden fysiek genereren&quot;,
+      &quot;ZIP-export opnemen in startscherm als downloadknop&quot;,
+      &quot;controle toevoegen of alle verplichte projectbestanden aanwezig zijn&quot;
+    ]
+  }
+}</pre></td></tr><tr><td>Storage</td><td><span class="badge ok">PROJECT_STORAGE_GEREED</span></td><td><pre>{
+  &quot;status&quot;: &quot;PROJECT_STORAGE_GEREED&quot;,
+  &quot;engine&quot;: &quot;ProjectStorageEngine&quot;,
+  &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+  &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+  &quot;warnings&quot;: [
+    &quot;Geen kritieke opslagwaarschuwingen.&quot;
+  ],
+  &quot;recommendation&quot;: {
+    &quot;status&quot;: &quot;PROJECT_STORAGE_ADVIES&quot;,
+    &quot;advice&quot;: &quot;Gebruik deze engine als centrale opslaglaag voor alle projectoutput. Elke projectanalyse krijgt hiermee een vaste mapstructuur, zodat rapporten, tekeningen, berekeningen, bronbestanden en exports niet door elkaar lopen.&quot;,
+    &quot;next_steps&quot;: [
+      &quot;ProjectStorageEngine koppelen aan BAOEES Core&quot;,
+      &quot;storage_result toevoegen aan Digital Twin&quot;,
+      &quot;rapportage-export naar projectmap laten schrijven&quot;,
+      &quot;Digital Twin als JSON opslaan&quot;,
+      &quot;STEE bronregister fysiek opslaan&quot;,
+      &quot;Project ZIP Engine koppelen aan project_output_dir&quot;
+    ]
+  }
+}</pre></td></tr><tr><td>Audit Trail</td><td><span class="badge ok">PROJECT_AUDIT_TRAIL_OPGESLAGEN</span></td><td><pre>{
+  &quot;status&quot;: &quot;PROJECT_AUDIT_TRAIL_OPGESLAGEN&quot;,
+  &quot;engine&quot;: &quot;ProjectAuditTrailEngine&quot;,
+  &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+  &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+  &quot;warnings&quot;: [
+    &quot;Geen kritieke audit trail-waarschuwingen.&quot;
+  ],
+  &quot;recommendation&quot;: {
+    &quot;status&quot;: &quot;PROJECT_AUDIT_TRAIL_ADVIES&quot;,
+    &quot;advice&quot;: &quot;Gebruik deze engine als eerste auditlaag voor herleidbaarheid van projectruns. De volgende stap is vastleggen van Git commit hash, checksums per outputbestand, gebruikersnaam, machine-ID en softwareversie.&quot;,
+    &quot;next_steps&quot;: [
+      &quot;ProjectAuditTrailEngine koppelen aan BAOEES Core&quot;,
+      &quot;audit trail opnemen in ZIP-export&quot;,
+      &quot;Git commit hash toevoegen&quot;,
+      &quot;checksums per bestand toevoegen&quot;,
+      &quot;engineversies automatisch uitlezen&quot;,
+      &quot;centrale project_run_history uitbreiden&quot;,
+      &quot;auditlog tonen in HTML-dashboard&quot;,
+      &quot;immutable auditlog toevoegen&quot;
+    ]
+  }
+}</pre></td></tr><tr><td>Checksum</td><td><span class="badge ok">PROJECT_FILE_MANIFEST_OPGESLAGEN</span></td><td><pre>{
+  &quot;status&quot;: &quot;PROJECT_FILE_MANIFEST_OPGESLAGEN&quot;,
+  &quot;engine&quot;: &quot;ProjectChecksumEngine&quot;,
+  &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+  &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+  &quot;warnings&quot;: [
+    &quot;Geen kritieke checksum/file-integrity-waarschuwingen.&quot;
+  ],
+  &quot;recommendation&quot;: {
+    &quot;status&quot;: &quot;PROJECT_CHECKSUM_ADVIES&quot;,
+    &quot;advice&quot;: &quot;Gebruik deze engine als eerste integriteitslaag voor projectoutput. De volgende stap is het manifest koppelen aan de audit trail, dashboard en finale ZIP.&quot;,
+    &quot;next_steps&quot;: [
+      &quot;ProjectChecksumEngine koppelen aan BAOEES Core&quot;,
+      &quot;file manifest opnemen in ZIP-export&quot;,
+      &quot;checksumresultaat opnemen in audit trail&quot;,
+      &quot;hashcontrolefunctie toevoegen&quot;,
+      &quot;verschillen tussen runs tonen&quot;,
+      &quot;Git commit hash toevoegen&quot;,
+      &quot;digitale ondertekening toevoegen&quot;
+    ]
+  }
+}</pre></td></tr><tr><td>Git Evidence</td><td><span class="badge ok">PROJECT_GIT_EVIDENCE_OPGESLAGEN</span></td><td><pre>{
+  &quot;status&quot;: &quot;PROJECT_GIT_EVIDENCE_OPGESLAGEN&quot;,
+  &quot;engine&quot;: &quot;ProjectGitEvidenceEngine&quot;,
+  &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+  &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+  &quot;warnings&quot;: [
+    &quot;Git working tree was niet schoon op het moment van evidence-generatie.&quot;
+  ],
+  &quot;recommendation&quot;: {
+    &quot;status&quot;: &quot;PROJECT_GIT_EVIDENCE_ADVIES&quot;,
+    &quot;advice&quot;: &quot;Gebruik deze engine als codeversie-bewijslaag. De volgende stap is koppeling aan audit trail, checksum manifest, HTML-dashboard en finale ZIP.&quot;,
+    &quot;next_steps&quot;: [
+      &quot;ProjectGitEvidenceEngine koppelen aan BAOEES Core&quot;,
+      &quot;git evidence opnemen in ZIP-export&quot;,
+      &quot;git evidence opnemen in audit trail&quot;,
+      &quot;git evidence tonen in HTML-dashboard&quot;,
+      &quot;GitHub release tag toevoegen&quot;,
+      &quot;BAOEES semantische versie toevoegen&quot;,
+      &quot;buildnummer toevoegen&quot;,
+      &quot;digitale ondertekening toevoegen&quot;
+    ]
+  }
+}</pre></td></tr><tr><td>Index</td><td><span class="badge ok">PROJECT_INDEX_STARTPAGE_OPGESLAGEN</span></td><td><pre>{
+  &quot;status&quot;: &quot;PROJECT_INDEX_STARTPAGE_OPGESLAGEN&quot;,
+  &quot;engine&quot;: &quot;ProjectIndexStartpageEngine&quot;,
+  &quot;warnings&quot;: [
+    &quot;Geen kritieke projectindexwaarschuwingen.&quot;
+  ],
+  &quot;recommendation&quot;: {
+    &quot;status&quot;: &quot;PROJECT_INDEX_STARTPAGE_ADVIES&quot;,
+    &quot;advice&quot;: &quot;Gebruik deze engine als centrale startpagina voor lokale projectoutput. De volgende stap is koppeling aan live projectstatus, zoekfunctie, filters en een echte BAOEES desktop/web interface.&quot;,
+    &quot;next_steps&quot;: [
+      &quot;ProjectIndexStartpageEngine koppelen aan BAOEES Core&quot;,
+      &quot;index.html automatisch na iedere projectrun bijwerken&quot;,
+      &quot;projectstatus uit runtime logs lezen&quot;,
+      &quot;laatste wijzigingsdatum per project tonen&quot;,
+      &quot;zoek- en filterfunctie toevoegen&quot;,
+      &quot;dashboardkaarten uitbreiden&quot;,
+      &quot;BAOEES startscherm koppelen aan index.html&quot;
+    ]
+  }
+}</pre></td></tr><tr><td>Extra resultaten</td><td><span class="badge ok">AANWEZIG</span></td><td><pre>{
+  &quot;report_writer_result&quot;: {
+    &quot;engine&quot;: &quot;ProjectReportWriterEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;PROJECT_REPORT_FILES_OPGESLAGEN&quot;,
+    &quot;calculation_level&quot;: &quot;Markdown/TXT rapportexport&quot;,
+    &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;reports_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\01_reports&quot;,
+    &quot;written_files&quot;: [
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\01_reports\\bruynzeel_waterfront_project_report.md&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 2107
+      },
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\01_reports\\bruynzeel_waterfront_project_report.txt&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 2107
+      }
+    ],
+    &quot;written_file_count&quot;: 2,
+    &quot;warnings&quot;: [
+      &quot;Geen kritieke rapportage-exportwaarschuwingen.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;PROJECT_REPORT_WRITER_ADVIES&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze engine als eerste fysieke rapportgenerator. De volgende stap is uitbreiding naar echte PDF- en DOCX-bestanden.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;ProjectReportWriterEngine koppelen aan BAOEES Core&quot;,
+        &quot;rapport opnemen in ZIP-export&quot;,
+        &quot;PDF-generatie toevoegen&quot;,
+        &quot;DOCX-generatie toevoegen&quot;,
+        &quot;rapportopmaak professionaliseren&quot;,
+        &quot;inhoud uitbreiden per discipline&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Project Report Writer Engine v1.0 schrijft eerst Markdown- en TXT-rapporten. In de volgende versie kan dit worden uitgebreid naar echte PDF- en DOCX-generatie.&quot;
+  },
+  &quot;pdf_docx_result&quot;: {
+    &quot;engine&quot;: &quot;ProjectPdfDocxWriterEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;PDF_DOCX_REPORTS_OPGESLAGEN&quot;,
+    &quot;calculation_level&quot;: &quot;basis PDF/DOCX rapportexport&quot;,
+    &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;reports_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\01_reports&quot;,
+    &quot;pdf_result&quot;: {
+      &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\01_reports\\bruynzeel_waterfront_project_report.pdf&quot;,
+      &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+      &quot;exists&quot;: true,
+      &quot;size_bytes&quot;: 2283
+    },
+    &quot;docx_result&quot;: {
+      &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\01_reports\\bruynzeel_waterfront_project_report.docx&quot;,
+      &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+      &quot;exists&quot;: true,
+      &quot;size_bytes&quot;: 1985
+    },
+    &quot;source_report_writer_status&quot;: &quot;PROJECT_REPORT_FILES_OPGESLAGEN&quot;,
+    &quot;runtime_status&quot;: &quot;RUNTIME_ORCHESTRATION_LOG_GEREED&quot;,
+    &quot;validation_status&quot;: &quot;VALIDATION_GEREED&quot;,
+    &quot;warnings&quot;: [
+      &quot;Geen kritieke PDF/DOCX-exportwaarschuwingen.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;PDF_DOCX_REPORT_EXPORT_ADVIES&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze engine als eerste echte PDF/DOCX-exportlaag. De volgende stap is professionele rapportopmaak met inhoudsopgave, tabellen, hoofdstukken, figuren en projectbijlagen.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;ProjectPdfDocxWriterEngine koppelen aan BAOEES Core&quot;,
+        &quot;PDF/DOCX opnemen in ZIP-export&quot;,
+        &quot;rapportinhoud per discipline uitbreiden&quot;,
+        &quot;voorblad en inhoudsopgave toevoegen&quot;,
+        &quot;professionele huisstijl toevoegen&quot;,
+        &quot;tabellen en bijlagen toevoegen&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze PDF/DOCX Report Export Engine v1.0 maakt eenvoudige basisrapporten met standaard Python. Voor professionele opmaak kunnen later python-docx, ReportLab, WeasyPrint of LibreOffice-conversie worden toegevoegd.&quot;
+  },
+  &quot;dxf_writer_result&quot;: {
+    &quot;engine&quot;: &quot;ProjectDxfWriterEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;PROJECT_DXF_FILES_OPGESLAGEN&quot;,
+    &quot;calculation_level&quot;: &quot;basis DXF tekeningen export&quot;,
+    &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;cad_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\03_cad&quot;,
+    &quot;written_files&quot;: [
+      {
+        &quot;drawing_type&quot;: &quot;situatie&quot;,
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\03_cad\\bruynzeel_waterfront_situatie.dxf&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1895
+      },
+      {
+        &quot;drawing_type&quot;: &quot;plattegrond&quot;,
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\03_cad\\bruynzeel_waterfront_plattegrond.dxf&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1922
+      },
+      {
+        &quot;drawing_type&quot;: &quot;doorsnede&quot;,
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\03_cad\\bruynzeel_waterfront_doorsnede.dxf&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1727
+      }
+    ],
+    &quot;written_file_count&quot;: 3,
+    &quot;drawing_engine_status&quot;: &quot;DRAWING_EXPORT_GEREED&quot;,
+    &quot;cad_engine_status&quot;: &quot;CAD_EXPORT_GEREED&quot;,
+    &quot;geo_engine_status&quot;: &quot;GEO_ANALYSE_GEREED&quot;,
+    &quot;structural_engine_status&quot;: &quot;STRUCTURAL_ANALYSE_GEREED&quot;,
+    &quot;warnings&quot;: [
+      &quot;Geen kritieke DXF-exportwaarschuwingen.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;PROJECT_DXF_WRITER_ADVIES&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze engine als eerste echte CAD/DXF-exportlaag. De volgende stap is om echte geometrie, maatvoering en lagen uit de Digital Twin te genereren.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;ProjectDxfWriterEngine koppelen aan BAOEES Core&quot;,
+        &quot;DXF-bestanden opnemen in ZIP-export&quot;,
+        &quot;maatvoering toevoegen&quot;,
+        &quot;lagenstructuur professionaliseren&quot;,
+        &quot;geometrie uit Digital Twin lezen&quot;,
+        &quot;per projecttype specifieke tekeningen genereren&quot;,
+        &quot;later DWG-export via externe converter toevoegen&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Project DXF Writer Engine v1.0 schrijft eenvoudige basis-DXF-bestanden. De tekeningen zijn schematisch en moeten later worden uitgebreid met echte geometrie, schaal, maatvoering, lagen, blokken, legenda en projectdata uit BIM/Digital Twin.&quot;
+  },
+  &quot;drawing_pdf_result&quot;: {
+    &quot;engine&quot;: &quot;ProjectDrawingPdfWriterEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;PROJECT_DRAWING_PDF_FILES_OPGESLAGEN&quot;,
+    &quot;calculation_level&quot;: &quot;basis PDF tekeningexport&quot;,
+    &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;drawings_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\02_drawings&quot;,
+    &quot;written_files&quot;: [
+      {
+        &quot;drawing_type&quot;: &quot;situatie&quot;,
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\02_drawings\\bruynzeel_waterfront_situatie.pdf&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1130
+      },
+      {
+        &quot;drawing_type&quot;: &quot;plattegrond&quot;,
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\02_drawings\\bruynzeel_waterfront_plattegrond.pdf&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1172
+      },
+      {
+        &quot;drawing_type&quot;: &quot;doorsnede&quot;,
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\02_drawings\\bruynzeel_waterfront_doorsnede.pdf&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1153
+      }
+    ],
+    &quot;written_file_count&quot;: 3,
+    &quot;drawing_engine_status&quot;: &quot;DRAWING_EXPORT_GEREED&quot;,
+    &quot;dxf_writer_status&quot;: &quot;PROJECT_DXF_FILES_OPGESLAGEN&quot;,
+    &quot;warnings&quot;: [
+      &quot;Geen kritieke PDF-tekeningexportwaarschuwingen.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;PROJECT_DRAWING_PDF_WRITER_ADVIES&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze engine als eerste PDF-tekeningenlaag. De volgende stap is om de tekeningen te voeden vanuit echte projectgeometrie en Digital Twin objecten.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;ProjectDrawingPdfWriterEngine koppelen aan BAOEES Core&quot;,
+        &quot;PDF-tekeningen opnemen in ZIP-export&quot;,
+        &quot;maatvoering toevoegen&quot;,
+        &quot;schaal en noordpijl toevoegen&quot;,
+        &quot;stempelblok professionaliseren&quot;,
+        &quot;echte geometrie uit Digital Twin gebruiken&quot;,
+        &quot;per projecttype aparte tekeningsets maken&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Project Drawing PDF Writer Engine v1.0 maakt eenvoudige schematische PDF-tekeningen. De tekeningen zijn nog geen officiële maatvaste vergunningstekeningen. Latere versies moeten schaal, maatvoering, legenda, lagen, stempels en echte geometrie uit de Digital Twin toevoegen.&quot;
+  },
+  &quot;csv_excel_result&quot;: {
+    &quot;engine&quot;: &quot;ProjectCsvExcelExportEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;PROJECT_CSV_EXCEL_FILES_OPGESLAGEN&quot;,
+    &quot;calculation_level&quot;: &quot;basis CSV/Excel tabel-export&quot;,
+    &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;exports_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports&quot;,
+    &quot;calculations_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\04_calculations&quot;,
+    &quot;written_files&quot;: [
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_project_summary.csv&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 339,
+        &quot;row_count&quot;: 10
+      },
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_cost_estimate.csv&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 895,
+        &quot;row_count&quot;: 9
+      },
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_planning.csv&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 1313,
+        &quot;row_count&quot;: 20
+      },
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_quantity_boq.csv&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 810,
+        &quot;row_count&quot;: 11
+      },
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_qa_qc.csv&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 554,
+        &quot;row_count&quot;: 10
+      },
+      {
+        &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\04_calculations\\bruynzeel_waterfront_calculation_index.csv&quot;,
+        &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+        &quot;exists&quot;: true,
+        &quot;size_bytes&quot;: 431,
+        &quot;row_count&quot;: 6
+      }
+    ],
+    &quot;written_file_count&quot;: 6,
+    &quot;cost_engine_status&quot;: &quot;COST_ESTIMATE_GEREED&quot;,
+    &quot;planning_engine_status&quot;: &quot;PLANNING_GEREED&quot;,
+    &quot;quantity_engine_status&quot;: &quot;QUANTITY_TAKEOFF_GEREED&quot;,
+    &quot;validation_engine_status&quot;: &quot;VALIDATION_GEREED&quot;,
+    &quot;runtime_engine_status&quot;: &quot;RUNTIME_ORCHESTRATION_LOG_GEREED&quot;,
+    &quot;warnings&quot;: [
+      &quot;Geen kritieke CSV/Excel-exportwaarschuwingen.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;PROJECT_CSV_EXCEL_EXPORT_ADVIES&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze engine als eerste tabel-exportlaag. De volgende stap is echte XLSX-export met meerdere tabbladen, filters, opmaak, formules en projectdashboards.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;ProjectCsvExcelExportEngine koppelen aan BAOEES Core&quot;,
+        &quot;CSV-bestanden opnemen in ZIP-export&quot;,
+        &quot;echte XLSX-export toevoegen&quot;,
+        &quot;kostenraming koppelen aan hoeveelheden&quot;,
+        &quot;planning koppelen aan uitvoeringsfasen&quot;,
+        &quot;QA/QC dashboard toevoegen&quot;,
+        &quot;Excel-dashboard per project genereren&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Project CSV/Excel Export Engine v1.0 maakt CSV-bestanden die direct in Excel geopend kunnen worden. In een volgende versie kan echte XLSX-export met meerdere werkbladen, opmaak, filters en formules worden toegevoegd.&quot;
+  },
+  &quot;xlsx_result&quot;: {
+    &quot;engine&quot;: &quot;ProjectXlsxExportEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;PROJECT_XLSX_FILE_OPGESLAGEN&quot;,
+    &quot;calculation_level&quot;: &quot;basis XLSX Excel-export met meerdere werkbladen&quot;,
+    &quot;project_id&quot;: &quot;bruynzeel_waterfront&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;exports_dir&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports&quot;,
+    &quot;xlsx_file&quot;: {
+      &quot;path&quot;: &quot;outputs\\projects\\bruynzeel_waterfront\\09_exports\\bruynzeel_waterfront_project_tables.xlsx&quot;,
+      &quot;status&quot;: &quot;OPGESLAGEN&quot;,
+      &quot;exists&quot;: true,
+      &quot;size_bytes&quot;: 7081
+    },
+    &quot;worksheet_count&quot;: 6,
+    &quot;worksheets&quot;: [
+      &quot;Project&quot;,
+      &quot;Kosten&quot;,
+      &quot;Planning&quot;,
+      &quot;Hoeveelheden&quot;,
+      &quot;QA_QC&quot;,
+      &quot;Index&quot;
+    ],
+    &quot;cost_engine_status&quot;: &quot;COST_ESTIMATE_GEREED&quot;,
+    &quot;planning_engine_status&quot;: &quot;PLANNING_GEREED&quot;,
+    &quot;quantity_engine_status&quot;: &quot;QUANTITY_TAKEOFF_GEREED&quot;,
+    &quot;validation_engine_status&quot;: &quot;VALIDATION_GEREED&quot;,
+    &quot;runtime_engine_status&quot;: &quot;RUNTIME_ORCHESTRATION_LOG_GEREED&quot;,
+    &quot;csv_excel_engine_status&quot;: &quot;PROJECT_CSV_EXCEL_FILES_OPGESLAGEN&quot;,
+    &quot;warnings&quot;: [
+      &quot;Geen kritieke XLSX-exportwaarschuwingen.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;PROJECT_XLSX_EXPORT_ADVIES&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze engine als eerste echte Excel XLSX-exportlaag. De volgende stap is uitbreiding met opmaak, filters, formules, grafieken en projectdashboards.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;ProjectXlsxExportEngine koppelen aan BAOEES Core&quot;,
+        &quot;XLSX-bestand opnemen in ZIP-export&quot;,
+        &quot;kolombreedtes toevoegen&quot;,
+        &quot;koprijen vet maken&quot;,
+        &quot;filters toevoegen&quot;,
+        &quot;kostenformules toevoegen&quot;,
+        &quot;dashboardtabblad toevoegen&quot;,
+        &quot;grafieken toevoegen&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Project XLSX Export Engine v1.0 maakt een echte basis-XLSX als Office Open XML zip-bestand. De volgende versie kan worden uitgebreid met professionele opmaak, filters, kolombreedtes, formules, grafieken en dashboards.&quot;
+  },
+  &quot;validation_result&quot;: {
+    &quot;engine&quot;: &quot;ValidationEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;VALIDATION_GEREED&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;location&quot;: &quot;Paramaribo, Suriname&quot;,
+    &quot;country&quot;: &quot;Suriname&quot;,
+    &quot;calculation_level&quot;: &quot;automatische QA/QC controle&quot;,
+    &quot;completeness&quot;: {
+      &quot;required_engine_count&quot;: 19,
+      &quot;available_engine_count&quot;: 19,
+      &quot;missing_engine_count&quot;: 0,
+      &quot;available_engines&quot;: [
+        &quot;project_analyzer&quot;,
+        &quot;aaie&quot;,
+        &quot;variant_engine&quot;,
+        &quot;geo_engine&quot;,
+        &quot;structural_engine&quot;,
+        &quot;permit_engine&quot;,
+        &quot;reporting_engine&quot;,
+        &quot;project_export_engine&quot;,
+        &quot;document_export_engine&quot;,
+        &quot;drawing_export_engine&quot;,
+        &quot;cad_export_engine&quot;,
+        &quot;cost_engine&quot;,
+        &quot;planning_engine&quot;,
+        &quot;traffic_parking_engine&quot;,
+        &quot;drainage_sewerage_engine&quot;,
+        &quot;aerius_engine&quot;,
+        &quot;gis_map_engine&quot;,
+        &quot;stee&quot;,
+        &quot;workflow_engine&quot;
+      ],
+      &quot;missing_engines&quot;: [],
+      &quot;completeness_percent&quot;: 100.0,
+      &quot;status&quot;: &quot;VOLLEDIG&quot;
+    },
+    &quot;status_check&quot;: {
+      &quot;overall_status&quot;: &quot;ALLE_ENGINES_GEREED&quot;,
+      &quot;not_ready_count&quot;: 0,
+      &quot;not_ready&quot;: [],
+      &quot;engine_statuses&quot;: [
+        {
+          &quot;engine&quot;: &quot;project_analyzer&quot;,
+          &quot;status&quot;: &quot;PROJECT_ANALYSE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;aaie&quot;,
+          &quot;status&quot;: &quot;AAIE_ANALYSE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;variant_engine&quot;,
+          &quot;status&quot;: &quot;VARIANTEN_AANGEMAAKT&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;geo_engine&quot;,
+          &quot;status&quot;: &quot;GEO_ANALYSE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;structural_engine&quot;,
+          &quot;status&quot;: &quot;STRUCTURAL_ANALYSE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;permit_engine&quot;,
+          &quot;status&quot;: &quot;VERGUNNINGSTRATEGIE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;reporting_engine&quot;,
+          &quot;status&quot;: &quot;RAPPORTSTRUCTUUR_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;project_export_engine&quot;,
+          &quot;status&quot;: &quot;PROJECT_EXPORT_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;document_export_engine&quot;,
+          &quot;status&quot;: &quot;DOCUMENT_EXPORT_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;drawing_export_engine&quot;,
+          &quot;status&quot;: &quot;DRAWING_EXPORT_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;cad_export_engine&quot;,
+          &quot;status&quot;: &quot;CAD_EXPORT_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;cost_engine&quot;,
+          &quot;status&quot;: &quot;COST_ESTIMATE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;planning_engine&quot;,
+          &quot;status&quot;: &quot;PLANNING_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;traffic_parking_engine&quot;,
+          &quot;status&quot;: &quot;TRAFFIC_PARKING_ANALYSE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;drainage_sewerage_engine&quot;,
+          &quot;status&quot;: &quot;DRAINAGE_SEWERAGE_DESIGN_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;aerius_engine&quot;,
+          &quot;status&quot;: &quot;AERIUS_VOORBEREIDING_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;gis_map_engine&quot;,
+          &quot;status&quot;: &quot;GIS_MAP_ANALYSE_GEREED&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;stee&quot;,
+          &quot;status&quot;: &quot;BRONREGISTER_AANGEMAAKT&quot;,
+          &quot;ready&quot;: true
+        },
+        {
+          &quot;engine&quot;: &quot;workflow_engine&quot;,
+          &quot;status&quot;: &quot;WORKFLOW_AANGEMAAKT&quot;,
+          &quot;ready&quot;: true
+        }
+      ]
+    },
+    &quot;warning_check&quot;: {
+      &quot;status&quot;: &quot;WAARSCHUWINGEN_HOOG&quot;,
+      &quot;total_warnings&quot;: 9,
+      &quot;critical_warning_count&quot;: 5,
+      &quot;warnings_by_engine&quot;: [
+        {
+          &quot;engine&quot;: &quot;project_analyzer&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;aaie&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;variant_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;geo_engine&quot;,
+          &quot;warning_count&quot;: 1,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: [
+            &quot;Zetting is een aandachtspunt. Controleer met echte sonderingen en samendrukkingsparameters.&quot;
+          ]
+        },
+        {
+          &quot;engine&quot;: &quot;structural_engine&quot;,
+          &quot;warning_count&quot;: 2,
+          &quot;critical_warning_count&quot;: 2,
+          &quot;warnings&quot;: [
+            &quot;Dakconstructie voldoet indicatief niet of vraagt controle.&quot;,
+            &quot;Fundering vraagt nadere controle op basis van Geo Engine-resultaten.&quot;
+          ]
+        },
+        {
+          &quot;engine&quot;: &quot;permit_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;reporting_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;project_export_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;document_export_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;drawing_export_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;cad_export_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;cost_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;planning_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;traffic_parking_engine&quot;,
+          &quot;warning_count&quot;: 1,
+          &quot;critical_warning_count&quot;: 1,
+          &quot;warnings&quot;: [
+            &quot;Geen kritieke verkeers- of parkeerwaarschuwingen op basis van deze indicatieve analyse.&quot;
+          ]
+        },
+        {
+          &quot;engine&quot;: &quot;drainage_sewerage_engine&quot;,
+          &quot;warning_count&quot;: 2,
+          &quot;critical_warning_count&quot;: 1,
+          &quot;warnings&quot;: [
+            &quot;Grondwaterstand is hoog. Infiltratievoorziening moet nader worden gecontroleerd.&quot;,
+            &quot;Gecombineerd stelsel kan lokaal mogelijk zijn, maar gescheiden HWA/DWA blijft ontwerpvoorkeur.&quot;
+          ]
+        },
+        {
+          &quot;engine&quot;: &quot;aerius_engine&quot;,
+          &quot;warning_count&quot;: 1,
+          &quot;critical_warning_count&quot;: 1,
+          &quot;warnings&quot;: [
+            &quot;Bouwfase NOx-emissie is indicatief verhoogd. Controleer elektrisch materieel of schonere emissieklasse.&quot;
+          ]
+        },
+        {
+          &quot;engine&quot;: &quot;gis_map_engine&quot;,
+          &quot;warning_count&quot;: 2,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: [
+            &quot;Water- en rioleringsaspecten moeten op kaart worden gecontroleerd.&quot;,
+            &quot;Ontsluiting en parkeeraanbod moeten op kaart worden onderbouwd.&quot;
+          ]
+        },
+        {
+          &quot;engine&quot;: &quot;stee&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        },
+        {
+          &quot;engine&quot;: &quot;workflow_engine&quot;,
+          &quot;warning_count&quot;: 0,
+          &quot;critical_warning_count&quot;: 0,
+          &quot;warnings&quot;: []
+        }
+      ]
+    },
+    &quot;consistency_check&quot;: {
+      &quot;status&quot;: &quot;CONSISTENTIE_AANDACHTSPUNTEN&quot;,
+      &quot;issue_count&quot;: 1,
+      &quot;issues&quot;: [
+        &quot;Afwatering/infiltratie geeft aandachtspunt aan.&quot;
+      ]
+    },
+    &quot;risk_check&quot;: {
+      &quot;status&quot;: &quot;PROJECTRISICO_HOOG&quot;,
+      &quot;risk_count&quot;: 5,
+      &quot;high_risk_count&quot;: 1,
+      &quot;medium_risk_count&quot;: 3,
+      &quot;low_risk_count&quot;: 1,
+      &quot;risks&quot;: [
+        {
+          &quot;domain&quot;: &quot;geotechniek&quot;,
+          &quot;risk&quot;: &quot;Funderingsrisico of aanvullend geotechnisch onderzoek nodig.&quot;,
+          &quot;level&quot;: &quot;middel&quot;
+        },
+        {
+          &quot;domain&quot;: &quot;constructie&quot;,
+          &quot;risk&quot;: &quot;Constructieve aandachtspunten aanwezig.&quot;,
+          &quot;level&quot;: &quot;middel&quot;
+        },
+        {
+          &quot;domain&quot;: &quot;riolering en afwatering&quot;,
+          &quot;risk&quot;: &quot;Infiltratie mogelijk beperkt door hoge grondwaterstand.&quot;,
+          &quot;level&quot;: &quot;middel&quot;
+        },
+        {
+          &quot;domain&quot;: &quot;GIS / locatie&quot;,
+          &quot;risk&quot;: &quot;Exacte coördinaten ontbreken nog.&quot;,
+          &quot;level&quot;: &quot;laag&quot;
+        },
+        {
+          &quot;domain&quot;: &quot;algemeen&quot;,
+          &quot;risk&quot;: &quot;Meerdere kritieke waarschuwingen aanwezig.&quot;,
+          &quot;level&quot;: &quot;hoog&quot;
+        }
+      ]
+    },
+    &quot;quality_score&quot;: {
+      &quot;score&quot;: 56.0,
+      &quot;quality_level&quot;: &quot;MATIG&quot;,
+      &quot;status&quot;: &quot;PROJECTKWALITEIT_BEREKEND&quot;
+    },
+    &quot;go_no_go_advice&quot;: {
+      &quot;decision&quot;: &quot;NO_GO_EERST_HERSTELLEN&quot;,
+      &quot;advice&quot;: &quot;Projectoutput bevat te veel aandachtspunten. Los eerst ontbrekende data en risico’s op.&quot;,
+      &quot;status&quot;: &quot;GO_NO_GO_ADVIES_GEREED&quot;
+    },
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;QA_QC_ADVIES_CONCEPT&quot;,
+      &quot;summary&quot;: &quot;Projectkwaliteitsscore: 56.0 / 100 (MATIG). Besluit: NO_GO_EERST_HERSTELLEN.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;controleer alle hoge risico’s&quot;,
+        &quot;vervang placeholders door projectspecifieke gegevens&quot;,
+        &quot;controleer geotechniek met echte sondering&quot;,
+        &quot;controleer constructie met definitieve normberekening&quot;,
+        &quot;controleer parkeren, water, AERIUS en GIS met officiële bronnen&quot;,
+        &quot;werk rapporten en tekeningen op definitief niveau uit&quot;,
+        &quot;laat formele stukken controleren door bevoegd deskundige&quot;
+      ],
+      &quot;risk_count&quot;: 5
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Validation &amp; QA/QC Engine voert een automatische controle uit op volledigheid, statussen, waarschuwingen en interne consistentie. Dit vervangt geen menselijke eindcontrole door bevoegde deskundigen.&quot;
+  },
+  &quot;runtime_result&quot;: {
+    &quot;engine&quot;: &quot;RuntimeEngine&quot;,
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;status&quot;: &quot;RUNTIME_ORCHESTRATION_LOG_GEREED&quot;,
+    &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+    &quot;location&quot;: &quot;Paramaribo, Suriname&quot;,
+    &quot;country&quot;: &quot;Suriname&quot;,
+    &quot;calculation_level&quot;: &quot;concept runtime en orchestration&quot;,
+    &quot;project_basis&quot;: {
+      &quot;project_name&quot;: &quot;Bruynzeel Waterfront District&quot;,
+      &quot;project_type&quot;: &quot;Gebiedsontwikkeling&quot;,
+      &quot;location&quot;: &quot;Paramaribo, Suriname&quot;,
+      &quot;country&quot;: &quot;Suriname&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;runtime_phase&quot;: &quot;concept autonome workflow-aansturing&quot;,
+      &quot;status&quot;: &quot;CONCEPT&quot;
+    },
+    &quot;engine_sequence&quot;: {
+      &quot;status&quot;: &quot;ENGINE_SEQUENCE_GEREGISTREERD&quot;,
+      &quot;total_engines&quot;: 36,
+      &quot;sequence&quot;: [
+        {
+          &quot;order&quot;: 1,
+          &quot;engine_key&quot;: &quot;project_selector&quot;,
+          &quot;engine_name&quot;: &quot;ProjectSelectorEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_SELECTIE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 2,
+          &quot;engine_key&quot;: &quot;project_config&quot;,
+          &quot;engine_name&quot;: &quot;ProjectConfigEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_CONFIG_GELADEN&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 3,
+          &quot;engine_key&quot;: &quot;project_storage&quot;,
+          &quot;engine_name&quot;: &quot;ProjectStorageEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_STORAGE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 4,
+          &quot;engine_key&quot;: &quot;project&quot;,
+          &quot;engine_name&quot;: &quot;project&quot;,
+          &quot;status&quot;: &quot;PROJECT_ANALYSE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 5,
+          &quot;engine_key&quot;: &quot;aaie&quot;,
+          &quot;engine_name&quot;: &quot;AAIE&quot;,
+          &quot;status&quot;: &quot;AAIE_ANALYSE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 6,
+          &quot;engine_key&quot;: &quot;variant&quot;,
+          &quot;engine_name&quot;: &quot;VariantEngine&quot;,
+          &quot;status&quot;: &quot;VARIANTEN_AANGEMAAKT&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 7,
+          &quot;engine_key&quot;: &quot;geo&quot;,
+          &quot;engine_name&quot;: &quot;GeoEngine&quot;,
+          &quot;status&quot;: &quot;GEO_ANALYSE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 8,
+          &quot;engine_key&quot;: &quot;structural&quot;,
+          &quot;engine_name&quot;: &quot;StructuralEngine&quot;,
+          &quot;status&quot;: &quot;STRUCTURAL_ANALYSE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 9,
+          &quot;engine_key&quot;: &quot;permit&quot;,
+          &quot;engine_name&quot;: &quot;PermitEngine&quot;,
+          &quot;status&quot;: &quot;VERGUNNINGSTRATEGIE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 10,
+          &quot;engine_key&quot;: &quot;stee&quot;,
+          &quot;engine_name&quot;: &quot;STEE&quot;,
+          &quot;status&quot;: &quot;BRONREGISTER_AANGEMAAKT&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 11,
+          &quot;engine_key&quot;: &quot;workflow&quot;,
+          &quot;engine_name&quot;: &quot;WorkflowEngine&quot;,
+          &quot;status&quot;: &quot;WORKFLOW_AANGEMAAKT&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 12,
+          &quot;engine_key&quot;: &quot;reporting&quot;,
+          &quot;engine_name&quot;: &quot;ReportingEngine&quot;,
+          &quot;status&quot;: &quot;RAPPORTSTRUCTUUR_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 13,
+          &quot;engine_key&quot;: &quot;project_export&quot;,
+          &quot;engine_name&quot;: &quot;ProjectExportEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_EXPORT_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 14,
+          &quot;engine_key&quot;: &quot;document_export&quot;,
+          &quot;engine_name&quot;: &quot;DocumentExportEngine&quot;,
+          &quot;status&quot;: &quot;DOCUMENT_EXPORT_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 15,
+          &quot;engine_key&quot;: &quot;drawing_export&quot;,
+          &quot;engine_name&quot;: &quot;DrawingExportEngine&quot;,
+          &quot;status&quot;: &quot;DRAWING_EXPORT_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 16,
+          &quot;engine_key&quot;: &quot;cad_export&quot;,
+          &quot;engine_name&quot;: &quot;CADExportEngine&quot;,
+          &quot;status&quot;: &quot;CAD_EXPORT_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 17,
+          &quot;engine_key&quot;: &quot;dxf_writer&quot;,
+          &quot;engine_name&quot;: &quot;ProjectDxfWriterEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_DXF_FILES_OPGESLAGEN&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 18,
+          &quot;engine_key&quot;: &quot;drawing_pdf_writer&quot;,
+          &quot;engine_name&quot;: &quot;ProjectDrawingPdfWriterEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_DRAWING_PDF_FILES_OPGESLAGEN&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 19,
+          &quot;engine_key&quot;: &quot;cost&quot;,
+          &quot;engine_name&quot;: &quot;CostEngine&quot;,
+          &quot;status&quot;: &quot;COST_ESTIMATE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 20,
+          &quot;engine_key&quot;: &quot;planning&quot;,
+          &quot;engine_name&quot;: &quot;PlanningEngine&quot;,
+          &quot;status&quot;: &quot;PLANNING_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 21,
+          &quot;engine_key&quot;: &quot;traffic_parking&quot;,
+          &quot;engine_name&quot;: &quot;TrafficParkingEngine&quot;,
+          &quot;status&quot;: &quot;TRAFFIC_PARKING_ANALYSE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 22,
+          &quot;engine_key&quot;: &quot;drainage_sewerage&quot;,
+          &quot;engine_name&quot;: &quot;DrainageSewerageEngine&quot;,
+          &quot;status&quot;: &quot;DRAINAGE_SEWERAGE_DESIGN_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 23,
+          &quot;engine_key&quot;: &quot;aerius&quot;,
+          &quot;engine_name&quot;: &quot;AERIUSEngine&quot;,
+          &quot;status&quot;: &quot;AERIUS_VOORBEREIDING_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 24,
+          &quot;engine_key&quot;: &quot;gis&quot;,
+          &quot;engine_name&quot;: &quot;GISMapEngine&quot;,
+          &quot;status&quot;: &quot;GIS_MAP_ANALYSE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 25,
+          &quot;engine_key&quot;: &quot;quantity&quot;,
+          &quot;engine_name&quot;: &quot;QuantityEngine&quot;,
+          &quot;status&quot;: &quot;QUANTITY_TAKEOFF_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 26,
+          &quot;engine_key&quot;: &quot;validation&quot;,
+          &quot;engine_name&quot;: &quot;ValidationEngine&quot;,
+          &quot;status&quot;: &quot;VALIDATION_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 27,
+          &quot;engine_key&quot;: &quot;specification&quot;,
+          &quot;engine_name&quot;: &quot;SpecificationEngine&quot;,
+          &quot;status&quot;: &quot;SPECIFICATION_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 28,
+          &quot;engine_key&quot;: &quot;tender&quot;,
+          &quot;engine_name&quot;: &quot;TenderEngine&quot;,
+          &quot;status&quot;: &quot;TENDER_PACKAGE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 29,
+          &quot;engine_key&quot;: &quot;contract&quot;,
+          &quot;engine_name&quot;: &quot;ContractEngine&quot;,
+          &quot;status&quot;: &quot;CONTRACT_PACKAGE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 30,
+          &quot;engine_key&quot;: &quot;construction_execution&quot;,
+          &quot;engine_name&quot;: &quot;ConstructionExecutionEngine&quot;,
+          &quot;status&quot;: &quot;EXECUTION_PLAN_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 31,
+          &quot;engine_key&quot;: &quot;site_monitoring&quot;,
+          &quot;engine_name&quot;: &quot;SiteMonitoringEngine&quot;,
+          &quot;status&quot;: &quot;SITE_MONITORING_PLAN_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 32,
+          &quot;engine_key&quot;: &quot;as_built&quot;,
+          &quot;engine_name&quot;: &quot;AsBuiltEngine&quot;,
+          &quot;status&quot;: &quot;AS_BUILT_PACKAGE_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 33,
+          &quot;engine_key&quot;: &quot;asset_management&quot;,
+          &quot;engine_name&quot;: &quot;AssetManagementEngine&quot;,
+          &quot;status&quot;: &quot;ASSET_MANAGEMENT_PLAN_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 34,
+          &quot;engine_key&quot;: &quot;sustainability&quot;,
+          &quot;engine_name&quot;: &quot;SustainabilityEngine&quot;,
+          &quot;status&quot;: &quot;SUSTAINABILITY_ANALYSIS_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 35,
+          &quot;engine_key&quot;: &quot;global_codes&quot;,
+          &quot;engine_name&quot;: &quot;GlobalCodesEngine&quot;,
+          &quot;status&quot;: &quot;GLOBAL_CODES_ANALYSIS_GEREED&quot;,
+          &quot;executed&quot;: true
+        },
+        {
+          &quot;order&quot;: 36,
+          &quot;engine_key&quot;: &quot;learning&quot;,
+          &quot;engine_name&quot;: &quot;LearningEngine&quot;,
+          &quot;status&quot;: &quot;PROJECT_LEARNING_GEREED&quot;,
+          &quot;executed&quot;: true
+        }
+      ]
+    },
+    &quot;status_summary&quot;: {
+      &quot;status&quot;: &quot;ENGINE_STATUS_SUMMARY_GEREED&quot;,
+      &quot;runtime_status&quot;: &quot;RUNTIME_FLOW_MET_AANDACHTSPUNTEN&quot;,
+      &quot;total_engines&quot;: 36,
+      &quot;completed_engines&quot;: 30,
+      &quot;unknown_status_engines&quot;: 0,
+      &quot;warning_status_engines&quot;: 6,
+      &quot;completion_percent&quot;: 83.3,
+      &quot;engine_statuses&quot;: {
+        &quot;project_selector&quot;: &quot;PROJECT_SELECTIE_GEREED&quot;,
+        &quot;project_config&quot;: &quot;PROJECT_CONFIG_GELADEN&quot;,
+        &quot;project_storage&quot;: &quot;PROJECT_STORAGE_GEREED&quot;,
+        &quot;project&quot;: &quot;PROJECT_ANALYSE_GEREED&quot;,
+        &quot;aaie&quot;: &quot;AAIE_ANALYSE_GEREED&quot;,
+        &quot;variant&quot;: &quot;VARIANTEN_AANGEMAAKT&quot;,
+        &quot;geo&quot;: &quot;GEO_ANALYSE_GEREED&quot;,
+        &quot;structural&quot;: &quot;STRUCTURAL_ANALYSE_GEREED&quot;,
+        &quot;permit&quot;: &quot;VERGUNNINGSTRATEGIE_GEREED&quot;,
+        &quot;stee&quot;: &quot;BRONREGISTER_AANGEMAAKT&quot;,
+        &quot;workflow&quot;: &quot;WORKFLOW_AANGEMAAKT&quot;,
+        &quot;reporting&quot;: &quot;RAPPORTSTRUCTUUR_GEREED&quot;,
+        &quot;project_export&quot;: &quot;PROJECT_EXPORT_GEREED&quot;,
+        &quot;document_export&quot;: &quot;DOCUMENT_EXPORT_GEREED&quot;,
+        &quot;drawing_export&quot;: &quot;DRAWING_EXPORT_GEREED&quot;,
+        &quot;cad_export&quot;: &quot;CAD_EXPORT_GEREED&quot;,
+        &quot;dxf_writer&quot;: &quot;PROJECT_DXF_FILES_OPGESLAGEN&quot;,
+        &quot;drawing_pdf_writer&quot;: &quot;PROJECT_DRAWING_PDF_FILES_OPGESLAGEN&quot;,
+        &quot;cost&quot;: &quot;COST_ESTIMATE_GEREED&quot;,
+        &quot;planning&quot;: &quot;PLANNING_GEREED&quot;,
+        &quot;traffic_parking&quot;: &quot;TRAFFIC_PARKING_ANALYSE_GEREED&quot;,
+        &quot;drainage_sewerage&quot;: &quot;DRAINAGE_SEWERAGE_DESIGN_GEREED&quot;,
+        &quot;aerius&quot;: &quot;AERIUS_VOORBEREIDING_GEREED&quot;,
+        &quot;gis&quot;: &quot;GIS_MAP_ANALYSE_GEREED&quot;,
+        &quot;quantity&quot;: &quot;QUANTITY_TAKEOFF_GEREED&quot;,
+        &quot;validation&quot;: &quot;VALIDATION_GEREED&quot;,
+        &quot;specification&quot;: &quot;SPECIFICATION_GEREED&quot;,
+        &quot;tender&quot;: &quot;TENDER_PACKAGE_GEREED&quot;,
+        &quot;contract&quot;: &quot;CONTRACT_PACKAGE_GEREED&quot;,
+        &quot;construction_execution&quot;: &quot;EXECUTION_PLAN_GEREED&quot;,
+        &quot;site_monitoring&quot;: &quot;SITE_MONITORING_PLAN_GEREED&quot;,
+        &quot;as_built&quot;: &quot;AS_BUILT_PACKAGE_GEREED&quot;,
+        &quot;asset_management&quot;: &quot;ASSET_MANAGEMENT_PLAN_GEREED&quot;,
+        &quot;sustainability&quot;: &quot;SUSTAINABILITY_ANALYSIS_GEREED&quot;,
+        &quot;global_codes&quot;: &quot;GLOBAL_CODES_ANALYSIS_GEREED&quot;,
+        &quot;learning&quot;: &quot;PROJECT_LEARNING_GEREED&quot;
+      }
+    },
+    &quot;runtime_checks&quot;: {
+      &quot;status&quot;: &quot;RUNTIME_CHECKS_GEREED&quot;,
+      &quot;digital_twin_object_count&quot;: 37,
+      &quot;digital_twin_source_count&quot;: 3,
+      &quot;checks&quot;: [
+        {
+          &quot;check&quot;: &quot;projectanalyse gestart&quot;,
+          &quot;status&quot;: &quot;OK&quot;
+        },
+        {
+          &quot;check&quot;: &quot;Digital Twin bevat objecten&quot;,
+          &quot;status&quot;: &quot;OK&quot;
+        },
+        {
+          &quot;check&quot;: &quot;STEE bronregistratie aanwezig&quot;,
+          &quot;status&quot;: &quot;OK&quot;
+        },
+        {
+          &quot;check&quot;: &quot;QA/QC controle aanwezig&quot;,
+          &quot;status&quot;: &quot;OK&quot;
+        },
+        {
+          &quot;check&quot;: &quot;projectexport aanwezig&quot;,
+          &quot;status&quot;: &quot;OK&quot;
+        },
+        {
+          &quot;check&quot;: &quot;oplever- en beheerfase aanwezig&quot;,
+          &quot;status&quot;: &quot;OK&quot;
+        }
+      ]
+    },
+    &quot;error_handling_plan&quot;: {
+      &quot;status&quot;: &quot;FOUTAFHANDELING_CONCEPT&quot;,
+      &quot;rules&quot;: [
+        {
+          &quot;error_type&quot;: &quot;missing_input&quot;,
+          &quot;action&quot;: &quot;AAIE inschakelen om ontbrekende gegevens als aanname te markeren&quot;
+        },
+        {
+          &quot;error_type&quot;: &quot;engine_failure&quot;,
+          &quot;action&quot;: &quot;engine-status op FOUT zetten en workflow niet definitief vrijgeven&quot;
+        },
+        {
+          &quot;error_type&quot;: &quot;validation_warning&quot;,
+          &quot;action&quot;: &quot;waarschuwing opnemen in QA/QC en projectdossier&quot;
+        },
+        {
+          &quot;error_type&quot;: &quot;missing_source&quot;,
+          &quot;action&quot;: &quot;STEE bronregistratie aanvullen of bron als ontbrekend markeren&quot;
+        },
+        {
+          &quot;error_type&quot;: &quot;export_failure&quot;,
+          &quot;action&quot;: &quot;export opnieuw proberen en fout opnemen in runtime-log&quot;
+        }
+      ]
+    },
+    &quot;autonomous_mode&quot;: {
+      &quot;status&quot;: &quot;AUTONOMOUS_MODE_CONCEPT&quot;,
+      &quot;mode&quot;: &quot;semi-autonoom / volledig autonoom voorbereid&quot;,
+      &quot;supported_modes&quot;: [
+        &quot;assistentmodus&quot;,
+        &quot;semi-autonoom&quot;,
+        &quot;volledig autonoom met QA/QC-blokkades&quot;
+      ],
+      &quot;control_points&quot;: [
+        &quot;na projectanalyse&quot;,
+        &quot;na ontwerpvarianten&quot;,
+        &quot;na constructie/geotechniek&quot;,
+        &quot;na vergunningstrategie&quot;,
+        &quot;na kosten/planning&quot;,
+        &quot;na bestek/contract&quot;,
+        &quot;voor uitvoering&quot;,
+        &quot;voor oplevering&quot;
+      ]
+    },
+    &quot;next_runtime_steps&quot;: {
+      &quot;status&quot;: &quot;VOLGENDE_RUNTIME_STAPPEN_CONCEPT&quot;,
+      &quot;runtime_status&quot;: &quot;RUNTIME_FLOW_MET_AANDACHTSPUNTEN&quot;,
+      &quot;next_steps&quot;: [
+        &quot;engine-resultaten standaardiseren&quot;,
+        &quot;centrale pipeline-configuratie maken&quot;,
+        &quot;runtime-log exporteren naar projectmap&quot;,
+        &quot;foutafhandeling per engine afdwingen&quot;,
+        &quot;QA/QC-blokkades koppelen aan workflow&quot;,
+        &quot;autonome modus instelbaar maken vanaf startscherm&quot;,
+        &quot;projectanalyse laten draaien via Runtime Engine in plaats van losse core-aanroep&quot;
+      ]
+    },
+    &quot;warnings&quot;: [
+      &quot;Niet alle engines lijken volledig gereed volgens de runtime-statussamenvatting.&quot;
+    ],
+    &quot;recommendation&quot;: {
+      &quot;status&quot;: &quot;RUNTIME_ADVIES_CONCEPT&quot;,
+      &quot;advice&quot;: &quot;Gebruik deze Runtime Engine als centrale controlelaag boven de BAOEES workflow. De volgende stap is om alle engine-aanroepen via één gestandaardiseerde pipeline te laten lopen met logging, foutafhandeling en QA/QC-blokkades.&quot;,
+      &quot;next_steps&quot;: [
+        &quot;runtime pipeline-configuratie toevoegen&quot;,
+        &quot;engine-statusmodel standaardiseren&quot;,
+        &quot;fouten en waarschuwingen centraal loggen&quot;,
+        &quot;workflow automatisch stoppen bij kritieke QA/QC-fouten&quot;,
+        &quot;runtime-log toevoegen aan projectexport&quot;,
+        &quot;autonome modus koppelen aan startscherm&quot;
+      ]
+    },
+    &quot;created_at&quot;: &quot;2026-07-02T23:06:20&quot;,
+    &quot;disclaimer&quot;: &quot;Deze Runtime Engine v1.0 maakt een conceptuele runtime- en orchestration-log. Voor volledige autonome uitvoering zijn echte taakwachtrijen, foutafhandeling, statusopslag, rollback, validatie en logging per engine nodig.&quot;,
+    &quot;runtime_mode&quot;: &quot;autonomous&quot;,
+    &quot;launcher_project_id&quot;: &quot;bruynzeel_waterfront&quot;
+  }
+}</pre></td></tr>
+  </tbody>
+</table>
 
-                <div class="card">
-                    <h2>CSV/Excel-tabellen</h2>
-                    <span class="status">PROJECT_CSV_EXCEL_FILES_OPGESLAGEN</span>
-                </div>
-                
 
-                <div class="card">
-                    <h2>XLSX werkboek</h2>
-                    <span class="status">PROJECT_XLSX_FILE_OPGESLAGEN</span>
-                </div>
-                
+    <h2>Bestandsmanifest</h2>
+    
+<table>
+  <thead>
+    <tr>
+      <th>Bestand</th>
+      <th>Type</th>
+      <th>Bytes</th>
+      <th>Relatief pad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><a href='outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.docx'>bruynzeel_waterfront_project_report.docx</a></td><td>.docx</td><td>1985</td><td>01_reports/bruynzeel_waterfront_project_report.docx</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.md'>bruynzeel_waterfront_project_report.md</a></td><td>.md</td><td>2107</td><td>01_reports/bruynzeel_waterfront_project_report.md</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.pdf'>bruynzeel_waterfront_project_report.pdf</a></td><td>.pdf</td><td>2283</td><td>01_reports/bruynzeel_waterfront_project_report.pdf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.txt'>bruynzeel_waterfront_project_report.txt</a></td><td>.txt</td><td>2107</td><td>01_reports/bruynzeel_waterfront_project_report.txt</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_doorsnede.pdf'>bruynzeel_waterfront_doorsnede.pdf</a></td><td>.pdf</td><td>1153</td><td>02_drawings/bruynzeel_waterfront_doorsnede.pdf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_plattegrond.pdf'>bruynzeel_waterfront_plattegrond.pdf</a></td><td>.pdf</td><td>1172</td><td>02_drawings/bruynzeel_waterfront_plattegrond.pdf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_situatie.pdf'>bruynzeel_waterfront_situatie.pdf</a></td><td>.pdf</td><td>1130</td><td>02_drawings/bruynzeel_waterfront_situatie.pdf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_doorsnede.dxf'>bruynzeel_waterfront_doorsnede.dxf</a></td><td>.dxf</td><td>1727</td><td>03_cad/bruynzeel_waterfront_doorsnede.dxf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_plattegrond.dxf'>bruynzeel_waterfront_plattegrond.dxf</a></td><td>.dxf</td><td>1922</td><td>03_cad/bruynzeel_waterfront_plattegrond.dxf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_situatie.dxf'>bruynzeel_waterfront_situatie.dxf</a></td><td>.dxf</td><td>1895</td><td>03_cad/bruynzeel_waterfront_situatie.dxf</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/04_calculations/bruynzeel_waterfront_calculation_index.csv'>bruynzeel_waterfront_calculation_index.csv</a></td><td>.csv</td><td>431</td><td>04_calculations/bruynzeel_waterfront_calculation_index.csv</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/04_calculations/qa_qc_report.json'>qa_qc_report.json</a></td><td>.json</td><td>11997</td><td>04_calculations/qa_qc_report.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/06_sources/source_register.json'>source_register.json</a></td><td>.json</td><td>1260</td><td>06_sources/source_register.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/07_digital_twin/digital_twin.json'>digital_twin.json</a></td><td>.json</td><td>332398</td><td>07_digital_twin/digital_twin.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_audit_trail.json'>bruynzeel_waterfront_audit_trail.json</a></td><td>.json</td><td>15257</td><td>08_runtime_logs/bruynzeel_waterfront_audit_trail.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_file_manifest.json'>bruynzeel_waterfront_file_manifest.json</a></td><td>.json</td><td>14282</td><td>08_runtime_logs/bruynzeel_waterfront_file_manifest.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/08_runtime_logs/bruynzeel_waterfront_git_evidence.json'>bruynzeel_waterfront_git_evidence.json</a></td><td>.json</td><td>12798</td><td>08_runtime_logs/bruynzeel_waterfront_git_evidence.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/08_runtime_logs/runtime_log.json'>runtime_log.json</a></td><td>.json</td><td>16290</td><td>08_runtime_logs/runtime_log.json</td></tr><tr><td><a href='bruynzeel_waterfront_cost_estimate.csv'>bruynzeel_waterfront_cost_estimate.csv</a></td><td>.csv</td><td>895</td><td>09_exports/bruynzeel_waterfront_cost_estimate.csv</td></tr><tr><td><a href='bruynzeel_waterfront_dashboard.html'>bruynzeel_waterfront_dashboard.html</a></td><td>.html</td><td>76569</td><td>09_exports/bruynzeel_waterfront_dashboard.html</td></tr><tr><td><a href='bruynzeel_waterfront_planning.csv'>bruynzeel_waterfront_planning.csv</a></td><td>.csv</td><td>1313</td><td>09_exports/bruynzeel_waterfront_planning.csv</td></tr><tr><td><a href='bruynzeel_waterfront_project_summary.csv'>bruynzeel_waterfront_project_summary.csv</a></td><td>.csv</td><td>339</td><td>09_exports/bruynzeel_waterfront_project_summary.csv</td></tr><tr><td><a href='bruynzeel_waterfront_project_tables.xlsx'>bruynzeel_waterfront_project_tables.xlsx</a></td><td>.xlsx</td><td>7081</td><td>09_exports/bruynzeel_waterfront_project_tables.xlsx</td></tr><tr><td><a href='bruynzeel_waterfront_qa_qc.csv'>bruynzeel_waterfront_qa_qc.csv</a></td><td>.csv</td><td>554</td><td>09_exports/bruynzeel_waterfront_qa_qc.csv</td></tr><tr><td><a href='bruynzeel_waterfront_quantity_boq.csv'>bruynzeel_waterfront_quantity_boq.csv</a></td><td>.csv</td><td>810</td><td>09_exports/bruynzeel_waterfront_quantity_boq.csv</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/10_zip/bruynzeel_waterfront_project_export.zip'>bruynzeel_waterfront_project_export.zip</a></td><td>.zip</td><td>80173</td><td>10_zip/bruynzeel_waterfront_project_export.zip</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/project_config.json'>project_config.json</a></td><td>.json</td><td>6144</td><td>project_config.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/project_selector.json'>project_selector.json</a></td><td>.json</td><td>3903</td><td>project_selector.json</td></tr><tr><td><a href='outputs/projects/bruynzeel_waterfront/project_summary.json'>project_summary.json</a></td><td>.json</td><td>1040</td><td>project_summary.json</td></tr>
+  </tbody>
+</table>
 
-                <div class="card">
-                    <h2>QA/QC validatie</h2>
-                    <span class="status">VALIDATION_GEREED</span>
-                </div>
-                
+  </main>
 
-                <div class="card">
-                    <h2>Runtime log</h2>
-                    <span class="status">RUNTIME_ORCHESTRATION_LOG_GEREED</span>
-                </div>
-                
-
-                <div class="card">
-                    <h2>ZIP export</h2>
-                    <span class="status unknown">ONBEKEND</span>
-                </div>
-                
-            </div>
-        </section>
-
-        <section>
-            <h2>Projectbestanden openen</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Categorie</th>
-                        <th>Bestand</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                <tr>
-                    <td>Rapport</td>
-                    <td>bruynzeel_waterfront_project_report.md</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.md">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>Rapport</td>
-                    <td>bruynzeel_waterfront_project_report.txt</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.txt">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>Rapport</td>
-                    <td>bruynzeel_waterfront_project_report.pdf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.pdf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>Rapport</td>
-                    <td>bruynzeel_waterfront_project_report.docx</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/01_reports/bruynzeel_waterfront_project_report.docx">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>PDF-tekening</td>
-                    <td>bruynzeel_waterfront_situatie.pdf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_situatie.pdf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>PDF-tekening</td>
-                    <td>bruynzeel_waterfront_plattegrond.pdf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_plattegrond.pdf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>PDF-tekening</td>
-                    <td>bruynzeel_waterfront_doorsnede.pdf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/02_drawings/bruynzeel_waterfront_doorsnede.pdf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>DXF</td>
-                    <td>bruynzeel_waterfront_situatie.dxf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_situatie.dxf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>DXF</td>
-                    <td>bruynzeel_waterfront_plattegrond.dxf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_plattegrond.dxf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>DXF</td>
-                    <td>bruynzeel_waterfront_doorsnede.dxf</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/03_cad/bruynzeel_waterfront_doorsnede.dxf">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>CSV</td>
-                    <td>bruynzeel_waterfront_project_summary.csv</td>
-                    <td><a href="bruynzeel_waterfront_project_summary.csv">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>CSV</td>
-                    <td>bruynzeel_waterfront_cost_estimate.csv</td>
-                    <td><a href="bruynzeel_waterfront_cost_estimate.csv">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>CSV</td>
-                    <td>bruynzeel_waterfront_planning.csv</td>
-                    <td><a href="bruynzeel_waterfront_planning.csv">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>CSV</td>
-                    <td>bruynzeel_waterfront_quantity_boq.csv</td>
-                    <td><a href="bruynzeel_waterfront_quantity_boq.csv">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>CSV</td>
-                    <td>bruynzeel_waterfront_qa_qc.csv</td>
-                    <td><a href="bruynzeel_waterfront_qa_qc.csv">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>XLSX</td>
-                    <td>bruynzeel_waterfront_project_tables.xlsx</td>
-                    <td><a href="bruynzeel_waterfront_project_tables.xlsx">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>JSON</td>
-                    <td>digital_twin.json</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/07_digital_twin/digital_twin.json">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>JSON</td>
-                    <td>source_register.json</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/06_sources/source_register.json">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>JSON</td>
-                    <td>runtime_log.json</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/08_runtime_logs/runtime_log.json">Openen</a></td>
-                </tr>
-                
-
-                <tr>
-                    <td>ZIP</td>
-                    <td>bruynzeel_waterfront_project_export.zip</td>
-                    <td><a href="file:///C:/BREWSTER-ENGINEERING-WIZARD/outputs/projects/bruynzeel_waterfront/10_zip/bruynzeel_waterfront_project_export.zip">Openen</a></td>
-                </tr>
-                
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-    <footer>
-        BAOEES V3 HTML Dashboard Export Engine v1.0 — automatisch gegenereerd dashboard.
-    </footer>
+  <footer>
+    Project HTML Dashboard Export Engine v1.6 —
+    automatisch gegenereerd door BAOEES V3 / Project Phoenix.
+  </footer>
 </body>
 </html>
