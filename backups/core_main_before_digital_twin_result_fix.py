@@ -193,7 +193,7 @@ class BAOEESCore:
             geo_result=geo_result,
             structural_result=structural_result,
             permit_result=permit_result,
-            digital_twin_result={},
+            digital_twin_result=digital_twin_result,
             assumptions_result=aaie_result
         )
 
@@ -202,20 +202,11 @@ class BAOEESCore:
             result=building_technical_result
         )
 
-        try:
-            self.add_to_digital_twin(
-                {},
-                "building_technical",
-                building_technical_result
-            )
-        except TypeError:
-            try:
-                self.add_to_digital_twin(
-                    "building_technical",
-                    building_technical_result
-                )
-            except TypeError:
-                pass
+        self.add_to_digital_twin(
+            digital_twin_result=digital_twin_result,
+            key="building_technical",
+            value=building_technical_result
+        )
 
         self.print_result("Permit Engine resultaat:", permit_result)
 

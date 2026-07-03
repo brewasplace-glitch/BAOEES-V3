@@ -50,7 +50,6 @@ from baoees.project_zip_engine.main import ProjectZipEngine
 from baoees.digital_twin.main import DigitalTwin
 from baoees.workflow_engine.main import WorkflowEngine
 from baoees.stee.main import STEEEngine
-from baoees.building_technical_engine.main import BuildingTechnicalEngine
 
 
 class BAOEESCore:
@@ -69,7 +68,6 @@ class BAOEESCore:
         self.project_csv_excel_export = ProjectCsvExcelExportEngine()
         self.project_xlsx_export = ProjectXlsxExportEngine()
         self.project_html_dashboard_export = ProjectHtmlDashboardExportEngine()
-        self.building_technical_engine = BuildingTechnicalEngine()
         self.project_index_startpage = ProjectIndexStartpageEngine()
         self.project_audit_trail = ProjectAuditTrailEngine()
         self.project_checksum = ProjectChecksumEngine()
@@ -187,36 +185,6 @@ class BAOEESCore:
             structural_result=structural_result,
             variant_result=variant_result
         )
-
-        building_technical_result = self.building_technical_engine.create_building_technical_analysis(
-            project_result=project_result,
-            geo_result=geo_result,
-            structural_result=structural_result,
-            permit_result=permit_result,
-            digital_twin_result={},
-            assumptions_result=aaie_result
-        )
-
-        self.print_result(
-            title="Building Technical Engine resultaat:",
-            result=building_technical_result
-        )
-
-        try:
-            self.add_to_digital_twin(
-                {},
-                "building_technical",
-                building_technical_result
-            )
-        except TypeError:
-            try:
-                self.add_to_digital_twin(
-                    "building_technical",
-                    building_technical_result
-                )
-            except TypeError:
-                pass
-
         self.print_result("Permit Engine resultaat:", permit_result)
 
         self.digital_twin.create_project_twin(

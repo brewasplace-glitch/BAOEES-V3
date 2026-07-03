@@ -9,7 +9,7 @@
             "source_type": "project_input",
             "reliability": "BEVESTIGD",
             "status": "GEREGISTREERD",
-            "registered_at": "2026-07-02T23:06:20"
+            "registered_at": "2026-07-03T11:31:34"
         },
         {
             "source": "BAOEES AAIE standaard fallback grondwaterstand P = -0,50 m",
@@ -18,7 +18,7 @@
             "source_type": "system_rule",
             "reliability": "AANNAME",
             "status": "GEREGISTREERD",
-            "registered_at": "2026-07-02T23:06:20"
+            "registered_at": "2026-07-03T11:31:34"
         },
         {
             "source": "BAOEES funderingsmodule - vergelijking strokenfundering en paalfundering",
@@ -27,7 +27,7 @@
             "source_type": "system_rule",
             "reliability": "TE_VERGELIJKEN",
             "status": "GEREGISTREERD",
-            "registered_at": "2026-07-02T23:06:20"
+            "registered_at": "2026-07-03T11:31:34"
         }
     ]
 }
