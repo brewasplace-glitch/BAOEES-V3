@@ -52,6 +52,7 @@ from baoees.workflow_engine.main import WorkflowEngine
 from baoees.stee.main import STEEEngine
 from baoees.building_technical_engine.main import BuildingTechnicalEngine
 from baoees.structural_load_engine.main import StructuralLoadEngine
+from baoees.element_load_engine.main import ElementLoadEngine
 
 
 class BAOEESCore:
@@ -248,6 +249,40 @@ class BAOEESCore:
                 self.add_to_digital_twin(
                     "structural_loads",
                     structural_load_result
+                )
+            except TypeError:
+                pass
+
+
+        try:
+            element_load_engine = ElementLoadEngine()
+            element_load_result = element_load_engine.create_element_load_analysis(
+                project_result=project_result,
+                structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                building_technical_result=building_technical_result if "building_technical_result" in locals() else {},
+                geo_result=geo_result if "geo_result" in locals() else {},
+                assumptions_result=aaie_result if "aaie_result" in locals() else {}
+            )
+        except Exception as error:
+            element_load_result = {
+                "engine": "ElementLoadEngine",
+                "status": "ELEMENT_LOAD_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result("Element Load Engine resultaat:", element_load_result)
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "element_loads",
+                element_load_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "element_loads",
+                    element_load_result
                 )
             except TypeError:
                 pass
