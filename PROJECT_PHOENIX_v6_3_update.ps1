@@ -1,4 +1,32 @@
-﻿from __future__ import annotations
+﻿# PROJECT PHOENIX v6.3 UPDATE
+# Automatische update zonder handmatig knip- en plakwerk.
+# Plaats dit bestand in C:\BREWSTER-ENGINEERING-WIZARD en voer het uit met:
+# powershell -ExecutionPolicy Bypass -File .\PROJECT_PHOENIX_v6_3_update.ps1
+
+$ErrorActionPreference = "Stop"
+
+Write-Host "PROJECT PHOENIX v6.3 UPDATE START" -ForegroundColor Cyan
+
+$ProjectRoot = Get-Location
+$TargetFile = Join-Path $ProjectRoot "baoees\project_analyzer\project_analyzer_launcher_bridge.py"
+
+if (-not (Test-Path (Join-Path $ProjectRoot "baoees"))) {
+    throw "Dit script moet worden uitgevoerd vanuit de projectmap C:\BREWSTER-ENGINEERING-WIZARD."
+}
+
+if (-not (Test-Path (Split-Path $TargetFile))) {
+    New-Item -ItemType Directory -Path (Split-Path $TargetFile) -Force | Out-Null
+}
+
+if (Test-Path $TargetFile) {
+    $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+    $BackupFile = "$TargetFile.backup_v6_3_$Timestamp"
+    Copy-Item $TargetFile $BackupFile -Force
+    Write-Host "Backup gemaakt: $BackupFile" -ForegroundColor Yellow
+}
+
+$PythonContent = @'
+from __future__ import annotations
 
 import html
 import json
@@ -400,3 +428,19 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
+'@
+
+Set-Content -Path $TargetFile -Value $PythonContent -Encoding UTF8
+
+Write-Host "Bestand geschreven: $TargetFile" -ForegroundColor Green
+
+Write-Host "Syntaxcontrole..." -ForegroundColor Cyan
+python -m py_compile baoees\project_analyzer\project_analyzer_launcher_bridge.py
+
+Write-Host "Engine uitvoeren..." -ForegroundColor Cyan
+python baoees\project_analyzer\project_analyzer_launcher_bridge.py
+
+Write-Host "Git status..." -ForegroundColor Cyan
+git status
+
+Write-Host "PROJECT PHOENIX v6.3 UPDATE KLAAR" -ForegroundColor Green
