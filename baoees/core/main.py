@@ -55,6 +55,7 @@ from baoees.structural_load_engine.main import StructuralLoadEngine
 from baoees.element_load_engine.main import ElementLoadEngine
 from baoees.foundation_load_transfer_engine.main import FoundationLoadTransferEngine
 from baoees.foundation_design_engine.main import FoundationDesignEngine
+from baoees.foundation_verification_engine.main import FoundationVerificationEngine
 
 
 class BAOEESCore:
@@ -396,6 +397,54 @@ class BAOEESCore:
                 self.add_to_digital_twin(
                     "element_loads",
                     element_load_result
+                )
+            except TypeError:
+                pass
+
+
+        try:
+            foundation_verification_engine = FoundationVerificationEngine()
+
+            if hasattr(foundation_verification_engine, "create_foundation_verification_analysis"):
+                foundation_verification_result = foundation_verification_engine.create_foundation_verification_analysis(
+                    project_result=project_result,
+                    foundation_design_result=foundation_design_result if "foundation_design_result" in locals() else {},
+                    foundation_load_transfer_result=foundation_load_transfer_result if "foundation_load_transfer_result" in locals() else {},
+                    element_load_result=element_load_result if "element_load_result" in locals() else {},
+                    structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                    geo_result=geo_result if "geo_result" in locals() else {},
+                    assumptions_result=aaie_result if "aaie_result" in locals() else {}
+                )
+            else:
+                foundation_verification_result = foundation_verification_engine.run(
+                    project_result=project_result,
+                    foundation_design_result=foundation_design_result if "foundation_design_result" in locals() else {},
+                    foundation_load_transfer_result=foundation_load_transfer_result if "foundation_load_transfer_result" in locals() else {},
+                    element_load_result=element_load_result if "element_load_result" in locals() else {},
+                    structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                    geo_result=geo_result if "geo_result" in locals() else {},
+                    assumptions_result=aaie_result if "aaie_result" in locals() else {}
+                )
+        except Exception as error:
+            foundation_verification_result = {
+                "engine": "FoundationVerificationEngine",
+                "status": "FOUNDATION_VERIFICATION_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result("Foundation Verification Engine resultaat:", foundation_verification_result)
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "foundation_verification",
+                foundation_verification_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "foundation_verification",
+                    foundation_verification_result
                 )
             except TypeError:
                 pass
