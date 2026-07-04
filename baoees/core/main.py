@@ -58,6 +58,7 @@ from baoees.foundation_design_engine.main import FoundationDesignEngine
 from baoees.foundation_verification_engine.main import FoundationVerificationEngine
 from baoees.structural_element_sizing_engine.main import StructuralElementSizingEngine
 from baoees.structural_reinforcement_engine.main import StructuralReinforcementEngine
+from baoees.structural_calculation_report_engine.main import StructuralCalculationReportEngine
 
 
 class BAOEESCore:
@@ -546,6 +547,47 @@ class BAOEESCore:
             "Structural Reinforcement Engine resultaat:",
             structural_reinforcement_result
         )
+
+        try:
+            structural_calculation_report_engine = StructuralCalculationReportEngine()
+            structural_calculation_report_result = structural_calculation_report_engine.create_structural_calculation_report(
+                project_result=project_result,
+                building_technical_result=building_technical_result if "building_technical_result" in locals() else {},
+                structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                element_load_result=element_load_result if "element_load_result" in locals() else {},
+                foundation_load_transfer_result=foundation_load_transfer_result if "foundation_load_transfer_result" in locals() else {},
+                foundation_design_result=foundation_design_result if "foundation_design_result" in locals() else {},
+                foundation_verification_result=foundation_verification_result if "foundation_verification_result" in locals() else {},
+                structural_element_sizing_result=structural_element_sizing_result if "structural_element_sizing_result" in locals() else {},
+                structural_reinforcement_result=structural_reinforcement_result if "structural_reinforcement_result" in locals() else {}
+            )
+        except Exception as error:
+            structural_calculation_report_result = {
+                "engine": "StructuralCalculationReportEngine",
+                "status": "STRUCTURAL_CALCULATION_REPORT_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Structural Calculation Report Engine resultaat:",
+            structural_calculation_report_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "structural_calculation_report",
+                structural_calculation_report_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "structural_calculation_report",
+                    structural_calculation_report_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
