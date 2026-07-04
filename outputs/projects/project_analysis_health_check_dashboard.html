@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Project Phoenix Health Check v6.5</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; }
+    main { max-width: 1240px; margin: 0 auto; padding: 32px; }
+    section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; }
+    h1, h2 { color: #f8fafc; }
+    table { width: 100%; border-collapse: collapse; }
+    td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #1e293b; }
+    code { color: #bfdbfe; }
+    .score { font-size: 34px; font-weight: bold; color: #86efac; }
+  </style>
+</head>
+<body>
+<main>
+  <section>
+    <h1>Project Phoenix Health Check v6.5</h1>
+    <p>Status: <strong>GOEDGEKEURD</strong></p>
+    <p class="score">100% compleet</p>
+  </section>
+  <section>
+    <h2>Samenvatting</h2>
+    <p>Checks totaal: 14</p>
+    <p>Geslaagd: 14</p>
+    <p>Aandachtspunten: 0</p>
+  </section>
+  <section>
+    <h2>Checks</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Onderdeel</th>
+        <th>Categorie</th>
+        <th>Status</th>
+        <th>Pad</th>
+        <th>Bericht</th>
+      </tr>
+      <tr><td>HC-001</td><td>START_PROJECTANALYSE.bat</td><td>runner</td><td>OK</td><td><code>START_PROJECTANALYSE.bat</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-002</td><td>START_PROJECTANALYSE.ps1</td><td>runner</td><td>OK</td><td><code>START_PROJECTANALYSE.ps1</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-003</td><td>Start dashboard</td><td>dashboard</td><td>OK</td><td><code>outputs\projects\project_start_analysis_dashboard.html</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-004</td><td>Launcher bridge dashboard</td><td>dashboard</td><td>OK</td><td><code>outputs\projects\project_analyzer_launcher_bridge_dashboard.html</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-005</td><td>Launcher bridge log</td><td>log</td><td>OK</td><td><code>outputs\projects\project_analyzer_launcher_bridge_log.json</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-006</td><td>Project package manifest</td><td>package</td><td>OK</td><td><code>outputs\projects\project_package_manifest.json</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-007</td><td>Project package ZIP</td><td>package</td><td>OK</td><td><code>outputs\projects\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-008</td><td>Evidence dashboard</td><td>evidence</td><td>OK</td><td><code>outputs\projects\project_package_evidence_dashboard.html</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-009</td><td>Evidence log</td><td>evidence</td><td>OK</td><td><code>outputs\projects\project_package_evidence_log.json</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-010</td><td>Report DOCX</td><td>report</td><td>OK</td><td><code>outputs\projects\project_report_bib_report.docx</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-011</td><td>Report PDF</td><td>report</td><td>OK</td><td><code>outputs\projects\project_report_bib_report.pdf</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-012</td><td>Report export log</td><td>report</td><td>OK</td><td><code>outputs\projects\project_report_export_log.json</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-013</td><td>Bronvermelding log</td><td>bronvermelding</td><td>OK</td><td><code>outputs\projects\Bronvermelding_van_dit_project\bronvermelding_log.json</code></td><td>Aanwezig en gevuld.</td></tr><tr><td>HC-014</td><td>Bronvermelding README</td><td>bronvermelding</td><td>OK</td><td><code>outputs\projects\Bronvermelding_van_dit_project\README_Bronvermelding_van_dit_project.txt</code></td><td>Aanwezig en gevuld.</td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>Volgende stappen</h2>
+    <ul><li>Alle hoofdoutputs zijn aanwezig.</li><li>Leg v6.5 vast met git add, commit en push.</li><li>Project Phoenix kan door naar v6.6.</li></ul>
+  </section>
+</main>
+</body>
+</html>
