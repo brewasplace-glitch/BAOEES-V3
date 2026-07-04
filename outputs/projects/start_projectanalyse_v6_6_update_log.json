@@ -1,0 +1,13 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix Brewster Knowledge Migration Connector",
+    "engine_version":  "v6.6",
+    "generated_at":  "2026-07-05T00:44:13",
+    "project_root":  "C:\\BREWSTER-ENGINEERING-WIZARD",
+    "migration_engine":  "C:\\BREWSTER-ENGINEERING-WIZARD\\baoees\\project_analyzer\\brewster_knowledge_migration_engine.py",
+    "start_projectanalyse_bat":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE.bat",
+    "start_projectanalyse_ps1":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE.ps1",
+    "versioned_bat":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE_v6_6.bat",
+    "versioned_ps1":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE_v6_6.ps1",
+    "purpose":  "Migreert opgebouwde Brewster Engineering Wizard kennis naar de lokale Project Phoenix BIB en koppelt dit aan START_PROJECTANALYSE."
+}

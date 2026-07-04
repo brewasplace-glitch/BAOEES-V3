@@ -83,7 +83,7 @@
     <div class="grid">
       <div class="card">
         <h3>BIB lookup</h3>
-        <p><span class="badge">BIB_GEVONDEN</span></p>
+        <p><span class="badge">BIB_ONBEKEND</span></p>
       </div>
       <div class="card">
         <h3>Inhoudelijk herkend</h3>
@@ -103,7 +103,7 @@
       </div>
       <div class="card">
         <h3>Aannames</h3>
-        <p>7</p>
+        <p>6</p>
       </div>
     </div>
   </section>
@@ -134,21 +134,12 @@
       <tbody>
         
             <tr>
-              <td>bib_first_policy</td>
-              <td>AAIE gebruikt eerst lokale BIB-kennis voordat nieuwe aannames worden gemaakt.</td>
-              <td>bib_knowledge_index</td>
-              <td>hoog</td>
-              <td>bib_lookup_first</td>
-              <td>Dit is de centrale wijziging van v5.8.</td>
-            </tr>
-            
-            <tr>
-              <td>recognized_technical_topics</td>
-              <td>BAOEES, BEOS, BREWAS, Digital Twin, AAIE, STEE, BIB, START PROJECTANALYSE, FreeCAD, OpenSees, CalculiX, Geotechniek, Fundering, Strokenfundering, Paalfundering, AERIUS, Omgevingswet, CROW, Parkeren, Riolering, Afwatering, Vergunning, BOPA, DOCX, PDF, DWG, DXF, SKP, IFC</td>
-              <td>bib_knowledge_index</td>
-              <td>hoog</td>
-              <td>bib_topic_recognition</td>
-              <td>Technische onderwerpen zijn uit de BIB gehaald.</td>
+              <td>bib_status</td>
+              <td>Geen bruikbare BIB-kennisindex gevonden.</td>
+              <td>system_check</td>
+              <td>laag</td>
+              <td>fallback</td>
+              <td>AAIE kan nog niet eerst uit BIB putten omdat de BIB-kennisindex ontbreekt of niet leesbaar is.</td>
             </tr>
             
             <tr>

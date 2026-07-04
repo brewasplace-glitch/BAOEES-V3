@@ -1,0 +1,27 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine",
+  "engine_version": "v6.6",
+  "started_at": "2026-07-05T00:44:14",
+  "finished_at": "2026-07-05T00:44:14",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "bib_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib",
+  "knowledge_json_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
+  "knowledge_md_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.md",
+  "migration_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_knowledge_migration_log_v6_6.json",
+  "dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\dashboards\\brewster_knowledge_migration_dashboard_v6_6.html",
+  "bib_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+  "project_summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\brewster_knowledge_migration_summary_v6_6.json",
+  "domain_count": 5,
+  "project_count": 3,
+  "module_count": 8,
+  "standard_rule_count": 5,
+  "output_format_count": 15,
+  "next_steps": [
+    "Controleer brewster_knowledge_migration_dashboard_v6_6.html.",
+    "Controleer brewster_engineering_wizard_knowledge_base_v6_6.json.",
+    "Controleer of bib_knowledge_content_index.json is bijgewerkt.",
+    "Leg v6.6 vast met git add, commit en push.",
+    "Ga daarna door naar v6.7: modules en engines verder operationaliseren."
+  ]
+}

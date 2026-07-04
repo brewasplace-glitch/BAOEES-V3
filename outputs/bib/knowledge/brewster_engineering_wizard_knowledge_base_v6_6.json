@@ -1,0 +1,196 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine",
+  "engine_version": "v6.6",
+  "generated_at": "2026-07-05T00:44:14",
+  "purpose": "Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.",
+  "domains": [
+    {
+      "name": "BEOS / BREWAS / BAOEES visie",
+      "summary": "Autonoom engineeringplatform van locatiekeuze tot beheer, met Digital Twin, Knowledge Graph en AI Engine als centrale kern.",
+      "importance": "kern"
+    },
+    {
+      "name": "Digital Twin centraal",
+      "summary": "Alle disciplines lezen en schrijven naar dezelfde Digital Twin: terrein, BIM, constructie, fundering, riolering, verkeer, vergunning, kosten en assetbeheer.",
+      "importance": "kern"
+    },
+    {
+      "name": "AAIE",
+      "summary": "Autonomous Assumption and Inference Engine vult ontbrekende gegevens aan met aannameslog, bron, datum, betrouwbaarheid en projectcontext.",
+      "importance": "kern"
+    },
+    {
+      "name": "STEE",
+      "summary": "Source Traceability and Evidence Engine maakt per project een bronvermelding, evidence-log en projectpakket.",
+      "importance": "kern"
+    },
+    {
+      "name": "Open engineering stack",
+      "summary": "SCIA/Viktor worden vervangen door open engines zoals FreeCAD BIM, OpenSees, CalculiX, BREWAS Geo Engine, rapportage-engine en viewers.",
+      "importance": "hoog"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Moskee Bunschoten",
+      "location": "Bikkersweg 88, Bunschoten",
+      "summary": "Uitbreiding circa 20 m² inclusief vergunning, parkeren, AERIUS, constructie, situatietekening, plattegronden, gevels, doorsneden en 3D-impressies.",
+      "known_outputs": [
+        "situatietekening",
+        "plattegronden bestaand en nieuw",
+        "geveltekeningen",
+        "doorsneden",
+        "3D-impressies",
+        "ruimtelijke onderbouwing / BOPA",
+        "parkeeronderzoek",
+        "participatie",
+        "AERIUS"
+      ]
+    },
+    {
+      "name": "Plutostraat Paramaribo",
+      "location": "Paramaribo, Suriname",
+      "summary": "Testproject voor geotechniek, fundering, constructie, grondwaterstand, strokenfundering en automatische rapportage.",
+      "known_outputs": [
+        "funderingsplan",
+        "geotechnische uitgangspunten",
+        "constructieschema",
+        "rapportage"
+      ]
+    },
+    {
+      "name": "Bruynzeel Waterfront District",
+      "location": "Paramaribo, Suriname",
+      "summary": "Masterplanontwikkeling met GLIS-percelen, waterfront, kantoorprogramma, multifunctionele functies, GREX, investeerdersmemo en professioneel masterplanrapport.",
+      "known_outputs": [
+        "masterplan",
+        "GLIS kaarten",
+        "perceelanalyse",
+        "GREX",
+        "SWOT",
+        "ontwikkelscenario's",
+        "investeerdersmemorandum"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "name": "Geotechniek",
+      "summary": "Automatisch grondwater en geo-informatie genereren op basis van kaartuitsnede of Google Maps/satellietfoto, met handmatige optie.",
+      "default_rules": [
+        "Standaard grondwaterstand P = -0,50 m tenzij projectspecifiek anders.",
+        "Onderzoek strokenfundering en palenfundering als varianten."
+      ]
+    },
+    {
+      "name": "Fundering",
+      "summary": "Standaard funderingsconcepten, waaronder strokenfundering met funderingsbalk en variantenonderzoek.",
+      "default_rules": [
+        "Standaard strook 150 cm breed en 40 cm hoog onder muren en kolommen.",
+        "Funderingsbalk 50 cm breed en 60 cm hoog in hart strook.",
+        "Later projectspecifiek ook strook 200 cm toepasbaar."
+      ]
+    },
+    {
+      "name": "Constructie",
+      "summary": "Constructiemodellen, belastingen, materiaaloptimalisatie, FreeCAD/OpenSees/CalculiX en constructierapportage.",
+      "default_rules": [
+        "Open engines krijgen voorkeur boven gesloten SCIA/Viktor flow.",
+        "Constructie-output moet reproduceerbaar en traceerbaar zijn."
+      ]
+    },
+    {
+      "name": "Riolering en afwatering",
+      "summary": "Ontwerp HWA, DWA, infiltratie, berging, leidingen, kolken, putten, hoeveelheden en kosten.",
+      "default_rules": [
+        "Afwateringsplan koppelen aan Digital Twin.",
+        "Hoeveelheden en kosten automatisch genereren."
+      ]
+    },
+    {
+      "name": "Verkeer en parkeren",
+      "summary": "Verkeersgeneratie, parkeerbalans, parkeerdruk, CROW-toets, advies parkeerregime en fysieke parkeerinformatie.",
+      "default_rules": [
+        "Vink advies parkeerregime opnemen.",
+        "Vink fysieke parkeerinfo opnemen.",
+        "Automatische analyse via kaartgebied of gesproken projectopdracht."
+      ]
+    },
+    {
+      "name": "Vergunningen",
+      "summary": "Ruimtelijke onderbouwing, BOPA, omgevingsvergunning, participatieplan, AERIUS en milieukundige paragrafen.",
+      "default_rules": [
+        "Omgevingswet en Regels op de kaart als bron opnemen.",
+        "AERIUS/stikstof als automatische stap opnemen."
+      ]
+    },
+    {
+      "name": "Rapportage en export",
+      "summary": "PDF, DOCX, dashboards, evidence, bronvermelding, manifest en ZIP-pakket.",
+      "default_rules": [
+        "PDF en DOCX standaard.",
+        "Project-ZIP standaard.",
+        "Bronvermelding_van_dit_project standaard."
+      ]
+    },
+    {
+      "name": "Live Digital Twin Viewer",
+      "summary": "Interactieve 3D viewer met vogelvlucht, walkthrough, drivethrough en videopresentatie.",
+      "default_rules": [
+        "Project moet rondom en van boven bekeken kunnen worden."
+      ]
+    }
+  ],
+  "standard_rules": [
+    {
+      "name": "Outputstandaard",
+      "rule": "Rapporten standaard PDF en DOCX; tekeningen standaard SKP, DWG en DXF."
+    },
+    {
+      "name": "Autonomous Project Mode",
+      "rule": "Volledig autonoom is default, met mogelijkheid tot assistent of semi-autonoom."
+    },
+    {
+      "name": "Ontwerpvarianten",
+      "rule": "Automatisch vijf varianten A t/m E genereren: kosten, vergunningkans, duurzaamheid, opbrengst en ruimtelijke kwaliteit."
+    },
+    {
+      "name": "Bronvermelding",
+      "rule": "Elke projectanalyse krijgt automatisch map Bronvermelding_van_dit_project."
+    },
+    {
+      "name": "Geen handmatig plakken",
+      "rule": "Project Phoenix updates gebeuren voortaan via downloadbare updatebestanden en scripts, niet via handmatig Python knip- en plakwerk."
+    }
+  ],
+  "output_formats": [
+    "PDF",
+    "DOCX",
+    "SKP",
+    "DWG",
+    "DXF",
+    "IFC",
+    "STEP",
+    "FreeCAD",
+    "OpenSees",
+    "CalculiX",
+    "Excel",
+    "CSV",
+    "JSON",
+    "HTML dashboard",
+    "ZIP projectpakket"
+  ],
+  "workflow_policy": {
+    "preferred_update_method": "downloadbaar PowerShell updatebestand",
+    "manual_python_paste": "niet standaard gebruiken",
+    "git_policy": [
+      "testen",
+      "git status",
+      "git add",
+      "git commit",
+      "git push",
+      "git status"
+    ]
+  }
+}
