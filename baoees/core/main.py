@@ -59,6 +59,7 @@ from baoees.foundation_verification_engine.main import FoundationVerificationEng
 from baoees.structural_element_sizing_engine.main import StructuralElementSizingEngine
 from baoees.structural_reinforcement_engine.main import StructuralReinforcementEngine
 from baoees.structural_calculation_report_engine.main import StructuralCalculationReportEngine
+from baoees.structural_drawing_package_engine.main import StructuralDrawingPackageEngine
 
 
 class BAOEESCore:
@@ -572,6 +573,47 @@ class BAOEESCore:
             "Structural Calculation Report Engine resultaat:",
             structural_calculation_report_result
         )
+
+        try:
+            structural_drawing_package_engine = StructuralDrawingPackageEngine()
+            structural_drawing_package_result = structural_drawing_package_engine.create_structural_drawing_package(
+                project_result=project_result,
+                building_technical_result=building_technical_result if "building_technical_result" in locals() else {},
+                structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                element_load_result=element_load_result if "element_load_result" in locals() else {},
+                foundation_design_result=foundation_design_result if "foundation_design_result" in locals() else {},
+                foundation_verification_result=foundation_verification_result if "foundation_verification_result" in locals() else {},
+                structural_element_sizing_result=structural_element_sizing_result if "structural_element_sizing_result" in locals() else {},
+                structural_reinforcement_result=structural_reinforcement_result if "structural_reinforcement_result" in locals() else {},
+                structural_calculation_report_result=structural_calculation_report_result if "structural_calculation_report_result" in locals() else {}
+            )
+        except Exception as error:
+            structural_drawing_package_result = {
+                "engine": "StructuralDrawingPackageEngine",
+                "status": "STRUCTURAL_DRAWING_PACKAGE_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Structural Drawing Package Engine resultaat:",
+            structural_drawing_package_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "structural_drawing_package",
+                structural_drawing_package_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "structural_drawing_package",
+                    structural_drawing_package_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
