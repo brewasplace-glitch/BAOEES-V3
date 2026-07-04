@@ -104,7 +104,7 @@
   ],
   "last_updated_by": "Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine",
   "last_updated_version": "v6.6",
-  "last_updated_at": "2026-07-05T00:44:14",
+  "last_updated_at": "2026-07-05T01:12:54",
   "brewster_knowledge_base": {
     "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
     "markdown_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.md",
@@ -121,6 +121,13 @@
       "title": "Brewster Engineering Wizard kennisbasis v6.6",
       "summary": "Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.",
       "created_at": "2026-07-05T00:44:14"
+    },
+    {
+      "source": "brewster_engineering_wizard_knowledge_base_v6_6",
+      "type": "knowledge_migration",
+      "title": "Brewster Engineering Wizard kennisbasis v6.6",
+      "summary": "Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.",
+      "created_at": "2026-07-05T01:12:54"
     }
   ]
 }

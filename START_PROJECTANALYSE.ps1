@@ -2,7 +2,7 @@
 Set-Location -Path $PSScriptRoot
 
 Write-Host "============================================================" -ForegroundColor Cyan
-Write-Host "PROJECT PHOENIX / BAOEES - START PROJECTANALYSE v6.6" -ForegroundColor Cyan
+Write-Host "PROJECT PHOENIX / BAOEES - START PROJECTANALYSE v6.7" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 
 $Steps = @(
@@ -14,7 +14,10 @@ $Steps = @(
     @{ Name = "DOCX/PDF export"; Command = "baoees\project_analyzer\project_report_export_engine.py" },
     @{ Name = "Evidence en projectpakket"; Command = "baoees\project_analyzer\project_package_evidence_engine.py" },
     @{ Name = "Launcher bridge en startdashboard"; Command = "baoees\project_analyzer\project_analyzer_launcher_bridge.py" },
-    @{ Name = "Health check"; Command = "baoees\project_analyzer\project_analysis_health_check_engine.py" }
+    @{ Name = "Health check"; Command = "baoees\project_analyzer\project_analysis_health_check_engine.py" },
+    @{ Name = "Error diagnostics"; Command = "baoees\project_analyzer\project_error_diagnostics_engine.py" },
+    @{ Name = "Auto repair"; Command = "baoees\project_analyzer\project_auto_repair_engine.py" },
+    @{ Name = "Health check na reparatie"; Command = "baoees\project_analyzer\project_analysis_health_check_engine.py" }
 )
 
 $Index = 1
@@ -30,12 +33,17 @@ foreach ($Step in $Steps) {
 }
 
 Write-Host ""
-Write-Host "PROJECT PHOENIX v6.6 START PROJECTANALYSE KLAAR" -ForegroundColor Green
+Write-Host "PROJECT PHOENIX v6.7 START PROJECTANALYSE KLAAR" -ForegroundColor Green
 
-$KnowledgeDashboard = Join-Path $PSScriptRoot "outputs\bib\dashboards\brewster_knowledge_migration_dashboard_v6_6.html"
+$DiagnosticsDashboard = Join-Path $PSScriptRoot "outputs\projects\project_error_diagnostics_dashboard.html"
+$RepairDashboard = Join-Path $PSScriptRoot "outputs\projects\project_auto_repair_dashboard.html"
 
-if (Test-Path $KnowledgeDashboard) {
-    Start-Process $KnowledgeDashboard
+if (Test-Path $DiagnosticsDashboard) {
+    Start-Process $DiagnosticsDashboard
+}
+
+if (Test-Path $RepairDashboard) {
+    Start-Process $RepairDashboard
 }
 
 git status
