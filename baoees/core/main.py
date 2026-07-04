@@ -60,6 +60,7 @@ from baoees.structural_element_sizing_engine.main import StructuralElementSizing
 from baoees.structural_reinforcement_engine.main import StructuralReinforcementEngine
 from baoees.structural_calculation_report_engine.main import StructuralCalculationReportEngine
 from baoees.structural_drawing_package_engine.main import StructuralDrawingPackageEngine
+from baoees.structural_cad_export_engine.main import StructuralCADExportEngine
 
 
 class BAOEESCore:
@@ -598,6 +599,44 @@ class BAOEESCore:
             "Structural Drawing Package Engine resultaat:",
             structural_drawing_package_result
         )
+
+        try:
+            structural_cad_export_engine = StructuralCADExportEngine()
+            structural_cad_export_result = structural_cad_export_engine.create_structural_cad_export(
+                project_result=project_result,
+                structural_drawing_package_result=structural_drawing_package_result if "structural_drawing_package_result" in locals() else {},
+                structural_calculation_report_result=structural_calculation_report_result if "structural_calculation_report_result" in locals() else {},
+                structural_reinforcement_result=structural_reinforcement_result if "structural_reinforcement_result" in locals() else {},
+                structural_element_sizing_result=structural_element_sizing_result if "structural_element_sizing_result" in locals() else {},
+                foundation_design_result=foundation_design_result if "foundation_design_result" in locals() else {}
+            )
+        except Exception as error:
+            structural_cad_export_result = {
+                "engine": "StructuralCADExportEngine",
+                "status": "STRUCTURAL_CAD_EXPORT_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Structural CAD Export Engine resultaat:",
+            structural_cad_export_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "structural_cad_export",
+                structural_cad_export_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "structural_cad_export",
+                    structural_cad_export_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
