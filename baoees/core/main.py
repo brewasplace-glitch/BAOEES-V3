@@ -53,6 +53,7 @@ from baoees.stee.main import STEEEngine
 from baoees.building_technical_engine.main import BuildingTechnicalEngine
 from baoees.structural_load_engine.main import StructuralLoadEngine
 from baoees.element_load_engine.main import ElementLoadEngine
+from baoees.foundation_load_transfer_engine.main import FoundationLoadTransferEngine
 
 
 class BAOEESCore:
@@ -271,6 +272,63 @@ class BAOEESCore:
             }
 
         self.print_result("Element Load Engine resultaat:", element_load_result)
+
+        try:
+            foundation_load_transfer_engine = FoundationLoadTransferEngine()
+
+            if hasattr(foundation_load_transfer_engine, "create_foundation_load_transfer_analysis"):
+                foundation_load_transfer_result = foundation_load_transfer_engine.create_foundation_load_transfer_analysis(
+                    project_result=project_result if "project_result" in locals() else {},
+                    structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                    element_load_result=element_load_result if "element_load_result" in locals() else {},
+                    geo_result=geo_result if "geo_result" in locals() else {},
+                    assumptions_result=aaie_result if "aaie_result" in locals() else {}
+                )
+            elif hasattr(foundation_load_transfer_engine, "create_foundation_load_analysis"):
+                foundation_load_transfer_result = foundation_load_transfer_engine.create_foundation_load_analysis(
+                    project_result=project_result if "project_result" in locals() else {},
+                    structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                    element_load_result=element_load_result if "element_load_result" in locals() else {},
+                    geo_result=geo_result if "geo_result" in locals() else {},
+                    assumptions_result=aaie_result if "aaie_result" in locals() else {}
+                )
+            elif hasattr(foundation_load_transfer_engine, "run"):
+                foundation_load_transfer_result = foundation_load_transfer_engine.run(
+                    project_result=project_result if "project_result" in locals() else {},
+                    structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                    element_load_result=element_load_result if "element_load_result" in locals() else {},
+                    geo_result=geo_result if "geo_result" in locals() else {},
+                    assumptions_result=aaie_result if "aaie_result" in locals() else {}
+                )
+            else:
+                foundation_load_transfer_result = {
+                    "engine": "FoundationLoadTransferEngine",
+                    "status": "FOUNDATION_LOAD_TRANSFER_ENGINE_METHOD_NOT_FOUND"
+                }
+        except Exception as error:
+            foundation_load_transfer_result = {
+                "engine": "FoundationLoadTransferEngine",
+                "status": "FOUNDATION_LOAD_TRANSFER_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result("Foundation Load Transfer Engine resultaat:", foundation_load_transfer_result)
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "foundation_load_transfer",
+                foundation_load_transfer_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "foundation_load_transfer",
+                    foundation_load_transfer_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
