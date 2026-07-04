@@ -2,8 +2,8 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Analyzer Workflow Engine",
   "engine_version": "v5.9",
-  "started_at": "2026-07-05T00:44:14",
-  "finished_at": "2026-07-05T00:44:14",
+  "started_at": "2026-07-05T01:12:55",
+  "finished_at": "2026-07-05T01:12:55",
   "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
   "bib_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
   "aaie_bib_assumptions_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
@@ -20,7 +20,7 @@
   "aaie_summary": {
     "status": "OPGESLAGEN",
     "engine_version": "v5.8",
-    "assumption_count": 7,
+    "assumption_count": 6,
     "source_priority": [
       "1. Lokale BIB-kennisindex",
       "2. Eerder bevestigde Project Phoenix / BAOEES kennis",

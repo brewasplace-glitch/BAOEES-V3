@@ -2,8 +2,8 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix START PROJECTANALYSE Engine",
   "engine_version": "v5.7",
-  "started_at": "2026-07-05T00:44:14",
-  "finished_at": "2026-07-05T00:44:14",
+  "started_at": "2026-07-05T01:12:54",
+  "finished_at": "2026-07-05T01:12:55",
   "purpose": "START PROJECTANALYSE met BIB-kennisindexkoppeling.",
   "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
   "project_output_root": "outputs\\projects",
@@ -64,8 +64,8 @@
         "status": "OPGESLAGEN",
         "engine": "Project Phoenix Project Analyzer Workflow Engine",
         "engine_version": "v5.9",
-        "started_at": "2026-07-05T00:44:14",
-        "finished_at": "2026-07-05T00:44:14",
+        "started_at": "2026-07-05T01:12:55",
+        "finished_at": "2026-07-05T01:12:55",
         "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
         "bib_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
         "aaie_bib_assumptions_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
@@ -82,7 +82,7 @@
         "aaie_summary": {
           "status": "OPGESLAGEN",
           "engine_version": "v5.8",
-          "assumption_count": 7,
+          "assumption_count": 6,
           "source_priority": [
             "1. Lokale BIB-kennisindex",
             "2. Eerder bevestigde Project Phoenix / BAOEES kennis",
@@ -119,8 +119,8 @@
         "status": "OPGESLAGEN",
         "engine": "Project Phoenix Project Package Evidence Engine",
         "engine_version": "v6.2",
-        "started_at": "2026-07-05T00:44:14",
-        "finished_at": "2026-07-05T00:44:14",
+        "started_at": "2026-07-05T01:12:55",
+        "finished_at": "2026-07-05T01:12:55",
         "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
         "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
         "bronvermelding_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project",
@@ -149,7 +149,7 @@
             "relative_path": "outputs\\projects\\project_report_bib_report.docx",
             "exists": true,
             "size_bytes": 3668,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "category": "rapportage_export"
           },
           {
@@ -158,7 +158,7 @@
             "relative_path": "outputs\\projects\\project_report_bib_report.pdf",
             "exists": true,
             "size_bytes": 1955,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "category": "rapportage_export"
           },
           {
@@ -167,7 +167,7 @@
             "relative_path": "outputs\\projects\\project_report_export_log.json",
             "exists": true,
             "size_bytes": 1251,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "category": "export_log"
           },
           {
@@ -176,7 +176,7 @@
             "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
             "exists": true,
             "size_bytes": 1364,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "category": "export_log"
           },
           {
@@ -185,7 +185,7 @@
             "relative_path": "outputs\\projects\\project_analyzer_workflow_log.json",
             "exists": true,
             "size_bytes": 1639,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "workflow"
           },
           {
@@ -194,7 +194,7 @@
             "relative_path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
             "exists": true,
             "size_bytes": 1709,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "workflow"
           },
           {
@@ -202,8 +202,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
             "relative_path": "outputs\\projects\\aaie_bib_assumptions.json",
             "exists": true,
-            "size_bytes": 6248,
-            "modified_at": "2026-07-05T00:27:40",
+            "size_bytes": 5194,
+            "modified_at": "2026-07-05T00:44:15",
             "category": "aaie"
           },
           {
@@ -211,8 +211,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
             "relative_path": "outputs\\bib\\index\\bib_knowledge_content_index.json",
             "exists": true,
-            "size_bytes": 38727,
-            "modified_at": "2026-07-05T00:44:14",
+            "size_bytes": 39084,
+            "modified_at": "2026-07-05T01:12:54",
             "category": "bib"
           },
           {
@@ -221,7 +221,7 @@
             "relative_path": "outputs\\projects\\project_package_manifest.json",
             "exists": true,
             "size_bytes": 14744,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "manifest"
           },
           {
@@ -230,7 +230,7 @@
             "relative_path": "outputs\\projects\\project_package_evidence_log.json",
             "exists": true,
             "size_bytes": 8236,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "evidence"
           },
           {
@@ -239,7 +239,7 @@
             "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
             "exists": true,
             "size_bytes": 3140,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "evidence"
           },
           {
@@ -248,7 +248,7 @@
             "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
             "exists": true,
             "size_bytes": 4623,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "bronvermelding"
           },
           {
@@ -257,7 +257,7 @@
             "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
             "exists": true,
             "size_bytes": 2479,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "category": "bronvermelding"
           },
           {
@@ -265,8 +265,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
             "relative_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
             "exists": true,
-            "size_bytes": 93931,
-            "modified_at": "2026-07-05T00:27:41",
+            "size_bytes": 94094,
+            "modified_at": "2026-07-05T00:44:16",
             "category": "project_package"
           }
         ],
@@ -292,7 +292,7 @@
             "relative_path": "outputs\\projects\\project_report_bib_report.docx",
             "exists": true,
             "size_bytes": 3668,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "source_type": "gegenereerd_rapport",
             "reliability": "hoog",
             "included_in_package": true
@@ -305,7 +305,7 @@
             "relative_path": "outputs\\projects\\project_report_bib_report.pdf",
             "exists": true,
             "size_bytes": 1955,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "source_type": "gegenereerd_rapport",
             "reliability": "hoog",
             "included_in_package": true
@@ -318,7 +318,7 @@
             "relative_path": "outputs\\projects\\project_report_export_log.json",
             "exists": true,
             "size_bytes": 1251,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "source_type": "systeemlog_export",
             "reliability": "middel",
             "included_in_package": true
@@ -331,7 +331,7 @@
             "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
             "exists": true,
             "size_bytes": 1364,
-            "modified_at": "2026-07-05T00:27:41",
+            "modified_at": "2026-07-05T00:44:15",
             "source_type": "systeemlog_export",
             "reliability": "middel",
             "included_in_package": true
@@ -344,7 +344,7 @@
             "relative_path": "outputs\\projects\\project_analyzer_workflow_log.json",
             "exists": true,
             "size_bytes": 1639,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "workflow_output",
             "reliability": "hoog",
             "included_in_package": true
@@ -357,7 +357,7 @@
             "relative_path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
             "exists": true,
             "size_bytes": 1709,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "workflow_output",
             "reliability": "hoog",
             "included_in_package": true
@@ -369,8 +369,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
             "relative_path": "outputs\\projects\\aaie_bib_assumptions.json",
             "exists": true,
-            "size_bytes": 6248,
-            "modified_at": "2026-07-05T00:27:40",
+            "size_bytes": 5194,
+            "modified_at": "2026-07-05T00:44:15",
             "source_type": "aaie_aannames",
             "reliability": "hoog",
             "included_in_package": true
@@ -382,8 +382,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
             "relative_path": "outputs\\bib\\index\\bib_knowledge_content_index.json",
             "exists": true,
-            "size_bytes": 38727,
-            "modified_at": "2026-07-05T00:44:14",
+            "size_bytes": 39084,
+            "modified_at": "2026-07-05T01:12:54",
             "source_type": "bib_kennisindex",
             "reliability": "hoog",
             "included_in_package": true
@@ -396,7 +396,7 @@
             "relative_path": "outputs\\projects\\project_package_manifest.json",
             "exists": true,
             "size_bytes": 14744,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "project_manifest",
             "reliability": "hoog",
             "included_in_package": true
@@ -409,7 +409,7 @@
             "relative_path": "outputs\\projects\\project_package_evidence_log.json",
             "exists": true,
             "size_bytes": 8236,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "evidence_log",
             "reliability": "hoog",
             "included_in_package": true
@@ -422,7 +422,7 @@
             "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
             "exists": true,
             "size_bytes": 3140,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "evidence_log",
             "reliability": "hoog",
             "included_in_package": true
@@ -435,7 +435,7 @@
             "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
             "exists": true,
             "size_bytes": 4623,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "bronvermelding",
             "reliability": "middel",
             "included_in_package": true
@@ -448,7 +448,7 @@
             "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
             "exists": true,
             "size_bytes": 2479,
-            "modified_at": "2026-07-05T00:44:14",
+            "modified_at": "2026-07-05T01:12:55",
             "source_type": "bronvermelding",
             "reliability": "middel",
             "included_in_package": true
@@ -460,8 +460,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
             "relative_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
             "exists": true,
-            "size_bytes": 93931,
-            "modified_at": "2026-07-05T00:27:41",
+            "size_bytes": 94094,
+            "modified_at": "2026-07-05T00:44:16",
             "source_type": "project_zip",
             "reliability": "middel",
             "included_in_package": true
@@ -485,8 +485,8 @@
         "status": "OPGESLAGEN",
         "engine": "Project Phoenix Project Analyzer Launcher Bridge",
         "engine_version": "v6.3",
-        "started_at": "2026-07-05T00:44:14",
-        "finished_at": "2026-07-05T00:44:14",
+        "started_at": "2026-07-05T01:12:55",
+        "finished_at": "2026-07-05T01:12:55",
         "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
         "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
         "project_start_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_start_analysis_dashboard.html",
@@ -511,7 +511,7 @@
             "relative_path": "outputs\\projects\\project_start_analysis_dashboard.html",
             "exists": true,
             "size_bytes": 3998,
-            "modified_at": "2026-07-05T00:27:41"
+            "modified_at": "2026-07-05T00:44:16"
           },
           {
             "name": "Project Package Manifest",
@@ -521,7 +521,7 @@
             "relative_path": "outputs\\projects\\project_package_manifest.json",
             "exists": true,
             "size_bytes": 14742,
-            "modified_at": "2026-07-05T00:44:14"
+            "modified_at": "2026-07-05T01:12:55"
           },
           {
             "name": "Project Package ZIP",
@@ -530,8 +530,8 @@
             "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
             "relative_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
             "exists": true,
-            "size_bytes": 94220,
-            "modified_at": "2026-07-05T00:44:14"
+            "size_bytes": 94152,
+            "modified_at": "2026-07-05T01:12:55"
           },
           {
             "name": "Evidence Dashboard",
@@ -541,7 +541,7 @@
             "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
             "exists": true,
             "size_bytes": 3140,
-            "modified_at": "2026-07-05T00:44:14"
+            "modified_at": "2026-07-05T01:12:55"
           },
           {
             "name": "Evidence Log",
@@ -551,7 +551,7 @@
             "relative_path": "outputs\\projects\\project_package_evidence_log.json",
             "exists": true,
             "size_bytes": 15394,
-            "modified_at": "2026-07-05T00:44:14"
+            "modified_at": "2026-07-05T01:12:55"
           },
           {
             "name": "Rapportage Export Dashboard",
@@ -561,7 +561,7 @@
             "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
             "exists": true,
             "size_bytes": 1364,
-            "modified_at": "2026-07-05T00:27:41"
+            "modified_at": "2026-07-05T00:44:15"
           },
           {
             "name": "Rapportage Export Log",
@@ -571,7 +571,7 @@
             "relative_path": "outputs\\projects\\project_report_export_log.json",
             "exists": true,
             "size_bytes": 1251,
-            "modified_at": "2026-07-05T00:27:41"
+            "modified_at": "2026-07-05T00:44:15"
           },
           {
             "name": "Projectrapport DOCX",
@@ -581,7 +581,7 @@
             "relative_path": "outputs\\projects\\project_report_bib_report.docx",
             "exists": true,
             "size_bytes": 3668,
-            "modified_at": "2026-07-05T00:27:41"
+            "modified_at": "2026-07-05T00:44:15"
           },
           {
             "name": "Projectrapport PDF",
@@ -591,7 +591,7 @@
             "relative_path": "outputs\\projects\\project_report_bib_report.pdf",
             "exists": true,
             "size_bytes": 1955,
-            "modified_at": "2026-07-05T00:27:41"
+            "modified_at": "2026-07-05T00:44:15"
           },
           {
             "name": "Bronvermelding Log",
@@ -601,7 +601,7 @@
             "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
             "exists": true,
             "size_bytes": 4623,
-            "modified_at": "2026-07-05T00:44:14"
+            "modified_at": "2026-07-05T01:12:55"
           },
           {
             "name": "Bronvermelding README",
@@ -611,7 +611,7 @@
             "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
             "exists": true,
             "size_bytes": 2479,
-            "modified_at": "2026-07-05T00:44:14"
+            "modified_at": "2026-07-05T01:12:55"
           }
         ],
         "next_steps": [
