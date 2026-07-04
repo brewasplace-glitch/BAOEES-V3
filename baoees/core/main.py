@@ -56,6 +56,7 @@ from baoees.element_load_engine.main import ElementLoadEngine
 from baoees.foundation_load_transfer_engine.main import FoundationLoadTransferEngine
 from baoees.foundation_design_engine.main import FoundationDesignEngine
 from baoees.foundation_verification_engine.main import FoundationVerificationEngine
+from baoees.structural_element_sizing_engine.main import StructuralElementSizingEngine
 
 
 class BAOEESCore:
@@ -445,6 +446,94 @@ class BAOEESCore:
                 self.add_to_digital_twin(
                     "foundation_verification",
                     foundation_verification_result
+                )
+            except TypeError:
+                pass
+
+
+        try:
+            structural_element_sizing_engine = StructuralElementSizingEngine()
+
+            if hasattr(
+                structural_element_sizing_engine,
+                "create_structural_element_sizing_analysis"
+            ):
+                structural_element_sizing_result = (
+                    structural_element_sizing_engine
+                    .create_structural_element_sizing_analysis(
+                        project_result=project_result,
+                        structural_load_result=structural_load_result
+                        if "structural_load_result" in locals() else {},
+                        element_load_result=element_load_result
+                        if "element_load_result" in locals() else {},
+                        foundation_load_transfer_result=foundation_load_transfer_result
+                        if "foundation_load_transfer_result" in locals() else {},
+                        foundation_design_result=foundation_design_result
+                        if "foundation_design_result" in locals() else {},
+                        foundation_verification_result=foundation_verification_result
+                        if "foundation_verification_result" in locals() else {},
+                        building_technical_result=building_technical_result
+                        if "building_technical_result" in locals() else {},
+                        geo_result=geo_result if "geo_result" in locals() else {},
+                        assumptions_result=aaie_result
+                        if "aaie_result" in locals() else {}
+                    )
+                )
+            elif hasattr(
+                structural_element_sizing_engine,
+                "create_element_sizing_analysis"
+            ):
+                structural_element_sizing_result = (
+                    structural_element_sizing_engine.create_element_sizing_analysis(
+                        project_result=project_result,
+                        structural_load_result=structural_load_result
+                        if "structural_load_result" in locals() else {},
+                        element_load_result=element_load_result
+                        if "element_load_result" in locals() else {},
+                        foundation_design_result=foundation_design_result
+                        if "foundation_design_result" in locals() else {},
+                        foundation_verification_result=foundation_verification_result
+                        if "foundation_verification_result" in locals() else {},
+                        building_technical_result=building_technical_result
+                        if "building_technical_result" in locals() else {}
+                    )
+                )
+            else:
+                structural_element_sizing_result = structural_element_sizing_engine.run(
+                    project_result=project_result,
+                    structural_load_result=structural_load_result
+                    if "structural_load_result" in locals() else {},
+                    element_load_result=element_load_result
+                    if "element_load_result" in locals() else {},
+                    foundation_design_result=foundation_design_result
+                    if "foundation_design_result" in locals() else {},
+                    foundation_verification_result=foundation_verification_result
+                    if "foundation_verification_result" in locals() else {}
+                )
+
+        except Exception as error:
+            structural_element_sizing_result = {
+                "engine": "StructuralElementSizingEngine",
+                "status": "STRUCTURAL_ELEMENT_SIZING_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Structural Element Sizing Engine resultaat:",
+            structural_element_sizing_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "structural_element_sizing",
+                structural_element_sizing_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "structural_element_sizing",
+                    structural_element_sizing_result
                 )
             except TypeError:
                 pass
