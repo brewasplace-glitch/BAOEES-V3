@@ -1,0 +1,21 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix START PROJECTANALYSE Connector",
+    "engine_version":  "v6.4",
+    "generated_at":  "2026-07-05T00:00:30",
+    "project_root":  "C:\\BREWSTER-ENGINEERING-WIZARD",
+    "start_projectanalyse_bat":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE.bat",
+    "start_projectanalyse_ps1":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE.ps1",
+    "versioned_bat":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE_v6_4.bat",
+    "versioned_ps1":  "C:\\BREWSTER-ENGINEERING-WIZARD\\START_PROJECTANALYSE_v6_4.ps1",
+    "purpose":  "Koppelt START_PROJECTANALYSE aan de volledige Project Phoenix flow inclusief dashboard, rapportage, evidence en projectpakket.",
+    "steps":  [
+                  "project_start_analysis_engine.py",
+                  "project_analyzer_workflow_engine.py",
+                  "aaie_bib_assumption_loader.py",
+                  "project_report_bib_engine.py",
+                  "project_report_export_engine.py",
+                  "project_package_evidence_engine.py",
+                  "project_analyzer_launcher_bridge.py"
+              ]
+}

@@ -2,10 +2,10 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Package Evidence Engine",
   "engine_version": "v6.2",
-  "started_at": "2026-07-02T13:09:10",
-  "generated_at": "2026-07-02T13:09:10",
+  "started_at": "2026-07-05T00:00:33",
+  "generated_at": "2026-07-05T00:00:33",
   "map": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project",
-  "bron_count": 13,
+  "bron_count": 15,
   "bronnen": [
     {
       "bron_id": "EV-001",
@@ -20,7 +20,7 @@
       "naam": "project_report_bib_report.docx",
       "type": "gegenereerd_rapport",
       "bestand": "outputs\\projects\\project_report_bib_report.docx",
-      "datum_tijd": "2026-07-02T12:29:29",
+      "datum_tijd": "2026-07-05T00:00:33",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -28,7 +28,7 @@
       "naam": "project_report_bib_report.pdf",
       "type": "gegenereerd_rapport",
       "bestand": "outputs\\projects\\project_report_bib_report.pdf",
-      "datum_tijd": "2026-07-02T12:29:29",
+      "datum_tijd": "2026-07-05T00:00:33",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -36,7 +36,7 @@
       "naam": "project_report_export_log.json",
       "type": "systeemlog_export",
       "bestand": "outputs\\projects\\project_report_export_log.json",
-      "datum_tijd": "2026-07-02T12:29:29",
+      "datum_tijd": "2026-07-05T00:00:33",
       "betrouwbaarheid": "middel"
     },
     {
@@ -44,7 +44,7 @@
       "naam": "project_report_export_dashboard.html",
       "type": "systeemlog_export",
       "bestand": "outputs\\projects\\project_report_export_dashboard.html",
-      "datum_tijd": "2026-07-02T12:29:29",
+      "datum_tijd": "2026-07-05T00:00:33",
       "betrouwbaarheid": "middel"
     },
     {
@@ -52,7 +52,7 @@
       "naam": "project_analyzer_workflow_log.json",
       "type": "workflow_output",
       "bestand": "outputs\\projects\\project_analyzer_workflow_log.json",
-      "datum_tijd": "2026-07-01T22:09:03",
+      "datum_tijd": "2026-07-05T00:00:32",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -60,7 +60,7 @@
       "naam": "project_analyzer_workflow_dashboard.html",
       "type": "workflow_output",
       "bestand": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
-      "datum_tijd": "2026-07-01T22:09:03",
+      "datum_tijd": "2026-07-05T00:00:32",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -68,7 +68,7 @@
       "naam": "aaie_bib_assumptions.json",
       "type": "aaie_aannames",
       "bestand": "outputs\\projects\\aaie_bib_assumptions.json",
-      "datum_tijd": "2026-06-30T18:24:39",
+      "datum_tijd": "2026-07-05T00:00:32",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -84,7 +84,7 @@
       "naam": "project_package_manifest.json",
       "type": "project_manifest",
       "bestand": "outputs\\projects\\project_package_manifest.json",
-      "datum_tijd": "2026-06-30T17:32:03",
+      "datum_tijd": "2026-07-05T00:00:31",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -92,7 +92,7 @@
       "naam": "project_package_evidence_log.json",
       "type": "evidence_log",
       "bestand": "outputs\\projects\\project_package_evidence_log.json",
-      "datum_tijd": "2026-06-30T17:32:03",
+      "datum_tijd": "2026-07-05T00:00:32",
       "betrouwbaarheid": "hoog"
     },
     {
@@ -100,15 +100,31 @@
       "naam": "project_package_evidence_dashboard.html",
       "type": "evidence_log",
       "bestand": "outputs\\projects\\project_package_evidence_dashboard.html",
-      "datum_tijd": "2026-06-30T17:32:03",
+      "datum_tijd": "2026-07-05T00:00:31",
       "betrouwbaarheid": "hoog"
+    },
+    {
+      "bron_id": "EV-013",
+      "naam": "bronvermelding_log.json",
+      "type": "bronvermelding",
+      "bestand": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+      "datum_tijd": "2026-07-05T00:00:31",
+      "betrouwbaarheid": "middel"
+    },
+    {
+      "bron_id": "EV-014",
+      "naam": "README_Bronvermelding_van_dit_project.txt",
+      "type": "bronvermelding",
+      "bestand": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+      "datum_tijd": "2026-07-05T00:00:31",
+      "betrouwbaarheid": "middel"
     },
     {
       "bron_id": "EV-015",
       "naam": "PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
       "type": "project_zip",
       "bestand": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
-      "datum_tijd": "2026-06-30T17:32:02",
+      "datum_tijd": "2026-07-05T00:00:32",
       "betrouwbaarheid": "middel"
     }
   ]
