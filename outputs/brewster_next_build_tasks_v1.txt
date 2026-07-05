@@ -1,0 +1,30 @@
+BREWSTER TASK ORCHESTRATOR - VOLGENDE BOUWTAKEN
+==========================================================
+
+Status: BREWSTER_TASK_ORCHESTRATION_GEREED
+Roadmap taken: 15
+
+Eerstvolgende taak:
+- Taak: S01-T001
+- Titel: Testtaak 1
+- Risico: laag
+- GO vereist: False
+
+Dagprioriteiten:
+- S01-T001: Testtaak 1 (veilig)
+- S01-T002: Testtaak 2 (veilig)
+- S01-T003: Testtaak 3 (GO)
+- S01-T004: Testtaak 4 (veilig)
+- S01-T005: Testtaak 5 (veilig)
+- S01-T006: Testtaak 6 (veilig)
+- S01-T007: Testtaak 7 (veilig)
+- S01-T008: Testtaak 8 (veilig)
+- S01-T009: Testtaak 9 (veilig)
+- S01-T010: Testtaak 10 (veilig)
+
+Vaste werkwijze:
+1. Downloadbaar script maken.
+2. Lokaal uitvoeren in C:\BREWSTER-ENGINEERING-WIZARD.
+3. BAOEES-test draaien.
+4. Commit en push.
+5. Eindigen met working tree clean.

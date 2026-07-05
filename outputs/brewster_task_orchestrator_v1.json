@@ -1,0 +1,575 @@
+{
+  "engine": "BrewsterTaskOrchestratorEngine",
+  "version": "1.0",
+  "status": "BREWSTER_TASK_ORCHESTRATION_GEREED",
+  "project_id": "BREWAS_BAOEES",
+  "project_name": "BREWSTER ENGINEERING WIZARD",
+  "roadmap_task_count": 15,
+  "execution_queue": [
+    {
+      "task_id": "S01-T001",
+      "global_order": 1,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 1",
+      "description": "Beschrijving testtaak 1",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 1",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T002",
+      "global_order": 2,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 2",
+      "description": "Beschrijving testtaak 2",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 2",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T003",
+      "global_order": 3,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 3",
+      "description": "Beschrijving testtaak 3",
+      "priority": 1,
+      "risk_level": "hoog",
+      "go_required": true,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 3",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T004",
+      "global_order": 4,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 4",
+      "description": "Beschrijving testtaak 4",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 4",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T005",
+      "global_order": 5,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 5",
+      "description": "Beschrijving testtaak 5",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 5",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T006",
+      "global_order": 6,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 6",
+      "description": "Beschrijving testtaak 6",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 6",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T007",
+      "global_order": 7,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 7",
+      "description": "Beschrijving testtaak 7",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 7",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T008",
+      "global_order": 8,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 8",
+      "description": "Beschrijving testtaak 8",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 8",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T009",
+      "global_order": 9,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 9",
+      "description": "Beschrijving testtaak 9",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 9",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T010",
+      "global_order": 10,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 10",
+      "description": "Beschrijving testtaak 10",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 10",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T011",
+      "global_order": 11,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 11",
+      "description": "Beschrijving testtaak 11",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 11",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T012",
+      "global_order": 12,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 12",
+      "description": "Beschrijving testtaak 12",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 12",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T013",
+      "global_order": 13,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 13",
+      "description": "Beschrijving testtaak 13",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 13",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T014",
+      "global_order": 14,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 14",
+      "description": "Beschrijving testtaak 14",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 14",
+      "done_definition": [
+        "working tree clean"
+      ]
+    },
+    {
+      "task_id": "S01-T015",
+      "global_order": 15,
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "title": "Testtaak 15",
+      "description": "Beschrijving testtaak 15",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 15",
+      "done_definition": [
+        "working tree clean"
+      ]
+    }
+  ],
+  "next_task": {
+    "task_id": "S01-T001",
+    "global_order": 1,
+    "track_id": "S01",
+    "track_title": "Stabilisatie en automatisering",
+    "title": "Testtaak 1",
+    "description": "Beschrijving testtaak 1",
+    "priority": 1,
+    "risk_level": "laag",
+    "go_required": false,
+    "depends_on": [],
+    "expected_files": [],
+    "test_commands": [
+      "python run_baoees_v3.py",
+      "git status"
+    ],
+    "commit_message": "feat: test task 1",
+    "done_definition": [
+      "working tree clean"
+    ]
+  },
+  "go_gate": {
+    "status": "GO_NIET_VEREIST",
+    "risk_level": "laag",
+    "go_required": false,
+    "instruction": "Deze taak mag als normale veilige stap worden voorbereid."
+  },
+  "automation_plan": {
+    "status": "AUTOMATION_PLAN_GEREED",
+    "next_script_name": "tools_execute_s01_t001_v1.py",
+    "script_policy": "downloadbaar script of ZIP",
+    "required_steps": [
+      "status",
+      "create-test",
+      "test-baoees",
+      "commit",
+      "git status"
+    ],
+    "backup_required": false,
+    "rollback_required": false
+  },
+  "daily_priorities": {
+    "status": "DAGPRIORITEITEN_GEREED",
+    "items": [
+      {
+        "task_id": "S01-T001",
+        "title": "Testtaak 1",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T002",
+        "title": "Testtaak 2",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T003",
+        "title": "Testtaak 3",
+        "risk_level": "hoog",
+        "go_required": true,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T004",
+        "title": "Testtaak 4",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T005",
+        "title": "Testtaak 5",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T006",
+        "title": "Testtaak 6",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T007",
+        "title": "Testtaak 7",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T008",
+        "title": "Testtaak 8",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T009",
+        "title": "Testtaak 9",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      },
+      {
+        "task_id": "S01-T010",
+        "title": "Testtaak 10",
+        "risk_level": "laag",
+        "go_required": false,
+        "priority": 1
+      }
+    ]
+  },
+  "command_plan": {
+    "status": "COMMAND_PLAN_GEREED",
+    "local_workdir": "C:\\BREWSTER-ENGINEERING-WIZARD",
+    "commands": [
+      "python tools_execute_s01_t001_v1.py status",
+      "python tools_execute_s01_t001_v1.py create-test",
+      "python tools_execute_s01_t001_v1.py commit",
+      "git status"
+    ],
+    "expected_final_status": "nothing to commit, working tree clean"
+  },
+  "progress_snapshot": {
+    "status": "PROGRESS_SNAPSHOT_GEREED",
+    "total_tasks": 15,
+    "queued_tasks": 15,
+    "high_risk_tasks": 1,
+    "go_required_tasks": 1,
+    "phoenix_bridge_status": "OPTIONEEL",
+    "phoenix_ui_mapping_status": "OPTIONEEL"
+  },
+  "digital_twin_update": {
+    "digital_twin_node": "brewster_task_orchestrator",
+    "project_id": "BREWAS_BAOEES",
+    "project_name": "BREWSTER ENGINEERING WIZARD",
+    "status": "READY_FOR_DIGITAL_TWIN_MERGE",
+    "data": {
+      "next_task": {
+        "task_id": "S01-T001",
+        "global_order": 1,
+        "track_id": "S01",
+        "track_title": "Stabilisatie en automatisering",
+        "title": "Testtaak 1",
+        "description": "Beschrijving testtaak 1",
+        "priority": 1,
+        "risk_level": "laag",
+        "go_required": false,
+        "depends_on": [],
+        "expected_files": [],
+        "test_commands": [
+          "python run_baoees_v3.py",
+          "git status"
+        ],
+        "commit_message": "feat: test task 1",
+        "done_definition": [
+          "working tree clean"
+        ]
+      },
+      "go_gate": {
+        "status": "GO_NIET_VEREIST",
+        "risk_level": "laag",
+        "go_required": false,
+        "instruction": "Deze taak mag als normale veilige stap worden voorbereid."
+      },
+      "daily_priorities": {
+        "status": "DAGPRIORITEITEN_GEREED",
+        "items": [
+          {
+            "task_id": "S01-T001",
+            "title": "Testtaak 1",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T002",
+            "title": "Testtaak 2",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T003",
+            "title": "Testtaak 3",
+            "risk_level": "hoog",
+            "go_required": true,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T004",
+            "title": "Testtaak 4",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T005",
+            "title": "Testtaak 5",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T006",
+            "title": "Testtaak 6",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T007",
+            "title": "Testtaak 7",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T008",
+            "title": "Testtaak 8",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T009",
+            "title": "Testtaak 9",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          },
+          {
+            "task_id": "S01-T010",
+            "title": "Testtaak 10",
+            "risk_level": "laag",
+            "go_required": false,
+            "priority": 1
+          }
+        ]
+      }
+    }
+  },
+  "warnings": [
+    "Geen kritieke waarschuwingen voor de eerstvolgende taak."
+  ],
+  "created_at": "2026-07-06T01:32:58"
+}
