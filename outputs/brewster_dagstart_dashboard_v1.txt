@@ -1,0 +1,27 @@
+BREWSTER ENGINEERING WIZARD - DAGSTART
+==============================================
+
+Status: DAGSTART_DASHBOARD_GEREED
+Totaal sporen: 10
+Totaal taken: 240
+
+Focus vandaag:
+- git status controleren
+- alleen verder bij working tree clean
+- eerstvolgende taak kiezen uit roadmap
+- GO vragen bij ingrijpende stap
+- testen, committen en pushen
+
+Top prioriteit taken:
+- S01-T001: Ontwerp modulearchitectuur en bestandsstructuur (normale stap)
+- S01-T002: Maak Python engine skeleton (normale stap)
+- S01-T003: Definieer input- en outputcontracten (normale stap)
+- S01-T004: Definieer Digital Twin-node (normale stap)
+- S01-T005: Definieer Knowledge Graph-entiteiten (normale stap)
+- S01-T006: Maak QA/QC-controles (normale stap)
+- S01-T007: Maak rapport- en dashboardmapping (normale stap)
+- S01-T008: Maak exportmapping (normale stap)
+- S01-T009: Maak CAD/BIM mapping (GO vereist)
+- S01-T010: Maak importtest en engine-test (normale stap)
+
+Volgende veilige stap: Voer één roadmaptaak uit via downloadbaar script en eindig met git status clean.
