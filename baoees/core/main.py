@@ -65,6 +65,7 @@ from baoees.structural_qaqc_engine.main import StructuralQAQCEngine
 from baoees.structural_project_output_package_engine.main import StructuralProjectOutputPackageEngine
 from baoees.phoenix_bridge_engine.main import PhoenixBridgeEngine
 from baoees.brewster_automation_roadmap_engine.main import BrewsterAutomationRoadmapEngine
+from baoees.brewster_task_orchestrator_engine.main import BrewsterTaskOrchestratorEngine
 
 
 class BAOEESCore:
@@ -721,6 +722,42 @@ class BAOEESCore:
             "Brewster Automation Roadmap Engine resultaat:",
             brewster_automation_roadmap_result
         )
+
+        try:
+            brewster_task_orchestrator_engine = BrewsterTaskOrchestratorEngine()
+            brewster_task_orchestrator_result = brewster_task_orchestrator_engine.create_task_orchestration(
+                project_result=project_result if "project_result" in locals() else {},
+                brewster_automation_roadmap_result=brewster_automation_roadmap_result if "brewster_automation_roadmap_result" in locals() else {},
+                phoenix_bridge_result=phoenix_bridge_result if "phoenix_bridge_result" in locals() else {},
+                phoenix_ui_mapping_result=phoenix_ui_mapping_result if "phoenix_ui_mapping_result" in locals() else {}
+            )
+        except Exception as error:
+            brewster_task_orchestrator_result = {
+                "engine": "BrewsterTaskOrchestratorEngine",
+                "status": "BREWSTER_TASK_ORCHESTRATOR_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Brewster Task Orchestrator Engine resultaat:",
+            brewster_task_orchestrator_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "brewster_task_orchestrator",
+                brewster_task_orchestrator_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "brewster_task_orchestrator",
+                    brewster_task_orchestrator_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
