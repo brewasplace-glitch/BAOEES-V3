@@ -1,0 +1,27 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Deep Knowledge Harvest Engine",
+  "engine_version": "v6.8",
+  "started_at": "2026-07-05T01:41:02",
+  "finished_at": "2026-07-05T01:41:08",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "bib_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib",
+  "harvest_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json",
+  "harvest_summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_summary_v6_8.md",
+  "harvest_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_log_v6_8.json",
+  "harvest_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\dashboards\\deep_knowledge_harvest_dashboard_v6_8.html",
+  "bib_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+  "project_summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\deep_knowledge_harvest_summary_v6_8.json",
+  "file_count": 304,
+  "knowledge_record_count": 224,
+  "project_count": 3,
+  "topic_count": 6,
+  "gap_count": 0,
+  "next_steps": [
+    "Controleer deep_knowledge_harvest_dashboard_v6_8.html.",
+    "Controleer deep_knowledge_harvest_index_v6_8.json.",
+    "Controleer welke kennisgaten nog openstaan.",
+    "Leg v6.8 vast met git add, commit en push.",
+    "Ga daarna door naar Module Registry & Engine Dashboard."
+  ]
+}
