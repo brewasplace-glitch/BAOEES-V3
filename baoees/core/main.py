@@ -61,6 +61,7 @@ from baoees.structural_reinforcement_engine.main import StructuralReinforcementE
 from baoees.structural_calculation_report_engine.main import StructuralCalculationReportEngine
 from baoees.structural_drawing_package_engine.main import StructuralDrawingPackageEngine
 from baoees.structural_cad_export_engine.main import StructuralCADExportEngine
+from baoees.structural_qaqc_engine.main import StructuralQAQCEngine
 
 
 class BAOEESCore:
@@ -621,6 +622,50 @@ class BAOEESCore:
             "Structural CAD Export Engine resultaat:",
             structural_cad_export_result
         )
+
+        try:
+            structural_qaqc_engine = StructuralQAQCEngine()
+            structural_qaqc_result = structural_qaqc_engine.create_structural_qaqc_review(
+                project_result=project_result,
+                building_technical_result=building_technical_result if "building_technical_result" in locals() else {},
+                structural_load_result=structural_load_result if "structural_load_result" in locals() else {},
+                element_load_result=element_load_result if "element_load_result" in locals() else {},
+                foundation_load_transfer_result=foundation_load_transfer_result if "foundation_load_transfer_result" in locals() else {},
+                foundation_design_result=foundation_design_result if "foundation_design_result" in locals() else {},
+                foundation_verification_result=foundation_verification_result if "foundation_verification_result" in locals() else {},
+                structural_element_sizing_result=structural_element_sizing_result if "structural_element_sizing_result" in locals() else {},
+                structural_reinforcement_result=structural_reinforcement_result if "structural_reinforcement_result" in locals() else {},
+                structural_calculation_report_result=structural_calculation_report_result if "structural_calculation_report_result" in locals() else {},
+                structural_drawing_package_result=structural_drawing_package_result if "structural_drawing_package_result" in locals() else {},
+                structural_cad_export_result=structural_cad_export_result if "structural_cad_export_result" in locals() else {}
+            )
+        except Exception as error:
+            structural_qaqc_result = {
+                "engine": "StructuralQAQCEngine",
+                "status": "STRUCTURAL_QAQC_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Structural QAQC Engine resultaat:",
+            structural_qaqc_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "structural_qaqc_review",
+                structural_qaqc_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "structural_qaqc_review",
+                    structural_qaqc_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
