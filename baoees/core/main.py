@@ -64,6 +64,7 @@ from baoees.structural_cad_export_engine.main import StructuralCADExportEngine
 from baoees.structural_qaqc_engine.main import StructuralQAQCEngine
 from baoees.structural_project_output_package_engine.main import StructuralProjectOutputPackageEngine
 from baoees.phoenix_bridge_engine.main import PhoenixBridgeEngine
+from baoees.brewster_automation_roadmap_engine.main import BrewsterAutomationRoadmapEngine
 
 
 class BAOEESCore:
@@ -700,6 +701,42 @@ class BAOEESCore:
             "Phoenix Bridge Engine resultaat:",
             phoenix_bridge_result
         )
+
+        try:
+            brewster_automation_roadmap_engine = BrewsterAutomationRoadmapEngine()
+            brewster_automation_roadmap_result = brewster_automation_roadmap_engine.create_automation_roadmap(
+                project_result=project_result if "project_result" in locals() else {},
+                phoenix_bridge_result=phoenix_bridge_result if "phoenix_bridge_result" in locals() else {},
+                phoenix_ui_mapping_result=phoenix_ui_mapping_result if "phoenix_ui_mapping_result" in locals() else {},
+                structural_project_output_package_result=structural_project_output_package_result if "structural_project_output_package_result" in locals() else {}
+            )
+        except Exception as error:
+            brewster_automation_roadmap_result = {
+                "engine": "BrewsterAutomationRoadmapEngine",
+                "status": "BREWSTER_AUTOMATION_ROADMAP_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Brewster Automation Roadmap Engine resultaat:",
+            brewster_automation_roadmap_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "brewster_automation_roadmap",
+                brewster_automation_roadmap_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "brewster_automation_roadmap",
+                    brewster_automation_roadmap_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
