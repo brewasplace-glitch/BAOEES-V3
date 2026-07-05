@@ -1,0 +1,22 @@
+BREWSTER AUTO BUILD SCRIPT FACTORY
+==========================================
+
+Status: BREWSTER_AUTO_BUILD_SCRIPT_FACTORY_GEREED
+Volgende taak: S01-T001
+Scriptnaam: tools_execute_s01_t001_v1.py
+Scripttype: engine_creation_script
+Risico: laag
+GO vereist: False
+
+Commando's:
+- python tools_execute_s01_t001_v1.py status
+- python tools_execute_s01_t001_v1.py create-test
+- python tools_execute_s01_t001_v1.py test-baoees
+- python tools_execute_s01_t001_v1.py commit
+- git status
+
+Stopcondities:
+- compile error
+- BAOEES_TEST_NIET_OK
+- PROJECTANALYSE GEREED ontbreekt
+- unexpected git status

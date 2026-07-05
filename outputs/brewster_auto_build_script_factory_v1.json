@@ -1,0 +1,158 @@
+{
+  "engine": "BrewsterAutoBuildScriptFactoryEngine",
+  "version": "1.0",
+  "status": "BREWSTER_AUTO_BUILD_SCRIPT_FACTORY_GEREED",
+  "project_id": "BREWAS_BAOEES",
+  "project_name": "BREWSTER ENGINEERING WIZARD",
+  "roadmap_task_count": 0,
+  "next_task": {
+    "task_id": "S01-T001",
+    "title": "Stabilisatie - Maak Python engine skeleton",
+    "description": "Maak een kleine downloadbare engine.",
+    "risk_level": "laag",
+    "go_required": false,
+    "expected_files": [
+      "baoees/test_engine/__init__.py",
+      "baoees/test_engine/main.py"
+    ],
+    "commit_message": "feat: add test engine"
+  },
+  "script_blueprint": {
+    "status": "SCRIPT_BLUEPRINT_GEREED",
+    "task_id": "S01-T001",
+    "script_name": "tools_execute_s01_t001_v1.py",
+    "zip_name": "s01_t001_auto_build_v1.zip",
+    "script_type": "engine_creation_script",
+    "commands": [
+      "status",
+      "create-test",
+      "test-baoees",
+      "commit",
+      "status"
+    ],
+    "must_include": [
+      "argparse command interface",
+      "git restore outputs",
+      "python compile checks",
+      "engine import test where applicable",
+      "BAOEES run check for PROJECTANALYSE GEREED",
+      "git add/commit/push",
+      "final git status"
+    ]
+  },
+  "file_blueprints": [
+    {
+      "path": "baoees/test_engine/__init__.py",
+      "status": "TE_GENEREREN",
+      "encoding": "utf-8",
+      "backup_required": false
+    },
+    {
+      "path": "baoees/test_engine/main.py",
+      "status": "TE_GENEREREN",
+      "encoding": "utf-8",
+      "backup_required": false
+    }
+  ],
+  "safety_blueprint": {
+    "status": "SAFETY_BLUEPRINT_GEREED",
+    "risk_level": "laag",
+    "go_required": false,
+    "backup_required": false,
+    "rollback_required": false,
+    "core_change_policy": "backup verplicht vóór wijziging van baoees/core/main.py",
+    "stop_conditions": [
+      "compile error",
+      "BAOEES_TEST_NIET_OK",
+      "PROJECTANALYSE GEREED ontbreekt",
+      "unexpected git status"
+    ]
+  },
+  "command_blueprint": {
+    "status": "COMMAND_BLUEPRINT_GEREED",
+    "local_workdir": "C:\\BREWSTER-ENGINEERING-WIZARD",
+    "commands": [
+      "python tools_execute_s01_t001_v1.py status",
+      "python tools_execute_s01_t001_v1.py create-test",
+      "python tools_execute_s01_t001_v1.py test-baoees",
+      "python tools_execute_s01_t001_v1.py commit",
+      "git status"
+    ],
+    "expected_final_status": "nothing to commit, working tree clean"
+  },
+  "supported_task_types": [
+    "engine_creation_script",
+    "core_connector_script",
+    "documentation_script",
+    "installer_patch_script",
+    "cad_bim_script",
+    "test_data_script",
+    "report_generator_script",
+    "database_migration_script",
+    "knowledge_graph_script",
+    "gui_mapping_script"
+  ],
+  "digital_twin_update": {
+    "digital_twin_node": "brewster_auto_build_script_factory",
+    "project_id": "BREWAS_BAOEES",
+    "project_name": "BREWSTER ENGINEERING WIZARD",
+    "status": "READY_FOR_DIGITAL_TWIN_MERGE",
+    "data": {
+      "next_task": {
+        "task_id": "S01-T001",
+        "title": "Stabilisatie - Maak Python engine skeleton",
+        "description": "Maak een kleine downloadbare engine.",
+        "risk_level": "laag",
+        "go_required": false,
+        "expected_files": [
+          "baoees/test_engine/__init__.py",
+          "baoees/test_engine/main.py"
+        ],
+        "commit_message": "feat: add test engine"
+      },
+      "script_blueprint": {
+        "status": "SCRIPT_BLUEPRINT_GEREED",
+        "task_id": "S01-T001",
+        "script_name": "tools_execute_s01_t001_v1.py",
+        "zip_name": "s01_t001_auto_build_v1.zip",
+        "script_type": "engine_creation_script",
+        "commands": [
+          "status",
+          "create-test",
+          "test-baoees",
+          "commit",
+          "status"
+        ],
+        "must_include": [
+          "argparse command interface",
+          "git restore outputs",
+          "python compile checks",
+          "engine import test where applicable",
+          "BAOEES run check for PROJECTANALYSE GEREED",
+          "git add/commit/push",
+          "final git status"
+        ]
+      },
+      "command_blueprint": {
+        "status": "COMMAND_BLUEPRINT_GEREED",
+        "local_workdir": "C:\\BREWSTER-ENGINEERING-WIZARD",
+        "commands": [
+          "python tools_execute_s01_t001_v1.py status",
+          "python tools_execute_s01_t001_v1.py create-test",
+          "python tools_execute_s01_t001_v1.py test-baoees",
+          "python tools_execute_s01_t001_v1.py commit",
+          "git status"
+        ],
+        "expected_final_status": "nothing to commit, working tree clean"
+      }
+    }
+  },
+  "warnings": [
+    "Geen kritieke waarschuwingen voor scriptgeneratie."
+  ],
+  "recommendation": {
+    "status": "SCRIPT_FACTORY_ADVIES",
+    "advice": "Gebruik deze factory als standaardgenerator voor volgende bouwscripts. Elke taak krijgt een eigen downloadbaar script met status, create-test, test-baoees, commit en rollback waar nodig."
+  },
+  "created_at": "2026-07-06T01:53:56"
+}
