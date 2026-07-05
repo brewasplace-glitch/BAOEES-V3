@@ -63,6 +63,7 @@ from baoees.structural_drawing_package_engine.main import StructuralDrawingPacka
 from baoees.structural_cad_export_engine.main import StructuralCADExportEngine
 from baoees.structural_qaqc_engine.main import StructuralQAQCEngine
 from baoees.structural_project_output_package_engine.main import StructuralProjectOutputPackageEngine
+from baoees.phoenix_bridge_engine.main import PhoenixBridgeEngine
 
 
 class BAOEESCore:
@@ -679,6 +680,42 @@ class BAOEESCore:
             "Structural Project Output Package Engine resultaat:",
             structural_project_output_package_result
         )
+
+        try:
+            phoenix_bridge_engine = PhoenixBridgeEngine()
+            phoenix_bridge_result = phoenix_bridge_engine.create_phoenix_bridge_package(
+                project_result=project_result if "project_result" in locals() else {},
+                structural_project_output_package_result=structural_project_output_package_result if "structural_project_output_package_result" in locals() else {},
+                structural_qaqc_result=structural_qaqc_result if "structural_qaqc_result" in locals() else {},
+                digital_twin_result=digital_twin_result if "digital_twin_result" in locals() else {}
+            )
+        except Exception as error:
+            phoenix_bridge_result = {
+                "engine": "PhoenixBridgeEngine",
+                "status": "PHOENIX_BRIDGE_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Phoenix Bridge Engine resultaat:",
+            phoenix_bridge_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "phoenix_bridge",
+                phoenix_bridge_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "phoenix_bridge",
+                    phoenix_bridge_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
