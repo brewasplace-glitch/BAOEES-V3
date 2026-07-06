@@ -2,7 +2,7 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix AAIE BIB Assumption Loader",
   "engine_version": "v5.8",
-  "generated_at": "2026-07-05T01:41:09",
+  "generated_at": "2026-07-06T15:16:48",
   "purpose": "AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.",
   "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
   "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
@@ -64,7 +64,7 @@
       "reliability": "laag",
       "method": "fallback",
       "note": "AAIE kan nog niet eerst uit BIB putten omdat de BIB-kennisindex ontbreekt of niet leesbaar is.",
-      "created_at": "2026-07-05T01:41:09",
+      "created_at": "2026-07-06T15:16:48",
       "aaie_version": "v5.8"
     },
     {
@@ -75,7 +75,7 @@
       "reliability": "middel",
       "method": "standard_engineering_rule",
       "note": "Bekende Brewster Engineering standaard voor geotechniek.",
-      "created_at": "2026-07-05T01:41:09",
+      "created_at": "2026-07-06T15:16:48",
       "aaie_version": "v5.8"
     },
     {
@@ -86,7 +86,7 @@
       "reliability": "middel",
       "method": "standard_engineering_rule",
       "note": "Bekend standaard concept-funderingsplan voor BEOS/Brewster Engineering.",
-      "created_at": "2026-07-05T01:41:09",
+      "created_at": "2026-07-06T15:16:48",
       "aaie_version": "v5.8"
     },
     {
@@ -97,7 +97,7 @@
       "reliability": "hoog",
       "method": "confirmed_project_preference",
       "note": "Door gebruiker herhaald als vaste outputwens.",
-      "created_at": "2026-07-05T01:41:09",
+      "created_at": "2026-07-06T15:16:48",
       "aaie_version": "v5.8"
     },
     {
@@ -108,7 +108,7 @@
       "reliability": "hoog",
       "method": "confirmed_project_preference",
       "note": "Vaste wens voor BAOEES / Project Phoenix.",
-      "created_at": "2026-07-05T01:41:09",
+      "created_at": "2026-07-06T15:16:48",
       "aaie_version": "v5.8"
     },
     {
@@ -119,7 +119,7 @@
       "reliability": "hoog",
       "method": "confirmed_project_preference",
       "note": "Vaste eis voor BAOEES variantenmodule.",
-      "created_at": "2026-07-05T01:41:09",
+      "created_at": "2026-07-06T15:16:48",
       "aaie_version": "v5.8"
     }
   ],

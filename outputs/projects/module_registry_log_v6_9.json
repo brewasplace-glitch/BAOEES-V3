@@ -1,0 +1,443 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Module Registry & Engine Dashboard",
+  "engine_version": "v6.9",
+  "generated_at": "2026-07-06T15:16:47",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "registry_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_v6_9.json",
+  "log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_log_v6_9.json",
+  "dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_dashboard_v6_9.html",
+  "summary": {
+    "status": "CORE_COMPLEET",
+    "total_items": 25,
+    "present_count": 18,
+    "required_count": 13,
+    "required_present_count": 13,
+    "required_missing_count": 0,
+    "optional_missing_count": 7,
+    "core_readiness_percent": 100
+  },
+  "registry_items": [
+    {
+      "file": "brewster_knowledge_migration_engine.py",
+      "engine_key": "brewster_knowledge_migration_engine",
+      "category": "knowledge",
+      "required": true,
+      "description": "Brewster kennis naar BIB",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\brewster_knowledge_migration_engine.py",
+      "classes": [
+        "BrewsterKnowledgeMigrationEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 22971,
+      "modified_at": "2026-07-05T00:44:13"
+    },
+    {
+      "file": "deep_knowledge_harvest_engine.py",
+      "engine_key": "deep_knowledge_harvest_engine",
+      "category": "knowledge",
+      "required": true,
+      "description": "Deep harvest lokale kennis",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\deep_knowledge_harvest_engine.py",
+      "classes": [
+        "DeepKnowledgeHarvestEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 23756,
+      "modified_at": "2026-07-05T01:41:01"
+    },
+    {
+      "file": "module_registry_engine.py",
+      "engine_key": "module_registry_engine",
+      "category": "registry",
+      "required": true,
+      "description": "Engine register",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\module_registry_engine.py",
+      "classes": [
+        "ModuleRegistryEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 12592,
+      "modified_at": "2026-07-06T15:16:36"
+    },
+    {
+      "file": "project_start_analysis_engine.py",
+      "engine_key": "project_start_analysis_engine",
+      "category": "workflow",
+      "required": true,
+      "description": "Startanalyse",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_start_analysis_engine.py",
+      "classes": [
+        "ProjectStartAnalysisEngine"
+      ],
+      "functions": [
+        "configure_console_output",
+        "safe_print_json",
+        "main"
+      ],
+      "size_bytes": 15849,
+      "modified_at": "2026-06-30T17:30:58"
+    },
+    {
+      "file": "project_analyzer_workflow_engine.py",
+      "engine_key": "project_analyzer_workflow_engine",
+      "category": "workflow",
+      "required": true,
+      "description": "Workflow",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_analyzer_workflow_engine.py",
+      "classes": [
+        "ProjectAnalyzerWorkflowEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 8616,
+      "modified_at": "2026-07-01T22:07:04"
+    },
+    {
+      "file": "aaie_bib_assumption_loader.py",
+      "engine_key": "aaie_bib_assumption_loader",
+      "category": "aaie",
+      "required": true,
+      "description": "AAIE/BIB aannames",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\aaie_bib_assumption_loader.py",
+      "classes": [
+        "AAIEBibAssumptionLoader"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 21489,
+      "modified_at": "2026-06-30T18:13:21"
+    },
+    {
+      "file": "project_report_bib_engine.py",
+      "engine_key": "project_report_bib_engine",
+      "category": "reporting",
+      "required": true,
+      "description": "Rapportagepackage",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_report_bib_engine.py",
+      "classes": [
+        "ProjectReportBibEngine"
+      ],
+      "functions": [],
+      "size_bytes": 8669,
+      "modified_at": "2026-07-02T23:25:51"
+    },
+    {
+      "file": "project_report_export_engine.py",
+      "engine_key": "project_report_export_engine",
+      "category": "export",
+      "required": true,
+      "description": "DOCX/PDF export",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_report_export_engine.py",
+      "classes": [
+        "ProjectReportExportEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 15696,
+      "modified_at": "2026-07-02T12:28:51"
+    },
+    {
+      "file": "project_package_evidence_engine.py",
+      "engine_key": "project_package_evidence_engine",
+      "category": "evidence",
+      "required": true,
+      "description": "Evidence en projectpakket",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_package_evidence_engine.py",
+      "classes": [
+        "ProjectPackageEvidenceEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 21230,
+      "modified_at": "2026-07-02T13:08:53"
+    },
+    {
+      "file": "project_analyzer_launcher_bridge.py",
+      "engine_key": "project_analyzer_launcher_bridge",
+      "category": "dashboard",
+      "required": true,
+      "description": "Startdashboard bridge",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_analyzer_launcher_bridge.py",
+      "classes": [
+        "ProjectAnalyzerLauncherBridge"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 13481,
+      "modified_at": "2026-07-04T18:20:13"
+    },
+    {
+      "file": "project_analysis_health_check_engine.py",
+      "engine_key": "project_analysis_health_check_engine",
+      "category": "qaqc",
+      "required": true,
+      "description": "Health check",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_analysis_health_check_engine.py",
+      "classes": [
+        "ProjectAnalysisHealthCheckEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 9338,
+      "modified_at": "2026-07-05T00:27:39"
+    },
+    {
+      "file": "project_error_diagnostics_engine.py",
+      "engine_key": "project_error_diagnostics_engine",
+      "category": "qaqc",
+      "required": true,
+      "description": "Foutherkenning",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_error_diagnostics_engine.py",
+      "classes": [
+        "ProjectErrorDiagnosticsEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 15667,
+      "modified_at": "2026-07-05T01:12:53"
+    },
+    {
+      "file": "project_auto_repair_engine.py",
+      "engine_key": "project_auto_repair_engine",
+      "category": "qaqc",
+      "required": true,
+      "description": "Veilige auto repair",
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\project_auto_repair_engine.py",
+      "classes": [
+        "ProjectAutoRepairEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 12063,
+      "modified_at": "2026-07-05T01:12:53"
+    },
+    {
+      "file": "geotechniek_engine.py",
+      "engine_key": "geotechniek_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: geotechniek",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/geotechniek_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "foundation_engine.py",
+      "engine_key": "foundation_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: fundering",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/foundation_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "structural_engine.py",
+      "engine_key": "structural_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: constructie",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/structural_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "cad_drawing_export_engine.py",
+      "engine_key": "cad_drawing_export_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: tekeningen/CAD",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/cad_drawing_export_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "permit_engine.py",
+      "engine_key": "permit_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: vergunningen",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/permit_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "traffic_parking_engine.py",
+      "engine_key": "traffic_parking_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: verkeer/parkeren",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/traffic_parking_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "cost_planning_engine.py",
+      "engine_key": "cost_planning_engine",
+      "category": "to_build",
+      "required": false,
+      "description": "Nog te bouwen: kosten/planning",
+      "exists": false,
+      "status": "NOG_TE_BOUWEN",
+      "relative_path": "baoees/project_analyzer/cost_planning_engine.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 0,
+      "modified_at": ""
+    },
+    {
+      "file": "bib_context_loader.py",
+      "engine_key": "bib_context_loader",
+      "category": "extra_discovered",
+      "required": false,
+      "description": "Extra ontdekt Pythonbestand.",
+      "exists": true,
+      "status": "AANWEZIG_EXTRA",
+      "relative_path": "baoees\\project_analyzer\\bib_context_loader.py",
+      "classes": [
+        "ProjectAnalyzerBibContextLoader"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 17082,
+      "modified_at": "2026-06-27T00:25:28"
+    },
+    {
+      "file": "config.py",
+      "engine_key": "config",
+      "category": "extra_discovered",
+      "required": false,
+      "description": "Extra ontdekt Pythonbestand.",
+      "exists": true,
+      "status": "AANWEZIG_EXTRA",
+      "relative_path": "baoees\\project_analyzer\\config.py",
+      "classes": [],
+      "functions": [],
+      "size_bytes": 87,
+      "modified_at": "2026-06-19T16:36:42"
+    },
+    {
+      "file": "geo_foundation_bib_engine.py",
+      "engine_key": "geo_foundation_bib_engine",
+      "category": "extra_discovered",
+      "required": false,
+      "description": "Extra ontdekt Pythonbestand.",
+      "exists": true,
+      "status": "AANWEZIG_EXTRA",
+      "relative_path": "baoees\\project_analyzer\\geo_foundation_bib_engine.py",
+      "classes": [
+        "GeoFoundationBibEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 30061,
+      "modified_at": "2026-06-27T10:52:32"
+    },
+    {
+      "file": "main.py",
+      "engine_key": "main",
+      "category": "extra_discovered",
+      "required": false,
+      "description": "Extra ontdekt Pythonbestand.",
+      "exists": true,
+      "status": "AANWEZIG_EXTRA",
+      "relative_path": "baoees\\project_analyzer\\main.py",
+      "classes": [
+        "ProjectAnalyzer"
+      ],
+      "functions": [],
+      "size_bytes": 2642,
+      "modified_at": "2026-06-20T17:19:28"
+    },
+    {
+      "file": "project_analyzer_workflow.py",
+      "engine_key": "project_analyzer_workflow",
+      "category": "extra_discovered",
+      "required": false,
+      "description": "Extra ontdekt Pythonbestand.",
+      "exists": true,
+      "status": "AANWEZIG_EXTRA",
+      "relative_path": "baoees\\project_analyzer\\project_analyzer_workflow.py",
+      "classes": [
+        "ProjectAnalyzerWorkflow"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 13918,
+      "modified_at": "2026-06-27T15:40:59"
+    }
+  ],
+  "next_steps": [
+    "Controleer module_registry_dashboard_v6_9.html.",
+    "Gebruik dit register als basis voor de echte vakmodules.",
+    "Volgende stap: Project Intake Engine of Geotechniek Engine."
+  ]
+}

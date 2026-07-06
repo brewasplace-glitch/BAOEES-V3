@@ -1,59 +1,59 @@
 # Deep Knowledge Harvest v6.8
 
-Bestanden gescand: 304
-Kennisrecords: 224
+Bestanden gescand: 338
+Kennisrecords: 247
 
 ## Projecten
 
 ### moskee_bunschoten
-Records: 59
+Records: 62
 Topics:
-- moskee_bunschoten: 59
-- plutostraat_paramaribo: 53
-- bruynzeel_waterfront: 46
-- baoees_core: 54
-- engineering_modules: 46
-- workflow_automation: 30
+- moskee_bunschoten: 62
+- plutostraat_paramaribo: 56
+- bruynzeel_waterfront: 49
+- baoees_core: 57
+- engineering_modules: 47
+- workflow_automation: 32
 
 ### plutostraat_paramaribo
-Records: 74
+Records: 77
 Topics:
-- moskee_bunschoten: 55
-- plutostraat_paramaribo: 74
-- bruynzeel_waterfront: 51
-- baoees_core: 70
-- engineering_modules: 54
-- workflow_automation: 35
+- moskee_bunschoten: 58
+- plutostraat_paramaribo: 77
+- bruynzeel_waterfront: 54
+- baoees_core: 73
+- engineering_modules: 55
+- workflow_automation: 37
 
 ### bruynzeel_waterfront
-Records: 55
+Records: 58
 Topics:
-- moskee_bunschoten: 49
-- plutostraat_paramaribo: 54
-- bruynzeel_waterfront: 55
-- baoees_core: 52
-- engineering_modules: 41
-- workflow_automation: 30
+- moskee_bunschoten: 52
+- plutostraat_paramaribo: 57
+- bruynzeel_waterfront: 58
+- baoees_core: 55
+- engineering_modules: 42
+- workflow_automation: 32
 
 ## Topics
 
 ### baoees_core
-Records: 175
+Records: 194
 
 ### plutostraat_paramaribo
-Records: 127
+Records: 135
 
 ### moskee_bunschoten
-Records: 83
+Records: 86
 
 ### engineering_modules
-Records: 119
+Records: 128
 
 ### bruynzeel_waterfront
-Records: 55
+Records: 58
 
 ### workflow_automation
-Records: 94
+Records: 102
 
 ## Kennisgaten
 
