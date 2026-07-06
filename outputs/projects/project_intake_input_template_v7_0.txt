@@ -1,0 +1,13 @@
+PROJECT INTAKE TEMPLATE v7.0
+
+Sla een ingevulde kopie op als:
+outputs/projects/project_intake_input.txt
+
+project_name: Moskee Bunschoten uitbreiding
+location: Bikkersweg 88, Bunschoten
+project_type: maatschappelijk / religieus gebouw
+client: opdrachtgever
+description: Ontwerp een uitbreiding inclusief vergunning, parkeren, AERIUS, constructie en tekeningen.
+requested_outputs: rapportage_docx, rapportage_pdf, situatietekening, plattegronden, gevels, doorsneden, project_zip
+uploads: tekeningen, foto's, kaartuitsnede
+notes: Volledig autonoom uitvoeren met bronvermelding.

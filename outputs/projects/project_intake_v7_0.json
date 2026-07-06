@@ -1,0 +1,52 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Project Intake Engine",
+  "engine_version": "v7.0",
+  "generated_at": "2026-07-06T17:23:20",
+  "source": "default",
+  "source_path": "",
+  "project": {
+    "project_name": "Project Phoenix intake test",
+    "location": "Locatie nog te bepalen",
+    "project_type": "algemeen bouwkundig / civiel project",
+    "client": "",
+    "description": "Automatische testintake voor Project Phoenix v7.0."
+  },
+  "requested_outputs": [
+    "project_context",
+    "rapportage_docx",
+    "rapportage_pdf",
+    "bronvermelding",
+    "project_zip"
+  ],
+  "uploads": [],
+  "notes": "",
+  "missing_required_fields": [],
+  "assumptions": [],
+  "recommended_modules": [
+    {
+      "module": "fundering",
+      "status": "aanbevolen",
+      "reason": "Herkenning op: palen"
+    },
+    {
+      "module": "rapportage_export",
+      "status": "aanbevolen",
+      "reason": "Herkenning op: rapport, pdf, docx"
+    },
+    {
+      "module": "evidence",
+      "status": "aanbevolen",
+      "reason": "Herkenning op: bron, project_zip, zip"
+    }
+  ],
+  "workflow_policy": {
+    "mode": "volledig_autonoom",
+    "use_bib_first": true,
+    "use_aaie_for_missing_data": true,
+    "create_evidence": true,
+    "create_project_zip": true,
+    "run_health_check": true,
+    "run_diagnostics_and_auto_repair": true
+  }
+}

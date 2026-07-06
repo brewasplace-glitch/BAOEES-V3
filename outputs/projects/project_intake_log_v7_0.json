@@ -1,0 +1,23 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Project Intake Engine",
+  "engine_version": "v7.0",
+  "generated_at": "2026-07-06T17:23:20",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "input_template_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_intake_input_template_v7_0.txt",
+  "intake_json_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_intake_v7_0.json",
+  "project_context_seed_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_seed_v7_0.json",
+  "intake_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_intake_log_v7_0.json",
+  "intake_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_intake_dashboard_v7_0.html",
+  "project_name": "Project Phoenix intake test",
+  "location": "Locatie nog te bepalen",
+  "project_type": "algemeen bouwkundig / civiel project",
+  "requested_output_count": 5,
+  "recommended_module_count": 3,
+  "assumption_count": 0,
+  "next_steps": [
+    "Vul project_intake_input.txt of project_intake_input.json voor projectspecifieke invoer.",
+    "Run START_PROJECTANALYSE opnieuw.",
+    "Gebruik project_context_seed_v7_0.json als basis voor v7.1 Project Context Builder."
+  ]
+}

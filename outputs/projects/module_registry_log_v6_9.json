@@ -2,15 +2,15 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Module Registry & Engine Dashboard",
   "engine_version": "v6.9",
-  "generated_at": "2026-07-06T15:16:47",
+  "generated_at": "2026-07-06T17:23:26",
   "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
   "registry_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_v6_9.json",
   "log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_log_v6_9.json",
   "dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_dashboard_v6_9.html",
   "summary": {
     "status": "CORE_COMPLEET",
-    "total_items": 25,
-    "present_count": 18,
+    "total_items": 26,
+    "present_count": 19,
     "required_count": 13,
     "required_present_count": 13,
     "required_missing_count": 0,
@@ -433,6 +433,24 @@
       ],
       "size_bytes": 13918,
       "modified_at": "2026-06-27T15:40:59"
+    },
+    {
+      "file": "project_intake_engine.py",
+      "engine_key": "project_intake_engine",
+      "category": "extra_discovered",
+      "required": false,
+      "description": "Extra ontdekt Pythonbestand.",
+      "exists": true,
+      "status": "AANWEZIG_EXTRA",
+      "relative_path": "baoees\\project_analyzer\\project_intake_engine.py",
+      "classes": [
+        "ProjectIntakeEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 14646,
+      "modified_at": "2026-07-06T17:23:18"
     }
   ],
   "next_steps": [
