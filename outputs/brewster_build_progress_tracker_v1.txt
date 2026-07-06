@@ -1,0 +1,21 @@
+BREWSTER BUILD PROGRESS TRACKER
+========================================
+
+Status: BREWSTER_BUILD_PROGRESS_TRACKER_GEREED
+Totaal taken: 20
+Voortgang: 0.0%
+Clean afgerond: 0
+Resterend: 20
+
+Eerstvolgende open taak:
+- Taak: S01-T001
+- Titel: Testtaak 1
+- Risico: laag
+- GO vereist: False
+
+Vandaag:
+- git status controleren
+- alleen verder bij working tree clean
+- eerstvolgende open taak uitvoeren
+- GO vragen bij hoge risico's
+- na taak status bijwerken naar clean

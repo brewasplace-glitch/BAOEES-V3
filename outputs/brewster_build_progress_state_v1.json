@@ -1,0 +1,364 @@
+{
+  "version": "1.0",
+  "task_states": {
+    "S01-T001": {
+      "task_id": "S01-T001",
+      "track_id": "S01",
+      "title": "Testtaak 1",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "status": "not_started",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": false,
+      "updated_at": null
+    },
+    "S01-T002": {
+      "task_id": "S01-T002",
+      "track_id": "S01",
+      "title": "Testtaak 2",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T001"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T003": {
+      "task_id": "S01-T003",
+      "track_id": "S01",
+      "title": "Testtaak 3",
+      "risk_level": "hoog",
+      "go_required": true,
+      "depends_on": [
+        "S01-T002"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T004": {
+      "task_id": "S01-T004",
+      "track_id": "S01",
+      "title": "Testtaak 4",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T003"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T005": {
+      "task_id": "S01-T005",
+      "track_id": "S01",
+      "title": "Testtaak 5",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T004"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T006": {
+      "task_id": "S01-T006",
+      "track_id": "S01",
+      "title": "Testtaak 6",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T005"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T007": {
+      "task_id": "S01-T007",
+      "track_id": "S01",
+      "title": "Testtaak 7",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T006"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T008": {
+      "task_id": "S01-T008",
+      "track_id": "S01",
+      "title": "Testtaak 8",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T007"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T009": {
+      "task_id": "S01-T009",
+      "track_id": "S01",
+      "title": "Testtaak 9",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T008"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T010": {
+      "task_id": "S01-T010",
+      "track_id": "S01",
+      "title": "Testtaak 10",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T009"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T011": {
+      "task_id": "S01-T011",
+      "track_id": "S01",
+      "title": "Testtaak 11",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T010"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T012": {
+      "task_id": "S01-T012",
+      "track_id": "S01",
+      "title": "Testtaak 12",
+      "risk_level": "hoog",
+      "go_required": true,
+      "depends_on": [
+        "S01-T011"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T013": {
+      "task_id": "S01-T013",
+      "track_id": "S01",
+      "title": "Testtaak 13",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T012"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T014": {
+      "task_id": "S01-T014",
+      "track_id": "S01",
+      "title": "Testtaak 14",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T013"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T015": {
+      "task_id": "S01-T015",
+      "track_id": "S01",
+      "title": "Testtaak 15",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T014"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T016": {
+      "task_id": "S01-T016",
+      "track_id": "S01",
+      "title": "Testtaak 16",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T015"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T017": {
+      "task_id": "S01-T017",
+      "track_id": "S01",
+      "title": "Testtaak 17",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T016"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T018": {
+      "task_id": "S01-T018",
+      "track_id": "S01",
+      "title": "Testtaak 18",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T017"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T019": {
+      "task_id": "S01-T019",
+      "track_id": "S01",
+      "title": "Testtaak 19",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T018"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T020": {
+      "task_id": "S01-T020",
+      "track_id": "S01",
+      "title": "Testtaak 20",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T019"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    }
+  },
+  "updated_at": "2026-07-06T12:41:51"
+}

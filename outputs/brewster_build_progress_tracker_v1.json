@@ -1,0 +1,839 @@
+{
+  "engine": "BrewsterBuildProgressTrackerEngine",
+  "version": "1.0",
+  "status": "BREWSTER_BUILD_PROGRESS_TRACKER_GEREED",
+  "project_id": "BREWAS_BAOEES",
+  "project_name": "BREWSTER ENGINEERING WIZARD",
+  "task_count": 20,
+  "task_states": {
+    "S01-T001": {
+      "task_id": "S01-T001",
+      "track_id": "S01",
+      "title": "Testtaak 1",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [],
+      "status": "not_started",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": false,
+      "updated_at": null
+    },
+    "S01-T002": {
+      "task_id": "S01-T002",
+      "track_id": "S01",
+      "title": "Testtaak 2",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T001"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T003": {
+      "task_id": "S01-T003",
+      "track_id": "S01",
+      "title": "Testtaak 3",
+      "risk_level": "hoog",
+      "go_required": true,
+      "depends_on": [
+        "S01-T002"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T004": {
+      "task_id": "S01-T004",
+      "track_id": "S01",
+      "title": "Testtaak 4",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T003"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T005": {
+      "task_id": "S01-T005",
+      "track_id": "S01",
+      "title": "Testtaak 5",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T004"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T006": {
+      "task_id": "S01-T006",
+      "track_id": "S01",
+      "title": "Testtaak 6",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T005"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T007": {
+      "task_id": "S01-T007",
+      "track_id": "S01",
+      "title": "Testtaak 7",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T006"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T008": {
+      "task_id": "S01-T008",
+      "track_id": "S01",
+      "title": "Testtaak 8",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T007"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T009": {
+      "task_id": "S01-T009",
+      "track_id": "S01",
+      "title": "Testtaak 9",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T008"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T010": {
+      "task_id": "S01-T010",
+      "track_id": "S01",
+      "title": "Testtaak 10",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T009"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T011": {
+      "task_id": "S01-T011",
+      "track_id": "S01",
+      "title": "Testtaak 11",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T010"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T012": {
+      "task_id": "S01-T012",
+      "track_id": "S01",
+      "title": "Testtaak 12",
+      "risk_level": "hoog",
+      "go_required": true,
+      "depends_on": [
+        "S01-T011"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T013": {
+      "task_id": "S01-T013",
+      "track_id": "S01",
+      "title": "Testtaak 13",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T012"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T014": {
+      "task_id": "S01-T014",
+      "track_id": "S01",
+      "title": "Testtaak 14",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T013"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T015": {
+      "task_id": "S01-T015",
+      "track_id": "S01",
+      "title": "Testtaak 15",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T014"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T016": {
+      "task_id": "S01-T016",
+      "track_id": "S01",
+      "title": "Testtaak 16",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T015"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T017": {
+      "task_id": "S01-T017",
+      "track_id": "S01",
+      "title": "Testtaak 17",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T016"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T018": {
+      "task_id": "S01-T018",
+      "track_id": "S01",
+      "title": "Testtaak 18",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T017"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T019": {
+      "task_id": "S01-T019",
+      "track_id": "S01",
+      "title": "Testtaak 19",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T018"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    },
+    "S01-T020": {
+      "task_id": "S01-T020",
+      "track_id": "S01",
+      "title": "Testtaak 20",
+      "risk_level": "laag",
+      "go_required": false,
+      "depends_on": [
+        "S01-T019"
+      ],
+      "status": "blocked",
+      "started": false,
+      "tested": false,
+      "committed": false,
+      "pushed": false,
+      "clean": false,
+      "blocked": true,
+      "updated_at": null
+    }
+  },
+  "progress_summary": {
+    "status": "PROGRESS_SUMMARY_GEREED",
+    "total_tasks": 20,
+    "counts": {
+      "not_started": 1,
+      "blocked": 19,
+      "in_progress": 0,
+      "tested": 0,
+      "committed": 0,
+      "pushed": 0,
+      "clean": 0
+    },
+    "clean_count": 0,
+    "progress_percent": 0.0,
+    "remaining_tasks": 20
+  },
+  "next_open_task": {
+    "task_id": "S01-T001",
+    "title": "Testtaak 1",
+    "description": "Beschrijving testtaak 1",
+    "track_id": "S01",
+    "track_title": "Stabilisatie en automatisering",
+    "priority": 1,
+    "risk_level": "laag",
+    "go_required": false,
+    "status": "not_started",
+    "expected_files": [],
+    "test_commands": [
+      "python run_baoees_v3.py",
+      "git status"
+    ],
+    "commit_message": "feat: test task 1"
+  },
+  "blocked_tasks": [
+    {
+      "task_id": "S01-T002",
+      "title": "Testtaak 2",
+      "depends_on": [
+        "S01-T001"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T003",
+      "title": "Testtaak 3",
+      "depends_on": [
+        "S01-T002"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T004",
+      "title": "Testtaak 4",
+      "depends_on": [
+        "S01-T003"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T005",
+      "title": "Testtaak 5",
+      "depends_on": [
+        "S01-T004"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T006",
+      "title": "Testtaak 6",
+      "depends_on": [
+        "S01-T005"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T007",
+      "title": "Testtaak 7",
+      "depends_on": [
+        "S01-T006"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T008",
+      "title": "Testtaak 8",
+      "depends_on": [
+        "S01-T007"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T009",
+      "title": "Testtaak 9",
+      "depends_on": [
+        "S01-T008"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T010",
+      "title": "Testtaak 10",
+      "depends_on": [
+        "S01-T009"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T011",
+      "title": "Testtaak 11",
+      "depends_on": [
+        "S01-T010"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T012",
+      "title": "Testtaak 12",
+      "depends_on": [
+        "S01-T011"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T013",
+      "title": "Testtaak 13",
+      "depends_on": [
+        "S01-T012"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T014",
+      "title": "Testtaak 14",
+      "depends_on": [
+        "S01-T013"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T015",
+      "title": "Testtaak 15",
+      "depends_on": [
+        "S01-T014"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T016",
+      "title": "Testtaak 16",
+      "depends_on": [
+        "S01-T015"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T017",
+      "title": "Testtaak 17",
+      "depends_on": [
+        "S01-T016"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T018",
+      "title": "Testtaak 18",
+      "depends_on": [
+        "S01-T017"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T019",
+      "title": "Testtaak 19",
+      "depends_on": [
+        "S01-T018"
+      ],
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T020",
+      "title": "Testtaak 20",
+      "depends_on": [
+        "S01-T019"
+      ],
+      "status": "blocked"
+    }
+  ],
+  "go_required_tasks": [
+    {
+      "task_id": "S01-T003",
+      "title": "Testtaak 3",
+      "risk_level": "hoog",
+      "status": "blocked"
+    },
+    {
+      "task_id": "S01-T012",
+      "title": "Testtaak 12",
+      "risk_level": "hoog",
+      "status": "blocked"
+    }
+  ],
+  "daily_progress_dashboard": {
+    "title": "Voortgang BREWSTER ENGINEERING WIZARD",
+    "status": "DAGELIJKS_VOORTGANGSDASHBOARD_GEREED",
+    "progress_percent": 0.0,
+    "remaining_tasks": 20,
+    "next_open_task": {
+      "task_id": "S01-T001",
+      "title": "Testtaak 1",
+      "description": "Beschrijving testtaak 1",
+      "track_id": "S01",
+      "track_title": "Stabilisatie en automatisering",
+      "priority": 1,
+      "risk_level": "laag",
+      "go_required": false,
+      "status": "not_started",
+      "expected_files": [],
+      "test_commands": [
+        "python run_baoees_v3.py",
+        "git status"
+      ],
+      "commit_message": "feat: test task 1"
+    },
+    "blocked_task_count": 19,
+    "go_required_task_count": 2,
+    "orchestrator_status": "OPTIONEEL",
+    "factory_status": "OPTIONEEL",
+    "today_focus": [
+      "git status controleren",
+      "alleen verder bij working tree clean",
+      "eerstvolgende open taak uitvoeren",
+      "GO vragen bij hoge risico's",
+      "na taak status bijwerken naar clean"
+    ]
+  },
+  "state_policy": {
+    "status": "STATE_POLICY_GEREED",
+    "state_file": "outputs/brewster_build_progress_state_v1.json",
+    "allowed_statuses": [
+      "not_started",
+      "blocked",
+      "in_progress",
+      "tested",
+      "committed",
+      "pushed",
+      "clean"
+    ],
+    "clean_definition": [
+      "script uitgevoerd zonder fout",
+      "BAOEES_TEST_OK",
+      "commit en push uitgevoerd",
+      "git status meldt nothing to commit, working tree clean"
+    ]
+  },
+  "digital_twin_update": {
+    "digital_twin_node": "brewster_build_progress_tracker",
+    "project_id": "BREWAS_BAOEES",
+    "project_name": "BREWSTER ENGINEERING WIZARD",
+    "status": "READY_FOR_DIGITAL_TWIN_MERGE",
+    "data": {
+      "progress_summary": {
+        "status": "PROGRESS_SUMMARY_GEREED",
+        "total_tasks": 20,
+        "counts": {
+          "not_started": 1,
+          "blocked": 19,
+          "in_progress": 0,
+          "tested": 0,
+          "committed": 0,
+          "pushed": 0,
+          "clean": 0
+        },
+        "clean_count": 0,
+        "progress_percent": 0.0,
+        "remaining_tasks": 20
+      },
+      "next_open_task": {
+        "task_id": "S01-T001",
+        "title": "Testtaak 1",
+        "description": "Beschrijving testtaak 1",
+        "track_id": "S01",
+        "track_title": "Stabilisatie en automatisering",
+        "priority": 1,
+        "risk_level": "laag",
+        "go_required": false,
+        "status": "not_started",
+        "expected_files": [],
+        "test_commands": [
+          "python run_baoees_v3.py",
+          "git status"
+        ],
+        "commit_message": "feat: test task 1"
+      },
+      "blocked_tasks": [
+        {
+          "task_id": "S01-T002",
+          "title": "Testtaak 2",
+          "depends_on": [
+            "S01-T001"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T003",
+          "title": "Testtaak 3",
+          "depends_on": [
+            "S01-T002"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T004",
+          "title": "Testtaak 4",
+          "depends_on": [
+            "S01-T003"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T005",
+          "title": "Testtaak 5",
+          "depends_on": [
+            "S01-T004"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T006",
+          "title": "Testtaak 6",
+          "depends_on": [
+            "S01-T005"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T007",
+          "title": "Testtaak 7",
+          "depends_on": [
+            "S01-T006"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T008",
+          "title": "Testtaak 8",
+          "depends_on": [
+            "S01-T007"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T009",
+          "title": "Testtaak 9",
+          "depends_on": [
+            "S01-T008"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T010",
+          "title": "Testtaak 10",
+          "depends_on": [
+            "S01-T009"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T011",
+          "title": "Testtaak 11",
+          "depends_on": [
+            "S01-T010"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T012",
+          "title": "Testtaak 12",
+          "depends_on": [
+            "S01-T011"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T013",
+          "title": "Testtaak 13",
+          "depends_on": [
+            "S01-T012"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T014",
+          "title": "Testtaak 14",
+          "depends_on": [
+            "S01-T013"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T015",
+          "title": "Testtaak 15",
+          "depends_on": [
+            "S01-T014"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T016",
+          "title": "Testtaak 16",
+          "depends_on": [
+            "S01-T015"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T017",
+          "title": "Testtaak 17",
+          "depends_on": [
+            "S01-T016"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T018",
+          "title": "Testtaak 18",
+          "depends_on": [
+            "S01-T017"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T019",
+          "title": "Testtaak 19",
+          "depends_on": [
+            "S01-T018"
+          ],
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T020",
+          "title": "Testtaak 20",
+          "depends_on": [
+            "S01-T019"
+          ],
+          "status": "blocked"
+        }
+      ],
+      "go_required_tasks": [
+        {
+          "task_id": "S01-T003",
+          "title": "Testtaak 3",
+          "risk_level": "hoog",
+          "status": "blocked"
+        },
+        {
+          "task_id": "S01-T012",
+          "title": "Testtaak 12",
+          "risk_level": "hoog",
+          "status": "blocked"
+        }
+      ]
+    }
+  },
+  "warnings": [
+    "Aantal geblokkeerde taken: 19."
+  ],
+  "recommendation": {
+    "status": "BUILD_PROGRESS_TRACKER_ADVIES",
+    "advice": "Gebruik deze tracker als voortgangsgeheugen. Na iedere taak moet de status worden bijgewerkt naar tested, committed, pushed en clean voordat de volgende taak start."
+  },
+  "created_at": "2026-07-06T12:41:51"
+}
