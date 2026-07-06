@@ -1,0 +1,259 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Project Context Builder Engine",
+  "engine_version": "v7.1",
+  "generated_at": "2026-07-06T17:43:59",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "project": {
+    "project_name": "Project Phoenix intake test",
+    "location": "Locatie nog te bepalen",
+    "project_type": "algemeen bouwkundig / civiel project",
+    "client": "",
+    "description": "Automatische testintake voor Project Phoenix v7.0."
+  },
+  "requested_outputs": [
+    "project_context",
+    "rapportage_docx",
+    "rapportage_pdf",
+    "bronvermelding",
+    "project_zip"
+  ],
+  "modules": {
+    "recommended_modules": [
+      {
+        "module": "fundering",
+        "status": "aanbevolen",
+        "reason": "Herkenning op: palen"
+      },
+      {
+        "module": "rapportage_export",
+        "status": "aanbevolen",
+        "reason": "Herkenning op: rapport, pdf, docx"
+      },
+      {
+        "module": "evidence",
+        "status": "aanbevolen",
+        "reason": "Herkenning op: bron, project_zip, zip"
+      }
+    ],
+    "active_core_engines": [
+      {
+        "engine_key": "brewster_knowledge_migration_engine",
+        "file": "brewster_knowledge_migration_engine.py",
+        "category": "knowledge",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "deep_knowledge_harvest_engine",
+        "file": "deep_knowledge_harvest_engine.py",
+        "category": "knowledge",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "module_registry_engine",
+        "file": "module_registry_engine.py",
+        "category": "registry",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_start_analysis_engine",
+        "file": "project_start_analysis_engine.py",
+        "category": "workflow",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_analyzer_workflow_engine",
+        "file": "project_analyzer_workflow_engine.py",
+        "category": "workflow",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "aaie_bib_assumption_loader",
+        "file": "aaie_bib_assumption_loader.py",
+        "category": "aaie",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_report_bib_engine",
+        "file": "project_report_bib_engine.py",
+        "category": "reporting",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_report_export_engine",
+        "file": "project_report_export_engine.py",
+        "category": "export",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_package_evidence_engine",
+        "file": "project_package_evidence_engine.py",
+        "category": "evidence",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_analyzer_launcher_bridge",
+        "file": "project_analyzer_launcher_bridge.py",
+        "category": "dashboard",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_analysis_health_check_engine",
+        "file": "project_analysis_health_check_engine.py",
+        "category": "qaqc",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_error_diagnostics_engine",
+        "file": "project_error_diagnostics_engine.py",
+        "category": "qaqc",
+        "status": "AANWEZIG"
+      },
+      {
+        "engine_key": "project_auto_repair_engine",
+        "file": "project_auto_repair_engine.py",
+        "category": "qaqc",
+        "status": "AANWEZIG"
+      }
+    ],
+    "missing_required_engines": []
+  },
+  "knowledge": {
+    "bib_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+    "knowledge_base_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
+    "harvest_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json",
+    "sources": [
+      {
+        "name": "BIB Knowledge Content Index",
+        "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+        "status": "BIJGEWERKT",
+        "type": "bib_index"
+      },
+      {
+        "name": "Brewster Engineering Wizard Knowledge Base",
+        "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
+        "status": "OPGESLAGEN",
+        "type": "knowledge_base"
+      },
+      {
+        "name": "Deep Knowledge Harvest",
+        "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json",
+        "status": "OPGESLAGEN",
+        "type": "deep_harvest"
+      }
+    ],
+    "use_bib_first": true
+  },
+  "assumptions": [
+    {
+      "key": "bib_status",
+      "value": "Geen bruikbare BIB-kennisindex gevonden.",
+      "source": "AAIE v5.8 controle",
+      "source_type": "system_check",
+      "reliability": "laag",
+      "method": "fallback",
+      "note": "AAIE kan nog niet eerst uit BIB putten omdat de BIB-kennisindex ontbreekt of niet leesbaar is.",
+      "created_at": "2026-07-06T17:43:59",
+      "aaie_version": "v5.8",
+      "source_group": "aaie"
+    },
+    {
+      "key": "default_groundwater_level",
+      "value": "P = -0,50 m, tenzij projectspecifieke gegevens anders aangeven.",
+      "source": "Project Phoenix standaardkennis",
+      "source_type": "project_standard",
+      "reliability": "middel",
+      "method": "standard_engineering_rule",
+      "note": "Bekende Brewster Engineering standaard voor geotechniek.",
+      "created_at": "2026-07-06T17:43:59",
+      "aaie_version": "v5.8",
+      "source_group": "aaie"
+    },
+    {
+      "key": "default_foundation_concept",
+      "value": "Strokenfundering 150 cm breed en 40 cm hoog met funderingsbalk 50 x 60 cm in het hart van de strook.",
+      "source": "Project Phoenix standaardkennis",
+      "source_type": "project_standard",
+      "reliability": "middel",
+      "method": "standard_engineering_rule",
+      "note": "Bekend standaard concept-funderingsplan voor BEOS/Brewster Engineering.",
+      "created_at": "2026-07-06T17:43:59",
+      "aaie_version": "v5.8",
+      "source_group": "aaie"
+    },
+    {
+      "key": "default_output_formats",
+      "value": "Rapporten standaard PDF/DOCX; tekeningen standaard SKP/DWG/DXF; waar relevant IFC, STEP, FreeCAD, OpenSees, CalculiX, Excel/CSV.",
+      "source": "Project Phoenix standaardkennis",
+      "source_type": "project_standard",
+      "reliability": "hoog",
+      "method": "confirmed_project_preference",
+      "note": "Door gebruiker herhaald als vaste outputwens.",
+      "created_at": "2026-07-06T17:43:59",
+      "aaie_version": "v5.8",
+      "source_group": "aaie"
+    },
+    {
+      "key": "autonomous_project_mode",
+      "value": "Volledig autonoom als standaardmodus, met controleerbare output en evidence.",
+      "source": "Project Phoenix standaardkennis",
+      "source_type": "project_standard",
+      "reliability": "hoog",
+      "method": "confirmed_project_preference",
+      "note": "Vaste wens voor BAOEES / Project Phoenix.",
+      "created_at": "2026-07-06T17:43:59",
+      "aaie_version": "v5.8",
+      "source_group": "aaie"
+    },
+    {
+      "key": "five_design_variants",
+      "value": "Automatisch 5 ontwerpvarianten: laagste kosten, hoogste vergunningkans, duurzaamste, hoogste opbrengst, beste ruimtelijke kwaliteit.",
+      "source": "Project Phoenix standaardkennis",
+      "source_type": "project_standard",
+      "reliability": "hoog",
+      "method": "confirmed_project_preference",
+      "note": "Vaste eis voor BAOEES variantenmodule.",
+      "created_at": "2026-07-06T17:43:59",
+      "aaie_version": "v5.8",
+      "source_group": "aaie"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Locatie ontbreekt",
+      "impact": "Kan geo, vergunning, parkeren en kosten beïnvloeden.",
+      "severity": "hoog",
+      "repair": "Vul project_intake_input.txt met locatie of adres."
+    },
+    {
+      "risk": "Aannames aanwezig",
+      "impact": "Projectcontext bevat automatisch ingevulde gegevens.",
+      "severity": "middel",
+      "repair": "Controleer aannames in project_context_v7_1.json."
+    },
+    {
+      "risk": "fundering nog conceptueel",
+      "impact": "Vakengine moet nog verder worden uitgebouwd.",
+      "severity": "middel",
+      "repair": "Bouw fundering engine in volgende versies."
+    }
+  ],
+  "workflow_policy": {
+    "mode": "volledig_autonoom",
+    "project_context_is_source_of_truth": true,
+    "use_aaie_for_missing_data": true,
+    "create_evidence": true,
+    "create_project_zip": true,
+    "run_health_check": true,
+    "run_diagnostics_and_auto_repair": true
+  },
+  "source_files": {
+    "intake": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_intake_v7_0.json",
+    "context_seed": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_seed_v7_0.json",
+    "bib_index": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
+    "aaie": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\aaie_bib_assumptions.json",
+    "module_registry": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_v6_9.json",
+    "knowledge_base": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
+    "deep_harvest": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json"
+  }
+}

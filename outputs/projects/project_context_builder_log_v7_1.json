@@ -1,0 +1,35 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Project Context Builder Engine",
+  "engine_version": "v7.1",
+  "started_at": "2026-07-06T17:43:59",
+  "finished_at": "2026-07-06T17:43:59",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
+  "project_context_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_v7_1.json",
+  "project_context_summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_summary_v7_1.md",
+  "project_context_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_builder_log_v7_1.json",
+  "project_context_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_dashboard_v7_1.html",
+  "source_status": {
+    "intake": "GELEZEN",
+    "context_seed": "GELEZEN",
+    "bib_index": "GELEZEN",
+    "aaie": "GELEZEN",
+    "module_registry": "GELEZEN",
+    "knowledge_base": "GELEZEN",
+    "deep_harvest": "GELEZEN"
+  },
+  "project_name": "Project Phoenix intake test",
+  "location": "Locatie nog te bepalen",
+  "recommended_module_count": 3,
+  "active_core_engine_count": 13,
+  "assumption_count": 6,
+  "knowledge_source_count": 3,
+  "risk_count": 3,
+  "next_steps": [
+    "Controleer project_context_dashboard_v7_1.html.",
+    "Gebruik project_context_v7_1.json als centrale bron voor alle volgende engines.",
+    "Leg v7.1 vast met git add, commit en push.",
+    "Ga daarna door naar v7.2: geotechniek of fundering engine laten lezen uit project_context_v7_1.json."
+  ]
+}

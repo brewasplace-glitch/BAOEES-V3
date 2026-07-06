@@ -1,0 +1,9 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix Project Context Builder Connector",
+    "engine_version":  "v7.1",
+    "generated_at":  "2026-07-06T17:43:54",
+    "project_root":  "C:\\BREWSTER-ENGINEERING-WIZARD",
+    "project_context_builder_engine":  "C:\\BREWSTER-ENGINEERING-WIZARD\\baoees\\project_analyzer\\project_context_builder_engine.py",
+    "purpose":  "Maakt centrale project_context_v7_1.json uit intake, BIB, AAIE, Module Registry en Deep Harvest."
+}

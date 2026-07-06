@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Project Phoenix Project Context v7.1</title>
+<style>
+body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; }
+main { max-width:1240px; margin:0 auto; padding:32px; }
+section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; }
+h1,h2 { color:#f8fafc; }
+table { width:100%; border-collapse:collapse; }
+td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; }
+th { background:#1e293b; }
+code { color:#bfdbfe; }
+</style>
+</head>
+<body>
+<main>
+<section>
+<h1>Project Phoenix Project Context v7.1</h1>
+<p>Status: <strong>OPGESLAGEN</strong></p>
+<p>De centrale projectcontext is opgebouwd uit intake, BIB, AAIE, Module Registry en Deep Harvest.</p>
+</section>
+
+<section>
+<h2>Project</h2>
+<p><strong>Naam:</strong> Project Phoenix intake test</p>
+<p><strong>Locatie:</strong> Locatie nog te bepalen</p>
+<p><strong>Type:</strong> algemeen bouwkundig / civiel project</p>
+<p><strong>Omschrijving:</strong> Automatische testintake voor Project Phoenix v7.0.</p>
+</section>
+
+<section>
+<h2>Aanbevolen modules</h2>
+<table>
+<tr><th>Module</th><th>Status</th><th>Reden</th></tr>
+<tr><td>fundering</td><td>aanbevolen</td><td>Herkenning op: palen</td></tr><tr><td>rapportage_export</td><td>aanbevolen</td><td>Herkenning op: rapport, pdf, docx</td></tr><tr><td>evidence</td><td>aanbevolen</td><td>Herkenning op: bron, project_zip, zip</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Actieve core engines</h2>
+<table>
+<tr><th>Engine</th><th>Categorie</th><th>Status</th></tr>
+<tr><td>brewster_knowledge_migration_engine</td><td>knowledge</td><td>AANWEZIG</td></tr><tr><td>deep_knowledge_harvest_engine</td><td>knowledge</td><td>AANWEZIG</td></tr><tr><td>module_registry_engine</td><td>registry</td><td>AANWEZIG</td></tr><tr><td>project_start_analysis_engine</td><td>workflow</td><td>AANWEZIG</td></tr><tr><td>project_analyzer_workflow_engine</td><td>workflow</td><td>AANWEZIG</td></tr><tr><td>aaie_bib_assumption_loader</td><td>aaie</td><td>AANWEZIG</td></tr><tr><td>project_report_bib_engine</td><td>reporting</td><td>AANWEZIG</td></tr><tr><td>project_report_export_engine</td><td>export</td><td>AANWEZIG</td></tr><tr><td>project_package_evidence_engine</td><td>evidence</td><td>AANWEZIG</td></tr><tr><td>project_analyzer_launcher_bridge</td><td>dashboard</td><td>AANWEZIG</td></tr><tr><td>project_analysis_health_check_engine</td><td>qaqc</td><td>AANWEZIG</td></tr><tr><td>project_error_diagnostics_engine</td><td>qaqc</td><td>AANWEZIG</td></tr><tr><td>project_auto_repair_engine</td><td>qaqc</td><td>AANWEZIG</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Kennisbronnen</h2>
+<table>
+<tr><th>Naam</th><th>Type</th><th>Pad</th></tr>
+<tr><td>BIB Knowledge Content Index</td><td>bib_index</td><td><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\bib\index\bib_knowledge_content_index.json</code></td></tr><tr><td>Brewster Engineering Wizard Knowledge Base</td><td>knowledge_base</td><td><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\bib\knowledge\brewster_engineering_wizard_knowledge_base_v6_6.json</code></td></tr><tr><td>Deep Knowledge Harvest</td><td>deep_harvest</td><td><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\bib\harvest\deep_knowledge_harvest_index_v6_8.json</code></td></tr>
+</table>
+</section>
+
+<section>
+<h2>Risico's en aandachtspunten</h2>
+<table>
+<tr><th>Risico</th><th>Ernst</th><th>Impact</th><th>Herstel</th></tr>
+<tr><td>Locatie ontbreekt</td><td>hoog</td><td>Kan geo, vergunning, parkeren en kosten beïnvloeden.</td><td>Vul project_intake_input.txt met locatie of adres.</td></tr><tr><td>Aannames aanwezig</td><td>middel</td><td>Projectcontext bevat automatisch ingevulde gegevens.</td><td>Controleer aannames in project_context_v7_1.json.</td></tr><tr><td>fundering nog conceptueel</td><td>middel</td><td>Vakengine moet nog verder worden uitgebouwd.</td><td>Bouw fundering engine in volgende versies.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Bestanden</h2>
+<p><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\projects\project_context_v7_1.json</code></p>
+<p><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\projects\project_context_summary_v7_1.md</code></p>
+</section>
+</main>
+</body>
+</html>
