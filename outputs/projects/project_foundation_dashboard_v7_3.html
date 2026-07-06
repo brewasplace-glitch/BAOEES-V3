@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Project Phoenix Foundation v7.3</title>
+<style>
+body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; }
+main { max-width:1240px; margin:0 auto; padding:32px; }
+section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; }
+h1,h2 { color:#f8fafc; }
+table { width:100%; border-collapse:collapse; }
+td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; }
+th { background:#1e293b; }
+code { color:#bfdbfe; }
+</style>
+</head>
+<body>
+<main>
+<section>
+<h1>Project Phoenix Foundation Engine v7.3</h1>
+<p>Status: <strong>OPGESLAGEN</strong></p>
+<p>Voorlopig funderingsconcept op basis van projectcontext en geotechniek.</p>
+</section>
+
+<section>
+<h2>Project</h2>
+<p><strong>Naam:</strong> Project Phoenix intake test</p>
+<p><strong>Locatie:</strong> Locatie nog te bepalen</p>
+<p><strong>Type:</strong> algemeen bouwkundig / civiel project</p>
+</section>
+
+<section>
+<h2>Geselecteerd concept</h2>
+<p><strong>Type:</strong> strokenfundering_met_funderingsbalk</p>
+<p><strong>Status:</strong> VOORLOPIG</p>
+<p><strong>Funderingsniveau:</strong> P = -0,50 m voorlopig</p>
+<p><strong>Strook:</strong> 150 x 40 cm</p>
+<p><strong>Funderingsbalk:</strong> 50 x 60 cm</p>
+<p>Locatie ontbreekt; standaard Brewster-funderingsregel toegepast.</p>
+</section>
+
+<section>
+<h2>Varianten</h2>
+<table>
+<tr><th>Variant</th><th>Naam</th><th>Status</th><th>Beschrijving</th></tr>
+<tr><td>A</td><td>Standaard strokenfundering</td><td>basisvariant</td><td>Strook 150 x 40 cm met funderingsbalk 50 x 60 cm in hart strook.</td></tr><tr><td>B</td><td>Verbrede strokenfundering</td><td>optioneel</td><td>Strook 200 x 40 cm met funderingsbalk 50 x 60 cm.</td></tr><tr><td>C</td><td>Palenfundering</td><td>alleen bij onvoldoende draagkracht</td><td>Palen met funderingsbalken/poeren op basis van draagkrachtige dieper gelegen laag.</td></tr><tr><td>D</td><td>Grondverbetering plus stroken</td><td>kostenvariant</td><td>Lokale grondverbetering of ophoog-/verdichtingspakket met strokenfundering.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Vereiste controles</h2>
+<table>
+<tr><th>Controle</th><th>Status</th><th>Benodigde input</th></tr>
+<tr><td>draagkracht strookfundering</td><td>open</td><td>bodemparameters en verticale belastingen</td></tr><tr><td>zettingscontrole</td><td>open</td><td>samendrukkingsparameters en belastingtoename</td></tr><tr><td>grondwater / ontgraving</td><td>open</td><td>actuele grondwaterstand en uitvoeringsmethode</td></tr><tr><td>wapening funderingsbalk</td><td>open</td><td>lijnlasten, kolomlasten, overspanningen en normaanduiding</td></tr><tr><td>palenvariant</td><td>optioneel</td><td>sondering en paalpuntniveau</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Risico's</h2>
+<table>
+<tr><th>Risico</th><th>Ernst</th><th>Impact</th><th>Herstel</th></tr>
+<tr><td>Locatie ontbreekt</td><td>hoog</td><td>Funderingsadvies blijft generiek.</td><td>Vul locatie/adres in project_intake_input.txt.</td></tr><tr><td>Grondwaterstand nog te verifiëren</td><td>middel</td><td>Invloed op ontgraving, bemaling en funderingsniveau.</td><td>Controleer grondwaterstand projectspecifiek.</td></tr><tr><td>Belastingen ontbreken</td><td>middel</td><td>Wapening en definitieve afmetingen kunnen nog niet worden berekend.</td><td>Laat v7.4 Constructie Engine lijnlasten en kolomlasten leveren.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Bestanden</h2>
+<p><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\projects\project_foundation_design_v7_3.json</code></p>
+<p><code>C:\BREWSTER-ENGINEERING-WIZARD\outputs\projects\project_foundation_summary_v7_3.md</code></p>
+</section>
+</main>
+</body>
+</html>

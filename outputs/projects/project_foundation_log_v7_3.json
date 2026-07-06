@@ -1,0 +1,30 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Foundation Engine",
+  "engine_version": "v7.3",
+  "started_at": "2026-07-06T21:37:35",
+  "finished_at": "2026-07-06T21:37:35",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
+  "project_context_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_v7_1.json",
+  "geotechniek_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_geotechniek_v7_2.json",
+  "foundation_json_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_foundation_design_v7_3.json",
+  "foundation_summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_foundation_summary_v7_3.md",
+  "foundation_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_foundation_log_v7_3.json",
+  "foundation_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_foundation_dashboard_v7_3.html",
+  "source_status": {
+    "project_context": "GELEZEN",
+    "geotechniek": "GELEZEN"
+  },
+  "project_name": "Project Phoenix intake test",
+  "foundation_type": "strokenfundering_met_funderingsbalk",
+  "concept_status": "VOORLOPIG",
+  "variant_count": 4,
+  "risk_count": 3,
+  "next_steps": [
+    "Controleer project_foundation_dashboard_v7_3.html.",
+    "Controleer project_foundation_design_v7_3.json.",
+    "Gebruik foundation-output als basis voor v7.4 Constructie Engine.",
+    "Vul later echte belastingen, stramien, muren/kolommen en sondering in voor definitieve berekening."
+  ]
+}

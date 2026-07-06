@@ -1,0 +1,189 @@
+﻿{
+  "status": "VOORLOPIG_CONCEPT",
+  "engine": "Project Phoenix Foundation Engine",
+  "engine_version": "v7.3",
+  "generated_at": "2026-07-06T21:37:35",
+  "project": {
+    "project_name": "Project Phoenix intake test",
+    "location": "Locatie nog te bepalen",
+    "project_type": "algemeen bouwkundig / civiel project",
+    "client": "",
+    "description": "Automatische testintake voor Project Phoenix v7.0."
+  },
+  "selected_concept": {
+    "type": "strokenfundering_met_funderingsbalk",
+    "status": "VOORLOPIG",
+    "foundation_level": "P = -0,50 m voorlopig",
+    "strip_width_cm": 150,
+    "strip_height_cm": 40,
+    "beam_width_cm": 50,
+    "beam_height_cm": 60,
+    "beam_position": "in hart strook",
+    "scope": "onder alle dragende muren en kolommen",
+    "reinforcement_status": "nog te bepalen na belastingen en normtoets",
+    "drawing_status": "schematisch concept; CAD volgt in latere engine",
+    "note": "Locatie ontbreekt; standaard Brewster-funderingsregel toegepast."
+  },
+  "variants": [
+    {
+      "variant": "A",
+      "name": "Standaard strokenfundering",
+      "description": "Strook 150 x 40 cm met funderingsbalk 50 x 60 cm in hart strook.",
+      "status": "basisvariant",
+      "when_to_use": "Bij voldoende draagkrachtige ondergrond en beperkte zettingsrisico's."
+    },
+    {
+      "variant": "B",
+      "name": "Verbrede strokenfundering",
+      "description": "Strook 200 x 40 cm met funderingsbalk 50 x 60 cm.",
+      "status": "optioneel",
+      "when_to_use": "Bij lagere draagkracht, hogere lasten of beperkte zettingsgevoeligheid."
+    },
+    {
+      "variant": "C",
+      "name": "Palenfundering",
+      "description": "Palen met funderingsbalken/poeren op basis van draagkrachtige dieper gelegen laag.",
+      "status": "alleen bij onvoldoende draagkracht",
+      "when_to_use": "Bij slappe lagen, hoge zettingsrisico's of onvoldoende strookdraagkracht."
+    },
+    {
+      "variant": "D",
+      "name": "Grondverbetering plus stroken",
+      "description": "Lokale grondverbetering of ophoog-/verdichtingspakket met strokenfundering.",
+      "status": "kostenvariant",
+      "when_to_use": "Wanneer grondverbetering goedkoper is dan palen en zettingen beheersbaar zijn."
+    }
+  ],
+  "design_rules": {
+    "default_brewster_foundation_rule": {
+      "strip_width_cm": 150,
+      "strip_height_cm": 40,
+      "foundation_beam_width_cm": 50,
+      "foundation_beam_height_cm": 60,
+      "beam_position": "hart strook",
+      "application": "onder alle dragende muren en kolommen"
+    },
+    "project_specific_override_rule": {
+      "strip_width_cm": 200,
+      "trigger": "slappe klei, zettingsrisico, hogere belasting of eerdere projectspecifieke keuze"
+    },
+    "groundwater_default": "P = -0,50 m",
+    "execution_level": "conceptontwerp; niet uitvoeringsgereed"
+  },
+  "required_checks": [
+    {
+      "check": "draagkracht strookfundering",
+      "status": "open",
+      "input_needed": "bodemparameters en verticale belastingen"
+    },
+    {
+      "check": "zettingscontrole",
+      "status": "open",
+      "input_needed": "samendrukkingsparameters en belastingtoename"
+    },
+    {
+      "check": "grondwater / ontgraving",
+      "status": "open",
+      "input_needed": "actuele grondwaterstand en uitvoeringsmethode"
+    },
+    {
+      "check": "wapening funderingsbalk",
+      "status": "open",
+      "input_needed": "lijnlasten, kolomlasten, overspanningen en normaanduiding"
+    },
+    {
+      "check": "palenvariant",
+      "status": "optioneel",
+      "input_needed": "sondering en paalpuntniveau"
+    }
+  ],
+  "geotechnical_basis": {
+    "soil_profile_status": "VOORLOPIG",
+    "soil_profile_source": "voorlopige_generieke_aanname",
+    "soil_profile_reliability": "basis",
+    "groundwater_level": "P = -0,50 m",
+    "geo_foundation_advice": "strokenfundering voorlopig uitgangspunt; bodemgegevens verifiëren"
+  },
+  "preliminary_dimensions": {
+    "foundation_level": "P = -0,50 m voorlopig",
+    "strip": {
+      "width_m": 1.5,
+      "height_m": 0.4
+    },
+    "foundation_beam": {
+      "width_m": 0.5,
+      "height_m": 0.6,
+      "position": "in hart strook"
+    },
+    "minimum_required_project_inputs_for_calculation": [
+      "stramien / assen",
+      "dragende muren",
+      "kolomposities",
+      "lijnlasten",
+      "kolomlasten",
+      "bodemonderzoek",
+      "grondwaterstand"
+    ]
+  },
+  "outputs_for_next_engine": {
+    "next_engine": "Structural Engine v7.4",
+    "foundation_type": "strokenfundering_met_funderingsbalk",
+    "foundation_level": "P = -0,50 m voorlopig",
+    "strip_width_cm": 150,
+    "strip_height_cm": 40,
+    "beam_width_cm": 50,
+    "beam_height_cm": 60,
+    "needs_load_model": true
+  },
+  "risks": [
+    {
+      "risk": "Locatie ontbreekt",
+      "severity": "hoog",
+      "impact": "Funderingsadvies blijft generiek.",
+      "repair": "Vul locatie/adres in project_intake_input.txt."
+    },
+    {
+      "risk": "Grondwaterstand nog te verifiëren",
+      "severity": "middel",
+      "impact": "Invloed op ontgraving, bemaling en funderingsniveau.",
+      "repair": "Controleer grondwaterstand projectspecifiek."
+    },
+    {
+      "risk": "Belastingen ontbreken",
+      "severity": "middel",
+      "impact": "Wapening en definitieve afmetingen kunnen nog niet worden berekend.",
+      "repair": "Laat v7.4 Constructie Engine lijnlasten en kolomlasten leveren."
+    }
+  ],
+  "assumptions": [
+    {
+      "field": "foundation_type",
+      "value": "strokenfundering_met_funderingsbalk",
+      "confidence": "basis",
+      "source": "Project Phoenix Foundation Engine",
+      "reason": "Voorlopig concept gekozen volgens Brewster standaardregel en v7.2 geotechniek."
+    },
+    {
+      "field": "foundation_level",
+      "value": "P = -0,50 m voorlopig",
+      "confidence": "basis",
+      "source": "Project Phoenix Foundation Engine",
+      "reason": "Voorlopig funderingsniveau gekoppeld aan standaard grondwateruitgangspunt."
+    },
+    {
+      "field": "groundwater_level",
+      "value": "P = -0,50 m",
+      "confidence": "basis",
+      "source": "Brewster Engineering Wizard standaardkeuze",
+      "reason": "Nog te verifiëren met projectspecifieke data."
+    },
+    {
+      "field": "soil_profile",
+      "value": "voorlopige_generieke_aanname",
+      "confidence": "basis",
+      "source": "Geotechniek Engine v7.2",
+      "reason": "Bodemopbouw is voorlopig totdat bodemonderzoek is toegevoegd."
+    }
+  ],
+  "not_for_execution_note": "Dit is een automatisch concept. Definitief ontwerp vereist projectspecifieke berekening, bodemonderzoek en constructieve toetsing."
+}
