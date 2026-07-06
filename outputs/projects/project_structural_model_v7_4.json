@@ -1,0 +1,220 @@
+﻿{
+  "status": "VOORLOPIG_CONCEPT",
+  "engine": "Project Phoenix Structural Engine",
+  "engine_version": "v7.4",
+  "generated_at": "2026-07-06T21:55:17",
+  "project": {
+    "project_name": "Project Phoenix intake test",
+    "location": "Locatie nog te bepalen",
+    "project_type": "algemeen bouwkundig / civiel project",
+    "client": "",
+    "description": "Automatische testintake voor Project Phoenix v7.0."
+  },
+  "selected_system": {
+    "system_type": "algemeen_draagstructuur_concept",
+    "status": "VOORLOPIG",
+    "reason": "Geen specifiek gebouwtype met geometrie gevonden; generiek constructief concept gekozen.",
+    "stability_concept": "nog te bepalen na plattegrond en geometrie"
+  },
+  "preliminary_grid": {
+    "status": "VOORLOPIG",
+    "source": "automatische standaardgrid totdat CAD/BIM-geometrie beschikbaar is",
+    "axis_spacing_m": {
+      "x_default": 5.0,
+      "y_default": 5.0
+    },
+    "assumed_bays": {
+      "x_direction": 2,
+      "y_direction": 2
+    },
+    "needs_real_geometry": true
+  },
+  "elements": [
+    {
+      "element_id": "WALL-001",
+      "type": "dragende_wand",
+      "material": "metselwerk/beton voorlopig",
+      "function": "verticale belastingafdracht en stabiliteit",
+      "status": "concept"
+    },
+    {
+      "element_id": "COL-001",
+      "type": "kolom",
+      "material": "staal/beton voorlopig",
+      "function": "ondersteuning balken/dakliggers",
+      "status": "optioneel"
+    },
+    {
+      "element_id": "BEAM-001",
+      "type": "balk",
+      "material": "staal/beton/hout voorlopig",
+      "function": "afdracht vloer-/daklasten",
+      "status": "concept"
+    },
+    {
+      "element_id": "ROOF-001",
+      "type": "dakconstructie",
+      "material": "hout of staal voorlopig",
+      "function": "afdracht daklasten en wind",
+      "status": "concept"
+    },
+    {
+      "element_id": "FOUNDATION-INTERFACE-001",
+      "type": "fundering_koppeling",
+      "material": "beton",
+      "function": "overdracht lijnlasten/kolomlasten naar fundering",
+      "status": "concept"
+    }
+  ],
+  "load_assumptions": [
+    {
+      "load_case": "LC1",
+      "name": "eigen gewicht",
+      "type": "permanent",
+      "preliminary_value": "nader te bepalen",
+      "status": "open"
+    },
+    {
+      "load_case": "LC2",
+      "name": "vloerbelasting",
+      "type": "veranderlijk",
+      "preliminary_value": "functieafhankelijk",
+      "status": "open"
+    },
+    {
+      "load_case": "LC3",
+      "name": "dakbelasting",
+      "type": "permanent/veranderlijk",
+      "preliminary_value": "dakopbouw + variabel",
+      "status": "open"
+    },
+    {
+      "load_case": "LC4",
+      "name": "windbelasting",
+      "type": "horizontaal",
+      "preliminary_value": "locatie- en hoogteafhankelijk",
+      "status": "open"
+    }
+  ],
+  "load_paths": [
+    {
+      "path": "dak -> liggers/spanten -> muren/kolommen -> fundering",
+      "status": "conceptueel"
+    },
+    {
+      "path": "vloer/wanden -> dragende muren -> funderingsbalk -> ondergrond",
+      "status": "conceptueel"
+    },
+    {
+      "path": "wind -> dak/vloerschijf -> stabiliteitswanden -> fundering",
+      "status": "nader te toetsen"
+    }
+  ],
+  "foundation_interface": {
+    "foundation_type": "strokenfundering_met_funderingsbalk",
+    "foundation_level": "P = -0,50 m voorlopig",
+    "strip_width_cm": 150,
+    "strip_height_cm": 40,
+    "beam_width_cm": 50,
+    "beam_height_cm": 60,
+    "needs_load_model": true,
+    "interface_status": "conceptuele koppeling"
+  },
+  "analysis_engines": {
+    "open_stack_policy": "SCIA/Viktor vervangen door open engines",
+    "future_targets": [
+      "OpenSees",
+      "CalculiX",
+      "FreeCAD BIM"
+    ]
+  },
+  "required_checks": [
+    {
+      "check": "geometrie en assen",
+      "status": "open",
+      "input_needed": "plattegrond, doorsnede, SKP/DWG/DXF/BIM"
+    },
+    {
+      "check": "belastingcombinaties",
+      "status": "open",
+      "input_needed": "normkeuze, functie, materiaal, overspanningen"
+    },
+    {
+      "check": "kolom- en balkdimensionering",
+      "status": "open",
+      "input_needed": "lijnlasten, kolomlasten, overspanningen"
+    },
+    {
+      "check": "stabiliteit",
+      "status": "open",
+      "input_needed": "windbelasting, schijfwerking, stabiliteitswanden"
+    },
+    {
+      "check": "OpenSees/CalculiX export",
+      "status": "later",
+      "input_needed": "rekenmodelgeneratie"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Locatie ontbreekt",
+      "severity": "middel",
+      "impact": "Windbelasting en lokale eisen kunnen nog niet definitief worden bepaald.",
+      "repair": "Vul locatie/adres in project_intake_input.txt."
+    },
+    {
+      "risk": "Werkelijke geometrie ontbreekt",
+      "severity": "hoog",
+      "impact": "Constructieve afmetingen, overspanningen en belastingen blijven indicatief.",
+      "repair": "Voeg plattegrond, doorsnede of CAD/BIM-bestand toe."
+    },
+    {
+      "risk": "Belastingen nog niet projectspecifiek",
+      "severity": "middel",
+      "impact": "OpenSees/CalculiX model kan nog niet definitief worden gegenereerd.",
+      "repair": "Laat toekomstige load engine echte belastingwaarden bepalen."
+    }
+  ],
+  "assumptions": [
+    {
+      "field": "structural_system",
+      "value": "algemeen_draagstructuur_concept",
+      "confidence": "basis",
+      "source": "Project Phoenix Structural Engine",
+      "reason": "Geen specifiek gebouwtype met geometrie gevonden; generiek constructief concept gekozen."
+    },
+    {
+      "field": "grid",
+      "value": "automatische standaardgrid totdat CAD/BIM-geometrie beschikbaar is",
+      "confidence": "basis",
+      "source": "Project Phoenix Structural Engine",
+      "reason": "Geen definitieve CAD/BIM-geometrie beschikbaar."
+    },
+    {
+      "field": "loads",
+      "value": "4 voorlopige load cases",
+      "confidence": "basis",
+      "source": "Project Phoenix Structural Engine",
+      "reason": "Belastingen zijn placeholders."
+    }
+  ],
+  "outputs_for_next_engine": {
+    "next_engine": "CAD Drawing Export Engine v7.5",
+    "drawing_layers": [
+      "constructie_assen",
+      "kolommen",
+      "balken",
+      "dragende_muren",
+      "dakconstructie",
+      "fundering_interface"
+    ],
+    "export_targets": [
+      "DXF",
+      "DWG",
+      "SKP",
+      "IFC",
+      "PDF"
+    ]
+  },
+  "not_for_execution_note": "Automatisch constructief concept; definitief ontwerp vereist geometrie, belastingen, normkeuze en berekening."
+}

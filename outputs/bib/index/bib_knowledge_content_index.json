@@ -104,7 +104,7 @@
   ],
   "last_updated_by": "Project Phoenix Module Registry & Engine Dashboard",
   "last_updated_version": "v6.9",
-  "last_updated_at": "2026-07-06T21:37:34",
+  "last_updated_at": "2026-07-06T21:55:16",
   "brewster_knowledge_base": {
     "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
     "markdown_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.md",
@@ -253,13 +253,35 @@
       "title": "Module Registry & Engine Dashboard v6.9",
       "summary": "Alle bekende Phoenix-engines en geplande modules geregistreerd.",
       "created_at": "2026-07-06T21:37:34"
+    },
+    {
+      "source": "brewster_engineering_wizard_knowledge_base_v6_6",
+      "type": "knowledge_migration",
+      "title": "Brewster Engineering Wizard kennisbasis v6.6",
+      "summary": "Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.",
+      "created_at": "2026-07-06T21:55:12"
+    },
+    {
+      "source": "deep_knowledge_harvest_v6_8",
+      "type": "deep_harvest",
+      "title": "Deep Knowledge Harvest v6.8",
+      "summary": "Lokale Phoenix/BIB/outputs/code kennis geoogst en geïndexeerd.",
+      "created_at": "2026-07-06T21:55:16",
+      "harvest_index_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json"
+    },
+    {
+      "source": "module_registry_v6_9",
+      "type": "engine_registry",
+      "title": "Module Registry & Engine Dashboard v6.9",
+      "summary": "Alle bekende Phoenix-engines en geplande modules geregistreerd.",
+      "created_at": "2026-07-06T21:55:16"
     }
   ],
   "deep_knowledge_harvest": {
     "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json",
     "summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_summary_v6_8.md",
-    "file_count": 366,
-    "knowledge_record_count": 275,
+    "file_count": 373,
+    "knowledge_record_count": 282,
     "project_count": 3,
     "topic_count": 6,
     "gap_count": 0
@@ -270,11 +292,11 @@
     "summary": {
       "status": "CORE_COMPLEET",
       "total_items": 27,
-      "present_count": 22,
+      "present_count": 23,
       "required_count": 13,
       "required_present_count": 13,
       "required_missing_count": 0,
-      "optional_missing_count": 5,
+      "optional_missing_count": 4,
       "core_readiness_percent": 100
     }
   }
