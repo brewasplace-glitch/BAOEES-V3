@@ -66,6 +66,7 @@ from baoees.structural_project_output_package_engine.main import StructuralProje
 from baoees.phoenix_bridge_engine.main import PhoenixBridgeEngine
 from baoees.brewster_automation_roadmap_engine.main import BrewsterAutomationRoadmapEngine
 from baoees.brewster_task_orchestrator_engine.main import BrewsterTaskOrchestratorEngine
+from baoees.brewster_auto_build_script_factory_engine.main import BrewsterAutoBuildScriptFactoryEngine
 
 
 class BAOEESCore:
@@ -742,6 +743,41 @@ class BAOEESCore:
             "Brewster Task Orchestrator Engine resultaat:",
             brewster_task_orchestrator_result
         )
+
+        try:
+            brewster_auto_build_script_factory_engine = BrewsterAutoBuildScriptFactoryEngine()
+            brewster_auto_build_script_factory_result = brewster_auto_build_script_factory_engine.create_script_factory_plan(
+                project_result=project_result if "project_result" in locals() else {},
+                brewster_task_orchestrator_result=brewster_task_orchestrator_result if "brewster_task_orchestrator_result" in locals() else {},
+                brewster_automation_roadmap_result=brewster_automation_roadmap_result if "brewster_automation_roadmap_result" in locals() else {}
+            )
+        except Exception as error:
+            brewster_auto_build_script_factory_result = {
+                "engine": "BrewsterAutoBuildScriptFactoryEngine",
+                "status": "BREWSTER_AUTO_BUILD_SCRIPT_FACTORY_ENGINE_ERROR",
+                "error": str(error)
+            }
+
+        self.print_result(
+            "Brewster Auto Build Script Factory Engine resultaat:",
+            brewster_auto_build_script_factory_result
+        )
+
+        try:
+            self.add_to_digital_twin(
+                {},
+                "brewster_auto_build_script_factory",
+                brewster_auto_build_script_factory_result
+            )
+        except TypeError:
+            try:
+                self.add_to_digital_twin(
+                    "brewster_auto_build_script_factory",
+                    brewster_auto_build_script_factory_result
+                )
+            except TypeError:
+                pass
+
 
         try:
             self.add_to_digital_twin(
