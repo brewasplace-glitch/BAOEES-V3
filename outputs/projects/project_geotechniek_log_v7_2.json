@@ -1,0 +1,31 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Geotechniek Engine",
+  "engine_version": "v7.2",
+  "started_at": "2026-07-06T17:57:15",
+  "finished_at": "2026-07-06T17:57:15",
+  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
+  "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
+  "project_context_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_context_v7_1.json",
+  "geotechniek_json_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_geotechniek_v7_2.json",
+  "geotechniek_summary_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_geotechniek_summary_v7_2.md",
+  "geotechniek_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_geotechniek_log_v7_2.json",
+  "geotechniek_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_geotechniek_dashboard_v7_2.html",
+  "source_status": {
+    "project_context": "GELEZEN",
+    "project_intake": "GELEZEN",
+    "aaie": "GELEZEN"
+  },
+  "project_name": "Project Phoenix intake test",
+  "location": "Locatie nog te bepalen",
+  "groundwater_level": "P = -0,50 m",
+  "foundation_advice": "strokenfundering voorlopig uitgangspunt; bodemgegevens verifiëren",
+  "risk_count": 3,
+  "assumption_count": 2,
+  "next_steps": [
+    "Controleer project_geotechniek_dashboard_v7_2.html.",
+    "Controleer project_geotechniek_v7_2.json.",
+    "Gebruik de geotechniek-output als basis voor v7.3 Fundering Engine.",
+    "Vul projectspecifieke bodemgegevens later aan via project_intake_input.txt of project_context."
+  ]
+}

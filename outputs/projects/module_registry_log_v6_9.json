@@ -2,7 +2,7 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Module Registry & Engine Dashboard",
   "engine_version": "v6.9",
-  "generated_at": "2026-07-06T17:43:59",
+  "generated_at": "2026-07-06T17:57:14",
   "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
   "registry_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_v6_9.json",
   "log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_log_v6_9.json",
@@ -10,11 +10,11 @@
   "summary": {
     "status": "CORE_COMPLEET",
     "total_items": 27,
-    "present_count": 20,
+    "present_count": 21,
     "required_count": 13,
     "required_present_count": 13,
     "required_missing_count": 0,
-    "optional_missing_count": 7,
+    "optional_missing_count": 6,
     "core_readiness_percent": 100
   },
   "registry_items": [
@@ -258,13 +258,17 @@
       "category": "to_build",
       "required": false,
       "description": "Nog te bouwen: geotechniek",
-      "exists": false,
-      "status": "NOG_TE_BOUWEN",
-      "relative_path": "baoees/project_analyzer/geotechniek_engine.py",
-      "classes": [],
-      "functions": [],
-      "size_bytes": 0,
-      "modified_at": ""
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\geotechniek_engine.py",
+      "classes": [
+        "GeotechniekEngine"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 19957,
+      "modified_at": "2026-07-06T17:57:09"
     },
     {
       "file": "foundation_engine.py",

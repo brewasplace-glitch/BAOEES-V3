@@ -1,7 +1,7 @@
 # Deep Knowledge Harvest v6.8
 
-Bestanden gescand: 352
-Kennisrecords: 261
+Bestanden gescand: 359
+Kennisrecords: 268
 
 ## Projecten
 
@@ -16,14 +16,14 @@ Topics:
 - workflow_automation: 34
 
 ### plutostraat_paramaribo
-Records: 79
+Records: 81
 Topics:
 - moskee_bunschoten: 60
-- plutostraat_paramaribo: 79
+- plutostraat_paramaribo: 81
 - bruynzeel_waterfront: 56
-- baoees_core: 75
-- engineering_modules: 57
-- workflow_automation: 39
+- baoees_core: 77
+- engineering_modules: 59
+- workflow_automation: 41
 
 ### bruynzeel_waterfront
 Records: 58
@@ -38,22 +38,22 @@ Topics:
 ## Topics
 
 ### baoees_core
-Records: 204
+Records: 210
 
 ### plutostraat_paramaribo
-Records: 145
+Records: 152
 
 ### moskee_bunschoten
 Records: 89
 
 ### engineering_modules
-Records: 136
+Records: 145
 
 ### bruynzeel_waterfront
 Records: 60
 
 ### workflow_automation
-Records: 115
+Records: 122
 
 ## Kennisgaten
 

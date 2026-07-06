@@ -1,0 +1,124 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Geotechniek Engine",
+  "engine_version": "v7.2",
+  "generated_at": "2026-07-06T17:57:15",
+  "project": {
+    "project_name": "Project Phoenix intake test",
+    "location": "Locatie nog te bepalen",
+    "project_type": "algemeen bouwkundig / civiel project",
+    "client": "",
+    "description": "Automatische testintake voor Project Phoenix v7.0."
+  },
+  "input_policy": {
+    "option_1": "Grondwaterstand en geo-informatie automatisch genereren via kaartuitsnede / Google Maps / satellietfoto.",
+    "option_2": "Handmatige invoer van bodemlagen, grondwaterstand en sondering.",
+    "default_mode": "automatisch_voorlopig_met_aannames",
+    "manual_override_allowed": true
+  },
+  "groundwater": {
+    "status": "VOORLOPIG",
+    "default_level": "P = -0,50 m",
+    "value_m_relative_to_p": -0.5,
+    "source": "Brewster Engineering Wizard standaardkeuze",
+    "reliability": "basis",
+    "needs_verification": true,
+    "automatic_generation_supported": true,
+    "manual_override_supported": true
+  },
+  "soil_profile": {
+    "status": "VOORLOPIG",
+    "source": "voorlopige_generieke_aanname",
+    "reliability": "basis",
+    "layers": [
+      {
+        "layer": 1,
+        "from_m": 0.0,
+        "to_m": -0.5,
+        "thickness_m": 0.5,
+        "soil_type": "bovenlaag / ophooglaag",
+        "classification": "onbekend",
+        "source": "voorlopige standaardaanname"
+      },
+      {
+        "layer": 2,
+        "from_m": -0.5,
+        "to_m": -2.0,
+        "thickness_m": 1.5,
+        "soil_type": "natuurlijke ondergrond",
+        "classification": "nog te verifiëren",
+        "source": "voorlopige standaardaanname"
+      }
+    ],
+    "needs_soil_investigation": true,
+    "manual_input_possible": true
+  },
+  "foundation_advice": {
+    "status": "VOORLOPIG",
+    "primary_advice": "strokenfundering voorlopig uitgangspunt; bodemgegevens verifiëren",
+    "variants_to_check": [
+      "strokenfundering",
+      "poeren met koppelbalken",
+      "palenvariant alleen bij onvoldoende draagkracht"
+    ],
+    "standard_brewster_rule": {
+      "strip_width_cm": 150,
+      "strip_height_cm": 40,
+      "foundation_beam_width_cm": 50,
+      "foundation_beam_height_cm": 60,
+      "note": "Standaardregel; projectspecifiek kan 200 cm strookbreedte nodig zijn."
+    },
+    "risk_level": "middel",
+    "requires_structural_loads": true,
+    "requires_settlement_check": true
+  },
+  "risks": [
+    {
+      "risk": "Locatie ontbreekt",
+      "severity": "hoog",
+      "impact": "Automatische geo-informatie kan nog niet locatiespecifiek worden bepaald.",
+      "repair": "Vul project_intake_input.txt met locatie of adres."
+    },
+    {
+      "risk": "Bodemopbouw is voorlopig",
+      "severity": "middel",
+      "impact": "Funderingsadvies blijft indicatief.",
+      "repair": "Voeg sondering of bodemonderzoek toe."
+    },
+    {
+      "risk": "Grondwaterstand is standaardaanname",
+      "severity": "middel",
+      "impact": "Ontwatering, uitvoerbaarheid en funderingsniveau moeten worden getoetst.",
+      "repair": "Verifieer grondwaterstand projectspecifiek."
+    }
+  ],
+  "assumptions": [
+    {
+      "field": "groundwater_level",
+      "value": "P = -0,50 m",
+      "source": "Brewster Engineering Wizard standaardkeuze",
+      "confidence": "basis",
+      "reason": "Standaard Brewster/BAOEES uitgangspunt totdat projectspecifieke data beschikbaar is."
+    },
+    {
+      "field": "soil_profile",
+      "value": "voorlopige_generieke_aanname",
+      "source": "Geotechniek Engine v7.2",
+      "confidence": "basis",
+      "reason": "Voorlopige bodemopbouw gekozen op basis van context en beschikbare kennis."
+    }
+  ],
+  "required_follow_up_data": [
+    "Locatiekaart of kaartuitsnede",
+    "Sondering of bodemonderzoek indien beschikbaar",
+    "Peil P = 0,00 m bevestigen",
+    "Gewenst funderingsniveau",
+    "Belastingen uit constructiemodel"
+  ],
+  "outputs_for_next_engine": {
+    "next_engine": "Foundation Engine v7.3",
+    "recommended_foundation_type": "strokenfundering voorlopig uitgangspunt; bodemgegevens verifiëren",
+    "groundwater_level": "P = -0,50 m",
+    "soil_profile_source": "voorlopige_generieke_aanname"
+  }
+}
