@@ -1,8 +1,8 @@
 ﻿{
   "suite_id": "architectural",
   "suite_title": "Architectural Suite",
-  "version": "1.1.0",
-  "status": "implemented_v1_1",
+  "version": "1.2.0",
+  "status": "implemented_v1_2",
   "modules": [
     "project_intake",
     "program_of_requirements",
@@ -11,16 +11,21 @@
     "facade_generator",
     "section_generator",
     "roof_generator",
-    "dimensioning"
+    "dimensioning",
+    "pdf_drawing_exporter",
+    "dxf_exporter",
+    "digital_twin_exporter"
   ],
   "exports_current": [
     "json",
-    "markdown"
-  ],
-  "exports_next": [
+    "markdown",
     "pdf",
     "dxf",
+    "digital_twin_json"
+  ],
+  "exports_next": [
     "ifc",
-    "skp"
+    "skp",
+    "freecad"
   ]
 }
