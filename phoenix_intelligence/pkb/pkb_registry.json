@@ -1,0 +1,48 @@
+{
+  "pkb_version": "1.0.0",
+  "created_at": "2026-07-08T00:27:56",
+  "items": [
+    {
+      "id": "pkb_001",
+      "title": "Project Phoenix is het hoofdplatform",
+      "category": "architecture",
+      "discipline": "platform",
+      "content": "BREWSTER ENGINEERING WIZARD blijft de gebruikersapplicatie; Project Phoenix wordt het onderliggende platform.",
+      "source": "architecture_decision",
+      "tags": [
+        "phoenix",
+        "brewster",
+        "platform"
+      ],
+      "created_at": "2026-07-08T00:27:56"
+    },
+    {
+      "id": "pkb_002",
+      "title": "BIB wordt geÃ¯ntegreerd in PKB",
+      "category": "knowledge",
+      "discipline": "intelligence",
+      "content": "De Brewster Intelligence Bibliotheek wordt opgenomen in de Phoenix Knowledge Base en niet separaat onderhouden.",
+      "source": "architecture_decision",
+      "tags": [
+        "bib",
+        "pkb",
+        "knowledge"
+      ],
+      "created_at": "2026-07-08T00:27:56"
+    },
+    {
+      "id": "pkb_003",
+      "title": "BAOEES blijft compatibiliteitslaag",
+      "category": "migration",
+      "discipline": "software",
+      "content": "De bestaande baoees-map blijft voorlopig bestaan als legacy/compatibiliteitslaag tijdens de migratie.",
+      "source": "migration_decision",
+      "tags": [
+        "baoees",
+        "legacy",
+        "migration"
+      ],
+      "created_at": "2026-07-08T00:27:56"
+    }
+  ]
+}

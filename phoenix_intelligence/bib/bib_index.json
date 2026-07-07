@@ -1,0 +1,22 @@
+{
+  "bib_version": "1.0.0",
+  "status": "integrated_into_pkb",
+  "created_at": "2026-07-08T00:27:56",
+  "domains": [
+    "vision",
+    "master_specification",
+    "architecture",
+    "bouwkunde",
+    "constructie",
+    "geotechniek",
+    "verkeer_parkeren",
+    "vergunningen",
+    "digital_twin",
+    "ai_workflows",
+    "standards",
+    "templates",
+    "lessons_learned",
+    "source_evidence"
+  ],
+  "principle": "BIB wordt niet separaat ontwikkeld; BIB is de inhoudelijke kennislaag binnen PKB."
+}

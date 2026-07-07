@@ -1,0 +1,19 @@
+{
+  "layer": "Phoenix Intelligence Layer",
+  "version": "1.0.0",
+  "created_at": "2026-07-08T00:27:56",
+  "components": {
+    "pkb": "installed",
+    "bib": "integrated",
+    "knowledge_graph": "installed",
+    "decision_log": "installed",
+    "source_evidence": "installed"
+  },
+  "counts": {
+    "pkb_items": 3,
+    "bib_domains": 14,
+    "graph_nodes": 6,
+    "graph_edges": 6,
+    "decisions": 3
+  }
+}

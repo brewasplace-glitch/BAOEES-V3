@@ -1,0 +1,27 @@
+{
+  "decision_log_version": "1.0.0",
+  "created_at": "2026-07-08T00:27:56",
+  "decisions": [
+    {
+      "id": "ADR-0001",
+      "title": "Repository wordt PROJECT-PHOENIX",
+      "status": "accepted",
+      "decision": "De repository is hernoemd naar PROJECT-PHOENIX.",
+      "impact": "Alle toekomstige ontwikkeling gebeurt binnen Project Phoenix."
+    },
+    {
+      "id": "ADR-0002",
+      "title": "BREWSTER ENGINEERING WIZARD wordt app-shell",
+      "status": "accepted",
+      "decision": "Brewster Engineering Wizard blijft de gebruikersinterface binnen apps/brewster_engineering_wizard.",
+      "impact": "Geen aparte parallelle ontwikkeling meer."
+    },
+    {
+      "id": "ADR-0003",
+      "title": "BIB integreert in PKB",
+      "status": "accepted",
+      "decision": "BIB wordt opgenomen in de Phoenix Knowledge Base.",
+      "impact": "EÃ©n centrale kennislaag voor alle suites."
+    }
+  ]
+}
