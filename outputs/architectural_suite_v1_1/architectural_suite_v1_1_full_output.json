@@ -1,0 +1,647 @@
+{
+  "suite": "Architectural Suite",
+  "version": "1.1.0",
+  "ran_at": "2026-07-08T01:20:35",
+  "project": {
+    "project_id": "moskee_bikkersweg_88",
+    "project_name": "Moskee Bikkersweg 88 Bunschoten",
+    "location": "Bikkersweg 88, Bunschoten",
+    "building_type": "Maatschappelijke/religieuze voorziening",
+    "client": "A. Brewster Architects.sr",
+    "extension_area_m2": 20.0,
+    "gross_floor_area_m2": 0.0,
+    "spaces": [
+      {
+        "name": "Entree",
+        "function": "verkeersruimte",
+        "floor": "begane grond",
+        "area_m2": 10.0,
+        "width_m": 3.0,
+        "length_m": 3.5,
+        "notes": ""
+      },
+      {
+        "name": "Gebedsruimte heren",
+        "function": "bijeenkomstfunctie",
+        "floor": "begane grond",
+        "area_m2": 120.0,
+        "width_m": 10.0,
+        "length_m": 12.0,
+        "notes": ""
+      },
+      {
+        "name": "Conferentie / ontmoeting",
+        "function": "bijeenkomstfunctie",
+        "floor": "begane grond",
+        "area_m2": 40.0,
+        "width_m": 6.0,
+        "length_m": 7.0,
+        "notes": ""
+      },
+      {
+        "name": "Rituele wasruimte",
+        "function": "sanitaire functie",
+        "floor": "begane grond",
+        "area_m2": 12.0,
+        "width_m": 3.0,
+        "length_m": 4.0,
+        "notes": ""
+      },
+      {
+        "name": "Gebedsruimte dames",
+        "function": "bijeenkomstfunctie",
+        "floor": "verdieping",
+        "area_m2": 80.0,
+        "width_m": 8.0,
+        "length_m": 10.0,
+        "notes": ""
+      },
+      {
+        "name": "Leslokalen",
+        "function": "onderwijs/nevenfunctie",
+        "floor": "verdieping",
+        "area_m2": 30.0,
+        "width_m": 5.0,
+        "length_m": 6.0,
+        "notes": ""
+      }
+    ],
+    "assumptions": [
+      "Architectural Suite v1.1 genereert gevels, doorsneden, daken en maatvoering conceptueel.",
+      "PDF/DXF/IFC/SKP worden in volgende release als echte exporters toegevoegd."
+    ],
+    "created_at": "2026-07-08T01:20:35"
+  },
+  "results": {
+    "project_intake": {
+      "module_id": "architectural.project_intake",
+      "version": "1.0.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "project": {
+        "project_id": "moskee_bikkersweg_88",
+        "project_name": "Moskee Bikkersweg 88 Bunschoten",
+        "location": "Bikkersweg 88, Bunschoten",
+        "building_type": "Maatschappelijke/religieuze voorziening",
+        "client": "A. Brewster Architects.sr",
+        "extension_area_m2": 20.0,
+        "gross_floor_area_m2": 0.0,
+        "spaces": [
+          {
+            "name": "Entree",
+            "function": "verkeersruimte",
+            "floor": "begane grond",
+            "area_m2": 10.0,
+            "width_m": 3.0,
+            "length_m": 3.5,
+            "notes": ""
+          },
+          {
+            "name": "Gebedsruimte heren",
+            "function": "bijeenkomstfunctie",
+            "floor": "begane grond",
+            "area_m2": 120.0,
+            "width_m": 10.0,
+            "length_m": 12.0,
+            "notes": ""
+          },
+          {
+            "name": "Conferentie / ontmoeting",
+            "function": "bijeenkomstfunctie",
+            "floor": "begane grond",
+            "area_m2": 40.0,
+            "width_m": 6.0,
+            "length_m": 7.0,
+            "notes": ""
+          },
+          {
+            "name": "Rituele wasruimte",
+            "function": "sanitaire functie",
+            "floor": "begane grond",
+            "area_m2": 12.0,
+            "width_m": 3.0,
+            "length_m": 4.0,
+            "notes": ""
+          },
+          {
+            "name": "Gebedsruimte dames",
+            "function": "bijeenkomstfunctie",
+            "floor": "verdieping",
+            "area_m2": 80.0,
+            "width_m": 8.0,
+            "length_m": 10.0,
+            "notes": ""
+          },
+          {
+            "name": "Leslokalen",
+            "function": "onderwijs/nevenfunctie",
+            "floor": "verdieping",
+            "area_m2": 30.0,
+            "width_m": 5.0,
+            "length_m": 6.0,
+            "notes": ""
+          }
+        ],
+        "assumptions": [
+          "Architectural Suite v1.1 genereert gevels, doorsneden, daken en maatvoering conceptueel.",
+          "PDF/DXF/IFC/SKP worden in volgende release als echte exporters toegevoegd."
+        ],
+        "created_at": "2026-07-08T01:20:35"
+      },
+      "status": "ok"
+    },
+    "program_of_requirements": {
+      "module_id": "architectural.program_of_requirements",
+      "version": "1.0.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "requirements": {
+        "functional_requirements": [],
+        "spatial_requirements": [
+          {
+            "space": "Entree",
+            "function": "verkeersruimte",
+            "floor": "begane grond",
+            "target_area_m2": 10.0
+          },
+          {
+            "space": "Gebedsruimte heren",
+            "function": "bijeenkomstfunctie",
+            "floor": "begane grond",
+            "target_area_m2": 120.0
+          },
+          {
+            "space": "Conferentie / ontmoeting",
+            "function": "bijeenkomstfunctie",
+            "floor": "begane grond",
+            "target_area_m2": 40.0
+          },
+          {
+            "space": "Rituele wasruimte",
+            "function": "sanitaire functie",
+            "floor": "begane grond",
+            "target_area_m2": 12.0
+          },
+          {
+            "space": "Gebedsruimte dames",
+            "function": "bijeenkomstfunctie",
+            "floor": "verdieping",
+            "target_area_m2": 80.0
+          },
+          {
+            "space": "Leslokalen",
+            "function": "onderwijs/nevenfunctie",
+            "floor": "verdieping",
+            "target_area_m2": 30.0
+          }
+        ],
+        "technical_requirements": [
+          "maatvoering controleren",
+          "bestaand en nieuw onderscheiden",
+          "koppeling met Digital Twin voorbereiden",
+          "export naar PDF/DXF/IFC/SKP voorbereiden"
+        ],
+        "permit_requirements": [
+          "situatie bestaand/nieuw",
+          "plattegronden bestaand/nieuw",
+          "gevels bestaand/nieuw",
+          "doorsneden",
+          "ruimtestaat",
+          "projectomschrijving"
+        ]
+      },
+      "status": "ok"
+    },
+    "space_schedule": {
+      "module_id": "architectural.space_schedule",
+      "version": "1.0.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "rows": [
+        {
+          "nr": 1,
+          "floor": "begane grond",
+          "name": "Entree",
+          "function": "verkeersruimte",
+          "area_m2": 10.0,
+          "width_m": 3.0,
+          "length_m": 3.5,
+          "notes": ""
+        },
+        {
+          "nr": 2,
+          "floor": "begane grond",
+          "name": "Gebedsruimte heren",
+          "function": "bijeenkomstfunctie",
+          "area_m2": 120.0,
+          "width_m": 10.0,
+          "length_m": 12.0,
+          "notes": ""
+        },
+        {
+          "nr": 3,
+          "floor": "begane grond",
+          "name": "Conferentie / ontmoeting",
+          "function": "bijeenkomstfunctie",
+          "area_m2": 40.0,
+          "width_m": 6.0,
+          "length_m": 7.0,
+          "notes": ""
+        },
+        {
+          "nr": 4,
+          "floor": "begane grond",
+          "name": "Rituele wasruimte",
+          "function": "sanitaire functie",
+          "area_m2": 12.0,
+          "width_m": 3.0,
+          "length_m": 4.0,
+          "notes": ""
+        },
+        {
+          "nr": 5,
+          "floor": "verdieping",
+          "name": "Gebedsruimte dames",
+          "function": "bijeenkomstfunctie",
+          "area_m2": 80.0,
+          "width_m": 8.0,
+          "length_m": 10.0,
+          "notes": ""
+        },
+        {
+          "nr": 6,
+          "floor": "verdieping",
+          "name": "Leslokalen",
+          "function": "onderwijs/nevenfunctie",
+          "area_m2": 30.0,
+          "width_m": 5.0,
+          "length_m": 6.0,
+          "notes": ""
+        }
+      ],
+      "total_area_m2": 292.0,
+      "space_count": 6,
+      "status": "ok"
+    },
+    "floorplan_generator": {
+      "module_id": "architectural.floorplan_generator",
+      "version": "1.0.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "drawing_type": "schematic_floorplan",
+      "floors": {
+        "begane grond": [
+          {
+            "space": "Entree",
+            "function": "verkeersruimte",
+            "x": 0.0,
+            "y": 0.0,
+            "width_m": 3.0,
+            "length_m": 3.5,
+            "area_m2": 10.0
+          },
+          {
+            "space": "Gebedsruimte heren",
+            "function": "bijeenkomstfunctie",
+            "x": 3.0,
+            "y": 0.0,
+            "width_m": 10.0,
+            "length_m": 12.0,
+            "area_m2": 120.0
+          },
+          {
+            "space": "Conferentie / ontmoeting",
+            "function": "bijeenkomstfunctie",
+            "x": 13.0,
+            "y": 0.0,
+            "width_m": 6.0,
+            "length_m": 7.0,
+            "area_m2": 40.0
+          },
+          {
+            "space": "Rituele wasruimte",
+            "function": "sanitaire functie",
+            "x": 19.0,
+            "y": 0.0,
+            "width_m": 3.0,
+            "length_m": 4.0,
+            "area_m2": 12.0
+          }
+        ],
+        "verdieping": [
+          {
+            "space": "Gebedsruimte dames",
+            "function": "bijeenkomstfunctie",
+            "x": 0.0,
+            "y": 0.0,
+            "width_m": 8.0,
+            "length_m": 10.0,
+            "area_m2": 80.0
+          },
+          {
+            "space": "Leslokalen",
+            "function": "onderwijs/nevenfunctie",
+            "x": 8.0,
+            "y": 0.0,
+            "width_m": 5.0,
+            "length_m": 6.0,
+            "area_m2": 30.0
+          }
+        ]
+      },
+      "exports_prepared": [
+        "json",
+        "pdf_next",
+        "dxf_next",
+        "ifc_next",
+        "skp_next"
+      ],
+      "status": "ok"
+    },
+    "facade_generator": {
+      "module_id": "architectural.facade_generator",
+      "version": "1.1.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "facades": [
+        {
+          "floor": "begane grond",
+          "facade": "voor",
+          "width_m": 22.0,
+          "height_m": 3.2,
+          "openings": [
+            {
+              "room": "Entree",
+              "type": "window",
+              "x_m": 1.0,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Gebedsruimte heren",
+              "type": "window",
+              "x_m": 3.5,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Conferentie / ontmoeting",
+              "type": "window",
+              "x_m": 6.0,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Rituele wasruimte",
+              "type": "window",
+              "x_m": 8.5,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            }
+          ]
+        },
+        {
+          "floor": "begane grond",
+          "facade": "achter",
+          "width_m": 22.0,
+          "height_m": 3.2,
+          "openings": [
+            {
+              "room": "Entree",
+              "type": "window",
+              "x_m": 1.0,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Gebedsruimte heren",
+              "type": "window",
+              "x_m": 3.5,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Conferentie / ontmoeting",
+              "type": "window",
+              "x_m": 6.0,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Rituele wasruimte",
+              "type": "window",
+              "x_m": 8.5,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            }
+          ]
+        },
+        {
+          "floor": "begane grond",
+          "facade": "links",
+          "width_m": 12.0,
+          "height_m": 3.2,
+          "openings": []
+        },
+        {
+          "floor": "begane grond",
+          "facade": "rechts",
+          "width_m": 12.0,
+          "height_m": 3.2,
+          "openings": []
+        },
+        {
+          "floor": "verdieping",
+          "facade": "voor",
+          "width_m": 13.0,
+          "height_m": 3.2,
+          "openings": [
+            {
+              "room": "Gebedsruimte dames",
+              "type": "window",
+              "x_m": 1.0,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Leslokalen",
+              "type": "window",
+              "x_m": 3.5,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            }
+          ]
+        },
+        {
+          "floor": "verdieping",
+          "facade": "achter",
+          "width_m": 13.0,
+          "height_m": 3.2,
+          "openings": [
+            {
+              "room": "Gebedsruimte dames",
+              "type": "window",
+              "x_m": 1.0,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            },
+            {
+              "room": "Leslokalen",
+              "type": "window",
+              "x_m": 3.5,
+              "sill_height_m": 0.9,
+              "width_m": 1.2,
+              "height_m": 1.4
+            }
+          ]
+        },
+        {
+          "floor": "verdieping",
+          "facade": "links",
+          "width_m": 10.0,
+          "height_m": 3.2,
+          "openings": []
+        },
+        {
+          "floor": "verdieping",
+          "facade": "rechts",
+          "width_m": 10.0,
+          "height_m": 3.2,
+          "openings": []
+        }
+      ],
+      "status": "ok"
+    },
+    "section_generator": {
+      "module_id": "architectural.section_generator",
+      "version": "1.1.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "sections": [
+        {
+          "section_id": "A-A",
+          "description": "schematische langsdoorsnede",
+          "floor_count": 2,
+          "floor_height_m": 3.2,
+          "total_height_m": 7.6,
+          "roof_type": "kap/plat dak nader te bepalen",
+          "elements": [
+            "fundering indicatief",
+            "vloeren",
+            "wanden",
+            "dak",
+            "maatvoering"
+          ]
+        },
+        {
+          "section_id": "B-B",
+          "description": "schematische dwarsdoorsnede",
+          "floor_count": 2,
+          "floor_height_m": 3.2,
+          "total_height_m": 7.6,
+          "roof_type": "kap/plat dak nader te bepalen",
+          "elements": [
+            "vloerpeilen",
+            "vrije hoogte",
+            "dakopbouw",
+            "gevelhoogte"
+          ]
+        }
+      ],
+      "status": "ok"
+    },
+    "roof_generator": {
+      "module_id": "architectural.roof_generator",
+      "version": "1.1.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "roof": {
+        "roof_type": "conceptueel plat dak / kap optioneel",
+        "footprint_width_m": 22.0,
+        "footprint_depth_m": 12.0,
+        "roof_area_m2": 264.0,
+        "drainage": "HWA nader uitwerken in MEP/riolering module",
+        "notes": [
+          "Dakvorm wordt later projectafhankelijk geoptimaliseerd.",
+          "Voor moskeeproject kan koepel/minaret als architectonisch element worden toegevoegd."
+        ]
+      },
+      "status": "ok"
+    },
+    "dimensioning": {
+      "module_id": "architectural.dimensioning",
+      "version": "1.1.0",
+      "ran_at": "2026-07-08T01:20:35",
+      "dimensions": [
+        {
+          "floor": "begane grond",
+          "type": "overall_width",
+          "value_m": 22.0
+        },
+        {
+          "floor": "begane grond",
+          "type": "overall_depth",
+          "value_m": 12.0
+        },
+        {
+          "floor": "begane grond",
+          "type": "room_dimension",
+          "space": "Entree",
+          "width_m": 3.0,
+          "length_m": 3.5
+        },
+        {
+          "floor": "begane grond",
+          "type": "room_dimension",
+          "space": "Gebedsruimte heren",
+          "width_m": 10.0,
+          "length_m": 12.0
+        },
+        {
+          "floor": "begane grond",
+          "type": "room_dimension",
+          "space": "Conferentie / ontmoeting",
+          "width_m": 6.0,
+          "length_m": 7.0
+        },
+        {
+          "floor": "begane grond",
+          "type": "room_dimension",
+          "space": "Rituele wasruimte",
+          "width_m": 3.0,
+          "length_m": 4.0
+        },
+        {
+          "floor": "verdieping",
+          "type": "overall_width",
+          "value_m": 13.0
+        },
+        {
+          "floor": "verdieping",
+          "type": "overall_depth",
+          "value_m": 10.0
+        },
+        {
+          "floor": "verdieping",
+          "type": "room_dimension",
+          "space": "Gebedsruimte dames",
+          "width_m": 8.0,
+          "length_m": 10.0
+        },
+        {
+          "floor": "verdieping",
+          "type": "room_dimension",
+          "space": "Leslokalen",
+          "width_m": 5.0,
+          "length_m": 6.0
+        }
+      ],
+      "status": "ok"
+    }
+  },
+  "status": "ok"
+}

@@ -1,19 +1,17 @@
 ﻿{
   "suite_id": "architectural",
   "suite_title": "Architectural Suite",
-  "version": "1.0.0",
-  "status": "implemented_v1",
+  "version": "1.1.0",
+  "status": "implemented_v1_1",
   "modules": [
     "project_intake",
     "program_of_requirements",
     "space_schedule",
-    "floorplan_generator"
-  ],
-  "knowledge_sources": [
-    "PKB",
-    "BIB",
-    "Knowledge Graph",
-    "Executable Architectural Master Specification"
+    "floorplan_generator",
+    "facade_generator",
+    "section_generator",
+    "roof_generator",
+    "dimensioning"
   ],
   "exports_current": [
     "json",
@@ -21,7 +19,6 @@
   ],
   "exports_next": [
     "pdf",
-    "docx",
     "dxf",
     "ifc",
     "skp"
