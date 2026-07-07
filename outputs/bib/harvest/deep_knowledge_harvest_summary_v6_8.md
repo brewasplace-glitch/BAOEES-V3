@@ -1,7 +1,7 @@
 # Deep Knowledge Harvest v6.8
 
-Bestanden gescand: 373
-Kennisrecords: 282
+Bestanden gescand: 377
+Kennisrecords: 286
 
 ## Projecten
 
@@ -38,22 +38,22 @@ Topics:
 ## Topics
 
 ### baoees_core
-Records: 218
+Records: 220
 
 ### plutostraat_paramaribo
-Records: 165
+Records: 169
 
 ### moskee_bunschoten
 Records: 91
 
 ### engineering_modules
-Records: 158
+Records: 162
 
 ### bruynzeel_waterfront
 Records: 60
 
 ### workflow_automation
-Records: 136
+Records: 140
 
 ## Kennisgaten
 

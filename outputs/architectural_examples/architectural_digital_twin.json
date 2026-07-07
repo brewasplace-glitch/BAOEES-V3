@@ -1,0 +1,66 @@
+{
+  "discipline": "architectural",
+  "project_name": "Moskee Bikkersweg 88 Bunschoten - Bouwkundig deel",
+  "location": "Bikkersweg 88, Bunschoten",
+  "spaces": [
+    {
+      "name": "Entree",
+      "function": "verkeersruimte",
+      "floor": "begane grond",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Gebedsruimte heren",
+      "function": "bijeenkomstfunctie",
+      "floor": "begane grond",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Conferentie/ontmoeting",
+      "function": "bijeenkomstfunctie",
+      "floor": "begane grond",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Rituele wasruimte",
+      "function": "sanitaire functie",
+      "floor": "begane grond",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Toiletten",
+      "function": "sanitaire functie",
+      "floor": "begane grond",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Gebedsruimte dames",
+      "function": "bijeenkomstfunctie",
+      "floor": "verdieping",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Leslokalen",
+      "function": "onderwijs/nevenfunctie",
+      "floor": "verdieping",
+      "area_m2": 0.0,
+      "notes": ""
+    },
+    {
+      "name": "Kantine",
+      "function": "bijeenkomst/nevenfunctie",
+      "floor": "verdieping",
+      "area_m2": 0.0,
+      "notes": ""
+    }
+  ],
+  "gross_floor_area_m2": 0.0,
+  "extension_area_m2": 20.0,
+  "status": "concept"
+}

@@ -1,0 +1,19 @@
+﻿{
+  "module": "architectural",
+  "version": "1.0",
+  "status": "installed",
+  "default_outputs": [
+    "architectural_program.json",
+    "architectural_permit_text.md",
+    "architectural_drawing_brief.md",
+    "architectural_digital_twin.json"
+  ],
+  "next_modules": [
+    "drawing_reader",
+    "room_stamp_engine",
+    "floorplan_generator",
+    "facade_generator",
+    "section_generator",
+    "architectural_pdf_export"
+  ]
+}

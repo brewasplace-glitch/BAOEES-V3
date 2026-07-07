@@ -1,0 +1,47 @@
+﻿A  baoees/architectural/architectural_engine.py
+A  baoees/architectural/module_manifest.json
+A  outputs/architectural_examples/architectural_digital_twin.json
+A  outputs/architectural_examples/architectural_drawing_brief.md
+A  outputs/architectural_examples/architectural_permit_text.md
+A  outputs/architectural_examples/architectural_program.json
+ M outputs/bib/dashboards/deep_knowledge_harvest_dashboard_v6_8.html
+ M outputs/bib/harvest/deep_knowledge_harvest_index_v6_8.json
+ M outputs/bib/harvest/deep_knowledge_harvest_log_v6_8.json
+ M outputs/bib/harvest/deep_knowledge_harvest_summary_v6_8.md
+ M outputs/bib/index/bib_knowledge_content_index.json
+ M outputs/bib/knowledge/brewster_engineering_wizard_knowledge_base_v6_6.json
+ M outputs/bib/knowledge/brewster_knowledge_migration_log_v6_6.json
+ M outputs/projects/Bronvermelding_van_dit_project/README_Bronvermelding_van_dit_project.txt
+ M outputs/projects/Bronvermelding_van_dit_project/bronvermelding_log.json
+ M outputs/projects/PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip
+ M outputs/projects/aaie_bib_assumptions.json
+ M outputs/projects/brewster_knowledge_migration_summary_v6_6.json
+ M outputs/projects/deep_knowledge_harvest_summary_v6_8.json
+ M outputs/projects/module_registry_log_v6_9.json
+ M outputs/projects/module_registry_v6_9.json
+ M outputs/projects/project_analysis_health_check_log.json
+ M outputs/projects/project_analyzer_launcher_bridge_log.json
+ M outputs/projects/project_analyzer_workflow_log.json
+ M outputs/projects/project_auto_repair_log.json
+ M outputs/projects/project_auto_repair_plan.json
+ M outputs/projects/project_context_builder_log_v7_1.json
+ M outputs/projects/project_context_seed_v7_0.json
+ M outputs/projects/project_context_v7_1.json
+ M outputs/projects/project_error_diagnostics_log.json
+ M outputs/projects/project_foundation_design_v7_3.json
+ M outputs/projects/project_foundation_log_v7_3.json
+ M outputs/projects/project_geotechniek_log_v7_2.json
+ M outputs/projects/project_geotechniek_v7_2.json
+ M outputs/projects/project_intake_log_v7_0.json
+ M outputs/projects/project_intake_v7_0.json
+ M outputs/projects/project_package_evidence_log.json
+ M outputs/projects/project_package_manifest.json
+ M outputs/projects/project_report_bib_report.docx
+ M outputs/projects/project_report_export_log.json
+ M outputs/projects/project_start_analysis_log.json
+ M outputs/projects/project_structural_log_v7_4.json
+ M outputs/projects/project_structural_model_v7_4.json
+?? DOCS/architectural/
+?? PROJECT_PHOENIX_CORE_v1_INSTALL.ps1
+?? brewster_architectural_module_v1/
+?? install_architectural_module_v1.ps1

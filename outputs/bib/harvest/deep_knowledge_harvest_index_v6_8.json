@@ -2,10 +2,10 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Deep Knowledge Harvest Engine",
   "engine_version": "v6.8",
-  "generated_at": "2026-07-06T21:55:16",
+  "generated_at": "2026-07-07T22:38:29",
   "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
-  "file_count": 373,
-  "knowledge_record_count": 282,
+  "file_count": 377,
+  "knowledge_record_count": 286,
   "project_map": {
     "moskee_bunschoten": {
       "record_count": 67,
@@ -262,7 +262,7 @@
   },
   "topic_map": {
     "baoees_core": {
-      "record_count": 218,
+      "record_count": 220,
       "sources": [
         "baoees\\__init__.py",
         "baoees\\aaie\\__init__.py",
@@ -457,6 +457,8 @@
         "outputs\\projects\\project_run_history.json",
         "outputs\\projects\\project_start_analysis_dashboard.html",
         "outputs\\projects\\project_start_analysis_log.json",
+        "outputs\\projects\\project_structural_dashboard_v7_4.html",
+        "outputs\\projects\\project_structural_summary_v7_4.md",
         "outputs\\projects\\start_projectanalyse_v6_4_update_log.json",
         "outputs\\projects\\start_projectanalyse_v6_5_update_log.json",
         "outputs\\projects\\start_projectanalyse_v6_6_update_log.json",
@@ -490,7 +492,7 @@
       }
     },
     "plutostraat_paramaribo": {
-      "record_count": 165,
+      "record_count": 169,
       "sources": [
         "baoees\\aaie\\config.py",
         "baoees\\aaie\\main.py",
@@ -647,6 +649,10 @@
         "outputs\\projects\\project_report_bib_report.md",
         "outputs\\projects\\project_run_history.json",
         "outputs\\projects\\project_start_analysis_log.json",
+        "outputs\\projects\\project_structural_dashboard_v7_4.html",
+        "outputs\\projects\\project_structural_log_v7_4.json",
+        "outputs\\projects\\project_structural_model_v7_4.json",
+        "outputs\\projects\\project_structural_summary_v7_4.md",
         "outputs\\projects\\start_projectanalyse_v7_2_update_log.json",
         "outputs\\projects\\start_projectanalyse_v7_3_update_log.json",
         "PROJECT_PHOENIX_v6_6_update.ps1",
@@ -766,7 +772,7 @@
       }
     },
     "engineering_modules": {
-      "record_count": 158,
+      "record_count": 162,
       "sources": [
         "baoees\\aerius_engine\\main.py",
         "baoees\\as_built_engine\\main.py",
@@ -913,6 +919,10 @@
         "outputs\\projects\\project_report_bib_report.md",
         "outputs\\projects\\project_run_history.json",
         "outputs\\projects\\project_start_analysis_log.json",
+        "outputs\\projects\\project_structural_dashboard_v7_4.html",
+        "outputs\\projects\\project_structural_log_v7_4.json",
+        "outputs\\projects\\project_structural_model_v7_4.json",
+        "outputs\\projects\\project_structural_summary_v7_4.md",
         "outputs\\projects\\start_projectanalyse_v7_2_update_log.json",
         "outputs\\projects\\start_projectanalyse_v7_3_update_log.json",
         "outputs\\projects\\start_projectanalyse_v7_4_update_log.json",
@@ -1004,7 +1014,7 @@
       }
     },
     "workflow_automation": {
-      "record_count": 136,
+      "record_count": 140,
       "sources": [
         "baoees\\bib_export_engine\\bib_knowledge_source.py",
         "baoees\\bib_export_engine\\bib_project_analyzer_bridge.py",
@@ -1117,6 +1127,10 @@
         "outputs\\projects\\project_report_export_log.json",
         "outputs\\projects\\project_start_analysis_dashboard.html",
         "outputs\\projects\\project_start_analysis_log.json",
+        "outputs\\projects\\project_structural_dashboard_v7_4.html",
+        "outputs\\projects\\project_structural_log_v7_4.json",
+        "outputs\\projects\\project_structural_model_v7_4.json",
+        "outputs\\projects\\project_structural_summary_v7_4.md",
         "outputs\\projects\\start_projectanalyse_v6_4_update_log.json",
         "outputs\\projects\\start_projectanalyse_v6_5_update_log.json",
         "outputs\\projects\\start_projectanalyse_v6_6_update_log.json",
@@ -6500,7 +6514,7 @@
       "relative_path": "outputs\\bib\\dashboards\\brewster_knowledge_migration_dashboard_v6_6.html",
       "suffix": ".html",
       "size_bytes": 4779,
-      "modified_at": "2026-07-06T21:55:12",
+      "modified_at": "2026-07-07T22:38:19",
       "sha256": "10e550b3d1abd10bde6b7c347609c68a89175f404c4f8f445a71769bc889c498",
       "topics": [
         "moskee_bunschoten",
@@ -6534,8 +6548,8 @@
       "relative_path": "outputs\\bib\\dashboards\\deep_knowledge_harvest_dashboard_v6_8.html",
       "suffix": ".html",
       "size_bytes": 3322,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "0405df27400d9b23b7e50865cfbf69b065c741abda45ae379930416450e64c15",
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "9bab77ecc986744df06e069e01b083562ea15853f3cbc081ce711f43920ed9e0",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -6626,9 +6640,9 @@
       "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json",
       "relative_path": "outputs\\bib\\harvest\\deep_knowledge_harvest_index_v6_8.json",
       "suffix": ".json",
-      "size_bytes": 970376,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "660ba0382fdfcddf49cc212e47ae0a94d2a36f4a0221efef4ac88137d8a3adac",
+      "size_bytes": 993260,
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "3b79920a6c74614efb7363677af28beb2e9d5b69e75691780ad08bf1d0b4d119",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -6688,7 +6702,7 @@
         "moeten bouwplaatsinrichting, veiligheid, planning, \\\"\",",
         "moeten vóór uitvoering definitief worden gecontroleerd.\\\")\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"generated_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"file_count\": 366, \"knowledge_record_count\": 275, \"project_map\": { \"moskee_bunschoten\": { \"record_count\": 65, \"sources\": [ \"baoees\\\\bib_export_engine\\\\bib_knowledge_source.py\", \"baoees\\\\bib_export_engine\\\\bib_project_analyzer_bridge.py\", \"baoees\\\\bib_export_engine\\\\bib_qa_qc.py\", \"baoees\\\\building_technical_engine\\\\main.py\", \"baoees\\\\gis_map_engine\\\\main.py\", \"baoees\\\\global_codes_engine\\\\main.py"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"generated_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"file_count\": 373, \"knowledge_record_count\": 282, \"project_map\": { \"moskee_bunschoten\": { \"record_count\": 67, \"sources\": [ \"baoees\\\\bib_export_engine\\\\bib_knowledge_source.py\", \"baoees\\\\bib_export_engine\\\\bib_project_analyzer_bridge.py\", \"baoees\\\\bib_export_engine\\\\bib_qa_qc.py\", \"baoees\\\\building_technical_engine\\\\main.py\", \"baoees\\\\gis_map_engine\\\\main.py\", \"baoees\\\\global_codes_engine\\\\main.py"
     },
     {
       "name": "deep_knowledge_harvest_log_v6_8.json",
@@ -6696,8 +6710,8 @@
       "relative_path": "outputs\\bib\\harvest\\deep_knowledge_harvest_log_v6_8.json",
       "suffix": ".json",
       "size_bytes": 1490,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "5661caf86acd924d7112a43727eeef0ef2267b13ab862488a6d5849de5d1079d",
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "4b90dfb671ea56ab7c7a5d0ace6084a5a86566d3324be058266265dcc77fdfcc",
       "topics": [
         "workflow_automation"
       ],
@@ -6708,7 +6722,7 @@
       "actions": [
         "commit en push.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:37:30\", \"finished_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output"
     },
     {
       "name": "deep_knowledge_harvest_summary_v6_8.md",
@@ -6716,8 +6730,8 @@
       "relative_path": "outputs\\bib\\harvest\\deep_knowledge_harvest_summary_v6_8.md",
       "suffix": ".md",
       "size_bytes": 1008,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "f960281b2208957e3731afe38afe385f8bd392b922ba22825074e03982aa5c7b",
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "bf8b1b804d688fd403463f73194ca1127fb839b6ab4101c729de2658cd909cbe",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -6733,7 +6747,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "# Deep Knowledge Harvest v6.8 Bestanden gescand: 366 Kennisrecords: 275 ## Projecten ### moskee_bunschoten Records: 65 Topics: - moskee_bunschoten: 65 - plutostraat_paramaribo: 58 - bruynzeel_waterfront: 51 - baoees_core: 59 - engineering_modules: 50 - workflow_automation: 34 ### plutostraat_paramaribo Records: 85 Topics: - moskee_bunschoten: 60 - plutostraat_paramaribo: 85 - bruynzeel_waterfront: 56 - baoees_core: 80 - engineering_modules: 63 - workflow_automation: 45 ### bruynzeel_waterfront Records: 58 Topics: - moskee_bunschoten: 52 - plutostraat_paramaribo: 57 - bruynzeel_waterfront: 58 -"
+      "snippet": "# Deep Knowledge Harvest v6.8 Bestanden gescand: 373 Kennisrecords: 282 ## Projecten ### moskee_bunschoten Records: 67 Topics: - moskee_bunschoten: 67 - plutostraat_paramaribo: 60 - bruynzeel_waterfront: 51 - baoees_core: 61 - engineering_modules: 52 - workflow_automation: 36 ### plutostraat_paramaribo Records: 88 Topics: - moskee_bunschoten: 60 - plutostraat_paramaribo: 88 - bruynzeel_waterfront: 56 - baoees_core: 80 - engineering_modules: 66 - workflow_automation: 48 ### bruynzeel_waterfront Records: 58 Topics: - moskee_bunschoten: 52 - plutostraat_paramaribo: 57 - bruynzeel_waterfront: 58 -"
     },
     {
       "name": "bib_import_index.json",
@@ -6805,9 +6819,9 @@
       "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\bib\\index\\bib_knowledge_content_index.json",
       "relative_path": "outputs\\bib\\index\\bib_knowledge_content_index.json",
       "suffix": ".json",
-      "size_bytes": 46274,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "aaf1186acfbfb8206d65423f4584c1b9176639e9f85db1d992a8c4036c697193",
+      "size_bytes": 47304,
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "0c87d1ccbbe6f521e13844394ba99860116baaf6f38473b40760b8a4bdb5a975",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -6936,8 +6950,8 @@
       "relative_path": "outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.json",
       "suffix": ".json",
       "size_bytes": 7166,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "3e8b8077531c06e460b7731e1d5e9c2ca5429f413486d283a4b7b563c61427b6",
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "ac639f98b774d6e7b3caba7630fee4c9743cfddb600d14fb75eef64caed440b8",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -6976,7 +6990,7 @@
         "commit\",",
         "push\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"generated_at\": \"2026-07-06T21:55:12\", \"purpose\": \"Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.\", \"domains\": [ { \"name\": \"BEOS / BREWAS / BAOEES visie\", \"summary\": \"Autonoom engineeringplatform van locatiekeuze tot beheer, met Digital Twin, Knowledge Graph en AI Engine als centrale kern.\", \"importance\": \"kern\" }, { \"name\": \"Digital Twin centraal\", \"summary\": \"Alle disciplines lezen en schrijven naa"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"generated_at\": \"2026-07-07T22:38:19\", \"purpose\": \"Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.\", \"domains\": [ { \"name\": \"BEOS / BREWAS / BAOEES visie\", \"summary\": \"Autonoom engineeringplatform van locatiekeuze tot beheer, met Digital Twin, Knowledge Graph en AI Engine als centrale kern.\", \"importance\": \"kern\" }, { \"name\": \"Digital Twin centraal\", \"summary\": \"Alle disciplines lezen en schrijven naa"
     },
     {
       "name": "brewster_engineering_wizard_knowledge_base_v6_6.md",
@@ -6984,7 +6998,7 @@
       "relative_path": "outputs\\bib\\knowledge\\brewster_engineering_wizard_knowledge_base_v6_6.md",
       "suffix": ".md",
       "size_bytes": 5050,
-      "modified_at": "2026-07-06T21:55:12",
+      "modified_at": "2026-07-07T22:38:19",
       "sha256": "023259453ad250f032c26510840151c5713d9902fd624ab66e05f7c9123e94fc",
       "topics": [
         "moskee_bunschoten",
@@ -7027,8 +7041,8 @@
       "relative_path": "outputs\\bib\\knowledge\\brewster_knowledge_migration_log_v6_6.json",
       "suffix": ".json",
       "size_bytes": 1617,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "2ebbb960ea3c2206f577a91dfce8c49293ff0414aa562c53919266d8f9c0de3a",
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "9e965c6d4fa7a1ebd9cbb6bc1276685b036eb28a83e456474a375f45938f7aa5",
       "topics": [
         "workflow_automation"
       ],
@@ -7039,7 +7053,7 @@
       "actions": [
         "commit en push.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:12\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-07T22:38:19\", \"finished_at\": \"2026-07-07T22:38:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat"
     },
     {
       "name": "bib_import_wizard_log.json",
@@ -7306,7 +7320,7 @@
       "relative_path": "outputs\\projects\\aaie_bib_assumptions.html",
       "suffix": ".html",
       "size_bytes": 5598,
-      "modified_at": "2026-07-06T21:37:34",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "b7d1ca89d99951677a891fbd905ee6b5d9d4dd321574a8a8f7e0d61c450429a9",
       "topics": [
         "plutostraat_paramaribo",
@@ -7339,8 +7353,8 @@
       "relative_path": "outputs\\projects\\aaie_bib_assumptions.json",
       "suffix": ".json",
       "size_bytes": 5194,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "fefd0c6c492359f96a860b8a6ad3dccccda6c85a8534d61f56dcaf41b77767fb",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "f5d6356ef8c0fa5e1ba8eed90d5d313d6c971a13d4e199321ffd179d17753b78",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -7363,7 +7377,7 @@
         "Standaard engineeringregels\","
       ],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix AAIE BIB Assumption Loader\", \"engine_version\": \"v5.8\", \"generated_at\": \"2026-07-06T21:37:34\", \"purpose\": \"AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"bib_knowledge_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"bib_status\": \"BIB_ONBEKEND\", \"bib_lookup\": { \"status\": \"B"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix AAIE BIB Assumption Loader\", \"engine_version\": \"v5.8\", \"generated_at\": \"2026-07-06T21:55:17\", \"purpose\": \"AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"bib_knowledge_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"bib_status\": \"BIB_ONBEKEND\", \"bib_lookup\": { \"status\": \"B"
     },
     {
       "name": "brewster_knowledge_migration_summary_v6_6.json",
@@ -7371,8 +7385,8 @@
       "relative_path": "outputs\\projects\\brewster_knowledge_migration_summary_v6_6.json",
       "suffix": ".json",
       "size_bytes": 1617,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "2ebbb960ea3c2206f577a91dfce8c49293ff0414aa562c53919266d8f9c0de3a",
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "9e965c6d4fa7a1ebd9cbb6bc1276685b036eb28a83e456474a375f45938f7aa5",
       "topics": [
         "workflow_automation"
       ],
@@ -7383,7 +7397,7 @@
       "actions": [
         "commit en push.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:12\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-07T22:38:19\", \"finished_at\": \"2026-07-07T22:38:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat"
     },
     {
       "name": "bronvermelding_log.json",
@@ -7391,8 +7405,8 @@
       "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
       "suffix": ".json",
       "size_bytes": 4623,
-      "modified_at": "2026-07-06T21:37:37",
-      "sha256": "0515cfb25d4515ab48bcc26c2fd423d411671bac3fc0fdb12a2e2956319b58d4",
+      "modified_at": "2026-07-06T21:55:19",
+      "sha256": "7c7fb10966c5e5f7aeeddd0ca47c3725b69265ee8e2ce2fa3782f8c636031acb",
       "topics": [
         "baoees_core",
         "workflow_automation"
@@ -7402,7 +7416,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:37:37\", \"generated_at\": \"2026-07-06T21:37:37\", \"map\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"bron_count\": 15, \"bronnen\": [ { \"bron_id\": \"EV-001\", \"naam\": \"project_report_bib_package.json\", \"type\": \"bib_kennisindex\", \"bestand\": \"outputs\\\\projects\\\\project_report_bib_package.json\", \"datum_tijd\": \"2026-06-30T17:32:02\", \"betrouwbaarheid\": \"hoog\" }, { \"bron_id\": \"EV-002\", \"naam\": \"project_report_bib_report.docx\""
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:55:19\", \"generated_at\": \"2026-07-06T21:55:19\", \"map\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"bron_count\": 15, \"bronnen\": [ { \"bron_id\": \"EV-001\", \"naam\": \"project_report_bib_package.json\", \"type\": \"bib_kennisindex\", \"bestand\": \"outputs\\\\projects\\\\project_report_bib_package.json\", \"datum_tijd\": \"2026-06-30T17:32:02\", \"betrouwbaarheid\": \"hoog\" }, { \"bron_id\": \"EV-002\", \"naam\": \"project_report_bib_report.docx\""
     },
     {
       "name": "README_Bronvermelding_van_dit_project.txt",
@@ -7410,8 +7424,8 @@
       "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
       "suffix": ".txt",
       "size_bytes": 2479,
-      "modified_at": "2026-07-06T21:37:37",
-      "sha256": "4c350e9b0123e5bcb26a4ec89ac87ee5b723d210aa6cd8e3ff3390dec81e1597",
+      "modified_at": "2026-07-06T21:55:19",
+      "sha256": "3b1c1ec73b3cca5fd309b736074d0901df65c1107091f5c62c84eefd14173a44",
       "topics": [
         "baoees_core",
         "workflow_automation"
@@ -7421,7 +7435,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "BRONVERMELDING VAN DIT PROJECT PROJECT PHOENIX / BAOEES Versie: v6.2 Deze map bevat de bronvermelding, evidence-log en verwijzingen naar projectbestanden. Bronnen en bestanden: - EV-001: outputs\\projects\\project_report_bib_package.json Type: bib_kennisindex Betrouwbaarheid: hoog Gewijzigd: 2026-06-30T17:32:02 - EV-002: outputs\\projects\\project_report_bib_report.docx Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:37:37 - EV-003: outputs\\projects\\project_report_bib_report.pdf Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:37:37 - EV-004: output"
+      "snippet": "BRONVERMELDING VAN DIT PROJECT PROJECT PHOENIX / BAOEES Versie: v6.2 Deze map bevat de bronvermelding, evidence-log en verwijzingen naar projectbestanden. Bronnen en bestanden: - EV-001: outputs\\projects\\project_report_bib_package.json Type: bib_kennisindex Betrouwbaarheid: hoog Gewijzigd: 2026-06-30T17:32:02 - EV-002: outputs\\projects\\project_report_bib_report.docx Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:55:19 - EV-003: outputs\\projects\\project_report_bib_report.pdf Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:55:19 - EV-004: output"
     },
     {
       "name": "bruynzeel_waterfront_project_report.md",
@@ -8025,8 +8039,8 @@
       "relative_path": "outputs\\projects\\deep_knowledge_harvest_summary_v6_8.json",
       "suffix": ".json",
       "size_bytes": 1490,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "5661caf86acd924d7112a43727eeef0ef2267b13ab862488a6d5849de5d1079d",
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "4b90dfb671ea56ab7c7a5d0ace6084a5a86566d3324be058266265dcc77fdfcc",
       "topics": [
         "workflow_automation"
       ],
@@ -8037,7 +8051,7 @@
       "actions": [
         "commit en push.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:37:30\", \"finished_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output"
     },
     {
       "name": "geo_foundation_bib_analysis.html",
@@ -8165,9 +8179,9 @@
       "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_dashboard_v6_9.html",
       "relative_path": "outputs\\projects\\module_registry_dashboard_v6_9.html",
       "suffix": ".html",
-      "size_bytes": 7394,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "47be84b3f5fb8642aae0bbf04efa249f97f89abc36772451db5e90ec2c961d3a",
+      "size_bytes": 7405,
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "3e0e143a647f3f78cd1404c5fff110516cdb5ab483d2d934969496914c8e09dd",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -8179,9 +8193,9 @@
       "action_count": 8,
       "decisions": [],
       "actions": [
-        "nog te bouwen: 5</p>",
+        "nog te bouwen: 4</p>",
         "Nog te bouwen: geotechniek</td></tr><tr><td>foundation_engine</td><td>to_build</td><td>AANWEZIG</td><td>False</td><td><code>baoees\\project_analyzer\\foundation_engine.py</code></td><td>Foundatio",
-        "Nog te bouwen: fundering</td></tr><tr><td>structural_engine</td><td>to_build</td><td>NOG_TE_BOUWEN</td><td>False</td><td><code>baoees/project_analyzer/structural_engine.py</code></td><td></td><",
+        "Nog te bouwen: fundering</td></tr><tr><td>structural_engine</td><td>to_build</td><td>AANWEZIG</td><td>False</td><td><code>baoees\\project_analyzer\\structural_engine.py</code></td><td>StructuralE",
         "Nog te bouwen: constructie</td></tr><tr><td>cad_drawing_export_engine</td><td>to_build</td><td>NOG_TE_BOUWEN</td><td>False</td><td><code>baoees/project_analyzer/cad_drawing_export_engine.py</co",
         "Nog te bouwen: tekeningen/CAD</td></tr><tr><td>permit_engine</td><td>to_build</td><td>NOG_TE_BOUWEN</td><td>False</td><td><code>baoees/project_analyzer/permit_engine.py</code></td><td></td><td>",
         "Nog te bouwen: vergunningen</td></tr><tr><td>traffic_parking_engine</td><td>to_build</td><td>NOG_TE_BOUWEN</td><td>False</td><td><code>baoees/project_analyzer/traffic_parking_engine.py</code></",
@@ -8195,9 +8209,9 @@
       "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_log_v6_9.json",
       "relative_path": "outputs\\projects\\module_registry_log_v6_9.json",
       "suffix": ".json",
-      "size_bytes": 15062,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "2eca5c5e7c95b16ef4d9c85dee84ca0ebb7939db9bf633517abd39040f2a3bc4",
+      "size_bytes": 15141,
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "50512522fadc84cc82cc7cbef3bb93e936414809cb8251e8c646e39895eadccb",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -8218,16 +8232,16 @@
         "Nog te bouwen: kosten/planning\",",
         "Volgende stap: Project Intake Engine of Geotechniek Engine.\""
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 22, \"required_"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 23, \"required_"
     },
     {
       "name": "module_registry_v6_9.json",
       "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_v6_9.json",
       "relative_path": "outputs\\projects\\module_registry_v6_9.json",
       "suffix": ".json",
-      "size_bytes": 15062,
-      "modified_at": "2026-07-06T21:37:34",
-      "sha256": "2eca5c5e7c95b16ef4d9c85dee84ca0ebb7939db9bf633517abd39040f2a3bc4",
+      "size_bytes": 15141,
+      "modified_at": "2026-07-06T21:55:16",
+      "sha256": "50512522fadc84cc82cc7cbef3bb93e936414809cb8251e8c646e39895eadccb",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -8248,7 +8262,7 @@
         "Nog te bouwen: kosten/planning\",",
         "Volgende stap: Project Intake Engine of Geotechniek Engine.\""
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 22, \"required_"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 23, \"required_"
     },
     {
       "name": "moskee_bunschoten_project_report.md",
@@ -9420,7 +9434,7 @@
       "relative_path": "outputs\\projects\\project_analysis_health_check_dashboard.html",
       "suffix": ".html",
       "size_bytes": 4107,
-      "modified_at": "2026-07-06T21:37:38",
+      "modified_at": "2026-07-06T21:55:20",
       "sha256": "efa88e47b606bcdfbcc8e7274d6ffe5c8a0ceb1ad7fd966d42e5d371e38f9f4e",
       "topics": [
         "workflow_automation"
@@ -9442,8 +9456,8 @@
       "relative_path": "outputs\\projects\\project_analysis_health_check_log.json",
       "suffix": ".json",
       "size_bytes": 7255,
-      "modified_at": "2026-07-06T21:37:38",
-      "sha256": "b1c19c730f9d15f3d9ed135d1a92a8f1a2d636ad788d637217fa70d7e3a3beea",
+      "modified_at": "2026-07-06T21:55:20",
+      "sha256": "6de2ad91a842c8c071d9b721a586f50572871a97227ad9ce268a985c82266acd",
       "topics": [
         "workflow_automation"
       ],
@@ -9455,7 +9469,7 @@
         "runner\",",
         "commit en push.\","
       ],
-      "snippet": "{ \"status\": \"GOEDGEKEURD\", \"engine\": \"Project Phoenix Project Analysis Health Check Engine\", \"engine_version\": \"v6.5\", \"generated_at\": \"2026-07-06T21:37:38\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"health_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_dashboard.html\", \"score_percent\": 100, \"check_count\": 14, \"passed_count\": 14, \"failed_count\":"
+      "snippet": "{ \"status\": \"GOEDGEKEURD\", \"engine\": \"Project Phoenix Project Analysis Health Check Engine\", \"engine_version\": \"v6.5\", \"generated_at\": \"2026-07-06T21:55:20\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"health_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_dashboard.html\", \"score_percent\": 100, \"check_count\": 14, \"passed_count\": 14, \"failed_count\":"
     },
     {
       "name": "project_analyzer_bib_context.html",
@@ -9555,7 +9569,7 @@
       "relative_path": "outputs\\projects\\project_analyzer_launcher_bridge_dashboard.html",
       "suffix": ".html",
       "size_bytes": 3998,
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "sha256": "f75e206723c3b8013d50be5af45a1d55dd1be61984ea43997fb4d1143f6453fc",
       "topics": [
         "baoees_core",
@@ -9576,8 +9590,8 @@
       "relative_path": "outputs\\projects\\project_analyzer_launcher_bridge_log.json",
       "suffix": ".json",
       "size_bytes": 6806,
-      "modified_at": "2026-07-06T21:37:37",
-      "sha256": "94fdddf689471063d03f8d55616030e674fb18077e55c3248d16daaad3fe38a1",
+      "modified_at": "2026-07-06T21:55:19",
+      "sha256": "44f87230a79b538255610008f004a153741b7c250f5b313d00f627289b70dea7",
       "topics": [
         "baoees_core",
         "workflow_automation"
@@ -9589,7 +9603,7 @@
       "actions": [
         "Downloadbaar totaalpakket van projectanalyse en rapportage.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Launcher Bridge\", \"engine_version\": \"v6.3\", \"started_at\": \"2026-07-06T21:37:37\", \"finished_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_start_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"launcher_bridge_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_launcher_bridge_log.json\", \"launcher_bridge_dashboard_path\":"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Launcher Bridge\", \"engine_version\": \"v6.3\", \"started_at\": \"2026-07-06T21:55:19\", \"finished_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_start_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"launcher_bridge_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_launcher_bridge_log.json\", \"launcher_bridge_dashboard_path\":"
     },
     {
       "name": "project_analyzer_workflow_dashboard.html",
@@ -9597,7 +9611,7 @@
       "relative_path": "outputs\\projects\\project_analyzer_workflow_dashboard.html",
       "suffix": ".html",
       "size_bytes": 1709,
-      "modified_at": "2026-07-06T21:37:36",
+      "modified_at": "2026-07-06T21:55:18",
       "sha256": "092bae09328b91f2d0fc2af4885805b4934ca5d94dbf99b9319408347759fba6",
       "topics": [
         "baoees_core",
@@ -9620,8 +9634,8 @@
       "relative_path": "outputs\\projects\\project_analyzer_workflow_log.json",
       "suffix": ".json",
       "size_bytes": 1639,
-      "modified_at": "2026-07-06T21:37:36",
-      "sha256": "9a2b6a7809d161e55e2b35a2e14303ee55d1f1b0e279bfd61a8c942b66eff35f",
+      "modified_at": "2026-07-06T21:55:18",
+      "sha256": "4a35466b180459c6005b0eb4cbe4ce830c0cfc5be3237fba134953472ccbe5fc",
       "topics": [
         "baoees_core",
         "workflow_automation"
@@ -9633,7 +9647,7 @@
         "Standaard engineeringregels\","
       ],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Workflow Engine\", \"engine_version\": \"v5.9\", \"started_at\": \"2026-07-06T21:37:36\", \"finished_at\": \"2026-07-06T21:37:36\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"aaie_bib_assumptions_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\aaie_bib_assumptions.json\", \"workflow_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_workflow_log.json\", \"workflow_dashboard_path\": \"C:\\"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Workflow Engine\", \"engine_version\": \"v5.9\", \"started_at\": \"2026-07-06T21:55:18\", \"finished_at\": \"2026-07-06T21:55:18\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"aaie_bib_assumptions_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\aaie_bib_assumptions.json\", \"workflow_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_workflow_log.json\", \"workflow_dashboard_path\": \"C:\\"
     },
     {
       "name": "project_auto_repair_dashboard.html",
@@ -9641,7 +9655,7 @@
       "relative_path": "outputs\\projects\\project_auto_repair_dashboard.html",
       "suffix": ".html",
       "size_bytes": 1321,
-      "modified_at": "2026-07-06T21:37:38",
+      "modified_at": "2026-07-06T21:55:20",
       "sha256": "929957ba3410799fbc65371926ffdfa807d66486ca309777547e90d459980234",
       "topics": [
         "workflow_automation"
@@ -9663,8 +9677,8 @@
       "relative_path": "outputs\\projects\\project_auto_repair_log.json",
       "suffix": ".json",
       "size_bytes": 1746,
-      "modified_at": "2026-07-06T21:37:38",
-      "sha256": "e017690ce5e4d22d6e49ac75c849920bb6adc38c08f32cf9a3974331e342c622",
+      "modified_at": "2026-07-06T21:55:20",
+      "sha256": "98b549c09c977584e091e915120e2b1cf1e44652a5a91f87384eaf72b4c0bad9",
       "topics": [
         "workflow_automation"
       ],
@@ -9673,7 +9687,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:37:38\", \"finished_at\": \"2026-07-06T21:37:38\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"repair_plan_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_auto_repair_plan.json\", \"repair_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\projec"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:55:20\", \"finished_at\": \"2026-07-06T21:55:20\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"repair_plan_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_auto_repair_plan.json\", \"repair_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\projec"
     },
     {
       "name": "project_auto_repair_plan.json",
@@ -9681,8 +9695,8 @@
       "relative_path": "outputs\\projects\\project_auto_repair_plan.json",
       "suffix": ".json",
       "size_bytes": 371,
-      "modified_at": "2026-07-06T21:37:38",
-      "sha256": "8021e25a3297e9ac0a556670c54f1cf932c8127c723f6cf3a2349dd930480901",
+      "modified_at": "2026-07-06T21:55:20",
+      "sha256": "08776c4bc052bcea3a594be1b86b0ab110807c88ae0cbf5e5d7a734f7c6b8ab9",
       "topics": [
         "workflow_automation"
       ],
@@ -9691,7 +9705,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"generated_at\": \"2026-07-06T21:37:38\", \"actions\": [ { \"repair_action\": \"ensure_base_directories\", \"source_code\": \"BASE\", \"source_title\": \"Basis mappen controleren\", \"safe\": true, \"status\": \"GEPLAND\" } ] }"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"generated_at\": \"2026-07-06T21:55:20\", \"actions\": [ { \"repair_action\": \"ensure_base_directories\", \"source_code\": \"BASE\", \"source_title\": \"Basis mappen controleren\", \"safe\": true, \"status\": \"GEPLAND\" } ] }"
     },
     {
       "name": "project_context_builder_log_v7_1.json",
@@ -9699,8 +9713,8 @@
       "relative_path": "outputs\\projects\\project_context_builder_log_v7_1.json",
       "suffix": ".json",
       "size_bytes": 1627,
-      "modified_at": "2026-07-06T21:37:35",
-      "sha256": "330c30fa4b07319973c2850d185058244bd0588a0bd46c2cad86e4b6c489d5bc",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "252baed245293338da4a979f735eb9cc449df561fd31676bf553e175f0dfe362",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -9714,7 +9728,7 @@
       "actions": [
         "commit en push.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"started_at\": \"2026-07-06T21:37:34\", \"finished_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"project_context_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_summary_v7_1.md\", \"project_context_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"project_context_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_summary_v7_1.md\", \"project_context_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\"
     },
     {
       "name": "project_context_dashboard_v7_1.html",
@@ -9722,7 +9736,7 @@
       "relative_path": "outputs\\projects\\project_context_dashboard_v7_1.html",
       "suffix": ".html",
       "size_bytes": 4333,
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "a07fe042bdac350aaa85ab7667ecae60a7ad56f7ea91868a9cdd7d8161d7c9c2",
       "topics": [
         "plutostraat_paramaribo",
@@ -9746,8 +9760,8 @@
       "relative_path": "outputs\\projects\\project_context_seed_v7_0.json",
       "suffix": ".json",
       "size_bytes": 1162,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "c45697ae4858193bc7649a9e6d1a47369381a12b9d178a8c44e7bc1aba863e69",
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "765fa0d34748acd8894b65573995de0ff81825266a92347fc613eedff4c898a9",
       "topics": [
         "plutostraat_paramaribo",
         "workflow_automation"
@@ -9757,7 +9771,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"SEED\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-06T21:55:12\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"recommended_modules\": [ { \"module\": \"fundering\", \"status\": \"aanbevolen\", \"reason\": \"Herkenning op: palen\" }, {"
+      "snippet": "{ \"status\": \"SEED\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-07T22:38:19\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"recommended_modules\": [ { \"module\": \"fundering\", \"status\": \"aanbevolen\", \"reason\": \"Herkenning op: palen\" }, {"
     },
     {
       "name": "project_context_summary_v7_1.md",
@@ -9765,7 +9779,7 @@
       "relative_path": "outputs\\projects\\project_context_summary_v7_1.md",
       "suffix": ".md",
       "size_bytes": 553,
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "24a92028320377dddfb5c2e1f1319dbdf47a14f2bff6c5cdc1a8850b2fd37c76",
       "topics": [
         "plutostraat_paramaribo",
@@ -9787,8 +9801,8 @@
       "relative_path": "outputs\\projects\\project_context_v7_1.json",
       "suffix": ".json",
       "size_bytes": 9735,
-      "modified_at": "2026-07-06T21:37:35",
-      "sha256": "f468e8e1a45880871fde1bbfb8c83f1ed629ef9ab24de5165a32011bba2c8ca0",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "885a3eb9cec9121067275660d83ce01cec4389b39548508420db00ac5a7b970f",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -9813,7 +9827,7 @@
         "run_health_check\": true,",
         "run_diagnostics_and_auto_repair\": true"
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"generated_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"modules\": { \"recommended_modules\": [ { \"modu"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"generated_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"modules\": { \"recommended_modules\": [ { \"modu"
     },
     {
       "name": "project_error_diagnostics_dashboard.html",
@@ -9821,7 +9835,7 @@
       "relative_path": "outputs\\projects\\project_error_diagnostics_dashboard.html",
       "suffix": ".html",
       "size_bytes": 1463,
-      "modified_at": "2026-07-06T21:37:38",
+      "modified_at": "2026-07-06T21:55:20",
       "sha256": "5cfd4105a7c772203077b653ecf92918473861e603ba6bbba6f0ec000f3c3fab",
       "topics": [
         "workflow_automation"
@@ -9841,8 +9855,8 @@
       "relative_path": "outputs\\projects\\project_error_diagnostics_log.json",
       "suffix": ".json",
       "size_bytes": 976,
-      "modified_at": "2026-07-06T21:37:38",
-      "sha256": "fbbe4e2363c14701e5226683a4f360334a34e69d954d257378790c34e169f0c2",
+      "modified_at": "2026-07-06T21:55:20",
+      "sha256": "ed7f49c4b28519cc40084b8b25e63eea5c3fbffb26a8745bf93387a340503c9a",
       "topics": [
         "workflow_automation"
       ],
@@ -9853,7 +9867,7 @@
       "actions": [
         "commit en push.\""
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Error Diagnostics Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:37:38\", \"finished_at\": \"2026-07-06T21:37:38\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"diagnostics_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Error Diagnostics Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:55:20\", \"finished_at\": \"2026-07-06T21:55:20\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"diagnostics_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\"
     },
     {
       "name": "project_foundation_dashboard_v7_3.html",
@@ -9861,7 +9875,7 @@
       "relative_path": "outputs\\projects\\project_foundation_dashboard_v7_3.html",
       "suffix": ".html",
       "size_bytes": 3818,
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "f87678536a67ec798ca5d4130cf638e417d3bc534471335401cdf8ae6857a30d",
       "topics": [
         "plutostraat_paramaribo",
@@ -9886,8 +9900,8 @@
       "relative_path": "outputs\\projects\\project_foundation_design_v7_3.json",
       "suffix": ".json",
       "size_bytes": 6773,
-      "modified_at": "2026-07-06T21:37:35",
-      "sha256": "98c2aeabfd61f1a95f829f06047dbe72bc104333d08cc0a0df6ad6bbb6ea53de",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "43b5680595519a20f95e5f7ceb073837ba4c08efb3f6dee2966e9b0299fc40cb",
       "topics": [
         "plutostraat_paramaribo",
         "engineering_modules",
@@ -9910,7 +9924,7 @@
         "gekozen volgens Brewster standaardregel en v7.2 geotechniek.\""
       ],
       "actions": [],
-      "snippet": "{ \"status\": \"VOORLOPIG_CONCEPT\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"generated_at\": \"2026-07-06T21:37:35\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"selected_concept\": { \"type\": \"strokenfundering_met_funderingsbalk\", \"status\": \"VOORLOPIG\", \"foundation_level\": \"P = -0,50 m voorlopig\", \"strip_width_cm\": 150, \"strip_height_cm\": 40, \"beam_width_cm\": 50, \"beam_height"
+      "snippet": "{ \"status\": \"VOORLOPIG_CONCEPT\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"generated_at\": \"2026-07-06T21:55:17\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"selected_concept\": { \"type\": \"strokenfundering_met_funderingsbalk\", \"status\": \"VOORLOPIG\", \"foundation_level\": \"P = -0,50 m voorlopig\", \"strip_width_cm\": 150, \"strip_height_cm\": 40, \"beam_width_cm\": 50, \"beam_height"
     },
     {
       "name": "project_foundation_log_v7_3.json",
@@ -9918,8 +9932,8 @@
       "relative_path": "outputs\\projects\\project_foundation_log_v7_3.json",
       "suffix": ".json",
       "size_bytes": 1622,
-      "modified_at": "2026-07-06T21:37:35",
-      "sha256": "1f37d78823f644a537f219d67df7604d52233023f2d986f420efe73dce8e8fe4",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "ea1a362df34e339aea0100143afdcb85f70c346f323d6c34e0739e4c8fc7ef4b",
       "topics": [
         "plutostraat_paramaribo",
         "engineering_modules",
@@ -9932,7 +9946,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"started_at\": \"2026-07-06T21:37:35\", \"finished_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"foundation_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_fou"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"foundation_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_fou"
     },
     {
       "name": "project_foundation_summary_v7_3.md",
@@ -9940,7 +9954,7 @@
       "relative_path": "outputs\\projects\\project_foundation_summary_v7_3.md",
       "suffix": ".md",
       "size_bytes": 785,
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "12bc593abfc4b162044dbedcf7e706d5f7a5a37875959bf6a087927da83c2f07",
       "topics": [
         "plutostraat_paramaribo",
@@ -9961,7 +9975,7 @@
       "relative_path": "outputs\\projects\\project_geotechniek_dashboard_v7_2.html",
       "suffix": ".html",
       "size_bytes": 2908,
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "5c33acfe42d5edc864b76c5e986074a8d1efb6446ae05392cef414fa68469046",
       "topics": [
         "plutostraat_paramaribo",
@@ -9991,8 +10005,8 @@
       "relative_path": "outputs\\projects\\project_geotechniek_log_v7_2.json",
       "suffix": ".json",
       "size_bytes": 1618,
-      "modified_at": "2026-07-06T21:37:35",
-      "sha256": "d25241e6e779ab4575a9eb654a4093a0b061702d612e9b163ce3111821a7144b",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "b7f66db93032d891493ad6f973bd6f86ef6c10b8ac43ad00adea36e219298949",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -10004,7 +10018,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"started_at\": \"2026-07-06T21:37:35\", \"finished_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"geotechniek_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\p"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"geotechniek_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\p"
     },
     {
       "name": "project_geotechniek_summary_v7_2.md",
@@ -10012,7 +10026,7 @@
       "relative_path": "outputs\\projects\\project_geotechniek_summary_v7_2.md",
       "suffix": ".md",
       "size_bytes": 382,
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "sha256": "1a2e3c9b5431129b0fdf4960f86371eb5e2089891a75ded7e3a1b92130decf92",
       "topics": [
         "plutostraat_paramaribo",
@@ -10032,8 +10046,8 @@
       "relative_path": "outputs\\projects\\project_geotechniek_v7_2.json",
       "suffix": ".json",
       "size_bytes": 4329,
-      "modified_at": "2026-07-06T21:37:35",
-      "sha256": "2b14941a0e9440504b912607ca3c8dc74b0e529d6269965d2c114e56c129e3bb",
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "4a5ab5592c3451ebc6e82136e58f485ab4b38c00b0f77425be9449b0b83e2089",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -10058,7 +10072,7 @@
       "actions": [
         "moeten worden getoetst.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"generated_at\": \"2026-07-06T21:37:35\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"input_policy\": { \"option_1\": \"Grondwaterstand en geo-informatie automatisch genereren via kaartuitsnede / Google Maps / satellietfoto.\", \"option_2\": \"Handmatige invoer van bodemlagen, grondwaterstand en sondering.\", \"defa"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"generated_at\": \"2026-07-06T21:55:17\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"input_policy\": { \"option_1\": \"Grondwaterstand en geo-informatie automatisch genereren via kaartuitsnede / Google Maps / satellietfoto.\", \"option_2\": \"Handmatige invoer van bodemlagen, grondwaterstand en sondering.\", \"defa"
     },
     {
       "name": "project_intake_dashboard_v7_0.html",
@@ -10066,7 +10080,7 @@
       "relative_path": "outputs\\projects\\project_intake_dashboard_v7_0.html",
       "suffix": ".html",
       "size_bytes": 2302,
-      "modified_at": "2026-07-06T21:55:12",
+      "modified_at": "2026-07-07T22:38:19",
       "sha256": "ead25b6464bf2419f2ceb9aa06ab8b09022a48f2a86f52d3439fc882119e6b50",
       "topics": [
         "plutostraat_paramaribo",
@@ -10106,8 +10120,8 @@
       "relative_path": "outputs\\projects\\project_intake_log_v7_0.json",
       "suffix": ".json",
       "size_bytes": 1274,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "edec303bf06f2ffb486aa7cd43a569348b238e39492ac6fe29eebcfc79fce9fd",
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "4a1d744252183e5029c19229614c584e86b7a9493024bb17298cfeedf60d9be9",
       "topics": [
         "workflow_automation"
       ],
@@ -10118,7 +10132,7 @@
       "actions": [
         "Run START_PROJECTANALYSE opnieuw.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-06T21:55:12\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"input_template_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_input_template_v7_0.txt\", \"intake_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_v7_0.json\", \"project_context_seed_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_seed_v7_0.json\", \"intake_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\pro"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-07T22:38:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"input_template_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_input_template_v7_0.txt\", \"intake_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_v7_0.json\", \"project_context_seed_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_seed_v7_0.json\", \"intake_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\pro"
     },
     {
       "name": "project_intake_v7_0.json",
@@ -10126,8 +10140,8 @@
       "relative_path": "outputs\\projects\\project_intake_v7_0.json",
       "suffix": ".json",
       "size_bytes": 1398,
-      "modified_at": "2026-07-06T21:55:12",
-      "sha256": "6346f8f084daeb0a2b42f0b260a7da86e8d864cf30c93bd66a6b10c8fffaa889",
+      "modified_at": "2026-07-07T22:38:19",
+      "sha256": "8cf8d19794c00aa709858dfa71bec88b021f60d774d07bff47dcd9a2a705d366",
       "topics": [
         "plutostraat_paramaribo",
         "baoees_core",
@@ -10143,7 +10157,7 @@
         "run_health_check\": true,",
         "run_diagnostics_and_auto_repair\": true"
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-06T21:55:12\", \"source\": \"default\", \"source_path\": \"\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"uploads\": [], \"notes\": \"\", \"missing_required_fields\": [], \"assum"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-07T22:38:19\", \"source\": \"default\", \"source_path\": \"\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"uploads\": [], \"notes\": \"\", \"missing_required_fields\": [], \"assum"
     },
     {
       "name": "project_package_evidence_dashboard.html",
@@ -10151,7 +10165,7 @@
       "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
       "suffix": ".html",
       "size_bytes": 3140,
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "sha256": "e490cb1c607e6094bfa4bd6fdabe0743d1d5fbc5dc86358d94d8328f79cf2a75",
       "topics": [
         "baoees_core",
@@ -10170,8 +10184,8 @@
       "relative_path": "outputs\\projects\\project_package_evidence_log.json",
       "suffix": ".json",
       "size_bytes": 15394,
-      "modified_at": "2026-07-06T21:37:37",
-      "sha256": "e9eecde311bb288e6a29b782e10c6fc85e48261aed46c0186d3143f0a26f3197",
+      "modified_at": "2026-07-06T21:55:19",
+      "sha256": "5cefd69f29c0c884cf4717de759f1bbcf0f29d32b8a7c5e5090ffe3d00818ad1",
       "topics": [
         "baoees_core",
         "workflow_automation"
@@ -10181,7 +10195,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:37:37\", \"finished_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_manifest_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_package_manifest.json\", \"evidence_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\p"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:55:19\", \"finished_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_manifest_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_package_manifest.json\", \"evidence_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\p"
     },
     {
       "name": "project_package_manifest.json",
@@ -10189,8 +10203,8 @@
       "relative_path": "outputs\\projects\\project_package_manifest.json",
       "suffix": ".json",
       "size_bytes": 14742,
-      "modified_at": "2026-07-06T21:37:37",
-      "sha256": "7532606b524246a563d889b0f2c7f172c9b8c5ffad77001f7a0e06fbb90e0fef",
+      "modified_at": "2026-07-06T21:55:19",
+      "sha256": "7ef2bdb98478baf4dc0c51670516098ebe97fb681d7940bfeee90c099091fd4b",
       "topics": [
         "baoees_core",
         "workflow_automation"
@@ -10200,7 +10214,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"generated_at\": \"2026-07-06T21:37:37\", \"started_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_zip_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip\", \"file_count\": 15, \"existing_file_count\": 15, \"missing_"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"generated_at\": \"2026-07-06T21:55:19\", \"started_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_zip_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip\", \"file_count\": 15, \"existing_file_count\": 15, \"missing_"
     },
     {
       "name": "project_report_bib_package.json",
@@ -10346,7 +10360,7 @@
       "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
       "suffix": ".html",
       "size_bytes": 1364,
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "sha256": "a992898a36888729065fd751a3c7ba204eb1763cce4aeefada8e327b10b679d8",
       "topics": [
         "workflow_automation"
@@ -10364,8 +10378,8 @@
       "relative_path": "outputs\\projects\\project_report_export_log.json",
       "suffix": ".json",
       "size_bytes": 1251,
-      "modified_at": "2026-07-06T21:37:37",
-      "sha256": "849167c164ce0e03a6abd9a14c929146135d45c665551552c7ae65a47e093d4b",
+      "modified_at": "2026-07-06T21:55:19",
+      "sha256": "27cd64850288cbbf27b351a41d595cb746a2b759b2984e0fd6da2553d01dabdf",
       "topics": [
         "workflow_automation"
       ],
@@ -10374,7 +10388,7 @@
       "action_count": 0,
       "decisions": [],
       "actions": [],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Report Export Engine\", \"engine_version\": \"v6.1\", \"started_at\": \"2026-07-06T21:37:37\", \"finished_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"report_package_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_package.json\", \"docx_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_report.docx\", \"pdf_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_repor"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Report Export Engine\", \"engine_version\": \"v6.1\", \"started_at\": \"2026-07-06T21:55:19\", \"finished_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"report_package_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_package.json\", \"docx_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_report.docx\", \"pdf_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_repor"
     },
     {
       "name": "project_run_history.json",
@@ -10429,7 +10443,7 @@
       "relative_path": "outputs\\projects\\project_start_analysis_dashboard.html",
       "suffix": ".html",
       "size_bytes": 3998,
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "sha256": "f75e206723c3b8013d50be5af45a1d55dd1be61984ea43997fb4d1143f6453fc",
       "topics": [
         "baoees_core",
@@ -10450,8 +10464,8 @@
       "relative_path": "outputs\\projects\\project_start_analysis_log.json",
       "suffix": ".json",
       "size_bytes": 29920,
-      "modified_at": "2026-07-06T21:37:36",
-      "sha256": "11bcb825ebb781ebe3bdd1603bc9c25739770dd9b9f6dad6979e9c301f737390",
+      "modified_at": "2026-07-06T21:55:18",
+      "sha256": "6285ffae9b09acf258c778ff91f690b99692a5c1c5a7b8dc547e09315291960d",
       "topics": [
         "moskee_bunschoten",
         "plutostraat_paramaribo",
@@ -10469,7 +10483,102 @@
         "run_results\": {",
         "Downloadbaar totaalpakket van projectanalyse en rapportage.\","
       ],
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix START PROJECTANALYSE Engine\", \"engine_version\": \"v5.7\", \"started_at\": \"2026-07-06T21:37:35\", \"finished_at\": \"2026-07-06T21:37:36\", \"purpose\": \"START PROJECTANALYSE met BIB-kennisindexkoppeling.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"outputs\\\\projects\", \"dashboard_path\": \"outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"log_path\": \"outputs\\\\projects\\\\project_start_analysis_log.json\", \"bib\": { \"status\": \"BIJGEWERKT\", \"engine\": \"Project Phoenix BIB Import Wizard\", \"engine_version\": \"v5.6\", \"gener"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix START PROJECTANALYSE Engine\", \"engine_version\": \"v5.7\", \"started_at\": \"2026-07-06T21:55:18\", \"finished_at\": \"2026-07-06T21:55:18\", \"purpose\": \"START PROJECTANALYSE met BIB-kennisindexkoppeling.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"outputs\\\\projects\", \"dashboard_path\": \"outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"log_path\": \"outputs\\\\projects\\\\project_start_analysis_log.json\", \"bib\": { \"status\": \"BIJGEWERKT\", \"engine\": \"Project Phoenix BIB Import Wizard\", \"engine_version\": \"v5.6\", \"gener"
+    },
+    {
+      "name": "project_structural_dashboard_v7_4.html",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_structural_dashboard_v7_4.html",
+      "relative_path": "outputs\\projects\\project_structural_dashboard_v7_4.html",
+      "suffix": ".html",
+      "size_bytes": 4319,
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "07c038d298997b0e1bea8cb89fd92c2e12c3663ff978550ca58339fa13aaf54c",
+      "topics": [
+        "plutostraat_paramaribo",
+        "baoees_core",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 2,
+      "action_count": 0,
+      "decisions": [
+        "keuze, functie, materiaal, overspanningen</td></tr><tr><td>kolom- en balkdimensionering</td><td>open</td><td>lijnlasten, kolomlasten, overspanningen</td></tr><tr><td>stabiliteit</td><td",
+        "gekozen.</p><p><strong>Stabiliteit:</strong> nog te bepalen na plattegrond en geometrie</p></section><section><h2>Elementen</h2><table><tr><th>ID</th><th>Type</th><th>Materiaal</th><th>Fu"
+      ],
+      "actions": [],
+      "snippet": "<!doctype html><html lang=\"nl\"><head><meta charset=\"utf-8\"><title>Project Phoenix Structural v7.4</title><style>body{margin:0;font-family:Arial,sans-serif;background:#0f172a;color:#e5e7eb}main{max-width:1240px;margin:0 auto;padding:32px}section{background:#111827;border:1px solid #334155;border-radius:14px;padding:20px;margin-bottom:18px}h1,h2{color:#f8fafc}table{width:100%;border-collapse:collapse}td,th{border:1px solid #334155;padding:10px;text-align:left;vertical-align:top}th{background:#1e293b}code{color:#bfdbfe}</style></head><body><main><section><h1>Project Phoenix Structural Engine v7.4"
+    },
+    {
+      "name": "project_structural_log_v7_4.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_structural_log_v7_4.json",
+      "relative_path": "outputs\\projects\\project_structural_log_v7_4.json",
+      "suffix": ".json",
+      "size_bytes": 1633,
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "7c68767655cf4e4d2aef970951454883c00d5f2ccb5120d888012ca73030818c",
+      "topics": [
+        "plutostraat_paramaribo",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 0,
+      "action_count": 0,
+      "decisions": [],
+      "actions": [],
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Structural Engine\", \"engine_version\": \"v7.4\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"foundation_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_foundation_design_v7_3.json\", \"structural_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZAR"
+    },
+    {
+      "name": "project_structural_model_v7_4.json",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_structural_model_v7_4.json",
+      "relative_path": "outputs\\projects\\project_structural_model_v7_4.json",
+      "suffix": ".json",
+      "size_bytes": 6675,
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "c48d1de6971e10d95f66a84f742a46f60a853f60c8847c00ba9af00dd58c24c7",
+      "topics": [
+        "plutostraat_paramaribo",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 7,
+      "action_count": 0,
+      "decisions": [
+        "standaardgrid totdat CAD/BIM-geometrie beschikbaar is\",",
+        "default\": 5.0,",
+        "default\": 5.0",
+        "keuze, functie, materiaal, overspanningen\"",
+        "keuze en berekening.\"",
+        "gekozen.\",",
+        "gekozen.\""
+      ],
+      "actions": [],
+      "snippet": "{ \"status\": \"VOORLOPIG_CONCEPT\", \"engine\": \"Project Phoenix Structural Engine\", \"engine_version\": \"v7.4\", \"generated_at\": \"2026-07-06T21:55:17\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"selected_system\": { \"system_type\": \"algemeen_draagstructuur_concept\", \"status\": \"VOORLOPIG\", \"reason\": \"Geen specifiek gebouwtype met geometrie gevonden; generiek constructief concept gekozen.\", \"stability_concept\":"
+    },
+    {
+      "name": "project_structural_summary_v7_4.md",
+      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_structural_summary_v7_4.md",
+      "relative_path": "outputs\\projects\\project_structural_summary_v7_4.md",
+      "suffix": ".md",
+      "size_bytes": 1031,
+      "modified_at": "2026-07-06T21:55:17",
+      "sha256": "540fcee53e76766f1256c6da032fb138974aa39cc6676323008643afcd289307",
+      "topics": [
+        "plutostraat_paramaribo",
+        "baoees_core",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 1,
+      "action_count": 0,
+      "decisions": [
+        "gekozen."
+      ],
+      "actions": [],
+      "snippet": "# Project Structural Model v7.4 Project: Project Phoenix intake test Locatie: Locatie nog te bepalen ## Constructief systeem - Type: algemeen_draagstructuur_concept - Status: VOORLOPIG - Reden: Geen specifiek gebouwtype met geometrie gevonden; generiek constructief concept gekozen. ## Elementen - WALL-001: dragende_wand - metselwerk/beton voorlopig - COL-001: kolom - staal/beton voorlopig - BEAM-001: balk - staal/beton/hout voorlopig - ROOF-001: dakconstructie - hout of staal voorlopig - FOUNDATION-INTERFACE-001: fundering_koppeling - beton ## Belastingen - LC1: eigen gewicht - open - LC2: vlo"
     },
     {
       "name": "start_projectanalyse_v6_4_update_log.json",
@@ -13400,7 +13509,7 @@
       "decision_count": 4,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Brewster Knowledge Migration v6.6</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { color: #bfd",
-      "modified_at": "2026-07-06T21:55:12",
+      "modified_at": "2026-07-07T22:38:19",
       "source_hash": "10e550b3d1abd10bde6b7c347609c68a89175f404c4f8f445a71769bc889c498"
     },
     {
@@ -13422,8 +13531,8 @@
       "decision_count": 0,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Deep Knowledge Harvest v6.8</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { color: #bfdbfe; }",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "0405df27400d9b23b7e50865cfbf69b065c741abda45ae379930416450e64c15"
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "9bab77ecc986744df06e069e01b083562ea15853f3cbc081ce711f43920ed9e0"
     },
     {
       "record_id": "KH-0218",
@@ -13467,9 +13576,9 @@
       ],
       "decision_count": 50,
       "action_count": 50,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"generated_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"file_count\": 366, \"knowledge_record_count\": 275, \"project_map\": { \"moskee_bunschoten\": { \"record_count\": 65, \"sources\": [ \"baoees\\\\bib_export_engine\\\\bib_knowledge_source.py\", \"baoees\\\\bib_export_engine\\\\bib_project_analyzer_bridge.py\", \"baoees\\\\bib_export_engine\\\\bib_qa_qc.py\", \"baoees\\\\building_technical_engine\\\\main.py\", \"baoees\\\\gis_map_engine\\\\main.py\", \"baoees\\\\global_codes_engine\\\\main.py",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "660ba0382fdfcddf49cc212e47ae0a94d2a36f4a0221efef4ac88137d8a3adac"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"generated_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"file_count\": 373, \"knowledge_record_count\": 282, \"project_map\": { \"moskee_bunschoten\": { \"record_count\": 67, \"sources\": [ \"baoees\\\\bib_export_engine\\\\bib_knowledge_source.py\", \"baoees\\\\bib_export_engine\\\\bib_project_analyzer_bridge.py\", \"baoees\\\\bib_export_engine\\\\bib_qa_qc.py\", \"baoees\\\\building_technical_engine\\\\main.py\", \"baoees\\\\gis_map_engine\\\\main.py\", \"baoees\\\\global_codes_engine\\\\main.py",
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "3b79920a6c74614efb7363677af28beb2e9d5b69e75691780ad08bf1d0b4d119"
     },
     {
       "record_id": "KH-0220",
@@ -13481,9 +13590,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:37:30\", \"finished_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "5661caf86acd924d7112a43727eeef0ef2267b13ab862488a6d5849de5d1079d"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output",
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "4b90dfb671ea56ab7c7a5d0ace6084a5a86566d3324be058266265dcc77fdfcc"
     },
     {
       "record_id": "KH-0221",
@@ -13502,9 +13611,9 @@
       ],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "# Deep Knowledge Harvest v6.8 Bestanden gescand: 366 Kennisrecords: 275 ## Projecten ### moskee_bunschoten Records: 65 Topics: - moskee_bunschoten: 65 - plutostraat_paramaribo: 58 - bruynzeel_waterfront: 51 - baoees_core: 59 - engineering_modules: 50 - workflow_automation: 34 ### plutostraat_paramaribo Records: 85 Topics: - moskee_bunschoten: 60 - plutostraat_paramaribo: 85 - bruynzeel_waterfront: 56 - baoees_core: 80 - engineering_modules: 63 - workflow_automation: 45 ### bruynzeel_waterfront Records: 58 Topics: - moskee_bunschoten: 52 - plutostraat_paramaribo: 57 - bruynzeel_waterfront: 58 -",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "f960281b2208957e3731afe38afe385f8bd392b922ba22825074e03982aa5c7b"
+      "snippet": "# Deep Knowledge Harvest v6.8 Bestanden gescand: 373 Kennisrecords: 282 ## Projecten ### moskee_bunschoten Records: 67 Topics: - moskee_bunschoten: 67 - plutostraat_paramaribo: 60 - bruynzeel_waterfront: 51 - baoees_core: 61 - engineering_modules: 52 - workflow_automation: 36 ### plutostraat_paramaribo Records: 88 Topics: - moskee_bunschoten: 60 - plutostraat_paramaribo: 88 - bruynzeel_waterfront: 56 - baoees_core: 80 - engineering_modules: 66 - workflow_automation: 48 ### bruynzeel_waterfront Records: 58 Topics: - moskee_bunschoten: 52 - plutostraat_paramaribo: 57 - bruynzeel_waterfront: 58 -",
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "bf8b1b804d688fd403463f73194ca1127fb839b6ab4101c729de2658cd909cbe"
     },
     {
       "record_id": "KH-0222",
@@ -13549,8 +13658,8 @@
       "decision_count": 16,
       "action_count": 35,
       "snippet": "{ \"status\": \"BIJGEWERKT\", \"engine\": \"Project Phoenix BIB Import Wizard\", \"engine_version\": \"v5.6\", \"generated_at\": \"2026-06-30T16:48:03\", \"recognized_text_items_count\": 1, \"projects\": [], \"categories\": {}, \"technical_topics\": { \"BAOEES\": 1, \"BEOS\": 1, \"BREWAS\": 1, \"Digital Twin\": 1, \"AAIE\": 1, \"STEE\": 1, \"BIB\": 1, \"START PROJECTANALYSE\": 1, \"FreeCAD\": 1, \"OpenSees\": 1, \"CalculiX\": 1, \"Geotechniek\": 1, \"Fundering\": 1, \"Strokenfundering\": 1, \"Paalfundering\": 1, \"AERIUS\": 1, \"Omgevingswet\": 1, \"CROW\": 1, \"Parkeren\": 1, \"Riolering\": 1, \"Afwatering\": 1, \"Vergunning\": 1, \"BOPA\": 1, \"DOCX\": 1, \"PDF\":",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "aaf1186acfbfb8206d65423f4584c1b9176639e9f85db1d992a8c4036c697193"
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "0c87d1ccbbe6f521e13844394ba99860116baaf6f38473b40760b8a4bdb5a975"
     },
     {
       "record_id": "KH-0224",
@@ -13594,9 +13703,9 @@
       ],
       "decision_count": 12,
       "action_count": 7,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"generated_at\": \"2026-07-06T21:55:12\", \"purpose\": \"Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.\", \"domains\": [ { \"name\": \"BEOS / BREWAS / BAOEES visie\", \"summary\": \"Autonoom engineeringplatform van locatiekeuze tot beheer, met Digital Twin, Knowledge Graph en AI Engine als centrale kern.\", \"importance\": \"kern\" }, { \"name\": \"Digital Twin centraal\", \"summary\": \"Alle disciplines lezen en schrijven naa",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "3e8b8077531c06e460b7731e1d5e9c2ca5429f413486d283a4b7b563c61427b6"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"generated_at\": \"2026-07-07T22:38:19\", \"purpose\": \"Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB.\", \"domains\": [ { \"name\": \"BEOS / BREWAS / BAOEES visie\", \"summary\": \"Autonoom engineeringplatform van locatiekeuze tot beheer, met Digital Twin, Knowledge Graph en AI Engine als centrale kern.\", \"importance\": \"kern\" }, { \"name\": \"Digital Twin centraal\", \"summary\": \"Alle disciplines lezen en schrijven naa",
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "ac639f98b774d6e7b3caba7630fee4c9743cfddb600d14fb75eef64caed440b8"
     },
     {
       "record_id": "KH-0226",
@@ -13618,7 +13727,7 @@
       "decision_count": 10,
       "action_count": 4,
       "snippet": "# Brewster Engineering Wizard Knowledge Base v6.6 Systematische migratie van opgebouwde Brewster Engineering Wizard kennis naar Project Phoenix / BAOEES BIB. ## Domeinen ### BEOS / BREWAS / BAOEES visie Autonoom engineeringplatform van locatiekeuze tot beheer, met Digital Twin, Knowledge Graph en AI Engine als centrale kern. Belang: kern ### Digital Twin centraal Alle disciplines lezen en schrijven naar dezelfde Digital Twin: terrein, BIM, constructie, fundering, riolering, verkeer, vergunning, kosten en assetbeheer. Belang: kern ### AAIE Autonomous Assumption and Inference Engine vult ontbrek",
-      "modified_at": "2026-07-06T21:55:12",
+      "modified_at": "2026-07-07T22:38:19",
       "source_hash": "023259453ad250f032c26510840151c5713d9902fd624ab66e05f7c9123e94fc"
     },
     {
@@ -13631,9 +13740,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:12\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "2ebbb960ea3c2206f577a91dfce8c49293ff0414aa562c53919266d8f9c0de3a"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-07T22:38:19\", \"finished_at\": \"2026-07-07T22:38:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat",
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "9e965c6d4fa7a1ebd9cbb6bc1276685b036eb28a83e456474a375f45938f7aa5"
     },
     {
       "record_id": "KH-0228",
@@ -13764,7 +13873,7 @@
       "decision_count": 9,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix AAIE BIB Assumptions v5.8</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1320px; margin: 0 auto; padding: 32px; } h1, h2, h3 { color: #f8fafc; } .hero { padding: 30px; border-radius: 20px; background: linear-gradient(135deg, #0f172a, #1e3a8a); border: 1px solid #38bdf8; margin-bottom: 26px; } .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 18px 0; } .card { background: #111827; bo",
-      "modified_at": "2026-07-06T21:37:34",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "b7d1ca89d99951677a891fbd905ee6b5d9d4dd321574a8a8f7e0d61c450429a9"
     },
     {
@@ -13781,9 +13890,9 @@
       "projects": [],
       "decision_count": 9,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix AAIE BIB Assumption Loader\", \"engine_version\": \"v5.8\", \"generated_at\": \"2026-07-06T21:37:34\", \"purpose\": \"AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"bib_knowledge_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"bib_status\": \"BIB_ONBEKEND\", \"bib_lookup\": { \"status\": \"B",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "fefd0c6c492359f96a860b8a6ad3dccccda6c85a8534d61f56dcaf41b77767fb"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix AAIE BIB Assumption Loader\", \"engine_version\": \"v5.8\", \"generated_at\": \"2026-07-06T21:55:17\", \"purpose\": \"AAIE zoekt eerst in de lokale BIB voordat nieuwe aannames worden gemaakt.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"bib_knowledge_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"bib_status\": \"BIB_ONBEKEND\", \"bib_lookup\": { \"status\": \"B",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "f5d6356ef8c0fa5e1ba8eed90d5d313d6c971a13d4e199321ffd179d17753b78"
     },
     {
       "record_id": "KH-0240",
@@ -13795,9 +13904,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:12\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "2ebbb960ea3c2206f577a91dfce8c49293ff0414aa562c53919266d8f9c0de3a"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Brewster Engineering Wizard Knowledge Migration Engine\", \"engine_version\": \"v6.6\", \"started_at\": \"2026-07-07T22:38:19\", \"finished_at\": \"2026-07-07T22:38:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"knowledge_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.json\", \"knowledge_md_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\knowledge\\\\brewster_engineering_wizard_knowledge_base_v6_6.md\", \"migrat",
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "9e965c6d4fa7a1ebd9cbb6bc1276685b036eb28a83e456474a375f45938f7aa5"
     },
     {
       "record_id": "KH-0241",
@@ -13810,9 +13919,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:37:37\", \"generated_at\": \"2026-07-06T21:37:37\", \"map\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"bron_count\": 15, \"bronnen\": [ { \"bron_id\": \"EV-001\", \"naam\": \"project_report_bib_package.json\", \"type\": \"bib_kennisindex\", \"bestand\": \"outputs\\\\projects\\\\project_report_bib_package.json\", \"datum_tijd\": \"2026-06-30T17:32:02\", \"betrouwbaarheid\": \"hoog\" }, { \"bron_id\": \"EV-002\", \"naam\": \"project_report_bib_report.docx\"",
-      "modified_at": "2026-07-06T21:37:37",
-      "source_hash": "0515cfb25d4515ab48bcc26c2fd423d411671bac3fc0fdb12a2e2956319b58d4"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:55:19\", \"generated_at\": \"2026-07-06T21:55:19\", \"map\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"bron_count\": 15, \"bronnen\": [ { \"bron_id\": \"EV-001\", \"naam\": \"project_report_bib_package.json\", \"type\": \"bib_kennisindex\", \"bestand\": \"outputs\\\\projects\\\\project_report_bib_package.json\", \"datum_tijd\": \"2026-06-30T17:32:02\", \"betrouwbaarheid\": \"hoog\" }, { \"bron_id\": \"EV-002\", \"naam\": \"project_report_bib_report.docx\"",
+      "modified_at": "2026-07-06T21:55:19",
+      "source_hash": "7c7fb10966c5e5f7aeeddd0ca47c3725b69265ee8e2ce2fa3782f8c636031acb"
     },
     {
       "record_id": "KH-0242",
@@ -13825,9 +13934,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "BRONVERMELDING VAN DIT PROJECT PROJECT PHOENIX / BAOEES Versie: v6.2 Deze map bevat de bronvermelding, evidence-log en verwijzingen naar projectbestanden. Bronnen en bestanden: - EV-001: outputs\\projects\\project_report_bib_package.json Type: bib_kennisindex Betrouwbaarheid: hoog Gewijzigd: 2026-06-30T17:32:02 - EV-002: outputs\\projects\\project_report_bib_report.docx Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:37:37 - EV-003: outputs\\projects\\project_report_bib_report.pdf Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:37:37 - EV-004: output",
-      "modified_at": "2026-07-06T21:37:37",
-      "source_hash": "4c350e9b0123e5bcb26a4ec89ac87ee5b723d210aa6cd8e3ff3390dec81e1597"
+      "snippet": "BRONVERMELDING VAN DIT PROJECT PROJECT PHOENIX / BAOEES Versie: v6.2 Deze map bevat de bronvermelding, evidence-log en verwijzingen naar projectbestanden. Bronnen en bestanden: - EV-001: outputs\\projects\\project_report_bib_package.json Type: bib_kennisindex Betrouwbaarheid: hoog Gewijzigd: 2026-06-30T17:32:02 - EV-002: outputs\\projects\\project_report_bib_report.docx Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:55:19 - EV-003: outputs\\projects\\project_report_bib_report.pdf Type: gegenereerd_rapport Betrouwbaarheid: hoog Gewijzigd: 2026-07-06T21:55:19 - EV-004: output",
+      "modified_at": "2026-07-06T21:55:19",
+      "source_hash": "3b1c1ec73b3cca5fd309b736074d0901df65c1107091f5c62c84eefd14173a44"
     },
     {
       "record_id": "KH-0243",
@@ -14175,9 +14284,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:37:30\", \"finished_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "5661caf86acd924d7112a43727eeef0ef2267b13ab862488a6d5849de5d1079d"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Deep Knowledge Harvest Engine\", \"engine_version\": \"v6.8\", \"started_at\": \"2026-07-06T21:55:12\", \"finished_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\", \"harvest_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_index_v6_8.json\", \"harvest_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\harvest\\\\deep_knowledge_harvest_summary_v6_8.md\", \"harvest_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\output",
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "4b90dfb671ea56ab7c7a5d0ace6084a5a86566d3324be058266265dcc77fdfcc"
     },
     {
       "record_id": "KH-0263",
@@ -14256,8 +14365,8 @@
       "decision_count": 0,
       "action_count": 8,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Module Registry v6.9</title> <style> body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; } main { max-width:1320px; margin:0 auto; padding:32px; } section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; } h1,h2 { color:#f8fafc; } table { width:100%; border-collapse:collapse; } td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; } th { background:#1e293b; } code { color:#bfdbfe; } .score { font-",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "47be84b3f5fb8642aae0bbf04efa249f97f89abc36772451db5e90ec2c961d3a"
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "3e0e143a647f3f78cd1404c5fff110516cdb5ab483d2d934969496914c8e09dd"
     },
     {
       "record_id": "KH-0267",
@@ -14272,9 +14381,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 8,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 22, \"required_",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "2eca5c5e7c95b16ef4d9c85dee84ca0ebb7939db9bf633517abd39040f2a3bc4"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 23, \"required_",
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "50512522fadc84cc82cc7cbef3bb93e936414809cb8251e8c646e39895eadccb"
     },
     {
       "record_id": "KH-0268",
@@ -14289,9 +14398,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 8,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:37:34\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 22, \"required_",
-      "modified_at": "2026-07-06T21:37:34",
-      "source_hash": "2eca5c5e7c95b16ef4d9c85dee84ca0ebb7939db9bf633517abd39040f2a3bc4"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Module Registry & Engine Dashboard\", \"engine_version\": \"v6.9\", \"generated_at\": \"2026-07-06T21:55:16\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"registry_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_v6_9.json\", \"log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_log_v6_9.json\", \"dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\module_registry_dashboard_v6_9.html\", \"summary\": { \"status\": \"CORE_COMPLEET\", \"total_items\": 27, \"present_count\": 23, \"required_",
+      "modified_at": "2026-07-06T21:55:16",
+      "source_hash": "50512522fadc84cc82cc7cbef3bb93e936414809cb8251e8c646e39895eadccb"
     },
     {
       "record_id": "KH-0269",
@@ -14944,7 +15053,7 @@
       "decision_count": 0,
       "action_count": 3,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Health Check v6.5</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { color: #bfd",
-      "modified_at": "2026-07-06T21:37:38",
+      "modified_at": "2026-07-06T21:55:20",
       "source_hash": "efa88e47b606bcdfbcc8e7274d6ffe5c8a0ceb1ad7fd966d42e5d371e38f9f4e"
     },
     {
@@ -14957,9 +15066,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 2,
-      "snippet": "{ \"status\": \"GOEDGEKEURD\", \"engine\": \"Project Phoenix Project Analysis Health Check Engine\", \"engine_version\": \"v6.5\", \"generated_at\": \"2026-07-06T21:37:38\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"health_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_dashboard.html\", \"score_percent\": 100, \"check_count\": 14, \"passed_count\": 14, \"failed_count\":",
-      "modified_at": "2026-07-06T21:37:38",
-      "source_hash": "b1c19c730f9d15f3d9ed135d1a92a8f1a2d636ad788d637217fa70d7e3a3beea"
+      "snippet": "{ \"status\": \"GOEDGEKEURD\", \"engine\": \"Project Phoenix Project Analysis Health Check Engine\", \"engine_version\": \"v6.5\", \"generated_at\": \"2026-07-06T21:55:20\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"health_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_dashboard.html\", \"score_percent\": 100, \"check_count\": 14, \"passed_count\": 14, \"failed_count\":",
+      "modified_at": "2026-07-06T21:55:20",
+      "source_hash": "6de2ad91a842c8c071d9b721a586f50572871a97227ad9ce268a985c82266acd"
     },
     {
       "record_id": "KH-0309",
@@ -15011,7 +15120,7 @@
       "decision_count": 0,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix START PROJECTANALYSE v6.3</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { col",
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "source_hash": "f75e206723c3b8013d50be5af45a1d55dd1be61984ea43997fb4d1143f6453fc"
     },
     {
@@ -15025,9 +15134,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Launcher Bridge\", \"engine_version\": \"v6.3\", \"started_at\": \"2026-07-06T21:37:37\", \"finished_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_start_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"launcher_bridge_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_launcher_bridge_log.json\", \"launcher_bridge_dashboard_path\":",
-      "modified_at": "2026-07-06T21:37:37",
-      "source_hash": "94fdddf689471063d03f8d55616030e674fb18077e55c3248d16daaad3fe38a1"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Launcher Bridge\", \"engine_version\": \"v6.3\", \"started_at\": \"2026-07-06T21:55:19\", \"finished_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_start_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"launcher_bridge_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_launcher_bridge_log.json\", \"launcher_bridge_dashboard_path\":",
+      "modified_at": "2026-07-06T21:55:19",
+      "source_hash": "44f87230a79b538255610008f004a153741b7c250f5b313d00f627289b70dea7"
     },
     {
       "record_id": "KH-0313",
@@ -15041,7 +15150,7 @@
       "decision_count": 1,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Workflow v5.9</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1100px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; } th { background: #1e293b; } </style> </head> <body> <main> <section> <h",
-      "modified_at": "2026-07-06T21:37:36",
+      "modified_at": "2026-07-06T21:55:18",
       "source_hash": "092bae09328b91f2d0fc2af4885805b4934ca5d94dbf99b9319408347759fba6"
     },
     {
@@ -15055,9 +15164,9 @@
       "projects": [],
       "decision_count": 1,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Workflow Engine\", \"engine_version\": \"v5.9\", \"started_at\": \"2026-07-06T21:37:36\", \"finished_at\": \"2026-07-06T21:37:36\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"aaie_bib_assumptions_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\aaie_bib_assumptions.json\", \"workflow_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_workflow_log.json\", \"workflow_dashboard_path\": \"C:\\",
-      "modified_at": "2026-07-06T21:37:36",
-      "source_hash": "9a2b6a7809d161e55e2b35a2e14303ee55d1f1b0e279bfd61a8c942b66eff35f"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Analyzer Workflow Engine\", \"engine_version\": \"v5.9\", \"started_at\": \"2026-07-06T21:55:18\", \"finished_at\": \"2026-07-06T21:55:18\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"bib_index_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\bib\\\\index\\\\bib_knowledge_content_index.json\", \"aaie_bib_assumptions_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\aaie_bib_assumptions.json\", \"workflow_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analyzer_workflow_log.json\", \"workflow_dashboard_path\": \"C:\\",
+      "modified_at": "2026-07-06T21:55:18",
+      "source_hash": "4a35466b180459c6005b0eb4cbe4ce830c0cfc5be3237fba134953472ccbe5fc"
     },
     {
       "record_id": "KH-0315",
@@ -15070,7 +15179,7 @@
       "decision_count": 0,
       "action_count": 3,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Auto Repair v6.7</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } </style> </head> <b",
-      "modified_at": "2026-07-06T21:37:38",
+      "modified_at": "2026-07-06T21:55:20",
       "source_hash": "929957ba3410799fbc65371926ffdfa807d66486ca309777547e90d459980234"
     },
     {
@@ -15083,9 +15192,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:37:38\", \"finished_at\": \"2026-07-06T21:37:38\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"repair_plan_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_auto_repair_plan.json\", \"repair_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\projec",
-      "modified_at": "2026-07-06T21:37:38",
-      "source_hash": "e017690ce5e4d22d6e49ac75c849920bb6adc38c08f32cf9a3974331e342c622"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:55:20\", \"finished_at\": \"2026-07-06T21:55:20\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"repair_plan_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_auto_repair_plan.json\", \"repair_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\projec",
+      "modified_at": "2026-07-06T21:55:20",
+      "source_hash": "98b549c09c977584e091e915120e2b1cf1e44652a5a91f87384eaf72b4c0bad9"
     },
     {
       "record_id": "KH-0317",
@@ -15097,9 +15206,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"generated_at\": \"2026-07-06T21:37:38\", \"actions\": [ { \"repair_action\": \"ensure_base_directories\", \"source_code\": \"BASE\", \"source_title\": \"Basis mappen controleren\", \"safe\": true, \"status\": \"GEPLAND\" } ] }",
-      "modified_at": "2026-07-06T21:37:38",
-      "source_hash": "8021e25a3297e9ac0a556670c54f1cf932c8127c723f6cf3a2349dd930480901"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Auto Repair Engine\", \"engine_version\": \"v6.7\", \"generated_at\": \"2026-07-06T21:55:20\", \"actions\": [ { \"repair_action\": \"ensure_base_directories\", \"source_code\": \"BASE\", \"source_title\": \"Basis mappen controleren\", \"safe\": true, \"status\": \"GEPLAND\" } ] }",
+      "modified_at": "2026-07-06T21:55:20",
+      "source_hash": "08776c4bc052bcea3a594be1b86b0ab110807c88ae0cbf5e5d7a734f7c6b8ab9"
     },
     {
       "record_id": "KH-0318",
@@ -15114,9 +15223,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"started_at\": \"2026-07-06T21:37:34\", \"finished_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"project_context_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_summary_v7_1.md\", \"project_context_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\",
-      "modified_at": "2026-07-06T21:37:35",
-      "source_hash": "330c30fa4b07319973c2850d185058244bd0588a0bd46c2cad86e4b6c489d5bc"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"project_context_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_summary_v7_1.md\", \"project_context_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "252baed245293338da4a979f735eb9cc449df561fd31676bf553e175f0dfe362"
     },
     {
       "record_id": "KH-0319",
@@ -15132,7 +15241,7 @@
       "decision_count": 0,
       "action_count": 2,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Project Context v7.1</title> <style> body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; } main { max-width:1240px; margin:0 auto; padding:32px; } section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; } h1,h2 { color:#f8fafc; } table { width:100%; border-collapse:collapse; } td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; } th { background:#1e293b; } code { color:#bfdbfe; } </style> </hea",
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "a07fe042bdac350aaa85ab7667ecae60a7ad56f7ea91868a9cdd7d8161d7c9c2"
     },
     {
@@ -15146,9 +15255,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"SEED\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-06T21:55:12\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"recommended_modules\": [ { \"module\": \"fundering\", \"status\": \"aanbevolen\", \"reason\": \"Herkenning op: palen\" }, {",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "c45697ae4858193bc7649a9e6d1a47369381a12b9d178a8c44e7bc1aba863e69"
+      "snippet": "{ \"status\": \"SEED\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-07T22:38:19\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"recommended_modules\": [ { \"module\": \"fundering\", \"status\": \"aanbevolen\", \"reason\": \"Herkenning op: palen\" }, {",
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "765fa0d34748acd8894b65573995de0ff81825266a92347fc613eedff4c898a9"
     },
     {
       "record_id": "KH-0321",
@@ -15163,7 +15272,7 @@
       "decision_count": 0,
       "action_count": 1,
       "snippet": "# Project Context v7.1 Project: Project Phoenix intake test Locatie: Locatie nog te bepalen Type: algemeen bouwkundig / civiel project ## Aanbevolen modules - fundering: Herkenning op: palen - rapportage_export: Herkenning op: rapport, pdf, docx - evidence: Herkenning op: bron, project_zip, zip ## Risico's - Locatie ontbreekt: Kan geo, vergunning, parkeren en kosten beïnvloeden. - Aannames aanwezig: Projectcontext bevat automatisch ingevulde gegevens. - fundering nog conceptueel: Vakengine moet nog verder worden uitgebouwd.",
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "24a92028320377dddfb5c2e1f1319dbdf47a14f2bff6c5cdc1a8850b2fd37c76"
     },
     {
@@ -15179,9 +15288,9 @@
       "projects": [],
       "decision_count": 8,
       "action_count": 3,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"generated_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"modules\": { \"recommended_modules\": [ { \"modu",
-      "modified_at": "2026-07-06T21:37:35",
-      "source_hash": "f468e8e1a45880871fde1bbfb8c83f1ed629ef9ab24de5165a32011bba2c8ca0"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Context Builder Engine\", \"engine_version\": \"v7.1\", \"generated_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"modules\": { \"recommended_modules\": [ { \"modu",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "885a3eb9cec9121067275660d83ce01cec4389b39548508420db00ac5a7b970f"
     },
     {
       "record_id": "KH-0323",
@@ -15194,7 +15303,7 @@
       "decision_count": 0,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Error Diagnostics v6.7</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { color:",
-      "modified_at": "2026-07-06T21:37:38",
+      "modified_at": "2026-07-06T21:55:20",
       "source_hash": "5cfd4105a7c772203077b653ecf92918473861e603ba6bbba6f0ec000f3c3fab"
     },
     {
@@ -15207,9 +15316,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Error Diagnostics Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:37:38\", \"finished_at\": \"2026-07-06T21:37:38\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"diagnostics_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\",
-      "modified_at": "2026-07-06T21:37:38",
-      "source_hash": "fbbe4e2363c14701e5226683a4f360334a34e69d954d257378790c34e169f0c2"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Error Diagnostics Engine\", \"engine_version\": \"v6.7\", \"started_at\": \"2026-07-06T21:55:20\", \"finished_at\": \"2026-07-06T21:55:20\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"health_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_analysis_health_check_log.json\", \"diagnostics_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_error_diagnostics_log.json\", \"diagnostics_dashboard_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\",
+      "modified_at": "2026-07-06T21:55:20",
+      "source_hash": "ed7f49c4b28519cc40084b8b25e63eea5c3fbffb26a8745bf93387a340503c9a"
     },
     {
       "record_id": "KH-0325",
@@ -15226,7 +15335,7 @@
       "decision_count": 2,
       "action_count": 0,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Foundation v7.3</title> <style> body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; } main { max-width:1240px; margin:0 auto; padding:32px; } section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; } h1,h2 { color:#f8fafc; } table { width:100%; border-collapse:collapse; } td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; } th { background:#1e293b; } code { color:#bfdbfe; } </style> </head> <b",
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "f87678536a67ec798ca5d4130cf638e417d3bc534471335401cdf8ae6857a30d"
     },
     {
@@ -15243,9 +15352,9 @@
       ],
       "decision_count": 9,
       "action_count": 0,
-      "snippet": "{ \"status\": \"VOORLOPIG_CONCEPT\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"generated_at\": \"2026-07-06T21:37:35\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"selected_concept\": { \"type\": \"strokenfundering_met_funderingsbalk\", \"status\": \"VOORLOPIG\", \"foundation_level\": \"P = -0,50 m voorlopig\", \"strip_width_cm\": 150, \"strip_height_cm\": 40, \"beam_width_cm\": 50, \"beam_height",
-      "modified_at": "2026-07-06T21:37:35",
-      "source_hash": "98c2aeabfd61f1a95f829f06047dbe72bc104333d08cc0a0df6ad6bbb6ea53de"
+      "snippet": "{ \"status\": \"VOORLOPIG_CONCEPT\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"generated_at\": \"2026-07-06T21:55:17\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"selected_concept\": { \"type\": \"strokenfundering_met_funderingsbalk\", \"status\": \"VOORLOPIG\", \"foundation_level\": \"P = -0,50 m voorlopig\", \"strip_width_cm\": 150, \"strip_height_cm\": 40, \"beam_width_cm\": 50, \"beam_height",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "43b5680595519a20f95e5f7ceb073837ba4c08efb3f6dee2966e9b0299fc40cb"
     },
     {
       "record_id": "KH-0327",
@@ -15261,9 +15370,9 @@
       ],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"started_at\": \"2026-07-06T21:37:35\", \"finished_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"foundation_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_fou",
-      "modified_at": "2026-07-06T21:37:35",
-      "source_hash": "1f37d78823f644a537f219d67df7604d52233023f2d986f420efe73dce8e8fe4"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Foundation Engine\", \"engine_version\": \"v7.3\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"foundation_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_fou",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "ea1a362df34e339aea0100143afdcb85f70c346f323d6c34e0739e4c8fc7ef4b"
     },
     {
       "record_id": "KH-0328",
@@ -15277,7 +15386,7 @@
       "decision_count": 1,
       "action_count": 0,
       "snippet": "# Project Foundation Design v7.3 Project: Project Phoenix intake test Locatie: Locatie nog te bepalen ## Geselecteerd concept - Type: strokenfundering_met_funderingsbalk - Status: VOORLOPIG - Funderingsniveau: P = -0,50 m voorlopig - Strook: 150 x 40 cm - Funderingsbalk: 50 x 60 cm ## Varianten - A: Standaard strokenfundering — basisvariant - B: Verbrede strokenfundering — optioneel - C: Palenfundering — alleen bij onvoldoende draagkracht - D: Grondverbetering plus stroken — kostenvariant ## Risico's - Locatie ontbreekt: Funderingsadvies blijft generiek. - Grondwaterstand nog te verifiëren: In",
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "12bc593abfc4b162044dbedcf7e706d5f7a5a37875959bf6a087927da83c2f07"
     },
     {
@@ -15295,7 +15404,7 @@
       "decision_count": 5,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Geotechniek v7.2</title> <style> body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; } main { max-width:1240px; margin:0 auto; padding:32px; } section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; } h1,h2 { color:#f8fafc; } table { width:100%; border-collapse:collapse; } td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; } th { background:#1e293b; } code { color:#bfdbfe; } </style> </head> <",
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "5c33acfe42d5edc864b76c5e986074a8d1efb6446ae05392cef414fa68469046"
     },
     {
@@ -15311,9 +15420,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"started_at\": \"2026-07-06T21:37:35\", \"finished_at\": \"2026-07-06T21:37:35\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"geotechniek_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\p",
-      "modified_at": "2026-07-06T21:37:35",
-      "source_hash": "d25241e6e779ab4575a9eb654a4093a0b061702d612e9b163ce3111821a7144b"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"geotechniek_summary_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\p",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "b7f66db93032d891493ad6f973bd6f86ef6c10b8ac43ad00adea36e219298949"
     },
     {
       "record_id": "KH-0331",
@@ -15328,7 +15437,7 @@
       "decision_count": 0,
       "action_count": 0,
       "snippet": "# Project Geotechniek v7.2 Project: Project Phoenix intake test Locatie: Locatie nog te bepalen ## Grondwater - P = -0,50 m ## Bodemlagen - Laag 1: 0.0 tot -0.5 m — bovenlaag / ophooglaag (onbekend) - Laag 2: -0.5 tot -2.0 m — natuurlijke ondergrond (nog te verifiëren) ## Funderingsadvies strokenfundering voorlopig uitgangspunt; bodemgegevens verifiëren",
-      "modified_at": "2026-07-06T21:37:35",
+      "modified_at": "2026-07-06T21:55:17",
       "source_hash": "1a2e3c9b5431129b0fdf4960f86371eb5e2089891a75ded7e3a1b92130decf92"
     },
     {
@@ -15346,9 +15455,9 @@
       ],
       "decision_count": 8,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"generated_at\": \"2026-07-06T21:37:35\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"input_policy\": { \"option_1\": \"Grondwaterstand en geo-informatie automatisch genereren via kaartuitsnede / Google Maps / satellietfoto.\", \"option_2\": \"Handmatige invoer van bodemlagen, grondwaterstand en sondering.\", \"defa",
-      "modified_at": "2026-07-06T21:37:35",
-      "source_hash": "2b14941a0e9440504b912607ca3c8dc74b0e529d6269965d2c114e56c129e3bb"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Geotechniek Engine\", \"engine_version\": \"v7.2\", \"generated_at\": \"2026-07-06T21:55:17\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"input_policy\": { \"option_1\": \"Grondwaterstand en geo-informatie automatisch genereren via kaartuitsnede / Google Maps / satellietfoto.\", \"option_2\": \"Handmatige invoer van bodemlagen, grondwaterstand en sondering.\", \"defa",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "4a5ab5592c3451ebc6e82136e58f485ab4b38c00b0f77425be9449b0b83e2089"
     },
     {
       "record_id": "KH-0333",
@@ -15362,7 +15471,7 @@
       "decision_count": 0,
       "action_count": 0,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Project Intake v7.0</title> <style> body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; } main { max-width:1240px; margin:0 auto; padding:32px; } section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; } h1,h2 { color:#f8fafc; } table { width:100%; border-collapse:collapse; } td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; } th { background:#1e293b; } code { color:#bfdbfe; } </style> </head",
-      "modified_at": "2026-07-06T21:55:12",
+      "modified_at": "2026-07-07T22:38:19",
       "source_hash": "ead25b6464bf2419f2ceb9aa06ab8b09022a48f2a86f52d3439fc882119e6b50"
     },
     {
@@ -15392,9 +15501,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 1,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-06T21:55:12\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"input_template_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_input_template_v7_0.txt\", \"intake_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_v7_0.json\", \"project_context_seed_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_seed_v7_0.json\", \"intake_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\pro",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "edec303bf06f2ffb486aa7cd43a569348b238e39492ac6fe29eebcfc79fce9fd"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-07T22:38:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"input_template_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_input_template_v7_0.txt\", \"intake_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_intake_v7_0.json\", \"project_context_seed_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_seed_v7_0.json\", \"intake_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\pro",
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "4a1d744252183e5029c19229614c584e86b7a9493024bb17298cfeedf60d9be9"
     },
     {
       "record_id": "KH-0336",
@@ -15408,9 +15517,9 @@
       "projects": [],
       "decision_count": 1,
       "action_count": 2,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-06T21:55:12\", \"source\": \"default\", \"source_path\": \"\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"uploads\": [], \"notes\": \"\", \"missing_required_fields\": [], \"assum",
-      "modified_at": "2026-07-06T21:55:12",
-      "source_hash": "6346f8f084daeb0a2b42f0b260a7da86e8d864cf30c93bd66a6b10c8fffaa889"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Intake Engine\", \"engine_version\": \"v7.0\", \"generated_at\": \"2026-07-07T22:38:19\", \"source\": \"default\", \"source_path\": \"\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"requested_outputs\": [ \"project_context\", \"rapportage_docx\", \"rapportage_pdf\", \"bronvermelding\", \"project_zip\" ], \"uploads\": [], \"notes\": \"\", \"missing_required_fields\": [], \"assum",
+      "modified_at": "2026-07-07T22:38:19",
+      "source_hash": "8cf8d19794c00aa709858dfa71bec88b021f60d774d07bff47dcd9a2a705d366"
     },
     {
       "record_id": "KH-0337",
@@ -15424,7 +15533,7 @@
       "decision_count": 0,
       "action_count": 0,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Evidence v6.2</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1180px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { color: #bfdbfe;",
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "source_hash": "e490cb1c607e6094bfa4bd6fdabe0743d1d5fbc5dc86358d94d8328f79cf2a75"
     },
     {
@@ -15438,9 +15547,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:37:37\", \"finished_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_manifest_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_package_manifest.json\", \"evidence_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\p",
-      "modified_at": "2026-07-06T21:37:37",
-      "source_hash": "e9eecde311bb288e6a29b782e10c6fc85e48261aed46c0186d3143f0a26f3197"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"started_at\": \"2026-07-06T21:55:19\", \"finished_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_manifest_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_package_manifest.json\", \"evidence_log_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\p",
+      "modified_at": "2026-07-06T21:55:19",
+      "source_hash": "5cefd69f29c0c884cf4717de759f1bbcf0f29d32b8a7c5e5090ffe3d00818ad1"
     },
     {
       "record_id": "KH-0339",
@@ -15453,9 +15562,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"generated_at\": \"2026-07-06T21:37:37\", \"started_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_zip_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip\", \"file_count\": 15, \"existing_file_count\": 15, \"missing_",
-      "modified_at": "2026-07-06T21:37:37",
-      "source_hash": "7532606b524246a563d889b0f2c7f172c9b8c5ffad77001f7a0e06fbb90e0fef"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Package Evidence Engine\", \"engine_version\": \"v6.2\", \"generated_at\": \"2026-07-06T21:55:19\", \"started_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"bronvermelding_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\Bronvermelding_van_dit_project\", \"package_zip_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip\", \"file_count\": 15, \"existing_file_count\": 15, \"missing_",
+      "modified_at": "2026-07-06T21:55:19",
+      "source_hash": "7ef2bdb98478baf4dc0c51670516098ebe97fb681d7940bfeee90c099091fd4b"
     },
     {
       "record_id": "KH-0340",
@@ -15529,7 +15638,7 @@
       "decision_count": 0,
       "action_count": 0,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix Export v6.1</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1080px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } code { color: #bfdbfe; } </style> </head> <body> <main> <section> <h1>Project Phoenix Export v6.1</h1> <p>Status: OPGESLAGEN</p> <p>De projectrapportagepackage is gekoppeld aan DOCX/PDF-export.<",
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "source_hash": "a992898a36888729065fd751a3c7ba204eb1763cce4aeefada8e327b10b679d8"
     },
     {
@@ -15542,9 +15651,9 @@
       "projects": [],
       "decision_count": 0,
       "action_count": 0,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Report Export Engine\", \"engine_version\": \"v6.1\", \"started_at\": \"2026-07-06T21:37:37\", \"finished_at\": \"2026-07-06T21:37:37\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"report_package_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_package.json\", \"docx_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_report.docx\", \"pdf_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_repor",
-      "modified_at": "2026-07-06T21:37:37",
-      "source_hash": "849167c164ce0e03a6abd9a14c929146135d45c665551552c7ae65a47e093d4b"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Project Report Export Engine\", \"engine_version\": \"v6.1\", \"started_at\": \"2026-07-06T21:55:19\", \"finished_at\": \"2026-07-06T21:55:19\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\", \"report_package_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_package.json\", \"docx_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_report_bib_report.docx\", \"pdf_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_repor",
+      "modified_at": "2026-07-06T21:55:19",
+      "source_hash": "27cd64850288cbbf27b351a41d595cb746a2b759b2984e0fd6da2553d01dabdf"
     },
     {
       "record_id": "KH-0345",
@@ -15580,7 +15689,7 @@
       "decision_count": 0,
       "action_count": 1,
       "snippet": "<!doctype html> <html lang=\"nl\"> <head> <meta charset=\"utf-8\"> <title>Project Phoenix START PROJECTANALYSE v6.3</title> <style> body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; } main { max-width: 1240px; margin: 0 auto; padding: 32px; } section { background: #111827; border: 1px solid #334155; border-radius: 14px; padding: 20px; margin-bottom: 18px; } h1, h2 { color: #f8fafc; } table { width: 100%; border-collapse: collapse; } td, th { border: 1px solid #334155; padding: 10px; text-align: left; vertical-align: top; } th { background: #1e293b; } code { col",
-      "modified_at": "2026-07-06T21:37:37",
+      "modified_at": "2026-07-06T21:55:19",
       "source_hash": "f75e206723c3b8013d50be5af45a1d55dd1be61984ea43997fb4d1143f6453fc"
     },
     {
@@ -15597,12 +15706,78 @@
       "projects": [],
       "decision_count": 1,
       "action_count": 2,
-      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix START PROJECTANALYSE Engine\", \"engine_version\": \"v5.7\", \"started_at\": \"2026-07-06T21:37:35\", \"finished_at\": \"2026-07-06T21:37:36\", \"purpose\": \"START PROJECTANALYSE met BIB-kennisindexkoppeling.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"outputs\\\\projects\", \"dashboard_path\": \"outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"log_path\": \"outputs\\\\projects\\\\project_start_analysis_log.json\", \"bib\": { \"status\": \"BIJGEWERKT\", \"engine\": \"Project Phoenix BIB Import Wizard\", \"engine_version\": \"v5.6\", \"gener",
-      "modified_at": "2026-07-06T21:37:36",
-      "source_hash": "11bcb825ebb781ebe3bdd1603bc9c25739770dd9b9f6dad6979e9c301f737390"
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix START PROJECTANALYSE Engine\", \"engine_version\": \"v5.7\", \"started_at\": \"2026-07-06T21:55:18\", \"finished_at\": \"2026-07-06T21:55:18\", \"purpose\": \"START PROJECTANALYSE met BIB-kennisindexkoppeling.\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_output_root\": \"outputs\\\\projects\", \"dashboard_path\": \"outputs\\\\projects\\\\project_start_analysis_dashboard.html\", \"log_path\": \"outputs\\\\projects\\\\project_start_analysis_log.json\", \"bib\": { \"status\": \"BIJGEWERKT\", \"engine\": \"Project Phoenix BIB Import Wizard\", \"engine_version\": \"v5.6\", \"gener",
+      "modified_at": "2026-07-06T21:55:18",
+      "source_hash": "6285ffae9b09acf258c778ff91f690b99692a5c1c5a7b8dc547e09315291960d"
     },
     {
       "record_id": "KH-0348",
+      "source_file": "outputs\\projects\\project_structural_dashboard_v7_4.html",
+      "name": "project_structural_dashboard_v7_4.html",
+      "topics": [
+        "plutostraat_paramaribo",
+        "baoees_core",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 2,
+      "action_count": 0,
+      "snippet": "<!doctype html><html lang=\"nl\"><head><meta charset=\"utf-8\"><title>Project Phoenix Structural v7.4</title><style>body{margin:0;font-family:Arial,sans-serif;background:#0f172a;color:#e5e7eb}main{max-width:1240px;margin:0 auto;padding:32px}section{background:#111827;border:1px solid #334155;border-radius:14px;padding:20px;margin-bottom:18px}h1,h2{color:#f8fafc}table{width:100%;border-collapse:collapse}td,th{border:1px solid #334155;padding:10px;text-align:left;vertical-align:top}th{background:#1e293b}code{color:#bfdbfe}</style></head><body><main><section><h1>Project Phoenix Structural Engine v7.4",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "07c038d298997b0e1bea8cb89fd92c2e12c3663ff978550ca58339fa13aaf54c"
+    },
+    {
+      "record_id": "KH-0349",
+      "source_file": "outputs\\projects\\project_structural_log_v7_4.json",
+      "name": "project_structural_log_v7_4.json",
+      "topics": [
+        "plutostraat_paramaribo",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 0,
+      "action_count": 0,
+      "snippet": "{ \"status\": \"OPGESLAGEN\", \"engine\": \"Project Phoenix Structural Engine\", \"engine_version\": \"v7.4\", \"started_at\": \"2026-07-06T21:55:17\", \"finished_at\": \"2026-07-06T21:55:17\", \"project_root\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\", \"project_context_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_context_v7_1.json\", \"geotechniek_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_geotechniek_v7_2.json\", \"foundation_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZARD\\\\outputs\\\\projects\\\\project_foundation_design_v7_3.json\", \"structural_json_path\": \"C:\\\\BREWSTER-ENGINEERING-WIZAR",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "7c68767655cf4e4d2aef970951454883c00d5f2ccb5120d888012ca73030818c"
+    },
+    {
+      "record_id": "KH-0350",
+      "source_file": "outputs\\projects\\project_structural_model_v7_4.json",
+      "name": "project_structural_model_v7_4.json",
+      "topics": [
+        "plutostraat_paramaribo",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 7,
+      "action_count": 0,
+      "snippet": "{ \"status\": \"VOORLOPIG_CONCEPT\", \"engine\": \"Project Phoenix Structural Engine\", \"engine_version\": \"v7.4\", \"generated_at\": \"2026-07-06T21:55:17\", \"project\": { \"project_name\": \"Project Phoenix intake test\", \"location\": \"Locatie nog te bepalen\", \"project_type\": \"algemeen bouwkundig / civiel project\", \"client\": \"\", \"description\": \"Automatische testintake voor Project Phoenix v7.0.\" }, \"selected_system\": { \"system_type\": \"algemeen_draagstructuur_concept\", \"status\": \"VOORLOPIG\", \"reason\": \"Geen specifiek gebouwtype met geometrie gevonden; generiek constructief concept gekozen.\", \"stability_concept\":",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "c48d1de6971e10d95f66a84f742a46f60a853f60c8847c00ba9af00dd58c24c7"
+    },
+    {
+      "record_id": "KH-0351",
+      "source_file": "outputs\\projects\\project_structural_summary_v7_4.md",
+      "name": "project_structural_summary_v7_4.md",
+      "topics": [
+        "plutostraat_paramaribo",
+        "baoees_core",
+        "engineering_modules",
+        "workflow_automation"
+      ],
+      "projects": [],
+      "decision_count": 1,
+      "action_count": 0,
+      "snippet": "# Project Structural Model v7.4 Project: Project Phoenix intake test Locatie: Locatie nog te bepalen ## Constructief systeem - Type: algemeen_draagstructuur_concept - Status: VOORLOPIG - Reden: Geen specifiek gebouwtype met geometrie gevonden; generiek constructief concept gekozen. ## Elementen - WALL-001: dragende_wand - metselwerk/beton voorlopig - COL-001: kolom - staal/beton voorlopig - BEAM-001: balk - staal/beton/hout voorlopig - ROOF-001: dakconstructie - hout of staal voorlopig - FOUNDATION-INTERFACE-001: fundering_koppeling - beton ## Belastingen - LC1: eigen gewicht - open - LC2: vlo",
+      "modified_at": "2026-07-06T21:55:17",
+      "source_hash": "540fcee53e76766f1256c6da032fb138974aa39cc6676323008643afcd289307"
+    },
+    {
+      "record_id": "KH-0352",
       "source_file": "outputs\\projects\\start_projectanalyse_v6_4_update_log.json",
       "name": "start_projectanalyse_v6_4_update_log.json",
       "topics": [
@@ -15617,7 +15792,7 @@
       "source_hash": "4711895c607cbe126ebd16b7898a228e5bd52a985323cf95a12c5bc15c6935be"
     },
     {
-      "record_id": "KH-0349",
+      "record_id": "KH-0353",
       "source_file": "outputs\\projects\\start_projectanalyse_v6_5_update_log.json",
       "name": "start_projectanalyse_v6_5_update_log.json",
       "topics": [
@@ -15632,7 +15807,7 @@
       "source_hash": "2424ab50b87c59aec63d8393eb306504a3d75f240c3edc3ecc025c368d49bca5"
     },
     {
-      "record_id": "KH-0350",
+      "record_id": "KH-0354",
       "source_file": "outputs\\projects\\start_projectanalyse_v6_6_update_log.json",
       "name": "start_projectanalyse_v6_6_update_log.json",
       "topics": [
@@ -15647,7 +15822,7 @@
       "source_hash": "e532a13847ee597246f08905029042686ec409818f8a67dd6c3627c8dc43ee91"
     },
     {
-      "record_id": "KH-0351",
+      "record_id": "KH-0355",
       "source_file": "outputs\\projects\\start_projectanalyse_v6_7_update_log.json",
       "name": "start_projectanalyse_v6_7_update_log.json",
       "topics": [
@@ -15662,7 +15837,7 @@
       "source_hash": "37f14fbedc6f067c4d3088c2629ac00e06a6fb94471314b775323c2513215f2a"
     },
     {
-      "record_id": "KH-0352",
+      "record_id": "KH-0356",
       "source_file": "outputs\\projects\\start_projectanalyse_v6_8_update_log.json",
       "name": "start_projectanalyse_v6_8_update_log.json",
       "topics": [
@@ -15677,7 +15852,7 @@
       "source_hash": "ca8f8a5080b63fccbe1f854bf24828ceb148907d330e91522d55c1bbd479d4c1"
     },
     {
-      "record_id": "KH-0353",
+      "record_id": "KH-0357",
       "source_file": "outputs\\projects\\start_projectanalyse_v6_9_update_log.json",
       "name": "start_projectanalyse_v6_9_update_log.json",
       "topics": [
@@ -15692,7 +15867,7 @@
       "source_hash": "9079cac0ed64df8e629aa87debc47d9b658b849e9d29e8d185ef28269d7c343e"
     },
     {
-      "record_id": "KH-0354",
+      "record_id": "KH-0358",
       "source_file": "outputs\\projects\\start_projectanalyse_v7_0_update_log.json",
       "name": "start_projectanalyse_v7_0_update_log.json",
       "topics": [
@@ -15707,7 +15882,7 @@
       "source_hash": "2f3d970caa6f525ae8fa7bab639e9d6fcdd6baff688c8f13ccf7c539543ed00f"
     },
     {
-      "record_id": "KH-0355",
+      "record_id": "KH-0359",
       "source_file": "outputs\\projects\\start_projectanalyse_v7_1_update_log.json",
       "name": "start_projectanalyse_v7_1_update_log.json",
       "topics": [
@@ -15722,7 +15897,7 @@
       "source_hash": "714d580bfdd96b8109c7861115fb57a80f840cbf976887c34d02c6b679ba17a1"
     },
     {
-      "record_id": "KH-0356",
+      "record_id": "KH-0360",
       "source_file": "outputs\\projects\\start_projectanalyse_v7_2_update_log.json",
       "name": "start_projectanalyse_v7_2_update_log.json",
       "topics": [
@@ -15739,7 +15914,7 @@
       "source_hash": "d2f4359ca687a172004b1aa5500f630ad9c728c87235b9c9e6a815b84094533f"
     },
     {
-      "record_id": "KH-0357",
+      "record_id": "KH-0361",
       "source_file": "outputs\\projects\\start_projectanalyse_v7_3_update_log.json",
       "name": "start_projectanalyse_v7_3_update_log.json",
       "topics": [
@@ -15756,7 +15931,7 @@
       "source_hash": "2e352e7f5f75e6255027212bba8b3b7b817b00695fa2761dee4f015acfa8b4db"
     },
     {
-      "record_id": "KH-0358",
+      "record_id": "KH-0362",
       "source_file": "outputs\\projects\\start_projectanalyse_v7_4_update_log.json",
       "name": "start_projectanalyse_v7_4_update_log.json",
       "topics": [
@@ -15772,7 +15947,7 @@
       "source_hash": "74d4858e6a8d36f8395cbe091eacfdb7f1059d1660a69ba2be9e22bb431c70d3"
     },
     {
-      "record_id": "KH-0360",
+      "record_id": "KH-0364",
       "source_file": "PROJECT_PHOENIX_v6_3_update.ps1",
       "name": "PROJECT_PHOENIX_v6_3_update.ps1",
       "topics": [
@@ -15787,7 +15962,7 @@
       "source_hash": "c5abd2ca2f587879c3f3e1b9435087e0de4a3475b22ef4bc97b359cf3b3ca88f"
     },
     {
-      "record_id": "KH-0361",
+      "record_id": "KH-0365",
       "source_file": "PROJECT_PHOENIX_v6_4_update.ps1",
       "name": "PROJECT_PHOENIX_v6_4_update.ps1",
       "topics": [
@@ -15802,7 +15977,7 @@
       "source_hash": "9effde473cf30ed7f460f2830889469c397f27fe02eec027e6932cbfef0ce5ef"
     },
     {
-      "record_id": "KH-0362",
+      "record_id": "KH-0366",
       "source_file": "PROJECT_PHOENIX_v6_5_update.ps1",
       "name": "PROJECT_PHOENIX_v6_5_update.ps1",
       "topics": [
@@ -15817,7 +15992,7 @@
       "source_hash": "ecaf42e0816b1667da55f4a1109265ad33929daf7057a4b4e3b21e91754d536f"
     },
     {
-      "record_id": "KH-0363",
+      "record_id": "KH-0367",
       "source_file": "PROJECT_PHOENIX_v6_6_update.ps1",
       "name": "PROJECT_PHOENIX_v6_6_update.ps1",
       "topics": [
@@ -15840,7 +16015,7 @@
       "source_hash": "d8e5aee855c5d60b775a22c34d0ff4c65c9e66d18fb2491f818947965524fe40"
     },
     {
-      "record_id": "KH-0364",
+      "record_id": "KH-0368",
       "source_file": "PROJECT_PHOENIX_v6_7_update.ps1",
       "name": "PROJECT_PHOENIX_v6_7_update.ps1",
       "topics": [
@@ -15855,7 +16030,7 @@
       "source_hash": "3ba25d8778b82d80b19a488e181e590deeb62e53a6360208304c9e05e24de476"
     },
     {
-      "record_id": "KH-0365",
+      "record_id": "KH-0369",
       "source_file": "PROJECT_PHOENIX_v6_8_update.ps1",
       "name": "PROJECT_PHOENIX_v6_8_update.ps1",
       "topics": [
@@ -15878,7 +16053,7 @@
       "source_hash": "0766b80a30a0e866c52ada88ce5152367982c7c4078f274837c25f7639a1888d"
     },
     {
-      "record_id": "KH-0366",
+      "record_id": "KH-0370",
       "source_file": "PROJECT_PHOENIX_v6_9_update.ps1",
       "name": "PROJECT_PHOENIX_v6_9_update.ps1",
       "topics": [
@@ -15895,7 +16070,7 @@
       "source_hash": "367acb7f83cb36d76455b815279617fdfbc57a73f6c00b7d96daf850929a49c7"
     },
     {
-      "record_id": "KH-0367",
+      "record_id": "KH-0371",
       "source_file": "PROJECT_PHOENIX_v7_0_update.ps1",
       "name": "PROJECT_PHOENIX_v7_0_update.ps1",
       "topics": [
@@ -15917,7 +16092,7 @@
       "source_hash": "2545f99c0224fb8905392642d6ac594dd0dca6c5a0f7decaab85316ac84cd9d0"
     },
     {
-      "record_id": "KH-0368",
+      "record_id": "KH-0372",
       "source_file": "PROJECT_PHOENIX_v7_1_update.ps1",
       "name": "PROJECT_PHOENIX_v7_1_update.ps1",
       "topics": [
@@ -15934,7 +16109,7 @@
       "source_hash": "e56a361c8363e8b90cea760e78a86ccb0b6398af2eba7986eadc1965571a0dea"
     },
     {
-      "record_id": "KH-0369",
+      "record_id": "KH-0373",
       "source_file": "PROJECT_PHOENIX_v7_2_update.ps1",
       "name": "PROJECT_PHOENIX_v7_2_update.ps1",
       "topics": [
@@ -15953,7 +16128,7 @@
       "source_hash": "1f76bce7406deb14e41bad30914dc49e0ea92ab6ee268860670324fff3480eee"
     },
     {
-      "record_id": "KH-0370",
+      "record_id": "KH-0374",
       "source_file": "PROJECT_PHOENIX_v7_3_update.ps1",
       "name": "PROJECT_PHOENIX_v7_3_update.ps1",
       "topics": [
@@ -15972,7 +16147,7 @@
       "source_hash": "f3fc3ec9e6bb1d5ed855c9ef554561f27be223e895e4aafe6871a3bc0c1418e8"
     },
     {
-      "record_id": "KH-0371",
+      "record_id": "KH-0375",
       "source_file": "PROJECT_PHOENIX_v7_4_update.ps1",
       "name": "PROJECT_PHOENIX_v7_4_update.ps1",
       "topics": [
@@ -15992,7 +16167,7 @@
       "source_hash": "3d363d9492801845a9115ddec3bba2f1deb03c8f3ea024b68afac5a11794f69c"
     },
     {
-      "record_id": "KH-0372",
+      "record_id": "KH-0376",
       "source_file": "START_PROJECTANALYSE.bat",
       "name": "START_PROJECTANALYSE.bat",
       "topics": [
@@ -16008,7 +16183,7 @@
       "source_hash": "4845b427ea614e7deadaae964fbf997668ca0e0b053a9a9df9acf2f18073c3c5"
     },
     {
-      "record_id": "KH-0373",
+      "record_id": "KH-0377",
       "source_file": "START_PROJECTANALYSE.ps1",
       "name": "START_PROJECTANALYSE.ps1",
       "topics": [
