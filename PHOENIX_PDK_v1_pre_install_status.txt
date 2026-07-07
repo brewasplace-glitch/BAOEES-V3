@@ -1,0 +1,11 @@
+﻿?? DOCS/project_phoenix/intelligence/
+?? DOCS/project_phoenix/specifications/
+?? INSTALL_EAMS_v1_0.ps1
+?? PHOENIX_DEVELOPMENT_KIT_v1_INSTALL.ps1
+?? PROJECT_PHOENIX_Architectural_Master_Specification_v1_0_Executable.docx
+?? PROJECT_PHOENIX_Architectural_Master_Specification_v1_0_Executable.pdf
+?? README.txt
+?? architectural_master_specification_v1_0.json
+?? architectural_master_specification_v1_0.yaml
+?? architectural_master_specification_v1_0_executable.py
+?? architectural_master_specification_v1_0_validation.json
