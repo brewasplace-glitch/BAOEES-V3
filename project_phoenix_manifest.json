@@ -1,0 +1,13 @@
+﻿{
+  "platform": "PROJECT PHOENIX",
+  "repository_target_name": "PROJECT-PHOENIX",
+  "application_brand": "BREWSTER ENGINEERING WIZARD",
+  "app_path": "apps/brewster_engineering_wizard",
+  "legacy_engine_path": "baoees",
+  "migration_status": "phase_1_structure_created",
+  "notes": [
+    "The repository folder should be renamed manually from BREWSTER-ENGINEERING-WIZARD to PROJECT-PHOENIX after this commit is pushed.",
+    "The existing baoees folder remains in place during the transition.",
+    "Future releases will progressively move/alias functionality into apps, phoenix_core, phoenix_intelligence and suites."
+  ]
+}
