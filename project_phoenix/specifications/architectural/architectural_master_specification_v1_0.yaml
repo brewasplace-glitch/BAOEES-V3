@@ -1,0 +1,94 @@
+specification: PROJECT PHOENIX Architectural Master Specification
+version: 1.0.0
+status: executable_specification
+modules:
+  - id: architectural.project_intake
+    name: Project Intake
+    inputs: ['user_brief', 'location', 'project_type']
+    outputs: ['project_profile.json', 'intake_report.md']
+    knowledge_sources: ['pkb', 'bib', 'decision_log']
+    tests: ['test_required_fields', 'test_output_profile']
+  - id: architectural.space_program
+    name: Programma van Eisen / Space Program
+    inputs: ['project_profile', 'reference_templates', 'regulations']
+    outputs: ['space_program.json', 'room_schedule.xlsx']
+    knowledge_sources: ['pkb', 'bib', 'templates']
+    tests: ['test_area_balance', 'test_room_schema']
+  - id: architectural.room_schedule
+    name: Ruimtestaat
+    inputs: ['space_program']
+    outputs: ['room_schedule.json', 'room_schedule.csv', 'room_schedule.xlsx']
+    knowledge_sources: ['pkb', 'standards']
+    tests: ['test_room_ids', 'test_area_totals']
+  - id: architectural.floorplan_generator
+    name: Plattegrondgenerator
+    inputs: ['project_profile', 'space_program', 'parcel', 'constraints']
+    outputs: ['floorplan.json', 'floorplan.dxf', 'floorplan.pdf']
+    knowledge_sources: ['pkb', 'knowledge_graph', 'digital_twin']
+    tests: ['test_room_generation', 'test_dimensioning', 'test_accessibility']
+  - id: architectural.facade_generator
+    name: Gevelgenerator
+    inputs: ['floorplan', 'levels', 'openings', 'materials']
+    outputs: ['facades.json', 'facades.dxf', 'facades.pdf']
+    knowledge_sources: ['pkb', 'templates']
+    tests: ['test_opening_alignment', 'test_levels']
+  - id: architectural.section_generator
+    name: Doorsnedegenerator
+    inputs: ['floorplan', 'levels', 'roof', 'structure']
+    outputs: ['sections.json', 'sections.dxf', 'sections.pdf']
+    knowledge_sources: ['pkb', 'digital_twin']
+    tests: ['test_section_levels', 'test_headroom']
+  - id: architectural.roof_generator
+    name: Dakgenerator
+    inputs: ['building_mass', 'climate', 'drainage_rules']
+    outputs: ['roof.json', 'roof_plan.dxf', 'roof_plan.pdf']
+    knowledge_sources: ['standards', 'pkb']
+    tests: ['test_roof_geometry', 'test_drainage']
+  - id: architectural.openings
+    name: Deuren en kozijnen
+    inputs: ['floorplan', 'facades', 'room_schedule']
+    outputs: ['opening_schedule.xlsx', 'openings.json']
+    knowledge_sources: ['templates', 'standards']
+    tests: ['test_door_widths', 'test_window_room_links']
+  - id: architectural.stairs
+    name: Trapgenerator
+    inputs: ['levels', 'floorplan', 'accessibility_rules']
+    outputs: ['stair.json', 'stair_details.pdf']
+    knowledge_sources: ['standards', 'pkb']
+    tests: ['test_rise_run', 'test_clear_width']
+  - id: architectural.materials
+    name: Materialisatie
+    inputs: ['building_elements', 'pkb_material_library']
+    outputs: ['material_schedule.xlsx', 'materials.json']
+    knowledge_sources: ['pkb', 'bib']
+    tests: ['test_material_ids', 'test_element_materials']
+  - id: architectural.quantity_takeoff
+    name: Hoeveelhedenstaat
+    inputs: ['digital_twin', 'building_elements']
+    outputs: ['quantity_takeoff.xlsx', 'quantity_takeoff.json']
+    knowledge_sources: ['digital_twin']
+    tests: ['test_quantity_units', 'test_quantity_totals']
+  - id: architectural.compliance_precheck
+    name: Bouwregelcontrole pre-check
+    inputs: ['project_profile', 'floorplan', 'room_schedule', 'regulations']
+    outputs: ['compliance_precheck.md', 'issues.json']
+    knowledge_sources: ['pkb', 'standards', 'source_evidence']
+    tests: ['test_rule_references', 'test_issue_schema']
+  - id: architectural.bim_export
+    name: BIM Export
+    inputs: ['digital_twin', 'building_elements']
+    outputs: ['architectural_twin.json', 'ifc_payload.json']
+    knowledge_sources: ['digital_twin', 'knowledge_graph']
+    tests: ['test_object_ids', 'test_ifc_mapping']
+  - id: architectural.drawing_package
+    name: Vergunningstekeningpakket
+    inputs: ['floorplans', 'facades', 'sections', 'schedules']
+    outputs: ['drawing_package.pdf', 'drawing_index.json']
+    knowledge_sources: ['templates', 'source_evidence']
+    tests: ['test_sheet_index', 'test_required_drawings']
+  - id: architectural.report_export
+    name: Rapportage export
+    inputs: ['all_module_results']
+    outputs: ['architectural_report.docx', 'architectural_report.pdf']
+    knowledge_sources: ['pkb', 'templates']
+    tests: ['test_report_sections', 'test_export_exists']

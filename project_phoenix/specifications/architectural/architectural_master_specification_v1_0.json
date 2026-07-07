@@ -1,0 +1,377 @@
+{
+  "specification": "PROJECT PHOENIX Architectural Master Specification",
+  "version": "1.0.0",
+  "status": "executable_specification",
+  "created_at": "2026-07-07T22:40:54",
+  "platform": "Project Phoenix",
+  "app": "Brewster Engineering Wizard",
+  "principles": [
+    "specification_first",
+    "single_source_of_truth",
+    "pkb_bib_integrated",
+    "digital_twin_synchronization",
+    "traceable_outputs"
+  ],
+  "contracts": {
+    "module_fields": [
+      "id",
+      "name",
+      "purpose",
+      "inputs",
+      "outputs",
+      "knowledge_sources",
+      "tests"
+    ],
+    "required_outputs": [
+      "json_contract",
+      "validation_result",
+      "digital_twin_sync_status"
+    ],
+    "quality_gates": [
+      "schema_valid",
+      "tests_defined",
+      "outputs_declared",
+      "knowledge_sources_declared",
+      "stree_traceability_declared"
+    ]
+  },
+  "modules": [
+    {
+      "id": "architectural.project_intake",
+      "name": "Project Intake",
+      "purpose": "Collects project goals, location, scope, constraints and deliverables.",
+      "inputs": [
+        "user_brief",
+        "location",
+        "project_type"
+      ],
+      "outputs": [
+        "project_profile.json",
+        "intake_report.md"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "bib",
+        "decision_log"
+      ],
+      "tests": [
+        "test_required_fields",
+        "test_output_profile"
+      ]
+    },
+    {
+      "id": "architectural.space_program",
+      "name": "Programma van Eisen / Space Program",
+      "purpose": "Transforms user requirements into rooms, areas, functions and relationships.",
+      "inputs": [
+        "project_profile",
+        "reference_templates",
+        "regulations"
+      ],
+      "outputs": [
+        "space_program.json",
+        "room_schedule.xlsx"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "bib",
+        "templates"
+      ],
+      "tests": [
+        "test_area_balance",
+        "test_room_schema"
+      ]
+    },
+    {
+      "id": "architectural.room_schedule",
+      "name": "Ruimtestaat",
+      "purpose": "Creates a structured room schedule with function, area, floor, occupancy and notes.",
+      "inputs": [
+        "space_program"
+      ],
+      "outputs": [
+        "room_schedule.json",
+        "room_schedule.csv",
+        "room_schedule.xlsx"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "standards"
+      ],
+      "tests": [
+        "test_room_ids",
+        "test_area_totals"
+      ]
+    },
+    {
+      "id": "architectural.floorplan_generator",
+      "name": "Plattegrondgenerator",
+      "purpose": "Generates schematic and later CAD-grade floorplans.",
+      "inputs": [
+        "project_profile",
+        "space_program",
+        "parcel",
+        "constraints"
+      ],
+      "outputs": [
+        "floorplan.json",
+        "floorplan.dxf",
+        "floorplan.pdf"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "knowledge_graph",
+        "digital_twin"
+      ],
+      "tests": [
+        "test_room_generation",
+        "test_dimensioning",
+        "test_accessibility"
+      ]
+    },
+    {
+      "id": "architectural.facade_generator",
+      "name": "Gevelgenerator",
+      "purpose": "Generates facade concepts, openings, materials and facade drawings.",
+      "inputs": [
+        "floorplan",
+        "levels",
+        "openings",
+        "materials"
+      ],
+      "outputs": [
+        "facades.json",
+        "facades.dxf",
+        "facades.pdf"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "templates"
+      ],
+      "tests": [
+        "test_opening_alignment",
+        "test_levels"
+      ]
+    },
+    {
+      "id": "architectural.section_generator",
+      "name": "Doorsnedegenerator",
+      "purpose": "Generates building sections, storey heights, structural zones and roof build-ups.",
+      "inputs": [
+        "floorplan",
+        "levels",
+        "roof",
+        "structure"
+      ],
+      "outputs": [
+        "sections.json",
+        "sections.dxf",
+        "sections.pdf"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "digital_twin"
+      ],
+      "tests": [
+        "test_section_levels",
+        "test_headroom"
+      ]
+    },
+    {
+      "id": "architectural.roof_generator",
+      "name": "Dakgenerator",
+      "purpose": "Generates roof geometry, slopes, drainage zones and build-up.",
+      "inputs": [
+        "building_mass",
+        "climate",
+        "drainage_rules"
+      ],
+      "outputs": [
+        "roof.json",
+        "roof_plan.dxf",
+        "roof_plan.pdf"
+      ],
+      "knowledge_sources": [
+        "standards",
+        "pkb"
+      ],
+      "tests": [
+        "test_roof_geometry",
+        "test_drainage"
+      ]
+    },
+    {
+      "id": "architectural.openings",
+      "name": "Deuren en kozijnen",
+      "purpose": "Places doors/windows and manages schedules.",
+      "inputs": [
+        "floorplan",
+        "facades",
+        "room_schedule"
+      ],
+      "outputs": [
+        "opening_schedule.xlsx",
+        "openings.json"
+      ],
+      "knowledge_sources": [
+        "templates",
+        "standards"
+      ],
+      "tests": [
+        "test_door_widths",
+        "test_window_room_links"
+      ]
+    },
+    {
+      "id": "architectural.stairs",
+      "name": "Trapgenerator",
+      "purpose": "Creates stairs, checks basic rise/run and circulation.",
+      "inputs": [
+        "levels",
+        "floorplan",
+        "accessibility_rules"
+      ],
+      "outputs": [
+        "stair.json",
+        "stair_details.pdf"
+      ],
+      "knowledge_sources": [
+        "standards",
+        "pkb"
+      ],
+      "tests": [
+        "test_rise_run",
+        "test_clear_width"
+      ]
+    },
+    {
+      "id": "architectural.materials",
+      "name": "Materialisatie",
+      "purpose": "Assigns materials to walls, floors, roofs, facades and interior finishes.",
+      "inputs": [
+        "building_elements",
+        "pkb_material_library"
+      ],
+      "outputs": [
+        "material_schedule.xlsx",
+        "materials.json"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "bib"
+      ],
+      "tests": [
+        "test_material_ids",
+        "test_element_materials"
+      ]
+    },
+    {
+      "id": "architectural.quantity_takeoff",
+      "name": "Hoeveelhedenstaat",
+      "purpose": "Calculates quantities for areas, lengths, openings and elements.",
+      "inputs": [
+        "digital_twin",
+        "building_elements"
+      ],
+      "outputs": [
+        "quantity_takeoff.xlsx",
+        "quantity_takeoff.json"
+      ],
+      "knowledge_sources": [
+        "digital_twin"
+      ],
+      "tests": [
+        "test_quantity_units",
+        "test_quantity_totals"
+      ]
+    },
+    {
+      "id": "architectural.compliance_precheck",
+      "name": "Bouwregelcontrole pre-check",
+      "purpose": "Performs pre-checks for building rules, accessibility, fire safety, daylight and ventilation.",
+      "inputs": [
+        "project_profile",
+        "floorplan",
+        "room_schedule",
+        "regulations"
+      ],
+      "outputs": [
+        "compliance_precheck.md",
+        "issues.json"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "standards",
+        "source_evidence"
+      ],
+      "tests": [
+        "test_rule_references",
+        "test_issue_schema"
+      ]
+    },
+    {
+      "id": "architectural.bim_export",
+      "name": "BIM Export",
+      "purpose": "Exports architectural objects to BIM/Digital Twin payloads and IFC-ready structures.",
+      "inputs": [
+        "digital_twin",
+        "building_elements"
+      ],
+      "outputs": [
+        "architectural_twin.json",
+        "ifc_payload.json"
+      ],
+      "knowledge_sources": [
+        "digital_twin",
+        "knowledge_graph"
+      ],
+      "tests": [
+        "test_object_ids",
+        "test_ifc_mapping"
+      ]
+    },
+    {
+      "id": "architectural.drawing_package",
+      "name": "Vergunningstekeningpakket",
+      "purpose": "Composes the drawing package for PDF/DXF/DWG/SKP/IFC outputs.",
+      "inputs": [
+        "floorplans",
+        "facades",
+        "sections",
+        "schedules"
+      ],
+      "outputs": [
+        "drawing_package.pdf",
+        "drawing_index.json"
+      ],
+      "knowledge_sources": [
+        "templates",
+        "source_evidence"
+      ],
+      "tests": [
+        "test_sheet_index",
+        "test_required_drawings"
+      ]
+    },
+    {
+      "id": "architectural.report_export",
+      "name": "Rapportage export",
+      "purpose": "Exports DOCX/PDF reports and specification summaries.",
+      "inputs": [
+        "all_module_results"
+      ],
+      "outputs": [
+        "architectural_report.docx",
+        "architectural_report.pdf"
+      ],
+      "knowledge_sources": [
+        "pkb",
+        "templates"
+      ],
+      "tests": [
+        "test_report_sections",
+        "test_export_exists"
+      ]
+    }
+  ]
+}
