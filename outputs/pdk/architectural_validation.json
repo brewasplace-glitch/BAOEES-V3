@@ -1,0 +1,14 @@
+{
+  "suite_id": "architectural",
+  "validated_at": "2026-07-08T00:50:48",
+  "checks": {
+    "suite_exists": true,
+    "manifest_exists": true,
+    "core_exists": true,
+    "engines_exists": true,
+    "schemas_exists": true,
+    "tests_exists": true,
+    "docs_exists": true
+  },
+  "overall_ok": true
+}

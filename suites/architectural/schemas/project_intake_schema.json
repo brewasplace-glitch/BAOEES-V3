@@ -1,0 +1,13 @@
+{
+  "module_id": "architectural.project_intake",
+  "module_title": "Project Intake Engine",
+  "inputs": [],
+  "outputs": [],
+  "knowledge_sources": [
+    "PKB",
+    "BIB",
+    "Knowledge Graph"
+  ],
+  "tests": [],
+  "exports": []
+}

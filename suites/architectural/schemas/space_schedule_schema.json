@@ -1,0 +1,13 @@
+{
+  "module_id": "architectural.space_schedule",
+  "module_title": "Ruimtestaat Engine",
+  "inputs": [],
+  "outputs": [],
+  "knowledge_sources": [
+    "PKB",
+    "BIB",
+    "Knowledge Graph"
+  ],
+  "tests": [],
+  "exports": []
+}

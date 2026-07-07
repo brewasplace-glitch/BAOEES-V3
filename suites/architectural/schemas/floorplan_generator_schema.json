@@ -1,0 +1,13 @@
+{
+  "module_id": "architectural.floorplan_generator",
+  "module_title": "Plattegrondgenerator",
+  "inputs": [],
+  "outputs": [],
+  "knowledge_sources": [
+    "PKB",
+    "BIB",
+    "Knowledge Graph"
+  ],
+  "tests": [],
+  "exports": []
+}

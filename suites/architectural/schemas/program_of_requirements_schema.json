@@ -1,0 +1,13 @@
+{
+  "module_id": "architectural.program_of_requirements",
+  "module_title": "Programma van Eisen Engine",
+  "inputs": [],
+  "outputs": [],
+  "knowledge_sources": [
+    "PKB",
+    "BIB",
+    "Knowledge Graph"
+  ],
+  "tests": [],
+  "exports": []
+}

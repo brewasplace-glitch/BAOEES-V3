@@ -1,0 +1,51 @@
+{
+  "pdk": "Phoenix Development Kit",
+  "version": "1.0.0",
+  "created_at": "2026-07-08T00:50:48",
+  "suite": {
+    "suite_id": "architectural",
+    "suite_title": "Architectural Suite",
+    "version": "0.1.0",
+    "created_at": "2026-07-08T00:50:48",
+    "status": "generated_by_pdk"
+  },
+  "modules": [
+    {
+      "module_id": "architectural.project_intake",
+      "module_file": "suites\\architectural\\engines\\project_intake.py"
+    },
+    {
+      "module_id": "architectural.program_of_requirements",
+      "module_file": "suites\\architectural\\engines\\program_of_requirements.py"
+    },
+    {
+      "module_id": "architectural.space_schedule",
+      "module_file": "suites\\architectural\\engines\\space_schedule.py"
+    },
+    {
+      "module_id": "architectural.floorplan_generator",
+      "module_file": "suites\\architectural\\engines\\floorplan_generator.py"
+    }
+  ],
+  "validation": {
+    "suite_id": "architectural",
+    "validated_at": "2026-07-08T00:50:48",
+    "checks": {
+      "suite_exists": true,
+      "manifest_exists": true,
+      "core_exists": true,
+      "engines_exists": true,
+      "schemas_exists": true,
+      "tests_exists": true,
+      "docs_exists": true
+    },
+    "overall_ok": true
+  },
+  "release": {
+    "release_name": "architectural_suite_pdk_bootstrap",
+    "version": "0.1.0",
+    "created_at": "2026-07-08T00:50:48",
+    "status": "release_manifest_created",
+    "generated_by": "Phoenix Development Kit v1.0"
+  }
+}
