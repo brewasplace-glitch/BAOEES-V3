@@ -1,7 +1,29 @@
-{
+﻿{
   "suite_id": "architectural",
   "suite_title": "Architectural Suite",
-  "version": "0.1.0",
-  "created_at": "2026-07-08T00:50:48",
-  "status": "generated_by_pdk"
+  "version": "1.0.0",
+  "status": "implemented_v1",
+  "modules": [
+    "project_intake",
+    "program_of_requirements",
+    "space_schedule",
+    "floorplan_generator"
+  ],
+  "knowledge_sources": [
+    "PKB",
+    "BIB",
+    "Knowledge Graph",
+    "Executable Architectural Master Specification"
+  ],
+  "exports_current": [
+    "json",
+    "markdown"
+  ],
+  "exports_next": [
+    "pdf",
+    "docx",
+    "dxf",
+    "ifc",
+    "skp"
+  ]
 }
