@@ -1,0 +1,58 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Task Executor / Build Script Factory",
+  "engine_version": "v7.7",
+  "generated_at": "2026-07-09T00:17:12",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "selected_task": {
+    "task_id": "S01-002",
+    "track": "Stabilisatie & automatisering",
+    "track_id": "S01",
+    "priority": 102,
+    "title": "Automated cleanup helper",
+    "objective": "Bouw of documenteer 'Automated cleanup helper' als gecontroleerde Phoenix-bouwtaak binnen spoor S01.",
+    "files_to_create_or_modify": [
+      "apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+      "DOCS/project_phoenix/s01/automated_cleanup_helper.md",
+      "outputs/projects/automated_cleanup_helper_log.json",
+      "outputs/projects/automated_cleanup_helper_dashboard.html"
+    ],
+    "update_script": "PROJECT_PHOENIX_s01_002_automated_cleanup_helper_update.ps1",
+    "test_command": "python -m py_compile apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+    "commit_message": "feat: add automated cleanup helper (S01-002)",
+    "risk_level": "laag",
+    "dependencies": [
+      "S01-001"
+    ],
+    "requires_go": false,
+    "expected_result": "Update script draait lokaal, dashboard/log worden aangemaakt, git status wordt getoond.",
+    "status": "open"
+  },
+  "roadmap_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_task_roadmap_v7_6.json",
+  "rules_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_build_rules_v7_6.json",
+  "progress_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_progress_overview_v7_6.json",
+  "next_go_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_next_go_step_v7_6.json",
+  "generated_task_package_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_generated_task_package_v7_7.json",
+  "generated_script_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\generated_task_scripts\\PROJECT_PHOENIX_s01_002_automated_cleanup_helper_update.ps1",
+  "roadmap_task_count": 200,
+  "overall_progress_percent": 5.5,
+  "go_gate": {
+    "go_required": false,
+    "risk_level": "laag",
+    "reason": "Laag risico, maar v7.7 houdt alsnog review vóór uitvoering aan.",
+    "allowed_next_user_signal": "go"
+  },
+  "execution_mode": {
+    "factory_created_script": true,
+    "factory_executes_task_now": false,
+    "user_go_required_before_task_execution": false,
+    "auto_commit": false,
+    "auto_push": false
+  },
+  "next_steps": [
+    "Controleer phoenix_task_executor_dashboard_v7_7.html.",
+    "Controleer gegenereerd taakscript in outputs/projects/generated_task_scripts.",
+    "Geef GO als deze taak uitgevoerd mag worden.",
+    "Na GO kan de volgende versie de echte taak uitvoeren of het taakscript verder invullen."
+  ]
+}

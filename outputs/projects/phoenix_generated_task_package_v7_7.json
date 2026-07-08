@@ -1,0 +1,66 @@
+﻿{
+  "status": "DRAFT_READY",
+  "engine": "Project Phoenix Task Executor / Build Script Factory",
+  "engine_version": "v7.7",
+  "generated_at": "2026-07-09T00:17:12",
+  "script_status": "DRAFT_ONLY_NOT_EXECUTED",
+  "selected_task": {
+    "task_id": "S01-002",
+    "track": "Stabilisatie & automatisering",
+    "track_id": "S01",
+    "priority": 102,
+    "title": "Automated cleanup helper",
+    "objective": "Bouw of documenteer 'Automated cleanup helper' als gecontroleerde Phoenix-bouwtaak binnen spoor S01.",
+    "files_to_create_or_modify": [
+      "apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+      "DOCS/project_phoenix/s01/automated_cleanup_helper.md",
+      "outputs/projects/automated_cleanup_helper_log.json",
+      "outputs/projects/automated_cleanup_helper_dashboard.html"
+    ],
+    "update_script": "PROJECT_PHOENIX_s01_002_automated_cleanup_helper_update.ps1",
+    "test_command": "python -m py_compile apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+    "commit_message": "feat: add automated cleanup helper (S01-002)",
+    "risk_level": "laag",
+    "dependencies": [
+      "S01-001"
+    ],
+    "requires_go": false,
+    "expected_result": "Update script draait lokaal, dashboard/log worden aangemaakt, git status wordt getoond.",
+    "status": "open"
+  },
+  "generated_script": {
+    "name": "PROJECT_PHOENIX_s01_002_automated_cleanup_helper_update.ps1",
+    "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\generated_task_scripts\\PROJECT_PHOENIX_s01_002_automated_cleanup_helper_update.ps1",
+    "type": "PowerShell",
+    "execution_policy": "Alleen uitvoeren na expliciete GO."
+  },
+  "go_gate": {
+    "go_required": false,
+    "risk_level": "laag",
+    "reason": "Laag risico, maar v7.7 houdt alsnog review vóór uitvoering aan.",
+    "allowed_next_user_signal": "go"
+  },
+  "planned_files": [
+    "apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+    "DOCS/project_phoenix/s01/automated_cleanup_helper.md",
+    "outputs/projects/automated_cleanup_helper_log.json",
+    "outputs/projects/automated_cleanup_helper_dashboard.html"
+  ],
+  "planned_test_command": "python -m py_compile apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+  "planned_commit_message": "feat: add automated cleanup helper (S01-002)",
+  "planned_workflow": [
+    "backup bestaande bestanden",
+    "maak of wijzig taakbestanden",
+    "run testcommando",
+    "toon git status",
+    "wacht op review",
+    "commit en push pas na goedkeuring"
+  ],
+  "safety_policy": {
+    "no_auto_commit": true,
+    "no_auto_push": true,
+    "no_delete_without_explicit_rule": true,
+    "write_backups": true,
+    "show_git_status": true
+  }
+}
