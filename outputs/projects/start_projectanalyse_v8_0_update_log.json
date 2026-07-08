@@ -1,0 +1,11 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix Task Autopilot Connector",
+    "engine_version":  "v8.0",
+    "generated_at":  "2026-07-09T01:22:38",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "engine_path":  "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_autopilot_engine.py",
+    "runner_ps1":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v8_0.ps1",
+    "runner_bat":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v8_0.bat",
+    "repository_policy":  "Alleen PROJECT-PHOENIX repository"
+}
