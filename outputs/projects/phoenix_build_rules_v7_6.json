@@ -1,0 +1,68 @@
+﻿{
+  "status": "ACTIEF",
+  "engine": "Project Phoenix Build Governance & Task Roadmap Engine",
+  "engine_version": "v7.6",
+  "generated_at": "2026-07-08T23:58:48",
+  "repository_policy": {
+    "main_repository": "PROJECT-PHOENIX",
+    "main_branch": "project-phoenix",
+    "old_repository_policy": "BREWSTER-ENGINEERING-WIZARD is niet meer het hoofdspoor; BAOEES/Wizard wordt engine-laag binnen Phoenix.",
+    "engine_layer_path": "apps/brewster_engineering_wizard/",
+    "scripts_path": "scripts/",
+    "documentation_path": "DOCS/project_phoenix/",
+    "outputs_path": "outputs/projects/"
+  },
+  "workflow_policy": {
+    "no_major_step_without_user_go": true,
+    "preferred_delivery": "downloadbare PowerShell update/patch scripts",
+    "avoid_manual_python_paste": true,
+    "one_task_one_script_one_test_one_commit": true,
+    "always_test_before_commit": true,
+    "always_end_with_git_status": true,
+    "target_end_state": "nothing to commit, working tree clean",
+    "backup_before_replace": true,
+    "rollback_or_restore_guidance_required": true
+  },
+  "task_format": [
+    "task_id",
+    "track",
+    "priority",
+    "title",
+    "objective",
+    "files_to_create_or_modify",
+    "update_script",
+    "test_command",
+    "commit_message",
+    "risk_level",
+    "dependencies",
+    "requires_go",
+    "expected_result"
+  ],
+  "go_rules": {
+    "requires_go_for": [
+      "core architecture changes",
+      "runner changes",
+      "database schema changes",
+      "knowledge graph schema changes",
+      "engine orchestration changes",
+      "file moves/deletes",
+      "large generated output changes"
+    ],
+    "safe_without_extra_go_after_start": [
+      "generate planned update script",
+      "write documentation",
+      "write isolated new engine file",
+      "create dashboards/roadmap JSON"
+    ]
+  },
+  "daily_start_policy": {
+    "show_priorities": true,
+    "show_progress": true,
+    "show_current_phase": true,
+    "show_risks": true,
+    "show_open_decisions": true,
+    "show_last_completed_version": true,
+    "show_next_safe_go_step": true,
+    "show_git_control": true
+  }
+}

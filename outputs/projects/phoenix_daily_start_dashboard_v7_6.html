@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Project Phoenix Dagstart / Build Governance v7.6</title>
+<style>
+body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; }
+main { max-width:1280px; margin:0 auto; padding:32px; }
+section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; }
+h1,h2 { color:#f8fafc; }
+table { width:100%; border-collapse:collapse; }
+td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; }
+th { background:#1e293b; }
+code { color:#bfdbfe; }
+.badge { display:inline-block; padding:6px 10px; background:#1e293b; border-radius:999px; }
+</style>
+</head>
+<body>
+<main>
+<section>
+<h1>Project Phoenix Dagstart / Build Governance v7.6</h1>
+<p>Status: <strong>ACTIEF</strong></p>
+<p class="badge">Voortgang: 5.5%</p>
+<p>Laatste afgeronde versie: <strong>v7.5 CAD Drawing Export Engine</strong></p>
+<p>Actuele fase: Phoenix governance, roadmap en gecontroleerde taakplanning</p>
+</section>
+
+<section>
+<h2>Volgende veilige GO-stap</h2>
+<p><strong>S01-002</strong> — Automated cleanup helper</p>
+<p>Bouw of documenteer &#x27;Automated cleanup helper&#x27; als gecontroleerde Phoenix-bouwtaak binnen spoor S01.</p>
+<p>Risico: <strong>laag</strong></p>
+<p>Commit: <code>feat: add automated cleanup helper (S01-002)</code></p>
+</section>
+
+<section>
+<h2>Werkregels</h2>
+<ul><li>no_major_step_without_user_go: True</li><li>preferred_delivery: downloadbare PowerShell update/patch scripts</li><li>avoid_manual_python_paste: True</li><li>one_task_one_script_one_test_one_commit: True</li><li>always_test_before_commit: True</li><li>always_end_with_git_status: True</li><li>target_end_state: nothing to commit, working tree clean</li><li>backup_before_replace: True</li><li>rollback_or_restore_guidance_required: True</li></ul>
+</section>
+
+<section>
+<h2>Voortgang per spoor</h2>
+<table>
+<tr><th>Spoor</th><th>Naam</th><th>Afgerond/deels</th><th>Voortgang</th></tr>
+<tr><td>S01</td><td>Stabilisatie &amp; automatisering</td><td>5/20</td><td>25.0%</td></tr><tr><td>S02</td><td>Hoofdscherm / GUI / dashboards</td><td>0/20</td><td>0.0%</td></tr><tr><td>S03</td><td>Project Intake + aannames + projectcontext</td><td>2/20</td><td>10.0%</td></tr><tr><td>S04</td><td>Digital Twin + Knowledge Graph</td><td>0/20</td><td>0.0%</td></tr><tr><td>S05</td><td>Geotechniek + fundering + constructie</td><td>3/20</td><td>15.0%</td></tr><tr><td>S06</td><td>Infra: wegen, parkeren, riolering, waterbouw</td><td>0/20</td><td>0.0%</td></tr><tr><td>S07</td><td>Vergunningen: BOPA, Omgevingsvergunning, AERIUS</td><td>0/20</td><td>0.0%</td></tr><tr><td>S08</td><td>Kosten, planning, aanbesteding</td><td>0/20</td><td>0.0%</td></tr><tr><td>S09</td><td>Rapporten, tekeningen, CAD/BIM/export</td><td>1/20</td><td>5.0%</td></tr><tr><td>S10</td><td>Installatie, updates, documentatie, handleidingen</td><td>0/20</td><td>0.0%</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Eerste 25 taken</h2>
+<table>
+<tr><th>Taak</th><th>Spoor</th><th>Titel</th><th>Risico</th><th>Status</th><th>GO nodig</th></tr>
+<tr><td>S01-001</td><td>Stabilisatie &amp; automatisering</td><td>Repo health baseline</td><td>hoog</td><td>gedeeltelijk_of_afgerond</td><td>True</td></tr><tr><td>S01-002</td><td>Stabilisatie &amp; automatisering</td><td>Automated cleanup helper</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-003</td><td>Stabilisatie &amp; automatisering</td><td>Runner validation</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-004</td><td>Stabilisatie &amp; automatisering</td><td>Patch factory</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-005</td><td>Stabilisatie &amp; automatisering</td><td>Rollback registry</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-006</td><td>Stabilisatie &amp; automatisering</td><td>Version manifest</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-007</td><td>Stabilisatie &amp; automatisering</td><td>Build progress tracker</td><td>laag</td><td>gedeeltelijk_of_afgerond</td><td>False</td></tr><tr><td>S01-008</td><td>Stabilisatie &amp; automatisering</td><td>Error diagnostics</td><td>hoog</td><td>gedeeltelijk_of_afgerond</td><td>False</td></tr><tr><td>S01-009</td><td>Stabilisatie &amp; automatisering</td><td>Auto repair workflow</td><td>laag</td><td>gedeeltelijk_of_afgerond</td><td>False</td></tr><tr><td>S01-010</td><td>Stabilisatie &amp; automatisering</td><td>Release checklist</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-011</td><td>Stabilisatie &amp; automatisering</td><td>Branch policy</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-012</td><td>Stabilisatie &amp; automatisering</td><td>Output hygiene</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-013</td><td>Stabilisatie &amp; automatisering</td><td>Evidence connector</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-014</td><td>Stabilisatie &amp; automatisering</td><td>Git status gate</td><td>hoog</td><td>open</td><td>False</td></tr><tr><td>S01-015</td><td>Stabilisatie &amp; automatisering</td><td>Smoke test suite</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-016</td><td>Stabilisatie &amp; automatisering</td><td>Dependency scanner</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-017</td><td>Stabilisatie &amp; automatisering</td><td>Config validator</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-018</td><td>Stabilisatie &amp; automatisering</td><td>Task orchestrator</td><td>laag</td><td>gedeeltelijk_of_afgerond</td><td>False</td></tr><tr><td>S01-019</td><td>Stabilisatie &amp; automatisering</td><td>Safe delete guard</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S01-020</td><td>Stabilisatie &amp; automatisering</td><td>Governance dashboard</td><td>hoog</td><td>open</td><td>False</td></tr><tr><td>S02-001</td><td>Hoofdscherm / GUI / dashboards</td><td>Phoenix start dashboard</td><td>hoog</td><td>open</td><td>True</td></tr><tr><td>S02-002</td><td>Hoofdscherm / GUI / dashboards</td><td>Dagstart dashboard</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S02-003</td><td>Hoofdscherm / GUI / dashboards</td><td>Module tiles</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S02-004</td><td>Hoofdscherm / GUI / dashboards</td><td>Project selector</td><td>laag</td><td>open</td><td>False</td></tr><tr><td>S02-005</td><td>Hoofdscherm / GUI / dashboards</td><td>Output viewer</td><td>laag</td><td>open</td><td>False</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Bestanden</h2>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\phoenix_build_rules_v7_6.json</code></p>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\phoenix_task_roadmap_v7_6.json</code></p>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\phoenix_progress_overview_v7_6.json</code></p>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\phoenix_next_go_step_v7_6.json</code></p>
+</section>
+</main>
+</body>
+</html>

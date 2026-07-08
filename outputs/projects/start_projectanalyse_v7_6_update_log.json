@@ -1,0 +1,11 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix Build Governance Connector",
+    "engine_version":  "v7.6",
+    "generated_at":  "2026-07-08T23:58:47",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "engine_path":  "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_build_governance_engine.py",
+    "runner_ps1":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v7_6.ps1",
+    "runner_bat":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v7_6.bat",
+    "repository_policy":  "Alleen PROJECT-PHOENIX repository"
+}

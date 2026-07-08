@@ -1,0 +1,93 @@
+﻿{
+  "status": "ACTIEF",
+  "generated_at": "2026-07-08T23:58:48",
+  "total_tasks": 200,
+  "completed_or_partial": 11,
+  "open_tasks": 189,
+  "overall_progress_percent": 5.5,
+  "current_phase": "Phoenix governance, roadmap en gecontroleerde taakplanning",
+  "last_completed_version": "v7.5 CAD Drawing Export Engine",
+  "by_track": [
+    {
+      "track_id": "S01",
+      "track": "Stabilisatie & automatisering",
+      "total_tasks": 20,
+      "completed_or_partial": 5,
+      "open": 15,
+      "progress_percent": 25.0
+    },
+    {
+      "track_id": "S02",
+      "track": "Hoofdscherm / GUI / dashboards",
+      "total_tasks": 20,
+      "completed_or_partial": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S03",
+      "track": "Project Intake + aannames + projectcontext",
+      "total_tasks": 20,
+      "completed_or_partial": 2,
+      "open": 18,
+      "progress_percent": 10.0
+    },
+    {
+      "track_id": "S04",
+      "track": "Digital Twin + Knowledge Graph",
+      "total_tasks": 20,
+      "completed_or_partial": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S05",
+      "track": "Geotechniek + fundering + constructie",
+      "total_tasks": 20,
+      "completed_or_partial": 3,
+      "open": 17,
+      "progress_percent": 15.0
+    },
+    {
+      "track_id": "S06",
+      "track": "Infra: wegen, parkeren, riolering, waterbouw",
+      "total_tasks": 20,
+      "completed_or_partial": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S07",
+      "track": "Vergunningen: BOPA, Omgevingsvergunning, AERIUS",
+      "total_tasks": 20,
+      "completed_or_partial": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S08",
+      "track": "Kosten, planning, aanbesteding",
+      "total_tasks": 20,
+      "completed_or_partial": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S09",
+      "track": "Rapporten, tekeningen, CAD/BIM/export",
+      "total_tasks": 20,
+      "completed_or_partial": 1,
+      "open": 19,
+      "progress_percent": 5.0
+    },
+    {
+      "track_id": "S10",
+      "track": "Installatie, updates, documentatie, handleidingen",
+      "total_tasks": 20,
+      "completed_or_partial": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    }
+  ],
+  "git_policy": "Na elke taak: git status, commit, push, git status, working tree clean."
+}

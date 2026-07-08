@@ -1,0 +1,29 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Build Governance & Task Roadmap Engine",
+  "engine_version": "v7.6",
+  "started_at": "2026-07-08T23:58:48",
+  "finished_at": "2026-07-08T23:58:48",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "rules_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_build_rules_v7_6.json",
+  "roadmap_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_task_roadmap_v7_6.json",
+  "progress_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_progress_overview_v7_6.json",
+  "next_go_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_next_go_step_v7_6.json",
+  "dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\phoenix_daily_start_dashboard_v7_6.html",
+  "documentation_path": "C:\\PROJECT-PHOENIX\\DOCS\\project_phoenix\\governance\\phoenix_build_governance_v7_6.md",
+  "task_count": 200,
+  "track_count": 10,
+  "next_safe_step": "S01-002",
+  "next_safe_title": "Automated cleanup helper",
+  "workflow_policy": {
+    "no_major_step_without_user_go": true,
+    "preferred_delivery": "downloadbare PowerShell update/patch scripts",
+    "avoid_manual_python_paste": true,
+    "one_task_one_script_one_test_one_commit": true,
+    "always_test_before_commit": true,
+    "always_end_with_git_status": true,
+    "target_end_state": "nothing to commit, working tree clean",
+    "backup_before_replace": true,
+    "rollback_or_restore_guidance_required": true
+  }
+}
