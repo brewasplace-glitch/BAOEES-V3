@@ -2,18 +2,18 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Project Analyzer Launcher Bridge",
   "engine_version": "v6.3",
-  "started_at": "2026-07-07T22:38:34",
-  "finished_at": "2026-07-07T22:38:34",
-  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
-  "project_output_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects",
-  "project_start_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_start_analysis_dashboard.html",
-  "launcher_bridge_log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_analyzer_launcher_bridge_log.json",
-  "launcher_bridge_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_analyzer_launcher_bridge_dashboard.html",
-  "project_package_manifest_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_manifest.json",
-  "project_package_zip_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
-  "project_package_evidence_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_dashboard.html",
-  "project_report_export_dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_dashboard.html",
-  "bronvermelding_root": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project",
+  "started_at": "2026-07-08T23:03:02",
+  "finished_at": "2026-07-08T23:03:02",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "project_output_root": "C:\\PROJECT-PHOENIX\\outputs\\projects",
+  "project_start_dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_start_analysis_dashboard.html",
+  "launcher_bridge_log_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_analyzer_launcher_bridge_log.json",
+  "launcher_bridge_dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_analyzer_launcher_bridge_dashboard.html",
+  "project_package_manifest_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_package_manifest.json",
+  "project_package_zip_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+  "project_package_evidence_dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_package_evidence_dashboard.html",
+  "project_report_export_dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_report_export_dashboard.html",
+  "bronvermelding_root": "C:\\PROJECT-PHOENIX\\outputs\\projects\\Bronvermelding_van_dit_project",
   "package_manifest_status": "GELEZEN",
   "evidence_log_status": "GELEZEN",
   "export_log_status": "GELEZEN",
@@ -24,111 +24,111 @@
       "name": "Project Start Analyse Dashboard",
       "category": "start_dashboard",
       "description": "Centraal START PROJECTANALYSE dashboard.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_start_analysis_dashboard.html",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_start_analysis_dashboard.html",
       "relative_path": "outputs\\projects\\project_start_analysis_dashboard.html",
       "exists": true,
-      "size_bytes": 9034,
-      "modified_at": "2026-07-07T22:38:32"
+      "size_bytes": 9022,
+      "modified_at": "2026-07-08T23:03:00"
     },
     {
       "name": "Project Package Manifest",
       "category": "project_package",
       "description": "Manifest van alle projectpakketbestanden.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_manifest.json",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_package_manifest.json",
       "relative_path": "outputs\\projects\\project_package_manifest.json",
       "exists": true,
-      "size_bytes": 14742,
-      "modified_at": "2026-07-07T22:38:34"
+      "size_bytes": 14334,
+      "modified_at": "2026-07-08T23:03:02"
     },
     {
       "name": "Project Package ZIP",
       "category": "project_package",
       "description": "Downloadbaar totaalpakket van projectanalyse en rapportage.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
       "relative_path": "outputs\\projects\\PROJECT_PHOENIX_PROJECT_ANALYZER_PACKAGE.zip",
       "exists": true,
-      "size_bytes": 94671,
-      "modified_at": "2026-07-07T22:38:34"
+      "size_bytes": 94580,
+      "modified_at": "2026-07-08T23:03:02"
     },
     {
       "name": "Evidence Dashboard",
       "category": "evidence",
       "description": "Dashboard met evidence-items en pakketstatus.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_dashboard.html",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_package_evidence_dashboard.html",
       "relative_path": "outputs\\projects\\project_package_evidence_dashboard.html",
       "exists": true,
-      "size_bytes": 3140,
-      "modified_at": "2026-07-07T22:38:34"
+      "size_bytes": 3128,
+      "modified_at": "2026-07-08T23:03:02"
     },
     {
       "name": "Evidence Log",
       "category": "evidence",
       "description": "STEE evidence-log van projectbestanden.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_package_evidence_log.json",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_package_evidence_log.json",
       "relative_path": "outputs\\projects\\project_package_evidence_log.json",
       "exists": true,
-      "size_bytes": 15394,
-      "modified_at": "2026-07-07T22:38:34"
+      "size_bytes": 14926,
+      "modified_at": "2026-07-08T23:03:02"
     },
     {
       "name": "Rapportage Export Dashboard",
       "category": "rapportage_export",
       "description": "Dashboard van DOCX/PDF-rapportage-export.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_dashboard.html",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_report_export_dashboard.html",
       "relative_path": "outputs\\projects\\project_report_export_dashboard.html",
       "exists": true,
-      "size_bytes": 1364,
-      "modified_at": "2026-07-07T22:38:33"
+      "size_bytes": 1316,
+      "modified_at": "2026-07-08T23:03:01"
     },
     {
       "name": "Rapportage Export Log",
       "category": "rapportage_export",
       "description": "Logbestand van DOCX/PDF-export.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_export_log.json",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_report_export_log.json",
       "relative_path": "outputs\\projects\\project_report_export_log.json",
       "exists": true,
-      "size_bytes": 1251,
-      "modified_at": "2026-07-07T22:38:33"
+      "size_bytes": 1167,
+      "modified_at": "2026-07-08T23:03:01"
     },
     {
       "name": "Projectrapport DOCX",
       "category": "rapportage_export",
       "description": "Gegenereerd Word-rapport.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_report.docx",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_report_bib_report.docx",
       "relative_path": "outputs\\projects\\project_report_bib_report.docx",
       "exists": true,
       "size_bytes": 3668,
-      "modified_at": "2026-07-07T22:38:33"
+      "modified_at": "2026-07-08T23:03:01"
     },
     {
       "name": "Projectrapport PDF",
       "category": "rapportage_export",
       "description": "Gegenereerd PDF-rapport.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_report_bib_report.pdf",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_report_bib_report.pdf",
       "relative_path": "outputs\\projects\\project_report_bib_report.pdf",
       "exists": true,
       "size_bytes": 1955,
-      "modified_at": "2026-07-07T22:38:33"
+      "modified_at": "2026-07-08T23:03:01"
     },
     {
       "name": "Bronvermelding Log",
       "category": "bronvermelding",
       "description": "Bronvermelding van dit project.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
       "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\bronvermelding_log.json",
       "exists": true,
-      "size_bytes": 4623,
-      "modified_at": "2026-07-07T22:38:34"
+      "size_bytes": 4611,
+      "modified_at": "2026-07-08T23:03:02"
     },
     {
       "name": "Bronvermelding README",
       "category": "bronvermelding",
       "description": "Leesbaar overzicht van bronnen en projectbestanden.",
-      "path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
       "relative_path": "outputs\\projects\\Bronvermelding_van_dit_project\\README_Bronvermelding_van_dit_project.txt",
       "exists": true,
       "size_bytes": 2479,
-      "modified_at": "2026-07-07T22:38:34"
+      "modified_at": "2026-07-08T23:03:02"
     }
   ],
   "next_steps": [

@@ -2,19 +2,19 @@
   "status": "OPGESLAGEN",
   "engine": "Project Phoenix Module Registry & Engine Dashboard",
   "engine_version": "v6.9",
-  "generated_at": "2026-07-07T22:38:30",
-  "project_root": "C:\\BREWSTER-ENGINEERING-WIZARD",
-  "registry_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_v6_9.json",
-  "log_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_log_v6_9.json",
-  "dashboard_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\module_registry_dashboard_v6_9.html",
+  "generated_at": "2026-07-08T23:02:57",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "registry_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\module_registry_v6_9.json",
+  "log_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\module_registry_log_v6_9.json",
+  "dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\module_registry_dashboard_v6_9.html",
   "summary": {
     "status": "CORE_COMPLEET",
     "total_items": 27,
-    "present_count": 23,
+    "present_count": 24,
     "required_count": 13,
     "required_present_count": 13,
     "required_missing_count": 0,
-    "optional_missing_count": 4,
+    "optional_missing_count": 3,
     "core_readiness_percent": 100
   },
   "registry_items": [
@@ -312,13 +312,18 @@
       "category": "to_build",
       "required": false,
       "description": "Nog te bouwen: tekeningen/CAD",
-      "exists": false,
-      "status": "NOG_TE_BOUWEN",
-      "relative_path": "baoees/project_analyzer/cad_drawing_export_engine.py",
-      "classes": [],
-      "functions": [],
-      "size_bytes": 0,
-      "modified_at": ""
+      "exists": true,
+      "status": "AANWEZIG",
+      "relative_path": "baoees\\project_analyzer\\cad_drawing_export_engine.py",
+      "classes": [
+        "CADDrawingExportEngine",
+        "DXFBuilder"
+      ],
+      "functions": [
+        "main"
+      ],
+      "size_bytes": 28302,
+      "modified_at": "2026-07-08T23:02:42"
     },
     {
       "file": "permit_engine.py",

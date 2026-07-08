@@ -2,7 +2,7 @@
   "status": "SEED",
   "engine": "Project Phoenix Project Intake Engine",
   "engine_version": "v7.0",
-  "generated_at": "2026-07-07T22:38:19",
+  "generated_at": "2026-07-08T23:02:44",
   "project": {
     "project_name": "Project Phoenix intake test",
     "location": "Locatie nog te bepalen",
@@ -35,6 +35,6 @@
     }
   ],
   "assumptions": [],
-  "source_intake_path": "C:\\BREWSTER-ENGINEERING-WIZARD\\outputs\\projects\\project_intake_v7_0.json",
+  "source_intake_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_intake_v7_0.json",
   "next_engine": "Project Context Builder v7.1"
 }

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Project Phoenix CAD Drawing Export v7.5</title>
+<style>
+body { margin:0; font-family:Arial,sans-serif; background:#0f172a; color:#e5e7eb; }
+main { max-width:1240px; margin:0 auto; padding:32px; }
+section { background:#111827; border:1px solid #334155; border-radius:14px; padding:20px; margin-bottom:18px; }
+h1,h2 { color:#f8fafc; }
+table { width:100%; border-collapse:collapse; }
+td,th { border:1px solid #334155; padding:10px; text-align:left; vertical-align:top; }
+th { background:#1e293b; }
+code { color:#bfdbfe; }
+</style>
+</head>
+<body>
+<main>
+<section>
+<h1>Project Phoenix CAD Drawing Export Engine v7.5</h1>
+<p>Status: <strong>OPGESLAGEN</strong></p>
+<p>Concept-DXF tekeningen zijn automatisch gegenereerd uit projectcontext, fundering en constructie.</p>
+</section>
+
+<section>
+<h2>Project</h2>
+<p><strong>Naam:</strong> Project Phoenix intake test</p>
+<p><strong>Locatie:</strong> Locatie nog te bepalen</p>
+<p><strong>Type:</strong> algemeen bouwkundig / civiel project</p>
+</section>
+
+<section>
+<h2>Geometriebasis</h2>
+<p><strong>Breedte:</strong> 10.0 m</p>
+<p><strong>Diepte:</strong> 10.0 m</p>
+<p><strong>Bron:</strong> automatische standaardgrid totdat CAD/BIM-geometrie beschikbaar is</p>
+<p><strong>Werkelijke geometrie nodig:</strong> True</p>
+</section>
+
+<section>
+<h2>Gegenereerde DXF-bestanden</h2>
+<table>
+<tr><th>Blad</th><th>Naam</th><th>Formaat</th><th>Pad</th><th>Status</th></tr>
+<tr><td>01</td><td>Situatie concept</td><td>DXF</td><td><code>C:\PROJECT-PHOENIX\outputs\projects\drawings\v7_5\01_situatie_concept_v7_5.dxf</code></td><td>created</td></tr><tr><td>02</td><td>Fundering concept</td><td>DXF</td><td><code>C:\PROJECT-PHOENIX\outputs\projects\drawings\v7_5\02_fundering_concept_v7_5.dxf</code></td><td>created</td></tr><tr><td>03</td><td>Constructie concept</td><td>DXF</td><td><code>C:\PROJECT-PHOENIX\outputs\projects\drawings\v7_5\03_constructie_concept_v7_5.dxf</code></td><td>created</td></tr><tr><td>04</td><td>Doorsnede concept</td><td>DXF</td><td><code>C:\PROJECT-PHOENIX\outputs\projects\drawings\v7_5\04_doorsnede_concept_v7_5.dxf</code></td><td>created</td></tr>
+</table>
+</section>
+
+<section>
+<h2>CAD-lagen</h2>
+<table>
+<tr><th>Laag</th><th>Omschrijving</th><th>Status</th></tr>
+<tr><td>A-ASSEN</td><td>Constructieassen</td><td>created</td></tr><tr><td>A-MAATVOERING</td><td>Conceptmaatvoering</td><td>created</td></tr><tr><td>S-FUNDERING-STROOK</td><td>Strokenfundering</td><td>created</td></tr><tr><td>S-FUNDERING-BALK</td><td>Funderingsbalken</td><td>created</td></tr><tr><td>S-KOLOMMEN</td><td>Kolommen</td><td>created</td></tr><tr><td>S-BALKEN</td><td>Balken</td><td>created</td></tr><tr><td>S-DAK</td><td>Dakconstructie/spanten</td><td>created</td></tr><tr><td>T-TEKST</td><td>Teksten en labels</td><td>created</td></tr><tr><td>P-PROJECTKADER</td><td>Bladkader / projectinfo</td><td>created</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Risico's</h2>
+<table>
+<tr><th>Risico</th><th>Ernst</th><th>Impact</th><th>Herstel</th></tr>
+<tr><td>Conceptgeometrie gebruikt</td><td>hoog</td><td>DXF-tekeningen zijn nog niet definitief maatvast.</td><td>Lees echte SKP/DWG/DXF/BIM-geometrie in.</td></tr><tr><td>Locatie ontbreekt</td><td>middel</td><td>Situatietekening kan nog niet kadastraal/kaartvast worden gemaakt.</td><td>Vul projectlocatie en kaartuitsnede in.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Bestanden</h2>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\project_cad_export_plan_v7_5.json</code></p>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\project_cad_export_summary_v7_5.md</code></p>
+<p><code>C:\PROJECT-PHOENIX\outputs\projects\drawings\v7_5</code></p>
+</section>
+</main>
+</body>
+</html>

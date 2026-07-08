@@ -1,0 +1,242 @@
+﻿{
+  "status": "VOORLOPIG_CONCEPT",
+  "engine": "Project Phoenix CAD Drawing Export Engine",
+  "engine_version": "v7.5",
+  "generated_at": "2026-07-08T23:02:58",
+  "project": {
+    "project_name": "Project Phoenix intake test",
+    "location": "Locatie nog te bepalen",
+    "project_type": "algemeen bouwkundig / civiel project",
+    "description": "Automatische testintake voor Project Phoenix v7.0."
+  },
+  "geometry_basis": {
+    "status": "CONCEPT",
+    "source": "automatische standaardgrid totdat CAD/BIM-geometrie beschikbaar is",
+    "width_m": 10.0,
+    "depth_m": 10.0,
+    "axis_spacing_x_m": 5.0,
+    "axis_spacing_y_m": 5.0,
+    "x_bays": 2,
+    "y_bays": 2,
+    "strip_width_m": 1.5,
+    "strip_height_m": 0.4,
+    "beam_width_m": 0.5,
+    "beam_height_m": 0.6,
+    "foundation_level": "P = -0,50 m voorlopig",
+    "needs_real_geometry": true
+  },
+  "cad_layers": [
+    {
+      "name": "A-ASSEN",
+      "description": "Constructieassen",
+      "status": "created"
+    },
+    {
+      "name": "A-MAATVOERING",
+      "description": "Conceptmaatvoering",
+      "status": "created"
+    },
+    {
+      "name": "S-FUNDERING-STROOK",
+      "description": "Strokenfundering",
+      "status": "created"
+    },
+    {
+      "name": "S-FUNDERING-BALK",
+      "description": "Funderingsbalken",
+      "status": "created"
+    },
+    {
+      "name": "S-KOLOMMEN",
+      "description": "Kolommen",
+      "status": "created"
+    },
+    {
+      "name": "S-BALKEN",
+      "description": "Balken",
+      "status": "created"
+    },
+    {
+      "name": "S-DAK",
+      "description": "Dakconstructie/spanten",
+      "status": "created"
+    },
+    {
+      "name": "T-TEKST",
+      "description": "Teksten en labels",
+      "status": "created"
+    },
+    {
+      "name": "P-PROJECTKADER",
+      "description": "Bladkader / projectinfo",
+      "status": "created"
+    }
+  ],
+  "sheets": [
+    {
+      "sheet": "01",
+      "title": "Situatie concept",
+      "scale": "conceptueel / niet op definitieve schaal",
+      "content": [
+        "projectkader",
+        "gebouwfootprint",
+        "noordpijl",
+        "projecttekst"
+      ]
+    },
+    {
+      "sheet": "02",
+      "title": "Funderingsconcept",
+      "scale": "1:100 concept",
+      "content": [
+        "assen",
+        "strokenfundering",
+        "funderingsbalk",
+        "maatvoering"
+      ]
+    },
+    {
+      "sheet": "03",
+      "title": "Constructieconcept",
+      "scale": "1:100 concept",
+      "content": [
+        "assen",
+        "kolommen",
+        "balken",
+        "dragende lijnen",
+        "dakconstructie"
+      ]
+    },
+    {
+      "sheet": "04",
+      "title": "Doorsnede concept",
+      "scale": "1:50 concept",
+      "content": [
+        "maaiveld",
+        "grondwater P=-0,50",
+        "fundering",
+        "wand/kolom",
+        "dak"
+      ]
+    }
+  ],
+  "drawing_files": [
+    {
+      "sheet": "01",
+      "name": "Situatie concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\01_situatie_concept_v7_5.dxf",
+      "status": "created"
+    },
+    {
+      "sheet": "02",
+      "name": "Fundering concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\02_fundering_concept_v7_5.dxf",
+      "status": "created"
+    },
+    {
+      "sheet": "03",
+      "name": "Constructie concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\03_constructie_concept_v7_5.dxf",
+      "status": "created"
+    },
+    {
+      "sheet": "04",
+      "name": "Doorsnede concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\04_doorsnede_concept_v7_5.dxf",
+      "status": "created"
+    }
+  ],
+  "export_formats": {
+    "created_now": [
+      "DXF"
+    ],
+    "planned_next": [
+      "DWG",
+      "SKP",
+      "IFC",
+      "PDF"
+    ],
+    "note": "DXF wordt nu als open tekstformaat gegenereerd; DWG/SKP/IFC/PDF volgen via latere koppelingen."
+  },
+  "source_files": {
+    "project_context": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_context_v7_1.json",
+    "geotechniek": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_geotechniek_v7_2.json",
+    "foundation": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_foundation_design_v7_3.json",
+    "structural": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_structural_model_v7_4.json"
+  },
+  "risks": [
+    {
+      "risk": "Conceptgeometrie gebruikt",
+      "severity": "hoog",
+      "impact": "DXF-tekeningen zijn nog niet definitief maatvast.",
+      "repair": "Lees echte SKP/DWG/DXF/BIM-geometrie in."
+    },
+    {
+      "risk": "Locatie ontbreekt",
+      "severity": "middel",
+      "impact": "Situatietekening kan nog niet kadastraal/kaartvast worden gemaakt.",
+      "repair": "Vul projectlocatie en kaartuitsnede in."
+    }
+  ],
+  "assumptions": [
+    {
+      "field": "geometry",
+      "value": "automatische standaardgrid totdat CAD/BIM-geometrie beschikbaar is",
+      "confidence": "basis",
+      "source": "Project Phoenix CAD Drawing Export Engine",
+      "reason": "CAD/BIM-geometrie nog niet definitief beschikbaar."
+    },
+    {
+      "field": "export_format",
+      "value": "DXF",
+      "confidence": "hoog",
+      "source": "Project Phoenix CAD Drawing Export Engine",
+      "reason": "DXF is open tekstformaat en kan zonder commerciële CAD-library worden gegenereerd."
+    }
+  ],
+  "outputs_for_next_engine": {
+    "next_engine": "Report Drawing Integration Engine v7.6",
+    "drawing_folder": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5",
+    "drawing_files": [
+      {
+        "sheet": "01",
+        "name": "Situatie concept",
+        "format": "DXF",
+        "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\01_situatie_concept_v7_5.dxf",
+        "status": "created"
+      },
+      {
+        "sheet": "02",
+        "name": "Fundering concept",
+        "format": "DXF",
+        "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\02_fundering_concept_v7_5.dxf",
+        "status": "created"
+      },
+      {
+        "sheet": "03",
+        "name": "Constructie concept",
+        "format": "DXF",
+        "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\03_constructie_concept_v7_5.dxf",
+        "status": "created"
+      },
+      {
+        "sheet": "04",
+        "name": "Doorsnede concept",
+        "format": "DXF",
+        "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\04_doorsnede_concept_v7_5.dxf",
+        "status": "created"
+      }
+    ],
+    "report_sections_to_update": [
+      "Situatie",
+      "Funderingsconcept",
+      "Constructief concept",
+      "Doorsnede concept"
+    ]
+  },
+  "not_for_execution_note": "Deze tekeningen zijn concept-DXF's. Definitieve bestek-/uitvoeringstekeningen vereisen echte maatvoering, CAD/BIM-geometrie, berekening en projectcontrole."
+}

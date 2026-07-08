@@ -1,0 +1,60 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix CAD Drawing Export Engine",
+  "engine_version": "v7.5",
+  "started_at": "2026-07-08T23:02:58",
+  "finished_at": "2026-07-08T23:02:58",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "project_output_root": "C:\\PROJECT-PHOENIX\\outputs\\projects",
+  "drawings_output_root": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5",
+  "source_status": {
+    "project_context": "GELEZEN",
+    "geotechniek": "GELEZEN",
+    "foundation": "GELEZEN",
+    "structural": "GELEZEN"
+  },
+  "export_plan_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_cad_export_plan_v7_5.json",
+  "export_summary_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_cad_export_summary_v7_5.md",
+  "export_log_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_cad_export_log_v7_5.json",
+  "export_dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\project_cad_export_dashboard_v7_5.html",
+  "drawing_files": [
+    {
+      "sheet": "01",
+      "name": "Situatie concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\01_situatie_concept_v7_5.dxf",
+      "status": "created"
+    },
+    {
+      "sheet": "02",
+      "name": "Fundering concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\02_fundering_concept_v7_5.dxf",
+      "status": "created"
+    },
+    {
+      "sheet": "03",
+      "name": "Constructie concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\03_constructie_concept_v7_5.dxf",
+      "status": "created"
+    },
+    {
+      "sheet": "04",
+      "name": "Doorsnede concept",
+      "format": "DXF",
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\drawings\\v7_5\\04_doorsnede_concept_v7_5.dxf",
+      "status": "created"
+    }
+  ],
+  "project_name": "Project Phoenix intake test",
+  "drawing_count": 4,
+  "layer_count": 9,
+  "risk_count": 2,
+  "next_steps": [
+    "Controleer project_cad_export_dashboard_v7_5.html.",
+    "Controleer de DXF-bestanden in outputs/projects/drawings/v7_5.",
+    "Gebruik deze CAD-output als basis voor v7.6 Report Drawing Integration Engine.",
+    "Vervang conceptgeometrie later door echte SKP/DWG/DXF/BIM-geometrie."
+  ]
+}
