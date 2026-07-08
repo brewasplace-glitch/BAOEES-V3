@@ -1,0 +1,521 @@
+{
+  "engine": "Phoenix Geometry Engine",
+  "version": "1.0.0",
+  "ran_at": "2026-07-08T02:05:46",
+  "geometry_model": {
+    "geometry_model_version": "1.0.0",
+    "spaces": [
+      {
+        "type": "space_geometry",
+        "space_id": "space_0001",
+        "name": "Entree",
+        "function": "verkeersruimte",
+        "floor": "begane grond",
+        "geometry": {
+          "type": "rectangle2d",
+          "name": "Entree",
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "width": 3.0,
+          "depth": 3.5,
+          "area": 10.5,
+          "perimeter": 13.0,
+          "layer": "begane grond_spaces",
+          "corners": [
+            {
+              "x": 0.0,
+              "y": 0.0
+            },
+            {
+              "x": 3.0,
+              "y": 0.0
+            },
+            {
+              "x": 3.0,
+              "y": 3.5
+            },
+            {
+              "x": 0.0,
+              "y": 3.5
+            }
+          ]
+        }
+      },
+      {
+        "type": "space_geometry",
+        "space_id": "space_0002",
+        "name": "Gebedsruimte heren",
+        "function": "bijeenkomstfunctie",
+        "floor": "begane grond",
+        "geometry": {
+          "type": "rectangle2d",
+          "name": "Gebedsruimte heren",
+          "origin": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "width": 10.0,
+          "depth": 12.0,
+          "area": 120.0,
+          "perimeter": 44.0,
+          "layer": "begane grond_spaces",
+          "corners": [
+            {
+              "x": 3.0,
+              "y": 0.0
+            },
+            {
+              "x": 13.0,
+              "y": 0.0
+            },
+            {
+              "x": 13.0,
+              "y": 12.0
+            },
+            {
+              "x": 3.0,
+              "y": 12.0
+            }
+          ]
+        }
+      },
+      {
+        "type": "space_geometry",
+        "space_id": "space_0003",
+        "name": "Wasruimte",
+        "function": "sanitair",
+        "floor": "begane grond",
+        "geometry": {
+          "type": "rectangle2d",
+          "name": "Wasruimte",
+          "origin": {
+            "x": 13.0,
+            "y": 0.0
+          },
+          "width": 3.0,
+          "depth": 4.0,
+          "area": 12.0,
+          "perimeter": 14.0,
+          "layer": "begane grond_spaces",
+          "corners": [
+            {
+              "x": 13.0,
+              "y": 0.0
+            },
+            {
+              "x": 16.0,
+              "y": 0.0
+            },
+            {
+              "x": 16.0,
+              "y": 4.0
+            },
+            {
+              "x": 13.0,
+              "y": 4.0
+            }
+          ]
+        }
+      },
+      {
+        "type": "space_geometry",
+        "space_id": "space_0004",
+        "name": "Gebedsruimte dames",
+        "function": "bijeenkomstfunctie",
+        "floor": "verdieping",
+        "geometry": {
+          "type": "rectangle2d",
+          "name": "Gebedsruimte dames",
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "width": 8.0,
+          "depth": 10.0,
+          "area": 80.0,
+          "perimeter": 36.0,
+          "layer": "verdieping_spaces",
+          "corners": [
+            {
+              "x": 0.0,
+              "y": 0.0
+            },
+            {
+              "x": 8.0,
+              "y": 0.0
+            },
+            {
+              "x": 8.0,
+              "y": 10.0
+            },
+            {
+              "x": 0.0,
+              "y": 10.0
+            }
+          ]
+        }
+      },
+      {
+        "type": "space_geometry",
+        "space_id": "space_0005",
+        "name": "Leslokaal",
+        "function": "onderwijs",
+        "floor": "verdieping",
+        "geometry": {
+          "type": "rectangle2d",
+          "name": "Leslokaal",
+          "origin": {
+            "x": 8.0,
+            "y": 0.0
+          },
+          "width": 5.0,
+          "depth": 6.0,
+          "area": 30.0,
+          "perimeter": 22.0,
+          "layer": "verdieping_spaces",
+          "corners": [
+            {
+              "x": 8.0,
+              "y": 0.0
+            },
+            {
+              "x": 13.0,
+              "y": 0.0
+            },
+            {
+              "x": 13.0,
+              "y": 6.0
+            },
+            {
+              "x": 8.0,
+              "y": 6.0
+            }
+          ]
+        }
+      }
+    ],
+    "walls": [
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0001",
+        "floor": "begane grond",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 3.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0002",
+        "floor": "begane grond",
+        "start": {
+          "x": 3.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 3.0,
+          "y": 3.5
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0003",
+        "floor": "begane grond",
+        "start": {
+          "x": 3.0,
+          "y": 3.5
+        },
+        "end": {
+          "x": 0.0,
+          "y": 3.5
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0004",
+        "floor": "begane grond",
+        "start": {
+          "x": 0.0,
+          "y": 3.5
+        },
+        "end": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0005",
+        "floor": "begane grond",
+        "start": {
+          "x": 3.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 13.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0006",
+        "floor": "begane grond",
+        "start": {
+          "x": 13.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 13.0,
+          "y": 12.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0007",
+        "floor": "begane grond",
+        "start": {
+          "x": 13.0,
+          "y": 12.0
+        },
+        "end": {
+          "x": 3.0,
+          "y": 12.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0008",
+        "floor": "begane grond",
+        "start": {
+          "x": 3.0,
+          "y": 12.0
+        },
+        "end": {
+          "x": 3.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0009",
+        "floor": "begane grond",
+        "start": {
+          "x": 13.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 16.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0010",
+        "floor": "begane grond",
+        "start": {
+          "x": 16.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 16.0,
+          "y": 4.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0011",
+        "floor": "begane grond",
+        "start": {
+          "x": 16.0,
+          "y": 4.0
+        },
+        "end": {
+          "x": 13.0,
+          "y": 4.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0012",
+        "floor": "begane grond",
+        "start": {
+          "x": 13.0,
+          "y": 4.0
+        },
+        "end": {
+          "x": 13.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0013",
+        "floor": "verdieping",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 8.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0014",
+        "floor": "verdieping",
+        "start": {
+          "x": 8.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 8.0,
+          "y": 10.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0015",
+        "floor": "verdieping",
+        "start": {
+          "x": 8.0,
+          "y": 10.0
+        },
+        "end": {
+          "x": 0.0,
+          "y": 10.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0016",
+        "floor": "verdieping",
+        "start": {
+          "x": 0.0,
+          "y": 10.0
+        },
+        "end": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0017",
+        "floor": "verdieping",
+        "start": {
+          "x": 8.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 13.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0018",
+        "floor": "verdieping",
+        "start": {
+          "x": 13.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 13.0,
+          "y": 6.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0019",
+        "floor": "verdieping",
+        "start": {
+          "x": 13.0,
+          "y": 6.0
+        },
+        "end": {
+          "x": 8.0,
+          "y": 6.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      },
+      {
+        "type": "wall_geometry",
+        "wall_id": "wall_0020",
+        "floor": "verdieping",
+        "start": {
+          "x": 8.0,
+          "y": 6.0
+        },
+        "end": {
+          "x": 8.0,
+          "y": 0.0
+        },
+        "thickness_m": 0.2,
+        "height_m": 3.2
+      }
+    ],
+    "counts": {
+      "spaces": 5,
+      "walls": 20
+    }
+  },
+  "exports": {
+    "dxf": {
+      "exporter": "PhoenixDxfGeometryExporter",
+      "version": "1.0.0",
+      "status": "ok",
+      "path": "outputs\\geometry_engine_v1_0\\dxf\\pge_geometry_model_v1_0.dxf"
+    },
+    "digital_twin": {
+      "exporter": "PhoenixGeometryDigitalTwinExporter",
+      "version": "1.0.0",
+      "status": "ok",
+      "path": "outputs\\geometry_engine_v1_0\\digital_twin\\pge_geometry_digital_twin_v1_0.json"
+    }
+  },
+  "status": "ok"
+}
