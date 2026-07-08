@@ -1,0 +1,16 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "actions": [
+    {
+      "action_id": "RRA-001",
+      "priority": "laag",
+      "type": "no_repair_needed",
+      "title": "Geen runnerreparatie nodig",
+      "problem": "v8.1 heeft geen herstelpunten gevonden.",
+      "proposed_repair": "Geen actie nodig. Ga door naar de volgende roadmaptaak.",
+      "target_files": [],
+      "auto_fix_allowed_after_go": false,
+      "requires_go": false
+    }
+  ]
+}

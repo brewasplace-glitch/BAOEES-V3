@@ -1,0 +1,18 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Runner Repair Advisor Engine",
+  "engine_version": "v8.2",
+  "started_at": "2026-07-09T01:56:00",
+  "finished_at": "2026-07-09T01:56:00",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "validation_report_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\runner_validation_report_v8_1.json",
+  "repair_plan_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\runner_repair_advisor_plan_v8_2.json",
+  "repair_actions_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\runner_repair_actions_v8_2.json",
+  "dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\runner_repair_advisor_dashboard_v8_2.html",
+  "documentation_path": "C:\\PROJECT-PHOENIX\\DOCS\\project_phoenix\\s01\\runner_repair_advisor_v8_2.md",
+  "total_actions": 1,
+  "high_priority_actions": 0,
+  "medium_priority_actions": 0,
+  "low_priority_actions": 1,
+  "go_required_for_repair": true
+}

@@ -1,0 +1,11 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix Runner Repair Advisor Connector",
+    "engine_version":  "v8.2",
+    "generated_at":  "2026-07-09T01:55:59",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "engine_path":  "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\runner_repair_advisor.py",
+    "runner_ps1":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v8_2.ps1",
+    "runner_bat":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v8_2.bat",
+    "repository_policy":  "Alleen PROJECT-PHOENIX repository"
+}
