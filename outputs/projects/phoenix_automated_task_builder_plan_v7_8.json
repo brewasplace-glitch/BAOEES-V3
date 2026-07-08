@@ -1,0 +1,61 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Automated Task Builder",
+  "engine_version": "v7.8",
+  "generated_at": "2026-07-09T00:38:28",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "selected_task": {
+    "task_id": "S01-002",
+    "track": "Stabilisatie & automatisering",
+    "track_id": "S01",
+    "priority": 102,
+    "title": "Automated cleanup helper",
+    "objective": "Bouw of documenteer 'Automated cleanup helper' als gecontroleerde Phoenix-bouwtaak binnen spoor S01.",
+    "files_to_create_or_modify": [
+      "apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+      "DOCS/project_phoenix/s01/automated_cleanup_helper.md",
+      "outputs/projects/automated_cleanup_helper_log.json",
+      "outputs/projects/automated_cleanup_helper_dashboard.html"
+    ],
+    "update_script": "PROJECT_PHOENIX_s01_002_automated_cleanup_helper_update.ps1",
+    "test_command": "python -m py_compile apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+    "commit_message": "feat: add automated cleanup helper (S01-002)",
+    "risk_level": "laag",
+    "dependencies": [
+      "S01-001"
+    ],
+    "requires_go": false,
+    "expected_result": "Update script draait lokaal, dashboard/log worden aangemaakt, git status wordt getoond.",
+    "status": "open"
+  },
+  "scaffold_results": [
+    {
+      "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\automated_cleanup_helper.py",
+      "action": "created",
+      "reason": "Scaffoldbestand aangemaakt."
+    },
+    {
+      "path": "C:\\PROJECT-PHOENIX\\DOCS\\project_phoenix\\s01\\automated_cleanup_helper.md",
+      "action": "created",
+      "reason": "Scaffoldbestand aangemaakt."
+    },
+    {
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\automated_cleanup_helper_log.json",
+      "action": "created",
+      "reason": "Scaffoldbestand aangemaakt."
+    },
+    {
+      "path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\automated_cleanup_helper_dashboard.html",
+      "action": "created",
+      "reason": "Scaffoldbestand aangemaakt."
+    }
+  ],
+  "test_command": "python -m py_compile apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+  "commit_message": "feat: add automated cleanup helper (S01-002)",
+  "next_steps": [
+    "Controleer aangemaakte scaffoldbestanden.",
+    "Run testcommando.",
+    "Commit en push na review.",
+    "Ga daarna door met echte inhoudelijke taaklogica na GO."
+  ]
+}
