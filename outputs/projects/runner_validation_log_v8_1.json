@@ -1,0 +1,17 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Runner Validation Engine",
+  "engine_version": "v8.1",
+  "started_at": "2026-07-09T01:38:39",
+  "finished_at": "2026-07-09T01:38:39",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "report_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\runner_validation_report_v8_1.json",
+  "dashboard_path": "C:\\PROJECT-PHOENIX\\outputs\\projects\\runner_validation_dashboard_v8_1.html",
+  "documentation_path": "C:\\PROJECT-PHOENIX\\DOCS\\project_phoenix\\s01\\runner_validation_v8_1.md",
+  "total_runners": 12,
+  "ok_runners": 12,
+  "warning_runners": 0,
+  "failed_runners": 0,
+  "missing_python_refs": 0,
+  "pair_warnings": 0
+}

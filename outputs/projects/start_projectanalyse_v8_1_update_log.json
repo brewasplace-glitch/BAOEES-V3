@@ -1,0 +1,11 @@
+﻿{
+    "status":  "OPGESLAGEN",
+    "engine":  "Project Phoenix Runner Validation Connector",
+    "engine_version":  "v8.1",
+    "generated_at":  "2026-07-09T01:38:38",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "engine_path":  "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\runner_validation.py",
+    "runner_ps1":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v8_1.ps1",
+    "runner_bat":  "C:\\PROJECT-PHOENIX\\scripts\\START_PROJECTANALYSE_v8_1.bat",
+    "repository_policy":  "Alleen PROJECT-PHOENIX repository"
+}

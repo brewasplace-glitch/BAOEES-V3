@@ -1,0 +1,283 @@
+﻿{
+  "status": "OPGESLAGEN",
+  "engine": "Project Phoenix Runner Validation Engine",
+  "engine_version": "v8.1",
+  "generated_at": "2026-07-09T01:38:39",
+  "project_root": "C:\\PROJECT-PHOENIX",
+  "scripts_dir": "C:\\PROJECT-PHOENIX\\scripts",
+  "runner_counts": {
+    "ps1": 6,
+    "bat": 6,
+    "total": 12
+  },
+  "summary": {
+    "overall_status": "OK",
+    "total_runners": 12,
+    "ok_runners": 12,
+    "warning_runners": 0,
+    "failed_runners": 0,
+    "missing_python_refs": 0,
+    "pair_warnings": 0
+  },
+  "runner_checks": [
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_6.ps1",
+      "type": "ps1",
+      "exists": true,
+      "size_bytes": 622,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_build_governance_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_build_governance_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_build_governance_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_7.ps1",
+      "type": "ps1",
+      "exists": true,
+      "size_bytes": 615,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_executor_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_executor_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_executor_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_8.ps1",
+      "type": "ps1",
+      "exists": true,
+      "size_bytes": 631,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_automated_task_builder_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_automated_task_builder_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_automated_task_builder_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_9.ps1",
+      "type": "ps1",
+      "exists": true,
+      "size_bytes": 637,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_status_roadmap_update_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_status_roadmap_update_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_status_roadmap_update_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v8_0.ps1",
+      "type": "ps1",
+      "exists": true,
+      "size_bytes": 599,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_autopilot_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_autopilot_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_autopilot_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v8_1.ps1",
+      "type": "ps1",
+      "exists": true,
+      "size_bytes": 580,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\runner_validation.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/runner_validation.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\runner_validation.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_6.bat",
+      "type": "bat",
+      "exists": true,
+      "size_bytes": 478,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_build_governance_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_build_governance_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_build_governance_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_7.bat",
+      "type": "bat",
+      "exists": true,
+      "size_bytes": 473,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_executor_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_executor_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_executor_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_8.bat",
+      "type": "bat",
+      "exists": true,
+      "size_bytes": 498,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_automated_task_builder_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_automated_task_builder_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_automated_task_builder_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v7_9.bat",
+      "type": "bat",
+      "exists": true,
+      "size_bytes": 496,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_status_roadmap_update_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_status_roadmap_update_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_status_roadmap_update_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v8_0.bat",
+      "type": "bat",
+      "exists": true,
+      "size_bytes": 458,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_autopilot_engine.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_autopilot_engine.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_task_autopilot_engine.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "runner": "scripts\\START_PROJECTANALYSE_v8_1.bat",
+      "type": "bat",
+      "exists": true,
+      "size_bytes": 434,
+      "status": "OK",
+      "python_refs": [
+        {
+          "reference": "apps\\brewster_engineering_wizard\\project_analyzer\\runner_validation.py",
+          "normalized": "apps/brewster_engineering_wizard/project_analyzer/runner_validation.py",
+          "path": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\runner_validation.py",
+          "exists": true,
+          "type": "python_engine"
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "pair_checks": [
+    {
+      "version": "v7_6",
+      "status": "OK",
+      "ps1": "scripts\\START_PROJECTANALYSE_v7_6.ps1",
+      "bat": "scripts\\START_PROJECTANALYSE_v7_6.bat",
+      "issue": ""
+    },
+    {
+      "version": "v7_7",
+      "status": "OK",
+      "ps1": "scripts\\START_PROJECTANALYSE_v7_7.ps1",
+      "bat": "scripts\\START_PROJECTANALYSE_v7_7.bat",
+      "issue": ""
+    },
+    {
+      "version": "v7_8",
+      "status": "OK",
+      "ps1": "scripts\\START_PROJECTANALYSE_v7_8.ps1",
+      "bat": "scripts\\START_PROJECTANALYSE_v7_8.bat",
+      "issue": ""
+    },
+    {
+      "version": "v7_9",
+      "status": "OK",
+      "ps1": "scripts\\START_PROJECTANALYSE_v7_9.ps1",
+      "bat": "scripts\\START_PROJECTANALYSE_v7_9.bat",
+      "issue": ""
+    },
+    {
+      "version": "v8_0",
+      "status": "OK",
+      "ps1": "scripts\\START_PROJECTANALYSE_v8_0.ps1",
+      "bat": "scripts\\START_PROJECTANALYSE_v8_0.bat",
+      "issue": ""
+    },
+    {
+      "version": "v8_1",
+      "status": "OK",
+      "ps1": "scripts\\START_PROJECTANALYSE_v8_1.ps1",
+      "bat": "scripts\\START_PROJECTANALYSE_v8_1.bat",
+      "issue": ""
+    }
+  ],
+  "policy": {
+    "no_auto_fix": true,
+    "no_auto_delete": true,
+    "validation_only": true,
+    "safe_to_run_without_commit": true
+  },
+  "next_steps": [
+    "Runnerstructuur is valide.",
+    "Commit en push v8.1 na controle.",
+    "Ga daarna door naar v8.2 Runner Repair Advisor of Phoenix Main Runner Orchestrator."
+  ]
+}

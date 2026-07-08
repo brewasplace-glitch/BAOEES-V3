@@ -1,4 +1,37 @@
-﻿from __future__ import annotations
+﻿# PROJECT PHOENIX v8.1 UPDATE
+# Runner Validation Engine
+# Geen handmatig Python knip- en plakwerk nodig.
+
+$ErrorActionPreference = "Stop"
+
+Write-Host "PROJECT PHOENIX v8.1 UPDATE START" -ForegroundColor Cyan
+
+$ProjectRoot = Get-Location
+
+if (-not (Test-Path (Join-Path $ProjectRoot ".git"))) {
+    throw "Dit script moet vanuit de root van de PROJECT-PHOENIX repository worden uitgevoerd."
+}
+
+$Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+
+$EnginePath = Join-Path $ProjectRoot "apps\brewster_engineering_wizard\project_analyzer\runner_validation.py"
+$ScriptDir = Join-Path $ProjectRoot "scripts"
+$RunnerPs1 = Join-Path $ScriptDir "START_PROJECTANALYSE_v8_1.ps1"
+$RunnerBat = Join-Path $ScriptDir "START_PROJECTANALYSE_v8_1.bat"
+$LogPath = Join-Path $ProjectRoot "outputs\projects\start_projectanalyse_v8_1_update_log.json"
+
+New-Item -ItemType Directory -Path (Split-Path $EnginePath) -Force | Out-Null
+New-Item -ItemType Directory -Path $ScriptDir -Force | Out-Null
+New-Item -ItemType Directory -Path (Split-Path $LogPath) -Force | Out-Null
+
+foreach ($Path in @($EnginePath, $RunnerPs1, $RunnerBat)) {
+    if (Test-Path $Path) {
+        Copy-Item $Path "$Path.backup_v8_1_$Timestamp" -Force
+    }
+}
+
+$EngineContent = @'
+from __future__ import annotations
 
 import html
 import json
@@ -400,3 +433,83 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+'@
+
+$RunnerPs1Content = @'
+$ErrorActionPreference = "Stop"
+
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ProjectRoot = Split-Path -Parent $ScriptDir
+Set-Location -Path $ProjectRoot
+
+Write-Host "PROJECT PHOENIX - RUNNER VALIDATION v8.1" -ForegroundColor Cyan
+
+python .\apps\brewster_engineering_wizard\project_analyzer\runner_validation.py
+
+if ($LASTEXITCODE -ne 0) {
+    throw "Runner Validation Engine v8.1 mislukt."
+}
+
+$Dashboard = Join-Path $ProjectRoot "outputs\projects\runner_validation_dashboard_v8_1.html"
+
+if (Test-Path $Dashboard) {
+    Start-Process $Dashboard
+}
+
+git status
+'@
+
+$RunnerBatContent = @'
+@echo off
+setlocal
+cd /d "%~dp0\.."
+
+echo PROJECT PHOENIX - RUNNER VALIDATION v8.1
+
+python apps\brewster_engineering_wizard\project_analyzer\runner_validation.py || goto error
+
+if exist "outputs\projects\runner_validation_dashboard_v8_1.html" (
+    start "" "outputs\projects\runner_validation_dashboard_v8_1.html"
+)
+
+git status
+pause
+exit /b 0
+
+:error
+echo FOUT: Runner Validation Engine v8.1 is gestopt.
+git status
+pause
+exit /b 1
+'@
+
+Set-Content -Path $EnginePath -Value $EngineContent -Encoding UTF8
+Set-Content -Path $RunnerPs1 -Value $RunnerPs1Content -Encoding UTF8
+Set-Content -Path $RunnerBat -Value $RunnerBatContent -Encoding ASCII
+
+$UpdateLog = [ordered]@{
+    status = "OPGESLAGEN"
+    engine = "Project Phoenix Runner Validation Connector"
+    engine_version = "v8.1"
+    generated_at = (Get-Date).ToString("s")
+    project_root = "$ProjectRoot"
+    engine_path = "$EnginePath"
+    runner_ps1 = "$RunnerPs1"
+    runner_bat = "$RunnerBat"
+    repository_policy = "Alleen PROJECT-PHOENIX repository"
+}
+
+$UpdateLog | ConvertTo-Json -Depth 5 | Set-Content -Path $LogPath -Encoding UTF8
+
+Write-Host "Bestanden geschreven." -ForegroundColor Green
+
+Write-Host "Syntaxcontrole Runner Validation Engine..." -ForegroundColor Cyan
+python -m py_compile .\apps\brewster_engineering_wizard\project_analyzer\runner_validation.py
+
+Write-Host "Run v8.1..." -ForegroundColor Cyan
+powershell -ExecutionPolicy Bypass -File .\scripts\START_PROJECTANALYSE_v8_1.ps1
+
+Write-Host "Git status..." -ForegroundColor Cyan
+git status
+
+Write-Host "PROJECT PHOENIX v8.1 UPDATE KLAAR" -ForegroundColor Green
