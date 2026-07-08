@@ -1,0 +1,32 @@
+﻿{
+  "status": "ACTIEF",
+  "generated_at": "2026-07-09T01:01:13",
+  "next_safe_step": {
+    "task_id": "S01-003",
+    "track": "Stabilisatie & automatisering",
+    "track_id": "S01",
+    "priority": 103,
+    "title": "Runner validation",
+    "objective": "Bouw of documenteer 'Runner validation' als gecontroleerde Phoenix-bouwtaak binnen spoor S01.",
+    "files_to_create_or_modify": [
+      "apps/brewster_engineering_wizard/project_analyzer/runner_validation.py",
+      "DOCS/project_phoenix/s01/runner_validation.md",
+      "outputs/projects/runner_validation_log.json",
+      "outputs/projects/runner_validation_dashboard.html"
+    ],
+    "update_script": "PROJECT_PHOENIX_s01_003_runner_validation_update.ps1",
+    "test_command": "python -m py_compile apps/brewster_engineering_wizard/project_analyzer/runner_validation.py",
+    "commit_message": "feat: add runner validation (S01-003)",
+    "risk_level": "laag",
+    "dependencies": [
+      "S01-002"
+    ],
+    "requires_go": false,
+    "expected_result": "Update script draait lokaal, dashboard/log worden aangemaakt, git status wordt getoond.",
+    "status": "open"
+  },
+  "recommended_next_version": "v8.0",
+  "recommended_next_engine": "Phoenix Task Autopilot Engine",
+  "instruction": "Vraag gebruiker om GO voordat de volgende taak inhoudelijk wordt uitgevoerd.",
+  "reason": "Na v7.9 kan Phoenix taakstatus bijhouden; volgende stap is gecontroleerde uitvoering van open taken."
+}

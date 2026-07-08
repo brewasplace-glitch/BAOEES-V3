@@ -1,0 +1,111 @@
+﻿{
+  "status": "ACTIEF_BIJGEWERKT",
+  "generated_at": "2026-07-09T01:01:13",
+  "total_tasks": 200,
+  "active_or_partial": 12,
+  "complete_tasks": 0,
+  "open_tasks": 188,
+  "overall_progress_percent": 6.0,
+  "complete_progress_percent": 0.0,
+  "current_phase": "Roadmap-status, voortgang en volgende GO-stap automatisch bijwerken",
+  "last_completed_version": "v7.8 Automated Task Builder",
+  "git_state": {
+    "branch": "project-phoenix",
+    "is_clean": false,
+    "porcelain_status": "?? PROJECT_PHOENIX_v7_9_update.ps1\n?? apps/brewster_engineering_wizard/project_analyzer/phoenix_task_status_roadmap_update_engine.py\n?? outputs/projects/start_projectanalyse_v7_9_update_log.json\n?? scripts/START_PROJECTANALYSE_v7_9.bat\n?? scripts/START_PROJECTANALYSE_v7_9.ps1",
+    "latest_commit": "5c23667",
+    "latest_commit_message": "feat: add Phoenix automated task builder v7.8"
+  },
+  "by_track": [
+    {
+      "track_id": "S01",
+      "track": "Stabilisatie & automatisering",
+      "total_tasks": 20,
+      "active_or_partial": 6,
+      "complete": 0,
+      "open": 14,
+      "progress_percent": 30.0
+    },
+    {
+      "track_id": "S02",
+      "track": "Hoofdscherm / GUI / dashboards",
+      "total_tasks": 20,
+      "active_or_partial": 0,
+      "complete": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S03",
+      "track": "Project Intake + aannames + projectcontext",
+      "total_tasks": 20,
+      "active_or_partial": 2,
+      "complete": 0,
+      "open": 18,
+      "progress_percent": 10.0
+    },
+    {
+      "track_id": "S04",
+      "track": "Digital Twin + Knowledge Graph",
+      "total_tasks": 20,
+      "active_or_partial": 0,
+      "complete": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S05",
+      "track": "Geotechniek + fundering + constructie",
+      "total_tasks": 20,
+      "active_or_partial": 3,
+      "complete": 0,
+      "open": 17,
+      "progress_percent": 15.0
+    },
+    {
+      "track_id": "S06",
+      "track": "Infra: wegen, parkeren, riolering, waterbouw",
+      "total_tasks": 20,
+      "active_or_partial": 0,
+      "complete": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S07",
+      "track": "Vergunningen: BOPA, Omgevingsvergunning, AERIUS",
+      "total_tasks": 20,
+      "active_or_partial": 0,
+      "complete": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S08",
+      "track": "Kosten, planning, aanbesteding",
+      "total_tasks": 20,
+      "active_or_partial": 0,
+      "complete": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    },
+    {
+      "track_id": "S09",
+      "track": "Rapporten, tekeningen, CAD/BIM/export",
+      "total_tasks": 20,
+      "active_or_partial": 1,
+      "complete": 0,
+      "open": 19,
+      "progress_percent": 5.0
+    },
+    {
+      "track_id": "S10",
+      "track": "Installatie, updates, documentatie, handleidingen",
+      "total_tasks": 20,
+      "active_or_partial": 0,
+      "complete": 0,
+      "open": 20,
+      "progress_percent": 0.0
+    }
+  ]
+}
