@@ -1,0 +1,19 @@
+﻿{
+    "policy_name":  "Phoenix Main Runner Orchestrator Policy",
+    "policy_version":  "v10.1",
+    "required_approval_token":  "GO",
+    "default_mode":  "plan",
+    "allowed_untracked_prefixes":  [
+                                       "DOCS/automation/",
+                                       "docs/automation/",
+                                       "apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py",
+                                       "apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+                                       "configs/phoenix/",
+                                       "outputs/runtime/",
+                                       "runners/",
+                                       "tests/automation/",
+                                       "apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py"
+                                   ],
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

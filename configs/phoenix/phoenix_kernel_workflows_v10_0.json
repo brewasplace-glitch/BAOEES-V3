@@ -1,0 +1,14 @@
+﻿{
+  "registry_name": "Phoenix Kernel Workflow Map",
+  "registry_version": "v10.0",
+  "workflows": {
+    "platform_foundation": {
+      "description": "Valideert Update Center, Main Runner en runnerfundering.",
+      "orchestrator_workflow": "platform_foundation"
+    },
+    "orchestrator_only": {
+      "description": "Valideert alleen de Main Runner Orchestrator.",
+      "orchestrator_workflow": "orchestrator_only"
+    }
+  }
+}

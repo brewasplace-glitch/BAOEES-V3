@@ -1,0 +1,17 @@
+﻿{
+    "engine":  "Phoenix Main Runner Orchestrator",
+    "version":  "v9.1",
+    "installed_at":  "2026-07-12T01:15:56",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\main_runner_orchestrator_install\\20260712_011556",
+    "installed_files":  [
+                            "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_main_runner_orchestrator.py",
+                            "C:\\PROJECT-PHOENIX\\runners\\PROJECT_PHOENIX_v9_1_main_runner_orchestrator.ps1",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\main_runner_policy_v9_1.json",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\main_runner_registry_v9_1.json",
+                            "C:\\PROJECT-PHOENIX\\docs\\automation\\PHOENIX_MAIN_RUNNER_ORCHESTRATOR_v9_1.md",
+                            "C:\\PROJECT-PHOENIX\\tests\\automation\\test_phoenix_main_runner_orchestrator_v9_1.py"
+                        ],
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

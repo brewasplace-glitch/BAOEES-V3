@@ -1,0 +1,14 @@
+﻿{
+    "engine":  "Phoenix Kernel Trust \u0026 Registry Update",
+    "version":  "v10.1",
+    "installed_at":  "2026-07-12T01:47:14",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\kernel_trust_registry_install\\20260712_014713",
+    "modified_files":  [
+                           "C:\\PROJECT-PHOENIX\\configs\\phoenix\\main_runner_policy_v9_1.json",
+                           "C:\\PROJECT-PHOENIX\\configs\\phoenix\\main_runner_registry_v9_1.json",
+                           "C:\\PROJECT-PHOENIX\\docs\\automation\\PHOENIX_KERNEL_TRUST_REGISTRY_v10_1.md"
+                       ],
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

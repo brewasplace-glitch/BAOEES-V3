@@ -1,0 +1,18 @@
+﻿{
+    "engine":  "Phoenix Kernel",
+    "version":  "v10.0",
+    "installed_at":  "2026-07-12T01:29:38",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\phoenix_kernel_install\\20260712_012937",
+    "installed_files":  [
+                            "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_kernel.py",
+                            "C:\\PROJECT-PHOENIX\\runners\\START_PROJECT_PHOENIX_v10_0.ps1",
+                            "C:\\PROJECT-PHOENIX\\runners\\START_PROJECT_PHOENIX_v10_0.bat",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\phoenix_kernel_policy_v10_0.json",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\phoenix_kernel_workflows_v10_0.json",
+                            "C:\\PROJECT-PHOENIX\\docs\\automation\\PHOENIX_KERNEL_v10_0.md",
+                            "C:\\PROJECT-PHOENIX\\tests\\automation\\test_phoenix_kernel_v10_0.py"
+                        ],
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

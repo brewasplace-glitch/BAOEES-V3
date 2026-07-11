@@ -1,0 +1,16 @@
+﻿{
+    "engine":  "Phoenix Update Center",
+    "version":  "v9.0",
+    "installed_at":  "2026-07-12T00:19:46",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\update_center_install\\20260712_001946",
+    "installed_files":  [
+                            "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_update_center.py",
+                            "C:\\PROJECT-PHOENIX\\runners\\PROJECT_PHOENIX_v9_0_update_center.ps1",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\update_center_policy_v9_0.json",
+                            "C:\\PROJECT-PHOENIX\\docs\\automation\\PHOENIX_UPDATE_CENTER_v9_0.md",
+                            "C:\\PROJECT-PHOENIX\\tests\\automation\\test_phoenix_update_center_v9_0.py"
+                        ],
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

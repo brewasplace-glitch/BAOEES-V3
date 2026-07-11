@@ -1,0 +1,66 @@
+﻿{
+  "registry_name": "Phoenix Main Runner Registry",
+  "registry_version": "v9.1",
+  "modules": {
+    "repository_preflight": {
+      "description": "Repository- en veiligheidscontrole.",
+      "mode": "virtual",
+      "dependencies": [],
+      "required": true
+    },
+    "update_center_self_test": {
+      "description": "Zelftest van Phoenix Update Center v9.0.",
+      "mode": "command",
+      "dependencies": ["repository_preflight"],
+      "required": true,
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py",
+        "self-test"
+      ]
+    },
+    "orchestrator_self_test": {
+      "description": "Zelftest van Main Runner Orchestrator v9.1.",
+      "mode": "command",
+      "dependencies": ["repository_preflight"],
+      "required": true,
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+        "self-test"
+      ]
+    },
+    "runner_validation": {
+      "description": "Bestaande Runner Validation Engine v8.1.",
+      "mode": "command",
+      "dependencies": ["repository_preflight"],
+      "required": false,
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/runner_validation.py"
+      ]
+    },
+    "git_diff_check": {
+      "description": "Controleert patch- en whitespacefouten.",
+      "mode": "command",
+      "dependencies": ["update_center_self_test","orchestrator_self_test"],
+      "required": true,
+      "command": ["git","diff","--check"]
+    }
+  },
+  "workflows": {
+    "platform_foundation": {
+      "description": "Veilige validatie van de Phoenix-platformfundering.",
+      "modules": [
+        "update_center_self_test",
+        "orchestrator_self_test",
+        "runner_validation",
+        "git_diff_check"
+      ]
+    },
+    "orchestrator_only": {
+      "description": "Alleen de Main Runner Orchestrator valideren.",
+      "modules": ["orchestrator_self_test","git_diff_check"]
+    }
+  }
+}

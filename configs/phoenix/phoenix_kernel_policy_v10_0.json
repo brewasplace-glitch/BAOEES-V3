@@ -1,0 +1,10 @@
+﻿{
+  "policy_name": "Phoenix Kernel Policy",
+  "policy_version": "v10.0",
+  "default_mode": "plan",
+  "required_approval_token": "GO",
+  "allow_execute_without_go": false,
+  "automatic_commit": false,
+  "automatic_push": false,
+  "write_runtime_reports": true
+}

@@ -1,0 +1,112 @@
+﻿{
+  "engine": "Phoenix Main Runner Orchestrator",
+  "version": "v9.1",
+  "workflow": "platform_foundation",
+  "execution_mode": "DRY_RUN",
+  "modules": [
+    {
+      "name": "repository_preflight",
+      "description": "Repository- en veiligheidscontrole.",
+      "dependencies": [],
+      "required": true,
+      "mode": "virtual",
+      "availability": {
+        "available": true,
+        "reason": "virtual"
+      },
+      "command": []
+    },
+    {
+      "name": "update_center_self_test",
+      "description": "Zelftest van Phoenix Update Center v9.0.",
+      "dependencies": [
+        "repository_preflight"
+      ],
+      "required": true,
+      "mode": "command",
+      "availability": {
+        "available": true,
+        "target": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_update_center.py"
+      },
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py",
+        "self-test"
+      ]
+    },
+    {
+      "name": "orchestrator_self_test",
+      "description": "Zelftest van Main Runner Orchestrator v9.1.",
+      "dependencies": [
+        "repository_preflight"
+      ],
+      "required": true,
+      "mode": "command",
+      "availability": {
+        "available": true,
+        "target": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_main_runner_orchestrator.py"
+      },
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+        "self-test"
+      ]
+    },
+    {
+      "name": "kernel_self_test",
+      "description": "Zelftest van Phoenix Kernel v10.0.",
+      "dependencies": [
+        "repository_preflight"
+      ],
+      "required": true,
+      "mode": "command",
+      "availability": {
+        "available": true,
+        "target": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_kernel.py"
+      },
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py",
+        "self-test"
+      ]
+    },
+    {
+      "name": "runner_validation",
+      "description": "Bestaande Runner Validation Engine v8.1.",
+      "dependencies": [
+        "repository_preflight"
+      ],
+      "required": false,
+      "mode": "command",
+      "availability": {
+        "available": true,
+        "target": "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\runner_validation.py"
+      },
+      "command": [
+        "{python}",
+        "{project_root}/apps/brewster_engineering_wizard/project_analyzer/runner_validation.py"
+      ]
+    },
+    {
+      "name": "git_diff_check",
+      "description": "Controleert patch- en whitespacefouten.",
+      "dependencies": [
+        "update_center_self_test",
+        "orchestrator_self_test"
+      ],
+      "required": true,
+      "mode": "command",
+      "availability": {
+        "available": true,
+        "reason": "path_command"
+      },
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ]
+    }
+  ],
+  "ready": true,
+  "automatic_commit_push": false
+}

@@ -1,0 +1,18 @@
+﻿{
+  "engine": "Phoenix Main Runner Orchestrator",
+  "version": "v9.1",
+  "workflow": "platform_foundation",
+  "execution_mode": "EXECUTE",
+  "approval_received": true,
+  "automatic_commit_push": false,
+  "status": "BLOCKED_REPOSITORY_PREFLIGHT",
+  "modules": [],
+  "repository_preflight": {
+    "tracked_changes": [],
+    "staged_changes": [],
+    "unexpected_untracked": [
+      "apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py"
+    ],
+    "ready": false
+  }
+}

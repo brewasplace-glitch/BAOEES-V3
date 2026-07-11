@@ -1,0 +1,26 @@
+﻿{
+  "policy_name": "Phoenix Update Center Policy",
+  "policy_version": "v9.0",
+  "required_approval_token": "GO",
+  "working_tree_must_be_clean": true,
+  "backup_before_replace": true,
+  "validate_checksums": true,
+  "extract_outside_repository": true,
+  "allowed_target_roots": [
+    "apps/",
+    "configs/",
+    "docs/",
+    "runners/",
+    "scripts/",
+    "tests/",
+    "templates/"
+  ],
+  "forbidden_target_prefixes": [
+    ".git/",
+    "backups/",
+    "outputs/",
+    "__pycache__/"
+  ],
+  "automatic_commit": false,
+  "automatic_push": false
+}
