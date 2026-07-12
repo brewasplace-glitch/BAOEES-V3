@@ -1,0 +1,9 @@
+﻿{
+  "policy_name": "Phoenix Autonomous AI Planner Policy",
+  "policy_version": "v14.0",
+  "default_mode": "DRY_RUN",
+  "allow_partial_plan": true,
+  "automatic_execution": false,
+  "automatic_commit": false,
+  "automatic_push": false
+}

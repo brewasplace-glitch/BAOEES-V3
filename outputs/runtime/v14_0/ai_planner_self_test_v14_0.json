@@ -1,0 +1,13 @@
+﻿{
+  "engine": "Phoenix Autonomous AI Planning Engine",
+  "version": "v14.0",
+  "checks": {
+    "policy_exists": true,
+    "templates_exist": true,
+    "capability_registry_exists": true,
+    "python_supported": true,
+    "templates_valid": true
+  },
+  "status": "PASS",
+  "generated_at": "2026-07-12T22:00:31"
+}

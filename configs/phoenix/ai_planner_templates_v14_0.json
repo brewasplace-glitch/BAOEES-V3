@@ -1,0 +1,42 @@
+﻿{
+  "registry_name": "Phoenix AI Planning Templates",
+  "registry_version": "v14.0",
+  "templates": [
+    {
+      "template_id": "phoenix_core_platform",
+      "capabilities": [
+        "workflow.orchestration",
+        "workflow.autonomous",
+        "engine.discovery",
+        "capability.registry"
+      ],
+      "tasks": [
+        {
+          "task_id": "project_intake",
+          "description": "Projectdoel en randvoorwaarden vastleggen.",
+          "dependencies": []
+        },
+        {
+          "task_id": "capability_analysis",
+          "description": "Benodigde capabilities analyseren.",
+          "dependencies": ["project_intake"]
+        },
+        {
+          "task_id": "engine_selection",
+          "description": "Passende engines selecteren.",
+          "dependencies": ["capability_analysis"]
+        },
+        {
+          "task_id": "workflow_construction",
+          "description": "Uitvoerbare workflow samenstellen.",
+          "dependencies": ["engine_selection"]
+        },
+        {
+          "task_id": "validation_gate",
+          "description": "Plan valideren vóór uitvoering.",
+          "dependencies": ["workflow_construction"]
+        }
+      ]
+    }
+  ]
+}

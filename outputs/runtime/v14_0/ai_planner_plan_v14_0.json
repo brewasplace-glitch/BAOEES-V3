@@ -1,0 +1,70 @@
+﻿{
+  "engine": "Phoenix Autonomous AI Planning Engine",
+  "version": "v14.0",
+  "mode": "DRY_RUN",
+  "project_id": "phoenix-core-v14",
+  "objective": "Build the next safe Phoenix Core workflow.",
+  "constraints": [
+    "No automatic commit",
+    "No automatic push",
+    "Explicit GO before execution"
+  ],
+  "requested_capabilities": [
+    "workflow.orchestration",
+    "workflow.autonomous",
+    "engine.discovery",
+    "capability.registry"
+  ],
+  "template_id": "phoenix_core_platform",
+  "tasks": [
+    {
+      "task_id": "project_intake",
+      "description": "Projectdoel en randvoorwaarden vastleggen.",
+      "dependencies": [],
+      "sequence": 1,
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "capability_analysis",
+      "description": "Benodigde capabilities analyseren.",
+      "dependencies": [
+        "project_intake"
+      ],
+      "sequence": 2,
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "engine_selection",
+      "description": "Passende engines selecteren.",
+      "dependencies": [
+        "capability_analysis"
+      ],
+      "sequence": 3,
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "workflow_construction",
+      "description": "Uitvoerbare workflow samenstellen.",
+      "dependencies": [
+        "engine_selection"
+      ],
+      "sequence": 4,
+      "status": "PLANNED"
+    },
+    {
+      "task_id": "validation_gate",
+      "description": "Plan valideren vóór uitvoering.",
+      "dependencies": [
+        "workflow_construction"
+      ],
+      "sequence": 5,
+      "status": "PLANNED"
+    }
+  ],
+  "unresolved_capabilities": [],
+  "ready": true,
+  "status": "PASS",
+  "automatic_execution": false,
+  "automatic_commit_push": false,
+  "generated_at": "2026-07-12T22:00:31"
+}
