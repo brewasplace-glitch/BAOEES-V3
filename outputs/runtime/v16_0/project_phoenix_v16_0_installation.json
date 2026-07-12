@@ -1,0 +1,10 @@
+﻿{
+    "engine":  "Phoenix Workflow Supervisor \u0026 Recovery Manager",
+    "version":  "v16.0",
+    "installed_at":  "2026-07-12T23:46:52",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\phoenix_core_v16_0_install\\20260712_234652",
+    "automatic_recovery":  false,
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

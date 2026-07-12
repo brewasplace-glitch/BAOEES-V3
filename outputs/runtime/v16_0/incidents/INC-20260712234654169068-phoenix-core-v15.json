@@ -1,0 +1,10 @@
+﻿{
+  "incident_id": "INC-20260712234654169068-phoenix-core-v15",
+  "execution_id": "phoenix-core-v15",
+  "category": "WORKFLOW_NOT_STARTED",
+  "severity": "LOW",
+  "message": "Workflow is gepland maar nog niet uitgevoerd.",
+  "failed_task": null,
+  "last_checkpoint": null,
+  "recorded_at": "2026-07-12T23:46:54"
+}

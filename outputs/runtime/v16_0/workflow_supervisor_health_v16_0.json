@@ -1,0 +1,12 @@
+﻿{
+  "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+  "version": "v16.0",
+  "checks": {
+    "repository_clean": false,
+    "execution_engine_available": true,
+    "default_plan_available": true,
+    "execution_state_directory_exists": true
+  },
+  "status": "PASS",
+  "generated_at": "2026-07-12T23:46:53"
+}

@@ -1,0 +1,13 @@
+﻿{
+  "policy_name": "Phoenix Workflow Supervisor & Recovery Policy",
+  "policy_version": "v16.0",
+  "required_approval_token": "GO",
+  "max_resume_attempts": 2,
+  "allow_automatic_resume": false,
+  "require_clean_repository": true,
+  "require_checkpoint": true,
+  "persist_incidents": true,
+  "persist_recovery_reports": true,
+  "automatic_commit": false,
+  "automatic_push": false
+}

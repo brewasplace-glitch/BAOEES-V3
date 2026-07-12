@@ -1,0 +1,30 @@
+﻿{
+  "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+  "version": "v16.0",
+  "execution_id": "phoenix-core-v15",
+  "state_status": "PLANNED",
+  "last_checkpoint": null,
+  "completed_tasks": [],
+  "incidents": [
+    {
+      "incident_id": "INC-20260712234654421752-phoenix-core-v15",
+      "execution_id": "phoenix-core-v15",
+      "category": "WORKFLOW_NOT_STARTED",
+      "severity": "LOW",
+      "message": "Workflow is gepland maar nog niet uitgevoerd.",
+      "failed_task": null,
+      "last_checkpoint": null,
+      "recorded_at": "2026-07-12T23:46:54"
+    }
+  ],
+  "strategy": {
+    "action": "RESUME_FROM_CHECKPOINT",
+    "reason": "v15 resume valideert de bestaande state vÃ³Ã³r hervatting.",
+    "max_retries": 2
+  },
+  "mode": "DRY_RUN",
+  "automatic_execution": false,
+  "automatic_commit_push": false,
+  "status": "PASS",
+  "generated_at": "2026-07-12T23:46:54"
+}
