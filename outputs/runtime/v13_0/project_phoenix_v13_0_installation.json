@@ -1,0 +1,8 @@
+﻿{
+    "installed_at":  "2026-07-12T20:10:05",
+    "version":  "v13.0",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\phoenix_core_v13_0_install\\20260712_201005",
+    "automatic_push":  false,
+    "automatic_commit":  false,
+    "engine":  "Phoenix AI Runtime"
+}

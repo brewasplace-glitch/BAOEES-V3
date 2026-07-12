@@ -1,0 +1,13 @@
+﻿{
+  "engine": "Phoenix AI Runtime",
+  "version": "v13.0",
+  "checks": {
+    "policy": true,
+    "registry": true,
+    "capabilities": true,
+    "graph": true,
+    "python": true
+  },
+  "status": "PASS",
+  "generated_at": "2026-07-12T20:50:43.261010"
+}

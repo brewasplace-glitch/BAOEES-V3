@@ -1,0 +1,8 @@
+﻿{
+    "installed_at":  "2026-07-12T20:50:43",
+    "version":  "v13.1",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\phoenix_core_v13_1_install\\20260712_205041",
+    "automatic_push":  false,
+    "automatic_commit":  false,
+    "engine":  "Phoenix Runtime Registry Validator"
+}

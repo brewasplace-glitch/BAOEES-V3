@@ -1,0 +1,34 @@
+﻿{
+  "registry_name":"Phoenix AI Runtime Registry",
+  "registry_version":"v13.0",
+  "engines":[
+    {
+      "engine_id":"phoenix.main_runner",
+      "module":"apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+      "dependencies":[],
+      "required":true,
+      "command":["{python}","{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py","self-test"]
+    },
+    {
+      "engine_id":"phoenix.kernel",
+      "module":"apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py",
+      "dependencies":["phoenix.main_runner"],
+      "required":true,
+      "command":["{python}","{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py","self-test"]
+    },
+    {
+      "engine_id":"phoenix.autonomous_workflow",
+      "module":"apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py",
+      "dependencies":["phoenix.kernel"],
+      "required":true,
+      "command":["{python}","{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py","self-test"]
+    },
+    {
+      "engine_id":"phoenix.engine_discovery",
+      "module":"apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py",
+      "dependencies":["phoenix.autonomous_workflow"],
+      "required":true,
+      "command":["{python}","{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py","self-test"]
+    }
+  ]
+}

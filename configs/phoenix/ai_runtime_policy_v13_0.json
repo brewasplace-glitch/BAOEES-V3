@@ -1,0 +1,9 @@
+﻿{
+  "policy_name":"Phoenix AI Runtime Policy",
+  "policy_version":"v13.0",
+  "default_mode":"PLAN",
+  "required_approval_token":"GO",
+  "required_engines":["phoenix.main_runner","phoenix.kernel","phoenix.autonomous_workflow"],
+  "automatic_commit":false,
+  "automatic_push":false
+}

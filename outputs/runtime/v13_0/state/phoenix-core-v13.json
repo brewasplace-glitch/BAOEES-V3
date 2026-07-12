@@ -1,0 +1,32 @@
+﻿{
+  "runtime_id": "phoenix-core-v13",
+  "status": "PLANNED",
+  "selected_engines": [
+    {
+      "engine_id": "phoenix.autonomous_workflow",
+      "capabilities": [
+        "workflow.autonomous"
+      ]
+    },
+    {
+      "engine_id": "phoenix.engine_intelligence",
+      "capabilities": [
+        "engine.discovery"
+      ]
+    },
+    {
+      "engine_id": "phoenix.main_runner",
+      "capabilities": [
+        "workflow.orchestration"
+      ]
+    }
+  ],
+  "execution_graph": [
+    "phoenix.main_runner",
+    "phoenix.kernel",
+    "phoenix.autonomous_workflow",
+    "phoenix.engine_intelligence"
+  ],
+  "completed_engines": [],
+  "updated_at": "2026-07-12T20:50:43.745638"
+}

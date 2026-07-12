@@ -1,0 +1,38 @@
+﻿{
+  "engine": "Phoenix AI Runtime",
+  "version": "v13.0",
+  "engines": [
+    {
+      "engine_id": "phoenix.autonomous_workflow",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py",
+      "status": "HEALTHY"
+    },
+    {
+      "engine_id": "phoenix.engine_discovery",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py",
+      "status": "HEALTHY"
+    },
+    {
+      "engine_id": "phoenix.engine_intelligence",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py",
+      "status": "HEALTHY"
+    },
+    {
+      "engine_id": "phoenix.kernel",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py",
+      "status": "HEALTHY"
+    },
+    {
+      "engine_id": "phoenix.main_runner",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+      "status": "HEALTHY"
+    },
+    {
+      "engine_id": "phoenix.update_center",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py",
+      "status": "HEALTHY"
+    }
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-12T20:50:43.507102"
+}
