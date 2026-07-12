@@ -1,0 +1,13 @@
+﻿{
+  "policy_name": "Phoenix Engine Intelligence Policy",
+  "policy_version": "v12.0",
+  "default_mode": "DRY_RUN",
+  "metadata_strategy": "static_ast",
+  "import_engines_during_discovery": false,
+  "excluded_filenames": ["__init__.py"],
+  "require_discovered_engine": true,
+  "allow_partial_plan": true,
+  "automatic_execution": false,
+  "automatic_commit": false,
+  "automatic_push": false
+}

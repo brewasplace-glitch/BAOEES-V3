@@ -1,0 +1,18 @@
+﻿{
+    "engine":  "Phoenix Core Engine Intelligence",
+    "version":  "v12.0",
+    "installed_at":  "2026-07-12T19:09:07",
+    "project_root":  "C:\\PROJECT-PHOENIX",
+    "backup_root":  "C:\\PROJECT-PHOENIX\\backups\\phoenix_core_v12_0_install\\20260712_190907",
+    "installed_files":  [
+                            "C:\\PROJECT-PHOENIX\\apps\\brewster_engineering_wizard\\project_analyzer\\phoenix_engine_intelligence_v12_0.py",
+                            "C:\\PROJECT-PHOENIX\\runners\\PROJECT_PHOENIX_v12_0_engine_intelligence.ps1",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\capability_registry_v12_0.json",
+                            "C:\\PROJECT-PHOENIX\\configs\\phoenix\\engine_intelligence_policy_v12_0.json",
+                            "C:\\PROJECT-PHOENIX\\docs\\automation\\PHOENIX_CORE_v12_0_ENGINE_INTELLIGENCE.md",
+                            "C:\\PROJECT-PHOENIX\\tests\\automation\\test_phoenix_engine_intelligence_v12_0.py"
+                        ],
+    "automatic_execution":  false,
+    "automatic_commit":  false,
+    "automatic_push":  false
+}

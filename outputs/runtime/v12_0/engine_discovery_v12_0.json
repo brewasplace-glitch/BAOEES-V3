@@ -1,0 +1,144 @@
+﻿{
+  "component": "engine_discovery",
+  "engine_count": 10,
+  "engines": [
+    {
+      "filename": "phoenix_automated_task_builder_engine.py",
+      "engine_name": "phoenix_automated_task_builder_engine",
+      "engine_version": "unknown",
+      "classes": [
+        "PhoenixAutomatedTaskBuilderEngine"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_automated_task_builder_engine.py",
+      "capabilities": []
+    },
+    {
+      "filename": "phoenix_autonomous_workflow_engine.py",
+      "engine_name": "Phoenix Autonomous Workflow Engine",
+      "engine_version": "v11.0",
+      "classes": [
+        "WorkflowEngineError",
+        "PhoenixAutonomousWorkflowEngine"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py",
+      "capabilities": [
+        "workflow.autonomous",
+        "workflow.resume",
+        "workflow.validate"
+      ]
+    },
+    {
+      "filename": "phoenix_build_governance_engine.py",
+      "engine_name": "phoenix_build_governance_engine",
+      "engine_version": "unknown",
+      "classes": [
+        "PhoenixBuildGovernanceEngine"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_build_governance_engine.py",
+      "capabilities": []
+    },
+    {
+      "filename": "phoenix_engine_intelligence_v12_0.py",
+      "engine_name": "Phoenix Engine Intelligence",
+      "engine_version": "v12.0",
+      "classes": [
+        "PhoenixEngineDiscovery",
+        "PhoenixCapabilityRegistry",
+        "PhoenixIntelligentModuleSelector",
+        "PhoenixEngineIntelligence"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py",
+      "capabilities": [
+        "capability.registry",
+        "engine.discovery",
+        "module.selection"
+      ]
+    },
+    {
+      "filename": "phoenix_kernel.py",
+      "engine_name": "Phoenix Kernel",
+      "engine_version": "v10.0",
+      "classes": [
+        "PhoenixKernel"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py",
+      "capabilities": [
+        "platform.kernel",
+        "project.start"
+      ]
+    },
+    {
+      "filename": "phoenix_main_runner_orchestrator.py",
+      "engine_name": "Phoenix Main Runner Orchestrator",
+      "engine_version": "v9.1",
+      "classes": [
+        "OrchestratorError",
+        "PhoenixMainRunnerOrchestrator"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+      "capabilities": [
+        "dependency.resolution",
+        "workflow.orchestration"
+      ]
+    },
+    {
+      "filename": "phoenix_task_autopilot_engine.py",
+      "engine_name": "phoenix_task_autopilot_engine",
+      "engine_version": "unknown",
+      "classes": [
+        "PhoenixTaskAutopilotEngine"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_autopilot_engine.py",
+      "capabilities": []
+    },
+    {
+      "filename": "phoenix_task_executor_engine.py",
+      "engine_name": "phoenix_task_executor_engine",
+      "engine_version": "unknown",
+      "classes": [
+        "PhoenixTaskExecutorEngine"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_executor_engine.py",
+      "capabilities": []
+    },
+    {
+      "filename": "phoenix_task_status_roadmap_update_engine.py",
+      "engine_name": "phoenix_task_status_roadmap_update_engine",
+      "engine_version": "unknown",
+      "classes": [
+        "PhoenixTaskStatusRoadmapUpdateEngine"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_status_roadmap_update_engine.py",
+      "capabilities": []
+    },
+    {
+      "filename": "phoenix_update_center.py",
+      "engine_name": "Phoenix Update Center",
+      "engine_version": "v9.0",
+      "classes": [
+        "CommandResult",
+        "UpdateCenterError",
+        "PhoenixUpdateCenter"
+      ],
+      "is_engine": true,
+      "relative_path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py",
+      "capabilities": [
+        "platform.update.apply",
+        "platform.update.inspect"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "engine": "Phoenix Engine Intelligence",
+  "version": "v12.0",
+  "generated_at": "2026-07-12T19:09:10"
+}

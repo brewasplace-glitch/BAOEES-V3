@@ -1,0 +1,41 @@
+﻿{
+  "registry_name": "Phoenix Capability Registry",
+  "registry_version": "v12.0",
+  "engines": [
+    {
+      "engine_id": "phoenix.update_center",
+      "engine_names": ["Phoenix Update Center"],
+      "module_patterns": ["phoenix_update_center.py"],
+      "capabilities": ["platform.update.inspect", "platform.update.apply"],
+      "priority": 10
+    },
+    {
+      "engine_id": "phoenix.main_runner",
+      "engine_names": ["Phoenix Main Runner Orchestrator"],
+      "module_patterns": ["phoenix_main_runner_orchestrator.py"],
+      "capabilities": ["workflow.orchestration", "dependency.resolution"],
+      "priority": 10
+    },
+    {
+      "engine_id": "phoenix.kernel",
+      "engine_names": ["Phoenix Kernel"],
+      "module_patterns": ["phoenix_kernel.py", "phoenix_kernel_v10_0.py"],
+      "capabilities": ["platform.kernel", "project.start"],
+      "priority": 10
+    },
+    {
+      "engine_id": "phoenix.autonomous_workflow",
+      "engine_names": ["Phoenix Autonomous Workflow Engine"],
+      "module_patterns": ["phoenix_autonomous_workflow_engine.py", "phoenix_autonomous_workflow_engine_v11_0.py"],
+      "capabilities": ["workflow.autonomous", "workflow.resume", "workflow.validate"],
+      "priority": 10
+    },
+    {
+      "engine_id": "phoenix.engine_intelligence",
+      "engine_names": ["Phoenix Engine Intelligence"],
+      "module_patterns": ["phoenix_engine_intelligence_v12_0.py"],
+      "capabilities": ["engine.discovery", "capability.registry", "module.selection"],
+      "priority": 10
+    }
+  ]
+}

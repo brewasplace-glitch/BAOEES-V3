@@ -1,0 +1,32 @@
+﻿{
+  "component": "intelligent_module_selection",
+  "mode": "DRY_RUN",
+  "selected_engines": [
+    {
+      "engine_id": "phoenix.engine_intelligence",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py",
+      "engine_name": "Phoenix Engine Intelligence",
+      "engine_version": "v12.0",
+      "capabilities": [
+        "engine.discovery",
+        "capability.registry"
+      ]
+    },
+    {
+      "engine_id": "phoenix.main_runner",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+      "engine_name": "Phoenix Main Runner Orchestrator",
+      "engine_version": "v9.1",
+      "capabilities": [
+        "workflow.orchestration"
+      ]
+    }
+  ],
+  "unresolved_capabilities": [],
+  "ready": true,
+  "status": "PASS",
+  "automatic_execution": false,
+  "engine": "Phoenix Engine Intelligence",
+  "version": "v12.0",
+  "generated_at": "2026-07-12T19:09:10"
+}
