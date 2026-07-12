@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Autonomous Execution Policy",
+  "policy_version": "v15.0",
+  "default_mode": "DRY_RUN",
+  "required_approval_token": "GO",
+  "require_clean_repository": true,
+  "persist_checkpoints": true,
+  "persist_evidence": true,
+  "allow_virtual_tasks": true,
+  "automatic_commit": false,
+  "automatic_push": false
+}

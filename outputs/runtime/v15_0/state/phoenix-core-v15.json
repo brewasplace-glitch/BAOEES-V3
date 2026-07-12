@@ -1,0 +1,60 @@
+﻿{
+  "execution_id": "phoenix-core-v15",
+  "plan_path": "outputs\\runtime\\v14_0\\ai_planner_plan_v14_0.json",
+  "plan_sha256": "bf46208b104e6b1a0e5a401eb9eb118ea3c270a08d482dc4d15ef17c51e9228b",
+  "mode": "DRY_RUN",
+  "status": "PLANNED",
+  "queue": [
+    {
+      "task_id": "project_intake",
+      "description": "Projectdoel en randvoorwaarden vastleggen.",
+      "dependencies": [],
+      "sequence": 1,
+      "status": "PENDING",
+      "execution_mode": "virtual"
+    },
+    {
+      "task_id": "capability_analysis",
+      "description": "Benodigde capabilities analyseren.",
+      "dependencies": [
+        "project_intake"
+      ],
+      "sequence": 2,
+      "status": "PENDING",
+      "execution_mode": "virtual"
+    },
+    {
+      "task_id": "engine_selection",
+      "description": "Passende engines selecteren.",
+      "dependencies": [
+        "capability_analysis"
+      ],
+      "sequence": 3,
+      "status": "PENDING",
+      "execution_mode": "virtual"
+    },
+    {
+      "task_id": "workflow_construction",
+      "description": "Uitvoerbare workflow samenstellen.",
+      "dependencies": [
+        "engine_selection"
+      ],
+      "sequence": 4,
+      "status": "PENDING",
+      "execution_mode": "virtual"
+    },
+    {
+      "task_id": "validation_gate",
+      "description": "Plan valideren vóór uitvoering.",
+      "dependencies": [
+        "workflow_construction"
+      ],
+      "sequence": 5,
+      "status": "PENDING",
+      "execution_mode": "virtual"
+    }
+  ],
+  "completed_tasks": [],
+  "created_at": "2026-07-12T22:47:39",
+  "updated_at": "2026-07-12T22:47:39"
+}

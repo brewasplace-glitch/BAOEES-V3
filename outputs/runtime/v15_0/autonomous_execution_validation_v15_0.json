@@ -1,0 +1,8 @@
+﻿{
+  "engine": "Phoenix Autonomous Execution Engine",
+  "version": "v15.0",
+  "plan_path": "outputs\\runtime\\v14_0\\ai_planner_plan_v14_0.json",
+  "errors": [],
+  "status": "PASS",
+  "generated_at": "2026-07-12T22:47:39"
+}
