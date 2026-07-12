@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Autonomous Workflow Policy",
+  "policy_version": "v11.0",
+  "default_mode": "plan",
+  "required_approval_token": "GO",
+  "allow_execute_without_go": false,
+  "allow_resume_without_go": false,
+  "persist_runtime_state": true,
+  "stop_on_required_step_failure": true,
+  "automatic_commit": false,
+  "automatic_push": false
+}

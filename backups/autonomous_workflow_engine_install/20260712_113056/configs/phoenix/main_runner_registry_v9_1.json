@@ -1,6 +1,6 @@
 ﻿{
     "registry_name":  "Phoenix Main Runner Registry",
-    "registry_version":  "v11.0",
+    "registry_version":  "v10.1",
     "modules":  {
                     "repository_preflight":  {
                                                  "description":  "Repository- en veiligheidscontrole.",
@@ -74,20 +74,7 @@
                                                              "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py",
                                                              "self-test"
                                                          ]
-                                         },
-                    "autonomous_workflow_self_test":  {
-                                                          "description":  "Zelftest van Autonomous Workflow Engine v11.0.",
-                                                          "mode":  "command",
-                                                          "dependencies":  [
-                                                                               "repository_preflight"
-                                                                           ],
-                                                          "required":  true,
-                                                          "command":  [
-                                                                          "{python}",
-                                                                          "{project_root}/apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py",
-                                                                          "self-test"
-                                                                      ]
-                                                      }
+                                         }
                 },
     "workflows":  {
                       "platform_foundation":  {
@@ -97,8 +84,7 @@
                                                                   "orchestrator_self_test",
                                                                   "kernel_self_test",
                                                                   "runner_validation",
-                                                                  "git_diff_check",
-                                                                  "autonomous_workflow_self_test"
+                                                                  "git_diff_check"
                                                               ]
                                               },
                       "orchestrator_only":  {

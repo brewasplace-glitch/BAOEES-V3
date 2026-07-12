@@ -1,0 +1,17 @@
+﻿{
+  "engine": "Phoenix Autonomous Workflow Engine",
+  "version": "v11.0",
+  "checks": {
+    "project_root_exists": true,
+    "git_directory_exists": true,
+    "registry_exists": true,
+    "policy_exists": true,
+    "main_runner_exists": true,
+    "state_directory_writable": true,
+    "workflows_registered": true,
+    "dependencies_valid": true,
+    "python_version_supported": true
+  },
+  "status": "PASS",
+  "generated_at": "2026-07-12T11:30:58"
+}

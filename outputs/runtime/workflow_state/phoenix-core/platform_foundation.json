@@ -1,0 +1,42 @@
+﻿{
+  "engine": "Phoenix Autonomous Workflow Engine",
+  "engine_version": "v11.0",
+  "project_id": "phoenix-core",
+  "workflow": "platform_foundation",
+  "created_at": "2026-07-12T11:30:59",
+  "updated_at": "2026-07-12T11:30:59",
+  "status": "PLANNED",
+  "steps": [
+    {
+      "name": "foundation_validation",
+      "description": "Valideert Update Center, Main Runner en Kernel.",
+      "dependencies": [],
+      "required": true,
+      "mode": "orchestrator",
+      "orchestrator_workflow": "platform_foundation",
+      "status": "PENDING"
+    },
+    {
+      "name": "kernel_validation",
+      "description": "Valideert de Phoenix Kernel afzonderlijk.",
+      "dependencies": [
+        "foundation_validation"
+      ],
+      "required": true,
+      "mode": "orchestrator",
+      "orchestrator_workflow": "orchestrator_only",
+      "status": "PENDING"
+    },
+    {
+      "name": "runtime_checkpoint",
+      "description": "Schrijft een hervatbaar runtime-checkpoint.",
+      "dependencies": [
+        "kernel_validation"
+      ],
+      "required": true,
+      "mode": "virtual",
+      "orchestrator_workflow": "",
+      "status": "PENDING"
+    }
+  ]
+}

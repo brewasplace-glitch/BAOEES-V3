@@ -1,0 +1,32 @@
+﻿{
+  "registry_name": "Phoenix Autonomous Workflow Registry",
+  "registry_version": "v11.0",
+  "steps": {
+    "foundation_validation": {
+      "description": "Valideert Update Center, Main Runner en Kernel.",
+      "mode": "orchestrator",
+      "dependencies": [],
+      "required": true,
+      "orchestrator_workflow": "platform_foundation"
+    },
+    "kernel_validation": {
+      "description": "Valideert de Phoenix Kernel afzonderlijk.",
+      "mode": "orchestrator",
+      "dependencies": ["foundation_validation"],
+      "required": true,
+      "orchestrator_workflow": "orchestrator_only"
+    },
+    "runtime_checkpoint": {
+      "description": "Schrijft een hervatbaar runtime-checkpoint.",
+      "mode": "virtual",
+      "dependencies": ["kernel_validation"],
+      "required": true
+    }
+  },
+  "workflows": {
+    "platform_foundation": {
+      "description": "Eerste autonome Phoenix Core-workflow.",
+      "steps": ["foundation_validation", "kernel_validation", "runtime_checkpoint"]
+    }
+  }
+}
