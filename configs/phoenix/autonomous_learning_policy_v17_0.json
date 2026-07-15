@@ -1,0 +1,14 @@
+﻿{
+  "policy_name": "Phoenix Autonomous Learning Policy",
+  "policy_version": "v17.0",
+  "minimum_records_for_reliable_learning": 20,
+  "failure_rate_warning_percent": 10.0,
+  "blocked_rate_warning_percent": 20.0,
+  "success_rate_good_percent": 80.0,
+  "learning_mode": "EVIDENCE_ONLY",
+  "allow_automatic_source_changes": false,
+  "allow_automatic_policy_changes": false,
+  "allow_automatic_execution": false,
+  "automatic_commit": false,
+  "automatic_push": false
+}

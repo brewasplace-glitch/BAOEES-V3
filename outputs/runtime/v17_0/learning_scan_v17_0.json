@@ -1,0 +1,340 @@
+﻿{
+  "engine": "Phoenix Autonomous Learning & Self-Optimization Engine",
+  "version": "v17.0",
+  "record_count": 47,
+  "parse_error_count": 0,
+  "records": [
+    {
+      "path": "outputs/runtime/phoenix_kernel_20260712_012939.json",
+      "status": "PASS",
+      "engine": "Phoenix Kernel",
+      "version": "v10.0",
+      "mode": "plan"
+    },
+    {
+      "path": "outputs/runtime/phoenix_kernel_20260712_013053.json",
+      "status": "PASS",
+      "engine": "Phoenix Kernel",
+      "version": "v10.0",
+      "mode": "plan"
+    },
+    {
+      "path": "outputs/runtime/phoenix_kernel_20260712_013111.json",
+      "status": "FAIL",
+      "engine": "Phoenix Kernel",
+      "version": "v10.0",
+      "mode": "execute"
+    },
+    {
+      "path": "outputs/runtime/phoenix_main_runner_20260712_011557.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_main_runner_20260712_012939.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_main_runner_20260712_013053.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_main_runner_20260712_013111.json",
+      "status": "BLOCKED_REPOSITORY_PREFLIGHT",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_main_runner_20260712_014714.json",
+      "status": "PASS",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_main_runner_20260712_014715.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_workflow_20260712_113058_628116.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Workflow Engine",
+      "version": "v11.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_workflow_20260712_113059_019812.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Workflow Engine",
+      "version": "v11.0",
+      "mode": "PLAN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_workflow_20260712_113059_263988.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Workflow Engine",
+      "version": "v11.0",
+      "mode": "PLAN"
+    },
+    {
+      "path": "outputs/runtime/phoenix_workflow_20260712_113059_264775.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Workflow Engine",
+      "version": "v11.0",
+      "mode": "VALIDATE"
+    },
+    {
+      "path": "outputs/runtime/project_phoenix_v10_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Kernel",
+      "version": "v10.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/project_phoenix_v10_1_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Kernel Trust & Registry Update",
+      "version": "v10.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/project_phoenix_v11_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Autonomous Workflow Engine",
+      "version": "v11.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/project_phoenix_v9_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Update Center",
+      "version": "v9.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/project_phoenix_v9_1_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Main Runner Orchestrator",
+      "version": "v9.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v12_0/capability_registry_validation_v12_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Engine Intelligence",
+      "version": "v12.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v12_0/engine_discovery_v12_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Engine Intelligence",
+      "version": "v12.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v12_0/engine_intelligence_self_test_v12_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Engine Intelligence",
+      "version": "v12.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v12_0/module_selection_plan_v12_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Engine Intelligence",
+      "version": "v12.0",
+      "mode": "DRY_RUN"
+    },
+    {
+      "path": "outputs/runtime/v12_0/project_phoenix_v12_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Core Engine Intelligence",
+      "version": "v12.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/ai_runtime_health_v13_0.json",
+      "status": "PASS",
+      "engine": "Phoenix AI Runtime",
+      "version": "v13.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/ai_runtime_plan_v13_0.json",
+      "status": "PASS",
+      "engine": "Phoenix AI Runtime",
+      "version": "v13.0",
+      "mode": "PLAN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/ai_runtime_self_test_v13_0.json",
+      "status": "PASS",
+      "engine": "Phoenix AI Runtime",
+      "version": "v13.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/project_phoenix_v13_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix AI Runtime",
+      "version": "v13.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/project_phoenix_v13_1_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Runtime Registry Validator",
+      "version": "v13.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/runtime_registry_validation_v13_1.json",
+      "status": "PASS",
+      "engine": "Phoenix Runtime Registry Validator",
+      "version": "v13.1",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v13_0/state/phoenix-core-v13.json",
+      "status": "PLANNED",
+      "engine": "UNKNOWN",
+      "version": "UNKNOWN",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v14_0/ai_planner_plan_v14_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous AI Planning Engine",
+      "version": "v14.0",
+      "mode": "DRY_RUN"
+    },
+    {
+      "path": "outputs/runtime/v14_0/ai_planner_self_test_v14_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous AI Planning Engine",
+      "version": "v14.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v14_0/ai_planner_validation_v14_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous AI Planning Engine",
+      "version": "v14.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v14_0/project_phoenix_v14_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Autonomous AI Planning Engine",
+      "version": "v14.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v15_0/autonomous_execution_dry_run_v15_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Execution Engine",
+      "version": "v15.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v15_0/autonomous_execution_self_test_v15_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Execution Engine",
+      "version": "v15.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v15_0/autonomous_execution_validation_v15_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Autonomous Execution Engine",
+      "version": "v15.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v15_0/project_phoenix_v15_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Autonomous Execution Engine",
+      "version": "v15.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v15_0/state/phoenix-core-v15.json",
+      "status": "PLANNED",
+      "engine": "UNKNOWN",
+      "version": "UNKNOWN",
+      "mode": "DRY_RUN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/incidents/INC-20260712234654169068-phoenix-core-v15.json",
+      "status": "UNKNOWN",
+      "engine": "UNKNOWN",
+      "version": "UNKNOWN",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/incidents/INC-20260712234654421752-phoenix-core-v15.json",
+      "status": "UNKNOWN",
+      "engine": "UNKNOWN",
+      "version": "UNKNOWN",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/project_phoenix_v16_0_installation.json",
+      "status": "UNKNOWN",
+      "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+      "version": "v16.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/workflow_supervisor_health_v16_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+      "version": "v16.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/workflow_supervisor_inspection_v16_0.json",
+      "status": "ATTENTION_REQUIRED",
+      "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+      "version": "v16.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/workflow_supervisor_recovery_plan_v16_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+      "version": "v16.0",
+      "mode": "DRY_RUN"
+    },
+    {
+      "path": "outputs/runtime/v16_0/workflow_supervisor_self_test_v16_0.json",
+      "status": "PASS",
+      "engine": "Phoenix Workflow Supervisor & Recovery Manager",
+      "version": "v16.0",
+      "mode": "UNKNOWN"
+    },
+    {
+      "path": "outputs/runtime/workflow_state/phoenix-core/platform_foundation.json",
+      "status": "PLANNED",
+      "engine": "Phoenix Autonomous Workflow Engine",
+      "version": "UNKNOWN",
+      "mode": "UNKNOWN"
+    }
+  ],
+  "parse_errors": [],
+  "status": "PASS",
+  "generated_at": "2026-07-15T22:19:31"
+}

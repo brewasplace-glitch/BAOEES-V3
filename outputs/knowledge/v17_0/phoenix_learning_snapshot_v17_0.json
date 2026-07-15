@@ -1,0 +1,55 @@
+﻿{
+  "engine": "Phoenix Autonomous Learning & Self-Optimization Engine",
+  "version": "v17.0",
+  "generated_at": "2026-07-15T22:19:31",
+  "dataset": {
+    "records": 47,
+    "status_counts": {
+      "PASS": 24,
+      "FAIL": 1,
+      "UNKNOWN": 17,
+      "BLOCKED_REPOSITORY_PREFLIGHT": 1,
+      "PLANNED": 3,
+      "ATTENTION_REQUIRED": 1
+    },
+    "engine_counts": {
+      "Phoenix Kernel": 4,
+      "Phoenix Main Runner Orchestrator": 7,
+      "Phoenix Autonomous Workflow Engine": 6,
+      "Phoenix Kernel Trust & Registry Update": 1,
+      "Phoenix Update Center": 1,
+      "Phoenix Engine Intelligence": 4,
+      "Phoenix Core Engine Intelligence": 1,
+      "Phoenix AI Runtime": 4,
+      "Phoenix Runtime Registry Validator": 2,
+      "UNKNOWN": 4,
+      "Phoenix Autonomous AI Planning Engine": 4,
+      "Phoenix Autonomous Execution Engine": 4,
+      "Phoenix Workflow Supervisor & Recovery Manager": 5
+    },
+    "mode_counts": {
+      "plan": 2,
+      "execute": 1,
+      "UNKNOWN": 36,
+      "PLAN": 3,
+      "VALIDATE": 1,
+      "DRY_RUN": 4
+    }
+  },
+  "metrics": {
+    "success_rate_percent": 51.06,
+    "failure_rate_percent": 2.13,
+    "blocked_rate_percent": 2.13,
+    "confidence": 1.0
+  },
+  "recommendations": [
+    {
+      "category": "GENERAL",
+      "priority": 50,
+      "message": "Geen urgente optimalisatie nodig; blijf evidence verzamelen."
+    }
+  ],
+  "automatic_source_changes": false,
+  "automatic_commit_push": false,
+  "status": "PASS"
+}

@@ -1,0 +1,9 @@
+﻿{
+    "engine":  "Phoenix Autonomous Learning \u0026 Self-Optimization Engine",
+    "version":  "v17.0",
+    "installed_at":  "2026-07-15T22:19:27",
+    "automatic_source_changes":  false,
+    "automatic_execution":  false,
+    "automatic_commit":  false,
+    "automatic_push":  false
+}
