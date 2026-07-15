@@ -1,0 +1,13 @@
+﻿{
+  "policy_name":"Phoenix Knowledge Graph & Reasoning Policy",
+  "policy_version":"v18.0",
+  "include_modules":true,
+  "include_configs":true,
+  "include_documentation":true,
+  "include_runtime_registry":true,
+  "reasoning_mode":"DRY_RUN",
+  "allow_automatic_source_changes":false,
+  "allow_automatic_policy_changes":false,
+  "automatic_commit":false,
+  "automatic_push":false
+}

@@ -1,0 +1,513 @@
+﻿{
+  "engine": "Phoenix Knowledge Graph & Reasoning Engine",
+  "version": "v18.0",
+  "generated_at": "2026-07-16T01:47:03",
+  "nodes": [
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py",
+      "type": "module",
+      "name": "automated_cleanup_helper.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/automated_cleanup_helper.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_ai_runtime_v13_0.py",
+      "type": "module",
+      "name": "phoenix_ai_runtime_v13_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_ai_runtime_v13_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_automated_task_builder_engine.py",
+      "type": "module",
+      "name": "phoenix_automated_task_builder_engine.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_automated_task_builder_engine.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_ai_planner_v14_0.py",
+      "type": "module",
+      "name": "phoenix_autonomous_ai_planner_v14_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_ai_planner_v14_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_execution_engine_v15_0.py",
+      "type": "module",
+      "name": "phoenix_autonomous_execution_engine_v15_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_execution_engine_v15_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_learning_engine_v17_0.py",
+      "type": "module",
+      "name": "phoenix_autonomous_learning_engine_v17_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_learning_engine_v17_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py",
+      "type": "module",
+      "name": "phoenix_autonomous_workflow_engine.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_build_governance_engine.py",
+      "type": "module",
+      "name": "phoenix_build_governance_engine.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_build_governance_engine.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py",
+      "type": "module",
+      "name": "phoenix_engine_intelligence_v12_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py",
+      "type": "module",
+      "name": "phoenix_kernel.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_knowledge_reasoning_v18_0.py",
+      "type": "module",
+      "name": "phoenix_knowledge_reasoning_v18_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_knowledge_reasoning_v18_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py",
+      "type": "module",
+      "name": "phoenix_main_runner_orchestrator.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_runtime_registry_validator_v13_1.py",
+      "type": "module",
+      "name": "phoenix_runtime_registry_validator_v13_1.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_runtime_registry_validator_v13_1.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_task_autopilot_engine.py",
+      "type": "module",
+      "name": "phoenix_task_autopilot_engine.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_autopilot_engine.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_task_executor_engine.py",
+      "type": "module",
+      "name": "phoenix_task_executor_engine.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_executor_engine.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_task_status_roadmap_update_engine.py",
+      "type": "module",
+      "name": "phoenix_task_status_roadmap_update_engine.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_task_status_roadmap_update_engine.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py",
+      "type": "module",
+      "name": "phoenix_update_center.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/phoenix_workflow_supervisor_v16_0.py",
+      "type": "module",
+      "name": "phoenix_workflow_supervisor_v16_0.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_workflow_supervisor_v16_0.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/runner_repair_advisor.py",
+      "type": "module",
+      "name": "runner_repair_advisor.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/runner_repair_advisor.py"
+    },
+    {
+      "id": "module:apps/brewster_engineering_wizard/project_analyzer/runner_validation.py",
+      "type": "module",
+      "name": "runner_validation.py",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/runner_validation.py"
+    },
+    {
+      "id": "config:configs/phoenix/ai_planner_policy_v14_0.json",
+      "type": "config",
+      "name": "ai_planner_policy_v14_0.json",
+      "path": "configs/phoenix/ai_planner_policy_v14_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/ai_planner_templates_v14_0.json",
+      "type": "config",
+      "name": "ai_planner_templates_v14_0.json",
+      "path": "configs/phoenix/ai_planner_templates_v14_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/ai_runtime_policy_v13_0.json",
+      "type": "config",
+      "name": "ai_runtime_policy_v13_0.json",
+      "path": "configs/phoenix/ai_runtime_policy_v13_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/ai_runtime_registry_v13_0.json",
+      "type": "config",
+      "name": "ai_runtime_registry_v13_0.json",
+      "path": "configs/phoenix/ai_runtime_registry_v13_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/autonomous_execution_policy_v15_0.json",
+      "type": "config",
+      "name": "autonomous_execution_policy_v15_0.json",
+      "path": "configs/phoenix/autonomous_execution_policy_v15_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/autonomous_learning_policy_v17_0.json",
+      "type": "config",
+      "name": "autonomous_learning_policy_v17_0.json",
+      "path": "configs/phoenix/autonomous_learning_policy_v17_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/autonomous_workflow_policy_v11_0.json",
+      "type": "config",
+      "name": "autonomous_workflow_policy_v11_0.json",
+      "path": "configs/phoenix/autonomous_workflow_policy_v11_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/autonomous_workflow_registry_v11_0.json",
+      "type": "config",
+      "name": "autonomous_workflow_registry_v11_0.json",
+      "path": "configs/phoenix/autonomous_workflow_registry_v11_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/capability_registry_v12_0.json",
+      "type": "config",
+      "name": "capability_registry_v12_0.json",
+      "path": "configs/phoenix/capability_registry_v12_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/engine_intelligence_policy_v12_0.json",
+      "type": "config",
+      "name": "engine_intelligence_policy_v12_0.json",
+      "path": "configs/phoenix/engine_intelligence_policy_v12_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/knowledge_reasoning_policy_v18_0.json",
+      "type": "config",
+      "name": "knowledge_reasoning_policy_v18_0.json",
+      "path": "configs/phoenix/knowledge_reasoning_policy_v18_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/main_runner_policy_v9_1.json",
+      "type": "config",
+      "name": "main_runner_policy_v9_1.json",
+      "path": "configs/phoenix/main_runner_policy_v9_1.json"
+    },
+    {
+      "id": "config:configs/phoenix/main_runner_registry_v9_1.json",
+      "type": "config",
+      "name": "main_runner_registry_v9_1.json",
+      "path": "configs/phoenix/main_runner_registry_v9_1.json"
+    },
+    {
+      "id": "config:configs/phoenix/phoenix_kernel_policy_v10_0.json",
+      "type": "config",
+      "name": "phoenix_kernel_policy_v10_0.json",
+      "path": "configs/phoenix/phoenix_kernel_policy_v10_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/phoenix_kernel_workflows_v10_0.json",
+      "type": "config",
+      "name": "phoenix_kernel_workflows_v10_0.json",
+      "path": "configs/phoenix/phoenix_kernel_workflows_v10_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/update_center_policy_v9_0.json",
+      "type": "config",
+      "name": "update_center_policy_v9_0.json",
+      "path": "configs/phoenix/update_center_policy_v9_0.json"
+    },
+    {
+      "id": "config:configs/phoenix/workflow_supervisor_policy_v16_0.json",
+      "type": "config",
+      "name": "workflow_supervisor_policy_v16_0.json",
+      "path": "configs/phoenix/workflow_supervisor_policy_v16_0.json"
+    },
+    {
+      "id": "config:configs/projects/bruynzeel_waterfront.json",
+      "type": "config",
+      "name": "bruynzeel_waterfront.json",
+      "path": "configs/projects/bruynzeel_waterfront.json"
+    },
+    {
+      "id": "config:configs/projects/moskee_bunschoten.json",
+      "type": "config",
+      "name": "moskee_bunschoten.json",
+      "path": "configs/projects/moskee_bunschoten.json"
+    },
+    {
+      "id": "config:configs/projects/plutostraat.json",
+      "type": "config",
+      "name": "plutostraat.json",
+      "path": "configs/projects/plutostraat.json"
+    },
+    {
+      "id": "config:configs/projects/project_index.json",
+      "type": "config",
+      "name": "project_index.json",
+      "path": "configs/projects/project_index.json"
+    },
+    {
+      "id": "documentation:docs/architectural/ARCHITECTURAL_MODULE_v1.md",
+      "type": "documentation",
+      "name": "ARCHITECTURAL_MODULE_v1.md",
+      "path": "docs/architectural/ARCHITECTURAL_MODULE_v1.md"
+    },
+    {
+      "id": "documentation:docs/Architecture.md",
+      "type": "documentation",
+      "name": "Architecture.md",
+      "path": "docs/Architecture.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_AUTONOMOUS_WORKFLOW_ENGINE_v11_0.md",
+      "type": "documentation",
+      "name": "PHOENIX_AUTONOMOUS_WORKFLOW_ENGINE_v11_0.md",
+      "path": "docs/automation/PHOENIX_AUTONOMOUS_WORKFLOW_ENGINE_v11_0.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v12_0_ENGINE_INTELLIGENCE.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v12_0_ENGINE_INTELLIGENCE.md",
+      "path": "docs/automation/PHOENIX_CORE_v12_0_ENGINE_INTELLIGENCE.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v13_0_AI_RUNTIME.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v13_0_AI_RUNTIME.md",
+      "path": "docs/automation/PHOENIX_CORE_v13_0_AI_RUNTIME.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v13_1_RUNTIME_REGISTRY_VALIDATOR.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v13_1_RUNTIME_REGISTRY_VALIDATOR.md",
+      "path": "docs/automation/PHOENIX_CORE_v13_1_RUNTIME_REGISTRY_VALIDATOR.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v14_0_AUTONOMOUS_AI_PLANNER.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v14_0_AUTONOMOUS_AI_PLANNER.md",
+      "path": "docs/automation/PHOENIX_CORE_v14_0_AUTONOMOUS_AI_PLANNER.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v15_0_AUTONOMOUS_EXECUTION_ENGINE.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v15_0_AUTONOMOUS_EXECUTION_ENGINE.md",
+      "path": "docs/automation/PHOENIX_CORE_v15_0_AUTONOMOUS_EXECUTION_ENGINE.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v16_0_WORKFLOW_SUPERVISOR_RECOVERY.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v16_0_WORKFLOW_SUPERVISOR_RECOVERY.md",
+      "path": "docs/automation/PHOENIX_CORE_v16_0_WORKFLOW_SUPERVISOR_RECOVERY.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v17_0_AUTONOMOUS_LEARNING.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v17_0_AUTONOMOUS_LEARNING.md",
+      "path": "docs/automation/PHOENIX_CORE_v17_0_AUTONOMOUS_LEARNING.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_CORE_v18_0_KNOWLEDGE_GRAPH.md",
+      "type": "documentation",
+      "name": "PHOENIX_CORE_v18_0_KNOWLEDGE_GRAPH.md",
+      "path": "docs/automation/PHOENIX_CORE_v18_0_KNOWLEDGE_GRAPH.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_KERNEL_TRUST_REGISTRY_v10_1.md",
+      "type": "documentation",
+      "name": "PHOENIX_KERNEL_TRUST_REGISTRY_v10_1.md",
+      "path": "docs/automation/PHOENIX_KERNEL_TRUST_REGISTRY_v10_1.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_KERNEL_v10_0.md",
+      "type": "documentation",
+      "name": "PHOENIX_KERNEL_v10_0.md",
+      "path": "docs/automation/PHOENIX_KERNEL_v10_0.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_MAIN_RUNNER_ORCHESTRATOR_v9_1.md",
+      "type": "documentation",
+      "name": "PHOENIX_MAIN_RUNNER_ORCHESTRATOR_v9_1.md",
+      "path": "docs/automation/PHOENIX_MAIN_RUNNER_ORCHESTRATOR_v9_1.md"
+    },
+    {
+      "id": "documentation:docs/automation/PHOENIX_UPDATE_CENTER_v9_0.md",
+      "type": "documentation",
+      "name": "PHOENIX_UPDATE_CENTER_v9_0.md",
+      "path": "docs/automation/PHOENIX_UPDATE_CENTER_v9_0.md"
+    },
+    {
+      "id": "documentation:docs/BREWSTER_v1_2_Project_Storage.md",
+      "type": "documentation",
+      "name": "BREWSTER_v1_2_Project_Storage.md",
+      "path": "docs/BREWSTER_v1_2_Project_Storage.md"
+    },
+    {
+      "id": "documentation:docs/phoenix_core/PROJECT_PHOENIX_CORE_v1.md",
+      "type": "documentation",
+      "name": "PROJECT_PHOENIX_CORE_v1.md",
+      "path": "docs/phoenix_core/PROJECT_PHOENIX_CORE_v1.md"
+    },
+    {
+      "id": "documentation:docs/phoenix_core/PROJECT_PHOENIX_CORE_v1_1.md",
+      "type": "documentation",
+      "name": "PROJECT_PHOENIX_CORE_v1_1.md",
+      "path": "docs/phoenix_core/PROJECT_PHOENIX_CORE_v1_1.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/architecture/TARGET_REPOSITORY_STRUCTURE.md",
+      "type": "documentation",
+      "name": "TARGET_REPOSITORY_STRUCTURE.md",
+      "path": "docs/project_phoenix/architecture/TARGET_REPOSITORY_STRUCTURE.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/automated_task_builder/phoenix_automated_task_builder_v7_8.md",
+      "type": "documentation",
+      "name": "phoenix_automated_task_builder_v7_8.md",
+      "path": "docs/project_phoenix/automated_task_builder/phoenix_automated_task_builder_v7_8.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/geometry/PHOENIX_GEOMETRY_ENGINE_v1_0.md",
+      "type": "documentation",
+      "name": "PHOENIX_GEOMETRY_ENGINE_v1_0.md",
+      "path": "docs/project_phoenix/geometry/PHOENIX_GEOMETRY_ENGINE_v1_0.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/governance/phoenix_build_governance_v7_6.md",
+      "type": "documentation",
+      "name": "phoenix_build_governance_v7_6.md",
+      "path": "docs/project_phoenix/governance/phoenix_build_governance_v7_6.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/intelligence/PHOENIX_INTELLIGENCE_LAYER_v1.md",
+      "type": "documentation",
+      "name": "PHOENIX_INTELLIGENCE_LAYER_v1.md",
+      "path": "docs/project_phoenix/intelligence/PHOENIX_INTELLIGENCE_LAYER_v1.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/pdk/PHOENIX_DEVELOPMENT_KIT_v1.md",
+      "type": "documentation",
+      "name": "PHOENIX_DEVELOPMENT_KIT_v1.md",
+      "path": "docs/project_phoenix/pdk/PHOENIX_DEVELOPMENT_KIT_v1.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/repository/REPOSITORY_RENAME_DECISION.md",
+      "type": "documentation",
+      "name": "REPOSITORY_RENAME_DECISION.md",
+      "path": "docs/project_phoenix/repository/REPOSITORY_RENAME_DECISION.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/roadmap_status/phoenix_task_status_roadmap_update_v7_9.md",
+      "type": "documentation",
+      "name": "phoenix_task_status_roadmap_update_v7_9.md",
+      "path": "docs/project_phoenix/roadmap_status/phoenix_task_status_roadmap_update_v7_9.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/s01/automated_cleanup_helper.md",
+      "type": "documentation",
+      "name": "automated_cleanup_helper.md",
+      "path": "docs/project_phoenix/s01/automated_cleanup_helper.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/s01/runner_repair_advisor_v8_2.md",
+      "type": "documentation",
+      "name": "runner_repair_advisor_v8_2.md",
+      "path": "docs/project_phoenix/s01/runner_repair_advisor_v8_2.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/s01/runner_validation.md",
+      "type": "documentation",
+      "name": "runner_validation.md",
+      "path": "docs/project_phoenix/s01/runner_validation.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/s01/runner_validation_v8_1.md",
+      "type": "documentation",
+      "name": "runner_validation_v8_1.md",
+      "path": "docs/project_phoenix/s01/runner_validation_v8_1.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/task_autopilot/phoenix_task_autopilot_v8_0.md",
+      "type": "documentation",
+      "name": "phoenix_task_autopilot_v8_0.md",
+      "path": "docs/project_phoenix/task_autopilot/phoenix_task_autopilot_v8_0.md"
+    },
+    {
+      "id": "documentation:docs/project_phoenix/task_executor/phoenix_task_executor_v7_7.md",
+      "type": "documentation",
+      "name": "phoenix_task_executor_v7_7.md",
+      "path": "docs/project_phoenix/task_executor/phoenix_task_executor_v7_7.md"
+    },
+    {
+      "id": "documentation:docs/PROJECT_STRUCTURE.md",
+      "type": "documentation",
+      "name": "PROJECT_STRUCTURE.md",
+      "path": "docs/PROJECT_STRUCTURE.md"
+    },
+    {
+      "id": "documentation:docs/Roadmap.md",
+      "type": "documentation",
+      "name": "Roadmap.md",
+      "path": "docs/Roadmap.md"
+    },
+    {
+      "id": "engine:phoenix.autonomous_workflow",
+      "type": "engine",
+      "name": "phoenix.autonomous_workflow",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_workflow_engine.py"
+    },
+    {
+      "id": "engine:phoenix.engine_discovery",
+      "type": "engine",
+      "name": "phoenix.engine_discovery",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py"
+    },
+    {
+      "id": "engine:phoenix.engine_intelligence",
+      "type": "engine",
+      "name": "phoenix.engine_intelligence",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_engine_intelligence_v12_0.py"
+    },
+    {
+      "id": "engine:phoenix.kernel",
+      "type": "engine",
+      "name": "phoenix.kernel",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_kernel.py"
+    },
+    {
+      "id": "engine:phoenix.main_runner",
+      "type": "engine",
+      "name": "phoenix.main_runner",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_main_runner_orchestrator.py"
+    },
+    {
+      "id": "engine:phoenix.update_center",
+      "type": "engine",
+      "name": "phoenix.update_center",
+      "path": "apps/brewster_engineering_wizard/project_analyzer/phoenix_update_center.py"
+    }
+  ],
+  "edges": [
+    {
+      "source": "engine:phoenix.autonomous_workflow",
+      "target": "engine:phoenix.kernel",
+      "relation": "depends_on"
+    },
+    {
+      "source": "engine:phoenix.engine_discovery",
+      "target": "engine:phoenix.autonomous_workflow",
+      "relation": "depends_on"
+    },
+    {
+      "source": "engine:phoenix.kernel",
+      "target": "engine:phoenix.main_runner",
+      "relation": "depends_on"
+    }
+  ],
+  "node_count": 81,
+  "edge_count": 3,
+  "status": "PASS"
+}

@@ -1,0 +1,20 @@
+﻿{
+  "engine": "Phoenix Knowledge Graph & Reasoning Engine",
+  "version": "v18.0",
+  "mode": "DRY_RUN",
+  "metrics": {
+    "modules": 20,
+    "configs": 21,
+    "documentation": 34,
+    "nodes": 81,
+    "edges": 3
+  },
+  "findings": [],
+  "recommendations": [
+    "Knowledge Graph en dependencystructuur zijn consistent als v18-baseline."
+  ],
+  "automatic_source_changes": false,
+  "automatic_commit_push": false,
+  "status": "PASS",
+  "generated_at": "2026-07-16T01:47:04"
+}
