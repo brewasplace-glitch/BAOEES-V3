@@ -1,0 +1,26 @@
+﻿{
+  "engine": "Phoenix Autonomous Decision & Planning Engine",
+  "version": "v25.0",
+  "objective": "Continue building Project Phoenix safely and autonomously.",
+  "strategy_id": "accelerate_build",
+  "steps": [
+    {
+      "sequence": 1,
+      "step_id": "confirm_clean_tree",
+      "description": "Bevestig working tree clean.",
+      "requires_go": false,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 2,
+      "step_id": "build_next_module",
+      "description": "Bouw de volgende module als downloadbare update.",
+      "requires_go": true,
+      "status": "PLANNED"
+    }
+  ],
+  "mode": "DRY_RUN",
+  "automatic_execution": false,
+  "status": "PASS",
+  "generated_at": "2026-07-16T11:10:01"
+}

@@ -1,0 +1,37 @@
+﻿{
+  "registry_name":"Phoenix Decision Strategy Registry",
+  "registry_version":"v25.0",
+  "strategies":[
+    {
+      "strategy_id":"stabilize_first",
+      "title":"Stabilize First",
+      "description":"Voer eerst extra validatie, risicoanalyse en herstelcontroles uit.",
+      "base_score":70,
+      "steps":[
+        {"step_id":"validate_repository","description":"Controleer repository, tests en runtime-evidence.","requires_go":false},
+        {"step_id":"review_risks","description":"Beoordeel risico's en open beslissingen.","requires_go":true},
+        {"step_id":"approve_next_build","description":"Geef expliciete GO voor de volgende bouwstap.","requires_go":true}
+      ]
+    },
+    {
+      "strategy_id":"accelerate_build",
+      "title":"Accelerate Build",
+      "description":"Ga na basisvalidatie direct door naar de volgende veilige module.",
+      "base_score":65,
+      "steps":[
+        {"step_id":"confirm_clean_tree","description":"Bevestig working tree clean.","requires_go":false},
+        {"step_id":"build_next_module","description":"Bouw de volgende module als downloadbare update.","requires_go":true}
+      ]
+    },
+    {
+      "strategy_id":"knowledge_enrichment",
+      "title":"Knowledge Enrichment",
+      "description":"Breid eerst projectmemory, lessons learned en knowledge graph uit.",
+      "base_score":60,
+      "steps":[
+        {"step_id":"enrich_memory","description":"Verzamel aanvullende project- en runtimekennis.","requires_go":true},
+        {"step_id":"update_reasoning","description":"Actualiseer reasoning en beslisregels.","requires_go":true}
+      ]
+    }
+  ]
+}
