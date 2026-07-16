@@ -1,0 +1,110 @@
+﻿{
+  "engine": "Phoenix Executive Controller",
+  "version": "v26.0",
+  "workflow_id": "phoenix_executive_core",
+  "run_id": "phoenix-core-v26",
+  "stages": [
+    {
+      "sequence": 1,
+      "component_id": "planner",
+      "role": "Planning",
+      "priority": 10,
+      "dependencies": [],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 2,
+      "component_id": "memory",
+      "role": "Project Memory",
+      "priority": 20,
+      "dependencies": [],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 3,
+      "component_id": "decision",
+      "role": "Decision and Planning",
+      "priority": 30,
+      "dependencies": [
+        "planner",
+        "memory"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 4,
+      "component_id": "reasoning",
+      "role": "Reasoning",
+      "priority": 40,
+      "dependencies": [
+        "planner",
+        "memory"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 5,
+      "component_id": "multi_agent",
+      "role": "Multi-Agent Coordination",
+      "priority": 50,
+      "dependencies": [
+        "decision",
+        "reasoning"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 6,
+      "component_id": "execution",
+      "role": "Execution",
+      "priority": 60,
+      "dependencies": [
+        "multi_agent"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 7,
+      "component_id": "supervisor",
+      "role": "Supervision and Recovery",
+      "priority": 70,
+      "dependencies": [
+        "execution"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 8,
+      "component_id": "learning",
+      "role": "Learning",
+      "priority": 80,
+      "dependencies": [
+        "supervisor"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 9,
+      "component_id": "release",
+      "role": "Release Finalization",
+      "priority": 90,
+      "dependencies": [
+        "learning"
+      ],
+      "mode": "SELF_TEST",
+      "status": "PLANNED"
+    }
+  ],
+  "state_path": "C:\\PROJECT-PHOENIX\\outputs\\runtime\\v26_0\\state\\phoenix-core-v26.json",
+  "automatic_execution": false,
+  "status": "PASS",
+  "generated_at": "2026-07-16T11:47:57"
+}

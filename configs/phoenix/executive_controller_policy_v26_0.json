@@ -1,0 +1,13 @@
+﻿{
+  "policy_name": "Phoenix Executive Controller Policy",
+  "policy_version": "v26.0",
+  "default_workflow": "phoenix_executive_core",
+  "default_mode": "DRY_RUN",
+  "require_component_discovery": true,
+  "require_dependency_validation": true,
+  "require_health_pass": true,
+  "allow_automatic_execution": false,
+  "allow_automatic_source_changes": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}

@@ -1,0 +1,53 @@
+﻿{
+  "engine": "Phoenix Executive Controller",
+  "version": "v26.0",
+  "components": [
+    {
+      "component_id": "planner",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "memory",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "decision",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "reasoning",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "multi_agent",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "execution",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "supervisor",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "learning",
+      "module_exists": true,
+      "status": "HEALTHY"
+    },
+    {
+      "component_id": "release",
+      "module_exists": true,
+      "status": "HEALTHY"
+    }
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-16T11:47:57"
+}

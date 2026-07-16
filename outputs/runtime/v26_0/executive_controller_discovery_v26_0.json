@@ -1,0 +1,97 @@
+﻿{
+  "engine": "Phoenix Executive Controller",
+  "version": "v26.0",
+  "components": [
+    {
+      "component_id": "planner",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_ai_planner_v14_0.py",
+      "exists": true,
+      "dependencies": [],
+      "priority": 10,
+      "role": "Planning"
+    },
+    {
+      "component_id": "memory",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_project_memory_engine_v24_0.py",
+      "exists": true,
+      "dependencies": [],
+      "priority": 20,
+      "role": "Project Memory"
+    },
+    {
+      "component_id": "decision",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_decision_planning_engine_v25_0.py",
+      "exists": true,
+      "dependencies": [
+        "planner",
+        "memory"
+      ],
+      "priority": 30,
+      "role": "Decision and Planning"
+    },
+    {
+      "component_id": "reasoning",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_knowledge_reasoning_v18_0.py",
+      "exists": true,
+      "dependencies": [
+        "planner",
+        "memory"
+      ],
+      "priority": 40,
+      "role": "Reasoning"
+    },
+    {
+      "component_id": "multi_agent",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_multi_agent_orchestrator_v19_0.py",
+      "exists": true,
+      "dependencies": [
+        "decision",
+        "reasoning"
+      ],
+      "priority": 50,
+      "role": "Multi-Agent Coordination"
+    },
+    {
+      "component_id": "execution",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_execution_engine_v15_0.py",
+      "exists": true,
+      "dependencies": [
+        "multi_agent"
+      ],
+      "priority": 60,
+      "role": "Execution"
+    },
+    {
+      "component_id": "supervisor",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_workflow_supervisor_v16_0.py",
+      "exists": true,
+      "dependencies": [
+        "execution"
+      ],
+      "priority": 70,
+      "role": "Supervision and Recovery"
+    },
+    {
+      "component_id": "learning",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_learning_engine_v17_0.py",
+      "exists": true,
+      "dependencies": [
+        "supervisor"
+      ],
+      "priority": 80,
+      "role": "Learning"
+    },
+    {
+      "component_id": "release",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_release_finalization_engine_v21_0.py",
+      "exists": true,
+      "dependencies": [
+        "learning"
+      ],
+      "priority": 90,
+      "role": "Release Finalization"
+    }
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-16T11:47:57"
+}
