@@ -1,0 +1,28 @@
+﻿{
+  "engine": "Phoenix Autonomous Patch Generation Engine",
+  "version": "v29.0",
+  "steps": [
+    {
+      "sequence": 1,
+      "patch_id": "DEV-001",
+      "target_id": "platform",
+      "steps": [
+        "verify_clean_repository",
+        "create_backup",
+        "render_patch_in_temp",
+        "validate_expected_paths",
+        "run_syntax_tests",
+        "run_unit_tests",
+        "run_regression_tests",
+        "require_explicit_go",
+        "apply_patch",
+        "verify_working_tree"
+      ],
+      "status": "PLANNED",
+      "automatic_apply": false
+    }
+  ],
+  "safe_to_apply_without_go": false,
+  "status": "PASS",
+  "generated_at": "2026-07-17T00:33:04"
+}

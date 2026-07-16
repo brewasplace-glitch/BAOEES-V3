@@ -1,0 +1,15 @@
+﻿{
+  "policy_name":"Phoenix Patch Generation Policy",
+  "policy_version":"v29.0",
+  "default_mode":"DRY_RUN",
+  "allow_automatic_patch_application":false,
+  "allow_automatic_source_changes":false,
+  "require_explicit_go_before_apply":true,
+  "require_clean_repository":true,
+  "require_backup_before_apply":true,
+  "require_syntax_tests":true,
+  "require_unit_tests":true,
+  "require_regression_tests":true,
+  "automatic_commit_after_tests":true,
+  "automatic_push_after_commit":true
+}

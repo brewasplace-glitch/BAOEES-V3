@@ -1,0 +1,28 @@
+﻿{
+  "engine": "Phoenix Autonomous Patch Generation Engine",
+  "version": "v29.0",
+  "manifests": [
+    {
+      "patch_id": "DEV-001",
+      "target_id": "platform",
+      "action": "RUN_CAPABILITY_GAP_REVIEW",
+      "target_path": "",
+      "template_id": "capability_gap_review",
+      "allowed_operations": [
+        "analyze",
+        "document",
+        "propose"
+      ],
+      "required_tests": [
+        "unit",
+        "integration"
+      ],
+      "requires_go": true,
+      "apply_mode": "DRY_RUN",
+      "fingerprint": "28d251dd7c792ca56d798ab91e11473c16123c6bd8dd4ec31903fc775d850864"
+    }
+  ],
+  "automatic_application": false,
+  "status": "PASS",
+  "generated_at": "2026-07-17T00:33:04"
+}

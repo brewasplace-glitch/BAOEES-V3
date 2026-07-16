@@ -1,0 +1,24 @@
+﻿{
+  "registry_name":"Phoenix Patch Template Registry",
+  "registry_version":"v29.0",
+  "templates":[
+    {
+      "template_id":"create_missing_component",
+      "action":"CREATE_MISSING_COMPONENT",
+      "allowed_operations":["create_file","create_directory","create_test","create_documentation"],
+      "required_tests":["syntax","unit","integration","regression"]
+    },
+    {
+      "template_id":"capability_gap_review",
+      "action":"RUN_CAPABILITY_GAP_REVIEW",
+      "allowed_operations":["analyze","document","propose"],
+      "required_tests":["unit","integration"]
+    }
+  ],
+  "default_template":{
+    "template_id":"safe_default",
+    "action":"DEFAULT",
+    "allowed_operations":["analyze","document"],
+    "required_tests":["unit"]
+  }
+}
