@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Autonomous Program Manager Policy",
+  "policy_version": "v27.0",
+  "priority_weight": 1.5,
+  "risk_weight": 2.0,
+  "remaining_work_weight": 1.0,
+  "default_mode": "DRY_RUN",
+  "allow_automatic_program_execution": false,
+  "allow_automatic_source_changes": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}

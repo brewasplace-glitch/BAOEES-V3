@@ -1,0 +1,35 @@
+﻿{
+  "registry_name": "Phoenix Program Portfolio Registry",
+  "registry_version": "v27.0",
+  "programs": {
+    "project-phoenix-core-program": {
+      "description": "Centrale ontwikkel- en integratieprogrammering voor Project Phoenix.",
+      "projects": [
+        {
+          "project_id": "phoenix-core-platform",
+          "workflow_id": "phoenix_executive_core",
+          "priority": 100,
+          "risk_score": 15,
+          "progress_percent": 85,
+          "status": "ACTIVE"
+        },
+        {
+          "project_id": "brewster-engineering-wizard",
+          "workflow_id": "phoenix_executive_core",
+          "priority": 90,
+          "risk_score": 25,
+          "progress_percent": 60,
+          "status": "ACTIVE"
+        },
+        {
+          "project_id": "architectural-suite",
+          "workflow_id": "phoenix_executive_core",
+          "priority": 80,
+          "risk_score": 20,
+          "progress_percent": 55,
+          "status": "ACTIVE"
+        }
+      ]
+    }
+  }
+}

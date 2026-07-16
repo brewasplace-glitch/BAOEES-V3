@@ -1,0 +1,28 @@
+﻿{
+  "engine": "Phoenix Autonomous Program Manager",
+  "version": "v27.0",
+  "program_id": "project-phoenix-core-program",
+  "project_count": 3,
+  "average_progress_percent": 66.67,
+  "highest_risk_project": {
+    "project_id": "brewster-engineering-wizard",
+    "workflow_id": "phoenix_executive_core",
+    "priority": 90,
+    "risk_score": 25,
+    "progress_percent": 60,
+    "program_score": 225.0,
+    "status": "ACTIVE"
+  },
+  "recommended_next_project": {
+    "project_id": "brewster-engineering-wizard",
+    "workflow_id": "phoenix_executive_core",
+    "priority": 90,
+    "risk_score": 25,
+    "progress_percent": 60,
+    "program_score": 225.0,
+    "status": "ACTIVE"
+  },
+  "safe_to_execute_without_go": false,
+  "status": "PASS",
+  "generated_at": "2026-07-16T12:33:23"
+}
