@@ -1,0 +1,9 @@
+﻿{
+    "installed_at":  "2026-07-16T02:55:03",
+    "version":  "v23.0",
+    "automatic_commit":  true,
+    "branch":  "project-phoenix",
+    "automatic_push":  true,
+    "post_commit_runtime_writes":  false,
+    "engine":  "Phoenix Deterministic Runtime \u0026 Release Finalization Engine"
+}

@@ -1,0 +1,24 @@
+﻿{
+  "engine": "Phoenix Deterministic Runtime & Release Finalization Engine",
+  "version": "v23.0",
+  "files": [
+    {
+      "path": "outputs/runtime/v23_0/deterministic_release_finalize_plan_v23_0.json",
+      "size_bytes": 565,
+      "sha256": "fea00fe848e5ed1e01bb402453c02fd6efe96c3d5f871ca5cc9fd51e13e1bb71"
+    },
+    {
+      "path": "outputs/runtime/v23_0/deterministic_release_self_test_v23_0.json",
+      "size_bytes": 314,
+      "sha256": "9778d437f732919b0634b4b8f4146de83878233a8f29e74bb524f6e9e36f5e45"
+    },
+    {
+      "path": "outputs/runtime/v23_0/project_phoenix_v23_0_installation.json",
+      "size_bytes": 303,
+      "sha256": "2ee6a3e4b8b0d7b96fa256f229d4dabdae4c510b393c1dc7f3295978de95ce9c"
+    }
+  ],
+  "file_count": 3,
+  "status": "PASS",
+  "generated_at": "2026-07-16T02:55:05"
+}

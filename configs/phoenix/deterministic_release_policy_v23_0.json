@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Deterministic Release Policy",
+  "policy_version": "v23.0",
+  "write_all_runtime_reports_before_staging": true,
+  "allow_post_commit_runtime_writes": false,
+  "require_expected_files_only": true,
+  "require_git_diff_check": true,
+  "require_push_success": true,
+  "require_working_tree_clean_after_push": true,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}
