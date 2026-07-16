@@ -1,8 +1,8 @@
 ﻿{
-    "installed_at":  "2026-07-16T11:09:59",
+    "installed_at":  "2026-07-16T11:10:29",
     "version":  "v25.0",
-    "automatic_commit":  true,
+    "automatic_commit":  false,
     "branch":  "project-phoenix",
-    "automatic_push":  true,
+    "automatic_push":  false,
     "engine":  "Phoenix Autonomous Decision \u0026 Planning Engine"
 }

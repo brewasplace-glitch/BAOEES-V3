@@ -15,7 +15,7 @@
     },
     "project_fingerprint": "c1abd060b0e932675daecbda4ec38eee460becd09e32a226b0d4862c830a8efa",
     "status": "PASS",
-    "generated_at": "2026-07-16T11:10:01",
+    "generated_at": "2026-07-16T11:10:31",
     "output_path": "C:\\PROJECT-PHOENIX\\outputs\\runtime\\v25_0\\decision_analysis_v25_0.json"
   },
   "candidates": [
@@ -52,5 +52,5 @@
   "automatic_execution": false,
   "automatic_source_changes": false,
   "status": "PASS",
-  "generated_at": "2026-07-16T11:10:01"
+  "generated_at": "2026-07-16T11:10:31"
 }
