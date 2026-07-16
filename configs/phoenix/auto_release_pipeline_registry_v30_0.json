@@ -1,0 +1,19 @@
+﻿{
+  "registry_name":"Phoenix Auto Release Pipeline Registry",
+  "registry_version":"v30.0",
+  "stages":[
+    {"stage_id":"repository_preflight","order":10,"description":"Controleer branch, remote en working tree.","blocking":true},
+    {"stage_id":"build","order":20,"description":"Installeer de nieuwe Phoenix-versie.","blocking":true},
+    {"stage_id":"syntax_tests","order":30,"description":"Voer syntaxcontrole uit.","blocking":true},
+    {"stage_id":"unit_tests","order":40,"description":"Voer unit tests uit.","blocking":true},
+    {"stage_id":"integration_tests","order":50,"description":"Voer integratievalidatie uit.","blocking":true},
+    {"stage_id":"regression_tests","order":60,"description":"Voer regressiecontroles uit.","blocking":true},
+    {"stage_id":"self_test","order":70,"description":"Voer engine self-test uit.","blocking":true},
+    {"stage_id":"runtime_evidence","order":80,"description":"Schrijf runtime-evidence voor Git-finalisatie.","blocking":true},
+    {"stage_id":"git_diff_check","order":90,"description":"Voer git diff --check uit.","blocking":true},
+    {"stage_id":"controlled_stage","order":100,"description":"Stage uitsluitend verwachte bestanden.","blocking":true},
+    {"stage_id":"commit","order":110,"description":"Commit automatisch na succesvolle tests.","blocking":true},
+    {"stage_id":"push","order":120,"description":"Push automatisch naar de actieve branch.","blocking":true},
+    {"stage_id":"final_status","order":130,"description":"Bevestig working tree clean.","blocking":true}
+  ]
+}

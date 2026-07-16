@@ -1,0 +1,102 @@
+﻿{
+  "engine": "Phoenix Auto Release Pipeline",
+  "version": "v30.0",
+  "stages": [
+    {
+      "sequence": 1,
+      "stage_id": "repository_preflight",
+      "description": "Controleer branch, remote en working tree.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 2,
+      "stage_id": "build",
+      "description": "Installeer de nieuwe Phoenix-versie.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 3,
+      "stage_id": "syntax_tests",
+      "description": "Voer syntaxcontrole uit.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 4,
+      "stage_id": "unit_tests",
+      "description": "Voer unit tests uit.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 5,
+      "stage_id": "integration_tests",
+      "description": "Voer integratievalidatie uit.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 6,
+      "stage_id": "regression_tests",
+      "description": "Voer regressiecontroles uit.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 7,
+      "stage_id": "self_test",
+      "description": "Voer engine self-test uit.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 8,
+      "stage_id": "runtime_evidence",
+      "description": "Schrijf runtime-evidence voor Git-finalisatie.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 9,
+      "stage_id": "git_diff_check",
+      "description": "Voer git diff --check uit.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 10,
+      "stage_id": "controlled_stage",
+      "description": "Stage uitsluitend verwachte bestanden.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 11,
+      "stage_id": "commit",
+      "description": "Commit automatisch na succesvolle tests.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 12,
+      "stage_id": "push",
+      "description": "Push automatisch naar de actieve branch.",
+      "blocking": true,
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 13,
+      "stage_id": "final_status",
+      "description": "Bevestig working tree clean.",
+      "blocking": true,
+      "status": "PLANNED"
+    }
+  ],
+  "automatic_commit": true,
+  "automatic_push": true,
+  "final_gate": "WORKING_TREE_CLEAN",
+  "status": "PASS",
+  "generated_at": "2026-07-17T00:54:24"
+}

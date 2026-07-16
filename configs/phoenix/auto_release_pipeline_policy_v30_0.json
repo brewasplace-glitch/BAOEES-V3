@@ -1,0 +1,13 @@
+﻿{
+  "policy_name":"Phoenix Auto Release Pipeline Policy",
+  "policy_version":"v30.0",
+  "required_stages":["repository_preflight","build","syntax_tests","unit_tests","integration_tests","regression_tests","self_test","runtime_evidence","git_diff_check","controlled_stage","commit","push","final_status"],
+  "require_clean_repository_before_build":true,
+  "require_all_tests_pass":true,
+  "require_expected_files_only":true,
+  "require_push_success":true,
+  "require_working_tree_clean_after_push":true,
+  "automatic_commit":true,
+  "automatic_push":true,
+  "allow_manual_git_finalize":false
+}

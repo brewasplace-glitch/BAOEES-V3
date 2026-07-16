@@ -1,0 +1,9 @@
+﻿{
+    "installed_at":  "2026-07-17T00:54:21",
+    "version":  "v30.0",
+    "automatic_commit":  true,
+    "branch":  "project-phoenix",
+    "automatic_push":  true,
+    "manual_git_finalize":  false,
+    "engine":  "Phoenix Auto Release Pipeline"
+}
