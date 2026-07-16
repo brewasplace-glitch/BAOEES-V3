@@ -1,0 +1,10 @@
+﻿{
+  "policy_name": "Phoenix Full Autonomous Project Policy",
+  "policy_version": "v20.0",
+  "required_approval_token": "GO",
+  "default_mode": "DRY_RUN",
+  "require_clean_repository": true,
+  "automatic_execution": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}

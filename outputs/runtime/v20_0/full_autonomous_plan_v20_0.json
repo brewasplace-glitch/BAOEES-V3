@@ -1,0 +1,71 @@
+﻿{
+  "engine": "Phoenix Full Autonomous Project Engine",
+  "version": "v20.0",
+  "project_id": "phoenix-core-v20",
+  "objective": "Run the complete Phoenix Core autonomous pipeline safely.",
+  "mode": "DRY_RUN",
+  "stages": [
+    {
+      "sequence": 1,
+      "stage_id": "planning",
+      "component": "planner",
+      "mode": "self-test",
+      "dependencies": [],
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 2,
+      "stage_id": "reasoning",
+      "component": "reasoning",
+      "mode": "self-test",
+      "dependencies": [
+        "planning"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 3,
+      "stage_id": "multi_agent_coordination",
+      "component": "multi_agent",
+      "mode": "self-test",
+      "dependencies": [
+        "reasoning"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 4,
+      "stage_id": "execution",
+      "component": "execution",
+      "mode": "self-test",
+      "dependencies": [
+        "multi_agent_coordination"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 5,
+      "stage_id": "supervision",
+      "component": "supervisor",
+      "mode": "self-test",
+      "dependencies": [
+        "execution"
+      ],
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 6,
+      "stage_id": "learning",
+      "component": "learning",
+      "mode": "self-test",
+      "dependencies": [
+        "supervision"
+      ],
+      "status": "PLANNED"
+    }
+  ],
+  "state_path": "C:\\PROJECT-PHOENIX\\outputs\\runtime\\v20_0\\state\\phoenix-core-v20.json",
+  "automatic_execution": false,
+  "status": "PASS",
+  "generated_at": "2026-07-16T02:13:00"
+}

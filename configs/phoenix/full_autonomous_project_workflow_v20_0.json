@@ -1,0 +1,42 @@
+﻿{
+  "workflow_name": "Phoenix Full Autonomous Project Workflow",
+  "workflow_version": "v20.0",
+  "stages": [
+    {
+      "stage_id": "planning",
+      "component": "planner",
+      "mode": "self-test",
+      "dependencies": []
+    },
+    {
+      "stage_id": "reasoning",
+      "component": "reasoning",
+      "mode": "self-test",
+      "dependencies": ["planning"]
+    },
+    {
+      "stage_id": "multi_agent_coordination",
+      "component": "multi_agent",
+      "mode": "self-test",
+      "dependencies": ["reasoning"]
+    },
+    {
+      "stage_id": "execution",
+      "component": "execution",
+      "mode": "self-test",
+      "dependencies": ["multi_agent_coordination"]
+    },
+    {
+      "stage_id": "supervision",
+      "component": "supervisor",
+      "mode": "self-test",
+      "dependencies": ["execution"]
+    },
+    {
+      "stage_id": "learning",
+      "component": "learning",
+      "mode": "self-test",
+      "dependencies": ["supervision"]
+    }
+  ]
+}
