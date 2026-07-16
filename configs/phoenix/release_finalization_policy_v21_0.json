@@ -1,0 +1,13 @@
+﻿{
+  "policy_name": "Phoenix Release Finalization Policy",
+  "policy_version": "v21.0",
+  "require_clean_repository_before_install": true,
+  "require_tests_pass": true,
+  "require_git_diff_check": true,
+  "require_expected_files_only": true,
+  "require_push_success": true,
+  "require_clean_repository_after_push": true,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true,
+  "rollback_staging_on_validation_failure": true
+}
