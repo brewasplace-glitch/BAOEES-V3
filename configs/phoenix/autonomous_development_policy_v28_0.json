@@ -1,0 +1,13 @@
+﻿{
+  "policy_name":"Phoenix Autonomous Development Policy",
+  "policy_version":"v28.0",
+  "default_mode":"PROPOSAL_ONLY",
+  "allow_automatic_patch_application":false,
+  "allow_automatic_source_changes":false,
+  "require_explicit_go_before_apply":true,
+  "require_syntax_tests":true,
+  "require_unit_tests":true,
+  "require_regression_plan":true,
+  "automatic_commit_after_tests":true,
+  "automatic_push_after_commit":true
+}

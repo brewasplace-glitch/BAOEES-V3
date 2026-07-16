@@ -1,0 +1,15 @@
+﻿{
+  "registry_name":"Phoenix Development Capability Registry",
+  "registry_version":"v28.0",
+  "capabilities":[
+    {"capability_id":"module_gap_analysis","test_type":"unit"},
+    {"capability_id":"patch_plan_generation","test_type":"unit"},
+    {"capability_id":"dependency_review","test_type":"integration"},
+    {"capability_id":"regression_plan_generation","test_type":"integration"}
+  ],
+  "targets":[
+    {"target_id":"executive_controller","path":"apps/brewster_engineering_wizard/project_analyzer/phoenix_executive_controller_v26_0.py","required":true},
+    {"target_id":"program_manager","path":"apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_program_manager_v27_0.py","required":true},
+    {"target_id":"project_memory","path":"apps/brewster_engineering_wizard/project_analyzer/phoenix_project_memory_engine_v24_0.py","required":true}
+  ]
+}

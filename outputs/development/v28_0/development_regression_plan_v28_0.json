@@ -1,0 +1,33 @@
+﻿{
+  "engine": "Phoenix Autonomous Development Engine",
+  "version": "v28.0",
+  "tests": [
+    {
+      "capability_id": "module_gap_analysis",
+      "test_type": "unit",
+      "required": true,
+      "status": "PLANNED"
+    },
+    {
+      "capability_id": "patch_plan_generation",
+      "test_type": "unit",
+      "required": true,
+      "status": "PLANNED"
+    },
+    {
+      "capability_id": "dependency_review",
+      "test_type": "integration",
+      "required": true,
+      "status": "PLANNED"
+    },
+    {
+      "capability_id": "regression_plan_generation",
+      "test_type": "integration",
+      "required": true,
+      "status": "PLANNED"
+    }
+  ],
+  "automatic_source_changes": false,
+  "status": "PASS",
+  "generated_at": "2026-07-16T22:42:55"
+}
