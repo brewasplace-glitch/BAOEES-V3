@@ -1,8 +1,8 @@
 ﻿{
-    "installed_at":  "2026-07-16T11:47:55",
+    "installed_at":  "2026-07-16T11:48:24",
     "version":  "v26.0",
-    "automatic_commit":  true,
+    "automatic_commit":  false,
     "branch":  "project-phoenix",
-    "automatic_push":  true,
+    "automatic_push":  false,
     "engine":  "Phoenix Executive Controller"
 }
