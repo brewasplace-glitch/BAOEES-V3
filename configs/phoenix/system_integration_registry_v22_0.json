@@ -1,0 +1,102 @@
+﻿{
+  "registry_name": "Phoenix System Integration Registry",
+  "registry_version": "v22.0",
+  "lifecycle": {
+    "allowed_states": [
+      "ACTIVE",
+      "STABLE",
+      "DEPRECATED"
+    ]
+  },
+  "components": {
+    "planner": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_ai_planner_v14_0.py",
+      "dependencies": [],
+      "capabilities": [
+        "project.plan",
+        "task.sequence"
+      ],
+      "lifecycle_state": "STABLE"
+    },
+    "execution": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_execution_engine_v15_0.py",
+      "dependencies": [
+        "planner"
+      ],
+      "capabilities": [
+        "task.execute",
+        "checkpoint.write"
+      ],
+      "lifecycle_state": "STABLE"
+    },
+    "supervisor": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_workflow_supervisor_v16_0.py",
+      "dependencies": [
+        "execution"
+      ],
+      "capabilities": [
+        "workflow.supervise",
+        "workflow.recover"
+      ],
+      "lifecycle_state": "STABLE"
+    },
+    "learning": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_learning_engine_v17_0.py",
+      "dependencies": [
+        "supervisor"
+      ],
+      "capabilities": [
+        "runtime.learn",
+        "workflow.optimize"
+      ],
+      "lifecycle_state": "ACTIVE"
+    },
+    "reasoning": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_knowledge_reasoning_v18_0.py",
+      "dependencies": [
+        "planner"
+      ],
+      "capabilities": [
+        "knowledge.reason",
+        "dependency.analyse"
+      ],
+      "lifecycle_state": "ACTIVE"
+    },
+    "multi_agent": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_multi_agent_orchestrator_v19_0.py",
+      "dependencies": [
+        "reasoning",
+        "execution"
+      ],
+      "capabilities": [
+        "agents.coordinate",
+        "messages.route"
+      ],
+      "lifecycle_state": "ACTIVE"
+    },
+    "full_autonomous_project": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_full_autonomous_project_engine_v20_0.py",
+      "dependencies": [
+        "multi_agent",
+        "supervisor",
+        "learning"
+      ],
+      "capabilities": [
+        "project.autonomous",
+        "pipeline.integrate"
+      ],
+      "lifecycle_state": "ACTIVE"
+    },
+    "release_finalization": {
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_release_finalization_engine_v21_0.py",
+      "dependencies": [
+        "full_autonomous_project"
+      ],
+      "capabilities": [
+        "release.audit",
+        "git.finalize"
+      ],
+      "lifecycle_state": "ACTIVE"
+    }
+  }
+}

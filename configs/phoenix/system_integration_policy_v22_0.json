@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix System Integration Policy",
+  "policy_version": "v22.0",
+  "require_component_discovery": true,
+  "require_dependency_validation": true,
+  "require_health_pass": true,
+  "require_lifecycle_validation": true,
+  "default_mode": "DRY_RUN",
+  "automatic_execution": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}
