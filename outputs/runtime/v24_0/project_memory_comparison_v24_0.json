@@ -1,0 +1,33 @@
+﻿{
+  "engine": "Phoenix Autonomous Project Memory Engine",
+  "version": "v24.0",
+  "left_project_id": "project-phoenix",
+  "right_project_id": "project-phoenix",
+  "shared_engines": [
+    "Phoenix AI Runtime",
+    "Phoenix Autonomous AI Planning Engine",
+    "Phoenix Autonomous Execution Engine",
+    "Phoenix Autonomous Learning & Self-Optimization Engine",
+    "Phoenix Autonomous Multi-Agent Orchestrator",
+    "Phoenix Autonomous Release & Git Finalization Engine",
+    "Phoenix Autonomous System Integration Engine",
+    "Phoenix Autonomous Workflow Engine",
+    "Phoenix Core Engine Intelligence",
+    "Phoenix Deterministic Runtime & Release Finalization Engine",
+    "Phoenix Engine Intelligence",
+    "Phoenix Full Autonomous Project Engine",
+    "Phoenix Kernel",
+    "Phoenix Kernel Trust & Registry Update",
+    "Phoenix Knowledge Graph & Reasoning Engine",
+    "Phoenix Main Runner Orchestrator",
+    "Phoenix Runtime Registry Validator",
+    "Phoenix Update Center",
+    "Phoenix Workflow Supervisor & Recovery Manager",
+    "UNKNOWN"
+  ],
+  "left_only_engines": [],
+  "right_only_engines": [],
+  "same_fingerprint": true,
+  "status": "PASS",
+  "generated_at": "2026-07-16T10:36:26"
+}

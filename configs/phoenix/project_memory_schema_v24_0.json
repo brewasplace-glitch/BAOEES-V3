@@ -1,0 +1,13 @@
+﻿{
+  "schema_name": "Phoenix Project Memory Schema",
+  "schema_version": "v24.0",
+  "required_fields": [
+    "project_id",
+    "generated_at",
+    "runtime_record_count",
+    "status_counts",
+    "engine_counts",
+    "fingerprint",
+    "status"
+  ]
+}

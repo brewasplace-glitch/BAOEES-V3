@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Project Memory Policy",
+  "policy_version": "v24.0",
+  "memory_mode": "PERSISTENT_EVIDENCE",
+  "include_runtime_outputs": true,
+  "include_source_code": false,
+  "allow_cross_project_comparison": true,
+  "allow_reuse_recommendations": true,
+  "allow_automatic_source_changes": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}
