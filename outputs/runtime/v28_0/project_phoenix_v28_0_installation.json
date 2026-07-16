@@ -1,8 +1,8 @@
 ﻿{
-    "installed_at":  "2026-07-16T22:42:53",
+    "installed_at":  "2026-07-16T22:43:27",
     "version":  "v28.0",
-    "automatic_commit":  true,
+    "automatic_commit":  false,
     "branch":  "project-phoenix",
-    "automatic_push":  true,
+    "automatic_push":  false,
     "engine":  "Phoenix Autonomous Development Engine"
 }
