@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Multi-Agent Policy",
+  "policy_version": "v19.0",
+  "required_approval_token": "GO",
+  "default_mode": "DRY_RUN",
+  "allow_parallel_execution": false,
+  "allow_agent_to_agent_messages": true,
+  "persist_message_bus": true,
+  "require_clean_repository": true,
+  "automatic_commit": false,
+  "automatic_push": false
+}

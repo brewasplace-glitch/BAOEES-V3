@@ -1,0 +1,48 @@
+﻿{
+  "registry_name": "Phoenix Multi-Agent Registry",
+  "registry_version": "v19.0",
+  "agents": {
+    "planner_agent": {
+      "role": "Planning",
+      "capabilities": ["project.plan", "task.sequence"],
+      "dependencies": [],
+      "mode": "virtual"
+    },
+    "reasoning_agent": {
+      "role": "Reasoning",
+      "capabilities": ["knowledge.reason", "dependency.analyse"],
+      "dependencies": ["planner_agent"],
+      "mode": "virtual"
+    },
+    "execution_agent": {
+      "role": "Execution",
+      "capabilities": ["task.execute", "checkpoint.write"],
+      "dependencies": ["reasoning_agent"],
+      "mode": "virtual"
+    },
+    "quality_agent": {
+      "role": "Quality Assurance",
+      "capabilities": ["quality.validate", "evidence.review"],
+      "dependencies": ["execution_agent"],
+      "mode": "virtual"
+    },
+    "reporting_agent": {
+      "role": "Reporting",
+      "capabilities": ["report.generate", "status.publish"],
+      "dependencies": ["quality_agent"],
+      "mode": "virtual"
+    }
+  },
+  "workflows": {
+    "phoenix_core_coordination": {
+      "description": "Veilige multi-agentcoordinatie voor Phoenix Core.",
+      "agents": [
+        "planner_agent",
+        "reasoning_agent",
+        "execution_agent",
+        "quality_agent",
+        "reporting_agent"
+      ]
+    }
+  }
+}

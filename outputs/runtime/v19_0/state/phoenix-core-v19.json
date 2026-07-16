@@ -1,0 +1,78 @@
+﻿{
+  "run_id": "phoenix-core-v19",
+  "workflow": "phoenix_core_coordination",
+  "status": "PLANNED",
+  "assignments": [
+    {
+      "sequence": 1,
+      "agent_id": "planner_agent",
+      "role": "Planning",
+      "capabilities": [
+        "project.plan",
+        "task.sequence"
+      ],
+      "dependencies": [],
+      "mode": "virtual",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 2,
+      "agent_id": "reasoning_agent",
+      "role": "Reasoning",
+      "capabilities": [
+        "knowledge.reason",
+        "dependency.analyse"
+      ],
+      "dependencies": [
+        "planner_agent"
+      ],
+      "mode": "virtual",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 3,
+      "agent_id": "execution_agent",
+      "role": "Execution",
+      "capabilities": [
+        "task.execute",
+        "checkpoint.write"
+      ],
+      "dependencies": [
+        "reasoning_agent"
+      ],
+      "mode": "virtual",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 4,
+      "agent_id": "quality_agent",
+      "role": "Quality Assurance",
+      "capabilities": [
+        "quality.validate",
+        "evidence.review"
+      ],
+      "dependencies": [
+        "execution_agent"
+      ],
+      "mode": "virtual",
+      "status": "PLANNED"
+    },
+    {
+      "sequence": 5,
+      "agent_id": "reporting_agent",
+      "role": "Reporting",
+      "capabilities": [
+        "report.generate",
+        "status.publish"
+      ],
+      "dependencies": [
+        "quality_agent"
+      ],
+      "mode": "virtual",
+      "status": "PLANNED"
+    }
+  ],
+  "completed_agents": [],
+  "created_at": "2026-07-16T01:57:59",
+  "updated_at": "2026-07-16T01:57:59"
+}
