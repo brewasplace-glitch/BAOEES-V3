@@ -1,9 +1,8 @@
 ﻿{
-    "installed_at":  "2026-07-17T02:13:34",
+    "installed_at":  "2026-07-17T02:22:38",
     "version":  "v31.1",
     "automatic_commit":  true,
     "branch":  "project-phoenix",
-    "recovery_from":  "v31.0",
     "automatic_push":  true,
     "engine":  "Phoenix Kernel"
 }

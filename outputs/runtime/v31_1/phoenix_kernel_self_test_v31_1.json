@@ -6,8 +6,9 @@
     "registry_exists": true,
     "python_supported": true,
     "plugins_registered": true,
-    "dataclass_import_issue_removed": true
+    "event_bus_available": true,
+    "service_bus_available": true
   },
   "status": "PASS",
-  "generated_at": "2026-07-17T02:13:36"
+  "generated_at": "2026-07-17T02:22:40"
 }

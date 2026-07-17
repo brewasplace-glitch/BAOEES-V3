@@ -4,38 +4,23 @@
   "plugins": {
     "executive_controller": {
       "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_executive_controller_v26_0.py",
-      "capabilities": [
-        "executive.plan",
-        "executive.health"
-      ]
+      "capabilities": ["executive.plan", "executive.health"]
     },
     "program_manager": {
       "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_program_manager_v27_0.py",
-      "capabilities": [
-        "program.assess",
-        "program.plan"
-      ]
+      "capabilities": ["program.assess", "program.plan"]
     },
     "development_engine": {
       "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_development_engine_v28_0.py",
-      "capabilities": [
-        "development.analyze",
-        "development.propose"
-      ]
+      "capabilities": ["development.analyze", "development.propose"]
     },
     "patch_generation": {
       "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_patch_generation_engine_v29_0.py",
-      "capabilities": [
-        "patch.generate",
-        "patch.plan"
-      ]
+      "capabilities": ["patch.generate", "patch.plan"]
     },
     "auto_release": {
       "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_auto_release_pipeline_v30_0.py",
-      "capabilities": [
-        "release.validate",
-        "release.finalize"
-      ]
+      "capabilities": ["release.validate", "release.finalize"]
     }
   }
 }

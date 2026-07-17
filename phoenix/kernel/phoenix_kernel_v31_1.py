@@ -45,18 +45,10 @@ class EventBus:
         self._subscribers: Dict[str, List[Callable[[KernelEvent], None]]] = {}
         self.history: List[Dict[str, Any]] = []
 
-    def subscribe(
-        self,
-        event_type: str,
-        handler: Callable[[KernelEvent], None],
-    ) -> None:
+    def subscribe(self, event_type: str, handler: Callable[[KernelEvent], None]) -> None:
         self._subscribers.setdefault(event_type, []).append(handler)
 
-    def publish(
-        self,
-        event_type: str,
-        payload: Dict[str, Any],
-    ) -> KernelEvent:
+    def publish(self, event_type: str, payload: Dict[str, Any]) -> KernelEvent:
         event = KernelEvent(event_type, payload)
         self.history.append(event.as_dict())
 
@@ -70,11 +62,7 @@ class ServiceBus:
     def __init__(self) -> None:
         self._services: Dict[str, Callable[..., Any]] = {}
 
-    def register(
-        self,
-        service_id: str,
-        handler: Callable[..., Any],
-    ) -> None:
+    def register(self, service_id: str, handler: Callable[..., Any]) -> None:
         if service_id in self._services:
             raise RuntimeError(f"Service bestaat al: {service_id}")
         self._services[service_id] = handler
@@ -120,12 +108,8 @@ class PluginLoader:
     def loadable(self, path: Path) -> bool:
         if not path.is_file():
             return False
-
-        try:
-            spec = importlib.util.spec_from_file_location(path.stem, path)
-            return spec is not None and spec.loader is not None
-        except Exception:
-            return False
+        spec = importlib.util.spec_from_file_location(path.stem, path)
+        return spec is not None and spec.loader is not None
 
 
 class PhoenixKernel:
@@ -143,9 +127,9 @@ class PhoenixKernel:
             "registry_exists": REGISTRY_PATH.is_file(),
             "python_supported": sys.version_info >= (3, 10),
             "plugins_registered": bool(self.registry.get("plugins")),
-            "dataclass_import_issue_removed": True,
+            "event_bus_available": isinstance(self.events, EventBus),
+            "service_bus_available": isinstance(self.services, ServiceBus),
         }
-
         return self._write_report(
             "self_test",
             {
@@ -173,10 +157,7 @@ class PhoenixKernel:
 
         status = (
             "PASS"
-            if all(
-                item["exists"] and item["loadable"]
-                for item in plugins
-            )
+            if all(item["exists"] and item["loadable"] for item in plugins)
             else "FAIL"
         )
 
@@ -192,7 +173,6 @@ class PhoenixKernel:
 
     def bootstrap(self) -> Dict[str, Any]:
         discovery = self.discover()
-
         if discovery["status"] != "PASS":
             return self._write_report(
                 "bootstrap",
@@ -204,22 +184,15 @@ class PhoenixKernel:
             )
 
         started = []
-
         for plugin in discovery["plugins"]:
             plugin_id = plugin["plugin_id"]
             self.lifecycle.register(plugin_id)
             self.lifecycle.transition(plugin_id, "STARTING")
             self.lifecycle.transition(plugin_id, "RUNNING")
             started.append(plugin_id)
-            self.events.publish(
-                "plugin.started",
-                {"plugin_id": plugin_id},
-            )
+            self.events.publish("plugin.started", {"plugin_id": plugin_id})
 
-        self.services.register(
-            "kernel.health",
-            lambda: {"status": "PASS"},
-        )
+        self.services.register("kernel.health", lambda: {"status": "PASS"})
         self.services.register(
             "kernel.plugins",
             lambda: {"plugins": sorted(started)},
@@ -241,20 +214,14 @@ class PhoenixKernel:
     def integration_test(self) -> Dict[str, Any]:
         received: List[Dict[str, Any]] = []
 
-        def handler(event: KernelEvent) -> None:
-            received.append(event.payload)
-
-        self.events.subscribe("kernel.test", handler)
+        self.events.subscribe(
+            "kernel.test",
+            lambda event: received.append(event.payload),
+        )
         self.events.publish("kernel.test", {"message": "ok"})
 
-        self.services.register(
-            "kernel.echo",
-            lambda message: {"message": message},
-        )
-        echo = self.services.call(
-            "kernel.echo",
-            message="ok",
-        )
+        self.services.register("kernel.echo", lambda message: {"message": message})
+        echo = self.services.call("kernel.echo", message="ok")
 
         lifecycle = LifecycleManager()
         lifecycle.register("test-component")
@@ -264,9 +231,7 @@ class PhoenixKernel:
         checks = {
             "event_bus": received == [{"message": "ok"}],
             "service_bus": echo == {"message": "ok"},
-            "lifecycle_manager": (
-                lifecycle.states["test-component"] == "RUNNING"
-            ),
+            "lifecycle_manager": lifecycle.states["test-component"] == "RUNNING",
             "plugin_loader": all(
                 self.loader.loadable(ROOT / item["module"])
                 for item in self.registry["plugins"].values()
@@ -310,26 +275,14 @@ class PhoenixKernel:
         )
 
     def _read_json(self, path: Path) -> Dict[str, Any]:
-        return json.loads(
-            path.read_text(encoding="utf-8-sig")
-        )
+        return json.loads(path.read_text(encoding="utf-8-sig"))
 
-    def _write_report(
-        self,
-        name: str,
-        data: Dict[str, Any],
-    ) -> Dict[str, Any]:
+    def _write_report(self, name: str, data: Dict[str, Any]) -> Dict[str, Any]:
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-        data["generated_at"] = datetime.now().isoformat(
-            timespec="seconds"
-        )
+        data["generated_at"] = datetime.now().isoformat(timespec="seconds")
         path = OUTPUT_DIR / f"phoenix_kernel_{name}_v31_1.json"
         path.write_text(
-            json.dumps(
-                data,
-                ensure_ascii=False,
-                indent=2,
-            ),
+            json.dumps(data, ensure_ascii=False, indent=2),
             encoding="utf-8-sig",
         )
         data["output_path"] = str(path)
@@ -364,18 +317,9 @@ def main() -> None:
     else:
         result = kernel.summary()
 
-    print(
-        json.dumps(
-            result,
-            ensure_ascii=True,
-            indent=2,
-        )
-    )
+    print(json.dumps(result, ensure_ascii=True, indent=2))
 
-    if result.get("status") in {
-        "FAIL",
-        "BLOCKED_PLUGIN_DISCOVERY",
-    }:
+    if result.get("status") in {"FAIL", "BLOCKED_PLUGIN_DISCOVERY"}:
         raise SystemExit(1)
 
 
