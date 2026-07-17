@@ -1,0 +1,12 @@
+﻿{
+  "policy_name": "Phoenix Digital Twin Policy",
+  "policy_version": "v32.0",
+  "kernel_version": "v31.1",
+  "require_change_log": true,
+  "require_versioning": true,
+  "require_snapshots": true,
+  "require_event_publication": true,
+  "allow_automatic_source_changes": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}

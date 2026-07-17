@@ -1,0 +1,13 @@
+﻿{
+  "engine": "Phoenix Digital Twin",
+  "version": "v32.0",
+  "checks": {
+    "policy_exists": true,
+    "schema_exists": true,
+    "kernel_exists": true,
+    "kernel_loadable": true,
+    "python_supported": true
+  },
+  "status": "PASS",
+  "generated_at": "2026-07-17T22:47:39"
+}

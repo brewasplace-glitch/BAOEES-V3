@@ -1,0 +1,29 @@
+﻿{
+  "schema_name": "Phoenix Digital Twin Schema",
+  "schema_version": "v32.0",
+  "allowed_object_types": [
+    "project",
+    "site",
+    "building",
+    "storey",
+    "space",
+    "element",
+    "system",
+    "asset",
+    "document",
+    "calculation",
+    "permit",
+    "cost_item",
+    "schedule_item"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "connected_to",
+    "documented_by",
+    "calculated_by",
+    "approved_by",
+    "costed_by",
+    "scheduled_by"
+  ]
+}

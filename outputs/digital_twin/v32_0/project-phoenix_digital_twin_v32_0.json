@@ -1,0 +1,156 @@
+﻿{
+  "engine": "Phoenix Digital Twin",
+  "version": "v32.0",
+  "project_id": "project-phoenix",
+  "twin_version": 1,
+  "objects": [
+    {
+      "object_id": "project-phoenix",
+      "object_type": "project",
+      "attributes": {
+        "name": "Project Phoenix",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-17T22:47:39",
+      "updated_at": "2026-07-17T22:47:39",
+      "revision": 1
+    },
+    {
+      "object_id": "building-001",
+      "object_type": "building",
+      "attributes": {
+        "name": "Testgebouw",
+        "discipline": "bouw",
+        "status": "VALIDATED"
+      },
+      "created_at": "2026-07-17T22:47:39",
+      "updated_at": "2026-07-17T22:47:39",
+      "revision": 2
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "project-phoenix",
+      "target_id": "building-001",
+      "relation_type": "contains"
+    }
+  ],
+  "changes": [
+    {
+      "sequence": 1,
+      "operation": "CREATE",
+      "object_id": "project-phoenix",
+      "details": {
+        "after": {
+          "object_id": "project-phoenix",
+          "object_type": "project",
+          "attributes": {
+            "name": "Project Phoenix",
+            "status": "ACTIVE"
+          },
+          "created_at": "2026-07-17T22:47:39",
+          "updated_at": "2026-07-17T22:47:39",
+          "revision": 1
+        }
+      },
+      "timestamp": "2026-07-17T22:47:39"
+    },
+    {
+      "sequence": 2,
+      "operation": "CREATE",
+      "object_id": "building-001",
+      "details": {
+        "after": {
+          "object_id": "building-001",
+          "object_type": "building",
+          "attributes": {
+            "name": "Testgebouw",
+            "discipline": "bouw",
+            "status": "VALIDATED"
+          },
+          "created_at": "2026-07-17T22:47:39",
+          "updated_at": "2026-07-17T22:47:39",
+          "revision": 2
+        }
+      },
+      "timestamp": "2026-07-17T22:47:39"
+    },
+    {
+      "sequence": 3,
+      "operation": "RELATE",
+      "object_id": "project-phoenix",
+      "details": {
+        "source_id": "project-phoenix",
+        "target_id": "building-001",
+        "relation_type": "contains"
+      },
+      "timestamp": "2026-07-17T22:47:39"
+    },
+    {
+      "sequence": 4,
+      "operation": "UPDATE",
+      "object_id": "building-001",
+      "details": {
+        "before": {
+          "object_id": "building-001",
+          "object_type": "building",
+          "attributes": {
+            "name": "Testgebouw",
+            "discipline": "bouw"
+          },
+          "created_at": "2026-07-17T22:47:39",
+          "updated_at": "2026-07-17T22:47:39",
+          "revision": 1
+        },
+        "after": {
+          "object_id": "building-001",
+          "object_type": "building",
+          "attributes": {
+            "name": "Testgebouw",
+            "discipline": "bouw",
+            "status": "VALIDATED"
+          },
+          "created_at": "2026-07-17T22:47:39",
+          "updated_at": "2026-07-17T22:47:39",
+          "revision": 2
+        }
+      },
+      "timestamp": "2026-07-17T22:47:39"
+    }
+  ],
+  "event_history": [
+    {
+      "event_type": "digital_twin.object.created",
+      "payload": {
+        "object_id": "project-phoenix"
+      },
+      "created_at": "2026-07-17T22:47:39"
+    },
+    {
+      "event_type": "digital_twin.object.created",
+      "payload": {
+        "object_id": "building-001"
+      },
+      "created_at": "2026-07-17T22:47:39"
+    },
+    {
+      "event_type": "digital_twin.relation.created",
+      "payload": {
+        "source_id": "project-phoenix",
+        "target_id": "building-001",
+        "relation_type": "contains"
+      },
+      "created_at": "2026-07-17T22:47:39"
+    },
+    {
+      "event_type": "digital_twin.object.updated",
+      "payload": {
+        "object_id": "building-001"
+      },
+      "created_at": "2026-07-17T22:47:39"
+    }
+  ],
+  "generated_at": "2026-07-17T22:47:39",
+  "fingerprint": "3b7118f509b48b416cee626166683d9e2e0929e6b13f4962b1bb597ca8a68bd5",
+  "status": "PASS"
+}
