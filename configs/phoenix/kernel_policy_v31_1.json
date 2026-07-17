@@ -1,0 +1,13 @@
+﻿{
+  "policy_name": "Phoenix Kernel Recovery Policy",
+  "policy_version": "v31.1",
+  "require_plugin_discovery": true,
+  "require_lifecycle_validation": true,
+  "require_event_bus": true,
+  "require_service_bus": true,
+  "remove_dataclass_import_dependency": true,
+  "allow_dynamic_plugin_loading": true,
+  "allow_automatic_source_changes": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}

@@ -1,0 +1,58 @@
+﻿{
+  "engine": "Phoenix Kernel",
+  "version": "v31.1",
+  "plugins": [
+    {
+      "plugin_id": "executive_controller",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_executive_controller_v26_0.py",
+      "exists": true,
+      "loadable": true,
+      "capabilities": [
+        "executive.plan",
+        "executive.health"
+      ]
+    },
+    {
+      "plugin_id": "program_manager",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_program_manager_v27_0.py",
+      "exists": true,
+      "loadable": true,
+      "capabilities": [
+        "program.assess",
+        "program.plan"
+      ]
+    },
+    {
+      "plugin_id": "development_engine",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_development_engine_v28_0.py",
+      "exists": true,
+      "loadable": true,
+      "capabilities": [
+        "development.analyze",
+        "development.propose"
+      ]
+    },
+    {
+      "plugin_id": "patch_generation",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_autonomous_patch_generation_engine_v29_0.py",
+      "exists": true,
+      "loadable": true,
+      "capabilities": [
+        "patch.generate",
+        "patch.plan"
+      ]
+    },
+    {
+      "plugin_id": "auto_release",
+      "module": "apps/brewster_engineering_wizard/project_analyzer/phoenix_auto_release_pipeline_v30_0.py",
+      "exists": true,
+      "loadable": true,
+      "capabilities": [
+        "release.validate",
+        "release.finalize"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-17T02:13:36"
+}
