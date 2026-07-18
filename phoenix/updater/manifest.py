@@ -4,7 +4,6 @@ import hashlib
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 
 
 @dataclass(frozen=True)
@@ -33,11 +32,20 @@ class UpdateManifest:
         if missing:
             raise ValueError(f"Manifest mist velden: {', '.join(missing)}")
 
+        files = list(data["files"])
+        for index, item in enumerate(files):
+            missing_file_fields = {"source", "target", "sha256"}.difference(item)
+            if missing_file_fields:
+                raise ValueError(
+                    f"Bestandsvermelding {index} mist: "
+                    f"{', '.join(sorted(missing_file_fields))}"
+                )
+
         return cls(
             update_id=str(data["update_id"]),
             version=str(data["version"]),
             description=str(data["description"]),
-            files=list(data["files"]),
+            files=files,
             test_commands=list(data["test_commands"]),
             commit_message=str(data["commit_message"]),
             auto_push=bool(data.get("auto_push", True)),

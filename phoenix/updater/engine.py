@@ -11,7 +11,7 @@ from .manifest import UpdateManifest, validate_manifest_files
 
 
 class PhoenixUpdater:
-    VERSION = "v1.0"
+    VERSION = "v1.1"
 
     def __init__(self, repository_root: Path) -> None:
         self.root = repository_root.resolve()
@@ -20,7 +20,7 @@ class PhoenixUpdater:
         self.installed = self.updates / "installed"
         self.rejected = self.updates / "rejected"
         self.rollback = self.updates / "rollback"
-        self.artifacts = self.root / "artifacts/releases/updater_v1_0"
+        self.artifacts = self.root / "artifacts/releases/updater_v1_1"
 
         for directory in (
             self.incoming,
@@ -33,10 +33,17 @@ class PhoenixUpdater:
 
     def discover(self) -> list[Path]:
         return sorted(
-            path
-            for path in self.incoming.iterdir()
-            if path.is_dir() and (path / "manifest.json").is_file()
+            (
+                path
+                for path in self.incoming.iterdir()
+                if path.is_dir() and (path / "manifest.json").is_file()
+            ),
+            key=lambda path: path.name.lower(),
         )
+
+    def next_package(self) -> Path | None:
+        packages = self.discover()
+        return packages[0] if packages else None
 
     def inspect(self, package: Path) -> dict[str, Any]:
         manifest = UpdateManifest.load(package / "manifest.json")
@@ -51,6 +58,30 @@ class PhoenixUpdater:
             "status": "PASS" if not errors else "FAIL",
             "generated_at": datetime.now().isoformat(timespec="seconds"),
         }
+
+    def apply_next(
+        self,
+        *,
+        run_tests: bool = True,
+        commit: bool = True,
+        push: bool = True,
+    ) -> dict[str, Any]:
+        package = self.next_package()
+        if package is None:
+            return {
+                "engine": "Phoenix Updater",
+                "version": self.VERSION,
+                "status": "PASS",
+                "message": "Geen updatepakketten beschikbaar.",
+                "packages": [],
+            }
+
+        return self.apply(
+            package,
+            run_tests=run_tests,
+            commit=commit,
+            push=push,
+        )
 
     def apply(
         self,
@@ -67,10 +98,13 @@ class PhoenixUpdater:
             self._move_package(package, self.rejected / package.name)
             return validation
 
-        if self._git_status():
+        dirty = self._git_status()
+        permitted_prefix = f"?? {package.relative_to(self.root).as_posix()}/"
+        unexpected = [line for line in dirty if not line.startswith(permitted_prefix)]
+        if unexpected:
             raise RuntimeError(
-                "Updater geblokkeerd: working tree is niet clean. "
-                "Commit of herstel bestaande wijzigingen eerst."
+                "Updater geblokkeerd: working tree bevat wijzigingen buiten "
+                f"het updatepakket: {unexpected}"
             )
 
         backup = self.rollback / (
@@ -119,7 +153,8 @@ class PhoenixUpdater:
                     )
                     if completed.returncode != 0:
                         raise RuntimeError(
-                            f"Test mislukt: {' '.join(command)}"
+                            f"Test mislukt: {' '.join(command)}\n"
+                            f"{completed.stdout}\n{completed.stderr}"
                         )
 
             if commit:
@@ -183,7 +218,7 @@ class PhoenixUpdater:
 
     def _git_status(self) -> list[str]:
         completed = subprocess.run(
-            ["git", "status", "--porcelain"],
+            ["git", "status", "--porcelain", "-uall"],
             cwd=self.root,
             text=True,
             capture_output=True,
