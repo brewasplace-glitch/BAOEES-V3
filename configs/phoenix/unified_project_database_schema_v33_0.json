@@ -1,0 +1,18 @@
+﻿{
+  "schema_name": "Phoenix Unified Project Database Schema",
+  "schema_version": "v33.0",
+  "tables": [
+    "projects",
+    "project_history",
+    "project_objects",
+    "project_relations",
+    "digital_twin_snapshots"
+  ],
+  "required_indexes": [
+    "idx_projects_status",
+    "idx_history_project_revision",
+    "idx_objects_project_type",
+    "idx_relations_project_type",
+    "idx_snapshots_project_version"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+    "branch":  "project-phoenix",
+    "automatic_push":  true,
+    "fixes":  [
+                  "Windows SQLite file lock",
+                  "explicit connection close",
+                  "isolated integration database",
+                  "repeatable integration tests"
+              ],
+    "automatic_commit":  true,
+    "repaired_at":  "2026-07-18T00:36:08",
+    "engine_version":  "v33.0",
+    "repair_version":  "v33.1",
+    "engine":  "Phoenix Unified Project Database"
+}

@@ -1,0 +1,9 @@
+﻿{
+    "branch":  "project-phoenix",
+    "automatic_commit":  true,
+    "lifecycle_fix_version":  "v33.2",
+    "automatic_push":  true,
+    "repaired_at":  "2026-07-18T02:04:58",
+    "engine_version":  "v33.0",
+    "engine":  "Phoenix Unified Project Database"
+}

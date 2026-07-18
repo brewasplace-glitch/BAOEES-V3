@@ -7,3 +7,7 @@ __pycache__/
 venv/
 .pytest_cache/
 exports/
+
+# Project Phoenix generated runtime databases
+outputs/database/**/*.sqlite3
+outputs/database/**/*.sqlite3-*

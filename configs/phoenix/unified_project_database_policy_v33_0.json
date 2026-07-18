@@ -1,0 +1,13 @@
+﻿{
+  "policy_name": "Phoenix Unified Project Database Policy",
+  "policy_version": "v33.0",
+  "digital_twin_version": "v32.0",
+  "storage_engine": "sqlite",
+  "require_transactions": true,
+  "require_version_history": true,
+  "require_indexes": true,
+  "require_fingerprints": true,
+  "allow_automatic_source_changes": false,
+  "automatic_commit_after_tests": true,
+  "automatic_push_after_commit": true
+}
