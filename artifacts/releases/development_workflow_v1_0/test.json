@@ -1,0 +1,31 @@
+﻿{
+  "engine": "Phoenix Development Workflow",
+  "version": "v1.0",
+  "command": "test",
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\brewasplace\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "tests/automation/test_phoenix_development_workflow_v1_0.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.328s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\brewasplace\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "C:\\PROJECT-PHOENIX\\tests\\automation\\test_phoenix_project_graph_v34_0.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.049s\n\nOK\n"
+    }
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-19T00:41:10"
+}

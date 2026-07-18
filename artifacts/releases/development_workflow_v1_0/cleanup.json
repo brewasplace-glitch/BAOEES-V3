@@ -1,0 +1,13 @@
+﻿{
+  "engine": "Phoenix Development Workflow",
+  "version": "v1.0",
+  "command": "cleanup",
+  "removed": [
+    "phoenix\\__pycache__",
+    "phoenix\\dev\\__pycache__",
+    "phoenix\\graph\\__pycache__",
+    "tests\\automation\\__pycache__"
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-19T00:41:07"
+}

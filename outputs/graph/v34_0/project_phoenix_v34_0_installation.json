@@ -1,0 +1,11 @@
+﻿{
+    "branch":  "project-phoenix",
+    "recovery_version":  "v34.0b",
+    "version":  "v34.0",
+    "documentation_path":  "DOCS\\automation\\PHOENIX_CORE_v34_0_PROJECT_GRAPH_FOUNDATION.md",
+    "engine":  "Phoenix Project Graph",
+    "automatic_commit":  true,
+    "automatic_push":  true,
+    "status":  "RECOVERED",
+    "recovered_at":  "2026-07-18T22:51:48"
+}

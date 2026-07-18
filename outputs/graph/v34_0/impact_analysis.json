@@ -1,0 +1,51 @@
+﻿{
+  "engine": "Phoenix Project Graph",
+  "version": "v34.0",
+  "changed_object": "FND-000001",
+  "impact_count": 6,
+  "impacts": [
+    {
+      "object_id": "COST-000001",
+      "object_type": "cost_item",
+      "name": "Kostenpost fundering",
+      "depth": 1,
+      "relation_type": "depends_on"
+    },
+    {
+      "object_id": "COL-000001",
+      "object_type": "column",
+      "name": "Kolom K12",
+      "depth": 1,
+      "relation_type": "depends_on"
+    },
+    {
+      "object_id": "CALC-000001",
+      "object_type": "calculation",
+      "name": "Constructieberekening",
+      "depth": 2,
+      "relation_type": "calculated_by"
+    },
+    {
+      "object_id": "BLD-000001",
+      "object_type": "building",
+      "name": "Testgebouw",
+      "depth": 2,
+      "relation_type": "contains"
+    },
+    {
+      "object_id": "PRM-000001",
+      "object_type": "permit",
+      "name": "Omgevingsvergunning",
+      "depth": 3,
+      "relation_type": "requires"
+    },
+    {
+      "object_id": "PROJECT-000001",
+      "object_type": "project",
+      "name": "Project Phoenix v34 Test",
+      "depth": 3,
+      "relation_type": "contains"
+    }
+  ],
+  "generated_at": "2026-07-19T00:41:10"
+}

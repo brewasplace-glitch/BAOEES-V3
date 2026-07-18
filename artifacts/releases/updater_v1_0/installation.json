@@ -1,0 +1,12 @@
+﻿{
+    "installed_at":  "2026-07-19T00:26:41",
+    "version":  "v1.0",
+    "commands":  [
+                     "python -m phoenix.updater list",
+                     "python -m phoenix.updater inspect",
+                     "python -m phoenix.updater apply"
+                 ],
+    "branch":  "project-phoenix",
+    "status":  "INSTALLED",
+    "engine":  "Phoenix Updater"
+}

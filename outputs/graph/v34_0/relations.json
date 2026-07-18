@@ -1,0 +1,50 @@
+﻿[
+  {
+    "edge_id": "EDGE-f6011e250735db75",
+    "source_id": "PROJECT-000001",
+    "target_id": "BLD-000001",
+    "relation_type": "contains",
+    "attributes": {},
+    "created_at": "2026-07-19T00:41:10"
+  },
+  {
+    "edge_id": "EDGE-b2552e2ed0e354a1",
+    "source_id": "BLD-000001",
+    "target_id": "COL-000001",
+    "relation_type": "contains",
+    "attributes": {},
+    "created_at": "2026-07-19T00:41:10"
+  },
+  {
+    "edge_id": "EDGE-a739c88e698fbda3",
+    "source_id": "COL-000001",
+    "target_id": "FND-000001",
+    "relation_type": "depends_on",
+    "attributes": {},
+    "created_at": "2026-07-19T00:41:10"
+  },
+  {
+    "edge_id": "EDGE-7c7104e0b4423362",
+    "source_id": "CALC-000001",
+    "target_id": "COL-000001",
+    "relation_type": "calculated_by",
+    "attributes": {},
+    "created_at": "2026-07-19T00:41:10"
+  },
+  {
+    "edge_id": "EDGE-23b557ec641f0e02",
+    "source_id": "COST-000001",
+    "target_id": "FND-000001",
+    "relation_type": "depends_on",
+    "attributes": {},
+    "created_at": "2026-07-19T00:41:10"
+  },
+  {
+    "edge_id": "EDGE-eaf618338d68e94d",
+    "source_id": "PRM-000001",
+    "target_id": "BLD-000001",
+    "relation_type": "requires",
+    "attributes": {},
+    "created_at": "2026-07-19T00:41:10"
+  }
+]

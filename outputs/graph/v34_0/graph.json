@@ -1,0 +1,129 @@
+﻿{
+  "engine": "Phoenix Project Graph",
+  "version": "v34.0",
+  "graph_revision": 13,
+  "nodes": [
+    {
+      "object_id": "PROJECT-000001",
+      "object_type": "project",
+      "name": "Project Phoenix v34 Test",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "07191b02bca364f0fd9b16861b6214af03041a2fb08b94fee80495e31fd63c4c",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    },
+    {
+      "object_id": "BLD-000001",
+      "object_type": "building",
+      "name": "Testgebouw",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "501adefddd575d8175a4a7727341d75864186398dda39cb8dbe0ba15ac26e01c",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    },
+    {
+      "object_id": "COL-000001",
+      "object_type": "column",
+      "name": "Kolom K12",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "8555486a641caee1cca70e7713a533412d1ef6945312c61124536d5545cdac16",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    },
+    {
+      "object_id": "FND-000001",
+      "object_type": "foundation",
+      "name": "Fundering F1",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "e25c9170f60a010ca87e7ac832fa914eb4576adfd5081ea0ed0c8c6a2b8a57a9",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    },
+    {
+      "object_id": "CALC-000001",
+      "object_type": "calculation",
+      "name": "Constructieberekening",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "5bffd2b34a4ef8f8757b90f7646d96033e6b9efef1ef52f2be8b071cced7d929",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    },
+    {
+      "object_id": "COST-000001",
+      "object_type": "cost_item",
+      "name": "Kostenpost fundering",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "4c18ad5e5bcf1d3d8da6ecb116cdfa26b5ad9c48b43bde6378162bd2f16a6222",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    },
+    {
+      "object_id": "PRM-000001",
+      "object_type": "permit",
+      "name": "Omgevingsvergunning",
+      "attributes": {},
+      "revision": 1,
+      "fingerprint": "a37c8a34a46c0b23b5c4e56451e476f80f80eb2372d85df2b7ec891bc7545684",
+      "created_at": "2026-07-19T00:41:10",
+      "updated_at": "2026-07-19T00:41:10"
+    }
+  ],
+  "relations": [
+    {
+      "edge_id": "EDGE-f6011e250735db75",
+      "source_id": "PROJECT-000001",
+      "target_id": "BLD-000001",
+      "relation_type": "contains",
+      "attributes": {},
+      "created_at": "2026-07-19T00:41:10"
+    },
+    {
+      "edge_id": "EDGE-b2552e2ed0e354a1",
+      "source_id": "BLD-000001",
+      "target_id": "COL-000001",
+      "relation_type": "contains",
+      "attributes": {},
+      "created_at": "2026-07-19T00:41:10"
+    },
+    {
+      "edge_id": "EDGE-a739c88e698fbda3",
+      "source_id": "COL-000001",
+      "target_id": "FND-000001",
+      "relation_type": "depends_on",
+      "attributes": {},
+      "created_at": "2026-07-19T00:41:10"
+    },
+    {
+      "edge_id": "EDGE-7c7104e0b4423362",
+      "source_id": "CALC-000001",
+      "target_id": "COL-000001",
+      "relation_type": "calculated_by",
+      "attributes": {},
+      "created_at": "2026-07-19T00:41:10"
+    },
+    {
+      "edge_id": "EDGE-23b557ec641f0e02",
+      "source_id": "COST-000001",
+      "target_id": "FND-000001",
+      "relation_type": "depends_on",
+      "attributes": {},
+      "created_at": "2026-07-19T00:41:10"
+    },
+    {
+      "edge_id": "EDGE-eaf618338d68e94d",
+      "source_id": "PRM-000001",
+      "target_id": "BLD-000001",
+      "relation_type": "requires",
+      "attributes": {},
+      "created_at": "2026-07-19T00:41:10"
+    }
+  ],
+  "fingerprint": "a312647d4b7ebc962a1a5aa001a18d774e43e03c5238ca433508cfbfcf5bb958",
+  "generated_at": "2026-07-19T00:41:10"
+}

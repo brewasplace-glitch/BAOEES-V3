@@ -1,0 +1,29 @@
+﻿name: Phoenix CI
+
+on:
+  push:
+    branches:
+      - project-phoenix
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Repository Doctor
+        run: python -m phoenix doctor
+      - name: Development Workflow Tests
+        run: python -m phoenix test
+      - name: Python compilation
+        run: python -m compileall phoenix
+      - name: Git cleanliness
+        shell: pwsh
+        run: |
+          if (git status --porcelain) {
+            git status
+            throw "CI generated uncommitted repository changes."
+          }

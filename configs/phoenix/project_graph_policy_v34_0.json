@@ -1,0 +1,11 @@
+﻿{
+  "policy_version": "v34.0",
+  "engine": "Phoenix Project Graph",
+  "require_universal_object_ids": true,
+  "require_typed_relations": true,
+  "require_graph_validation": true,
+  "require_impact_analysis": true,
+  "require_runtime_export": true,
+  "require_sha256_fingerprints": true,
+  "integration_targets": ["Phoenix Digital Twin v32.0", "Phoenix Unified Project Database v33.2"]
+}

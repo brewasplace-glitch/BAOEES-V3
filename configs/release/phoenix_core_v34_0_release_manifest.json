@@ -1,0 +1,75 @@
+﻿{
+    "runtime_policies":  [
+                             {
+                                 "path":  "outputs/graph/v34_0",
+                                 "mode":  "track"
+                             },
+                             {
+                                 "path":  "outputs/database/**/*.sqlite3",
+                                 "mode":  "ignore"
+                             },
+                             {
+                                 "path":  "phoenix/graph/__pycache__",
+                                 "mode":  "clean"
+                             },
+                             {
+                                 "path":  "tests/automation/__pycache__",
+                                 "mode":  "clean"
+                             }
+                         ],
+    "schema_version":  "1.0",
+    "include_gitignore":  true,
+    "release":  "Phoenix Core v34.0 Project Graph Foundation",
+    "branch":  "project-phoenix",
+    "test_commands":  [
+                          {
+                              "failure_message":  "Project Graph-unit tests mislukt.",
+                              "command":  "python -m unittest \".\\tests\\automation\\test_phoenix_project_graph_v34_0.py\""
+                          },
+                          {
+                              "failure_message":  "Project Graph self-test mislukt.",
+                              "command":  "python \".\\phoenix\\graph\\phoenix_project_graph_v34_0.py\" self-test"
+                          },
+                          {
+                              "failure_message":  "Project Graph-integratietest mislukt.",
+                              "command":  "python \".\\phoenix\\graph\\phoenix_project_graph_v34_0.py\" integration-test"
+                          },
+                          {
+                              "failure_message":  "Project Graph-demo mislukt.",
+                              "command":  "python \".\\phoenix\\graph\\phoenix_project_graph_v34_0.py\" demo"
+                          }
+                      ],
+    "source_paths":  [
+                         "phoenix/graph",
+                         "phoenix/release",
+                         "configs/phoenix/project_graph_policy_v34_0.json",
+                         "configs/phoenix/project_graph_schema_v34_0.json",
+                         "configs/release/phoenix_core_v34_0_release_manifest.json",
+                         "docs/automation/PHOENIX_CORE_v34_0_PROJECT_GRAPH_FOUNDATION.md",
+                         "docs/automation/PHOENIX_RELEASE_FRAMEWORK_v1_0.md",
+                         "tests/automation/test_phoenix_project_graph_v34_0.py",
+                         "tests/automation/test_phoenix_release_framework_v1_0.ps1",
+                         "runners/PROJECT_PHOENIX_v34_0_project_graph.ps1",
+                         "runners/PROJECT_PHOENIX_release.ps1",
+                         "outputs/release/v1_0"
+                     ],
+    "commit_message":  "feat: add Phoenix Core v34.0 project graph foundation and release framework",
+    "required_files":  [
+                           "phoenix/graph/phoenix_project_graph_v34_0.py",
+                           "configs/phoenix/project_graph_policy_v34_0.json",
+                           "configs/phoenix/project_graph_schema_v34_0.json",
+                           "tests/automation/test_phoenix_project_graph_v34_0.py",
+                           "runners/PROJECT_PHOENIX_v34_0_project_graph.ps1"
+                       ],
+    "validation_commands":  [
+                                {
+                                    "failure_message":  "Project Graph-syntaxcontrole mislukt.",
+                                    "command":  "python -m py_compile \".\\phoenix\\graph\\phoenix_project_graph_v34_0.py\""
+                                },
+                                {
+                                    "failure_message":  "Release Framework-test mislukt.",
+                                    "command":  "powershell -NoProfile -ExecutionPolicy Bypass -File \".\\tests\\automation\\test_phoenix_release_framework_v1_0.ps1\""
+                                }
+                            ],
+    "repository_root":  "C:\\PROJECT-PHOENIX"
+}

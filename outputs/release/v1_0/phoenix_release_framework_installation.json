@@ -1,0 +1,13 @@
+﻿{
+    "framework":  "Phoenix Release Framework",
+    "version":  "v1.0",
+    "status":  "INSTALLED",
+    "branch":  "project-phoenix",
+    "installed_at":  "2026-07-18T23:09:09",
+    "runtime_modes":  [
+                          "track",
+                          "ignore",
+                          "clean"
+                      ],
+    "purpose":  "Manifest-driven release automation"
+}

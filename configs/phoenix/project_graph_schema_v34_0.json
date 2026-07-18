@@ -1,0 +1,6 @@
+﻿{
+  "schema_version": "v34.0",
+  "node_fields": ["object_id", "object_type", "name", "attributes", "revision", "fingerprint", "created_at", "updated_at"],
+  "edge_fields": ["edge_id", "source_id", "target_id", "relation_type", "attributes", "created_at"],
+  "relation_types": ["contains", "belongs_to", "depends_on", "references", "located_in", "calculated_by", "generated_from", "requires", "updates", "affects", "validated_by", "scheduled_by", "costed_by"]
+}

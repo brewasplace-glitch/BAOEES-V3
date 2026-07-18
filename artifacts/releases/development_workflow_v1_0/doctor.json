@@ -1,0 +1,94 @@
+﻿{
+  "engine": "Phoenix Development Workflow",
+  "version": "v1.0",
+  "command": "doctor",
+  "branch": "project-phoenix",
+  "working_tree_clean": false,
+  "working_tree_entries": [
+    "?? .github/",
+    "?? .pre-commit-config.yaml",
+    "?? DOCS/automation/PHOENIX_CORE_v34_0_PROJECT_GRAPH_FOUNDATION.md",
+    "?? DOCS/automation/PHOENIX_DEVELOPMENT_WORKFLOW_v1_0.md",
+    "?? DOCS/automation/PHOENIX_RELEASE_FRAMEWORK_v1_0.md",
+    "?? DOCS/automation/PHOENIX_UPDATER_v1_0.md",
+    "?? artifacts/",
+    "?? configs/phoenix/project_graph_policy_v34_0.json",
+    "?? configs/phoenix/project_graph_schema_v34_0.json",
+    "?? configs/release/",
+    "?? outputs/graph/",
+    "?? outputs/release/",
+    "?? phoenix/__init__.py",
+    "?? phoenix/__main__.py",
+    "?? phoenix/dev/",
+    "?? phoenix/graph/",
+    "?? phoenix/release/",
+    "?? phoenix/updater/",
+    "?? runners/PROJECT_PHOENIX_dev.ps1",
+    "?? runners/PROJECT_PHOENIX_release.ps1",
+    "?? runners/PROJECT_PHOENIX_updater.ps1",
+    "?? runners/PROJECT_PHOENIX_v34_0_project_graph.ps1",
+    "?? tests/automation/test_phoenix_development_workflow_v1_0.py",
+    "?? tests/automation/test_phoenix_project_graph_v34_0.py",
+    "?? tests/automation/test_phoenix_release_framework_v1_0.ps1",
+    "?? tests/updater/"
+  ],
+  "checks": [
+    {
+      "name": "repository",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX"
+    },
+    {
+      "name": "python",
+      "passed": true,
+      "detail": "3.14.6"
+    },
+    {
+      "name": "git",
+      "passed": true,
+      "detail": "C:\\Users\\brewasplace\\AppData\\Local\\gitkraken\\app-12.3.0\\resources\\app.asar.unpacked\\git\\cmd\\git.EXE"
+    },
+    {
+      "name": "branch",
+      "passed": true,
+      "detail": "project-phoenix"
+    },
+    {
+      "name": "path:phoenix",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\phoenix"
+    },
+    {
+      "name": "path:tests",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\tests"
+    },
+    {
+      "name": "path:configs",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\configs"
+    },
+    {
+      "name": "path:docs",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\docs"
+    },
+    {
+      "name": "path:runners",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\runners"
+    },
+    {
+      "name": "project_graph_v34",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\phoenix\\graph\\phoenix_project_graph_v34_0.py"
+    },
+    {
+      "name": "database_v33",
+      "passed": true,
+      "detail": "C:\\PROJECT-PHOENIX\\phoenix\\database\\phoenix_unified_project_database_v33_0.py"
+    }
+  ],
+  "status": "PASS",
+  "generated_at": "2026-07-19T00:41:09"
+}
