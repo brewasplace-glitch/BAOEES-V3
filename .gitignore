@@ -14,3 +14,15 @@ outputs/database/**/*.sqlite3-*
 
 # Phoenix updater runtime
 updates/
+
+# Phoenix runtime
+runtime/
+
+# Phoenix runtime
+runtime_reports/
+
+# Phoenix runtime
+.phoenix/runtime/
+
+# Phoenix runtime
+artifacts/runtime/
