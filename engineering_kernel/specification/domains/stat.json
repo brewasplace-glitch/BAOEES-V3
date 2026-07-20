@@ -1,0 +1,22 @@
+{
+  "domain": "STAT",
+  "title": "Statistics and reliability",
+  "target_function_count": 60,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "descriptive statistics",
+    "probability distributions",
+    "regression",
+    "percentiles",
+    "confidence intervals",
+    "reliability indices",
+    "sampling",
+    "Monte Carlo"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

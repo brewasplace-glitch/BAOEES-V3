@@ -1,0 +1,22 @@
+{
+  "domain": "CODE",
+  "title": "Codes and rule checks",
+  "target_function_count": 70,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "Eurocode check",
+    "NEN check",
+    "CROW check",
+    "permit rule check",
+    "national annex profile",
+    "limit state check",
+    "compliance result",
+    "rule traceability"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

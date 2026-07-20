@@ -1,0 +1,22 @@
+{
+  "domain": "LOAD",
+  "title": "Loads and combinations",
+  "target_function_count": 90,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "self weight",
+    "imposed load",
+    "wind load",
+    "snow load",
+    "water load",
+    "thermal load",
+    "load combination",
+    "load validation"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

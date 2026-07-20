@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phoenix Engineering Kernel Function",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "domain",
+    "purpose",
+    "status",
+    "inputs",
+    "outputs",
+    "test_requirements"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^PEK-(UNITS|MATH|GEOM|MATL|LOAD|STAT|OPTI|CODE|VALD|REPT)-[0-9]{4}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "domain": {
+      "enum": [
+        "UNITS",
+        "MATH",
+        "GEOM",
+        "MATL",
+        "LOAD",
+        "STAT",
+        "OPTI",
+        "CODE",
+        "VALD",
+        "REPT"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 10
+    },
+    "status": {
+      "enum": [
+        "PLANNED",
+        "SPECIFIED",
+        "IMPLEMENTED",
+        "UNIT_TESTED",
+        "VALIDATED",
+        "RELEASED"
+      ]
+    },
+    "inputs": {
+      "type": "array"
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "standards": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_requirements": {
+      "type": "array",
+      "minItems": 5
+    }
+  },
+  "additionalProperties": true
+}

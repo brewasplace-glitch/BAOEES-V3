@@ -1,0 +1,22 @@
+{
+  "domain": "MATL",
+  "title": "Material properties",
+  "target_function_count": 110,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "concrete properties",
+    "steel properties",
+    "timber properties",
+    "masonry properties",
+    "soil properties",
+    "aluminium properties",
+    "glass properties",
+    "generic material model"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

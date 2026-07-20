@@ -1,0 +1,95 @@
+{
+  "specification": {
+    "id": "EKMS-1.0",
+    "name": "Engineering Kernel Master Specification",
+    "version": "1.0.1",
+    "status": "FOUNDATION_READY",
+    "created_utc": "2026-07-20T12:24:42.150014+00:00",
+    "owner": "Project Phoenix",
+    "single_source_of_truth": true,
+    "hotfix": "Registry ID validation corrected for UNITS."
+  },
+  "principles": {
+    "primary_language": "Python",
+    "internal_unit_system": "SI",
+    "codes_priority": [
+      "Eurocodes",
+      "Dutch NEN",
+      "CROW"
+    ],
+    "regional_profiles": [
+      "NL",
+      "SR",
+      "GENERIC"
+    ],
+    "norm_logic_separated_from_generic_math": true,
+    "hidden_assumptions_forbidden": true,
+    "evidence_required": true,
+    "stop_on_first_error": true
+  },
+  "lifecycle": [
+    "PLANNED",
+    "SPECIFIED",
+    "IMPLEMENTED",
+    "UNIT_TESTED",
+    "VALIDATED",
+    "RELEASED"
+  ],
+  "domains": [
+    {
+      "code": "UNITS",
+      "name": "Units and quantities",
+      "target_function_count": 80
+    },
+    {
+      "code": "MATH",
+      "name": "Mathematics and numerical methods",
+      "target_function_count": 110
+    },
+    {
+      "code": "GEOM",
+      "name": "Geometry and coordinate systems",
+      "target_function_count": 100
+    },
+    {
+      "code": "MATL",
+      "name": "Material properties",
+      "target_function_count": 110
+    },
+    {
+      "code": "LOAD",
+      "name": "Loads and combinations",
+      "target_function_count": 90
+    },
+    {
+      "code": "STAT",
+      "name": "Statistics and reliability",
+      "target_function_count": 60
+    },
+    {
+      "code": "OPTI",
+      "name": "Optimization",
+      "target_function_count": 60
+    },
+    {
+      "code": "CODE",
+      "name": "Codes and rule checks",
+      "target_function_count": 70
+    },
+    {
+      "code": "VALD",
+      "name": "Validation and QA/QC",
+      "target_function_count": 45
+    },
+    {
+      "code": "REPT",
+      "name": "Reporting and traceability",
+      "target_function_count": 25
+    }
+  ],
+  "registry": {
+    "function_count": 750,
+    "file": "functions/function_registry.json",
+    "id_pattern": "^PEK-(UNITS|MATH|GEOM|MATL|LOAD|STAT|OPTI|CODE|VALD|REPT)-[0-9]{4}$"
+  }
+}

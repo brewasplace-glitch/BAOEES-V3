@@ -1,0 +1,22 @@
+{
+  "domain": "OPTI",
+  "title": "Optimization",
+  "target_function_count": 60,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "single objective",
+    "multi objective",
+    "constraint handling",
+    "parameter sweep",
+    "cost optimization",
+    "weight optimization",
+    "carbon optimization",
+    "sensitivity analysis"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

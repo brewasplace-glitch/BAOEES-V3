@@ -1,0 +1,10 @@
+{
+  "function_count": 750,
+  "links": [],
+  "required_link_types": [
+    "SPEC_TO_CODE",
+    "CODE_TO_TEST",
+    "TEST_TO_EVIDENCE",
+    "RESULT_TO_STANDARD"
+  ]
+}

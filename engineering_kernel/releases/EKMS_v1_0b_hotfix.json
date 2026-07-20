@@ -1,0 +1,6 @@
+{
+  "release": "EKMS v1.0b Registry ID Hotfix",
+  "version": "1.0.1",
+  "fix": "Accept exact registered domain codes, including five-character UNITS.",
+  "status": "READY_FOR_INSTALLATION"
+}

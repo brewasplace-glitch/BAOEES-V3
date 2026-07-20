@@ -1,0 +1,25 @@
+{
+  "status": "PLACEHOLDER_REGISTRY_READY",
+  "profiles": [
+    {
+      "id": "STD-EUROCODE",
+      "priority": 1,
+      "status": "TO_BE_POPULATED"
+    },
+    {
+      "id": "STD-NEN-NL",
+      "priority": 2,
+      "status": "TO_BE_POPULATED"
+    },
+    {
+      "id": "STD-CROW-NL",
+      "priority": 3,
+      "status": "TO_BE_POPULATED"
+    },
+    {
+      "id": "STD-SR",
+      "priority": 4,
+      "status": "TO_BE_DEFINED"
+    }
+  ]
+}

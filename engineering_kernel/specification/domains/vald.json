@@ -1,0 +1,22 @@
+{
+  "domain": "VALD",
+  "title": "Validation and QA/QC",
+  "target_function_count": 45,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "input validation",
+    "unit validation",
+    "range validation",
+    "consistency validation",
+    "schema validation",
+    "evidence validation",
+    "assumption validation",
+    "result validation"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

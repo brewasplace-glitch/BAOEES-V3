@@ -1,0 +1,22 @@
+{
+  "domain": "MATH",
+  "title": "Mathematics and numerical methods",
+  "target_function_count": 110,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "linear algebra",
+    "root finding",
+    "interpolation",
+    "numerical integration",
+    "differentiation",
+    "matrix operations",
+    "vector operations",
+    "equation solving"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

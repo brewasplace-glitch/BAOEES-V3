@@ -1,0 +1,22 @@
+{
+  "domain": "REPT",
+  "title": "Reporting and traceability",
+  "target_function_count": 25,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "calculation record",
+    "evidence record",
+    "assumption record",
+    "table model",
+    "chart model",
+    "audit trail",
+    "result summary",
+    "machine readable export"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

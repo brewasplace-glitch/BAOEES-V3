@@ -1,0 +1,22 @@
+{
+  "domain": "UNITS",
+  "title": "Units and quantities",
+  "target_function_count": 80,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "quantity creation",
+    "dimensional validation",
+    "SI conversion",
+    "derived units",
+    "temperature conversion",
+    "pressure conversion",
+    "force conversion",
+    "length conversion"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}

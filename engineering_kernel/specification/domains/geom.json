@@ -1,0 +1,22 @@
+{
+  "domain": "GEOM",
+  "title": "Geometry and coordinate systems",
+  "target_function_count": 100,
+  "status": "REGISTERED",
+  "responsibilities": [
+    "point operations",
+    "line operations",
+    "polygon operations",
+    "area calculation",
+    "volume calculation",
+    "coordinate transformation",
+    "intersection",
+    "mesh utilities"
+  ],
+  "forbidden": [
+    "hidden unit conversion",
+    "silent fallback",
+    "untraceable constants",
+    "unlogged assumptions"
+  ]
+}
