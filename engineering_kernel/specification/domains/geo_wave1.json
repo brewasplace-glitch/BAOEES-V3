@@ -1,0 +1,11 @@
+{
+  "domain": "GEO",
+  "release": "PEK Geo Engine Wave 1 v1.0",
+  "classification": "DOMAIN_EXTENSION",
+  "core_registry_modified": false,
+  "implemented_functions": 30,
+  "status": "UNIT_TESTED",
+  "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geo.py",
+  "tests": "engineering_kernel/tests/test_geo_wave1.py",
+  "note": "GEO is added as a domain extension without changing the fixed 750-function core registry."
+}
