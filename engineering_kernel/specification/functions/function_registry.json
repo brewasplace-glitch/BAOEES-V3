@@ -2682,22 +2682,34 @@
     },
     {
       "id": "PEK-MATH-0001",
-      "name": "linear_algebra_001",
+      "name": "add",
       "domain": "MATH",
       "title": "Linear Algebra function 1",
       "purpose": "Standardized Phoenix Engineering Kernel operation for linear algebra.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2705,29 +2717,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0002",
-      "name": "root_finding_002",
+      "name": "subtract",
       "domain": "MATH",
       "title": "Root Finding function 2",
       "purpose": "Standardized Phoenix Engineering Kernel operation for root finding.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2735,29 +2761,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0003",
-      "name": "interpolation_003",
+      "name": "multiply",
       "domain": "MATH",
       "title": "Interpolation function 3",
       "purpose": "Standardized Phoenix Engineering Kernel operation for interpolation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2765,29 +2805,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0004",
-      "name": "numerical_integration_004",
+      "name": "divide",
       "domain": "MATH",
       "title": "Numerical Integration function 4",
       "purpose": "Standardized Phoenix Engineering Kernel operation for numerical integration.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2795,29 +2849,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0005",
-      "name": "differentiation_005",
+      "name": "power",
       "domain": "MATH",
       "title": "Differentiation function 5",
       "purpose": "Standardized Phoenix Engineering Kernel operation for differentiation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2825,29 +2893,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0006",
-      "name": "matrix_operations_006",
+      "name": "square_root",
       "domain": "MATH",
       "title": "Matrix Operations function 6",
       "purpose": "Standardized Phoenix Engineering Kernel operation for matrix operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2855,29 +2937,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0007",
-      "name": "vector_operations_007",
+      "name": "absolute",
       "domain": "MATH",
       "title": "Vector Operations function 7",
       "purpose": "Standardized Phoenix Engineering Kernel operation for vector operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2885,29 +2981,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0008",
-      "name": "equation_solving_008",
+      "name": "minimum",
       "domain": "MATH",
       "title": "Equation Solving function 8",
       "purpose": "Standardized Phoenix Engineering Kernel operation for equation solving.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2915,29 +3025,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0009",
-      "name": "linear_algebra_009",
+      "name": "maximum",
       "domain": "MATH",
       "title": "Linear Algebra function 9",
       "purpose": "Standardized Phoenix Engineering Kernel operation for linear algebra.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2945,29 +3069,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0010",
-      "name": "root_finding_010",
+      "name": "clamp",
       "domain": "MATH",
       "title": "Root Finding function 10",
       "purpose": "Standardized Phoenix Engineering Kernel operation for root finding.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -2975,29 +3113,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0011",
-      "name": "interpolation_011",
+      "name": "arithmetic_mean",
       "domain": "MATH",
       "title": "Interpolation function 11",
       "purpose": "Standardized Phoenix Engineering Kernel operation for interpolation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3005,29 +3157,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0012",
-      "name": "numerical_integration_012",
+      "name": "weighted_mean",
       "domain": "MATH",
       "title": "Numerical Integration function 12",
       "purpose": "Standardized Phoenix Engineering Kernel operation for numerical integration.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3035,29 +3201,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0013",
-      "name": "differentiation_013",
+      "name": "percentage",
       "domain": "MATH",
       "title": "Differentiation function 13",
       "purpose": "Standardized Phoenix Engineering Kernel operation for differentiation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3065,29 +3245,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0014",
-      "name": "matrix_operations_014",
+      "name": "percentage_change",
       "domain": "MATH",
       "title": "Matrix Operations function 14",
       "purpose": "Standardized Phoenix Engineering Kernel operation for matrix operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3095,29 +3289,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0015",
-      "name": "vector_operations_015",
+      "name": "apply_factor",
       "domain": "MATH",
       "title": "Vector Operations function 15",
       "purpose": "Standardized Phoenix Engineering Kernel operation for vector operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3125,29 +3333,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0016",
-      "name": "equation_solving_016",
+      "name": "margin",
       "domain": "MATH",
       "title": "Equation Solving function 16",
       "purpose": "Standardized Phoenix Engineering Kernel operation for equation solving.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3155,29 +3377,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0017",
-      "name": "linear_algebra_017",
+      "name": "utilization",
       "domain": "MATH",
       "title": "Linear Algebra function 17",
       "purpose": "Standardized Phoenix Engineering Kernel operation for linear algebra.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3185,29 +3421,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0018",
-      "name": "root_finding_018",
+      "name": "is_close",
       "domain": "MATH",
       "title": "Root Finding function 18",
       "purpose": "Standardized Phoenix Engineering Kernel operation for root finding.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3215,29 +3465,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0019",
-      "name": "interpolation_019",
+      "name": "round_to_decimals",
       "domain": "MATH",
       "title": "Interpolation function 19",
       "purpose": "Standardized Phoenix Engineering Kernel operation for interpolation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3245,29 +3509,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0020",
-      "name": "numerical_integration_020",
+      "name": "round_to_increment",
       "domain": "MATH",
       "title": "Numerical Integration function 20",
       "purpose": "Standardized Phoenix Engineering Kernel operation for numerical integration.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3275,29 +3553,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0021",
-      "name": "differentiation_021",
+      "name": "normalize",
       "domain": "MATH",
       "title": "Differentiation function 21",
       "purpose": "Standardized Phoenix Engineering Kernel operation for differentiation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3305,29 +3597,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0022",
-      "name": "matrix_operations_022",
+      "name": "linear_interpolate",
       "domain": "MATH",
       "title": "Matrix Operations function 22",
       "purpose": "Standardized Phoenix Engineering Kernel operation for matrix operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3335,29 +3641,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0023",
-      "name": "vector_operations_023",
+      "name": "dot_product",
       "domain": "MATH",
       "title": "Vector Operations function 23",
       "purpose": "Standardized Phoenix Engineering Kernel operation for vector operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3365,29 +3685,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0024",
-      "name": "equation_solving_024",
+      "name": "vector_magnitude",
       "domain": "MATH",
       "title": "Equation Solving function 24",
       "purpose": "Standardized Phoenix Engineering Kernel operation for equation solving.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3395,29 +3729,43 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0025",
-      "name": "linear_algebra_025",
+      "name": "vector_normalize",
       "domain": "MATH",
       "title": "Linear Algebra function 25",
       "purpose": "Standardized Phoenix Engineering Kernel operation for linear algebra.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite numeric Python values or sequences."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic finite numeric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "MathematicsError for invalid domains, dimensions, ranges or non-finite input."
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "General numerical engineering practice"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -3425,10 +3773,12 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit test tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/mathematics.py",
+      "tests": "engineering_kernel/tests/test_mathematics_wave1.py"
     },
     {
       "id": "PEK-MATH-0026",

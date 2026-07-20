@@ -1,0 +1,32 @@
+{
+  "release": "PEK Mathematics Wave 1 v1.0",
+  "implemented_count": 25,
+  "function_ids": [
+    "PEK-MATH-0001",
+    "PEK-MATH-0002",
+    "PEK-MATH-0003",
+    "PEK-MATH-0004",
+    "PEK-MATH-0005",
+    "PEK-MATH-0006",
+    "PEK-MATH-0007",
+    "PEK-MATH-0008",
+    "PEK-MATH-0009",
+    "PEK-MATH-0010",
+    "PEK-MATH-0011",
+    "PEK-MATH-0012",
+    "PEK-MATH-0013",
+    "PEK-MATH-0014",
+    "PEK-MATH-0015",
+    "PEK-MATH-0016",
+    "PEK-MATH-0017",
+    "PEK-MATH-0018",
+    "PEK-MATH-0019",
+    "PEK-MATH-0020",
+    "PEK-MATH-0021",
+    "PEK-MATH-0022",
+    "PEK-MATH-0023",
+    "PEK-MATH-0024",
+    "PEK-MATH-0025"
+  ],
+  "status": "READY_FOR_INSTALLATION"
+}
