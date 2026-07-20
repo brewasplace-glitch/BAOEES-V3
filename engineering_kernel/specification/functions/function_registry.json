@@ -13567,22 +13567,38 @@
     },
     {
       "id": "PEK-LOAD-0001",
-      "name": "self_weight_001",
+      "name": "normalize_direction",
       "domain": "LOAD",
       "title": "Self Weight function 1",
       "purpose": "Standardized Phoenix Engineering Kernel operation for self weight.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13590,29 +13606,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0002",
-      "name": "imposed_load_002",
+      "name": "create_load",
       "domain": "LOAD",
       "title": "Imposed Load function 2",
       "purpose": "Standardized Phoenix Engineering Kernel operation for imposed load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13620,29 +13654,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0003",
-      "name": "wind_load_003",
+      "name": "dead_load",
       "domain": "LOAD",
       "title": "Wind Load function 3",
       "purpose": "Standardized Phoenix Engineering Kernel operation for wind load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13650,29 +13702,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0004",
-      "name": "snow_load_004",
+      "name": "imposed_load",
       "domain": "LOAD",
       "title": "Snow Load function 4",
       "purpose": "Standardized Phoenix Engineering Kernel operation for snow load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13680,29 +13750,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0005",
-      "name": "water_load_005",
+      "name": "wind_load",
       "domain": "LOAD",
       "title": "Water Load function 5",
       "purpose": "Standardized Phoenix Engineering Kernel operation for water load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13710,29 +13798,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0006",
-      "name": "thermal_load_006",
+      "name": "snow_load",
       "domain": "LOAD",
       "title": "Thermal Load function 6",
       "purpose": "Standardized Phoenix Engineering Kernel operation for thermal load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13740,29 +13846,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0007",
-      "name": "load_combination_007",
+      "name": "seismic_load",
       "domain": "LOAD",
       "title": "Load Combination function 7",
       "purpose": "Standardized Phoenix Engineering Kernel operation for load combination.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13770,29 +13894,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0008",
-      "name": "load_validation_008",
+      "name": "thermal_load",
       "domain": "LOAD",
       "title": "Load Validation function 8",
       "purpose": "Standardized Phoenix Engineering Kernel operation for load validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13800,29 +13942,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0009",
-      "name": "self_weight_009",
+      "name": "hydrostatic_pressure",
       "domain": "LOAD",
       "title": "Self Weight function 9",
       "purpose": "Standardized Phoenix Engineering Kernel operation for self weight.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13830,29 +13990,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0010",
-      "name": "imposed_load_010",
+      "name": "earth_pressure_unit_weight",
       "domain": "LOAD",
       "title": "Imposed Load function 10",
       "purpose": "Standardized Phoenix Engineering Kernel operation for imposed load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13860,29 +14038,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0011",
-      "name": "wind_load_011",
+      "name": "uniform_line_load",
       "domain": "LOAD",
       "title": "Wind Load function 11",
       "purpose": "Standardized Phoenix Engineering Kernel operation for wind load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13890,29 +14086,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0012",
-      "name": "snow_load_012",
+      "name": "uniform_area_load",
       "domain": "LOAD",
       "title": "Snow Load function 12",
       "purpose": "Standardized Phoenix Engineering Kernel operation for snow load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13920,29 +14134,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0013",
-      "name": "water_load_013",
+      "name": "point_load_from_pressure",
       "domain": "LOAD",
       "title": "Water Load function 13",
       "purpose": "Standardized Phoenix Engineering Kernel operation for water load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13950,29 +14182,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0014",
-      "name": "thermal_load_014",
+      "name": "resultant_of_uniform_line_load",
       "domain": "LOAD",
       "title": "Thermal Load function 14",
       "purpose": "Standardized Phoenix Engineering Kernel operation for thermal load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -13980,29 +14230,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0015",
-      "name": "load_combination_015",
+      "name": "resultant_of_uniform_area_load",
       "domain": "LOAD",
       "title": "Load Combination function 15",
       "purpose": "Standardized Phoenix Engineering Kernel operation for load combination.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14010,29 +14278,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0016",
-      "name": "load_validation_016",
+      "name": "triangular_line_load_resultant",
       "domain": "LOAD",
       "title": "Load Validation function 16",
       "purpose": "Standardized Phoenix Engineering Kernel operation for load validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14040,29 +14326,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0017",
-      "name": "self_weight_017",
+      "name": "triangular_line_load_position",
       "domain": "LOAD",
       "title": "Self Weight function 17",
       "purpose": "Standardized Phoenix Engineering Kernel operation for self weight.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14070,29 +14374,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0018",
-      "name": "imposed_load_018",
+      "name": "trapezoidal_line_load_resultant",
       "domain": "LOAD",
       "title": "Imposed Load function 18",
       "purpose": "Standardized Phoenix Engineering Kernel operation for imposed load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14100,29 +14422,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0019",
-      "name": "wind_load_019",
+      "name": "moment_from_force",
       "domain": "LOAD",
       "title": "Wind Load function 19",
       "purpose": "Standardized Phoenix Engineering Kernel operation for wind load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14130,29 +14470,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0020",
-      "name": "snow_load_020",
+      "name": "load_component",
       "domain": "LOAD",
       "title": "Snow Load function 20",
       "purpose": "Standardized Phoenix Engineering Kernel operation for snow load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14160,29 +14518,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0021",
-      "name": "water_load_021",
+      "name": "load_vector",
       "domain": "LOAD",
       "title": "Water Load function 21",
       "purpose": "Standardized Phoenix Engineering Kernel operation for water load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14190,29 +14566,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0022",
-      "name": "thermal_load_022",
+      "name": "scale_load",
       "domain": "LOAD",
       "title": "Thermal Load function 22",
       "purpose": "Standardized Phoenix Engineering Kernel operation for thermal load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14220,29 +14614,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0023",
-      "name": "load_combination_023",
+      "name": "sum_load_vectors",
       "domain": "LOAD",
       "title": "Load Combination function 23",
       "purpose": "Standardized Phoenix Engineering Kernel operation for load combination.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14250,29 +14662,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0024",
-      "name": "load_validation_024",
+      "name": "resultant_load",
       "domain": "LOAD",
       "title": "Load Validation function 24",
       "purpose": "Standardized Phoenix Engineering Kernel operation for load validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14280,29 +14710,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0025",
-      "name": "self_weight_025",
+      "name": "combination_value",
       "domain": "LOAD",
       "title": "Self Weight function 25",
       "purpose": "Standardized Phoenix Engineering Kernel operation for self weight.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14310,29 +14758,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0026",
-      "name": "imposed_load_026",
+      "name": "combination_vector",
       "domain": "LOAD",
       "title": "Imposed Load function 26",
       "purpose": "Standardized Phoenix Engineering Kernel operation for imposed load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14340,29 +14806,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0027",
-      "name": "wind_load_027",
+      "name": "characteristic_combination",
       "domain": "LOAD",
       "title": "Wind Load function 27",
       "purpose": "Standardized Phoenix Engineering Kernel operation for wind load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14370,29 +14854,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0028",
-      "name": "snow_load_028",
+      "name": "design_combination",
       "domain": "LOAD",
       "title": "Snow Load function 28",
       "purpose": "Standardized Phoenix Engineering Kernel operation for snow load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14400,29 +14902,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0029",
-      "name": "water_load_029",
+      "name": "accidental_combination",
       "domain": "LOAD",
       "title": "Water Load function 29",
       "purpose": "Standardized Phoenix Engineering Kernel operation for water load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14430,29 +14950,47 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0030",
-      "name": "thermal_load_030",
+      "name": "dynamic_amplification",
       "domain": "LOAD",
       "title": "Thermal Load function 30",
       "purpose": "Standardized Phoenix Engineering Kernel operation for thermal load.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite load data in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic load, resultant or combination value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "LoadError for invalid, degenerate or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM"
+      ],
+      "standards": [
+        "General load mechanics; code coefficients supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -14460,10 +14998,12 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/loads.py",
+      "tests": "engineering_kernel/tests/test_loads_wave1.py"
     },
     {
       "id": "PEK-LOAD-0031",

@@ -1000,6 +1000,306 @@
       "function_id": "PEK-MATL-0030",
       "link_type": "CODE_TO_TEST",
       "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0001",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0001",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0002",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0002",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0003",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0003",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0004",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0004",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0005",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0005",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0006",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0006",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0007",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0007",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0008",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0008",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0009",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0009",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0010",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0010",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0011",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0011",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0012",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0012",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0013",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0013",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0014",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0014",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0015",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0015",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0016",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0016",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0017",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0017",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0018",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0018",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0019",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0019",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0020",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0020",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0021",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0021",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0022",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0022",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0023",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0023",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0024",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0024",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0025",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0025",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0026",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0026",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0027",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0027",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0028",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0028",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0029",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0029",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0030",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/loads.py"
+    },
+    {
+      "function_id": "PEK-LOAD-0030",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_loads_wave1.py"
     }
   ],
   "required_link_types": [
