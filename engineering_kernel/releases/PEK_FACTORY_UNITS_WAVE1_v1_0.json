@@ -1,0 +1,27 @@
+{
+  "release": "PEK Factory v1.0 + Units Wave 1",
+  "implemented_count": 20,
+  "function_ids": [
+    "PEK-UNITS-0001",
+    "PEK-UNITS-0002",
+    "PEK-UNITS-0003",
+    "PEK-UNITS-0004",
+    "PEK-UNITS-0005",
+    "PEK-UNITS-0006",
+    "PEK-UNITS-0007",
+    "PEK-UNITS-0008",
+    "PEK-UNITS-0009",
+    "PEK-UNITS-0010",
+    "PEK-UNITS-0011",
+    "PEK-UNITS-0012",
+    "PEK-UNITS-0013",
+    "PEK-UNITS-0014",
+    "PEK-UNITS-0015",
+    "PEK-UNITS-0016",
+    "PEK-UNITS-0017",
+    "PEK-UNITS-0018",
+    "PEK-UNITS-0019",
+    "PEK-UNITS-0020"
+  ],
+  "status": "READY_FOR_INSTALLATION"
+}

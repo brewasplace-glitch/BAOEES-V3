@@ -1,6 +1,207 @@
 {
   "function_count": 750,
-  "links": [],
+  "links": [
+    {
+      "function_id": "PEK-UNITS-0001",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0001",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0002",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0002",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0003",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0003",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0004",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0004",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0005",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0005",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0006",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0006",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0007",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0007",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0008",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0008",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0009",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0009",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0010",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0010",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0011",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0011",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0012",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0012",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0013",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0013",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0014",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0014",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0015",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0015",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0016",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0016",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0017",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0017",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0018",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0018",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0019",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0019",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0020",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/units.py"
+    },
+    {
+      "function_id": "PEK-UNITS-0020",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_units_wave1.py"
+    }
+  ],
   "required_link_types": [
     "SPEC_TO_CODE",
     "CODE_TO_TEST",

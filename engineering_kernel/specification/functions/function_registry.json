@@ -2,22 +2,34 @@
   "functions": [
     {
       "id": "PEK-UNITS-0001",
-      "name": "quantity_creation_001",
+      "name": "quantity",
       "domain": "UNITS",
       "title": "Quantity Creation function 1",
       "purpose": "Standardized Phoenix Engineering Kernel operation for quantity creation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -28,26 +40,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0002",
-      "name": "dimensional_validation_002",
+      "name": "convert",
       "domain": "UNITS",
       "title": "Dimensional Validation function 2",
       "purpose": "Standardized Phoenix Engineering Kernel operation for dimensional validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -58,26 +84,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0003",
-      "name": "si_conversion_003",
+      "name": "convert_length",
       "domain": "UNITS",
       "title": "Si Conversion function 3",
       "purpose": "Standardized Phoenix Engineering Kernel operation for SI conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -88,26 +128,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0004",
-      "name": "derived_units_004",
+      "name": "convert_area",
       "domain": "UNITS",
       "title": "Derived Units function 4",
       "purpose": "Standardized Phoenix Engineering Kernel operation for derived units.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -118,26 +172,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0005",
-      "name": "temperature_conversion_005",
+      "name": "convert_volume",
       "domain": "UNITS",
       "title": "Temperature Conversion function 5",
       "purpose": "Standardized Phoenix Engineering Kernel operation for temperature conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -148,26 +216,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0006",
-      "name": "pressure_conversion_006",
+      "name": "convert_mass",
       "domain": "UNITS",
       "title": "Pressure Conversion function 6",
       "purpose": "Standardized Phoenix Engineering Kernel operation for pressure conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -178,26 +260,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0007",
-      "name": "force_conversion_007",
+      "name": "convert_time",
       "domain": "UNITS",
       "title": "Force Conversion function 7",
       "purpose": "Standardized Phoenix Engineering Kernel operation for force conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -208,26 +304,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0008",
-      "name": "length_conversion_008",
+      "name": "convert_force",
       "domain": "UNITS",
       "title": "Length Conversion function 8",
       "purpose": "Standardized Phoenix Engineering Kernel operation for length conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -238,26 +348,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0009",
-      "name": "quantity_creation_009",
+      "name": "convert_pressure",
       "domain": "UNITS",
       "title": "Quantity Creation function 9",
       "purpose": "Standardized Phoenix Engineering Kernel operation for quantity creation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -268,26 +392,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0010",
-      "name": "dimensional_validation_010",
+      "name": "convert_density",
       "domain": "UNITS",
       "title": "Dimensional Validation function 10",
       "purpose": "Standardized Phoenix Engineering Kernel operation for dimensional validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -298,26 +436,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0011",
-      "name": "si_conversion_011",
+      "name": "convert_acceleration",
       "domain": "UNITS",
       "title": "Si Conversion function 11",
       "purpose": "Standardized Phoenix Engineering Kernel operation for SI conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -328,26 +480,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0012",
-      "name": "derived_units_012",
+      "name": "convert_energy",
       "domain": "UNITS",
       "title": "Derived Units function 12",
       "purpose": "Standardized Phoenix Engineering Kernel operation for derived units.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -358,26 +524,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0013",
-      "name": "temperature_conversion_013",
+      "name": "convert_power",
       "domain": "UNITS",
       "title": "Temperature Conversion function 13",
       "purpose": "Standardized Phoenix Engineering Kernel operation for temperature conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -388,26 +568,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0014",
-      "name": "pressure_conversion_014",
+      "name": "convert_angle",
       "domain": "UNITS",
       "title": "Pressure Conversion function 14",
       "purpose": "Standardized Phoenix Engineering Kernel operation for pressure conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -418,26 +612,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0015",
-      "name": "force_conversion_015",
+      "name": "convert_temperature",
       "domain": "UNITS",
       "title": "Force Conversion function 15",
       "purpose": "Standardized Phoenix Engineering Kernel operation for force conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -448,26 +656,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0016",
-      "name": "length_conversion_016",
+      "name": "to_si",
       "domain": "UNITS",
       "title": "Length Conversion function 16",
       "purpose": "Standardized Phoenix Engineering Kernel operation for length conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -478,26 +700,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0017",
-      "name": "quantity_creation_017",
+      "name": "from_si",
       "domain": "UNITS",
       "title": "Quantity Creation function 17",
       "purpose": "Standardized Phoenix Engineering Kernel operation for quantity creation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -508,26 +744,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0018",
-      "name": "dimensional_validation_018",
+      "name": "are_compatible",
       "domain": "UNITS",
       "title": "Dimensional Validation function 18",
       "purpose": "Standardized Phoenix Engineering Kernel operation for dimensional validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -538,26 +788,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0019",
-      "name": "si_conversion_019",
+      "name": "validate_dimension",
       "domain": "UNITS",
       "title": "Si Conversion function 19",
       "purpose": "Standardized Phoenix Engineering Kernel operation for SI conversion.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -568,26 +832,40 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0020",
-      "name": "derived_units_020",
+      "name": "normalized_symbol",
       "domain": "UNITS",
       "title": "Derived Units function 20",
       "purpose": "Standardized Phoenix Engineering Kernel operation for derived units.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Typed Python API"
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic SI-traceable result"
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
+      "errors": [
+        "UnitError"
+      ],
       "dependencies": [],
-      "standards": [],
+      "standards": [
+        "SI principles"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -598,7 +876,9 @@
       "accuracy_requirement": "To be specified before IMPLEMENTED state.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/units.py",
+      "tests": "engineering_kernel/tests/test_units_wave1.py"
     },
     {
       "id": "PEK-UNITS-0021",
