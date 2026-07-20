@@ -1,0 +1,32 @@
+{
+  "release": "PEK Geometry Wave 1 v1.0",
+  "implemented_count": 25,
+  "function_ids": [
+    "PEK-GEOM-0001",
+    "PEK-GEOM-0002",
+    "PEK-GEOM-0003",
+    "PEK-GEOM-0004",
+    "PEK-GEOM-0005",
+    "PEK-GEOM-0006",
+    "PEK-GEOM-0007",
+    "PEK-GEOM-0008",
+    "PEK-GEOM-0009",
+    "PEK-GEOM-0010",
+    "PEK-GEOM-0011",
+    "PEK-GEOM-0012",
+    "PEK-GEOM-0013",
+    "PEK-GEOM-0014",
+    "PEK-GEOM-0015",
+    "PEK-GEOM-0016",
+    "PEK-GEOM-0017",
+    "PEK-GEOM-0018",
+    "PEK-GEOM-0019",
+    "PEK-GEOM-0020",
+    "PEK-GEOM-0021",
+    "PEK-GEOM-0022",
+    "PEK-GEOM-0023",
+    "PEK-GEOM-0024",
+    "PEK-GEOM-0025"
+  ],
+  "status": "READY_FOR_INSTALLATION"
+}

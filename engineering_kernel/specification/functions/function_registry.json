@@ -6332,22 +6332,37 @@
     },
     {
       "id": "PEK-GEOM-0001",
-      "name": "point_operations_001",
+      "name": "point_2d",
       "domain": "GEOM",
       "title": "Point Operations function 1",
       "purpose": "Standardized Phoenix Engineering Kernel operation for point operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6355,29 +6370,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0002",
-      "name": "line_operations_002",
+      "name": "point_3d",
       "domain": "GEOM",
       "title": "Line Operations function 2",
       "purpose": "Standardized Phoenix Engineering Kernel operation for line operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6385,29 +6417,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0003",
-      "name": "polygon_operations_003",
+      "name": "distance_2d",
       "domain": "GEOM",
       "title": "Polygon Operations function 3",
       "purpose": "Standardized Phoenix Engineering Kernel operation for polygon operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6415,29 +6464,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0004",
-      "name": "area_calculation_004",
+      "name": "distance_3d",
       "domain": "GEOM",
       "title": "Area Calculation function 4",
       "purpose": "Standardized Phoenix Engineering Kernel operation for area calculation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6445,29 +6511,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0005",
-      "name": "volume_calculation_005",
+      "name": "midpoint_2d",
       "domain": "GEOM",
       "title": "Volume Calculation function 5",
       "purpose": "Standardized Phoenix Engineering Kernel operation for volume calculation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6475,29 +6558,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0006",
-      "name": "coordinate_transformation_006",
+      "name": "midpoint_3d",
       "domain": "GEOM",
       "title": "Coordinate Transformation function 6",
       "purpose": "Standardized Phoenix Engineering Kernel operation for coordinate transformation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6505,29 +6605,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0007",
-      "name": "intersection_007",
+      "name": "vector_2d",
       "domain": "GEOM",
       "title": "Intersection function 7",
       "purpose": "Standardized Phoenix Engineering Kernel operation for intersection.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6535,29 +6652,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0008",
-      "name": "mesh_utilities_008",
+      "name": "vector_3d",
       "domain": "GEOM",
       "title": "Mesh Utilities function 8",
       "purpose": "Standardized Phoenix Engineering Kernel operation for mesh utilities.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6565,29 +6699,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0009",
-      "name": "point_operations_009",
+      "name": "dot_2d",
       "domain": "GEOM",
       "title": "Point Operations function 9",
       "purpose": "Standardized Phoenix Engineering Kernel operation for point operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6595,29 +6746,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0010",
-      "name": "line_operations_010",
+      "name": "dot_3d",
       "domain": "GEOM",
       "title": "Line Operations function 10",
       "purpose": "Standardized Phoenix Engineering Kernel operation for line operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6625,29 +6793,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0011",
-      "name": "polygon_operations_011",
+      "name": "cross_2d",
       "domain": "GEOM",
       "title": "Polygon Operations function 11",
       "purpose": "Standardized Phoenix Engineering Kernel operation for polygon operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6655,29 +6840,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0012",
-      "name": "area_calculation_012",
+      "name": "cross_3d",
       "domain": "GEOM",
       "title": "Area Calculation function 12",
       "purpose": "Standardized Phoenix Engineering Kernel operation for area calculation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6685,29 +6887,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0013",
-      "name": "volume_calculation_013",
+      "name": "vector_length_2d",
       "domain": "GEOM",
       "title": "Volume Calculation function 13",
       "purpose": "Standardized Phoenix Engineering Kernel operation for volume calculation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6715,29 +6934,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0014",
-      "name": "coordinate_transformation_014",
+      "name": "vector_length_3d",
       "domain": "GEOM",
       "title": "Coordinate Transformation function 14",
       "purpose": "Standardized Phoenix Engineering Kernel operation for coordinate transformation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6745,29 +6981,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0015",
-      "name": "intersection_015",
+      "name": "normalize_vector_2d",
       "domain": "GEOM",
       "title": "Intersection function 15",
       "purpose": "Standardized Phoenix Engineering Kernel operation for intersection.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6775,29 +7028,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0016",
-      "name": "mesh_utilities_016",
+      "name": "normalize_vector_3d",
       "domain": "GEOM",
       "title": "Mesh Utilities function 16",
       "purpose": "Standardized Phoenix Engineering Kernel operation for mesh utilities.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6805,29 +7075,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0017",
-      "name": "point_operations_017",
+      "name": "angle_between_vectors_2d",
       "domain": "GEOM",
       "title": "Point Operations function 17",
       "purpose": "Standardized Phoenix Engineering Kernel operation for point operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6835,29 +7122,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0018",
-      "name": "line_operations_018",
+      "name": "polygon_area",
       "domain": "GEOM",
       "title": "Line Operations function 18",
       "purpose": "Standardized Phoenix Engineering Kernel operation for line operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6865,29 +7169,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0019",
-      "name": "polygon_operations_019",
+      "name": "polygon_signed_area",
       "domain": "GEOM",
       "title": "Polygon Operations function 19",
       "purpose": "Standardized Phoenix Engineering Kernel operation for polygon operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6895,29 +7216,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0020",
-      "name": "area_calculation_020",
+      "name": "polygon_perimeter",
       "domain": "GEOM",
       "title": "Area Calculation function 20",
       "purpose": "Standardized Phoenix Engineering Kernel operation for area calculation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6925,29 +7263,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0021",
-      "name": "volume_calculation_021",
+      "name": "polygon_centroid",
       "domain": "GEOM",
       "title": "Volume Calculation function 21",
       "purpose": "Standardized Phoenix Engineering Kernel operation for volume calculation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6955,29 +7310,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0022",
-      "name": "coordinate_transformation_022",
+      "name": "bounding_box_2d",
       "domain": "GEOM",
       "title": "Coordinate Transformation function 22",
       "purpose": "Standardized Phoenix Engineering Kernel operation for coordinate transformation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -6985,29 +7357,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0023",
-      "name": "intersection_023",
+      "name": "translate_2d",
       "domain": "GEOM",
       "title": "Intersection function 23",
       "purpose": "Standardized Phoenix Engineering Kernel operation for intersection.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -7015,29 +7404,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0024",
-      "name": "mesh_utilities_024",
+      "name": "rotate_2d",
       "domain": "GEOM",
       "title": "Mesh Utilities function 24",
       "purpose": "Standardized Phoenix Engineering Kernel operation for mesh utilities.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -7045,29 +7451,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0025",
-      "name": "point_operations_025",
+      "name": "line_intersection_2d",
       "domain": "GEOM",
       "title": "Point Operations function 25",
       "purpose": "Standardized Phoenix Engineering Kernel operation for point operations.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite coordinates using one consistent linear unit."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic geometric result."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "GeometryError for invalid, degenerate or non-finite geometry."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "Cartesian analytic geometry"
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -7075,10 +7498,12 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision; explicit tolerances where required.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py",
+      "tests": "engineering_kernel/tests/test_geometry_wave1.py"
     },
     {
       "id": "PEK-GEOM-0026",

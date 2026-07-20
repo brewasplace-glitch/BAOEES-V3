@@ -450,6 +450,256 @@
       "function_id": "PEK-MATH-0025",
       "link_type": "CODE_TO_TEST",
       "target": "engineering_kernel/tests/test_mathematics_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0001",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0001",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0002",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0002",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0003",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0003",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0004",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0004",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0005",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0005",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0006",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0006",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0007",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0007",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0008",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0008",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0009",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0009",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0010",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0010",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0011",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0011",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0012",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0012",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0013",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0013",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0014",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0014",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0015",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0015",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0016",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0016",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0017",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0017",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0018",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0018",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0019",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0019",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0020",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0020",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0021",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0021",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0022",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0022",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0023",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0023",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0024",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0024",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0025",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/geometry.py"
+    },
+    {
+      "function_id": "PEK-GEOM-0025",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_geometry_wave1.py"
     }
   ],
   "required_link_types": [
