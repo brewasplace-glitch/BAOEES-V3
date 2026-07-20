@@ -22507,22 +22507,40 @@
     },
     {
       "id": "PEK-VALD-0001",
-      "name": "input_validation_001",
+      "name": "validate_type",
       "domain": "VALD",
       "title": "Input Validation function 1",
       "purpose": "Standardized Phoenix Engineering Kernel operation for input validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22530,29 +22548,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0002",
-      "name": "unit_validation_002",
+      "name": "validate_required",
       "domain": "VALD",
       "title": "Unit Validation function 2",
       "purpose": "Standardized Phoenix Engineering Kernel operation for unit validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22560,29 +22598,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0003",
-      "name": "range_validation_003",
+      "name": "validate_not_nan",
       "domain": "VALD",
       "title": "Range Validation function 3",
       "purpose": "Standardized Phoenix Engineering Kernel operation for range validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22590,29 +22648,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0004",
-      "name": "consistency_validation_004",
+      "name": "validate_finite",
       "domain": "VALD",
       "title": "Consistency Validation function 4",
       "purpose": "Standardized Phoenix Engineering Kernel operation for consistency validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22620,29 +22698,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0005",
-      "name": "schema_validation_005",
+      "name": "validate_range",
       "domain": "VALD",
       "title": "Schema Validation function 5",
       "purpose": "Standardized Phoenix Engineering Kernel operation for schema validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22650,29 +22748,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0006",
-      "name": "evidence_validation_006",
+      "name": "validate_positive",
       "domain": "VALD",
       "title": "Evidence Validation function 6",
       "purpose": "Standardized Phoenix Engineering Kernel operation for evidence validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22680,29 +22798,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0007",
-      "name": "assumption_validation_007",
+      "name": "validate_non_negative",
       "domain": "VALD",
       "title": "Assumption Validation function 7",
       "purpose": "Standardized Phoenix Engineering Kernel operation for assumption validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22710,29 +22848,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0008",
-      "name": "result_validation_008",
+      "name": "validate_choice",
       "domain": "VALD",
       "title": "Result Validation function 8",
       "purpose": "Standardized Phoenix Engineering Kernel operation for result validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22740,29 +22898,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0009",
-      "name": "input_validation_009",
+      "name": "validate_length",
       "domain": "VALD",
       "title": "Input Validation function 9",
       "purpose": "Standardized Phoenix Engineering Kernel operation for input validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22770,29 +22948,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0010",
-      "name": "unit_validation_010",
+      "name": "validate_dimensions",
       "domain": "VALD",
       "title": "Unit Validation function 10",
       "purpose": "Standardized Phoenix Engineering Kernel operation for unit validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22800,29 +22998,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0011",
-      "name": "range_validation_011",
+      "name": "validate_units",
       "domain": "VALD",
       "title": "Range Validation function 11",
       "purpose": "Standardized Phoenix Engineering Kernel operation for range validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22830,29 +23048,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0012",
-      "name": "consistency_validation_012",
+      "name": "validate_consistency",
       "domain": "VALD",
       "title": "Consistency Validation function 12",
       "purpose": "Standardized Phoenix Engineering Kernel operation for consistency validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22860,29 +23098,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0013",
-      "name": "schema_validation_013",
+      "name": "validate_monotonic",
       "domain": "VALD",
       "title": "Schema Validation function 13",
       "purpose": "Standardized Phoenix Engineering Kernel operation for schema validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22890,29 +23148,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0014",
-      "name": "evidence_validation_014",
+      "name": "validate_tolerance",
       "domain": "VALD",
       "title": "Evidence Validation function 14",
       "purpose": "Standardized Phoenix Engineering Kernel operation for evidence validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22920,29 +23198,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0015",
-      "name": "assumption_validation_015",
+      "name": "validate_relative_tolerance",
       "domain": "VALD",
       "title": "Assumption Validation function 15",
       "purpose": "Standardized Phoenix Engineering Kernel operation for assumption validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22950,29 +23248,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0016",
-      "name": "result_validation_016",
+      "name": "validate_rounding",
       "domain": "VALD",
       "title": "Result Validation function 16",
       "purpose": "Standardized Phoenix Engineering Kernel operation for result validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -22980,29 +23298,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0017",
-      "name": "input_validation_017",
+      "name": "validate_convergence",
       "domain": "VALD",
       "title": "Input Validation function 17",
       "purpose": "Standardized Phoenix Engineering Kernel operation for input validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23010,29 +23348,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0018",
-      "name": "unit_validation_018",
+      "name": "validate_factor_of_safety",
       "domain": "VALD",
       "title": "Unit Validation function 18",
       "purpose": "Standardized Phoenix Engineering Kernel operation for unit validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23040,29 +23398,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0019",
-      "name": "range_validation_019",
+      "name": "validate_utilization",
       "domain": "VALD",
       "title": "Range Validation function 19",
       "purpose": "Standardized Phoenix Engineering Kernel operation for range validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23070,29 +23448,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0020",
-      "name": "consistency_validation_020",
+      "name": "validate_material_property",
       "domain": "VALD",
       "title": "Consistency Validation function 20",
       "purpose": "Standardized Phoenix Engineering Kernel operation for consistency validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23100,29 +23498,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0021",
-      "name": "schema_validation_021",
+      "name": "validate_geometry_non_degenerate",
       "domain": "VALD",
       "title": "Schema Validation function 21",
       "purpose": "Standardized Phoenix Engineering Kernel operation for schema validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23130,29 +23548,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0022",
-      "name": "evidence_validation_022",
+      "name": "validate_load_magnitude",
       "domain": "VALD",
       "title": "Evidence Validation function 22",
       "purpose": "Standardized Phoenix Engineering Kernel operation for evidence validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23160,29 +23598,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0023",
-      "name": "assumption_validation_023",
+      "name": "validate_dependency_set",
       "domain": "VALD",
       "title": "Assumption Validation function 23",
       "purpose": "Standardized Phoenix Engineering Kernel operation for assumption validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23190,29 +23648,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0024",
-      "name": "result_validation_024",
+      "name": "validate_traceability",
       "domain": "VALD",
       "title": "Result Validation function 24",
       "purpose": "Standardized Phoenix Engineering Kernel operation for result validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23220,29 +23698,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0025",
-      "name": "input_validation_025",
+      "name": "validate_registry_unique_ids",
       "domain": "VALD",
       "title": "Input Validation function 25",
       "purpose": "Standardized Phoenix Engineering Kernel operation for input validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23250,29 +23748,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0026",
-      "name": "unit_validation_026",
+      "name": "classify_issue",
       "domain": "VALD",
       "title": "Unit Validation function 26",
       "purpose": "Standardized Phoenix Engineering Kernel operation for unit validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23280,29 +23798,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0027",
-      "name": "range_validation_027",
+      "name": "create_issue",
       "domain": "VALD",
       "title": "Range Validation function 27",
       "purpose": "Standardized Phoenix Engineering Kernel operation for range validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23310,29 +23848,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0028",
-      "name": "consistency_validation_028",
+      "name": "create_validation_report",
       "domain": "VALD",
       "title": "Consistency Validation function 28",
       "purpose": "Standardized Phoenix Engineering Kernel operation for consistency validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23340,29 +23898,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0029",
-      "name": "schema_validation_029",
+      "name": "merge_validation_reports",
       "domain": "VALD",
       "title": "Schema Validation function 29",
       "purpose": "Standardized Phoenix Engineering Kernel operation for schema validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23370,29 +23948,49 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0030",
-      "name": "evidence_validation_030",
+      "name": "validation_summary",
       "domain": "VALD",
       "title": "Evidence Validation function 30",
       "purpose": "Standardized Phoenix Engineering Kernel operation for evidence validation.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Validation subject and explicit engineering constraints."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic boolean, issue or validation report."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "ValidationError for invalid validator configuration or arguments."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH",
+        "PEK-GEOM",
+        "PEK-MATL",
+        "PEK-LOAD"
+      ],
+      "standards": [
+        "Generic QA/QC validation; code-specific rules supplied externally."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -23400,10 +23998,12 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "Explicit finite checks and caller-defined tolerances.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/validation.py",
+      "tests": "engineering_kernel/tests/test_validation_wave1.py"
     },
     {
       "id": "PEK-VALD-0031",

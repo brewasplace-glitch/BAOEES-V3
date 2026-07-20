@@ -1300,6 +1300,306 @@
       "function_id": "PEK-LOAD-0030",
       "link_type": "CODE_TO_TEST",
       "target": "engineering_kernel/tests/test_loads_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0001",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0001",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0002",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0002",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0003",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0003",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0004",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0004",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0005",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0005",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0006",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0006",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0007",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0007",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0008",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0008",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0009",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0009",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0010",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0010",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0011",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0011",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0012",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0012",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0013",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0013",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0014",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0014",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0015",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0015",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0016",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0016",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0017",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0017",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0018",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0018",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0019",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0019",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0020",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0020",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0021",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0021",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0022",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0022",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0023",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0023",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0024",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0024",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0025",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0025",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0026",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0026",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0027",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0027",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0028",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0028",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0029",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0029",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
+    },
+    {
+      "function_id": "PEK-VALD-0030",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/validation.py"
+    },
+    {
+      "function_id": "PEK-VALD-0030",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_validation_wave1.py"
     }
   ],
   "required_link_types": [
