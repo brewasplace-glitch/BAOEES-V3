@@ -700,6 +700,306 @@
       "function_id": "PEK-GEOM-0025",
       "link_type": "CODE_TO_TEST",
       "target": "engineering_kernel/tests/test_geometry_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0001",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0001",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0002",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0002",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0003",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0003",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0004",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0004",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0005",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0005",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0006",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0006",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0007",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0007",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0008",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0008",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0009",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0009",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0010",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0010",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0011",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0011",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0012",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0012",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0013",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0013",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0014",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0014",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0015",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0015",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0016",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0016",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0017",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0017",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0018",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0018",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0019",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0019",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0020",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0020",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0021",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0021",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0022",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0022",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0023",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0023",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0024",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0024",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0025",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0025",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0026",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0026",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0027",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0027",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0028",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0028",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0029",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0029",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
+    },
+    {
+      "function_id": "PEK-MATL-0030",
+      "link_type": "SPEC_TO_CODE",
+      "target": "engineering_kernel/src/phoenix_engineering_kernel/materials.py"
+    },
+    {
+      "function_id": "PEK-MATL-0030",
+      "link_type": "CODE_TO_TEST",
+      "target": "engineering_kernel/tests/test_materials_wave1.py"
     }
   ],
   "required_link_types": [

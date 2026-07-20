@@ -9757,22 +9757,37 @@
     },
     {
       "id": "PEK-MATL-0001",
-      "name": "concrete_properties_001",
+      "name": "create_material",
       "domain": "MATL",
       "title": "Concrete Properties function 1",
       "purpose": "Standardized Phoenix Engineering Kernel operation for concrete properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9780,29 +9795,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0002",
-      "name": "steel_properties_002",
+      "name": "concrete_material",
       "domain": "MATL",
       "title": "Steel Properties function 2",
       "purpose": "Standardized Phoenix Engineering Kernel operation for steel properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9810,29 +9842,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0003",
-      "name": "timber_properties_003",
+      "name": "structural_steel_material",
       "domain": "MATL",
       "title": "Timber Properties function 3",
       "purpose": "Standardized Phoenix Engineering Kernel operation for timber properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9840,29 +9889,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0004",
-      "name": "masonry_properties_004",
+      "name": "reinforcement_steel_material",
       "domain": "MATL",
       "title": "Masonry Properties function 4",
       "purpose": "Standardized Phoenix Engineering Kernel operation for masonry properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9870,29 +9936,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0005",
-      "name": "soil_properties_005",
+      "name": "timber_material",
       "domain": "MATL",
       "title": "Soil Properties function 5",
       "purpose": "Standardized Phoenix Engineering Kernel operation for soil properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9900,29 +9983,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0006",
-      "name": "aluminium_properties_006",
+      "name": "masonry_material",
       "domain": "MATL",
       "title": "Aluminium Properties function 6",
       "purpose": "Standardized Phoenix Engineering Kernel operation for aluminium properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9930,29 +10030,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0007",
-      "name": "glass_properties_007",
+      "name": "aluminium_material",
       "domain": "MATL",
       "title": "Glass Properties function 7",
       "purpose": "Standardized Phoenix Engineering Kernel operation for glass properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9960,29 +10077,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0008",
-      "name": "generic_material_model_008",
+      "name": "glass_material",
       "domain": "MATL",
       "title": "Generic Material Model function 8",
       "purpose": "Standardized Phoenix Engineering Kernel operation for generic material model.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -9990,29 +10124,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0009",
-      "name": "concrete_properties_009",
+      "name": "plastic_material",
       "domain": "MATL",
       "title": "Concrete Properties function 9",
       "purpose": "Standardized Phoenix Engineering Kernel operation for concrete properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10020,29 +10171,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0010",
-      "name": "steel_properties_010",
+      "name": "soil_material",
       "domain": "MATL",
       "title": "Steel Properties function 10",
       "purpose": "Standardized Phoenix Engineering Kernel operation for steel properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10050,29 +10218,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0011",
-      "name": "timber_properties_011",
+      "name": "shear_modulus",
       "domain": "MATL",
       "title": "Timber Properties function 11",
       "purpose": "Standardized Phoenix Engineering Kernel operation for timber properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10080,29 +10265,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0012",
-      "name": "masonry_properties_012",
+      "name": "bulk_modulus",
       "domain": "MATL",
       "title": "Masonry Properties function 12",
       "purpose": "Standardized Phoenix Engineering Kernel operation for masonry properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10110,29 +10312,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0013",
-      "name": "soil_properties_013",
+      "name": "specific_weight",
       "domain": "MATL",
       "title": "Soil Properties function 13",
       "purpose": "Standardized Phoenix Engineering Kernel operation for soil properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10140,29 +10359,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0014",
-      "name": "aluminium_properties_014",
+      "name": "stress",
       "domain": "MATL",
       "title": "Aluminium Properties function 14",
       "purpose": "Standardized Phoenix Engineering Kernel operation for aluminium properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10170,29 +10406,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0015",
-      "name": "glass_properties_015",
+      "name": "strain",
       "domain": "MATL",
       "title": "Glass Properties function 15",
       "purpose": "Standardized Phoenix Engineering Kernel operation for glass properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10200,29 +10453,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0016",
-      "name": "generic_material_model_016",
+      "name": "elastic_stress",
       "domain": "MATL",
       "title": "Generic Material Model function 16",
       "purpose": "Standardized Phoenix Engineering Kernel operation for generic material model.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10230,29 +10500,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0017",
-      "name": "concrete_properties_017",
+      "name": "elastic_strain",
       "domain": "MATL",
       "title": "Concrete Properties function 17",
       "purpose": "Standardized Phoenix Engineering Kernel operation for concrete properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10260,29 +10547,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0018",
-      "name": "steel_properties_018",
+      "name": "characteristic_to_design_value",
       "domain": "MATL",
       "title": "Steel Properties function 18",
       "purpose": "Standardized Phoenix Engineering Kernel operation for steel properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10290,29 +10594,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0019",
-      "name": "timber_properties_019",
+      "name": "design_to_characteristic_value",
       "domain": "MATL",
       "title": "Timber Properties function 19",
       "purpose": "Standardized Phoenix Engineering Kernel operation for timber properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10320,29 +10641,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0020",
-      "name": "masonry_properties_020",
+      "name": "safety_factor",
       "domain": "MATL",
       "title": "Masonry Properties function 20",
       "purpose": "Standardized Phoenix Engineering Kernel operation for masonry properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10350,29 +10688,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0021",
-      "name": "soil_properties_021",
+      "name": "utilization_ratio",
       "domain": "MATL",
       "title": "Soil Properties function 21",
       "purpose": "Standardized Phoenix Engineering Kernel operation for soil properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10380,29 +10735,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0022",
-      "name": "aluminium_properties_022",
+      "name": "apply_temperature_factor",
       "domain": "MATL",
       "title": "Aluminium Properties function 22",
       "purpose": "Standardized Phoenix Engineering Kernel operation for aluminium properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10410,29 +10782,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0023",
-      "name": "glass_properties_023",
+      "name": "apply_moisture_factor",
       "domain": "MATL",
       "title": "Glass Properties function 23",
       "purpose": "Standardized Phoenix Engineering Kernel operation for glass properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10440,29 +10829,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0024",
-      "name": "generic_material_model_024",
+      "name": "thermal_strain",
       "domain": "MATL",
       "title": "Generic Material Model function 24",
       "purpose": "Standardized Phoenix Engineering Kernel operation for generic material model.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10470,29 +10876,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0025",
-      "name": "concrete_properties_025",
+      "name": "thermal_expansion_length",
       "domain": "MATL",
       "title": "Concrete Properties function 25",
       "purpose": "Standardized Phoenix Engineering Kernel operation for concrete properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10500,29 +10923,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0026",
-      "name": "steel_properties_026",
+      "name": "creep_adjusted_modulus",
       "domain": "MATL",
       "title": "Steel Properties function 26",
       "purpose": "Standardized Phoenix Engineering Kernel operation for steel properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10530,29 +10970,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0027",
-      "name": "timber_properties_027",
+      "name": "shrinkage_deformation",
       "domain": "MATL",
       "title": "Timber Properties function 27",
       "purpose": "Standardized Phoenix Engineering Kernel operation for timber properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10560,29 +11017,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0028",
-      "name": "masonry_properties_028",
+      "name": "classify_material",
       "domain": "MATL",
       "title": "Masonry Properties function 28",
       "purpose": "Standardized Phoenix Engineering Kernel operation for masonry properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10590,29 +11064,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0029",
-      "name": "soil_properties_029",
+      "name": "validate_material",
       "domain": "MATL",
       "title": "Soil Properties function 29",
       "purpose": "Standardized Phoenix Engineering Kernel operation for soil properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10620,29 +11111,46 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0030",
-      "name": "aluminium_properties_030",
+      "name": "adjusted_material",
       "domain": "MATL",
       "title": "Aluminium Properties function 30",
       "purpose": "Standardized Phoenix Engineering Kernel operation for aluminium properties.",
-      "status": "PLANNED",
-      "maturity": "M0",
+      "status": "UNIT_TESTED",
+      "maturity": "M2",
       "implementation_language": "python",
       "deterministic": true,
       "internal_units": "SI",
-      "inputs": [],
-      "outputs": [],
+      "inputs": [
+        {
+          "contract": "Finite material properties in one consistent unit system."
+        }
+      ],
+      "outputs": [
+        {
+          "contract": "Deterministic material property or engineering value."
+        }
+      ],
       "preconditions": [],
       "postconditions": [],
-      "errors": [],
-      "dependencies": [],
-      "standards": [],
+      "errors": [
+        "MaterialError for invalid, non-physical or non-finite data."
+      ],
+      "dependencies": [
+        "PEK-UNITS",
+        "PEK-MATH"
+      ],
+      "standards": [
+        "General material mechanics; code-specific values supplied by higher layers."
+      ],
       "test_requirements": [
         "nominal_case",
         "boundary_case",
@@ -10650,10 +11158,12 @@
         "unit_consistency_case",
         "reproducibility_case"
       ],
-      "accuracy_requirement": "To be specified before IMPLEMENTED state.",
+      "accuracy_requirement": "IEEE-754 double precision with explicit engineering validation.",
       "source_evidence_required": true,
       "assumptions_allowed": true,
-      "assumptions_must_be_logged": true
+      "assumptions_must_be_logged": true,
+      "implementation": "engineering_kernel/src/phoenix_engineering_kernel/materials.py",
+      "tests": "engineering_kernel/tests/test_materials_wave1.py"
     },
     {
       "id": "PEK-MATL-0031",
