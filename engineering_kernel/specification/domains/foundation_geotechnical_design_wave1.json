@@ -1,0 +1,18 @@
+{
+  "domain": "FNDN",
+  "release": "PEK Foundation & Geotechnical Design Engine Wave 1 v1.0",
+  "classification": "DOMAIN_EXTENSION",
+  "core_registry_modified": false,
+  "implemented_functions": 30,
+  "status": "UNIT_TESTED",
+  "implementation": "engineering_kernel/src/phoenix_engineering_kernel/foundation.py",
+  "tests": "engineering_kernel/tests/test_foundation_wave1.py",
+  "dependencies": [
+    "UNITS",
+    "MATH",
+    "LOAD",
+    "VALD",
+    "GEO",
+    "STRUCT"
+  ]
+}
