@@ -1,0 +1,28 @@
+{
+  "policy_id": "PHOENIX-CONCRETE-AXIAL-DESIGN-WAVE10-v1.0.1",
+  "engine_id": "concrete_axial_design",
+  "input_artifact": "phoenix-reference-solver-results-v1.0",
+  "output_artifact": "phoenix-concrete-axial-design-results-v1.0",
+  "verified_scope": {
+    "material_system": "reinforced_concrete",
+    "action": "axial_force_only",
+    "design_method": "generic_policy_based",
+    "named_code_compliance": false,
+    "units": "SI"
+  },
+  "hard_rules": [
+    "wave9_result_integrity_must_verify",
+    "wave9_equilibrium_must_pass",
+    "wave9_results_must_be_finite",
+    "member_result_reference_must_resolve",
+    "minimum_and_maximum_reinforcement_ratios_must_validate",
+    "named_code_compliance_must_not_be_claimed",
+    "unsupported_limit_states_must_be_disclaimed",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic"
+  ],
+  "patch": {
+    "fix": "Use Wave 7-supported load type 'dead' in the Wave 10 integration fixture.",
+    "recovery": "Installer can safely remove the exact partial Wave 10 v1.0 footprint left by the failed installation."
+  }
+}

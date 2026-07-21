@@ -1,0 +1,32 @@
+{
+  "release": "Phoenix Concrete Axial Design Engine Wave 10 v1.0.1",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_wave9_result_input",
+    "tension_axial_reinforcement_sizing",
+    "compression_axial_capacity_check",
+    "minimum_reinforcement_policy",
+    "maximum_reinforcement_policy",
+    "bar_count_selection",
+    "capacity_utilization",
+    "explicit_pass_fail_summary",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_named_code_compliance",
+    "no_bending",
+    "no_shear",
+    "no_slenderness",
+    "no_buckling",
+    "no_second_order_effects",
+    "no_crack_control",
+    "no_detailing",
+    "no_durability",
+    "no_fire_resistance"
+  ],
+  "patch_notes": [
+    "Correct unsupported Wave 7 integration fixture load_type from design to dead.",
+    "Add exact-footprint recovery for a failed Wave 10 v1.0 installation."
+  ]
+}
