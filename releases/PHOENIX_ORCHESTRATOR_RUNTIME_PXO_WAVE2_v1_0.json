@@ -1,0 +1,20 @@
+{
+  "release": "Phoenix Orchestrator Runtime PXO Wave 2 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "engine_adapter_registry",
+    "ready_engine_execution",
+    "strict_runtime_transitions",
+    "stop_on_first_error",
+    "atomic_json_checkpoint",
+    "checkpoint_sha256",
+    "bounded_execution_loop",
+    "deterministic_test_adapter"
+  ],
+  "limitations": [
+    "no_external_process_adapter",
+    "no_database_checkpoint_backend",
+    "no_parallel_workers",
+    "no_retry_backoff"
+  ]
+}

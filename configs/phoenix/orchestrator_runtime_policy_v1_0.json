@@ -1,0 +1,16 @@
+{
+  "policy_id": "PHOENIX-ORCHESTRATOR-RUNTIME-v1.0",
+  "stop_on_first_error": true,
+  "maximum_engine_executions": 100,
+  "checkpoint_filename": "pxo_runtime_checkpoint.json",
+  "hard_rules": [
+    "only_registered_adapters_may_execute",
+    "engine_must_be_ready_before_start",
+    "adapter_result_requires_outputs",
+    "adapter_result_requires_evidence",
+    "checkpoint_write_is_atomic",
+    "checkpoint_contains_integrity_hash",
+    "first_error_stops_runtime",
+    "failed_engine_is_never_marked_completed"
+  ]
+}
