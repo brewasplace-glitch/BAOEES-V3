@@ -1,0 +1,27 @@
+{
+  "release": "Phoenix Timber & Masonry Axial Design Engine Wave 12 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_wave9_result_input",
+    "timber_axial_strength_check",
+    "masonry_axial_strength_check",
+    "compression_resistance",
+    "tension_resistance",
+    "governing_resistance",
+    "optional_slenderness_screen",
+    "capacity_utilization",
+    "explicit_pass_fail_summary",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_named_code_compliance",
+    "no_stability_resistance_model",
+    "no_timber_connection_design",
+    "no_timber_duration_moisture_model",
+    "no_masonry_eccentricity",
+    "no_masonry_lateral_stability",
+    "no_fire_resistance",
+    "no_durability"
+  ]
+}

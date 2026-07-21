@@ -67,3 +67,10 @@ from .steel_axial_design import (
     SteelMemberDesignInput,
     create_steel_axial_design_adapter,
 )
+
+from .timber_masonry_axial_design import (
+    TimberMasonryAxialDesignConfig,
+    TimberMasonryAxialDesignError,
+    TimberMasonryMemberDesignInput,
+    create_timber_masonry_axial_design_adapter,
+)
