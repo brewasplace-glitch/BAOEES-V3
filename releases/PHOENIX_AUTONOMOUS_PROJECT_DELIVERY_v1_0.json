@@ -1,0 +1,12 @@
+{
+  "release": "Phoenix Autonomous Project Delivery v1.0",
+  "type": "EXECUTABLE_MASTER_SPECIFICATION",
+  "status": "READY_FOR_INSTALLATION",
+  "scope": [
+    "single_command_contract",
+    "ten_variant_contract",
+    "selection_logic",
+    "engine_dependency_registry",
+    "complete_dossier_manifest"
+  ]
+}

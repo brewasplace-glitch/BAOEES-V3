@@ -1,0 +1,28 @@
+{
+  "policy_id": "PHOENIX-AUTONOMOUS-PROJECT-DELIVERY-v1.0",
+  "trigger": "Ontwerp een appartementencomplex op deze locatie.",
+  "concept_variants": 10,
+  "presentation": "one_by_one",
+  "selection_modes": [
+    "phoenix_selects",
+    "user_selects",
+    "external_design"
+  ],
+  "engines": [
+    "geotechnical",
+    "structural_steel",
+    "concrete",
+    "hydraulics",
+    "road_design",
+    "traffic",
+    "sustainability",
+    "electrical",
+    "fire_safety",
+    "water_supply",
+    "sewer_design",
+    "bim",
+    "gis",
+    "ai_optimization"
+  ],
+  "final_output": "complete_project_dossier"
+}
