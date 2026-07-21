@@ -1,0 +1,20 @@
+{
+  "policy_id": "PHOENIX-AUTOMATIC-DRAWING-GENERATION-WAVE14-v1.0",
+  "engine_id": "automatic_drawing_generation",
+  "input_artifact": "phoenix-bim-ifc-synchronization-v1.0",
+  "outputs": [
+    "SVG plan",
+    "SVG elevation",
+    "ASCII DXF R12",
+    "drawing register",
+    "drawing manifest"
+  ],
+  "scope": "two-node line elements; generated for review",
+  "limitations": [
+    "no DWG",
+    "no PDF",
+    "no reinforcement detailing",
+    "no permit-ready claim",
+    "no construction-ready claim"
+  ]
+}

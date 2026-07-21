@@ -80,3 +80,9 @@ from .bim_ifc_synchronization import (
     BIMIFCSynchronizationError,
     create_bim_ifc_synchronization_adapter,
 )
+
+from .automatic_drawing_generation import (
+    AutomaticDrawingGenerationConfig,
+    AutomaticDrawingGenerationError,
+    create_automatic_drawing_generation_adapter,
+)

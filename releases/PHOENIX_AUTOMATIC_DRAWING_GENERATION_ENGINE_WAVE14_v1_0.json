@@ -1,0 +1,22 @@
+{
+  "release": "Phoenix Automatic Drawing Generation Engine Wave 14 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified Wave 13 input",
+    "SVG plan",
+    "SVG elevation",
+    "ASCII DXF R12",
+    "title block",
+    "revision metadata",
+    "drawing register",
+    "SHA-256 manifest",
+    "PXO integration"
+  ],
+  "limitations": [
+    "two-node line elements only",
+    "no DWG",
+    "no PDF",
+    "no reinforcement details",
+    "review required"
+  ]
+}
