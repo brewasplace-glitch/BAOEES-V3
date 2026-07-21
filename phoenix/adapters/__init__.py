@@ -29,3 +29,13 @@ from .foundation_bootstrap import (
     FoundationBootstrapError,
     create_foundation_bootstrap_adapter,
 )
+
+from .structural_analysis_bootstrap import (
+    StructuralBootstrapConfig,
+    StructuralBootstrapError,
+    StructuralElement,
+    StructuralLoadCase,
+    StructuralLoadCombination,
+    StructuralMaterial,
+    create_structural_analysis_bootstrap_adapter,
+)

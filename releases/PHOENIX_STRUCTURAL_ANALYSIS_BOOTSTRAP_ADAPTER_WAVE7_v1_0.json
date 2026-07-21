@@ -1,0 +1,25 @@
+{
+  "release": "Phoenix Structural Analysis Bootstrap Adapter Wave 7 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_foundation_artifact_input",
+    "node_registry",
+    "material_registry",
+    "element_registry",
+    "load_case_registry",
+    "load_combination_registry",
+    "analysis_graph",
+    "global_dof_bootstrap",
+    "atomic_artifact_write",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_boundary_condition_solver",
+    "no_finite_element_solution",
+    "no_member_forces",
+    "no_displacements",
+    "no_stability_verification",
+    "no_code_verification"
+  ]
+}
