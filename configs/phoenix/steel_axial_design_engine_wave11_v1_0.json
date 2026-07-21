@@ -1,0 +1,26 @@
+{
+  "policy_id": "PHOENIX-STEEL-AXIAL-DESIGN-WAVE11-v1.0",
+  "engine_id": "steel_axial_design",
+  "input_artifact": "phoenix-reference-solver-results-v1.0",
+  "output_artifact": "phoenix-steel-axial-design-results-v1.0",
+  "verified_scope": {
+    "material_system": "structural_steel",
+    "action": "axial_force_only",
+    "design_method": "generic_policy_based",
+    "named_code_compliance": false,
+    "optional_check": "slenderness_screen_only",
+    "units": "SI"
+  },
+  "hard_rules": [
+    "wave9_result_integrity_must_verify",
+    "wave9_equilibrium_must_pass",
+    "wave9_results_must_be_finite",
+    "member_result_reference_must_resolve",
+    "yield_and_ultimate_resistance_must_be_reported",
+    "slenderness_inputs_must_be_complete_or_absent",
+    "buckling_resistance_must_not_be_claimed",
+    "named_code_compliance_must_not_be_claimed",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "release": "Phoenix Steel Axial Design Engine Wave 11 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_wave9_result_input",
+    "tension_axial_strength_check",
+    "compression_gross_section_strength_check",
+    "yield_resistance",
+    "ultimate_resistance",
+    "governing_resistance",
+    "optional_slenderness_screen",
+    "capacity_utilization",
+    "explicit_pass_fail_summary",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_named_code_compliance",
+    "no_buckling_resistance_model",
+    "no_local_buckling",
+    "no_lateral_torsional_buckling",
+    "no_connection_design",
+    "no_fatigue",
+    "no_fire_resistance",
+    "no_fracture"
+  ]
+}
