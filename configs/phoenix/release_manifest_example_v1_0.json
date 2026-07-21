@@ -1,0 +1,10 @@
+{
+  "release_id": "PHOENIX_EXAMPLE_RELEASE",
+  "version": "1.0.0",
+  "metadata": {
+    "wave": "example"
+  },
+  "include_files": [
+    "DOCS/architecture/PHOENIX_RELEASE_BUILDER_PRB_v1_0_0.md"
+  ]
+}

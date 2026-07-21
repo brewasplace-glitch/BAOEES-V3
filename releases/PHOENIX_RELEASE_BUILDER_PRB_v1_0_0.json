@@ -1,0 +1,18 @@
+{
+  "release_id": "PHOENIX_RELEASE_BUILDER_PRB",
+  "version": "1.0.0",
+  "status": "release_candidate",
+  "capabilities": [
+    "explicit release manifests",
+    "deterministic ZIP archives",
+    "SHA-256 evidence",
+    "safe path validation",
+    "CLI and PowerShell runner",
+    "automatic installer checks",
+    "known Wave 15.1 interrupted-install recovery"
+  ],
+  "limitations": [
+    "PRB packages existing repository files; it does not generate source code",
+    "remote release publication is not included in v1.0.0"
+  ]
+}

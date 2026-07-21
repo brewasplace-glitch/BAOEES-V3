@@ -1,0 +1,17 @@
+{
+  "release_id": "PHOENIX_RECOVERY_MANAGER_PRM",
+  "version": "1.0.0",
+  "status": "release_candidate",
+  "includes": [
+    "Wave 15.1.1 recovery",
+    "Phoenix Release Builder PRB v1.0.0",
+    "Phoenix Recovery Manager PRM v1.0.0"
+  ],
+  "safety": [
+    "explicit changed-path allow-list",
+    "untracked files enumerated individually",
+    "no automatic deletion or reset",
+    "tests before commit and push",
+    "clean-tree final verification"
+  ]
+}

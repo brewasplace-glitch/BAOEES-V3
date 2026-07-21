@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.optimization_core.wave15_1",
+  "engine_version": "1.0.0",
+  "default_sensitivity_delta": 0.1,
+  "default_rounding_digits": 9,
+  "supported_directions": [
+    "minimize",
+    "maximize"
+  ],
+  "supported_constraint_operators": [
+    "<=",
+    ">=",
+    "=="
+  ],
+  "default_objectives": [
+    {
+      "name": "cost",
+      "direction": "minimize",
+      "weight": 0.3
+    },
+    {
+      "name": "carbon",
+      "direction": "minimize",
+      "weight": 0.2
+    },
+    {
+      "name": "mass",
+      "direction": "minimize",
+      "weight": 0.15
+    },
+    {
+      "name": "safety",
+      "direction": "maximize",
+      "weight": 0.35
+    }
+  ],
+  "status": "generated_for_engineering_review"
+}

@@ -86,3 +86,4 @@ from .automatic_drawing_generation import (
     AutomaticDrawingGenerationError,
     create_automatic_drawing_generation_adapter,
 )
+from .optimization_core_adapter import create_optimization_core_adapter, run_optimization_core

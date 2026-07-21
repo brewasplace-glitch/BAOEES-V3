@@ -1,0 +1,31 @@
+{
+  "release_id": "PHOENIX_OPTIMIZATION_CORE_WAVE15_1_v1_0",
+  "wave": "15.1",
+  "version": "1.0.0",
+  "engine_id": "phoenix.optimization_core.wave15_1",
+  "status": "release_candidate",
+  "files": [
+    "DOCS/architecture/PHOENIX_OPTIMIZATION_CORE_WAVE15_1_v1_0.md",
+    "INSTALL_PHOENIX_OPTIMIZATION_CORE_WAVE15_1_v1_0.ps1",
+    "configs/phoenix/optimization_core_wave15_1_v1_0.json",
+    "phoenix/adapters/optimization_core_adapter.py",
+    "phoenix/optimization/__init__.py",
+    "phoenix/optimization/optimization_core.py",
+    "releases/PHOENIX_OPTIMIZATION_CORE_WAVE15_1_v1_0.json",
+    "tests/automation/test_phoenix_optimization_core_wave15_1_v1_0.py"
+  ],
+  "claims": [
+    "deterministic objective normalization",
+    "hard-constraint filtering",
+    "Pareto-front extraction",
+    "weighted ranking",
+    "sensitivity scenarios",
+    "SHA-256 evidence"
+  ],
+  "non_claims": [
+    "automatic structural variant generation",
+    "code-compliant final structural design",
+    "permit-ready evidence",
+    "construction-ready evidence"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "manager_id": "phoenix.recovery_manager",
+  "manager_version": "1.0.0",
+  "policy": {
+    "enumerate_untracked_files_individually": true,
+    "allow_only_explicit_paths": true,
+    "overwrite_known_release_payload_before_validation": true,
+    "never_delete_unrelated_files": true,
+    "stop_on_first_error": true,
+    "commit_and_push_only_after_all_checks": true
+  }
+}
