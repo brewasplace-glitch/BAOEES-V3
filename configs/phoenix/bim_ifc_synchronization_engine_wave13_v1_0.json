@@ -1,0 +1,24 @@
+{
+  "policy_id": "PHOENIX-BIM-IFC-SYNCHRONIZATION-WAVE13-v1.0",
+  "engine_id": "bim_ifc_synchronization",
+  "input_artifacts": [
+    "phoenix-structural-analysis-bootstrap-v1.0",
+    "phoenix-concrete-axial-design-results-v1.0",
+    "phoenix-steel-axial-design-results-v1.0",
+    "phoenix-timber-masonry-axial-design-results-v1.0"
+  ],
+  "output_artifact": "phoenix-bim-ifc-synchronization-v1.0",
+  "ifc_targets": [
+    "IFC4",
+    "IFC4X3"
+  ],
+  "hard_rules": [
+    "all_input_artifact_hashes_must_verify",
+    "all_design_element_references_must_resolve",
+    "deterministic_global_id_seeds_required",
+    "binary_ifc_must_not_be_claimed",
+    "ifc_schema_validation_must_not_be_claimed",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic"
+  ]
+}

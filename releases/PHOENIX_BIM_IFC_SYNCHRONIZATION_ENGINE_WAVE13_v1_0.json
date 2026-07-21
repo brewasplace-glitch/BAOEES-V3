@@ -1,0 +1,22 @@
+{
+  "release": "Phoenix BIM / IFC Synchronization Engine Wave 13 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_structural_artifact_input",
+    "verified_design_artifact_input",
+    "ifc_entity_intent_mapping",
+    "deterministic_global_id_seeds",
+    "phoenix_identity_property_sets",
+    "design_evidence_property_sets",
+    "spatial_structure_mapping",
+    "reference_integrity_validation",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_binary_ifc_serialization",
+    "no_ifc_schema_validation",
+    "no_solid_geometry",
+    "no_authoring_tool_roundtrip"
+  ]
+}

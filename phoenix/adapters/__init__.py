@@ -74,3 +74,9 @@ from .timber_masonry_axial_design import (
     TimberMasonryMemberDesignInput,
     create_timber_masonry_axial_design_adapter,
 )
+
+from .bim_ifc_synchronization import (
+    BIMIFCSynchronizationConfig,
+    BIMIFCSynchronizationError,
+    create_bim_ifc_synchronization_adapter,
+)
