@@ -1,0 +1,27 @@
+{
+  "release": "Phoenix Reference Solver Execution Engine Wave 9 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_wave8_contract_input",
+    "verified_wave7_model_input",
+    "global_stiffness_assembly",
+    "boundary_condition_application",
+    "pivoted_dense_linear_solution",
+    "nodal_displacement_results",
+    "reaction_results",
+    "axial_force_stress_strain_results",
+    "global_equilibrium_verification",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "global_x_truss_only",
+    "ux_degree_of_freedom_only",
+    "single_active_load_case",
+    "no_distributed_loads",
+    "no_frame_bending",
+    "no_buckling",
+    "no_second_order_analysis",
+    "no_code_verification"
+  ]
+}

@@ -47,3 +47,9 @@ from .structural_solver_contract import (
     StructuralSolverContractError,
     create_structural_solver_contract_adapter,
 )
+
+from .reference_solver_execution import (
+    ReferenceSolverExecutionConfig,
+    ReferenceSolverExecutionError,
+    create_reference_solver_execution_adapter,
+)

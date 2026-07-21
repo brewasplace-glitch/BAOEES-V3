@@ -1,0 +1,26 @@
+{
+  "policy_id": "PHOENIX-REFERENCE-SOLVER-EXECUTION-WAVE9-v1.0",
+  "engine_id": "reference_solver",
+  "input_artifact": "phoenix-structural-solver-contract-v1.0",
+  "output_artifact": "phoenix-reference-solver-results-v1.0",
+  "verified_scope": {
+    "analysis_type": "linear_static",
+    "element_type": "truss",
+    "element_alignment": "global_x",
+    "active_dof": "ux",
+    "load_type": "nodal_ux",
+    "support_type": "zero_ux",
+    "units": "SI"
+  },
+  "hard_rules": [
+    "wave8_contract_integrity_must_verify",
+    "wave7_artifact_integrity_must_verify",
+    "unsupported_models_must_be_rejected",
+    "singular_systems_must_be_rejected",
+    "global_equilibrium_must_verify",
+    "nonfinite_results_must_be_rejected",
+    "code_compliance_must_not_be_claimed",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic"
+  ]
+}
