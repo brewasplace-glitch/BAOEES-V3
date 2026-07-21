@@ -1,4 +1,5 @@
 from __future__ import annotations
+from engineering_kernel.tests.numeric_assertions import assert_float_close
 import unittest
 
 from engineering_kernel.src.phoenix_engineering_kernel.materials import *
@@ -35,17 +36,17 @@ class MaterialsWave1Tests(unittest.TestCase):
 
     def test_stress_strain(self):
         self.assertEqual(stress(1000, 100), 10)
-        self.assertEqual(strain(2, 1000), 0.002)
+        assert_float_close(self, strain(2, 1000), 0.002)
         self.assertEqual(elastic_stress(200000, 0.001), 200)
-        self.assertEqual(elastic_strain(200, 200000), 0.001)
+        assert_float_close(self, elastic_strain(200, 200000), 0.001)
 
     def test_design_values(self):
         self.assertEqual(characteristic_to_design_value(30, 1.5), 20)
         self.assertEqual(design_to_characteristic_value(20, 1.5), 30)
 
     def test_safety_and_utilization(self):
-        self.assertEqual(safety_factor(150, 100), 1.5)
-        self.assertEqual(utilization_ratio(80, 100), 0.8)
+        assert_float_close(self, safety_factor(150, 100), 1.5)
+        assert_float_close(self, utilization_ratio(80, 100), 0.8)
 
     def test_environmental_factors(self):
         self.assertEqual(apply_temperature_factor(100, 0.8), 80)
@@ -62,8 +63,8 @@ class MaterialsWave1Tests(unittest.TestCase):
     def test_adjusted_material(self):
         m = create_material("Generic", "test", 1000, 5000, 0.25)
         adjusted = adjusted_material(m, moisture_factor=0.9, temperature_factor=0.8)
-        self.assertEqual(adjusted.moisture_factor, 0.9)
-        self.assertEqual(adjusted.temperature_factor, 0.8)
+        assert_float_close(self, adjusted.moisture_factor, 0.9)
+        assert_float_close(self, adjusted.temperature_factor, 0.8)
 
     def test_validation(self):
         m = create_material("Generic", "test", 1000, 5000, 0.25)

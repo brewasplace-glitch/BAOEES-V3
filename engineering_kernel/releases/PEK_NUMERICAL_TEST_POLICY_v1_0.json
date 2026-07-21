@@ -1,0 +1,9 @@
+{
+  "release": "PEK Numerical Test Policy v1.0",
+  "classification": "QUALITY_POLICY",
+  "status": "READY_FOR_INSTALLATION",
+  "default_relative_tolerance": 1e-09,
+  "default_absolute_tolerance": 1e-12,
+  "enforcement": true,
+  "automated_migration": true
+}

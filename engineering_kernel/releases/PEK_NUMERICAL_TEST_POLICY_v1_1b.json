@@ -1,0 +1,9 @@
+{
+  "release": "PEK Numerical Test Policy v1.1b",
+  "classification": "QUALITY_POLICY_HOTFIX",
+  "supersedes": "PEK Numerical Test Policy v1.1a",
+  "status": "READY_FOR_INSTALLATION",
+  "fix": "AST_CALLSITE_TYPE_REPAIR",
+  "repository_wide_scan": true,
+  "callsite_policy_check": true
+}

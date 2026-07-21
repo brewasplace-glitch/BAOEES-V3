@@ -1,0 +1,18 @@
+{
+  "policy": "PEK Numerical Test Policy",
+  "version": "1.0",
+  "scope": "engineering_kernel/tests",
+  "default_relative_tolerance": 1e-09,
+  "default_absolute_tolerance": 1e-12,
+  "rules": [
+    "Do not use assertEqual for floating-point calculations.",
+    "Use assert_float_close for scalar real-number comparisons.",
+    "Use assert_numeric_sequence_close for real-number sequences.",
+    "Do not round values inside engineering-kernel calculations.",
+    "Apply presentation rounding only in report and UI layers.",
+    "NaN comparisons fail explicitly.",
+    "Boolean comparisons remain exact."
+  ],
+  "enforcement": "engineering_kernel/tools/check_numeric_test_policy.py",
+  "migration": "engineering_kernel/tools/migrate_numeric_assertions.py"
+}

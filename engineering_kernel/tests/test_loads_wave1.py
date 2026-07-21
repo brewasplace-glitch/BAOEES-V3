@@ -1,4 +1,5 @@
 from __future__ import annotations
+from engineering_kernel.tests.numeric_assertions import assert_float_close, assert_numeric_sequence_close
 import math
 import unittest
 
@@ -41,7 +42,7 @@ class LoadsWave1Tests(unittest.TestCase):
     def test_components_and_vector(self):
         load = create_load("X", "test", 10, (1, 0, 0))
         self.assertEqual(load_component(load, 0), 10)
-        self.assertEqual(load_vector(load), (10.0, 0.0, 0.0))
+        assert_numeric_sequence_close(self, load_vector(load), (10.0, 0.0, 0.0))
 
     def test_scale(self):
         load = dead_load("G", 10)
@@ -51,7 +52,7 @@ class LoadsWave1Tests(unittest.TestCase):
     def test_resultants(self):
         a = create_load("A", "test", 3, (1, 0, 0))
         b = create_load("B", "test", 4, (0, 1, 0))
-        self.assertEqual(sum_load_vectors([a, b]), (3.0, 4.0, 0.0))
+        assert_numeric_sequence_close(self, sum_load_vectors([a, b]), (3.0, 4.0, 0.0))
         r = resultant_load([a, b])
         self.assertAlmostEqual(r.magnitude, 5)
 
@@ -69,7 +70,7 @@ class LoadsWave1Tests(unittest.TestCase):
         g = dead_load("G", 10)
         q = imposed_load("Q", 5)
         a = create_load("A", "accidental", 2, (1, 0, 0))
-        self.assertEqual(accidental_combination([g], [q], a, [0.3]), 13.5)
+        assert_float_close(self, accidental_combination([g], [q], a, [0.3]), 13.5)
 
     def test_dynamic_and_tributary(self):
         self.assertEqual(dynamic_amplification(10, 1.2), 12)

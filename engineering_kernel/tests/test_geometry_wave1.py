@@ -1,4 +1,5 @@
 from __future__ import annotations
+from engineering_kernel.tests.numeric_assertions import assert_float_close, assert_numeric_sequence_close
 import math
 import unittest
 
@@ -21,12 +22,12 @@ class GeometryWave1Tests(unittest.TestCase):
     def test_vector_products(self):
         self.assertEqual(dot_2d((1,2),(3,4)), 11)
         self.assertEqual(cross_2d((1,0),(0,1)), 1)
-        self.assertEqual(cross_3d((1,0,0),(0,1,0)), (0,0,1))
+        assert_numeric_sequence_close(self, cross_3d((1,0,0),(0,1,0)), (0,0,1))
 
     def test_normalize(self):
-        self.assertEqual(normalize_vector_2d((3,4)), (0.6,0.8))
+        assert_numeric_sequence_close(self, normalize_vector_2d((3,4)), (0.6,0.8))
         result=normalize_vector_3d((0,0,2))
-        self.assertEqual(result, (0.0,0.0,1.0))
+        assert_numeric_sequence_close(self, result, (0.0,0.0,1.0))
 
     def test_zero_vector_rejected(self):
         with self.assertRaises(GeometryError):

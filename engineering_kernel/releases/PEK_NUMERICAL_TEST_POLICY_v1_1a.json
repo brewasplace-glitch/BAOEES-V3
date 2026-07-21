@@ -1,0 +1,8 @@
+{
+  "release": "PEK Numerical Test Policy v1.1a",
+  "classification": "QUALITY_POLICY_HOTFIX",
+  "supersedes": "PEK Numerical Test Policy v1.1",
+  "status": "READY_FOR_INSTALLATION",
+  "fix": "TYPE_AWARE_EXPECTED_VALUE_CHECKING",
+  "regression_tests_added": true
+}

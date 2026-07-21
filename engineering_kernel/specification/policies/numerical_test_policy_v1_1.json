@@ -1,0 +1,16 @@
+{
+  "policy": "PEK Numerical Test Policy",
+  "version": "1.1",
+  "supersedes": "1.0",
+  "scope": "engineering_kernel/tests",
+  "default_relative_tolerance": 1e-09,
+  "default_absolute_tolerance": 1e-12,
+  "migration_strategy": "TYPE_AWARE_AST",
+  "rules": [
+    "Float scalar expectations use assert_float_close.",
+    "Numeric tuple and list expectations use assert_numeric_sequence_close.",
+    "String, boolean, integer, bytes, None and unknown composite expectations remain exact.",
+    "The migrator must prefer no migration over an unsafe type guess.",
+    "Kernel calculations are never rounded to satisfy tests."
+  ]
+}

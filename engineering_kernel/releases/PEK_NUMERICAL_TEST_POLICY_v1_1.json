@@ -1,0 +1,9 @@
+{
+  "release": "PEK Numerical Test Policy v1.1",
+  "classification": "QUALITY_POLICY",
+  "supersedes": "PEK Numerical Test Policy v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "type_aware_migration": true,
+  "known_v1_0_repairs": 6,
+  "migrator_regression_tests": true
+}
