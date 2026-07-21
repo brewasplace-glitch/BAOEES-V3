@@ -1,0 +1,23 @@
+{
+  "release": "Phoenix Structural Solver Contract Adapter Wave 8 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_structural_bootstrap_input",
+    "boundary_condition_registry",
+    "nodal_action_registry",
+    "solver_policy_registry",
+    "degree_of_freedom_summary",
+    "atomic_artifact_write",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_solver_input_export",
+    "no_solver_process_execution",
+    "no_convergence_verification",
+    "no_reactions",
+    "no_displacements",
+    "no_member_forces",
+    "no_code_verification"
+  ]
+}

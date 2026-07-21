@@ -1,0 +1,31 @@
+{
+  "policy_id": "PHOENIX-STRUCTURAL-SOLVER-CONTRACT-WAVE8-v1.0",
+  "engine_id": "structural_solver",
+  "input_artifact": "phoenix-structural-analysis-bootstrap-v1.0",
+  "output_artifact": "phoenix-structural-solver-contract-v1.0",
+  "supported_analysis_types": [
+    "linear_static",
+    "eigenvalue",
+    "second_order",
+    "nonlinear_static"
+  ],
+  "degree_of_freedom_labels": [
+    "ux",
+    "uy",
+    "uz",
+    "rx",
+    "ry",
+    "rz"
+  ],
+  "hard_rules": [
+    "structural_bootstrap_integrity_must_verify",
+    "boundary_node_references_must_resolve",
+    "nodal_action_node_references_must_resolve",
+    "nodal_action_load_case_references_must_resolve",
+    "solver_execution_must_not_be_fabricated",
+    "convergence_must_not_be_fabricated",
+    "solver_results_must_not_be_fabricated",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic"
+  ]
+}

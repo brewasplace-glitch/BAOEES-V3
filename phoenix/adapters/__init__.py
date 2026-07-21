@@ -39,3 +39,11 @@ from .structural_analysis_bootstrap import (
     StructuralMaterial,
     create_structural_analysis_bootstrap_adapter,
 )
+
+from .structural_solver_contract import (
+    BoundaryCondition,
+    NodalAction,
+    StructuralSolverContractConfig,
+    StructuralSolverContractError,
+    create_structural_solver_contract_adapter,
+)
