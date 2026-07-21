@@ -1,0 +1,24 @@
+{
+  "policy_id": "PHOENIX-PROJECT-GENERATOR-v1.0",
+  "required_variants": 10,
+  "presentation_mode": "one_by_one",
+  "selection_modes": [
+    "automatic",
+    "manual",
+    "external"
+  ],
+  "score_dimensions": [
+    "cost",
+    "permit_probability",
+    "sustainability",
+    "spatial_quality",
+    "constructability"
+  ],
+  "hard_rules": [
+    "exactly_10_variants",
+    "deterministic_generation",
+    "unique_variant_fingerprints",
+    "no_engineering_claim_without_evidence",
+    "selected_variant_required_before_detailed_design"
+  ]
+}

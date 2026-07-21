@@ -1,0 +1,18 @@
+{
+  "release": "Phoenix Project Generator PPG v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "single_project_brief_input",
+    "exactly_ten_concept_variants",
+    "deterministic_generation",
+    "multi_criteria_scoring",
+    "one_by_one_presentation_queue",
+    "automatic_or_manual_selection",
+    "traceable_variant_fingerprints"
+  ],
+  "limitations": [
+    "no_final_engineering_calculations",
+    "no_permit_ready_drawings",
+    "no_verified_site_or_soil_data"
+  ]
+}
