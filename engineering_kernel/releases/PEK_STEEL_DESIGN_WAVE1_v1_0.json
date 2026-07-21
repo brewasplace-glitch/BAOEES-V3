@@ -1,0 +1,9 @@
+{
+  "release_id": "PEK-12",
+  "name": "PEK Steel Design Engine Wave 1",
+  "version": "1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "function_count": 39,
+  "internal_units": "SI",
+  "standard_neutral": true
+}
