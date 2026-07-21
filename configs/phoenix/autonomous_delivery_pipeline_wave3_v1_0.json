@@ -1,0 +1,21 @@
+{
+  "policy_id": "PHOENIX-AUTONOMOUS-DELIVERY-PIPELINE-WAVE3-v1.0",
+  "entry": "project_brief",
+  "variant_count": 10,
+  "selection_modes": [
+    "automatic",
+    "manual"
+  ],
+  "handoff": "PPG_to_PXO",
+  "checkpoint_resume": true,
+  "integrity_algorithm": "SHA-256",
+  "hard_rules": [
+    "exactly_10_variants_before_selection",
+    "selected_variant_fingerprint_required",
+    "pxo_plan_created_from_selected_variant",
+    "runtime_executes_only_registered_adapters",
+    "checkpoint_integrity_verified_before_resume",
+    "tampered_checkpoint_rejected",
+    "missing_engine_never_marked_completed"
+  ]
+}

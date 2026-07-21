@@ -1,0 +1,20 @@
+{
+  "release": "Phoenix Autonomous Delivery Pipeline Wave 3 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "PPG_to_PXO_handoff",
+    "automatic_or_manual_variant_selection",
+    "bootstrap_manifest",
+    "runtime_adapter_execution",
+    "checkpoint_resume",
+    "checkpoint_integrity_verification",
+    "tamper_rejection",
+    "deterministic_pipeline_fingerprinting"
+  ],
+  "limitations": [
+    "no_real_discipline_adapters",
+    "no_parallel_execution",
+    "no_database_backend",
+    "no_dashboard_UI"
+  ]
+}
