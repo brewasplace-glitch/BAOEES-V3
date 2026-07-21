@@ -23,3 +23,9 @@ __all__ = [
     "SoilLayer",
     "create_geotechnical_bootstrap_adapter",
 ]
+
+from .foundation_bootstrap import (
+    FoundationBootstrapConfig,
+    FoundationBootstrapError,
+    create_foundation_bootstrap_adapter,
+)

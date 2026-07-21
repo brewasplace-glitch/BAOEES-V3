@@ -1,0 +1,21 @@
+{
+  "release": "Phoenix Foundation Bootstrap Adapter Wave 6.1 v1.0",
+  "status": "READY_FOR_REPAIR_INSTALLATION",
+  "corrects": "Wave 6 malformed newline string in foundation_bootstrap.py",
+  "capabilities": [
+    "repair_partial_wave6_installation",
+    "verified_geotechnical_artifact_input",
+    "foundation_type_preference",
+    "phoenix_standard_strip_concept",
+    "atomic_artifact_write",
+    "artifact_sha256",
+    "pxo_runtime_integration"
+  ],
+  "limitations": [
+    "no_bearing_resistance_verification",
+    "no_settlement_verification",
+    "no_structural_capacity_verification",
+    "no_reinforcement_design",
+    "no_foundation_drawing"
+  ]
+}

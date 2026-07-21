@@ -1,0 +1,32 @@
+{
+  "policy_id": "PHOENIX-FOUNDATION-BOOTSTRAP-ADAPTER-WAVE6.1-v1.0",
+  "engine_id": "foundation",
+  "input_artifact": "phoenix-geotechnical-site-model-v1.0",
+  "output_artifact": "phoenix-foundation-concept-v1.0",
+  "allowed_types": [
+    "strip",
+    "pad",
+    "raft",
+    "pile",
+    "undetermined"
+  ],
+  "phoenix_standard_strip_concept": {
+    "enabled_by_default": false,
+    "strip_width_m": 1.5,
+    "strip_height_m": 0.4,
+    "beam_width_m": 0.5,
+    "beam_height_m": 0.6,
+    "beam_position": "centered"
+  },
+  "hard_rules": [
+    "geotechnical_artifact_integrity_must_verify",
+    "explicit_foundation_preference_requires_basis",
+    "standard_strip_concept_must_be_marked_as_assumption",
+    "bearing_resistance_must_not_be_invented",
+    "settlement_verification_must_not_be_invented",
+    "reinforcement_must_remain_unverified",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic",
+    "bootstrap_must_not_be_presented_as_verified_design"
+  ]
+}
