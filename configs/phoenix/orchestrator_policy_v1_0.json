@@ -1,0 +1,37 @@
+{
+  "policy_id": "PHOENIX-ORCHESTRATOR-PXO-v1.0",
+  "entry_requirement": "selected_ppg_variant",
+  "required_engine_order": [
+    "gis",
+    "geotechnical",
+    "traffic",
+    "parking",
+    "foundation",
+    "structural",
+    "fire_safety",
+    "water_supply",
+    "sewer",
+    "climate_installations",
+    "electrical",
+    "sustainability",
+    "cost",
+    "permit",
+    "planning",
+    "bim",
+    "digital_twin",
+    "dossier"
+  ],
+  "optional_engines": [
+    "structural_steel",
+    "concrete"
+  ],
+  "hard_rules": [
+    "dependencies_must_complete_before_engine_start",
+    "completed_engine_requires_outputs",
+    "completed_engine_requires_evidence",
+    "failed_required_engine_fails_plan",
+    "no_claim_of_execution_for_unavailable_engine",
+    "audit_log_is_append_only",
+    "plan_fingerprint_changes_on_transition"
+  ]
+}

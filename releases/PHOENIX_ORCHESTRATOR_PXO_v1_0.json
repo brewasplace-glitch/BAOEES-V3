@@ -1,0 +1,21 @@
+{
+  "release": "Phoenix Orchestrator PXO v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "selected_variant_entry_contract",
+    "twenty_engine_dependency_graph",
+    "deterministic_plan_creation",
+    "ready_running_completed_failed_transitions",
+    "output_and_evidence_enforcement",
+    "blocked_engine_detection",
+    "append_only_audit_log",
+    "plan_fingerprinting",
+    "status_summary"
+  ],
+  "limitations": [
+    "no_external_engine_process_execution",
+    "no_persistent_database",
+    "no_retry_scheduler",
+    "no_parallel_worker_runtime"
+  ]
+}
