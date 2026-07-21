@@ -1,0 +1,23 @@
+{
+  "policy_id": "PHOENIX-GIS-BOOTSTRAP-ADAPTER-WAVE4-v1.0",
+  "engine_id": "gis",
+  "artifact_schema": "phoenix-gis-site-context-v1.0",
+  "authoritative": false,
+  "geometry_policy": {
+    "coordinates_must_be_supplied": true,
+    "crs_required_with_geometry": true,
+    "fabricated_coordinates_forbidden": true
+  },
+  "source_policy": {
+    "unsourced_site_facts_forbidden": true,
+    "source_reference_required": true
+  },
+  "hard_rules": [
+    "project_id_must_match_runtime",
+    "adapter_only_executes_gis_engine",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic",
+    "unknown_site_facts_remain_unresolved",
+    "bootstrap_must_not_be_presented_as_authoritative_analysis"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "release": "Phoenix GIS Bootstrap Adapter Wave 4 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "first_real_file_producing_PXO_adapter",
+    "reference_only_site_context",
+    "optional_supplied_geometry",
+    "source_registration",
+    "atomic_artifact_write",
+    "artifact_SHA256",
+    "PXO_runtime_integration"
+  ],
+  "limitations": [
+    "not_authoritative_GIS_analysis",
+    "no_online_map_connector",
+    "no_parcel_lookup",
+    "no_zoning_lookup",
+    "no_elevation_service"
+  ]
+}
