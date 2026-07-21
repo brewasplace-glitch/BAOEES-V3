@@ -1,0 +1,18 @@
+{
+  "policy_id": "PHOENIX-GEOTECHNICAL-BOOTSTRAP-ADAPTER-WAVE5-v1.0",
+  "engine_id": "geotechnical",
+  "input_artifact": "phoenix-gis-site-context-v1.0",
+  "output_artifact": "phoenix-geotechnical-site-model-v1.0",
+  "default_groundwater_assumption_m": -0.5,
+  "default_groundwater_enabled": false,
+  "hard_rules": [
+    "gis_artifact_integrity_must_verify",
+    "soil_layers_must_be_explicitly_supplied",
+    "supplied_groundwater_requires_basis",
+    "assumed_groundwater_must_be_marked_as_assumption",
+    "bearing_capacity_must_not_be_fabricated",
+    "foundation_recommendation_remains_null",
+    "artifact_requires_sha256",
+    "artifact_write_is_atomic"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "release": "Phoenix Geotechnical Bootstrap Adapter Wave 5 v1.0",
+  "status": "READY_FOR_INSTALLATION",
+  "capabilities": [
+    "verified_GIS_artifact_input",
+    "explicit_soil_layer_registration",
+    "supplied_groundwater_registration",
+    "explicit_minus_0_50m_groundwater_assumption",
+    "atomic_geotechnical_artifact",
+    "artifact_SHA256",
+    "PXO_runtime_integration"
+  ],
+  "limitations": [
+    "no_bearing_capacity_calculation",
+    "no_settlement_calculation",
+    "no_foundation_recommendation",
+    "no_online_ground_data_connector",
+    "no_CPT_interpretation"
+  ]
+}
