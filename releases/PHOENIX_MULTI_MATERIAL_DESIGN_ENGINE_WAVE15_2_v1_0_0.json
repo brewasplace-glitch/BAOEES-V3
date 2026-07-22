@@ -1,0 +1,19 @@
+{
+  "release_id": "PHOENIX_MULTI_MATERIAL_DESIGN_ENGINE_WAVE15_2",
+  "version": "1.0.0",
+  "wave": "15.2",
+  "status": "release_candidate",
+  "capabilities": [
+    "concrete/steel/timber/masonry alternative generation",
+    "compatibility filtering",
+    "utilization filtering",
+    "mass/cost/carbon metrics",
+    "optimization-core contract",
+    "SHA-256 evidence"
+  ],
+  "limitations": [
+    "supplied design resistance required",
+    "not a complete code-specific design calculation",
+    "engineering review required"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.multi_material_design.wave15_2",
+  "engine_version": "1.0.0",
+  "supported_families": [
+    "concrete",
+    "steel",
+    "timber",
+    "masonry",
+    "other"
+  ],
+  "required_inputs": [
+    "design_action_kn",
+    "material density",
+    "material carbon factor",
+    "material cost factor",
+    "system volume",
+    "system design resistance"
+  ],
+  "review_status": "engineering_review_required"
+}

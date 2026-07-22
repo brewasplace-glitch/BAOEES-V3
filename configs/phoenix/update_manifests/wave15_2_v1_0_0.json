@@ -1,0 +1,20 @@
+{
+  "update_id": "PHOENIX_MULTI_MATERIAL_DESIGN_ENGINE_WAVE15_2",
+  "version": "1.0.0",
+  "install_files": [
+    "phoenix/multi_material/__init__.py",
+    "phoenix/multi_material/engine.py",
+    "phoenix/adapters/multi_material_design_adapter.py",
+    "configs/phoenix/multi_material_design_wave15_2_v1_0.json",
+    "configs/phoenix/update_manifests/wave15_2_v1_0_0.json",
+    "tests/automation/test_phoenix_multi_material_design_engine_wave15_2_v1_0_0.py",
+    "docs/architecture/PHOENIX_MULTI_MATERIAL_DESIGN_ENGINE_WAVE15_2_v1_0_0.md",
+    "releases/PHOENIX_MULTI_MATERIAL_DESIGN_ENGINE_WAVE15_2_v1_0_0.json"
+  ],
+  "remove_files": [],
+  "tests": [
+    "tests.automation.test_phoenix_multi_material_design_engine_wave15_2_v1_0_0"
+  ],
+  "validation_config": "configs/phoenix/validation_engine_default_v1_0.json",
+  "commit_message": "feat: add Phoenix Multi-Material Design Engine Wave 15.2"
+}
