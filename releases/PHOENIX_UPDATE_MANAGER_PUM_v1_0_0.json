@@ -1,0 +1,12 @@
+{
+  "release_id": "PHOENIX_UPDATE_MANAGER_PUM",
+  "version": "1.0.0",
+  "status": "release_candidate",
+  "capabilities": [
+    "manifest-driven update planning",
+    "deterministic evidence",
+    "persistent phase state",
+    "commit/push separation",
+    "push retry model"
+  ]
+}

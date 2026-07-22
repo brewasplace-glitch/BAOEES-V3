@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "manager_id": "phoenix.update_manager",
+  "manager_version": "1.0.0",
+  "policies": {
+    "clean_tree_required": true,
+    "manifest_paths_only": true,
+    "tests_before_commit": true,
+    "pve_before_commit": true,
+    "git_diff_check_required": true,
+    "stop_on_first_error": true,
+    "separate_commit_and_push_state": true,
+    "push_retry_supported": true,
+    "runtime_state_not_committed": true,
+    "final_target": "nothing to commit, working tree clean"
+  }
+}

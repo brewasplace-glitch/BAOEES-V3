@@ -1,0 +1,13 @@
+{
+  "update_id": "PHOENIX_EXAMPLE_UPDATE",
+  "version": "1.0.0",
+  "install_files": [
+    "docs/architecture/PHOENIX_UPDATE_MANAGER_PUM_v1_0_0.md"
+  ],
+  "remove_files": [],
+  "tests": [
+    "tests.automation.test_phoenix_update_manager_pum_v1_0_0"
+  ],
+  "validation_config": "configs/phoenix/validation_engine_default_v1_0.json",
+  "commit_message": "feat: apply Phoenix example update"
+}
