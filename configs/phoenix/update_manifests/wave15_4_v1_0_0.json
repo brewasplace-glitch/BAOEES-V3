@@ -1,0 +1,20 @@
+{
+  "update_id": "PHOENIX_VARIANT_RANKING_DECISION_INTELLIGENCE_ENGINE_WAVE15_4",
+  "version": "1.0.0",
+  "install_files": [
+    "phoenix/decision_intelligence/__init__.py",
+    "phoenix/decision_intelligence/engine.py",
+    "phoenix/adapters/decision_intelligence_adapter.py",
+    "configs/phoenix/decision_intelligence_wave15_4_v1_0.json",
+    "configs/phoenix/update_manifests/wave15_4_v1_0_0.json",
+    "tests/automation/test_phoenix_decision_intelligence_engine_wave15_4_v1_0_0.py",
+    "docs/architecture/PHOENIX_DECISION_INTELLIGENCE_ENGINE_WAVE15_4_v1_0_0.md",
+    "releases/PHOENIX_DECISION_INTELLIGENCE_ENGINE_WAVE15_4_v1_0_0.json"
+  ],
+  "remove_files": [],
+  "tests": [
+    "tests.automation.test_phoenix_decision_intelligence_engine_wave15_4_v1_0_0"
+  ],
+  "validation_config": "configs/phoenix/validation_engine_default_v1_0.json",
+  "commit_message": "feat: add Phoenix Decision Intelligence Engine Wave 15.4"
+}

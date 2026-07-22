@@ -1,0 +1,21 @@
+{
+  "release_id": "PHOENIX_DECISION_INTELLIGENCE_ENGINE_WAVE15_4",
+  "version": "1.0.0",
+  "wave": "15.4",
+  "status": "release_candidate",
+  "capabilities": [
+    "weighted-sum ranking",
+    "weighted-product ranking",
+    "TOPSIS ranking",
+    "Pareto-front detection",
+    "sensitivity analysis",
+    "consensus recommendation",
+    "confidence score",
+    "SHA-256 evidence"
+  ],
+  "limitations": [
+    "depends on approved criteria and weights",
+    "decision support only",
+    "multidisciplinary review required"
+  ]
+}

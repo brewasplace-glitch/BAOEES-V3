@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.variant_ranking_decision_intelligence.wave15_4",
+  "engine_version": "1.0.0",
+  "methods": [
+    "weighted_sum",
+    "weighted_product",
+    "topsis",
+    "pareto",
+    "sensitivity"
+  ],
+  "default_sensitivity_delta": 0.1,
+  "review_status": "multidisciplinary_review_required"
+}
