@@ -1,0 +1,14 @@
+{
+  "release_id": "PHOENIX_COST_CARBON_OPTIMIZATION_ENGINE_WAVE15_3",
+  "version": "1.0.0",
+  "wave": "15.3",
+  "status": "release_candidate",
+  "capabilities": [
+    "lifecycle cost",
+    "lifecycle carbon",
+    "replacement scenarios",
+    "salvage value",
+    "optimization contract",
+    "SHA-256 evidence"
+  ]
+}

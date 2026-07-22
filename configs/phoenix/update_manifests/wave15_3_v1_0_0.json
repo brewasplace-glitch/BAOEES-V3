@@ -1,0 +1,20 @@
+{
+  "update_id": "PHOENIX_COST_CARBON_OPTIMIZATION_ENGINE_WAVE15_3",
+  "version": "1.0.0",
+  "install_files": [
+    "phoenix/cost_carbon/__init__.py",
+    "phoenix/cost_carbon/engine.py",
+    "phoenix/adapters/cost_carbon_optimization_adapter.py",
+    "configs/phoenix/cost_carbon_optimization_wave15_3_v1_0.json",
+    "configs/phoenix/update_manifests/wave15_3_v1_0_0.json",
+    "tests/automation/test_phoenix_cost_carbon_optimization_engine_wave15_3_v1_0_0.py",
+    "docs/architecture/PHOENIX_COST_CARBON_OPTIMIZATION_ENGINE_WAVE15_3_v1_0_0.md",
+    "releases/PHOENIX_COST_CARBON_OPTIMIZATION_ENGINE_WAVE15_3_v1_0_0.json"
+  ],
+  "remove_files": [],
+  "tests": [
+    "tests.automation.test_phoenix_cost_carbon_optimization_engine_wave15_3_v1_0_0"
+  ],
+  "validation_config": "configs/phoenix/validation_engine_default_v1_0.json",
+  "commit_message": "feat: add Phoenix Cost Carbon Optimization Engine Wave 15.3"
+}

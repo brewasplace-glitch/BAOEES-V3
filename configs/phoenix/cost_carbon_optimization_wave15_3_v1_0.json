@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.cost_carbon_optimization.wave15_3",
+  "engine_version": "1.0.0",
+  "default_profile": {
+    "analysis_years": 50,
+    "discount_rate": 0.03,
+    "annual_maintenance_fraction": 0.01
+  },
+  "review_status": "cost_and_sustainability_review_required"
+}
