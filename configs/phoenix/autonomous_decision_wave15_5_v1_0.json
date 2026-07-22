@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.autonomous_decision_engine.wave15_5",
+  "engine_version": "1.0.0",
+  "default_policy": {
+    "auto_approve_min_confidence": 0.85,
+    "review_min_confidence": 0.6,
+    "max_auto_approve_risk": 0.3,
+    "human_approval_required": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "update_id": "PHOENIX_AUTONOMOUS_DECISION_ENGINE_WAVE15_5",
+  "version": "1.0.0",
+  "install_files": [
+    "phoenix/autonomous_decision/__init__.py",
+    "phoenix/autonomous_decision/engine.py",
+    "phoenix/adapters/autonomous_decision_adapter.py",
+    "configs/phoenix/autonomous_decision_wave15_5_v1_0.json",
+    "configs/phoenix/update_manifests/wave15_5_v1_0_0.json",
+    "tests/automation/test_phoenix_autonomous_decision_engine_wave15_5_v1_0_0.py",
+    "docs/architecture/PHOENIX_AUTONOMOUS_DECISION_ENGINE_WAVE15_5_v1_0_0.md",
+    "releases/PHOENIX_AUTONOMOUS_DECISION_ENGINE_WAVE15_5_v1_0_0.json"
+  ],
+  "remove_files": [],
+  "tests": [
+    "tests.automation.test_phoenix_autonomous_decision_engine_wave15_5_v1_0_0"
+  ],
+  "validation_config": "configs/phoenix/validation_engine_default_v1_0.json",
+  "commit_message": "feat: add Phoenix Autonomous Decision Engine Wave 15.5"
+}

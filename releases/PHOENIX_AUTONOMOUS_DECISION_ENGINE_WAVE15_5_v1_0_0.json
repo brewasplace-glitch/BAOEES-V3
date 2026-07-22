@@ -1,0 +1,14 @@
+{
+  "release_id": "PHOENIX_AUTONOMOUS_DECISION_ENGINE_WAVE15_5",
+  "version": "1.0.0",
+  "wave": "15.5",
+  "status": "release_candidate",
+  "capabilities": [
+    "constraint evaluation",
+    "risk-aware decision policy",
+    "assumption-aware review routing",
+    "human approval gate",
+    "audit trail",
+    "SHA-256 evidence"
+  ]
+}
