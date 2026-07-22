@@ -1,0 +1,20 @@
+{
+  "release_id": "PHOENIX_VALIDATION_ENGINE_PVE",
+  "version": "1.0.5",
+  "status": "release_candidate",
+  "release_type": "consolidation_recovery",
+  "replaces": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.0.3",
+    "1.0.4"
+  ],
+  "recovery_policy": {
+    "preserve_working_tree": true,
+    "reset_index_only_for_authorized_pve_paths": true,
+    "reject_unrelated_changes": true,
+    "stage_exact_git_reported_paths": true,
+    "commit_runtime_output": false
+  }
+}

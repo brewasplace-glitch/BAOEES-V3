@@ -1,0 +1,21 @@
+{
+  "project_id": "PROJECT-PHOENIX",
+  "required_paths": [
+    "phoenix",
+    "configs/phoenix",
+    "tests/automation",
+    "DOCS/architecture",
+    "releases"
+  ],
+  "json_paths": [
+    "configs/phoenix/release_builder_policy_v1_0.json",
+    "configs/phoenix/recovery_manager_policy_v1_0.json"
+  ],
+  "import_modules": [
+    "phoenix",
+    "phoenix.optimization",
+    "phoenix.release_builder",
+    "phoenix.recovery_manager",
+    "phoenix.validation_engine"
+  ]
+}
