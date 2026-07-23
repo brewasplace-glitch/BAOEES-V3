@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "applications": [
+    {
+      "application_id": "ifcopenshell",
+      "name": "IfcOpenShell",
+      "adapter_id": "phoenix.osif.adapter.ifcopenshell",
+      "execution_mode": "python",
+      "enabled": false,
+      "capabilities": [
+        {
+          "capability_id": "ifc.read",
+          "name": "Read IFC",
+          "input_formats": [
+            "ifc"
+          ],
+          "output_formats": [
+            "json"
+          ]
+        }
+      ]
+    },
+    {
+      "application_id": "freecad",
+      "name": "FreeCAD",
+      "adapter_id": "phoenix.osif.adapter.freecad",
+      "execution_mode": "cli",
+      "enabled": false,
+      "capabilities": [
+        {
+          "capability_id": "cad.convert",
+          "name": "Convert CAD geometry",
+          "input_formats": [
+            "step"
+          ],
+          "output_formats": [
+            "step",
+            "stl"
+          ]
+        }
+      ]
+    }
+  ]
+}

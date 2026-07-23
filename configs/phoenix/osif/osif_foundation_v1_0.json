@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "component": "phoenix.core.v2.osif",
+  "version": "1.0.4",
+  "build_block": "BB1",
+  "package_manager": "1.0.0"
+}
