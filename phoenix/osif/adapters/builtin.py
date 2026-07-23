@@ -7,6 +7,7 @@ import shutil
 
 from phoenix.osif import ApplicationDescriptor, Capability
 from .base import AdapterError, OSIFAdapter
+from .blender import BlenderAdapter
 from .contracts import (
     AdapterExecutionRequest,
     AdapterExecutionResult,
@@ -75,24 +76,8 @@ class _DiscoveryOnlyAdapter(OSIFAdapter):
         request: AdapterExecutionRequest,
     ) -> AdapterExecutionResult:
         raise AdapterError(
-            f"{self.ADAPTER_ID} is a foundation adapter; "
-            "execution is enabled in a later build block."
+            f"{self.ADAPTER_ID} is a foundation adapter."
         )
-
-
-class BlenderAdapter(_DiscoveryOnlyAdapter):
-    APPLICATION_ID = "blender"
-    APPLICATION_NAME = "Blender"
-    ADAPTER_ID = "phoenix.osif.adapter.blender"
-    EXECUTABLE_NAMES = ("blender.exe", "blender")
-    CAPABILITIES = (
-        Capability(
-            "visualization.render",
-            "Render visualization",
-            ("blend", "obj", "gltf", "glb"),
-            ("png", "jpg", "mp4"),
-        ),
-    )
 
 
 class QGISAdapter(_DiscoveryOnlyAdapter):

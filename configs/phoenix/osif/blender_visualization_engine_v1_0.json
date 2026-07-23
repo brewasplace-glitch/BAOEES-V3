@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "service_id": "phoenix.osif.blender.bb6",
+  "version": "1.0.0",
+  "worker_protocol": "json-file-v1",
+  "default_timeout_seconds": 900,
+  "capabilities": [
+    "blender.scene.inspect",
+    "blender.scene.save",
+    "blender.scene.export",
+    "blender.render.still",
+    "blender.render.animation",
+    "visualization.render"
+  ],
+  "source_formats": [
+    "blend",
+    "obj",
+    "gltf",
+    "glb",
+    "stl",
+    "fbx"
+  ],
+  "render_formats": [
+    "png",
+    "jpg",
+    "tif",
+    "exr",
+    "mp4",
+    "mov",
+    "mkv",
+    "avi"
+  ],
+  "evidence_algorithm": "sha256"
+}

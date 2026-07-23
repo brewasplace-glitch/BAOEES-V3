@@ -1,0 +1,19 @@
+{
+  "release_id": "PHOENIX_CORE_v2_0_BB6_BLENDER_VISUALIZATION_ENGINE",
+  "version": "1.0.0",
+  "build_block": "BB6",
+  "status": "release_candidate",
+  "overall_phoenix_core_v2_progress_percent": 40,
+  "capabilities": [
+    "Blender detection",
+    "scene inspection",
+    "scene saving",
+    "scene export",
+    "still rendering",
+    "animation rendering",
+    "camera configuration",
+    "lighting configuration",
+    "material assignment",
+    "SHA-256 evidence"
+  ]
+}

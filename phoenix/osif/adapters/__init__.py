@@ -1,8 +1,8 @@
 """Open Source Adapter Framework."""
 
 from .base import AdapterError, OSIFAdapter
+from .blender import BlenderAdapter, BlenderIntegrationError
 from .builtin import (
-    BlenderAdapter,
     FreeCADAdapter,
     IfcOpenShellAdapter,
     QGISAdapter,
@@ -31,6 +31,7 @@ __all__ = [
     "AdapterRegistry",
     "AdapterRegistryError",
     "BlenderAdapter",
+    "BlenderIntegrationError",
     "FreeCADAdapter",
     "FreeCADIntegrationError",
     "IfcOpenShellAdapter",
