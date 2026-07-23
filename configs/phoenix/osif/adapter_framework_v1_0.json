@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "service_id": "phoenix.osif.adapter_framework.bb3",
+  "version": "1.0.0",
+  "lifecycle_states": [
+    "created",
+    "initialized",
+    "ready",
+    "running",
+    "stopped",
+    "failed"
+  ],
+  "builtin_adapters": [
+    "phoenix.osif.adapter.freecad",
+    "phoenix.osif.adapter.ifcopenshell",
+    "phoenix.osif.adapter.blender",
+    "phoenix.osif.adapter.qgis"
+  ],
+  "digital_twin_writeback": true,
+  "evidence_algorithm": "sha256"
+}

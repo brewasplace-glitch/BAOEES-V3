@@ -1,0 +1,20 @@
+{
+  "release_id": "PHOENIX_CORE_v2_0_BB3_OPEN_SOURCE_ADAPTER_FRAMEWORK",
+  "version": "1.0.0",
+  "build_block": "BB3",
+  "status": "release_candidate",
+  "overall_phoenix_core_v2_progress_percent": 18,
+  "capabilities": [
+    "adapter lifecycle",
+    "adapter registry",
+    "capability resolution",
+    "health checks",
+    "managed execution",
+    "Digital Twin write-back",
+    "SHA-256 audit evidence",
+    "FreeCAD foundation adapter",
+    "IfcOpenShell foundation adapter",
+    "Blender foundation adapter",
+    "QGIS foundation adapter"
+  ]
+}
