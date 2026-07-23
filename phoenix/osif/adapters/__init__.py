@@ -17,6 +17,7 @@ from .contracts import (
 )
 from .executor import AdapterExecutor
 from .freecad import FreeCADIntegrationError
+from .ifcopenshell import IfcOpenShellIntegrationError
 from .registry import AdapterRegistry, AdapterRegistryError
 
 __all__ = [
@@ -33,6 +34,7 @@ __all__ = [
     "FreeCADAdapter",
     "FreeCADIntegrationError",
     "IfcOpenShellAdapter",
+    "IfcOpenShellIntegrationError",
     "OSIFAdapter",
     "QGISAdapter",
     "register_builtin_adapters",

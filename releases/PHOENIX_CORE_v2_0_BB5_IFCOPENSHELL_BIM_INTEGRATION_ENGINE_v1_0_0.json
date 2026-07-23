@@ -1,0 +1,17 @@
+{
+  "release_id": "PHOENIX_CORE_v2_0_BB5_IFCOPENSHELL_BIM_INTEGRATION_ENGINE",
+  "version": "1.0.0",
+  "build_block": "BB5",
+  "status": "release_candidate",
+  "overall_phoenix_core_v2_progress_percent": 32,
+  "capabilities": [
+    "IFC read",
+    "IFC write",
+    "IFC validation",
+    "IFC entity query",
+    "IFC property-set extraction",
+    "IFC spatial structure extraction",
+    "Digital Twin export",
+    "SHA-256 evidence"
+  ]
+}

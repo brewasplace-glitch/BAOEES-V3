@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "service_id": "phoenix.osif.ifcopenshell.bb5",
+  "version": "1.0.0",
+  "python_module": "ifcopenshell",
+  "capabilities": [
+    "ifc.read",
+    "ifc.write",
+    "ifc.validate",
+    "ifc.query",
+    "ifc.pset.read",
+    "ifc.structure.read",
+    "ifc.digital_twin.export"
+  ],
+  "schema_support": [
+    "IFC2X3",
+    "IFC4",
+    "IFC4X3"
+  ],
+  "evidence_algorithm": "sha256"
+}

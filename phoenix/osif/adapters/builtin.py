@@ -13,6 +13,7 @@ from .contracts import (
     AdapterHealth,
 )
 from .freecad import FreeCADAdapter
+from .ifcopenshell import IfcOpenShellAdapter
 
 
 class _DiscoveryOnlyAdapter(OSIFAdapter):
@@ -32,7 +33,7 @@ class _DiscoveryOnlyAdapter(OSIFAdapter):
             execution_mode=self.EXECUTION_MODE,
             capabilities=self.CAPABILITIES,
             enabled=False,
-            metadata={"bb3_status": "foundation_only"},
+            metadata={"status": "foundation_only"},
         )
 
     def _locate(self) -> tuple[str, str]:
@@ -53,38 +54,30 @@ class _DiscoveryOnlyAdapter(OSIFAdapter):
         available = bool(executable or module)
         return AdapterHealth(
             status="available" if available else "unavailable",
-            message="Dependency discovered." if available else "Dependency not found.",
+            message=(
+                "Dependency discovered."
+                if available
+                else "Dependency not found."
+            ),
             details={"executable": executable, "python_module": module},
         )
 
     def validate_request(self, request: AdapterExecutionRequest) -> None:
-        supported = {
-            capability.capability_id
-            for capability in self.CAPABILITIES
-        }
+        supported = {item.capability_id for item in self.CAPABILITIES}
         if request.capability_id not in supported:
             raise AdapterError(
                 f"Unsupported capability for {self.ADAPTER_ID}: "
                 f"{request.capability_id}"
             )
 
-    def _execute(self, request: AdapterExecutionRequest) -> AdapterExecutionResult:
+    def _execute(
+        self,
+        request: AdapterExecutionRequest,
+    ) -> AdapterExecutionResult:
         raise AdapterError(
             f"{self.ADAPTER_ID} is a foundation adapter; "
-            "discipline execution is enabled in a later build block."
+            "execution is enabled in a later build block."
         )
-
-
-class IfcOpenShellAdapter(_DiscoveryOnlyAdapter):
-    APPLICATION_ID = "ifcopenshell"
-    APPLICATION_NAME = "IfcOpenShell"
-    ADAPTER_ID = "phoenix.osif.adapter.ifcopenshell"
-    EXECUTION_MODE = "python"
-    PYTHON_MODULES = ("ifcopenshell",)
-    CAPABILITIES = (
-        Capability("ifc.read", "Read IFC", ("ifc",), ("json",)),
-        Capability("ifc.write", "Write IFC", ("json",), ("ifc",)),
-    )
 
 
 class BlenderAdapter(_DiscoveryOnlyAdapter):
