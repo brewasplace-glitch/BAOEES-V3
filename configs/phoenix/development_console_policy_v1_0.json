@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "service_id": "phoenix.development_console.bb7",
+  "version": "1.0.0",
+  "default_repo_root": "C:\\PROJECT-PHOENIX",
+  "external_terminal_required": true,
+  "gitkraken_embedded_terminal_supported": false,
+  "automation": {
+    "fail_fast": true,
+    "stage_only_intended_paths": true,
+    "commit_only_after_all_validation": true,
+    "push_only_after_commit": true,
+    "required_final_state": "nothing to commit, working tree clean"
+  }
+}
