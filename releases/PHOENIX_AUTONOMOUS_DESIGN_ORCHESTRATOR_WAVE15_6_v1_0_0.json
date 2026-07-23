@@ -1,0 +1,16 @@
+{
+  "release_id": "PHOENIX_AUTONOMOUS_DESIGN_ORCHESTRATOR_WAVE15_6",
+  "version": "1.0.0",
+  "wave": "15.6",
+  "status": "release_candidate",
+  "capabilities": [
+    "dependency graph validation",
+    "deterministic topological execution",
+    "required and optional engine handling",
+    "failure propagation",
+    "shared workflow state",
+    "per-step SHA-256 evidence",
+    "workflow SHA-256 evidence",
+    "human approval gate"
+  ]
+}

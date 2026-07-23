@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.autonomous_design_orchestrator.wave15_6",
+  "engine_version": "1.0.0",
+  "default_policy": {
+    "mode": "fully_autonomous",
+    "stop_on_required_failure": true,
+    "human_approval_required": true
+  },
+  "workflow_statuses": [
+    "completed",
+    "failed",
+    "incomplete"
+  ],
+  "step_statuses": [
+    "completed",
+    "failed",
+    "blocked",
+    "skipped_optional"
+  ]
+}
