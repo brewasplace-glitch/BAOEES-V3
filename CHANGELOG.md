@@ -23,3 +23,18 @@
 - Traceability validation
 - BB9 Digital Twin import bridge
 - Deterministic graph persistence and SHA-256 evidence
+
+## [BB11-1.0.0] - 2026-07-24
+
+### Added
+
+- Phoenix AI Workflow Engine
+- Dependency-aware workflow planning
+- Cycle detection
+- Conditional execution
+- Bounded retry handling
+- Fail-fast policy
+- Assumption registration
+- Decision and rationale logging
+- Workflow evidence persistence
+- Knowledge Graph decision publication

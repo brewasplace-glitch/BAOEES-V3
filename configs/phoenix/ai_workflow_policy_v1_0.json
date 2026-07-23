@@ -1,0 +1,16 @@
+{
+  "policy_id": "PHOENIX-AI-WORKFLOW-1.0",
+  "execution": {
+    "fail_fast": true,
+    "dependency_validation": true,
+    "cycle_detection": true,
+    "conditional_steps": true,
+    "bounded_retries": true
+  },
+  "governance": {
+    "assumptions_require_source": true,
+    "decision_log_required": true,
+    "evidence_persistence": true,
+    "knowledge_graph_integration": true
+  }
+}
