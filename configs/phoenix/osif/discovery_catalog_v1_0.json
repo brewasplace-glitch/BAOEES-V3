@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "service_id": "phoenix.osif.discovery.bb2",
+  "version": "1.0.0",
+  "applications": [
+    "ifcopenshell",
+    "freecad",
+    "blender",
+    "qgis"
+  ],
+  "execution_modes": [
+    "python",
+    "cli"
+  ],
+  "health_statuses": [
+    "available",
+    "unavailable"
+  ],
+  "evidence_algorithm": "sha256"
+}

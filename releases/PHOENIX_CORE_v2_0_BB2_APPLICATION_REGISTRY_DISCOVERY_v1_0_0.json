@@ -1,0 +1,16 @@
+{
+  "release_id": "PHOENIX_CORE_v2_0_BB2_APPLICATION_REGISTRY_DISCOVERY",
+  "version": "1.0.0",
+  "build_block": "BB2",
+  "status": "release_candidate",
+  "overall_phoenix_core_v2_progress_percent": 12,
+  "capabilities": [
+    "executable discovery",
+    "python module discovery",
+    "version probing",
+    "health classification",
+    "capability indexing",
+    "registry upsert",
+    "SHA-256 evidence"
+  ]
+}
