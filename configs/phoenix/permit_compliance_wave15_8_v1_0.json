@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.permit_compliance.wave15_8",
+  "engine_version": "1.0.0",
+  "default_human_approval_required": true,
+  "permit_statuses": [
+    "ready_for_submission",
+    "review_required",
+    "blocked"
+  ],
+  "severities": [
+    "info",
+    "warning",
+    "error",
+    "critical"
+  ],
+  "supported_operators": [
+    "exists",
+    "equals",
+    "not_equals",
+    "gte",
+    "lte",
+    "in",
+    "not_empty"
+  ]
+}

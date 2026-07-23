@@ -1,0 +1,20 @@
+{
+  "update_id": "PHOENIX_PERMIT_COMPLIANCE_ENGINE_WAVE15_8",
+  "version": "1.0.0",
+  "install_files": [
+    "phoenix/permit_compliance/__init__.py",
+    "phoenix/permit_compliance/engine.py",
+    "phoenix/adapters/permit_compliance_adapter.py",
+    "configs/phoenix/permit_compliance_wave15_8_v1_0.json",
+    "configs/phoenix/update_manifests/wave15_8_v1_0_0.json",
+    "tests/automation/test_phoenix_permit_compliance_wave15_8_v1_0_0.py",
+    "docs/architecture/PHOENIX_PERMIT_COMPLIANCE_ENGINE_WAVE15_8_v1_0_0.md",
+    "releases/PHOENIX_PERMIT_COMPLIANCE_ENGINE_WAVE15_8_v1_0_0.json"
+  ],
+  "remove_files": [],
+  "tests": [
+    "tests.automation.test_phoenix_permit_compliance_wave15_8_v1_0_0"
+  ],
+  "validation_config": "configs/phoenix/validation_engine_default_v1_0.json",
+  "commit_message": "feat: add Phoenix Permit & Compliance Engine Wave 15.8"
+}

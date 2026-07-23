@@ -1,0 +1,15 @@
+{
+  "release_id": "PHOENIX_PERMIT_COMPLIANCE_ENGINE_WAVE15_8",
+  "version": "1.0.0",
+  "wave": "15.8",
+  "status": "release_candidate",
+  "capabilities": [
+    "versioned compliance rule evaluation",
+    "nested Digital Twin path validation",
+    "permit completeness scoring",
+    "severity-based blocking",
+    "permit dossier generation",
+    "human approval gate",
+    "SHA-256 evidence"
+  ]
+}
