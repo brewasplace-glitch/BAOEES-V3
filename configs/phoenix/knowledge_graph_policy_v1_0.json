@@ -1,0 +1,16 @@
+{
+  "policy_id": "PHOENIX-KG-1.0",
+  "requirements": {
+    "typed_nodes": true,
+    "typed_edges": true,
+    "referential_integrity": true,
+    "traceability_validation": true,
+    "deterministic_persistence": true,
+    "sha256_evidence": true
+  },
+  "query": {
+    "text_search": true,
+    "property_filter": true,
+    "relation_trace": true
+  }
+}
