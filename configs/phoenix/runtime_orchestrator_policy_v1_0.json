@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.runtime_orchestrator",
+  "version": "1.0.0",
+  "max_workers_default": 4,
+  "fail_on_dependency_error": true,
+  "block_dependents_on_failure": true,
+  "event_bus_enabled": true,
+  "runtime_snapshot_enabled": true,
+  "sha256_evidence_enabled": true,
+  "task_priority_order": "ascending",
+  "supported_task_states": [
+    "completed",
+    "failed",
+    "blocked",
+    "cancelled"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "release_id": "PHOENIX_CORE_v2_0_BB8_RUNTIME_ORCHESTRATOR_ENGINE",
+  "version": "1.0.0",
+  "build_block": "BB8",
+  "status": "release_candidate",
+  "overall_phoenix_core_v2_progress_percent": 56,
+  "capabilities": [
+    "task registration",
+    "dependency resolution",
+    "parallel execution",
+    "priority scheduling",
+    "retry management",
+    "cancellation",
+    "runtime event bus",
+    "engine health registry",
+    "runtime snapshot",
+    "SHA-256 evidence"
+  ]
+}
