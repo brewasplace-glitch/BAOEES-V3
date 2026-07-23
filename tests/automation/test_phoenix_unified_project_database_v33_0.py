@@ -1,122 +1,62 @@
-﻿from __future__ import annotations
-
-import gc
-import importlib.util
-import json
-import sys
+from pathlib import Path
 import tempfile
 import unittest
-from pathlib import Path
+
+from phoenix.database import ProjectDatabase
 
 
-def project_root() -> Path:
-    current = Path(__file__).resolve()
-    for parent in current.parents:
-        if (parent / ".git").exists():
-            return parent
-    raise RuntimeError("PROJECT-PHOENIX root niet gevonden.")
+class ProjectDatabaseTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        self.db = ProjectDatabase("TEST-001", Path(self.tmp.name))
 
+    def tearDown(self) -> None:
+        self.tmp.cleanup()
 
-def load_database_module():
-    path = project_root() / "phoenix/database/phoenix_unified_project_database_v33_0.py"
-    name = "phoenix_unified_project_database_v33_0_test"
-    spec = importlib.util.spec_from_file_location(name, path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError("Databasemodule kon niet worden geladen.")
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[name] = module
-    try:
-        spec.loader.exec_module(module)
-    finally:
-        sys.modules.pop(name, None)
-    return module
+    def test_create_and_read_object(self) -> None:
+        obj = self.db.create_object("building", "Main Building")
+        loaded = self.db.objects.require(obj.object_id)
+        self.assertEqual(loaded.name, "Main Building")
 
+    def test_relationship_requires_existing_objects(self) -> None:
+        source = self.db.create_object("building", "A")
+        with self.assertRaises(KeyError):
+            self.db.relate(source.object_id, "contains", "missing")
 
-class PhoenixUnifiedProjectDatabaseTests(unittest.TestCase):
-    def test_policy(self) -> None:
-        data = json.loads(
-            (project_root() / "configs/phoenix/unified_project_database_policy_v33_0.json")
-            .read_text(encoding="utf-8-sig")
-        )
-        self.assertEqual(data["policy_version"], "v33.0")
-        self.assertTrue(data["require_transactions"])
-        self.assertTrue(data["require_version_history"])
+    def test_delete_with_relationship_is_blocked(self) -> None:
+        building = self.db.create_object("building", "A")
+        storey = self.db.create_object("storey", "B")
+        self.db.relate(building.object_id, "contains", storey.object_id)
+        with self.assertRaises(ValueError):
+            self.db.delete_object(building.object_id)
 
-    def test_import(self) -> None:
-        module = load_database_module()
-        self.assertTrue(hasattr(module, "PhoenixUnifiedProjectDatabase"))
+    def test_update_increments_version(self) -> None:
+        obj = self.db.create_object("beam", "B1")
+        updated = self.db.update_object(obj.object_id, name="B2")
+        self.assertEqual(updated.version, 2)
+        self.assertEqual(updated.name, "B2")
 
-    def test_project_revisioning_and_file_release(self) -> None:
-        module = load_database_module()
-        with tempfile.TemporaryDirectory(prefix="phoenix_v33_revision_") as temp_directory:
-            path = Path(temp_directory) / "revision.sqlite3"
-            with module.PhoenixUnifiedProjectDatabase(path) as database:
-                database.upsert_project({"project_id": "test-project", "name": "Test", "status": "ACTIVE"})
-                database.upsert_project({"project_id": "test-project", "name": "Test", "status": "VALIDATED"})
-                project = database.get_project("test-project")
-                history = database.project_history("test-project")
-                self.assertEqual(project["revision"], 2)
-                self.assertEqual(project["status"], "VALIDATED")
-                self.assertEqual(len(history), 2)
-            gc.collect()
-            probe = path.with_suffix(".probe.sqlite3")
-            path.replace(probe)
-            probe.replace(path)
+    def test_save_and_load(self) -> None:
+        obj = self.db.create_object("space", "Room 1")
+        checksum = self.db.save()
+        self.assertEqual(len(checksum), 64)
+        other = ProjectDatabase("TEST-001", Path(self.tmp.name))
+        other.load()
+        self.assertEqual(other.objects.require(obj.object_id).name, "Room 1")
 
-    def test_transaction_rollback_and_file_release(self) -> None:
-        module = load_database_module()
-        with tempfile.TemporaryDirectory(prefix="phoenix_v33_rollback_") as temp_directory:
-            path = Path(temp_directory) / "rollback.sqlite3"
-            with module.PhoenixUnifiedProjectDatabase(path) as database:
-                with self.assertRaises(RuntimeError):
-                    with database.transaction() as connection:
-                        connection.execute(
-                            """
-                            INSERT INTO projects (
-                                project_id, name, status, payload_json,
-                                fingerprint, revision, created_at, updated_at
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                            """,
-                            ("rollback-test", "Rollback", "ACTIVE", "{}", "hash", 1, "now", "now"),
-                        )
-                        raise RuntimeError("force rollback")
-                with database.connection() as connection:
-                    count = connection.execute(
-                        "SELECT COUNT(*) FROM projects WHERE project_id = ?",
-                        ("rollback-test",),
-                    ).fetchone()[0]
-                self.assertEqual(count, 0)
-            gc.collect()
-            path.unlink()
-            self.assertFalse(path.exists())
+    def test_snapshot_restore(self) -> None:
+        obj = self.db.create_object("beam", "B1")
+        record = self.db.create_snapshot()
+        self.db.update_object(obj.object_id, name="Changed")
+        self.db.restore_snapshot(record)
+        self.assertEqual(self.db.objects.require(obj.object_id).name, "B1")
 
-    def test_repeated_integration(self) -> None:
-        module = load_database_module()
-        with tempfile.TemporaryDirectory(prefix="phoenix_v33_repeat_") as temp_directory:
-            path = Path(temp_directory) / "repeat.sqlite3"
-            with module.PhoenixUnifiedProjectDatabase(path) as database:
-                first = database.integration_test()
-                second = database.integration_test()
-                third = database.integration_test()
-                self.assertEqual(first["status"], "PASS")
-                self.assertEqual(second["status"], "PASS")
-                self.assertEqual(third["status"], "PASS")
-            gc.collect()
-            path.unlink()
-            self.assertFalse(path.exists())
-
-    def test_closed_engine_rejects_new_connections(self) -> None:
-        module = load_database_module()
-        with tempfile.TemporaryDirectory(prefix="phoenix_v33_closed_") as temp_directory:
-            path = Path(temp_directory) / "closed.sqlite3"
-            database = module.PhoenixUnifiedProjectDatabase(path)
-            database.close()
-            with self.assertRaises(RuntimeError):
-                with database.connection():
-                    pass
-            gc.collect()
-            path.unlink()
-            self.assertFalse(path.exists())
+    def test_snapshot_compare(self) -> None:
+        left = self.db.to_dict()
+        self.db.create_object("column", "C1")
+        right = self.db.to_dict()
+        result = self.db.snapshots.compare(left, right)
+        self.assertEqual(result["object_count_delta"], 1)
 
 
 if __name__ == "__main__":

@@ -1,18 +1,32 @@
-﻿{
-  "schema_name": "Phoenix Unified Project Database Schema",
-  "schema_version": "v33.0",
-  "tables": [
-    "projects",
-    "project_history",
-    "project_objects",
-    "project_relations",
-    "digital_twin_snapshots"
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/unified_project_database_v33_0.json",
+  "title": "Phoenix Unified Project Database",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "objects",
+    "relationships",
+    "audit_log"
   ],
-  "required_indexes": [
-    "idx_projects_status",
-    "idx_history_project_revision",
-    "idx_objects_project_type",
-    "idx_relations_project_type",
-    "idx_snapshots_project_version"
-  ]
+  "properties": {
+    "schema_version": {
+      "const": "33.0"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objects": {
+      "type": "array"
+    },
+    "relationships": {
+      "type": "array"
+    },
+    "audit_log": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
 }
