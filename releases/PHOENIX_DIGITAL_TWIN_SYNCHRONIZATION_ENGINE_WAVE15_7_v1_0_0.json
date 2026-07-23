@@ -1,0 +1,16 @@
+{
+  "release_id": "PHOENIX_DIGITAL_TWIN_SYNCHRONIZATION_ENGINE_WAVE15_7",
+  "version": "1.0.0",
+  "wave": "15.7",
+  "status": "release_candidate",
+  "capabilities": [
+    "unified project digital twin",
+    "object versioning",
+    "strict merge and review modes",
+    "version conflict detection",
+    "recursive payload merge",
+    "change history",
+    "atomic result writing",
+    "SHA-256 evidence"
+  ]
+}

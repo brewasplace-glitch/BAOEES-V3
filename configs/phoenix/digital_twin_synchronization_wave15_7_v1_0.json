@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "engine_id": "phoenix.digital_twin_synchronization.wave15_7",
+  "engine_version": "1.0.0",
+  "default_mode": "review",
+  "supported_modes": [
+    "strict",
+    "merge",
+    "review"
+  ],
+  "human_review_required_for_conflicts": true,
+  "object_versioning": true,
+  "audit_history": true,
+  "sha256_evidence": true
+}
