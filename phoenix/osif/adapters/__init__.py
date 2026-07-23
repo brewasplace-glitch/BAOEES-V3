@@ -1,4 +1,4 @@
-"""Open Source Adapter Framework — Phoenix Core v2.0 BB3."""
+"""Open Source Adapter Framework."""
 
 from .base import AdapterError, OSIFAdapter
 from .builtin import (
@@ -16,6 +16,7 @@ from .contracts import (
     AdapterLifecycleState,
 )
 from .executor import AdapterExecutor
+from .freecad import FreeCADIntegrationError
 from .registry import AdapterRegistry, AdapterRegistryError
 
 __all__ = [
@@ -30,6 +31,7 @@ __all__ = [
     "AdapterRegistryError",
     "BlenderAdapter",
     "FreeCADAdapter",
+    "FreeCADIntegrationError",
     "IfcOpenShellAdapter",
     "OSIFAdapter",
     "QGISAdapter",

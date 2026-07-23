@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "service_id": "phoenix.osif.freecad.bb4",
+  "version": "1.0.0",
+  "worker_protocol": "json-file-v1",
+  "default_timeout_seconds": 300,
+  "custom_macros_enabled_by_default": false,
+  "capabilities": [
+    "freecad.document.create",
+    "freecad.document.import",
+    "freecad.document.export",
+    "freecad.document.inspect",
+    "freecad.geometry.validate",
+    "freecad.macro.execute",
+    "cad.convert"
+  ],
+  "source_formats": [
+    "fcstd",
+    "step",
+    "stp",
+    "iges",
+    "igs",
+    "brep",
+    "brp"
+  ],
+  "destination_formats": [
+    "fcstd",
+    "step",
+    "stp",
+    "iges",
+    "igs",
+    "brep",
+    "brp",
+    "stl",
+    "obj"
+  ],
+  "evidence_algorithm": "sha256"
+}

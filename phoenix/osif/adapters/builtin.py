@@ -1,9 +1,8 @@
-"""Initial adapter foundations for FreeCAD, IfcOpenShell, Blender and QGIS."""
+"""Built-in OSIF adapters."""
 
 from __future__ import annotations
 
 import importlib.util
-from pathlib import Path
 import shutil
 
 from phoenix.osif import ApplicationDescriptor, Capability
@@ -13,6 +12,7 @@ from .contracts import (
     AdapterExecutionResult,
     AdapterHealth,
 )
+from .freecad import FreeCADAdapter
 
 
 class _DiscoveryOnlyAdapter(OSIFAdapter):
@@ -70,24 +70,9 @@ class _DiscoveryOnlyAdapter(OSIFAdapter):
 
     def _execute(self, request: AdapterExecutionRequest) -> AdapterExecutionResult:
         raise AdapterError(
-            f"{self.ADAPTER_ID} is a BB3 foundation adapter; "
-            "discipline execution is enabled in later build blocks."
+            f"{self.ADAPTER_ID} is a foundation adapter; "
+            "discipline execution is enabled in a later build block."
         )
-
-
-class FreeCADAdapter(_DiscoveryOnlyAdapter):
-    APPLICATION_ID = "freecad"
-    APPLICATION_NAME = "FreeCAD"
-    ADAPTER_ID = "phoenix.osif.adapter.freecad"
-    EXECUTABLE_NAMES = ("FreeCADCmd.exe", "FreeCADCmd", "freecadcmd")
-    CAPABILITIES = (
-        Capability(
-            "cad.convert",
-            "Convert CAD geometry",
-            ("step", "stp", "iges", "igs"),
-            ("step", "stl", "obj"),
-        ),
-    )
 
 
 class IfcOpenShellAdapter(_DiscoveryOnlyAdapter):

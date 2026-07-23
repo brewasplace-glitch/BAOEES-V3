@@ -1,0 +1,19 @@
+{
+  "release_id": "PHOENIX_CORE_v2_0_BB4_FREECAD_INTEGRATION_ENGINE",
+  "version": "1.0.0",
+  "build_block": "BB4",
+  "status": "release_candidate",
+  "overall_phoenix_core_v2_progress_percent": 25,
+  "capabilities": [
+    "FreeCADCmd detection",
+    "FreeCAD document creation",
+    "CAD import",
+    "CAD export",
+    "document inspection",
+    "geometry validation",
+    "policy-controlled macro execution",
+    "timeout handling",
+    "SHA-256 output evidence",
+    "Digital Twin write-back compatibility"
+  ]
+}
