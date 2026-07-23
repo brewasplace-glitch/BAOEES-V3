@@ -1,0 +1,13 @@
+
+
+## [BB9A-1.0.0] - 2026-07-24
+
+### Added
+
+- Phoenix Knowledge Base repository structure
+- Phoenix Build System
+- Architecture Decision Records
+- Master specification
+- Knowledge index generation
+- Gitignore-safe staging policy
+- BB9A tests and self-test runner

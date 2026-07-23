@@ -58,3 +58,18 @@ Project Analyzer
 → GIS / Map Engine
 → Validation & QA/QC Engine
 → Project ZIP Engine
+
+## Phoenix Knowledge Base
+
+Project Phoenix stores its durable project knowledge inside the repository.
+
+Primary entry points:
+
+- `knowledge/INDEX.md`
+- `architecture/master_architecture.md`
+- `specifications/master/PHOENIX_MASTER_SPECIFICATION_v1_0.md`
+- `roadmap/build_blocks.md`
+- `decisions/README.md`
+
+The Phoenix Build System validates Build Blocks and produces deterministic
+SHA-256 evidence before Git synchronization.

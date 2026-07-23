@@ -1,0 +1,17 @@
+{
+  "policy_id": "PHOENIX-PBS-1.0",
+  "fail_fast": true,
+  "required_checks": [
+    "python_compile",
+    "unit_tests",
+    "self_tests",
+    "git_diff_check"
+  ],
+  "git": {
+    "stage_intended_paths_only": true,
+    "skip_ignored_paths": true,
+    "commit_after_all_checks": true,
+    "push_after_commit": true,
+    "require_clean_final_tree": true
+  }
+}
