@@ -38,3 +38,19 @@
 - Decision and rationale logging
 - Workflow evidence persistence
 - Knowledge Graph decision publication
+
+## [BB12-1.0.0] - 2026-07-24
+
+### Added
+
+- Phoenix QGIS Integration Engine
+- Offline-safe GIS runtime
+- QGIS runtime discovery
+- GIS project and layer models
+- GeoJSON support
+- QGIS `.qgs` project generation
+- Spatial extent and distance primitives
+- GIS service catalog
+- Digital Twin bridge
+- Knowledge Graph bridge
+- GIS project SHA-256 evidence

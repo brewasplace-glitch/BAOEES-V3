@@ -1,0 +1,30 @@
+{
+  "policy_id": "PHOENIX-QGIS-1.0",
+  "runtime": {
+    "pyqgis_optional": true,
+    "offline_mode_required": true,
+    "qgis_process_detection": true
+  },
+  "data": {
+    "supported_file_types": [
+      "GeoJSON",
+      "GeoPackage",
+      "Shapefile",
+      "DXF",
+      "CSV",
+      "GeoTIFF"
+    ],
+    "service_types": [
+      "WMS",
+      "WFS",
+      "WMTS",
+      "XYZ"
+    ],
+    "crs_required": true
+  },
+  "integration": {
+    "digital_twin_bridge": true,
+    "knowledge_graph_bridge": true,
+    "sha256_manifest_evidence": true
+  }
+}
