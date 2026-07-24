@@ -68,3 +68,14 @@
 - Digital Twin bridge
 - Knowledge Graph bridge
 - BB14–BB17 prework roadmap
+
+## [BB14-1.0.0] - 2026-07-24
+
+### Added
+- Phoenix CalculiX Finite Element Engine
+- CalculiX runtime discovery
+- B31 input-deck generation
+- offline cantilever verification
+- optional native `ccx` execution
+- SHA-256 evidence
+- Digital Twin and Knowledge Graph bridges

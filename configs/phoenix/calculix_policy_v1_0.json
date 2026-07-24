@@ -1,0 +1,16 @@
+{
+  "policy_id": "PHOENIX-CALCULIX-1.0",
+  "runtime": {
+    "calculix_optional": true,
+    "offline_verification_required": true,
+    "environment_variable": "CALCULIX_CCX"
+  },
+  "analysis": {
+    "supported": [
+      "B31 input deck",
+      "single cantilever verification",
+      "native ccx execution"
+    ],
+    "evidence_required": true
+  }
+}
