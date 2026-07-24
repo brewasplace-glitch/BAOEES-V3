@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phoenix OpenSees Structural Model",
+  "type": "object",
+  "required": [
+    "name",
+    "model_id",
+    "dimension",
+    "nodes",
+    "truss_elements"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dimension": {
+      "enum": [
+        2,
+        3
+      ]
+    },
+    "nodes": {
+      "type": "array"
+    },
+    "truss_elements": {
+      "type": "array"
+    },
+    "boundary_conditions": {
+      "type": "array"
+    },
+    "loads": {
+      "type": "array"
+    }
+  }
+}

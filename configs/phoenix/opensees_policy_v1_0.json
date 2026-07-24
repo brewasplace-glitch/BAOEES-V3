@@ -1,0 +1,16 @@
+{
+  "policy_id": "PHOENIX-OPENSEES-1.0",
+  "runtime": {
+    "openseespy_optional": true,
+    "offline_solver_required": true,
+    "native_mode_preferred_when_available": true
+  },
+  "analysis": {
+    "bb13_supported": [
+      "linear_static_2d_truss"
+    ],
+    "evidence_required": true,
+    "digital_twin_publication": true,
+    "knowledge_graph_publication": true
+  }
+}

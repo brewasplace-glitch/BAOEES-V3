@@ -54,3 +54,17 @@
 - Digital Twin bridge
 - Knowledge Graph bridge
 - GIS project SHA-256 evidence
+
+## [BB13-1.0.0] - 2026-07-24
+
+### Added
+
+- Phoenix OpenSees Structural Analysis Engine
+- OpenSeesPy runtime detection
+- Offline linear 2D truss solver
+- Structural model validation
+- Displacement, reaction and axial-force results
+- SHA-256 analysis evidence
+- Digital Twin bridge
+- Knowledge Graph bridge
+- BB14–BB17 prework roadmap
