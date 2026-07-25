@@ -1,0 +1,17 @@
+{
+  "policy_id": "PHOENIX-MULTIPHYSICS-1.0",
+  "default_engines": [
+    "QGIS",
+    "OpenSees",
+    "CalculiX"
+  ],
+  "execution": {
+    "dependency_validation": true,
+    "stop_on_required_failure": true,
+    "evidence_required": true
+  },
+  "cross_validation": {
+    "relative_tolerance": 0.05,
+    "absolute_tolerance": 1e-09
+  }
+}

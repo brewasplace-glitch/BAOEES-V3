@@ -79,3 +79,13 @@
 - optional native `ccx` execution
 - SHA-256 evidence
 - Digital Twin and Knowledge Graph bridges
+
+## [BB15-1.0.0] - 2026-07-25
+
+### Added
+- Phoenix Multi-Physics Coordination Engine
+- QGIS, OpenSees and CalculiX adapter registry
+- dependency-aware orchestration and cycle detection
+- cross-engine comparison and result fusion
+- SHA-256 evidence
+- Digital Twin and Knowledge Graph bridges
