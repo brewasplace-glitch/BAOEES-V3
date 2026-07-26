@@ -1,0 +1,22 @@
+{
+  "id": "PHX-BB19-SDE-1.0.0",
+  "name": "Structural Design Engine",
+  "build_block": "BB19",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB16 Building Model Engine v1.0.2",
+    "Phoenix Toolchain & Dependency Manager v1.0.0",
+    "BB17.4 Jurisdiction Rulepack Compiler v1.0.0"
+  ],
+  "analysis_handoffs": [
+    "openseespy",
+    "calculix",
+    "scia"
+  ],
+  "quality_boundary": {
+    "status": "preliminary-non-certifying",
+    "jurisdiction_load_factors_required": true,
+    "geotechnical_validation_required": true,
+    "professional_review_required": true
+  }
+}
