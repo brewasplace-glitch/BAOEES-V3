@@ -1,0 +1,36 @@
+{
+  "id": "PHX-BB17-BCE-1.0.0",
+  "name": "Building Code Engine",
+  "build_block": "BB17",
+  "version": "1.0.0",
+  "schema_version": "phoenix.building-code-report/1.0",
+  "depends_on": [
+    "BB16 Building Model Engine v1.0.2",
+    "Phoenix Toolchain & Dependency Manager v1.0.0"
+  ],
+  "capabilities": [
+    "source_controlled_code_profiles",
+    "safe_rule_expression_runtime",
+    "applicability_evaluation",
+    "evidence_capture",
+    "deterministic_evaluation_ids",
+    "deterministic_fingerprints",
+    "machine_readable_compliance_reports",
+    "jurisdiction_pack_extension"
+  ],
+  "bundled_profiles": [
+    {
+      "id": "PHX-BASELINE-BUILDING-MODEL-1.0",
+      "status": "non-regulatory-baseline",
+      "legal_compliance_claim": false
+    }
+  ],
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}

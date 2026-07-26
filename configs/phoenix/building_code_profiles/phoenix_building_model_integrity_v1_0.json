@@ -1,0 +1,218 @@
+{
+  "id": "PHX-BASELINE-BUILDING-MODEL-1.0",
+  "name": "Phoenix Building Model Integrity Baseline",
+  "version": "1.0.0",
+  "jurisdiction": "PHOENIX-INTERNAL",
+  "status": "non-regulatory-baseline",
+  "fail_severities": [
+    "error",
+    "critical"
+  ],
+  "metadata": {
+    "purpose": "Validate canonical BB16 model integrity before jurisdiction-specific checks.",
+    "legal_compliance_claim": false,
+    "source_locked": true
+  },
+  "rules": [
+    {
+      "id": "PHX-BMI-001",
+      "title": "Project identifier present",
+      "description": "The model must contain a non-empty project identifier.",
+      "discipline": "model_integrity",
+      "severity": "error",
+      "expression": "not_empty(\"project_id\")",
+      "failure_message": "The model has no usable project identifier.",
+      "evidence_paths": [
+        "project_id"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-MODEL"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-002",
+      "title": "Schema version present",
+      "description": "The model must declare its schema version.",
+      "discipline": "model_integrity",
+      "severity": "warning",
+      "expression": "not_empty(\"schema_version\")",
+      "failure_message": "The model does not declare a schema version.",
+      "evidence_paths": [
+        "schema_version"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-MODEL"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-003",
+      "title": "SI unit system",
+      "description": "BB16 v1 uses SI as its canonical unit system.",
+      "discipline": "units",
+      "severity": "error",
+      "expression": "equals(\"units\", \"SI\")",
+      "failure_message": "The model is not declared in SI units.",
+      "evidence_paths": [
+        "units"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-UNITS"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-004",
+      "title": "Level identifiers valid and unique",
+      "description": "At least one level with unique identifiers is required.",
+      "discipline": "spatial_structure",
+      "severity": "error",
+      "expression": "count(\"levels\") >= 1 and all_have(\"levels\", \"id\") and unique(\"levels\", \"id\")",
+      "failure_message": "Levels are missing, incomplete or duplicated.",
+      "evidence_paths": [
+        "levels"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-LEVEL"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-005",
+      "title": "Space identifiers unique",
+      "description": "Every space identifier must be unique.",
+      "discipline": "spatial_structure",
+      "severity": "error",
+      "expression": "unique(\"spaces\", \"id\")",
+      "failure_message": "Spaces contain missing or duplicate identifiers.",
+      "evidence_paths": [
+        "spaces"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-SPACE"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-006",
+      "title": "Space level references valid",
+      "description": "Every space must reference an existing level.",
+      "discipline": "spatial_structure",
+      "severity": "error",
+      "expression": "references_exist(\"spaces\", \"level_id\", \"levels\", \"id\", False)",
+      "failure_message": "One or more spaces reference an unknown level.",
+      "evidence_paths": [
+        "spaces",
+        "levels"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-SPACE-LEVEL"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-007",
+      "title": "Element identifiers unique",
+      "description": "Every building element identifier must be unique.",
+      "discipline": "building_elements",
+      "severity": "error",
+      "expression": "unique(\"elements\", \"id\")",
+      "failure_message": "Elements contain missing or duplicate identifiers.",
+      "evidence_paths": [
+        "elements"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-ELEMENT"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-008",
+      "title": "Element level references valid",
+      "description": "Element level references must identify existing levels when present.",
+      "discipline": "building_elements",
+      "severity": "error",
+      "expression": "references_exist(\"elements\", \"level_id\", \"levels\", \"id\", True)",
+      "failure_message": "One or more elements reference an unknown level.",
+      "evidence_paths": [
+        "elements",
+        "levels"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-ELEMENT-LEVEL"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-009",
+      "title": "Positive level heights",
+      "description": "Declared level heights must be greater than zero.",
+      "discipline": "geometry",
+      "severity": "error",
+      "expression": "positive_or_empty(\"levels\", \"height_m\")",
+      "failure_message": "One or more level heights are not positive.",
+      "evidence_paths": [
+        "levels"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-LEVEL-GEOMETRY"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-010",
+      "title": "Non-negative space quantities",
+      "description": "Declared space areas and volumes must not be negative.",
+      "discipline": "geometry",
+      "severity": "error",
+      "expression": "nonnegative_or_empty(\"spaces\", \"area_m2\") and nonnegative_or_empty(\"spaces\", \"volume_m3\")",
+      "failure_message": "One or more spaces have a negative area or volume.",
+      "evidence_paths": [
+        "spaces"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-SPACE-GEOMETRY"
+        }
+      ]
+    },
+    {
+      "id": "PHX-BMI-011",
+      "title": "Relationship endpoints valid",
+      "description": "Relationships must connect known canonical objects.",
+      "discipline": "model_graph",
+      "severity": "error",
+      "expression": "relationships_valid()",
+      "failure_message": "One or more relationships have invalid endpoints or no type.",
+      "evidence_paths": [
+        "relationships"
+      ],
+      "references": [
+        {
+          "type": "phoenix_contract",
+          "id": "BB16-RELATIONSHIP"
+        }
+      ]
+    }
+  ]
+}
