@@ -1,0 +1,30 @@
+{
+  "id": "PHX-CODEPACK-MODEL-INTEGRITY-1.0",
+  "name": "Phoenix Building Model Integrity Baseline",
+  "version": "1.0.0",
+  "jurisdiction": "PHOENIX-INTERNAL",
+  "profile_path": "configs/phoenix/building_code_profiles/phoenix_building_model_integrity_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "validated",
+  "activation_state": "active",
+  "sources": [
+    {
+      "id": "PHX-SOURCE-BB16-CONTRACT",
+      "title": "BB16 Building Model Contract",
+      "publisher": "PROJECT-PHOENIX",
+      "publication_id": "BB16-BME-1.0.2",
+      "edition": "1.0.2",
+      "source_status": "verified",
+      "effective_from": "2026-07-26",
+      "license_class": "project-internal",
+      "rights_note": "Internal Phoenix architecture contract."
+    }
+  ],
+  "reviewed_by": "PROJECT-PHOENIX automated validation suite",
+  "reviewed_at": "2026-07-26T00:00:00Z",
+  "supersedes": [],
+  "metadata": {
+    "legal_compliance_claim": false,
+    "source_locked": true
+  }
+}

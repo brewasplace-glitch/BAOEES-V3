@@ -1,0 +1,19 @@
+{
+  "id": "PHX-BB17.1-CGSR-1.0.0",
+  "name": "Codepack Governance & Source Registry",
+  "build_block": "BB17.1",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB17 Building Code Engine v1.0.0"
+  ],
+  "capabilities": [
+    "official_source_metadata",
+    "jurisdiction_and_validity",
+    "review_and_activation_status",
+    "license_and_rights_metadata",
+    "source_hash_validation",
+    "single_active_codepack_guard",
+    "supersession_and_rollback_candidates",
+    "deterministic_registry_fingerprint"
+  ]
+}
