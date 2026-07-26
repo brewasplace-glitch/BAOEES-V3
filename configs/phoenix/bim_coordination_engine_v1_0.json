@@ -1,0 +1,46 @@
+{
+  "id": "PHX-BB22-BCE-1.0.0",
+  "name": "BIM Coordination Engine",
+  "build_block": "BB22",
+  "version": "1.0.0",
+  "schema_version": "phoenix.bim-coordination-report/1.0",
+  "depends_on": [
+    "BB16 Building Model Engine",
+    "BB18.1 Architectural Drawing Engine",
+    "BB19 Structural Design Engine",
+    "BB20 Quantity Take-Off Engine",
+    "BB21 Cost Estimation Engine"
+  ],
+  "capabilities": [
+    "discipline_model_identity_checks",
+    "duplicate_and_missing_object_id_detection",
+    "semantic_category_conflicts",
+    "level_assignment_conflicts",
+    "shared_object_geometry_drift",
+    "axis_aligned_hard_clash_detection",
+    "quantity_to_model_reconciliation",
+    "cost_to_quantity_reconciliation",
+    "deterministic_issue_ids",
+    "deterministic_report_fingerprint",
+    "json_export",
+    "csv_export",
+    "dependency_free_xlsx_export",
+    "bcf_foundation_export"
+  ],
+  "coordination_policy": {
+    "default_tolerance_m": 0.001,
+    "certifying": false,
+    "geometry_method": "axis_aligned_bounding_boxes",
+    "bcf_profile": "foundation",
+    "critical_or_error_open_issue_blocks_pass": true
+  },
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "json_csv_xlsx_bcf_export_validation",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}
