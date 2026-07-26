@@ -1,0 +1,24 @@
+{
+  "id": "PHX-BB16-BME-1.0.2",
+  "name": "Building Model Engine",
+  "build_block": "BB16",
+  "version": "1.0.2",
+  "schema_version": "phoenix.building-model/1.0",
+  "units": "SI",
+  "capabilities": [
+    "canonical_building_model",
+    "levels_spaces_elements",
+    "relationship_graph",
+    "validation",
+    "deterministic_fingerprint",
+    "json_snapshot_export",
+    "sketchup_detection_and_manifest_handoff",
+    "scia_detection_and_manifest_handoff"
+  ],
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "git_diff_check"
+  ]
+}
