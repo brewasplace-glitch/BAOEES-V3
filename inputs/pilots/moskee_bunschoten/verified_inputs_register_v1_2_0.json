@@ -1,0 +1,204 @@
+{
+  "schema_version": "phoenix.bb35.verified-input-register/1.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "scope_basis": {
+    "selected_option": "B",
+    "width_m": 7.0,
+    "depth_m": 10.0,
+    "footprint_m2": 70.0,
+    "storeys": 2,
+    "gross_extension_area_m2": 140.0
+  },
+  "inputs": [
+    {
+      "input_id": "HBM-VI-001",
+      "category": "project_identity",
+      "description": "Project identity, address and building use: Haci Bayram Moskee, Bikkersweg 88, Bunschoten-Spakenburg.",
+      "status": "verified",
+      "severity": "info",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-EV-001",
+        "HBM-ADM-001"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-002",
+      "category": "authoritative_scope",
+      "description": "Authoritative extension: 7.00 x 10.00 m, two storeys, 70 m² footprint and approximately 140 m² gross.",
+      "status": "accepted_authoritative",
+      "severity": "info",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-EV-001",
+        "HBM-EV-002",
+        "HBM-EV-004",
+        "HBM-EV-005",
+        "HBM-ADM-001"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-003",
+      "category": "concept_layout",
+      "description": "Ground-floor and upper-floor concept layouts for the 7.00 x 10.00 m two-storey extension are available.",
+      "status": "verified",
+      "severity": "info",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-EV-002",
+        "HBM-EV-004",
+        "HBM-EV-005"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-004",
+      "category": "consultant_scope_matrix",
+      "description": "Administrative briefs allocate structural/bestek work, BOPA/AERIUS, parking/participation and Bbl assessment.",
+      "status": "verified",
+      "severity": "info",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-ADM-002",
+        "HBM-ADM-003",
+        "HBM-ADM-004",
+        "HBM-ADM-005"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-005",
+      "category": "parking_preliminary",
+      "description": "A preliminary parking study and consultant brief are available, but field measurements are not yet verified.",
+      "status": "verified_preliminary",
+      "severity": "warning",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-EV-006",
+        "HBM-EV-008",
+        "HBM-ADM-004"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-006",
+      "category": "design_stage",
+      "description": "The available architectural overview is concept/overview information and still requires DO/TO verification.",
+      "status": "verified",
+      "severity": "warning",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-EV-002"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-101",
+      "category": "existing_building_drawings",
+      "description": "Original 19-page PDF 'Haci Bayram tekeningen en details', dated 03-03-2004, as an independently accessible source file.",
+      "status": "referenced_not_embedded",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Owner / architect",
+      "required_file_types": [
+        "PDF"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-102",
+      "category": "cadastral_site_base",
+      "description": "Original kadaster.dwg with parcel boundaries, coordinates and verifiable dimensions.",
+      "status": "referenced_not_embedded",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Owner / architect / surveyor",
+      "required_file_types": [
+        "DWG",
+        "DXF",
+        "PDF"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-103",
+      "category": "structural_survey",
+      "description": "Signed structural survey of existing foundations, frame, floors, roof and proposed connections.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Structural engineer",
+      "required_file_types": [
+        "PDF",
+        "photos",
+        "measurement register"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-104",
+      "category": "geotechnical",
+      "description": "Project-specific ground investigation, groundwater data and foundation recommendation.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Geotechnical engineer",
+      "required_file_types": [
+        "PDF",
+        "CPT/GEF",
+        "CSV"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-105",
+      "category": "technical_assumptions",
+      "description": "Final materials, fire safety, occupancy, ventilation, daylight, accessibility, installations and Bbl assumptions.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Architect / Bbl advisor / MEP advisor",
+      "required_file_types": [
+        "PDF",
+        "JSON",
+        "XLSX"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-106",
+      "category": "parking_field_evidence",
+      "description": "Verified parking counts at representative peak moments and confirmation of public/private parking status and use rights.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Traffic consultant",
+      "required_file_types": [
+        "PDF",
+        "CSV",
+        "photos",
+        "agreements"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-107",
+      "category": "occupancy_and_use",
+      "description": "Agreed existing and future occupancy, prayer-place capacity, weekly programme and peak-event scenarios for the 140 m² scope.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Owner / architect / traffic consultant",
+      "required_file_types": [
+        "signed schedule",
+        "CSV",
+        "PDF"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-108",
+      "category": "aerius_activity_data",
+      "description": "Construction duration, equipment, transport movements and operational traffic data required for AERIUS.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true,
+      "responsible_party": "Structural/build-method advisor and traffic consultant",
+      "required_file_types": [
+        "CSV",
+        "JSON",
+        "PDF"
+      ]
+    }
+  ]
+}

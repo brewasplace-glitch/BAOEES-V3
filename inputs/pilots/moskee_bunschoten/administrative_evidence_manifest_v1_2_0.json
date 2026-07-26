@@ -1,0 +1,36 @@
+{
+  "schema_version": "phoenix.bb35.administrative-evidence/1.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "files": [
+    {
+      "evidence_id": "HBM-ADM-001",
+      "relative_path": "Offerteaanvraag_Antea_Totaalpakket_Haci_Bayram_net_opgemaakt_v1_5.pdf",
+      "role": "integrated_140m2_project_brief",
+      "sha256": "7d10cca520d527a81218ba1384b4649e55bb3a4b1fa378255339519ae3348a02"
+    },
+    {
+      "evidence_id": "HBM-ADM-002",
+      "relative_path": "03_Offerteaanvraag_Bouwbureau_Nederland_Constructie_Bestek_Bouwmethode_Haci_Bayram_v1_1.pdf",
+      "role": "structural_and_specification_brief",
+      "sha256": "fed2ad1684a0031ff08dbe8f075c74faa3bdd684b51df63ea3709f1dd2f0500c"
+    },
+    {
+      "evidence_id": "HBM-ADM-003",
+      "relative_path": "04_Offerteaanvraag_Kubiek_Haci_Bayram_net_opgemaakt_John_Brewster_v1_3.pdf",
+      "role": "bopa_etfal_aerius_brief",
+      "sha256": "c9e8e52983e50da8dffa9ea321a45c934b9bf8c64c99baf4247850e87a5d276f"
+    },
+    {
+      "evidence_id": "HBM-ADM-004",
+      "relative_path": "02_Offerteaanvraag_4Traffic_Parkeren_Participatie_Verkeersgeneratie_Haci_Bayram_v1_1.pdf",
+      "role": "parking_participation_traffic_brief",
+      "sha256": "a324fe993bfd64a168a671171ab8d8dc7f71defc206782e8e07cea69a6bec230"
+    },
+    {
+      "evidence_id": "HBM-ADM-005",
+      "relative_path": "03_Offerteaanvraag_BouwadviesShop_Haci_Bayram_net_opgemaakt_John_Brewster_v1_3.pdf",
+      "role": "bbl_assessment_brief",
+      "sha256": "0234a315104319a4cbec7d4e6b6490f8bd8af99ca2cf92874ace66f36000ef8d"
+    }
+  ]
+}
