@@ -1,0 +1,42 @@
+{
+  "id": "PHX-BB21-CEE-1.0.0",
+  "name": "Cost Estimation Engine",
+  "build_block": "BB21",
+  "version": "1.0.0",
+  "schema_version": "phoenix.cost-estimate-report/1.0",
+  "depends_on": [
+    "BB20 Quantity Take-Off Engine v1.0.0"
+  ],
+  "capabilities": [
+    "ratebook_governance",
+    "quantity_to_rate_matching",
+    "material_labor_equipment_subcontract_other_components",
+    "currency_and_price_date_control",
+    "jurisdiction_and_location_profiles",
+    "waste_and_quantity_factors",
+    "escalation_and_location_factors",
+    "overhead_risk_contingency_profit_tax",
+    "multi_scenario_comparison",
+    "cost_totals_by_work_section_level_and_cost_code",
+    "quantity_and_drawing_traceability",
+    "json_csv_xlsx_exports",
+    "deterministic_fingerprints"
+  ],
+  "safety_policy": {
+    "currency_conversion": false,
+    "market_rates_bundled": false,
+    "synthetic_ratebook_test_only": true,
+    "certifying": false,
+    "validated_ratebook_required_by_default": true
+  },
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "json_csv_xlsx_validation",
+    "git_diff_check",
+    "exact_payload_staging",
+    "clean_commit",
+    "push_verification"
+  ]
+}

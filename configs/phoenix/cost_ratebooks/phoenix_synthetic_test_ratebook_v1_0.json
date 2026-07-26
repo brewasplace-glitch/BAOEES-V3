@@ -1,0 +1,77 @@
+{
+  "id": "PHX-SYNTHETIC-COST-RATEBOOK-1.0",
+  "name": "Phoenix Synthetic Cost Rate Book",
+  "version": "1.0.0",
+  "status": "validated",
+  "currency": "EUR",
+  "price_date": "2026-07-26",
+  "jurisdiction": "PHOENIX-TEST",
+  "location_profile": "SYNTHETIC-TEST-LOCATION",
+  "source_reference": "Synthetic values for automated tests only; not market data.",
+  "metadata": {
+    "test_only": true,
+    "market_use_prohibited": true,
+    "currency_conversion_performed": false
+  },
+  "rates": [
+    {
+      "id": "RATE-WALL-MASONRY-M3",
+      "cost_code": "04.10.100",
+      "description": "Synthetic masonry wall volume",
+      "unit": "m3",
+      "selector": {
+        "quantity_types": [
+          "wall_volume"
+        ],
+        "materials": [
+          "masonry"
+        ]
+      },
+      "material_rate": 100.0,
+      "labor_rate": 50.0,
+      "equipment_rate": 10.0,
+      "waste_percent": 5.0,
+      "source_reference": "SYNTHETIC-TEST"
+    },
+    {
+      "id": "RATE-SLAB-CONCRETE-M3",
+      "cost_code": "05.10.100",
+      "description": "Synthetic concrete slab volume",
+      "unit": "m3",
+      "selector": {
+        "quantity_types": [
+          "slab_volume"
+        ],
+        "materials": [
+          "concrete"
+        ]
+      },
+      "material_rate": 120.0,
+      "labor_rate": 40.0,
+      "equipment_rate": 20.0,
+      "waste_percent": 2.0,
+      "source_reference": "SYNTHETIC-TEST"
+    },
+    {
+      "id": "RATE-DOOR-TIMBER-EA",
+      "cost_code": "07.10.100",
+      "description": "Synthetic timber door set",
+      "unit": "ea",
+      "selector": {
+        "quantity_types": [
+          "count"
+        ],
+        "categories": [
+          "door"
+        ],
+        "materials": [
+          "timber"
+        ]
+      },
+      "material_rate": 300.0,
+      "labor_rate": 100.0,
+      "waste_percent": 0.0,
+      "source_reference": "SYNTHETIC-TEST"
+    }
+  ]
+}

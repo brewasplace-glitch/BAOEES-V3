@@ -1,0 +1,46 @@
+[
+  {
+    "id": "SCENARIO-BASE",
+    "name": "Base estimate",
+    "currency": "EUR",
+    "quantity_factor": 1.0,
+    "location_factor": 1.0,
+    "escalation_percent": 0.0,
+    "material_factor": 1.0,
+    "labor_factor": 1.0,
+    "equipment_factor": 1.0,
+    "subcontract_factor": 1.0,
+    "other_factor": 1.0,
+    "overhead_percent": 10.0,
+    "risk_percent": 5.0,
+    "contingency_percent": 3.0,
+    "profit_percent": 4.0,
+    "tax_percent": 0.0,
+    "require_validated_ratebook": true,
+    "metadata": {
+      "example_only": true
+    }
+  },
+  {
+    "id": "SCENARIO-CONSERVATIVE",
+    "name": "Conservative estimate",
+    "currency": "EUR",
+    "quantity_factor": 1.03,
+    "location_factor": 1.05,
+    "escalation_percent": 2.0,
+    "material_factor": 1.04,
+    "labor_factor": 1.06,
+    "equipment_factor": 1.03,
+    "subcontract_factor": 1.05,
+    "other_factor": 1.03,
+    "overhead_percent": 12.0,
+    "risk_percent": 8.0,
+    "contingency_percent": 5.0,
+    "profit_percent": 5.0,
+    "tax_percent": 0.0,
+    "require_validated_ratebook": true,
+    "metadata": {
+      "example_only": true
+    }
+  }
+]

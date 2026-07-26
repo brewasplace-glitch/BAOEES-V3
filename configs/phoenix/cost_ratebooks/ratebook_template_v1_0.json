@@ -1,0 +1,36 @@
+{
+  "id": "PHX-RATEBOOK-TEMPLATE-1.0",
+  "name": "Phoenix Project Rate Book Template",
+  "version": "1.0.0",
+  "status": "draft",
+  "currency": "EUR",
+  "price_date": "2026-07-26",
+  "jurisdiction": "PROJECT-SPECIFIC",
+  "location_profile": "PROJECT-SPECIFIC",
+  "source_reference": "Replace with controlled project or market source.",
+  "metadata": {
+    "template": true,
+    "requires_validation_before_use": true,
+    "currency_conversion_performed": false
+  },
+  "rates": [
+    {
+      "id": "RATE-TEMPLATE-001",
+      "cost_code": "00.00.000",
+      "description": "Replace with validated rate",
+      "unit": "ea",
+      "selector": {
+        "quantity_types": [
+          "replace_me"
+        ]
+      },
+      "material_rate": 0.0,
+      "labor_rate": 0.0,
+      "equipment_rate": 0.0,
+      "subcontract_rate": 0.0,
+      "other_rate": 0.0,
+      "waste_percent": 0.0,
+      "source_reference": "REQUIRED"
+    }
+  ]
+}
