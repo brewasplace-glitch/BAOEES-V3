@@ -1,0 +1,19 @@
+{
+  "id": "PHX-FOUNDATION-AW-1.0",
+  "name": "Aruba Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "AW",
+  "status": "foundation-source-identified",
+  "fail_severities": [
+    "error",
+    "critical"
+  ],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "activation_allowed": false,
+    "rule_count_expected": 0,
+    "required_next_step": "Create reviewed source-locked rules before activation."
+  },
+  "rules": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "CW",
+  "name": "Curaçao",
+  "legal_scope": "country_within_kingdom",
+  "country_codes": [
+    "CW"
+  ],
+  "aliases": [
+    "CURACAO",
+    "CURAÇAO"
+  ],
+  "legal_codepack_manifest": "configs/phoenix/codepacks/foundations/cw_foundation_v1_0.json",
+  "foundation_profile": "configs/phoenix/building_code_profiles/foundations/cw_foundation_v1_0.json",
+  "default_overlays": [
+    "ARID-CARIBBEAN",
+    "CARIBBEAN-EXTREME-WIND",
+    "COASTAL-CORROSION",
+    "FLOOD-COASTAL",
+    "TERMITE-BIODEGRADATION"
+  ],
+  "island_overlays": {},
+  "source_watch": [
+    "https://gobiernu.cw/wp-content/uploads/2025/06/73-GT.-Bouw-en-Woningverordening-1935-1.pdf"
+  ],
+  "mixing_policy": "exclusive_primary",
+  "metadata": {
+    "foundation_only": true,
+    "local_spatial_rules_required": true
+  }
+}

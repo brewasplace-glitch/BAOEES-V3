@@ -1,0 +1,34 @@
+{
+  "id": "SX",
+  "name": "Sint Maarten",
+  "legal_scope": "country_within_kingdom",
+  "country_codes": [
+    "SX"
+  ],
+  "aliases": [
+    "SINT MAARTEN",
+    "ST MAARTEN",
+    "SAINT MARTIN DUTCH"
+  ],
+  "legal_codepack_manifest": "configs/phoenix/codepacks/foundations/sx_foundation_v1_0.json",
+  "foundation_profile": "configs/phoenix/building_code_profiles/foundations/sx_foundation_v1_0.json",
+  "default_overlays": [
+    "TROPICAL-HUMID",
+    "CARIBBEAN-EXTREME-WIND",
+    "SEISMIC-REGIONAL",
+    "COASTAL-CORROSION",
+    "FLOOD-COASTAL",
+    "STEEP-SLOPE",
+    "TERMITE-BIODEGRADATION"
+  ],
+  "island_overlays": {},
+  "source_watch": [
+    "https://www.sintmaartengov.org/services/Pages/Building-Permit-Application-Form.aspx",
+    "https://www.sintmaartengov.org/Ministries/Departments/Pages/Section-PPO.aspx"
+  ],
+  "mixing_policy": "exclusive_primary",
+  "metadata": {
+    "foundation_only": true,
+    "hurricane_and_seismic_parameters_required": true
+  }
+}

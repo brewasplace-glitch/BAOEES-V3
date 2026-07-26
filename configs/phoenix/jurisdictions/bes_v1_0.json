@@ -1,0 +1,46 @@
+{
+  "id": "BES",
+  "name": "Caribbean Netherlands — Bonaire, Sint Eustatius and Saba",
+  "legal_scope": "public_bodies",
+  "country_codes": [
+    "BQ"
+  ],
+  "aliases": [
+    "BES",
+    "CARIBISCH NEDERLAND",
+    "BONAIRE",
+    "SINT EUSTATIUS",
+    "SABA"
+  ],
+  "legal_codepack_manifest": "configs/phoenix/codepacks/foundations/bes_foundation_v1_0.json",
+  "foundation_profile": "configs/phoenix/building_code_profiles/foundations/bes_foundation_v1_0.json",
+  "default_overlays": [
+    "TROPICAL-HUMID",
+    "CARIBBEAN-EXTREME-WIND",
+    "COASTAL-CORROSION",
+    "SEISMIC-REGIONAL",
+    "TERMITE-BIODEGRADATION"
+  ],
+  "island_overlays": {
+    "Bonaire": [
+      "ARID-CARIBBEAN",
+      "FLOOD-COASTAL"
+    ],
+    "Sint Eustatius": [
+      "VOLCANIC-SLOPE",
+      "STEEP-SLOPE"
+    ],
+    "Saba": [
+      "VOLCANIC-SLOPE",
+      "STEEP-SLOPE"
+    ]
+  },
+  "source_watch": [
+    "https://wetten.overheid.nl/BWBR0036000/"
+  ],
+  "mixing_policy": "exclusive_primary",
+  "metadata": {
+    "foundation_only": true,
+    "island_local_rules_required": true
+  }
+}

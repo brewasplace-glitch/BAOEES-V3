@@ -1,0 +1,31 @@
+{
+  "id": "PHX-CODEPACK-AW-FOUNDATION-1.0",
+  "name": "Aruba Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "AW",
+  "profile_path": "configs/phoenix/building_code_profiles/foundations/aw_foundation_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "draft",
+  "activation_state": "inactive",
+  "sources": [
+    {
+      "id": "PHX-SRC-AW-ROPV",
+      "title": "Ruimtelijk ontwikkelingsplan met voorschriften",
+      "publisher": "Government of Aruba — DIP",
+      "publication_id": "AB-2021-NO-123",
+      "edition": "Official publication identified — verify current applicability",
+      "source_status": "identified",
+      "canonical_uri": "https://www.dip.aw/wp-content/uploads/2021/08/AB-2021-No.-123-Aruba-ROPV.pdf",
+      "license_class": "official-public-metadata",
+      "rights_note": "Building and housing provisions require separate source review."
+    }
+  ],
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "supersedes": [],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "may_not_be_activated": true
+  }
+}

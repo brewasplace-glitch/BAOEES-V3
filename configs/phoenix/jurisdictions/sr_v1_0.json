@@ -1,0 +1,29 @@
+{
+  "id": "SR",
+  "name": "Suriname",
+  "legal_scope": "country",
+  "country_codes": [
+    "SR"
+  ],
+  "aliases": [
+    "SURINAME"
+  ],
+  "legal_codepack_manifest": "configs/phoenix/codepacks/foundations/sr_foundation_v1_0.json",
+  "foundation_profile": "configs/phoenix/building_code_profiles/foundations/sr_foundation_v1_0.json",
+  "default_overlays": [
+    "TROPICAL-HUMID",
+    "FLOOD-HIGH-GROUNDWATER",
+    "COASTAL-CORROSION",
+    "TERMITE-BIODEGRADATION"
+  ],
+  "island_overlays": {},
+  "source_watch": [
+    "https://gov.sr/thema/bouwvergunning/",
+    "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/vergunningen/"
+  ],
+  "mixing_policy": "exclusive_primary",
+  "metadata": {
+    "foundation_only": true,
+    "district_specific_rules_required": true
+  }
+}

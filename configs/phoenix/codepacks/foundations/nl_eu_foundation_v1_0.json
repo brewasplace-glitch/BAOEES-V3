@@ -1,0 +1,31 @@
+{
+  "id": "PHX-CODEPACK-NL-EU-FOUNDATION-1.0",
+  "name": "European Netherlands Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "NL-EU",
+  "profile_path": "configs/phoenix/building_code_profiles/foundations/nl_eu_foundation_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "draft",
+  "activation_state": "inactive",
+  "sources": [
+    {
+      "id": "PHX-SRC-NL-BBL",
+      "title": "Besluit bouwwerken leefomgeving",
+      "publisher": "Rijksoverheid",
+      "publication_id": "BWBR0041297",
+      "edition": "Current consolidated version — verify before activation",
+      "source_status": "identified",
+      "canonical_uri": "https://wetten.overheid.nl/BWBR0041297/",
+      "license_class": "official-public-metadata",
+      "rights_note": "Foundation stores metadata only; rule transcription requires source and rights review."
+    }
+  ],
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "supersedes": [],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "may_not_be_activated": true
+  }
+}

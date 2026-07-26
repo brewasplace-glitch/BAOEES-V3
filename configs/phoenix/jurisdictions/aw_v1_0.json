@@ -1,0 +1,29 @@
+{
+  "id": "AW",
+  "name": "Aruba",
+  "legal_scope": "country_within_kingdom",
+  "country_codes": [
+    "AW"
+  ],
+  "aliases": [
+    "ARUBA"
+  ],
+  "legal_codepack_manifest": "configs/phoenix/codepacks/foundations/aw_foundation_v1_0.json",
+  "foundation_profile": "configs/phoenix/building_code_profiles/foundations/aw_foundation_v1_0.json",
+  "default_overlays": [
+    "ARID-CARIBBEAN",
+    "CARIBBEAN-EXTREME-WIND",
+    "COASTAL-CORROSION",
+    "FLOOD-COASTAL",
+    "TERMITE-BIODEGRADATION"
+  ],
+  "island_overlays": {},
+  "source_watch": [
+    "https://www.dip.aw/wp-content/uploads/2021/08/AB-2021-No.-123-Aruba-ROPV.pdf"
+  ],
+  "mixing_policy": "exclusive_primary",
+  "metadata": {
+    "foundation_only": true,
+    "local_spatial_rules_required": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": "phoenix.engineering-overlays/1.0",
+  "status": "foundation-only",
+  "numeric_parameters_included": false,
+  "overlays": [
+    {
+      "id": "TEMPERATE-MARITIME",
+      "category": "climate",
+      "topics": [
+        "rain",
+        "wind",
+        "freeze-thaw"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "TROPICAL-HUMID",
+      "category": "climate",
+      "topics": [
+        "heat",
+        "humidity",
+        "ventilation",
+        "driving-rain"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "ARID-CARIBBEAN",
+      "category": "climate",
+      "topics": [
+        "solar-gain",
+        "heat",
+        "water-scarcity"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "CARIBBEAN-EXTREME-WIND",
+      "category": "hazard",
+      "topics": [
+        "hurricane-wind",
+        "windborne-debris",
+        "uplift"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "SEISMIC-REGIONAL",
+      "category": "hazard",
+      "topics": [
+        "earthquake",
+        "site-class",
+        "ductility"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "FLOOD-HIGH-GROUNDWATER",
+      "category": "water",
+      "topics": [
+        "flooding",
+        "groundwater",
+        "drainage",
+        "infiltration"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "FLOOD-COASTAL",
+      "category": "water",
+      "topics": [
+        "storm-surge",
+        "coastal-flood",
+        "wave-exposure"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "FLOOD-WATER-MANAGEMENT",
+      "category": "water",
+      "topics": [
+        "pluvial-flood",
+        "surface-water",
+        "water-board"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "COASTAL-CORROSION",
+      "category": "durability",
+      "topics": [
+        "chloride",
+        "salt-spray",
+        "metal-corrosion"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "TERMITE-BIODEGRADATION",
+      "category": "durability",
+      "topics": [
+        "termites",
+        "fungal-decay",
+        "timber-protection"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "STEEP-SLOPE",
+      "category": "geotechnical",
+      "topics": [
+        "slope-stability",
+        "erosion",
+        "access"
+      ],
+      "requires_project_parameters": true
+    },
+    {
+      "id": "VOLCANIC-SLOPE",
+      "category": "geotechnical",
+      "topics": [
+        "volcanic-soil",
+        "slope-stability",
+        "erosion"
+      ],
+      "requires_project_parameters": true
+    }
+  ]
+}

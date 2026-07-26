@@ -1,0 +1,31 @@
+{
+  "id": "PHX-CODEPACK-SR-FOUNDATION-1.0",
+  "name": "Suriname Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "SR",
+  "profile_path": "configs/phoenix/building_code_profiles/foundations/sr_foundation_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "draft",
+  "activation_state": "inactive",
+  "sources": [
+    {
+      "id": "PHX-SRC-SR-BUILD-PERMIT",
+      "title": "Bouwvergunning and permit guidance",
+      "publisher": "Government of Suriname — Ministry of Public Works and Spatial Planning",
+      "publication_id": "GOV-SR-BUILD-PERMIT",
+      "edition": "Current official web guidance — verify before activation",
+      "source_status": "identified",
+      "canonical_uri": "https://gov.sr/thema/bouwvergunning/",
+      "license_class": "official-public-metadata",
+      "rights_note": "Procedural source identified; binding rule sources and effective dates still require legal review."
+    }
+  ],
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "supersedes": [],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "may_not_be_activated": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "PHX-CODEPACK-BES-FOUNDATION-1.0",
+  "name": "Caribbean Netherlands — Bonaire, Sint Eustatius and Saba Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "BES",
+  "profile_path": "configs/phoenix/building_code_profiles/foundations/bes_foundation_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "draft",
+  "activation_state": "inactive",
+  "sources": [
+    {
+      "id": "PHX-SRC-BES-BOUWBESLUIT",
+      "title": "BES Bouwbesluit",
+      "publisher": "Kingdom of the Netherlands",
+      "publication_id": "BWBR0036000",
+      "edition": "Current consolidated version — verify before activation",
+      "source_status": "identified",
+      "canonical_uri": "https://wetten.overheid.nl/BWBR0036000/",
+      "license_class": "official-public-metadata",
+      "rights_note": "Island-level regulations must be added separately."
+    }
+  ],
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "supersedes": [],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "may_not_be_activated": true
+  }
+}

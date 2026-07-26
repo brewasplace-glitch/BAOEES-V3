@@ -1,0 +1,31 @@
+{
+  "id": "PHX-CODEPACK-SX-FOUNDATION-1.0",
+  "name": "Sint Maarten Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "SX",
+  "profile_path": "configs/phoenix/building_code_profiles/foundations/sx_foundation_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "draft",
+  "activation_state": "inactive",
+  "sources": [
+    {
+      "id": "PHX-SRC-SX-PERMITS",
+      "title": "Building Permit Application and Department of Permits",
+      "publisher": "Government of Sint Maarten — VROMI",
+      "publication_id": "SX-VROMI-BUILDING-PERMIT",
+      "edition": "Current official web guidance — verify before activation",
+      "source_status": "identified",
+      "canonical_uri": "https://www.sintmaartengov.org/services/Pages/Building-Permit-Application-Form.aspx",
+      "license_class": "official-public-metadata",
+      "rights_note": "National building and fire-prevention instruments require article-level legal review."
+    }
+  ],
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "supersedes": [],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "may_not_be_activated": true
+  }
+}

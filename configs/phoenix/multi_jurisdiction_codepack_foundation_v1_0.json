@@ -1,0 +1,21 @@
+{
+  "id": "PHX-BB17.2-MJCF-1.0.0",
+  "name": "Multi-Jurisdiction Building Codepack Foundation",
+  "build_block": "BB17.2",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB17 Building Code Engine v1.0.0",
+    "BB17.1 Codepack Governance & Source Registry v1.0.0"
+  ],
+  "jurisdictions": [
+    "NL-EU",
+    "SR",
+    "BES",
+    "AW",
+    "CW",
+    "SX"
+  ],
+  "legal_mixing_policy": "exclusive_primary",
+  "engineering_overlays": "stackable_non_legal",
+  "foundation_profiles_are_non_regulatory": true
+}

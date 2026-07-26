@@ -1,0 +1,31 @@
+{
+  "id": "PHX-CODEPACK-CW-FOUNDATION-1.0",
+  "name": "Curaçao Building Codepack Foundation",
+  "version": "1.0.0",
+  "jurisdiction": "CW",
+  "profile_path": "configs/phoenix/building_code_profiles/foundations/cw_foundation_v1_0.json",
+  "regulatory_claim": false,
+  "review_status": "draft",
+  "activation_state": "inactive",
+  "sources": [
+    {
+      "id": "PHX-SRC-CW-BWV",
+      "title": "Bouw- en Woningverordening 1935",
+      "publisher": "Government of Curaçao",
+      "publication_id": "73-GT-BWV-1935",
+      "edition": "Official consolidated text identified — verify current applicability",
+      "source_status": "identified",
+      "canonical_uri": "https://gobiernu.cw/wp-content/uploads/2025/06/73-GT.-Bouw-en-Woningverordening-1935-1.pdf",
+      "license_class": "official-public-metadata",
+      "rights_note": "Spatial-development and local implementation rules require separate source review."
+    }
+  ],
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "supersedes": [],
+  "metadata": {
+    "foundation_only": true,
+    "legal_compliance_claim": false,
+    "may_not_be_activated": true
+  }
+}

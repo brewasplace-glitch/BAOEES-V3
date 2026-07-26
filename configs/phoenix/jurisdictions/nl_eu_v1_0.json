@@ -1,0 +1,28 @@
+{
+  "id": "NL-EU",
+  "name": "European Netherlands",
+  "legal_scope": "country",
+  "country_codes": [
+    "NL"
+  ],
+  "aliases": [
+    "NETHERLANDS",
+    "NEDERLAND",
+    "EUROPEAN NETHERLANDS"
+  ],
+  "legal_codepack_manifest": "configs/phoenix/codepacks/foundations/nl_foundation_v1_0.json",
+  "foundation_profile": "configs/phoenix/building_code_profiles/foundations/nl_foundation_v1_0.json",
+  "default_overlays": [
+    "TEMPERATE-MARITIME",
+    "FLOOD-WATER-MANAGEMENT"
+  ],
+  "island_overlays": {},
+  "source_watch": [
+    "https://wetten.overheid.nl/BWBR0041297/"
+  ],
+  "mixing_policy": "exclusive_primary",
+  "metadata": {
+    "foundation_only": true,
+    "regulatory_activation_allowed": false
+  }
+}
