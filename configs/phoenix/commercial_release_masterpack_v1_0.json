@@ -1,0 +1,39 @@
+{
+  "id": "PHX-BB31-BB36-CRMP-1.0.0",
+  "name": "Commercial Release Masterpack",
+  "version": "1.0.0",
+  "build_blocks": {
+    "BB31": "Commercial Product Shell & Project Intake Wizard",
+    "BB32": "Autonomous Building Design Package Generator",
+    "BB33": "Security & Project Data Protection",
+    "BB34": "Installer, Updates, Licensing & Release Candidate",
+    "BB35": "Real Project Validation Framework",
+    "BB36": "Commercial Production Release Framework"
+  },
+  "commercial_deliverables": [
+    "3d_impression",
+    "structural_calculations",
+    "structural_report",
+    "building_drawings",
+    "technical_specification",
+    "specification_drawings",
+    "cost_calculation",
+    "material_schedules",
+    "site_plan"
+  ],
+  "release_policy": {
+    "minimum_real_pilots": 2,
+    "synthetic_pilots_accepted": false,
+    "independent_review_required": true,
+    "clean_install_required": true,
+    "reproducibility_required": true,
+    "minimum_deliverable_quality_score": 80,
+    "production_release_locked_until_bb35": true
+  },
+  "security_policy": {
+    "role_based_permissions": true,
+    "audit_hash_chain": true,
+    "integrity_manifest": true,
+    "backup_and_restore_tests_required": true
+  }
+}
