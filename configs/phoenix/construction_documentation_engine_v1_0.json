@@ -1,0 +1,56 @@
+{
+  "id": "PHX-BB23-CDE-1.0.0",
+  "name": "Construction Documentation Engine",
+  "build_block": "BB23",
+  "version": "1.0.0",
+  "schema_version": "phoenix.construction-document-package/1.0",
+  "depends_on": [
+    "BB16 Building Model Engine",
+    "BB18.1 Architectural Drawing Engine",
+    "BB19 Structural Design Engine",
+    "BB20 Quantity Take-Off Engine",
+    "BB21 Cost Estimation Engine",
+    "BB22 BIM Coordination Engine"
+  ],
+  "capabilities": [
+    "controlled_document_register",
+    "project_and_source_identity_validation",
+    "revision_control",
+    "coordination_release_gate",
+    "source_sha256_evidence",
+    "technical_report_assembly",
+    "json_manifest_export",
+    "csv_register_export",
+    "markdown_export",
+    "html_export",
+    "dependency_free_docx_export",
+    "dependency_free_pdf_export",
+    "deterministic_checksum_manifest",
+    "complete_dossier_zip_export"
+  ],
+  "release_policy": {
+    "revision_format": "A00",
+    "required_sources": [
+      "building_model",
+      "drawing_manifest",
+      "structural_report",
+      "quantity_report",
+      "cost_report",
+      "coordination_report"
+    ],
+    "open_coordination_error_or_critical_blocks_release": true,
+    "certifying": false,
+    "publication_profile": "BB23-foundation"
+  },
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "json_csv_markdown_html_docx_pdf_zip_validation",
+    "docx_render_validation",
+    "pdf_render_validation",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}
