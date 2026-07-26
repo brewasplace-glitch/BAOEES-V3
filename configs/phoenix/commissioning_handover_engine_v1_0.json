@@ -1,0 +1,9 @@
+{
+  "id": "PHX-BB28-CHE-1.0.0",
+  "build_block": "BB28",
+  "name": "Commissioning, Handover & Asset Dossier Engine",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB27"
+  ]
+}

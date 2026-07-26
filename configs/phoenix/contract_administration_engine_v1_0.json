@@ -1,0 +1,12 @@
+{
+  "id": "PHX-BB26-CAE-1.0.0",
+  "build_block": "BB26",
+  "name": "Contract Administration & Construction Control Engine",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB21",
+    "BB24",
+    "BB25"
+  ],
+  "automatic_approval": false
+}

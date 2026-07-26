@@ -1,0 +1,9 @@
+{
+  "id": "PHX-BB29-DTO-1.0.0",
+  "build_block": "BB29",
+  "name": "Digital Twin Operations & Lifecycle Management Engine",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB28"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "PHX-BB30-CDO-1.0.0",
+  "build_block": "BB30",
+  "name": "End-to-End Commercial Building Delivery Orchestrator",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB16",
+    "BB17",
+    "BB18",
+    "BB19",
+    "BB20",
+    "BB21",
+    "BB22",
+    "BB23",
+    "BB24",
+    "BB25",
+    "BB26",
+    "BB27",
+    "BB28",
+    "BB29"
+  ],
+  "required_commercial_deliverables": [
+    "3d_impression",
+    "structural_calculations",
+    "structural_report",
+    "building_drawings",
+    "technical_specification",
+    "specification_drawings",
+    "cost_calculation",
+    "material_schedules",
+    "site_plan"
+  ],
+  "commercial_pilot_only": true,
+  "production_release_requires": [
+    "BB31",
+    "BB32",
+    "BB33",
+    "BB34",
+    "BB35",
+    "BB36"
+  ]
+}

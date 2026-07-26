@@ -1,0 +1,10 @@
+{
+  "id": "PHX-BB27-SEQ-1.0.0",
+  "build_block": "BB27",
+  "name": "Site Execution, Inspections & QA/QC Engine",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB24",
+    "BB26"
+  ]
+}
