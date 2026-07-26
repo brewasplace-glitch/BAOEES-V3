@@ -1,0 +1,44 @@
+{
+  "id": "PHX-BB24-CPS-1.0.0",
+  "name": "Construction Planning & Scheduling Engine",
+  "build_block": "BB24",
+  "version": "1.0.0",
+  "schema_version": "phoenix.construction-planning-report/1.0",
+  "depends_on": [
+    "BB20 Quantity Take-Off Engine",
+    "BB21 Cost Estimation Engine",
+    "BB22 BIM Coordination Engine",
+    "BB23 Construction Documentation Engine"
+  ],
+  "capabilities": [
+    "wbs_generation_from_bb20",
+    "finish_to_start_dependencies",
+    "critical_path_method",
+    "working_day_calendar",
+    "milestones_and_float",
+    "resource_demand_summary",
+    "monthly_cost_and_cashflow_phasing",
+    "baseline_accelerated_delayed_scenarios",
+    "model_object_and_quantity_traceability",
+    "json_csv_xlsx_exports",
+    "html_and_svg_gantt_exports",
+    "checksum_and_dossier_exports",
+    "deterministic_report_fingerprint"
+  ],
+  "planning_policy": {
+    "calendar": "Monday-Friday",
+    "dependency_type": "finish-to-start",
+    "default_currency": "USD",
+    "certifying": false,
+    "open_bb22_failure_blocks_planning": true
+  },
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "json_csv_xlsx_html_svg_zip_validation",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}
