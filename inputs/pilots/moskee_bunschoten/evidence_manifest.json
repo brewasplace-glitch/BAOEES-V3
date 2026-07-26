@@ -1,0 +1,54 @@
+{
+  "schema_version": "phoenix.bb35.evidence-manifest/1.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "files": [
+    {
+      "evidence_id": "HBM-EV-001",
+      "relative_path": "06_Definitief_Bijlagenpakket_Haci_Bayram_Moskee_v1_6_maatvoering_gecorrigeerd.pdf",
+      "role": "definitive_project_evidence_bundle",
+      "sha256": "22010e3bd51187f2e088a5729e7cc55e3e23cb5e7737a103d2ffe025842a1c34"
+    },
+    {
+      "evidence_id": "HBM-EV-002",
+      "relative_path": "bijlage  1 tekeningen en vergunning aanvraag moskee.pdf",
+      "role": "architectural_overview",
+      "sha256": "d448e59a07e5867a0426fdacc1ed9508a30bea1587a6dab623b0fdcc2df38fcd"
+    },
+    {
+      "evidence_id": "HBM-EV-003",
+      "relative_path": "spakenburg.pdf",
+      "role": "new_situation_overview",
+      "sha256": "fb22339a06e044b47bbc7928c83dad805133199f04b09ad5fdc55554e4d97ed9"
+    },
+    {
+      "evidence_id": "HBM-EV-004",
+      "relative_path": "Begane grond bıjgebouw(3).pdf",
+      "role": "new_ground_floor_plan",
+      "sha256": "b764e634eecf70f4f25a1fe05e08b8f0e64e8121ea23f1bed0595393acc37330"
+    },
+    {
+      "evidence_id": "HBM-EV-005",
+      "relative_path": "Verdieping-bijgebouw.pdf",
+      "role": "new_upper_floor_plan",
+      "sha256": "007b08936367b132f955661a015d408968a8b444c2400ab00334abea8b52f58c"
+    },
+    {
+      "evidence_id": "HBM-EV-006",
+      "relative_path": "Parkeerstudie_Bikkersweg_88_Bunschoten_v01.pdf",
+      "role": "preliminary_parking_study",
+      "sha256": "1de61acdfbc93a43e4dfd645fea69489afde5e81f69f3660783aa516d4b7a4b7"
+    },
+    {
+      "evidence_id": "HBM-EV-007",
+      "relative_path": "Ruimtelijke_Onderbouwing_Moskee_Bikkersweg88_Uitgebreid.pdf",
+      "role": "concept_spatial_justification",
+      "sha256": "de3dc2831b0db89b45f07cdd4d505146b08908a4cbb7bba01e1cbbb58f923937"
+    },
+    {
+      "evidence_id": "HBM-EV-008",
+      "relative_path": "situatietekening_parkeren_bikkersweg88.png",
+      "role": "indicative_parking_site_map",
+      "sha256": "56647371eeb35401ccdceecbe4b8c493d0ed001b1443da04d065ccf7635e0904"
+    }
+  ]
+}

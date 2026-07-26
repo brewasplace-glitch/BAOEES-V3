@@ -1,0 +1,225 @@
+{
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "pilot_name": "BB35 Pilot 1 — Haci Bayram Moskee Bunschoten",
+  "project": {
+    "project_id": "HBM-2026-001",
+    "project_name": "Uitbreiding Haci Bayram Moskee",
+    "address": "Bikkersweg 88, 3752 WV Bunschoten-Spakenburg",
+    "country": "Nederland",
+    "building_use": "Moskee / bijeenkomstfunctie",
+    "architect": "A. Brewster Architects.sr",
+    "contact_email": "info@architect.sr",
+    "contact_phone": "+31 6 86101700"
+  },
+  "strategic_decisions": [
+    {
+      "decision_id": "HBM-SCOPE-001",
+      "question": "Welke uitbreiding is maatgevend voor het definitieve pilotmodel: circa 20 m² of het getekende bouwvolume van 7,00 x 10,00 m over twee bouwlagen?",
+      "options": [
+        {
+          "option_id": "A",
+          "label": "Uitbreiding circa 20 m²",
+          "consequence": "De huidige 7,00 x 10,00 m tekeningen moeten worden herzien voordat constructie, hoeveelheden en kosten betrouwbaar kunnen worden gegenereerd."
+        },
+        {
+          "option_id": "B",
+          "label": "Uitbreiding 7,00 x 10,00 m, twee bouwlagen (circa 140 m² bruto)",
+          "consequence": "Projectomschrijving, parkeren, vergunningstrategie, AERIUS, constructie, kosten en bestek moeten op deze grotere omvang worden gebaseerd."
+        }
+      ],
+      "selected_option": null,
+      "status": "open",
+      "blocking": true
+    }
+  ],
+  "verified_conflicts": [
+    {
+      "conflict_id": "HBM-CONFLICT-001",
+      "severity": "critical",
+      "description": "Het definitieve bijlagenpakket noemt een uitbreiding van circa 20 m², terwijl dezelfde set gecorrigeerde maatvoering van 7.000 x 10.000 mm voor begane grond en verdieping bevat.",
+      "status": "open",
+      "blocking": true
+    },
+    {
+      "conflict_id": "HBM-CONFLICT-002",
+      "severity": "error",
+      "description": "Het architectonisch overzicht is indicatief en vermeldt dat maatvoering, posities en detaillering nog in DO/TO moeten worden gecontroleerd en uitgewerkt.",
+      "status": "open",
+      "blocking": true
+    },
+    {
+      "conflict_id": "HBM-CONFLICT-003",
+      "severity": "warning",
+      "description": "De parkeerstudie is een voorlopige bureaustudie; tellingen, openbaar/private status en capaciteit moeten op locatie worden geverifieerd.",
+      "status": "open",
+      "blocking": false
+    }
+  ],
+  "required_input_evidence": [
+    {
+      "input_id": "HBM-IN-001",
+      "description": "Officiële bestaande-situatietekening 'Haci Bayram tekeningen en details(1).pdf', 19 pagina's, d.d. 03-03-2004.",
+      "status": "referenced_not_embedded",
+      "severity": "critical",
+      "blocking": true
+    },
+    {
+      "input_id": "HBM-IN-002",
+      "description": "Originele kadaster.dwg met perceelsgrenzen en verifieerbare coördinaten/maatvoering.",
+      "status": "referenced_not_embedded",
+      "severity": "critical",
+      "blocking": true
+    },
+    {
+      "input_id": "HBM-IN-003",
+      "description": "Definitief constructief opnameverslag van bestaande fundering, draagstructuur, vloeren, dak en aansluitdetails.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true
+    },
+    {
+      "input_id": "HBM-IN-004",
+      "description": "Projectspecifieke geotechnische gegevens en funderingsadvies.",
+      "status": "missing",
+      "severity": "critical",
+      "blocking": true
+    },
+    {
+      "input_id": "HBM-IN-005",
+      "description": "Definitief materialen-, installatie-, brandveiligheids- en Bbl-uitgangspuntenregister.",
+      "status": "missing",
+      "severity": "error",
+      "blocking": true
+    },
+    {
+      "input_id": "HBM-IN-006",
+      "description": "Gecontroleerde parkeerdrukmetingen en bevestiging welke parkeerplaatsen openbaar of privaat zijn.",
+      "status": "missing",
+      "severity": "warning",
+      "blocking": false
+    }
+  ],
+  "commercial_deliverables": [
+    {
+      "deliverable_id": "DEL-01",
+      "name": "3D-impressie",
+      "readiness": "partial",
+      "available_evidence": [
+        "Fotomontage bestaande en nieuwe situatie in definitief bijlagenpakket"
+      ],
+      "remaining_work": [
+        "Controleerbaar 3D-model",
+        "Vier gevelzijden",
+        "Vogelvlucht",
+        "Definitieve materialen en maatvoering"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-02",
+      "name": "Constructieberekeningen",
+      "readiness": "missing",
+      "available_evidence": [],
+      "remaining_work": [
+        "Constructief model",
+        "Belastingen",
+        "Stabiliteit",
+        "Fundering",
+        "UGT/BGT-toetsingen"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-03",
+      "name": "Constructierapport",
+      "readiness": "missing",
+      "available_evidence": [],
+      "remaining_work": [
+        "Uitgangspunten",
+        "Berekeningsresultaten",
+        "Details",
+        "Professionele controle"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-04",
+      "name": "Bouwtekeningen",
+      "readiness": "partial",
+      "available_evidence": [
+        "Beganegrondplattegrond",
+        "Verdiepingsplattegrond",
+        "Indicatief architectonisch overzicht",
+        "Gevels en doorsneden op overzichtsblad"
+      ],
+      "remaining_work": [
+        "Definitieve bestaande/nieuwe situatie",
+        "Volledige maatvoering",
+        "Schaalcontrole",
+        "Detailtekeningen",
+        "DO/TO-uitwerking"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-05",
+      "name": "Technisch bestek",
+      "readiness": "missing",
+      "available_evidence": [],
+      "remaining_work": [
+        "Materialen",
+        "Uitvoeringseisen",
+        "Kwaliteits- en keuringsbepalingen"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-06",
+      "name": "Bestekstekeningen",
+      "readiness": "missing",
+      "available_evidence": [],
+      "remaining_work": [
+        "Definitieve detaillering",
+        "Constructiedetails",
+        "Aansluitdetails",
+        "Tekeningenregister"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-07",
+      "name": "Kostencalculatie",
+      "readiness": "missing",
+      "available_evidence": [],
+      "remaining_work": [
+        "Definitieve hoeveelheden",
+        "Prijspeil",
+        "Eenheidsprijzen",
+        "Risico en onvoorzien"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-08",
+      "name": "Materiaalstaten",
+      "readiness": "missing",
+      "available_evidence": [],
+      "remaining_work": [
+        "Elementenregister",
+        "Hoeveelheden",
+        "Materiaalkwaliteiten",
+        "Herkomst naar modelobject"
+      ]
+    },
+    {
+      "deliverable_id": "DEL-09",
+      "name": "Situatieschets",
+      "readiness": "partial",
+      "available_evidence": [
+        "Kadastrale preview",
+        "Indicatieve parkeerzones"
+      ],
+      "remaining_work": [
+        "Originele DWG",
+        "Perceelsgrenzen",
+        "Noordpijl",
+        "Schaal",
+        "Afstanden en maatvoering",
+        "Directe omgeving"
+      ]
+    }
+  ]
+}
