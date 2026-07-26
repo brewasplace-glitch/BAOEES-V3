@@ -1,0 +1,43 @@
+{
+  "id": "PHX-BB20-QTO-1.0.0",
+  "name": "Quantity Take-Off Engine",
+  "build_block": "BB20",
+  "version": "1.0.0",
+  "schema_version": "phoenix.quantity-takeoff-report/1.0",
+  "depends_on": [
+    "BB16 Building Model Engine",
+    "BB18.1 Architectural Drawing Engine",
+    "BB19 Structural Design Engine"
+  ],
+  "capabilities": [
+    "element_quantities",
+    "material_quantities",
+    "level_totals",
+    "work_section_totals",
+    "source_object_traceability",
+    "drawing_reference_traceability",
+    "declared_quantity_ingestion",
+    "structural_model_precedence",
+    "json_export",
+    "csv_export",
+    "dependency_free_xlsx_export",
+    "deterministic_quantity_ids",
+    "deterministic_report_fingerprint"
+  ],
+  "measurement_policy": {
+    "release_stage": "concept",
+    "certifying": false,
+    "negative_dimensions": "error",
+    "missing_dimensions": "warning",
+    "structural_model_overrides_duplicate_structural_building_elements": true
+  },
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "export_validation",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}
