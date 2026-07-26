@@ -1,0 +1,14 @@
+{
+  "id": "PHX-RULE-MAPPING-CW-1.0",
+  "jurisdiction_id": "CW",
+  "version": "1.0.0",
+  "target_profile": "configs/phoenix/building_code_profiles/foundations/cw_foundation_v1_0.json",
+  "required_rule_ids": [],
+  "mappings": [],
+  "status": "draft-foundation",
+  "metadata": {
+    "foundation_only": true,
+    "regulatory_activation_allowed": false,
+    "mapping_workflow": "source-verify_then_map_then_review_then-approve"
+  }
+}

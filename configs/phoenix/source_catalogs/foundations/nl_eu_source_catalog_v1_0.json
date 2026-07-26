@@ -1,0 +1,41 @@
+{
+  "id": "PHX-SOURCE-CATALOG-NL-EU-1.0",
+  "jurisdiction_id": "NL-EU",
+  "version": "1.0.0",
+  "status": "foundation-unverified",
+  "sources": [
+    {
+      "id": "PHX-SOURCE-NL-EU-FOUNDATION",
+      "jurisdiction_id": "NL-EU",
+      "title": "European Netherlands building-regulation source foundation",
+      "authority": "Official Netherlands legislation portal",
+      "canonical_uri": "https://wetten.overheid.nl/BWBR0041297/",
+      "status": "discovered",
+      "rights_class": "metadata_only",
+      "content_storage_policy": "metadata_only_until_review",
+      "required": true,
+      "publication_id": null,
+      "edition": null,
+      "effective_from": null,
+      "effective_until": null,
+      "verified_at": null,
+      "verified_by": null,
+      "snapshot_sha256": null,
+      "topics": [
+        "building-regulation",
+        "permit",
+        "technical-requirements"
+      ],
+      "metadata": {
+        "foundation_only": true,
+        "automatic_network_access": false,
+        "requires_human_source_verification": true
+      }
+    }
+  ],
+  "metadata": {
+    "foundation_only": true,
+    "activation_allowed": false,
+    "source_text_embedded": false
+  }
+}

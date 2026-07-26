@@ -1,0 +1,41 @@
+{
+  "id": "PHX-SOURCE-CATALOG-SR-1.0",
+  "jurisdiction_id": "SR",
+  "version": "1.0.0",
+  "status": "foundation-unverified",
+  "sources": [
+    {
+      "id": "PHX-SOURCE-SR-FOUNDATION",
+      "jurisdiction_id": "SR",
+      "title": "Suriname building-permit source foundation",
+      "authority": "Government of Suriname",
+      "canonical_uri": "https://gov.sr/thema/bouwvergunning/",
+      "status": "discovered",
+      "rights_class": "metadata_only",
+      "content_storage_policy": "metadata_only_until_review",
+      "required": true,
+      "publication_id": null,
+      "edition": null,
+      "effective_from": null,
+      "effective_until": null,
+      "verified_at": null,
+      "verified_by": null,
+      "snapshot_sha256": null,
+      "topics": [
+        "building-permit",
+        "spatial-rules",
+        "public-works"
+      ],
+      "metadata": {
+        "foundation_only": true,
+        "automatic_network_access": false,
+        "requires_human_source_verification": true
+      }
+    }
+  ],
+  "metadata": {
+    "foundation_only": true,
+    "activation_allowed": false,
+    "source_text_embedded": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "PHX-SOURCE-CATALOG-AW-1.0",
+  "jurisdiction_id": "AW",
+  "version": "1.0.0",
+  "status": "foundation-unverified",
+  "sources": [
+    {
+      "id": "PHX-SOURCE-AW-FOUNDATION",
+      "jurisdiction_id": "AW",
+      "title": "Aruba spatial and building source foundation",
+      "authority": "Government of Aruba",
+      "canonical_uri": "https://www.dip.aw/wp-content/uploads/2021/08/AB-2021-No.-123-Aruba-ROPV.pdf",
+      "status": "discovered",
+      "rights_class": "metadata_only",
+      "content_storage_policy": "metadata_only_until_review",
+      "required": true,
+      "publication_id": null,
+      "edition": null,
+      "effective_from": null,
+      "effective_until": null,
+      "verified_at": null,
+      "verified_by": null,
+      "snapshot_sha256": null,
+      "topics": [
+        "spatial-plan",
+        "building-permit",
+        "land-use"
+      ],
+      "metadata": {
+        "foundation_only": true,
+        "automatic_network_access": false,
+        "requires_human_source_verification": true
+      }
+    }
+  ],
+  "metadata": {
+    "foundation_only": true,
+    "activation_allowed": false,
+    "source_text_embedded": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "PHX-BB17.3-SARM-1.0.0",
+  "name": "Jurisdiction Source Acquisition & Rule Mapping Engine",
+  "build_block": "BB17.3",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB17 Building Code Engine v1.0.0",
+    "BB17.1 Codepack Governance & Source Registry v1.0.0",
+    "BB17.2 Multi-Jurisdiction Building Codepack Foundation v1.0.0",
+    "BB18 Phoenix Release Framework v1.0.0"
+  ],
+  "jurisdictions": [
+    "NL-EU",
+    "SR",
+    "BES",
+    "AW",
+    "CW",
+    "SX"
+  ],
+  "safety_policy": {
+    "automatic_network_access": false,
+    "automatic_source_text_storage": false,
+    "credentials_in_source_uri_allowed": false,
+    "regulatory_activation_requires_verified_sources": true,
+    "regulatory_activation_requires_approved_mappings": true,
+    "cross_jurisdiction_mapping_allowed": false
+  },
+  "capabilities": [
+    "source_catalog_registry",
+    "rights_aware_acquisition_planning",
+    "source_status_and_validity_metadata",
+    "rule_to_source_locator_mapping",
+    "mapping_review_workflow",
+    "coverage_and_activation_gate",
+    "deterministic_catalog_mapping_and_assessment_fingerprints",
+    "multi_jurisdiction_foundation_reports"
+  ]
+}

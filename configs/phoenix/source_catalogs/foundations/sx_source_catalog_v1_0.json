@@ -1,0 +1,41 @@
+{
+  "id": "PHX-SOURCE-CATALOG-SX-1.0",
+  "jurisdiction_id": "SX",
+  "version": "1.0.0",
+  "status": "foundation-unverified",
+  "sources": [
+    {
+      "id": "PHX-SOURCE-SX-FOUNDATION",
+      "jurisdiction_id": "SX",
+      "title": "Sint Maarten building-permit source foundation",
+      "authority": "Government of Sint Maarten",
+      "canonical_uri": "https://www.sintmaartengov.org/services/Pages/Building-Permit-Application-Form.aspx",
+      "status": "discovered",
+      "rights_class": "metadata_only",
+      "content_storage_policy": "metadata_only_until_review",
+      "required": true,
+      "publication_id": null,
+      "edition": null,
+      "effective_from": null,
+      "effective_until": null,
+      "verified_at": null,
+      "verified_by": null,
+      "snapshot_sha256": null,
+      "topics": [
+        "building-permit",
+        "building-code",
+        "public-safety"
+      ],
+      "metadata": {
+        "foundation_only": true,
+        "automatic_network_access": false,
+        "requires_human_source_verification": true
+      }
+    }
+  ],
+  "metadata": {
+    "foundation_only": true,
+    "activation_allowed": false,
+    "source_text_embedded": false
+  }
+}

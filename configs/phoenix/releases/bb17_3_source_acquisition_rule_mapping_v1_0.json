@@ -1,0 +1,74 @@
+{
+  "id": "PHX-RELEASE-BB17.3-1.0.0",
+  "name": "BB17.3 Source Acquisition and Rule Mapping",
+  "version": "1.0.0",
+  "branch": "project-phoenix",
+  "commit_message": "feat(bb17.3): add source acquisition and rule mapping v1.0.0",
+  "artifacts": [
+    {
+      "path": "phoenix/source_mapping",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "configs/phoenix/source_catalogs/foundations",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "configs/phoenix/rule_mappings/foundations",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "outputs/runtime/bb17_3",
+      "policy": "ignore",
+      "required": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "PHX-GATE-BB17.3-COMPILE",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "phoenix/source_mapping"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "PHX-GATE-BB17.3-TEST",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/source_mapping"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "PHX-GATE-BB17.3-DIFF",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    }
+  ],
+  "metadata": {
+    "foundation_catalog_count": 6,
+    "foundation_mapping_set_count": 6,
+    "network_execution": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "PHX-SOURCE-CATALOG-CW-1.0",
+  "jurisdiction_id": "CW",
+  "version": "1.0.0",
+  "status": "foundation-unverified",
+  "sources": [
+    {
+      "id": "PHX-SOURCE-CW-FOUNDATION",
+      "jurisdiction_id": "CW",
+      "title": "Curaçao building and housing source foundation",
+      "authority": "Government of Curaçao",
+      "canonical_uri": "https://gobiernu.cw/wp-content/uploads/2025/06/73-GT.-Bouw-en-Woningverordening-1935-1.pdf",
+      "status": "discovered",
+      "rights_class": "metadata_only",
+      "content_storage_policy": "metadata_only_until_review",
+      "required": true,
+      "publication_id": null,
+      "edition": null,
+      "effective_from": null,
+      "effective_until": null,
+      "verified_at": null,
+      "verified_by": null,
+      "snapshot_sha256": null,
+      "topics": [
+        "building-regulation",
+        "housing",
+        "spatial-rules"
+      ],
+      "metadata": {
+        "foundation_only": true,
+        "automatic_network_access": false,
+        "requires_human_source_verification": true
+      }
+    }
+  ],
+  "metadata": {
+    "foundation_only": true,
+    "activation_allowed": false,
+    "source_text_embedded": false
+  }
+}
