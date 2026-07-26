@@ -1,0 +1,32 @@
+{
+  "id": "PHX-PTDM-1.0.0",
+  "name": "Phoenix Toolchain & Dependency Manager",
+  "version": "1.0.0",
+  "schema_version": "phoenix.toolchain-report/1.0",
+  "milestone": "PRE-BB17-STABILIZATION",
+  "policy": {
+    "automatic_external_downloads": false,
+    "automatic_python_package_installation": false,
+    "explicit_installation_approval_required": true,
+    "runtime_reports_are_git_ignored": true
+  },
+  "managed_dependencies": [
+    "Python",
+    "Git",
+    "IfcOpenShell",
+    "OpenSeesPy",
+    "FreeCAD",
+    "Blender",
+    "CalculiX",
+    "SketchUp",
+    "SCIA Engineer"
+  ],
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}
