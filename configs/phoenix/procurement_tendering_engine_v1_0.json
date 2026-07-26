@@ -1,0 +1,55 @@
+{
+  "id": "PHX-BB25-PTE-1.0.0",
+  "name": "Procurement & Tendering Engine",
+  "build_block": "BB25",
+  "version": "1.0.0",
+  "schema_version": "phoenix.procurement-tendering-report/1.0",
+  "depends_on": [
+    "BB20 Quantity Take-Off Engine",
+    "BB21 Cost Estimation Engine",
+    "BB22 BIM Coordination Engine",
+    "BB23 Construction Documentation Engine",
+    "BB24 Construction Planning & Scheduling Engine"
+  ],
+  "capabilities": [
+    "procurement_package_derivation",
+    "tender_line_schedule",
+    "bb21_budget_link",
+    "bb24_required_date_link",
+    "supplier_and_bid_registers",
+    "bid_currency_validation",
+    "missing_and_extra_line_detection",
+    "scope_exclusion_detection",
+    "normalized_evaluated_bid_total",
+    "price_completeness_delivery_scoring",
+    "three_transparent_award_scenarios",
+    "json_and_csv_exports",
+    "styled_xlsx_workbook",
+    "docx_and_pdf_request_for_tender",
+    "checksum_and_dossier_exports",
+    "deterministic_fingerprints"
+  ],
+  "award_policy": {
+    "automatic_award": false,
+    "automatic_currency_conversion": false,
+    "default_currency": "USD",
+    "scenarios": {
+      "lowest_evaluated_cost": {"price": 0.80, "completeness": 0.15, "delivery": 0.05},
+      "balanced": {"price": 0.55, "completeness": 0.30, "delivery": 0.15},
+      "schedule_priority": {"price": 0.35, "completeness": 0.20, "delivery": 0.45}
+    },
+    "certifying": false
+  },
+  "quality_gates": [
+    "python_compile",
+    "unit_tests",
+    "self_test",
+    "json_csv_xlsx_docx_pdf_zip_validation",
+    "xlsx_open_validation",
+    "docx_render_validation",
+    "pdf_render_validation",
+    "git_diff_check",
+    "clean_commit",
+    "push_verification"
+  ]
+}
