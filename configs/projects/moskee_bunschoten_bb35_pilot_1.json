@@ -9,7 +9,33 @@
     "building_use": "Moskee / bijeenkomstfunctie",
     "architect": "A. Brewster Architects.sr",
     "contact_email": "info@architect.sr",
-    "contact_phone": "+31 6 86101700"
+    "contact_phone": "+31 6 86101700",
+    "authoritative_scope": {
+      "decision_id": "HBM-SCOPE-001",
+      "selected_option": "B",
+      "status": "authoritative",
+      "extension_width_m": 7.0,
+      "extension_depth_m": 10.0,
+      "extension_footprint_m2": 70.0,
+      "number_of_extension_storeys": 2,
+      "gross_extension_area_m2": 140.0,
+      "description": "Uitbreiding 7,00 x 10,00 m over twee bouwlagen, circa 140 m² bruto.",
+      "applies_to": [
+        "3d_impression",
+        "architectural_drawings",
+        "structural_calculations",
+        "structural_report",
+        "permit_documents",
+        "parking_analysis",
+        "aerius_assessment",
+        "technical_specification",
+        "specification_drawings",
+        "quantity_takeoff",
+        "cost_calculation",
+        "material_schedules",
+        "site_plan"
+      ]
+    }
   },
   "strategic_decisions": [
     {
@@ -27,9 +53,11 @@
           "consequence": "Projectomschrijving, parkeren, vergunningstrategie, AERIUS, constructie, kosten en bestek moeten op deze grotere omvang worden gebaseerd."
         }
       ],
-      "selected_option": null,
-      "status": "open",
-      "blocking": true
+      "selected_option": "B",
+      "status": "resolved",
+      "blocking": true,
+      "resolved_basis": "User-approved authoritative scope: 7.00 x 10.00 m, two storeys, approximately 140 m² gross extension.",
+      "resolved_at_release": "BB35-PILOT-001-HBM/v1.1.0"
     }
   ],
   "verified_conflicts": [
@@ -37,8 +65,9 @@
       "conflict_id": "HBM-CONFLICT-001",
       "severity": "critical",
       "description": "Het definitieve bijlagenpakket noemt een uitbreiding van circa 20 m², terwijl dezelfde set gecorrigeerde maatvoering van 7.000 x 10.000 mm voor begane grond en verdieping bevat.",
-      "status": "open",
-      "blocking": true
+      "status": "resolved",
+      "blocking": false,
+      "resolution": "The 7.00 x 10.00 m two-storey extension is authoritative. All references to approximately 20 m² must be revised."
     },
     {
       "conflict_id": "HBM-CONFLICT-002",
@@ -111,8 +140,15 @@
         "Controleerbaar 3D-model",
         "Vier gevelzijden",
         "Vogelvlucht",
-        "Definitieve materialen en maatvoering"
-      ]
+        "Definitieve materialen en maatvoering",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-02",
@@ -124,8 +160,15 @@
         "Belastingen",
         "Stabiliteit",
         "Fundering",
-        "UGT/BGT-toetsingen"
-      ]
+        "UGT/BGT-toetsingen",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-03",
@@ -136,8 +179,15 @@
         "Uitgangspunten",
         "Berekeningsresultaten",
         "Details",
-        "Professionele controle"
-      ]
+        "Professionele controle",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-04",
@@ -154,8 +204,15 @@
         "Volledige maatvoering",
         "Schaalcontrole",
         "Detailtekeningen",
-        "DO/TO-uitwerking"
-      ]
+        "DO/TO-uitwerking",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-05",
@@ -165,8 +222,15 @@
       "remaining_work": [
         "Materialen",
         "Uitvoeringseisen",
-        "Kwaliteits- en keuringsbepalingen"
-      ]
+        "Kwaliteits- en keuringsbepalingen",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-06",
@@ -177,8 +241,15 @@
         "Definitieve detaillering",
         "Constructiedetails",
         "Aansluitdetails",
-        "Tekeningenregister"
-      ]
+        "Tekeningenregister",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-07",
@@ -189,8 +260,15 @@
         "Definitieve hoeveelheden",
         "Prijspeil",
         "Eenheidsprijzen",
-        "Risico en onvoorzien"
-      ]
+        "Risico en onvoorzien",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-08",
@@ -201,8 +279,15 @@
         "Elementenregister",
         "Hoeveelheden",
         "Materiaalkwaliteiten",
-        "Herkomst naar modelobject"
-      ]
+        "Herkomst naar modelobject",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     },
     {
       "deliverable_id": "DEL-09",
@@ -218,8 +303,48 @@
         "Noordpijl",
         "Schaal",
         "Afstanden en maatvoering",
-        "Directe omgeving"
-      ]
+        "Directe omgeving",
+        "Uitwerken en controleren op basis van 7,00 x 10,00 m, twee bouwlagen en circa 140 m² bruto uitbreiding"
+      ],
+      "authoritative_scope_basis": {
+        "width_m": 7.0,
+        "depth_m": 10.0,
+        "storeys": 2,
+        "gross_extension_area_m2": 140.0
+      }
     }
-  ]
+  ],
+  "pilot_revision": "1.1.0",
+  "scope_status": "authoritative_scope_B",
+  "superseded_scope_statements": [
+    {
+      "statement": "Uitbreiding circa 20 m²",
+      "status": "superseded",
+      "replacement": "Uitbreiding 7,00 x 10,00 m over twee bouwlagen, circa 140 m² bruto."
+    }
+  ],
+  "mandatory_propagation": {
+    "basis": "authoritative_scope_B",
+    "footprint_m2": 70.0,
+    "gross_extension_area_m2": 140.0,
+    "storeys": 2,
+    "modules": [
+      "building_model",
+      "architectural_drawings",
+      "structural_design",
+      "quantity_takeoff",
+      "cost_estimation",
+      "bim_coordination",
+      "construction_documentation",
+      "construction_planning",
+      "procurement_tendering",
+      "permit_and_bopa",
+      "parking_and_traffic",
+      "aerius",
+      "technical_specification",
+      "material_schedules",
+      "site_plan"
+    ],
+    "rule": "No downstream module may use the superseded 20 m² scope."
+  }
 }

@@ -1,0 +1,38 @@
+{
+  "schema_version": "phoenix.bb35.scope-decision/1.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "decision_id": "HBM-SCOPE-001",
+  "selected_option": "B",
+  "status": "authoritative",
+  "decision": {
+    "extension_width_m": 7.0,
+    "extension_depth_m": 10.0,
+    "extension_footprint_m2": 70.0,
+    "number_of_extension_storeys": 2,
+    "gross_extension_area_m2": 140.0
+  },
+  "supersedes": [
+    "All project references to an extension of approximately 20 m²."
+  ],
+  "mandatory_application": [
+    "3D impression",
+    "structural calculations",
+    "structural report",
+    "building drawings",
+    "permit/BOPA documents",
+    "parking and traffic analysis",
+    "AERIUS assessment",
+    "technical specification",
+    "specification drawings",
+    "quantity take-off",
+    "cost calculation",
+    "material schedules",
+    "site plan"
+  ],
+  "production_release_effect": {
+    "bb35_pilot_completed": false,
+    "bb36_unlock_allowed": false,
+    "reason": "The scope conflict is resolved, but verified structural, geotechnical, permit and measurement inputs are still required."
+  }
+}
