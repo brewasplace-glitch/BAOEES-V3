@@ -1,0 +1,74 @@
+{
+  "id": "PHX-RELEASE-BB17.1-BB17.2-BB18-1.0.0",
+  "name": "Governance, Multi-Jurisdiction Foundation and Release Framework",
+  "version": "1.0.0",
+  "branch": "project-phoenix",
+  "commit_message": "release: add BB17.1 BB17.2 and BB18 v1.0.0",
+  "artifacts": [
+    {
+      "path": "phoenix/codepack_governance",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "phoenix/multi_jurisdiction",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "phoenix/release_framework",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "outputs/runtime/releases",
+      "policy": "ignore",
+      "required": false
+    },
+    {
+      "path": "outputs/runtime/releases/staging",
+      "policy": "clean",
+      "required": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "PHX-GATE-COMPILE",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "phoenix"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "PHX-GATE-TEST",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "PHX-GATE-DIFF",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    }
+  ]
+}

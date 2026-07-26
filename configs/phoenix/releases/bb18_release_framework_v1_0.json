@@ -1,0 +1,74 @@
+{
+  "id": "PHX-RELEASE-BB18-1.0.0",
+  "name": "Phoenix Release Framework v1.0",
+  "version": "1.0.0",
+  "branch": "project-phoenix",
+  "commit_message": "feat(bb18): add Phoenix Release Framework v1.0.0",
+  "artifacts": [
+    {
+      "path": "phoenix/release_framework/__init__.py",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "phoenix/release_framework/manifest.py",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "phoenix/release_framework/framework.py",
+      "policy": "track",
+      "required": true
+    },
+    {
+      "path": "outputs/runtime/releases",
+      "policy": "ignore",
+      "required": false
+    },
+    {
+      "path": "outputs/runtime/releases/staging",
+      "policy": "clean",
+      "required": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "PHX-GATE-COMPILE",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "phoenix/release_framework"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "PHX-GATE-TEST",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/release_framework"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    },
+    {
+      "id": "PHX-GATE-DIFF",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "allowed_exit_codes": [
+        0
+      ]
+    }
+  ]
+}

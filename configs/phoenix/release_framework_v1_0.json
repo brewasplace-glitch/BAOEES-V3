@@ -1,0 +1,11 @@
+{
+  "id": "PHX-BB18-PRF-1.0.0",
+  "name": "Phoenix Release Framework",
+  "build_block": "BB18",
+  "version": "1.0.0",
+  "policies": [
+    "track",
+    "ignore",
+    "clean"
+  ]
+}
