@@ -1,0 +1,25 @@
+{
+  "id": "PHX-BB18.1-ADE-1.0.0",
+  "name": "Architectural Drawing Engine",
+  "build_block": "BB18.1",
+  "version": "1.0.0",
+  "depends_on": [
+    "BB16 Building Model Engine v1.0.2"
+  ],
+  "sheet_families": [
+    "site",
+    "plan",
+    "elevation",
+    "section",
+    "schedule"
+  ],
+  "outputs": [
+    "drawing_manifest_json",
+    "concept_plan_svg"
+  ],
+  "quality_boundary": {
+    "status": "concept-coordination",
+    "permit_certification": false,
+    "professional_review_required": true
+  }
+}
