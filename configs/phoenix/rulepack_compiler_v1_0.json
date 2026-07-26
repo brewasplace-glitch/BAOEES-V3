@@ -1,0 +1,30 @@
+{
+  "id": "PHX-BB17.4-RPC-1.0.0",
+  "name": "Jurisdiction Rulepack Compiler & Validation Engine",
+  "build_block": "BB17.4",
+  "version": "1.0.0",
+  "jurisdictions": [
+    "NL-EU",
+    "SR",
+    "BES",
+    "AW",
+    "CW",
+    "SX"
+  ],
+  "activation_policy": {
+    "compiled_profiles_are_active": false,
+    "release_review_required": true,
+    "approved_mapping_required": true,
+    "verified_source_required": true,
+    "validated_definition_set_required": true
+  },
+  "capabilities": [
+    "source_mapping_to_executable_profile",
+    "cross_jurisdiction_blocking",
+    "source_and_definition_coverage",
+    "safe_expression_validation",
+    "deterministic_compilation_fingerprint",
+    "blocked_and_compiled_outputs",
+    "bb17_profile_schema_output"
+  ]
+}
