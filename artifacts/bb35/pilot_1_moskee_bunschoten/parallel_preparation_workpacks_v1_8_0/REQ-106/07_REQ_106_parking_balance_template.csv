@@ -1,0 +1,4 @@
+﻿scenario,authoritative_persons,verified_public_capacity,measured_occupied_by_other_users,measured_available_capacity,calculated_project_demand,surplus_or_deficit,professional_conclusion
+regular_future,150,,,,,,
+friday_prayer_future,125,,,,,,
+special_peak,200,,,,,,

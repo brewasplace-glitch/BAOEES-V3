@@ -1,0 +1,9 @@
+﻿requirement_id,discipline,topic,input_status,professional_action
+105-R-01,use_and_occupancy,authoritative occupancy,AVAILABLE,Confirm applicability and use as common calculation basis.
+105-R-02,fire_safety,escape routes and capacities,CALCULATION_REQUIRED,"Calculate route widths, travel distances and exits."
+105-R-03,fire_safety,compartmentation and fire resistance,ASSESSMENT_REQUIRED,Define required compartments and performance.
+105-R-04,ventilation,ventilation capacity,CALCULATION_REQUIRED,Calculate statutory minimum ventilation by room and use.
+105-R-05,installations,no kitchen function,OWNER_APPROVED,Exclude kitchen-specific extraction and gas systems.
+105-R-06,accessibility,routes and sanitary provisions,ASSESSMENT_REQUIRED,Verify accessibility and sanitary requirements.
+105-R-07,energy,statutory minimum,OWNER_APPROVED,Apply statutory minimum without enhanced claims.
+105-R-08,coordination,drawing coordination,CURRENT_DRAWINGS_REQUIRED,Coordinate calculations with validated current drawings.

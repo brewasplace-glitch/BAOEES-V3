@@ -1,0 +1,41 @@
+{
+  "protocol": [
+    {
+      "instruction": "Confirm each parking space physically and assign a subarea and availability classification.",
+      "protocol_id": "106-P-01",
+      "step": "inventory"
+    },
+    {
+      "instruction": "Record occupied, free, inaccessible and disputed spaces.",
+      "protocol_id": "106-P-02",
+      "step": "baseline"
+    },
+    {
+      "instruction": "Record mosque attendance or a traceable proxy for each measurement.",
+      "protocol_id": "106-P-03",
+      "step": "mosque_use"
+    },
+    {
+      "instruction": "Record significant simultaneous use by surrounding facilities.",
+      "protocol_id": "106-P-04",
+      "step": "other_users"
+    },
+    {
+      "instruction": "Attach time-stamped photographs and a signed count sheet.",
+      "protocol_id": "106-P-05",
+      "step": "evidence"
+    },
+    {
+      "instruction": "Verify whether every counted space is public, private or subject to restrictions.",
+      "protocol_id": "106-P-06",
+      "step": "legal_availability"
+    },
+    {
+      "instruction": "Calculate occupancy by subarea and total without treating the provisional 300-space hypothesis as proven.",
+      "protocol_id": "106-P-07",
+      "step": "analysis"
+    }
+  ],
+  "provisional_capacity_spaces": 300,
+  "warning": "The 300-space figure is a provisional field hypothesis."
+}

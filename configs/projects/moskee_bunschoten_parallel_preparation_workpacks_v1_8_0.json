@@ -1,0 +1,86 @@
+{
+  "schema_version": "phoenix.bb35.parallel-preparation-workpacks-config/1.0",
+  "version": "1.8.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "authoritative_occupancy_program_id": "HBM-OCC-2026-001",
+  "strategic_basis": {
+    "kitchen_function": "geen_keukenfunctie",
+    "installation_sustainability_level": "wettelijk_minimum",
+    "parking_strategy": "openbare_capaciteit",
+    "execution_phasing": "gefaseerde_uitvoering",
+    "mosque_remains_in_use_during_construction": true
+  },
+  "parking_hypothesis": {
+    "status": "PROVISIONAL_FIELD_HYPOTHESIS_NOT_VERIFIED",
+    "total_spaces": 300,
+    "subareas": [
+      {
+        "area_id": "P-01",
+        "name": "Zwembad De Duker",
+        "provisional_spaces": 100
+      },
+      {
+        "area_id": "P-02",
+        "name": "CGV Agilitas en omliggende voorzieningen",
+        "provisional_spaces": 50
+      },
+      {
+        "area_id": "P-03",
+        "name": "Denksportcentrum en omgeving",
+        "provisional_spaces": 30
+      },
+      {
+        "area_id": "P-04",
+        "name": "Openbare parkeerstroken",
+        "provisional_spaces": 50
+      },
+      {
+        "area_id": "P-05",
+        "name": "Overige openbare parkeerplaatsen",
+        "provisional_spaces": 70
+      }
+    ]
+  },
+  "measurement_windows": [
+    {
+      "measurement_id": "M-01",
+      "scenario": "regular_weekday",
+      "proposed_window": "19:00-20:00",
+      "status": "PROPOSED_ADVISER_CONFIRMATION_REQUIRED"
+    },
+    {
+      "measurement_id": "M-02",
+      "scenario": "friday_pre_peak",
+      "proposed_window": "15:30-16:00",
+      "status": "PROPOSED_ADVISER_CONFIRMATION_REQUIRED"
+    },
+    {
+      "measurement_id": "M-03",
+      "scenario": "friday_prayer_peak",
+      "proposed_window": "16:30-17:30",
+      "status": "PROPOSED_ADVISER_CONFIRMATION_REQUIRED"
+    },
+    {
+      "measurement_id": "M-04",
+      "scenario": "saturday_active_use",
+      "proposed_window": "12:00-13:00",
+      "status": "PROPOSED_ADVISER_CONFIRMATION_REQUIRED"
+    },
+    {
+      "measurement_id": "M-05",
+      "scenario": "sunday_active_use",
+      "proposed_window": "18:00-19:00",
+      "status": "PROPOSED_ADVISER_CONFIRMATION_REQUIRED"
+    }
+  ],
+  "policy": {
+    "no_professional_result_fabrication": true,
+    "parking_hypothesis_is_not_final_capacity": true,
+    "no_aerius_emission_values_without_source_data": true,
+    "no_req_closure_without_signed_evidence": true,
+    "req107_formal_cosign_still_required": true,
+    "final_generation_allowed": false,
+    "bb36_unlock_allowed": false
+  }
+}
