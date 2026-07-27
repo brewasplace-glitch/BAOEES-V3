@@ -1,0 +1,83 @@
+{
+  "schema_version": "phoenix.bb35.req107-owner-decision-input/1.0",
+  "version": "1.6.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "decision_date": "2026-07-27",
+  "approval_basis": "explicit_project_owner_instruction",
+  "normalization_note": "The supplied phrase '1 mal' is normalized to one occurrence per year. All opening times are stored in 24-hour notation without changing their meaning.",
+  "occupancy": {
+    "regular": {
+      "existing_persons": 80,
+      "future_persons": 150
+    },
+    "friday_prayer": {
+      "existing_persons": 65,
+      "future_persons": 125
+    },
+    "special_peak": {
+      "maximum_persons": 200,
+      "frequency_per_year": 1
+    }
+  },
+  "opening_hours": [
+    {
+      "schedule_id": "SCH-MO-TH",
+      "period": "monday_through_thursday",
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday"
+      ],
+      "start_time": "07:00",
+      "end_time": "23:00"
+    },
+    {
+      "schedule_id": "SCH-FR",
+      "period": "friday",
+      "days": [
+        "friday"
+      ],
+      "start_time": "16:00",
+      "end_time": "18:00"
+    },
+    {
+      "schedule_id": "SCH-SA",
+      "period": "saturday",
+      "days": [
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "23:00"
+    },
+    {
+      "schedule_id": "SCH-SU",
+      "period": "sunday",
+      "days": [
+        "sunday"
+      ],
+      "start_time": "10:00",
+      "end_time": "20:00"
+    },
+    {
+      "schedule_id": "SCH-RAMADAN",
+      "period": "ramadan",
+      "days": [
+        "ramadan_days"
+      ],
+      "start_time": "06:00",
+      "end_time": "24:00"
+    },
+    {
+      "schedule_id": "SCH-SPECIAL",
+      "period": "holidays_and_special_activities",
+      "days": [
+        "holidays",
+        "special_activities"
+      ],
+      "start_time": "10:00",
+      "end_time": "20:00"
+    }
+  ]
+}

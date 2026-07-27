@@ -1,0 +1,7 @@
+﻿schedule_id,period,days,start_time,end_time
+SCH-MO-TH,monday_through_thursday,"[""monday"", ""tuesday"", ""wednesday"", ""thursday""]",07:00,23:00
+SCH-FR,friday,"[""friday""]",16:00,18:00
+SCH-SA,saturday,"[""saturday""]",10:00,23:00
+SCH-SU,sunday,"[""sunday""]",10:00,20:00
+SCH-RAMADAN,ramadan,"[""ramadan_days""]",06:00,24:00
+SCH-SPECIAL,holidays_and_special_activities,"[""holidays"", ""special_activities""]",10:00,20:00

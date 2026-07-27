@@ -1,0 +1,4 @@
+﻿scenario,existing_persons,future_persons,increase_persons,increase_percent,frequency_per_year
+regular,80,150,70,87.5,
+friday_prayer,65,125,60,92.31,
+special_peak,,200,,,1

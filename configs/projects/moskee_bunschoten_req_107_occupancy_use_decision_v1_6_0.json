@@ -1,0 +1,21 @@
+{
+  "schema_version": "phoenix.bb35.req107-occupancy-use-decision-config/1.0",
+  "version": "1.6.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "program_id": "HBM-OCC-2026-001",
+  "decision_ids": [
+    "DEC-107-01",
+    "DEC-107-02",
+    "DEC-107-03",
+    "DEC-107-04"
+  ],
+  "formal_cosign_required": true,
+  "downstream_preparation_unlocked": [
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "final_generation_allowed": false,
+  "bb36_unlock_allowed": false
+}
