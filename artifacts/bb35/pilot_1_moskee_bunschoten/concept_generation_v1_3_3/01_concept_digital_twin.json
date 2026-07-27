@@ -1,0 +1,795 @@
+{
+  "assumptions": [
+    {
+      "assumption_id": "A-001",
+      "category": "status",
+      "confidence": "authoritative",
+      "requires_verification": false,
+      "statement": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "assumption_id": "A-002",
+      "category": "geometry",
+      "confidence": "authoritative",
+      "requires_verification": false,
+      "statement": "Extension footprint is 7.00 x 10.00 m."
+    },
+    {
+      "assumption_id": "A-003",
+      "category": "geometry",
+      "confidence": "authoritative",
+      "requires_verification": false,
+      "statement": "Two extension storeys provide approximately 140 m2 gross floor area."
+    },
+    {
+      "assumption_id": "A-004",
+      "category": "levels",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Concept floor-to-floor height is 3.30 m."
+    },
+    {
+      "assumption_id": "A-005",
+      "category": "roof",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Concept roof is a low-slope roof behind a 0.60 m parapet."
+    },
+    {
+      "assumption_id": "A-006",
+      "category": "structure",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Preliminary structural option is a steel frame on a 3 x 3 column grid."
+    },
+    {
+      "assumption_id": "A-007",
+      "category": "structure",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Floor system is provisionally a lightweight composite or precast floor."
+    },
+    {
+      "assumption_id": "A-008",
+      "category": "foundation",
+      "confidence": "unknown",
+      "requires_verification": true,
+      "statement": "Foundation type is unresolved pending structural survey and geotechnical evidence."
+    },
+    {
+      "assumption_id": "A-009",
+      "category": "existing_building",
+      "confidence": "safety_rule",
+      "requires_verification": true,
+      "statement": "No load is transferred to the existing building until the connection is professionally verified."
+    },
+    {
+      "assumption_id": "A-010",
+      "category": "fire",
+      "confidence": "unknown",
+      "requires_verification": true,
+      "statement": "Fire resistance, compartmentation and escape routes require Bbl/fire-safety assessment."
+    },
+    {
+      "assumption_id": "A-011",
+      "category": "occupancy",
+      "confidence": "unknown",
+      "requires_verification": true,
+      "statement": "Occupancy and prayer-place capacity remain external verified inputs."
+    },
+    {
+      "assumption_id": "A-012",
+      "category": "parking",
+      "confidence": "preliminary",
+      "requires_verification": true,
+      "statement": "Available parking information is preliminary and not field-verified."
+    },
+    {
+      "assumption_id": "A-013",
+      "category": "aerius",
+      "confidence": "safety_rule",
+      "requires_verification": true,
+      "statement": "No final AERIUS result is generated without verified activity and traffic data."
+    },
+    {
+      "assumption_id": "A-014",
+      "category": "materials",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Material selections are concept placeholders and may not be procured."
+    },
+    {
+      "assumption_id": "A-015",
+      "category": "cost",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Cost band uses illustrative planning allowances, not market-verified quotations."
+    },
+    {
+      "assumption_id": "A-016",
+      "category": "site",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Site plan is schematic until the original cadastral DWG or survey base is supplied."
+    },
+    {
+      "assumption_id": "A-017",
+      "category": "drawings",
+      "confidence": "concept",
+      "requires_verification": true,
+      "statement": "Room boundaries are reconstructed conceptually from available overview plans."
+    },
+    {
+      "assumption_id": "A-018",
+      "category": "quality",
+      "confidence": "authoritative",
+      "requires_verification": false,
+      "statement": "Every output must retain the concept status notice."
+    }
+  ],
+  "cost_band": {
+    "rows": [
+      {
+        "amount_max_eur": 476000.0,
+        "amount_min_eur": 308000.0,
+        "basis": "140 m2 x EUR 2,200-3,400/m2 illustrative only",
+        "cost_id": "C-001",
+        "description": "Illustrative construction allowance",
+        "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+      },
+      {
+        "amount_max_eur": 85680.0,
+        "amount_min_eur": 36960.0,
+        "basis": "12%-18% planning allowance",
+        "cost_id": "C-002",
+        "description": "Design, engineering and permit allowance",
+        "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+      },
+      {
+        "amount_max_eur": 119000.0,
+        "amount_min_eur": 46200.0,
+        "basis": "15%-25% due to unresolved evidence",
+        "cost_id": "C-003",
+        "description": "Risk and unknown-input allowance",
+        "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+      },
+      {
+        "amount_max_eur": 680680.0,
+        "amount_min_eur": 391160.0,
+        "basis": "not market verified; replace after technical design and quotations",
+        "cost_id": "C-004",
+        "description": "Total concept planning band",
+        "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+      }
+    ],
+    "total_max_eur": 680680.0,
+    "total_min_eur": 391160.0
+  },
+  "generator_version": "1.3.3",
+  "levels": [
+    {
+      "elevation_m": 0.0,
+      "height_m": 3.3,
+      "level_id": "GF",
+      "name": "Ground floor"
+    },
+    {
+      "elevation_m": 3.3,
+      "height_m": 3.3,
+      "level_id": "UF",
+      "name": "Upper floor"
+    },
+    {
+      "elevation_m": 6.6,
+      "height_m": 0.6,
+      "level_id": "RF",
+      "name": "Roof"
+    }
+  ],
+  "materials": [
+    {
+      "category": "primary_structure",
+      "concept_material": "Steel frame - grade/profile unresolved",
+      "material_id": "M-001",
+      "scope": "columns and beams",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "floor",
+      "concept_material": "Composite or precast floor - unresolved",
+      "material_id": "M-002",
+      "scope": "upper floor",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "roof",
+      "concept_material": "Lightweight insulated low-slope roof",
+      "material_id": "M-003",
+      "scope": "roof",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "facade",
+      "concept_material": "Insulated masonry or rainscreen concept",
+      "material_id": "M-004",
+      "scope": "external walls",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "glazing",
+      "concept_material": "Thermally insulated glazing concept",
+      "material_id": "M-005",
+      "scope": "windows and entrance",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "internal_walls",
+      "concept_material": "Lightweight partitions / masonry mix",
+      "material_id": "M-006",
+      "scope": "room separation",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "wet_rooms",
+      "concept_material": "Water-resistant finishes and drainage",
+      "material_id": "M-007",
+      "scope": "ablution and toilets",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "fire",
+      "concept_material": "Fire-rated materials subject to fire strategy",
+      "material_id": "M-008",
+      "scope": "escape and compartmentation",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    },
+    {
+      "category": "foundation",
+      "concept_material": "Reinforced concrete concept only",
+      "material_id": "M-009",
+      "scope": "foundations and ground beams",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "verification_required": true
+    }
+  ],
+  "permit_register": [
+    {
+      "blocking_final": true,
+      "current_status": "brief available; report pending",
+      "discipline": "planning",
+      "item_id": "P-001",
+      "requirement": "BOPA/ETFAL and Omgevingsplan assessment for 140 m2 scope",
+      "responsible_party": "spatial-planning consultant"
+    },
+    {
+      "blocking_final": true,
+      "current_status": "brief available; assessment pending",
+      "discipline": "building_code",
+      "item_id": "P-002",
+      "requirement": "Bbl assessment: use, occupancy, escape, fire, daylight, ventilation, accessibility",
+      "responsible_party": "Bbl/fire advisor"
+    },
+    {
+      "blocking_final": true,
+      "current_status": "blocked by survey and geotechnical inputs",
+      "discipline": "structure",
+      "item_id": "P-003",
+      "requirement": "Structural calculations and report",
+      "responsible_party": "structural engineer"
+    },
+    {
+      "blocking_final": true,
+      "current_status": "preliminary only; field evidence pending",
+      "discipline": "traffic",
+      "item_id": "P-004",
+      "requirement": "Parking, traffic generation and participation",
+      "responsible_party": "traffic consultant"
+    },
+    {
+      "blocking_final": true,
+      "current_status": "activity data pending",
+      "discipline": "nitrogen",
+      "item_id": "P-005",
+      "requirement": "AERIUS construction and operation phases",
+      "responsible_party": "AERIUS/spatial consultant"
+    },
+    {
+      "blocking_final": true,
+      "current_status": "original cadastral DWG pending",
+      "discipline": "site",
+      "item_id": "P-006",
+      "requirement": "Definitive site plan and parcel boundaries",
+      "responsible_party": "architect/surveyor"
+    },
+    {
+      "blocking_final": true,
+      "current_status": "not ready",
+      "discipline": "coordination",
+      "item_id": "P-007",
+      "requirement": "Complete Omgevingsloket submission dossier",
+      "responsible_party": "permit coordinator"
+    }
+  ],
+  "project": {
+    "address": "Bikkersweg 88, 3752 WV Bunschoten-Spakenburg",
+    "architect": "A. Brewster Architects.sr",
+    "authoritative_scope": {
+      "applies_to": [
+        "3d_impression",
+        "architectural_drawings",
+        "structural_calculations",
+        "structural_report",
+        "permit_documents",
+        "parking_analysis",
+        "aerius_assessment",
+        "technical_specification",
+        "specification_drawings",
+        "quantity_takeoff",
+        "cost_calculation",
+        "material_schedules",
+        "site_plan"
+      ],
+      "decision_id": "HBM-SCOPE-001",
+      "description": "Uitbreiding 7,00 x 10,00 m over twee bouwlagen, circa 140 m² bruto.",
+      "extension_depth_m": 10.0,
+      "extension_footprint_m2": 70.0,
+      "extension_width_m": 7.0,
+      "gross_extension_area_m2": 140.0,
+      "number_of_extension_storeys": 2,
+      "selected_option": "B",
+      "status": "authoritative"
+    },
+    "building_use": "Moskee / bijeenkomstfunctie",
+    "contact_email": "info@architect.sr",
+    "contact_phone": "+31 6 86101700",
+    "country": "Nederland",
+    "project_id": "HBM-2026-001",
+    "project_name": "Uitbreiding Haci Bayram Moskee"
+  },
+  "quantities": [
+    {
+      "basis": "7 x 10 x 2",
+      "category": "area",
+      "description": "Gross extension floor area",
+      "item_id": "Q-001",
+      "quantity": 140.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "7 x 10",
+      "category": "area",
+      "description": "Roof area",
+      "item_id": "Q-002",
+      "quantity": 70.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "perimeter x 6.60",
+      "category": "envelope",
+      "description": "Gross external wall area",
+      "item_id": "Q-003",
+      "quantity": 224.4,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "gross facade less 18% openings",
+      "category": "envelope",
+      "description": "Concept net opaque facade area",
+      "item_id": "Q-004",
+      "quantity": 184.01,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "18% opening allowance",
+      "category": "envelope",
+      "description": "Concept external openings",
+      "item_id": "Q-005",
+      "quantity": 40.39,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "9 columns x 6.60",
+      "category": "structure",
+      "description": "Concept steel columns",
+      "item_id": "Q-006",
+      "quantity": 59.4,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m"
+    },
+    {
+      "basis": "51 m per level x 2",
+      "category": "structure",
+      "description": "Concept beam grid length",
+      "item_id": "Q-007",
+      "quantity": 102.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m"
+    },
+    {
+      "basis": "one position per grid column",
+      "category": "foundation",
+      "description": "Concept foundation positions",
+      "item_id": "Q-008",
+      "quantity": 9.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "nr"
+    },
+    {
+      "basis": "3 x 10 m plus 3 x 7 m",
+      "category": "foundation",
+      "description": "Concept ground-beam grid",
+      "item_id": "Q-009",
+      "quantity": 51.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m"
+    },
+    {
+      "basis": "reconstructed room layout allowance",
+      "category": "partitions",
+      "description": "Concept internal partition allowance",
+      "item_id": "Q-010",
+      "quantity": 110.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "gross floor area",
+      "category": "finishes",
+      "description": "Floor finish area",
+      "item_id": "Q-011",
+      "quantity": 140.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    },
+    {
+      "basis": "gross floor area",
+      "category": "ceilings",
+      "description": "Ceiling finish area",
+      "item_id": "Q-012",
+      "quantity": 140.0,
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "unit": "m2"
+    }
+  ],
+  "release": {
+    "bb36_unlock_allowed": false,
+    "final_generation_allowed": false
+  },
+  "risk_register": [
+    {
+      "category": "existing_building",
+      "impact": "critical",
+      "mitigation": "Complete structural survey before final design",
+      "risk": "Unknown existing load path and connection capacity",
+      "risk_id": "R-001",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "geotechnical",
+      "impact": "critical",
+      "mitigation": "Obtain project-specific ground investigation",
+      "risk": "Unknown soil and settlement behaviour",
+      "risk_id": "R-002",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "site",
+      "impact": "high",
+      "mitigation": "Supply DWG/DXF and survey verification",
+      "risk": "No original cadastral/survey base in controlled evidence",
+      "risk_id": "R-003",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "fire",
+      "impact": "critical",
+      "mitigation": "Complete Bbl/fire assessment",
+      "risk": "Occupancy and fire strategy not agreed",
+      "risk_id": "R-004",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "parking",
+      "impact": "high",
+      "mitigation": "Perform counts and secure written use agreements where needed",
+      "risk": "Parking capacity and public/private rights are not field verified",
+      "risk_id": "R-005",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "aerius",
+      "impact": "high",
+      "mitigation": "Prepare verified activity schedule",
+      "risk": "Construction and operational activity data unavailable",
+      "risk_id": "R-006",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "cost",
+      "impact": "high",
+      "mitigation": "Replace with measured quantities and supplier/contractor pricing",
+      "risk": "Concept rates are not market quotations",
+      "risk_id": "R-007",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "scope_coordination",
+      "impact": "high",
+      "mitigation": "Use only the authoritative 140 m2 scope register",
+      "risk": "Legacy 20 m2 references may remain outside controlled records",
+      "risk_id": "R-008",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    },
+    {
+      "category": "design",
+      "impact": "medium",
+      "mitigation": "Complete measured DO/TO architectural design",
+      "risk": "Room layout reconstructed from overview drawings",
+      "risk_id": "R-009",
+      "status": "open - CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+    }
+  ],
+  "schema_version": "phoenix.bb35.moskee-concept-package/1.0",
+  "spaces": [
+    {
+      "area_m2": 33.6,
+      "depth_m": 7.0,
+      "level": "ground_floor",
+      "name": "Prayer / meeting room",
+      "space_id": "GF-01",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 4.8,
+      "x_m": 0.0,
+      "y_m": 0.0
+    },
+    {
+      "area_m2": 10.56,
+      "depth_m": 4.8,
+      "level": "ground_floor",
+      "name": "Conference room",
+      "space_id": "GF-02",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 0.0
+    },
+    {
+      "area_m2": 3.52,
+      "depth_m": 1.6,
+      "level": "ground_floor",
+      "name": "Main entrance",
+      "space_id": "GF-03",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 4.8
+    },
+    {
+      "area_m2": 4.62,
+      "depth_m": 2.1,
+      "level": "ground_floor",
+      "name": "Ablution room",
+      "space_id": "GF-04",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 6.4
+    },
+    {
+      "area_m2": 3.3,
+      "depth_m": 1.5,
+      "level": "ground_floor",
+      "name": "Toilets",
+      "space_id": "GF-05",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 8.5
+    },
+    {
+      "area_m2": 14.4,
+      "depth_m": 3.0,
+      "level": "ground_floor",
+      "name": "Connection / circulation",
+      "space_id": "GF-06",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 4.8,
+      "x_m": 0.0,
+      "y_m": 7.0
+    },
+    {
+      "area_m2": 26.4,
+      "depth_m": 5.5,
+      "level": "upper_floor",
+      "name": "Ladies prayer room",
+      "space_id": "UF-01",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 4.8,
+      "x_m": 0.0,
+      "y_m": 0.0
+    },
+    {
+      "area_m2": 5.94,
+      "depth_m": 2.7,
+      "level": "upper_floor",
+      "name": "Classroom 1",
+      "space_id": "UF-02",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 0.0
+    },
+    {
+      "area_m2": 6.16,
+      "depth_m": 2.8,
+      "level": "upper_floor",
+      "name": "Classroom 2",
+      "space_id": "UF-03",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 2.7
+    },
+    {
+      "area_m2": 6.0,
+      "depth_m": 2.5,
+      "level": "upper_floor",
+      "name": "Void",
+      "space_id": "UF-04",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.4,
+      "x_m": 0.0,
+      "y_m": 5.5
+    },
+    {
+      "area_m2": 6.0,
+      "depth_m": 2.5,
+      "level": "upper_floor",
+      "name": "Landing / circulation",
+      "space_id": "UF-05",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.4,
+      "x_m": 2.4,
+      "y_m": 5.5
+    },
+    {
+      "area_m2": 5.5,
+      "depth_m": 2.5,
+      "level": "upper_floor",
+      "name": "Ablution room",
+      "space_id": "UF-06",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 5.5
+    },
+    {
+      "area_m2": 4.8,
+      "depth_m": 2.0,
+      "level": "upper_floor",
+      "name": "Storage",
+      "space_id": "UF-07",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.4,
+      "x_m": 0.0,
+      "y_m": 8.0
+    },
+    {
+      "area_m2": 4.8,
+      "depth_m": 2.0,
+      "level": "upper_floor",
+      "name": "Upper circulation",
+      "space_id": "UF-08",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.4,
+      "x_m": 2.4,
+      "y_m": 8.0
+    },
+    {
+      "area_m2": 4.4,
+      "depth_m": 2.0,
+      "level": "upper_floor",
+      "name": "Toilet",
+      "space_id": "UF-09",
+      "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+      "width_m": 2.2,
+      "x_m": 4.8,
+      "y_m": 8.0
+    }
+  ],
+  "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+  "structural_concept": {
+    "columns": [
+      {
+        "column_id": "C-11",
+        "height_m": 6.6,
+        "x_m": 0.0,
+        "y_m": 0.0
+      },
+      {
+        "column_id": "C-12",
+        "height_m": 6.6,
+        "x_m": 0.0,
+        "y_m": 5.0
+      },
+      {
+        "column_id": "C-13",
+        "height_m": 6.6,
+        "x_m": 0.0,
+        "y_m": 10.0
+      },
+      {
+        "column_id": "C-21",
+        "height_m": 6.6,
+        "x_m": 3.5,
+        "y_m": 0.0
+      },
+      {
+        "column_id": "C-22",
+        "height_m": 6.6,
+        "x_m": 3.5,
+        "y_m": 5.0
+      },
+      {
+        "column_id": "C-23",
+        "height_m": 6.6,
+        "x_m": 3.5,
+        "y_m": 10.0
+      },
+      {
+        "column_id": "C-31",
+        "height_m": 6.6,
+        "x_m": 7.0,
+        "y_m": 0.0
+      },
+      {
+        "column_id": "C-32",
+        "height_m": 6.6,
+        "x_m": 7.0,
+        "y_m": 5.0
+      },
+      {
+        "column_id": "C-33",
+        "height_m": 6.6,
+        "x_m": 7.0,
+        "y_m": 10.0
+      }
+    ],
+    "connection_rule": "No verified load transfer to existing building",
+    "floor_system_assumption": "Composite or precast floor - unresolved",
+    "foundation_assumption": "Pad/strip or alternative subject to geotechnical design",
+    "grid_x_m": [
+      0.0,
+      3.5,
+      7.0
+    ],
+    "grid_y_m": [
+      0.0,
+      5.0,
+      10.0
+    ],
+    "gross_area_m2": 140.0,
+    "option_id": "S1",
+    "roof_system_assumption": "Lightweight low-slope roof - unresolved",
+    "status": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+    "steel_grade_assumption": "S355 concept only",
+    "storey_heights_m": [
+      3.3,
+      3.3
+    ],
+    "system": "Preliminary independent steel frame"
+  }
+}

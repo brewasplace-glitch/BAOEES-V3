@@ -1,0 +1,13 @@
+﻿item_id,category,description,unit,quantity,basis,status
+Q-001,area,Gross extension floor area,m2,140.0,7 x 10 x 2,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-002,area,Roof area,m2,70.0,7 x 10,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-003,envelope,Gross external wall area,m2,224.4,perimeter x 6.60,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-004,envelope,Concept net opaque facade area,m2,184.01,gross facade less 18% openings,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-005,envelope,Concept external openings,m2,40.39,18% opening allowance,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-006,structure,Concept steel columns,m,59.4,9 columns x 6.60,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-007,structure,Concept beam grid length,m,102.0,51 m per level x 2,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-008,foundation,Concept foundation positions,nr,9.0,one position per grid column,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-009,foundation,Concept ground-beam grid,m,51.0,3 x 10 m plus 3 x 7 m,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-010,partitions,Concept internal partition allowance,m2,110.0,reconstructed room layout allowance,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-011,finishes,Floor finish area,m2,140.0,gross floor area,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+Q-012,ceilings,Ceiling finish area,m2,140.0,gross floor area,CONCEPT - NOT FOR EXECUTION OR SUBMISSION

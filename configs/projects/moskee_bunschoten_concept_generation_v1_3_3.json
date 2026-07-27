@@ -1,0 +1,28 @@
+{
+  "schema_version": "phoenix.bb35.concept-generation-config/1.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "generator_version": "1.3.3",
+  "status_notice": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION",
+  "authoritative_scope": {
+    "width_m": 7.0,
+    "depth_m": 10.0,
+    "storeys": 2,
+    "footprint_m2": 70.0,
+    "gross_area_m2": 140.0
+  },
+  "concept_cost_allowance": {
+    "currency": "EUR",
+    "min_eur_per_m2": 2200.0,
+    "max_eur_per_m2": 3400.0,
+    "market_verified": false
+  },
+  "release_policy": {
+    "concept_generation_allowed": true,
+    "final_generation_allowed": false,
+    "bb36_unlock_allowed": false
+  },
+  "deterministic_text_newline": "LF",
+  "cross_platform_regression_fix": "Internal dossier ZIP uses canonical explicit headers, including create_system=3, to remove Windows/Linux ZipInfo defaults.",
+  "deterministic_dossier_zip_method": "ZIP_STORED_CANONICAL_HEADERS"
+}

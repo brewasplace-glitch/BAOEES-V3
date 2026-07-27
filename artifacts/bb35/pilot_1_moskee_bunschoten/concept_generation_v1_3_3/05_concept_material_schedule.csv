@@ -1,0 +1,10 @@
+﻿material_id,category,concept_material,scope,verification_required,status
+M-001,primary_structure,Steel frame - grade/profile unresolved,columns and beams,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-002,floor,Composite or precast floor - unresolved,upper floor,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-003,roof,Lightweight insulated low-slope roof,roof,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-004,facade,Insulated masonry or rainscreen concept,external walls,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-005,glazing,Thermally insulated glazing concept,windows and entrance,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-006,internal_walls,Lightweight partitions / masonry mix,room separation,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-007,wet_rooms,Water-resistant finishes and drainage,ablution and toilets,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-008,fire,Fire-rated materials subject to fire strategy,escape and compartmentation,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
+M-009,foundation,Reinforced concrete concept only,foundations and ground beams,True,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
