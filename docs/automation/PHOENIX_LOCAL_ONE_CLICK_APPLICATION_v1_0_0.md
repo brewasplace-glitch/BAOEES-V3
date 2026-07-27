@@ -28,3 +28,8 @@ The selected dashboard is not overwritten. A local runtime panel is injected in 
 ## Current workflow availability
 
 The BB35 simulation, integrated dossier and project-leader review are connected. The real drawings and reports workflow is shown but remains disabled until its production engine is installed.
+
+
+## Production engine integration v1.1.0
+
+The real concept drawings and reports workflow is enabled and the generated issue index and complete drawing set can be opened directly from the local dashboard.

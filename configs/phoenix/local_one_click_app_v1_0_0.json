@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local",
+  "application_name": "Project Phoenix Local - Production Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -54,12 +54,22 @@
       "id": "project_folder",
       "label": "Open projectmap",
       "relative_path": "."
+    },
+    {
+      "id": "real_concept_issue_index",
+      "label": "Open echte concepttekeningen en rapporten",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/real_concept_drawings_reports_v1_0_0/06_issue_index.html"
+    },
+    {
+      "id": "real_concept_drawing_set",
+      "label": "Open complete concepttekeningenset",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/real_concept_drawings_reports_v1_0_0/drawings/pdf/BB35_PILOT_1_REAL_CONCEPT_DRAWING_SET_v1_0_0.pdf"
     }
   ],
   "preferred_port": 8765,
   "runtime_root": "outputs/runtime/phoenix_local_app_v1_0_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "workflows": [
     {
       "expect_flag": "--expect-simulation-passed",
@@ -92,10 +102,9 @@
       "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_concept_dossier_review_approval_v2_1_0.py"
     },
     {
-      "disabled_reason": "De productie-engine voor echte tekeningen en rapporten is nog niet geïnstalleerd.",
       "expect_flag": "--expect-production-ready",
       "id": "real_concept_drawings_reports",
-      "label": "Echte concepttekeningen en rapporten",
+      "label": "Maak echte concepttekeningen en rapporten",
       "output_subdir": "real_concept_drawings_reports",
       "required_files": [
         "runners/PROJECT_PHOENIX_BB35_pilot_1_real_concept_drawings_reports.py"

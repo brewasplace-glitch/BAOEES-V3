@@ -35,7 +35,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         )
 
     def test_open_targets_registered(self):
-        self.assertGreaterEqual(len(CONFIG["open_targets"]), 4)
+        self.assertGreaterEqual(len(CONFIG["open_targets"]), 6)
 
     def test_candidate_serialization(self):
         value = DashboardCandidate("index.html", 10, ("Phoenix",)).to_dict()
@@ -92,10 +92,10 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         self.assertTrue(described["bb35_integrated_concept_dossier"]["available"])
         self.assertTrue(described["bb35_project_leader_review"]["available"])
 
-    def test_production_workflow_stays_gated(self):
+    def test_production_workflow_is_available(self):
         registry = WorkflowRegistry(ROOT, CONFIG)
         described = {item["id"]: item for item in registry.describe()}
-        self.assertFalse(described["real_concept_drawings_reports"]["available"])
+        self.assertTrue(described["real_concept_drawings_reports"]["available"])
 
     def test_start_script_exists(self):
         self.assertTrue((ROOT / "START_PHOENIX.ps1").is_file())

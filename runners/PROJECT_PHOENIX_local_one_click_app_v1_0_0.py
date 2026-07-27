@@ -61,7 +61,7 @@ def self_test(repository: Path) -> dict:
         )
         workflows.append({"id": item["id"], "available": available})
     checks = {
-        "config_loaded": config["version"] == "1.0.0",
+        "config_loaded": config["version"] == "1.1.0",
         "local_bind_only": config["host"] == "127.0.0.1",
         "dashboard_rendered": "phoenix-local-bridge" in html,
         "dashboard_source_selected": bool(info["source_path"]),
@@ -69,9 +69,9 @@ def self_test(repository: Path) -> dict:
         "three_existing_workflows_available": sum(
             1 for item in workflows if item["available"]
         ) >= 3,
-        "production_workflow_visible_but_gated": any(
+        "production_workflow_available": any(
             item["id"] == "real_concept_drawings_reports"
-            and not item["available"]
+            and item["available"]
             for item in workflows
         ),
         "launcher_present": (repository / "START_PHOENIX.ps1").is_file(),

@@ -1,0 +1,143 @@
+{
+  "aerius_phases": [
+    {
+      "duration_days": 10,
+      "id": "SIM-AER-01",
+      "name": "site preparation"
+    },
+    {
+      "duration_days": 15,
+      "id": "SIM-AER-02",
+      "name": "foundation"
+    },
+    {
+      "duration_days": 30,
+      "id": "SIM-AER-03",
+      "name": "structure and enclosure"
+    },
+    {
+      "duration_days": 40,
+      "id": "SIM-AER-04",
+      "name": "installations and finishes"
+    },
+    {
+      "duration_days": 365,
+      "id": "SIM-AER-05",
+      "name": "operational use"
+    }
+  ],
+  "fire_concept": {
+    "compliance_conclusion": "NOT_MADE_IN_CONCEPT_PRODUCTION",
+    "design_peak_persons": 200,
+    "exit_count": 2,
+    "exit_width_m_each": 1.2,
+    "total_exit_width_m": 2.4
+  },
+  "foundation_concept": {
+    "foundation_beam_height_m": 0.6,
+    "foundation_beam_width_m": 0.5,
+    "groundwater_level_m": -0.5,
+    "perimeter_strip_width_m": 1.5,
+    "status": "SYNTHETIC_CONCEPT_GEOTECHNICAL_EVIDENCE_REQUIRED",
+    "strip_height_m": 0.4
+  },
+  "geometry": {
+    "existing_reference_length_m": 14.0,
+    "existing_reference_width_m": 12.0,
+    "extension_length_m": 10.0,
+    "extension_width_m": 7.0,
+    "first_floor_level_m": 3.2,
+    "gross_area_m2": 140.0,
+    "ground_floor_level_m": 0.0,
+    "parapet_level_m": 6.8,
+    "roof_level_m": 6.4,
+    "storeys": 2,
+    "wall_thickness_m": 0.2
+  },
+  "issue_date": "2026-07-27",
+  "issue_id": "HBM-CONCEPT-ISSUE-2026-001",
+  "occupancy": {
+    "friday_existing_persons": 65,
+    "friday_future_persons": 125,
+    "regular_existing_persons": 80,
+    "regular_future_persons": 150,
+    "special_peak_frequency_per_year": 1,
+    "special_peak_persons": 200
+  },
+  "parking": {
+    "basis_status": "PROJECT_LEADER_CONFIRMED_FIELD_VERIFICATION_PENDING",
+    "confirmed_capacity_spaces": 225,
+    "synthetic_demand": {
+      "friday_future": 25,
+      "regular_future": 30,
+      "special_peak": 40
+    },
+    "zones": [
+      {
+        "id": "P-A",
+        "label": "Directe parkeerzone noord",
+        "spaces": 70
+      },
+      {
+        "id": "P-B",
+        "label": "Sportcluster west",
+        "spaces": 50
+      },
+      {
+        "id": "P-C",
+        "label": "Openbare stroken zuid",
+        "spaces": 40
+      },
+      {
+        "id": "P-D",
+        "label": "Voorzieningencluster oost",
+        "spaces": 35
+      },
+      {
+        "id": "P-E",
+        "label": "Overige directe omgeving",
+        "spaces": 30
+      }
+    ]
+  },
+  "production": {
+    "bb36_production_release_allowed": false,
+    "drawing_formats": [
+      "PDF",
+      "SVG"
+    ],
+    "drawing_sheet_count": 10,
+    "dxf_sheet_ids": [
+      "A-001",
+      "A-101",
+      "A-102",
+      "A-401",
+      "S-101"
+    ],
+    "final_permit_ready_generation_allowed": false,
+    "professional_blocker_ids": [
+      "REQ-102",
+      "REQ-103",
+      "REQ-104",
+      "REQ-105",
+      "REQ-106",
+      "REQ-108"
+    ],
+    "report_count": 6,
+    "report_formats": [
+      "PDF",
+      "DOCX"
+    ],
+    "req107_status": "CLOSED_PROJECT_LEADER_APPROVED"
+  },
+  "project": {
+    "address": "Bikkersweg 88, Bunschoten",
+    "client": "Haci Bayram Moskee",
+    "name": "Uitbreiding moskee Haci Bayram",
+    "pilot_id": "BB35-PILOT-001-HBM",
+    "project_id": "HBM-2026-001",
+    "status": "CONCEPT - NOT FOR SUBMISSION OR EXECUTION"
+  },
+  "schema_version": "phoenix.real-concept-drawings-reports-production/1.0",
+  "version": "1.0.0"
+}
