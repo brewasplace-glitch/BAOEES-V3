@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Phoenix</title>
+<style>
+:root{--bg:#07111f;--panel:#102033;--line:#27425f;--text:#ecf4ff;--muted:#9db0c7;--accent:#1f8fff;--good:#31c48d}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#06101d,#0e2237);color:var(--text);font:16px/1.5 Arial,sans-serif;min-height:100vh}.shell{max-width:1300px;margin:auto;padding:28px}.hero{display:flex;justify-content:space-between;gap:30px;align-items:center;margin-bottom:24px}.brand h1{font-size:42px;margin:0}.brand p{color:var(--muted);max-width:760px}.badge{padding:9px 13px;border:1px solid var(--line);border-radius:99px;color:#cfe7ff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(16,32,51,.92);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 12px 35px rgba(0,0,0,.2)}.card h2{margin-top:0}.discipline{min-height:170px}.discipline strong{font-size:26px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;color:var(--muted);font-size:13px;margin-bottom:5px}input,select,textarea{width:100%;background:#07111f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px}textarea{min-height:90px}.wide{grid-column:1/-1}.outputs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.outputs label{padding:8px;background:#0b1828;border-radius:9px}.start{background:var(--accent);border:0;color:white;font-weight:bold;border-radius:12px;padding:14px 18px;width:100%;font-size:18px;margin-top:15px}.status{color:var(--good)}@media(max-width:900px){.grid{grid-template-columns:1fr}.hero{display:block}.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="hero"><div class="brand"><h1>PROJECT PHOENIX</h1><p>Autonome lokale projectomgeving voor ontwerp, engineering, bewijsvoering, tekeningen, rapporten en projectdossiers.</p></div><div class="badge">LOCAL ONE-CLICK APPLICATION</div></div>
+  <div class="grid">
+    <div class="card discipline"><strong>BOUW</strong><p>Gebouwen, constructie, installaties, vergunningen en digitale tweeling.</p><p class="status">Lokale runtime beschikbaar</p></div>
+    <div class="card discipline"><strong>CIVIEL</strong><p>Terrein, water, infrastructuur, geotechniek en openbare ruimte.</p><p>Modules worden via Phoenix-runners gekoppeld.</p></div>
+    <div class="card discipline"><strong>INFRA</strong><p>Verkeer, parkeren, wegen, fasering en integrale gebiedsontwikkeling.</p><p>Projectdata blijft lokaal in de repository.</p></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h2>Start projectanalyse</h2>
+    <div class="form-grid">
+      <div><label>Projectnaam</label><input value="Moskee Bunschoten — BB35 Pilot 1"></div>
+      <div><label>Locatie</label><input value="Bikkersweg 88, Bunschoten"></div>
+      <div class="wide"><label>Projectopdracht</label><textarea>Open het bestaande project, valideer de huidige status en voer de geselecteerde toegestane workflow uit.</textarea></div>
+      <div><label>Autonomous Project Mode</label><select><option>Volledig autonoom</option><option>Semi-autonoom</option><option>Assistent</option></select></div>
+      <div><label>Projectstatus</label><input value="Conceptdossier projectleider-goedgekeurd" readonly></div>
+      <div class="wide outputs"><label><input type="checkbox" checked> Digital Twin</label><label><input type="checkbox" checked> Rapporten</label><label><input type="checkbox" checked> Tekeningen</label><label><input type="checkbox" checked> Berekeningen</label><label><input type="checkbox" checked> Vergunningdossier</label><label><input type="checkbox" checked> Project-ZIP</label></div>
+    </div>
+    <button class="start" onclick="document.getElementById('phoenix-local-bridge')?.scrollIntoView({behavior:'smooth'})">START PROJECTANALYSE</button>
+  </div>
+</div>
+</body>
+</html>

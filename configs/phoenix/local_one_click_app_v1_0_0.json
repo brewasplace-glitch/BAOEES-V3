@@ -1,0 +1,106 @@
+{
+  "application_name": "Project Phoenix Local",
+  "browser_open_delay_seconds": 0.25,
+  "dashboard": {
+    "content_markers": {
+      "Autonomous Project Mode": 6,
+      "Bouw": 2,
+      "Civiel": 2,
+      "Infra": 2,
+      "PROJECT PHOENIX": 6,
+      "Phoenix": 2,
+      "START PROJECTANALYSE": 8,
+      "Start Project": 3,
+      "Start Projectanalyse": 8
+    },
+    "excluded_parts": [
+      ".git",
+      "__pycache__",
+      "node_modules",
+      ".venv",
+      "venv",
+      "phoenix/local_app/static",
+      "artifacts/bb35/pilot_1_moskee_bunschoten"
+    ],
+    "max_candidate_files": 500,
+    "minimum_score": 8,
+    "reuse_existing": true,
+    "search_globs": [
+      "index*.html",
+      "*start*.html",
+      "*dashboard*.html",
+      "*home*.html"
+    ]
+  },
+  "host": "127.0.0.1",
+  "max_port_attempts": 10,
+  "open_targets": [
+    {
+      "id": "integrated_concept_dossier",
+      "label": "Open geïntegreerd conceptdossier",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/integrated_concept_dossier_v2_0_2/03_integrated_concept_dossier.html"
+    },
+    {
+      "id": "simulation_dashboard",
+      "label": "Open conceptsimulatiedashboard",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/07_full_concept_simulation_dashboard.html"
+    },
+    {
+      "id": "review_dashboard",
+      "label": "Open projectleidersreview",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/concept_dossier_review_project_leader_approval_v2_1_0/12_review_approval_dashboard.html"
+    },
+    {
+      "id": "project_folder",
+      "label": "Open projectmap",
+      "relative_path": "."
+    }
+  ],
+  "preferred_port": 8765,
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_0_0",
+  "schema_version": "phoenix.local-one-click-application/1.0",
+  "version": "1.0.0",
+  "workflows": [
+    {
+      "expect_flag": "--expect-simulation-passed",
+      "id": "bb35_full_concept_simulation",
+      "label": "BB35 volledige conceptsimulatie",
+      "output_subdir": "bb35_full_concept_simulation",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_full_concept_evidence_simulation_v1_9_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_full_concept_evidence_simulation_v1_9_0.py"
+    },
+    {
+      "expect_flag": "--expect-dossier-ready",
+      "id": "bb35_integrated_concept_dossier",
+      "label": "BB35 geïntegreerd conceptdossier",
+      "output_subdir": "bb35_integrated_concept_dossier",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_integrated_concept_dossier_v2_0_2.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_integrated_concept_dossier_v2_0_2.py"
+    },
+    {
+      "expect_flag": "--expect-approved",
+      "id": "bb35_project_leader_review",
+      "label": "BB35 projectleidersreview",
+      "output_subdir": "bb35_project_leader_review",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_concept_dossier_review_approval_v2_1_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_concept_dossier_review_approval_v2_1_0.py"
+    },
+    {
+      "disabled_reason": "De productie-engine voor echte tekeningen en rapporten is nog niet geïnstalleerd.",
+      "expect_flag": "--expect-production-ready",
+      "id": "real_concept_drawings_reports",
+      "label": "Echte concepttekeningen en rapporten",
+      "output_subdir": "real_concept_drawings_reports",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_real_concept_drawings_reports.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_real_concept_drawings_reports.py"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "connected_workflows": 3,
+  "dashboard_reuse_enabled": true,
+  "desktop_shortcut_supported": true,
+  "fallback_dashboard_present": true,
+  "gated_future_workflows": 1,
+  "local_bind_only": true,
+  "schema_version": "phoenix.local-one-click-validation/1.0",
+  "self_test_checks_passed": 10,
+  "status": "PASSED",
+  "unit_tests_passed": 26,
+  "version": "1.0.0",
+  "workflow_allowlist_count": 4
+}
