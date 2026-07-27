@@ -1,0 +1,4 @@
+﻿finding_id,classification,description,status
+FND-01,ACCEPTANCE_CONDITION,Concept simulations must be replaced by validated professional evidence before permit-ready release.,ACCEPTED_CONDITION
+FND-02,ACCEPTANCE_CONDITION,The 225-space parking basis remains subject to field verification and professional parking analysis.,ACCEPTED_CONDITION
+FND-03,USE_RESTRICTION,The integrated concept dossier is not approved for permit submission or construction.,ACCEPTED_CONDITION

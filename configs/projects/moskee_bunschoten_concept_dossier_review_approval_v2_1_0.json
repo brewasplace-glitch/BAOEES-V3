@@ -1,0 +1,33 @@
+{
+  "schema_version": "phoenix.bb35.concept-dossier-review-project-leader-approval/1.0",
+  "version": "2.1.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "dossier_id": "HBM-CD-2026-001",
+  "review_id": "HBM-CD-REV-2026-001",
+  "review_date": "2026-07-27",
+  "approval": {
+    "approver_role": "project_leader",
+    "approver_identity": "PROJECT_LEADER_USER",
+    "approval_method": "EXPLICIT_PROJECT_LEADER_INSTRUCTION",
+    "signature_status": "INTERNAL_APPROVAL_RECORDED_NOT_QUALIFIED_ELECTRONIC_SIGNATURE",
+    "approval_scope": "PILOT_VALIDATION_AND_PROFESSIONAL_EVIDENCE_REPLACEMENT"
+  },
+  "limitations": [
+    "Conceptsimulaties zijn niet geschikt voor vergunningindiening.",
+    "Conceptsimulaties zijn niet geschikt voor uitvoering.",
+    "REQ-102, REQ-103, REQ-104, REQ-105, REQ-106 en REQ-108 moeten door gevalideerd professioneel bewijs worden vervangen.",
+    "De bevestigde parkeerbasis van 225 plaatsen vereist nog veldverificatie en een professionele parkeerconclusie.",
+    "BB36 is functioneel gevalideerd maar niet vrijgegeven voor productie."
+  ],
+  "expected": {
+    "request_count": 7,
+    "drawing_register_count": 8,
+    "calculation_register_count": 8,
+    "assumption_count": 8,
+    "consistency_check_count": 11,
+    "professional_blocker_count": 6,
+    "parking_basis_spaces": 225,
+    "req107_status": "CLOSED_PROJECT_LEADER_APPROVED"
+  }
+}

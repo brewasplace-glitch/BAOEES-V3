@@ -1,0 +1,14 @@
+{
+  "acceptance_conditions": [
+    "Conceptsimulaties zijn niet geschikt voor vergunningindiening.",
+    "Conceptsimulaties zijn niet geschikt voor uitvoering.",
+    "REQ-102, REQ-103, REQ-104, REQ-105, REQ-106 en REQ-108 moeten door gevalideerd professioneel bewijs worden vervangen.",
+    "De bevestigde parkeerbasis van 225 plaatsen vereist nog veldverificatie en een professionele parkeerconclusie.",
+    "BB36 is functioneel gevalideerd maar niet vrijgegeven voor productie."
+  ],
+  "approved_scope": "PILOT_VALIDATION_AND_PROFESSIONAL_EVIDENCE_REPLACEMENT",
+  "construction_use_allowed": false,
+  "permit_submission_allowed": false,
+  "professional_evidence_replacement_allowed": true,
+  "simulation_notice": "CONCEPTSIMULATIE - NIET VOOR INDIENING OF UITVOERING"
+}

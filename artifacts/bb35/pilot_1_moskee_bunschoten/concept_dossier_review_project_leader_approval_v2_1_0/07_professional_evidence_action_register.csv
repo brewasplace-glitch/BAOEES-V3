@@ -1,0 +1,7 @@
+﻿request_id,action,responsible_role,status
+REQ-102,"Replace simulated geometry validation with validated scale, coordinates, layers and cadastral evidence.",architect_or_survey_specialist,PENDING
+REQ-103,Replace structural simulation with current survey and new-to-existing connection assessment.,structural_engineer,PENDING
+REQ-104,Replace geotechnical simulation with ground investigation and signed foundation advice.,geotechnical_adviser,PENDING
+REQ-105,Replace Bbl/fire/installation simulation with signed professional assessments and calculations.,architect_fire_safety_and_installation_advisers,PENDING
+REQ-106,"Verify 225 spaces, perform field counts and issue a professional parking balance.",traffic_or_parking_adviser,PENDING
+REQ-108,Replace synthetic activity data with verified phased construction data and an AERIUS calculation.,aerius_or_nitrogen_adviser,PENDING

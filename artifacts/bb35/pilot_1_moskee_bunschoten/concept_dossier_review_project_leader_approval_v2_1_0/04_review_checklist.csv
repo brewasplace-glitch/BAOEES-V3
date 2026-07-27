@@ -1,0 +1,13 @@
+﻿check_id,topic,criterion,passed
+REV-01,integrated_dossier,Integrated concept dossier is generated.,True
+REV-02,request_coverage,REQ-102 through REQ-108 are registered.,True
+REV-03,drawings,Drawing register contains 8 items.,True
+REV-04,calculations,Calculation register contains 8 items.,True
+REV-05,assumptions,Assumptions register contains 8 items.,True
+REV-06,consistency,All 11 consistency checks passed.,True
+REV-07,parking,Parking basis is 225 project-leader-confirmed spaces.,True
+REV-08,occupancy,REQ-107 is closed by the project leader.,True
+REV-09,simulation_boundary,Six professional evidence blockers remain visible.,True
+REV-10,permit_gate,Final permit-ready generation remains blocked.,True
+REV-11,bb36_functional,BB36 functional validation passed.,True
+REV-12,bb36_release,BB36 production release remains locked.,True
