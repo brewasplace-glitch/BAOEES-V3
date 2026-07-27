@@ -1,0 +1,7 @@
+{
+  "required": [
+    "Validated DWG units, layers and scale.",
+    "Surveyed parcel and building coordinates.",
+    "Signed geometry and boundary verification."
+  ]
+}

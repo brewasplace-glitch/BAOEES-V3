@@ -1,0 +1,8 @@
+{
+  "bb36_functional_validation_passed": true,
+  "bb36_production_release_allowed": false,
+  "concept_dossier_generation_allowed": true,
+  "final_permit_ready_generation_allowed": false,
+  "remaining_professional_evidence_blockers": 6,
+  "req107": "CLOSED_PROJECT_LEADER_APPROVED"
+}

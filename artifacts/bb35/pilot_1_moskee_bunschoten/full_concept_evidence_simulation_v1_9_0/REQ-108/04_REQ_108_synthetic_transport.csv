@@ -1,0 +1,6 @@
+﻿phase_id,movement_type,movements,distance_km,value_status
+SIM-AER-01,heavy_vehicle,40,20.0,SYNTHETIC
+SIM-AER-02,heavy_vehicle,60,20.0,SYNTHETIC
+SIM-AER-03,mixed_delivery,80,20.0,SYNTHETIC
+SIM-AER-04,light_van,200,15.0,SYNTHETIC
+SIM-AER-05,operational_traffic,,,PROFESSIONAL_INPUT_PENDING

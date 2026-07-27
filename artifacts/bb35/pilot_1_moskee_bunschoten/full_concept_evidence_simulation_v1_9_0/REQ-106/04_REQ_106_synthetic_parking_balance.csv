@@ -1,0 +1,4 @@
+﻿scenario,synthetic_demand_spaces,minimum_synthetic_available_spaces,synthetic_surplus_spaces,status
+regular_future,30,55,25,SYNTHETIC_TEST_RESULT
+friday_future,25,55,30,SYNTHETIC_TEST_RESULT
+special_peak,40,55,15,SYNTHETIC_TEST_RESULT

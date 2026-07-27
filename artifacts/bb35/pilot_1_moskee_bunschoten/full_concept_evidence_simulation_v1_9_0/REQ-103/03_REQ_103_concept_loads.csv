@@ -1,0 +1,5 @@
+﻿quantity,value,unit
+total_service_gravity_load_kn,1335.0,kN
+average_column_reaction_kn,148.33,kN
+representative_beam_line_load_kn_m,24.5,kN/m
+representative_simple_span_moment_knm,76.56,kNm

@@ -1,0 +1,8 @@
+﻿phase_id,equipment,operating_hours,value_status
+SIM-AER-01,mini_excavator,60,SYNTHETIC
+SIM-AER-01,wheel_loader,40,SYNTHETIC
+SIM-AER-02,excavator,80,SYNTHETIC
+SIM-AER-02,concrete_pump,16,SYNTHETIC
+SIM-AER-03,mobile_crane,80,SYNTHETIC
+SIM-AER-03,telehandler,120,SYNTHETIC
+SIM-AER-04,small_tools_aggregate,100,SYNTHETIC

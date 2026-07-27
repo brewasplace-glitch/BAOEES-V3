@@ -1,0 +1,27 @@
+{
+  "schema_version": "phoenix.bb35.full-concept-simulation-authorization/1.0",
+  "version": "1.9.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "authorization_date": "2026-07-27",
+  "authorization_basis": "explicit_project_leader_instruction",
+  "project_leader_authority": {
+    "req107_closure_authorized": true,
+    "approval_method": "electronic_project_decision_record",
+    "handwritten_signature_fabricated": false
+  },
+  "parking_correction": {
+    "previous_hypothesis_spaces": 300,
+    "current_project_leader_confirmed_spaces": 225,
+    "status": "PROJECT_LEADER_CONFIRMED_FIELD_VERIFICATION_PENDING",
+    "supersedes_previous_hypothesis": true
+  },
+  "simulation_policy": {
+    "label": "CONCEPT_SIMULATION_NOT_FOR_SUBMISSION_OR_EXECUTION",
+    "professional_results_may_be_simulated": true,
+    "simulated_results_must_be_explicitly_labelled": true,
+    "simulated_results_do_not_close_professional_evidence_requests": true,
+    "final_permit_ready_generation_allowed": false,
+    "bb36_production_release_allowed": false
+  }
+}

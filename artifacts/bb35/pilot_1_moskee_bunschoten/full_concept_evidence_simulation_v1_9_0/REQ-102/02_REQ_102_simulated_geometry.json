@@ -1,0 +1,25 @@
+{
+  "coordinate_system": "LOCAL_SIMULATION_GRID",
+  "diagonal_m": 12.2066,
+  "footprint_area_m2": 70.0,
+  "gross_floor_area_m2": 140.0,
+  "perimeter_m": 34.0,
+  "polygon_m": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      10.0,
+      0.0
+    ],
+    [
+      10.0,
+      7.0
+    ],
+    [
+      0.0,
+      7.0
+    ]
+  ]
+}

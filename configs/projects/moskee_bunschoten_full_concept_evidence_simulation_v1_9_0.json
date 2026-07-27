@@ -1,0 +1,173 @@
+{
+  "schema_version": "phoenix.bb35.full-concept-evidence-simulation-config/1.0",
+  "version": "1.9.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "simulation_seed": "HBM-FULL-CONCEPT-190",
+  "scope": {
+    "extension_length_m": 10.0,
+    "extension_width_m": 7.0,
+    "storeys": 2,
+    "footprint_m2": 70.0,
+    "gross_floor_area_m2": 140.0
+  },
+  "synthetic_assumptions": {
+    "REQ-102": {
+      "coordinate_system": "LOCAL_SIMULATION_GRID",
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "polygon_m": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0
+        ],
+        [
+          10.0,
+          7.0
+        ],
+        [
+          0.0,
+          7.0
+        ]
+      ]
+    },
+    "REQ-103": {
+      "structural_system": "SYNTHETIC_STEEL_FRAME_FOR_ENGINE_TEST",
+      "grid_x_m": [
+        0.0,
+        5.0,
+        10.0
+      ],
+      "grid_y_m": [
+        0.0,
+        3.5,
+        7.0
+      ],
+      "storey_height_m": 3.2,
+      "floor_dead_plus_live_load_kn_m2": 7.0,
+      "roof_service_load_kn_m2": 1.5,
+      "frame_wall_allowance_kn": 250.0
+    },
+    "REQ-104": {
+      "groundwater_level_m_relative_to_grade": -0.5,
+      "foundation_test_concept": "STRIP_1_50x0_40_WITH_GRADE_BEAM_0_50x0_60",
+      "assumed_total_strip_length_m": 48.0,
+      "soil_profile": [
+        {
+          "from_m": 0.0,
+          "to_m": -0.8,
+          "description": "synthetic sand fill"
+        },
+        {
+          "from_m": -0.8,
+          "to_m": -2.5,
+          "description": "synthetic soft clay"
+        },
+        {
+          "from_m": -2.5,
+          "to_m": -8.0,
+          "description": "synthetic medium-dense sand"
+        }
+      ]
+    },
+    "REQ-105": {
+      "simulated_exit_count": 2,
+      "simulated_exit_clear_width_m_each": 1.2,
+      "simulation_ventilation_rate_l_s_person": 7.0
+    },
+    "REQ-106": {
+      "confirmed_total_spaces": 225,
+      "simulation_only_subarea_allocation": [
+        {
+          "area_id": "P-01",
+          "name": "Zwembad De Duker",
+          "spaces": 75
+        },
+        {
+          "area_id": "P-02",
+          "name": "CGV Agilitas en omgeving",
+          "spaces": 40
+        },
+        {
+          "area_id": "P-03",
+          "name": "Denksportcentrum en omgeving",
+          "spaces": 25
+        },
+        {
+          "area_id": "P-04",
+          "name": "Openbare parkeerstroken",
+          "spaces": 40
+        },
+        {
+          "area_id": "P-05",
+          "name": "Overige openbare plaatsen",
+          "spaces": 45
+        }
+      ],
+      "synthetic_measurements": [
+        {
+          "measurement_id": "SIM-M01",
+          "scenario": "regular_weekday",
+          "occupied": 110
+        },
+        {
+          "measurement_id": "SIM-M02",
+          "scenario": "friday_pre_peak",
+          "occupied": 135
+        },
+        {
+          "measurement_id": "SIM-M03",
+          "scenario": "friday_prayer_peak",
+          "occupied": 170
+        },
+        {
+          "measurement_id": "SIM-M04",
+          "scenario": "saturday_active_use",
+          "occupied": 145
+        },
+        {
+          "measurement_id": "SIM-M05",
+          "scenario": "sunday_active_use",
+          "occupied": 125
+        }
+      ],
+      "baseline_car_mode_share": 0.5,
+      "baseline_persons_per_car": 2.5
+    },
+    "REQ-108": {
+      "phases": [
+        {
+          "phase_id": "SIM-AER-01",
+          "name": "site_preparation",
+          "duration_days": 10
+        },
+        {
+          "phase_id": "SIM-AER-02",
+          "name": "foundation",
+          "duration_days": 15
+        },
+        {
+          "phase_id": "SIM-AER-03",
+          "name": "structure_and_enclosure",
+          "duration_days": 30
+        },
+        {
+          "phase_id": "SIM-AER-04",
+          "name": "installations_and_finishes",
+          "duration_days": 40
+        },
+        {
+          "phase_id": "SIM-AER-05",
+          "name": "operational_use",
+          "duration_days": 365
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "all_consistency_checks_passed": true,
+  "bb36_functional_validation_passed": true,
+  "bb36_production_release_allowed": false,
+  "concept_dossier_generation_allowed": true,
+  "concept_simulation_count": 6,
+  "consistency_check_count": 11,
+  "end_to_end_workflow_validated": true,
+  "engine_version": "1.9.0",
+  "final_permit_ready_generation_allowed": false,
+  "next_gate": "Use the simulation dossier to validate the run; replace each synthetic REQ-102/103/104/105/106/108 result with professional evidence before permit-ready release.",
+  "parking_basis_spaces": 225,
+  "parking_previous_hypothesis_spaces": 300,
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "professional_blocker_ids": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "professional_evidence_still_required": true,
+  "project_id": "HBM-2026-001",
+  "project_leader_closed_request_count": 1,
+  "remaining_professional_evidence_blockers": 6,
+  "report_fingerprint_sha256": "ef41015256a0344d7e4c54a445619e3650a8911814123547c75579b1464e4616",
+  "req107_status": "CLOSED_PROJECT_LEADER_APPROVED",
+  "req_range": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-107",
+    "REQ-108"
+  ],
+  "schema_version": "phoenix.bb35.full-concept-evidence-simulation/1.0",
+  "simulation_label": "CONCEPT_SIMULATION_NOT_FOR_SUBMISSION_OR_EXECUTION",
+  "status": "FULL_CONCEPT_EVIDENCE_SIMULATION_RUN_PASSED"
+}

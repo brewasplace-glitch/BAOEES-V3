@@ -1,0 +1,8 @@
+{
+  "code_compliance_conclusion": "NOT_MADE_IN_SIMULATION",
+  "persons_per_exit": 100.0,
+  "persons_per_m_total_exit_width": 83.33,
+  "simulated_exit_count": 2,
+  "simulated_exit_width_m_each": 1.2,
+  "simulated_total_exit_width_m": 2.4
+}
