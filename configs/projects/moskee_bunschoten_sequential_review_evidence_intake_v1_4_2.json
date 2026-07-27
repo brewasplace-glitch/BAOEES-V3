@@ -1,0 +1,24 @@
+{
+  "schema_version": "phoenix.bb35.sequential-review-intake-config/1.0",
+  "version": "1.4.2",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "installation_order": [
+    "concept_review_evidence_acquisition_v1_4_0",
+    "uploaded_evidence_intake_v1_4_1",
+    "sequential_integrated_validation_v1_4_2"
+  ],
+  "required_prior_phase": {
+    "name": "concept_generation_v1_3_3",
+    "manifest": "artifacts/bb35/pilot_1_moskee_bunschoten/concept_generation_v1_3_3/concept_package_manifest.json"
+  },
+  "expected_state": {
+    "valid_uploaded_evidence": 6,
+    "requests_closed": 1,
+    "requests_partial": 2,
+    "requests_open": 5,
+    "remaining_blockers": 7,
+    "final_generation_allowed": false,
+    "bb36_unlock_allowed": false
+  }
+}

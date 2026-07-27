@@ -1,0 +1,28 @@
+{
+  "acceptance_criteria": [
+    "Original DWG or DXF opens without missing external references.",
+    "Coordinate system, units and drawing scale are identified.",
+    "Parcel boundaries and surrounding context are visible.",
+    "A plotted PDF and survey/source statement are included."
+  ],
+  "acceptance_summary": "Original DWG/DXF plus plotted PDF with parcel boundaries, north, scale and verified dimensions.",
+  "blocking_final": true,
+  "category": "cadastral_site_base",
+  "input_id": "HBM-VI-102",
+  "priority": 2,
+  "request_id": "REQ-102",
+  "required_file_types": [
+    "DWG",
+    "DXF",
+    "PDF"
+  ],
+  "responsible_party": "Owner / architect / surveyor",
+  "status": "open_not_submitted",
+  "title": "Cadastral DWG and surveyed site base",
+  "unlocks_modules": [
+    "site_plan",
+    "building_model",
+    "architectural_drawings",
+    "permit_and_bopa"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "acceptance_criteria": [
+    "Investigation locations are tied to the project site.",
+    "Original CPT/GEF or equivalent source data are included.",
+    "Groundwater and soil profile are stated.",
+    "Bearing capacity and settlement are assessed.",
+    "A foundation recommendation is signed by a competent advisor."
+  ],
+  "acceptance_summary": "Project-specific CPT/soil data, groundwater level, settlement assessment and foundation recommendation.",
+  "blocking_final": true,
+  "category": "geotechnical",
+  "input_id": "HBM-VI-104",
+  "priority": 4,
+  "request_id": "REQ-104",
+  "required_file_types": [
+    "PDF",
+    "CPT/GEF",
+    "CSV"
+  ],
+  "responsible_party": "Geotechnical engineer",
+  "status": "open_not_submitted",
+  "title": "Geotechnical investigation and foundation advice",
+  "unlocks_modules": [
+    "structural_design",
+    "quantity_takeoff",
+    "cost_estimation",
+    "technical_specification"
+  ]
+}

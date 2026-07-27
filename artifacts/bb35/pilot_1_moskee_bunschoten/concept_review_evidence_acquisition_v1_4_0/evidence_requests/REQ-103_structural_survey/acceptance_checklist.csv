@@ -1,0 +1,6 @@
+﻿criterion_id,acceptance_criterion,submitted,verified,review_comment
+REQ-103-AC-01,"Site inspection date, engineer and organization are identified.",False,False,
+REQ-103-AC-02,Measured member sizes/materials and load paths are recorded.,False,False,
+REQ-103-AC-03,"Foundation, floor, roof and connection zones are photographed.",False,False,
+REQ-103-AC-04,"Defects, uncertainties and required opening-up works are stated.",False,False,
+REQ-103-AC-05,Report is signed or professionally accepted.,False,False,

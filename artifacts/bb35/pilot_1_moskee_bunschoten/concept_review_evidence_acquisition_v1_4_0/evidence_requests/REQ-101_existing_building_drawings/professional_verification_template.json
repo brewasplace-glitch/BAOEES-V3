@@ -1,0 +1,9 @@
+{
+  "request_id": "REQ-101",
+  "review_comment": "<comment>",
+  "reviewer_name": "<name>",
+  "reviewer_organization": "<organization>",
+  "reviewer_role_or_qualification": "<role>",
+  "verification_date": "<YYYY-MM-DD>",
+  "verification_status": "<accepted|rejected>"
+}

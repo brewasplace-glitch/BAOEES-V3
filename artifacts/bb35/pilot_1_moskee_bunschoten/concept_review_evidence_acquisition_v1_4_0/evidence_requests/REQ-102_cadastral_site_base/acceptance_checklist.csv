@@ -1,0 +1,5 @@
+﻿criterion_id,acceptance_criterion,submitted,verified,review_comment
+REQ-102-AC-01,Original DWG or DXF opens without missing external references.,False,False,
+REQ-102-AC-02,"Coordinate system, units and drawing scale are identified.",False,False,
+REQ-102-AC-03,Parcel boundaries and surrounding context are visible.,False,False,
+REQ-102-AC-04,A plotted PDF and survey/source statement are included.,False,False,

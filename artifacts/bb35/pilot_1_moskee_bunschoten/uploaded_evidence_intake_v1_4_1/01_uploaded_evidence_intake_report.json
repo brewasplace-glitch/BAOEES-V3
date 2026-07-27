@@ -1,0 +1,176 @@
+{
+  "authoritative_scope": {
+    "depth_m": 10.0,
+    "gross_extension_area_m2": 140.0,
+    "storeys": 2,
+    "width_m": 7.0
+  },
+  "bb36_unlock_allowed": false,
+  "closed_request_count": 1,
+  "concept_generation_allowed": true,
+  "concept_package_status": "ACCEPTED_WITH_CONDITIONS",
+  "engine_version": "1.4.1",
+  "evidence_results": [
+    {
+      "actual_sha256": "0aa977f66728494abc7812fd27dd29fd2b3e969462b384cc68171406f0966734",
+      "available": true,
+      "evidence_id": "HBM-ING-002",
+      "expected_sha256": "0aa977f66728494abc7812fd27dd29fd2b3e969462b384cc68171406f0966734",
+      "file_name": "20251218 Bikkersweg 88 kadastergrens (1) (1).dwg",
+      "hash_valid": true,
+      "request_id": "REQ-102",
+      "role": "original_cadastral_dwg",
+      "signature_valid": true,
+      "size_bytes": 216481
+    },
+    {
+      "actual_sha256": "a80a28622607b5d8262fb904f2b2e366f949d86c4c9d40759c17db0a31ae658d",
+      "available": true,
+      "evidence_id": "HBM-ING-004",
+      "expected_sha256": "a80a28622607b5d8262fb904f2b2e366f949d86c4c9d40759c17db0a31ae658d",
+      "file_name": "Bovenanzicht google maps.png",
+      "hash_valid": true,
+      "request_id": "SUPPORT",
+      "role": "site_context_aerial_image",
+      "signature_valid": true,
+      "size_bytes": 1628725
+    },
+    {
+      "actual_sha256": "1a5f2ad31d7f20b1c32a47adfa9fb34f6ff33d2204dc3001343d2184268544be",
+      "available": true,
+      "evidence_id": "HBM-ING-003",
+      "expected_sha256": "1a5f2ad31d7f20b1c32a47adfa9fb34f6ff33d2204dc3001343d2184268544be",
+      "file_name": "Haci Bayram Constructietekeningen (1).pdf",
+      "hash_valid": true,
+      "request_id": "REQ-103",
+      "role": "historical_structural_drawings_10_pages",
+      "signature_valid": true,
+      "size_bytes": 1000237
+    },
+    {
+      "actual_sha256": "0144a403daa0610a2b159489134d1e269f78e5e132c6150ca1bb59ac1b5d83c3",
+      "available": true,
+      "evidence_id": "HBM-ING-001",
+      "expected_sha256": "0144a403daa0610a2b159489134d1e269f78e5e132c6150ca1bb59ac1b5d83c3",
+      "file_name": "Haci Bayram tekeningen  en details (1).pdf",
+      "hash_valid": true,
+      "request_id": "REQ-101",
+      "role": "official_existing_building_drawings_19_pages",
+      "signature_valid": true,
+      "size_bytes": 1746261
+    },
+    {
+      "actual_sha256": "8615e7fe8d47cbb24bd2313864f0f64e02fe14200bda1493d7dc3d231734dee1",
+      "available": true,
+      "evidence_id": "HBM-ING-005",
+      "expected_sha256": "8615e7fe8d47cbb24bd2313864f0f64e02fe14200bda1493d7dc3d231734dee1",
+      "file_name": "impressie nw sit moskee in parkstijl.png",
+      "hash_valid": true,
+      "request_id": "SUPPORT",
+      "role": "new_situation_facade_impression",
+      "signature_valid": true,
+      "size_bytes": 3188762
+    },
+    {
+      "actual_sha256": "9b395156ecf8efa3fd28c784fb3b2daa91fb640814bcad89a6376a0fc4eda0c5",
+      "available": true,
+      "evidence_id": "HBM-ING-006",
+      "expected_sha256": "9b395156ecf8efa3fd28c784fb3b2daa91fb640814bcad89a6376a0fc4eda0c5",
+      "file_name": "totaal overzicht.png",
+      "hash_valid": true,
+      "request_id": "SUPPORT",
+      "role": "coordinated_architectural_overview",
+      "signature_valid": true,
+      "size_bytes": 1223331
+    }
+  ],
+  "final_generation_allowed": false,
+  "issues": [],
+  "next_gate": "Validate cadastral DWG geometry and commission current structural survey; continue REQ-104 through REQ-108.",
+  "open_request_count": 5,
+  "partial_request_count": 2,
+  "pilot_completed": false,
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "received_file_count": 6,
+  "remaining_blocking_input_count": 7,
+  "report_fingerprint_sha256": "0a3de0403d53d3db017e6276bc68e3a551d73f545aa4b4292edeb59ce7281cd6",
+  "request_statuses": [
+    {
+      "accepted_evidence_ids": [
+        "HBM-ING-001"
+      ],
+      "blocking": false,
+      "category": "existing_building_drawings",
+      "remaining_action": "",
+      "request_id": "REQ-101",
+      "status": "CLOSED_VERIFIED"
+    },
+    {
+      "accepted_evidence_ids": [
+        "HBM-ING-002",
+        "HBM-ING-004"
+      ],
+      "blocking": true,
+      "category": "cadastral_site_base",
+      "remaining_action": "Validate layers, units, scale, parcel boundaries, coordinate system and consistency with site survey.",
+      "request_id": "REQ-102",
+      "status": "RECEIVED_PENDING_GEOMETRY_VALIDATION"
+    },
+    {
+      "accepted_evidence_ids": [
+        "HBM-ING-003",
+        "HBM-ING-001"
+      ],
+      "blocking": true,
+      "category": "structural_survey",
+      "remaining_action": "Perform and sign current site inspection, verify existing member dimensions, condition and proposed connections.",
+      "request_id": "REQ-103",
+      "status": "HISTORICAL_DOCUMENTATION_ACCEPTED_CURRENT_SURVEY_PENDING"
+    },
+    {
+      "accepted_evidence_ids": [],
+      "blocking": true,
+      "category": "geotechnical",
+      "remaining_action": "Supply the requested professional evidence.",
+      "request_id": "REQ-104",
+      "status": "OPEN"
+    },
+    {
+      "accepted_evidence_ids": [],
+      "blocking": true,
+      "category": "technical_assumptions",
+      "remaining_action": "Supply the requested professional evidence.",
+      "request_id": "REQ-105",
+      "status": "OPEN"
+    },
+    {
+      "accepted_evidence_ids": [],
+      "blocking": true,
+      "category": "parking_field_evidence",
+      "remaining_action": "Supply the requested professional evidence.",
+      "request_id": "REQ-106",
+      "status": "OPEN"
+    },
+    {
+      "accepted_evidence_ids": [],
+      "blocking": true,
+      "category": "occupancy_and_use",
+      "remaining_action": "Supply the requested professional evidence.",
+      "request_id": "REQ-107",
+      "status": "OPEN"
+    },
+    {
+      "accepted_evidence_ids": [],
+      "blocking": true,
+      "category": "aerius_activity_data",
+      "remaining_action": "Supply the requested professional evidence.",
+      "request_id": "REQ-108",
+      "status": "OPEN"
+    }
+  ],
+  "schema_version": "phoenix.bb35.uploaded-evidence-intake/1.0",
+  "status": "EVIDENCE_ACQUISITION_PARTIALLY_SATISFIED",
+  "valid_file_count": 6,
+  "verified_project_fact_count": 10
+}

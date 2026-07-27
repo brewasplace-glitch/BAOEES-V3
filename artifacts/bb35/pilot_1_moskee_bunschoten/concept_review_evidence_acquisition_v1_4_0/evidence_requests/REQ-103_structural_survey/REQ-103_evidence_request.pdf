@@ -1,0 +1,53 @@
+%PDF-1.4
+%PHOENIX
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842.00 595.00] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1765 >>
+stream
+0.900 g 35.00 535.00 772.00 35.00 re f 0 g
+BT /F1 14.00 Tf 48.00 550.00 Td (REQ-103 - EVIDENCE REQUEST) Tj ET
+BT /F1 9.00 Tf 48.00 527.00 Td (Uitbreiding Haci Bayram Moskee) Tj ET
+BT /F1 8.00 Tf 430.00 527.00 Td (CONCEPT REVIEW - FINAL GENERATION BLOCKED) Tj ET
+1.20 w 35.00 520.00 m 807.00 520.00 l S
+BT /F1 8.00 Tf 48.00 25.00 Td (CONCEPT - NOT FOR EXECUTION OR SUBMISSION) Tj ET
+BT /F1 13.00 Tf 50.00 500.00 Td (Structural survey of the existing building) Tj ET
+BT /F1 9.00 Tf 50.00 476.00 Td (Priority: 3 | Responsible: Structural engineer) Tj ET
+BT /F1 11.00 Tf 50.00 454.00 Td (REQUESTED EVIDENCE) Tj ET
+BT /F1 8.50 Tf 55.00 437.00 Td (Signed survey covering foundations, frame, floors, roof, defects and connection zones.) Tj ET
+BT /F1 11.00 Tf 50.00 417.00 Td (ACCEPTANCE CRITERIA) Tj ET
+BT /F1 8.20 Tf 55.00 400.00 Td (1. Site inspection date, engineer and organization are identified.) Tj ET
+BT /F1 8.20 Tf 55.00 386.00 Td (2. Measured member sizes/materials and load paths are recorded.) Tj ET
+BT /F1 8.20 Tf 55.00 372.00 Td (3. Foundation, floor, roof and connection zones are photographed.) Tj ET
+BT /F1 8.20 Tf 55.00 358.00 Td (4. Defects, uncertainties and required opening-up works are stated.) Tj ET
+BT /F1 8.20 Tf 55.00 344.00 Td (5. Report is signed or professionally accepted.) Tj ET
+BT /F1 11.00 Tf 50.00 325.00 Td (SUBMISSION CONTROL) Tj ET
+BT /F1 8.20 Tf 55.00 308.00 Td (- Provide original files, not screenshots or summaries.) Tj ET
+BT /F1 8.20 Tf 55.00 295.00 Td (- Include professional_verification.json completed by the responsible reviewer.) Tj ET
+BT /F1 8.20 Tf 55.00 282.00 Td (- Phoenix calculates SHA-256 during evidence intake.) Tj ET
+BT /F1 8.20 Tf 55.00 269.00 Td (- Acceptance unlocks only the listed downstream modules.) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000018 00000 n 
+0000000067 00000 n 
+0000000124 00000 n 
+0000000194 00000 n 
+0000000326 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2142
+%%EOF

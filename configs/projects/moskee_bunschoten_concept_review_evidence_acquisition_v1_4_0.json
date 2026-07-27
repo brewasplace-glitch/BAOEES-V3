@@ -1,0 +1,26 @@
+{
+  "schema_version": "phoenix.bb35.concept-review-config/1.0",
+  "version": "1.4.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "concept_artifact_path": "artifacts/bb35/pilot_1_moskee_bunschoten/concept_generation_v1_3_3",
+  "review_artifact_path": "artifacts/bb35/pilot_1_moskee_bunschoten/concept_review_evidence_acquisition_v1_4_0",
+  "evidence_request_ids": [
+    "REQ-101",
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-107",
+    "REQ-108"
+  ],
+  "policy": {
+    "concept_review_may_accept_with_conditions": true,
+    "original_files_required": true,
+    "professional_verification_required": true,
+    "screenshots_do_not_count_as_final_evidence": true,
+    "final_generation_allowed": false,
+    "bb36_unlock_allowed": false
+  }
+}

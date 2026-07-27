@@ -1,0 +1,12 @@
+﻿module,concept_allowed,final_ready,blocking_request_ids,release_condition
+aerius,False,False,"[""REQ-106"", ""REQ-107"", ""REQ-108""]",all listed requests accepted
+architectural_drawings,True,False,"[""REQ-101"", ""REQ-102"", ""REQ-105"", ""REQ-107""]",all listed requests accepted
+building_model,True,False,"[""REQ-101"", ""REQ-102""]",all listed requests accepted
+cost_estimation,True,False,"[""REQ-101"", ""REQ-103"", ""REQ-104"", ""REQ-105""]",all listed requests accepted
+material_schedules,False,False,"[""REQ-103"", ""REQ-105""]",all listed requests accepted
+parking_and_traffic,True,False,"[""REQ-106"", ""REQ-107""]",all listed requests accepted
+permit_and_bopa,True,False,"[""REQ-101"", ""REQ-102"", ""REQ-105"", ""REQ-106"", ""REQ-107"", ""REQ-108""]",all listed requests accepted
+quantity_takeoff,True,False,"[""REQ-101"", ""REQ-103"", ""REQ-104"", ""REQ-105""]",all listed requests accepted
+site_plan,True,False,"[""REQ-102""]",all listed requests accepted
+structural_design,False,False,"[""REQ-101"", ""REQ-103"", ""REQ-104""]",all listed requests accepted
+technical_specification,False,False,"[""REQ-103"", ""REQ-104"", ""REQ-105""]",all listed requests accepted

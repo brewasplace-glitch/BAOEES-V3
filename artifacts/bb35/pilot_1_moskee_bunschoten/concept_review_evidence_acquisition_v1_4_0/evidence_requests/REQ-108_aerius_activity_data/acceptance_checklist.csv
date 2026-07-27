@@ -1,0 +1,6 @@
+﻿criterion_id,acceptance_criterion,submitted,verified,review_comment
+REQ-108-AC-01,Construction phases and durations are listed.,False,False,
+REQ-108-AC-02,"Equipment type, power, hours and fuel are quantified.",False,False,
+REQ-108-AC-03,Construction transports and routes are quantified.,False,False,
+REQ-108-AC-04,Operational vehicle movements and vehicle classes are quantified.,False,False,
+REQ-108-AC-05,Structural/build-method and traffic advisors verify their respective inputs.,False,False,

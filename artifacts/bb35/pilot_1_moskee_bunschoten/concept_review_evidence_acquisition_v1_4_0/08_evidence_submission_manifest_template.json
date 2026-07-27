@@ -1,0 +1,34 @@
+{
+  "organization": "<organization>",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "professional_verification": {
+    "limitations": [],
+    "reviewer_name": "<qualified reviewer>",
+    "reviewer_organization": "<organization>",
+    "verification_date": "<YYYY-MM-DD>",
+    "verification_status": "<accepted|rejected>"
+  },
+  "project_id": "HBM-2026-001",
+  "request_id": "<REQ-101..REQ-108>",
+  "rule": "References, offer letters and screenshots do not replace required original technical evidence.",
+  "schema_version": "phoenix.bb35.evidence-submission/1.0",
+  "source_files": [
+    {
+      "file_name": "<original-file.ext>",
+      "sha256": "<calculated-by-intake-engine>",
+      "source_description": "<origin and revision>"
+    }
+  ],
+  "submission_date": "<YYYY-MM-DD>",
+  "submitted_by": "<name>",
+  "valid_request_ids": [
+    "REQ-101",
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-107",
+    "REQ-108"
+  ]
+}

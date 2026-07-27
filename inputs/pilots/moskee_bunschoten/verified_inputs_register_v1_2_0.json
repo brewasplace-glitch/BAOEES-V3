@@ -93,19 +93,23 @@
       "input_id": "HBM-VI-101",
       "category": "existing_building_drawings",
       "description": "Original 19-page PDF 'Haci Bayram tekeningen en details', dated 03-03-2004, as an independently accessible source file.",
-      "status": "referenced_not_embedded",
-      "severity": "critical",
-      "blocking": true,
+      "status": "verified",
+      "severity": "info",
+      "blocking": false,
       "responsible_party": "Owner / architect",
       "required_file_types": [
         "PDF"
-      ]
+      ],
+      "evidence_ids": [
+        "HBM-ING-001"
+      ],
+      "verification_note": "Independent 19-page existing-building drawing and detail PDF received."
     },
     {
       "input_id": "HBM-VI-102",
       "category": "cadastral_site_base",
       "description": "Original kadaster.dwg with parcel boundaries, coordinates and verifiable dimensions.",
-      "status": "referenced_not_embedded",
+      "status": "received_pending_geometry_validation",
       "severity": "critical",
       "blocking": true,
       "responsible_party": "Owner / architect / surveyor",
@@ -113,13 +117,18 @@
         "DWG",
         "DXF",
         "PDF"
-      ]
+      ],
+      "evidence_ids": [
+        "HBM-ING-002",
+        "HBM-ING-004"
+      ],
+      "verification_note": "Native AC1032 DWG received. Parcel geometry, coordinate system, scale and dimensional consistency still require CAD/survey validation."
     },
     {
       "input_id": "HBM-VI-103",
       "category": "structural_survey",
       "description": "Signed structural survey of existing foundations, frame, floors, roof and proposed connections.",
-      "status": "missing",
+      "status": "historical_documentation_received_current_survey_pending",
       "severity": "critical",
       "blocking": true,
       "responsible_party": "Structural engineer",
@@ -127,7 +136,12 @@
         "PDF",
         "photos",
         "measurement register"
-      ]
+      ],
+      "evidence_ids": [
+        "HBM-ING-003",
+        "HBM-ING-001"
+      ],
+      "verification_note": "Ten-page historical structural drawing set received, including foundation, reinforcement, floor and roof information. Current signed site survey and connection verification remain required."
     },
     {
       "input_id": "HBM-VI-104",
@@ -199,6 +213,58 @@
         "JSON",
         "PDF"
       ]
+    },
+    {
+      "input_id": "HBM-VI-007",
+      "category": "site_context",
+      "description": "Aerial location image showing the mosque and surrounding sports, parking and residential context.",
+      "status": "verified",
+      "severity": "info",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-ING-004"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-008",
+      "category": "facade_design_intent",
+      "description": "New-situation park-style facade impression received as design-intent evidence.",
+      "status": "verified_preliminary",
+      "severity": "warning",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-ING-005"
+      ]
+    },
+    {
+      "input_id": "HBM-VI-009",
+      "category": "coordinated_overview",
+      "description": "Coordinated overview received with 7,000 x 10,000 mm extension plans, existing plans, facades and sections.",
+      "status": "verified_preliminary",
+      "severity": "warning",
+      "blocking": false,
+      "evidence_ids": [
+        "HBM-ING-006"
+      ]
     }
-  ]
+  ],
+  "version": "1.4.1",
+  "last_evidence_intake": {
+    "intake_id": "HBM-EVIDENCE-INTAKE-2026-001",
+    "received_file_count": 6,
+    "closed_request_ids": [
+      "REQ-101"
+    ],
+    "partially_satisfied_request_ids": [
+      "REQ-102",
+      "REQ-103"
+    ],
+    "open_request_ids": [
+      "REQ-104",
+      "REQ-105",
+      "REQ-106",
+      "REQ-107",
+      "REQ-108"
+    ]
+  }
 }

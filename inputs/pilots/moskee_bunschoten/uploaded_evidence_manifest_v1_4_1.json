@@ -1,0 +1,84 @@
+{
+  "schema_version": "phoenix.bb35.uploaded-evidence-manifest/1.0",
+  "version": "1.4.1",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "authoritative_scope": {
+    "width_m": 7.0,
+    "depth_m": 10.0,
+    "storeys": 2,
+    "gross_extension_area_m2": 140.0
+  },
+  "files": [
+    {
+      "evidence_id": "HBM-ING-002",
+      "relative_path": "20251218 Bikkersweg 88 kadastergrens (1) (1).dwg",
+      "role": "original_cadastral_dwg",
+      "request_id": "REQ-102",
+      "sha256": "0aa977f66728494abc7812fd27dd29fd2b3e969462b384cc68171406f0966734",
+      "size_bytes": 216481,
+      "file_type": "dwg",
+      "dwg_signature": "AC1032",
+      "detected_version": "AutoCAD 2018/2019/2020",
+      "signature_valid": true
+    },
+    {
+      "evidence_id": "HBM-ING-004",
+      "relative_path": "Bovenanzicht google maps.png",
+      "role": "site_context_aerial_image",
+      "request_id": "SUPPORT",
+      "sha256": "a80a28622607b5d8262fb904f2b2e366f949d86c4c9d40759c17db0a31ae658d",
+      "size_bytes": 1628725,
+      "file_type": "png",
+      "width_px": 1673,
+      "height_px": 840,
+      "signature_valid": true
+    },
+    {
+      "evidence_id": "HBM-ING-003",
+      "relative_path": "Haci Bayram Constructietekeningen (1).pdf",
+      "role": "historical_structural_drawings_10_pages",
+      "request_id": "REQ-103",
+      "sha256": "1a5f2ad31d7f20b1c32a47adfa9fb34f6ff33d2204dc3001343d2184268544be",
+      "size_bytes": 1000237,
+      "file_type": "pdf",
+      "page_count": 10,
+      "signature_valid": true
+    },
+    {
+      "evidence_id": "HBM-ING-001",
+      "relative_path": "Haci Bayram tekeningen  en details (1).pdf",
+      "role": "official_existing_building_drawings_19_pages",
+      "request_id": "REQ-101",
+      "sha256": "0144a403daa0610a2b159489134d1e269f78e5e132c6150ca1bb59ac1b5d83c3",
+      "size_bytes": 1746261,
+      "file_type": "pdf",
+      "page_count": 19,
+      "signature_valid": true
+    },
+    {
+      "evidence_id": "HBM-ING-005",
+      "relative_path": "impressie nw sit moskee in parkstijl.png",
+      "role": "new_situation_facade_impression",
+      "request_id": "SUPPORT",
+      "sha256": "8615e7fe8d47cbb24bd2313864f0f64e02fe14200bda1493d7dc3d231734dee1",
+      "size_bytes": 3188762,
+      "file_type": "png",
+      "width_px": 1672,
+      "height_px": 941,
+      "signature_valid": true
+    },
+    {
+      "evidence_id": "HBM-ING-006",
+      "relative_path": "totaal overzicht.png",
+      "role": "coordinated_architectural_overview",
+      "request_id": "SUPPORT",
+      "sha256": "9b395156ecf8efa3fd28c784fb3b2daa91fb640814bcad89a6376a0fc4eda0c5",
+      "size_bytes": 1223331,
+      "file_type": "png",
+      "width_px": 1673,
+      "height_px": 907,
+      "signature_valid": true
+    }
+  ]
+}

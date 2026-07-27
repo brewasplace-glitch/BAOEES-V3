@@ -1,0 +1,19 @@
+﻿assumption_id,category,confidence,statement,disposition,evidence_request_ids,final_use_allowed
+A-001,status,authoritative,CONCEPT - NOT FOR EXECUTION OR SUBMISSION,retain_authoritative,[],True
+A-002,geometry,authoritative,Extension footprint is 7.00 x 10.00 m.,retain_authoritative,[],True
+A-003,geometry,authoritative,Two extension storeys provide approximately 140 m2 gross floor area.,retain_authoritative,[],True
+A-004,levels,concept,Concept floor-to-floor height is 3.30 m.,verify_before_final,"[""REQ-101""]",False
+A-005,roof,concept,Concept roof is a low-slope roof behind a 0.60 m parapet.,verify_before_final,"[""REQ-101"", ""REQ-105""]",False
+A-006,structure,concept,Preliminary structural option is a steel frame on a 3 x 3 column grid.,verify_before_final,"[""REQ-103"", ""REQ-104""]",False
+A-007,structure,concept,Floor system is provisionally a lightweight composite or precast floor.,verify_before_final,"[""REQ-103"", ""REQ-104""]",False
+A-008,foundation,unknown,Foundation type is unresolved pending structural survey and geotechnical evidence.,verify_before_final,"[""REQ-103"", ""REQ-104""]",False
+A-009,existing_building,safety_rule,No load is transferred to the existing building until the connection is professionally verified.,verify_before_final,"[""REQ-101"", ""REQ-103""]",False
+A-010,fire,unknown,"Fire resistance, compartmentation and escape routes require Bbl/fire-safety assessment.",verify_before_final,"[""REQ-105"", ""REQ-107""]",False
+A-011,occupancy,unknown,Occupancy and prayer-place capacity remain external verified inputs.,verify_before_final,"[""REQ-107""]",False
+A-012,parking,preliminary,Available parking information is preliminary and not field-verified.,verify_before_final,"[""REQ-106"", ""REQ-107""]",False
+A-013,aerius,safety_rule,No final AERIUS result is generated without verified activity and traffic data.,verify_before_final,"[""REQ-108""]",False
+A-014,materials,concept,Material selections are concept placeholders and may not be procured.,verify_before_final,"[""REQ-103"", ""REQ-105""]",False
+A-015,cost,concept,"Cost band uses illustrative planning allowances, not market-verified quotations.",verify_before_final,"[""REQ-103"", ""REQ-104"", ""REQ-105""]",False
+A-016,site,concept,Site plan is schematic until the original cadastral DWG or survey base is supplied.,verify_before_final,"[""REQ-102""]",False
+A-017,drawings,concept,Room boundaries are reconstructed conceptually from available overview plans.,verify_before_final,"[""REQ-101"", ""REQ-102""]",False
+A-018,quality,authoritative,Every output must retain the concept status notice.,retain_authoritative,[],True

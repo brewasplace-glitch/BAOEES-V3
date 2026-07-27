@@ -1,0 +1,433 @@
+{
+  "bb36_unlock_allowed": false,
+  "canonical_zip_headers": true,
+  "engine_version": "1.4.0",
+  "final_generation_allowed": false,
+  "outputs": [
+    {
+      "file_name": "04_assumption_disposition_register.csv",
+      "output_id": "assumptions_csv",
+      "relative_path": "04_assumption_disposition_register.csv",
+      "sha256": "87ba052fcdb81cfec5ef4d7efa6299c81a7e394c3eb435bd8dd53033382c2424",
+      "size_bytes": 2652
+    },
+    {
+      "file_name": "checksums.sha256",
+      "output_id": "checksums",
+      "relative_path": "checksums.sha256",
+      "sha256": "b0d5e9cae5d05266ee35c619bda374c18fa0eea504e2e62bdfc85b9ca2ba1d15",
+      "size_bytes": 7778
+    },
+    {
+      "file_name": "09_review_dashboard.html",
+      "output_id": "dashboard_html",
+      "relative_path": "09_review_dashboard.html",
+      "sha256": "399734e4cb175e5bdd5ed49b72a825f80dee27d3d361387384adc5058c5d906d",
+      "size_bytes": 5294
+    },
+    {
+      "file_name": "07_dependency_gate_matrix.csv",
+      "output_id": "dependency_csv",
+      "relative_path": "07_dependency_gate_matrix.csv",
+      "sha256": "febd807c009b0eb3d293f3642d149b8edd6dfb5dd0d0e362fed7af5b06c6a92b",
+      "size_bytes": 1193
+    },
+    {
+      "file_name": "03_review_findings.csv",
+      "output_id": "findings_csv",
+      "relative_path": "03_review_findings.csv",
+      "sha256": "a4092d328dcede10bee1a209dcceedd74aa5dc102ee401452d9fcd2937ef34e6",
+      "size_bytes": 1884
+    },
+    {
+      "file_name": "11_evidence_acquisition_master_request.pdf",
+      "output_id": "master_request_pdf",
+      "relative_path": "11_evidence_acquisition_master_request.pdf",
+      "sha256": "a9d0b2cd82ecd152b78c877a647d3d3a4aa02e9d7c4eaed581f18f367471db9d",
+      "size_bytes": 5388
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-101_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "220c87ac0c38ee91959254c72cbc62ee6e0c7a7c7871e0508bf0ecc9c24ba94f",
+      "size_bytes": 447
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-101_json",
+      "relative_path": "request.json",
+      "sha256": "3cbf34fa0f6494b6f6f301e5e18743dbe36f743bfe672f87f71ef37733d6b5a5",
+      "size_bytes": 910
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-101_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "b51edfb76837f615fb2295e9d203a2fb6f540f6b37e761fb1718736ccdafcccb",
+      "size_bytes": 985
+    },
+    {
+      "file_name": "REQ-101_evidence_request.pdf",
+      "output_id": "req-101_pdf",
+      "relative_path": "REQ-101_evidence_request.pdf",
+      "sha256": "c7441caa790b00b45bec6546a187e05361296b9ad8b3bab5ddd4d28bf3c0187f",
+      "size_bytes": 2248
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-101_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "d8e90ba283e9831ca43d938b43f1370c10db7c97474056fe895f0fb4de2ea948",
+      "size_bytes": 195
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-101_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "524479789283502e344d6e810f18e91a5dd97b49f1f80151a506adc955e15cb4",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-102_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "35165f16a3d27cf9e87621622de9b932d31c5bc1a6f9a3c2ea0f2b18aeb2b8b9",
+      "size_bytes": 419
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-102_json",
+      "relative_path": "request.json",
+      "sha256": "b62f64fed46db4f889ad8de51a7e22364f0f843c221511b62d22e923efa2e093",
+      "size_bytes": 876
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-102_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "c77bef0a0b06e8c108e08bb7aba913b878da92b3a6b424f18877ce220377d9ae",
+      "size_bytes": 952
+    },
+    {
+      "file_name": "REQ-102_evidence_request.pdf",
+      "output_id": "req-102_pdf",
+      "relative_path": "REQ-102_evidence_request.pdf",
+      "sha256": "172e43bca48e813bf8d5a61f52c76836c48f5dd248db92d229c6cc01efd53a31",
+      "size_bytes": 2231
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-102_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "eb034b3cd3ce07b2b033918057917e12bae4f4da4a8be9a3d6cc95cdb9506ffc",
+      "size_bytes": 193
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-102_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "493513c75400d7a7ddaab34c6ff6782a40ee1a3e93ce23b922e0dace90fa67dd",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-103_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "813e7f6f9a362ecbcb3112d0464e6eba2b314bad3279ec1a660e0a4872cc404d",
+      "size_bytes": 516
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-103_json",
+      "relative_path": "request.json",
+      "sha256": "6c31784971eb843187db4055ec56b66ca4a7acc847cacd7af35f41d50eaf4536",
+      "size_bytes": 967
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-103_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "f0a0fafde259dff9afc06df2bdc6f37b910f00535c188a58bfef820682ea51d4",
+      "size_bytes": 1040
+    },
+    {
+      "file_name": "REQ-103_evidence_request.pdf",
+      "output_id": "req-103_pdf",
+      "relative_path": "REQ-103_evidence_request.pdf",
+      "sha256": "d7417b1fa3f0977c43c386aa3707a7609bb7e69e355536e71d9443e53d50a1bf",
+      "size_bytes": 2326
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-103_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "ece3914ff30b948c5d6899f9e13b7a0914140c3ae6b45e3806bc92ab9e571570",
+      "size_bytes": 199
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-103_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "7b3919e14924dc28ad6fda1d521e4c0d70f28a0835261beda3968ae46e1c04f2",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-104_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "647a84e9299016ec6abb70364c1fffd533168d2c2c1280d15b0b96e3bc9b1435",
+      "size_bytes": 472
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-104_json",
+      "relative_path": "request.json",
+      "sha256": "4243252ff9143b20edb0d688f5f84cdd2b7bff78a119c34ffa4b27f150080ffa",
+      "size_bytes": 931
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-104_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "93fafac3c1a85597a80d56f19f78b0324096cd500279091d61eab4ff171e7149",
+      "size_bytes": 1009
+    },
+    {
+      "file_name": "REQ-104_evidence_request.pdf",
+      "output_id": "req-104_pdf",
+      "relative_path": "REQ-104_evidence_request.pdf",
+      "sha256": "76c83e05f2f3dda9e1fd5cfe1e66599d676c061da32243cd4f7e3a0c003518e6",
+      "size_bytes": 2313
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-104_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "6fd9c993f5787296fea1ba92d097ee04b83a51686fb8d3ec953d4a59b59429d4",
+      "size_bytes": 205
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-104_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "62f8505afd1b615cc632123b821a799cd6de828457954a41f501e8b91cd5e941",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-105_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "0b19d1f5f261abd36e05841312bac9cb8a7a8770469d9dd21e0ffbf64f1b010e",
+      "size_bytes": 531
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-105_json",
+      "relative_path": "request.json",
+      "sha256": "ac8a54decf935c5471861a2af7bd691de0428585668ac09185aae7b623541957",
+      "size_bytes": 1050
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-105_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "2b283765f0faa79f039f63ad960255552bfc2cbdf8654600ddc98ecfa86d763f",
+      "size_bytes": 1113
+    },
+    {
+      "file_name": "REQ-105_evidence_request.pdf",
+      "output_id": "req-105_pdf",
+      "relative_path": "REQ-105_evidence_request.pdf",
+      "sha256": "39a54ef45a5fb1c99abb20c162cbc2c605686a64f06464112f435385b649346a",
+      "size_bytes": 2434
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-105_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "2836faefbb00a758a1e5cc4233a3bdba89444decb40d9ea11418ed379ea90004",
+      "size_bytes": 203
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-105_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "8510a8d012abecee56efe062a17f38803153a193e61dff144f9aa59dca9fd355",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-106_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "25a7052817108fd51b4b0f9fc40aedb92e3e2eb2b77f2856a0128095fe650c93",
+      "size_bytes": 464
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-106_json",
+      "relative_path": "request.json",
+      "sha256": "e2bd860461b9de56afeaf5dd4b684d7612ff3f10a2e955514f86a39bf9bad27f",
+      "size_bytes": 912
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-106_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "d50f512277579f987a365cc9d75a5b0f84d07fc6c59f1c4938c1f7c6adc94b36",
+      "size_bytes": 985
+    },
+    {
+      "file_name": "REQ-106_evidence_request.pdf",
+      "output_id": "req-106_pdf",
+      "relative_path": "REQ-106_evidence_request.pdf",
+      "sha256": "868663f84ffa76f6878aeb0c24205d767843e11159bcb2c37f4fd7916b95d95b",
+      "size_bytes": 2271
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-106_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "c5f981fe981563d601fe5591703e648251ea35296de9af85e4c91c4a22a40233",
+      "size_bytes": 200
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-106_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "8daabf93379f4c2a624ba5109fb9d9062b0cdbb749d6918baa4316f24f422ed7",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-107_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "67c71fd8ce5dd2614c2a416a851591a3cf73830319f4b3527a19adf553d967bd",
+      "size_bytes": 497
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-107_json",
+      "relative_path": "request.json",
+      "sha256": "fc1740eab57017321c81d6ef4c128bc7f6e6a7dacc3ff82bbf643314418fbd06",
+      "size_bytes": 976
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-107_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "c4fbb056b78c0acce28bb06e6d14e353538887cf69a19864d6fed25d193bbfa1",
+      "size_bytes": 1049
+    },
+    {
+      "file_name": "REQ-107_evidence_request.pdf",
+      "output_id": "req-107_pdf",
+      "relative_path": "REQ-107_evidence_request.pdf",
+      "sha256": "12e8679d0d1090920dc6967acec31dee5f92b99f54cf108fd23e7f174f330e6a",
+      "size_bytes": 2393
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-107_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "78da5cce54d66936f3e76f65249b4f41fdc7d428fbf75fd208e13ce679d03410",
+      "size_bytes": 199
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-107_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "bd8faa2c82197690315a6d22edda1c344a965f891eb7d90595bf6ba7691fa6a7",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "acceptance_checklist.csv",
+      "output_id": "req-108_checklist",
+      "relative_path": "acceptance_checklist.csv",
+      "sha256": "580d64ca6e6460b513abb863c97ee2661fc9eb69a0ec0c4a073aae550c457e1b",
+      "size_bytes": 508
+    },
+    {
+      "file_name": "request.json",
+      "output_id": "req-108_json",
+      "relative_path": "request.json",
+      "sha256": "89014ea6d851088e515039ae8e270461015b63da32bc4716cb96616cfce9adfb",
+      "size_bytes": 941
+    },
+    {
+      "file_name": "request_letter.md",
+      "output_id": "req-108_letter",
+      "relative_path": "request_letter.md",
+      "sha256": "2333ebd27e0efa69befa2ab55dab67135294f014c3ab6c07970f8bdcb9ab54ac",
+      "size_bytes": 1023
+    },
+    {
+      "file_name": "REQ-108_evidence_request.pdf",
+      "output_id": "req-108_pdf",
+      "relative_path": "REQ-108_evidence_request.pdf",
+      "sha256": "a5de24fee1ff6b524928a47d05353754b07c1f293c6e07a36be70b3c4a016a78",
+      "size_bytes": 2384
+    },
+    {
+      "file_name": "SUBMISSION_README.txt",
+      "output_id": "req-108_readme",
+      "relative_path": "SUBMISSION_README.txt",
+      "sha256": "cf106f2ab880cb312f8e52be594b307f85e5abfa06850ed1360a62683074bd8a",
+      "size_bytes": 206
+    },
+    {
+      "file_name": "professional_verification_template.json",
+      "output_id": "req-108_verification",
+      "relative_path": "professional_verification_template.json",
+      "sha256": "0f6a5e2241f38fc020f8763d1efe62c5e2e023b3add269b4cdd8a3d36da929d5",
+      "size_bytes": 270
+    },
+    {
+      "file_name": "06_evidence_acquisition_master_register.csv",
+      "output_id": "requests_csv",
+      "relative_path": "06_evidence_acquisition_master_register.csv",
+      "sha256": "09a98e0b742fa6c8da2ff78dfeb0b8bbaf1c3903b084ed5b2ea94e75f540977a",
+      "size_bytes": 3093
+    },
+    {
+      "file_name": "02_concept_review_matrix.csv",
+      "output_id": "review_matrix_csv",
+      "relative_path": "02_concept_review_matrix.csv",
+      "sha256": "ab33b2b11a0e68cccd7c1071612284a7abb063f7d3afd2120350e6b5f98640df",
+      "size_bytes": 1588
+    },
+    {
+      "file_name": "10_concept_review_report.pdf",
+      "output_id": "review_report_pdf",
+      "relative_path": "10_concept_review_report.pdf",
+      "sha256": "026a911003d759a35158ddcd06b5cde731812265267cdefc07916dff52871a04",
+      "size_bytes": 5729
+    },
+    {
+      "file_name": "05_prioritized_risk_register.csv",
+      "output_id": "risks_csv",
+      "relative_path": "05_prioritized_risk_register.csv",
+      "sha256": "5113140ce6c0c9779f7c8daf87b7cc5de127c7bb3390042fab3010148183f4e0",
+      "size_bytes": 1844
+    },
+    {
+      "file_name": "08_evidence_submission_manifest_template.json",
+      "output_id": "submission_template_json",
+      "relative_path": "08_evidence_submission_manifest_template.json",
+      "sha256": "9ed93ef9879313ff75f2e0fcf83152e0e7270bc4fb4196bbc915fef7e570d806",
+      "size_bytes": 950
+    },
+    {
+      "file_name": "01_concept_review_summary.json",
+      "output_id": "summary_json",
+      "relative_path": "01_concept_review_summary.json",
+      "sha256": "528fa63f0dcc7552d67098759b60e90b226adff0c2723a011ef26dbeee3a7f7a",
+      "size_bytes": 2003
+    }
+  ],
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "schema_version": "phoenix.bb35.concept-review-manifest/1.0",
+  "status": "CONCEPT_REVIEW_COMPLETE_EVIDENCE_ACQUISITION_OPEN",
+  "status_notice": "CONCEPT - NOT FOR EXECUTION OR SUBMISSION"
+}

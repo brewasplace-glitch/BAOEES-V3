@@ -1,0 +1,29 @@
+{
+  "acceptance_criteria": [
+    "Existing and future maximum persons are separated.",
+    "Normal Friday, Ramadan and Eid scenarios are quantified.",
+    "Opening hours and weekly activities are included.",
+    "Vehicle occupancy and modal assumptions are coordinated with traffic advisor.",
+    "Owner signs or formally accepts the programme."
+  ],
+  "acceptance_summary": "Signed existing/future occupancy, prayer capacity, weekly programme and peak-event scenarios for 140 m2 scope.",
+  "blocking_final": true,
+  "category": "occupancy_and_use",
+  "input_id": "HBM-VI-107",
+  "priority": 7,
+  "request_id": "REQ-107",
+  "required_file_types": [
+    "signed schedule",
+    "CSV",
+    "PDF"
+  ],
+  "responsible_party": "Owner / architect / traffic consultant",
+  "status": "open_not_submitted",
+  "title": "Agreed occupancy and operational programme",
+  "unlocks_modules": [
+    "permit_and_bopa",
+    "parking_and_traffic",
+    "aerius",
+    "architectural_drawings"
+  ]
+}

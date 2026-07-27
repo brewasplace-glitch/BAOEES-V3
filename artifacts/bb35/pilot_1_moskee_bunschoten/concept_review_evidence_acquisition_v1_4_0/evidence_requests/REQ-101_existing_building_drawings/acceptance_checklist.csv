@@ -1,0 +1,5 @@
+﻿criterion_id,acceptance_criterion,submitted,verified,review_comment
+REQ-101-AC-01,"Complete original 19-page PDF, not a screenshot or partial extract.",False,False,
+REQ-101-AC-02,Document title/date/revision are readable.,False,False,
+REQ-101-AC-03,"All plans, elevations, sections, structural and detail pages are present.",False,False,
+REQ-101-AC-04,Architect or owner confirms this is the authoritative existing condition.,False,False,
