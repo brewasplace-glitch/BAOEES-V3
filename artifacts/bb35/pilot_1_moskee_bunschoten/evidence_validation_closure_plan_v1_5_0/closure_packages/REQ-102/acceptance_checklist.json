@@ -1,0 +1,49 @@
+{
+  "acceptance_criteria": [
+    {
+      "criterion_id": "REQ-102-AC-01",
+      "description": "De DWG opent zonder herstelmelding.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-102-AC-02",
+      "description": "Eenheden, schaal en hoofdafmetingen zijn expliciet bevestigd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-102-AC-03",
+      "description": "Perceelsgrenzen zijn herleidbaar tot de bron.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-102-AC-04",
+      "description": "De uitbreiding van 7,00 x 10,00 m kan eenduidig worden gepositioneerd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-102-AC-05",
+      "description": "Een bevoegd deskundige ondertekent het validatierapport.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    }
+  ],
+  "closure_status": "PLAN_READY_EXTERNAL_VALIDATION_REQUIRED",
+  "professional_signoff_required": true,
+  "rejection_conditions": [
+    "Onbekende of inconsistente eenheden.",
+    "Niet-herleidbare perceelsgrenzen.",
+    "Ontbrekende schaal- of coördinatenverklaring.",
+    "Afwijkingen zonder gedocumenteerde correctie."
+  ],
+  "request_id": "REQ-102",
+  "title": "Kadastrale DWG en ingemeten terreinonderlegger"
+}

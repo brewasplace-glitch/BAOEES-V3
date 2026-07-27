@@ -1,0 +1,89 @@
+{
+  "execution_order": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-107",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "nodes": [
+    {
+      "depends_on": [],
+      "priority": "P0",
+      "request_id": "REQ-102",
+      "unblocks": [
+        "site_plan",
+        "permit_documents",
+        "parking_analysis"
+      ]
+    },
+    {
+      "depends_on": [],
+      "priority": "P0",
+      "request_id": "REQ-103",
+      "unblocks": [
+        "structural_calculations",
+        "structural_report",
+        "specification_drawings"
+      ]
+    },
+    {
+      "depends_on": [
+        "REQ-102"
+      ],
+      "priority": "P0",
+      "request_id": "REQ-104",
+      "unblocks": [
+        "foundation_design",
+        "structural_calculations",
+        "cost_calculation"
+      ]
+    },
+    {
+      "depends_on": [
+        "REQ-107"
+      ],
+      "priority": "P1",
+      "request_id": "REQ-105",
+      "unblocks": [
+        "permit_documents",
+        "technical_specification",
+        "cost_calculation"
+      ]
+    },
+    {
+      "depends_on": [
+        "REQ-107"
+      ],
+      "priority": "P1",
+      "request_id": "REQ-106",
+      "unblocks": [
+        "parking_analysis",
+        "permit_documents"
+      ]
+    },
+    {
+      "depends_on": [],
+      "priority": "P0_CRITICAL_PATH",
+      "request_id": "REQ-107",
+      "unblocks": [
+        "REQ-105",
+        "REQ-106",
+        "REQ-108"
+      ]
+    },
+    {
+      "depends_on": [
+        "REQ-107"
+      ],
+      "priority": "P1",
+      "request_id": "REQ-108",
+      "unblocks": [
+        "aerius_assessment",
+        "permit_documents"
+      ]
+    }
+  ]
+}

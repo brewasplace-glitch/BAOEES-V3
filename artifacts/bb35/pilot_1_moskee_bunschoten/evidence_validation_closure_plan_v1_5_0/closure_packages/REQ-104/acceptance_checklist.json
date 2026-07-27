@@ -1,0 +1,49 @@
+{
+  "acceptance_criteria": [
+    {
+      "criterion_id": "REQ-104-AC-01",
+      "description": "Onderzoekslocaties zijn op tekening vastgelegd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-104-AC-02",
+      "description": "Peilen en coördinaten zijn herleidbaar.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-104-AC-03",
+      "description": "Advies sluit aan op de uitbreiding van 140 m² bruto.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-104-AC-04",
+      "description": "Toelaatbare belastingen en zettingen zijn benoemd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-104-AC-05",
+      "description": "Rapport is ondertekend door een deskundige.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    }
+  ],
+  "closure_status": "PLAN_READY_FIELD_INVESTIGATION_REQUIRED",
+  "professional_signoff_required": true,
+  "rejection_conditions": [
+    "Alleen generieke bodemkaart zonder projectspecifieke motivering.",
+    "Geen peilreferentie of grondwaterinformatie.",
+    "Geen funderingsadvies.",
+    "Geen herleidbare meetdata."
+  ],
+  "request_id": "REQ-104",
+  "title": "Grondonderzoek en funderingsadvies"
+}

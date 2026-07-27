@@ -1,0 +1,49 @@
+{
+  "acceptance_criteria": [
+    {
+      "criterion_id": "REQ-105-AC-01",
+      "description": "Uitgangspunten zijn gebaseerd op het goedgekeurde gebruiksprogramma.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-105-AC-02",
+      "description": "Brand- en vluchtwegcapaciteit zijn aantoonbaar gecontroleerd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-105-AC-03",
+      "description": "Ventilatie en installaties zijn ruimtelijk gecoördineerd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-105-AC-04",
+      "description": "Afwijkingen en gelijkwaardigheden zijn expliciet benoemd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-105-AC-05",
+      "description": "Documenten zijn ondertekend door de verantwoordelijke adviseurs.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    }
+  ],
+  "closure_status": "PLAN_READY_STRATEGIC_AND_PROFESSIONAL_INPUT_REQUIRED",
+  "professional_signoff_required": true,
+  "rejection_conditions": [
+    "Geen koppeling aan goedgekeurde bezetting.",
+    "Geen brandveiligheids- of ventilatieberekening.",
+    "Onbevestigde materiaal- of installatiekeuzes.",
+    "Tegenstrijdige uitgangspunten tussen disciplines."
+  ],
+  "request_id": "REQ-105",
+  "title": "Bbl-, brandveiligheids- en installatie-uitgangspunten"
+}

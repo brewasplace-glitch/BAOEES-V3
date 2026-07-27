@@ -1,0 +1,24 @@
+{
+  "provider_name": null,
+  "provider_role": "Registerconstructeur / constructeur",
+  "request_id": "REQ-103",
+  "required_formats": [
+    "PDF",
+    "JPG",
+    "CSV"
+  ],
+  "schema_version": "phoenix.bb35.evidence-submission-manifest/1.0",
+  "signature": {
+    "qualification": null,
+    "signatory": null,
+    "signed": false
+  },
+  "source_files": [],
+  "submission_date": null,
+  "submission_id": null,
+  "verification": {
+    "acceptance_checklist_complete": false,
+    "accepted": false,
+    "sha256_complete": false
+  }
+}

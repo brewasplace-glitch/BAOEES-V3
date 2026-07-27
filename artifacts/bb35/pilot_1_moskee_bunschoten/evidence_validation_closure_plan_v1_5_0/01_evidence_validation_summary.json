@@ -1,0 +1,71 @@
+{
+  "acceptance_criterion_count": 35,
+  "authoritative_scope": {
+    "depth_m": 10.0,
+    "gross_extension_area_m2": 140.0,
+    "storeys": 2,
+    "width_m": 7.0
+  },
+  "bb36_unlock_allowed": false,
+  "closed_request_count": 1,
+  "closure_authority_counts": {
+    "client_strategic_decision": 1,
+    "external_professional": 3,
+    "mixed": 3
+  },
+  "closure_execution_allowed": true,
+  "closure_item_count": 7,
+  "concept_generation_allowed": true,
+  "critical_path_downstream_requests": [
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "critical_path_root": "REQ-107",
+  "engine_version": "1.5.0",
+  "final_generation_allowed": false,
+  "internal_automation_action_count": 21,
+  "next_gate": "Approve the strategic use and occupancy decisions for REQ-107, then issue the external professional work orders.",
+  "open_request_count": 5,
+  "partial_request_count": 2,
+  "pending_strategic_decision_count": 8,
+  "pilot_completed": false,
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "policy": {
+    "gate": {
+      "bb36_unlock_allowed": false,
+      "closure_execution_allowed": true,
+      "current_status": "EVIDENCE_VALIDATION_COMPLETE_CLOSURE_PLAN_READY",
+      "final_generation_allowed": false
+    },
+    "rules": {
+      "all_evidence_requires_hash_and_source_registration": true,
+      "concept_documents_remain_non_submittable": true,
+      "external_reports_require_signature": true,
+      "no_automatic_professional_signoff": true,
+      "no_final_generation_with_open_blockers": true,
+      "one_authoritative_occupancy_version_across_disciplines": true,
+      "strategic_decisions_require_owner_approval": true
+    },
+    "schema_version": "phoenix.bb35.evidence-closure-policy/1.0",
+    "version": "1.5.0"
+  },
+  "professional_work_order_count": 6,
+  "project_id": "HBM-2026-001",
+  "project_name": "Uitbreiding Haci Bayram Moskee",
+  "recommended_execution_order": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-107",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "remaining_blocking_input_count": 7,
+  "report_fingerprint_sha256": "0ea9878d0ee431798b7bbfc4ff75dde361406e29ae6def93112e3bd00869e7c3",
+  "schema_version": "phoenix.bb35.evidence-validation-closure-plan/1.0",
+  "source_gate_status": "EVIDENCE_ACQUISITION_PARTIALLY_SATISFIED",
+  "status": "EVIDENCE_VALIDATION_COMPLETE_CLOSURE_PLAN_READY",
+  "strategic_decision_count": 8
+}

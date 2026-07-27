@@ -1,0 +1,49 @@
+{
+  "acceptance_criteria": [
+    {
+      "criterion_id": "REQ-108-AC-01",
+      "description": "Aanleg- en gebruiksfase zijn afzonderlijk berekend.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-108-AC-02",
+      "description": "Alle invoereenheden en bronnen zijn herleidbaar.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-108-AC-03",
+      "description": "Verkeersdata sluiten aan op REQ-107 en REQ-106.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-108-AC-04",
+      "description": "Berekening bevat versie, datum en adviseursverklaring.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-108-AC-05",
+      "description": "Bronbestanden zijn meegeleverd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    }
+  ],
+  "closure_status": "PLAN_READY_ACTIVITY_DATA_REQUIRED",
+  "professional_signoff_required": true,
+  "rejection_conditions": [
+    "Onbekende bouwmethode of materieelinzet.",
+    "Geen onderscheid tussen aanleg en gebruik.",
+    "Verkeersdata wijken af van het goedgekeurde programma.",
+    "Alleen een screenshot zonder AERIUS-bronbestand."
+  ],
+  "request_id": "REQ-108",
+  "title": "AERIUS-activiteitendata voor aanleg en gebruik"
+}

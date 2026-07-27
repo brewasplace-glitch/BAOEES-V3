@@ -1,0 +1,49 @@
+{
+  "acceptance_criteria": [
+    {
+      "criterion_id": "REQ-106-AC-01",
+      "description": "Meetmomenten omvatten ten minste de relevante vrijdagpiek.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-106-AC-02",
+      "description": "De telling is reproduceerbaar per deelgebied.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-106-AC-03",
+      "description": "Beschikbaarheid en gebruiksrechten zijn juridisch of beheerstechnisch onderbouwd.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-106-AC-04",
+      "description": "Moskeegebruik is afzonderlijk zichtbaar in de analyse.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    },
+    {
+      "criterion_id": "REQ-106-AC-05",
+      "description": "Conclusies sluiten aan op het goedgekeurde bezettingsprogramma.",
+      "evidence_reference": null,
+      "reviewer": null,
+      "status": "PENDING"
+    }
+  ],
+  "closure_status": "PLAN_READY_FIELD_MEASUREMENT_REQUIRED",
+  "professional_signoff_required": true,
+  "rejection_conditions": [
+    "Alleen desktopinschatting zonder veldmeting.",
+    "Geen onderscheid tussen openbaar en privaat.",
+    "Niet-representatieve meetmomenten.",
+    "Geen herleidbare ruwe tellingen."
+  ],
+  "request_id": "REQ-106",
+  "title": "Parkeerdrukmeting, parkeerbalans en gebruiksrechten"
+}

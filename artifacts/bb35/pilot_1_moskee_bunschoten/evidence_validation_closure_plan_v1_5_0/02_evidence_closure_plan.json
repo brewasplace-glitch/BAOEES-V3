@@ -1,0 +1,413 @@
+{
+  "closure_items": [
+    {
+      "acceptance_criteria": [
+        "De DWG opent zonder herstelmelding.",
+        "Eenheden, schaal en hoofdafmetingen zijn expliciet bevestigd.",
+        "Perceelsgrenzen zijn herleidbaar tot de bron.",
+        "De uitbreiding van 7,00 x 10,00 m kan eenduidig worden gepositioneerd.",
+        "Een bevoegd deskundige ondertekent het validatierapport."
+      ],
+      "category": "cadastral_site_base",
+      "closure_authority": "external_professional",
+      "closure_status": "PLAN_READY_EXTERNAL_VALIDATION_REQUIRED",
+      "current_status": "RECEIVED_PENDING_GEOMETRY_VALIDATION",
+      "depends_on": [],
+      "estimated_external_effort": "1–2 werkdagen",
+      "external_deliverables": [
+        "Ondertekend geometrie- en coördinatenvalidatierapport.",
+        "Bevestiging van DWG-eenheden en schaal.",
+        "Bevestiging perceelsgrenzen en maatvoering.",
+        "Vastgelegd coördinatenstelsel of expliciete lokale referentie.",
+        "Gecontroleerde PDF-plot met noordpijl, schaal en hoofdafmetingen."
+      ],
+      "input_id": "HBM-VI-102",
+      "internal_actions": [
+        "Bevestig SHA-256, bestandstype AC1032 en evidence-ID.",
+        "Registreer de aangeleverde luchtfoto als ondersteunende context.",
+        "Maak een controlelijst voor lagen, eenheden, schaal en geometrie."
+      ],
+      "lead_party": "Landmeter / CAD-specialist",
+      "priority": "P0",
+      "rejection_conditions": [
+        "Onbekende of inconsistente eenheden.",
+        "Niet-herleidbare perceelsgrenzen.",
+        "Ontbrekende schaal- of coördinatenverklaring.",
+        "Afwijkingen zonder gedocumenteerde correctie."
+      ],
+      "request_id": "REQ-102",
+      "required_formats": [
+        "DWG",
+        "PDF",
+        "JSON"
+      ],
+      "strategic_decisions": [],
+      "supporting_parties": [
+        "Architect",
+        "Phoenix"
+      ],
+      "title": "Kadastrale DWG en ingemeten terreinonderlegger",
+      "unblocks": [
+        "site_plan",
+        "permit_documents",
+        "parking_analysis"
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Opname is projectspecifiek en actueel.",
+        "Alle dragende aansluitpunten zijn fysiek beoordeeld.",
+        "Afmetingen zijn gemeten en niet alleen uit oude tekeningen overgenomen.",
+        "Afwijkingen tussen bestaand werk en historische tekeningen zijn vastgelegd.",
+        "De constructeur ondertekent conclusies en beperkingen."
+      ],
+      "category": "structural_survey",
+      "closure_authority": "external_professional",
+      "closure_status": "PLAN_READY_CURRENT_SURVEY_REQUIRED",
+      "current_status": "HISTORICAL_DOCUMENTATION_ACCEPTED_CURRENT_SURVEY_PENDING",
+      "depends_on": [],
+      "estimated_external_effort": "2–4 werkdagen",
+      "external_deliverables": [
+        "Ondertekende opname van fundering, draagstructuur, vloeren en dak.",
+        "Meetstaat van relevante bestaande doorsneden en overspanningen.",
+        "Fotoregister met locatieverwijzingen.",
+        "Conditiebeoordeling van bestaande constructiedelen.",
+        "Aansluitadvies voor de uitbreiding en noodzakelijke scheidingen."
+      ],
+      "input_id": "HBM-VI-103",
+      "internal_actions": [
+        "Indexeer historische funderings-, vloer- en dakbladen.",
+        "Koppel bestaande details aan de voorgenomen uitbreiding.",
+        "Genereer een meet- en fotoregister voor de opname."
+      ],
+      "lead_party": "Registerconstructeur / constructeur",
+      "priority": "P0",
+      "rejection_conditions": [
+        "Alleen bureauonderzoek zonder locatiebezoek.",
+        "Geen controle van fundering of aansluitzones.",
+        "Geen meetstaat of fotobewijs.",
+        "Niet-ondertekende conclusies."
+      ],
+      "request_id": "REQ-103",
+      "required_formats": [
+        "PDF",
+        "JPG",
+        "CSV"
+      ],
+      "strategic_decisions": [],
+      "supporting_parties": [
+        "Architect",
+        "Eigenaar",
+        "Phoenix"
+      ],
+      "title": "Actuele constructieve opname en aansluitcontrole",
+      "unblocks": [
+        "structural_calculations",
+        "structural_report",
+        "specification_drawings"
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Onderzoekslocaties zijn op tekening vastgelegd.",
+        "Peilen en coördinaten zijn herleidbaar.",
+        "Advies sluit aan op de uitbreiding van 140 m² bruto.",
+        "Toelaatbare belastingen en zettingen zijn benoemd.",
+        "Rapport is ondertekend door een deskundige."
+      ],
+      "category": "geotechnical",
+      "closure_authority": "external_professional",
+      "closure_status": "PLAN_READY_FIELD_INVESTIGATION_REQUIRED",
+      "current_status": "OPEN",
+      "depends_on": [
+        "REQ-102"
+      ],
+      "estimated_external_effort": "5–15 werkdagen",
+      "external_deliverables": [
+        "Projectspecifieke sondering(en) of gemotiveerde gelijkwaardige bron.",
+        "Laagopbouw en grondparameters.",
+        "Grondwaterstand en peilreferentie.",
+        "Funderingsadvies voor de uitbreiding.",
+        "Zettings- en uitvoeringsaandachtspunten."
+      ],
+      "input_id": "HBM-VI-104",
+      "internal_actions": [
+        "Lever scope, situering en conceptbelastingen aan.",
+        "Genereer invoersjabloon voor sonderingen en grondwater.",
+        "Controleer volledigheid en bronverwijzingen bij ontvangst."
+      ],
+      "lead_party": "Geotechnisch adviseur",
+      "priority": "P0",
+      "rejection_conditions": [
+        "Alleen generieke bodemkaart zonder projectspecifieke motivering.",
+        "Geen peilreferentie of grondwaterinformatie.",
+        "Geen funderingsadvies.",
+        "Geen herleidbare meetdata."
+      ],
+      "request_id": "REQ-104",
+      "required_formats": [
+        "PDF",
+        "GEF",
+        "CSV"
+      ],
+      "strategic_decisions": [],
+      "supporting_parties": [
+        "Constructeur",
+        "Architect",
+        "Phoenix"
+      ],
+      "title": "Grondonderzoek en funderingsadvies",
+      "unblocks": [
+        "foundation_design",
+        "structural_calculations",
+        "cost_calculation"
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Uitgangspunten zijn gebaseerd op het goedgekeurde gebruiksprogramma.",
+        "Brand- en vluchtwegcapaciteit zijn aantoonbaar gecontroleerd.",
+        "Ventilatie en installaties zijn ruimtelijk gecoördineerd.",
+        "Afwijkingen en gelijkwaardigheden zijn expliciet benoemd.",
+        "Documenten zijn ondertekend door de verantwoordelijke adviseurs."
+      ],
+      "category": "technical_assumptions",
+      "closure_authority": "mixed",
+      "closure_status": "PLAN_READY_STRATEGIC_AND_PROFESSIONAL_INPUT_REQUIRED",
+      "current_status": "OPEN",
+      "depends_on": [
+        "REQ-107"
+      ],
+      "estimated_external_effort": "5–10 werkdagen",
+      "external_deliverables": [
+        "Ondertekende Bbl-uitgangspuntennotitie.",
+        "Brandveiligheidsconcept met bezetting en vluchtroutes.",
+        "Ventilatie- en installatieconcept.",
+        "Toegankelijkheids- en sanitaire uitgangspunten.",
+        "Materiaal- en prestatiekeuzes voor definitieve uitwerking."
+      ],
+      "input_id": "HBM-VI-105",
+      "internal_actions": [
+        "Maak een eisenmatrix voor brand, ventilatie, daglicht en toegankelijkheid.",
+        "Koppel iedere eis aan bron, verantwoordelijke en bewijsstuk.",
+        "Controleer dat conceptstukken niet als definitief worden gebruikt."
+      ],
+      "lead_party": "Architect / Bbl-adviseur / installatieadviseur",
+      "priority": "P1",
+      "rejection_conditions": [
+        "Geen koppeling aan goedgekeurde bezetting.",
+        "Geen brandveiligheids- of ventilatieberekening.",
+        "Onbevestigde materiaal- of installatiekeuzes.",
+        "Tegenstrijdige uitgangspunten tussen disciplines."
+      ],
+      "request_id": "REQ-105",
+      "required_formats": [
+        "PDF",
+        "XLSX",
+        "JSON"
+      ],
+      "strategic_decisions": [
+        "DEC-105-01",
+        "DEC-105-02"
+      ],
+      "supporting_parties": [
+        "Eigenaar",
+        "Brandveiligheidsadviseur",
+        "Phoenix"
+      ],
+      "title": "Bbl-, brandveiligheids- en installatie-uitgangspunten",
+      "unblocks": [
+        "permit_documents",
+        "technical_specification",
+        "cost_calculation"
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Meetmomenten omvatten ten minste de relevante vrijdagpiek.",
+        "De telling is reproduceerbaar per deelgebied.",
+        "Beschikbaarheid en gebruiksrechten zijn juridisch of beheerstechnisch onderbouwd.",
+        "Moskeegebruik is afzonderlijk zichtbaar in de analyse.",
+        "Conclusies sluiten aan op het goedgekeurde bezettingsprogramma."
+      ],
+      "category": "parking_field_evidence",
+      "closure_authority": "mixed",
+      "closure_status": "PLAN_READY_FIELD_MEASUREMENT_REQUIRED",
+      "current_status": "OPEN",
+      "depends_on": [
+        "REQ-107"
+      ],
+      "estimated_external_effort": "5–10 werkdagen",
+      "external_deliverables": [
+        "Parkeerdrukmetingen op representatieve momenten.",
+        "Herleidbare telling per deelgebied.",
+        "Bevestiging openbaar, privaat of gedeeld gebruik.",
+        "Documentatie van eventuele gebruiksafspraken.",
+        "Definitieve parkeerbalans voor de uitbreiding."
+      ],
+      "input_id": "HBM-VI-106",
+      "internal_actions": [
+        "Gebruik de bestaande voorlopige telling van circa 300 plaatsen als hypothese.",
+        "Genereer meetformulieren voor representatieve piekmomenten.",
+        "Controleer dataset op tijdstippen, locaties, dubbeltellingen en bewijsfoto's."
+      ],
+      "lead_party": "Verkeerskundig adviseur",
+      "priority": "P1",
+      "rejection_conditions": [
+        "Alleen desktopinschatting zonder veldmeting.",
+        "Geen onderscheid tussen openbaar en privaat.",
+        "Niet-representatieve meetmomenten.",
+        "Geen herleidbare ruwe tellingen."
+      ],
+      "request_id": "REQ-106",
+      "required_formats": [
+        "CSV",
+        "PDF",
+        "JPG",
+        "agreements"
+      ],
+      "strategic_decisions": [
+        "DEC-106-01"
+      ],
+      "supporting_parties": [
+        "Eigenaar",
+        "Gemeente / beheerders",
+        "Phoenix"
+      ],
+      "title": "Parkeerdrukmeting, parkeerbalans en gebruiksrechten",
+      "unblocks": [
+        "parking_analysis",
+        "permit_documents"
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Reguliere bezetting, vrijdagpiek en bijzondere piek zijn afzonderlijk vastgesteld.",
+        "Weekprogramma en openingstijden zijn compleet.",
+        "Bestaande en toekomstige situatie zijn afzonderlijk vastgelegd.",
+        "De eigenaar of het bestuur heeft het programma ondertekend.",
+        "Dezelfde versie wordt gebruikt voor brand, parkeren en AERIUS."
+      ],
+      "category": "occupancy_and_use",
+      "closure_authority": "client_strategic_decision",
+      "closure_status": "PLAN_READY_STRATEGIC_DECISION_REQUIRED",
+      "current_status": "OPEN",
+      "depends_on": [],
+      "estimated_external_effort": "Strategische beslissing; 1 werksessie",
+      "external_deliverables": [
+        "Medeondertekende controle door architect of verkeersadviseur."
+      ],
+      "input_id": "HBM-VI-107",
+      "internal_actions": [
+        "Genereer het strategische beslisformulier.",
+        "Controleer totalen, tijdvensters en scenario-consistentie.",
+        "Versiebeheer en ondertekening van de goedgekeurde gebruiksmatrix."
+      ],
+      "lead_party": "Eigenaar / bestuur",
+      "priority": "P0_CRITICAL_PATH",
+      "rejection_conditions": [
+        "Alleen één ongedifferentieerd bezoekersaantal.",
+        "Geen tijdstippen of weekprogramma.",
+        "Niet-ondertekende capaciteit.",
+        "Verschillende aantallen per discipline."
+      ],
+      "request_id": "REQ-107",
+      "required_formats": [
+        "signed PDF",
+        "CSV",
+        "JSON"
+      ],
+      "strategic_decisions": [
+        "DEC-107-01",
+        "DEC-107-02",
+        "DEC-107-03",
+        "DEC-107-04"
+      ],
+      "supporting_parties": [
+        "Architect",
+        "Verkeersadviseur",
+        "Phoenix"
+      ],
+      "title": "Definitief bezettings- en gebruiksprogramma",
+      "unblocks": [
+        "REQ-105",
+        "REQ-106",
+        "REQ-108"
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Aanleg- en gebruiksfase zijn afzonderlijk berekend.",
+        "Alle invoereenheden en bronnen zijn herleidbaar.",
+        "Verkeersdata sluiten aan op REQ-107 en REQ-106.",
+        "Berekening bevat versie, datum en adviseursverklaring.",
+        "Bronbestanden zijn meegeleverd."
+      ],
+      "category": "aerius_activity_data",
+      "closure_authority": "mixed",
+      "closure_status": "PLAN_READY_ACTIVITY_DATA_REQUIRED",
+      "current_status": "OPEN",
+      "depends_on": [
+        "REQ-107"
+      ],
+      "estimated_external_effort": "3–7 werkdagen na complete invoer",
+      "external_deliverables": [
+        "Bouwduur en fasering.",
+        "Materieellijst met draaiuren en brandstofsoort.",
+        "Aan- en afvoerbewegingen.",
+        "Operationele verkeersbewegingen.",
+        "AERIUS-berekening met project- en bronbestanden."
+      ],
+      "input_id": "HBM-VI-108",
+      "internal_actions": [
+        "Genereer invoertabellen voor materieel, uren, brandstof en transport.",
+        "Controleer eenheden, dubbeltellingen en scenario-versies.",
+        "Koppel gebruiksfaseverkeer aan het goedgekeurde bezettingsprogramma."
+      ],
+      "lead_party": "AERIUS-adviseur",
+      "priority": "P1",
+      "rejection_conditions": [
+        "Onbekende bouwmethode of materieelinzet.",
+        "Geen onderscheid tussen aanleg en gebruik.",
+        "Verkeersdata wijken af van het goedgekeurde programma.",
+        "Alleen een screenshot zonder AERIUS-bronbestand."
+      ],
+      "request_id": "REQ-108",
+      "required_formats": [
+        "JSON",
+        "CSV",
+        "PDF",
+        "AERIUS export"
+      ],
+      "strategic_decisions": [
+        "DEC-108-01"
+      ],
+      "supporting_parties": [
+        "Constructeur / bouwmethodiekadviseur",
+        "Verkeersadviseur",
+        "Eigenaar",
+        "Phoenix"
+      ],
+      "title": "AERIUS-activiteitendata voor aanleg en gebruik",
+      "unblocks": [
+        "aerius_assessment",
+        "permit_documents"
+      ]
+    }
+  ],
+  "critical_path_downstream_requests": [
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "critical_path_root": "REQ-107",
+  "recommended_execution_order": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-107",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ]
+}

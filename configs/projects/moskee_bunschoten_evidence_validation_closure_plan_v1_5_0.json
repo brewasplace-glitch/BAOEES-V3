@@ -1,0 +1,41 @@
+{
+  "schema_version": "phoenix.bb35.evidence-validation-closure-plan-config/1.0",
+  "version": "1.5.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "authoritative_scope": {
+    "width_m": 7.0,
+    "depth_m": 10.0,
+    "storeys": 2,
+    "gross_extension_area_m2": 140.0
+  },
+  "critical_path_root": "REQ-107",
+  "closure_request_ids": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-107",
+    "REQ-108"
+  ],
+  "policy": {
+    "schema_version": "phoenix.bb35.evidence-closure-policy/1.0",
+    "version": "1.5.0",
+    "rules": {
+      "no_automatic_professional_signoff": true,
+      "no_final_generation_with_open_blockers": true,
+      "strategic_decisions_require_owner_approval": true,
+      "external_reports_require_signature": true,
+      "all_evidence_requires_hash_and_source_registration": true,
+      "one_authoritative_occupancy_version_across_disciplines": true,
+      "concept_documents_remain_non_submittable": true
+    },
+    "gate": {
+      "current_status": "EVIDENCE_VALIDATION_COMPLETE_CLOSURE_PLAN_READY",
+      "closure_execution_allowed": true,
+      "final_generation_allowed": false,
+      "bb36_unlock_allowed": false
+    }
+  }
+}
