@@ -33,3 +33,8 @@ The BB35 simulation, integrated dossier and project-leader review are connected.
 ## Production engine integration v1.1.0
 
 The real concept drawings and reports workflow is enabled and the generated issue index and complete drawing set can be opened directly from the local dashboard.
+
+
+## Central model integration v1.2.0
+
+The dashboard can build and open the central geometric project model. The real drawings and reports workflow now derives its geometry and parking capacity from the canonical model fingerprint.

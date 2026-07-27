@@ -774,7 +774,7 @@ class DocxBuilder:
 
 
 class RealConceptProductionEngine:
-    VERSION = "1.0.0"
+    VERSION = "1.1.0"
 
     def __init__(self, config: Mapping[str, Any]) -> None:
         self.config=config
@@ -856,6 +856,9 @@ class RealConceptProductionEngine:
             'issue_id':self.config['issue_id'],
             'issue_date':self.config['issue_date'],
             'project_id':self.project['project_id'],
+            'model_id':self.config.get('model_provenance',{}).get('model_id'),
+            'model_fingerprint_sha256':self.config.get('model_provenance',{}).get('model_fingerprint_sha256'),
+            'geometry_source':self.config.get('model_provenance',{}).get('geometry_source','legacy_config'),
             'status':'REAL_CONCEPT_DRAWINGS_AND_REPORTS_GENERATED',
             'drawing_sheet_count':len(drawing_register),
             'drawing_pdf_count':len(drawing_register)+1,

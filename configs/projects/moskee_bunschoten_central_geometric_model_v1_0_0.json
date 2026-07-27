@@ -1,0 +1,196 @@
+{
+  "construction": {
+    "external_wall_thickness_m": 0.2,
+    "internal_wall_thickness_m": 0.1,
+    "roof_thickness_m": 0.2,
+    "slab_thickness_m": 0.25,
+    "storey_height_m": 3.2
+  },
+  "coordinate_system": {
+    "axis_x": "east",
+    "axis_y": "north",
+    "axis_z": "up",
+    "name": "HBM_LOCAL_CARTESIAN",
+    "origin_description": "Synthetic project origin; cadastral transformation pending REQ-102."
+  },
+  "existing_building": {
+    "footprint": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        12.0,
+        0.0
+      ],
+      [
+        12.0,
+        14.0
+      ],
+      [
+        0.0,
+        14.0
+      ]
+    ],
+    "id": "BLD-EXISTING",
+    "name": "Bestaande moskee",
+    "storeys": 2
+  },
+  "extension": {
+    "footprint": [
+      [
+        12.0,
+        2.0
+      ],
+      [
+        19.0,
+        2.0
+      ],
+      [
+        19.0,
+        12.0
+      ],
+      [
+        12.0,
+        12.0
+      ]
+    ],
+    "gross_area_m2": 140.0,
+    "id": "BLD-EXTENSION",
+    "length_m": 10.0,
+    "name": "Conceptuitbreiding",
+    "storeys": 2,
+    "width_m": 7.0
+  },
+  "levels": [
+    {
+      "elevation_m": 0.0,
+      "id": "L00",
+      "name": "Begane grond",
+      "storey_index": 0
+    },
+    {
+      "elevation_m": 3.2,
+      "id": "L01",
+      "name": "Verdieping",
+      "storey_index": 1
+    },
+    {
+      "elevation_m": 6.4,
+      "id": "LRF",
+      "name": "Dak",
+      "storey_index": 2
+    }
+  ],
+  "model_id": "HBM-GEO-2026-001",
+  "parking_bay": {
+    "gap_m": 0.2,
+    "length_m": 5.0,
+    "width_m": 2.5
+  },
+  "parking_zones": [
+    {
+      "columns": 14,
+      "id": "P-A",
+      "name": "Directe parkeerzone noord",
+      "origin": [
+        -35.0,
+        20.0
+      ],
+      "spaces": 70
+    },
+    {
+      "columns": 10,
+      "id": "P-B",
+      "name": "Sportcluster west",
+      "origin": [
+        -45.0,
+        -10.0
+      ],
+      "spaces": 50
+    },
+    {
+      "columns": 10,
+      "id": "P-C",
+      "name": "Openbare stroken zuid",
+      "origin": [
+        -20.0,
+        -35.0
+      ],
+      "spaces": 40
+    },
+    {
+      "columns": 7,
+      "id": "P-D",
+      "name": "Voorzieningencluster oost",
+      "origin": [
+        25.0,
+        -5.0
+      ],
+      "spaces": 35
+    },
+    {
+      "columns": 10,
+      "id": "P-E",
+      "name": "Overige directe omgeving",
+      "origin": [
+        25.0,
+        20.0
+      ],
+      "spaces": 30
+    }
+  ],
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "professional_blockers": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "project_id": "HBM-2026-001",
+  "req107_status": "CLOSED_PROJECT_LEADER_APPROVED",
+  "schema_version": "phoenix.central-geometric-project-model/1.0",
+  "site": {
+    "parcel_polygon": [
+      [
+        -6.0,
+        -6.0
+      ],
+      [
+        25.0,
+        -6.0
+      ],
+      [
+        25.0,
+        21.0
+      ],
+      [
+        -6.0,
+        21.0
+      ]
+    ],
+    "polygon": [
+      [
+        -50.0,
+        -40.0
+      ],
+      [
+        50.0,
+        -40.0
+      ],
+      [
+        50.0,
+        40.0
+      ],
+      [
+        -50.0,
+        40.0
+      ]
+    ]
+  },
+  "status": "CONCEPT_MODEL_NOT_FOR_SUBMISSION_OR_EXECUTION",
+  "units": "m",
+  "version": "1.0.0"
+}

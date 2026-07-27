@@ -1,0 +1,23 @@
+﻿check_id,name,passed,observed
+GEO-001,unique_object_ids,True,299
+GEO-002,levels_defined,True,3
+GEO-003,existing_footprint_area,True,168.0
+GEO-004,extension_width,True,7.0
+GEO-005,extension_length,True,10.0
+GEO-006,extension_floor_area,True,70.0
+GEO-007,extension_gross_area,True,140.0
+GEO-008,two_storeys,True,2
+GEO-009,connection_points,True,4
+GEO-010,stair_connects_levels,True,1
+GEO-011,spaces_present,True,12
+GEO-012,walls_present,True,26
+GEO-013,slabs_and_roofs_present,True,6
+GEO-014,openings_present,True,16
+GEO-015,opening_hosts_exist,True,16
+GEO-016,parking_zone_total,True,225
+GEO-017,parking_bay_objects,True,225
+GEO-018,parking_zones_present,True,5
+GEO-019,site_and_parcel_present,True,"[1, 1]"
+GEO-020,professional_blockers_visible,True,6
+GEO-021,req107_closed,True,CLOSED_PROJECT_LEADER_APPROVED
+GEO-022,fingerprint_length,True,64

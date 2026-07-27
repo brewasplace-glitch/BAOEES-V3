@@ -61,11 +61,11 @@ def self_test(repository: Path) -> dict:
         )
         workflows.append({"id": item["id"], "available": available})
     checks = {
-        "config_loaded": config["version"] == "1.1.0",
+        "config_loaded": config["version"] == "1.2.0",
         "local_bind_only": config["host"] == "127.0.0.1",
         "dashboard_rendered": "phoenix-local-bridge" in html,
         "dashboard_source_selected": bool(info["source_path"]),
-        "workflow_allowlist_present": len(workflows) == 4,
+        "workflow_allowlist_present": len(workflows) == 5,
         "three_existing_workflows_available": sum(
             1 for item in workflows if item["available"]
         ) >= 3,

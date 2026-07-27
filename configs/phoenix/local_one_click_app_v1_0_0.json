@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Production Enabled",
+  "application_name": "Project Phoenix Local - Central Model Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -56,21 +56,41 @@
       "relative_path": "."
     },
     {
-      "id": "real_concept_issue_index",
-      "label": "Open echte concepttekeningen en rapporten",
-      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/real_concept_drawings_reports_v1_0_0/06_issue_index.html"
+      "id": "central_geometric_model_browser",
+      "label": "Open centraal geometrisch projectmodel",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/central_geometric_project_model_v1_0_0/16_model_browser.html"
     },
     {
-      "id": "real_concept_drawing_set",
-      "label": "Open complete concepttekeningenset",
-      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/real_concept_drawings_reports_v1_0_0/drawings/pdf/BB35_PILOT_1_REAL_CONCEPT_DRAWING_SET_v1_0_0.pdf"
+      "id": "central_geometric_model_3d",
+      "label": "Open 3D-modelbestand (OBJ)",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/central_geometric_project_model_v1_0_0/18_central_model_3d.obj"
+    },
+    {
+      "id": "model_driven_issue_index",
+      "label": "Open modelgestuurde tekeningen en rapporten",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/model_driven_real_concept_drawings_reports_v1_1_0/06_issue_index.html"
+    },
+    {
+      "id": "model_driven_drawing_set",
+      "label": "Open modelgestuurde tekeningenset",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/model_driven_real_concept_drawings_reports_v1_1_0/drawings/pdf/BB35_PILOT_1_REAL_CONCEPT_DRAWING_SET_v1_0_0.pdf"
     }
   ],
   "preferred_port": 8765,
   "runtime_root": "outputs/runtime/phoenix_local_app_v1_0_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "workflows": [
+    {
+      "expect_flag": "--expect-model-valid",
+      "id": "central_geometric_project_model",
+      "label": "Bouw centraal geometrisch projectmodel",
+      "output_subdir": "central_geometric_project_model",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_central_geometric_project_model_v1_0_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_central_geometric_project_model_v1_0_0.py"
+    },
     {
       "expect_flag": "--expect-simulation-passed",
       "id": "bb35_full_concept_simulation",
@@ -104,12 +124,12 @@
     {
       "expect_flag": "--expect-production-ready",
       "id": "real_concept_drawings_reports",
-      "label": "Maak echte concepttekeningen en rapporten",
-      "output_subdir": "real_concept_drawings_reports",
+      "label": "Maak modelgestuurde concepttekeningen en rapporten",
+      "output_subdir": "model_driven_real_concept_drawings_reports",
       "required_files": [
-        "runners/PROJECT_PHOENIX_BB35_pilot_1_real_concept_drawings_reports.py"
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_real_concept_production_v1_1_0.py"
       ],
-      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_real_concept_drawings_reports.py"
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_real_concept_production_v1_1_0.py"
     }
   ]
 }

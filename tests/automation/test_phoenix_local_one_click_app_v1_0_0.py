@@ -26,7 +26,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
     def test_four_workflows_registered(self):
-        self.assertEqual(4, len(CONFIG["workflows"]))
+        self.assertEqual(5, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(
@@ -35,7 +35,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         )
 
     def test_open_targets_registered(self):
-        self.assertGreaterEqual(len(CONFIG["open_targets"]), 6)
+        self.assertGreaterEqual(len(CONFIG["open_targets"]), 8)
 
     def test_candidate_serialization(self):
         value = DashboardCandidate("index.html", 10, ("Phoenix",)).to_dict()
