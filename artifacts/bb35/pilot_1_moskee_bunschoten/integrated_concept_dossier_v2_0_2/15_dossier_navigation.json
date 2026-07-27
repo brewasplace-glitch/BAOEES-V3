@@ -1,0 +1,16 @@
+{
+  "gate_status": "14_release_gate_status.json",
+  "primary_document": "03_integrated_concept_dossier.html",
+  "printable_source": "02_integrated_concept_dossier.md",
+  "registers": [
+    "05_request_status_register.csv",
+    "06_drawing_register.csv",
+    "07_calculation_register.csv",
+    "08_assumptions_register.csv",
+    "09_cross_discipline_handoff_matrix.csv",
+    "10_consistency_validation_register.csv",
+    "11_professional_blocker_register.csv",
+    "12_evidence_replacement_plan.csv"
+  ],
+  "validation": "13_BB36_functional_validation_report.md"
+}

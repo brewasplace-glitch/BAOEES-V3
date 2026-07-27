@@ -1,0 +1,9 @@
+﻿drawing_id,title,source_request,concept_status,professional_action
+DRW-001,Situatie en parkeercontext,REQ-102/REQ-106,REGISTERED_SOURCE_DRAWING_OR_PLACEHOLDER,"Actualiseer schaal, perceel en 225 parkeerplaatsen."
+DRW-002,Begane grond bestaand en nieuw,REQ-102,CONCEPT_GEOMETRY_AVAILABLE,Controleer maatvoering en aansluiting op bestaand.
+DRW-003,Verdieping bestaand en nieuw,REQ-102,CONCEPT_GEOMETRY_AVAILABLE,"Controleer maatvoering, functies en vide."
+DRW-004,Gevelaanzichten,REQ-102,SOURCE_DRAWING_REVIEW_REQUIRED,Werk gevelwijziging en peilen vergunninggereed uit.
+DRW-005,Doorsneden,REQ-102/REQ-103,SOURCE_DRAWING_REVIEW_REQUIRED,"Toon hoogten, vloeren, dak en constructieve aansluiting."
+DRW-006,Concept draagstructuur,REQ-103,SIMULATED_SCHEME_ONLY,Vervang door constructeursmodel en berekening.
+DRW-007,Concept funderingsplan,REQ-104,SIMULATED_FOUNDATION_ONLY,Vervang na grondonderzoek en funderingsadvies.
+DRW-008,Brandveiligheid en vluchtroutes,REQ-105,CONCEPT_REVIEW_REQUIRED,"Laat uitgangsbreedten, loopafstanden en installaties toetsen."

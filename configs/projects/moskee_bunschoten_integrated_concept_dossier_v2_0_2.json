@@ -1,0 +1,67 @@
+{
+  "dossier_date": "2026-07-27",
+  "dossier_id": "HBM-CD-2026-001",
+  "language": "nl-NL",
+  "parking_basis_spaces": 225,
+  "parking_basis_status": "PROJECT_LEADER_CONFIRMED_FIELD_VERIFICATION_PENDING",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "policy": {
+    "all_simulated_values_must_remain_labelled": true,
+    "bb36_functional_validation_passed": true,
+    "bb36_production_release_allowed": false,
+    "concept_dossier_generation_allowed": true,
+    "final_permit_ready_generation_allowed": false,
+    "professional_evidence_still_required": true
+  },
+  "professional_blockers": [
+    {
+      "discipline": "Geometrie en kadastrale verificatie",
+      "request_id": "REQ-102",
+      "required_evidence": "Gevalideerde schaal, geometrie, perceelsgrenzen en coordinaten.",
+      "responsible_role": "landmeter, CAD/BIM-coordinator of architect"
+    },
+    {
+      "discipline": "Constructieve opname",
+      "request_id": "REQ-103",
+      "required_evidence": "Actuele opname, draagstructuur en aansluiting bestaand-nieuw.",
+      "responsible_role": "constructeur"
+    },
+    {
+      "discipline": "Geotechniek en fundering",
+      "request_id": "REQ-104",
+      "required_evidence": "Grondonderzoek, grondwatergegevens en ondertekend funderingsadvies.",
+      "responsible_role": "geotechnisch adviseur en constructeur"
+    },
+    {
+      "discipline": "Bbl, brandveiligheid en installaties",
+      "request_id": "REQ-105",
+      "required_evidence": "Bbl-, vluchtweg-, ventilatie-, toegankelijkheids- en installatiebeoordeling.",
+      "responsible_role": "architect, brandveiligheids- en installatieadviseur"
+    },
+    {
+      "discipline": "Parkeren",
+      "request_id": "REQ-106",
+      "required_evidence": "Veldtelling van 225 plaatsen, juridische beschikbaarheid en parkeerbalans.",
+      "responsible_role": "verkeerskundig of parkeeradviseur"
+    },
+    {
+      "discipline": "AERIUS",
+      "request_id": "REQ-108",
+      "required_evidence": "Werkelijke activiteitendata, AERIUS-bronbestand en berekeningsrapport.",
+      "responsible_role": "stikstof- of AERIUS-adviseur"
+    }
+  ],
+  "project_id": "HBM-2026-001",
+  "project_location": "Bikkersweg 88, Bunschoten",
+  "project_name": "Uitbreiding Haci Bayram Moskee Bunschoten",
+  "req107_status": "CLOSED_PROJECT_LEADER_APPROVED",
+  "schema_version": "phoenix.bb35.integrated-concept-dossier-config/1.0",
+  "simulation_notice": "CONCEPTSIMULATIE - NIET VOOR INDIENING OF UITVOERING",
+  "source_manifest_policy": {
+    "mode": "PACKAGED_REFERENCE_SNAPSHOT",
+    "reason": "Prevent OS checkout transformations and nested ZIP metadata from changing dossier artifacts.",
+    "runtime_validation": "RELATIVE_PATH_SET_ONLY",
+    "snapshot_path": "inputs/pilots/moskee_bunschoten/integrated_concept_dossier_source_manifest_snapshot_v2_0_2.json"
+  },
+  "version": "2.0.2"
+}

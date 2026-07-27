@@ -1,0 +1,7 @@
+﻿request_id,discipline,responsible_role,required_evidence,blocker_status,concept_available,permit_ready_release_blocked
+REQ-102,Geometrie en kadastrale verificatie,"landmeter, CAD/BIM-coordinator of architect","Gevalideerde schaal, geometrie, perceelsgrenzen en coordinaten.",OPEN_PROFESSIONAL_EVIDENCE_REQUIRED,True,True
+REQ-103,Constructieve opname,constructeur,"Actuele opname, draagstructuur en aansluiting bestaand-nieuw.",OPEN_PROFESSIONAL_EVIDENCE_REQUIRED,True,True
+REQ-104,Geotechniek en fundering,geotechnisch adviseur en constructeur,"Grondonderzoek, grondwatergegevens en ondertekend funderingsadvies.",OPEN_PROFESSIONAL_EVIDENCE_REQUIRED,True,True
+REQ-105,"Bbl, brandveiligheid en installaties","architect, brandveiligheids- en installatieadviseur","Bbl-, vluchtweg-, ventilatie-, toegankelijkheids- en installatiebeoordeling.",OPEN_PROFESSIONAL_EVIDENCE_REQUIRED,True,True
+REQ-106,Parkeren,verkeerskundig of parkeeradviseur,"Veldtelling van 225 plaatsen, juridische beschikbaarheid en parkeerbalans.",OPEN_PROFESSIONAL_EVIDENCE_REQUIRED,True,True
+REQ-108,AERIUS,stikstof- of AERIUS-adviseur,"Werkelijke activiteitendata, AERIUS-bronbestand en berekeningsrapport.",OPEN_PROFESSIONAL_EVIDENCE_REQUIRED,True,True

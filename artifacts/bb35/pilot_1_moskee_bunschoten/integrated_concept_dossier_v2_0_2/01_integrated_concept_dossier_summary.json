@@ -1,0 +1,124 @@
+{
+  "dossier_date": "2026-07-27",
+  "dossier_id": "HBM-CD-2026-001",
+  "engine_version": "2.0.2",
+  "gates": {
+    "bb36_functional_validation_passed": true,
+    "bb36_production_release_allowed": false,
+    "concept_dossier_review_ready": true,
+    "end_to_end_workflow_validated": true,
+    "final_permit_ready_generation_allowed": false,
+    "integrated_concept_dossier_generated": true,
+    "professional_evidence_still_required": true
+  },
+  "metrics": {
+    "assumption_count": 8,
+    "authoritative_request_count": 1,
+    "calculation_register_count": 8,
+    "concept_simulation_count": 6,
+    "consistency_check_count": 11,
+    "drawing_register_count": 8,
+    "handoff_count": 6,
+    "professional_blocker_count": 6,
+    "request_count": 7,
+    "source_file_count": 44
+  },
+  "next_gate": "Review and approve the concept dossier, then replace REQ-102, REQ-103, REQ-104, REQ-105, REQ-106 and REQ-108 simulations with validated professional evidence.",
+  "occupancy_program": {
+    "friday_prayer": {
+      "existing_persons": 65,
+      "future_persons": 125,
+      "increase_percent": 92.31,
+      "increase_persons": 60
+    },
+    "regular": {
+      "existing_persons": 80,
+      "future_persons": 150,
+      "increase_percent": 87.5,
+      "increase_persons": 70
+    },
+    "special_peak": {
+      "frequency_per_year": 1,
+      "maximum_persons": 200
+    }
+  },
+  "opening_hours": [
+    {
+      "days": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday"
+      ],
+      "end_time": "23:00",
+      "period": "monday_through_thursday",
+      "schedule_id": "SCH-MO-TH",
+      "start_time": "07:00"
+    },
+    {
+      "days": [
+        "friday"
+      ],
+      "end_time": "18:00",
+      "period": "friday",
+      "schedule_id": "SCH-FR",
+      "start_time": "16:00"
+    },
+    {
+      "days": [
+        "saturday"
+      ],
+      "end_time": "23:00",
+      "period": "saturday",
+      "schedule_id": "SCH-SA",
+      "start_time": "10:00"
+    },
+    {
+      "days": [
+        "sunday"
+      ],
+      "end_time": "20:00",
+      "period": "sunday",
+      "schedule_id": "SCH-SU",
+      "start_time": "10:00"
+    },
+    {
+      "days": [
+        "ramadan_days"
+      ],
+      "end_time": "24:00",
+      "period": "ramadan",
+      "schedule_id": "SCH-RAMADAN",
+      "start_time": "06:00"
+    },
+    {
+      "days": [
+        "holidays",
+        "special_activities"
+      ],
+      "end_time": "20:00",
+      "period": "holidays_and_special_activities",
+      "schedule_id": "SCH-SPECIAL",
+      "start_time": "10:00"
+    }
+  ],
+  "parking_basis_spaces": 225,
+  "parking_basis_status": "PROJECT_LEADER_CONFIRMED_FIELD_VERIFICATION_PENDING",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "previous_parking_hypothesis_spaces": 300,
+  "project_id": "HBM-2026-001",
+  "project_location": "Bikkersweg 88, Bunschoten",
+  "project_name": "Uitbreiding Haci Bayram Moskee Bunschoten",
+  "project_scope": {
+    "footprint_area_m2": 70.0,
+    "footprint_depth_m": 7.0,
+    "footprint_width_m": 10.0,
+    "gross_floor_area_m2": 140.0,
+    "storeys": 2
+  },
+  "report_fingerprint_sha256": "cd3c8727824436efa006c8595588ecd5b485d599e34660dd685c5afa9ac73c5d",
+  "req107_status": "CLOSED_PROJECT_LEADER_APPROVED",
+  "schema_version": "phoenix.bb35.integrated-concept-dossier/1.0",
+  "simulation_notice": "CONCEPTSIMULATIE - NIET VOOR INDIENING OF UITVOERING",
+  "status": "INTEGRATED_CONCEPT_DOSSIER_GENERATED_REVIEW_READY"
+}
