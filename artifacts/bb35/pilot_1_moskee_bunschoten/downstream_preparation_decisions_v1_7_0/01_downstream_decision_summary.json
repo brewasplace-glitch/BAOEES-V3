@@ -1,0 +1,34 @@
+{
+  "all_strategic_decisions_approved": true,
+  "approved_strategic_decision_count": 8,
+  "authoritative_occupancy_program_id": "HBM-OCC-2026-001",
+  "bb36_unlock_allowed": false,
+  "engine_version": "1.7.0",
+  "final_generation_allowed": false,
+  "newly_approved_decision_ids": [
+    "DEC-105-01",
+    "DEC-105-02",
+    "DEC-106-01",
+    "DEC-108-01"
+  ],
+  "next_gate": "Generate and issue the REQ-105, REQ-106 and REQ-108 preparation workpacks while pursuing formal REQ-107 co-sign.",
+  "parallel_preparation_allowed": true,
+  "pending_strategic_decision_count": 0,
+  "pilot_completed": false,
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "professional_evidence_still_required": true,
+  "project_id": "HBM-2026-001",
+  "remaining_blocking_input_count": 7,
+  "report_fingerprint_sha256": "a8b0b21f1646d34876fa5c7f1c06f5633b818fd091540d868452bcf9a65e2ba0",
+  "req107_formal_cosign_still_pending": true,
+  "schema_version": "phoenix.bb35.downstream-preparation-decisions/1.0",
+  "selected_strategic_basis": {
+    "execution_phasing": "gefaseerde_uitvoering",
+    "installation_sustainability_level": "wettelijk_minimum",
+    "kitchen_function": "geen_keukenfunctie",
+    "mosque_remains_in_use_during_construction": true,
+    "parking_strategy": "openbare_capaciteit"
+  },
+  "status": "ALL_STRATEGIC_DECISIONS_OWNER_APPROVED_DOWNSTREAM_PREPARATION_READY",
+  "workstream_count": 3
+}

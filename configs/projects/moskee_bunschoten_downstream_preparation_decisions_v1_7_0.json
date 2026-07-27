@@ -1,0 +1,20 @@
+{
+  "schema_version": "phoenix.bb35.downstream-preparation-decisions-config/1.0",
+  "version": "1.7.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "decision_ids": [
+    "DEC-105-01",
+    "DEC-105-02",
+    "DEC-106-01",
+    "DEC-108-01"
+  ],
+  "workstreams": [
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "professional_evidence_still_required": true,
+  "final_generation_allowed": false,
+  "bb36_unlock_allowed": false
+}

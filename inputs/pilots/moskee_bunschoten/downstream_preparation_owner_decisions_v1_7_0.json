@@ -1,0 +1,30 @@
+{
+  "schema_version": "phoenix.bb35.downstream-preparation-owner-decisions/1.0",
+  "version": "1.7.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "decision_date": "2026-07-27",
+  "approval_basis": "explicit_project_owner_instruction",
+  "decisions": {
+    "DEC-105-01": {
+      "selected_option": "A",
+      "selected_value": "geen_keukenfunctie",
+      "label_nl": "Geen keukenfunctie"
+    },
+    "DEC-105-02": {
+      "selected_option": "A",
+      "selected_value": "wettelijk_minimum",
+      "label_nl": "Wettelijk minimum"
+    },
+    "DEC-106-01": {
+      "selected_option": "A",
+      "selected_value": "openbare_capaciteit",
+      "label_nl": "Onderbouwing met beschikbare openbare parkeerplaatsen"
+    },
+    "DEC-108-01": {
+      "selected_option": "B",
+      "selected_value": "gefaseerde_uitvoering",
+      "label_nl": "Gefaseerde uitvoering terwijl de moskee in gebruik blijft"
+    }
+  }
+}
