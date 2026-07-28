@@ -1,0 +1,127 @@
+{
+  "engines": {
+    "calculix": {
+      "acceptance_arguments": [
+        "-v"
+      ],
+      "approved_version": "user-approved Windows build",
+      "artifact_names": [
+        "ccx.exe"
+      ],
+      "display_name": "CalculiX CrunchiX",
+      "environment_variable": "CALCULIX_CCX",
+      "executable_candidates": [
+        "ccx.exe"
+      ],
+      "installation_method": "reviewed_portable_binary_import",
+      "official_source": "https://www.dhondt.de/",
+      "windows_distribution_note": "The official project directs Windows users to third-party distributions; explicit project-leader source approval is required."
+    },
+    "energyplus": {
+      "acceptance_arguments": [
+        "--version"
+      ],
+      "approved_version": "26.1.0",
+      "artifact_names": [
+        "energyplus.exe"
+      ],
+      "display_name": "EnergyPlus",
+      "environment_variable": "ENERGYPLUS_EXE",
+      "executable_candidates": [
+        "energyplus.exe"
+      ],
+      "installation_method": "official_installer_or_existing_registration",
+      "official_source": "https://energyplus.net/"
+    },
+    "freecad": {
+      "acceptance_arguments": [
+        "--version"
+      ],
+      "approved_version": "1.1.1",
+      "artifact_names": [
+        "FreeCADCmd.exe",
+        "freecadcmd.exe"
+      ],
+      "display_name": "FreeCAD",
+      "environment_variable": "FREECAD_CMD",
+      "executable_candidates": [
+        "FreeCADCmd.exe",
+        "freecadcmd.exe"
+      ],
+      "installation_method": "installed_or_portable_registration",
+      "official_source": "https://www.freecad.org/downloads.php"
+    },
+    "ifcconvert": {
+      "acceptance_arguments": [
+        "--version"
+      ],
+      "approved_version": "0.8.5-compatible",
+      "artifact_names": [
+        "IfcConvert.exe"
+      ],
+      "display_name": "IfcConvert",
+      "environment_variable": "IFCCONVERT_EXE",
+      "executable_candidates": [
+        "IfcConvert.exe"
+      ],
+      "installation_method": "portable_binary_import",
+      "official_source": "https://docs.ifcopenshell.org/ifcconvert/installation.html"
+    },
+    "ifcopenshell": {
+      "acceptance_command": [
+        "python",
+        "-c",
+        "import ifcopenshell; print(ifcopenshell.version)"
+      ],
+      "approved_version": "0.8.5",
+      "display_name": "IfcOpenShell Python",
+      "environment_variable": "",
+      "executable_candidates": [],
+      "installation_method": "python_pip",
+      "official_source": "https://docs.ifcopenshell.org/ifcopenshell-python/installation.html",
+      "package": "ifcopenshell==0.8.5"
+    },
+    "opensees": {
+      "acceptance_arguments": [],
+      "approved_version": "3.8.0",
+      "artifact_names": [
+        "OpenSees.exe"
+      ],
+      "display_name": "OpenSees",
+      "environment_variable": "OPENSEES_EXE",
+      "executable_candidates": [
+        "OpenSees.exe"
+      ],
+      "installation_method": "official_portable_binary_import",
+      "official_source": "https://opensees.berkeley.edu/OpenSees/user/download.php"
+    },
+    "qgis": {
+      "acceptance_arguments": [
+        "--version"
+      ],
+      "approved_version": "3.44 LTR",
+      "artifact_names": [
+        "qgis_process-qgis-ltr.exe",
+        "qgis_process.exe"
+      ],
+      "display_name": "QGIS LTR",
+      "environment_variable": "QGIS_PROCESS_EXE",
+      "executable_candidates": [
+        "qgis_process-qgis-ltr.exe",
+        "qgis_process.exe"
+      ],
+      "installation_method": "osgeo4w_or_existing_registration",
+      "official_source": "https://qgis.org/download/",
+      "preferred_package": "qgis-ltr"
+    }
+  },
+  "policy": {
+    "administrator_rights_may_be_required": true,
+    "automatic_installation_requires_supported_method": true,
+    "download_only_from_official_or_explicitly_approved_source": true,
+    "never_bundle_third_party_binaries_in_phoenix_package": true,
+    "never_simulate_missing_engine": true,
+    "verify_sha256_before_install_or_registration": true
+  },
+  "schema_version": "phoenix.third-party-engine-registry/5.1.0"
+}
