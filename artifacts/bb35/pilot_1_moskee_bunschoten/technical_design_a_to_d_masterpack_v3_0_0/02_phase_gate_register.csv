@@ -1,0 +1,5 @@
+﻿phase,name,gate,check_count,checks_passed,gate_status,deliverable_count
+A,Architectural Technical Design and Detailing,A-GATE,12,12,PASSED,9
+B,Multidisciplinary Engineering Integration,B-GATE,12,12,PASSED,9
+C,Technical Coordination and Clash Control,C-GATE,12,12,PASSED,7
+D,Permit Tender Execution Concept Issue,D-GATE,12,12,PASSED,9

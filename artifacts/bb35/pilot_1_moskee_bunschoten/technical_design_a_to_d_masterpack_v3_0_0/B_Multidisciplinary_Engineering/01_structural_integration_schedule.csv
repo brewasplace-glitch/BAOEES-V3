@@ -1,0 +1,13 @@
+﻿interface_id,element,model_reference,design_basis,professional_evidence,status
+STR-01,Roof diaphragm,LRF,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-02,First-floor slab,L01,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-03,Ground-floor slab,L00,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-04,Perimeter walls,WALL objects,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-05,Internal load line,S-201,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-06,Columns,Grid 3 x 3 concept,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-07,Foundation beam,FND-002,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-08,Strip foundation,FND-001,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-09,New-existing connection,CONN objects,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-10,Movement joint,JNT-001,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-11,Stair support,STA-001,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT
+STR-12,Temporary works interface,Phase X-101,Concept load path linked to calculation workbook,REQ-103/REQ-104,CONCEPT

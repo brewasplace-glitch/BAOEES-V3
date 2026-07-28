@@ -1,0 +1,180 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1115 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 13 Tf 1 0 0 1 70.866 779.528 Tm (PROJECT PHOENIX) Tj ET
+BT /F2 23 Tf 1 0 0 1 70.866 680.315 Tm (Integrated Technical Design Report) Tj ET
+BT /F1 12 Tf 1 0 0 1 70.866 646.299 Tm (Phases A-D accelerated technical concept masterpack) Tj ET
+70.866 595.276 m 524.409 595.276 l S
+BT /F2 8 Tf 1 0 0 1 70.866 561.26 Tm (PROJECT) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 561.26 Tm (Moskee Haci Bayram - BB35 Pilot 1) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 535.748 Tm (LOCATION) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 535.748 Tm (Bikkersweg 88, Bunschoten) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 510.236 Tm (ISSUE) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 510.236 Tm (2026-07-27) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 484.724 Tm (STATUS) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 484.724 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 408.189 Tm (This report contains actual generated concept deliverables. It is not a) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 395.189 Tm (professional certification and is not approved for permit submission or) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 382.189 Tm (construction.) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4013 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 8 Tf 1 0 0 1 56.693 802.205 Tm (Integrated Technical Design Report) Tj ET
+BT /F1 8 Tf 1 0 0 1 514.583 802.205 Tm (Page 2) Tj ET
+56.693 39.685 m 538.583 39.685 l S
+BT /F2 7 Tf 1 0 0 1 56.693 22.677 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 756.85 Tm (1. Executive summary) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 722.835 Tm (The accelerated masterpack executes phases A-D in one transaction and creates revision C02.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 708.094 Tm (All four internal gates pass. The package remains a technical concept because six) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 693.354 Tm (professional evidence packages are not yet accepted.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 670.11 Tm (TECHNICAL CONCEPT - NOT FOR PERMIT SUBMISSION OR EXECUTION) Tj ET
+0.90 g
+56.693 627.024 481.89 25.512 re B
+0 g
+BT /F2 7 Tf 1 0 0 1 62.362 635.528 Tm (Phase) Tj ET
+BT /F2 7 Tf 1 0 0 1 182.835 635.528 Tm (Name) Tj ET
+BT /F2 7 Tf 1 0 0 1 303.307 635.528 Tm (Gate) Tj ET
+BT /F2 7 Tf 1 0 0 1 423.78 635.528 Tm (Deliverables) Tj ET
+56.693 601.512 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 610.016 Tm (A) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 610.016 Tm (Architectural) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 600.016 Tm (Technical Design) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 590.016 Tm (and Detailing) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 610.016 Tm (PASSED) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 610.016 Tm (9) Tj ET
+56.693 576 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 584.504 Tm (B) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 584.504 Tm (Multidisciplinary) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 574.504 Tm (Engineering) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 564.504 Tm (Integration) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 584.504 Tm (PASSED) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 584.504 Tm (9) Tj ET
+56.693 550.488 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 558.992 Tm (C) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 558.992 Tm (Technical) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 548.992 Tm (Coordination and) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 538.992 Tm (Clash Control) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 558.992 Tm (PASSED) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 558.992 Tm (7) Tj ET
+56.693 524.976 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 533.48 Tm (D) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 533.48 Tm (Permit Tender) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 523.48 Tm (Execution Concept) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 513.48 Tm (Issue) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 533.48 Tm (PASSED) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 533.48 Tm (9) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 482.457 Tm (2. Design basis) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 448.441 Tm (Extension: 7 x 10 m, two storeys, 140 m2 gross. Central model: 299 objects. Parking basis:) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 433.701 Tm (225 project-leader-confirmed spaces. REQ-107 remains closed.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 387.78 Tm (3. Phase A - architectural technical design) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 353.764 Tm (Component assemblies, technical details, accessibility, building physics, doors, windows and) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 339.024 Tm (room finishes are coordinated as a concept design freeze.) Tj ET
+0.90 g
+56.693 295.937 481.89 25.512 re B
+0 g
+BT /F2 7 Tf 1 0 0 1 62.362 304.441 Tm (Register) Tj ET
+BT /F2 7 Tf 1 0 0 1 303.307 304.441 Tm (Count) Tj ET
+56.693 270.425 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 278.929 Tm (Assemblies) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 278.929 Tm (16) Tj ET
+56.693 244.913 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 253.417 Tm (Detail sheets) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 253.417 Tm (12) Tj ET
+56.693 219.402 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 227.906 Tm (Doors) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 227.906 Tm (12) Tj ET
+56.693 193.89 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 202.394 Tm (Windows) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 202.394 Tm (8) Tj ET
+56.693 168.378 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 176.882 Tm (Rooms) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 176.882 Tm (12) Tj ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 2266 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 8 Tf 1 0 0 1 56.693 802.205 Tm (Integrated Technical Design Report) Tj ET
+BT /F1 8 Tf 1 0 0 1 514.583 802.205 Tm (Page 3) Tj ET
+56.693 39.685 m 538.583 39.685 l S
+BT /F2 7 Tf 1 0 0 1 56.693 22.677 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 756.85 Tm (4. Phase B - multidisciplinary engineering) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 722.835 Tm (Structural, foundation, MEP, drainage, fire, site/parking and AERIUS interfaces are) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 708.094 Tm (integrated. Specialist calculations and declarations remain mandatory.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 662.173 Tm (5. Phase C - technical coordination) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 628.157 Tm (Twenty-four clash checks, twenty discipline interfaces and twenty-four coordination checks) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 613.417 Tm (are recorded. Concept conflicts are resolved or retained as explicit conditions.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 567.496 Tm (6. Phase D - issue preparation) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 533.48 Tm (Permit, tender and execution concept indexes are generated, but none are released as final.) Tj ET
+0.90 g
+56.693 490.394 481.89 25.512 re B
+0 g
+BT /F2 7 Tf 1 0 0 1 62.362 498.898 Tm (Issue type) Tj ET
+BT /F2 7 Tf 1 0 0 1 222.992 498.898 Tm (Items) Tj ET
+BT /F2 7 Tf 1 0 0 1 383.622 498.898 Tm (Ready) Tj ET
+56.693 464.882 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 473.386 Tm (Permit concept) Tj ET
+BT /F1 7 Tf 1 0 0 1 222.992 473.386 Tm (24) Tj ET
+BT /F1 7 Tf 1 0 0 1 383.622 473.386 Tm (No) Tj ET
+56.693 439.37 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 447.874 Tm (Tender concept) Tj ET
+BT /F1 7 Tf 1 0 0 1 222.992 447.874 Tm (28) Tj ET
+BT /F1 7 Tf 1 0 0 1 383.622 447.874 Tm (No) Tj ET
+56.693 413.858 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 422.362 Tm (Execution concept) Tj ET
+BT /F1 7 Tf 1 0 0 1 222.992 422.362 Tm (32) Tj ET
+BT /F1 7 Tf 1 0 0 1 383.622 422.362 Tm (No) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 371.339 Tm (7. Evidence boundary) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 337.323 Tm (REQ-102, REQ-103, REQ-104, REQ-105, REQ-106 and REQ-108 must be replaced and accepted before) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 322.583 Tm (revision C03 may be considered permit-ready.) Tj ET
+
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000230 00000 n 
+0000000332 00000 n 
+0000000475 00000 n 
+0000001642 00000 n 
+0000001785 00000 n 
+0000005850 00000 n 
+0000005994 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+8313
+%%EOF

@@ -1,0 +1,17 @@
+﻿opening_id,level,host,service,size_mm,fire_stop,structural_check,status
+OPN-001,L00,Wall,Drainage,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-002,L00,Wall,Electrical,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-003,L00,Floor,Water,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-004,L00,Wall,Ventilation,400x250,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-005,L00,Wall,Drainage,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-006,L00,Floor,Electrical,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-007,L00,Wall,Water,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-008,L00,Wall,Ventilation,400x250,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-009,L01,Floor,Drainage,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-010,L01,Wall,Electrical,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-011,L01,Wall,Water,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-012,L01,Floor,Ventilation,400x250,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-013,L01,Wall,Drainage,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-014,L01,Wall,Electrical,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-015,L01,Floor,Water,150 dia,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT
+OPN-016,L01,Wall,Ventilation,400x250,Required at rated separation,REQ-103 pending,COORDINATED CONCEPT

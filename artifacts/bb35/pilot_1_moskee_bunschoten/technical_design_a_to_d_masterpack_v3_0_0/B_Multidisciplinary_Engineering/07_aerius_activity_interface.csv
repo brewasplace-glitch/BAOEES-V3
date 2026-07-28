@@ -1,0 +1,9 @@
+﻿activity_id,activity,data_status,required_replacement,evidence,status
+AER-01,Site setup,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-02,Groundworks,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-03,Structure,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-04,Envelope and fit-out,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-05,Operational use,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-06,Construction traffic,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-07,Staff travel,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY
+AER-08,Overlap with mosque use,Synthetic fixture linked,Verified quantities/durations/traffic,REQ-108,SIMULATION_ONLY

@@ -1,0 +1,53 @@
+{
+  "schema_version": "phoenix.bb35.technical-design-a-to-d-masterpack/1.0",
+  "version": "3.0.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "package_id": "HBM-TD-A-D-2026-001",
+  "revision_code": "C02",
+  "issue_date": "2026-07-28",
+  "status_notice": "TECHNICAL CONCEPT - NOT FOR PERMIT SUBMISSION OR EXECUTION",
+  "scope": {
+    "existing_building": "12 x 14 m concept reference geometry",
+    "extension": "7 x 10 m, two storeys, 140 m2 gross",
+    "parking_basis_spaces": 225,
+    "req107_status": "CLOSED_PROJECT_LEADER_APPROVED"
+  },
+  "phase_sequence": [
+    {
+      "phase": "A",
+      "name": "Architectural Technical Design and Detailing",
+      "gate": "A-GATE"
+    },
+    {
+      "phase": "B",
+      "name": "Multidisciplinary Engineering Integration",
+      "gate": "B-GATE"
+    },
+    {
+      "phase": "C",
+      "name": "Technical Coordination and Clash Control",
+      "gate": "C-GATE"
+    },
+    {
+      "phase": "D",
+      "name": "Permit Tender Execution Concept Issue",
+      "gate": "D-GATE"
+    }
+  ],
+  "professional_evidence_requests": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "release_boundaries": {
+    "technical_concept_issue_allowed": true,
+    "permit_ready_issue_allowed": false,
+    "tender_ready_issue_allowed": false,
+    "execution_ready_issue_allowed": false,
+    "bb36_production_release_allowed": false
+  }
+}

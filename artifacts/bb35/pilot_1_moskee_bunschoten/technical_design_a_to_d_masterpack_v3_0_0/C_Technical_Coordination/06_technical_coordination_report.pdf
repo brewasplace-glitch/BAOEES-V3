@@ -1,0 +1,92 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1110 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 13 Tf 1 0 0 1 70.866 779.528 Tm (PROJECT PHOENIX) Tj ET
+BT /F2 23 Tf 1 0 0 1 70.866 680.315 Tm (Technical Coordination Report) Tj ET
+BT /F1 12 Tf 1 0 0 1 70.866 646.299 Tm (Model, drawing, report and calculation coordination) Tj ET
+70.866 595.276 m 524.409 595.276 l S
+BT /F2 8 Tf 1 0 0 1 70.866 561.26 Tm (PROJECT) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 561.26 Tm (Moskee Haci Bayram - BB35 Pilot 1) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 535.748 Tm (LOCATION) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 535.748 Tm (Bikkersweg 88, Bunschoten) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 510.236 Tm (ISSUE) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 510.236 Tm (2026-07-27) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 484.724 Tm (STATUS) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 484.724 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 408.189 Tm (This report contains actual generated concept deliverables. It is not a) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 395.189 Tm (professional certification and is not approved for permit submission or) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 382.189 Tm (construction.) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1924 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 8 Tf 1 0 0 1 56.693 802.205 Tm (Technical Coordination Report) Tj ET
+BT /F1 8 Tf 1 0 0 1 514.583 802.205 Tm (Page 2) Tj ET
+56.693 39.685 m 538.583 39.685 l S
+BT /F2 7 Tf 1 0 0 1 56.693 22.677 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 756.85 Tm (1. Coordination basis) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 722.835 Tm (The central geometric model is the single geometry source. Drawing, schedule, calculation) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 708.094 Tm (and report interfaces are checked against revision C02.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 662.173 Tm (2. Clash control) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 628.157 Tm (Twenty-four automated concept clashes were reviewed. Nineteen are closed conceptually and) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 613.417 Tm (five remain accepted conditions requiring professional confirmation.) Tj ET
+0.90 g
+56.693 570.331 481.89 25.512 re B
+0 g
+BT /F2 7 Tf 1 0 0 1 62.362 578.835 Tm (Status) Tj ET
+BT /F2 7 Tf 1 0 0 1 303.307 578.835 Tm (Count) Tj ET
+56.693 544.819 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 553.323 Tm (Closed concept) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 553.323 Tm (19) Tj ET
+56.693 519.307 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 527.811 Tm (Condition accepted) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 527.811 Tm (5) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 476.787 Tm (3. Discipline interfaces) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 442.772 Tm (Architecture, structure, MEP, fire, drainage, site, parking, AERIUS, specifications,) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 428.031 Tm (quantities and issue indexes are cross-linked.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 382.11 Tm (4. Release boundary) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 348.094 Tm (TECHNICAL CONCEPT - NOT FOR PERMIT SUBMISSION OR EXECUTION) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 324.85 Tm (Technical coordination completion does not constitute professional approval.) Tj ET
+
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000224 00000 n 
+0000000326 00000 n 
+0000000469 00000 n 
+0000001631 00000 n 
+0000001774 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+3750
+%%EOF

@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Professional Evidence Programme Enabled",
+  "application_name": "Project Phoenix Local - Technical Design A-D Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -35,6 +35,26 @@
   "host": "127.0.0.1",
   "max_port_attempts": 10,
   "open_targets": [
+    {
+      "id": "technical_design_masterpack_dashboard",
+      "label": "Open technisch ontwerppakket A-D",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/technical_design_a_to_d_masterpack_v3_0_0/06_technical_design_masterpack_dashboard.html"
+    },
+    {
+      "id": "technical_design_combined_drawings",
+      "label": "Open gecombineerde technische tekeningenset C02",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/technical_design_a_to_d_masterpack_v3_0_0/12_combined_technical_drawing_set_C02.pdf"
+    },
+    {
+      "id": "technical_design_integrated_report",
+      "label": "Open integraal technisch ontwerprapport",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/technical_design_a_to_d_masterpack_v3_0_0/10_integrated_technical_design_report.pdf"
+    },
+    {
+      "id": "technical_design_issue_package",
+      "label": "Open compleet technisch conceptpakket C02",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/technical_design_a_to_d_masterpack_v3_0_0/BB35_PILOT_1_TECHNICAL_DESIGN_A_TO_D_MASTERPACK_C02.zip"
+    },
     {
       "id": "professional_evidence_programme_dashboard",
       "label": "Open professioneel bewijsvervangingsprogramma",
@@ -112,10 +132,20 @@
     }
   ],
   "preferred_port": 8765,
-  "runtime_root": "outputs/runtime/phoenix_local_app_v1_5_0",
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_6_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "workflows": [
+    {
+      "expect_flag": "--expect-masterpack-ready",
+      "id": "technical_design_a_to_d_masterpack",
+      "label": "Bouw technisch ontwerppakket fase A t/m D",
+      "output_subdir": "technical_design_a_to_d_masterpack",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_technical_design_a_to_d_masterpack_v3_0_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_technical_design_a_to_d_masterpack_v3_0_0.py"
+    },
     {
       "expect_flag": "--expect-programme-ready",
       "id": "professional_evidence_replacement_programme",

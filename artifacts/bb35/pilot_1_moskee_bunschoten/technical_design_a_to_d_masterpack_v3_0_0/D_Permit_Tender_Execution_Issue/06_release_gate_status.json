@@ -1,0 +1,15 @@
+{
+  "bb36_functional_validation_passed": true,
+  "bb36_production_release_allowed": false,
+  "execution_ready_issue_allowed": false,
+  "next_gate": "Replace and accept the six professional evidence packages; regenerate coordinated revision C03.",
+  "permit_ready_issue_allowed": false,
+  "phase_a_passed": true,
+  "phase_b_passed": true,
+  "phase_c_passed": true,
+  "phase_d_passed": true,
+  "professional_blocker_count": 6,
+  "revision": "C02",
+  "technical_concept_issue_allowed": true,
+  "tender_ready_issue_allowed": false
+}

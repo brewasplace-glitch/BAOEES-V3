@@ -1,0 +1,9 @@
+﻿drain_id,item,route,diameter_mm,fall,verification,status
+DRN-01,Roof outlet north,Modelled concept route,80,Roof falls to outlet,REQ-105,CONCEPT
+DRN-02,Roof outlet south,Modelled concept route,80,Roof falls to outlet,REQ-105,CONCEPT
+DRN-03,Emergency overflow north,Modelled concept route,80,1:100 concept,REQ-105,CONCEPT
+DRN-04,Emergency overflow south,Modelled concept route,80,1:100 concept,REQ-105,CONCEPT
+DRN-05,Ablution stack ground,Modelled concept route,110,1:100 concept,REQ-105,CONCEPT
+DRN-06,Ablution stack first,Modelled concept route,110,1:100 concept,REQ-105,CONCEPT
+DRN-07,WC stack,Modelled concept route,110,1:100 concept,REQ-105,CONCEPT
+DRN-08,Site connection,Modelled concept route,110,1:100 concept,REQ-105,CONCEPT

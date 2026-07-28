@@ -1,0 +1,21 @@
+﻿interface_id,discipline_a,discipline_b,control,result,open_condition
+INT-01,Architecture,Structure,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-02,Architecture,Ventilation,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-03,Architecture,Electrical,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-04,Architecture,Sanitary,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-05,Architecture,Fire,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-06,Structure,Ventilation,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-07,Structure,Sanitary,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-08,Structure,Electrical,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-09,Roof,Drainage,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-10,Fire,Doors,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-11,Accessibility,Doors,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-12,Site,Parking,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-13,Site,Fire access,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-14,AERIUS,Phasing,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-15,Specification,Drawings,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-16,Quantities,Model,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-17,Reports,Calculations,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-18,Permit,Evidence,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-19,Tender,Specification,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable
+INT-20,Execution,Coordination,Cross-discipline interface checked,PASS - concept coordination,Professional evidence where applicable

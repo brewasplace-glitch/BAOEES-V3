@@ -1,0 +1,13 @@
+﻿system_id,system,route_zone,capacity_basis,model_reservation,evidence,status
+MEP-01,Ventilation supply,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-02,Ventilation extract,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-03,Heating/cooling,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-04,Electrical distribution,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-05,General lighting,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-06,Emergency lighting,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-07,Fire alarm,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-08,Cold water,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-09,Hot water,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-10,Sanitary drainage,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-11,Rainwater drainage,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT
+MEP-12,Data/security,Ceiling zone / shaft / service wall,Concept design basis,Reserved in central technical model,REQ-105,CONCEPT

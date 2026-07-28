@@ -25,8 +25,8 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_default_port(self):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
-    def test_eight_workflows_registered(self):
-        self.assertEqual(8, len(CONFIG["workflows"]))
+    def test_nine_workflows_registered(self):
+        self.assertEqual(9, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(
@@ -35,7 +35,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         )
 
     def test_open_targets_registered(self):
-        self.assertGreaterEqual(len(CONFIG["open_targets"]), 14)
+        self.assertGreaterEqual(len(CONFIG["open_targets"]), 18)
 
     def test_candidate_serialization(self):
         value = DashboardCandidate("index.html", 10, ("Phoenix",)).to_dict()
@@ -167,15 +167,15 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         self.assertEqual(".", target["relative_path"])
 
     def test_orchestrator_workflow_is_first(self):
-        self.assertEqual("professional_evidence_replacement_programme", CONFIG["workflows"][0]["id"])
+        self.assertEqual("technical_design_a_to_d_masterpack", CONFIG["workflows"][0]["id"])
 
     def test_orchestrator_workflow_is_available(self):
         registry = WorkflowRegistry(ROOT, CONFIG)
         described = {item["id"]: item for item in registry.describe()}
         self.assertTrue(described["unified_model_driven_production_orchestrator"]["available"])
 
-    def test_local_app_version_1_5(self):
-        self.assertEqual("1.5.0", CONFIG["version"])
+    def test_local_app_version_1_6(self):
+        self.assertEqual("1.6.0", CONFIG["version"])
 
     def test_orchestrator_dashboard_target(self):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "unified_orchestrator_dashboard")
@@ -189,6 +189,15 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_professional_evidence_dashboard_target(self):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "professional_evidence_programme_dashboard")
         self.assertTrue(target["relative_path"].endswith("07_professional_evidence_programme_dashboard.html"))
+
+    def test_technical_design_masterpack_workflow_is_available(self):
+        registry = WorkflowRegistry(ROOT, CONFIG)
+        described = {item["id"]: item for item in registry.describe()}
+        self.assertTrue(described["technical_design_a_to_d_masterpack"]["available"])
+
+    def test_technical_design_dashboard_target(self):
+        target = next(item for item in CONFIG["open_targets"] if item["id"] == "technical_design_masterpack_dashboard")
+        self.assertTrue(target["relative_path"].endswith("06_technical_design_masterpack_dashboard.html"))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,11 @@
+﻿item_id,description,unit,quantity,source,cost_status
+Q-001,Extension gross floor area,m2,140.0,central model,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-002,Extension gross volume,m3,448.0,calculation workbook,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-003,External wall area concept,m2,217.6,central model,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-004,Flat roof area,m2,70.0,central model,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-005,Door units,nr,12,door schedule,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-006,Window units,nr,8,window schedule,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-007,Technical detail sheets,nr,12,detail register,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-008,Parking basis spaces,nr,225,REQ-106 project basis,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-009,Professional evidence packages,nr,6,evidence programme,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING
+Q-010,Calculation records,nr,32,calculation workbook,QUANTITY INTERFACE ONLY - COMMERCIAL VALIDATION PENDING

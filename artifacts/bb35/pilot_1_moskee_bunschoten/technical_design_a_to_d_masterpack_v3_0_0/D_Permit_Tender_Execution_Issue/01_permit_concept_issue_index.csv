@@ -1,0 +1,25 @@
+﻿item_no,document,status,permit_ready,blocker
+1,Application form interface,CONCEPT INCLUDED,False,Professional evidence / authority validation
+2,Project description,CONCEPT INCLUDED,False,Professional evidence / authority validation
+3,Situation plan,CONCEPT INCLUDED,False,Professional evidence / authority validation
+4,Existing plans,CONCEPT INCLUDED,False,Professional evidence / authority validation
+5,Proposed plans,CONCEPT INCLUDED,False,Professional evidence / authority validation
+6,Elevations,CONCEPT INCLUDED,False,Professional evidence / authority validation
+7,Sections,CONCEPT INCLUDED,False,Professional evidence / authority validation
+8,Roof plan,CONCEPT INCLUDED,False,Professional evidence / authority validation
+9,Area schedule,CONCEPT INCLUDED,False,Professional evidence / authority validation
+10,Fire concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+11,Accessibility concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+12,Parking concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+13,AERIUS interface,CONCEPT INCLUDED,False,Professional evidence / authority validation
+14,Structural concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+15,Foundation concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+16,Building physics concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+17,Ventilation concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+18,Drainage concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+19,Material concept,CONCEPT INCLUDED,False,Professional evidence / authority validation
+20,Detail register,CONCEPT INCLUDED,False,Professional evidence / authority validation
+21,Professional evidence register,CONCEPT INCLUDED,False,Professional evidence / authority validation
+22,Assumptions register,CONCEPT INCLUDED,False,Professional evidence / authority validation
+23,Revision register,CONCEPT INCLUDED,False,Professional evidence / authority validation
+24,Issue transmittal,CONCEPT INCLUDED,False,Professional evidence / authority validation

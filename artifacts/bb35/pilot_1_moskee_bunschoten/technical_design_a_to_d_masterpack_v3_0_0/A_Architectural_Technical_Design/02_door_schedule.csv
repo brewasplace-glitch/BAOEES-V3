@@ -1,0 +1,13 @@
+﻿door_id,location,width_mm,height_mm,type,fire_rating,hardware,status
+D-01,Ground floor,1200,2300,External accessible,N/A concept,Escape set,CONCEPT
+D-02,Ground floor,1200,2300,Fire-resisting,Professional verification pending,Escape set,CONCEPT
+D-03,Ground floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-04,Ground floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-05,Ground floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-06,Ground floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-07,Ground floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-08,First floor,930,2300,Fire-resisting,Professional verification pending,Escape set,CONCEPT
+D-09,First floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-10,First floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-11,First floor,930,2300,Internal,N/A concept,Standard,CONCEPT
+D-12,First floor,930,2300,Internal,N/A concept,Standard,CONCEPT

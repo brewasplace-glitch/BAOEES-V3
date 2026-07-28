@@ -1,0 +1,209 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 1124 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 13 Tf 1 0 0 1 70.866 779.528 Tm (PROJECT PHOENIX) Tj ET
+BT /F2 23 Tf 1 0 0 1 70.866 680.315 Tm (Technical Specification) Tj ET
+BT /F1 12 Tf 1 0 0 1 70.866 646.299 Tm (Concept technical specification for permit/tender/execution preparation) Tj ET
+70.866 595.276 m 524.409 595.276 l S
+BT /F2 8 Tf 1 0 0 1 70.866 561.26 Tm (PROJECT) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 561.26 Tm (Moskee Haci Bayram - BB35 Pilot 1) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 535.748 Tm (LOCATION) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 535.748 Tm (Bikkersweg 88, Bunschoten) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 510.236 Tm (ISSUE) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 510.236 Tm (2026-07-27) Tj ET
+BT /F2 8 Tf 1 0 0 1 70.866 484.724 Tm (STATUS) Tj ET
+BT /F1 10 Tf 1 0 0 1 184.252 484.724 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 408.189 Tm (This report contains actual generated concept deliverables. It is not a) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 395.189 Tm (professional certification and is not approved for permit submission or) Tj ET
+BT /F2 10 Tf 1 0 0 1 70.866 382.189 Tm (construction.) Tj ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 1142 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 8 Tf 1 0 0 1 56.693 802.205 Tm (Technical Specification) Tj ET
+BT /F1 8 Tf 1 0 0 1 514.583 802.205 Tm (Page 2) Tj ET
+56.693 39.685 m 538.583 39.685 l S
+BT /F2 7 Tf 1 0 0 1 56.693 22.677 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 756.85 Tm (1. General requirements) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 722.835 Tm (TECHNICAL CONCEPT - NOT FOR PERMIT SUBMISSION OR EXECUTION) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 699.591 Tm (All work shall be coordinated with the central model, drawing set, schedules and calculation) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 684.85 Tm (workbook. Deviations require a recorded revision.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 638.929 Tm (2. Existing conditions) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 604.913 Tm (Existing dimensions, materials and structural conditions shall be field verified before) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 590.173 Tm (procurement or construction.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 544.252 Tm (3. Component assemblies) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 510.236 Tm (The following concept assemblies define the coordinated technical basis.) Tj ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 5435 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 8 Tf 1 0 0 1 56.693 802.205 Tm (Technical Specification) Tj ET
+BT /F1 8 Tf 1 0 0 1 514.583 802.205 Tm (Page 3) Tj ET
+56.693 39.685 m 538.583 39.685 l S
+BT /F2 7 Tf 1 0 0 1 56.693 22.677 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+0.90 g
+56.693 759.685 481.89 25.512 re B
+0 g
+BT /F2 7 Tf 1 0 0 1 62.362 768.189 Tm (ID) Tj ET
+BT /F2 7 Tf 1 0 0 1 182.835 768.189 Tm (Component) Tj ET
+BT /F2 7 Tf 1 0 0 1 303.307 768.189 Tm (Thickness) Tj ET
+BT /F2 7 Tf 1 0 0 1 423.78 768.189 Tm (Status) Tj ET
+56.693 734.173 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 742.677 Tm (EXT-W01) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 742.677 Tm (External wall) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 742.677 Tm (350) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 742.677 Tm (CONCEPT) Tj ET
+56.693 708.661 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 717.165 Tm (INT-W01) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 717.165 Tm (Internal partition) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 717.165 Tm (125) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 717.165 Tm (CONCEPT) Tj ET
+56.693 683.15 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 691.654 Tm (FLO-G01) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 691.654 Tm (Ground floor) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 691.654 Tm (420) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 691.654 Tm (CONCEPT) Tj ET
+56.693 657.638 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 666.142 Tm (FLO-101) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 666.142 Tm (First floor) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 666.142 Tm (350) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 666.142 Tm (CONCEPT) Tj ET
+56.693 632.126 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 640.63 Tm (ROF-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 640.63 Tm (Flat roof) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 640.63 Tm (420) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 640.63 Tm (CONCEPT) Tj ET
+56.693 606.614 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 615.118 Tm (WIN-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 615.118 Tm (Window system) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 615.118 Tm (90) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 615.118 Tm (CONCEPT) Tj ET
+56.693 581.102 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 589.606 Tm (DOR-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 589.606 Tm (External door) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 589.606 Tm (70) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 589.606 Tm (CONCEPT) Tj ET
+56.693 555.591 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 564.094 Tm (DOR-002) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 564.094 Tm (Fire-resisting door) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 564.094 Tm (54) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 564.094 Tm (CONCEPT) Tj ET
+56.693 530.079 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 538.583 Tm (STA-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 538.583 Tm (Stair) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 538.583 Tm (180) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 538.583 Tm (CONCEPT) Tj ET
+56.693 504.567 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 513.071 Tm (FND-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 513.071 Tm (Perimeter strip) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 503.071 Tm (foundation) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 513.071 Tm (400) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 513.071 Tm (SIMULATION_ONLY) Tj ET
+56.693 479.055 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 487.559 Tm (FND-002) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 487.559 Tm (Foundation beam) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 487.559 Tm (600) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 487.559 Tm (SIMULATION_ONLY) Tj ET
+56.693 453.543 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 462.047 Tm (JNT-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 462.047 Tm (New-existing) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 452.047 Tm (movement joint) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 462.047 Tm (40) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 462.047 Tm (CONCEPT) Tj ET
+56.693 428.031 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 436.535 Tm (DRN-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 436.535 Tm (Roof outlet) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 436.535 Tm (0) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 436.535 Tm (CONCEPT) Tj ET
+56.693 402.52 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 411.024 Tm (FIN-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 411.024 Tm (Prayer room floor) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 401.024 Tm (finish) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 411.024 Tm (20) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 411.024 Tm (CONCEPT) Tj ET
+56.693 377.008 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 385.512 Tm (FIN-002) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 385.512 Tm (Wet room floor) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 375.512 Tm (finish) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 385.512 Tm (45) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 385.512 Tm (CONCEPT) Tj ET
+56.693 351.496 481.89 25.512 re S
+BT /F1 7 Tf 1 0 0 1 62.362 360 Tm (CLG-001) Tj ET
+BT /F1 7 Tf 1 0 0 1 182.835 360 Tm (Acoustic ceiling) Tj ET
+BT /F1 7 Tf 1 0 0 1 303.307 360 Tm (180) Tj ET
+BT /F1 7 Tf 1 0 0 1 423.78 360 Tm (CONCEPT) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 308.976 Tm (4. Workmanship and interfaces) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 274.961 Tm (New-to-existing joints, fire stopping, waterproofing, air sealing, acoustic continuity and) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 260.22 Tm (service penetrations require coordinated shop details and specialist approval.) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 214.299 Tm (5. Testing and handover) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 180.283 Tm (Testing, inspection, commissioning, as-built records and operation/maintenance information) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 165.543 Tm (shall be specified at final issue.) Tj ET
+
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 455 >>
+stream
+0.12 0.18 0.25 RG
+BT /F2 8 Tf 1 0 0 1 56.693 802.205 Tm (Technical Specification) Tj ET
+BT /F1 8 Tf 1 0 0 1 514.583 802.205 Tm (Page 4) Tj ET
+56.693 39.685 m 538.583 39.685 l S
+BT /F2 7 Tf 1 0 0 1 56.693 22.677 Tm (CONCEPT - NOT FOR SUBMISSION OR EXECUTION) Tj ET
+BT /F2 15 Tf 1 0 0 1 56.693 756.85 Tm (6. Exclusions) Tj ET
+BT /F1 9 Tf 1 0 0 1 56.693 722.835 Tm (Professional evidence and final authority acceptance are excluded from revision C02.) Tj ET
+
+endstream
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000237 00000 n 
+0000000339 00000 n 
+0000000482 00000 n 
+0000001658 00000 n 
+0000001801 00000 n 
+0000002995 00000 n 
+0000003139 00000 n 
+0000008627 00000 n 
+0000008772 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+9279
+%%EOF

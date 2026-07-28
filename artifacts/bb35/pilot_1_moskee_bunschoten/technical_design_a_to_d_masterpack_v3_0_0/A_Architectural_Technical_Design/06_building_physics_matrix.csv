@@ -1,0 +1,13 @@
+﻿check_id,topic,concept_target,calculation_status,evidence,status
+PHY-01,External wall thermal,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-02,Roof thermal,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-03,Ground floor thermal,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-04,Window thermal,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-05,Junction thermal bridge,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-06,Surface condensation,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-07,Interstitial condensation,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-08,Air tightness,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-09,Daylight,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-10,Summer comfort,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-11,Room acoustics,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
+PHY-12,External noise,Statutory minimum design basis,Concept method defined,REQ-105,PROFESSIONAL VERIFICATION PENDING
