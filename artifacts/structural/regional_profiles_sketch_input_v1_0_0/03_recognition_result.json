@@ -1,0 +1,116 @@
+{
+  "candidate": {
+    "distributed_loads": [
+      {
+        "category": "variable",
+        "characteristic_kn_m": 12.0,
+        "confidence": 0.98,
+        "evidence": "q = 12 kN/m",
+        "load_id": "Q-01"
+      }
+    ],
+    "fields": {
+      "concrete_class": {
+        "confidence": 0.99,
+        "evidence": "C30/37",
+        "value": "C30/37"
+      },
+      "height_mm": {
+        "confidence": 0.96,
+        "evidence": "beam 300 x 500 mm",
+        "value": 500
+      },
+      "nominal_cover_mm": {
+        "confidence": 0.9,
+        "evidence": "cover = 40 mm",
+        "value": 40
+      },
+      "reinforcement_class": {
+        "confidence": 0.97,
+        "evidence": "B500B",
+        "value": "B500B"
+      },
+      "span_m": {
+        "confidence": 0.97,
+        "evidence": "L = 5.0 m",
+        "value": 5.0
+      },
+      "support_a": {
+        "confidence": 0.92,
+        "evidence": "support A text",
+        "value": "PIN"
+      },
+      "support_b": {
+        "confidence": 0.92,
+        "evidence": "support B text",
+        "value": "ROLLER"
+      },
+      "width_mm": {
+        "confidence": 0.96,
+        "evidence": "beam 300 x 500 mm",
+        "value": 300
+      }
+    },
+    "point_loads": [
+      {
+        "category": "variable",
+        "characteristic_kn": 25.0,
+        "confidence": 0.97,
+        "evidence": "P1 = 25 kN @ 2.0 m",
+        "load_id": "P-01",
+        "position_m": 2.0
+      }
+    ],
+    "warnings": []
+  },
+  "engine_version": "1.0.0",
+  "final_structural_release_allowed": false,
+  "input_ready": true,
+  "jurisdiction_code": "SUR",
+  "ocr_text": "Jurisdiction SUR\nL = 5.0 m\nq = 12 kN/m\nP1 = 25 kN @ 2.0 m\nbeam 300 x 500 mm\nC30/37\nB500B\ncover = 40 mm\nsupport A pin\nsupport B roller",
+  "resolved": {
+    "confirmation_note": "Deterministic sample confirmation for engine validation.",
+    "confirmed": true,
+    "confirmed_by_user": true,
+    "distributed_loads": [
+      {
+        "category": "variable",
+        "characteristic_kn_m": 12.0,
+        "confidence": 0.98,
+        "evidence": "q = 12 kN/m",
+        "load_id": "Q-01"
+      }
+    ],
+    "errors": [],
+    "point_loads": [
+      {
+        "category": "variable",
+        "characteristic_kn": 25.0,
+        "confidence": 0.97,
+        "evidence": "P1 = 25 kN @ 2.0 m",
+        "load_id": "P-01",
+        "position_m": 2.0
+      }
+    ],
+    "values": {
+      "concrete_class": "C30/37",
+      "height_mm": 500,
+      "nominal_cover_mm": 40,
+      "reinforcement_class": "B500B",
+      "span_m": 5.0,
+      "support_a": "PIN",
+      "support_b": "ROLLER",
+      "width_mm": 300
+    }
+  },
+  "schema_version": "phoenix.structural-sketch-recognition/1.0",
+  "sketch": {
+    "extension": ".png",
+    "filename": "sample_rc_beam_sketch_SUR.png",
+    "mime_type": "image/png",
+    "sha256": "44e458f712559bef85adfaa993247e078a753035fc3929b841101c2e2419d0f4",
+    "size_bytes": 39808
+  },
+  "text_source": "SIDECAR_TEXT",
+  "warnings": []
+}

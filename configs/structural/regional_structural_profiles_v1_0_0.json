@@ -1,0 +1,256 @@
+{
+  "global_release_policy": "CONCEPT_ONLY_UNTIL_LOCAL_ENGINEER_AND_AUTHORITY_CONFIRMATION",
+  "profiles": {
+    "ABW": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_ARUBA_ENGINEER_APPROVAL",
+      "jurisdiction": "Aruba",
+      "jurisdiction_code": "ABW",
+      "language_options": [
+        "nl",
+        "en",
+        "pap"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of Aruba",
+          "title": "Bouwvergunning",
+          "url": "https://www.gobierno.aw/nl/bouwvergunning"
+        },
+        {
+          "authority": "Government of Aruba",
+          "title": "Law texts 06.01 Volkshuisvesting",
+          "url": "https://www.gobierno.aw/en/law-texts-0601-volkshuisvesting"
+        }
+      ],
+      "permit_authority_note": "The competent Aruba authority and a locally accepted engineer must confirm the applicable structural design basis and submission requirements.",
+      "profile_id": "ARUBA_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "marine_exposure_assessment",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "site_specific_hazard_screening",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    },
+    "BES-BON": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_BES_ENGINEER_APPROVAL",
+      "jurisdiction": "Bonaire (Caribbean Netherlands)",
+      "jurisdiction_code": "BES-BON",
+      "language_options": [
+        "nl",
+        "en",
+        "pap"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of the Netherlands",
+          "title": "BES Bouwbesluit",
+          "url": "https://wetten.overheid.nl/BWBR0036000"
+        }
+      ],
+      "permit_authority_note": "BES Bouwbesluit requires structural safety for permanent, variable, wind, accidental and fire situations; the calculation standard and project parameters require professional confirmation.",
+      "profile_id": "BES_BONAIRE_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "marine_exposure_assessment",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "site_specific_hazard_screening",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    },
+    "BES-EUX": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_BES_ENGINEER_APPROVAL",
+      "jurisdiction": "Sint Eustatius (Caribbean Netherlands)",
+      "jurisdiction_code": "BES-EUX",
+      "language_options": [
+        "nl",
+        "en"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of the Netherlands",
+          "title": "BES Bouwbesluit",
+          "url": "https://wetten.overheid.nl/BWBR0036000"
+        }
+      ],
+      "permit_authority_note": "BES Bouwbesluit applies; site wind, accidental-action and other hazard inputs must be project-specific.",
+      "profile_id": "BES_SINT_EUSTATIUS_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "marine_exposure_assessment",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "site_specific_hazard_screening",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    },
+    "BES-SAB": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_BES_ENGINEER_APPROVAL",
+      "jurisdiction": "Saba (Caribbean Netherlands)",
+      "jurisdiction_code": "BES-SAB",
+      "language_options": [
+        "nl",
+        "en"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of the Netherlands",
+          "title": "BES Bouwbesluit",
+          "url": "https://wetten.overheid.nl/BWBR0036000"
+        }
+      ],
+      "permit_authority_note": "BES Bouwbesluit applies; site wind, accidental-action and other hazard inputs must be project-specific.",
+      "profile_id": "BES_SABA_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "marine_exposure_assessment",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "site_specific_hazard_screening",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    },
+    "CUR": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_CURACAO_ENGINEER_APPROVAL",
+      "jurisdiction": "Curaçao",
+      "jurisdiction_code": "CUR",
+      "language_options": [
+        "nl",
+        "en",
+        "pap"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of Curaçao",
+          "title": "Bouw- en Woningverordening 1935, consolidated text published 2024",
+          "url": "https://gobiernu.cw/nl/themas-result/?years=2024"
+        },
+        {
+          "authority": "Government of Curaçao",
+          "title": "Technical fire-prevention regulations, consolidated 2025",
+          "url": "https://gobiernu.cw/wp-content/uploads/2025/06/61.-GT.-Landsbesluit-Technische-brandpreventie-voorschriften-Curacao.pdf"
+        }
+      ],
+      "permit_authority_note": "Curaçao project requirements, structural basis and any fire-related structural requirements require confirmation by the competent authority and local engineer.",
+      "profile_id": "CURACAO_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "marine_exposure_assessment",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "site_specific_hazard_screening",
+        "fire_resistance_requirement",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    },
+    "SUR": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_SURINAME_ENGINEER_APPROVAL",
+      "jurisdiction": "Republic of Suriname",
+      "jurisdiction_code": "SUR",
+      "language_options": [
+        "nl",
+        "en"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of Suriname",
+          "title": "Bouwwet 1956",
+          "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/"
+        },
+        {
+          "authority": "Government of Suriname",
+          "title": "Bouwbesluit no. 1",
+          "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/"
+        }
+      ],
+      "permit_authority_note": "Building permit and local review requirements must be confirmed with the competent Suriname authority and project structural engineer.",
+      "profile_id": "SUR_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "site coastal_or_inland",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "flood_or_water_exposure_if_relevant",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    },
+    "SXM": {
+      "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+      "final_release_policy": "BLOCKED_UNTIL_SINT_MAARTEN_ENGINEER_APPROVAL",
+      "jurisdiction": "Sint Maarten",
+      "jurisdiction_code": "SXM",
+      "language_options": [
+        "en",
+        "nl"
+      ],
+      "legal_context": [
+        {
+          "authority": "Government of Sint Maarten",
+          "title": "Building Ordinance, AB 2013 GT no. 136",
+          "url": "https://www.sintmaartengov.org/Ministries/Departments/Pages/Department-of-Permits.aspx"
+        },
+        {
+          "authority": "Government of Sint Maarten",
+          "title": "Building Code, AB 2021 no. 69",
+          "url": "https://www.sintmaartengov.org/Government/Pages/Official-Publications.aspx"
+        }
+      ],
+      "permit_authority_note": "The Department of Permits processes building permits; the structural standard, site hazards and project parameters require local professional confirmation.",
+      "profile_id": "SINT_MAARTEN_STRUCTURAL_PRELIMINARY_2026",
+      "required_environment_inputs": [
+        "marine_exposure_assessment",
+        "exposure_class",
+        "design_working_life",
+        "nominal_cover_mm"
+      ],
+      "required_hazard_inputs": [
+        "site_wind_basis",
+        "site_specific_hazard_screening",
+        "accidental_actions_if_relevant"
+      ],
+      "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+      "unit_system": "metric"
+    }
+  },
+  "reference_checked_on": "2026-07-28",
+  "schema_version": "phoenix.regional-structural-profiles/1.0",
+  "version": "1.0.0"
+}

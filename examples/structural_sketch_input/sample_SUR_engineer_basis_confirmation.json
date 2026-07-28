@@ -1,0 +1,18 @@
+{
+  "accidental_actions_if_relevant": "Not included in demonstration",
+  "beam_id": "RCB-SUR-DEMO-001",
+  "beam_name": "Suriname sketch-input demonstration beam",
+  "coastal_or_inland": "inland",
+  "design_standard_reference": "PROJECT-SPECIFIED EC2 PRELIMINARY BASIS FOR DEMONSTRATION",
+  "design_working_life": "50 years demonstration input",
+  "exposure_class": "ENGINEER-CONFIRMED DEMO",
+  "flood_or_water_exposure_if_relevant": "Not governing for demonstration",
+  "jurisdiction_code": "SUR",
+  "model_object_id": "UNASSIGNED-SKETCH-BEAM",
+  "national_annex_or_local_basis": "LOCAL ENGINEER CONFIRMATION REQUIRED",
+  "nominal_cover_mm": 40,
+  "project_id": "PHX-SUR-SKETCH-DEMO-001",
+  "site": "inland",
+  "site_wind_basis": "Not part of local gravity beam demonstration",
+  "structural_engineer_basis_confirmed": true
+}

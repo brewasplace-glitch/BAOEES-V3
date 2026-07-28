@@ -1,0 +1,8 @@
+{
+  "confirmation_note": "Deterministic sample confirmation for engine validation.",
+  "confirmed_by_user": true,
+  "fields": {
+    "support_a": "PIN",
+    "support_b": "ROLLER"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Reinforced Concrete Beam Design Enabled",
+  "application_name": "Project Phoenix Local - Regional Structural Profiles and Sketch Input Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -35,6 +35,21 @@
   "host": "127.0.0.1",
   "max_port_attempts": 10,
   "open_targets": [
+    {
+      "id": "regional_sketch_input_dashboard",
+      "label": "Open regionale profielen en schetsinvoer",
+      "relative_path": "artifacts/structural/regional_profiles_sketch_input_v1_0_0/08_sketch_input_dashboard.html"
+    },
+    {
+      "id": "regional_sketch_normalized_input",
+      "label": "Open genormaliseerde betonbalkinvoer",
+      "relative_path": "artifacts/structural/regional_profiles_sketch_input_v1_0_0/05_normalized_rc_beam_input.json"
+    },
+    {
+      "id": "regional_sketch_preview",
+      "label": "Open herkende schetsinterpretatie",
+      "relative_path": "artifacts/structural/regional_profiles_sketch_input_v1_0_0/06_interpretation_preview.svg"
+    },
     {
       "id": "rc_beam_design_dashboard",
       "label": "Open betonbalkberekening dashboard",
@@ -152,9 +167,9 @@
     }
   ],
   "preferred_port": 8765,
-  "runtime_root": "outputs/runtime/phoenix_local_app_v1_7_0",
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_8_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "workflows": [
     {
       "expect_flag": "--expect-masterpack-ready",
@@ -165,6 +180,16 @@
         "runners/PROJECT_PHOENIX_BB35_pilot_1_technical_design_a_to_d_masterpack_v3_0_0.py"
       ],
       "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_technical_design_a_to_d_masterpack_v3_0_0.py"
+    },
+    {
+      "expect_flag": "--expect-input-ready",
+      "id": "regional_structural_profiles_sketch_input",
+      "label": "Herken balkschets en kies Suriname/Caribisch profiel",
+      "output_subdir": "regional_structural_profiles_sketch_input",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_structural_profiles_sketch_input_v1_0_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_structural_profiles_sketch_input_v1_0_0.py"
     },
     {
       "expect_flag": "--expect-design-valid",

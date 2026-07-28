@@ -1,0 +1,10 @@
+Jurisdiction SUR
+L = 5.0 m
+q = 12 kN/m
+P1 = 25 kN @ 2.0 m
+beam 300 x 500 mm
+C30/37
+B500B
+cover = 40 mm
+support A pin
+support B roller

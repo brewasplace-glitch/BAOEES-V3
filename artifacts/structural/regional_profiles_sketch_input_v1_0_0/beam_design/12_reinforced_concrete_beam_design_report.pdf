@@ -1,0 +1,288 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 714 >>
+stream
+BT
+/F2 15 Tf
+50 790 Td
+(PROJECT PHOENIX) Tj
+0 -26 Td
+/F1 9.5 Tf
+(REINFORCED CONCRETE BEAM PRELIMINARY DESIGN REPORT) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Beam: RCB-SUR-DEMO-001 - Suriname sketch-input demonstration beam) Tj
+0 -15 Td
+(Project: PHX-SUR-SKETCH-DEMO-001) Tj
+0 -15 Td
+(Status: PRELIMINARY STRUCTURAL DESIGN - ENGINEER REVIEW REQUIRED) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Geometry: L=5.0 m, b=300 mm, h=500 mm) Tj
+0 -15 Td
+(Materials: C30/37 / B500B) Tj
+0 -15 Td
+(Standard profile: SUR_STRUCTURAL_PRELIMINARY_2026__PROJECT-SPECIFIED EC2 PRELIMINARY) Tj
+0 -15 Td
+(BASIS FOR DEMONSTRATION) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(This report is not a signed structural calculation and is not approved for construction.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Length 457 >>
+stream
+BT
+/F2 15 Tf
+50 790 Td
+(1. LOADS AND ANALYSIS) Tj
+0 -26 Td
+/F1 9.5 Tf
+() Tj
+0 -15 Td
+(Self weight: 3.75 kN/m) Tj
+0 -15 Td
+(Total permanent UDL: 3.75 kN/m) Tj
+0 -15 Td
+(Variable UDL: 12.0 kN/m) Tj
+0 -15 Td
+(ULS reaction A: 80.156 kN) Tj
+0 -15 Td
+(ULS reaction B: 72.656 kN) Tj
+0 -15 Td
+(ULS maximum moment: 114.188 kNm) Tj
+0 -15 Td
+(ULS maximum shear: 80.156 kN) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Point loads:) Tj
+0 -15 Td
+(- P-01: 25.0 kN at 2.0 m) Tj
+0 -15 Td
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 540 >>
+stream
+BT
+/F2 15 Tf
+50 790 Td
+(2. FLEXURE AND SHEAR) Tj
+0 -26 Td
+/F1 9.5 Tf
+() Tj
+0 -15 Td
+(Required steel: 629.563 mm2) Tj
+0 -15 Td
+(Provided steel: 678.584 mm2) Tj
+0 -15 Td
+(Bottom reinforcement: 6T12 bottom \(As=679 mm2; clear=26 mm\)) Tj
+0 -15 Td
+(Moment resistance: 123.709 kNm) Tj
+0 -15 Td
+(Flexure utilization: 0.923) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Concrete shear resistance: 66.428 kN) Tj
+0 -15 Td
+(Stirrups: 2-leg T8 stirrups @ 200 mm) Tj
+0 -15 Td
+(Governing shear resistance: 87.331 kN) Tj
+0 -15 Td
+(Shear utilization: 0.918) Tj
+0 -15 Td
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 499 >>
+stream
+BT
+/F2 15 Tf
+50 790 Td
+(3. SERVICEABILITY AND DETAILING) Tj
+0 -26 Td
+/F1 9.5 Tf
+() Tj
+0 -15 Td
+(Estimated deflection: 6.746 mm) Tj
+0 -15 Td
+(Deflection limit: 20.0 mm) Tj
+0 -15 Td
+(Estimated crack width: 0.093 mm) Tj
+0 -15 Td
+(Crack width limit: 0.3 mm) Tj
+0 -15 Td
+(Design anchorage length: 395 mm) Tj
+0 -15 Td
+(Available anchorage length: 850 mm) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(The serviceability calculations are preliminary estimates and require engineer) Tj
+0 -15 Td
+(confirmation.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 1613 >>
+stream
+BT
+/F2 15 Tf
+50 790 Td
+(4. DESIGN CHECKS) Tj
+0 -26 Td
+/F1 9.5 Tf
+() Tj
+0 -15 Td
+(CHK-001 | Statics | PASS | Reactions equal total ULS load.) Tj
+0 -15 Td
+(CHK-002 | Flexure resistance | PASS | MEd/MRd = 0.923) Tj
+0 -15 Td
+(CHK-003 | Neutral axis | PASS | x/\(xlim*d\) = 0.333) Tj
+0 -15 Td
+(CHK-004 | Minimum reinforcement | PASS | As,prov = 678.6 mm2; As,min = 200.9 mm2) Tj
+0 -15 Td
+(CHK-005 | Maximum reinforcement | PASS | As,prov = 678.6 mm2; As,max = 6000.0 mm2) Tj
+0 -15 Td
+(CHK-006 | Bar fit | PASS | 6T12 bottom \(As=679 mm2; clear=26 mm\)) Tj
+0 -15 Td
+(CHK-007 | Shear resistance | PASS | VEd/VRd = 0.918) Tj
+0 -15 Td
+(CHK-008 | Shear compression strut | PASS | VEd = 80.2 kN; VRd,max = 538.0 kN) Tj
+0 -15 Td
+(CHK-009 | Deflection | PASS | delta = 6.75 mm; limit = 20.00 mm) Tj
+0 -15 Td
+(CHK-010 | Crack width | PASS | wk = 0.093 mm; limit = 0.300 mm) Tj
+0 -15 Td
+(CHK-011 | Anchorage fit | PASS | lb,design = 395 mm; available = 850 mm) Tj
+0 -15 Td
+(CHK-012 | Support bearing | PASS | bearing utilization = 0.087) Tj
+0 -15 Td
+(CHK-013 | Deep-section review gate | PASS | h = 500 mm; mandatory review threshold = 700) Tj
+0 -15 Td
+(mm) Tj
+0 -15 Td
+(CHK-014 | Fire design boundary | PASS | Fire design is excluded and must be completed) Tj
+0 -15 Td
+(separately.) Tj
+0 -15 Td
+(CHK-015 | Professional review gate | PASS | All outputs remain preliminary until signed) Tj
+0 -15 Td
+(by a competent structural engineer.) Tj
+0 -15 Td
+(CHK-016 | Standard profile declared | PASS |) Tj
+0 -15 Td
+(SUR_STRUCTURAL_PRELIMINARY_2026__PROJECT-SPECIFIED EC2 PRELIMINARY BASIS FOR) Tj
+0 -15 Td
+(DEMONSTRATION) Tj
+0 -15 Td
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 1000 >>
+stream
+BT
+/F2 15 Tf
+50 790 Td
+(5. LIMITATIONS AND NEXT GATE) Tj
+0 -26 Td
+/F1 9.5 Tf
+() Tj
+0 -15 Td
+(- This is a preliminary design engine and not a signed structural calculation.) Tj
+0 -15 Td
+(- The selected standard profile and National Annex parameters must be confirmed for the) Tj
+0 -15 Td
+(  project.) Tj
+0 -15 Td
+(- Fire resistance, robustness, seismic design, fatigue and accidental actions are) Tj
+0 -15 Td
+(  outside this v1.0.0 scope.) Tj
+0 -15 Td
+(- Construction tolerances, bar curtailment, laps, couplers, support-zone detailing and) Tj
+0 -15 Td
+(  actual load paths require engineer review.) Tj
+0 -15 Td
+(- The 2025 Dutch National Annex introduced shear-related changes; deep sections trigger) Tj
+0 -15 Td
+(  a mandatory review gate.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Next gate:) Tj
+0 -15 Td
+(Assign the beam to an approved model object, replace example loads with project loads,) Tj
+0 -15 Td
+(and obtain signed structural-engineer review before use for permit, tender or execution.) Tj
+0 -15 Td
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] /Count 6 >>
+endobj
+16 0 obj
+<< /Type /Catalog /Pages 15 0 R >>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000000925 00000 n 
+0000001062 00000 n 
+0000001570 00000 n 
+0000001707 00000 n 
+0000002298 00000 n 
+0000002435 00000 n 
+0000002985 00000 n 
+0000003123 00000 n 
+0000004789 00000 n 
+0000004928 00000 n 
+0000005981 00000 n 
+0000006120 00000 n 
+0000006211 00000 n 
+trailer
+<< /Size 17 /Root 16 0 R >>
+startxref
+6262
+%%EOF

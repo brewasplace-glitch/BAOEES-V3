@@ -1,0 +1,37 @@
+{
+  "concept_analysis_preset": "EC2_TRANSPARENT_PRELIMINARY_NOT_A_LEGAL_DEFAULT",
+  "final_release_policy": "BLOCKED_UNTIL_SURINAME_ENGINEER_APPROVAL",
+  "jurisdiction": "Republic of Suriname",
+  "jurisdiction_code": "SUR",
+  "language_options": [
+    "nl",
+    "en"
+  ],
+  "legal_context": [
+    {
+      "authority": "Government of Suriname",
+      "title": "Bouwwet 1956",
+      "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/"
+    },
+    {
+      "authority": "Government of Suriname",
+      "title": "Bouwbesluit no. 1",
+      "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/"
+    }
+  ],
+  "permit_authority_note": "Building permit and local review requirements must be confirmed with the competent Suriname authority and project structural engineer.",
+  "profile_id": "SUR_STRUCTURAL_PRELIMINARY_2026",
+  "required_environment_inputs": [
+    "site coastal_or_inland",
+    "exposure_class",
+    "design_working_life",
+    "nominal_cover_mm"
+  ],
+  "required_hazard_inputs": [
+    "site_wind_basis",
+    "flood_or_water_exposure_if_relevant",
+    "accidental_actions_if_relevant"
+  ],
+  "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED",
+  "unit_system": "metric"
+}

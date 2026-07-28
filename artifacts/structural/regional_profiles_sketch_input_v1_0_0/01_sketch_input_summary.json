@@ -1,0 +1,11 @@
+{
+  "distributed_load_count": 1,
+  "final_structural_release_allowed": false,
+  "input_ready": true,
+  "jurisdiction": "Republic of Suriname",
+  "jurisdiction_code": "SUR",
+  "point_load_count": 1,
+  "recognized_field_count": 8,
+  "status": "SKETCH_INPUT_READY_FOR_PRELIMINARY_BEAM_DESIGN",
+  "text_source": "SIDECAR_TEXT"
+}

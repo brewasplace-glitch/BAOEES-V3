@@ -1,0 +1,136 @@
+{
+  "analysis": {
+    "deflection_segments": 400,
+    "station_count": 101
+  },
+  "beam": {
+    "beam_id": "RCB-SUR-DEMO-001",
+    "height_mm": 500,
+    "model_object_id": "UNASSIGNED-SKETCH-BEAM",
+    "name": "Suriname sketch-input demonstration beam",
+    "nominal_cover_mm": 40,
+    "span_m": 5.0,
+    "stirrup_diameter_mm": 8,
+    "support_width_mm": 300,
+    "trial_main_bar_diameter_mm": 16,
+    "width_mm": 300
+  },
+  "design_factors": {
+    "alpha_cc": 0.85,
+    "gamma_c": 1.5,
+    "gamma_g": 1.35,
+    "gamma_q": 1.5,
+    "gamma_s": 1.15,
+    "psi2_default": 0.3
+  },
+  "detailing": {
+    "anchorage_bond_factor": 2.25,
+    "anchorage_eta1": 1.0,
+    "anchorage_eta2": 1.0,
+    "maximum_bars_in_single_layer": 8,
+    "maximum_stirrup_spacing_mm": 300,
+    "minimum_anchorage_factor_phi": 10,
+    "minimum_anchorage_mm": 100,
+    "minimum_clear_spacing_mm": 25,
+    "permitted_main_bar_diameters_mm": [
+      12,
+      16,
+      20,
+      25,
+      32
+    ],
+    "stirrup_legs": 2,
+    "stirrup_spacing_increment_mm": 25,
+    "support_extension_for_anchorage_mm": 550,
+    "top_hanger_reinforcement": "2T12 continuous"
+  },
+  "loads": {
+    "permanent_udl_kn_m": 0,
+    "point_loads": [
+      {
+        "category": "variable",
+        "characteristic_kn": 25.0,
+        "load_id": "P-01",
+        "position_m": 2.0,
+        "psi2": 0.3
+      }
+    ],
+    "variable_udl_kn_m": 12.0
+  },
+  "materials": {
+    "concrete_class": "C30/37",
+    "concrete_density_kn_m3": 25,
+    "fck_mpa": 30.0,
+    "fcm_increment_mpa": 8,
+    "fctk_005_mpa": 2.03,
+    "fctm_mpa": 2.9,
+    "fyk_mpa": 500.0,
+    "reinforcement_class": "B500B",
+    "steel_modulus_mpa": 200000
+  },
+  "official_references": [
+    "https://eurocodes.jrc.ec.europa.eu/EN-Eurocodes/eurocode-2-design-concrete-structures",
+    "https://www.nen.nl/en/nen-en-1992-1-1-2005-c2-2011-a1-2015-nl-332423",
+    "https://www.nen.nl/en/nen-en-1992-1-1-2005-c2-2011-a1-2015-nb-2016-a1-2020-a2-2025-nl-338114"
+  ],
+  "project_id": "PHX-SUR-SKETCH-DEMO-001",
+  "regional_profile": {
+    "engineer_confirmation": {
+      "accidental_actions_if_relevant": "Not included in demonstration",
+      "beam_id": "RCB-SUR-DEMO-001",
+      "beam_name": "Suriname sketch-input demonstration beam",
+      "coastal_or_inland": "inland",
+      "design_standard_reference": "PROJECT-SPECIFIED EC2 PRELIMINARY BASIS FOR DEMONSTRATION",
+      "design_working_life": "50 years demonstration input",
+      "exposure_class": "ENGINEER-CONFIRMED DEMO",
+      "flood_or_water_exposure_if_relevant": "Not governing for demonstration",
+      "jurisdiction_code": "SUR",
+      "model_object_id": "UNASSIGNED-SKETCH-BEAM",
+      "national_annex_or_local_basis": "LOCAL ENGINEER CONFIRMATION REQUIRED",
+      "nominal_cover_mm": 40,
+      "project_id": "PHX-SUR-SKETCH-DEMO-001",
+      "site": "inland",
+      "site_wind_basis": "Not part of local gravity beam demonstration",
+      "structural_engineer_basis_confirmed": true
+    },
+    "final_release_policy": "BLOCKED_UNTIL_SURINAME_ENGINEER_APPROVAL",
+    "jurisdiction": "Republic of Suriname",
+    "jurisdiction_code": "SUR",
+    "profile_id": "SUR_STRUCTURAL_PRELIMINARY_2026",
+    "structural_standard_status": "PROJECT_SPECIFIC_ENGINEER_CONFIRMATION_REQUIRED"
+  },
+  "schema_version": "phoenix.rc-beam-input/1.0",
+  "scope": {
+    "fire_design_included": false
+  },
+  "serviceability": {
+    "crack_k1": 0.8,
+    "crack_k2": 0.5,
+    "crack_k3": 3.4,
+    "crack_k4": 0.425,
+    "crack_kt": 0.4,
+    "crack_width_limit_mm": 0.3,
+    "deflection_limit_ratio": 250
+  },
+  "standard_profile": {
+    "alpha_cw": 1.0,
+    "base_standard": "PROJECT-SPECIFIED EC2 PRELIMINARY BASIS FOR DEMONSTRATION",
+    "c_rdc_numerator": 0.18,
+    "cot_theta": 1.0,
+    "mandatory_deep_section_review_height_mm": 700,
+    "maximum_longitudinal_ratio_for_shear": 0.02,
+    "maximum_reinforcement_ratio": 0.04,
+    "minimum_reinforcement_factor_1": 0.26,
+    "minimum_reinforcement_factor_2": 0.0013,
+    "minimum_shear_reinforcement_coefficient": 0.08,
+    "national_annex": "LOCAL ENGINEER CONFIRMATION REQUIRED",
+    "neutral_axis_limit_ratio": 0.45,
+    "profile_id": "SUR_STRUCTURAL_PRELIMINARY_2026__PROJECT-SPECIFIED EC2 PRELIMINARY BASIS FOR DEMONSTRATION",
+    "stress_block_eta": 1.0,
+    "stress_block_lambda": 0.8,
+    "support_bearing_stress_limit_factor": 0.6,
+    "v1_coefficient": 0.6,
+    "v1_denominator_mpa": 250,
+    "vmin_coefficient": 0.035
+  }
+}

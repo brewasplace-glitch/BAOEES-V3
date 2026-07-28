@@ -1,0 +1,11 @@
+﻿input_id,category,name,value,unit,source,status
+IN-001,geometry,span,5.0,m,input_config,USER_CONFIGURABLE
+IN-002,geometry,width,300.0,mm,input_config,USER_CONFIGURABLE
+IN-003,geometry,height,500.0,mm,input_config,USER_CONFIGURABLE
+IN-004,geometry,effective_depth,446.0,mm,derived,DERIVED
+IN-005,material,fck,30.0,MPa,input_config,USER_CONFIGURABLE
+IN-006,material,fyd,434.783,MPa,derived,DERIVED
+IN-007,load,self_weight,3.75,kN/m,derived,DERIVED
+IN-008,load,permanent_superimposed,0.0,kN/m,input_config,USER_CONFIGURABLE
+IN-009,load,variable_udl,12.0,kN/m,input_config,USER_CONFIGURABLE
+IN-010,point_load,P-01,25.0,kN,input_config,USER_CONFIGURABLE

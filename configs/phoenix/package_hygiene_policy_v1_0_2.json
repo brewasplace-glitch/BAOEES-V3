@@ -1,0 +1,19 @@
+{
+  "forbidden_directory_names": [
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache"
+  ],
+  "forbidden_file_extensions": [
+    ".pyc",
+    ".pyo",
+    ".tmp",
+    ".bak",
+    ".log"
+  ],
+  "installer_preflight_enforced": true,
+  "package_version": "1.0.2",
+  "purpose": "Prevent runtime-generated files from entering deterministic installer payloads.",
+  "schema_version": "phoenix.package-hygiene/1.0"
+}

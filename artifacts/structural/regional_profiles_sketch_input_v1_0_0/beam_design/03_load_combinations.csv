@@ -1,0 +1,4 @@
+﻿combination_id,description,udl_kn_m,point_load_total_kn,reaction_a_kn,reaction_b_kn,total_load_kn
+ULS_STR,Ultimate STR combination,23.062,37.5,80.156,72.656,152.812
+SLS_CHARACTERISTIC,Characteristic service combination,15.75,25.0,54.375,49.375,103.75
+SLS_QUASI_PERMANENT,Quasi-permanent service combination,7.35,7.5,22.875,21.375,44.25

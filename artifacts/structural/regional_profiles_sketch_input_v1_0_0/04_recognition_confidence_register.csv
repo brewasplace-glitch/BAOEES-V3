@@ -1,0 +1,11 @@
+field,value,confidence,evidence
+concrete_class,C30/37,0.99,C30/37
+height_mm,500,0.96,beam 300 x 500 mm
+nominal_cover_mm,40,0.9,cover = 40 mm
+reinforcement_class,B500B,0.97,B500B
+span_m,5.0,0.97,L = 5.0 m
+support_a,PIN,0.92,support A text
+support_b,ROLLER,0.92,support B text
+width_mm,300,0.96,beam 300 x 500 mm
+Q-01,12.0,0.98,q = 12 kN/m
+P-01,25.0,0.97,P1 = 25 kN @ 2.0 m
