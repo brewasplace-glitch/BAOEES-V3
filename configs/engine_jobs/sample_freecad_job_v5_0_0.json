@@ -1,0 +1,8 @@
+{
+  "arguments": [],
+  "engine_id": "freecad",
+  "input_path": "inputs/sample/freecad_build.py",
+  "job_id": "SAMPLE-FREECAD-001",
+  "output_dir": "outputs/runtime/open_source_engines_v5_0_0/freecad",
+  "schema_version": "phoenix.engine-job/5.0.0"
+}

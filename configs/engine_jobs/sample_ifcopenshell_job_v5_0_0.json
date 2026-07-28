@@ -1,0 +1,9 @@
+{
+  "engine_id": "ifcopenshell",
+  "input_path": "inputs/sample/model.ifc",
+  "job_id": "SAMPLE-IFC-001",
+  "options": [],
+  "output_dir": "outputs/runtime/open_source_engines_v5_0_0/ifcopenshell",
+  "output_name": "model.glb",
+  "schema_version": "phoenix.engine-job/5.0.0"
+}

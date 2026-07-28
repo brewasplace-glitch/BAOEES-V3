@@ -1,0 +1,39 @@
+{
+  "architecture_rule": "Do not rebuild reliable open-source domain engines; build adapters, orchestration, validation and traceability.",
+  "engines": {
+    "calculix": {
+      "preferred_interface": "ccx CLI using INP jobs",
+      "primary_role": "general finite element analysis"
+    },
+    "energyplus": {
+      "preferred_interface": "EnergyPlus CLI using IDF or epJSON",
+      "primary_role": "building energy and thermal simulation"
+    },
+    "freecad": {
+      "preferred_interface": "FreeCADCmd Python scripts",
+      "primary_role": "parametric CAD and technical geometry"
+    },
+    "ifcopenshell": {
+      "preferred_interface": "IfcOpenShell Python API and IfcConvert CLI",
+      "primary_role": "IFC authoring, validation and geometry conversion"
+    },
+    "opensees": {
+      "preferred_interface": "OpenSees Tcl or OpenSeesPy adapter",
+      "primary_role": "structural and geotechnical analysis"
+    },
+    "qgis": {
+      "preferred_interface": "qgis_process CLI",
+      "primary_role": "GIS, open data and spatial processing"
+    }
+  },
+  "execution_policy": {
+    "automatic_installation": false,
+    "capture_command": true,
+    "capture_stdout_stderr": true,
+    "hash_outputs": true,
+    "professional_review_required": true,
+    "reason": "Engine installation may require licences, platform-specific packages, administrator rights or user-selected versions.",
+    "simulate_missing_engine_results": false
+  },
+  "schema_version": "phoenix.open-source-engine-adapter-layer/5.0.0"
+}

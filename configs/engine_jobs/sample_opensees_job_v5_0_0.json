@@ -1,0 +1,7 @@
+{
+  "engine_id": "opensees",
+  "input_path": "inputs/sample/structure.tcl",
+  "job_id": "SAMPLE-OPENSEES-001",
+  "output_dir": "outputs/runtime/open_source_engines_v5_0_0/opensees",
+  "schema_version": "phoenix.engine-job/5.0.0"
+}

@@ -1,0 +1,7 @@
+{
+  "engine_id": "calculix",
+  "input_path": "inputs/sample/model.inp",
+  "job_id": "SAMPLE-CCX-001",
+  "output_dir": "outputs/runtime/open_source_engines_v5_0_0/calculix",
+  "schema_version": "phoenix.engine-job/5.0.0"
+}

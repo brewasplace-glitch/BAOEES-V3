@@ -1,0 +1,8 @@
+{
+  "engine_id": "energyplus",
+  "input_path": "inputs/sample/building.epjson",
+  "job_id": "SAMPLE-EPLUS-001",
+  "output_dir": "outputs/runtime/open_source_engines_v5_0_0/energyplus",
+  "schema_version": "phoenix.engine-job/5.0.0",
+  "weather_file": "inputs/sample/weather.epw"
+}

@@ -1,0 +1,13 @@
+{
+  "algorithm": "native:buffer",
+  "engine_id": "qgis",
+  "input_path": "inputs/sample/qgis_job.json",
+  "job_id": "SAMPLE-QGIS-001",
+  "output_dir": "outputs/runtime/open_source_engines_v5_0_0/qgis",
+  "parameters": {
+    "DISTANCE": 10,
+    "INPUT": "inputs/sample/input.gpkg",
+    "OUTPUT": "outputs/runtime/open_source_engines_v5_0_0/qgis/buffer.gpkg"
+  },
+  "schema_version": "phoenix.engine-job/5.0.0"
+}
