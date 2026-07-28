@@ -1,0 +1,8 @@
+{
+  "desktop_shortcut_name": "Project Phoenix 2.0",
+  "html_path": "phoenix/local_app/static/official_start_v2_0/index.html",
+  "local_runtime_url": "http://127.0.0.1:8765/",
+  "official": true,
+  "schema_version": "phoenix.official-start-screen/2.0",
+  "title": "Project Phoenix 2.0"
+}
