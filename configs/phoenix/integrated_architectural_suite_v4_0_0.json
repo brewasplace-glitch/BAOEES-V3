@@ -1,0 +1,18 @@
+{
+  "components": [
+    "architectural_model",
+    "space_occupancy",
+    "bbl_checks",
+    "floor_plans",
+    "elevation",
+    "section",
+    "space_schedule",
+    "integrated_report",
+    "sha256_manifest"
+  ],
+  "release_policy": {
+    "concept_generation": true,
+    "permit_tender_execution_require_professional_validation": true
+  },
+  "schema_version": "phoenix.architectural-suite/4.0.0"
+}

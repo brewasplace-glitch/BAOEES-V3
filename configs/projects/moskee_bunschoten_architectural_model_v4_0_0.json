@@ -1,0 +1,262 @@
+{
+  "jurisdiction": "NL",
+  "levels": [
+    {
+      "elevation_m": 0.0,
+      "floor_to_floor_m": 3.3,
+      "id": "L00",
+      "name": "Begane grond"
+    },
+    {
+      "elevation_m": 3.3,
+      "floor_to_floor_m": 3.0,
+      "id": "L01",
+      "name": "Verdieping"
+    }
+  ],
+  "metadata": {
+    "occupancy_program_id": "HBM-OCC-2026-001",
+    "release_constraints": [
+      "REQ-102",
+      "REQ-103",
+      "REQ-104",
+      "REQ-105",
+      "REQ-106",
+      "REQ-108"
+    ],
+    "ventilation_capacity_lps": {
+      "S001": 600,
+      "S101": 350
+    }
+  },
+  "openings": [
+    {
+      "height_m": 2.3,
+      "id": "D1",
+      "kind": "door",
+      "wall_id": "W1",
+      "width_m": 1.2
+    },
+    {
+      "height_m": 2.3,
+      "id": "D2",
+      "kind": "door",
+      "wall_id": "W3",
+      "width_m": 1.2
+    },
+    {
+      "height_m": 2.3,
+      "id": "D3",
+      "kind": "door",
+      "wall_id": "W5",
+      "width_m": 0.95
+    }
+  ],
+  "phase": "CONCEPT",
+  "project_id": "BB35-PILOT-1-MOSKEE-BUNSCHOTEN",
+  "project_name": "Moskee Bunschoten",
+  "schema_version": "phoenix.architectural-model/4.0.0",
+  "spaces": [
+    {
+      "accessible": true,
+      "function": "assembly",
+      "id": "S001",
+      "level_id": "L00",
+      "name": "Gebedsruimte heren",
+      "occupancy": 80,
+      "polygon": [
+        [
+          0.3,
+          0.3
+        ],
+        [
+          9.7,
+          0.3
+        ],
+        [
+          9.7,
+          6.7
+        ],
+        [
+          0.3,
+          6.7
+        ]
+      ],
+      "ventilation_lps_per_person": 7
+    },
+    {
+      "accessible": false,
+      "function": "assembly",
+      "id": "S101",
+      "level_id": "L01",
+      "name": "Gebedsruimte dames",
+      "occupancy": 45,
+      "polygon": [
+        [
+          0.3,
+          0.3
+        ],
+        [
+          9.7,
+          0.3
+        ],
+        [
+          9.7,
+          6.7
+        ],
+        [
+          0.3,
+          6.7
+        ]
+      ],
+      "ventilation_lps_per_person": 7
+    }
+  ],
+  "stairs": [
+    {
+      "accessible_alternative": false,
+      "going_m": 0.25,
+      "id": "ST1",
+      "rise_m": 0.183,
+      "width_m": 1.2
+    }
+  ],
+  "walls": [
+    {
+      "end": [
+        10,
+        0
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.3,
+      "id": "W1",
+      "level_id": "L00",
+      "material": "masonry",
+      "start": [
+        0,
+        0
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        10,
+        7
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.3,
+      "id": "W2",
+      "level_id": "L00",
+      "material": "masonry",
+      "start": [
+        10,
+        0
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        0,
+        7
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.3,
+      "id": "W3",
+      "level_id": "L00",
+      "material": "masonry",
+      "start": [
+        10,
+        7
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        0,
+        0
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.3,
+      "id": "W4",
+      "level_id": "L00",
+      "material": "masonry",
+      "start": [
+        0,
+        7
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        10,
+        0
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.0,
+      "id": "W5",
+      "level_id": "L01",
+      "material": "masonry",
+      "start": [
+        0,
+        0
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        10,
+        7
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.0,
+      "id": "W6",
+      "level_id": "L01",
+      "material": "masonry",
+      "start": [
+        10,
+        0
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        0,
+        7
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.0,
+      "id": "W7",
+      "level_id": "L01",
+      "material": "masonry",
+      "start": [
+        10,
+        7
+      ],
+      "thickness_m": 0.3
+    },
+    {
+      "end": [
+        0,
+        0
+      ],
+      "external": true,
+      "fire_rating_min": 60,
+      "height_m": 3.0,
+      "id": "W8",
+      "level_id": "L01",
+      "material": "masonry",
+      "start": [
+        0,
+        7
+      ],
+      "thickness_m": 0.3
+    }
+  ]
+}
