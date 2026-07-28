@@ -1,0 +1,9 @@
+﻿input_id,description,accepted_formats,mandatory,submission_status,validation_status
+IN-105-01,Bbl-toetsingsmatrix voor gebruik en bezetting,XLSX/PDF,True,PENDING,NOT_STARTED
+IN-105-02,Brand- en vluchtveiligheidsrapport,PDF,True,PENDING,NOT_STARTED
+IN-105-03,Vluchtweg- en uitgangscapaciteitsberekening,XLSX/PDF,True,PENDING,NOT_STARTED
+IN-105-04,Brandcompartimentering en weerstandseisen,PDF/DWG,True,PENDING,NOT_STARTED
+IN-105-05,Ventilatieberekening voor reguliere en piekbezetting,XLSX/PDF,True,PENDING,NOT_STARTED
+IN-105-06,Installatie- en noodvoorzieningenconcept,PDF,True,PENDING,NOT_STARTED
+IN-105-07,Toegankelijkheids- en sanitaire beoordeling,PDF,True,PENDING,NOT_STARTED
+IN-105-08,Ondertekende disciplineverklaringen,PDF,True,PENDING,NOT_STARTED

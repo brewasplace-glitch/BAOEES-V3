@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Unified Production Orchestrator Enabled",
+  "application_name": "Project Phoenix Local - Professional Evidence Programme Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -35,6 +35,11 @@
   "host": "127.0.0.1",
   "max_port_attempts": 10,
   "open_targets": [
+    {
+      "id": "professional_evidence_programme_dashboard",
+      "label": "Open professioneel bewijsvervangingsprogramma",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/professional_evidence_replacement_programme_v2_2_0/07_professional_evidence_programme_dashboard.html"
+    },
     {
       "id": "integrated_concept_dossier",
       "label": "Open geïntegreerd conceptdossier",
@@ -107,10 +112,20 @@
     }
   ],
   "preferred_port": 8765,
-  "runtime_root": "outputs/runtime/phoenix_local_app_v1_4_0",
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_5_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "workflows": [
+    {
+      "expect_flag": "--expect-programme-ready",
+      "id": "professional_evidence_replacement_programme",
+      "label": "Bouw professioneel bewijsvervangingsprogramma",
+      "output_subdir": "professional_evidence_replacement_programme",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_professional_evidence_replacement_programme_v2_2_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_professional_evidence_replacement_programme_v2_2_0.py"
+    },
     {
       "expect_flag": "--expect-release-ready",
       "id": "unified_model_driven_production_orchestrator",

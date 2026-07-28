@@ -1,0 +1,13 @@
+﻿check_id,criterion,passed
+PERP-01,Project-leader concept approval exists.,True
+PERP-02,Professional evidence replacement is allowed.,True
+PERP-03,REQ-107 remains closed.,True
+PERP-04,Parking basis remains 225 spaces.,True
+PERP-05,Unified concept issue is ready.,True
+PERP-06,Cross-discipline checks passed.,True
+PERP-07,Exactly six replacement requests are defined.,True
+PERP-08,All request IDs are unique.,True
+PERP-09,Each request has required inputs.,True
+PERP-10,Each request has acceptance criteria.,True
+PERP-11,Permit-ready generation remains blocked.,True
+PERP-12,BB36 production remains locked.,True

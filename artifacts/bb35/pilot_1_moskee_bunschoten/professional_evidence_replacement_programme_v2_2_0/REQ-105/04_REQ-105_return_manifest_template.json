@@ -1,0 +1,75 @@
+{
+  "declarations": {
+    "all_mandatory_inputs_included": false,
+    "concept_differences_identified": false,
+    "professional_responsibility_accepted": false,
+    "professional_review_completed": false
+  },
+  "discipline": "building_regulations_fire_and_installations",
+  "files": [
+    {
+      "document_type": "Bbl-toetsingsmatrix voor gebruik en bezetting",
+      "input_id": "IN-105-01",
+      "relative_path": "",
+      "sha256": "",
+      "signed": false
+    },
+    {
+      "document_type": "Brand- en vluchtveiligheidsrapport",
+      "input_id": "IN-105-02",
+      "relative_path": "",
+      "sha256": "",
+      "signed": false
+    },
+    {
+      "document_type": "Vluchtweg- en uitgangscapaciteitsberekening",
+      "input_id": "IN-105-03",
+      "relative_path": "",
+      "sha256": "",
+      "signed": false
+    },
+    {
+      "document_type": "Brandcompartimentering en weerstandseisen",
+      "input_id": "IN-105-04",
+      "relative_path": "",
+      "sha256": "",
+      "signed": false
+    },
+    {
+      "document_type": "Ventilatieberekening voor reguliere en piekbezetting",
+      "input_id": "IN-105-05",
+      "relative_path": "",
+      "sha256": "",
+      "signed": false
+    },
+    {
+      "document_type": "Installatie- en noodvoorzieningenconcept",
+      "input_id": "IN-105-06",
+      "relative_path": "",
+      "sha256": "",
+      "signed": true
+    },
+    {
+      "document_type": "Toegankelijkheids- en sanitaire beoordeling",
+      "input_id": "IN-105-07",
+      "relative_path": "",
+      "sha256": "",
+      "signed": true
+    },
+    {
+      "document_type": "Ondertekende disciplineverklaringen",
+      "input_id": "IN-105-08",
+      "relative_path": "",
+      "sha256": "",
+      "signed": true
+    }
+  ],
+  "lead_role": "coordinating_architect_or_fire_safety_adviser",
+  "programme_id": "HBM-PERP-2026-001",
+  "project_id": "HBM-2026-001",
+  "request_id": "REQ-105",
+  "revision": "",
+  "schema_version": "phoenix.professional-evidence-return-manifest/1.0",
+  "submission_date": "",
+  "submission_id": ""
+}

@@ -1,0 +1,518 @@
+{
+  "dossier_id": "HBM-CD-2026-001",
+  "evidence_status": "PROFESSIONAL_EVIDENCE_PENDING",
+  "excluded_closed_request": "REQ-107",
+  "issue_date": "2026-07-28",
+  "occupancy_programme_reference": "HBM-OCC-2026-001",
+  "parking_basis_spaces": 225,
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "programme_id": "HBM-PERP-2026-001",
+  "programme_status": "PROGRAMME_READY_FOR_ISSUE_AND_INTAKE",
+  "project_id": "HBM-2026-001",
+  "project_leader_approval_reference": "HBM-CD-REV-2026-001",
+  "replacement_requests": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "requests": [
+    {
+      "closure_condition": "Validated_geometry_package_accepted",
+      "concept_source": "central_geometric_project_model_v1_0_0",
+      "criteria": [
+        [
+          "AC-102-01",
+          "Schaal en eenheden zijn aantoonbaar correct.",
+          "MANDATORY"
+        ],
+        [
+          "AC-102-02",
+          "Perceelsgrens en projectgeometrie zijn onderling gepositioneerd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-102-03",
+          "Bestaand/nieuw en vier aansluitpunten zijn gecontroleerd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-102-04",
+          "Alle afwijkingen zijn geregistreerd en verwerkt of geaccepteerd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-102-05",
+          "Een bevoegde professional heeft de validatie ondertekend.",
+          "MANDATORY"
+        ]
+      ],
+      "discipline": "architecture_and_survey",
+      "lead_role": "architect_or_survey_specialist",
+      "request_id": "REQ-102",
+      "required_inputs": [
+        [
+          "IN-102-01",
+          "Actuele kadastrale bron/DWG met perceelsgrens",
+          "DWG/DXF/PDF",
+          true
+        ],
+        [
+          "IN-102-02",
+          "Gevalideerde schaal- en eenhedenverklaring",
+          "PDF",
+          true
+        ],
+        [
+          "IN-102-03",
+          "Coordinatenstelsel en referentiepunten",
+          "CSV/PDF",
+          true
+        ],
+        [
+          "IN-102-04",
+          "Lagen- en objectenmapping bestaand/nieuw",
+          "XLSX/CSV/PDF",
+          true
+        ],
+        [
+          "IN-102-05",
+          "Controlemaatvoering hoofdafmetingen en aansluitpunten",
+          "PDF/DWG",
+          true
+        ],
+        [
+          "IN-102-06",
+          "Ondertekende validatieverklaring",
+          "PDF",
+          true
+        ]
+      ],
+      "support_roles": [
+        "project_leader",
+        "cad_bim_specialist"
+      ],
+      "title": "Geometrie, schaal, lagen en kadastrale validatie"
+    },
+    {
+      "closure_condition": "Current_structural_survey_and_connection_assessment_accepted",
+      "concept_source": "structural_concept_and_central_model",
+      "criteria": [
+        [
+          "AC-103-01",
+          "Actuele constructieve toestand is op locatie vastgesteld.",
+          "MANDATORY"
+        ],
+        [
+          "AC-103-02",
+          "Krachtsafdracht nieuw naar bestaand/fundering is navolgbaar.",
+          "MANDATORY"
+        ],
+        [
+          "AC-103-03",
+          "Vier modelaansluitingen zijn technisch beoordeeld.",
+          "MANDATORY"
+        ],
+        [
+          "AC-103-04",
+          "Kritieke onzekerheden en vervolgmaatregelen zijn benoemd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-103-05",
+          "Constructeur heeft rapport en details ondertekend.",
+          "MANDATORY"
+        ]
+      ],
+      "discipline": "structural_engineering",
+      "lead_role": "structural_engineer",
+      "request_id": "REQ-103",
+      "required_inputs": [
+        [
+          "IN-103-01",
+          "Actuele opname draagstructuur bestaand gebouw",
+          "PDF/DWG/JPG",
+          true
+        ],
+        [
+          "IN-103-02",
+          "Materiaal- en maatvoeringsoverzicht",
+          "PDF/XLSX",
+          true
+        ],
+        [
+          "IN-103-03",
+          "Beoordeling bestaande draagcapaciteit",
+          "PDF",
+          true
+        ],
+        [
+          "IN-103-04",
+          "Detailbeoordeling aansluitingen bestaand/nieuw",
+          "PDF/DWG",
+          true
+        ],
+        [
+          "IN-103-05",
+          "Belastingsuitgangspunten en krachtsafdracht",
+          "PDF/XLSX",
+          true
+        ],
+        [
+          "IN-103-06",
+          "Ondertekende constructieve verklaring",
+          "PDF",
+          true
+        ]
+      ],
+      "support_roles": [
+        "project_leader",
+        "architect"
+      ],
+      "title": "Actuele constructieve opname en aansluitcontrole"
+    },
+    {
+      "closure_condition": "Signed_geotechnical_and_foundation_advice_accepted",
+      "concept_source": "foundation_concept_and_calculation_workbook",
+      "criteria": [
+        [
+          "AC-104-01",
+          "Onderzoek is representatief voor uitbreiding en aansluiting.",
+          "MANDATORY"
+        ],
+        [
+          "AC-104-02",
+          "Draagkracht en zetting zijn kwantitatief beoordeeld.",
+          "MANDATORY"
+        ],
+        [
+          "AC-104-03",
+          "Advies sluit aan op constructieve belastingen.",
+          "MANDATORY"
+        ],
+        [
+          "AC-104-04",
+          "Uitvoeringsrisico’s en grondwater zijn behandeld.",
+          "MANDATORY"
+        ],
+        [
+          "AC-104-05",
+          "Geotechnisch adviseur heeft het advies ondertekend.",
+          "MANDATORY"
+        ]
+      ],
+      "discipline": "geotechnical_engineering",
+      "lead_role": "geotechnical_adviser",
+      "request_id": "REQ-104",
+      "required_inputs": [
+        [
+          "IN-104-01",
+          "Sonderingen/boringen op representatieve locaties",
+          "GEF/PDF/CSV",
+          true
+        ],
+        [
+          "IN-104-02",
+          "Grondwater- en bodemopbouwgegevens",
+          "PDF/CSV",
+          true
+        ],
+        [
+          "IN-104-03",
+          "Geotechnische interpretatie en parameters",
+          "PDF/XLSX",
+          true
+        ],
+        [
+          "IN-104-04",
+          "Funderingsvariantvergelijking",
+          "PDF",
+          true
+        ],
+        [
+          "IN-104-05",
+          "Zettings- en draagkrachtcontrole",
+          "PDF/XLSX",
+          true
+        ],
+        [
+          "IN-104-06",
+          "Ondertekend funderingsadvies",
+          "PDF",
+          true
+        ]
+      ],
+      "support_roles": [
+        "structural_engineer",
+        "project_leader"
+      ],
+      "title": "Geotechnisch onderzoek en funderingsadvies"
+    },
+    {
+      "closure_condition": "Signed_Bbl_fire_ventilation_installation_package_accepted",
+      "concept_source": "bbl_fire_ventilation_concept_reports",
+      "criteria": [
+        [
+          "AC-105-01",
+          "Bezettingen uit HBM-OCC-2026-001 zijn gebruikt.",
+          "MANDATORY"
+        ],
+        [
+          "AC-105-02",
+          "Vluchtcapaciteit, afstanden en deurbreedten zijn aantoonbaar getoetst.",
+          "MANDATORY"
+        ],
+        [
+          "AC-105-03",
+          "Brandcompartimentering en voorzieningen zijn vastgelegd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-105-04",
+          "Ventilatie is berekend voor relevante gebruiksscenario’s.",
+          "MANDATORY"
+        ],
+        [
+          "AC-105-05",
+          "Geen keukenfunctie en wettelijk minimum installaties zijn correct verwerkt.",
+          "MANDATORY"
+        ],
+        [
+          "AC-105-06",
+          "Relevante professionals hebben hun onderdelen ondertekend.",
+          "MANDATORY"
+        ]
+      ],
+      "discipline": "building_regulations_fire_and_installations",
+      "lead_role": "coordinating_architect_or_fire_safety_adviser",
+      "request_id": "REQ-105",
+      "required_inputs": [
+        [
+          "IN-105-01",
+          "Bbl-toetsingsmatrix voor gebruik en bezetting",
+          "XLSX/PDF",
+          true
+        ],
+        [
+          "IN-105-02",
+          "Brand- en vluchtveiligheidsrapport",
+          "PDF",
+          true
+        ],
+        [
+          "IN-105-03",
+          "Vluchtweg- en uitgangscapaciteitsberekening",
+          "XLSX/PDF",
+          true
+        ],
+        [
+          "IN-105-04",
+          "Brandcompartimentering en weerstandseisen",
+          "PDF/DWG",
+          true
+        ],
+        [
+          "IN-105-05",
+          "Ventilatieberekening voor reguliere en piekbezetting",
+          "XLSX/PDF",
+          true
+        ],
+        [
+          "IN-105-06",
+          "Installatie- en noodvoorzieningenconcept",
+          "PDF",
+          true
+        ],
+        [
+          "IN-105-07",
+          "Toegankelijkheids- en sanitaire beoordeling",
+          "PDF",
+          true
+        ],
+        [
+          "IN-105-08",
+          "Ondertekende disciplineverklaringen",
+          "PDF",
+          true
+        ]
+      ],
+      "support_roles": [
+        "fire_safety_adviser",
+        "installation_adviser",
+        "accessibility_adviser"
+      ],
+      "title": "Bbl, brandveiligheid, ventilatie en installaties"
+    },
+    {
+      "closure_condition": "Field_verified_parking_balance_accepted",
+      "concept_source": "parking_model_225_spaces_and_concept_balance",
+      "criteria": [
+        [
+          "AC-106-01",
+          "Exact 225 plaatsen zijn herleidbaar geïnventariseerd of gemotiveerd gecorrigeerd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-106-02",
+          "Vijf representatieve meetmomenten zijn uitgevoerd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-106-03",
+          "Vrijdaggebed en bijzondere piek zijn afzonderlijk beoordeeld.",
+          "MANDATORY"
+        ],
+        [
+          "AC-106-04",
+          "Dubbelgebruik, beperkingen en andere gebruikers zijn verwerkt.",
+          "MANDATORY"
+        ],
+        [
+          "AC-106-05",
+          "Adviseur heeft de parkeerconclusie ondertekend.",
+          "MANDATORY"
+        ]
+      ],
+      "discipline": "traffic_and_parking",
+      "lead_role": "traffic_or_parking_adviser",
+      "request_id": "REQ-106",
+      "required_inputs": [
+        [
+          "IN-106-01",
+          "Kaartinventarisatie van 225 parkeerplaatsen",
+          "PDF/GIS/DWG",
+          true
+        ],
+        [
+          "IN-106-02",
+          "Classificatie openbaar/privé/beperkt",
+          "CSV/XLSX/PDF",
+          true
+        ],
+        [
+          "IN-106-03",
+          "Vijf veldmetingen inclusief vrijdagpiek",
+          "CSV/XLSX",
+          true
+        ],
+        [
+          "IN-106-04",
+          "Ruwe telbladen, tijdstempels en fotobewijs",
+          "PDF/JPG/ZIP",
+          true
+        ],
+        [
+          "IN-106-05",
+          "Parkeerbalans regulier, vrijdag en bijzondere piek",
+          "XLSX/PDF",
+          true
+        ],
+        [
+          "IN-106-06",
+          "Verkeerskundige conclusie en maatregelen",
+          "PDF",
+          true
+        ],
+        [
+          "IN-106-07",
+          "Ondertekende adviseursverklaring",
+          "PDF",
+          true
+        ]
+      ],
+      "support_roles": [
+        "project_leader",
+        "field_survey_team"
+      ],
+      "title": "Parkeercapaciteit, tellingen en parkeerbalans"
+    },
+    {
+      "closure_condition": "Verified_activity_data_and_AERIUS_package_accepted",
+      "concept_source": "phased_construction_and_aerius_input_concept",
+      "criteria": [
+        [
+          "AC-108-01",
+          "Bouw- en gebruiksfase zijn afzonderlijk en volledig ingevoerd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-108-02",
+          "Fasering sluit aan op uitvoering terwijl de moskee in gebruik blijft.",
+          "MANDATORY"
+        ],
+        [
+          "AC-108-03",
+          "Materieel- en verkeersdata zijn herleidbaar en onderbouwd.",
+          "MANDATORY"
+        ],
+        [
+          "AC-108-04",
+          "AERIUS-bronbestand en resultaat zijn reproduceerbaar.",
+          "MANDATORY"
+        ],
+        [
+          "AC-108-05",
+          "Stikstofadviseur heeft de conclusie ondertekend.",
+          "MANDATORY"
+        ]
+      ],
+      "discipline": "nitrogen_and_aerius",
+      "lead_role": "aerius_or_nitrogen_adviser",
+      "request_id": "REQ-108",
+      "required_inputs": [
+        [
+          "IN-108-01",
+          "Definitieve uitvoeringsfasen en doorlooptijden",
+          "XLSX/PDF",
+          true
+        ],
+        [
+          "IN-108-02",
+          "Materieellijst, vermogen, brandstof en draaiuren",
+          "XLSX/CSV",
+          true
+        ],
+        [
+          "IN-108-03",
+          "Bouwverkeer per voertuigtype, route en afstand",
+          "XLSX/CSV",
+          true
+        ],
+        [
+          "IN-108-04",
+          "Gebruiksfase en operationele verkeersdata",
+          "XLSX/CSV",
+          true
+        ],
+        [
+          "IN-108-05",
+          "Overlapbeoordeling bij openblijvende moskee",
+          "PDF",
+          true
+        ],
+        [
+          "IN-108-06",
+          "AERIUS-projectbestand en bronexport",
+          "AERIUS/ZIP",
+          true
+        ],
+        [
+          "IN-108-07",
+          "AERIUS-resultaat en ondertekende conclusie",
+          "PDF",
+          true
+        ]
+      ],
+      "support_roles": [
+        "contractor_or_cost_planner",
+        "project_leader"
+      ],
+      "title": "Activiteitendata, fasering en AERIUS-berekening"
+    }
+  ],
+  "schema_version": "phoenix.bb35.professional-evidence-replacement-programme/1.0",
+  "use_restriction": "NOT_FOR_PERMIT_SUBMISSION_OR_CONSTRUCTION",
+  "version": "2.2.0"
+}

@@ -1,0 +1,8 @@
+﻿input_id,description,accepted_formats,mandatory,submission_status,validation_status
+IN-106-01,Kaartinventarisatie van 225 parkeerplaatsen,PDF/GIS/DWG,True,PENDING,NOT_STARTED
+IN-106-02,Classificatie openbaar/privé/beperkt,CSV/XLSX/PDF,True,PENDING,NOT_STARTED
+IN-106-03,Vijf veldmetingen inclusief vrijdagpiek,CSV/XLSX,True,PENDING,NOT_STARTED
+IN-106-04,"Ruwe telbladen, tijdstempels en fotobewijs",PDF/JPG/ZIP,True,PENDING,NOT_STARTED
+IN-106-05,"Parkeerbalans regulier, vrijdag en bijzondere piek",XLSX/PDF,True,PENDING,NOT_STARTED
+IN-106-06,Verkeerskundige conclusie en maatregelen,PDF,True,PENDING,NOT_STARTED
+IN-106-07,Ondertekende adviseursverklaring,PDF,True,PENDING,NOT_STARTED

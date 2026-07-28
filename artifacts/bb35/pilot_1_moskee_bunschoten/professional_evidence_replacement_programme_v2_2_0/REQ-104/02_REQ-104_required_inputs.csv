@@ -1,0 +1,7 @@
+﻿input_id,description,accepted_formats,mandatory,submission_status,validation_status
+IN-104-01,Sonderingen/boringen op representatieve locaties,GEF/PDF/CSV,True,PENDING,NOT_STARTED
+IN-104-02,Grondwater- en bodemopbouwgegevens,PDF/CSV,True,PENDING,NOT_STARTED
+IN-104-03,Geotechnische interpretatie en parameters,PDF/XLSX,True,PENDING,NOT_STARTED
+IN-104-04,Funderingsvariantvergelijking,PDF,True,PENDING,NOT_STARTED
+IN-104-05,Zettings- en draagkrachtcontrole,PDF/XLSX,True,PENDING,NOT_STARTED
+IN-104-06,Ondertekend funderingsadvies,PDF,True,PENDING,NOT_STARTED

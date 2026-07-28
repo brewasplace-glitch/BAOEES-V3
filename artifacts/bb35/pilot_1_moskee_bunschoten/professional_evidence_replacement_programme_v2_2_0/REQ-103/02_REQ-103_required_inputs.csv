@@ -1,0 +1,7 @@
+﻿input_id,description,accepted_formats,mandatory,submission_status,validation_status
+IN-103-01,Actuele opname draagstructuur bestaand gebouw,PDF/DWG/JPG,True,PENDING,NOT_STARTED
+IN-103-02,Materiaal- en maatvoeringsoverzicht,PDF/XLSX,True,PENDING,NOT_STARTED
+IN-103-03,Beoordeling bestaande draagcapaciteit,PDF,True,PENDING,NOT_STARTED
+IN-103-04,Detailbeoordeling aansluitingen bestaand/nieuw,PDF/DWG,True,PENDING,NOT_STARTED
+IN-103-05,Belastingsuitgangspunten en krachtsafdracht,PDF/XLSX,True,PENDING,NOT_STARTED
+IN-103-06,Ondertekende constructieve verklaring,PDF,True,PENDING,NOT_STARTED

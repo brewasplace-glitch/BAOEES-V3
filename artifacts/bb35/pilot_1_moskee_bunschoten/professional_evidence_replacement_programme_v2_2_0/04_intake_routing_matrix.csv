@@ -1,0 +1,7 @@
+﻿request_id,intake_folder,manifest_name,validation_sequence,quarantine_on_failure
+REQ-102,evidence_intake/REQ-102,REQ-102_RETURN_MANIFEST.json,manifest>file_inventory>format>completeness>criteria>signature>closure,True
+REQ-103,evidence_intake/REQ-103,REQ-103_RETURN_MANIFEST.json,manifest>file_inventory>format>completeness>criteria>signature>closure,True
+REQ-104,evidence_intake/REQ-104,REQ-104_RETURN_MANIFEST.json,manifest>file_inventory>format>completeness>criteria>signature>closure,True
+REQ-105,evidence_intake/REQ-105,REQ-105_RETURN_MANIFEST.json,manifest>file_inventory>format>completeness>criteria>signature>closure,True
+REQ-106,evidence_intake/REQ-106,REQ-106_RETURN_MANIFEST.json,manifest>file_inventory>format>completeness>criteria>signature>closure,True
+REQ-108,evidence_intake/REQ-108,REQ-108_RETURN_MANIFEST.json,manifest>file_inventory>format>completeness>criteria>signature>closure,True

@@ -1,0 +1,7 @@
+﻿input_id,description,accepted_formats,mandatory,submission_status,validation_status
+IN-102-01,Actuele kadastrale bron/DWG met perceelsgrens,DWG/DXF/PDF,True,PENDING,NOT_STARTED
+IN-102-02,Gevalideerde schaal- en eenhedenverklaring,PDF,True,PENDING,NOT_STARTED
+IN-102-03,Coordinatenstelsel en referentiepunten,CSV/PDF,True,PENDING,NOT_STARTED
+IN-102-04,Lagen- en objectenmapping bestaand/nieuw,XLSX/CSV/PDF,True,PENDING,NOT_STARTED
+IN-102-05,Controlemaatvoering hoofdafmetingen en aansluitpunten,PDF/DWG,True,PENDING,NOT_STARTED
+IN-102-06,Ondertekende validatieverklaring,PDF,True,PENDING,NOT_STARTED
