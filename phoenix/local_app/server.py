@@ -21,7 +21,7 @@ from .workflow_registry import WorkflowRegistry
 
 
 class PhoenixLocalApplication:
-    VERSION = "1.3.0"
+    VERSION = "1.4.0"
 
     def __init__(self, repository: Path, config: dict[str, Any]):
         self.repository = repository.resolve()
@@ -51,6 +51,7 @@ class PhoenixLocalApplication:
                 for item in self.config["open_targets"]
             ],
             "latest_job": latest.to_dict() if latest else None,
+            "production_orchestrator": self._orchestrator_status(),
         }
 
     def render_dashboard(self) -> str:
@@ -77,7 +78,7 @@ class PhoenixLocalApplication:
         application = self
 
         class Handler(BaseHTTPRequestHandler):
-            server_version = "ProjectPhoenixLocal/1.3"
+            server_version = "ProjectPhoenixLocal/1.4"
 
             def do_GET(self):
                 parsed = urllib.parse.urlparse(self.path)
@@ -154,6 +155,22 @@ class PhoenixLocalApplication:
         self.server = ThreadingHTTPServer((host, port), Handler)
         self.server.daemon_threads = True
         self.server.serve_forever(poll_interval=0.25)
+
+    def _orchestrator_status(self) -> dict[str, Any] | None:
+        path = self.repository / "artifacts/bb35/pilot_1_moskee_bunschoten/unified_model_driven_production_orchestrator_v1_0_0/01_orchestrator_summary.json"
+        if not path.is_file():
+            return None
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+        return {
+            "status": value.get("status"),
+            "revision_code": value.get("revision_code"),
+            "model_fingerprint_sha256": value.get("model_fingerprint_sha256"),
+            "all_cross_checks_passed": value.get("all_cross_checks_passed"),
+            "professional_blocker_count": value.get("professional_blocker_count"),
+        }
 
     def _git_status(self) -> dict[str, Any]:
         def run(*args: str) -> str:

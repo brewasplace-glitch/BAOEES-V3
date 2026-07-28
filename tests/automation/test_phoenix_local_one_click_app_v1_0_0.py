@@ -25,8 +25,8 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_default_port(self):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
-    def test_six_workflows_registered(self):
-        self.assertEqual(6, len(CONFIG["workflows"]))
+    def test_seven_workflows_registered(self):
+        self.assertEqual(7, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(
@@ -35,7 +35,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         )
 
     def test_open_targets_registered(self):
-        self.assertGreaterEqual(len(CONFIG["open_targets"]), 11)
+        self.assertGreaterEqual(len(CONFIG["open_targets"]), 14)
 
     def test_candidate_serialization(self):
         value = DashboardCandidate("index.html", 10, ("Phoenix",)).to_dict()
@@ -165,6 +165,21 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_project_folder_target_exists(self):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "project_folder")
         self.assertEqual(".", target["relative_path"])
+
+    def test_orchestrator_workflow_is_first(self):
+        self.assertEqual("unified_model_driven_production_orchestrator", CONFIG["workflows"][0]["id"])
+
+    def test_orchestrator_workflow_is_available(self):
+        registry = WorkflowRegistry(ROOT, CONFIG)
+        described = {item["id"]: item for item in registry.describe()}
+        self.assertTrue(described["unified_model_driven_production_orchestrator"]["available"])
+
+    def test_local_app_version_1_4(self):
+        self.assertEqual("1.4.0", CONFIG["version"])
+
+    def test_orchestrator_dashboard_target(self):
+        target = next(item for item in CONFIG["open_targets"] if item["id"] == "unified_orchestrator_dashboard")
+        self.assertTrue(target["relative_path"].endswith("11_orchestrator_dashboard.html"))
 
 
 if __name__ == "__main__":

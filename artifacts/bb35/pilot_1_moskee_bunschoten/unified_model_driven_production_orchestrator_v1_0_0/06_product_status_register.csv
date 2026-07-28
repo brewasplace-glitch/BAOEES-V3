@@ -1,0 +1,4 @@
+﻿component_id,action,status,stale,summary_status,source_directory
+calculations,REGENERATE,CURRENT,False,MODEL_DRIVEN_CONCEPT_CALCULATIONS_GENERATED,component://calculations
+central_model,REGENERATE,CURRENT,False,CENTRAL_GEOMETRIC_PROJECT_MODEL_GENERATED,component://central_model
+drawings_reports,REGENERATE,CURRENT,False,REAL_CONCEPT_DRAWINGS_AND_REPORTS_GENERATED,component://drawings_reports

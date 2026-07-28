@@ -1,0 +1,81 @@
+{
+  "components": {
+    "calculations": {
+      "artifact_dir": "artifacts/bb35/pilot_1_moskee_bunschoten/model_driven_calculation_workbook_v1_0_0",
+      "depends_on": [
+        "central_model"
+      ],
+      "expect_flag": "--expect-calculations-valid",
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py",
+      "source_paths": [
+        "configs/projects/moskee_bunschoten_model_driven_calculation_workbook_v1_0_0.json",
+        "phoenix/calculations/model_driven_workbook.py",
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py",
+        "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-106/03_REQ_106_synthetic_measurements.csv",
+        "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-106/04_REQ_106_synthetic_parking_balance.csv",
+        "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-108/02_REQ_108_simulated_phases.csv",
+        "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-108/03_REQ_108_synthetic_equipment.csv",
+        "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-108/04_REQ_108_synthetic_transport.csv"
+      ],
+      "summary_file": "01_calculation_summary.json"
+    },
+    "central_model": {
+      "artifact_dir": "artifacts/bb35/pilot_1_moskee_bunschoten/central_geometric_project_model_v1_0_0",
+      "canonical_model_file": "02_canonical_geometric_project_model.json",
+      "depends_on": [],
+      "expect_flag": "--expect-model-valid",
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_central_geometric_project_model_v1_0_0.py",
+      "source_paths": [
+        "configs/projects/moskee_bunschoten_central_geometric_model_v1_0_0.json",
+        "phoenix/model/central_geometric_project_model.py",
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_central_geometric_project_model_v1_0_0.py"
+      ],
+      "summary_file": "01_model_summary.json"
+    },
+    "drawings_reports": {
+      "artifact_dir": "artifacts/bb35/pilot_1_moskee_bunschoten/model_driven_real_concept_drawings_reports_v1_1_0",
+      "depends_on": [
+        "central_model"
+      ],
+      "expect_flag": "--expect-production-ready",
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_real_concept_production_v1_1_0.py",
+      "source_paths": [
+        "configs/projects/moskee_bunschoten_real_concept_production_v1_0_0.json",
+        "phoenix/production/real_drawings_reports.py",
+        "phoenix/production/model_driven_adapter.py",
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_real_concept_production_v1_1_0.py"
+      ],
+      "summary_file": "01_issue_summary.json"
+    }
+  },
+  "expected": {
+    "calculation_categories": 8,
+    "calculation_checks": 18,
+    "calculations": 32,
+    "cross_checks": 22,
+    "drawing_sheets": 10,
+    "gross_area_m2": 140.0,
+    "model_checks": 22,
+    "model_objects": 299,
+    "parking_spaces": 225,
+    "production_checks": 14,
+    "professional_blockers": 6,
+    "reports": 6
+  },
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "previous_revision_state": "artifacts/bb35/pilot_1_moskee_bunschoten/unified_model_driven_production_orchestrator_v1_0_0/03_revision_state.json",
+  "professional_blocker_ids": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "project_id": "HBM-2026-001",
+  "release_date": "2026-07-28",
+  "release_series": "CONCEPT",
+  "revision_prefix": "C",
+  "schema_version": "phoenix.unified-model-driven-production-orchestrator/1.0",
+  "version": "1.0.0"
+}

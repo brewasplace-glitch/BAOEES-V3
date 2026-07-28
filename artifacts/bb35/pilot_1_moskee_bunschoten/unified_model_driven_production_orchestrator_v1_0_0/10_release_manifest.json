@@ -1,0 +1,547 @@
+{
+  "component_file_count": 90,
+  "files": [
+    {
+      "component_id": "central_model",
+      "relative_path": "01_model_summary.json",
+      "sha256": "394f8287e94af763a1cab6e00253c6650cada5b3aab40e5379088a916b56376c",
+      "size_bytes": 876
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "02_canonical_geometric_project_model.json",
+      "sha256": "f579e894834600b003b5a0e7660a31c90e9e55eedf45656072e40f46b1c6b7d0",
+      "size_bytes": 206505
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "03_object_register.csv",
+      "sha256": "ccf570409ce34522fefd1ebe6f08e958b8aef0ac3b6e5098d7fada23c1d2864d",
+      "size_bytes": 25985
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "04_level_register.csv",
+      "sha256": "e7b799a2c6d5014daa932830b4d0d77531955f2bde7f3fdd407027d9e242c399",
+      "size_bytes": 98
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "05_space_register.csv",
+      "sha256": "5741019fdfc98d4caccf06598e45e9a80529a8dd841bb1299c47091929ea9602",
+      "size_bytes": 1334
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "06_opening_register.csv",
+      "sha256": "e10da803698d1f28b39e09f3e63fe32a9d4f8b4e0133daa1797ba44c32b44612",
+      "size_bytes": 1604
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "07_connection_register.csv",
+      "sha256": "139dd075063078355396573a0054fe927567f074f63a13e721d10e13ea550645",
+      "size_bytes": 492
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "08_parking_zone_register.csv",
+      "sha256": "c4912b5173eb9da5bf9650b78b4a341f4cd4fafeb78c75575ee126ca565c4349",
+      "size_bytes": 428
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "09_relationship_register.csv",
+      "sha256": "1df61095cbe68fad6d3099e5ac02ce70dce8a39ec5be7146c2e26668bda54d74",
+      "size_bytes": 17304
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "10_geometry_validation_checks.csv",
+      "sha256": "14f46ff616ce15224cce44885c148a9ea7de8bb0070e22aa18fad92040f103ed",
+      "size_bytes": 871
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "11_model_dependency_map.json",
+      "sha256": "c2f2efc293ebe639a2f492f07c877c4b8e0a0e2ec94488b1780c8ba1eb9357b0",
+      "size_bytes": 635
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "12_ground_floor_plan.svg",
+      "sha256": "2fbfcb6d7ffc945990c952e3ed30ef3ccd38839f3652c9dcc1730f7253d440e9",
+      "size_bytes": 2898
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "13_first_floor_plan.svg",
+      "sha256": "ec80a2c801859681ba204e3c16db4bd44d9806bd9c77c5855934ca97f16a6949",
+      "size_bytes": 2818
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "14_site_parking_plan.svg",
+      "sha256": "bef842e574262e6b93eeaccc3f942804579e6498d191bef00a7b24c4587e098a",
+      "size_bytes": 1935
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "15_isometric_model.svg",
+      "sha256": "3de6c5bd3d6e62fb2a501a153764c5ed6c401c0a61d4b01c0d7e3bffaedc17c6",
+      "size_bytes": 1501
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "16_model_browser.html",
+      "sha256": "e59169ada6230abec5a0e30aec4c206b44e406b05ed31d516a28705983bd967e",
+      "size_bytes": 6792
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "17_central_model_plan.dxf",
+      "sha256": "3d3b9dfd11f6b560ee5b54ff1b86d362dc92ad513fc22b093a790be3d623f9fd",
+      "size_bytes": 1628
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "18_central_model_3d.obj",
+      "sha256": "b54c8c33380a972dfa4ef72df912d42a7e3933311f36a250eaf2265d4ec6331e",
+      "size_bytes": 10820
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "19_central_model_3d.mtl",
+      "sha256": "d7aeab5867f40f11e7497b6a135510d5695b1278755f23201be876a30bd1e419",
+      "size_bytes": 100
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "20_model_export_manifest.json",
+      "sha256": "e0ab6f759293613f1680a60d7127dfa2e64c9159437acb783058cbb4fc7d8be8",
+      "size_bytes": 475
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "BB35_PILOT_1_CENTRAL_GEOMETRIC_PROJECT_MODEL_v1_0_0.zip",
+      "sha256": "f0026bf4183cba4be5d1671d0293f2ab0da957e7e28c5d903d4acaacebfba33b",
+      "size_bytes": 289607
+    },
+    {
+      "component_id": "central_model",
+      "relative_path": "checksums.sha256",
+      "sha256": "6729a3707e082ea51cfbe32f36b24b1020ee3ae97c8a8cf375f79f62fca0ba51",
+      "size_bytes": 1846
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "01_issue_summary.json",
+      "sha256": "d0565e94eca94c12ecc6c16cd90faebde84dc936a662c25c0c6555e0a57d822b",
+      "size_bytes": 1401
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "02_drawing_register.csv",
+      "sha256": "cfd023dbd63985e576319e3f9dc4ceac4ef5576c7d37d5219f76ac1fa3360a95",
+      "size_bytes": 1945
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "03_report_register.csv",
+      "sha256": "b86c0410a74bd96e70b8d23c2608c417992acec30b42af01abf32b5c63d158c5",
+      "size_bytes": 1228
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "04_cross_check_report.json",
+      "sha256": "a26892e7f14e2765a2e96318e243d2b4e67e7da0973ebfa06bab34c15778d2f4",
+      "size_bytes": 1901
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "05_assumptions_and_limitations.csv",
+      "sha256": "72c58c02b5cf7f45a98b22d9640298ff8cb85e310a817bd70bdc45645a3e8aad",
+      "size_bytes": 889
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "06_issue_index.html",
+      "sha256": "1c2a6db3bc8ca73475c0e90e7175041eaf46f5ab533a034b39d0a3bd39db9111",
+      "size_bytes": 5665
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "BB35_PILOT_1_REAL_CONCEPT_ISSUE_PACKAGE_v1_0_0.zip",
+      "sha256": "1f6399d33518ab4aed6e93d412ad6fc7f88db8ecd05706c01eb676419aba7657",
+      "size_bytes": 299396
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "checksums.sha256",
+      "sha256": "b907923884a0f2496e2115c3df14ea8d9fd38225d14d925bcc964351ce9a8447",
+      "size_bytes": 4955
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/dxf/A-001_Situation_and_parking_concept.dxf",
+      "sha256": "3f2127fef439565c8fe7c538240d61d909528f87a7d718c5ff5e4c23bbd7a319",
+      "size_bytes": 7043
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/dxf/A-101_Ground_floor_plan.dxf",
+      "sha256": "2142702f2b3b5aaeecab55f7b347568ed5dc4dfeb4c0b09124fc050be0bb5075",
+      "size_bytes": 4806
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/dxf/A-102_First_floor_plan.dxf",
+      "sha256": "803336fffc417a62ec476b4bf45b90a5f27c83bfc1f28f528eeb3c5b09ca514a",
+      "size_bytes": 4815
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/dxf/A-401_Roof_plan_and_drainage_concept.dxf",
+      "sha256": "aa1c5e67b37f8de2f4ae0e82baa6ab0cc38e5a0e4629d5f94d84ffa5a572d62c",
+      "size_bytes": 3101
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/dxf/S-101_Foundation_concept.dxf",
+      "sha256": "76ff5172ae08b22e03e21708ef2d90d1b2e2008a72fd14511fd3c8a16f037c32",
+      "size_bytes": 3535
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/A-001_Situation_and_parking_concept.pdf",
+      "sha256": "a38290b8f74803ab33a8f680f12683757bcdbf55b56f6a17c933b4b7d9974a17",
+      "size_bytes": 4351
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/A-101_Ground_floor_plan.pdf",
+      "sha256": "2cd64b77f026eb8ce5bf1866623031be1dc054399bbeab86627bdcd103ae3045",
+      "size_bytes": 3683
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/A-102_First_floor_plan.pdf",
+      "sha256": "246815961a1f7ffab8d57f129f30dd3ccac9605690371959efbffb5a6d80fc99",
+      "size_bytes": 3694
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/A-201_Elevations.pdf",
+      "sha256": "4ec158eaeea585de7f0838929b41efa49c3cbc59b22943d28d8c7c84a74338b2",
+      "size_bytes": 6088
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/A-301_Sections.pdf",
+      "sha256": "480ad2ef9d7648b70cd8a77d9229b25e1fa25c51ec3ddef9a2765ef91d41bb20",
+      "size_bytes": 3835
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/A-401_Roof_plan_and_drainage_concept.pdf",
+      "sha256": "051a96ed69724c0c97833a8c570175d768563bd44cd43434e711169adcbb3e21",
+      "size_bytes": 3130
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/BB35_PILOT_1_REAL_CONCEPT_DRAWING_SET_v1_0_0.pdf",
+      "sha256": "6bc78832b76a8317ee5c1161373306043225ce190983859499c07ec575153d5b",
+      "size_bytes": 35885
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/F-101_Fire_and_escape_route_concept.pdf",
+      "sha256": "e8da45d96a4bf39aaea7930bb2a0415430c1805b244b9ab32214bb48f1764791",
+      "size_bytes": 4053
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/S-101_Foundation_concept.pdf",
+      "sha256": "c371d46bdfa5f3b7a87cffdf3624c60bc098f95e0e8924d57f2dd73133a907d7",
+      "size_bytes": 2228
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/S-201_Structural_scheme_and_load_path.pdf",
+      "sha256": "034af67dd249787bc5a291f6758e6e32c857440f56b986edff37ffd50cbd5b7b",
+      "size_bytes": 6452
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/pdf/X-101_Construction_phasing_concept.pdf",
+      "sha256": "6bb4ee451ea433ba91a8af2c99bf66e1c208a4596b2795c8dee55071b24cce46",
+      "size_bytes": 2639
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/A-001_Situation_and_parking_concept.svg",
+      "sha256": "9cb2135bf8b223ac2cb84c00dbb6051f9bee816d565a5b89719aa5f1bf8be624",
+      "size_bytes": 7514
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/A-101_Ground_floor_plan.svg",
+      "sha256": "edfd52d3389d3916f49a545d2b756bf41565b5d3be63c607892e88468d5fcd14",
+      "size_bytes": 6697
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/A-102_First_floor_plan.svg",
+      "sha256": "2af0f249f2bd011bf818531d8e9ca36fa4e79f4ab74072eee60be6dbf178601b",
+      "size_bytes": 6708
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/A-201_Elevations.svg",
+      "sha256": "d1e6a55fe60158a9aef47e6949c76844286039f3c1276d074f6de15ff3bb0780",
+      "size_bytes": 10769
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/A-301_Sections.svg",
+      "sha256": "5fdd831f7e22eaa328772a8942d99a4f46ed1baaa0109c554015ac2d253711e7",
+      "size_bytes": 6699
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/A-401_Roof_plan_and_drainage_concept.svg",
+      "sha256": "845f88c83f14d2240fa8f26f7ce7182a08b70aba995778e6fe353545e908eb5b",
+      "size_bytes": 4461
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/F-101_Fire_and_escape_route_concept.svg",
+      "sha256": "11957f8ce9f15b3a44affcb6dfcfab1bb30afb30ba7a98dcb9829f78e2388dce",
+      "size_bytes": 7612
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/S-101_Foundation_concept.svg",
+      "sha256": "3beecbf35376f270985c9ebacd09345dbeac55b076d8e1a13f46e4cd90f23079",
+      "size_bytes": 3290
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/S-201_Structural_scheme_and_load_path.svg",
+      "sha256": "a1bf629d7c1cead466c83d1f50dd16fec81daf1c3dce57bad48456b84b274ed6",
+      "size_bytes": 8721
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "drawings/svg/X-101_Construction_phasing_concept.svg",
+      "sha256": "d8306917c4af0e70d70e697ae6c65015a8c1b4220b4d9cab2a985c4c96237e9d",
+      "size_bytes": 4220
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/docx/R-001_Integrated_concept_design_report.docx",
+      "sha256": "0cd765a57be11310db609a8c593828371919028996ea2996f58036588f5023c5",
+      "size_bytes": 15110
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/docx/R-101_Architectural_concept_report.docx",
+      "sha256": "a8406dd2168f94eef507a6a124c1690018b297c1dac3858d7439f6b60fa8edab",
+      "size_bytes": 12784
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/docx/R-201_Structural_and_foundation_concept_report.docx",
+      "sha256": "cb619c0f2a1fc0c237d88b53fbac7ad686c3208539dd96644050dce26a726cfb",
+      "size_bytes": 10357
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/docx/R-301_Bbl__fire_safety_and_ventilation_concept_report.docx",
+      "sha256": "e931942f2c093f7981ea2327335422d973c10f0a3edb038cdfa22047c6c04eef",
+      "size_bytes": 10179
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/docx/R-401_Parking_concept_report.docx",
+      "sha256": "aeeb2ba2778707bd87063e5cade8def49c4131accfeeea7d81ee8d88b49d061a",
+      "size_bytes": 13549
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/docx/R-501_AERIUS_activity_data_concept_report.docx",
+      "sha256": "928c68b70462282b32482e7f993c2f5f2b1ba691e7060b72a0706044a8c61528",
+      "size_bytes": 11401
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/pdf/R-001_Integrated_concept_design_report.pdf",
+      "sha256": "cbaf2332fd4a42a6c07f54c9bdcb7a52bdfbc27b4bb9310bd33ef80ba516a334",
+      "size_bytes": 8184
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/pdf/R-101_Architectural_concept_report.pdf",
+      "sha256": "2e6828f08c0264d900c8838acc7a536cf092b54398a8364def103bc9bcc8170d",
+      "size_bytes": 6419
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/pdf/R-201_Structural_and_foundation_concept_report.pdf",
+      "sha256": "6ff07d8ed3fa46e1b0f760bce4e2dcf4d463b8b3d5edbd3d618daa3f406e0745",
+      "size_bytes": 4692
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/pdf/R-301_Bbl__fire_safety_and_ventilation_concept_report.pdf",
+      "sha256": "cd1782fcd557960ceab9afe40493c2a7209785961dcf680bfed01a4ec766c9f6",
+      "size_bytes": 4521
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/pdf/R-401_Parking_concept_report.pdf",
+      "sha256": "36028e96bcd3f7a73a97a75d17aa3648bb4942c13952a5aeccd9a04e23209e21",
+      "size_bytes": 5739
+    },
+    {
+      "component_id": "drawings_reports",
+      "relative_path": "reports/pdf/R-501_AERIUS_activity_data_concept_report.pdf",
+      "sha256": "8b70652ddcfd925927b35ea8fd7bf4726f4bdd4b20f1e8549db9acba810ffdd1",
+      "size_bytes": 4960
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "01_calculation_summary.json",
+      "sha256": "46ad1c4e79d867190dc05db0246ede9621bf91b67c85c7a892f0a13d36821690",
+      "size_bytes": 1114
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "02_calculation_register.csv",
+      "sha256": "9b9c3db6759081d453103e17661239cbc73fb6b8b81ae2d88dcd05810150d6d2",
+      "size_bytes": 9555
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "03_input_register.csv",
+      "sha256": "e79c7991836ac7b9453056b02aa4684d864e8ddca28de1e40d76770c864a0755",
+      "size_bytes": 3700
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "04_formula_register.csv",
+      "sha256": "79622cf42209aacdbec5abfb98e63082afe9afd6357aba3257e7f5be33e61f14",
+      "size_bytes": 2032
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "05_traceability_matrix.csv",
+      "sha256": "9ba7512c7e5a021c89a1b83abaf409d0a7c3a74e5ea39b0b25c4004f5575dabd",
+      "size_bytes": 5815
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "06_assumptions_and_limitations.csv",
+      "sha256": "315eb7eef68b227339e539ecdf2b26ba7ab99fd83f706e04a03cb1efa38805bb",
+      "size_bytes": 1040
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "07_quality_checks.csv",
+      "sha256": "5bfb918cf5ffd237dd73ffd8c81827501775a6612f3c3eb5ed91cffa9f84feed",
+      "size_bytes": 1060
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "08_calculation_dashboard.html",
+      "sha256": "7e8bd58d4dcb00b6b2df645c96330943a324951945e718c7760412db2bc4d591",
+      "size_bytes": 5816
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "09_calculation_dossier.md",
+      "sha256": "dd4c535c125390d32db44d3366e7d6a5f37cba3498809f63d0aa479607fc4829",
+      "size_bytes": 8137
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "10_model_driven_calculation_workbook.xlsx",
+      "sha256": "084ab31ad260bd242a0755e7c524210fb1295ad5eac251ff1b435e7e687f33e7",
+      "size_bytes": 130619
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "11_model_driven_calculation_dossier.pdf",
+      "sha256": "fc66b4fc0444de69a0f1af3c4da1d4dc87f016c5a04c8a8052b8b209c3729168",
+      "size_bytes": 12654
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "12_area_volume_calculations.csv",
+      "sha256": "21b30b29f36dc54d319b11d161553158d3b611d64607be164ac7259f943ba042",
+      "size_bytes": 1580
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "13_structural_load_calculations.csv",
+      "sha256": "595d36dbae4cd6540af1106ea7e544dfe9d0945b828bdfac16f7c54baef2b19f",
+      "size_bytes": 863
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "14_load_path_calculations.csv",
+      "sha256": "fd0940d20c48f9f2011836696829706154edbefedc1ba09e76b30e6aa6b79f15",
+      "size_bytes": 1036
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "15_foundation_calculations.csv",
+      "sha256": "8dd3952273b57dd41d9735465b6c38a733625118b504312e9ee45ea86c5f1aed",
+      "size_bytes": 588
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "16_egress_calculations.csv",
+      "sha256": "c28bd13f28a6e390c52dd6c52ee6fe38928bd452700d9d76287475fe885e9aec",
+      "size_bytes": 833
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "17_ventilation_calculations.csv",
+      "sha256": "9da6596f1d59b109aef5a13a92f12633fcdc617d3ccc03a605cfe40f3bd4b5b6",
+      "size_bytes": 888
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "18_parking_calculations.csv",
+      "sha256": "3a08bbe97d8da4f5a9aa5aa63b67ccc8ce4a5addaf31bfd8144d8fa813a9766c",
+      "size_bytes": 1873
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "19_construction_activity_calculations.csv",
+      "sha256": "1d0af256e21b886a642e95f4d212fab3f87e7302e54a736eefa9f22db7a8cc9b",
+      "size_bytes": 792
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "20_calculation_export_manifest.json",
+      "sha256": "d123743aec2deced449464113c05eaad7e040965dae9bde1a5fe1511e802b81e",
+      "size_bytes": 421
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "BB35_PILOT_1_MODEL_DRIVEN_CALCULATION_WORKBOOK_v1_0_0.zip",
+      "sha256": "bae21a904c4a51f8a4b6a1af31d51fb1e3d320a8023d20870737be0492ee9fb1",
+      "size_bytes": 195200
+    },
+    {
+      "component_id": "calculations",
+      "relative_path": "checksums.sha256",
+      "sha256": "4697665e4aed8a1864c88f42f78a7e63716cdfe45abd5d952ba7773a226ef096",
+      "size_bytes": 1938
+    }
+  ],
+  "model_fingerprint_sha256": "61c1c56f500192557d603552561dd408cfed09fe704247b26f18343d24f1af0a",
+  "revision_code": "C01"
+}

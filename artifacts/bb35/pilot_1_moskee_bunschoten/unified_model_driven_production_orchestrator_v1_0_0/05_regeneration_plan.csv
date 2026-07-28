@@ -1,0 +1,4 @@
+﻿sequence,component_id,action,reason,stale_before_run,status_after_success
+1,calculations,REGENERATE,DIRECT_SOURCE_CHANGE,True,CURRENT
+2,central_model,REGENERATE,DIRECT_SOURCE_CHANGE,True,CURRENT
+3,drawings_reports,REGENERATE,DIRECT_SOURCE_CHANGE,True,CURRENT

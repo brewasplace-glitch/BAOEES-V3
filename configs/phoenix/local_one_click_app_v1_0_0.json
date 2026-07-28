@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Calculation Workbook Enabled",
+  "application_name": "Project Phoenix Local - Unified Production Orchestrator Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -89,13 +89,38 @@
       "id": "model_driven_calculation_dossier_pdf",
       "label": "Open modelgestuurd berekeningsdossier PDF",
       "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/model_driven_calculation_workbook_v1_0_0/11_model_driven_calculation_dossier.pdf"
+    },
+    {
+      "id": "unified_orchestrator_dashboard",
+      "label": "Open productie-orchestrator en revisiestatus",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/unified_model_driven_production_orchestrator_v1_0_0/11_orchestrator_dashboard.html"
+    },
+    {
+      "id": "unified_concept_issue_package",
+      "label": "Open complete modelgestuurde conceptuitgifte",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/unified_model_driven_production_orchestrator_v1_0_0/BB35_PILOT_1_UNIFIED_MODEL_DRIVEN_CONCEPT_ISSUE_C01.zip"
+    },
+    {
+      "id": "revision_control_report",
+      "label": "Open revisiebeheerrapport",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/unified_model_driven_production_orchestrator_v1_0_0/13_revision_control_report.md"
     }
   ],
   "preferred_port": 8765,
-  "runtime_root": "outputs/runtime/phoenix_local_app_v1_0_0",
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_4_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "workflows": [
+    {
+      "expect_flag": "--expect-release-ready",
+      "id": "unified_model_driven_production_orchestrator",
+      "label": "Start volledige modelgestuurde productierun met revisiebeheer",
+      "output_subdir": "unified_model_driven_production_orchestrator",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_unified_model_driven_production_orchestrator_v1_0_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_unified_model_driven_production_orchestrator_v1_0_0.py"
+    },
     {
       "expect_flag": "--expect-model-valid",
       "id": "central_geometric_project_model",
@@ -147,14 +172,14 @@
       "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_real_concept_production_v1_1_0.py"
     },
     {
+      "expect_flag": "--expect-calculations-valid",
       "id": "model_driven_calculation_workbook",
       "label": "Maak modelgestuurde berekeningsbladen",
-      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py",
-      "expect_flag": "--expect-calculations-valid",
       "output_subdir": "model_driven_calculation_workbook",
       "required_files": [
         "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py"
-      ]
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py"
     }
   ]
 }
