@@ -25,8 +25,8 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_default_port(self):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
-    def test_four_workflows_registered(self):
-        self.assertEqual(5, len(CONFIG["workflows"]))
+    def test_six_workflows_registered(self):
+        self.assertEqual(6, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(
@@ -35,7 +35,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         )
 
     def test_open_targets_registered(self):
-        self.assertGreaterEqual(len(CONFIG["open_targets"]), 8)
+        self.assertGreaterEqual(len(CONFIG["open_targets"]), 11)
 
     def test_candidate_serialization(self):
         value = DashboardCandidate("index.html", 10, ("Phoenix",)).to_dict()
@@ -96,6 +96,15 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         registry = WorkflowRegistry(ROOT, CONFIG)
         described = {item["id"]: item for item in registry.describe()}
         self.assertTrue(described["real_concept_drawings_reports"]["available"])
+
+    def test_calculation_workbook_workflow_is_available(self):
+        registry = WorkflowRegistry(ROOT, CONFIG)
+        described = {item["id"]: item for item in registry.describe()}
+        self.assertTrue(described["model_driven_calculation_workbook"]["available"])
+
+    def test_calculation_workbook_open_target(self):
+        target = next(item for item in CONFIG["open_targets"] if item["id"] == "model_driven_calculation_workbook")
+        self.assertTrue(target["relative_path"].endswith("10_model_driven_calculation_workbook.xlsx"))
 
     def test_start_script_exists(self):
         self.assertTrue((ROOT / "START_PHOENIX.ps1").is_file())

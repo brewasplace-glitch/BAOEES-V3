@@ -1,0 +1,47 @@
+{
+  "schema_version": "phoenix.model-driven-calculation-workbook/1.0",
+  "version": "1.0.0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "model_id": "HBM-GEO-2026-001",
+  "expected_model_fingerprint_sha256": "61c1c56f500192557d603552561dd408cfed09fe704247b26f18343d24f1af0a",
+  "status_label": "CONCEPT CALCULATIONS - NOT FOR SUBMISSION OR EXECUTION",
+  "calculation_basis": {
+    "floor_area_load_kn_m2": 7.0,
+    "roof_area_load_kn_m2": 3.5,
+    "wall_and_misc_allowance_kn": 110.0,
+    "representative_tributary_width_m": 3.5,
+    "representative_beam_span_m": 5.0,
+    "structural_column_count": 9,
+    "foundation_strip_width_m": 1.5,
+    "foundation_total_strip_length_m": 48.0,
+    "peak_occupancy_persons": 200,
+    "regular_occupancy_persons": 150,
+    "friday_occupancy_persons": 125,
+    "exit_count": 2,
+    "exit_width_each_m": 1.2,
+    "ventilation_rate_l_s_person": 7.0,
+    "parking_capacity_spaces": 225
+  },
+  "source_artifacts": {
+    "central_model": "artifacts/bb35/pilot_1_moskee_bunschoten/central_geometric_project_model_v1_0_0/02_canonical_geometric_project_model.json",
+    "model_summary": "artifacts/bb35/pilot_1_moskee_bunschoten/central_geometric_project_model_v1_0_0/01_model_summary.json",
+    "req103_loads": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-103/03_REQ_103_concept_loads.csv",
+    "req104_foundation": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-104/03_REQ_104_foundation_concept_calculation.json",
+    "req105_egress": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-105/04_REQ_105_egress_calculation.csv",
+    "req105_ventilation": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-105/03_REQ_105_ventilation_concept.csv",
+    "req106_measurements": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-106/03_REQ_106_synthetic_measurements.csv",
+    "req106_balance": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-106/04_REQ_106_synthetic_parking_balance.csv",
+    "req108_phases": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-108/02_REQ_108_simulated_phases.csv",
+    "req108_equipment": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-108/03_REQ_108_synthetic_equipment.csv",
+    "req108_transport": "artifacts/bb35/pilot_1_moskee_bunschoten/full_concept_evidence_simulation_v1_9_0/REQ-108/04_REQ_108_synthetic_transport.csv"
+  },
+  "professional_evidence_blockers": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ]
+}

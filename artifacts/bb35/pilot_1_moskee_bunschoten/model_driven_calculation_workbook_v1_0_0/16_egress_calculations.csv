@@ -1,0 +1,4 @@
+﻿calculation_id,title,formula_or_method,input_refs,result,unit,status,control_limit,model_refs,drawing_refs,report_refs,request_refs,source_status
+CAL-E01,Total simulated exit width,exit_count * exit_width_each,"IN-016,IN-017",2.4,m,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,F-101,R-301,REQ-105,SIMULATION_ONLY
+CAL-E02,Persons per simulated exit,peak_occupancy / exit_count,"IN-013,IN-016",100.0,persons/exit,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,F-101,R-301,"REQ-105,REQ-107",SIMULATION_ONLY
+CAL-E03,Persons per metre total exit width,peak_occupancy / total_exit_width,"IN-013,CAL-E01",83.33,persons/m,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,F-101,R-301,"REQ-105,REQ-107",SIMULATION_ONLY

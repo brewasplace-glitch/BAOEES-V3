@@ -21,7 +21,7 @@ from .workflow_registry import WorkflowRegistry
 
 
 class PhoenixLocalApplication:
-    VERSION = "1.2.0"
+    VERSION = "1.3.0"
 
     def __init__(self, repository: Path, config: dict[str, Any]):
         self.repository = repository.resolve()
@@ -77,7 +77,7 @@ class PhoenixLocalApplication:
         application = self
 
         class Handler(BaseHTTPRequestHandler):
-            server_version = "ProjectPhoenixLocal/1.2"
+            server_version = "ProjectPhoenixLocal/1.3"
 
             def do_GET(self):
                 parsed = urllib.parse.urlparse(self.path)

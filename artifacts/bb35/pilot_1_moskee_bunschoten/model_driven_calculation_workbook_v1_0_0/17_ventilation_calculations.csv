@@ -1,0 +1,4 @@
+﻿calculation_id,title,formula_or_method,input_refs,result,unit,status,control_limit,model_refs,drawing_refs,report_refs,request_refs,source_status
+CAL-V01,Ventilation flow regular_future,persons * rate_l_s_person * 3.6,IN-018,3780.0,m3/h,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"BLD-EXISTING,BLD-EXTENSION","A-101,A-102",R-301,"REQ-105,REQ-107",SIMULATION_ONLY
+CAL-V02,Ventilation flow friday_future,persons * rate_l_s_person * 3.6,IN-018,3150.0,m3/h,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"BLD-EXISTING,BLD-EXTENSION","A-101,A-102",R-301,"REQ-105,REQ-107",SIMULATION_ONLY
+CAL-V03,Ventilation flow special_peak,persons * rate_l_s_person * 3.6,IN-018,5040.0,m3/h,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"BLD-EXISTING,BLD-EXTENSION","A-101,A-102",R-301,"REQ-105,REQ-107",SIMULATION_ONLY

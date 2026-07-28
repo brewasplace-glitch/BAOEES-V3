@@ -1,0 +1,3 @@
+﻿calculation_id,title,formula_or_method,input_refs,result,unit,status,control_limit,model_refs,drawing_refs,report_refs,request_refs,source_status
+CAL-F01,Assumed bearing area,strip_width * total_strip_length,"IN-011,IN-012",72.0,m2,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,S-101,R-201,REQ-104,SIMULATION_ONLY
+CAL-F02,Indicative average contact pressure,total_service_load / bearing_area,"CAL-S03,CAL-F01",18.54,kPa,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,S-101,R-201,REQ-104,SIMULATION_ONLY

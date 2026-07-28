@@ -1,0 +1,29 @@
+{
+  "engine_version": "1.0.0",
+  "gates": {
+    "bb36_production_release_allowed": false,
+    "calculation_quality_checks_passed": true,
+    "calculation_workbook_generated": true,
+    "concept_calculation_issue_allowed": true,
+    "final_permit_ready_generation_allowed": false,
+    "model_traceability_passed": true
+  },
+  "metrics": {
+    "calculation_category_count": 8,
+    "calculation_count": 32,
+    "input_count": 38,
+    "parking_capacity_spaces": 225,
+    "professional_blocker_count": 6,
+    "quality_check_count": 18,
+    "quality_checks_passed": 18,
+    "traceability_link_count": 85
+  },
+  "model_fingerprint_sha256": "61c1c56f500192557d603552561dd408cfed09fe704247b26f18343d24f1af0a",
+  "model_id": "HBM-GEO-2026-001",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_id": "HBM-2026-001",
+  "result_fingerprint_sha256": "e847128222c9213da21ea9bb6555152091a718972414f983324308c350b35444",
+  "schema_version": "phoenix.model-driven-calculation-workbook-result/1.0",
+  "status": "MODEL_DRIVEN_CONCEPT_CALCULATIONS_GENERATED",
+  "status_label": "CONCEPT CALCULATIONS - NOT FOR SUBMISSION OR EXECUTION"
+}
