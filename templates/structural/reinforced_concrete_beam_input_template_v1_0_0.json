@@ -1,0 +1,111 @@
+{
+  "schema_version": "phoenix.rc-beam-input/1.0",
+  "project_id": "PHX-RC-DEMO-001",
+  "beam": {
+    "beam_id": "RCB-001",
+    "name": "Simply supported demonstration beam",
+    "model_object_id": "STRUCT-BEAM-DEMO-001",
+    "span_m": 5.0,
+    "width_mm": 300,
+    "height_mm": 500,
+    "nominal_cover_mm": 35,
+    "stirrup_diameter_mm": 8,
+    "trial_main_bar_diameter_mm": 16,
+    "support_width_mm": 300
+  },
+  "materials": {
+    "concrete_class": "C30/37",
+    "reinforcement_class": "B500B",
+    "concrete_density_kn_m3": 25,
+    "fck_mpa": 30,
+    "fctm_mpa": 2.9,
+    "fctk_005_mpa": 2.0,
+    "fyk_mpa": 500,
+    "steel_modulus_mpa": 200000,
+    "fcm_increment_mpa": 8
+  },
+  "loads": {
+    "permanent_udl_kn_m": 8.0,
+    "variable_udl_kn_m": 10.0,
+    "point_loads": [
+      {
+        "load_id": "P-01",
+        "characteristic_kn": 20.0,
+        "position_m": 2.5,
+        "category": "variable",
+        "psi2": 0.3
+      }
+    ]
+  },
+  "design_factors": {
+    "gamma_g": 1.35,
+    "gamma_q": 1.5,
+    "gamma_c": 1.5,
+    "gamma_s": 1.15,
+    "alpha_cc": 0.85,
+    "psi2_default": 0.3
+  },
+  "detailing": {
+    "minimum_clear_spacing_mm": 25,
+    "permitted_main_bar_diameters_mm": [
+      12,
+      16,
+      20,
+      25,
+      32
+    ],
+    "maximum_bars_in_single_layer": 8,
+    "stirrup_legs": 2,
+    "maximum_stirrup_spacing_mm": 300,
+    "stirrup_spacing_increment_mm": 25,
+    "top_hanger_reinforcement": "2T12 continuous",
+    "anchorage_eta1": 1.0,
+    "anchorage_eta2": 1.0,
+    "anchorage_bond_factor": 2.25,
+    "minimum_anchorage_factor_phi": 10,
+    "minimum_anchorage_mm": 100,
+    "support_extension_for_anchorage_mm": 550
+  },
+  "serviceability": {
+    "deflection_limit_ratio": 250,
+    "crack_width_limit_mm": 0.3,
+    "crack_k1": 0.8,
+    "crack_k2": 0.5,
+    "crack_k3": 3.4,
+    "crack_k4": 0.425,
+    "crack_kt": 0.4
+  },
+  "standard_profile": {
+    "profile_id": "NL_EC2_2005_A1_2015_NA_A2_2025_PRELIMINARY",
+    "base_standard": "NEN-EN 1992-1-1:2005+C2:2011+A1:2015",
+    "national_annex": "NB:2016+A1:2020+A2:2025",
+    "stress_block_eta": 1.0,
+    "stress_block_lambda": 0.8,
+    "neutral_axis_limit_ratio": 0.45,
+    "minimum_reinforcement_factor_1": 0.26,
+    "minimum_reinforcement_factor_2": 0.0013,
+    "maximum_reinforcement_ratio": 0.04,
+    "maximum_longitudinal_ratio_for_shear": 0.02,
+    "c_rdc_numerator": 0.18,
+    "vmin_coefficient": 0.035,
+    "cot_theta": 1.0,
+    "v1_coefficient": 0.6,
+    "v1_denominator_mpa": 250,
+    "alpha_cw": 1.0,
+    "minimum_shear_reinforcement_coefficient": 0.08,
+    "support_bearing_stress_limit_factor": 0.6,
+    "mandatory_deep_section_review_height_mm": 700
+  },
+  "analysis": {
+    "station_count": 101,
+    "deflection_segments": 400
+  },
+  "scope": {
+    "fire_design_included": false
+  },
+  "official_references": [
+    "https://eurocodes.jrc.ec.europa.eu/EN-Eurocodes/eurocode-2-design-concrete-structures",
+    "https://www.nen.nl/en/nen-en-1992-1-1-2005-c2-2011-a1-2015-nl-332423",
+    "https://www.nen.nl/en/nen-en-1992-1-1-2005-c2-2011-a1-2015-nb-2016-a1-2020-a2-2025-nl-338114"
+  ]
+}

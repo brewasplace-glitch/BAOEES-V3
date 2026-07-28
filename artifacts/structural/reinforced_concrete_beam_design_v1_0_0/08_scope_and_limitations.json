@@ -1,0 +1,11 @@
+{
+  "limitations": [
+    "This is a preliminary design engine and not a signed structural calculation.",
+    "The selected standard profile and National Annex parameters must be confirmed for the project.",
+    "Fire resistance, robustness, seismic design, fatigue and accidental actions are outside this v1.0.0 scope.",
+    "Construction tolerances, bar curtailment, laps, couplers, support-zone detailing and actual load paths require engineer review.",
+    "The 2025 Dutch National Annex introduced shear-related changes; deep sections trigger a mandatory review gate."
+  ],
+  "next_gate": "Assign the beam to an approved model object, replace example loads with project loads, and obtain signed structural-engineer review before use for permit, tender or execution.",
+  "status_label": "PRELIMINARY STRUCTURAL DESIGN - ENGINEER REVIEW REQUIRED"
+}

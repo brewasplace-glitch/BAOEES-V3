@@ -1,0 +1,17 @@
+﻿check_id,topic,passed,evidence
+CHK-001,Statics,True,Reactions equal total ULS load.
+CHK-002,Flexure resistance,True,MEd/MRd = 0.917
+CHK-003,Neutral axis,True,x/(xlim*d) = 0.389
+CHK-004,Minimum reinforcement,True,"As,prov = 804.2 mm2; As,min = 203.1 mm2"
+CHK-005,Maximum reinforcement,True,"As,prov = 804.2 mm2; As,max = 6000.0 mm2"
+CHK-006,Bar fit,True,4T16 bottom (As=804 mm2; clear=50 mm)
+CHK-007,Shear resistance,True,VEd/VRd = 0.913
+CHK-008,Shear compression strut,True,"VEd = 92.2 kN; VRd,max = 544.1 kN"
+CHK-009,Deflection,True,delta = 8.31 mm; limit = 20.00 mm
+CHK-010,Crack width,True,wk = 0.134 mm; limit = 0.300 mm
+CHK-011,Anchorage fit,True,"lb,design = 532 mm; available = 850 mm"
+CHK-012,Support bearing,True,bearing utilization = 0.100
+CHK-013,Deep-section review gate,True,h = 500 mm; mandatory review threshold = 700 mm
+CHK-014,Fire design boundary,True,Fire design is excluded and must be completed separately.
+CHK-015,Professional review gate,True,All outputs remain preliminary until signed by a competent structural engineer.
+CHK-016,Standard profile declared,True,NL_EC2_2005_A1_2015_NA_A2_2025_PRELIMINARY

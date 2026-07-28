@@ -1,0 +1,4 @@
+﻿zone,reinforcement,required_area_mm2,provided_area_mm2,status
+bottom_span,4T16 bottom (As=804 mm2; clear=50 mm),737.814,804.248,PRELIMINARY
+top_hanger,2T12 continuous,DETAILING_MINIMUM,SEE_REINFORCEMENT,PRELIMINARY
+shear_full_span,2-leg T8 stirrups @ 175 mm,0.5245,0.5745,PRELIMINARY

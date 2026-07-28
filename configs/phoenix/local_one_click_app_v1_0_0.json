@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Technical Design A-D Enabled",
+  "application_name": "Project Phoenix Local - Reinforced Concrete Beam Design Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -35,6 +35,26 @@
   "host": "127.0.0.1",
   "max_port_attempts": 10,
   "open_targets": [
+    {
+      "id": "rc_beam_design_dashboard",
+      "label": "Open betonbalkberekening dashboard",
+      "relative_path": "artifacts/structural/reinforced_concrete_beam_design_v1_0_0/09_beam_design_dashboard.html"
+    },
+    {
+      "id": "rc_beam_design_workbook",
+      "label": "Open betonbalkberekening Excel",
+      "relative_path": "artifacts/structural/reinforced_concrete_beam_design_v1_0_0/10_reinforced_concrete_beam_design_workbook.xlsx"
+    },
+    {
+      "id": "rc_beam_design_report",
+      "label": "Open betonbalkberekening PDF",
+      "relative_path": "artifacts/structural/reinforced_concrete_beam_design_v1_0_0/12_reinforced_concrete_beam_design_report.pdf"
+    },
+    {
+      "id": "rc_beam_reinforcement_detail",
+      "label": "Open betonbalk wapeningdetail",
+      "relative_path": "artifacts/structural/reinforced_concrete_beam_design_v1_0_0/14_reinforcement_detail.svg"
+    },
     {
       "id": "technical_design_masterpack_dashboard",
       "label": "Open technisch ontwerppakket A-D",
@@ -132,9 +152,9 @@
     }
   ],
   "preferred_port": 8765,
-  "runtime_root": "outputs/runtime/phoenix_local_app_v1_6_0",
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_7_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "workflows": [
     {
       "expect_flag": "--expect-masterpack-ready",
@@ -145,6 +165,16 @@
         "runners/PROJECT_PHOENIX_BB35_pilot_1_technical_design_a_to_d_masterpack_v3_0_0.py"
       ],
       "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_technical_design_a_to_d_masterpack_v3_0_0.py"
+    },
+    {
+      "expect_flag": "--expect-design-valid",
+      "id": "reinforced_concrete_beam_design",
+      "label": "Bereken betonbalk op twee steunpunten",
+      "output_subdir": "reinforced_concrete_beam_design",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_reinforced_concrete_beam_design_v1_0_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_reinforced_concrete_beam_design_v1_0_0.py"
     },
     {
       "expect_flag": "--expect-programme-ready",

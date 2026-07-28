@@ -25,8 +25,8 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_default_port(self):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
-    def test_nine_workflows_registered(self):
-        self.assertEqual(9, len(CONFIG["workflows"]))
+    def test_ten_workflows_registered(self):
+        self.assertEqual(10, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(
@@ -174,8 +174,8 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         described = {item["id"]: item for item in registry.describe()}
         self.assertTrue(described["unified_model_driven_production_orchestrator"]["available"])
 
-    def test_local_app_version_1_6(self):
-        self.assertEqual("1.6.0", CONFIG["version"])
+    def test_local_app_version_1_7(self):
+        self.assertEqual("1.7.0", CONFIG["version"])
 
     def test_orchestrator_dashboard_target(self):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "unified_orchestrator_dashboard")
@@ -198,6 +198,18 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_technical_design_dashboard_target(self):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "technical_design_masterpack_dashboard")
         self.assertTrue(target["relative_path"].endswith("06_technical_design_masterpack_dashboard.html"))
+
+    def test_rc_beam_workflow_is_available(self):
+        registry = WorkflowRegistry(ROOT, CONFIG)
+        described = {item["id"]: item for item in registry.describe()}
+        self.assertTrue(described["reinforced_concrete_beam_design"]["available"])
+
+    def test_rc_beam_workbook_target(self):
+        target = next(item for item in CONFIG["open_targets"] if item["id"] == "rc_beam_design_workbook")
+        self.assertTrue(target["relative_path"].endswith("10_reinforced_concrete_beam_design_workbook.xlsx"))
+
+    def test_rc_beam_workflow_is_second(self):
+        self.assertEqual("reinforced_concrete_beam_design", CONFIG["workflows"][1]["id"])
 
 
 if __name__ == "__main__":

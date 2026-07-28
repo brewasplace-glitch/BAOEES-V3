@@ -1,0 +1,87 @@
+{
+  "analysis": {
+    "station_count": 103,
+    "uls_max_abs_shear_kn": 92.156,
+    "uls_max_abs_shear_position_m": 0.0,
+    "uls_max_moment_knm": 133.945,
+    "uls_max_moment_position_m": 2.5,
+    "uls_reaction_a_kn": 92.156,
+    "uls_reaction_b_kn": 92.156
+  },
+  "beam_id": "RCB-001",
+  "beam_name": "Simply supported demonstration beam",
+  "design_fingerprint_sha256": "615625cf30cb7ec4420c897afc1521ab4534164e30f1ddcd91751451e7805ca1",
+  "detailing": {
+    "anchorage_utilization": 0.626,
+    "available_anchorage_length_mm": 850.0,
+    "bottom_reinforcement": "4T16 bottom (As=804 mm2; clear=50 mm)",
+    "design_anchorage_length_mm": 532.0,
+    "nominal_cover_mm": 35.0,
+    "stirrups": "2-leg T8 stirrups @ 175 mm",
+    "top_hanger_reinforcement": "2T12 continuous"
+  },
+  "engine_version": "1.0.0",
+  "final_structural_release_allowed": false,
+  "flexure": {
+    "bar_description": "4T16 bottom (As=804 mm2; clear=50 mm)",
+    "design_steel_area_mm2": 737.814,
+    "lever_arm_mm": 417.55,
+    "main_bar_count": 4,
+    "main_bar_diameter_mm": 16.0,
+    "maximum_steel_area_mm2": 6000.0,
+    "minimum_steel_area_mm2": 203.128,
+    "moment_resistance_knm": 146.006,
+    "neutral_axis_depth_mm": 78.625,
+    "neutral_axis_utilization": 0.389,
+    "provided_steel_area_mm2": 804.248,
+    "required_steel_area_mm2": 737.814,
+    "utilization": 0.917
+  },
+  "geometry": {
+    "effective_depth_actual_mm": 449.0,
+    "effective_depth_trial_mm": 449.0,
+    "height_mm": 500.0,
+    "span_m": 5.0,
+    "support_width_mm": 300.0,
+    "width_mm": 300.0
+  },
+  "metrics": {
+    "all_technical_checks_passed": true,
+    "final_structural_release_allowed": false,
+    "fire_design_included": false,
+    "professional_review_required": true,
+    "technical_check_count": 13,
+    "technical_checks_passed": 13
+  },
+  "model_object_id": "STRUCT-BEAM-DEMO-001",
+  "next_gate": "Assign the beam to an approved model object, replace example loads with project loads, and obtain signed structural-engineer review before use for permit, tender or execution.",
+  "project_id": "PHX-RC-DEMO-001",
+  "schema_version": "phoenix.reinforced-concrete-beam-design/1.0",
+  "serviceability": {
+    "characteristic_max_moment_knm": 92.969,
+    "crack_width_limit_mm": 0.3,
+    "crack_width_utilization": 0.447,
+    "cracking_moment_knm": 36.25,
+    "deflection_limit_mm": 20.0,
+    "deflection_utilization": 0.416,
+    "effective_inertia_mm4": 839431222.0,
+    "estimated_crack_width_mm": 0.134,
+    "estimated_deflection_mm": 8.311,
+    "quasi_permanent_max_moment_knm": 53.594,
+    "service_steel_stress_mpa": 159.594
+  },
+  "shear": {
+    "concrete_shear_resistance_kn": 70.519,
+    "design_shear_kn": 92.156,
+    "governing_shear_resistance_kn": 100.931,
+    "maximum_shear_resistance_kn": 544.08,
+    "minimum_asw_per_s_mm2_per_mm": 0.2629,
+    "provided_asw_per_s_mm2_per_mm": 0.5745,
+    "required_asw_per_s_mm2_per_mm": 0.5245,
+    "shear_reinforcement_resistance_kn": 100.931,
+    "stirrup_description": "2-leg T8 stirrups @ 175 mm",
+    "stirrup_spacing_mm": 175.0,
+    "utilization": 0.913
+  },
+  "status": "PRELIMINARY_DESIGN_CHECKS_PASSED"
+}

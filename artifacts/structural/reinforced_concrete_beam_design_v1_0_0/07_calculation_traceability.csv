@@ -1,0 +1,7 @@
+﻿calculation_id,topic,inputs,output,drawing
+CAL-STAT-01,reactions,"geometry, loads, combinations",RA=92.156 kN; RB=92.156 kN,13_load_shear_moment_diagrams.svg
+CAL-FLEX-01,flexure,"MEd, b, d, fcd, fyd",4T16 bottom (As=804 mm2; clear=50 mm),14_reinforcement_detail.svg
+CAL-SHEAR-01,shear,"VEd, d, fck, fyd",2-leg T8 stirrups @ 175 mm,14_reinforcement_detail.svg
+CAL-SLS-01,deflection,"SLS loads, Ecm, Ieff",8.311 mm,11_reinforced_concrete_beam_design_report.docx
+CAL-SLS-02,crack_width,"Mqp, As, cover, bar diameter",0.134 mm,11_reinforced_concrete_beam_design_report.docx
+CAL-DET-01,anchorage,"bar diameter, bond strength, stress",532.0 mm,14_reinforcement_detail.svg
