@@ -1,0 +1,22 @@
+{
+  "change_impacts": [
+    "construction_logistics",
+    "aerius_input_model",
+    "environmental_report",
+    "permit_environmental_annex"
+  ],
+  "discipline": "Environmental / nitrogen deposition assessment",
+  "required_basis_fields": {
+    "activity_data_verified": true,
+    "aerius_export_included": true,
+    "construction_phase_included": true,
+    "use_phase_included": true
+  },
+  "required_document_types": [
+    "verified_activity_data_register",
+    "aerius_project_calculation",
+    "aerius_export",
+    "aerius_assumptions_and_conclusions"
+  ],
+  "title": "Verified activity data and AERIUS calculation package"
+}

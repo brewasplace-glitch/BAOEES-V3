@@ -1,0 +1,21 @@
+{
+  "change_impacts": [
+    "central_geometric_model",
+    "architectural_drawings",
+    "site_plan",
+    "area_and_dimension_registers"
+  ],
+  "discipline": "Survey / geospatial / architectural geometry",
+  "required_basis_fields": {
+    "boundary_source_traceable": true,
+    "coordinate_system_confirmed": true,
+    "geometry_validated": true,
+    "model_reference_confirmed": true
+  },
+  "required_document_types": [
+    "survey_validation_report",
+    "validated_geometry_export",
+    "coordinate_and_boundary_control"
+  ],
+  "title": "Validated geometry, survey and cadastral control"
+}

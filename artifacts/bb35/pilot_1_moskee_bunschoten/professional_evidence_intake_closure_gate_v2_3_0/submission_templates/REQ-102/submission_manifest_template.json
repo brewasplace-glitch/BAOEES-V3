@@ -1,0 +1,52 @@
+{
+  "basis_fields": {
+    "boundary_source_traceable": true,
+    "coordinate_system_confirmed": true,
+    "geometry_validated": true,
+    "model_reference_confirmed": true
+  },
+  "basis_of_design": "REPLACE WITH PROFESSIONAL BASIS",
+  "documents": [
+    {
+      "document_type": "survey_validation_report",
+      "issue_date": "YYYY-MM-DD",
+      "relative_path": "evidence/REPLACE_WITH_FILE_1.pdf",
+      "revision": "REPLACE",
+      "sha256": "REPLACE_WITH_64_CHARACTER_SHA256",
+      "title": "REPLACE WITH PROFESSIONAL DOCUMENT TITLE"
+    },
+    {
+      "document_type": "validated_geometry_export",
+      "issue_date": "YYYY-MM-DD",
+      "relative_path": "evidence/REPLACE_WITH_FILE_2.pdf",
+      "revision": "REPLACE",
+      "sha256": "REPLACE_WITH_64_CHARACTER_SHA256",
+      "title": "REPLACE WITH PROFESSIONAL DOCUMENT TITLE"
+    },
+    {
+      "document_type": "coordinate_and_boundary_control",
+      "issue_date": "YYYY-MM-DD",
+      "relative_path": "evidence/REPLACE_WITH_FILE_3.pdf",
+      "revision": "REPLACE",
+      "sha256": "REPLACE_WITH_64_CHARACTER_SHA256",
+      "title": "REPLACE WITH PROFESSIONAL DOCUMENT TITLE"
+    }
+  ],
+  "issue_date": "YYYY-MM-DD",
+  "limitations": "REPLACE WITH LIMITATIONS OR STATE NONE",
+  "professional": {
+    "declaration_text": "I accept professional responsibility for the submitted scope and conclusions.",
+    "discipline": "Survey / geospatial / architectural geometry",
+    "name": "REPLACE",
+    "organization": "REPLACE",
+    "registration_authority": "REPLACE",
+    "registration_number": "REPLACE",
+    "signed_declaration": true
+  },
+  "project_id": "HBM-2026-001",
+  "requirement_id": "REQ-102",
+  "schema_version": "phoenix.professional-evidence-submission/1.0",
+  "scope_statement": "REPLACE WITH PROJECT-SPECIFIC SCOPE",
+  "submission_id": "REQ-102-PROF-YYYY-NNN",
+  "supersedes_simulated_evidence": true
+}

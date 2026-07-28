@@ -1,0 +1,188 @@
+{
+  "accepted_extensions": [
+    ".pdf",
+    ".docx",
+    ".xlsx",
+    ".csv",
+    ".json",
+    ".xml",
+    ".gef",
+    ".dwg",
+    ".dxf",
+    ".ifc",
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".tif",
+    ".tiff",
+    ".zip"
+  ],
+  "artifact_root": "artifacts/bb35/pilot_1_moskee_bunschoten/professional_evidence_intake_closure_gate_v2_3_0",
+  "closed_requirement": {
+    "closure_must_be_preserved": true,
+    "programme_id": "HBM-OCC-2026-001",
+    "requirement_id": "REQ-107",
+    "status": "CLOSED"
+  },
+  "deterministic_evaluation_date": "2026-07-28",
+  "evaluation_revision": "E01",
+  "forbidden_markers": [
+    "simulation",
+    "simulated",
+    "synthetic",
+    "placeholder",
+    "template",
+    "example",
+    "dummy",
+    "test evidence",
+    "not signed"
+  ],
+  "intake_root": "inputs/pilots/moskee_bunschoten/professional_evidence_intake_v2_3_0",
+  "pilot_id": "BB35-PILOT-001-HBM",
+  "project_address": "Bikkersweg 88, Bunschoten",
+  "project_id": "HBM-2026-001",
+  "project_name": "Uitbreiding Haci Bayram Moskee",
+  "release_policy": {
+    "accepted_evidence_requires_model_regeneration": true,
+    "bb36_unlock_requires_final_coordinated_issue": true,
+    "document_hash_match_required": true,
+    "permit_tender_execution_release_requires_post_closure_regeneration": true,
+    "professional_evidence_gate_requires_all_six_closed": true,
+    "professional_signature_and_registration_required": true,
+    "project_leader_acceptance_required_per_requirement": true,
+    "simulated_evidence_cannot_close_requirement": true
+  },
+  "requirements": {
+    "REQ-102": {
+      "change_impacts": [
+        "central_geometric_model",
+        "architectural_drawings",
+        "site_plan",
+        "area_and_dimension_registers"
+      ],
+      "discipline": "Survey / geospatial / architectural geometry",
+      "required_basis_fields": {
+        "boundary_source_traceable": true,
+        "coordinate_system_confirmed": true,
+        "geometry_validated": true,
+        "model_reference_confirmed": true
+      },
+      "required_document_types": [
+        "survey_validation_report",
+        "validated_geometry_export",
+        "coordinate_and_boundary_control"
+      ],
+      "title": "Validated geometry, survey and cadastral control"
+    },
+    "REQ-103": {
+      "change_impacts": [
+        "structural_model",
+        "load_path",
+        "existing_to_new_details",
+        "structural_calculations"
+      ],
+      "discipline": "Structural engineering",
+      "required_basis_fields": {
+        "connection_design_confirmed": true,
+        "existing_structure_assessed": true,
+        "site_visit_completed": true,
+        "structural_limitations_stated": true
+      },
+      "required_document_types": [
+        "current_structural_survey",
+        "existing_structure_assessment",
+        "existing_to_new_connection_design"
+      ],
+      "title": "Current structural survey and existing-to-new connection design"
+    },
+    "REQ-104": {
+      "change_impacts": [
+        "foundation_model",
+        "foundation_calculations",
+        "foundation_drawings",
+        "construction_method_and_cost"
+      ],
+      "discipline": "Geotechnical engineering",
+      "required_basis_fields": {
+        "foundation_recommendation_issued": true,
+        "groundwater_reference_confirmed": true,
+        "investigation_locations_confirmed": true,
+        "settlement_assessed": true
+      },
+      "required_document_types": [
+        "geotechnical_investigation_report",
+        "groundwater_and_level_reference",
+        "foundation_and_settlement_advice"
+      ],
+      "title": "Project-specific geotechnical investigation and foundation advice"
+    },
+    "REQ-105": {
+      "change_impacts": [
+        "fire_compartmentation",
+        "egress_design",
+        "ventilation_calculations",
+        "mep_coordination",
+        "technical_details"
+      ],
+      "discipline": "Building regulations / fire / building services",
+      "required_basis_fields": {
+        "fire_safety_assessed": true,
+        "installations_coordinated": true,
+        "occupancy_program_id": "HBM-OCC-2026-001",
+        "ventilation_assessed": true
+      },
+      "required_document_types": [
+        "bbl_compliance_report",
+        "fire_safety_and_egress_design",
+        "ventilation_and_installation_design"
+      ],
+      "title": "Bbl, fire safety, ventilation and installation design validation"
+    },
+    "REQ-106": {
+      "change_impacts": [
+        "parking_model",
+        "parking_balance",
+        "site_plan_and_routes",
+        "permit_parking_report"
+      ],
+      "discipline": "Traffic and parking engineering",
+      "required_basis_fields": {
+        "field_inventory_completed": true,
+        "minimum_count_moments_completed": 5,
+        "parking_basis_spaces": 225,
+        "professional_parking_balance_issued": true
+      },
+      "required_document_types": [
+        "parking_space_inventory",
+        "parking_count_observations",
+        "professional_parking_balance",
+        "field_evidence_register"
+      ],
+      "title": "Verified parking inventory, counts and professional parking balance"
+    },
+    "REQ-108": {
+      "change_impacts": [
+        "construction_logistics",
+        "aerius_input_model",
+        "environmental_report",
+        "permit_environmental_annex"
+      ],
+      "discipline": "Environmental / nitrogen deposition assessment",
+      "required_basis_fields": {
+        "activity_data_verified": true,
+        "aerius_export_included": true,
+        "construction_phase_included": true,
+        "use_phase_included": true
+      },
+      "required_document_types": [
+        "verified_activity_data_register",
+        "aerius_project_calculation",
+        "aerius_export",
+        "aerius_assumptions_and_conclusions"
+      ],
+      "title": "Verified activity data and AERIUS calculation package"
+    }
+  },
+  "schema_version": "phoenix.bb35.professional-evidence-intake-closure-gate/1.0",
+  "version": "2.3.0"
+}

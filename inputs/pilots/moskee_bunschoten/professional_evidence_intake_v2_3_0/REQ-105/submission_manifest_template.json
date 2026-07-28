@@ -1,0 +1,52 @@
+{
+  "basis_fields": {
+    "fire_safety_assessed": true,
+    "installations_coordinated": true,
+    "occupancy_program_id": "HBM-OCC-2026-001",
+    "ventilation_assessed": true
+  },
+  "basis_of_design": "REPLACE WITH PROFESSIONAL BASIS",
+  "documents": [
+    {
+      "document_type": "bbl_compliance_report",
+      "issue_date": "YYYY-MM-DD",
+      "relative_path": "evidence/REPLACE_WITH_FILE_1.pdf",
+      "revision": "REPLACE",
+      "sha256": "REPLACE_WITH_64_CHARACTER_SHA256",
+      "title": "REPLACE WITH PROFESSIONAL DOCUMENT TITLE"
+    },
+    {
+      "document_type": "fire_safety_and_egress_design",
+      "issue_date": "YYYY-MM-DD",
+      "relative_path": "evidence/REPLACE_WITH_FILE_2.pdf",
+      "revision": "REPLACE",
+      "sha256": "REPLACE_WITH_64_CHARACTER_SHA256",
+      "title": "REPLACE WITH PROFESSIONAL DOCUMENT TITLE"
+    },
+    {
+      "document_type": "ventilation_and_installation_design",
+      "issue_date": "YYYY-MM-DD",
+      "relative_path": "evidence/REPLACE_WITH_FILE_3.pdf",
+      "revision": "REPLACE",
+      "sha256": "REPLACE_WITH_64_CHARACTER_SHA256",
+      "title": "REPLACE WITH PROFESSIONAL DOCUMENT TITLE"
+    }
+  ],
+  "issue_date": "YYYY-MM-DD",
+  "limitations": "REPLACE WITH LIMITATIONS OR STATE NONE",
+  "professional": {
+    "declaration_text": "I accept professional responsibility for the submitted scope and conclusions.",
+    "discipline": "Building regulations / fire / building services",
+    "name": "REPLACE",
+    "organization": "REPLACE",
+    "registration_authority": "REPLACE",
+    "registration_number": "REPLACE",
+    "signed_declaration": true
+  },
+  "project_id": "HBM-2026-001",
+  "requirement_id": "REQ-105",
+  "schema_version": "phoenix.professional-evidence-submission/1.0",
+  "scope_statement": "REPLACE WITH PROJECT-SPECIFIC SCOPE",
+  "submission_id": "REQ-105-PROF-YYYY-NNN",
+  "supersedes_simulated_evidence": true
+}

@@ -1,0 +1,7 @@
+requirement_id,finding_code,severity,message,status,remediation_action
+REQ-102,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN,"Supply the missing project-specific field, document or decision record."
+REQ-103,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN,"Supply the missing project-specific field, document or decision record."
+REQ-104,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN,"Supply the missing project-specific field, document or decision record."
+REQ-105,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN,"Supply the missing project-specific field, document or decision record."
+REQ-106,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN,"Supply the missing project-specific field, document or decision record."
+REQ-108,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN,"Supply the missing project-specific field, document or decision record."

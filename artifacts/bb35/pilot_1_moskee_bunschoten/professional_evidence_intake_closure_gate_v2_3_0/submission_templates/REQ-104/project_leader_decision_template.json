@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "approved_by_name": "REPLACE",
+  "approved_by_role": "Projectleider",
+  "critical_findings_open": 0,
+  "decision": "ACCEPTED",
+  "decision_date": "YYYY-MM-DD",
+  "decision_note": "REPLACE WITH DECISION BASIS",
+  "project_id": "HBM-2026-001",
+  "requirement_id": "REQ-104",
+  "reviewed_manifest_sha256": "REPLACE_WITH_SHA256_OF_submission_manifest.json",
+  "schema_version": "phoenix.project-leader-evidence-decision/1.0"
+}

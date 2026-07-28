@@ -1,0 +1,22 @@
+{
+  "change_impacts": [
+    "parking_model",
+    "parking_balance",
+    "site_plan_and_routes",
+    "permit_parking_report"
+  ],
+  "discipline": "Traffic and parking engineering",
+  "required_basis_fields": {
+    "field_inventory_completed": true,
+    "minimum_count_moments_completed": 5,
+    "parking_basis_spaces": 225,
+    "professional_parking_balance_issued": true
+  },
+  "required_document_types": [
+    "parking_space_inventory",
+    "parking_count_observations",
+    "professional_parking_balance",
+    "field_evidence_register"
+  ],
+  "title": "Verified parking inventory, counts and professional parking balance"
+}

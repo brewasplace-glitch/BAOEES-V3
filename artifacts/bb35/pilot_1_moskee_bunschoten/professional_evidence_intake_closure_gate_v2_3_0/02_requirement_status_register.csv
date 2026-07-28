@@ -1,0 +1,7 @@
+requirement_id,title,discipline,status,accepted,submission_id,professional_name,professional_organization,document_count,finding_count,critical_or_blocking_finding_count
+REQ-102,"Validated geometry, survey and cadastral control",Survey / geospatial / architectural geometry,AWAITING_SUBMISSION,False,,,,0,1,1
+REQ-103,Current structural survey and existing-to-new connection design,Structural engineering,AWAITING_SUBMISSION,False,,,,0,1,1
+REQ-104,Project-specific geotechnical investigation and foundation advice,Geotechnical engineering,AWAITING_SUBMISSION,False,,,,0,1,1
+REQ-105,"Bbl, fire safety, ventilation and installation design validation",Building regulations / fire / building services,AWAITING_SUBMISSION,False,,,,0,1,1
+REQ-106,"Verified parking inventory, counts and professional parking balance",Traffic and parking engineering,AWAITING_SUBMISSION,False,,,,0,1,1
+REQ-108,Verified activity data and AERIUS calculation package,Environmental / nitrogen deposition assessment,AWAITING_SUBMISSION,False,,,,0,1,1

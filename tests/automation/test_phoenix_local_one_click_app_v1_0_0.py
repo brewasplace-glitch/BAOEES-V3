@@ -25,8 +25,8 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
     def test_default_port(self):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
-    def test_eleven_workflows_registered(self):
-        self.assertEqual(11, len(CONFIG["workflows"]))
+    def test_twelve_workflows_registered(self):
+        self.assertEqual(12, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(
@@ -166,16 +166,16 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "project_folder")
         self.assertEqual(".", target["relative_path"])
 
-    def test_orchestrator_workflow_is_first(self):
-        self.assertEqual("technical_design_a_to_d_masterpack", CONFIG["workflows"][0]["id"])
+    def test_closure_gate_workflow_is_first(self):
+        self.assertEqual("professional_evidence_intake_validation_closure_gate", CONFIG["workflows"][0]["id"])
 
     def test_orchestrator_workflow_is_available(self):
         registry = WorkflowRegistry(ROOT, CONFIG)
         described = {item["id"]: item for item in registry.describe()}
         self.assertTrue(described["unified_model_driven_production_orchestrator"]["available"])
 
-    def test_local_app_version_1_8(self):
-        self.assertEqual("1.8.0", CONFIG["version"])
+    def test_local_app_version_1_9(self):
+        self.assertEqual("1.9.0", CONFIG["version"])
 
     def test_orchestrator_dashboard_target(self):
         target = next(item for item in CONFIG["open_targets"] if item["id"] == "unified_orchestrator_dashboard")
@@ -209,10 +209,10 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         self.assertTrue(target["relative_path"].endswith("10_reinforced_concrete_beam_design_workbook.xlsx"))
 
     def test_sketch_workflow_is_second(self):
-        self.assertEqual("regional_structural_profiles_sketch_input", CONFIG["workflows"][1]["id"])
+        self.assertEqual("regional_structural_profiles_sketch_input", CONFIG["workflows"][2]["id"])
 
     def test_rc_beam_workflow_is_third(self):
-        self.assertEqual("reinforced_concrete_beam_design", CONFIG["workflows"][2]["id"])
+        self.assertEqual("reinforced_concrete_beam_design", CONFIG["workflows"][3]["id"])
 
     def test_sketch_workflow_is_available(self):
         registry = WorkflowRegistry(ROOT, CONFIG)
@@ -225,6 +225,19 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
 
     def test_sketch_upload_start_script_exists(self):
         self.assertTrue((ROOT / "START_PHOENIX_STRUCTURAL_SKETCH_INPUT.ps1").is_file())
+
+    def test_closure_gate_workflow_is_available(self):
+        registry = WorkflowRegistry(ROOT, CONFIG)
+        described = {item["id"]: item for item in registry.describe()}
+        self.assertTrue(described["professional_evidence_intake_validation_closure_gate"]["available"])
+
+    def test_closure_gate_dashboard_target(self):
+        target = next(item for item in CONFIG["open_targets"] if item["id"] == "professional_evidence_intake_dashboard")
+        self.assertTrue(target["relative_path"].endswith("09_professional_evidence_intake_dashboard.html"))
+
+    def test_closure_gate_intake_folder_target(self):
+        target = next(item for item in CONFIG["open_targets"] if item["id"] == "professional_evidence_intake_folder")
+        self.assertTrue(target["relative_path"].endswith("professional_evidence_intake_v2_3_0"))
 
 
 if __name__ == "__main__":

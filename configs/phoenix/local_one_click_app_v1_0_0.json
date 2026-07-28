@@ -1,5 +1,5 @@
 {
-  "application_name": "Project Phoenix Local - Regional Structural Profiles and Sketch Input Enabled",
+  "application_name": "Project Phoenix Local - Professional Evidence Intake and Closure Gate Enabled",
   "browser_open_delay_seconds": 0.25,
   "dashboard": {
     "content_markers": {
@@ -35,6 +35,26 @@
   "host": "127.0.0.1",
   "max_port_attempts": 10,
   "open_targets": [
+    {
+      "id": "professional_evidence_intake_dashboard",
+      "label": "Open professionele bewijsinname en sluitingsgate",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/professional_evidence_intake_closure_gate_v2_3_0/09_professional_evidence_intake_dashboard.html"
+    },
+    {
+      "id": "professional_evidence_closure_report",
+      "label": "Open professioneel bewijssluitingsrapport",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/professional_evidence_intake_closure_gate_v2_3_0/12_professional_evidence_closure_report.md"
+    },
+    {
+      "id": "professional_evidence_gate_status",
+      "label": "Open professionele bewijsgatestatus",
+      "relative_path": "artifacts/bb35/pilot_1_moskee_bunschoten/professional_evidence_intake_closure_gate_v2_3_0/13_professional_evidence_closure_gate_status.json"
+    },
+    {
+      "id": "professional_evidence_intake_folder",
+      "label": "Open professionele bewijsinvoermap",
+      "relative_path": "inputs/pilots/moskee_bunschoten/professional_evidence_intake_v2_3_0"
+    },
     {
       "id": "regional_sketch_input_dashboard",
       "label": "Open regionale profielen en schetsinvoer",
@@ -167,10 +187,20 @@
     }
   ],
   "preferred_port": 8765,
-  "runtime_root": "outputs/runtime/phoenix_local_app_v1_8_0",
+  "runtime_root": "outputs/runtime/phoenix_local_app_v1_9_0",
   "schema_version": "phoenix.local-one-click-application/1.0",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "workflows": [
+    {
+      "expect_flag": "--expect-gate-operational",
+      "id": "professional_evidence_intake_validation_closure_gate",
+      "label": "Valideer professionele bewijsinname en sluitingsgate",
+      "output_subdir": "professional_evidence_intake_validation_closure_gate",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_BB35_pilot_1_professional_evidence_intake_validation_closure_gate_v2_3_0.py"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_professional_evidence_intake_validation_closure_gate_v2_3_0.py"
+    },
     {
       "expect_flag": "--expect-masterpack-ready",
       "id": "technical_design_a_to_d_masterpack",
