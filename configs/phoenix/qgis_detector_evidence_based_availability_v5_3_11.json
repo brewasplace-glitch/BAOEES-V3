@@ -1,0 +1,20 @@
+{
+  "acceptance": {
+    "algorithm": "native:buffer",
+    "buffer_distance_m": 25,
+    "epsg": 28992,
+    "geopackage_required": true,
+    "simulated_results_allowed": false
+  },
+  "confirmed_launcher": "C:\\OSGeo4W\\bin\\qgis_process-qgis-ltr.bat",
+  "detector_availability_policy": {
+    "batch_exit_code_one_with_valid_evidence": "diagnostic_only",
+    "real_accepted_geopackage_evidence": "sufficient",
+    "version_probe_exit_zero": "sufficient"
+  },
+  "engine_id": "qgis",
+  "installation_action": "NONE",
+  "release_line": "3.44",
+  "reuse_existing_installation": true,
+  "schema_version": "phoenix.qgis-detector-evidence-availability/5.3.11"
+}

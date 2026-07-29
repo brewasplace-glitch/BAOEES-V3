@@ -2,6 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 from .base import Detection, EngineAdapter, EngineSpec
+from .qgis_adapter_v5_3_11 import QGISWindowsAdapter
 
 class IfcOpenShellAdapter(EngineAdapter):
     def detect_python_module(self):
@@ -124,7 +125,7 @@ ADAPTERS = {
     "energyplus": EnergyPlusAdapter,
     "opensees": OpenSeesAdapter,
     "calculix": CalculiXAdapter,
-    "qgis": QGISAdapter,
+    "qgis": QGISWindowsAdapter,
 }
 
 def create_adapter(engine_id: str) -> EngineAdapter:
