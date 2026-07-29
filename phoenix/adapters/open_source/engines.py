@@ -1,9 +1,30 @@
 from __future__ import annotations
 from pathlib import Path
 from typing import Any
-from .base import EngineAdapter, EngineSpec
+from .base import Detection, EngineAdapter, EngineSpec
 
 class IfcOpenShellAdapter(EngineAdapter):
+    def detect_python_module(self):
+        import subprocess
+        import sys
+        probe = subprocess.run(
+            [sys.executable, "-c", "import ifcopenshell; print(ifcopenshell.version)"],
+            text=True,
+            capture_output=True,
+            timeout=20,
+            check=False,
+        )
+        if probe.returncode == 0:
+            return Detection(
+                self.spec.engine_id,
+                True,
+                sys.executable,
+                "python_module",
+                (probe.stdout or "").strip(),
+                ["IfcOpenShell Python module detected"],
+            )
+        return None
+
     spec = EngineSpec(
         "ifcopenshell", "IfcOpenShell / IfcConvert",
         ("IfcConvert.exe","IfcConvert","ifcconvert"),

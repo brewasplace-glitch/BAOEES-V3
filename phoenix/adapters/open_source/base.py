@@ -70,6 +70,9 @@ class EngineAdapter:
 
     def detect(self) -> Detection:
         notes: list[str] = []
+        module_detection = self.detect_python_module()
+        if module_detection is not None:
+            return module_detection
         for var in self.spec.environment_variables:
             raw = os.environ.get(var)
             if raw:
@@ -87,6 +90,9 @@ class EngineAdapter:
             if resolved:
                 return self._detected(resolved, "PATH", notes)
         return Detection(self.spec.engine_id, False, None, "not_found", "", notes)
+
+    def detect_python_module(self) -> Detection | None:
+        return None
 
     def _detected(self, executable: str, source: str, notes: list[str]) -> Detection:
         version = ""

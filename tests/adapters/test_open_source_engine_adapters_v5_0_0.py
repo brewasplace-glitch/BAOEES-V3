@@ -9,10 +9,15 @@ class Tests(unittest.TestCase):
         self.assertEqual(set(ADAPTERS), {"ifcopenshell","freecad","energyplus","opensees","calculix","qgis"})
 
     def test_detection_never_claims_missing_engine(self):
+        # Fully isolate detection from the real workstation state.
         with patch("shutil.which", return_value=None):
             with patch.dict("os.environ", {}, clear=True):
-                report=detect_all()
-                self.assertTrue(all(not x["available"] for x in report["engines"].values()))
+                with patch(
+                    "phoenix.adapters.open_source.engines.IfcOpenShellAdapter.detect_python_module",
+                    return_value=None,
+                ):
+                    report=detect_all()
+                    self.assertTrue(all(not x["available"] for x in report["engines"].values()))
 
     def test_commands(self):
         jobs={
