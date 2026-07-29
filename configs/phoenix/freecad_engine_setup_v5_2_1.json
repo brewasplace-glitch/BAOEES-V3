@@ -1,0 +1,19 @@
+{
+  "acceptance": {
+    "create_fcstd": true,
+    "export_step": true,
+    "rerun_phoenix_detection": true,
+    "simulated_results_allowed": false,
+    "version_probe": true
+  },
+  "approved_version": "1.1.1",
+  "display_name": "FreeCAD",
+  "engine_id": "freecad",
+  "environment_variable": "FREECAD_CMD",
+  "official_release_source": "https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.1",
+  "package_manager": "winget",
+  "required_executable": "FreeCADCmd.exe",
+  "schema_version": "phoenix.freecad-engine-setup/5.2.1",
+  "version_recovery_note": "v5.2.0 incorrectly pinned nonexistent version 1.1.3; corrected to official stable and WinGet version 1.1.1",
+  "winget_package_id": "FreeCAD.FreeCAD"
+}
