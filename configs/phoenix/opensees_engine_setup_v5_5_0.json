@@ -1,0 +1,25 @@
+{
+  "acceptance": {
+    "analysis": "linear_static_2d_truss",
+    "simulated_results_allowed": false
+  },
+  "display_name": "OpenSeesPy",
+  "engine_id": "opensees",
+  "environment_variable": "OPENSEESPY_PYTHON",
+  "official_version": "3.8.0.0",
+  "package": "openseespy==3.8.0.0",
+  "packages": [
+    "openseespy==3.8.0.0",
+    "openseespywin==3.8.0.0"
+  ],
+  "python_requirement": ">=3.10",
+  "runtime": {
+    "architecture": "x64",
+    "native_import_required_before_repository_mutation": true,
+    "python_major_minor": "3.12",
+    "venv_python": "C:\\PHOENIX-ENGINES\\OpenSeesPy\\3.8.0.0\\venv\\Scripts\\python.exe",
+    "venv_root": "C:\\PHOENIX-ENGINES\\OpenSeesPy\\3.8.0.0\\venv",
+    "winget_package": "Python.Python.3.12"
+  },
+  "schema_version": "phoenix.opensees-dedicated-python-runtime/5.5.5"
+}
