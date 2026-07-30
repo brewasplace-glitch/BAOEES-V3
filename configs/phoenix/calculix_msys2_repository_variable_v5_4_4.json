@@ -1,0 +1,58 @@
+{
+  "acceptance": {
+    "analysis": "linear_static_3d_solid_cube",
+    "completion_marker_required": true,
+    "dat_required": true,
+    "element": "C3D8",
+    "frd_required": true,
+    "material": "linear_elastic_steel",
+    "simulated_results_allowed": false
+  },
+  "candidate_executables": [
+    "ccx.exe",
+    "ccx_static.exe",
+    "ccx_2.23.exe",
+    "ccx_2.23_MT.exe"
+  ],
+  "display_name": "CalculiX CrunchiX",
+  "engine_id": "calculix",
+  "environment_variable": "CALCULIX_CCX_EXE",
+  "expected_executable": "C:\\msys64\\mingw64\\bin\\ccx.exe",
+  "installer_url": "https://repo.msys2.org/distrib/msys2-x86_64-latest.exe",
+  "managed_install_root": "C:\\msys64\\mingw64",
+  "mirror_policy": {
+    "geo_redirector_disabled_during_recovery": true,
+    "mingw": "https://repo.msys2.org/mingw/$repo/",
+    "msys": "https://repo.msys2.org/msys/$arch/",
+    "third_party_mirrors_disabled_during_recovery": true
+  },
+  "mirrorlist_backup_required": true,
+  "msys2_install_strategy": {
+    "fallback": "official HTTPS installer with valid Authenticode signature",
+    "invalid_latest_sha256_request": "removed",
+    "primary": "winget package MSYS2.MSYS2"
+  },
+  "msys2_package": "mingw-w64-x86_64-calculix-ccx",
+  "msys2_package_version_observed_at_build": "2.23-1",
+  "msys2_root": "C:\\msys64",
+  "official_homepage": "https://dhondt.de/",
+  "official_version": "2.23",
+  "official_windows_archive": "https://dhondt.de/calculix_2.23_4win.zip",
+  "repository_rollback_policy": {
+    "external_failure_before_payload_copy": "repository_untouched",
+    "rollback_after_payload_copy_only": true
+  },
+  "repository_variable_contract": {
+    "mirrorlist_mingw": "$repo",
+    "mirrorlist_msys": "$arch"
+  },
+  "retry_policy": {
+    "database_refresh_attempts": 3,
+    "delay_seconds": 15,
+    "package_install_attempts": 5,
+    "pacman_cache_preserved": true,
+    "partial_downloads_preserved": true
+  },
+  "schema_version": "phoenix.calculix-msys2-repository-variable/5.4.4",
+  "windows_binary_provider": "MSYS2"
+}

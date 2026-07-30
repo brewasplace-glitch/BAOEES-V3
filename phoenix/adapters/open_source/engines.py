@@ -2,6 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 from .base import Detection, EngineAdapter, EngineSpec
+from .calculix_adapter_v5_4_1 import CalculiXWindowsAdapter
 from .qgis_adapter_v5_3_11 import QGISWindowsAdapter
 
 class IfcOpenShellAdapter(EngineAdapter):
@@ -124,7 +125,7 @@ ADAPTERS = {
     "freecad": FreeCADAdapter,
     "energyplus": EnergyPlusAdapter,
     "opensees": OpenSeesAdapter,
-    "calculix": CalculiXAdapter,
+    "calculix": CalculiXWindowsAdapter,
     "qgis": QGISWindowsAdapter,
 }
 
