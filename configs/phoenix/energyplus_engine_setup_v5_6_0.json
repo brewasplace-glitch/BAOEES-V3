@@ -1,0 +1,62 @@
+{
+  "acceptance": "real_design_day_official_example",
+  "admin_elevation": {
+    "loop_guard": "PhoenixElevated",
+    "mechanism": "Start-Process powershell.exe -Verb RunAs",
+    "preserve_repository": true,
+    "required": true,
+    "wait": true
+  },
+  "asset_selection": {
+    "forbidden_name_pattern": "arm64",
+    "required_architecture": "AMD64",
+    "required_name_pattern": "Windows-x86_64",
+    "required_pe_machine": "0x8664"
+  },
+  "install_root": "C:\\PHOENIX-ENGINES\\EnergyPlus\\26.1.0",
+  "installer_cli": {
+    "framework": "Qt Installer Framework",
+    "interactive_input_allowed": false,
+    "mutual_exclusion_policy": {
+      "removed": "--accept-messages",
+      "selected": "--default-answer"
+    },
+    "options": [
+      "--root",
+      "--accept-licenses",
+      "--default-answer",
+      "--confirm-command",
+      "install"
+    ],
+    "timeout_seconds": 1800
+  },
+  "post_install_recovery": {
+    "acceptance_before_repository_mutation": true,
+    "expected_executable": "C:\\PHOENIX-ENGINES\\EnergyPlus\\26.1.0\\energyplus.exe",
+    "expected_version": "26.1.0",
+    "installer_invocation_allowed": false,
+    "reuse_existing_installation": true,
+    "uac_elevation_allowed": false
+  },
+  "python_resolution": {
+    "candidate_order": [
+      "python.exe",
+      "py.exe",
+      "python3.exe"
+    ],
+    "enumerate_results_individually": true,
+    "exclude_windowsapps": true,
+    "get_command_all": true,
+    "validate_launcher_file": true,
+    "validate_sys_executable": true
+  },
+  "release_api": "https://api.github.com/repos/NatLabRockies/EnergyPlus/releases/tags/v26.1.0",
+  "schema_version": "phoenix.energyplus-sqlite-output-request/5.6.7",
+  "simulated_results_allowed": false,
+  "sqlite_output_request": {
+    "object": "Output:SQLite",
+    "option_type": "SimpleAndTabular",
+    "required_before_simulation": true
+  },
+  "version": "26.1.0"
+}
