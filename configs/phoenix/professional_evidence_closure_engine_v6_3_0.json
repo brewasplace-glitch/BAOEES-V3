@@ -1,0 +1,45 @@
+{
+  "closure_policy": {
+    "all_requirements_must_close": true,
+    "all_sources_sha256_hashed": true,
+    "automatic_professional_approval_forbidden": true,
+    "permit_ready_only_after_req_108": true,
+    "professional_reviewer_identity_required": true
+  },
+  "engine_id": "PHX-PECE-630",
+  "initial_state": "OPEN",
+  "pipeline_dependency": "6.2.0",
+  "requirements": {
+    "REQ-102": {
+      "automatic_approval": false,
+      "professional_review": "REQUIRED",
+      "status": "OPEN"
+    },
+    "REQ-103": {
+      "automatic_approval": false,
+      "professional_review": "REQUIRED",
+      "status": "OPEN"
+    },
+    "REQ-104": {
+      "automatic_approval": false,
+      "professional_review": "REQUIRED",
+      "status": "OPEN"
+    },
+    "REQ-105": {
+      "automatic_approval": false,
+      "professional_review": "REQUIRED",
+      "status": "OPEN"
+    },
+    "REQ-106": {
+      "automatic_approval": false,
+      "professional_review": "REQUIRED",
+      "status": "OPEN"
+    },
+    "REQ-108": {
+      "automatic_approval": false,
+      "professional_review": "REQUIRED",
+      "status": "OPEN"
+    }
+  },
+  "schema_version": "phoenix.professional-evidence-closure-engine/6.3.0"
+}
