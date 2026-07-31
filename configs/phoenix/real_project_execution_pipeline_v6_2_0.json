@@ -1,0 +1,25 @@
+{
+  "cross_engine_checks": [
+    "PROJECT_ID",
+    "GROSS_FLOOR_AREA",
+    "STOREYS",
+    "NON_EMPTY_ARTIFACTS",
+    "SHA256"
+  ],
+  "engines": [
+    "qgis",
+    "freecad",
+    "ifcopenshell",
+    "calculix",
+    "opensees",
+    "energyplus"
+  ],
+  "orchestrator_dependency": "6.1.0",
+  "pipeline_id": "PHX-RPEP-620",
+  "release": {
+    "permit_ready": false,
+    "professional_review_required": true,
+    "simulated_results_allowed": false
+  },
+  "schema_version": "phoenix.real-project-execution-pipeline/6.2.0"
+}

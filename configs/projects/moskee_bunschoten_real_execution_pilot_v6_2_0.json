@@ -1,0 +1,76 @@
+{
+  "engine_tasks": {
+    "calculix": {
+      "required": true,
+      "task": "linear_static_fea"
+    },
+    "energyplus": {
+      "required": true,
+      "task": "design_day_energy"
+    },
+    "freecad": {
+      "required": true,
+      "task": "parametric_geometry"
+    },
+    "ifcopenshell": {
+      "required": true,
+      "task": "ifc_generation"
+    },
+    "opensees": {
+      "required": true,
+      "task": "structural_system_analysis"
+    },
+    "qgis": {
+      "required": true,
+      "task": "site_context"
+    }
+  },
+  "execution_inputs": {
+    "energy_proxy": {
+      "not_for_final_compliance": true
+    },
+    "geometry": {
+      "length_m": 10.0,
+      "storey_height_m": 3.2,
+      "storeys": 2,
+      "width_m": 7.0
+    },
+    "site_anchor": {
+      "crs": "EPSG:28992",
+      "permit_use_allowed": false,
+      "status": "ASSUMED_FOR_CONTROLLED_PILOT",
+      "x": 155000.0,
+      "y": 463000.0
+    },
+    "structural_proxy": {
+      "not_for_final_design": true
+    }
+  },
+  "location": {
+    "address": "Bikkersweg 88, Bunschoten",
+    "coordinate_reference_system": "EPSG:28992",
+    "country": "NL"
+  },
+  "project_id": "MOSKEE-BUNSCHOTEN-PILOT-001",
+  "project_name": "Moskee Bunschoten",
+  "release_constraints": {
+    "open_evidence_requirements": [
+      "REQ-102",
+      "REQ-103",
+      "REQ-104",
+      "REQ-105",
+      "REQ-106",
+      "REQ-108"
+    ],
+    "permit_ready": false,
+    "professional_review_required": true
+  },
+  "schema_version": "phoenix.project-manifest/6.2.0",
+  "scope": {
+    "building_extension_length_m": 10.0,
+    "building_extension_width_m": 7.0,
+    "gross_floor_area_m2": 140.0,
+    "mode": "controlled_pilot",
+    "storeys": 2
+  }
+}
