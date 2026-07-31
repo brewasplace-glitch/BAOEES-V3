@@ -1,0 +1,87 @@
+{
+  "engines": [
+    "freecad",
+    "ifcopenshell",
+    "qgis",
+    "calculix",
+    "opensees",
+    "energyplus"
+  ],
+  "minimum_qualification_contract": {
+    "engine_version_recorded": true,
+    "exit_code_zero": true,
+    "non_empty_artifacts": true,
+    "professional_review_required": true,
+    "real_execution": true,
+    "sha256_manifest": true
+  },
+  "output": {
+    "hash_manifest": "artifact_manifest.json",
+    "json_report": "multi_engine_qualification.json",
+    "markdown_report": "multi_engine_qualification.md",
+    "release_gate": "production_release_gate.json",
+    "runtime_directory": "outputs/runtime/multi_engine_qualification_v6_0_0"
+  },
+  "production_release_policy": "ALL_SIX_ENGINES_MUST_PASS",
+  "runtime_routing": {
+    "calculix": {
+      "acceptance_module": "phoenix/adapters/open_source/calculix_acceptance_v5_4_9.py",
+      "element_type": "C3D8",
+      "executable": "C:\\msys64\\mingw64\\bin\\ccx.exe",
+      "input_argument": "-i MODEL_STEM",
+      "load_step_contract": "CLOAD_WITHIN_STATIC_STEP",
+      "package_version": "2.23-1",
+      "required_artifacts": [
+        "phoenix_calculix_acceptance.inp",
+        "phoenix_calculix_acceptance.dat",
+        "phoenix_calculix_acceptance.frd",
+        "calculix_engine_acceptance.json",
+        "calculix_stdout.txt",
+        "calculix_stderr.txt"
+      ],
+      "required_content_checks": [
+        "DAT_CONTAINS_DISPLACEMENTS",
+        "FRD_CONTAINS_RESULT_DATASET_MARKERS",
+        "SOLVER_OUTPUT_CONFIRMS_SPOOLES",
+        "SOLVER_OUTPUT_REJECTS_PASTIX"
+      ],
+      "solver": "SPOOLES",
+      "strategy": "invoke_installed_verified_acceptance_module",
+      "verified_contract_version": "5.4.9",
+      "windows_binary_provider": "MSYS2"
+    },
+    "ifcopenshell": {
+      "environment_variable": "IFCOPENSHELL_PYTHON",
+      "preferred_paths": [
+        "C:\\Users\\brewasplace\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe"
+      ],
+      "required_probe": "import ifcopenshell; print(ifcopenshell.version)",
+      "strategy": "dedicated_python_with_import_probe"
+    },
+    "opensees": {
+      "path": "C:\\PHOENIX-ENGINES\\OpenSeesPy\\3.8.0.0\\venv\\Scripts\\python.exe",
+      "strategy": "dedicated_existing_venv"
+    },
+    "orchestrator": "verified_general_python_3"
+  },
+  "schema_version": "phoenix.multi-engine-calculix-stale-test-alignment/6.0.4",
+  "simulated_results_allowed": false,
+  "suite_id": "PHX-MEQS-600",
+  "test_contract": {
+    "calculix": {
+      "active_contract": "VERIFIED_ACCEPTANCE_MODULE_REUSE_V5_4_9",
+      "obsolete_contracts_removed": [
+        "INLINE_DECK_REQUIRES_THREADS_KEY",
+        "INLINE_RUNNER_CONTAINS_STATIC_SPOOLES_LITERAL",
+        "INLINE_RUNNER_SETS_OMP_NUM_THREADS_LITERAL"
+      ],
+      "validation_strategy": [
+        "CONFIG_REFERENCES_ACCEPTANCE_MODULE",
+        "RUNNER_INVOKES_ACCEPTANCE_MODULE",
+        "RUNNER_VALIDATES_ACCEPTANCE_EVIDENCE",
+        "AST_RESOLVES_EXECUTION_MARKER",
+        "REAL_PRE_PAYLOAD_QUALIFICATION"
+      ]
+    }
+  }
+}
