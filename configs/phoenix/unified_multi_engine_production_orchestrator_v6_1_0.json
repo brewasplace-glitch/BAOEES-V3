@@ -1,0 +1,65 @@
+{
+  "digital_twin": {
+    "artifact_hashes_required": true,
+    "engine_writeback_required": true,
+    "immutable_run_snapshots": true,
+    "schema": "phoenix.digital-twin-project/6.1.0",
+    "single_source_of_truth": true
+  },
+  "engine_routing": {
+    "calculix": [
+      "linear_static_fea",
+      "stress_displacement_results"
+    ],
+    "energyplus": [
+      "design_day_energy",
+      "sqlite_results"
+    ],
+    "freecad": [
+      "parametric_geometry",
+      "native_model",
+      "step_export"
+    ],
+    "ifcopenshell": [
+      "ifc_generation",
+      "ifc_validation",
+      "bim_properties"
+    ],
+    "opensees": [
+      "structural_system_analysis",
+      "reaction_equilibrium"
+    ],
+    "qgis": [
+      "site_context",
+      "geo_reference",
+      "spatial_constraints"
+    ]
+  },
+  "orchestrator_id": "PHX-UMEPO-610",
+  "production_phases": [
+    "INTAKE",
+    "QUALIFICATION_GATE",
+    "DIGITAL_TWIN_INITIALIZATION",
+    "SITE_AND_GEO",
+    "GEOMETRY_AND_BIM",
+    "STRUCTURAL_ANALYSIS",
+    "ENERGY_ANALYSIS",
+    "CROSS_ENGINE_VALIDATION",
+    "EVIDENCE_AND_RELEASE"
+  ],
+  "qualification_dependency": {
+    "minimum_status": "PASSED",
+    "required_qualified_engines": 6,
+    "required_release_gate": "UNLOCKED",
+    "simulated_results_allowed": false,
+    "suite": "PROJECT_PHOENIX_multi_engine_qualification_v6_0_0.py"
+  },
+  "release_policy": {
+    "all_artifacts_sha256_hashed": true,
+    "all_required_artifacts_non_empty": true,
+    "all_required_phases_pass": true,
+    "professional_review_required": true,
+    "simulated_results_allowed": false
+  },
+  "schema_version": "phoenix.unified-multi-engine-production-orchestrator/6.1.0"
+}
