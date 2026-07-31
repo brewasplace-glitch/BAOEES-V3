@@ -1,0 +1,50 @@
+{
+  "generator_id": "PHX-PABDG-650",
+  "model_components": [
+    "storeys",
+    "spaces",
+    "external_walls",
+    "internal_walls",
+    "floors",
+    "roof",
+    "doors",
+    "windows",
+    "stairs",
+    "shafts",
+    "zones",
+    "materials",
+    "dimensions",
+    "levels",
+    "drawing_sheets"
+  ],
+  "outputs": {
+    "architectural_model_json": true,
+    "digital_twin": true,
+    "drawing_index_csv": true,
+    "elevations_svg": true,
+    "floor_plans_svg": true,
+    "freecad_native_model": true,
+    "ifc4": true,
+    "material_schedule_csv": true,
+    "opening_schedule_csv": true,
+    "quality_report_json": true,
+    "quantity_schedule_csv": true,
+    "release_gate_json": true,
+    "room_schedule_csv": true,
+    "sections_svg": true,
+    "step_export": true
+  },
+  "pilot_project_dependency": false,
+  "project_mode": "GENERIC_BUILDING_PROJECT",
+  "release_policy": {
+    "automatic_professional_approval_forbidden": true,
+    "building_physics_review_required": true,
+    "execution_ready_requires_professional_approval": true,
+    "fire_safety_review_required": true,
+    "jurisdiction_rules_required": true,
+    "permit_ready_requires_professional_approval": true,
+    "site_evidence_required": true,
+    "structural_design_required": true
+  },
+  "schema_version": "phoenix.parametric-architectural-bim-drawing-generator/6.5.0"
+}
