@@ -1,0 +1,15 @@
+{
+  "schema_version": "phoenix.professional-review-decision/6.4.0",
+  "requirement_id": "REQ-XXX",
+  "reviewer": {
+    "name": "",
+    "role": "",
+    "organization": "",
+    "registration_or_authority": ""
+  },
+  "review_date": "YYYY-MM-DD",
+  "decision": "APPROVED_OR_REJECTED_OR_REVISION_REQUIRED",
+  "reviewed_sources": [],
+  "comments": "",
+  "limitations": []
+}

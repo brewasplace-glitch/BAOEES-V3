@@ -1,0 +1,67 @@
+{
+  "closure_engine_dependency": {
+    "automatic_professional_approval": false,
+    "minimum_version": "6.3.1",
+    "required_status": "PASSED"
+  },
+  "intake_policy": {
+    "allowed_extensions": [
+      ".pdf",
+      ".docx",
+      ".xlsx",
+      ".csv",
+      ".json",
+      ".ifc",
+      ".dwg",
+      ".dxf",
+      ".png",
+      ".jpg",
+      ".jpeg"
+    ],
+    "duplicate_hash_detection": true,
+    "empty_files_rejected": true,
+    "metadata_record_required": true,
+    "sha256_required": true,
+    "source_date_required": true,
+    "source_version_required": true
+  },
+  "permit_ready_policy": {
+    "all_requirements_closed": true,
+    "professional_review_required": true,
+    "req_108_last": true
+  },
+  "requirements": [
+    "REQ-102",
+    "REQ-103",
+    "REQ-104",
+    "REQ-105",
+    "REQ-106",
+    "REQ-108"
+  ],
+  "review_policy": {
+    "automatic_approval_forbidden": true,
+    "decision_values": [
+      "APPROVED",
+      "REJECTED",
+      "REVISION_REQUIRED"
+    ],
+    "review_packet_required": true,
+    "reviewer_assignment_required": true,
+    "reviewer_identity_required": true,
+    "reviewer_organization_required": true,
+    "reviewer_role_required": true
+  },
+  "schema_version": "phoenix.professional-evidence-intake-review-workflow/6.4.0",
+  "workflow_id": "PHX-PEIRW-640",
+  "workflow_states": [
+    "EMPTY",
+    "INTAKE_RECEIVED",
+    "METADATA_INCOMPLETE",
+    "READY_FOR_REVIEW",
+    "UNDER_REVIEW",
+    "REVISION_REQUIRED",
+    "REJECTED",
+    "APPROVED",
+    "CLOSED"
+  ]
+}
