@@ -1,0 +1,36 @@
+{
+  "document_statuses": [
+    "DRAFT",
+    "INTERNAL_REVIEW",
+    "APPROVED_FOR_SUBMISSION",
+    "SUPERSEDED",
+    "WITHDRAWN"
+  ],
+  "dossier_sections": [
+    "cover_and_submission",
+    "project_identification",
+    "document_register",
+    "drawings",
+    "reports",
+    "compliance",
+    "jurisdiction_and_rules",
+    "permit_evidence",
+    "revision_control",
+    "signoff_and_approvals",
+    "submission_manifest"
+  ],
+  "engine_id": "PHX-PDS-690",
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "release_policy": {
+    "all_submission_documents_approved_for_submission": true,
+    "all_submission_documents_current_revision": true,
+    "all_submission_documents_present": true,
+    "automatic_authority_submission_forbidden": true,
+    "execution_ready_requires_final_design_release": true,
+    "permit_evidence_gate_required": true,
+    "professional_signoff_required": true,
+    "sha256_manifest_required": true
+  },
+  "schema_version": "phoenix.permit-dossier-document-control-submission/6.9.0"
+}

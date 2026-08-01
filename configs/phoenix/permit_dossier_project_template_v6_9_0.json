@@ -1,0 +1,21 @@
+{
+  "document_requirements": [],
+  "dossier_id": "PERMIT-DOSSIER-TEMPLATE",
+  "professional_signoff": {
+    "approval_date": "",
+    "approved": false,
+    "required": true,
+    "reviewer": "",
+    "role": ""
+  },
+  "project_id": "",
+  "schema_version": "phoenix.permit-dossier-project-profile/6.9.0",
+  "submission": {
+    "authority_department": "",
+    "authority_name": "",
+    "automatic_submission": false,
+    "planned_submission_date": "",
+    "submission_reference": "",
+    "submission_type": ""
+  }
+}
