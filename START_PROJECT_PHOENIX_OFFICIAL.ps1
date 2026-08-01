@@ -1,7 +1,16 @@
-param([string]$Repository = "C:\PROJECT-PHOENIX")
-$ErrorActionPreference="Stop"
-$Html=Join-Path $Repository "phoenix\local_app\static\official_start_v2_0\index.html"
-if(-not(Test-Path -LiteralPath $Html -PathType Leaf)){throw "Official Phoenix start screen not found: $Html"}
-$Candidates=@("START_PROJECT_PHOENIX_LOCAL_APP.ps1","START_PHOENIX_LOCAL_APP.ps1","START_PROJECT_PHOENIX.ps1","START_PHOENIX.ps1")
-foreach($Candidate in $Candidates){$Path=Join-Path $Repository $Candidate;if(Test-Path -LiteralPath $Path -PathType Leaf){try{Start-Process powershell.exe -WindowStyle Hidden -ArgumentList @("-NoProfile","-ExecutionPolicy","Bypass","-File","`"$Path`"")|Out-Null}catch{};break}}
-Start-Process $Html
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
+
+$Repo = Split-Path -Parent $MyInvocation.MyCommand.Path
+$Refresh = Join-Path $Repo "tools\start_screen\REFRESH_PROJECT_PHOENIX_OFFICIAL_START_v3.ps1"
+$Legacy = Join-Path $Repo "START_PROJECT_PHOENIX_OFFICIAL_PRE_V3.ps1"
+
+if (-not (Test-Path -LiteralPath $Refresh)) {
+    throw "Phoenix v3 start-screen refresh hook missing: $Refresh"
+}
+if (-not (Test-Path -LiteralPath $Legacy)) {
+    throw "Preserved pre-v3 official launcher missing: $Legacy"
+}
+
+& $Refresh -Repo $Repo
+& $Legacy @args

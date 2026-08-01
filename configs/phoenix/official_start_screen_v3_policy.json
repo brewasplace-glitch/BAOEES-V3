@@ -1,0 +1,13 @@
+{
+  "engine_id": "PHX-OFFICIAL-START-SCREEN-V3-POLICY",
+  "version": "3.0.0",
+  "official_start_screen": "official_start_v3_0",
+  "migration_strategy": "COPY_LAST_WORKING_OFFICIAL_SCREEN_THEN_ENHANCE_NON_DESTRUCTIVELY",
+  "preserve_existing_start_projectanalyse": true,
+  "preserve_existing_backend_routes_and_assets": true,
+  "autosync_on_every_official_start": true,
+  "future_module_discovery": "AUTOMATIC",
+  "manual_dashboard_registration_required": false,
+  "production_acceptance_test_status": "PENDING_REAL_PROJECT_END_TO_END_PRODUCTION_ACCEPTANCE_TEST",
+  "production_release": "LOCKED_PENDING_PAT"
+}

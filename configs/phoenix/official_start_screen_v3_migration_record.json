@@ -1,0 +1,8 @@
+{
+  "engine_id": "PHX-OFFICIAL-START-SCREEN-V3-MIGRATION",
+  "version": "3.0.0",
+  "source_screen_directory": "phoenix/local_app/static/official_start_v2_0",
+  "target_screen_directory": "phoenix/local_app/static/official_start_v3_0",
+  "migration_strategy": "NON_DESTRUCTIVE_COPY_AND_ENHANCE",
+  "source_index_sha256": "1210f004b0cffc82ff9cd41ef71e0b92abd30f987372ff214ed2cd610a6ea632"
+}

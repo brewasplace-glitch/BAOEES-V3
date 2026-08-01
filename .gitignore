@@ -26,3 +26,6 @@ runtime_reports/
 
 # Phoenix runtime
 artifacts/runtime/
+
+# PROJECT PHOENIX official start v3 runtime
+phoenix/local_app/static/official_start_v3_0/phoenix_start_screen_runtime.json
