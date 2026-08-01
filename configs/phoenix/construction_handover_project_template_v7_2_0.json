@@ -1,0 +1,23 @@
+{
+  "as_built_documents": [],
+  "changes_and_deviations": [],
+  "commissioning_items": [],
+  "daily_site_records": [],
+  "field_release_gate_path": "",
+  "handover_documents": [],
+  "ncrs": [],
+  "professional_completion_release": {
+    "approved": false,
+    "release_date": "",
+    "release_reference": "",
+    "released_by": "",
+    "required": true,
+    "role": ""
+  },
+  "profile_id": "CONSTRUCTION-HANDOVER-TEMPLATE",
+  "progress_records": [],
+  "project_id": "",
+  "punch_items": [],
+  "schema_version": "phoenix.construction-handover-project-profile/7.2.0",
+  "site_evidence": []
+}

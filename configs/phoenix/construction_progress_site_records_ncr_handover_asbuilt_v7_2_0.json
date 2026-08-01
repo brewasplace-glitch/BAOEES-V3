@@ -1,0 +1,41 @@
+{
+  "domains": [
+    "construction_progress",
+    "daily_site_records",
+    "site_evidence",
+    "nonconformance",
+    "change_deviation",
+    "punch_list",
+    "commissioning",
+    "as_built",
+    "handover",
+    "professional_completion_release"
+  ],
+  "engine_id": "PHX-CPSNHA-720",
+  "ncr_severity_levels": [
+    "MINOR",
+    "MAJOR",
+    "CRITICAL"
+  ],
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "record_statuses": [
+    "OPEN",
+    "IN_REVIEW",
+    "CORRECTED",
+    "VERIFIED",
+    "CLOSED"
+  ],
+  "release_policy": {
+    "all_mandatory_ncrs_closed": true,
+    "all_mandatory_punch_items_closed": true,
+    "as_built_documents_complete": true,
+    "automatic_handover_release_forbidden": true,
+    "commissioning_complete_and_passed": true,
+    "field_release_gate_required": true,
+    "handover_documents_complete": true,
+    "no_open_critical_ncrs": true,
+    "professional_completion_release_required": true
+  },
+  "schema_version": "phoenix.construction-progress-site-records-ncr-handover-asbuilt/7.2.0"
+}
