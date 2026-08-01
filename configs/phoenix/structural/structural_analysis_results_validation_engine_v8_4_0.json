@@ -1,0 +1,38 @@
+{
+  "engine_id": "PHX-STRUCT-ANALYSIS-RESULTS-VALIDATION-V8.4.0",
+  "name": "Project Phoenix Structural Analysis Results, Combination & Sanity Validation Engine",
+  "version": "8.4.0",
+  "prerequisite": "structural_solver_input_analysis_engine_v8_3_0",
+  "purpose": "Validate normalized solver results, preserve solver evidence and provenance, synthesize configured linear load combinations, perform explicit project sanity checks, compare independent solver result sets where available, and create a Digital Twin validation candidate without claiming code compliance or structural approval.",
+  "capabilities": {
+    "normalized_result_ingestion": true,
+    "solver_evidence_provenance_validation": true,
+    "result_completeness_validation": true,
+    "finite_numeric_validation": true,
+    "known_entity_id_validation": true,
+    "unit_contract_validation": true,
+    "linear_load_combination_synthesis": true,
+    "provided_combination_result_verification": true,
+    "displacement_sanity_envelope": true,
+    "global_force_equilibrium_check": true,
+    "cross_solver_consistency_check": true,
+    "review_item_generation": true,
+    "digital_twin_writeback_contract": true
+  },
+  "safety_rules": {
+    "sanity_thresholds_must_be_explicit_project_policy": true,
+    "sanity_pass_is_not_code_compliance": true,
+    "solver_agreement_is_not_proof_of_correctness": true,
+    "missing_or_nonfinite_results_must_block_validation": true,
+    "raw_solver_evidence_must_be_preserved": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "structural_model_release": "LOCKED"
+  },
+  "release_gate": {
+    "requires_code_and_limit_state_checks": true,
+    "requires_member_and_section_verification": true,
+    "requires_global_stability_verification": true,
+    "requires_engineering_review": true
+  }
+}

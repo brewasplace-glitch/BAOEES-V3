@@ -1,0 +1,115 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-STRUCT-RESULTS-V8.4.0",
+  "project_type": "generic_building",
+  "source_engine": "PHX-STRUCT-SOLVER-INPUT-ANALYSIS-V8.3.0",
+  "model_state": "ANALYSIS_RESULT_VALIDATION_CANDIDATE",
+  "analytical_model": {
+    "nodes": [{"id": "N1"}, {"id": "N2"}],
+    "members": [{"id": "M1"}],
+    "shells": []
+  },
+  "action_load_model": {
+    "load_cases": [{"id": "G", "category": "permanent"}, {"id": "Q", "category": "variable"}],
+    "load_combinations": [
+      {
+        "id": "COMB-ULS-01",
+        "limit_state": "ULS",
+        "terms": [
+          {"case_id": "G", "coefficient": 1.35},
+          {"case_id": "Q", "coefficient": 1.5}
+        ]
+      }
+    ]
+  },
+  "analysis_result_sets": [
+    {
+      "solver": "opensees",
+      "case_id": "G",
+      "status": "COMPLETED",
+      "converged": true,
+      "normalization_version": "8.3.0",
+      "units": {"length": "m", "force": "kN", "stress": "kN/m2", "rotation": "rad"},
+      "node_displacements": {
+        "N1": {"UX": 0.0, "UY": 0.0, "UZ": 0.0, "RX": 0.0, "RY": 0.0, "RZ": 0.0},
+        "N2": {"UX": 0.0, "UY": 0.0, "UZ": -0.002, "RX": 0.0, "RY": 0.0002, "RZ": 0.0}
+      },
+      "node_reactions": {"N1": {"FX": 0.0, "FY": 0.0, "FZ": 100.0}},
+      "element_forces": {"M1": {"N": -100.0, "MY": 10.0}},
+      "element_stresses": {"M1": {"SXX": 1000.0}},
+      "raw_solver_evidence_reference": "outputs/solver/opensees/G/raw_evidence"
+    },
+    {
+      "solver": "opensees",
+      "case_id": "Q",
+      "status": "COMPLETED",
+      "converged": true,
+      "normalization_version": "8.3.0",
+      "units": {"length": "m", "force": "kN", "stress": "kN/m2", "rotation": "rad"},
+      "node_displacements": {
+        "N1": {"UX": 0.0, "UY": 0.0, "UZ": 0.0, "RX": 0.0, "RY": 0.0, "RZ": 0.0},
+        "N2": {"UX": 0.0, "UY": 0.0, "UZ": -0.003, "RX": 0.0, "RY": 0.0003, "RZ": 0.0}
+      },
+      "node_reactions": {"N1": {"FX": 0.0, "FY": 0.0, "FZ": 40.0}},
+      "element_forces": {"M1": {"N": -40.0, "MY": 5.0}},
+      "element_stresses": {"M1": {"SXX": 400.0}},
+      "raw_solver_evidence_reference": "outputs/solver/opensees/Q/raw_evidence"
+    },
+    {
+      "solver": "calculix",
+      "case_id": "G",
+      "status": "COMPLETED",
+      "converged": true,
+      "normalization_version": "8.3.0",
+      "units": {"length": "m", "force": "kN", "stress": "kN/m2", "rotation": "rad"},
+      "node_displacements": {
+        "N1": {"UX": 0.0, "UY": 0.0, "UZ": 0.0, "RX": 0.0, "RY": 0.0, "RZ": 0.0},
+        "N2": {"UX": 0.0, "UY": 0.0, "UZ": -0.00202, "RX": 0.0, "RY": 0.000201, "RZ": 0.0}
+      },
+      "node_reactions": {"N1": {"FX": 0.0, "FY": 0.0, "FZ": 100.2}},
+      "element_forces": {"M1": {"N": -100.2, "MY": 10.05}},
+      "element_stresses": {"M1": {"SXX": 1002.0}},
+      "raw_solver_evidence_reference": "outputs/solver/calculix/G/raw_evidence"
+    },
+    {
+      "solver": "calculix",
+      "case_id": "Q",
+      "status": "COMPLETED",
+      "converged": true,
+      "normalization_version": "8.3.0",
+      "units": {"length": "m", "force": "kN", "stress": "kN/m2", "rotation": "rad"},
+      "node_displacements": {
+        "N1": {"UX": 0.0, "UY": 0.0, "UZ": 0.0, "RX": 0.0, "RY": 0.0, "RZ": 0.0},
+        "N2": {"UX": 0.0, "UY": 0.0, "UZ": -0.00302, "RX": 0.0, "RY": 0.000302, "RZ": 0.0}
+      },
+      "node_reactions": {"N1": {"FX": 0.0, "FY": 0.0, "FZ": 40.1}},
+      "element_forces": {"M1": {"N": -40.1, "MY": 5.02}},
+      "element_stresses": {"M1": {"SXX": 401.0}},
+      "raw_solver_evidence_reference": "outputs/solver/calculix/Q/raw_evidence"
+    }
+  ],
+  "expected_case_resultants_kN": {
+    "G": {"FX": 0.0, "FY": 0.0, "FZ": -100.0},
+    "Q": {"FX": 0.0, "FY": 0.0, "FZ": -40.0}
+  },
+  "validation_policy": {
+    "required_solvers": ["opensees", "calculix"],
+    "required_result_fields": ["node_displacements", "node_reactions", "element_forces", "element_stresses"],
+    "expected_units": {"length": "m", "force": "kN", "stress": "kN/m2", "rotation": "rad"},
+    "require_raw_solver_evidence": true,
+    "require_converged_status": true,
+    "require_known_entity_ids": true,
+    "require_all_load_cases_per_solver": true,
+    "cross_solver_comparison_enabled": true,
+    "sanity_thresholds": {
+      "max_translation_m": 0.05,
+      "max_rotation_rad": 0.02,
+      "max_equilibrium_relative_residual": 0.01
+    },
+    "comparison_tolerances": {"absolute": 1e-8, "relative": 0.02}
+  },
+  "release_policy": {
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "structural_model_release": "LOCKED"
+  }
+}
