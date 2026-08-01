@@ -1,0 +1,32 @@
+{
+  "derivation_domains": [
+    "structural_axes",
+    "loadbearing_wall_candidates",
+    "column_candidates",
+    "beam_candidates",
+    "slab_panels",
+    "roof_support_candidates",
+    "support_nodes",
+    "span_candidates",
+    "stability_zones",
+    "material_hypotheses",
+    "architectural_traceability"
+  ],
+  "engine_id": "PHX-STRUCT-DERIVE-800",
+  "pilot_project_dependency": false,
+  "project_mode": "GENERIC_PROJECT",
+  "release_policy": {
+    "analysis_engine_required_for_release": true,
+    "automatic_structural_approval_forbidden": true,
+    "loads_engine_required_for_release": true,
+    "member_design_required_for_release": true,
+    "professional_structural_review_required": true,
+    "structural_model_is_candidate_only": true
+  },
+  "schema_version": "phoenix.structural.model-derivation/8.0.0",
+  "source_models": [
+    "architectural_model",
+    "detailed_architectural_elements"
+  ],
+  "suite": "PHOENIX STRUCTURAL ENGINEERING SUITE"
+}

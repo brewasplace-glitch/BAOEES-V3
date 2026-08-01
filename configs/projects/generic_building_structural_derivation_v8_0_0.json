@@ -1,0 +1,19 @@
+{
+  "assumptions": {
+    "column_grid_target_m": 5.0,
+    "default_beam_material": "reinforced_concrete_or_steel_candidate",
+    "default_column_material": "reinforced_concrete_or_steel_candidate",
+    "default_roof_material": "timber_or_steel_candidate",
+    "default_slab_material": "reinforced_concrete_candidate",
+    "default_wall_material": "reinforced_concrete_or_masonry_candidate",
+    "maximum_preferred_slab_span_m": 7.5,
+    "minimum_loadbearing_wall_thickness_m": 0.12
+  },
+  "profile_id": "GENERIC-STRUCTURAL-DERIVATION-800",
+  "project_id": "GENERIC-BUILDING-STRUCTURAL-800",
+  "release": {
+    "candidate_model_only": true,
+    "professional_structural_review": false
+  },
+  "schema_version": "phoenix.structural.derivation-project-profile/8.0.0"
+}
