@@ -1,0 +1,20 @@
+{
+  "clashes": [],
+  "discipline_models": [],
+  "execution_release_gate_path": "",
+  "field_inspections": [],
+  "issues": [],
+  "professional_site_release": {
+    "approved": false,
+    "release_date": "",
+    "release_reference": "",
+    "released_by": "",
+    "required": true,
+    "role": ""
+  },
+  "profile_id": "FIELD-RELEASE-TEMPLATE",
+  "project_id": "",
+  "qaqc_items": [],
+  "schema_version": "phoenix.field-release-project-profile/7.1.0",
+  "work_packages": []
+}

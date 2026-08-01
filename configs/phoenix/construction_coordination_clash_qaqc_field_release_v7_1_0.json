@@ -1,0 +1,39 @@
+{
+  "domains": [
+    "discipline_coordination",
+    "clash_detection",
+    "issue_management",
+    "qaqc",
+    "work_packages",
+    "field_inspections",
+    "site_release",
+    "professional_review"
+  ],
+  "engine_id": "PHX-CCQFR-710",
+  "issue_statuses": [
+    "OPEN",
+    "IN_REVIEW",
+    "RESOLVED",
+    "CLOSED",
+    "WAIVED"
+  ],
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "release_policy": {
+    "all_mandatory_field_inspections_pass": true,
+    "all_mandatory_qaqc_items_pass": true,
+    "all_release_blocking_issues_closed": true,
+    "automatic_field_release_forbidden": true,
+    "execution_release_gate_required": true,
+    "no_open_critical_clashes": true,
+    "professional_site_release_required": true,
+    "work_package_revision_current": true
+  },
+  "schema_version": "phoenix.construction-coordination-clash-qaqc-field-release/7.1.0",
+  "severity_levels": [
+    "INFO",
+    "MINOR",
+    "MAJOR",
+    "CRITICAL"
+  ]
+}
