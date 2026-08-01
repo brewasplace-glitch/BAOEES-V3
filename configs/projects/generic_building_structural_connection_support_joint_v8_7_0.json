@@ -1,0 +1,173 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-CONNECTIONS-V8.7.0",
+  "source_engine": "PHX-STRUCT-GLOBAL-STABILITY-SECOND-ORDER-ROBUSTNESS-V8.6.0",
+  "global_stability_state": "GLOBAL_STABILITY_ROBUSTNESS_CANDIDATE_PASSED",
+  "connection_basis": {
+    "jurisdiction": "PROJECT_DEFINED",
+    "standard_set": "PROJECT_DEFINED_STRUCTURAL_STANDARD",
+    "edition": "PROJECT_DEFINED_EDITION",
+    "source_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:CONNECTIONS_SUPPORTS_JOINTS",
+    "status": "ENGINEER_OR_VERIFIED_STANDARDS_ENGINE_INPUT"
+  },
+  "structural_model": {
+    "members": [
+      {
+        "id": "B1"
+      },
+      {
+        "id": "B2"
+      },
+      {
+        "id": "C1"
+      }
+    ],
+    "joints": [
+      {
+        "id": "J1"
+      },
+      {
+        "id": "J2"
+      }
+    ],
+    "supports": [
+      {
+        "id": "S1"
+      }
+    ],
+    "connection_candidates": [
+      {
+        "id": "CONN-BC-1"
+      },
+      {
+        "id": "CONN-BB-1"
+      },
+      {
+        "id": "BASE-C1"
+      }
+    ]
+  },
+  "verification_checks": [
+    {
+      "id": "CJ-BC-1",
+      "check_type": "BEAM_COLUMN_CONNECTION",
+      "connection_id": "CONN-BC-1",
+      "demand": 285.0,
+      "capacity": 360.0,
+      "quantity": "combined_design_action",
+      "unit": "kN_equivalent",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BC-1"
+    },
+    {
+      "id": "CJ-BB-1",
+      "check_type": "BEAM_BEAM_CONNECTION",
+      "connection_id": "CONN-BB-1",
+      "demand": 148.0,
+      "capacity": 210.0,
+      "quantity": "combined_design_action",
+      "unit": "kN_equivalent",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BB-1"
+    },
+    {
+      "id": "CJ-BASE-1",
+      "check_type": "COLUMN_BASE_CONNECTION",
+      "connection_id": "BASE-C1",
+      "demand": 410.0,
+      "capacity": 520.0,
+      "quantity": "combined_design_action",
+      "unit": "kN_equivalent",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BASE-C1"
+    },
+    {
+      "id": "CJ-SUP-1",
+      "check_type": "SUPPORT_REACTION_CAPACITY",
+      "support_id": "S1",
+      "demand": 620.0,
+      "capacity": 780.0,
+      "quantity": "resultant_support_reaction",
+      "unit": "kN",
+      "mandatory": true,
+      "normative_reference": "PROJECT_SUPPORT_DESIGN:S1"
+    },
+    {
+      "id": "CJ-BOLT-1",
+      "check_type": "BOLT_GROUP_CAPACITY",
+      "connection_id": "CONN-BC-1",
+      "demand": 172.0,
+      "capacity": 225.0,
+      "quantity": "bolt_group_design_action",
+      "unit": "kN_equivalent",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BC-1:BOLTS"
+    },
+    {
+      "id": "CJ-WELD-1",
+      "check_type": "WELD_CAPACITY",
+      "connection_id": "CONN-BB-1",
+      "demand": 96.0,
+      "capacity": 132.0,
+      "quantity": "weld_group_design_action",
+      "unit": "kN_equivalent",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BB-1:WELDS"
+    },
+    {
+      "id": "CJ-ANCHOR-1",
+      "check_type": "ANCHOR_GROUP_CAPACITY",
+      "connection_id": "BASE-C1",
+      "demand": 188.0,
+      "capacity": 250.0,
+      "quantity": "anchor_group_design_action",
+      "unit": "kN_equivalent",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BASE-C1:ANCHORS"
+    },
+    {
+      "id": "CJ-BEAR-1",
+      "check_type": "BEARING_CAPACITY",
+      "connection_id": "BASE-C1",
+      "demand": 7.8,
+      "capacity": 10.0,
+      "quantity": "bearing_pressure",
+      "unit": "MPa",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:BASE-C1:BEARING"
+    },
+    {
+      "id": "CJ-STIFF-1",
+      "check_type": "JOINT_STIFFNESS_CLASSIFICATION_EVIDENCE",
+      "joint_id": "J1",
+      "classification": "SEMI_RIGID_PROJECT_DEFINED",
+      "classification_verified": true,
+      "evidence_reference": "PROJECT_CONNECTION_MODEL:J1:STIFFNESS_CLASSIFICATION",
+      "mandatory": true,
+      "normative_reference": "PROJECT_CONNECTION_DESIGN:J1:CLASSIFICATION"
+    }
+  ],
+  "verification_policy": {
+    "acceptable_global_stability_states": [
+      "GLOBAL_STABILITY_ROBUSTNESS_CANDIDATE_PASSED"
+    ],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ANCHOR_GROUP_CAPACITY",
+      "BEAM_BEAM_CONNECTION",
+      "BEAM_COLUMN_CONNECTION",
+      "BEARING_CAPACITY",
+      "BOLT_GROUP_CAPACITY",
+      "COLUMN_BASE_CONNECTION",
+      "JOINT_STIFFNESS_CLASSIFICATION_EVIDENCE",
+      "SUPPORT_REACTION_CAPACITY",
+      "WELD_CAPACITY"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "release_policy": {
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_connection_approval": false,
+    "structural_model_release": "LOCKED"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "engine_id": "PHX-STRUCT-CONNECTION-SUPPORT-JOINT-VERIFICATION-V8.7.0",
+  "name": "Project Phoenix Structural Connection, Support & Joint Verification Engine",
+  "version": "8.7.0",
+  "prerequisite": "structural_global_stability_second_order_robustness_engine_v8_6_0",
+  "purpose": "Create auditable connection, support and joint verification evidence using only explicit project demands, capacities, classifications and normative references; preserve engineering review and structural release gates.",
+  "capabilities": {
+    "global_stability_candidate_consumption": true,
+    "explicit_connection_design_basis_contract": true,
+    "beam_column_connection_verification": true,
+    "beam_beam_connection_verification": true,
+    "column_base_connection_verification": true,
+    "support_reaction_capacity_verification": true,
+    "bolt_group_capacity_verification": true,
+    "weld_capacity_verification": true,
+    "anchor_group_capacity_verification": true,
+    "bearing_capacity_verification": true,
+    "joint_stiffness_classification_evidence": true,
+    "connection_utilization_envelope": true,
+    "review_item_generation": true,
+    "digital_twin_writeback_contract": true
+  },
+  "normative_data_policy": {
+    "normative_limits_and_capacities_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "code_edition_required": true,
+    "jurisdiction_required": true,
+    "no_unreferenced_bolt_capacity_generation": true,
+    "no_unreferenced_weld_capacity_generation": true,
+    "no_unreferenced_anchor_capacity_generation": true,
+    "no_unreferenced_joint_stiffness_classification": true,
+    "screening_pass_must_not_be_presented_as_code_compliance": true
+  },
+  "safety_rules": {
+    "v8_6_global_stability_state_must_be_acceptable": true,
+    "failed_or_incomplete_mandatory_check_must_create_review_item": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_connection_approval": false,
+    "structural_model_release": "LOCKED"
+  },
+  "release_gate": {
+    "requires_all_mandatory_connection_support_joint_checks_passed": true,
+    "requires_foundation_interface_verification": true,
+    "requires_competent_engineering_review": true
+  }
+}
