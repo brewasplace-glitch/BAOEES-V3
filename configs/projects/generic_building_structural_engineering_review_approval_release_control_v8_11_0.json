@@ -1,0 +1,75 @@
+{
+  "engineering_package": {
+    "calculation_package_fingerprint_sha256": "9876b754441acf72b1d12b7d738846508da54c3b0b0f1a6a90fa33c2d4f629b0",
+    "drawing_package_fingerprint_sha256": "f706405607e65d3ab44c1c4e0046aa1450bc282a348137f0cfeb14734f733969",
+    "engineering_evidence_index_fingerprint_sha256": "c6b4969949e498b3eaca3c1ce99f6b53619966c20f272213169f1229af6b3d28",
+    "evidence_reference": "outputs/structural/v8_10_0/engineering_package_qaqc.json",
+    "package_fingerprint_sha256": "e31c8667a678d6fa7137feed071bbf5615b649d240983745a2f962aee710e6b7",
+    "package_id": "STRUCT-PKG-001",
+    "package_revision": "P01",
+    "project_id": "GENERIC-BUILDING-001",
+    "qaqc_blockers": 0,
+    "required_documents_complete": true,
+    "structural_model_fingerprint_sha256": "97d14a1beb5a65fe11942f02e3e8c2e5cf03f4eb04a15064fe10fecfecdc8f9e",
+    "verification_registers_complete": true
+  },
+  "engineering_package_qaqc_state": "ENGINEERING_PACKAGE_QAQC_CANDIDATE_PASSED",
+  "human_engineering_review": {
+    "approved_calculation_package_fingerprint_sha256": "9876b754441acf72b1d12b7d738846508da54c3b0b0f1a6a90fa33c2d4f629b0",
+    "approved_drawing_package_fingerprint_sha256": "f706405607e65d3ab44c1c4e0046aa1450bc282a348137f0cfeb14734f733969",
+    "approved_package_fingerprint_sha256": "e31c8667a678d6fa7137feed071bbf5615b649d240983745a2f962aee710e6b7",
+    "approved_scopes": [
+      "STRUCTURAL_MODEL",
+      "CONSTRUCTION_DOCUMENTS"
+    ],
+    "approved_structural_model_fingerprint_sha256": "97d14a1beb5a65fe11942f02e3e8c2e5cf03f4eb04a15064fe10fecfecdc8f9e",
+    "comments": [],
+    "identity_evidence_reference": "reviews/ENG-REV-001.identity.json",
+    "professional_responsibility_acknowledged": true,
+    "review_timestamp": "2026-08-01T10:00:00+00:00",
+    "reviewer_id": "ENG-REV-001",
+    "reviewer_name": "Demo Structural Reviewer",
+    "reviewer_role": "COMPETENT_STRUCTURAL_ENGINEER",
+    "signature_evidence_reference": "reviews/ENG-REV-001.signature.p7s",
+    "signature_validation_state": "VERIFIED_EXTERNALLY",
+    "status": "APPROVED"
+  },
+  "previous_release_event_hash_sha256": "",
+  "release_authorization": {
+    "authority_id": "REL-AUTH-001",
+    "authority_name": "Demo Release Authority",
+    "authority_role": "STRUCTURAL_RELEASE_AUTHORITY",
+    "authorization_timestamp": "2026-08-01T10:30:00+00:00",
+    "authorized_package_fingerprint_sha256": "e31c8667a678d6fa7137feed071bbf5615b649d240983745a2f962aee710e6b7",
+    "authorized_scopes": [
+      "STRUCTURAL_MODEL",
+      "CONSTRUCTION"
+    ],
+    "decision": "RELEASE_CONSTRUCTION",
+    "identity_evidence_reference": "release/REL-AUTH-001.identity.json",
+    "release_note": "Demo release after engineering review",
+    "signature_evidence_reference": "release/REL-AUTH-001.signature.p7s",
+    "signature_validation_state": "VERIFIED_EXTERNALLY"
+  },
+  "release_policy": {
+    "allow_approved_with_comments": true,
+    "allowed_release_authority_roles": [
+      "STRUCTURAL_RELEASE_AUTHORITY",
+      "PROJECT_ENGINEER",
+      "PRINCIPAL_STRUCTURAL_ENGINEER"
+    ],
+    "allowed_reviewer_roles": [
+      "COMPETENT_STRUCTURAL_ENGINEER",
+      "LICENSED_STRUCTURAL_ENGINEER",
+      "CHARTERED_STRUCTURAL_ENGINEER"
+    ],
+    "invalidate_approval_on_any_fingerprint_change": true,
+    "require_complete_documents_for_construction_release": true,
+    "require_complete_verification_registers": true,
+    "require_external_signature_validation": true,
+    "require_professional_responsibility_acknowledgement": true,
+    "require_separation_of_duties": true,
+    "require_zero_qaqc_blockers": true
+  },
+  "source_engine": "PHX-STRUCT-DRAWING-CALC-PACKAGE-ENGINEERING-QAQC-V8.10.0"
+}

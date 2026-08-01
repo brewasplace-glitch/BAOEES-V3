@@ -1,0 +1,21 @@
+{
+  "engine_id": "PHX-STRUCT-ENGINEERING-REVIEW-APPROVAL-RELEASE-CONTROL-V8.11.0",
+  "purpose": "Formal human engineering review, approval binding, explicit release authorization, release-state control, change invalidation and release ledger evidence.",
+  "release_model": {
+    "approval_binding": "EXACT_SHA256_PACKAGE_AND_COMPONENT_FINGERPRINTS",
+    "change_after_approval": "INVALIDATE_APPROVAL_AND_REQUIRE_NEW_REVIEW",
+    "construction_release": "EXPLICIT_HUMAN_REVIEW_PLUS_RELEASE_AUTHORIZATION",
+    "default_state": "LOCKED",
+    "release_ledger": "HASH_CHAIN_CAPABLE_APPEND_ONLY_CONTRACT",
+    "structural_model_release": "EXPLICIT_HUMAN_REVIEW_PLUS_RELEASE_AUTHORIZATION"
+  },
+  "safety": {
+    "automatic_human_approval_fabrication": "DISABLED",
+    "automatic_professional_engineering_approval": "DISABLED",
+    "legal_competence_determination": "PROJECT_GOVERNANCE_AND_APPLICABLE_LAW",
+    "release_without_explicit_human_authorization": "DISABLED"
+  },
+  "source_engine_required": "PHX-STRUCT-DRAWING-CALC-PACKAGE-ENGINEERING-QAQC-V8.10.0",
+  "source_state_required": "ENGINEERING_PACKAGE_QAQC_CANDIDATE_PASSED",
+  "version": "8.11.0"
+}
