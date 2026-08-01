@@ -1,0 +1,59 @@
+{
+  "engine_id": "PHX-STRUCT-SOLVER-INPUT-ANALYSIS-V8.3.0",
+  "name": "Project Phoenix Structural Solver Input and Analysis Engine",
+  "version": "8.3.0",
+  "prerequisite": "structural_action_load_model_generation_v8_2_0",
+  "purpose": "Convert the solver-neutral analytical and action/load models into traceable OpenSees and CalculiX solver packages, create an analysis-run contract, and normalize externally produced results without inventing engineering values or auto-releasing the structural model.",
+  "status": {
+    "solver_input_generation": true,
+    "solver_execution_default": false,
+    "automatic_structural_approval": false,
+    "automatic_code_compliance_claim": false,
+    "structural_model_release": "LOCKED",
+    "engineering_review_required": true
+  },
+  "adapters": {
+    "opensees": {
+      "enabled": true,
+      "format": "TCL",
+      "analysis_mode": "LINEAR_STATIC_BASE_CASES"
+    },
+    "calculix": {
+      "enabled": true,
+      "format": "INP",
+      "analysis_mode": "LINEAR_STATIC_BASE_CASES"
+    }
+  },
+  "capabilities": {
+    "solver_neutral_model_validation": true,
+    "section_property_derivation_from_explicit_geometry": true,
+    "self_weight_from_explicit_density_and_geometry": true,
+    "line_action_to_equivalent_nodal_loads": true,
+    "area_action_to_equivalent_nodal_loads": true,
+    "nodal_action_passthrough": true,
+    "base_load_case_solver_decks": true,
+    "load_combination_postprocessing_contract": true,
+    "solver_executable_discovery": true,
+    "explicit_execution_gate": true,
+    "result_normalization_contract": true,
+    "analysis_traceability": true,
+    "digital_twin_writeback_contract": true
+  },
+  "safety_rules": {
+    "material_values_must_be_explicit_project_input": true,
+    "section_geometry_must_be_explicit_project_input": true,
+    "gravity_value_must_be_explicit_project_input": true,
+    "unsupported_targets_must_block_or_warn_without_fake_mapping": true,
+    "solver_execution_requires_project_policy_and_explicit_cli_opt_in": true,
+    "solver_success_does_not_equal_code_compliance": true,
+    "solver_success_does_not_grant_structural_approval": true
+  },
+  "release_gate": {
+    "requires_solver_results": true,
+    "requires_result_sanity_checks": true,
+    "requires_code_checks": true,
+    "requires_member_verification": true,
+    "requires_stability_verification": true,
+    "requires_engineering_review": true
+  }
+}

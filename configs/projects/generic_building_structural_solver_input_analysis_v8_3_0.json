@@ -1,0 +1,344 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-STRUCT-SOLVER-V8.3.0",
+  "project_type": "generic_building",
+  "source_engine": "PHX-STRUCT-ACTION-LOAD-MODEL-V8.2.0",
+  "model_state": "SOLVER_INPUT_CANDIDATE",
+  "analytical_model": {
+    "unit_system": {
+      "length": "m",
+      "force": "kN",
+      "stress": "kN/m2"
+    },
+    "nodes": [
+      {
+        "id": "N0001",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      {
+        "id": "N0002",
+        "x": 5.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      {
+        "id": "N0003",
+        "x": 5.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      {
+        "id": "N0004",
+        "x": 0.0,
+        "y": 4.0,
+        "z": 0.0
+      },
+      {
+        "id": "N0005",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      {
+        "id": "N0006",
+        "x": 5.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      {
+        "id": "N0007",
+        "x": 5.0,
+        "y": 4.0,
+        "z": 3.0
+      },
+      {
+        "id": "N0008",
+        "x": 0.0,
+        "y": 4.0,
+        "z": 3.0
+      }
+    ],
+    "members": [
+      {
+        "id": "M0001",
+        "type": "column",
+        "node_i": "N0001",
+        "node_j": "N0005",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-COL"
+      },
+      {
+        "id": "M0002",
+        "type": "column",
+        "node_i": "N0002",
+        "node_j": "N0006",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-COL"
+      },
+      {
+        "id": "M0003",
+        "type": "column",
+        "node_i": "N0003",
+        "node_j": "N0007",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-COL"
+      },
+      {
+        "id": "M0004",
+        "type": "column",
+        "node_i": "N0004",
+        "node_j": "N0008",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-COL"
+      },
+      {
+        "id": "M0005",
+        "type": "beam",
+        "node_i": "N0005",
+        "node_j": "N0006",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-BEAM"
+      },
+      {
+        "id": "M0006",
+        "type": "beam",
+        "node_i": "N0006",
+        "node_j": "N0007",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-BEAM"
+      },
+      {
+        "id": "M0007",
+        "type": "beam",
+        "node_i": "N0007",
+        "node_j": "N0008",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-BEAM"
+      },
+      {
+        "id": "M0008",
+        "type": "beam",
+        "node_i": "N0008",
+        "node_j": "N0005",
+        "material_id": "MAT-RC",
+        "section_id": "SEC-BEAM"
+      }
+    ],
+    "shells": [
+      {
+        "id": "S0001",
+        "type": "slab_panel",
+        "node_ids": [
+          "N0005",
+          "N0006",
+          "N0007",
+          "N0008"
+        ],
+        "material_id": "MAT-RC",
+        "section_id": "SEC-SLAB"
+      }
+    ],
+    "supports": [
+      {
+        "id": "SUP0001",
+        "node_id": "N0001",
+        "type": "FIXED",
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ]
+      },
+      {
+        "id": "SUP0002",
+        "node_id": "N0002",
+        "type": "FIXED",
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ]
+      },
+      {
+        "id": "SUP0003",
+        "node_id": "N0003",
+        "type": "FIXED",
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ]
+      },
+      {
+        "id": "SUP0004",
+        "node_id": "N0004",
+        "type": "FIXED",
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ]
+      }
+    ]
+  },
+  "solver_basis": {
+    "basis": "EXPLICIT_DEMONSTRATION_INPUT_NOT_FOR_DESIGN",
+    "analysis_type": "LINEAR_STATIC",
+    "gravity_acceleration_m_s2": 9.81,
+    "materials": {
+      "MAT-RC": {
+        "name": "Generic reinforced concrete demonstration material",
+        "elastic_modulus_kN_m2": 30000000.0,
+        "poisson_ratio": 0.2,
+        "density_kg_m3": 2500.0
+      }
+    },
+    "sections": {
+      "SEC-COL": {
+        "type": "rectangular_beam",
+        "width_m": 0.3,
+        "height_m": 0.3
+      },
+      "SEC-BEAM": {
+        "type": "rectangular_beam",
+        "width_m": 0.3,
+        "height_m": 0.5
+      },
+      "SEC-SLAB": {
+        "type": "shell",
+        "thickness_m": 0.2
+      }
+    }
+  },
+  "action_load_model": {
+    "load_cases": [
+      {
+        "id": "LC-G",
+        "name": "Permanent actions",
+        "category": "permanent"
+      },
+      {
+        "id": "LC-Q",
+        "name": "Variable floor actions",
+        "category": "variable"
+      },
+      {
+        "id": "LC-WX",
+        "name": "Wind +X",
+        "category": "wind"
+      }
+    ],
+    "action_assignments": [
+      {
+        "id": "LA0001",
+        "source_action_id": "ACT-G-SW",
+        "case_id": "LC-G",
+        "kind": "self_weight",
+        "direction": "GRAVITY",
+        "factor": 1.0,
+        "target_element_ids": [
+          "M0001",
+          "M0002",
+          "M0003",
+          "M0004",
+          "M0005",
+          "M0006",
+          "M0007",
+          "M0008",
+          "S0001"
+        ]
+      },
+      {
+        "id": "LA0002",
+        "source_action_id": "ACT-G-FIN",
+        "case_id": "LC-G",
+        "kind": "area",
+        "direction": "GLOBAL_Z",
+        "magnitude": -1.5,
+        "factor": 1.0,
+        "target_element_id": "S0001"
+      },
+      {
+        "id": "LA0003",
+        "source_action_id": "ACT-Q-FLOOR",
+        "case_id": "LC-Q",
+        "kind": "area",
+        "direction": "GLOBAL_Z",
+        "magnitude": -2.5,
+        "factor": 1.0,
+        "target_element_id": "S0001"
+      },
+      {
+        "id": "LA0004",
+        "source_action_id": "ACT-W-X",
+        "case_id": "LC-WX",
+        "kind": "line",
+        "direction": "GLOBAL_X",
+        "magnitude": 1.0,
+        "factor": 1.0,
+        "target_element_id": "M0001"
+      }
+    ],
+    "load_combinations": [
+      {
+        "id": "COMB-ULS-01",
+        "name": "Configured ULS candidate",
+        "limit_state": "ULS",
+        "terms": [
+          {
+            "case_id": "LC-G",
+            "coefficient": 1.35
+          },
+          {
+            "case_id": "LC-Q",
+            "coefficient": 1.5
+          },
+          {
+            "case_id": "LC-WX",
+            "coefficient": 1.5
+          }
+        ]
+      },
+      {
+        "id": "COMB-SLS-01",
+        "name": "Configured SLS candidate",
+        "limit_state": "SLS",
+        "terms": [
+          {
+            "case_id": "LC-G",
+            "coefficient": 1.0
+          },
+          {
+            "case_id": "LC-Q",
+            "coefficient": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "solver_adapters": [
+    "opensees",
+    "calculix"
+  ],
+  "execution_policy": {
+    "allow_execution": false,
+    "require_explicit_cli_opt_in": true,
+    "solver_executables": {
+      "opensees": "OpenSees",
+      "calculix": "ccx"
+    }
+  }
+}
