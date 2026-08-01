@@ -1,0 +1,80 @@
+{
+  "source_engine": "PHX-STRUCT-ENGINEERING-REVIEW-APPROVAL-RELEASE-CONTROL-V8.11.0",
+  "project_id": "PHX-GENERIC-BUILDING",
+  "revision_policy": {
+    "require_release_record_for_ifc": true,
+    "invalidate_release_on_any_engineering_change": true,
+    "require_all_ifc_documents_complete": true
+  },
+  "baseline_release": {
+    "revision_id": "C01",
+    "revision_state": "IFC",
+    "component_fingerprints": {
+      "architectural_model": "db925d92a7854f2bdf578f28cd8ab8834727ce196546db5f368f7e8ed92a27cc",
+      "structural_model": "68818557d8791dcdc34280c0f482500ebe1e31228cdf53240a4e73679801daa9",
+      "load_model": "dec3a61909f47cb996c66b0c7dc67d4f6be7dcc0571cd3244e7b149b2b00e6c7",
+      "analysis_results": "a198cee9048f44a52ef0f9232410750e7d0da926a2a656a17bf1925119357192",
+      "member_verification": "1e736a968c90b8e18fcb8dd0e8356dba138ab04a7ca4f0a049fab53cb849204d",
+      "global_stability": "07594242637c6a33c0ac5fda1bf908ee38c42ffa0c36bd00a4f973cc0a70f2bf",
+      "connections": "032f347e5715ce294b546448dde5cadf270532d27b0cdc3eba3eb079c4b39201",
+      "foundation_soil": "e90f10d697cceb39154efba3c72259d89bd143984fa1248cd3dbd416d3554414",
+      "foundation_design": "5184a20f7dbe69343d113d7c9e9faafa5ec3cfe7a0e5f3d13f8fb0476f3b6573",
+      "calculation_package": "1fc48c6ebc7ff10b7641671a76838ea7a3b3f22b1efef2a2fb2fc8f9e96a9cb8",
+      "drawing_package": "a01636a0f3406b37bc7093574a70c6d73c760494ef679e0e845a37378d744067",
+      "engineering_evidence_index": "48830afe05885786983d2f306e5c3300cdee8f3aa255f176038076f5899a3888"
+    },
+    "revision_fingerprint_sha256": "1421be51650ce1de49bdf4baead97f06e85d1844e6bb09409ad6d6814daa8f3d"
+  },
+  "current_revision": {
+    "revision_id": "C02",
+    "requested_state": "IFC",
+    "component_fingerprints": {
+      "architectural_model": "db925d92a7854f2bdf578f28cd8ab8834727ce196546db5f368f7e8ed92a27cc",
+      "structural_model": "e73f568e3eec50ce175308874dc596a5a2d74358c18690bee192d22d5da0f9c2",
+      "load_model": "dec3a61909f47cb996c66b0c7dc67d4f6be7dcc0571cd3244e7b149b2b00e6c7",
+      "analysis_results": "7d94b95c181fbe6b0cf4260b15f305773c7502a982256c0efca5cc12a56b2f28",
+      "member_verification": "55b88741d08af5f5846863cfd0b9f9ffb70cda51296ee4c4c2ce246aa53a7cb7",
+      "global_stability": "07594242637c6a33c0ac5fda1bf908ee38c42ffa0c36bd00a4f973cc0a70f2bf",
+      "connections": "032f347e5715ce294b546448dde5cadf270532d27b0cdc3eba3eb079c4b39201",
+      "foundation_soil": "e90f10d697cceb39154efba3c72259d89bd143984fa1248cd3dbd416d3554414",
+      "foundation_design": "5184a20f7dbe69343d113d7c9e9faafa5ec3cfe7a0e5f3d13f8fb0476f3b6573",
+      "calculation_package": "09bba3d8074faaffc3ba7de1240e7098e2bf6b328b6f63326fc8eadee0f1c7aa",
+      "drawing_package": "a134ab6b902fc09f8780ce9647dfd3512c0248cdc6b387c936d5140d4c62b09f",
+      "engineering_evidence_index": "d138d8e95238780ef98f64179451cb0f47f0d4893473618e79b4d675272bb846"
+    },
+    "revision_fingerprint_sha256": "58bbb12a7b16aff3bd6b4a920e5d94a9c3d97b35b89da762ad13f5ab7f07f8cf"
+  },
+  "current_v8_11_release_record": {
+    "engine_id": "PHX-STRUCT-ENGINEERING-REVIEW-APPROVAL-RELEASE-CONTROL-V8.11.0",
+    "package_fingerprint_sha256": "58bbb12a7b16aff3bd6b4a920e5d94a9c3d97b35b89da762ad13f5ab7f07f8cf",
+    "structural_model_release": "RELEASED",
+    "construction_release": "RELEASED",
+    "release_id": "PHX-REL-C02-0001"
+  },
+  "documents": [
+    {
+      "document_id": "STR-CALC-001",
+      "title": "Structural Calculation Package",
+      "revision": "C02",
+      "sha256": "d0d9e6e675e19019562b182a7bdcab62bf2ee9c2b35c72768fbe91008009d135",
+      "required_for_ifc": true,
+      "status": "APPROVED"
+    },
+    {
+      "document_id": "STR-DWG-001",
+      "title": "Structural Drawing Package",
+      "revision": "C02",
+      "sha256": "60041c5f25ae12be7d59ad71262323fc0bf3994117cc17a57a0e7e0a80646d39",
+      "required_for_ifc": true,
+      "status": "IFC"
+    },
+    {
+      "document_id": "STR-QAQC-001",
+      "title": "Engineering QA/QC Evidence Index",
+      "revision": "C02",
+      "sha256": "d30beba8cec4e84a44f30289384819a62f4f8200dacdd81a388a5c4ae0f76935",
+      "required_for_ifc": true,
+      "status": "APPROVED"
+    }
+  ]
+}

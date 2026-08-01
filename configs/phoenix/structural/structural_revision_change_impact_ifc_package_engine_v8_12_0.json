@@ -1,0 +1,28 @@
+{
+  "engine_id": "PHX-STRUCT-REVISION-CHANGE-IMPACT-IFC-PACKAGE-V8.12.0",
+  "version": "8.12.0",
+  "name": "Structural Revision, Change Impact & Issued-for-Construction Package Engine",
+  "source_prerequisite": "PHX-STRUCT-ENGINEERING-REVIEW-APPROVAL-RELEASE-CONTROL-V8.11.0",
+  "default_revision_state": "DRAFT",
+  "default_ifc_package_state": "LOCKED",
+  "revision_states": [
+    "APPROVED",
+    "AS_BUILT",
+    "DRAFT",
+    "FOR_REVIEW",
+    "IFC",
+    "SUPERSEDED"
+  ],
+  "policies": {
+    "fingerprint_change_detection": "ENFORCED",
+    "transitive_change_impact_analysis": "ENFORCED",
+    "fresh_v8_10_qaqc_after_engineering_change": "ENFORCED",
+    "fresh_v8_11_human_review_release_after_engineering_change": "ENFORCED",
+    "exact_v8_11_release_binding_for_ifc": "ENFORCED",
+    "immutable_ifc_manifest": "ENFORCED",
+    "superseded_document_control": "INSTALLED",
+    "automatic_professional_engineering_approval": "DISABLED",
+    "automatic_human_review_fabrication": "DISABLED",
+    "automatic_ifc_without_v8_11_release": "DISABLED"
+  }
+}
