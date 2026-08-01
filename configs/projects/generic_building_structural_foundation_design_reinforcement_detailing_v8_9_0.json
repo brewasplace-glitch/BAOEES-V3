@@ -1,0 +1,358 @@
+{
+  "drawing_details": [
+    {
+      "foundation_element_id": "F1",
+      "id": "D-F1",
+      "scale": "1:20",
+      "source_reference": "DETAIL:F1",
+      "status": "DEFINED",
+      "view_type": "PLAN_AND_SECTION"
+    },
+    {
+      "foundation_element_id": "SF1",
+      "id": "D-SF1",
+      "scale": "1:20",
+      "source_reference": "DETAIL:SF1",
+      "status": "DEFINED",
+      "view_type": "PLAN_AND_SECTION"
+    },
+    {
+      "foundation_element_id": "FB1",
+      "id": "D-FB1",
+      "scale": "1:20",
+      "source_reference": "DETAIL:FB1",
+      "status": "DEFINED",
+      "view_type": "LONGITUDINAL_AND_CROSS_SECTION"
+    },
+    {
+      "foundation_element_id": "PC1",
+      "id": "D-PC1",
+      "scale": "1:20",
+      "source_reference": "DETAIL:PC1",
+      "status": "DEFINED",
+      "view_type": "PLAN_AND_SECTION"
+    }
+  ],
+  "foundation_design_basis": {
+    "edition": "PROJECT_DEFINED_EDITION",
+    "jurisdiction": "PROJECT_DEFINED",
+    "source_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:FOUNDATION_DESIGN_DETAILING",
+    "standard_set": "PROJECT_DEFINED_REINFORCED_CONCRETE_FOUNDATION_STANDARD",
+    "status": "ENGINEER_OR_VERIFIED_STANDARDS_ENGINE_INPUT"
+  },
+  "foundation_elements": [
+    {
+      "concrete_material_id": "CONC-1",
+      "dimensions": {
+        "length_m": 2.0,
+        "thickness_m": 0.45,
+        "width_m": 2.0
+      },
+      "id": "F1",
+      "source_reference": "GEOM:F1",
+      "type": "PAD_FOUNDATION"
+    },
+    {
+      "concrete_material_id": "CONC-1",
+      "dimensions": {
+        "length_m": 6.0,
+        "thickness_m": 0.4,
+        "width_m": 1.5
+      },
+      "id": "SF1",
+      "source_reference": "GEOM:SF1",
+      "type": "STRIP_FOUNDATION"
+    },
+    {
+      "concrete_material_id": "CONC-1",
+      "dimensions": {
+        "height_m": 0.6,
+        "length_m": 6.0,
+        "width_m": 0.5
+      },
+      "id": "FB1",
+      "source_reference": "GEOM:FB1",
+      "type": "FOUNDATION_BEAM"
+    },
+    {
+      "concrete_material_id": "CONC-1",
+      "dimensions": {
+        "length_m": 2.2,
+        "thickness_m": 0.8,
+        "width_m": 2.2
+      },
+      "id": "PC1",
+      "source_reference": "GEOM:PC1",
+      "type": "PILE_CAP"
+    }
+  ],
+  "foundation_interface_soil_support_state": "FOUNDATION_INTERFACE_SOIL_SUPPORT_CANDIDATE_PASSED",
+  "materials": {
+    "concrete": [
+      {
+        "design_strength": 20.0,
+        "id": "CONC-1",
+        "source_reference": "MAT:CONC-1",
+        "strength_unit": "MPa"
+      }
+    ],
+    "reinforcement": [
+      {
+        "density_kg_m3": 7850.0,
+        "design_strength": 435.0,
+        "id": "REBAR-1",
+        "source_reference": "MAT:REBAR-1",
+        "strength_unit": "MPa"
+      }
+    ]
+  },
+  "project_id": "PHX-GENERIC-BUILDING-FOUNDATION-DESIGN-V8.9.0",
+  "reinforcement_groups": [
+    {
+      "bar_length_m": 1.8,
+      "bar_mark": "F1-B1",
+      "count": 11,
+      "cover_mm": 50,
+      "diameter_mm": 16,
+      "foundation_element_id": "F1",
+      "id": "RG1",
+      "material_id": "REBAR-1",
+      "role": "BOTTOM_X",
+      "shape_code": "STRAIGHT",
+      "source_reference": "REINF:F1-B1",
+      "spacing_mm": 150
+    },
+    {
+      "bar_length_m": 5.8,
+      "bar_mark": "SF1-B1",
+      "count": 6,
+      "cover_mm": 50,
+      "diameter_mm": 16,
+      "foundation_element_id": "SF1",
+      "id": "RG2",
+      "material_id": "REBAR-1",
+      "role": "BOTTOM_LONGITUDINAL",
+      "shape_code": "STRAIGHT",
+      "source_reference": "REINF:SF1-B1",
+      "spacing_mm": 200
+    },
+    {
+      "bar_length_m": 5.8,
+      "bar_mark": "FB1-B1",
+      "count": 4,
+      "cover_mm": 40,
+      "diameter_mm": 20,
+      "foundation_element_id": "FB1",
+      "id": "RG3",
+      "material_id": "REBAR-1",
+      "role": "BOTTOM_LONGITUDINAL",
+      "shape_code": "STRAIGHT",
+      "source_reference": "REINF:FB1-B1",
+      "spacing_mm": 120
+    },
+    {
+      "bar_length_m": 2.0,
+      "bar_mark": "PC1-B1",
+      "count": 12,
+      "cover_mm": 60,
+      "diameter_mm": 20,
+      "foundation_element_id": "PC1",
+      "id": "RG4",
+      "material_id": "REBAR-1",
+      "role": "BOTTOM_X",
+      "shape_code": "STRAIGHT",
+      "source_reference": "REINF:PC1-B1",
+      "spacing_mm": 160
+    }
+  ],
+  "source_engine": "PHX-STRUCT-FOUNDATION-INTERFACE-SOIL-SUPPORT-VERIFICATION-V8.8.0",
+  "verification_checks": [
+    {
+      "capacity": 120,
+      "check_type": "PAD_FLEXURAL_CAPACITY",
+      "demand": 85,
+      "foundation_element_id": "F1",
+      "id": "FD01",
+      "mandatory": true,
+      "normative_reference": "REF:PAD_FLEXURE",
+      "quantity": "design_moment",
+      "unit": "kNm"
+    },
+    {
+      "capacity": 160,
+      "check_type": "PAD_ONE_WAY_SHEAR_CAPACITY",
+      "demand": 110,
+      "foundation_element_id": "F1",
+      "id": "FD02",
+      "mandatory": true,
+      "normative_reference": "REF:PAD_ONE_WAY_SHEAR",
+      "quantity": "design_shear",
+      "unit": "kN"
+    },
+    {
+      "capacity": 430,
+      "check_type": "PAD_PUNCHING_SHEAR_CAPACITY",
+      "demand": 330,
+      "foundation_element_id": "F1",
+      "id": "FD03",
+      "mandatory": true,
+      "normative_reference": "REF:PAD_PUNCHING",
+      "quantity": "punching_shear",
+      "unit": "kN"
+    },
+    {
+      "capacity": 105,
+      "check_type": "STRIP_FLEXURAL_CAPACITY",
+      "demand": 72,
+      "foundation_element_id": "SF1",
+      "id": "FD04",
+      "mandatory": true,
+      "normative_reference": "REF:STRIP_FLEXURE",
+      "quantity": "design_moment",
+      "unit": "kNm/m"
+    },
+    {
+      "capacity": 125,
+      "check_type": "STRIP_ONE_WAY_SHEAR_CAPACITY",
+      "demand": 88,
+      "foundation_element_id": "SF1",
+      "id": "FD05",
+      "mandatory": true,
+      "normative_reference": "REF:STRIP_SHEAR",
+      "quantity": "design_shear",
+      "unit": "kN/m"
+    },
+    {
+      "capacity": 180,
+      "check_type": "FOUNDATION_BEAM_FLEXURAL_CAPACITY",
+      "demand": 135,
+      "foundation_element_id": "FB1",
+      "id": "FD06",
+      "mandatory": true,
+      "normative_reference": "REF:FOUNDATION_BEAM_FLEXURE",
+      "quantity": "design_moment",
+      "unit": "kNm"
+    },
+    {
+      "capacity": 190,
+      "check_type": "FOUNDATION_BEAM_SHEAR_CAPACITY",
+      "demand": 145,
+      "foundation_element_id": "FB1",
+      "id": "FD07",
+      "mandatory": true,
+      "normative_reference": "REF:FOUNDATION_BEAM_SHEAR",
+      "quantity": "design_shear",
+      "unit": "kN"
+    },
+    {
+      "capacity": 780,
+      "check_type": "PILE_CAP_STRUT_TIE_CAPACITY",
+      "demand": 610,
+      "foundation_element_id": "PC1",
+      "id": "FD08",
+      "mandatory": true,
+      "normative_reference": "REF:PILE_CAP_STRUT_TIE",
+      "quantity": "strut_tie_design_action",
+      "unit": "kN"
+    },
+    {
+      "check_type": "MINIMUM_REINFORCEMENT_EVIDENCE",
+      "evidence_reference": "EVIDENCE:MIN_REINF",
+      "foundation_element_id": "F1",
+      "id": "FD09",
+      "mandatory": true,
+      "normative_reference": "REF:MIN_REINF",
+      "verified": true
+    },
+    {
+      "check_type": "MAXIMUM_REINFORCEMENT_EVIDENCE",
+      "evidence_reference": "EVIDENCE:MAX_REINF",
+      "foundation_element_id": "F1",
+      "id": "FD10",
+      "mandatory": true,
+      "normative_reference": "REF:MAX_REINF",
+      "verified": true
+    },
+    {
+      "check_type": "CONCRETE_COVER_EVIDENCE",
+      "evidence_reference": "EVIDENCE:COVER",
+      "foundation_element_id": "F1",
+      "id": "FD11",
+      "mandatory": true,
+      "normative_reference": "REF:COVER",
+      "verified": true
+    },
+    {
+      "check_type": "BAR_SPACING_EVIDENCE",
+      "evidence_reference": "EVIDENCE:SPACING",
+      "foundation_element_id": "SF1",
+      "id": "FD12",
+      "mandatory": true,
+      "normative_reference": "REF:SPACING",
+      "verified": true
+    },
+    {
+      "check_type": "ANCHORAGE_DEVELOPMENT_EVIDENCE",
+      "evidence_reference": "EVIDENCE:ANCHORAGE",
+      "foundation_element_id": "FB1",
+      "id": "FD13",
+      "mandatory": true,
+      "normative_reference": "REF:ANCHORAGE",
+      "verified": true
+    },
+    {
+      "check_type": "DOWEL_STARTER_BAR_EVIDENCE",
+      "evidence_reference": "EVIDENCE:DOWELS",
+      "foundation_element_id": "F1",
+      "id": "FD14",
+      "mandatory": true,
+      "normative_reference": "REF:DOWELS",
+      "verified": true
+    },
+    {
+      "check_type": "MATERIAL_TRACEABILITY",
+      "evidence_reference": "EVIDENCE:MATERIALS",
+      "foundation_element_id": "F1",
+      "id": "FD15",
+      "mandatory": true,
+      "normative_reference": "REF:MATERIALS",
+      "verified": true
+    },
+    {
+      "check_type": "DRAWING_DETAIL_COMPLETENESS",
+      "evidence_reference": "EVIDENCE:DRAWINGS",
+      "foundation_element_id": "F1",
+      "id": "FD16",
+      "mandatory": true,
+      "normative_reference": "REF:DRAWINGS",
+      "verified": true
+    }
+  ],
+  "verification_policy": {
+    "acceptable_foundation_interface_states": [
+      "FOUNDATION_INTERFACE_SOIL_SUPPORT_CANDIDATE_PASSED"
+    ],
+    "mandatory_check_types": [
+      "ANCHORAGE_DEVELOPMENT_EVIDENCE",
+      "BAR_SPACING_EVIDENCE",
+      "CONCRETE_COVER_EVIDENCE",
+      "DOWEL_STARTER_BAR_EVIDENCE",
+      "DRAWING_DETAIL_COMPLETENESS",
+      "FOUNDATION_BEAM_FLEXURAL_CAPACITY",
+      "FOUNDATION_BEAM_SHEAR_CAPACITY",
+      "MATERIAL_TRACEABILITY",
+      "MAXIMUM_REINFORCEMENT_EVIDENCE",
+      "MINIMUM_REINFORCEMENT_EVIDENCE",
+      "PAD_FLEXURAL_CAPACITY",
+      "PAD_ONE_WAY_SHEAR_CAPACITY",
+      "PAD_PUNCHING_SHEAR_CAPACITY",
+      "PILE_CAP_STRUT_TIE_CAPACITY",
+      "STRIP_FLEXURAL_CAPACITY",
+      "STRIP_ONE_WAY_SHEAR_CAPACITY"
+    ],
+    "pass_tolerance": 1e-12,
+    "require_detail_for_all_foundations": true,
+    "require_normative_reference": true,
+    "require_reinforcement_for_all_foundations": true
+  }
+}
