@@ -1,0 +1,28 @@
+{
+  "dependency": {
+    "detailed_architecture_minimum": "6.6.5",
+    "pilot_project_dependency": false
+  },
+  "domains": [
+    "use_functions",
+    "fire_compartments",
+    "escape_routes",
+    "accessibility",
+    "daylight",
+    "ventilation",
+    "thermal_envelope",
+    "moisture_risk",
+    "acoustics_evidence",
+    "jurisdiction"
+  ],
+  "engine_id": "PHX-ACFABP-670",
+  "project_mode": "GENERIC_BUILDING_PROJECT",
+  "release_policy": {
+    "automatic_legal_compliance_approval_forbidden": true,
+    "execution_ready_requires_detailed_design": true,
+    "jurisdiction_profile_must_be_verified": true,
+    "permit_ready_only_when_all_mandatory_checks_pass": true,
+    "professional_review_required": true
+  },
+  "schema_version": "phoenix.architectural-compliance-fire-accessibility-building-physics/6.7.0"
+}

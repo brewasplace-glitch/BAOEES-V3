@@ -1,0 +1,46 @@
+{
+  "jurisdiction": {
+    "country": "",
+    "effective_date": "",
+    "municipality": "",
+    "regulation_name": "",
+    "verified": false,
+    "version": ""
+  },
+  "legal_release": {
+    "professional_approval": false,
+    "verified_by": "",
+    "verified_date": ""
+  },
+  "profile_id": "GENERIC-UNVERIFIED-001",
+  "rules": {
+    "accessibility": {
+      "accessible_route_required": null,
+      "lift_trigger_storeys": null,
+      "minimum_clear_door_width_m": null,
+      "minimum_corridor_width_m": null
+    },
+    "daylight": {
+      "minimum_equivalent_daylight_area_ratio": null
+    },
+    "fire": {
+      "max_compartment_area_m2": null,
+      "max_escape_distance_m": null,
+      "minimum_exit_count": null,
+      "minimum_exit_width_m": null
+    },
+    "moisture": {
+      "condensation_assessment_required": null
+    },
+    "thermal": {
+      "maximum_u_floor_w_m2k": null,
+      "maximum_u_roof_w_m2k": null,
+      "maximum_u_wall_w_m2k": null,
+      "maximum_u_window_w_m2k": null
+    },
+    "ventilation": {
+      "minimum_outdoor_air_lps_person": null
+    }
+  },
+  "schema_version": "phoenix.architectural-rule-profile/6.7.0"
+}
