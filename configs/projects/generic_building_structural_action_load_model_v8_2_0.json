@@ -1,0 +1,101 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-STRUCT-ACTION-LOAD-V8.2.0",
+  "project_type": "generic_building",
+  "source_engine": "PHX-STRUCT-ANALYTICAL-MODEL-V8.1.0",
+  "analytical_model": {
+    "engine": {
+      "id": "PHX-STRUCT-ANALYTICAL-MODEL-V8.1.0",
+      "version": "8.1.0"
+    },
+    "model_state": "ANALYTICAL_CANDIDATE",
+    "nodes": [
+      {"id": "N0001", "x": 0, "y": 0, "z": 0},
+      {"id": "N0002", "x": 0, "y": 0, "z": 3},
+      {"id": "N0003", "x": 5, "y": 0, "z": 0},
+      {"id": "N0004", "x": 5, "y": 0, "z": 3}
+    ],
+    "members": [
+      {"id": "M0001", "type": "column", "node_i": "N0001", "node_j": "N0002", "approval_state": "CANDIDATE_ONLY"},
+      {"id": "M0002", "type": "column", "node_i": "N0003", "node_j": "N0004", "approval_state": "CANDIDATE_ONLY"},
+      {"id": "M0003", "type": "beam", "node_i": "N0002", "node_j": "N0004", "approval_state": "CANDIDATE_ONLY"}
+    ],
+    "shells": [
+      {"id": "S0001", "type": "slab_panel", "node_ids": ["N0001", "N0002", "N0004", "N0003"], "approval_state": "CANDIDATE_ONLY"}
+    ]
+  },
+  "action_load_input": {
+    "basis": "PROJECT_DEFINED_PRELIMINARY_ACTION_BASIS",
+    "unit_system": {
+      "length": "m",
+      "force": "kN",
+      "moment": "kNm",
+      "stress": "kPa",
+      "mass": "kg"
+    },
+    "actions": [
+      {
+        "id": "ACT-G-SW",
+        "case_id": "LC-G",
+        "case_name": "Permanent self weight",
+        "category": "permanent",
+        "kind": "self_weight",
+        "direction": "GRAVITY",
+        "factor": 1.0,
+        "target": {"all_elements": true}
+      },
+      {
+        "id": "ACT-G-FIN",
+        "case_id": "LC-G",
+        "case_name": "Permanent self weight",
+        "category": "permanent",
+        "kind": "area",
+        "direction": "GLOBAL_Z",
+        "magnitude": -1.5,
+        "target": {"element_types": ["slab_panel"]}
+      },
+      {
+        "id": "ACT-Q-FLOOR",
+        "case_id": "LC-Q",
+        "case_name": "Variable floor action",
+        "category": "variable",
+        "kind": "area",
+        "direction": "GLOBAL_Z",
+        "magnitude": -2.5,
+        "target": {"element_types": ["slab_panel"]}
+      },
+      {
+        "id": "ACT-W-X",
+        "case_id": "LC-WX",
+        "case_name": "Wind +X",
+        "category": "wind",
+        "kind": "line",
+        "direction": "GLOBAL_X",
+        "magnitude": 1.0,
+        "target": {"element_types": ["column"]}
+      }
+    ],
+    "combinations": [
+      {
+        "id": "COMB-ULS-01",
+        "name": "Configured ULS candidate",
+        "limit_state": "ULS",
+        "basis": "PROJECT_DEFINED_PRELIMINARY_ACTION_BASIS",
+        "terms": [
+          {"case_id": "LC-G", "coefficient": 1.35},
+          {"case_id": "LC-Q", "coefficient": 1.5},
+          {"case_id": "LC-WX", "coefficient": 1.5}
+        ]
+      },
+      {
+        "id": "COMB-SLS-01",
+        "name": "Configured SLS candidate",
+        "limit_state": "SLS",
+        "basis": "PROJECT_DEFINED_PRELIMINARY_ACTION_BASIS",
+        "terms": [
+          {"case_id": "LC-G", "coefficient": 1.0},
+          {"case_id": "LC-Q", "coefficient": 1.0}
+        ]
+      }
+    ]
+  }
+}

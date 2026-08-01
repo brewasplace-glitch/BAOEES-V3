@@ -1,0 +1,44 @@
+{
+  "engine_id": "PHX-STRUCT-ACTION-LOAD-MODEL-V8.2.0",
+  "name": "Project Phoenix Structural Action and Load Model Generation Engine",
+  "version": "8.2.0",
+  "prerequisite": "structural_analytical_model_generation_v8_1_0",
+  "purpose": "Generate a solver-neutral structural action and load model candidate from an analytical structural model and explicit project action inputs while preserving traceability and release safety.",
+  "status": {
+    "automatic_normative_value_invention": false,
+    "automatic_structural_approval": false,
+    "analysis_execution_allowed": false,
+    "structural_model_release": "LOCKED",
+    "engineering_review_required": true
+  },
+  "capabilities": {
+    "load_case_generation": true,
+    "self_weight_flag_generation": true,
+    "nodal_action_assignment": true,
+    "line_action_assignment": true,
+    "area_action_assignment": true,
+    "acceleration_action_assignment": true,
+    "explicit_load_combination_generation": true,
+    "element_type_targeting": true,
+    "unknown_target_warning": true,
+    "unit_system_contract": true,
+    "action_traceability": true,
+    "digital_twin_writeback_contract": true,
+    "solver_neutral_output": true
+  },
+  "safety_rules": {
+    "action_values_must_come_from_project_input": true,
+    "combination_coefficients_must_be_explicit": true,
+    "unknown_targets_must_not_create_fake_assignments": true,
+    "solver_execution_requires_downstream_gate": true,
+    "code_compliance_not_claimed": true
+  },
+  "release_gate": {
+    "requires_action_basis_validation": true,
+    "requires_preliminary_sizing": true,
+    "requires_solver_adapter": true,
+    "requires_solver_results": true,
+    "requires_code_checks": true,
+    "requires_engineering_review": true
+  }
+}
