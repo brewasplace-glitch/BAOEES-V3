@@ -1,0 +1,129 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-STABILITY-V8.6.0",
+  "source_engine": "PHX-STRUCT-CODE-LIMIT-STATE-MEMBER-VERIFICATION-V8.5.0",
+  "member_verification_state": "MEMBER_VERIFICATION_CANDIDATE_PASSED",
+  "stability_basis": {
+    "jurisdiction": "PROJECT_DEFINED",
+    "standard_set": "PROJECT_DEFINED_STRUCTURAL_STANDARD",
+    "edition": "PROJECT_DEFINED_EDITION",
+    "source_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:GLOBAL_STABILITY",
+    "status": "ENGINEER_OR_VERIFIED_STANDARDS_ENGINE_INPUT"
+  },
+  "analytical_model": {
+    "nodes": [{"id": "N1"}, {"id": "N2"}, {"id": "N3"}, {"id": "N4"}],
+    "supports": [{"id": "S1"}, {"id": "S2"}],
+    "storeys": [{"id": "L1"}, {"id": "L2"}]
+  },
+  "stability_checks": [
+    {
+      "id": "GS-2ND",
+      "check_type": "SECOND_ORDER_AMPLIFICATION",
+      "first_order_displacement_m": 0.018,
+      "second_order_displacement_m": 0.0207,
+      "max_amplification_factor": 1.20,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:SECOND_ORDER_LIMIT"
+    },
+    {
+      "id": "GS-THETA-L2",
+      "check_type": "STOREY_STABILITY_INDEX",
+      "storey_id": "L2",
+      "gravity_load_kN": 5200.0,
+      "storey_drift_m": 0.008,
+      "storey_shear_kN": 680.0,
+      "storey_height_m": 3.4,
+      "max_stability_index": 0.10,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:STOREY_STABILITY_INDEX_LIMIT"
+    },
+    {
+      "id": "GS-BUCKLING",
+      "check_type": "GLOBAL_BUCKLING_FACTOR",
+      "critical_load_factor": 8.2,
+      "minimum_critical_load_factor": 5.0,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:GLOBAL_BUCKLING_FACTOR"
+    },
+    {
+      "id": "GS-TORSION-L2",
+      "check_type": "TORSIONAL_DRIFT_RATIO",
+      "storey_id": "L2",
+      "max_edge_drift_m": 0.0102,
+      "average_edge_drift_m": 0.0085,
+      "max_torsional_drift_ratio": 1.40,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:TORSIONAL_DRIFT_LIMIT"
+    },
+    {
+      "id": "GS-SOFT-L1",
+      "check_type": "SOFT_STOREY_STIFFNESS_RATIO",
+      "storey_id": "L1",
+      "storey_stiffness_kN_per_m": 125000.0,
+      "reference_stiffness_kN_per_m": 150000.0,
+      "minimum_ratio": 0.70,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:SOFT_STOREY_STIFFNESS_RATIO"
+    },
+    {
+      "id": "GS-WEAK-L1",
+      "check_type": "WEAK_STOREY_STRENGTH_RATIO",
+      "storey_id": "L1",
+      "storey_strength_kN": 1550.0,
+      "reference_strength_kN": 1750.0,
+      "minimum_ratio": 0.80,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:WEAK_STOREY_STRENGTH_RATIO"
+    },
+    {
+      "id": "GS-DIAPH",
+      "check_type": "DIAPHRAGM_CONTINUITY",
+      "continuity_verified": true,
+      "evidence_reference": "PHX_ANALYTICAL_MODEL:DIAPHRAGM_CONNECTIVITY_EVIDENCE",
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:DIAPHRAGM_CONTINUITY"
+    },
+    {
+      "id": "GS-LOADPATH",
+      "check_type": "LOAD_PATH_CONTINUITY",
+      "loaded_nodes": ["N3", "N4"],
+      "load_path_edges": [
+        {"from": "N3", "to": "N2"},
+        {"from": "N4", "to": "N1"},
+        {"from": "N2", "to": "N1"},
+        {"from": "N1", "to": "S1"}
+      ],
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:LOAD_PATH_CONTINUITY"
+    },
+    {
+      "id": "GS-ALP",
+      "check_type": "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "alternate_path_verified": true,
+      "evidence_reference": "PROJECT_ROBUSTNESS_ASSESSMENT:ALTERNATE_PATH_CASES",
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:ROBUSTNESS_ALTERNATE_LOAD_PATH"
+    }
+  ],
+  "stability_policy": {
+    "acceptable_member_verification_states": ["MEMBER_VERIFICATION_CANDIDATE_PASSED"],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "SOFT_STOREY_STIFFNESS_RATIO",
+      "STOREY_STABILITY_INDEX",
+      "TORSIONAL_DRIFT_RATIO",
+      "WEAK_STOREY_STRENGTH_RATIO"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "release_policy": {
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "structural_model_release": "LOCKED"
+  }
+}

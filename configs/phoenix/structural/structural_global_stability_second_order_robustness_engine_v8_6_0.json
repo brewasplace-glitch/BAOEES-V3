@@ -1,0 +1,47 @@
+{
+  "engine_id": "PHX-STRUCT-GLOBAL-STABILITY-SECOND-ORDER-ROBUSTNESS-V8.6.0",
+  "name": "Project Phoenix Global Stability, Second-Order & Structural Robustness Verification Engine",
+  "version": "8.6.0",
+  "prerequisite": "structural_code_limit_state_member_verification_engine_v8_5_0",
+  "purpose": "Evaluate explicit and traceable global stability, second-order sensitivity, storey irregularity, load-path continuity and robustness evidence after member verification, while keeping all normative thresholds external and preserving engineering review/release gates.",
+  "capabilities": {
+    "member_verification_candidate_consumption": true,
+    "explicit_stability_basis_contract": true,
+    "second_order_amplification_check": true,
+    "p_delta_storey_stability_index_check": true,
+    "global_buckling_factor_check": true,
+    "torsional_drift_ratio_check": true,
+    "soft_storey_stiffness_ratio_check": true,
+    "weak_storey_strength_ratio_check": true,
+    "diaphragm_continuity_evidence": true,
+    "load_path_graph_continuity_check": true,
+    "alternate_load_path_evidence": true,
+    "global_stability_utilization_envelope": true,
+    "review_item_generation": true,
+    "digital_twin_writeback_contract": true
+  },
+  "normative_data_policy": {
+    "normative_limits_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "code_edition_required": true,
+    "jurisdiction_required": true,
+    "no_unreferenced_second_order_threshold_generation": true,
+    "no_unreferenced_stability_index_limit_generation": true,
+    "no_unreferenced_irregularity_threshold_generation": true,
+    "screening_pass_must_not_be_presented_as_code_compliance": true
+  },
+  "safety_rules": {
+    "v8_5_member_verification_state_must_be_acceptable": true,
+    "failed_or_incomplete_mandatory_check_must_create_review_item": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "structural_model_release": "LOCKED"
+  },
+  "release_gate": {
+    "requires_all_mandatory_global_stability_checks_passed": true,
+    "requires_connection_and_support_verification": true,
+    "requires_foundation_interface_verification": true,
+    "requires_competent_engineering_review": true
+  }
+}
