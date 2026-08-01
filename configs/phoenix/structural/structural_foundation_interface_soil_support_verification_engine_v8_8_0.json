@@ -1,0 +1,54 @@
+{
+  "engine_id": "PHX-STRUCT-FOUNDATION-INTERFACE-SOIL-SUPPORT-VERIFICATION-V8.8.0",
+  "name": "Project Phoenix Structural Foundation Interface, Soil-Support & Foundation Verification Engine",
+  "version": "8.8.0",
+  "prerequisite": "structural_connection_support_joint_verification_engine_v8_7_0",
+  "purpose": "Create an auditable structural-to-foundation-to-soil interface candidate using only explicit support mappings, reactions, geotechnical parameters, capacities, serviceability limits and normative references.",
+  "capabilities": {
+    "v8_7_connection_candidate_consumption": true,
+    "explicit_foundation_geotechnical_basis_contract": true,
+    "support_to_foundation_interface_mapping": true,
+    "foundation_reaction_capacity_verification": true,
+    "soil_bearing_pressure_verification": true,
+    "settlement_limit_verification": true,
+    "differential_settlement_limit_verification": true,
+    "uplift_resistance_verification": true,
+    "sliding_resistance_verification": true,
+    "foundation_beam_capacity_contract": true,
+    "pile_axial_capacity_contract": true,
+    "pile_group_capacity_contract": true,
+    "soil_spring_stiffness_evidence": true,
+    "geotechnical_parameter_traceability": true,
+    "foundation_utilization_envelope": true,
+    "review_item_generation": true,
+    "digital_twin_writeback_contract": true
+  },
+  "normative_data_policy": {
+    "soil_and_foundation_parameters_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "code_edition_required": true,
+    "jurisdiction_required": true,
+    "no_unreferenced_soil_parameter_generation": true,
+    "no_unreferenced_bearing_capacity_generation": true,
+    "no_unreferenced_settlement_limit_generation": true,
+    "no_unreferenced_pile_capacity_generation": true,
+    "no_unreferenced_spring_stiffness_generation": true,
+    "screening_pass_must_not_be_presented_as_geotechnical_or_code_approval": true
+  },
+  "safety_rules": {
+    "v8_7_connection_support_joint_state_must_be_acceptable": true,
+    "all_structural_supports_must_map_to_foundations_and_soil_zones": true,
+    "failed_or_incomplete_mandatory_check_must_create_review_item": true,
+    "automatic_geotechnical_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_foundation_approval": false,
+    "structural_model_release": "LOCKED"
+  },
+  "release_gate": {
+    "requires_all_mandatory_foundation_soil_support_checks_passed": true,
+    "requires_complete_support_foundation_interface_mapping": true,
+    "requires_foundation_design_detail_verification": true,
+    "requires_competent_structural_geotechnical_review": true
+  }
+}

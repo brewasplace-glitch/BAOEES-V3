@@ -1,0 +1,55 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-FOUNDATION-V8.8.0",
+  "source_engine": "PHX-STRUCT-CONNECTION-SUPPORT-JOINT-VERIFICATION-V8.7.0",
+  "connection_support_joint_state": "CONNECTION_SUPPORT_JOINT_CANDIDATE_PASSED",
+  "foundation_geotechnical_basis": {
+    "jurisdiction": "PROJECT_DEFINED",
+    "standard_set": "PROJECT_DEFINED_STRUCTURAL_GEOTECHNICAL_STANDARD",
+    "edition": "PROJECT_DEFINED_EDITION",
+    "source_reference": "PROJECT_STRUCTURAL_GEOTECHNICAL_DESIGN_BASIS:FOUNDATION_INTERFACE",
+    "status": "ENGINEER_OR_VERIFIED_STANDARDS_ENGINE_INPUT"
+  },
+  "foundation_model": {
+    "supports": [{"id": "S1"}, {"id": "S2"}],
+    "foundation_elements": [{"id": "F1", "type": "PAD_OR_STRIP_CANDIDATE"}, {"id": "FB1", "type": "FOUNDATION_BEAM_CANDIDATE"}],
+    "soil_zones": [{"id": "SZ1"}],
+    "piles": [{"id": "P1"}],
+    "pile_groups": [{"id": "PG1"}]
+  },
+  "support_foundation_interfaces": [
+    {"support_id": "S1", "foundation_id": "F1", "soil_zone_id": "SZ1", "evidence_reference": "INTERFACE:S1-F1-SZ1"},
+    {"support_id": "S2", "foundation_id": "FB1", "soil_zone_id": "SZ1", "evidence_reference": "INTERFACE:S2-FB1-SZ1"}
+  ],
+  "verification_checks": [
+    {"id": "F01", "check_type": "FOUNDATION_REACTION_CAPACITY", "foundation_id": "F1", "demand": 420, "capacity": 600, "quantity": "vertical_reaction", "unit": "kN", "mandatory": true, "normative_reference": "REF:FOUNDATION_REACTION"},
+    {"id": "F02", "check_type": "SOIL_BEARING_PRESSURE", "foundation_id": "F1", "soil_zone_id": "SZ1", "demand": 120, "capacity": 180, "quantity": "bearing_pressure", "unit": "kPa", "mandatory": true, "normative_reference": "REF:SOIL_BEARING"},
+    {"id": "F03", "check_type": "SETTLEMENT_LIMIT", "foundation_id": "F1", "soil_zone_id": "SZ1", "demand": 18, "capacity": 25, "quantity": "settlement", "unit": "mm", "mandatory": true, "normative_reference": "REF:SETTLEMENT"},
+    {"id": "F04", "check_type": "DIFFERENTIAL_SETTLEMENT_LIMIT", "foundation_id": "F1", "soil_zone_id": "SZ1", "demand": 9, "capacity": 15, "quantity": "differential_settlement", "unit": "mm", "mandatory": true, "normative_reference": "REF:DIFFERENTIAL_SETTLEMENT"},
+    {"id": "F05", "check_type": "UPLIFT_RESISTANCE", "foundation_id": "F1", "soil_zone_id": "SZ1", "demand": 70, "capacity": 110, "quantity": "uplift_action", "unit": "kN", "mandatory": true, "normative_reference": "REF:UPLIFT"},
+    {"id": "F06", "check_type": "SLIDING_RESISTANCE", "foundation_id": "F1", "soil_zone_id": "SZ1", "demand": 55, "capacity": 90, "quantity": "horizontal_action", "unit": "kN", "mandatory": true, "normative_reference": "REF:SLIDING"},
+    {"id": "F07", "check_type": "FOUNDATION_BEAM_CAPACITY", "foundation_id": "FB1", "demand": 95, "capacity": 130, "quantity": "design_action", "unit": "kNm", "mandatory": true, "normative_reference": "REF:FOUNDATION_BEAM"},
+    {"id": "F08", "check_type": "PILE_AXIAL_CAPACITY", "pile_id": "P1", "demand": 310, "capacity": 420, "quantity": "axial_load", "unit": "kN", "mandatory": true, "normative_reference": "REF:PILE_AXIAL"},
+    {"id": "F09", "check_type": "PILE_GROUP_CAPACITY", "pile_group_id": "PG1", "demand": 850, "capacity": 1100, "quantity": "group_axial_load", "unit": "kN", "mandatory": true, "normative_reference": "REF:PILE_GROUP"},
+    {"id": "F10", "check_type": "SOIL_SPRING_STIFFNESS_EVIDENCE", "soil_zone_id": "SZ1", "verified": true, "stiffness_model": "PROJECT_DEFINED", "evidence_reference": "EVIDENCE:SOIL_SPRING_SZ1", "mandatory": true, "normative_reference": "REF:SOIL_SPRING"},
+    {"id": "F11", "check_type": "GEOTECHNICAL_PARAMETER_TRACEABILITY", "soil_zone_id": "SZ1", "verified": true, "parameter_set_id": "GEO-PARAM-SZ1", "evidence_reference": "EVIDENCE:GEO_PARAMETER_SET_SZ1", "mandatory": true, "normative_reference": "REF:GEOTECHNICAL_PARAMETERS"}
+  ],
+  "verification_policy": {
+    "acceptable_connection_states": ["CONNECTION_SUPPORT_JOINT_CANDIDATE_PASSED"],
+    "require_normative_reference": true,
+    "require_all_supports_mapped": true,
+    "mandatory_check_types": [
+      "FOUNDATION_REACTION_CAPACITY",
+      "SOIL_BEARING_PRESSURE",
+      "SETTLEMENT_LIMIT",
+      "DIFFERENTIAL_SETTLEMENT_LIMIT",
+      "UPLIFT_RESISTANCE",
+      "SLIDING_RESISTANCE",
+      "FOUNDATION_BEAM_CAPACITY",
+      "PILE_AXIAL_CAPACITY",
+      "PILE_GROUP_CAPACITY",
+      "SOIL_SPRING_STIFFNESS_EVIDENCE",
+      "GEOTECHNICAL_PARAMETER_TRACEABILITY"
+    ],
+    "pass_tolerance": 1e-12
+  }
+}
