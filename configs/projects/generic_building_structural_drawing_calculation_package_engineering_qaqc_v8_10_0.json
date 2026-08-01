@@ -1,0 +1,332 @@
+{
+  "assumptions": [
+    {
+      "id": "ASM-001",
+      "owner": "PROJECT_QA",
+      "source_reference": "digital_twin/snapshot_manifest.json",
+      "statement": "All project geometry used in the package is derived from the controlled Digital Twin snapshot.",
+      "status": "VALIDATED"
+    },
+    {
+      "id": "ASM-002",
+      "owner": "STRUCTURAL_ENGINEERING",
+      "source_reference": "design_basis/structural_basis.json",
+      "statement": "Normative values are supplied by the controlled project design basis and are not invented by this engine.",
+      "status": "VALIDATED"
+    }
+  ],
+  "calculation_sections": [
+    {
+      "discipline": "STRUCTURAL_ANALYSIS",
+      "id": "CALC-01",
+      "normative_reference": "Project design basis / ULS-SLS",
+      "related_drawing_ids": [
+        "S-001"
+      ],
+      "revision": "P01",
+      "source_reference": "calculations/CALC-01.json",
+      "status": "ISSUED_FOR_ENGINEERING_QA",
+      "title": "Actions, analysis and member verification"
+    },
+    {
+      "discipline": "STRUCTURAL_STABILITY_CONNECTIONS",
+      "id": "CALC-02",
+      "normative_reference": "Project design basis / stability and connections",
+      "related_drawing_ids": [
+        "S-001",
+        "S-201"
+      ],
+      "revision": "P01",
+      "source_reference": "calculations/CALC-02.json",
+      "status": "ISSUED_FOR_ENGINEERING_QA",
+      "title": "Global stability and connection verification"
+    },
+    {
+      "discipline": "FOUNDATIONS",
+      "id": "CALC-03",
+      "normative_reference": "Project design basis / foundations",
+      "related_drawing_ids": [
+        "S-101"
+      ],
+      "revision": "P01",
+      "source_reference": "calculations/CALC-03.json",
+      "status": "ISSUED_FOR_ENGINEERING_QA",
+      "title": "Foundation and reinforcement verification"
+    }
+  ],
+  "drawings": [
+    {
+      "drawing_type": "GENERAL_ARRANGEMENT",
+      "id": "S-001",
+      "related_calculation_ids": [
+        "CALC-01",
+        "CALC-02"
+      ],
+      "related_element_ids": [
+        "COL-01",
+        "BEAM-01"
+      ],
+      "revision": "P01",
+      "source_reference": "drawings/S-001.pdf",
+      "status": "ISSUED_FOR_ENGINEERING_QA",
+      "title": "Structural general arrangement"
+    },
+    {
+      "drawing_type": "FOUNDATION_REINFORCEMENT",
+      "id": "S-101",
+      "related_calculation_ids": [
+        "CALC-03"
+      ],
+      "related_element_ids": [
+        "F1",
+        "FB1",
+        "PC1"
+      ],
+      "revision": "P01",
+      "source_reference": "drawings/S-101.pdf",
+      "status": "ISSUED_FOR_ENGINEERING_QA",
+      "title": "Foundation and reinforcement plan"
+    },
+    {
+      "drawing_type": "CONNECTION_DETAILS",
+      "id": "S-201",
+      "related_calculation_ids": [
+        "CALC-02"
+      ],
+      "related_element_ids": [
+        "J1",
+        "SUP-01"
+      ],
+      "revision": "P01",
+      "source_reference": "drawings/S-201.pdf",
+      "status": "ISSUED_FOR_ENGINEERING_QA",
+      "title": "Connection and support details"
+    }
+  ],
+  "engineering_package_basis": {
+    "edition": "PROJECT_DEFINED",
+    "jurisdiction": "PROJECT_DEFINED",
+    "package_id": "STRUCT-PKG-001",
+    "package_revision": "P01",
+    "project_id": "GENERIC-BUILDING-001",
+    "source_reference": "configs/projects/generic_building_structural_drawing_calculation_package_engineering_qaqc_v8_10_0.json",
+    "standard_set": "PROJECT DESIGN BASIS",
+    "status": "ENGINEERING_QA_CANDIDATE"
+  },
+  "foundation_design_reinforcement_detailing_state": "FOUNDATION_DESIGN_REINFORCEMENT_DETAILING_CANDIDATE_PASSED",
+  "human_engineering_review_gate": {
+    "required": true,
+    "review_reference": "ENG-REVIEW-PENDING",
+    "reviewer_role": "COMPETENT_STRUCTURAL_ENGINEER",
+    "status": "PENDING"
+  },
+  "qaqc_checks": [
+    {
+      "check_type": "ASSUMPTION_REGISTER_COMPLETENESS",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/assumption_register_completeness.json",
+      "verified": true
+    },
+    {
+      "check_type": "DIGITAL_TWIN_CROSS_REFERENCE",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/digital_twin_cross_reference.json",
+      "verified": true
+    },
+    {
+      "check_type": "DRAWING_CALCULATION_CROSS_REFERENCE",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/drawing_calculation_cross_reference.json",
+      "verified": true
+    },
+    {
+      "check_type": "DRAWING_REVISION_COHERENCE",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/drawing_revision_coherence.json",
+      "verified": true
+    },
+    {
+      "check_type": "NORMATIVE_REFERENCE_COMPLETENESS",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/normative_reference_completeness.json",
+      "verified": true
+    },
+    {
+      "check_type": "OPEN_REVIEW_ITEM_RECONCILIATION",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/open_review_item_reconciliation.json",
+      "verified": true
+    },
+    {
+      "check_type": "PACKAGE_IDENTIFIER_COHERENCE",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/package_identifier_coherence.json",
+      "verified": true
+    },
+    {
+      "check_type": "QUANTITY_SCHEDULE_COHERENCE",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/quantity_schedule_coherence.json",
+      "verified": true
+    },
+    {
+      "check_type": "SOURCE_LAYER_COMPLETENESS",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/source_layer_completeness.json",
+      "verified": true
+    },
+    {
+      "check_type": "VERIFICATION_REGISTER_COMPLETENESS",
+      "comment": "Demo evidence verified",
+      "evidence_reference": "qa/verification_register_completeness.json",
+      "verified": true
+    }
+  ],
+  "qaqc_policy": {
+    "human_engineering_review_required": true,
+    "mandatory_qaqc_check_types": [
+      "ASSUMPTION_REGISTER_COMPLETENESS",
+      "DIGITAL_TWIN_CROSS_REFERENCE",
+      "DRAWING_CALCULATION_CROSS_REFERENCE",
+      "DRAWING_REVISION_COHERENCE",
+      "NORMATIVE_REFERENCE_COMPLETENESS",
+      "OPEN_REVIEW_ITEM_RECONCILIATION",
+      "PACKAGE_IDENTIFIER_COHERENCE",
+      "QUANTITY_SCHEDULE_COHERENCE",
+      "SOURCE_LAYER_COMPLETENESS",
+      "VERIFICATION_REGISTER_COMPLETENESS"
+    ],
+    "require_drawing_calc_cross_reference": true,
+    "require_normative_reference": true,
+    "require_source_reference": true,
+    "require_zero_open_assumptions_for_readiness": true,
+    "require_zero_open_verification_review_items": true,
+    "required_source_versions": [
+      "v8.0.0",
+      "v8.1.0",
+      "v8.2.0",
+      "v8.3.0",
+      "v8.4.0",
+      "v8.5.0",
+      "v8.6.0",
+      "v8.7.0",
+      "v8.8.0",
+      "v8.9.0"
+    ]
+  },
+  "source_engine": "PHX-STRUCT-FOUNDATION-DESIGN-REINFORCEMENT-DETAILING-V8.9.0",
+  "source_layers": [
+    {
+      "evidence_reference": "outputs/runtime/v8_0_0/evidence.json",
+      "layer_id": "ARCHITECTURAL_TO_STRUCTURAL_DERIVATION",
+      "mandatory": true,
+      "state": "ARCHITECTURAL_TO_STRUCTURAL_DERIVATION_CANDIDATE_PASSED",
+      "version": "v8.0.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_1_0/evidence.json",
+      "layer_id": "STRUCTURAL_ANALYTICAL_MODEL",
+      "mandatory": true,
+      "state": "STRUCTURAL_ANALYTICAL_MODEL_CANDIDATE_PASSED",
+      "version": "v8.1.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_2_0/evidence.json",
+      "layer_id": "STRUCTURAL_ACTION_LOAD_MODEL",
+      "mandatory": true,
+      "state": "STRUCTURAL_ACTION_LOAD_MODEL_CANDIDATE_PASSED",
+      "version": "v8.2.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_3_0/evidence.json",
+      "layer_id": "STRUCTURAL_SOLVER_INPUT_ANALYSIS",
+      "mandatory": true,
+      "state": "STRUCTURAL_SOLVER_INPUT_ANALYSIS_CANDIDATE_PASSED",
+      "version": "v8.3.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_4_0/evidence.json",
+      "layer_id": "STRUCTURAL_ANALYSIS_RESULTS_VALIDATION",
+      "mandatory": true,
+      "state": "STRUCTURAL_ANALYSIS_RESULTS_VALIDATION_CANDIDATE_PASSED",
+      "version": "v8.4.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_5_0/evidence.json",
+      "layer_id": "STRUCTURAL_MEMBER_VERIFICATION",
+      "mandatory": true,
+      "state": "STRUCTURAL_MEMBER_VERIFICATION_CANDIDATE_PASSED",
+      "version": "v8.5.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_6_0/evidence.json",
+      "layer_id": "STRUCTURAL_GLOBAL_STABILITY_ROBUSTNESS",
+      "mandatory": true,
+      "state": "STRUCTURAL_GLOBAL_STABILITY_ROBUSTNESS_CANDIDATE_PASSED",
+      "version": "v8.6.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_7_0/evidence.json",
+      "layer_id": "STRUCTURAL_CONNECTION_SUPPORT_JOINT_VERIFICATION",
+      "mandatory": true,
+      "state": "STRUCTURAL_CONNECTION_SUPPORT_JOINT_VERIFICATION_CANDIDATE_PASSED",
+      "version": "v8.7.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_8_0/evidence.json",
+      "layer_id": "STRUCTURAL_FOUNDATION_INTERFACE_SOIL_SUPPORT",
+      "mandatory": true,
+      "state": "STRUCTURAL_FOUNDATION_INTERFACE_SOIL_SUPPORT_CANDIDATE_PASSED",
+      "version": "v8.8.0"
+    },
+    {
+      "evidence_reference": "outputs/runtime/v8_9_0/evidence.json",
+      "layer_id": "STRUCTURAL_FOUNDATION_DESIGN_REINFORCEMENT_DETAILING",
+      "mandatory": true,
+      "state": "STRUCTURAL_FOUNDATION_DESIGN_REINFORCEMENT_DETAILING_CANDIDATE_PASSED",
+      "version": "v8.9.0"
+    }
+  ],
+  "verification_registers": [
+    {
+      "category": "MEMBER_VERIFICATION",
+      "evidence_reference": "outputs/structural/member_verification.json",
+      "maximum_utilization": 0.8661,
+      "normative_reference": "Design basis / member verification clauses",
+      "open_review_items": 0,
+      "status": "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+    },
+    {
+      "category": "GLOBAL_STABILITY_ROBUSTNESS",
+      "evidence_reference": "outputs/structural/global_stability.json",
+      "maximum_utilization": 0.9583,
+      "normative_reference": "Design basis / global stability clauses",
+      "open_review_items": 0,
+      "status": "GLOBAL_STABILITY_ROBUSTNESS_CANDIDATE_PASSED"
+    },
+    {
+      "category": "CONNECTION_SUPPORT_JOINT",
+      "evidence_reference": "outputs/structural/connections.json",
+      "maximum_utilization": 0.82,
+      "normative_reference": "Design basis / connection clauses",
+      "open_review_items": 0,
+      "status": "CONNECTION_SUPPORT_JOINT_CANDIDATE_PASSED"
+    },
+    {
+      "category": "FOUNDATION_INTERFACE_SOIL_SUPPORT",
+      "evidence_reference": "outputs/structural/foundation_interface.json",
+      "maximum_utilization": 0.74,
+      "normative_reference": "Design basis / foundation and geotechnical clauses",
+      "open_review_items": 0,
+      "status": "FOUNDATION_INTERFACE_SOIL_SUPPORT_CANDIDATE_PASSED"
+    },
+    {
+      "category": "FOUNDATION_DESIGN_REINFORCEMENT_DETAILING",
+      "evidence_reference": "outputs/structural/foundation_design.json",
+      "maximum_utilization": 0.7821,
+      "normative_reference": "Design basis / reinforced foundation clauses",
+      "open_review_items": 0,
+      "status": "FOUNDATION_DESIGN_REINFORCEMENT_DETAILING_CANDIDATE_PASSED"
+    }
+  ]
+}

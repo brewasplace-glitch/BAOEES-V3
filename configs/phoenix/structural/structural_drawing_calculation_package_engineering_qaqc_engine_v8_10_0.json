@@ -1,0 +1,60 @@
+{
+  "capabilities": {
+    "calculation_register_generation": true,
+    "canonical_package_fingerprint_sha256": true,
+    "digital_twin_engineering_package_writeback": true,
+    "drawing_calculation_cross_reference_checks": true,
+    "drawing_register_generation": true,
+    "engineering_assumption_register": true,
+    "engineering_evidence_index": true,
+    "mandatory_human_engineering_review_gate": true,
+    "normative_reference_completeness_checks": true,
+    "open_review_item_reconciliation": true,
+    "qaqc_findings_and_blocker_register": true,
+    "revision_coherence_checks": true,
+    "source_evidence_completeness_checks": true,
+    "technical_release_readiness_matrix": true,
+    "v8_0_to_v8_9_source_layer_evidence_matrix": true,
+    "v8_9_candidate_consumption": true,
+    "verification_register_aggregation": true
+  },
+  "engine_id": "PHX-STRUCT-DRAWING-CALC-PACKAGE-ENGINEERING-QAQC-V8.10.0",
+  "evidence_policy": {
+    "all_mandatory_source_layers_must_be_candidate_passed": true,
+    "all_required_source_layers_must_be_present": true,
+    "cross_references_must_resolve": true,
+    "drawing_and_calculation_revisions_must_match_package_revision": true,
+    "failed_or_missing_mandatory_qaqc_evidence_blocks_readiness": true,
+    "normative_references_must_be_explicit": true,
+    "open_engineering_assumptions_block_technical_readiness": true,
+    "open_verification_review_items_block_technical_readiness": true,
+    "package_fingerprint_is_evidence_integrity_metadata_not_a_professional_approval": true,
+    "source_references_must_be_explicit": true,
+    "verification_registers_must_be_present_and_candidate_passed": true
+  },
+  "name": "Project Phoenix Structural Drawing, Calculation Package & Engineering QA/QC Engine",
+  "prerequisite": "structural_foundation_design_reinforcement_detailing_engine_v8_9_0",
+  "purpose": "Consolidate the v8.0-v8.9 structural evidence chain into an auditable engineering drawing/calculation package candidate with cross-document QA/QC, evidence indexing, release-readiness evaluation and mandatory human engineering review gating.",
+  "release_gate": {
+    "requires_competent_structural_engineer_review": true,
+    "requires_complete_drawing_calculation_cross_reference": true,
+    "requires_complete_v8_0_to_v8_9_evidence_chain": true,
+    "requires_normative_and_source_traceability": true,
+    "requires_separate_professional_approval_and_construction_release_process": true,
+    "requires_zero_open_engineering_assumptions": true,
+    "requires_zero_open_verification_review_items": true,
+    "requires_zero_qaqc_blockers": true
+  },
+  "safety_rules": {
+    "construction_release": "LOCKED",
+    "human_engineering_review_required": true,
+    "no_automatic_calculation_approval": true,
+    "no_automatic_code_compliance_claim": true,
+    "no_automatic_construction_release": true,
+    "no_automatic_drawing_approval": true,
+    "no_automatic_professional_engineering_approval": true,
+    "no_automatic_structural_approval": true,
+    "structural_model_release": "LOCKED"
+  },
+  "version": "8.10.0"
+}
