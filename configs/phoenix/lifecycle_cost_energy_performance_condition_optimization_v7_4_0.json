@@ -1,0 +1,42 @@
+{
+  "condition_scale": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "domains": [
+    "lifecycle_cost",
+    "energy",
+    "water_and_resources",
+    "performance_kpis",
+    "condition_monitoring",
+    "maintenance_forecast",
+    "replacement_forecast",
+    "performance_deviation",
+    "optimization_recommendations",
+    "professional_approval"
+  ],
+  "engine_id": "PHX-LCEPCO-740",
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "recommendation_statuses": [
+    "PROPOSED",
+    "UNDER_REVIEW",
+    "APPROVED",
+    "REJECTED",
+    "IMPLEMENTED"
+  ],
+  "release_policy": {
+    "automatic_optimization_action_forbidden": true,
+    "condition_data_required": true,
+    "energy_baseline_required": true,
+    "financial_assumptions_verified": true,
+    "minimum_data_quality_required": true,
+    "operations_gate_required": true,
+    "optimization_evidence_required": true,
+    "professional_approval_required": true
+  },
+  "schema_version": "phoenix.lifecycle-cost-energy-performance-condition-optimization/7.4.0"
+}

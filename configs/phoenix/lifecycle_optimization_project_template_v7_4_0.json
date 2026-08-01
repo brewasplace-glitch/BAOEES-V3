@@ -1,0 +1,29 @@
+{
+  "condition_records": [],
+  "cost_records": [],
+  "energy_records": [],
+  "financial_assumptions": {
+    "analysis_period_years": null,
+    "currency": "",
+    "discount_rate": null,
+    "inflation_rate": null,
+    "verified": false
+  },
+  "maintenance_forecasts": [],
+  "operations_release_gate_path": "",
+  "optimization_recommendations": [],
+  "performance_kpis": [],
+  "professional_optimization_approval": {
+    "approval_date": "",
+    "approval_reference": "",
+    "approved": false,
+    "approved_by": "",
+    "required": true,
+    "role": ""
+  },
+  "profile_id": "LIFECYCLE-OPTIMIZATION-TEMPLATE",
+  "project_id": "",
+  "replacement_forecasts": [],
+  "resource_records": [],
+  "schema_version": "phoenix.lifecycle-optimization-project-profile/7.4.0"
+}
