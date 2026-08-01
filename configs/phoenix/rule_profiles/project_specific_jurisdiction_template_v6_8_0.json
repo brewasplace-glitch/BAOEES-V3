@@ -1,0 +1,32 @@
+{
+  "evidence_requirements": [],
+  "jurisdiction": {
+    "authority_contact_reference": "",
+    "authority_department": "",
+    "authority_name": "",
+    "country": "",
+    "municipality": "",
+    "province_state_region": "",
+    "verified": false,
+    "verified_by": "",
+    "verified_date": ""
+  },
+  "professional_review": {
+    "approved": false,
+    "required": true,
+    "review_date": "",
+    "reviewer_name": "",
+    "reviewer_role": ""
+  },
+  "profile_id": "PROJECT-JURISDICTION-TEMPLATE",
+  "project_id": "",
+  "regulations": [],
+  "rules": [],
+  "schema_version": "phoenix.project-jurisdiction-profile/6.8.0",
+  "submission": {
+    "authority_submission_required": true,
+    "evidence_complete": false,
+    "submission_date": "",
+    "submission_reference": ""
+  }
+}

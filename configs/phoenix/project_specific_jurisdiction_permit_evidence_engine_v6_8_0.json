@@ -1,0 +1,26 @@
+{
+  "domains": [
+    "jurisdiction_identity",
+    "authority",
+    "regulation_sources",
+    "rule_profile",
+    "evidence_register",
+    "compliance_traceability",
+    "permit_readiness",
+    "professional_review"
+  ],
+  "engine_id": "PHX-JPE-680",
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "release_policy": {
+    "all_mandatory_rules_assessable": true,
+    "all_mandatory_rules_pass": true,
+    "authority_submission_evidence_required": true,
+    "automatic_legal_approval_forbidden": true,
+    "execution_ready_requires_final_design_and_professional_approval": true,
+    "professional_review_required": true,
+    "verified_jurisdiction_required": true,
+    "verified_sources_required": true
+  },
+  "schema_version": "phoenix.jurisdiction-permit-evidence/6.8.0"
+}
