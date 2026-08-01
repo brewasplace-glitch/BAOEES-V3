@@ -1,0 +1,124 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-STRUCT-CODE-V8.5.0",
+  "project_type": "generic_building",
+  "source_engine": "PHX-STRUCT-ANALYSIS-RESULTS-VALIDATION-V8.4.0",
+  "analysis_validation_state": "SANITY_VALIDATED_CANDIDATE",
+  "code_basis": {
+    "jurisdiction": "PROJECT_DEFINED",
+    "standard_set": "PROJECT_DEFINED_STRUCTURAL_STANDARD",
+    "edition": "PROJECT_DEFINED_EDITION",
+    "source_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS",
+    "status": "ENGINEER_OR_VERIFIED_STANDARDS_ENGINE_INPUT"
+  },
+  "analytical_model": {
+    "members": [
+      {"id": "M1", "length_m": 5.0, "material_family": "steel"}
+    ],
+    "nodes": [{"id": "N1"}, {"id": "N2"}]
+  },
+  "combination_results": {
+    "opensees": {
+      "ULS1": {
+        "limit_state": "ULS",
+        "node_displacements": {"N2": {"UZ": -0.0072}},
+        "element_forces": {"M1": {"N": -180.0, "VY": 35.0, "VZ": 12.0, "MY": 70.0, "MZ": 8.0, "T": 2.0}}
+      },
+      "SLS1": {
+        "limit_state": "SLS",
+        "node_displacements": {"N2": {"UZ": -0.011}},
+        "element_forces": {"M1": {"N": -95.0, "VY": 18.0, "VZ": 8.0, "MY": 42.0, "MZ": 5.0, "T": 1.0}}
+      }
+    }
+  },
+  "verification_rules": [
+    {
+      "id": "M1-ULS-NC",
+      "member_id": "M1",
+      "limit_state": "ULS",
+      "combination_id": "ULS1",
+      "solver": "opensees",
+      "rule_type": "FORCE_CAPACITY_RATIO",
+      "demand_component": "N_COMPRESSION",
+      "capacity": 420.0,
+      "unit": "kN",
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:M1_COMPRESSION_RESISTANCE"
+    },
+    {
+      "id": "M1-ULS-MY",
+      "member_id": "M1",
+      "limit_state": "ULS",
+      "combination_id": "ULS1",
+      "solver": "opensees",
+      "rule_type": "FORCE_CAPACITY_RATIO",
+      "demand_component": "MY",
+      "capacity": 160.0,
+      "unit": "kNm",
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:M1_BENDING_Y_RESISTANCE"
+    },
+    {
+      "id": "M1-ULS-INTERACTION",
+      "member_id": "M1",
+      "limit_state": "ULS",
+      "combination_id": "ULS1",
+      "solver": "opensees",
+      "rule_type": "LINEAR_INTERACTION",
+      "limit": 1.0,
+      "mandatory": true,
+      "terms": [
+        {"demand_component": "N_COMPRESSION", "capacity": 420.0, "unit": "kN"},
+        {"demand_component": "MY", "capacity": 160.0, "unit": "kNm"}
+      ],
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:M1_INTERACTION_RULE"
+    },
+    {
+      "id": "M1-ULS-BUCKLING",
+      "member_id": "M1",
+      "limit_state": "ULS",
+      "combination_id": "ULS1",
+      "solver": "opensees",
+      "rule_type": "BUCKLING_RESISTANCE_RATIO",
+      "buckling_resistance_kN": 360.0,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:M1_BUCKLING_RESISTANCE"
+    },
+    {
+      "id": "M1-SLS-DEFLECTION",
+      "member_id": "M1",
+      "limit_state": "SLS",
+      "combination_id": "SLS1",
+      "solver": "opensees",
+      "rule_type": "NODE_DISPLACEMENT_LIMIT",
+      "node_id": "N2",
+      "dof": "UZ",
+      "max_abs_displacement_m": 0.02,
+      "mandatory": true,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:M1_SLS_VERTICAL_DEFLECTION_LIMIT"
+    },
+    {
+      "id": "M1-SLS-SLENDERNESS",
+      "member_id": "M1",
+      "limit_state": "SLS",
+      "combination_id": "SLS1",
+      "solver": "opensees",
+      "rule_type": "SLENDERNESS_LIMIT",
+      "actual_slenderness": 72.0,
+      "max_slenderness": 120.0,
+      "mandatory": false,
+      "normative_reference": "PROJECT_STRUCTURAL_DESIGN_BASIS:M1_SLENDERNESS_POLICY"
+    }
+  ],
+  "verification_policy": {
+    "acceptable_analysis_validation_states": ["SANITY_VALIDATED_CANDIDATE"],
+    "require_normative_reference": true,
+    "require_mandatory_rules_for_each_member": true,
+    "mandatory_limit_states": ["ULS", "SLS"],
+    "pass_tolerance": 1e-12
+  },
+  "release_policy": {
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "structural_model_release": "LOCKED"
+  }
+}

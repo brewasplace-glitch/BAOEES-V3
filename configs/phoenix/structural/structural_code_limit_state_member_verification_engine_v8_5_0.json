@@ -1,0 +1,46 @@
+{
+  "engine_id": "PHX-STRUCT-CODE-LIMIT-STATE-MEMBER-VERIFICATION-V8.5.0",
+  "name": "Project Phoenix Structural Code, Limit-State & Member Verification Engine",
+  "version": "8.5.0",
+  "prerequisite": "structural_analysis_results_validation_engine_v8_4_0",
+  "purpose": "Evaluate explicit, traceable ULS/SLS member verification rules against validated structural analysis results while keeping normative parameters external, evidence-based and reviewable. The engine computes demand/capacity and configured interaction checks, generates review items and writes a verification candidate to the central Digital Twin without claiming final code compliance or granting structural approval.",
+  "capabilities": {
+    "validated_analysis_result_consumption": true,
+    "explicit_code_basis_contract": true,
+    "normative_reference_traceability": true,
+    "uls_and_sls_limit_state_classification": true,
+    "member_force_capacity_ratio_checks": true,
+    "configured_linear_interaction_checks": true,
+    "node_displacement_limit_checks": true,
+    "member_slenderness_limit_checks": true,
+    "compression_buckling_resistance_checks": true,
+    "member_utilization_envelope": true,
+    "incomplete_verification_detection": true,
+    "review_item_generation": true,
+    "digital_twin_writeback_contract": true
+  },
+  "normative_data_policy": {
+    "normative_values_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "code_edition_required": true,
+    "jurisdiction_required": true,
+    "no_unreferenced_design_resistance_generation": true,
+    "no_unreferenced_partial_factor_generation": true,
+    "no_unreferenced_serviceability_limit_generation": true,
+    "generic_screening_rule_must_not_be_presented_as_code_compliance": true
+  },
+  "safety_rules": {
+    "v8_4_validation_state_must_be_acceptable": true,
+    "failed_or_incomplete_rule_must_create_review_item": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "structural_model_release": "LOCKED"
+  },
+  "release_gate": {
+    "requires_all_mandatory_verification_rules_passed": true,
+    "requires_global_stability_verification": true,
+    "requires_connection_and_support_verification": true,
+    "requires_foundation_interface_verification": true,
+    "requires_engineering_review": true
+  }
+}
