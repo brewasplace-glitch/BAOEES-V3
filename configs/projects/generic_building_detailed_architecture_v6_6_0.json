@@ -1,0 +1,203 @@
+{
+  "building": {
+    "external_wall_thickness_m": 0.3,
+    "floor_thickness_m": 0.25,
+    "internal_wall_thickness_m": 0.12,
+    "roof_thickness_m": 0.3,
+    "roof_type": "flat",
+    "storey_height_m": 3.2
+  },
+  "element_catalog": {
+    "door": {
+      "height_m": 2.315,
+      "type_id": "DT-001",
+      "width_m": 0.93
+    },
+    "external_wall": {
+      "layers": [
+        {
+          "name": "finish",
+          "thickness_m": 0.02
+        },
+        {
+          "name": "insulation",
+          "thickness_m": 0.14
+        },
+        {
+          "name": "structure",
+          "thickness_m": 0.12
+        },
+        {
+          "name": "inside",
+          "thickness_m": 0.02
+        }
+      ],
+      "type_id": "WT-EXT-001"
+    },
+    "floor": {
+      "layers": [
+        {
+          "name": "finish",
+          "thickness_m": 0.02
+        },
+        {
+          "name": "screed",
+          "thickness_m": 0.06
+        },
+        {
+          "name": "slab",
+          "thickness_m": 0.17
+        }
+      ],
+      "type_id": "FT-001"
+    },
+    "internal_wall": {
+      "layers": [
+        {
+          "name": "finish_a",
+          "thickness_m": 0.015
+        },
+        {
+          "name": "core",
+          "thickness_m": 0.09
+        },
+        {
+          "name": "finish_b",
+          "thickness_m": 0.015
+        }
+      ],
+      "type_id": "WT-INT-001"
+    },
+    "roof": {
+      "layers": [
+        {
+          "name": "finish",
+          "thickness_m": 0.01
+        },
+        {
+          "name": "insulation",
+          "thickness_m": 0.16
+        },
+        {
+          "name": "slab",
+          "thickness_m": 0.13
+        }
+      ],
+      "type_id": "RT-001"
+    },
+    "stair": {
+      "going_m": 0.25,
+      "riser_m": 0.178,
+      "width_m": 1.2
+    },
+    "window": {
+      "height_m": 1.5,
+      "sill_height_m": 0.9,
+      "type_id": "WDT-001",
+      "width_m": 1.5
+    }
+  },
+  "jurisdiction": {
+    "building_regulation_profile": "",
+    "country_code": "",
+    "municipality_code": "",
+    "permit_route": ""
+  },
+  "location": {
+    "address": "",
+    "coordinate_reference_system": "",
+    "country": "",
+    "municipality": ""
+  },
+  "professional_release": {
+    "execution_approved": false,
+    "permit_approved": false
+  },
+  "project_id": "GENERIC-BUILDING-001",
+  "project_name": "Generic Building Project",
+  "project_type": "building",
+  "schema_version": "phoenix.architectural-project-program/6.6.0",
+  "site": {
+    "north_angle_deg": 0.0,
+    "plot_depth_m": 40.0,
+    "plot_width_m": 30.0,
+    "verified_coordinates": false
+  },
+  "storeys": [
+    {
+      "elevation_m": 0.0,
+      "name": "Ground Floor",
+      "spaces": [
+        {
+          "area_m2": 20.0,
+          "function": "entrance",
+          "min_width_m": 3.0,
+          "name": "Entrance",
+          "space_id": "R001"
+        },
+        {
+          "area_m2": 35.0,
+          "function": "office",
+          "min_width_m": 4.0,
+          "name": "Office",
+          "space_id": "R002"
+        },
+        {
+          "area_m2": 40.0,
+          "function": "meeting",
+          "min_width_m": 5.0,
+          "name": "Meeting",
+          "space_id": "R003"
+        },
+        {
+          "area_m2": 15.0,
+          "function": "sanitary",
+          "min_width_m": 3.0,
+          "name": "Sanitary",
+          "space_id": "R004"
+        },
+        {
+          "area_m2": 10.0,
+          "function": "technical",
+          "min_width_m": 2.5,
+          "name": "Technical",
+          "space_id": "R005"
+        }
+      ],
+      "storey_id": "L00"
+    },
+    {
+      "elevation_m": 3.2,
+      "name": "First Floor",
+      "spaces": [
+        {
+          "area_m2": 70.0,
+          "function": "office",
+          "min_width_m": 6.0,
+          "name": "Open Workspace",
+          "space_id": "R101"
+        },
+        {
+          "area_m2": 30.0,
+          "function": "meeting",
+          "min_width_m": 4.0,
+          "name": "Meeting Room",
+          "space_id": "R102"
+        },
+        {
+          "area_m2": 15.0,
+          "function": "storage",
+          "min_width_m": 3.0,
+          "name": "Storage",
+          "space_id": "R103"
+        }
+      ],
+      "storey_id": "L01"
+    }
+  ],
+  "vertical_circulation": {
+    "lift_required": false,
+    "shaft_required": true,
+    "stairs_required": true
+  }
+}

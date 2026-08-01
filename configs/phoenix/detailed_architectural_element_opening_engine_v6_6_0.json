@@ -1,0 +1,22 @@
+{
+  "elements": [
+    "external_walls",
+    "internal_walls",
+    "floors",
+    "roof",
+    "doors",
+    "windows",
+    "stairs",
+    "shafts",
+    "junctions"
+  ],
+  "engine_id": "PHX-DAEOE-660",
+  "pilot_project_dependency": false,
+  "project_mode": "GENERIC_BUILDING_PROJECT",
+  "release_policy": {
+    "automatic_professional_approval": false,
+    "execution_ready": false,
+    "permit_ready": false
+  },
+  "schema_version": "phoenix.detailed-architectural-element-opening-engine/6.6.0"
+}
