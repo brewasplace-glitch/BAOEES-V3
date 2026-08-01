@@ -1,0 +1,19 @@
+{
+  "constructability_checks": [],
+  "details": [],
+  "execution_documents": [],
+  "material_specifications": [],
+  "permit_dossier_gate_path": "",
+  "product_requirements": [],
+  "professional_release": {
+    "approved": false,
+    "release_date": "",
+    "release_reference": "",
+    "released_by": "",
+    "required": true,
+    "role": ""
+  },
+  "profile_id": "EXECUTION-RELEASE-TEMPLATE",
+  "project_id": "",
+  "schema_version": "phoenix.execution-release-project-profile/7.0.0"
+}

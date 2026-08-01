@@ -1,0 +1,70 @@
+{
+  "details": [
+    {
+      "category": "wall_floor",
+      "detail_id": "DET-WALL-FLOOR-001",
+      "required_inputs": [
+        "wall_type_id",
+        "floor_type_id",
+        "level",
+        "thermal_continuity",
+        "moisture_barrier"
+      ],
+      "status": "TEMPLATE",
+      "title": "External wall to floor junction"
+    },
+    {
+      "category": "wall_roof",
+      "detail_id": "DET-WALL-ROOF-001",
+      "required_inputs": [
+        "wall_type_id",
+        "roof_type_id",
+        "weathering",
+        "thermal_continuity"
+      ],
+      "status": "TEMPLATE",
+      "title": "External wall to roof junction"
+    },
+    {
+      "category": "window",
+      "detail_id": "DET-WINDOW-001",
+      "required_inputs": [
+        "window_type_id",
+        "wall_type_id",
+        "fixing",
+        "waterproofing",
+        "insulation_return"
+      ],
+      "status": "TEMPLATE",
+      "title": "Window jamb sill head"
+    },
+    {
+      "category": "door",
+      "detail_id": "DET-DOOR-001",
+      "required_inputs": [
+        "door_type_id",
+        "threshold",
+        "weathering",
+        "accessibility",
+        "fixing"
+      ],
+      "status": "TEMPLATE",
+      "title": "External door threshold"
+    },
+    {
+      "category": "stair",
+      "detail_id": "DET-STAIR-001",
+      "required_inputs": [
+        "stair_type_id",
+        "landing",
+        "guarding",
+        "handrail",
+        "finish"
+      ],
+      "status": "TEMPLATE",
+      "title": "Stair landing and guarding"
+    }
+  ],
+  "library_id": "PHX-ARCH-DETAIL-LIB-700",
+  "schema_version": "phoenix.architectural-detail-library/7.0.0"
+}

@@ -1,0 +1,35 @@
+{
+  "domains": [
+    "execution_drawings",
+    "detail_library",
+    "dimensions",
+    "materials",
+    "products",
+    "specifications",
+    "constructability",
+    "revision_control",
+    "professional_release"
+  ],
+  "drawing_statuses": [
+    "DRAFT",
+    "INTERNAL_REVIEW",
+    "COORDINATION_REVIEW",
+    "APPROVED_FOR_CONSTRUCTION",
+    "SUPERSEDED"
+  ],
+  "engine_id": "PHX-EDSR-700",
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "release_policy": {
+    "all_constructability_checks_pass": true,
+    "all_execution_documents_current_revision": true,
+    "all_mandatory_details_present": true,
+    "all_mandatory_dimensions_present": true,
+    "all_material_specifications_complete": true,
+    "all_product_requirements_complete": true,
+    "automatic_construction_release_forbidden": true,
+    "permit_dossier_gate_required": true,
+    "professional_release_required": true
+  },
+  "schema_version": "phoenix.execution-drawing-detail-specification-release/7.0.0"
+}
