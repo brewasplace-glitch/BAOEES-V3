@@ -1,0 +1,45 @@
+{
+  "engine_id": "PHX-STRUCT-ANALYTICAL-MODEL-V8.1.0",
+  "name": "Project Phoenix Structural Analytical Model Generation Engine",
+  "version": "8.1.0",
+  "prerequisite": "architectural_to_structural_model_derivation_v8_0_0",
+  "purpose": "Convert architectural structural candidates into a solver-neutral analytical structural model candidate while preserving traceability and release safety.",
+  "status": {
+    "automatic_structural_approval": false,
+    "structural_model_release": "LOCKED",
+    "engineering_review_required": true
+  },
+  "capabilities": {
+    "node_generation": true,
+    "line_member_generation": true,
+    "shell_panel_generation": true,
+    "boundary_condition_candidate_generation": true,
+    "connectivity_graph": true,
+    "load_path_graph": true,
+    "material_candidate_assignment": true,
+    "section_candidate_assignment": true,
+    "stability_zone_transfer": true,
+    "architectural_traceability": true,
+    "digital_twin_writeback_contract": true,
+    "solver_neutral_output": true
+  },
+  "defaults": {
+    "coordinate_tolerance_m": 1e-06,
+    "column_material_candidate": "reinforced_concrete",
+    "beam_material_candidate": "reinforced_concrete",
+    "wall_material_candidate": "masonry_or_reinforced_concrete",
+    "slab_material_candidate": "reinforced_concrete",
+    "roof_support_material_candidate": "steel_or_timber",
+    "column_section_candidate": "AUTO_PRELIMINARY_COLUMN",
+    "beam_section_candidate": "AUTO_PRELIMINARY_BEAM",
+    "roof_support_section_candidate": "AUTO_PRELIMINARY_ROOF_SUPPORT",
+    "base_support_candidate": "PROVISIONAL_FIXED_BASE"
+  },
+  "release_gate": {
+    "requires_load_model": true,
+    "requires_preliminary_sizing": true,
+    "requires_solver_results": true,
+    "requires_code_checks": true,
+    "requires_engineering_review": true
+  }
+}

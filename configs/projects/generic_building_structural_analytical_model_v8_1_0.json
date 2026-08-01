@@ -1,0 +1,139 @@
+{
+  "project_id": "PHX-GENERIC-BUILDING-STRUCT-ANALYTICAL-V8.1.0",
+  "project_type": "generic_building",
+  "source_engine": "PHX-ARCH-TO-STRUCT-V8.0.0",
+  "structural_candidates": {
+    "columns": [
+      {
+        "id": "COL-C01",
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "top": [
+          0,
+          0,
+          3
+        ],
+        "material_candidate": "reinforced_concrete"
+      },
+      {
+        "id": "COL-C02",
+        "base": [
+          5,
+          0,
+          0
+        ],
+        "top": [
+          5,
+          0,
+          3
+        ],
+        "material_candidate": "reinforced_concrete"
+      }
+    ],
+    "beams": [
+      {
+        "id": "BEAM-B01",
+        "start": [
+          0,
+          0,
+          3
+        ],
+        "end": [
+          5,
+          0,
+          3
+        ],
+        "material_candidate": "reinforced_concrete"
+      }
+    ],
+    "loadbearing_walls": [
+      {
+        "id": "WALL-W01",
+        "polygon": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "material_candidate": "masonry_or_reinforced_concrete"
+      }
+    ],
+    "slab_panels": [
+      {
+        "id": "SLAB-S01",
+        "polygon": [
+          [
+            0,
+            0,
+            3
+          ],
+          [
+            5,
+            0,
+            3
+          ],
+          [
+            5,
+            4,
+            3
+          ],
+          [
+            0,
+            4,
+            3
+          ]
+        ],
+        "material_candidate": "reinforced_concrete"
+      }
+    ],
+    "roof_supports": [
+      {
+        "id": "ROOF-R01",
+        "start": [
+          0,
+          0,
+          6
+        ],
+        "end": [
+          5,
+          0,
+          6
+        ],
+        "material_candidate": "steel"
+      }
+    ],
+    "stability_zones": [
+      {
+        "id": "SZ-01",
+        "axis": "X",
+        "source_ids": [
+          "WALL-W01"
+        ]
+      }
+    ]
+  },
+  "analytical_model_policy": {
+    "auto_generate_column_base_support_candidates": true,
+    "automatic_structural_approval": false,
+    "structural_model_release": "LOCKED"
+  }
+}
