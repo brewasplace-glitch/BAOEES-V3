@@ -1,0 +1,23 @@
+{
+  "assets": [],
+  "faults": [],
+  "handover_gate_path": "",
+  "inspections": [],
+  "maintenance_plans": [],
+  "om_documents": [],
+  "professional_operations_acceptance": {
+    "acceptance_date": "",
+    "acceptance_reference": "",
+    "accepted_by": "",
+    "approved": false,
+    "required": true,
+    "role": ""
+  },
+  "profile_id": "ASSET-FM-OPERATIONS-TEMPLATE",
+  "project_id": "",
+  "replacement_cycles": [],
+  "schema_version": "phoenix.asset-fm-operations-project-profile/7.3.0",
+  "service_history": [],
+  "spare_parts": [],
+  "warranties": []
+}

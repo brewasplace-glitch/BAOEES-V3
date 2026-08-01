@@ -1,0 +1,37 @@
+{
+  "asset_statuses": [
+    "COMMISSIONED",
+    "IN_SERVICE",
+    "OUT_OF_SERVICE",
+    "UNDER_MAINTENANCE",
+    "RETIRED"
+  ],
+  "domains": [
+    "asset_information",
+    "om_documents",
+    "warranties",
+    "preventive_maintenance",
+    "inspections",
+    "faults",
+    "service_history",
+    "spare_parts",
+    "replacement_cycles",
+    "facility_management",
+    "operational_digital_twin"
+  ],
+  "engine_id": "PHX-AFMO-730",
+  "pilot_project_dependency": false,
+  "project_mode": "PROJECT_SPECIFIC",
+  "release_policy": {
+    "all_mandatory_assets_registered": true,
+    "all_mandatory_om_documents_present": true,
+    "all_mandatory_warranties_recorded": true,
+    "automatic_operations_release_forbidden": true,
+    "critical_spares_defined": true,
+    "handover_gate_required": true,
+    "initial_inspections_complete": true,
+    "maintenance_plans_complete": true,
+    "professional_operations_acceptance_required": true
+  },
+  "schema_version": "phoenix.asset-fm-maintenance-digital-twin-operations/7.3.0"
+}
