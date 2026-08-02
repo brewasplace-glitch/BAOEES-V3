@@ -1,8 +1,0 @@
-{
-  "calculation_result_fingerprint_sha256": "e847128222c9213da21ea9bb6555152091a718972414f983324308c350b35444",
-  "file_count_before_manifest": 19,
-  "model_fingerprint_sha256": "61c1c56f500192557d603552561dd408cfed09fe704247b26f18343d24f1af0a",
-  "model_id": "HBM-GEO-2026-001",
-  "schema_version": "phoenix.calculation-export-manifest/1.0",
-  "status_label": "CONCEPT CALCULATIONS - NOT FOR SUBMISSION OR EXECUTION"
-}

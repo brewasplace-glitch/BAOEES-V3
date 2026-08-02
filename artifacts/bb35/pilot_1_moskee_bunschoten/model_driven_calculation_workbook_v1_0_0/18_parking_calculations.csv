@@ -1,9 +1,0 @@
-﻿calculation_id,title,formula_or_method,input_refs,result,unit,status,control_limit,model_refs,drawing_refs,report_refs,request_refs,source_status
-CAL-P01,Available spaces regular_weekday,capacity - occupied,IN-019,115.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P02,Available spaces friday_pre_peak,capacity - occupied,IN-019,90.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P03,Available spaces friday_prayer_peak,capacity - occupied,IN-019,55.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P04,Available spaces saturday_active_use,capacity - occupied,IN-019,80.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P05,Available spaces sunday_active_use,capacity - occupied,IN-019,100.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P06,Synthetic parking surplus regular_future,minimum_available - demand,,25.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P07,Synthetic parking surplus friday_future,minimum_available - demand,,30.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY
-CAL-P08,Synthetic parking surplus special_peak,minimum_available - demand,,15.0,spaces,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"P-A,P-B,P-C,P-D,P-E",A-001,R-401,REQ-106,SIMULATION_ONLY

@@ -1,9 +1,0 @@
-gate_id,status,allowed,basis
-GATE-INTAKE-OPERATIONAL,PASSED,True,Six controlled intake channels and validation rules are active.
-GATE-REQ-107-PRESERVED,PASSED,True,REQ-107 remains CLOSED under HBM-OCC-2026-001.
-GATE-PROFESSIONAL-EVIDENCE-6-OF-6,BLOCKED,False,0 of 6 evidence packages accepted.
-GATE-POST-CLOSURE-REGENERATION,NOT_AVAILABLE,False,Accepted evidence must be consumed by the model/drawing/report/calculation orchestrator.
-GATE-PERMIT-READY,BLOCKED,False,Requires closure plus coordinated regeneration and final review.
-GATE-TENDER-READY,BLOCKED,False,Requires closure plus coordinated regeneration and final review.
-GATE-EXECUTION-READY,BLOCKED,False,Requires closure plus coordinated regeneration and final review.
-GATE-BB36-PRODUCTION-RELEASE,LOCKED,False,Requires final coordinated professional issue and explicit release approval.

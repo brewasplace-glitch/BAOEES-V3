@@ -1,9 +1,0 @@
-﻿calculation_id,title,request_id,concept_result,status
-CALC-102-01,Geometrische basiscontrole,REQ-102,70.0 m2 footprint; 140.0 m2 BVO,SIMULATION_ONLY
-CALC-103-01,Concept draagstructuur en belastingafdracht,REQ-103,9 kolommen; synthetisch staalframe,SIMULATION_ONLY
-CALC-104-01,Indicatieve funderingsdruk,REQ-104,18.54 kPa gemiddeld,SIMULATION_ONLY
-CALC-105-01,Concept vluchtwegcapaciteit,REQ-105,2 uitgangen van 1.2 m,SIMULATION_ONLY_NO_COMPLIANCE_CONCLUSION
-CALC-105-02,Concept ventilatie-invoer,REQ-105,Bezettingsgestuurde simulatie op wettelijk minimumniveau,SIMULATION_ONLY
-CALC-106-01,Concept parkeerbalans,REQ-106,225 plaatsen als projectleidersbasis,FIELD_VERIFICATION_PENDING
-CALC-108-01,AERIUS aanlegfase invoermatrix,REQ-108,Vijf fases; activiteitendata synthetisch of leeg,NO_AERIUS_CALCULATION_RUN
-CALC-108-02,AERIUS gebruiksfase invoermatrix,REQ-108,Bezetting en openingstijden gekoppeld; emissie-uitkomst ontbreekt,NO_AERIUS_CALCULATION_RUN

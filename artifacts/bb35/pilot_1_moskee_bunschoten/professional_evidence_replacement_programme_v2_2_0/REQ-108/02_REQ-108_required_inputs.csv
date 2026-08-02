@@ -1,8 +1,0 @@
-﻿input_id,description,accepted_formats,mandatory,submission_status,validation_status
-IN-108-01,Definitieve uitvoeringsfasen en doorlooptijden,XLSX/PDF,True,PENDING,NOT_STARTED
-IN-108-02,"Materieellijst, vermogen, brandstof en draaiuren",XLSX/CSV,True,PENDING,NOT_STARTED
-IN-108-03,"Bouwverkeer per voertuigtype, route en afstand",XLSX/CSV,True,PENDING,NOT_STARTED
-IN-108-04,Gebruiksfase en operationele verkeersdata,XLSX/CSV,True,PENDING,NOT_STARTED
-IN-108-05,Overlapbeoordeling bij openblijvende moskee,PDF,True,PENDING,NOT_STARTED
-IN-108-06,AERIUS-projectbestand en bronexport,AERIUS/ZIP,True,PENDING,NOT_STARTED
-IN-108-07,AERIUS-resultaat en ondertekende conclusie,PDF,True,PENDING,NOT_STARTED

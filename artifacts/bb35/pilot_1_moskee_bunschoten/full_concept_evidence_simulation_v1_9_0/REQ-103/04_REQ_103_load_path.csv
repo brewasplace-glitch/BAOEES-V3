@@ -1,5 +1,0 @@
-﻿sequence,load_path
-1,roof/floor -> synthetic secondary members
-2,secondary members -> synthetic primary beams
-3,primary beams -> nine synthetic columns
-4,columns -> REQ-104 test foundation concept

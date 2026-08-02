@@ -1,7 +1,0 @@
-﻿sequence,request_id,title,discipline,lead_role,required_input_count,acceptance_criterion_count,workpack_status,evidence_status,validation_status,closure_status
-1,REQ-102,"Geometrie, schaal, lagen en kadastrale validatie",architecture_and_survey,architect_or_survey_specialist,6,5,READY_FOR_ISSUE,PENDING,NOT_STARTED,OPEN
-2,REQ-103,Actuele constructieve opname en aansluitcontrole,structural_engineering,structural_engineer,6,5,READY_FOR_ISSUE,PENDING,NOT_STARTED,OPEN
-3,REQ-104,Geotechnisch onderzoek en funderingsadvies,geotechnical_engineering,geotechnical_adviser,6,5,READY_FOR_ISSUE,PENDING,NOT_STARTED,OPEN
-4,REQ-105,"Bbl, brandveiligheid, ventilatie en installaties",building_regulations_fire_and_installations,coordinating_architect_or_fire_safety_adviser,8,6,READY_FOR_ISSUE,PENDING,NOT_STARTED,OPEN
-5,REQ-106,"Parkeercapaciteit, tellingen en parkeerbalans",traffic_and_parking,traffic_or_parking_adviser,7,5,READY_FOR_ISSUE,PENDING,NOT_STARTED,OPEN
-6,REQ-108,"Activiteitendata, fasering en AERIUS-berekening",nitrogen_and_aerius,aerius_or_nitrogen_adviser,7,5,READY_FOR_ISSUE,PENDING,NOT_STARTED,OPEN

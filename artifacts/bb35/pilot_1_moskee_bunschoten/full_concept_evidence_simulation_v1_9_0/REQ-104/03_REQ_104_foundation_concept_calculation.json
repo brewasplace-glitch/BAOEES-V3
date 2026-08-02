@@ -1,8 +1,0 @@
-{
-  "assumed_bearing_area_m2": 72.0,
-  "assumed_strip_width_m": 1.5,
-  "assumed_total_strip_length_m": 48.0,
-  "foundation_test_concept": "STRIP_1_50x0_40_WITH_GRADE_BEAM_0_50x0_60",
-  "indicative_average_contact_pressure_kpa": 18.54,
-  "input_service_load_kn": 1335.0
-}

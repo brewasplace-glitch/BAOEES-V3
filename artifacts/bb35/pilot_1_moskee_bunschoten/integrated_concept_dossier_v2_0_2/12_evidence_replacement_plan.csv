@@ -1,7 +1,0 @@
-﻿sequence,request_id,replace_concept_with,responsible_role,acceptance_gate
-1,REQ-102,"Gevalideerde schaal, geometrie, perceelsgrenzen en coordinaten.","landmeter, CAD/BIM-coordinator of architect",SIGNED_EVIDENCE_VALIDATED_AND_CHECKSUM_REGISTERED
-2,REQ-103,"Actuele opname, draagstructuur en aansluiting bestaand-nieuw.",constructeur,SIGNED_EVIDENCE_VALIDATED_AND_CHECKSUM_REGISTERED
-3,REQ-104,"Grondonderzoek, grondwatergegevens en ondertekend funderingsadvies.",geotechnisch adviseur en constructeur,SIGNED_EVIDENCE_VALIDATED_AND_CHECKSUM_REGISTERED
-4,REQ-105,"Bbl-, vluchtweg-, ventilatie-, toegankelijkheids- en installatiebeoordeling.","architect, brandveiligheids- en installatieadviseur",SIGNED_EVIDENCE_VALIDATED_AND_CHECKSUM_REGISTERED
-5,REQ-106,"Veldtelling van 225 plaatsen, juridische beschikbaarheid en parkeerbalans.",verkeerskundig of parkeeradviseur,SIGNED_EVIDENCE_VALIDATED_AND_CHECKSUM_REGISTERED
-6,REQ-108,"Werkelijke activiteitendata, AERIUS-bronbestand en berekeningsrapport.",stikstof- of AERIUS-adviseur,SIGNED_EVIDENCE_VALIDATED_AND_CHECKSUM_REGISTERED

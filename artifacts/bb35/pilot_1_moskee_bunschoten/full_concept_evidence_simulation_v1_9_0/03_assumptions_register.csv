@@ -1,9 +1,0 @@
-﻿assumption_id,request_id,description,value,status
-ASM-102-01,REQ-102,Local synthetic coordinate grid,"0,0 origin",SIMULATION_ONLY
-ASM-103-01,REQ-103,Synthetic steel frame,SYNTHETIC_STEEL_FRAME_FOR_ENGINE_TEST,SIMULATION_ONLY
-ASM-104-01,REQ-104,Synthetic soil profile,three test layers,SIMULATION_ONLY
-ASM-105-01,REQ-105,Engine-test ventilation rate,7.0,SIMULATION_ONLY
-ASM-106-01,REQ-106,Parking capacity,225,PROJECT_LEADER_CONFIRMED_FIELD_VERIFICATION_PENDING
-ASM-106-02,REQ-106,Synthetic parking counts,5,SIMULATION_ONLY
-ASM-107-01,REQ-107,Occupancy programme,HBM-OCC-2026-001,PROJECT_LEADER_APPROVED
-ASM-108-01,REQ-108,Synthetic phase activity data,5,SIMULATION_ONLY

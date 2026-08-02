@@ -1,5 +1,0 @@
-﻿id,name,level_id,subtype,status
-CONN-001,Zuidelijke aansluiting bestaand-nieuw,L00,existing_to_extension,CONCEPT MODEL - NOT FOR SUBMISSION OR EXECUTION
-CONN-002,Noordelijke aansluiting bestaand-nieuw,L00,existing_to_extension,CONCEPT MODEL - NOT FOR SUBMISSION OR EXECUTION
-CONN-003,Verdiepingsvloeraansluiting,L01,existing_to_extension,CONCEPT MODEL - NOT FOR SUBMISSION OR EXECUTION
-CONN-004,Dakaansluiting,LRF,existing_to_extension,CONCEPT MODEL - NOT FOR SUBMISSION OR EXECUTION

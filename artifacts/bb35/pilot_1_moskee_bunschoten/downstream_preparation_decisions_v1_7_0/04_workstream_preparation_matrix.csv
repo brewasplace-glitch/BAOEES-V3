@@ -1,4 +1,0 @@
-﻿request_id,title,status,strategic_basis,professional_evidence_required,finalization_allowed
-REQ-105,"Bbl, brandveiligheid en installaties — voorbereiding",PREPARATION_READY_PROFESSIONAL_EVIDENCE_PENDING,"{""installation_sustainability_level"": ""wettelijk_minimum"", ""kitchen_function"": ""geen_keukenfunctie""}",True,False
-REQ-106,Parkeeronderzoek en parkeerbalans — voorbereiding,PREPARATION_READY_FIELD_EVIDENCE_PENDING,"{""parking_strategy"": ""openbare_capaciteit""}",True,False
-REQ-108,AERIUS aanleg en gebruik — voorbereiding,PREPARATION_READY_ACTIVITY_DATA_PENDING,"{""execution_phasing"": ""gefaseerde_uitvoering"", ""mosque_remains_in_use"": true}",True,False

@@ -1,4 +1,0 @@
-﻿calculation_id,title,formula_or_method,input_refs,result,unit,status,control_limit,model_refs,drawing_refs,report_refs,request_refs,source_status
-CAL-S01,Service floor load per storey,floor_area * floor_area_load,"CAL-A01,IN-005",490.0,kN,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,S-201,R-201,REQ-103,SIMULATION_ONLY
-CAL-S02,Service roof load,roof_area * roof_area_load,"CAL-A01,IN-006",245.0,kN,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,"BLD-EXTENSION,LRF","A-401,S-201",R-201,REQ-103,SIMULATION_ONLY
-CAL-S03,Total service gravity load,floor_area * floor_load * storeys + roof_area * roof_load + wall_allowance,"CAL-A01,IN-003,IN-005,IN-006,IN-007",1335.0,kN,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,S-201,R-201,REQ-103,SIMULATION_ONLY

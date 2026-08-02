@@ -1,7 +1,0 @@
-requirement_id,finding_code,severity,message,status
-REQ-102,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN
-REQ-103,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN
-REQ-104,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN
-REQ-105,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN
-REQ-106,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN
-REQ-108,SUBMISSION_MANIFEST_MISSING,BLOCKING,No submission_manifest.json has been received.,OPEN

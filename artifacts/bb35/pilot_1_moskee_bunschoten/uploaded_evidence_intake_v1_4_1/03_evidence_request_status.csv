@@ -1,9 +1,0 @@
-﻿request_id,category,status,blocking,accepted_evidence_ids,remaining_action
-REQ-101,existing_building_drawings,CLOSED_VERIFIED,False,"[""HBM-ING-001""]",
-REQ-102,cadastral_site_base,RECEIVED_PENDING_GEOMETRY_VALIDATION,True,"[""HBM-ING-002"", ""HBM-ING-004""]","Validate layers, units, scale, parcel boundaries, coordinate system and consistency with site survey."
-REQ-103,structural_survey,HISTORICAL_DOCUMENTATION_ACCEPTED_CURRENT_SURVEY_PENDING,True,"[""HBM-ING-003"", ""HBM-ING-001""]","Perform and sign current site inspection, verify existing member dimensions, condition and proposed connections."
-REQ-104,geotechnical,OPEN,True,[],Supply the requested professional evidence.
-REQ-105,technical_assumptions,OPEN,True,[],Supply the requested professional evidence.
-REQ-106,parking_field_evidence,OPEN,True,[],Supply the requested professional evidence.
-REQ-107,occupancy_and_use,OPEN,True,[],Supply the requested professional evidence.
-REQ-108,aerius_activity_data,OPEN,True,[],Supply the requested professional evidence.

@@ -1,5 +1,0 @@
-﻿cost_id,description,amount_min_eur,amount_max_eur,basis,status
-C-001,Illustrative construction allowance,308000.0,476000.0,"140 m2 x EUR 2,200-3,400/m2 illustrative only",CONCEPT - NOT FOR EXECUTION OR SUBMISSION
-C-002,"Design, engineering and permit allowance",36960.0,85680.0,12%-18% planning allowance,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
-C-003,Risk and unknown-input allowance,46200.0,119000.0,15%-25% due to unresolved evidence,CONCEPT - NOT FOR EXECUTION OR SUBMISSION
-C-004,Total concept planning band,391160.0,680680.0,not market verified; replace after technical design and quotations,CONCEPT - NOT FOR EXECUTION OR SUBMISSION

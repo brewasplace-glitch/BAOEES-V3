@@ -1,4 +1,0 @@
-﻿calculation_id,title,formula_or_method,input_refs,result,unit,status,control_limit,model_refs,drawing_refs,report_refs,request_refs,source_status
-CAL-C01,Construction-phase duration,sum(duration_days excluding operational use),,95.0,days,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,X-101,R-501,REQ-108,SIMULATION_ONLY
-CAL-C02,Synthetic equipment operating hours,sum(equipment operating_hours),IN-020,496.0,h,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,X-101,R-501,REQ-108,SIMULATION_ONLY
-CAL-C03,Synthetic transport activity,sum(movements * distance_km),IN-021,6600.0,vehicle-km,CALCULATED_CONCEPT_RESULT,PROFESSIONAL ACCEPTANCE CRITERION NOT APPLIED,BLD-EXTENSION,X-101,R-501,REQ-108,SIMULATION_ONLY

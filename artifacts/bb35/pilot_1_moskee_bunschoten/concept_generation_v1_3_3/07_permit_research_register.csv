@@ -1,8 +1,0 @@
-﻿item_id,discipline,requirement,current_status,blocking_final,responsible_party
-P-001,planning,BOPA/ETFAL and Omgevingsplan assessment for 140 m2 scope,brief available; report pending,True,spatial-planning consultant
-P-002,building_code,"Bbl assessment: use, occupancy, escape, fire, daylight, ventilation, accessibility",brief available; assessment pending,True,Bbl/fire advisor
-P-003,structure,Structural calculations and report,blocked by survey and geotechnical inputs,True,structural engineer
-P-004,traffic,"Parking, traffic generation and participation",preliminary only; field evidence pending,True,traffic consultant
-P-005,nitrogen,AERIUS construction and operation phases,activity data pending,True,AERIUS/spatial consultant
-P-006,site,Definitive site plan and parcel boundaries,original cadastral DWG pending,True,architect/surveyor
-P-007,coordination,Complete Omgevingsloket submission dossier,not ready,True,permit coordinator

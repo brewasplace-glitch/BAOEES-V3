@@ -1,6 +1,0 @@
-﻿measurement_id,scenario,occupied,capacity,available,occupancy_percent,evidence_status
-SIM-M01,regular_weekday,110,225,115,48.89,SYNTHETIC_TEST_VALUE
-SIM-M02,friday_pre_peak,135,225,90,60.0,SYNTHETIC_TEST_VALUE
-SIM-M03,friday_prayer_peak,170,225,55,75.56,SYNTHETIC_TEST_VALUE
-SIM-M04,saturday_active_use,145,225,80,64.44,SYNTHETIC_TEST_VALUE
-SIM-M05,sunday_active_use,125,225,100,55.56,SYNTHETIC_TEST_VALUE

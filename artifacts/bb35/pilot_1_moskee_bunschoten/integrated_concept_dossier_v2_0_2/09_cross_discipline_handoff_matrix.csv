@@ -1,7 +1,0 @@
-﻿from_request,to_request,data,status
-REQ-102,REQ-103,70 m2 footprint,SIMULATED
-REQ-103,REQ-104,1335 kN service load,SIMULATED
-REQ-107,REQ-105,150/125/200 persons,AUTHORITATIVE
-REQ-107,REQ-106,150/125/200 persons,AUTHORITATIVE
-REQ-107,REQ-108,occupancy and schedule,AUTHORITATIVE
-REQ-106,integrated_dossier,225 spaces,PROJECT_LEADER_CONFIRMED

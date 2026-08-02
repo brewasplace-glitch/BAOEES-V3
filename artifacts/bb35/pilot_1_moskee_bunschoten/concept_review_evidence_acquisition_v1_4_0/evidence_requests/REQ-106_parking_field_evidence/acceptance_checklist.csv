@@ -1,5 +1,0 @@
-﻿criterion_id,acceptance_criterion,submitted,verified,review_comment
-REQ-106-AC-01,"Counts cover representative Friday, evening and peak-event periods.",False,False,
-REQ-106-AC-02,"Survey method, weather, event and observation times are documented.",False,False,
-REQ-106-AC-03,"Every counted area is classified public, private or shared.",False,False,
-REQ-106-AC-04,Private/shared capacity is supported by written permission where relied upon.,False,False,

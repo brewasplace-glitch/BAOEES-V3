@@ -1,8 +1,0 @@
-﻿id,topic,statement,required_replacement
-LIM-01,general,CONCEPT CALCULATIONS - NOT FOR SUBMISSION OR EXECUTION,All professional evidence blockers must be closed.
-LIM-02,geometry,Geometry is a concept model and requires REQ-102 validation.,"Validated survey, scale, coordinates and cadastral geometry."
-LIM-03,structure,"Loads, spans and structural system are synthetic test fixtures.","Signed structural survey, combinations and member calculations."
-LIM-04,foundation,Contact pressure is indicative; resistance and settlement are not verified.,Ground investigation and signed foundation advice.
-LIM-05,fire_ventilation,No Bbl or fire-safety compliance conclusion is made.,"Professional Bbl, fire and ventilation calculations."
-LIM-06,parking,225 spaces are project-leader-confirmed but field verification is pending.,"Mapped inventory, field counts and professional parking balance."
-LIM-07,aerius,Activity values are synthetic and no AERIUS deposition result is generated.,Verified activity data and professional AERIUS export.

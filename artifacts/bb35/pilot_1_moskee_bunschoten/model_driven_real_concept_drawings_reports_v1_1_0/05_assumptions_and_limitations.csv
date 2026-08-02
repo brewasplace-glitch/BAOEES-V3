@@ -1,9 +1,0 @@
-id,subject,value,source,status,replacement_required
-ASM-001,extension geometry,"7 x 10 m, two storeys, 140 m2 gross",owner-approved scope B,PROJECT_BASIS,survey reconciliation
-ASM-002,existing building reference,schematic 12 x 14 m block,synthetic test fixture,SIMULATION_ONLY,REQ-102
-ASM-003,structural grid,3.5 x 5.0 m conceptual grid,synthetic test fixture,SIMULATION_ONLY,REQ-103
-ASM-004,foundation,1.50 x 0.40 m strip plus 0.50 x 0.60 m beam,synthetic test fixture,SIMULATION_ONLY,REQ-104
-ASM-005,fire exits,2 x 1.20 m,synthetic test fixture,SIMULATION_ONLY,REQ-105
-ASM-006,parking capacity,225 spaces,project leader confirmation,FIELD_VERIFICATION_PENDING,REQ-106
-ASM-007,occupancy,"150 regular, 125 Friday, 200 peak",HBM-OCC-2026-001,PROJECT_LEADER_APPROVED,none for REQ-107
-ASM-008,AERIUS phases,10/15/30/40 days plus operational use,synthetic test fixture,SIMULATION_ONLY,REQ-108
