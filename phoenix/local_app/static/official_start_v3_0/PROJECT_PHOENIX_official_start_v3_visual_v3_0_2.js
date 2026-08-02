@@ -6,6 +6,8 @@ const headers = {"Content-Type": "application/json", "X-Phoenix-Token": TOKEN};
 const desiredCatalog = Array.isArray(window.PHOENIX_DESIRED_OUTPUTS) ? window.PHOENIX_DESIRED_OUTPUTS : [];
 
 let state = {
+  monitorTimer: null,
+  monitorJobId: null,
   summary: null,
   status: null,
   progress: null,
@@ -323,13 +325,68 @@ async function openModule(moduleId){
     toast(err.message, true);
   }
 }
+
+function stopActiveMonitor(){
+  if(state.monitorTimer){
+    clearTimeout(state.monitorTimer);
+    state.monitorTimer = null;
+  }
+  state.monitorJobId = null;
+}
+
+async function monitorActiveJob(jobId){
+  stopActiveMonitor();
+  state.monitorJobId = jobId;
+
+  const tick = async () => {
+    if(state.monitorJobId !== jobId) return;
+    try{
+      const job = await api(`/api/jobs/${encodeURIComponent(jobId)}`);
+      const status = String(job.status || "").toUpperCase();
+
+      // Update only the progress strip; never rebuild the dashboard.
+      const percent =
+        status === "PASSED" || status === "SUCCEEDED" ? 100 :
+        status === "FAILED" ? 100 :
+        status === "RUNNING" ? 55 : 10;
+
+      renderProgress({
+        active: status === "RUNNING" || status === "PENDING",
+        percent,
+        status,
+        label: job.label || "Phoenix workflow",
+        step_label:
+          status === "PASSED" || status === "SUCCEEDED" ? "Workflow gereed." :
+          status === "FAILED" ? "Workflow mislukt." :
+          status === "RUNNING" ? "Phoenix voert de geselecteerde workflow uit." :
+          "Workflow wordt voorbereid.",
+        job_id: job.job_id,
+        output_dir: job.output_dir,
+        log_path: job.log_path
+      });
+
+      if(status === "RUNNING" || status === "PENDING"){
+        state.monitorTimer = setTimeout(tick, 2500);
+      }else{
+        stopActiveMonitor();
+        // Refresh the heavier data once, only after a real state transition.
+        await refreshHeavy();
+      }
+    }catch(err){
+      stopActiveMonitor();
+      toast("Voortgangscontrole gestopt: " + err.message, true);
+    }
+  };
+
+  await tick();
+}
+
 async function startWorkflow(id){
   try{
     const job = await post(`/api/workflows/${encodeURIComponent(id)}/run`);
     showModal("Workflow gestart", `<pre>${esc(JSON.stringify(job, null, 2))}</pre>`);
     toast(`Workflow gestart: ${job.label} · ${job.job_id}`);
-    await refreshProgress();
-    await refreshHeavy();
+    await monitorActiveJob(job.job_id);
   }catch(err){ toast(err.message, true); }
 }
 
@@ -397,6 +454,10 @@ $("myStandardBtn").onclick = () => {
   if(state.desiredOutputs.size){ saveMyStandard(); }
   else if(!loadMyStandard()) toast("Nog geen opgeslagen standaard aanwezig.", true);
 };
+$("manualRefreshBtn").onclick = async () => {
+  await refreshAll();
+  toast("Phoenix-status handmatig vernieuwd.");
+};
 $("resultsBtn").onclick = openResults;
 $("resultsNav").onclick = openResults;
 $("startBtn").onclick = async () => {
@@ -424,7 +485,6 @@ $("startBtn").onclick = async () => {
     `);
     document.querySelectorAll("[data-modal-workflow]").forEach(b => b.onclick = () => startWorkflow(b.dataset.modalWorkflow));
     toast("Projectanalyse-sessie gestart.");
-    await refreshHeavy();
   }catch(err){ toast(err.message, true); }
 };
 
@@ -433,10 +493,14 @@ $("startBtn").onclick = async () => {
   setDesired(defaults.default || []);
   loadMyStandard();
   renderDesiredOutputs();
+
+  // One initial dashboard read only.
   await refreshAll();
-  setInterval(refreshSummary, 10000);
-  setInterval(refreshProgress, 1800);
-  // Heavy project/workflow/module DOM is refreshed only after real actions,
-  // not periodically. This prevents visible redraw/flicker.
+
+  // Zero idle polling: if a job is already active, monitor only that job.
+  const initial = state.progress || {};
+  if(initial.active && initial.job_id){
+    await monitorActiveJob(initial.job_id);
+  }
 })();
 })();

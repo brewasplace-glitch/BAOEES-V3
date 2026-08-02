@@ -15,7 +15,7 @@
   },
   "production_acceptance_test_status": "PENDING_REAL_PROJECT_END_TO_END_PRODUCTION_ACCEPTANCE_TEST",
   "production_release": "LOCKED_PENDING_PAT",
-  "revision": "R2",
+  "revision": "R4",
   "r1_hotfix": {
     "full_page_vertical_scroll": true,
     "desktop_compact_layout": true,
@@ -28,5 +28,18 @@
     "validated_working_tree_staging": true,
     "staging_command": "git add -A",
     "legacy_missing_pathspec_failure_fixed": true
+  },
+  "r3_zero_idle_polling": {
+    "idle_polling": false,
+    "set_interval_usage": false,
+    "active_job_polling_only": true,
+    "active_job_poll_seconds": 2.5,
+    "manual_status_refresh": true,
+    "heavy_dom_refresh_only_on_real_state_transition": true
+  },
+  "r4_test_contract_fix": {
+    "runtime_code_changed": false,
+    "legacy_r1_polling_assertion_removed": true,
+    "r3_zero_idle_polling_contract_preserved": true
   }
 }

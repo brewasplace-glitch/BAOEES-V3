@@ -48,13 +48,27 @@ class StartScreen302StaticTests(unittest.TestCase):
     def test_r1_no_periodic_heavy_refresh(self):
         js=JS.read_text(encoding="utf-8")
         self.assertNotIn("setInterval(refreshHeavy",js)
-        self.assertIn("setInterval(refreshProgress",js)
+        # R3 supersedes the earlier R1 progress polling contract:
+        # there must be no idle setInterval polling at all.
+        self.assertNotIn("setInterval(",js)
 
     def test_r1_uses_delta_guards(self):
         js=JS.read_text(encoding="utf-8")
         self.assertIn("__heavySignature",js)
         self.assertIn("__progressSignature",js)
         self.assertIn("function setText",js)
+
+    def test_r3_zero_idle_polling(self):
+        js=JS.read_text(encoding="utf-8")
+        self.assertNotIn("setInterval(",js)
+        self.assertIn("monitorActiveJob",js)
+        self.assertIn("setTimeout(tick, 2500)",js)
+
+    def test_r3_manual_status_refresh(self):
+        html=HTML.read_text(encoding="utf-8")
+        js=JS.read_text(encoding="utf-8")
+        self.assertIn('id="manualRefreshBtn"',html)
+        self.assertIn('manualRefreshBtn',js)
 
 if __name__=="__main__":
     unittest.main()

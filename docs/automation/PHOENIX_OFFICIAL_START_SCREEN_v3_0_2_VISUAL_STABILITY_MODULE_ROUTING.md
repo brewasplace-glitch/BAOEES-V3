@@ -53,3 +53,31 @@ R1 changes:
 - summary/status text is only mutated when values change;
 - progress UI is only mutated when progress actually changes;
 - heavy lists refresh after real actions instead of on a fixed timer.
+
+
+## R3 zero-idle-polling correction
+Practical validation showed that the browser still exhibited visible flicker after
+periodic heavy redraws were removed. R3 therefore removes all periodic idle
+polling from the start screen.
+
+Behavior:
+- no setInterval loops while Phoenix is idle;
+- one initial status read at startup;
+- a manual STATUS refresh button is available;
+- only an actually running workflow is polled, by job id, every 2.5 seconds;
+- only the progress strip changes during workflow execution;
+- project/workflow/module lists are refreshed once after a real workflow state transition.
+
+This eliminates background UI mutation while the user is reading or configuring a project.
+
+
+## R4 test-contract correction
+R3's runtime implementation correctly removed all idle `setInterval(...)` polling,
+but one older R1 static test still required `setInterval(refreshProgress, ...)`.
+That legacy assertion contradicted the new R3 zero-idle-polling design and caused
+the installer to fail even though the runtime code matched the intended behavior.
+
+R4 changes only the test contract:
+- removes the obsolete requirement for periodic progress polling;
+- asserts that no idle `setInterval(...)` loop remains;
+- preserves the R3 active-job-only `setTimeout(...)` monitor.
