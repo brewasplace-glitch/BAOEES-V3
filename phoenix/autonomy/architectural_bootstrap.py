@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from typing import Any
 
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 
 @dataclass
@@ -80,7 +80,7 @@ def _space(storey: str, sid: str, name: str, x: float, y: float, w: float, d: fl
 
 def _outer_walls(storey: str,w:float,d:float,t:float) -> list[dict[str,Any]]:
     pts=[((0,0),(w,0)),((w,0),(w,d)),((w,d),(0,d)),((0,d),(0,0))]
-    return [{"wall_id":f"{storey}-EW{i+1}","kind":"external","x1_m":a[0],"y1_m":a[1],"x2_m":b[0],"y2_m":b[1],"thickness_m":t,"status":"CONCEPT_CANDIDATE"} for i,(a,b) in enumerate(pts)]
+    return [{"wall_id":f"{storey}-EW{i+1}","element_id":f"{storey}-EW{i+1}","storey_id":storey,"kind":"external","category":"external_wall","x1_m":a[0],"y1_m":a[1],"x2_m":b[0],"y2_m":b[1],"length_m":round(((b[0]-a[0])**2+(b[1]-a[1])**2)**0.5,3),"height_m":3.0,"thickness_m":t,"status":"CONCEPT_CANDIDATE"} for i,(a,b) in enumerate(pts)]
 
 
 def _internal_walls(storey:str,w:float,d:float,t:float,upper:bool=False) -> list[dict[str,Any]]:
@@ -88,7 +88,7 @@ def _internal_walls(storey:str,w:float,d:float,t:float,upper:bool=False) -> list
         seg=[((0,d*0.58),(w,d*0.58)),((w*0.60,0),(w*0.60,d*0.58)),((w*0.32,d*0.58),(w*0.32,d)),((w*0.54,d*0.58),(w*0.54,d)),((w*0.74,d*0.58),(w*0.74,d))]
     else:
         seg=[((0,d*0.52),(w,d*0.52)),((w*0.40,0),(w*0.40,d*0.52)),((w*0.70,0),(w*0.70,d*0.52)),((w*0.32,d*0.52),(w*0.32,d)),((w*0.62,d*0.52),(w*0.62,d))]
-    return [{"wall_id":f"{storey}-IW{i+1}","kind":"internal","x1_m":round(a[0],3),"y1_m":round(a[1],3),"x2_m":round(b[0],3),"y2_m":round(b[1],3),"thickness_m":t,"status":"CONCEPT_CANDIDATE"} for i,(a,b) in enumerate(seg)]
+    return [{"wall_id":f"{storey}-IW{i+1}","element_id":f"{storey}-IW{i+1}","storey_id":storey,"kind":"internal","category":"internal_wall","x1_m":round(a[0],3),"y1_m":round(a[1],3),"x2_m":round(b[0],3),"y2_m":round(b[1],3),"length_m":round(((b[0]-a[0])**2+(b[1]-a[1])**2)**0.5,3),"height_m":3.0,"thickness_m":t,"status":"CONCEPT_CANDIDATE"} for i,(a,b) in enumerate(seg)]
 
 
 def _doors(storey:str,w:float,d:float,upper:bool=False) -> list[dict[str,Any]]:

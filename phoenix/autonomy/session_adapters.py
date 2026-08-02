@@ -18,11 +18,16 @@ from .adapter_runtime import (
     finish,
     load_session_context,
     repo_ref,
+    resolve_ref,
+    read_json,
     run_subprocess,
     python_command,
     write_json,
 )
 from .architectural_bootstrap import generate_architectural_bootstrap
+from .project_context import generate_project_context
+from .structural_profile import generate_structural_project_profile
+from .drawing_production import produce_architectural_drawings
 
 
 
@@ -73,6 +78,25 @@ def _structural_profile_candidate(value: dict[str, Any]) -> bool:
     return required.issubset(assumptions)
 
 
+def _update_project_manifest(ctx: dict[str, Any], updates: dict[str, Any]) -> None:
+    manifest=dict(ctx.get("manifest") or {})
+    manifest.update(updates)
+    manifest["updated_by"]="project_context_structural_profile_drawing_masterpack_v1.0"
+    write_json(ctx["manifest_path"],manifest)
+    ctx["manifest"]=manifest
+
+
+def _load_project_context_from_arch_state(ctx: dict[str, Any], arch_outputs: list[str]) -> dict[str, Any] | None:
+    ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
+    if not ref:
+        ref=(ctx.get("manifest") or {}).get("project_context")
+    path=resolve_ref(ref,ctx["repository"]) if ref else None
+    if path and path.is_file():
+        try:return read_json(path)
+        except Exception:return None
+    return None
+
+
 def run_architecture(ctx: dict[str, Any]) -> int:
     cap = "architecture"
     label = CAPABILITIES[cap]
@@ -81,7 +105,7 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     json_uploads = discover_json_uploads(ctx)
 
     intake = {
-        "schema_version": "phoenix.architectural-session-intake/1.1",
+        "schema_version": "phoenix.architectural-session-intake/1.2",
         "project_id": ctx["project_id"],
         "session_id": ctx["session"].get("session_id"),
         "project_type": ctx["session"].get("project_type"),
@@ -110,8 +134,6 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         if profile_source is None and _structural_profile_candidate(value):
             profile_source, profile_value = path, value
 
-    # In Autonomous Project Mode a sufficiently clear BOUW brief may bootstrap
-    # a dimensioned *concept candidate*. All defaults are registered explicitly.
     if model_source is None and str(ctx["session"].get("project_mode") or "").lower() == "autonomous":
         generated = generate_architectural_bootstrap(
             project_id=ctx["project_id"],
@@ -174,25 +196,101 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         write_json(program_path,generated.program)
         write_json(assumptions_path,generated.assumptions)
         write_json(handoff_path,generated.structural_handoff)
-        outputs.extend([repo_ref(program_path,ctx["repository"]),repo_ref(assumptions_path,ctx["repository"]),repo_ref(handoff_path,ctx["repository"])])
+        outputs.extend([
+            repo_ref(program_path,ctx["repository"]),
+            repo_ref(assumptions_path,ctx["repository"]),
+            repo_ref(handoff_path,ctx["repository"]),
+        ])
         metadata["assumptions_register"] = repo_ref(assumptions_path,ctx["repository"])
         metadata["space_program"] = repo_ref(program_path,ctx["repository"])
         metadata["structural_handoff"] = repo_ref(handoff_path,ctx["repository"])
-        metadata["desired_output_states"] = generated.desired_output_states
+        metadata["desired_output_states"] = dict(generated.desired_output_states)
         metadata["autonomous_architectural_bootstrap_version"] = "1.0.0"
+    else:
+        metadata["desired_output_states"] = {}
 
-    if profile_value is not None:
-        profile_path = out / "structural_project_profile.json"
-        write_json(profile_path, profile_value)
-        outputs.append(repo_ref(profile_path, ctx["repository"]))
-        metadata["structural_project_profile"] = repo_ref(profile_path, ctx["repository"])
+    # Central project context: facts remain separate from design assumptions.
+    context_result=generate_project_context(
+        project_id=ctx["project_id"],
+        brief=str(ctx["session"].get("brief") or ""),
+        architectural_model=model_value,
+    )
+    context_path=out/"project_context.json"
+    context_assumptions_path=out/"project_context_assumptions.json"
+    site_context_path=out/"site_context.json"
+    write_json(context_path,context_result.context)
+    write_json(context_assumptions_path,context_result.assumptions)
+    write_json(site_context_path,context_result.site_context)
+    outputs.extend([
+        repo_ref(context_path,ctx["repository"]),
+        repo_ref(context_assumptions_path,ctx["repository"]),
+        repo_ref(site_context_path,ctx["repository"]),
+    ])
+    metadata["project_context"]=repo_ref(context_path,ctx["repository"])
+    metadata["site_context"]=repo_ref(site_context_path,ctx["repository"])
+    metadata["project_context_version"]="1.0.0"
+
+    manifest_updates=dict(context_result.manifest_updates)
+    manifest_updates.update({
+        "project_context":repo_ref(context_path,ctx["repository"]),
+        "site_context":repo_ref(site_context_path,ctx["repository"]),
+    })
+    _update_project_manifest(ctx,manifest_updates)
+
+    # A concept structural profile is now generated from candidate geometry.
+    # It contains no code basis, loads, soil facts, member sizes or approval.
+    if profile_value is None:
+        profile_value=generate_structural_project_profile(
+            project_id=ctx["project_id"],
+            architectural_model=model_value,
+            project_context=context_result.context,
+        )
+        profile_source="AUTONOMOUS_CONCEPT_PROFILE"
+    profile_path = out / "structural_project_profile.json"
+    write_json(profile_path, profile_value)
+    outputs.append(repo_ref(profile_path, ctx["repository"]))
+    metadata["structural_project_profile"] = repo_ref(profile_path, ctx["repository"])
+    metadata["structural_profile_source"] = (
+        profile_source if isinstance(profile_source,str)
+        else repo_ref(profile_source,ctx["repository"])
+    )
+    metadata["structural_profile_version"]="1.0.0"
+
+    # Produce real drawing artifacts from geometry. They are CONCEPT / TER CONTROLE.
+    drawings_dir=out/"drawings"
+    drawing_result=produce_architectural_drawings(
+        project_id=ctx["project_id"],
+        architectural_model=model_value,
+        site_context=context_result.site_context,
+        output_dir=drawings_dir,
+        requested_outputs=list(ctx["session"].get("desired_outputs",[])),
+    )
+    drawing_register_path=out/"architectural_drawing_register.json"
+    drawing_register=dict(drawing_result["register"])
+    drawing_register["files"]=[
+        {
+            **item,
+            "path": repo_ref((drawings_dir/item["name"]),ctx["repository"])
+        }
+        for item in drawing_register.get("files",[])
+    ]
+    write_json(drawing_register_path,drawing_register)
+    outputs.append(repo_ref(drawing_register_path,ctx["repository"]))
+    for file_path in drawing_result["files"]:
+        outputs.append(repo_ref(file_path,ctx["repository"]))
+    metadata["drawing_register"]=repo_ref(drawing_register_path,ctx["repository"])
+    metadata["drawing_production_version"]="1.0.0"
+    metadata["desired_output_states"].update(drawing_result["coverage"])
 
     contract = {
-        "schema_version": "phoenix.architectural-adapter-contract/1.1",
+        "schema_version": "phoenix.architectural-adapter-contract/1.2",
         "project_id": ctx["project_id"],
         "architectural_model": repo_ref(model_path, ctx["repository"]),
         "detailed_elements": metadata.get("detailed_elements"),
         "structural_project_profile": metadata.get("structural_project_profile"),
+        "project_context":metadata.get("project_context"),
+        "site_context":metadata.get("site_context"),
+        "drawing_register":metadata.get("drawing_register"),
         "generation_mode": metadata["generation_mode"],
         "assumptions_register": metadata.get("assumptions_register"),
         "approval_state": "CANDIDATE_ONLY",
@@ -202,13 +300,19 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     write_json(contract_path, contract)
     outputs.append(repo_ref(contract_path, ctx["repository"]))
 
+    warnings=[
+        "Architectural model and drawings are concept candidates and require professional/project review before final use.",
+        "Structural project profile contains explicit concept hypotheses only; code basis, loads and geotechnical facts remain unresolved.",
+    ]
+    if context_result.site_context.get("status")=="SCHEMATIC_ASSUMPTION":
+        warnings.append("Site plan is schematic only because real plot/location facts were not supplied.")
+
     return finish(
         ctx, capability_id=cap, label=label, status="PASSED",
         outputs=outputs,
-        warnings=["Architectural model is a concept candidate and requires professional/project review before final use."],
+        warnings=warnings,
         metadata=metadata,
     )
-
 
 def run_digital_twin(ctx: dict[str, Any]) -> int:
     cap = "digital_twin"
@@ -223,15 +327,23 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
             ctx, capability_id=cap, label=label, status="BLOCKED_DEPENDENCY",
             blockers=[{
                 "reason": "ARCHITECTURAL_MODEL_NOT_AVAILABLE",
-                "message": "Digital Twin wacht op een gestructureerd architectuurmodel.",
+                "message": "Digitale Tweeling wacht op een gestructureerd architectuurmodel.",
             }],
         )
+    context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
+    site_ref=next((x for x in arch_outputs if x.endswith("/site_context.json")),None)
+    profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
+    drawing_register_ref=next((x for x in arch_outputs if x.endswith("/architectural_drawing_register.json")),None)
 
     twin = {
-        "schema_version": "phoenix.central-project-digital-twin/1.0",
+        "schema_version": "phoenix.central-project-digital-twin/1.1",
         "project_id": ctx["project_id"],
         "session_id": ctx["session"].get("session_id"),
         "architectural_model": model_ref,
+        "project_context":context_ref,
+        "site_context":site_ref,
+        "structural_project_profile":profile_ref,
+        "architectural_drawing_register":drawing_register_ref,
         "structural_model": None,
         "permit_state": None,
         "cost_planning_state": None,
@@ -251,9 +363,14 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
     return finish(
         ctx, capability_id=cap, label=label, status="PASSED",
         outputs=[repo_ref(path, ctx["repository"]), repo_ref(project_twin, ctx["repository"])],
-        warnings=["Digital Twin geometry remains candidate-only until discipline review."],
+        warnings=["Digitale Tweeling bevat kandidaatcontext/geometrie; professionele vrijgave blijft geblokkeerd."],
+        metadata={
+            "project_context":context_ref,
+            "site_context":site_ref,
+            "structural_project_profile":profile_ref,
+            "drawing_register":drawing_register_ref,
+        },
     )
-
 
 def run_structural(ctx: dict[str, Any]) -> int:
     cap = "structural_engineering"

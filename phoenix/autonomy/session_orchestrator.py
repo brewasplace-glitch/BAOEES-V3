@@ -66,7 +66,7 @@ class BootstrapResult:
 
 
 class AutonomousProjectOrchestrator:
-    VERSION = "1.2.0"
+    VERSION = "1.3.0"
 
     def __init__(self, repository: Path, config_path: Path | None = None):
         self.repository = repository.resolve()
@@ -631,21 +631,22 @@ class AutonomousProjectOrchestrator:
         plan_path.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         blockers_path.write_text(
             json.dumps({
-                "schema_version": "phoenix.autonomous-blocker-register/1.2",
+                "schema_version": "phoenix.autonomous-blocker-register/1.3",
                 "session_id": session["session_id"],
                 "project_id": bootstrap["project_id"],
                 "blocker_count": len(blockers),
                 "blockers": blockers,
                 "legacy_pilot_runner_blocked": True,
                 "generic_session_adapter_masterpack": "1.0.0",
-                "autonomous_architectural_bootstrap": "1.0.0",
+                "autonomous_architectural_bootstrap": "1.1.0",
+                "project_context_structural_profile_drawing_masterpack": "1.0.0",
                 "updated_utc": utc_now(),
             }, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
 
         result_index = {
-            "schema_version": "phoenix.autonomous-result-index/1.2",
+            "schema_version": "phoenix.autonomous-result-index/1.3",
             "project_id": bootstrap["project_id"],
             "session_id": session["session_id"],
             "desired_outputs": session.get("desired_outputs", []),
@@ -664,10 +665,11 @@ class AutonomousProjectOrchestrator:
         )
 
         summary = {
-            "schema_version": "phoenix.autonomous-session-orchestration-summary/1.2",
+            "schema_version": "phoenix.autonomous-session-orchestration-summary/1.3",
             "orchestrator_version": self.VERSION,
             "session_adapter_masterpack_version": "1.0.0",
-            "autonomous_architectural_bootstrap_version": "1.0.0",
+            "autonomous_architectural_bootstrap_version": "1.1.0",
+            "project_context_structural_profile_drawing_masterpack_version": "1.0.0",
             "session_id": session["session_id"],
             "project_id": bootstrap["project_id"],
             "project_mode": session.get("project_mode"),

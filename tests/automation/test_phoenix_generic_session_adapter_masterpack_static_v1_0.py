@@ -33,9 +33,9 @@ class SessionAdapterStaticTests(unittest.TestCase):
         js=(ROOT/"phoenix"/"local_app"/"static"/"official_start_v3_0"/"PROJECT_PHOENIX_official_start_v3_visual_v3_0_2.js").read_text(encoding="utf-8")
         self.assertNotIn("setInterval(",js)
 
-    def test_05_runtime_is_1_8_0(self):
-        self.assertIn('VERSION = "1.8.1"',SERVER.read_text(encoding="utf-8"))
-        self.assertIn('value.get("version") != "1.8.1"',LAUNCHER.read_text(encoding="utf-8"))
+    def test_05_runtime_is_1_8_2(self):
+        self.assertIn('VERSION = "1.8.2"',SERVER.read_text(encoding="utf-8"))
+        self.assertIn('value.get("version") != "1.8.2"',LAUNCHER.read_text(encoding="utf-8"))
 
     def test_06_release_stays_locked(self):
         text=ADAPTERS.read_text(encoding="utf-8")

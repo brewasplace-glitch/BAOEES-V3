@@ -1,0 +1,38 @@
+{
+  "engine_id": "PHX-AUTONOMOUS-PROJECT-CONTEXT-STRUCTURAL-PROFILE-DRAWING-PRODUCTION",
+  "version": "1.0.0",
+  "orchestrator_version": "1.3.0",
+  "runtime_version": "1.8.2",
+  "components": {
+    "project_context_engine": "1.0.0",
+    "structural_project_profile_generator": "1.0.0",
+    "architectural_drawing_production_engine": "1.0.0",
+    "architectural_bootstrap_schema": "1.1.0"
+  },
+  "contracts": {
+    "facts_and_assumptions_separated": true,
+    "ui_locale_must_not_define_project_country": true,
+    "currency_only_explicit_or_derived_from_explicit_country": true,
+    "site_context_may_be_schematic_but_not_legal_fact": true,
+    "schematic_site_plan_does_not_satisfy_final_site_output": true,
+    "structural_profile_may_contain_explicit_concept_hypotheses": true,
+    "structural_profile_must_not_invent_code_basis_or_design_loads": true,
+    "drawing_stage": "CONCEPT_FOR_REVIEW",
+    "automatic_professional_approval": false,
+    "production_release": "LOCKED"
+  },
+  "pat_target": {
+    "remove_blockers": [
+      "STRUCTURAL_PROJECT_PROFILE_REQUIRED",
+      "FINAL_DRAWING_EXPORT_REQUIRED:floor_plans",
+      "FINAL_DRAWING_EXPORT_REQUIRED:facades",
+      "FINAL_DRAWING_EXPORT_REQUIRED:sections"
+    ],
+    "may_remain_without_user_location": [
+      "PROJECT_LOCATION_JURISDICTION_REQUIRED",
+      "CURRENCY_REQUIRED",
+      "SITE_FACTS_REQUIRED_FOR_SITUATION_PLAN",
+      "V8_1_TO_V8_12_VALIDATED_INPUT_MAPPING_REQUIRED"
+    ]
+  }
+}
