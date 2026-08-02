@@ -1,0 +1,31 @@
+{
+  "engine_id": "PHX-GENERIC-SESSION-ADAPTER-MASTERPACK",
+  "version": "1.0.0",
+  "orchestrator_version": "1.1.0",
+  "runtime_version": "1.8.0",
+  "adapters": {
+    "architecture": "runners/PROJECT_PHOENIX_session_adapter_architectural_v1_0_0.py",
+    "digital_twin": "runners/PROJECT_PHOENIX_session_adapter_digital_twin_v1_0_0.py",
+    "structural_engineering": "runners/PROJECT_PHOENIX_session_adapter_structural_v8_0_to_v8_12_v1_0_0.py",
+    "permit": "runners/PROJECT_PHOENIX_session_adapter_permit_bopa_aerius_v1_0_0.py",
+    "cost_planning": "runners/PROJECT_PHOENIX_session_adapter_cost_planning_v1_0_0.py",
+    "reporting": "runners/PROJECT_PHOENIX_session_adapter_reporting_v1_0_0.py",
+    "closure": "runners/PROJECT_PHOENIX_session_adapter_qaqc_review_release_v1_0_0.py"
+  },
+  "contracts": {
+    "same_session_file": true,
+    "same_project_workspace": true,
+    "same_project_manifest": true,
+    "adapter_result_json_required": true,
+    "controlled_blocked_exit_code": 10,
+    "legacy_pilot_runners_forbidden": true,
+    "automatic_professional_approval": false,
+    "production_release_default": "LOCKED"
+  },
+  "revision": "FIXED_R1",
+  "fixed_r1": {
+    "git_diff_check_eof_blank_line_fixed": true,
+    "payload_trailing_whitespace_normalized": true,
+    "runtime_behavior_changed": false
+  }
+}

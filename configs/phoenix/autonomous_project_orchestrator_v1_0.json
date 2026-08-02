@@ -1,6 +1,6 @@
 {
   "schema_version": "phoenix.autonomous-project-orchestrator/1.0",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "legacy_pilot_runners_allowed": false,
   "capability_order": [
     "project_bootstrap",
@@ -150,11 +150,11 @@
       "depends_on": [
         "intake_normalization"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_architectural_project_generator_v1_0_0.py",
-        "runners/PROJECT_PHOENIX_architectural_project_program_v6_5_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_architectural_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     },
     "digital_twin": {
       "label": "Digital Twin / Central Geometric Model",
@@ -162,10 +162,11 @@
       "depends_on": [
         "architecture"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_central_geometric_project_model_v1_0_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_digital_twin_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     },
     "structural_engineering": {
       "label": "Structural Engineering v8.0\u2013v8.12",
@@ -174,22 +175,11 @@
         "architecture",
         "digital_twin"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_architectural_to_structural_model_derivation_v8_0_0.py",
-        "runners/PROJECT_PHOENIX_structural_analytical_model_generation_v8_1_0.py",
-        "runners/PROJECT_PHOENIX_structural_action_load_model_generation_v8_2_0.py",
-        "runners/PROJECT_PHOENIX_structural_solver_input_analysis_v8_3_0.py",
-        "runners/PROJECT_PHOENIX_structural_analysis_results_validation_v8_4_0.py",
-        "runners/PROJECT_PHOENIX_structural_code_limit_state_member_verification_v8_5_0.py",
-        "runners/PROJECT_PHOENIX_structural_global_stability_second_order_robustness_v8_6_0.py",
-        "runners/PROJECT_PHOENIX_structural_connection_support_joint_verification_v8_7_0.py",
-        "runners/PROJECT_PHOENIX_structural_foundation_interface_soil_support_verification_v8_8_0.py",
-        "runners/PROJECT_PHOENIX_structural_foundation_design_reinforcement_detailing_v8_9_0.py",
-        "runners/PROJECT_PHOENIX_structural_drawing_calculation_package_engineering_qaqc_v8_10_0.py",
-        "runners/PROJECT_PHOENIX_structural_engineering_review_approval_release_control_v8_11_0.py",
-        "runners/PROJECT_PHOENIX_structural_revision_change_impact_ifc_package_v8_12_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_structural_v8_0_to_v8_12_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     },
     "infrastructure": {
       "label": "Civil / Infrastructure Engineering",
@@ -208,10 +198,11 @@
       "depends_on": [
         "architecture"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_permit_orchestrator_v1_0_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_permit_bopa_aerius_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     },
     "cost_planning": {
       "label": "Cost & Planning",
@@ -219,33 +210,36 @@
       "depends_on": [
         "architecture"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_cost_planning_orchestrator_v1_0_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_cost_planning_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     },
     "reporting": {
       "label": "Reporting / Documentation",
       "execution_mode": "adapter",
       "depends_on": [
-        "architecture"
+        "intake_normalization"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_reporting_orchestrator_v1_0_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_reporting_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     },
     "closure": {
       "label": "QA/QC / Review / Release",
       "execution_mode": "adapter",
       "depends_on": [
-        "architecture",
-        "digital_twin"
+        "intake_normalization"
       ],
-      "session_adapter_ready": false,
+      "session_adapter_ready": true,
       "runner_candidates": [
-        "runners/PROJECT_PHOENIX_release_control_orchestrator_v1_0_0.py"
-      ]
+        "runners/PROJECT_PHOENIX_session_adapter_qaqc_review_release_v1_0_0.py"
+      ],
+      "adapter_protocol": "phoenix.session-adapter/1.0"
     }
-  }
+  },
+  "session_adapter_masterpack_version": "1.0.0"
 }

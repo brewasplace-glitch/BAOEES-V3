@@ -13,6 +13,8 @@ import json
 import re
 import secrets
 import shutil
+import subprocess
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -64,7 +66,7 @@ class BootstrapResult:
 
 
 class AutonomousProjectOrchestrator:
-    VERSION = "1.0.0"
+    VERSION = "1.1.0"
 
     def __init__(self, repository: Path, config_path: Path | None = None):
         self.repository = repository.resolve()
@@ -288,6 +290,79 @@ class AutonomousProjectOrchestrator:
     # ------------------------------------------------------------------
     # Runtime orchestration
     # ------------------------------------------------------------------
+    def _write_adapter_state(
+        self,
+        workspace: Path,
+        session: dict[str, Any],
+        bootstrap: dict[str, Any],
+        capability_states: dict[str, Any],
+    ) -> Path:
+        path = workspace / "orchestration" / "adapter_state.json"
+        path.write_text(
+            json.dumps({
+                "schema_version": "phoenix.session-adapter-state/1.0",
+                "orchestrator_version": self.VERSION,
+                "project_id": bootstrap["project_id"],
+                "session_id": session["session_id"],
+                "capabilities": capability_states,
+                "updated_utc": utc_now(),
+            }, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        return path
+
+    def _run_adapter(
+        self,
+        *,
+        runner_ref: str,
+        session_file: Path,
+        workspace: Path,
+        adapter_output: Path,
+        log_path: Path,
+    ) -> tuple[int, dict[str, Any] | None]:
+        runner = (self.repository / runner_ref).resolve()
+        if not runner.is_file():
+            return 10, {
+                "status": "BLOCKED",
+                "blockers": [{
+                    "reason": "SESSION_ADAPTER_RUNNER_MISSING",
+                    "message": f"Session Adapter runner ontbreekt: {runner_ref}",
+                }],
+                "outputs": [],
+            }
+
+        adapter_output.mkdir(parents=True, exist_ok=True)
+        command = [
+            sys.executable,
+            str(runner),
+            "--session-file", str(session_file),
+            "--workspace", str(workspace),
+            "--output-dir", str(adapter_output),
+            "--expect-session-adapted",
+        ]
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with log_path.open("w", encoding="utf-8", newline="\n") as log:
+            log.write("PROJECT PHOENIX GENERIC SESSION ADAPTER\n")
+            log.write(json.dumps(command, ensure_ascii=False) + "\n\n")
+            log.flush()
+            proc = subprocess.run(
+                command,
+                cwd=str(self.repository),
+                stdout=log,
+                stderr=subprocess.STDOUT,
+                text=True,
+                check=False,
+            )
+
+        result_path = adapter_output / "adapter_result.json"
+        result = None
+        if result_path.is_file():
+            try:
+                result = json.loads(result_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                result = None
+        return int(proc.returncode), result
+
     def run_session(self, session_file: Path, output_dir: Path) -> int:
         session_file = session_file.resolve()
         output_dir = output_dir.resolve()
@@ -309,12 +384,17 @@ class AutonomousProjectOrchestrator:
 
         workspace = self.repository / bootstrap["workspace"]
         plan_path = self.repository / bootstrap["orchestration_plan"]
-        plan = json.loads(plan_path.read_text(encoding="utf-8"))
+        # Rebuild plan so newly installed adapters are reflected immediately.
+        plan = self.build_plan(session, bootstrap["project_id"])
+        plan_path.write_text(
+            json.dumps(plan, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
         progress_path = output_dir / "progress.json"
 
         def progress(percent: int, status: str, step: str, extra: dict[str, Any] | None = None):
             value = {
-                "schema_version": "phoenix.autonomous-progress/1.0",
+                "schema_version": "phoenix.autonomous-progress/1.1",
                 "session_id": session["session_id"],
                 "project_id": bootstrap["project_id"],
                 "percent": int(percent),
@@ -328,50 +408,160 @@ class AutonomousProjectOrchestrator:
                 json.dumps(value, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
-            project_progress = workspace / "orchestration" / "progress.json"
-            project_progress.write_text(
+            (workspace / "orchestration" / "progress.json").write_text(
                 json.dumps(value, indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
             )
 
-        progress(5, "RUNNING", "Projectworkspace en sessiecontext laden")
+        progress(3, "RUNNING", "Projectworkspace en sessiecontext laden")
 
-        # Execute internal bootstrap/control steps and evaluate all external capabilities.
-        blockers = []
-        completed = 0
+        blockers: list[dict[str, Any]] = []
+        capability_states: dict[str, Any] = {}
+        produced: list[str] = [
+            bootstrap["project_manifest"],
+            bootstrap["digital_twin_state"],
+            bootstrap["orchestration_plan"],
+        ]
         steps = plan["steps"]
         total = max(1, len(steps))
-        for step in steps:
+
+        for idx, step in enumerate(steps, 1):
             cap_id = step["capability_id"]
             availability = self.capability_availability(cap_id)
             step["availability"] = availability
 
+            # Internal control capabilities always execute in-process.
             if step["execution_mode"] == "internal":
                 step["status"] = "PASSED"
-                completed += 1
-            elif availability["status"] == "AVAILABLE":
-                # v1.0 deliberately requires explicit, tested session adapters before
-                # invoking discipline runners. No legacy/pilot runner is ever used.
-                step["status"] = "READY"
-            else:
-                step["status"] = "BLOCKED"
-                blockers.append({
+                capability_states[cap_id] = {
+                    "status": "PASSED",
+                    "label": step["label"],
+                    "outputs": [],
+                    "blockers": [],
+                }
+                self._write_adapter_state(workspace, session, bootstrap, capability_states)
+                pct = min(92, 5 + round((idx / total) * 80))
+                progress(pct, "RUNNING", f"Capability gereed: {step['label']}")
+                continue
+
+            # If a declared dependency did not pass, do not execute the adapter.
+            failed_deps = [
+                dep for dep in step.get("depends_on", [])
+                if (capability_states.get(dep) or {}).get("status") != "PASSED"
+            ]
+            if failed_deps:
+                block = {
+                    "capability_id": cap_id,
+                    "label": step["label"],
+                    "reason": "BLOCKED_DEPENDENCY",
+                    "dependencies": failed_deps,
+                    "message": "Session Adapter niet gestart omdat vereiste upstream-capability niet PASSED is.",
+                }
+                blockers.append(block)
+                step["status"] = "BLOCKED_DEPENDENCY"
+                capability_states[cap_id] = {
+                    "status": "BLOCKED_DEPENDENCY",
+                    "label": step["label"],
+                    "outputs": [],
+                    "blockers": [block],
+                }
+                self._write_adapter_state(workspace, session, bootstrap, capability_states)
+                pct = min(92, 5 + round((idx / total) * 80))
+                progress(pct, "RUNNING", f"Dependency geblokkeerd: {step['label']}")
+                continue
+
+            if availability["status"] != "AVAILABLE":
+                block = {
                     "capability_id": cap_id,
                     "label": step["label"],
                     "reason": availability["status"],
                     "runner": availability.get("runner"),
-                    "message": (
-                        "Generieke engine gevonden maar nog niet aan de Session Adapter gekoppeld."
-                        if availability["status"] == "DISCOVERED_UNADAPTED"
-                        else "Geen generieke sessiegeschikte capability beschikbaar."
-                    ),
+                    "message": "Generieke Session Adapter is niet uitvoerbaar.",
+                }
+                blockers.append(block)
+                step["status"] = "BLOCKED"
+                capability_states[cap_id] = {
+                    "status": "BLOCKED",
+                    "label": step["label"],
+                    "outputs": [],
+                    "blockers": [block],
+                }
+                self._write_adapter_state(workspace, session, bootstrap, capability_states)
+                continue
+
+            adapter_root = workspace / "results" / "session_adapters" / cap_id
+            log_path = workspace / "logs" / f"session_adapter_{cap_id}.log"
+            rc, result = self._run_adapter(
+                runner_ref=availability["runner"],
+                session_file=session_file,
+                workspace=workspace,
+                adapter_output=adapter_root,
+                log_path=log_path,
+            )
+
+            if not isinstance(result, dict):
+                status = "FAILED"
+                cap_blockers = [{
+                    "capability_id": cap_id,
+                    "reason": "ADAPTER_RESULT_MISSING",
+                    "message": f"Session Adapter leverde geen geldig adapter_result.json (exitcode {rc}).",
+                }]
+                outputs = []
+            else:
+                status = str(result.get("status") or ("PASSED" if rc == 0 else "BLOCKED" if rc == 10 else "FAILED")).upper()
+                outputs = [str(x) for x in result.get("outputs", [])]
+                cap_blockers = list(result.get("blockers", []))
+
+            # Normalize adapter terminal states for orchestration.
+            if rc == 0 and status == "PASSED":
+                step["status"] = "PASSED"
+                normalized = "PASSED"
+            elif rc == 10 or status.startswith("BLOCKED"):
+                step["status"] = "BLOCKED"
+                normalized = "BLOCKED"
+                for item in cap_blockers or [{
+                    "reason":"SESSION_ADAPTER_BLOCKED",
+                    "message":f"{step['label']} is gecontroleerd geblokkeerd.",
+                }]:
+                    blockers.append({
+                        "capability_id": cap_id,
+                        "label": step["label"],
+                        **item,
+                    })
+            else:
+                step["status"] = "FAILED"
+                normalized = "FAILED"
+                blockers.append({
+                    "capability_id": cap_id,
+                    "label": step["label"],
+                    "reason": "SESSION_ADAPTER_FAILED",
+                    "return_code": rc,
+                    "message": f"Session Adapter stopte met exitcode {rc}.",
                 })
 
-            pct = min(70, 10 + round((completed / total) * 50))
-            progress(pct, "RUNNING", f"Capability beoordelen: {step['label']}")
+            capability_states[cap_id] = {
+                "status": normalized,
+                "adapter_status": status,
+                "label": step["label"],
+                "runner": availability["runner"],
+                "outputs": outputs,
+                "blockers": cap_blockers,
+                "log": log_path.relative_to(self.repository).as_posix(),
+            }
+            produced.extend(outputs)
+            self._write_adapter_state(workspace, session, bootstrap, capability_states)
+
+            pct = min(92, 5 + round((idx / total) * 80))
+            progress(
+                pct,
+                "RUNNING",
+                f"Session Adapter: {step['label']} → {normalized}",
+                {"active_capability": cap_id},
+            )
 
         plan["evaluated_utc"] = utc_now()
         plan["blocker_count"] = len(blockers)
+        plan["capability_states"] = capability_states
         plan_path.write_text(
             json.dumps(plan, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
@@ -380,29 +570,47 @@ class AutonomousProjectOrchestrator:
         blockers_path = workspace / "orchestration" / "blockers.json"
         blockers_path.write_text(
             json.dumps({
-                "schema_version": "phoenix.autonomous-blocker-register/1.0",
+                "schema_version": "phoenix.autonomous-blocker-register/1.1",
                 "session_id": session["session_id"],
                 "project_id": bootstrap["project_id"],
                 "blocker_count": len(blockers),
                 "blockers": blockers,
                 "legacy_pilot_runner_blocked": True,
+                "generic_session_adapter_masterpack": "1.0.0",
                 "updated_utc": utc_now(),
             }, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
+        produced.append(blockers_path.relative_to(self.repository).as_posix())
+
+        # Granular desired-output state.
+        output_states = {}
+        output_map = self.config["output_capability_map"]
+        for output_id in session.get("desired_outputs", []):
+            required = output_map.get(output_id, [])
+            states = [(capability_states.get(cap) or {}).get("status", "NOT_PLANNED") for cap in required]
+            if required and all(x == "PASSED" for x in states):
+                status = "PASSED"
+            elif any(x == "FAILED" for x in states):
+                status = "FAILED"
+            else:
+                status = "BLOCKED"
+            output_states[output_id] = {
+                "status": status,
+                "required_capabilities": required,
+                "capability_states": states,
+            }
 
         result_index = {
-            "schema_version": "phoenix.autonomous-result-index/1.0",
+            "schema_version": "phoenix.autonomous-result-index/1.1",
             "project_id": bootstrap["project_id"],
             "session_id": session["session_id"],
             "desired_outputs": session.get("desired_outputs", []),
-            "produced": [
-                bootstrap["project_manifest"],
-                bootstrap["digital_twin_state"],
-                bootstrap["orchestration_plan"],
-                blockers_path.relative_to(self.repository).as_posix(),
-            ],
-            "blocked_outputs": session.get("desired_outputs", []) if blockers else [],
+            "desired_output_states": output_states,
+            "capability_states": capability_states,
+            "produced": sorted(set(produced)),
+            "blocked_outputs": [k for k,v in output_states.items() if v["status"] != "PASSED"],
+            "passed_outputs": [k for k,v in output_states.items() if v["status"] == "PASSED"],
             "production_release": "LOCKED",
             "updated_utc": utc_now(),
         }
@@ -413,8 +621,9 @@ class AutonomousProjectOrchestrator:
         )
 
         summary = {
-            "schema_version": "phoenix.autonomous-session-orchestration-summary/1.0",
+            "schema_version": "phoenix.autonomous-session-orchestration-summary/1.1",
             "orchestrator_version": self.VERSION,
+            "session_adapter_masterpack_version": "1.0.0",
             "session_id": session["session_id"],
             "project_id": bootstrap["project_id"],
             "project_mode": session.get("project_mode"),
@@ -423,9 +632,10 @@ class AutonomousProjectOrchestrator:
             "session_context_propagated": True,
             "project_workspace_created": True,
             "dependency_plan_created": True,
+            "session_adapters_executed": True,
             "blocker_count": len(blockers),
             "blockers": blockers,
-            "status": "BLOCKED" if blockers else "READY_FOR_CAPABILITY_EXECUTION",
+            "status": "BLOCKED" if blockers else "PASSED",
             "production_release": "LOCKED",
             "workspace": bootstrap["workspace"],
             "result_index": result_index_path.relative_to(self.repository).as_posix(),
@@ -442,12 +652,12 @@ class AutonomousProjectOrchestrator:
 
         if blockers:
             progress(
-                70,
+                92,
                 "BLOCKED",
-                "Autonome projectbootstrap gereed; generieke capability-koppelingen ontbreken",
-                {"blocker_count": len(blockers), "blockers": blockers[:10]},
+                "Generic Session Adapters uitgevoerd; projectspecifieke input/dependencies blokkeren resterende output",
+                {"blocker_count": len(blockers), "blockers": blockers[:12]},
             )
             return 10
 
-        progress(100, "PASSED", "Autonome sessie-orchestratie gereed")
+        progress(100, "PASSED", "Alle geplande Generic Session Adapters zijn geslaagd")
         return 0
