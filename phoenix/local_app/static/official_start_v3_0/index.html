@@ -3,152 +3,286 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PROJECT PHOENIX 3.0.1 — Official Start</title>
+<title>PROJECT PHOENIX 3.0.2 — Official Start</title>
 <style>
 :root{
-  --bg:#04101e;--panel:#0a1c30;--panel2:#0d243c;--line:#1f4770;
-  --text:#eef7ff;--muted:#8ca9c5;--cyan:#23b7ff;--green:#62e29d;
-  --amber:#ffd166;--danger:#ff6b6b
+  --bg:#040b15;--panel:#081526;--panel2:#0b1d33;--line:#153b60;--text:#f4f8ff;--muted:#8aa6c0;
+  --blue:#2f7dff;--cyan:#25b6ff;--green:#73e0a3;--amber:#ffcd61;--orange:#ff932e;
+  --shadow:0 18px 50px rgba(0,0,0,.35)
 }
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:
-radial-gradient(circle at 15% 0%,#123b64 0,transparent 32%),
-radial-gradient(circle at 100% 10%,#12362f 0,transparent 24%),var(--bg);
-color:var(--text);font:15px "Segoe UI",Arial,sans-serif}
+body{margin:0;background:
+radial-gradient(circle at 10% 0%,rgba(40,100,180,.18),transparent 25%),
+radial-gradient(circle at 100% 10%,rgba(0,130,90,.15),transparent 22%),
+linear-gradient(180deg,#02060d,#07111f 40%,#050d18 100%);
+color:var(--text);font:15px/1.4 "Segoe UI",Arial,sans-serif;overflow:hidden}
 button,input,textarea,select{font:inherit}
-.shell{max-width:1460px;margin:auto;padding:24px}
-.top{display:flex;justify-content:space-between;gap:20px;align-items:center}
-.brand{display:flex;gap:14px;align-items:center}
-.logo{width:54px;height:54px;border:1px solid #2f699c;border-radius:16px;
-display:grid;place-items:center;font-size:20px;font-weight:800;
-background:linear-gradient(145deg,#0f2f50,#091828);box-shadow:0 0 30px #0f7ec844}
-h1{font-size:24px;margin:0}.subtitle{color:var(--muted);margin-top:5px}
-.live{padding:8px 12px;border:1px solid #266047;border-radius:999px;color:var(--green);background:#092219}
-.statusbar{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.status{background:#071827cc;border:1px solid #173b5c;border-radius:12px;padding:11px 13px}
-.status small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:10px}
-.status strong{display:block;margin-top:5px;font-size:13px}
-.main{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-top:16px}
-.card{background:#071827e8;border:1px solid #173b5c;border-radius:18px;padding:18px;box-shadow:0 18px 60px #0004}
-.card h2{font-size:15px;margin:0 0 13px;letter-spacing:.07em;text-transform:uppercase;color:#b8d9f6}
-.types{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.type{padding:22px;border:1px solid #235784;background:#0b2137;color:#dff2ff;border-radius:14px;cursor:pointer;font-weight:700}
-.type.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan),0 0 24px #23b7ff25;background:#103453}
-.inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.field{background:#081a2c;border:1px solid #173b5c;border-radius:12px;padding:11px}
-.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px;text-transform:uppercase}
-.field textarea,.field select{width:100%;background:#04111e;color:var(--text);border:1px solid #234864;border-radius:8px;padding:9px;min-height:44px}
-.field textarea{height:82px;resize:vertical}
-.actions{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:10px;margin-top:12px}
-.action{border:1px solid #24547b;border-radius:12px;padding:14px;background:#0a2137;color:var(--text);cursor:pointer;font-weight:700}
-.action:hover,.module:hover,.workflow:hover{border-color:var(--cyan);transform:translateY(-1px)}
-.action.primary{background:linear-gradient(135deg,#087cc0,#15a0d5);border-color:#35c1ff;color:#fff}
-.action .hint{display:block;font-size:10px;font-weight:400;color:#a9c6dc;margin-top:4px}
-.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.module{min-height:78px;text-align:left;border:1px solid #1d466b;border-radius:12px;background:#0a1f34;color:var(--text);padding:12px;cursor:pointer;transition:.12s}
-.module b{display:block}.module span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
-.module[disabled]{opacity:.42;cursor:not-allowed}
-.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.list{max-height:255px;overflow:auto}
-.workflow,.project{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border-bottom:1px solid #15334e}
-.workflow button,.project button{padding:7px 10px;border-radius:8px;border:1px solid #285d88;background:#0a2944;color:#eef7ff;cursor:pointer}
-.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#0d2d49;color:#addaff}
-.good{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--danger)}
-#toast{position:fixed;right:22px;bottom:22px;max-width:520px;padding:13px 16px;border:1px solid #2b6796;border-radius:12px;background:#061522f2;display:none;z-index:20;box-shadow:0 14px 50px #0008}
-#modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:19}
-.modalbox{width:min(820px,92vw);max-height:82vh;overflow:auto;background:#071827;border:1px solid #28618e;border-radius:18px;padding:20px}
-.modalhead{display:flex;justify-content:space-between;align-items:center}.close{background:transparent;border:0;color:white;font-size:24px;cursor:pointer}
-pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px solid #153954;border-radius:10px;padding:12px;color:#bfe0f8}
+.app{display:grid;grid-template-columns:230px 1fr;gap:18px;max-width:1536px;margin:0 auto;padding:18px;height:100vh}
+.side{background:rgba(7,17,30,.92);border:1px solid #0e2a49;border-radius:20px;padding:18px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.logo{width:42px;height:42px;border-radius:12px;border:1px solid #2560d0;background:linear-gradient(145deg,#0b1f39,#061121);display:grid;place-items:center;font-weight:800}
+.brandtxt{font-size:18px;font-weight:800;letter-spacing:.02em}
+.nav{display:flex;flex-direction:column;gap:8px}
+.navbtn{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid transparent;background:transparent;color:#dfeaff;cursor:pointer;text-align:left}
+.navbtn.active,.navbtn:hover{background:linear-gradient(90deg,rgba(49,87,255,.35),rgba(10,27,46,.8));border-color:#264f9c}
+.navicon{width:18px;text-align:center;opacity:.9}
+.sidecards{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+.minicard{border:1px solid #12355c;border-radius:14px;padding:14px;background:#061322}
+.minicard .title{font-size:12px;color:var(--green);text-transform:uppercase;font-weight:700}
+.minicard .value{margin-top:6px;font-size:13px}
+.content{display:grid;grid-template-rows:auto auto 1fr;gap:14px;min-width:0}
+.topbar{background:rgba(6,17,30,.92);border:1px solid #0e2a49;border-radius:20px;padding:14px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow)}
+.title h1{margin:0;font-size:30px;letter-spacing:.02em}
+.title .sub{color:#d8b67b;font-size:14px}
+.topchips{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{padding:8px 12px;border-radius:999px;border:1px solid #1d4f35;background:#072217;color:var(--green);font-weight:700}
+.statusgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.status{background:rgba(6,17,30,.92);border:1px solid #12355c;border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
+.status small{display:block;color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.08em}
+.status strong{display:block;margin-top:5px}
+.mainwrap{display:grid;grid-template-columns:1fr 290px;gap:14px;min-height:0}
+.center{display:grid;grid-template-rows:auto auto auto auto 1fr;gap:14px;min-height:0}
+.panel{background:rgba(6,17,30,.92);border:1px solid #0e2a49;border-radius:20px;padding:18px;box-shadow:var(--shadow);min-width:0}
+.panel h2{margin:0 0 12px;font-size:15px;color:#f2e2b9;letter-spacing:.05em;text-transform:uppercase}
+.sectionlabel{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.badge{width:24px;height:24px;border-radius:7px;background:#244bff;color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px}
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.typecard{border-radius:16px;border:1px solid #1c446e;background:#071626;padding:16px;cursor:pointer;position:relative;overflow:hidden;min-height:140px}
+.typecard.active{box-shadow:0 0 0 1px var(--cyan),0 0 20px rgba(37,182,255,.18)}
+.typecard h3{margin:0 0 8px;font-size:16px}
+.typecard ul{margin:0;padding-left:18px;color:#c9d8ea;font-size:12px}
+.typecard .icon{position:absolute;left:18px;bottom:18px;font-size:44px;opacity:.8}
+.type-bouw h3{color:#48a4ff}.type-civiel h3{color:#8cd532}.type-infra h3{color:#ff962b}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dropzone,.speechbox{border:1px solid #12355c;border-radius:16px;padding:18px;background:#050f1c;min-height:160px}
+.dropzone .big,.speechbox .big{font-size:18px;font-weight:700;text-align:center;margin:26px 0 10px}
+.dropzone .fmt{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.fmt span{border:1px solid #274665;border-radius:6px;padding:3px 6px;font-size:11px;color:#c5d4e4}
+.bigmic{font-size:48px;text-align:center;margin-top:18px;color:#61b9ff}
+.modus{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.modecard{border:1px solid #12355c;border-radius:16px;padding:14px;background:#06111f;cursor:pointer;min-height:120px}
+.modecard.active{box-shadow:0 0 0 1px #25b6ff;background:linear-gradient(180deg,#0b1e36,#071321)}
+.modecard h3{margin:0 0 10px;font-size:15px}
+.modecard p{margin:0;color:#b7c7da;font-size:12px}
+.outputtoolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.toolbtn{padding:8px 10px;border-radius:10px;border:1px solid #25496d;background:#0a2037;color:#eef7ff;cursor:pointer}
+.outputgroups{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.outputgroup{border:1px solid #12355c;border-radius:16px;padding:14px;background:#05111e}
+.outputgroup h3{margin:0 0 10px;font-size:13px;color:#cfe5ff}
+.outputitem{display:flex;align-items:center;gap:8px;margin:7px 0;color:#dfebf7}
+.outputitem input{width:16px;height:16px}
+.startbar{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+.progresspanel{display:flex;flex-direction:column;gap:8px}
+.progressmeta{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#d9e8f8}
+.progresstrack{height:18px;border-radius:999px;background:#03101b;border:1px solid #173b60;overflow:hidden}
+.progressfill{height:100%;width:0;background:linear-gradient(90deg,#2b86ff,#2be0ff)}
+.primarybtn,.secondarybtn{border:0;border-radius:16px;padding:16px 20px;font-size:18px;font-weight:800;cursor:pointer}
+.primarybtn{background:linear-gradient(90deg,#2642ff,#2e84ff);color:#fff}
+.secondarybtn{background:#0b2038;color:#e6f3ff;border:1px solid #25527e}
+.resultsrow{display:flex;gap:12px}
+.sidepanel{display:grid;grid-template-rows:auto auto auto 1fr;gap:14px;min-height:0}
+.imagepanel{border-radius:20px;border:1px solid #103154;overflow:hidden;min-height:240px;background:
+linear-gradient(180deg,rgba(4,16,30,.2),rgba(4,16,30,.65)),
+url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1000&q=80") center/cover}
+.imagepanel .overlay{height:100%;display:flex;align-items:flex-end;padding:16px;font-weight:700;color:#f4f8ff;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.modlist{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modbtn{padding:14px;border-radius:14px;border:1px solid #12355c;background:#071525;color:#eef7ff;cursor:pointer;text-align:left;min-height:88px}
+.modbtn:hover{border-color:#27b4ff}
+.modbtn .name{font-weight:800}.modbtn .sub{display:block;margin-top:6px;color:#9fb9d3;font-size:12px}
+.scrollpanel{overflow:auto;min-height:0}
+.listrow{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #103154;padding:10px 4px}
+.listrow .meta{font-size:12px;color:#9eb7d0}
+.mini{padding:7px 10px;font-size:13px;border-radius:10px;border:1px solid #295c8b;background:#0a2742;color:#fff;cursor:pointer}
+.toast{position:fixed;right:24px;bottom:24px;display:none;max-width:460px;z-index:40;padding:12px 14px;border-radius:12px;background:#061522f2;border:1px solid #2b6796;box-shadow:var(--shadow)}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(1,5,10,.65);z-index:30}
+.modalbox{width:min(1000px,94vw);max-height:88vh;overflow:auto;background:#071625;border:1px solid #1c4a74;border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.close{border:0;background:transparent;color:#fff;font-size:26px;cursor:pointer}
+pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px solid #153954;border-radius:12px;padding:12px;color:#bfe0f8}
 .hidden{display:none!important}
-@media(max-width:1000px){.main,.bottom{grid-template-columns:1fr}.statusbar{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.types,.actions,.modules,.inputs,.statusbar{grid-template-columns:1fr}}
+@media(max-width:1280px){
+  .app{grid-template-columns:1fr;height:auto;overflow:auto}
+  body{overflow:auto}
+  .mainwrap{grid-template-columns:1fr}
+}
+@media(max-width:980px){
+  .types,.modus,.outputgroups,.twocol,.startbar,.modlist,.statusgrid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<div class="shell">
-  <div class="top">
+<div class="app">
+  <aside class="side">
     <div class="brand">
       <div class="logo">P3</div>
-      <div><h1>PROJECT PHOENIX 3.0.1</h1><div class="subtitle">Official Functional Start Screen · Autonomous Engineering · Digital Twin · Controlled Release</div></div>
+      <div>
+        <div class="brandtxt">PROJECT PHOENIX</div>
+        <div style="font-size:12px;color:#b7c8da">Official Start v3.0.2</div>
+      </div>
     </div>
-    <div class="live" id="runtimeLive">RUNTIME CONNECTING</div>
-  </div>
-
-  <div class="statusbar">
-    <div class="status"><small>Repository</small><strong id="gitState">—</strong></div>
-    <div class="status"><small>Branch</small><strong id="branchState">—</strong></div>
-    <div class="status"><small>Local Runtime</small><strong id="runtimeState">—</strong></div>
-    <div class="status"><small>Production</small><strong class="warn">PAT PENDING · RELEASE LOCKED</strong></div>
-  </div>
-
-  <div class="main">
-    <section class="card">
-      <h2>Nieuwe / bestaande projectanalyse</h2>
-      <div class="types">
-        <button class="type active" data-type="BOUW">BOUW</button>
-        <button class="type" data-type="CIVIEL">CIVIEL</button>
-        <button class="type" data-type="INFRA">INFRA</button>
+    <nav class="nav" id="leftNav">
+      <button class="navbtn active" data-module="new_project"><span class="navicon">⌂</span>Nieuw Project</button>
+      <button class="navbtn" data-module="projects"><span class="navicon">⛁</span>Projecten</button>
+      <button class="navbtn" data-module="digital_twin"><span class="navicon">⌘</span>Digital Twin</button>
+      <button class="navbtn" data-module="ai_agents"><span class="navicon">✦</span>AI Agents</button>
+      <button class="navbtn" data-module="simulations"><span class="navicon">◌</span>Simulaties</button>
+      <button class="navbtn" data-module="documents"><span class="navicon">☰</span>Documenten</button>
+      <button class="navbtn" data-module="reports"><span class="navicon">▤</span>Rapporten</button>
+      <button class="navbtn" data-module="asset_management"><span class="navicon">☷</span>Asset Management</button>
+      <button class="navbtn" data-module="dashboard"><span class="navicon">◫</span>Dashboard</button>
+      <button class="navbtn" data-module="settings"><span class="navicon">⚙</span>Instellingen</button>
+      <button class="navbtn" id="resultsNav"><span class="navicon">✓</span>Resultaten</button>
+    </nav>
+    <div class="sidecards">
+      <div class="minicard">
+        <div class="title">Systeemstatus</div>
+        <div class="value" id="sysCard">● Runtime verbinden...</div>
       </div>
+      <div class="minicard">
+        <div class="title">Phoenix Core</div>
+        <div class="value" id="coreCard">Online</div>
+      </div>
+    </div>
+  </aside>
 
-      <div class="inputs">
-        <div class="field">
-          <label>Project</label>
-          <select id="projectSelect"><option value="">Nieuw / geen bestaand project gekozen</option></select>
+  <main class="content">
+    <div class="topbar">
+      <div class="title">
+        <h1>PROJECT PHOENIX 3.0.2</h1>
+        <div class="sub">Autonomous Engineering & Infrastructure Intelligence Platform</div>
+      </div>
+      <div class="topchips">
+        <div class="chip" id="chipRuntime">RUNTIME CONNECTING</div>
+      </div>
+    </div>
+
+    <div class="statusgrid">
+      <div class="status"><small>Repository</small><strong id="gitState">—</strong></div>
+      <div class="status"><small>Branch</small><strong id="branchState">—</strong></div>
+      <div class="status"><small>Local Runtime</small><strong id="runtimeState">—</strong></div>
+      <div class="status"><small>Production</small><strong style="color:var(--amber)">PAT PENDING · RELEASE LOCKED</strong></div>
+    </div>
+
+    <div class="mainwrap">
+      <section class="center">
+        <div class="panel">
+          <h2>Nieuw Project</h2>
+          <div class="sectionlabel"><div class="badge">1</div><div>SELECTEER PROJECTTYPE</div></div>
+          <div class="types">
+            <button class="typecard type-bouw active" data-type="BOUW">
+              <h3>BOUW</h3>
+              <ul><li>Woningbouw</li><li>Utiliteitsbouw</li><li>Industrie</li><li>Hoogbouw</li><li>Renovatie</li><li>Transformatie</li></ul>
+              <div class="icon">🏢</div>
+            </button>
+            <button class="typecard type-civiel" data-type="CIVIEL">
+              <h3>CIVIEL</h3>
+              <ul><li>Bruggen</li><li>Kademuren</li><li>Keerwanden</li><li>Waterbouwkundige constructies</li><li>Tunnels</li><li>Kunstwerken</li></ul>
+              <div class="icon">🌉</div>
+            </button>
+            <button class="typecard type-infra" data-type="INFRA">
+              <h3>INFRA</h3>
+              <ul><li>Wegen</li><li>Parkeerterreinen</li><li>Rotondes</li><li>Verkeersknooppunten</li><li>Fietsinfrastructuur</li><li>Railinfrastructuur</li></ul>
+              <div class="icon">🛣</div>
+            </button>
+          </div>
         </div>
-        <div class="field">
-          <label>Projectopdracht / spraakinvoer</label>
-          <textarea id="brief" placeholder="Beschrijf het project of gebruik SPRAAK..."></textarea>
+
+        <div class="twocol">
+          <div class="panel">
+            <div class="sectionlabel"><div class="badge">2</div><div>INVOER / UPLOAD PROJECTOMSCHRIJVING</div></div>
+            <div class="dropzone" id="dropzone">
+              <div class="big">Sleep uw bestand hierheen<br>of klik om te bladeren</div>
+              <div style="text-align:center;color:#a8bfd9" id="uploadState">Geen uploadbatch geselecteerd.</div>
+              <div class="fmt"><span>PDF</span><span>DOCX</span><span>XLSX</span><span>DWG</span><span>DXF</span><span>IFC</span><span>RVT</span><span>SKP</span><span>JPG</span><span>PNG</span><span>SHP</span><span>GeoJSON</span></div>
+            </div>
+            <input id="filePicker" class="hidden" type="file" multiple accept=".pdf,.docx,.xlsx,.dwg,.dxf,.ifc,.rvt,.skp,.jpg,.jpeg,.png,.shp,.geojson,.json,.csv,.txt">
+          </div>
+          <div class="panel">
+            <div class="sectionlabel"><div class="badge">3</div><div>SPRAAK INVOER PROJECTOMSCHRIJVING</div></div>
+            <div class="speechbox">
+              <div class="bigmic">🎤</div>
+              <div class="big" style="margin-top:8px">Klik op de microfoon om te beginnen</div>
+              <div style="text-align:center;color:#a8bfd9">Phoenix zet uw spraak automatisch om naar projectdefinitie, PvE, disciplines en vergunningstrategie.</div>
+              <div style="text-align:center;margin-top:12px"><button class="toolbtn" id="speechBtn">SPRAAK STARTEN</button></div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="actions">
-        <button class="action" id="uploadBtn">UPLOAD<span class="hint">Bestanden echt opslaan in Phoenix intake</span></button>
-        <button class="action" id="speechBtn">SPRAAK<span class="hint">Browser speech recognition → projectopdracht</span></button>
-        <button class="action primary" id="startBtn">START PROJECTANALYSE<span class="hint">Maakt sessie + toont beschikbare echte workflows</span></button>
-      </div>
-      <input id="filePicker" class="hidden" type="file" multiple accept=".pdf,.docx,.xlsx,.dwg,.dxf,.ifc,.rvt,.skp,.jpg,.jpeg,.png,.shp,.geojson,.json,.csv,.txt">
-      <div id="uploadState" class="subtitle" style="margin-top:10px">Geen uploadbatch geselecteerd.</div>
-    </section>
+        <div class="twocol">
+          <div class="panel">
+            <div class="sectionlabel"><div class="badge">4</div><div>PROJECTMODUS</div></div>
+            <div class="modus">
+              <button class="modecard" data-mode="manual"><h3>HANDMATIGE WORKFLOW</h3><p>U bepaalt zelf alle stappen en processen.</p></button>
+              <button class="modecard" data-mode="guided"><h3>BEGELEIDE WORKFLOW</h3><p>Phoenix begeleidt u stap voor stap.</p></button>
+              <button class="modecard active" data-mode="autonomous"><h3>AUTONOMOUS PROJECT MODE</h3><p>Phoenix voert het volledige project automatisch uit.</p></button>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="sectionlabel"><div class="badge">Project</div><div>PROJECTSELECTIE / OMSCHRIJVING</div></div>
+            <div style="display:grid;gap:10px">
+              <select id="projectSelect" style="width:100%;background:#04111e;color:#fff;border:1px solid #234864;border-radius:10px;padding:10px"></select>
+              <textarea id="brief" placeholder="Beschrijf het project of gebruik spraak..." style="width:100%;height:98px;background:#04111e;color:#fff;border:1px solid #234864;border-radius:10px;padding:10px;resize:vertical"></textarea>
+            </div>
+          </div>
+        </div>
 
-    <section class="card">
-      <h2>Phoenix modules</h2>
-      <div class="modules" id="moduleGrid">
-        <button class="module" data-module="projects"><b>PROJECTEN</b><span>Projectregister en projectmappen</span></button>
-        <button class="module" data-module="digital_twin"><b>DIGITAL TWIN</b><span>Centraal geometrisch / digitaal model</span></button>
-        <button class="module" data-module="architectural"><b>BOUWKUNDIG</b><span>Architectural Suite en tekeningen</span></button>
-        <button class="module" data-module="structural"><b>CONSTRUCTIEF</b><span>Structural engineering v8.x keten</span></button>
-        <button class="module" data-module="civil"><b>CIVIEL</b><span>Civiele engineering</span></button>
-        <button class="module" data-module="infra"><b>INFRA</b><span>Infrastructuur / verkeer / water</span></button>
-        <button class="module" data-module="permits"><b>VERGUNNINGEN</b><span>Permit / BOPA / AERIUS workflows</span></button>
-        <button class="module" data-module="cost_planning"><b>KOSTEN & PLANNING</b><span>Ratebooks, raming en planning</span></button>
-        <button class="module" data-module="qaqc"><b>QA/QC</b><span>Evidence, review en kwaliteitscontrole</span></button>
-        <button class="module" data-module="release_control"><b>RELEASE CONTROL</b><span>Revisie, approval en uitgifte</span></button>
-        <button class="module" data-module="knowledge"><b>BIB / KNOWLEDGE</b><span>Phoenix kennisbibliotheek</span></button>
-        <button class="module" id="systemBtn"><b>SYSTEM STATUS</b><span>Live API, Git, workflows en engines</span></button>
-      </div>
-    </section>
-  </div>
+        <div class="panel">
+          <div class="sectionlabel"><div class="badge">5</div><div>GEWENSTE OUTPUT</div></div>
+          <div class="outputtoolbar">
+            <button class="toolbtn" id="allOnBtn">ALLES AAN</button>
+            <button class="toolbtn" id="allOffBtn">ALLES UIT</button>
+            <button class="toolbtn" id="recommendedBtn">AANBEVOLEN</button>
+            <button class="toolbtn" id="myStandardBtn">MIJN STANDAARD</button>
+          </div>
+          <div class="outputgroups" id="desiredOutputGroups"></div>
+        </div>
 
-  <div class="bottom">
-    <section class="card">
-      <h2>Beschikbare workflows</h2>
-      <div class="list" id="workflowList">Runtime wordt geladen…</div>
-    </section>
-    <section class="card">
-      <h2>Projecten</h2>
-      <div class="list" id="projectList">Projectregister wordt geladen…</div>
-    </section>
-  </div>
+        <div class="panel">
+          <div class="startbar">
+            <div class="progresspanel">
+              <div class="resultsrow">
+                <button class="secondarybtn" id="resultsBtn">RESULTATEN</button>
+                <button class="primarybtn" id="startBtn">START PROJECTANALYSE</button>
+              </div>
+              <div class="progressmeta"><span id="progressLabel">Geen actieve Phoenix-bewerking.</span><span id="progressPercent">0%</span></div>
+              <div class="progresstrack"><div class="progressfill" id="progressFill"></div></div>
+              <div style="color:#98b4cf;font-size:12px" id="progressStep">Wacht op nieuwe bewerking.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidepanel">
+        <div class="imagepanel"><div class="overlay">Visuele Phoenix-identiteit hersteld — stabiele UI zonder flikkeren</div></div>
+
+        <div class="panel">
+          <h2>Phoenix Modules</h2>
+          <div class="modlist" id="moduleGrid"></div>
+        </div>
+
+        <div class="panel scrollpanel">
+          <h2>Beschikbare Workflows</h2>
+          <div id="workflowList"></div>
+        </div>
+
+        <div class="panel scrollpanel">
+          <h2>Projecten</h2>
+          <div id="projectList"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
 </div>
 
-<div id="toast"></div>
-<div id="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">Phoenix</h2><button class="close" id="modalClose">×</button></div><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">Phoenix</h2><button class="close" id="modalClose">×</button></div><div id="modalBody"></div></div></div>
 
 <script>
 window.PHOENIX_SESSION_TOKEN="__PHOENIX_SESSION_TOKEN__";
 window.PHOENIX_RUNTIME_VERSION="__PHOENIX_RUNTIME_VERSION__";
 window.PHOENIX_START_SCREEN_VERSION="__PHOENIX_START_SCREEN_VERSION__";
+window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
 </script>
-<script src="/start-v3/PROJECT_PHOENIX_official_start_v3_functional_v3_0_1.js"></script>
+<script src="/start-v3/PROJECT_PHOENIX_official_start_v3_visual_v3_0_2.js"></script>
 </body>
 </html>

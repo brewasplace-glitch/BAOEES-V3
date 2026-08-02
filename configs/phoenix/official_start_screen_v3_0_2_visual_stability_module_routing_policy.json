@@ -1,0 +1,18 @@
+{
+  "engine_id": "PHX-OFFICIAL-START-SCREEN-V3.0.2-VISUAL-STABILITY-MODULE-ROUTING",
+  "version": "3.0.2",
+  "runtime_version_required": "1.6.0",
+  "official_route": "/start-v3/",
+  "capabilities": {
+    "restored_visual_identity": true,
+    "stable_delta_polling": true,
+    "results_panel": true,
+    "progress_indicator": true,
+    "desired_output_selector": true,
+    "integrated_module_routing": true,
+    "screen_modules_open_in_runtime_when_appropriate": true,
+    "placeholder_folder_routing_eliminated_as_primary_behavior": true
+  },
+  "production_acceptance_test_status": "PENDING_REAL_PROJECT_END_TO_END_PRODUCTION_ACCEPTANCE_TEST",
+  "production_release": "LOCKED_PENDING_PAT"
+}
