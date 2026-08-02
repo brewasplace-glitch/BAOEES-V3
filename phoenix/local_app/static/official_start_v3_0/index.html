@@ -1,5 +1,154 @@
-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project Phoenix 2.0</title><style>
-html,body{margin:0;width:100%;height:100%;background:#020b18;overflow:hidden;font-family:Segoe UI,Arial,sans-serif}#screen{position:fixed;inset:0;background:url("phoenix_official_start_screen_v2_0.png") center/contain no-repeat}.hotspot{position:absolute;border:0;background:transparent;cursor:pointer}.hotspot:hover,.hotspot:focus{outline:2px solid rgba(0,153,255,.8);box-shadow:0 0 18px rgba(0,153,255,.5);border-radius:10px}#start{left:31.8%;top:84.1%;width:43.8%;height:7.3%}#upload{left:18.2%;top:37.4%;width:27.2%;height:15.5%}#speech{left:47.6%;top:37.3%;width:26.2%;height:15.5%}#bouw{left:18.7%;top:16.2%;width:16.7%;height:16.1%}#civiel{left:36.3%;top:16.2%;width:16.3%;height:16.1%}#infra{left:53.2%;top:16.2%;width:15%;height:16.1%}#message{position:fixed;left:50%;bottom:3.5%;transform:translateX(-50%);display:none;background:#071a2f;color:white;padding:12px 20px;border:1px solid #1689ff;border-radius:9px;box-shadow:0 0 24px rgba(0,130,255,.45);z-index:5}input{display:none}</style></head><body><div id="screen"><button class="hotspot" id="bouw"></button><button class="hotspot" id="civiel"></button><button class="hotspot" id="infra"></button><button class="hotspot" id="upload"></button><button class="hotspot" id="speech"></button><button class="hotspot" id="start"></button><input id="filePicker" type="file" multiple accept=".pdf,.docx,.xlsx,.dwg,.dxf,.ifc,.rvt,.skp,.jpg,.jpeg,.png,.shp,.geojson"></div><div id="message"></div><script>
-const msg=t=>{const m=document.getElementById('message');m.textContent=t;m.style.display='block';clearTimeout(window.__m);window.__m=setTimeout(()=>m.style.display='none',3500)};let type='BOUW';['bouw','civiel','infra'].forEach(id=>document.getElementById(id).onclick=()=>{type=id.toUpperCase();msg('Projecttype geselecteerd: '+type)});document.getElementById('upload').onclick=()=>document.getElementById('filePicker').click();document.getElementById('filePicker').onchange=e=>msg(e.target.files.length+' bestand(en) geselecteerd');document.getElementById('speech').onclick=()=>msg('Spraakinvoer wordt geopend via de lokale Phoenix-runtime');document.getElementById('start').onclick=()=>{localStorage.setItem('phoenix_project_type',type);location.href='http://127.0.0.1:8765/'};
-</script>  <script src="PROJECT_PHOENIX_official_start_v3_client.js"></script>
-</body></html>
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROJECT PHOENIX 3.0.1 — Official Start</title>
+<style>
+:root{
+  --bg:#04101e;--panel:#0a1c30;--panel2:#0d243c;--line:#1f4770;
+  --text:#eef7ff;--muted:#8ca9c5;--cyan:#23b7ff;--green:#62e29d;
+  --amber:#ffd166;--danger:#ff6b6b
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:
+radial-gradient(circle at 15% 0%,#123b64 0,transparent 32%),
+radial-gradient(circle at 100% 10%,#12362f 0,transparent 24%),var(--bg);
+color:var(--text);font:15px "Segoe UI",Arial,sans-serif}
+button,input,textarea,select{font:inherit}
+.shell{max-width:1460px;margin:auto;padding:24px}
+.top{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:54px;height:54px;border:1px solid #2f699c;border-radius:16px;
+display:grid;place-items:center;font-size:20px;font-weight:800;
+background:linear-gradient(145deg,#0f2f50,#091828);box-shadow:0 0 30px #0f7ec844}
+h1{font-size:24px;margin:0}.subtitle{color:var(--muted);margin-top:5px}
+.live{padding:8px 12px;border:1px solid #266047;border-radius:999px;color:var(--green);background:#092219}
+.statusbar{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.status{background:#071827cc;border:1px solid #173b5c;border-radius:12px;padding:11px 13px}
+.status small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+.status strong{display:block;margin-top:5px;font-size:13px}
+.main{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-top:16px}
+.card{background:#071827e8;border:1px solid #173b5c;border-radius:18px;padding:18px;box-shadow:0 18px 60px #0004}
+.card h2{font-size:15px;margin:0 0 13px;letter-spacing:.07em;text-transform:uppercase;color:#b8d9f6}
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.type{padding:22px;border:1px solid #235784;background:#0b2137;color:#dff2ff;border-radius:14px;cursor:pointer;font-weight:700}
+.type.active{border-color:var(--cyan);box-shadow:0 0 0 1px var(--cyan),0 0 24px #23b7ff25;background:#103453}
+.inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.field{background:#081a2c;border:1px solid #173b5c;border-radius:12px;padding:11px}
+.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px;text-transform:uppercase}
+.field textarea,.field select{width:100%;background:#04111e;color:var(--text);border:1px solid #234864;border-radius:8px;padding:9px;min-height:44px}
+.field textarea{height:82px;resize:vertical}
+.actions{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:10px;margin-top:12px}
+.action{border:1px solid #24547b;border-radius:12px;padding:14px;background:#0a2137;color:var(--text);cursor:pointer;font-weight:700}
+.action:hover,.module:hover,.workflow:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.action.primary{background:linear-gradient(135deg,#087cc0,#15a0d5);border-color:#35c1ff;color:#fff}
+.action .hint{display:block;font-size:10px;font-weight:400;color:#a9c6dc;margin-top:4px}
+.modules{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.module{min-height:78px;text-align:left;border:1px solid #1d466b;border-radius:12px;background:#0a1f34;color:var(--text);padding:12px;cursor:pointer;transition:.12s}
+.module b{display:block}.module span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.module[disabled]{opacity:.42;cursor:not-allowed}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.list{max-height:255px;overflow:auto}
+.workflow,.project{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border-bottom:1px solid #15334e}
+.workflow button,.project button{padding:7px 10px;border-radius:8px;border:1px solid #285d88;background:#0a2944;color:#eef7ff;cursor:pointer}
+.tag{font-size:10px;padding:4px 7px;border-radius:999px;background:#0d2d49;color:#addaff}
+.good{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--danger)}
+#toast{position:fixed;right:22px;bottom:22px;max-width:520px;padding:13px 16px;border:1px solid #2b6796;border-radius:12px;background:#061522f2;display:none;z-index:20;box-shadow:0 14px 50px #0008}
+#modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:19}
+.modalbox{width:min(820px,92vw);max-height:82vh;overflow:auto;background:#071827;border:1px solid #28618e;border-radius:18px;padding:20px}
+.modalhead{display:flex;justify-content:space-between;align-items:center}.close{background:transparent;border:0;color:white;font-size:24px;cursor:pointer}
+pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px solid #153954;border-radius:10px;padding:12px;color:#bfe0f8}
+.hidden{display:none!important}
+@media(max-width:1000px){.main,.bottom{grid-template-columns:1fr}.statusbar{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.types,.actions,.modules,.inputs,.statusbar{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <div class="brand">
+      <div class="logo">P3</div>
+      <div><h1>PROJECT PHOENIX 3.0.1</h1><div class="subtitle">Official Functional Start Screen · Autonomous Engineering · Digital Twin · Controlled Release</div></div>
+    </div>
+    <div class="live" id="runtimeLive">RUNTIME CONNECTING</div>
+  </div>
+
+  <div class="statusbar">
+    <div class="status"><small>Repository</small><strong id="gitState">—</strong></div>
+    <div class="status"><small>Branch</small><strong id="branchState">—</strong></div>
+    <div class="status"><small>Local Runtime</small><strong id="runtimeState">—</strong></div>
+    <div class="status"><small>Production</small><strong class="warn">PAT PENDING · RELEASE LOCKED</strong></div>
+  </div>
+
+  <div class="main">
+    <section class="card">
+      <h2>Nieuwe / bestaande projectanalyse</h2>
+      <div class="types">
+        <button class="type active" data-type="BOUW">BOUW</button>
+        <button class="type" data-type="CIVIEL">CIVIEL</button>
+        <button class="type" data-type="INFRA">INFRA</button>
+      </div>
+
+      <div class="inputs">
+        <div class="field">
+          <label>Project</label>
+          <select id="projectSelect"><option value="">Nieuw / geen bestaand project gekozen</option></select>
+        </div>
+        <div class="field">
+          <label>Projectopdracht / spraakinvoer</label>
+          <textarea id="brief" placeholder="Beschrijf het project of gebruik SPRAAK..."></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="action" id="uploadBtn">UPLOAD<span class="hint">Bestanden echt opslaan in Phoenix intake</span></button>
+        <button class="action" id="speechBtn">SPRAAK<span class="hint">Browser speech recognition → projectopdracht</span></button>
+        <button class="action primary" id="startBtn">START PROJECTANALYSE<span class="hint">Maakt sessie + toont beschikbare echte workflows</span></button>
+      </div>
+      <input id="filePicker" class="hidden" type="file" multiple accept=".pdf,.docx,.xlsx,.dwg,.dxf,.ifc,.rvt,.skp,.jpg,.jpeg,.png,.shp,.geojson,.json,.csv,.txt">
+      <div id="uploadState" class="subtitle" style="margin-top:10px">Geen uploadbatch geselecteerd.</div>
+    </section>
+
+    <section class="card">
+      <h2>Phoenix modules</h2>
+      <div class="modules" id="moduleGrid">
+        <button class="module" data-module="projects"><b>PROJECTEN</b><span>Projectregister en projectmappen</span></button>
+        <button class="module" data-module="digital_twin"><b>DIGITAL TWIN</b><span>Centraal geometrisch / digitaal model</span></button>
+        <button class="module" data-module="architectural"><b>BOUWKUNDIG</b><span>Architectural Suite en tekeningen</span></button>
+        <button class="module" data-module="structural"><b>CONSTRUCTIEF</b><span>Structural engineering v8.x keten</span></button>
+        <button class="module" data-module="civil"><b>CIVIEL</b><span>Civiele engineering</span></button>
+        <button class="module" data-module="infra"><b>INFRA</b><span>Infrastructuur / verkeer / water</span></button>
+        <button class="module" data-module="permits"><b>VERGUNNINGEN</b><span>Permit / BOPA / AERIUS workflows</span></button>
+        <button class="module" data-module="cost_planning"><b>KOSTEN & PLANNING</b><span>Ratebooks, raming en planning</span></button>
+        <button class="module" data-module="qaqc"><b>QA/QC</b><span>Evidence, review en kwaliteitscontrole</span></button>
+        <button class="module" data-module="release_control"><b>RELEASE CONTROL</b><span>Revisie, approval en uitgifte</span></button>
+        <button class="module" data-module="knowledge"><b>BIB / KNOWLEDGE</b><span>Phoenix kennisbibliotheek</span></button>
+        <button class="module" id="systemBtn"><b>SYSTEM STATUS</b><span>Live API, Git, workflows en engines</span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="bottom">
+    <section class="card">
+      <h2>Beschikbare workflows</h2>
+      <div class="list" id="workflowList">Runtime wordt geladen…</div>
+    </section>
+    <section class="card">
+      <h2>Projecten</h2>
+      <div class="list" id="projectList">Projectregister wordt geladen…</div>
+    </section>
+  </div>
+</div>
+
+<div id="toast"></div>
+<div id="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">Phoenix</h2><button class="close" id="modalClose">×</button></div><div id="modalBody"></div></div></div>
+
+<script>
+window.PHOENIX_SESSION_TOKEN="__PHOENIX_SESSION_TOKEN__";
+window.PHOENIX_RUNTIME_VERSION="__PHOENIX_RUNTIME_VERSION__";
+window.PHOENIX_START_SCREEN_VERSION="__PHOENIX_START_SCREEN_VERSION__";
+</script>
+<script src="/start-v3/PROJECT_PHOENIX_official_start_v3_functional_v3_0_1.js"></script>
+</body>
+</html>
