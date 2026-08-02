@@ -1,0 +1,16 @@
+{
+  "engine_id": "PHX-FRONTEND-LOCALIZATION-NL",
+  "version": "1.0.0",
+  "frontend_locale": "nl-NL",
+  "backend_contract_locale": "en-US",
+  "rules": {
+    "user_visible_frontend_dutch": true,
+    "technical_api_status_codes_unchanged": true,
+    "technical_json_keys_unchanged": true,
+    "workflow_ids_unchanged": true,
+    "session_ids_unchanged": true,
+    "capability_ids_unchanged": true,
+    "exit_codes_unchanged": true,
+    "zero_idle_polling_unchanged": true
+  }
+}
