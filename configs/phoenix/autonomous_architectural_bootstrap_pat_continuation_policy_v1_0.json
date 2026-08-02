@@ -1,0 +1,29 @@
+{
+  "engine_id": "PHX-AUTONOMOUS-ARCHITECTURAL-BOOTSTRAP-PAT-CONTINUATION",
+  "version": "1.0.0",
+  "orchestrator_version": "1.2.0",
+  "runtime_version": "1.8.1",
+  "frontend_language": "nl-NL",
+  "backend_contract_language": "en-US",
+  "rules": {
+    "free_text_building_brief_to_candidate_model": true,
+    "all_defaults_logged_as_assumptions": true,
+    "no_site_facts_invented": true,
+    "no_structural_load_or_material_profile_invented": true,
+    "no_professional_approval": true,
+    "production_release_default": "LOCKED",
+    "downstream_digital_twin_may_continue_from_candidate_geometry": true,
+    "final_drawing_outputs_not_falsely_marked_passed": true,
+    "pat_defect_004_terminal_modal_status_sync_fixed": true,
+    "zero_idle_polling_preserved": true
+  },
+  "revision": "FIXED_R1",
+  "fixed_r1": {
+    "root_cause": "obsolete_generic_session_adapter_regression_expected_autonomous_text_only_architecture_to_block",
+    "production_code_changed": false,
+    "regression_contract_updated": true,
+    "autonomous_clear_residential_brief_expected": "PASSED_CANDIDATE",
+    "non_autonomous_text_only_expected": "BLOCKED_INPUT",
+    "production_release": "LOCKED"
+  }
+}

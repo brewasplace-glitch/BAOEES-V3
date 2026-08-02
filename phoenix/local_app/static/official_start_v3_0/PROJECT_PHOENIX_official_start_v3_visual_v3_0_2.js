@@ -8,6 +8,7 @@ const desiredCatalog = Array.isArray(window.PHOENIX_DESIRED_OUTPUTS) ? window.PH
 let state = {
   monitorTimer: null,
   monitorJobId: null,
+  autonomousModalJobId: null,
   summary: null,
   status: null,
   progress: null,
@@ -334,6 +335,19 @@ function stopActiveMonitor(){
   state.monitorJobId = null;
 }
 
+
+function updateAutonomousRunModal(job){
+  if(!job || state.autonomousModalJobId !== job.job_id) return;
+  const statusEl = $("autonomousRunStatus");
+  if(!statusEl) return;
+  statusEl.textContent = String(job.status || "UNKNOWN").toUpperCase();
+  const pct = Number.isFinite(Number(job.progress_percent)) ? Number(job.progress_percent) : null;
+  setText("autonomousRunProgress", pct === null ? "—" : `${pct}%`);
+  setText("autonomousRunStep", job.progress_step || "—");
+  const count = Number(job.blocker_count || 0);
+  setText("autonomousRunBlockers", String(count));
+}
+
 async function monitorActiveJob(jobId){
   stopActiveMonitor();
   state.monitorJobId = jobId;
@@ -343,6 +357,7 @@ async function monitorActiveJob(jobId){
     try{
       const job = await api(`/api/jobs/${encodeURIComponent(jobId)}`);
       const status = String(job.status || "").toUpperCase();
+      updateAutonomousRunModal(job);
 
       // Update only the progress strip; never rebuild the dashboard.
       const percent =
@@ -485,13 +500,17 @@ $("startBtn").onclick = async () => {
 
     if(state.projectMode === "autonomous"){
       const job = await post("/api/autonomous/start", {session_id: session.session_id});
+      state.autonomousModalJobId = job.job_id;
       showModal("AUTONOME PRODUCTIERUN GESTART", `
         <p><b>Sessie:</b> ${esc(session.session_id)}</p>
         <p><b>Project:</b> ${esc(session.bootstrap?.project_id || "—")}</p>
         <p><b>Gewenste outputselecties:</b> ${esc(String((session.desired_outputs || []).length))}</p>
         <p><b>Autonomous Project Mode:</b> Phoenix heeft zelf de Session-Driven Orchestrator gestart.</p>
         <p><b>Job:</b> ${esc(job.job_id)}</p>
-        <p><b>Status:</b> ${esc(job.status)}</p>
+        <p><b>Status:</b> <span id="autonomousRunStatus">${esc(job.status)}</span></p>
+        <p><b>Voortgang:</b> <span id="autonomousRunProgress">—</span></p>
+        <p><b>Stap:</b> <span id="autonomousRunStep">—</span></p>
+        <p><b>Blokkeringen:</b> <span id="autonomousRunBlockers">0</span></p>
         <p>Er is geen technische workflowselectie door de gebruiker nodig.</p>
       `);
       toast("Autonomous Session-Driven Orchestrator gestart.");

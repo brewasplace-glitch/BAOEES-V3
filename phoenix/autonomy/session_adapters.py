@@ -22,6 +22,8 @@ from .adapter_runtime import (
     python_command,
     write_json,
 )
+from .architectural_bootstrap import generate_architectural_bootstrap
+
 
 
 CAPABILITIES = {
@@ -79,13 +81,14 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     json_uploads = discover_json_uploads(ctx)
 
     intake = {
-        "schema_version": "phoenix.architectural-session-intake/1.0",
+        "schema_version": "phoenix.architectural-session-intake/1.1",
         "project_id": ctx["project_id"],
         "session_id": ctx["session"].get("session_id"),
         "project_type": ctx["session"].get("project_type"),
         "brief": ctx["session"].get("brief"),
         "desired_outputs": ctx["session"].get("desired_outputs", []),
         "upload_files": [repo_ref(p, ctx["repository"]) for p in uploads],
+        "autonomous_text_bootstrap_allowed": str(ctx["session"].get("project_mode") or "").lower() == "autonomous",
         "professional_release": "LOCKED",
     }
     intake_path = out / "architectural_session_intake.json"
@@ -97,6 +100,7 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     detail_value = None
     profile_source = None
     profile_value = None
+    generated = None
 
     for path, value in json_uploads:
         if model_source is None and _architecture_model_candidate(value):
@@ -106,17 +110,31 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         if profile_source is None and _structural_profile_candidate(value):
             profile_source, profile_value = path, value
 
-    if model_source is None:
+    # In Autonomous Project Mode a sufficiently clear BOUW brief may bootstrap
+    # a dimensioned *concept candidate*. All defaults are registered explicitly.
+    if model_source is None and str(ctx["session"].get("project_mode") or "").lower() == "autonomous":
+        generated = generate_architectural_bootstrap(
+            project_id=ctx["project_id"],
+            project_type=str(ctx["session"].get("project_type") or ""),
+            brief=str(ctx["session"].get("brief") or ""),
+            desired_outputs=list(ctx["session"].get("desired_outputs", [])),
+        )
+        if generated.status == "PASSED":
+            model_value = generated.model
+            detail_value = generated.detailed_elements
+
+    if model_value is None:
         geometry_formats = sorted(
             {p.suffix.lower() for p in uploads if p.suffix.lower() in {".ifc",".dwg",".dxf",".rvt",".skp"}}
         )
+        reason = generated.reason if generated is not None and generated.reason else "DIMENSIONED_ARCHITECTURAL_MODEL_REQUIRED"
         blockers = [{
-            "reason": "DIMENSIONED_ARCHITECTURAL_MODEL_REQUIRED",
+            "reason": reason,
             "message": (
-                "Geen gestructureerd maatvoerend architectuurmodel gevonden. "
-                "Phoenix genereert geen willekeurige gebouwgeometrie uit alleen vrije tekst."
+                "Autonome architectuurbootstrap kon uit deze projectomschrijving geen veilig conceptmodel maken. "
+                "Voeg gebruikstype/hoofdmaten toe of lever een gestructureerd/CAD-BIM model aan."
             ),
-            "accepted_now": ["JSON/GeoJSON met storeys/spaces"],
+            "accepted_now": ["duidelijke BOUW-projectomschrijving voor woning", "JSON/GeoJSON met storeys/spaces"],
             "detected_unparsed_geometry_formats": geometry_formats,
         }]
         if geometry_formats:
@@ -128,19 +146,19 @@ def run_architecture(ctx: dict[str, Any]) -> int:
             ctx, capability_id=cap, label=label, status="BLOCKED_INPUT",
             outputs=[repo_ref(intake_path, ctx["repository"])],
             blockers=blockers,
-            metadata={"upload_count": len(uploads)},
+            metadata={"upload_count": len(uploads), "autonomous_bootstrap_attempted": generated is not None},
         )
 
     model_path = out / "architectural_model.json"
     write_json(model_path, model_value)
+    outputs = [repo_ref(intake_path, ctx["repository"]), repo_ref(model_path, ctx["repository"])]
 
-    outputs = [
-        repo_ref(intake_path, ctx["repository"]),
-        repo_ref(model_path, ctx["repository"]),
-    ]
     metadata = {
-        "architectural_model_source": repo_ref(model_source, ctx["repository"]),
+        "architectural_model_source": "AUTONOMOUS_TEXT_BOOTSTRAP" if generated is not None else repo_ref(model_source, ctx["repository"]),
+        "generation_mode": "AUTONOMOUS_TEXT_CONCEPT" if generated is not None else "PROJECT_INPUT",
         "candidate_only": True,
+        "professional_review_required": True,
+        "production_release": "LOCKED",
     }
 
     if detail_value is not None:
@@ -149,6 +167,20 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         outputs.append(repo_ref(detail_path, ctx["repository"]))
         metadata["detailed_elements"] = repo_ref(detail_path, ctx["repository"])
 
+    if generated is not None:
+        program_path=out/"architectural_space_program.json"
+        assumptions_path=out/"architectural_assumptions_register.json"
+        handoff_path=out/"architectural_structural_handoff.json"
+        write_json(program_path,generated.program)
+        write_json(assumptions_path,generated.assumptions)
+        write_json(handoff_path,generated.structural_handoff)
+        outputs.extend([repo_ref(program_path,ctx["repository"]),repo_ref(assumptions_path,ctx["repository"]),repo_ref(handoff_path,ctx["repository"])])
+        metadata["assumptions_register"] = repo_ref(assumptions_path,ctx["repository"])
+        metadata["space_program"] = repo_ref(program_path,ctx["repository"])
+        metadata["structural_handoff"] = repo_ref(handoff_path,ctx["repository"])
+        metadata["desired_output_states"] = generated.desired_output_states
+        metadata["autonomous_architectural_bootstrap_version"] = "1.0.0"
+
     if profile_value is not None:
         profile_path = out / "structural_project_profile.json"
         write_json(profile_path, profile_value)
@@ -156,12 +188,15 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         metadata["structural_project_profile"] = repo_ref(profile_path, ctx["repository"])
 
     contract = {
-        "schema_version": "phoenix.architectural-adapter-contract/1.0",
+        "schema_version": "phoenix.architectural-adapter-contract/1.1",
         "project_id": ctx["project_id"],
         "architectural_model": repo_ref(model_path, ctx["repository"]),
         "detailed_elements": metadata.get("detailed_elements"),
         "structural_project_profile": metadata.get("structural_project_profile"),
+        "generation_mode": metadata["generation_mode"],
+        "assumptions_register": metadata.get("assumptions_register"),
         "approval_state": "CANDIDATE_ONLY",
+        "production_release": "LOCKED",
     }
     contract_path = out / "architectural_adapter_contract.json"
     write_json(contract_path, contract)
@@ -170,7 +205,7 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     return finish(
         ctx, capability_id=cap, label=label, status="PASSED",
         outputs=outputs,
-        warnings=["Architectural model is candidate input and requires professional review."],
+        warnings=["Architectural model is a concept candidate and requires professional/project review before final use."],
         metadata=metadata,
     )
 

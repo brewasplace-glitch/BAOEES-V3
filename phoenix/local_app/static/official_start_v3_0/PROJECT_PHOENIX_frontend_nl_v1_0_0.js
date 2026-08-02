@@ -56,6 +56,14 @@ const REASONS = new Map([
   ["UPSTREAM_NOT_PASSED", "Voorgaande stap niet geslaagd"],
   ["MISSING_GENERIC_CAPABILITY", "Generieke capability ontbreekt"],
   ["DISCOVERED_UNADAPTED", "Engine gevonden maar nog niet gekoppeld"],
+  ["ARCHITECTURAL_BRIEF_INSUFFICIENT", "Projectomschrijving onvoldoende voor autonome architectuurbootstrap"],
+  ["ARCHITECTURAL_USE_TYPE_REQUIRED", "Gebruiksfunctie van het gebouw vereist"],
+  ["ARCHITECTURAL_BOOTSTRAP_BUILDING_ONLY", "Architectuurbootstrap is alleen voor bouwprojecten"],
+  ["SITE_CONTEXT_REQUIRED", "Perceel- en locatiecontext vereist"],
+  ["FINAL_DRAWING_EXPORT_REQUIRED", "Definitieve tekeningexport en controle vereist"],
+  ["ARCHITECTURAL_DETAIL_ENGINE_REQUIRED", "Architectonische detailengineering vereist"],
+  ["CAD_EXPORT_ENGINE_REQUIRED", "CAD-exportengine vereist"],
+  ["DESIRED_OUTPUT_NOT_FINAL", "Gewenste uitvoer is nog niet definitief"],
 ]);
 
 const PHRASES = [

@@ -63,9 +63,31 @@ class SessionAdapterMasterpackTests(unittest.TestCase):
             self.assertTrue(cfg["capabilities"][cap]["session_adapter_ready"])
             self.assertTrue(cfg["capabilities"][cap]["runner_candidates"])
 
-    def test_02_architecture_blocks_text_only_without_fabricating_geometry(self):
+    def test_02_architecture_autonomous_text_bootstrap_generates_candidate_with_explicit_assumptions(self):
         td,repo,session,sf=self.make_repo()
         try:
+            session["brief"]="PHOENIX-PAT-001\\nOntwerp een vrijstaande woning van twee bouwlagen."
+            sf.write_text(json.dumps(session),encoding="utf-8")
+            ws=repo/session["bootstrap"]["workspace"]
+            out=ws/"results"/"session_adapters"/"architecture"
+            rc=run_adapter("architecture",repo,sf,ws,out)
+            self.assertEqual(rc,0)
+            result=json.loads((out/"adapter_result.json").read_text())
+            self.assertEqual(result["status"],"PASSED")
+            self.assertEqual(result["metadata"]["generation_mode"],"AUTONOMOUS_TEXT_CONCEPT")
+            self.assertTrue((out/"architectural_model.json").is_file())
+            self.assertTrue((out/"architectural_assumptions_register.json").is_file())
+            model=json.loads((out/"architectural_model.json").read_text())
+            self.assertEqual(model["production_release"],"LOCKED")
+            self.assertFalse(model["professional_approval"])
+        finally: td.cleanup()
+
+    def test_02b_architecture_non_autonomous_text_only_still_blocks_without_fabricating_geometry(self):
+        td,repo,session,sf=self.make_repo()
+        try:
+            session["project_mode"]="manual"
+            session["brief"]="PHOENIX-PAT-001\\nOntwerp een vrijstaande woning van twee bouwlagen."
+            sf.write_text(json.dumps(session),encoding="utf-8")
             ws=repo/session["bootstrap"]["workspace"]
             out=ws/"results"/"session_adapters"/"architecture"
             rc=run_adapter("architecture",repo,sf,ws,out)

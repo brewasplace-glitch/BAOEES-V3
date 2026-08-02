@@ -66,7 +66,7 @@ class BootstrapResult:
 
 
 class AutonomousProjectOrchestrator:
-    VERSION = "1.1.0"
+    VERSION = "1.2.0"
 
     def __init__(self, repository: Path, config_path: Path | None = None):
         self.repository = repository.resolve()
@@ -511,6 +511,7 @@ class AutonomousProjectOrchestrator:
                 status = str(result.get("status") or ("PASSED" if rc == 0 else "BLOCKED" if rc == 10 else "FAILED")).upper()
                 outputs = [str(x) for x in result.get("outputs", [])]
                 cap_blockers = list(result.get("blockers", []))
+                adapter_metadata = dict(result.get("metadata") or {})
 
             # Normalize adapter terminal states for orchestration.
             if rc == 0 and status == "PASSED":
@@ -546,6 +547,7 @@ class AutonomousProjectOrchestrator:
                 "runner": availability["runner"],
                 "outputs": outputs,
                 "blockers": cap_blockers,
+                "metadata": adapter_metadata if isinstance(result, dict) else {},
                 "log": log_path.relative_to(self.repository).as_posix(),
             }
             produced.extend(outputs)
@@ -583,26 +585,67 @@ class AutonomousProjectOrchestrator:
         )
         produced.append(blockers_path.relative_to(self.repository).as_posix())
 
-        # Granular desired-output state.
+        # Granular desired-output state. Adapter capabilities may pass while a
+        # final requested deliverable is still only a concept candidate.
         output_states = {}
         output_map = self.config["output_capability_map"]
+        output_level_blockers = []
         for output_id in session.get("desired_outputs", []):
             required = output_map.get(output_id, [])
             states = [(capability_states.get(cap) or {}).get("status", "NOT_PLANNED") for cap in required]
-            if required and all(x == "PASSED" for x in states):
-                status = "PASSED"
-            elif any(x == "FAILED" for x in states):
+            explicit_coverage = []
+            for cap in required:
+                meta = (capability_states.get(cap) or {}).get("metadata") or {}
+                coverage = (meta.get("desired_output_states") or {}).get(output_id)
+                if isinstance(coverage, dict):
+                    explicit_coverage.append({"capability_id":cap, **coverage})
+
+            if any(x == "FAILED" for x in states):
                 status = "FAILED"
-            else:
+            elif any(x != "PASSED" for x in states) or not required:
                 status = "BLOCKED"
+            elif explicit_coverage and any(str(x.get("status") or "").upper() != "PASSED" for x in explicit_coverage):
+                status = "BLOCKED"
+            else:
+                status = "PASSED"
+
             output_states[output_id] = {
                 "status": status,
                 "required_capabilities": required,
                 "capability_states": states,
+                "adapter_output_coverage": explicit_coverage,
             }
+            if status == "BLOCKED" and required and all(x == "PASSED" for x in states) and explicit_coverage:
+                first = next((x for x in explicit_coverage if str(x.get("status") or "").upper() != "PASSED"), explicit_coverage[0])
+                output_level_blockers.append({
+                    "capability_id":"desired_output",
+                    "output_id":output_id,
+                    "label":output_id,
+                    "reason":first.get("reason") or "DESIRED_OUTPUT_NOT_FINAL",
+                    "message":first.get("message") or "Gewenste uitvoer is nog niet definitief geproduceerd.",
+                })
+
+        blockers.extend(output_level_blockers)
+        plan["blocker_count"] = len(blockers)
+        plan["desired_output_states"] = output_states
+        plan_path.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        blockers_path.write_text(
+            json.dumps({
+                "schema_version": "phoenix.autonomous-blocker-register/1.2",
+                "session_id": session["session_id"],
+                "project_id": bootstrap["project_id"],
+                "blocker_count": len(blockers),
+                "blockers": blockers,
+                "legacy_pilot_runner_blocked": True,
+                "generic_session_adapter_masterpack": "1.0.0",
+                "autonomous_architectural_bootstrap": "1.0.0",
+                "updated_utc": utc_now(),
+            }, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
 
         result_index = {
-            "schema_version": "phoenix.autonomous-result-index/1.1",
+            "schema_version": "phoenix.autonomous-result-index/1.2",
             "project_id": bootstrap["project_id"],
             "session_id": session["session_id"],
             "desired_outputs": session.get("desired_outputs", []),
@@ -621,9 +664,10 @@ class AutonomousProjectOrchestrator:
         )
 
         summary = {
-            "schema_version": "phoenix.autonomous-session-orchestration-summary/1.1",
+            "schema_version": "phoenix.autonomous-session-orchestration-summary/1.2",
             "orchestrator_version": self.VERSION,
             "session_adapter_masterpack_version": "1.0.0",
+            "autonomous_architectural_bootstrap_version": "1.0.0",
             "session_id": session["session_id"],
             "project_id": bootstrap["project_id"],
             "project_mode": session.get("project_mode"),
