@@ -310,6 +310,26 @@
         "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py"
       ],
       "runner": "runners/PROJECT_PHOENIX_BB35_pilot_1_model_driven_calculation_workbook_v1_0_0.py"
+    },
+    {
+      "expect_flag": "--expect-session-orchestrated",
+      "id": "autonomous_session_orchestrator_v1_0",
+      "label": "Phoenix Autonomous Session-Driven Orchestrator v1.0",
+      "output_subdir": "autonomous_session_orchestrator_v1_0",
+      "required_files": [
+        "runners/PROJECT_PHOENIX_autonomous_session_orchestrator_v1_0_0.py",
+        "configs/phoenix/autonomous_project_orchestrator_v1_0.json"
+      ],
+      "runner": "runners/PROJECT_PHOENIX_autonomous_session_orchestrator_v1_0_0.py",
+      "ui_hidden": true,
+      "session_driven": true,
+      "legacy_pilot": false
     }
-  ]
+  ],
+  "autonomous_project_orchestrator": {
+    "version": "1.0.0",
+    "workflow_id": "autonomous_session_orchestrator_v1_0",
+    "legacy_pilot_autonomous_execution": false,
+    "session_context_required": true
+  }
 }

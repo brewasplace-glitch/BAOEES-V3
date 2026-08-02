@@ -46,6 +46,8 @@ def find_live_runtime():
         return None
     if value.get("start_screen_version") != "3.0.2":
         return None
+    if value.get("version") != "1.7.0":
+        return None
     return port
 
 
@@ -81,6 +83,7 @@ def serve():
         "url": f"http://{host}:{port}/start-v3/",
         "started_utc": datetime.now(timezone.utc).isoformat(),
         "start_screen_version": "3.0.2",
+        "runtime_version": "1.7.0",
     }
     STATE_FILE.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
     app = PhoenixLocalApplication(REPO, config)

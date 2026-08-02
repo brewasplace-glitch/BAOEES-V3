@@ -66,7 +66,7 @@ class StartScreen302Tests(unittest.TestCase):
         return td,repo,app
 
     def test_01_versions(self):
-        self.assertEqual(PhoenixLocalApplication.VERSION,"1.6.0")
+        self.assertEqual(PhoenixLocalApplication.VERSION,"1.7.0")
         self.assertEqual(PhoenixLocalApplication.START_SCREEN_VERSION,"3.0.2")
 
     def test_02_render_injects_desired_output_catalog(self):

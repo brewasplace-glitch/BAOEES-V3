@@ -154,7 +154,7 @@ function renderStatusHeavy(status){
   if(psel.innerHTML !== projectHtml) psel.innerHTML = projectHtml;
   if ([...psel.options].some(o => o.value === current)) psel.value = current;
 
-  const workflowHtml = (status.workflows || []).map(w => `
+  const workflowHtml = (status.workflows || []).filter(w => !w.ui_hidden).map(w => `
     <div class="listrow">
       <div>
         <div><strong>${esc(w.label)}</strong></div>
@@ -346,29 +346,41 @@ async function monitorActiveJob(jobId){
 
       // Update only the progress strip; never rebuild the dashboard.
       const percent =
+        Number.isFinite(Number(job.progress_percent)) ? Number(job.progress_percent) :
         status === "PASSED" || status === "SUCCEEDED" ? 100 :
         status === "FAILED" ? 100 :
+        status === "BLOCKED" ? 70 :
         status === "RUNNING" ? 55 : 10;
 
       renderProgress({
-        active: status === "RUNNING" || status === "PENDING",
+        active: status === "RUNNING" || status === "PENDING" || status === "QUEUED",
         percent,
         status,
         label: job.label || "Phoenix workflow",
         step_label:
-          status === "PASSED" || status === "SUCCEEDED" ? "Workflow gereed." :
+          job.progress_step ||
+          (status === "PASSED" || status === "SUCCEEDED" ? "Workflow gereed." :
+          status === "BLOCKED" ? "Autonome run gecontroleerd geblokkeerd." :
           status === "FAILED" ? "Workflow mislukt." :
           status === "RUNNING" ? "Phoenix voert de geselecteerde workflow uit." :
-          "Workflow wordt voorbereid.",
+          "Workflow wordt voorbereid."),
         job_id: job.job_id,
         output_dir: job.output_dir,
         log_path: job.log_path
       });
 
-      if(status === "RUNNING" || status === "PENDING"){
+      if(status === "RUNNING" || status === "PENDING" || status === "QUEUED"){
         state.monitorTimer = setTimeout(tick, 2500);
       }else{
         stopActiveMonitor();
+        if(status === "BLOCKED"){
+          const count = Number(job.blocker_count || 0);
+          toast(`Autonome run gecontroleerd geblokkeerd · ${count} capability blocker(s). Open RESULTATEN voor details.`, true);
+        }else if(status === "FAILED"){
+          toast("Phoenix workflow is mislukt. Open RESULTATEN / log voor details.", true);
+        }else if(status === "PASSED" || status === "SUCCEEDED"){
+          toast("Phoenix autonome workflow gereed.");
+        }
         // Refresh the heavier data once, only after a real state transition.
         await refreshHeavy();
       }
@@ -470,12 +482,29 @@ $("startBtn").onclick = async () => {
       project_mode: state.projectMode,
       desired_outputs: [...state.desiredOutputs],
     });
-    const flows = session.available_workflows || [];
+
+    if(state.projectMode === "autonomous"){
+      const job = await post("/api/autonomous/start", {session_id: session.session_id});
+      showModal("AUTONOME PRODUCTIERUN GESTART", `
+        <p><b>Sessie:</b> ${esc(session.session_id)}</p>
+        <p><b>Project:</b> ${esc(session.bootstrap?.project_id || "—")}</p>
+        <p><b>Gewenste outputselecties:</b> ${esc(String((session.desired_outputs || []).length))}</p>
+        <p><b>Autonomous Project Mode:</b> Phoenix heeft zelf de Session-Driven Orchestrator gestart.</p>
+        <p><b>Job:</b> ${esc(job.job_id)}</p>
+        <p><b>Status:</b> ${esc(job.status)}</p>
+        <p>Er is geen technische workflowselectie door de gebruiker nodig.</p>
+      `);
+      toast("Autonomous Session-Driven Orchestrator gestart.");
+      await monitorActiveJob(job.job_id);
+      return;
+    }
+
+    const flows = (session.available_workflows || []).filter(w => !w.ui_hidden);
     showModal("PROJECTANALYSE GESTART", `
       <p><b>Sessie:</b> ${esc(session.session_id)}</p>
       <p><b>Status:</b> ${esc(session.status)}</p>
       <p><b>Gewenste outputselecties:</b> ${esc(String((session.desired_outputs || []).length))}</p>
-      <p>De analyse-intake is opgeslagen. Kies nu een beschikbare echte Phoenix-workflow:</p>
+      <p>Kies een beschikbare Phoenix-workflow:</p>
       <div>${flows.length ? flows.map(w => `
         <div class="listrow">
           <div><strong>${esc(w.label)}</strong><div class="meta">${esc(w.id)}</div></div>
@@ -483,7 +512,9 @@ $("startBtn").onclick = async () => {
         </div>
       `).join("") : "<p>Geen uitvoerbare workflow beschikbaar.</p>"}</div>
     `);
-    document.querySelectorAll("[data-modal-workflow]").forEach(b => b.onclick = () => startWorkflow(b.dataset.modalWorkflow));
+    document.querySelectorAll("[data-modal-workflow]").forEach(
+      b => b.onclick = () => startWorkflow(b.dataset.modalWorkflow)
+    );
     toast("Projectanalyse-sessie gestart.");
   }catch(err){ toast(err.message, true); }
 };

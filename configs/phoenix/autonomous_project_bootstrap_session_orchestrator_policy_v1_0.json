@@ -1,0 +1,33 @@
+{
+  "engine_id": "PHX-AUTONOMOUS-PROJECT-BOOTSTRAP-SESSION-ORCHESTRATOR",
+  "version": "1.0.0",
+  "status": "INSTALLED_BY_PACKAGE",
+  "resolves_pat_defects": [
+    "PAT-DEFECT-001_AUTONOMOUS_MODE_MANUAL_WORKFLOW_SELECTION",
+    "PAT-DEFECT-002_PILOT_RUNNER_SELECTED_FOR_NEW_PROJECT",
+    "PAT-DEFECT-003_SESSION_CONTEXT_NOT_PROPAGATED"
+  ],
+  "controls": {
+    "autonomous_mode_auto_starts_orchestrator": true,
+    "session_file_passed_to_runner": true,
+    "project_workspace_bootstrap": true,
+    "desired_outputs_dependency_plan": true,
+    "upload_batch_reference_preserved": true,
+    "legacy_pilot_runner_autonomous_execution": false,
+    "controlled_blocked_state_for_missing_generic_capability": true,
+    "production_release_default": "LOCKED"
+  },
+  "revision": "FIXED_R2",
+  "fixed_r1": {
+    "temporary_repo_compatibility": true,
+    "explicit_project_id_fixture_corrected": true,
+    "legacy_runtime_regression_updated_to_1_7_0": true,
+    "stale_runtime_reuse_prevented": true
+  },
+  "fixed_r2": {
+    "windows_8_3_temp_path_alias_tolerated": true,
+    "manifest_source_session_path_no_longer_blocks_bootstrap": true,
+    "repo_relative_reference_preferred": true,
+    "absolute_reference_fallback": true
+  }
+}

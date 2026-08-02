@@ -27,10 +27,11 @@ from typing import Any
 
 from .dashboard_adapter import DashboardAdapter
 from .workflow_registry import WorkflowRegistry
+from phoenix.autonomy.session_orchestrator import AutonomousProjectOrchestrator
 
 
 class PhoenixLocalApplication:
-    VERSION = "1.6.0"
+    VERSION = "1.7.0"
     START_SCREEN_VERSION = "3.0.2"
 
     def __init__(self, repository: Path, config: dict[str, Any]):
@@ -39,6 +40,12 @@ class PhoenixLocalApplication:
         self.token = secrets.token_urlsafe(24)
         self.dashboard = DashboardAdapter(self.repository, config)
         self.workflows = WorkflowRegistry(self.repository, config)
+        autonomy_config = self.repository / "configs" / "phoenix" / "autonomous_project_orchestrator_v1_0.json"
+        self.autonomy = (
+            AutonomousProjectOrchestrator(self.repository, autonomy_config)
+            if autonomy_config.is_file()
+            else None
+        )
         self.server: ThreadingHTTPServer | None = None
         self.dashboard_info: dict[str, Any] = {}
         self.start_screen_root = (
@@ -76,7 +83,10 @@ class PhoenixLocalApplication:
                 "speech_input": "browser_capability",
                 "results_panel": True,
                 "desired_output_selection": True,
-                "visual_refresh_mode": "stable_delta_polling",
+                "autonomous_project_bootstrap": True,
+                "session_driven_orchestrator": "1.0.0",
+                "legacy_pilot_autonomous_execution": False,
+                "visual_refresh_mode": "zero_idle_polling",
             },
         }
 
@@ -106,19 +116,34 @@ class PhoenixLocalApplication:
                 "log_path": None,
                 "result_count": self._result_count(),
             }
+
+        view = self.job_view(latest)
         status = (latest.status or "").upper()
-        percent_map = {"PENDING": 5, "RUNNING": 55, "PASSED": 100, "SUCCEEDED": 100, "FAILED": 100}
-        percent = percent_map.get(status, 10 if status else 0)
-        if status in {"PASSED", "SUCCEEDED"}:
-            step_label = "Workflow gereed."
-        elif status == "FAILED":
-            step_label = "Workflow mislukt."
-        elif status == "RUNNING":
-            step_label = "Phoenix voert de geselecteerde workflow uit."
-        else:
-            step_label = "Workflow wacht of wordt voorbereid."
+        percent_map = {
+            "QUEUED": 5,
+            "PENDING": 5,
+            "RUNNING": 55,
+            "PASSED": 100,
+            "SUCCEEDED": 100,
+            "FAILED": 100,
+            "BLOCKED": 70,
+        }
+        percent = int(view.get("progress_percent", percent_map.get(status, 10)))
+        step_label = view.get("progress_step")
+        if not step_label:
+            if status in {"PASSED", "SUCCEEDED"}:
+                step_label = "Workflow gereed."
+            elif status == "BLOCKED":
+                step_label = "Autonome run gecontroleerd geblokkeerd door ontbrekende generieke capability."
+            elif status == "FAILED":
+                step_label = "Workflow mislukt."
+            elif status == "RUNNING":
+                step_label = "Phoenix voert de geselecteerde workflow uit."
+            else:
+                step_label = "Workflow wacht of wordt voorbereid."
+
         return {
-            "active": status in {"RUNNING", "PENDING"},
+            "active": status in {"RUNNING", "PENDING", "QUEUED"},
             "percent": percent,
             "status": status or "UNKNOWN",
             "label": latest.label,
@@ -127,7 +152,29 @@ class PhoenixLocalApplication:
             "output_dir": latest.output_dir,
             "log_path": latest.log_path,
             "result_count": self._result_count(),
+            "project_id": view.get("project_id"),
+            "session_id": view.get("session_id"),
+            "blocker_count": view.get("blocker_count", 0),
         }
+
+    def job_view(self, job) -> dict[str, Any]:
+        value = job.to_dict()
+        result_dir = self.repository / job.output_dir / "result"
+        progress_file = result_dir / "progress.json"
+        if progress_file.is_file():
+            try:
+                progress = json.loads(progress_file.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                progress = None
+            if isinstance(progress, dict):
+                value["progress_percent"] = progress.get("percent")
+                value["progress_step"] = progress.get("step")
+                value["project_id"] = progress.get("project_id")
+                value["session_id"] = progress.get("session_id")
+                value["blocker_count"] = progress.get("blocker_count", 0)
+                value["orchestration_status"] = progress.get("status")
+                value["blockers"] = progress.get("blockers", [])
+        return value
 
     def results_snapshot(self) -> dict[str, Any]:
         root = self.repository / "outputs" / "runtime"
@@ -379,6 +426,11 @@ class PhoenixLocalApplication:
         project_type = str(body.get("project_type", "BOUW")).strip().upper()
         if project_type not in {"BOUW", "CIVIEL", "INFRA"}:
             raise ValueError("project_type moet BOUW, CIVIEL of INFRA zijn.")
+
+        project_mode = str(body.get("project_mode", "manual")).strip().lower()
+        if project_mode not in {"manual", "guided", "autonomous"}:
+            raise ValueError("project_mode moet manual, guided of autonomous zijn.")
+
         brief = str(body.get("brief", "")).strip()
         selected_project = str(body.get("selected_project", "")).strip() or None
         upload_batch = str(body.get("upload_batch", "")).strip() or None
@@ -392,24 +444,82 @@ class PhoenixLocalApplication:
         session_id = f"PHX-{now.strftime('%Y%m%dT%H%M%SZ')}-{secrets.token_hex(4)}"
         root = self.repository / "outputs" / "runtime" / "phoenix_start_v3_sessions"
         root.mkdir(parents=True, exist_ok=True)
+
+        workflows = [
+            x for x in self.workflows.describe()
+            if x.get("available") and not x.get("ui_hidden")
+        ]
         session = {
             "session_id": session_id,
             "created_utc": now.isoformat(),
             "project_type": project_type,
+            "project_mode": project_mode,
             "brief": brief,
             "selected_project": selected_project,
             "upload_batch": upload_batch,
             "desired_outputs": desired_outputs,
-            "status": "READY_FOR_WORKFLOW_SELECTION",
-            "available_workflows": [x for x in self.workflows.describe() if x.get("available")],
+            "status": (
+                "READY_FOR_AUTONOMOUS_ORCHESTRATION"
+                if project_mode == "autonomous"
+                else "READY_FOR_WORKFLOW_SELECTION"
+            ),
+            "available_workflows": workflows,
         }
         path = root / f"{session_id}.json"
-        path.write_text(json.dumps(session, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        path.write_text(
+            json.dumps(session, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        if project_mode == "autonomous":
+            if self.autonomy is None:
+                raise RuntimeError(
+                    "Autonomous Project Orchestrator configuratie ontbreekt."
+                )
+            bootstrap = self.autonomy.bootstrap_session(session, path)
+            session["bootstrap"] = bootstrap.to_dict()
+            path.write_text(
+                json.dumps(session, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+
         return {
             **session,
             "session_file": path.relative_to(self.repository).as_posix(),
             "runtime_dashboard": "/",
         }
+
+    def start_autonomous_session(self, session_id: str) -> dict[str, Any]:
+        session_id = str(session_id or "").strip()
+        if not re.fullmatch(r"PHX-[A-Za-z0-9T_-]+", session_id):
+            raise ValueError("Ongeldige Phoenix session_id.")
+
+        path = (
+            self.repository
+            / "outputs"
+            / "runtime"
+            / "phoenix_start_v3_sessions"
+            / f"{session_id}.json"
+        )
+        if not path.is_file():
+            raise FileNotFoundError(f"Phoenix sessie niet gevonden: {session_id}")
+
+        session = json.loads(path.read_text(encoding="utf-8"))
+        if str(session.get("project_mode") or "").lower() != "autonomous":
+            raise ValueError("Sessie staat niet in Autonomous Project Mode.")
+        if self.autonomy is None:
+            raise RuntimeError(
+                "Autonomous Project Orchestrator configuratie ontbreekt."
+            )
+
+        bootstrap = session.get("bootstrap") or {}
+        project_id = str(bootstrap.get("project_id") or "autonomous-project")
+        job = self.workflows.start(
+            "autonomous_session_orchestrator_v1_0",
+            extra_args=["--session-file", str(path)],
+            label_suffix=project_id,
+        )
+        return self.job_view(job)
 
     def save_uploads(self, files: Any) -> dict[str, Any]:
         if not isinstance(files, list) or not files:
@@ -555,7 +665,7 @@ class PhoenixLocalApplication:
                     if job is None:
                         self._json({"error": "Job niet gevonden."}, HTTPStatus.NOT_FOUND)
                     else:
-                        self._json(job.to_dict())
+                        self._json(application.job_view(job))
                 else:
                     self._json({"error": "Route niet gevonden."}, HTTPStatus.NOT_FOUND)
 
@@ -582,6 +692,11 @@ class PhoenixLocalApplication:
                             self._json(application.open_module(module_id))
                         elif parsed.path == "/api/project-analysis/start":
                             self._json(application.create_analysis_session(body), HTTPStatus.CREATED)
+                        elif parsed.path == "/api/autonomous/start":
+                            self._json(
+                                application.start_autonomous_session(str(body.get("session_id", ""))),
+                                HTTPStatus.ACCEPTED,
+                            )
                         elif parsed.path == "/api/shutdown":
                             self._json({"status": "shutting_down"})
                             threading.Thread(target=application.server.shutdown, daemon=True).start()

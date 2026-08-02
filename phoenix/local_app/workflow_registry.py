@@ -1,5 +1,4 @@
 """Allow-listed Phoenix workflow registry."""
-
 from __future__ import annotations
 
 import json
@@ -40,6 +39,9 @@ class WorkflowRegistry:
                 "id": workflow["id"],
                 "label": workflow["label"],
                 "available": available,
+                "ui_hidden": bool(workflow.get("ui_hidden", False)),
+                "session_driven": bool(workflow.get("session_driven", False)),
+                "legacy_pilot": bool(workflow.get("legacy_pilot", "pilot" in workflow.get("runner", "").lower())),
                 "disabled_reason": (
                     None if available else workflow.get(
                         "disabled_reason",
@@ -49,7 +51,13 @@ class WorkflowRegistry:
             })
         return result
 
-    def start(self, workflow_id: str) -> RuntimeJob:
+    def start(
+        self,
+        workflow_id: str,
+        *,
+        extra_args: list[str] | None = None,
+        label_suffix: str | None = None,
+    ) -> RuntimeJob:
         workflow = next(
             (item for item in self.config["workflows"] if item["id"] == workflow_id),
             None,
@@ -71,6 +79,7 @@ class WorkflowRegistry:
                     raise RuntimeError(
                         f"Er draait al een Phoenix-workflow: {active.job_id}"
                     )
+
             job_id = uuid.uuid4().hex[:12]
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             output_dir = (
@@ -87,10 +96,17 @@ class WorkflowRegistry:
                 str(output_dir / "result"),
                 workflow["expect_flag"],
             ]
+            if extra_args:
+                command.extend([str(x) for x in extra_args])
+
+            label = workflow["label"]
+            if label_suffix:
+                label = f"{label} · {label_suffix}"
+
             job = RuntimeJob(
                 job_id=job_id,
                 workflow_id=workflow_id,
-                label=workflow["label"],
+                label=label,
                 status="QUEUED",
                 started_at=utc_now(),
                 output_dir=str(output_dir.relative_to(self.repository)),
@@ -117,7 +133,16 @@ class WorkflowRegistry:
         )[-1]
 
     def get(self, job_id: str) -> RuntimeJob | None:
-        return self._jobs.get(job_id)
+        job = self._jobs.get(job_id)
+        if job is not None:
+            return job
+        path = self.runtime_root / "jobs" / f"{job_id}.json"
+        if not path.is_file():
+            return None
+        try:
+            return RuntimeJob(**json.loads(path.read_text(encoding="utf-8")))
+        except (TypeError, ValueError, json.JSONDecodeError):
+            return None
 
     def _run(self, job: RuntimeJob, log_path: Path) -> None:
         job.status = "RUNNING"
@@ -138,11 +163,19 @@ class WorkflowRegistry:
                     shell=False,
                 )
                 return_code = process.wait()
+
             job.return_code = return_code
-            job.status = "PASSED" if return_code == 0 else "FAILED"
-            if return_code != 0:
+            if return_code == 0:
+                job.status = "PASSED"
+            elif return_code == 10:
+                # Controlled autonomous gate: orchestration ran correctly but
+                # one or more generic capabilities are not yet session-adapted.
+                job.status = "BLOCKED"
+                job.error = None
+            else:
+                job.status = "FAILED"
                 job.error = f"Workflow stopte met exitcode {return_code}."
-        except Exception as error:  # pragma: no cover - defensive runtime path
+        except Exception as error:  # pragma: no cover
             job.status = "FAILED"
             job.error = str(error)
         finally:

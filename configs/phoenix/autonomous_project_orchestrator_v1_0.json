@@ -1,0 +1,251 @@
+{
+  "schema_version": "phoenix.autonomous-project-orchestrator/1.0",
+  "version": "1.0.0",
+  "legacy_pilot_runners_allowed": false,
+  "capability_order": [
+    "project_bootstrap",
+    "intake_normalization",
+    "architecture",
+    "digital_twin",
+    "structural_engineering",
+    "infrastructure",
+    "permit",
+    "cost_planning",
+    "reporting",
+    "closure"
+  ],
+  "output_capability_map": {
+    "reports": [
+      "reporting"
+    ],
+    "calculations": [
+      "structural_engineering"
+    ],
+    "specifications": [
+      "reporting"
+    ],
+    "tender_docs": [
+      "reporting",
+      "cost_planning"
+    ],
+    "permit_dossier": [
+      "permit",
+      "reporting"
+    ],
+    "cost_estimate": [
+      "cost_planning"
+    ],
+    "planning": [
+      "cost_planning"
+    ],
+    "quantities": [
+      "cost_planning"
+    ],
+    "site_plan": [
+      "architecture"
+    ],
+    "floor_plans": [
+      "architecture"
+    ],
+    "facades": [
+      "architecture"
+    ],
+    "sections": [
+      "architecture"
+    ],
+    "details": [
+      "architecture"
+    ],
+    "structural_drawings": [
+      "structural_engineering"
+    ],
+    "foundation_drawings": [
+      "structural_engineering"
+    ],
+    "infra_drawings": [
+      "infrastructure"
+    ],
+    "digital_twin_output": [
+      "digital_twin"
+    ],
+    "ifc_bim": [
+      "digital_twin"
+    ],
+    "dwg_dxf": [
+      "architecture",
+      "digital_twin"
+    ],
+    "structural_analysis": [
+      "structural_engineering"
+    ],
+    "foundation_design": [
+      "structural_engineering"
+    ],
+    "traffic_parking": [
+      "infrastructure"
+    ],
+    "drainage": [
+      "infrastructure"
+    ],
+    "aerius": [
+      "permit"
+    ],
+    "permit_analysis": [
+      "permit"
+    ],
+    "cost_optimization": [
+      "cost_planning"
+    ],
+    "variant_analysis": [
+      "architecture",
+      "cost_planning"
+    ],
+    "viewer_3d": [
+      "digital_twin"
+    ],
+    "walkthrough": [
+      "digital_twin"
+    ],
+    "drivethrough": [
+      "digital_twin"
+    ],
+    "bird_view": [
+      "digital_twin"
+    ],
+    "auto_video": [
+      "digital_twin"
+    ],
+    "qaqc_output": [
+      "closure"
+    ],
+    "source_evidence": [
+      "closure"
+    ],
+    "engineering_review_package": [
+      "closure"
+    ],
+    "release_package": [
+      "closure"
+    ],
+    "project_zip": [
+      "closure"
+    ]
+  },
+  "capabilities": {
+    "project_bootstrap": {
+      "label": "Project Bootstrap",
+      "execution_mode": "internal",
+      "depends_on": []
+    },
+    "intake_normalization": {
+      "label": "Intake Normalization",
+      "execution_mode": "internal",
+      "depends_on": [
+        "project_bootstrap"
+      ]
+    },
+    "architecture": {
+      "label": "Architectural Project Generation",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "intake_normalization"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_architectural_project_generator_v1_0_0.py",
+        "runners/PROJECT_PHOENIX_architectural_project_program_v6_5_0.py"
+      ]
+    },
+    "digital_twin": {
+      "label": "Digital Twin / Central Geometric Model",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "architecture"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_central_geometric_project_model_v1_0_0.py"
+      ]
+    },
+    "structural_engineering": {
+      "label": "Structural Engineering v8.0\u2013v8.12",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "architecture",
+        "digital_twin"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_architectural_to_structural_model_derivation_v8_0_0.py",
+        "runners/PROJECT_PHOENIX_structural_analytical_model_generation_v8_1_0.py",
+        "runners/PROJECT_PHOENIX_structural_action_load_model_generation_v8_2_0.py",
+        "runners/PROJECT_PHOENIX_structural_solver_input_analysis_v8_3_0.py",
+        "runners/PROJECT_PHOENIX_structural_analysis_results_validation_v8_4_0.py",
+        "runners/PROJECT_PHOENIX_structural_code_limit_state_member_verification_v8_5_0.py",
+        "runners/PROJECT_PHOENIX_structural_global_stability_second_order_robustness_v8_6_0.py",
+        "runners/PROJECT_PHOENIX_structural_connection_support_joint_verification_v8_7_0.py",
+        "runners/PROJECT_PHOENIX_structural_foundation_interface_soil_support_verification_v8_8_0.py",
+        "runners/PROJECT_PHOENIX_structural_foundation_design_reinforcement_detailing_v8_9_0.py",
+        "runners/PROJECT_PHOENIX_structural_drawing_calculation_package_engineering_qaqc_v8_10_0.py",
+        "runners/PROJECT_PHOENIX_structural_engineering_review_approval_release_control_v8_11_0.py",
+        "runners/PROJECT_PHOENIX_structural_revision_change_impact_ifc_package_v8_12_0.py"
+      ]
+    },
+    "infrastructure": {
+      "label": "Civil / Infrastructure Engineering",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "intake_normalization"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_infrastructure_orchestrator_v1_0_0.py"
+      ]
+    },
+    "permit": {
+      "label": "Permit / BOPA / AERIUS",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "architecture"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_permit_orchestrator_v1_0_0.py"
+      ]
+    },
+    "cost_planning": {
+      "label": "Cost & Planning",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "architecture"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_cost_planning_orchestrator_v1_0_0.py"
+      ]
+    },
+    "reporting": {
+      "label": "Reporting / Documentation",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "architecture"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_reporting_orchestrator_v1_0_0.py"
+      ]
+    },
+    "closure": {
+      "label": "QA/QC / Review / Release",
+      "execution_mode": "adapter",
+      "depends_on": [
+        "architecture",
+        "digital_twin"
+      ],
+      "session_adapter_ready": false,
+      "runner_candidates": [
+        "runners/PROJECT_PHOENIX_release_control_orchestrator_v1_0_0.py"
+      ]
+    }
+  }
+}
