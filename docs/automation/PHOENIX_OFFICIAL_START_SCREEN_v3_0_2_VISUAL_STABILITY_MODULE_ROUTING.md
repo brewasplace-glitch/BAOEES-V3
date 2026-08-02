@@ -38,3 +38,18 @@ Modules now expose view metadata and richer routing logic. Screen-like modules
 can stay inside the Phoenix runtime; other modules open the best available real
 file or folder target. Placeholder empty-folder behavior is no longer the main
 user path.
+
+
+## R1 visual stability / fit-to-screen correction
+Practical browser validation showed two UI issues:
+1. the page used a fixed viewport layout that prevented normal vertical scrolling;
+2. periodic DOM rebuilds were still capable of producing visible redraw/flicker.
+
+R1 changes:
+- normal vertical page scrolling;
+- smaller desktop spacing and card heights;
+- sticky, independently scrollable left navigation on desktop;
+- no periodic heavy project/workflow/module DOM rebuild;
+- summary/status text is only mutated when values change;
+- progress UI is only mutated when progress actually changes;
+- heavy lists refresh after real actions instead of on a fixed timer.

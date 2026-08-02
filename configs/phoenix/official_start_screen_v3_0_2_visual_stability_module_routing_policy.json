@@ -14,5 +14,19 @@
     "placeholder_folder_routing_eliminated_as_primary_behavior": true
   },
   "production_acceptance_test_status": "PENDING_REAL_PROJECT_END_TO_END_PRODUCTION_ACCEPTANCE_TEST",
-  "production_release": "LOCKED_PENDING_PAT"
+  "production_release": "LOCKED_PENDING_PAT",
+  "revision": "R2",
+  "r1_hotfix": {
+    "full_page_vertical_scroll": true,
+    "desktop_compact_layout": true,
+    "sticky_scrollable_navigation": true,
+    "periodic_heavy_dom_rebuild": false,
+    "delta_only_status_updates": true,
+    "progress_updates_only_when_changed": true
+  },
+  "r2_installer_fix": {
+    "validated_working_tree_staging": true,
+    "staging_command": "git add -A",
+    "legacy_missing_pathspec_failure_fixed": true
+  }
 }

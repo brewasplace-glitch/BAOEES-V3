@@ -20,6 +20,21 @@ let state = {
 const $ = id => document.getElementById(id);
 const esc = v => String(v ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 
+function setText(id, value){
+  const el = $(id);
+  const next = String(value ?? "");
+  if(el && el.textContent !== next) el.textContent = next;
+}
+function setWidth(id, value){
+  const el = $(id);
+  const next = String(value);
+  if(el && el.style.width !== next) el.style.width = next;
+}
+function stableJson(value){
+  try { return JSON.stringify(value); } catch { return ""; }
+}
+
+
 function toast(msg, bad=false){
   const e = $("toast");
   e.textContent = msg;
@@ -96,14 +111,31 @@ function saveMyStandard(){
 function renderStatusDelta(summary){
   state.summary = summary;
   const git = summary.git || {};
-  $("gitState").textContent = git.clean ? "CLEAN" : "CHANGES DETECTED";
-  $("branchState").textContent = git.branch || "UNKNOWN";
-  $("runtimeState").textContent = `v${window.PHOENIX_RUNTIME_VERSION} · START v${window.PHOENIX_START_SCREEN_VERSION}`;
-  $("chipRuntime").textContent = `RUNTIME ${window.PHOENIX_RUNTIME_VERSION} · CONNECTED`;
-  $("sysCard").textContent = git.clean ? "● ALLE SYSTEMEN ACTIEF" : "● REPOSITORY WIJZIGINGEN";
+  setText("gitState", git.clean ? "CLEAN" : "CHANGES DETECTED");
+  setText("branchState", git.branch || "UNKNOWN");
+  setText("runtimeState", `v${window.PHOENIX_RUNTIME_VERSION} · START v${window.PHOENIX_START_SCREEN_VERSION}`);
+  setText("chipRuntime", `RUNTIME ${window.PHOENIX_RUNTIME_VERSION} · CONNECTED`);
+  setText("sysCard", git.clean ? "● ALLE SYSTEMEN ACTIEF" : "● REPOSITORY WIJZIGINGEN");
 }
 
 function renderStatusHeavy(status){
+  const signature = stableJson({
+    projects: status.projects || [],
+    workflows: status.workflows || [],
+    modules: status.modules || []
+  });
+  if(state.__heavySignature === signature){
+    renderStatusDelta({
+      git: status.git,
+      latest_job: status.latest_job,
+      project_count: (status.projects || []).length,
+      workflow_count: (status.workflows || []).length,
+      module_count: (status.modules || []).length,
+    });
+    state.status = status;
+    return;
+  }
+  state.__heavySignature = signature;
   state.status = status;
   renderStatusDelta({
     git: status.git,
@@ -111,16 +143,16 @@ function renderStatusHeavy(status){
     project_count: (status.projects || []).length,
     workflow_count: (status.workflows || []).length,
     module_count: (status.modules || []).length,
-    progress: status.progress,
   });
 
   const psel = $("projectSelect");
   const current = psel.value;
-  psel.innerHTML = '<option value="">Nieuw / geen bestaand project gekozen</option>' +
+  const projectHtml = '<option value="">Nieuw / geen bestaand project gekozen</option>' +
     (status.projects || []).map(p => `<option value="${esc(p.project_id)}">${esc(p.name)} · ${esc(p.project_id)}</option>`).join("");
+  if(psel.innerHTML !== projectHtml) psel.innerHTML = projectHtml;
   if ([...psel.options].some(o => o.value === current)) psel.value = current;
 
-  $("workflowList").innerHTML = (status.workflows || []).map(w => `
+  const workflowHtml = (status.workflows || []).map(w => `
     <div class="listrow">
       <div>
         <div><strong>${esc(w.label)}</strong></div>
@@ -129,9 +161,12 @@ function renderStatusHeavy(status){
       <button class="mini" data-workflow="${esc(w.id)}" ${w.available ? "" : "disabled"}>START</button>
     </div>
   `).join("") || '<div class="listrow"><div>Geen workflows geregistreerd.</div></div>';
-  document.querySelectorAll("[data-workflow]").forEach(b => b.onclick = () => startWorkflow(b.dataset.workflow));
+  if($("workflowList").innerHTML !== workflowHtml){
+    $("workflowList").innerHTML = workflowHtml;
+    document.querySelectorAll("[data-workflow]").forEach(b => b.onclick = () => startWorkflow(b.dataset.workflow));
+  }
 
-  $("projectList").innerHTML = (status.projects || []).map(p => `
+  const projectListHtml = (status.projects || []).map(p => `
     <div class="listrow">
       <div>
         <div><strong>${esc(p.name)}</strong></div>
@@ -140,30 +175,44 @@ function renderStatusHeavy(status){
       <button class="mini" data-select-project="${esc(p.project_id)}">KIES</button>
     </div>
   `).join("") || '<div class="listrow"><div>Geen projectconfiguraties gevonden.</div></div>';
-  document.querySelectorAll("[data-select-project]").forEach(b => b.onclick = () => {
-    $("projectSelect").value = b.dataset.selectProject;
-    toast("Project geselecteerd: " + b.dataset.selectProject);
-  });
+  if($("projectList").innerHTML !== projectListHtml){
+    $("projectList").innerHTML = projectListHtml;
+    document.querySelectorAll("[data-select-project]").forEach(b => b.onclick = () => {
+      $("projectSelect").value = b.dataset.selectProject;
+      toast("Project geselecteerd: " + b.dataset.selectProject);
+    });
+  }
 
   const modules = status.modules || [];
   const wanted = ["bouwkundig","constructief","civiel","infra","vergunningen","kosten_planning","qaqc","release_control","knowledge","digital_twin","projects","system_status"];
   const filtered = modules.filter(m => wanted.includes(m.id));
-  $("moduleGrid").innerHTML = filtered.map(m => `
+  const moduleHtml = filtered.map(m => `
     <button class="modbtn" data-module="${esc(m.id)}">
       <span class="name">${esc(m.label)}</span>
       <span class="sub">${esc(m.description)}</span>
     </button>
   `).join("");
-  document.querySelectorAll(".modbtn[data-module]").forEach(b => b.onclick = () => openModule(b.dataset.module));
+  if($("moduleGrid").innerHTML !== moduleHtml){
+    $("moduleGrid").innerHTML = moduleHtml;
+    document.querySelectorAll(".modbtn[data-module]").forEach(b => b.onclick = () => openModule(b.dataset.module));
+  }
   document.querySelectorAll(".navbtn[data-module]").forEach(b => b.onclick = () => openModule(b.dataset.module));
 }
-
 function renderProgress(progress){
+  const signature = stableJson({
+    percent: progress.percent || 0,
+    status: progress.status || "",
+    label: progress.label || "",
+    step_label: progress.step_label || "",
+    job_id: progress.job_id || ""
+  });
+  if(state.__progressSignature === signature) return;
+  state.__progressSignature = signature;
   state.progress = progress;
-  $("progressFill").style.width = `${progress.percent || 0}%`;
-  $("progressPercent").textContent = `${progress.percent || 0}%`;
-  $("progressLabel").textContent = progress.label || "Geen actieve Phoenix-bewerking.";
-  $("progressStep").textContent = progress.step_label || "Wacht op nieuwe bewerking.";
+  setWidth("progressFill", `${progress.percent || 0}%`);
+  setText("progressPercent", `${progress.percent || 0}%`);
+  setText("progressLabel", progress.label || "Geen actieve Phoenix-bewerking.");
+  setText("progressStep", progress.step_label || "Wacht op nieuwe bewerking.");
 }
 
 async function refreshSummary(){
@@ -232,11 +281,12 @@ async function openRepoTarget(relativePath){
   }
 }
 async function openModule(moduleId){
+  let view = null;
   if(moduleId === "system_status"){ return openSystemStatus(); }
   if(moduleId === "results"){ return openResults(); }
 
   try{
-    const view = await api(`/api/modules/${encodeURIComponent(moduleId)}/view`);
+    view = await api(`/api/modules/${encodeURIComponent(moduleId)}/view`);
     if(view.route_kind === "screen" && view.screen_route){
       if(view.screen_route === "/start-v3/"){
         window.location.href = "/start-v3/";
@@ -279,6 +329,7 @@ async function startWorkflow(id){
     showModal("Workflow gestart", `<pre>${esc(JSON.stringify(job, null, 2))}</pre>`);
     toast(`Workflow gestart: ${job.label} · ${job.job_id}`);
     await refreshProgress();
+    await refreshHeavy();
   }catch(err){ toast(err.message, true); }
 }
 
@@ -373,6 +424,7 @@ $("startBtn").onclick = async () => {
     `);
     document.querySelectorAll("[data-modal-workflow]").forEach(b => b.onclick = () => startWorkflow(b.dataset.modalWorkflow));
     toast("Projectanalyse-sessie gestart.");
+    await refreshHeavy();
   }catch(err){ toast(err.message, true); }
 };
 
@@ -382,8 +434,9 @@ $("startBtn").onclick = async () => {
   loadMyStandard();
   renderDesiredOutputs();
   await refreshAll();
-  setInterval(refreshSummary, 3000);
-  setInterval(refreshProgress, 2000);
-  setInterval(refreshHeavy, 30000);
+  setInterval(refreshSummary, 10000);
+  setInterval(refreshProgress, 1800);
+  // Heavy project/workflow/module DOM is refreshed only after real actions,
+  // not periodically. This prevents visible redraw/flicker.
 })();
 })();

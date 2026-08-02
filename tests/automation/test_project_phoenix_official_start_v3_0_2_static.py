@@ -40,5 +40,21 @@ class StartScreen302StaticTests(unittest.TestCase):
         for marker in ["SELECTEER PROJECTTYPE","INVOER / UPLOAD PROJECTOMSCHRIJVING","GEWENSTE OUTPUT","Autonomous Engineering & Infrastructure Intelligence Platform"]:
             self.assertIn(marker,html)
 
+    def test_r1_allows_vertical_scroll(self):
+        html=HTML.read_text(encoding="utf-8")
+        self.assertIn("overflow-y:auto",html)
+        self.assertIn("min-height:100vh",html)
+
+    def test_r1_no_periodic_heavy_refresh(self):
+        js=JS.read_text(encoding="utf-8")
+        self.assertNotIn("setInterval(refreshHeavy",js)
+        self.assertIn("setInterval(refreshProgress",js)
+
+    def test_r1_uses_delta_guards(self):
+        js=JS.read_text(encoding="utf-8")
+        self.assertIn("__heavySignature",js)
+        self.assertIn("__progressSignature",js)
+        self.assertIn("function setText",js)
+
 if __name__=="__main__":
     unittest.main()
