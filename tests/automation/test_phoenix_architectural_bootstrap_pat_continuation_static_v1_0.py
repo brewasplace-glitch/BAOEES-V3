@@ -18,5 +18,5 @@ class StaticTests(unittest.TestCase):
     def test_05_dutch_new_blocker_reasons(self):
         t=LOCALIZER.read_text(encoding='utf-8'); self.assertIn('SITE_CONTEXT_REQUIRED',t); self.assertIn('FINAL_DRAWING_EXPORT_REQUIRED',t)
     def test_06_runtime_1_8_2_gate(self):
-        self.assertIn('VERSION = "1.8.3"',SERVER.read_text(encoding='utf-8')); self.assertIn('value.get("version") != "1.8.3"',LAUNCHER.read_text(encoding='utf-8'))
+        self.assertIn('VERSION = "1.8.4"',SERVER.read_text(encoding='utf-8')); self.assertIn('value.get("version") != "1.8.4"',LAUNCHER.read_text(encoding='utf-8'))
 if __name__=='__main__': unittest.main()

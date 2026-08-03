@@ -1,0 +1,6 @@
+{
+  "schema_version": "phoenix.location-provider-registry/1.0",
+  "version": "1.0.0",
+  "providers": [],
+  "note": "No remote geocoder is preconfigured. Add an authoritative provider explicitly if required."
+}

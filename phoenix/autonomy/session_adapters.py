@@ -29,6 +29,8 @@ from .project_context import generate_project_context
 from .local_cost_intelligence import build_local_cost_market_context, calculate_cost_items
 from .structural_profile import generate_structural_project_profile
 from .drawing_production import produce_architectural_drawings
+from .location_intelligence import resolve_location_intelligence
+from .structural_session_chain import run_structural_chain
 
 
 
@@ -216,9 +218,20 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         brief=str(ctx["session"].get("brief") or ""),
         architectural_model=model_value,
     )
+    location_result=resolve_location_intelligence(
+        repository=ctx["repository"],
+        project_id=ctx["project_id"],
+        brief=str(ctx["session"].get("brief") or ""),
+        manifest=ctx.get("manifest") or {},
+        project_context=context_result.context,
+    )
+    context_result.context.setdefault("facts",{}).update(location_result.fact_updates)
+    location_path=out/"location_intelligence.json"
+    write_json(location_path,location_result.record)
     context_path=out/"project_context.json"
     context_assumptions_path=out/"project_context_assumptions.json"
     site_context_path=out/"site_context.json"
+    context_result.site_context["location_intelligence"]=repo_ref(location_path,ctx["repository"])
     write_json(context_path,context_result.context)
     write_json(context_assumptions_path,context_result.assumptions)
     write_json(site_context_path,context_result.site_context)
@@ -226,12 +239,16 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         repo_ref(context_path,ctx["repository"]),
         repo_ref(context_assumptions_path,ctx["repository"]),
         repo_ref(site_context_path,ctx["repository"]),
+        repo_ref(location_path,ctx["repository"]),
     ])
     metadata["project_context"]=repo_ref(context_path,ctx["repository"])
     metadata["site_context"]=repo_ref(site_context_path,ctx["repository"])
-    metadata["project_context_version"]="1.0.0"
+    metadata["project_context_version"]="1.1.0"
+    metadata["location_intelligence"]=repo_ref(location_path,ctx["repository"])
+    metadata["location_intelligence_status"]=location_result.status
 
     manifest_updates=dict(context_result.manifest_updates)
+    manifest_updates.update(location_result.manifest_updates)
     manifest_updates.update({
         "project_context":repo_ref(context_path,ctx["repository"]),
         "site_context":repo_ref(site_context_path,ctx["repository"]),
@@ -335,6 +352,7 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
     site_ref=next((x for x in arch_outputs if x.endswith("/site_context.json")),None)
     profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
     drawing_register_ref=next((x for x in arch_outputs if x.endswith("/architectural_drawing_register.json")),None)
+    location_intelligence_ref=next((x for x in arch_outputs if x.endswith("/location_intelligence.json")),None)
 
     twin = {
         "schema_version": "phoenix.central-project-digital-twin/1.1",
@@ -345,6 +363,7 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
         "site_context":site_ref,
         "structural_project_profile":profile_ref,
         "architectural_drawing_register":drawing_register_ref,
+        "location_intelligence":location_intelligence_ref,
         "structural_model": None,
         "permit_state": None,
         "cost_planning_state": None,
@@ -374,28 +393,22 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
     )
 
 def run_structural(ctx: dict[str, Any]) -> int:
-    cap = "structural_engineering"
-    label = CAPABILITIES[cap]
-    state = adapter_state(ctx["workspace"])
-    arch = (state.get("capabilities") or {}).get("architecture") or {}
-    arch_outputs = arch.get("outputs") or []
+    cap="structural_engineering"
+    label=CAPABILITIES[cap]
+    state=adapter_state(ctx["workspace"])
+    arch=(state.get("capabilities") or {}).get("architecture") or {}
+    arch_outputs=arch.get("outputs") or []
 
-    model_ref = next((x for x in arch_outputs if x.endswith("/architectural_model.json")), None)
-    detail_ref = next((x for x in arch_outputs if x.endswith("/detailed_elements.json")), None)
-    profile_ref = next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")), None)
+    model_ref=next((x for x in arch_outputs if x.endswith("/architectural_model.json")),None)
+    detail_ref=next((x for x in arch_outputs if x.endswith("/detailed_elements.json")),None)
+    profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
 
-    blockers = []
-    if not model_ref:
-        blockers.append({"reason":"ARCHITECTURAL_MODEL_REQUIRED","message":"Constructieve keten vereist architectuurmodel."})
-    if not detail_ref:
-        blockers.append({"reason":"DETAILED_ELEMENTS_REQUIRED","message":"Constructieve afleiding vereist gedetailleerde bouwkundige elementen."})
-    if not profile_ref:
-        blockers.append({
-            "reason":"STRUCTURAL_PROJECT_PROFILE_REQUIRED",
-            "message":"Geen projectspecifiek constructief profiel gevonden; Phoenix vult normen/materialen/belastingsaannames niet stilzwijgend in.",
-        })
+    blockers=[]
+    if not model_ref: blockers.append({"reason":"ARCHITECTURAL_MODEL_REQUIRED","message":"Constructieve keten vereist architectuurmodel."})
+    if not detail_ref: blockers.append({"reason":"DETAILED_ELEMENTS_REQUIRED","message":"Constructieve afleiding vereist gedetailleerde bouwkundige elementen."})
+    if not profile_ref: blockers.append({"reason":"STRUCTURAL_PROJECT_PROFILE_REQUIRED","message":"Projectspecifiek constructief profiel ontbreekt."})
 
-    chain = [
+    chain_names=[
         "PROJECT_PHOENIX_architectural_to_structural_model_derivation_v8_0_0.py",
         "PROJECT_PHOENIX_structural_analytical_model_generation_v8_1_0.py",
         "PROJECT_PHOENIX_structural_action_load_model_generation_v8_2_0.py",
@@ -410,98 +423,56 @@ def run_structural(ctx: dict[str, Any]) -> int:
         "PROJECT_PHOENIX_structural_engineering_review_approval_release_control_v8_11_0.py",
         "PROJECT_PHOENIX_structural_revision_change_impact_ifc_package_v8_12_0.py",
     ]
-    discovery = [{
-        "version": f"8.{i}.0" if i <= 9 else f"8.{i}.0",
-        "runner": name,
-        "available": (ctx["repository"] / "runners" / name).is_file(),
-    } for i, name in enumerate(chain)]
-
-    chain_manifest = {
-        "schema_version": "phoenix.structural-session-adapter-chain/1.0",
-        "project_id": ctx["project_id"],
-        "chain": discovery,
-        "legacy_pilot_dependency": False,
-        "automatic_structural_approval": False,
-        "structural_release": "LOCKED",
-    }
-    chain_path = ctx["output_dir"] / "structural_v8_chain_manifest.json"
-    write_json(chain_path, chain_manifest)
-
-    missing_runners = [x["runner"] for x in discovery if not x["available"]]
-    if missing_runners:
-        blockers.append({
-            "reason":"STRUCTURAL_V8_CHAIN_INCOMPLETE",
-            "message":"Niet alle generieke v8.0–v8.12 runners zijn aanwezig.",
-            "missing_runners": missing_runners,
-        })
-
+    discovery=[{"runner":x,"available":(ctx["repository"]/"runners"/x).is_file()} for x in chain_names]
+    missing=[x["runner"] for x in discovery if not x["available"]]
+    if missing:
+        blockers.append({"reason":"STRUCTURAL_V8_CHAIN_INCOMPLETE","message":"Niet alle generieke v8.0-v8.12 engines zijn aanwezig.","missing_runners":missing})
+    chain_manifest={"schema_version":"phoenix.structural-session-adapter-chain/2.0","project_id":ctx["project_id"],"chain":discovery,
+                    "validated_session_chain_version":"1.0.0","legacy_pilot_dependency": False,
+                    "automatic_structural_approval":False,"structural_release":"LOCKED"}
+    chain_manifest_path=ctx["output_dir"]/"structural_v8_chain_manifest.json";write_json(chain_manifest_path,chain_manifest)
     if blockers:
-        return finish(
-            ctx, capability_id=cap, label=label, status="BLOCKED_INPUT",
-            outputs=[repo_ref(chain_path, ctx["repository"])],
-            blockers=blockers,
-            metadata={"v8_chain_discovered": len(discovery) - len(missing_runners), "v8_chain_total": len(discovery)},
-        )
+        return finish(ctx,capability_id=cap,label=label,status="BLOCKED_INPUT",
+                      outputs=[repo_ref(chain_manifest_path,ctx["repository"])],blockers=blockers)
 
-    # Safe first hand-off: v8.0 has an explicit, known generic CLI contract.
-    # Later v8 stages remain governed by their own release gates and are not
-    # called until their input contracts are present/validated.
-    v80 = ctx["repository"] / "runners" / chain[0]
-    v80_out = ctx["output_dir"] / "v8_0_structural_derivation"
-    cmd = python_command(
-        v80,
-        "--project-profile", str(ctx["repository"] / profile_ref),
-        "--architectural-model", str(ctx["repository"] / model_ref),
-        "--detailed-elements", str(ctx["repository"] / detail_ref),
-        "--output", str(v80_out),
+    v80=ctx["repository"]/"runners"/chain_names[0]
+    v80_out=ctx["output_dir"]/"v8_0_structural_derivation"
+    cmd=python_command(v80,
+        "--project-profile",str(ctx["repository"]/profile_ref),
+        "--architectural-model",str(ctx["repository"]/model_ref),
+        "--detailed-elements",str(ctx["repository"]/detail_ref),
+        "--output",str(v80_out))
+    rc=run_subprocess(cmd,ctx["repository"],ctx["output_dir"]/"v8_0.log")
+    v80_model=v80_out/"model"/"structural_candidate_model.json"
+    if rc!=0 or not v80_model.is_file():
+        return finish(ctx,capability_id=cap,label=label,status="FAILED",
+                      outputs=[repo_ref(chain_manifest_path,ctx["repository"])],
+                      blockers=[{"reason":"STRUCTURAL_V8_0_EXECUTION_FAILED","message":f"v8.0 stopte met exitcode {rc}."}])
+
+    chain=run_structural_chain(
+        repository=ctx["repository"],session=ctx["session"],workspace=ctx["workspace"],
+        output_dir=ctx["output_dir"]/"validated_v8_1_to_v8_12",
+        project_id=ctx["project_id"],v80_model_path=v80_model,
+        architectural_model_path=ctx["repository"]/model_ref,
+        detailed_elements_path=ctx["repository"]/detail_ref,
     )
-    rc = run_subprocess(cmd, ctx["repository"], ctx["output_dir"] / "v8_0.log")
-    if rc != 0:
-        return finish(
-            ctx, capability_id=cap, label=label, status="FAILED",
-            outputs=[repo_ref(chain_path, ctx["repository"])],
-            blockers=[{
-                "reason":"STRUCTURAL_V8_0_EXECUTION_FAILED",
-                "message":f"v8.0 runner stopte met exitcode {rc}.",
-            }],
-        )
+    stage_path=ctx["output_dir"]/"validated_v8_1_to_v8_12"/"stage_register.json"
+    write_json(stage_path,chain.stage_register)
+    outputs=[repo_ref(chain_manifest_path,ctx["repository"]),repo_ref(v80_model,ctx["repository"]),repo_ref(stage_path,ctx["repository"])]
+    outputs.extend(chain.outputs)
 
-    v80_model = v80_out / "model" / "structural_candidate_model.json"
-    if not v80_model.is_file():
-        return finish(
-            ctx, capability_id=cap, label=label, status="FAILED",
-            blockers=[{"reason":"STRUCTURAL_V8_0_OUTPUT_MISSING","message":"v8.0 produceerde geen structural_candidate_model.json."}],
-        )
-
-    # The adapter is connected to the full chain registry, but it refuses to
-    # invent cross-version transformations. It records the exact next contract.
-    handoff = {
-        "schema_version":"phoenix.structural-session-handoff/1.0",
-        "project_id":ctx["project_id"],
-        "completed_through":"8.0.0",
-        "next_stage":"8.1.0",
-        "source_structural_candidate_model":repo_ref(v80_model,ctx["repository"]),
-        "v8_chain_registry":repo_ref(chain_path,ctx["repository"]),
-        "status":"READY_FOR_VALIDATED_V8_1_INPUT_MAPPING",
-        "automatic_structural_approval":False,
-        "release":"LOCKED",
-    }
-    handoff_path = ctx["output_dir"] / "structural_session_handoff.json"
-    write_json(handoff_path,handoff)
-
-    return finish(
-        ctx, capability_id=cap, label=label, status="BLOCKED",
-        outputs=[
-            repo_ref(chain_path, ctx["repository"]),
-            repo_ref(v80_model, ctx["repository"]),
-            repo_ref(handoff_path, ctx["repository"]),
-        ],
-        blockers=[{
-            "reason":"V8_1_TO_V8_12_VALIDATED_INPUT_MAPPING_REQUIRED",
-            "message":"Session Adapter heeft v8.0 veilig uitgevoerd; v8.1–v8.12 blijven geblokkeerd totdat iedere tussenversie-input expliciet gevalideerd kan worden doorgegeven.",
-        }],
-        metadata={"completed_through":"8.0.0","chain_target":"8.12.0"},
-    )
+    if chain.status=="FAILED":
+        return finish(ctx,capability_id=cap,label=label,status="FAILED",outputs=outputs,blockers=chain.blockers,
+                      metadata={"completed_through":chain.completed_through,"next_stage":chain.next_stage,"session_chain_version":"1.0.0",
+                                "legacy_pilot_dependency":False})
+    if chain.status=="BLOCKED":
+        return finish(ctx,capability_id=cap,label=label,status="BLOCKED",outputs=outputs,blockers=chain.blockers,warnings=chain.warnings,
+                      metadata={"completed_through":chain.completed_through,"next_stage":chain.next_stage,"session_chain_version":"1.0.0",
+                                "generic_cross_version_mapping_blocker_removed":True,"legacy_pilot_dependency":False})
+    return finish(ctx,capability_id=cap,label=label,status="PASSED",outputs=outputs,warnings=chain.warnings,
+                  metadata={"completed_through":"8.12.0","session_chain_version":"1.0.0",
+                            "legacy_pilot_dependency":False,
+                            "automatic_professional_approval":False,"production_release":"LOCKED"})
 
 
 def _session_location(ctx: dict[str, Any]) -> str | None:
@@ -514,57 +485,49 @@ def _session_location(ctx: dict[str, Any]) -> str | None:
 
 
 def run_permit(ctx: dict[str, Any]) -> int:
-    cap = "permit"
-    label = CAPABILITIES[cap]
-    location = _session_location(ctx)
-    desired = set(ctx["session"].get("desired_outputs", []))
+    cap="permit"
+    label=CAPABILITIES[cap]
+    state=adapter_state(ctx["workspace"])
+    arch=(state.get("capabilities") or {}).get("architecture") or {}
+    arch_outputs=arch.get("outputs") or []
+    context=_load_project_context_from_arch_state(ctx,arch_outputs) or {}
+    facts=context.get("facts") if isinstance(context,dict) else {}
+    facts=facts if isinstance(facts,dict) else {}
+    location=facts.get("project_location") or _session_location(ctx)
+    country=facts.get("country_code")
+    municipality=facts.get("municipality")
+    desired=set(ctx["session"].get("desired_outputs",[]))
+    jurisdiction_key=":".join(str(x) for x in (country,municipality) if x)
 
-    scope = {
-        "schema_version":"phoenix.permit-session-scope/1.0",
-        "project_id":ctx["project_id"],
-        "location":location,
-        "requested":{
-            "permit_dossier":"permit_dossier" in desired,
-            "permit_analysis":"permit_analysis" in desired,
-            "aerius":"aerius" in desired,
-        },
-        "jurisdiction_confirmed":False,
-        "automatic_permit_conclusion":False,
-        "release":"LOCKED",
+    scope={
+        "schema_version":"phoenix.permit-session-scope/1.1","project_id":ctx["project_id"],
+        "location":location,"country_code":country,"municipality":municipality,"jurisdiction_key":jurisdiction_key or None,
+        "requested":{"permit_dossier":"permit_dossier" in desired,"permit_analysis":"permit_analysis" in desired,"aerius":"aerius" in desired},
+        "jurisdiction_confirmed":False,"automatic_permit_conclusion":False,"release":"LOCKED",
     }
-    scope_path=ctx["output_dir"]/"permit_scope.json"
-    write_json(scope_path,scope)
-
-    if not location:
-        return finish(
-            ctx, capability_id=cap, label=label, status="BLOCKED_INPUT",
+    scope_path=ctx["output_dir"]/"permit_scope.json";write_json(scope_path,scope)
+    if not location or not country:
+        return finish(ctx,capability_id=cap,label=label,status="BLOCKED_INPUT",
             outputs=[repo_ref(scope_path,ctx["repository"])],
-            blockers=[{
-                "reason":"PROJECT_LOCATION_JURISDICTION_REQUIRED",
-                "message":"Vergunning/BOPA/AERIUS kan niet projectspecifiek worden bepaald zonder locatie/jurisdictie.",
-            }],
-        )
+            blockers=[{"reason":"PROJECT_LOCATION_JURISDICTION_REQUIRED",
+                       "message":"Expliciete projectlocatie plus betrouwbaar opgelost land/gebiedsdeel zijn vereist voor projectspecifieke vergunningrouting."}])
 
-    checklist = {
-        "schema_version":"phoenix.permit-session-checklist/1.0",
-        "project_id":ctx["project_id"],
-        "location":location,
+    checklist={
+        "schema_version":"phoenix.permit-session-checklist/1.1","project_id":ctx["project_id"],
+        "location":location,"country_code":country,"municipality":municipality,
         "checks":[
-            {"id":"jurisdiction","status":"REQUIRES_VALIDATION"},
+            {"id":"jurisdiction","status":"LOCATION_CONTEXT_RESOLVED_RULES_REQUIRE_SOURCE_EVIDENCE"},
             {"id":"planning_environment","status":"REQUIRES_SOURCE_EVIDENCE"},
             {"id":"bopa","status":"IF_APPLICABLE"},
             {"id":"aerius","status":"IF_APPLICABLE"},
             {"id":"participation","status":"IF_APPLICABLE"},
         ],
-        "status":"CANDIDATE_ONLY",
+        "status":"CANDIDATE_ONLY","automatic_legal_conclusion":False,
     }
-    checklist_path=ctx["output_dir"]/"permit_checklist.json"
-    write_json(checklist_path,checklist)
-    return finish(
-        ctx,capability_id=cap,label=label,status="PASSED",
+    checklist_path=ctx["output_dir"]/"permit_checklist.json";write_json(checklist_path,checklist)
+    return finish(ctx,capability_id=cap,label=label,status="PASSED",
         outputs=[repo_ref(scope_path,ctx["repository"]),repo_ref(checklist_path,ctx["repository"])],
-        warnings=["Permit checklist is routing metadata, not a permit approval or AERIUS result."],
-    )
+        warnings=["Locatie/jurisdictie-routing is kandidaatcontext; actuele vergunningregels vereisen bron-evidence."])
 
 
 def run_cost_planning(ctx: dict[str, Any]) -> int:

@@ -1,0 +1,32 @@
+{
+  "engine_id": "PHX-STRUCTURAL-SESSION-CHAIN-LOCATION-INTELLIGENCE",
+  "version": "1.0.0",
+  "runtime_version": "1.8.4",
+  "structural_chain": {
+    "from": "8.1.0",
+    "through": "8.12.0",
+    "v8_0_to_v8_1_geometric_mapping": true,
+    "automatic_design_load_invention": false,
+    "automatic_code_basis_invention": false,
+    "automatic_solver_result_invention": false,
+    "automatic_capacity_check_invention": false,
+    "automatic_geotechnical_invention": false,
+    "automatic_professional_review": false,
+    "automatic_release_authorization": false,
+    "production_release": "LOCKED"
+  },
+  "location_intelligence": {
+    "ui_locale_inference_forbidden": true,
+    "exact_known_locality_catalog_allowed": true,
+    "remote_geocoder_preconfigured": false,
+    "cadastral_inference_forbidden": true
+  },
+  "revision": "FIXED_R1",
+  "fixed_r1": {
+    "root_cause": "explicit legacy_pilot_dependency=false safety metadata was dropped from the new structural adapter chain",
+    "production_chain_changed": false,
+    "legacy_pilot_dependency": false,
+    "generic_session_chain_preserved": true,
+    "production_release": "LOCKED"
+  }
+}

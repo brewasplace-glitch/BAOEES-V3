@@ -31,7 +31,7 @@ from phoenix.autonomy.session_orchestrator import AutonomousProjectOrchestrator
 
 
 class PhoenixLocalApplication:
-    VERSION = "1.8.3"
+    VERSION = "1.8.4"
     START_SCREEN_VERSION = "3.0.2"
 
     def __init__(self, repository: Path, config: dict[str, Any]):
@@ -89,6 +89,8 @@ class PhoenixLocalApplication:
                 "autonomous_architectural_bootstrap": "1.1.0",
                 "project_context_structural_profile_drawing_masterpack": "1.0.0",
                 "local_cost_intelligence_currency_market_pricing": "1.0.0",
+                "structural_v8_1_v8_12_session_chain": "1.0.0",
+                "location_intelligence": "1.0.0",
                 "pat_defect_004_modal_status_sync": True,
                 "legacy_pilot_autonomous_execution": False,
                 "visual_refresh_mode": "zero_idle_polling",

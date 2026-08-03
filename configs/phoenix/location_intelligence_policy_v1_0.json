@@ -1,0 +1,19 @@
+{
+  "schema_version": "phoenix.location-intelligence-policy/1.0",
+  "version": "1.0.0",
+  "rules": {
+    "ui_locale_may_define_project_country": false,
+    "explicit_location_preferred": true,
+    "exact_known_locality_catalog_inference_allowed": true,
+    "remote_geocoding_preconfigured": false,
+    "automatic_cadastral_boundary_inference": false,
+    "planning_rules_require_source_evidence": true,
+    "permit_rules_require_source_evidence": true,
+    "production_release": "LOCKED"
+  },
+  "remote_provider_contract": {
+    "registry_file": "configs/phoenix/location_provider_registry_v1_0.json",
+    "https_only": true,
+    "enabled_by_default": false
+  }
+}

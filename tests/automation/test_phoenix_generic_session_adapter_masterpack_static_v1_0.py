@@ -34,8 +34,8 @@ class SessionAdapterStaticTests(unittest.TestCase):
         self.assertNotIn("setInterval(",js)
 
     def test_05_runtime_is_1_8_2(self):
-        self.assertIn('VERSION = "1.8.3"',SERVER.read_text(encoding="utf-8"))
-        self.assertIn('value.get("version") != "1.8.3"',LAUNCHER.read_text(encoding="utf-8"))
+        self.assertIn('VERSION = "1.8.4"',SERVER.read_text(encoding="utf-8"))
+        self.assertIn('value.get("version") != "1.8.4"',LAUNCHER.read_text(encoding="utf-8"))
 
     def test_06_release_stays_locked(self):
         text=ADAPTERS.read_text(encoding="utf-8")
