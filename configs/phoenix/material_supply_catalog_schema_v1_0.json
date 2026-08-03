@@ -1,0 +1,94 @@
+{
+  "schema_version": "phoenix.material-supply-catalog-schema/1.0",
+  "required_catalog_metadata": [
+    "catalog_id",
+    "supplier_id",
+    "supplier_name",
+    "country_code",
+    "source_name"
+  ],
+  "optional_catalog_metadata": [
+    "region_name",
+    "city",
+    "currency",
+    "source_url",
+    "confidence",
+    "market_scope",
+    "availability_verified_date",
+    "availability_valid_until"
+  ],
+  "required_product_fields": [
+    "product_id",
+    "description",
+    "material_family",
+    "availability_status",
+    "unit"
+  ],
+  "structural_product_required_fields": [
+    "engineering_material_id",
+    "technical_properties"
+  ],
+  "availability_status_source_values": [
+    "IN_STOCK",
+    "AVAILABLE_TO_ORDER",
+    "LIMITED_STOCK",
+    "BACKORDER",
+    "OUT_OF_STOCK",
+    "DISCONTINUED",
+    "UNKNOWN"
+  ],
+  "phoenix_selection_status_values": [
+    "LOCAL_AVAILABILITY_CONFIRMED",
+    "LOCAL_AVAILABILITY_PROBABLE",
+    "REGIONAL_IMPORT_REQUIRED",
+    "INTERNATIONAL_IMPORT_REQUIRED",
+    "AVAILABILITY_UNKNOWN",
+    "UNAVAILABLE"
+  ],
+  "material_families": [
+    "structural_concrete",
+    "reinforcement_steel",
+    "structural_steel_section",
+    "structural_timber",
+    "masonry_unit",
+    "roof_covering",
+    "insulation",
+    "window_system",
+    "door_system",
+    "pipe",
+    "paving",
+    "asphalt",
+    "aggregate",
+    "culvert",
+    "lighting",
+    "other"
+  ],
+  "example": {
+    "metadata": {
+      "catalog_id": "EXAMPLE-ONLY",
+      "supplier_id": "SUPPLIER-EXAMPLE",
+      "supplier_name": "VOORBEELD — GEEN ECHTE LEVERANCIER",
+      "country_code": "NL",
+      "region_name": "Voorbeeldregio",
+      "currency": "EUR",
+      "source_name": "Vervang door echte lokale bron",
+      "confidence": "LOW",
+      "availability_verified_date": "2026-08-01"
+    },
+    "products": [
+      {
+        "product_id": "EXAMPLE-PRODUCT",
+        "description": "VOORBEELD — NIET ALS WERKELIJK PRODUCT GEBRUIKEN",
+        "material_family": "structural_timber",
+        "engineering_material_id": "EXAMPLE-DO-NOT-USE",
+        "technical_properties": {
+          "example_only": true
+        },
+        "availability_status": "UNKNOWN",
+        "unit": "m3",
+        "unit_price": 0.0
+      }
+    ]
+  },
+  "warning": "The example documents the schema only and is not installed as a selectable supplier catalog."
+}

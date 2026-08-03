@@ -31,6 +31,7 @@ from .structural_profile import generate_structural_project_profile
 from .drawing_production import produce_architectural_drawings
 from .location_intelligence import resolve_location_intelligence
 from .structural_session_chain import run_structural_chain
+from .local_material_supply_intelligence import build_local_material_supply_context
 
 
 
@@ -272,7 +273,50 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         profile_source if isinstance(profile_source,str)
         else repo_ref(profile_source,ctx["repository"])
     )
-    metadata["structural_profile_version"]="1.0.0"
+    metadata["structural_profile_version"]="1.1.0"
+
+    # Local Material / Product / Supply Intelligence.
+    # Concept geometry may continue when availability is unresolved, but final/release
+    # gates and structural material use may not treat unconfirmed products as final.
+    material_result=build_local_material_supply_context(
+        repository=ctx["repository"],
+        project_id=ctx["project_id"],
+        architectural_model=model_value,
+        structural_profile=profile_value,
+        project_context=context_result.context,
+        manifest=ctx.get("manifest") or {},
+    )
+    material_requirements_path=out/"local_material_requirements.json"
+    material_selection_path=out/"local_material_selection_register.json"
+    material_supply_sources_path=out/"local_material_supply_source_register.json"
+    material_change_control_path=out/"material_product_change_control.json"
+    write_json(material_requirements_path,material_result.requirements)
+    write_json(material_selection_path,material_result.selection_register)
+    write_json(material_supply_sources_path,material_result.supply_register)
+    write_json(material_change_control_path,material_result.change_control)
+    outputs.extend([
+        repo_ref(material_requirements_path,ctx["repository"]),
+        repo_ref(material_selection_path,ctx["repository"]),
+        repo_ref(material_supply_sources_path,ctx["repository"]),
+        repo_ref(material_change_control_path,ctx["repository"]),
+    ])
+    metadata["local_material_supply_intelligence_version"]="1.0.0"
+    metadata["local_material_selection_register"]=repo_ref(material_selection_path,ctx["repository"])
+    metadata["local_material_supply_gate"]=material_result.status
+    metadata["all_structural_materials_locally_confirmed"]=material_result.selection_register.get(
+        "all_structural_requirements_locally_confirmed",False
+    )
+
+    profile_value.setdefault("local_material_policy",{}).update({
+        "status":material_result.status,
+        "selection_register":repo_ref(material_selection_path,ctx["repository"]),
+        "all_structural_requirements_locally_confirmed":material_result.selection_register.get(
+            "all_structural_requirements_locally_confirmed",False
+        ),
+        "automatic_product_substitution":False,
+        "material_substitution_requires_recalculation":True,
+    })
+    write_json(profile_path,profile_value)
 
     # Produce real drawing artifacts from geometry. They are CONCEPT / TER CONTROLE.
     drawings_dir=out/"drawings"
@@ -306,6 +350,8 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         "architectural_model": repo_ref(model_path, ctx["repository"]),
         "detailed_elements": metadata.get("detailed_elements"),
         "structural_project_profile": metadata.get("structural_project_profile"),
+        "local_material_selection_register": metadata.get("local_material_selection_register"),
+        "local_material_supply_gate": metadata.get("local_material_supply_gate"),
         "project_context":metadata.get("project_context"),
         "site_context":metadata.get("site_context"),
         "drawing_register":metadata.get("drawing_register"),
@@ -353,6 +399,7 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
     profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
     drawing_register_ref=next((x for x in arch_outputs if x.endswith("/architectural_drawing_register.json")),None)
     location_intelligence_ref=next((x for x in arch_outputs if x.endswith("/location_intelligence.json")),None)
+    local_material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
 
     twin = {
         "schema_version": "phoenix.central-project-digital-twin/1.1",
@@ -364,6 +411,7 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
         "structural_project_profile":profile_ref,
         "architectural_drawing_register":drawing_register_ref,
         "location_intelligence":location_intelligence_ref,
+        "local_material_selection_register":local_material_selection_ref,
         "structural_model": None,
         "permit_state": None,
         "cost_planning_state": None,
@@ -402,6 +450,7 @@ def run_structural(ctx: dict[str, Any]) -> int:
     model_ref=next((x for x in arch_outputs if x.endswith("/architectural_model.json")),None)
     detail_ref=next((x for x in arch_outputs if x.endswith("/detailed_elements.json")),None)
     profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
+    material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
 
     blockers=[]
     if not model_ref: blockers.append({"reason":"ARCHITECTURAL_MODEL_REQUIRED","message":"Constructieve keten vereist architectuurmodel."})
@@ -429,6 +478,8 @@ def run_structural(ctx: dict[str, Any]) -> int:
         blockers.append({"reason":"STRUCTURAL_V8_CHAIN_INCOMPLETE","message":"Niet alle generieke v8.0-v8.12 engines zijn aanwezig.","missing_runners":missing})
     chain_manifest={"schema_version":"phoenix.structural-session-adapter-chain/2.0","project_id":ctx["project_id"],"chain":discovery,
                     "validated_session_chain_version":"1.0.0","legacy_pilot_dependency": False,
+                    "local_material_selection_register":material_selection_ref,
+                    "local_material_availability_required":True,
                     "automatic_structural_approval":False,"structural_release":"LOCKED"}
     chain_manifest_path=ctx["output_dir"]/"structural_v8_chain_manifest.json";write_json(chain_manifest_path,chain_manifest)
     if blockers:
@@ -455,6 +506,7 @@ def run_structural(ctx: dict[str, Any]) -> int:
         project_id=ctx["project_id"],v80_model_path=v80_model,
         architectural_model_path=ctx["repository"]/model_ref,
         detailed_elements_path=ctx["repository"]/detail_ref,
+        material_selection_path=(ctx["repository"]/material_selection_ref) if material_selection_ref else None,
     )
     stage_path=ctx["output_dir"]/"validated_v8_1_to_v8_12"/"stage_register.json"
     write_json(stage_path,chain.stage_register)
@@ -538,6 +590,7 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
     arch_outputs=arch.get("outputs") or []
     model_ref=next((x for x in arch_outputs if x.endswith("/architectural_model.json")),None)
     project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
+    material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
 
     project_context={}
     if project_context_ref:
@@ -576,6 +629,7 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "fx_used":market.market_context.get("fx_used",False),
         "market_context":repo_ref(market_path,ctx["repository"]),
         "price_source_register":repo_ref(sources_path,ctx["repository"]),
+        "local_material_selection_register":material_selection_ref,
         "status":"INPUT_CHECK",
     }
     reg_path=ctx["output_dir"]/"cost_planning_input_register.json"
@@ -586,6 +640,17 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         blockers.append({
             "reason":"ARCHITECTURAL_MODEL_REQUIRED",
             "message":"Kosten/hoeveelheden vereisen een projectmodel of gevalideerde hoeveelheden."
+        })
+    material_selection={}
+    if material_selection_ref:
+        try:
+            material_selection=read_json((ctx["repository"]/material_selection_ref).resolve())
+        except Exception:
+            material_selection={}
+    if not material_selection_ref or not material_selection.get("all_requirements_locally_confirmed",False):
+        blockers.append({
+            "reason":"LOCAL_MATERIAL_AVAILABILITY_REQUIRED_FOR_COST_PLAN",
+            "message":"Kostenplanning mag niet als projectspecifiek lokaal plan doorgaan zolang vereiste materialen/producten niet lokaal bevestigd zijn.",
         })
     blockers.extend(market.blockers)
 
@@ -647,6 +712,8 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "international_fx_fallback":False,
         "automatic_tax_application":False,
         "local_price_traceability_required":True,
+        "local_material_availability_required":True,
+        "local_material_selection_register":material_selection_ref,
         "cost_calculation":calculation_ref,
         "cost_estimate_status":"READY_FOR_LOCAL_MARKET_COST_ENGINE" if calculation_ref is None else "LOCAL_COST_CALCULATION_AVAILABLE",
         "schedule_status":"READY_FOR_PLANNING_ENGINE",
@@ -719,8 +786,24 @@ def run_closure(ctx: dict[str, Any]) -> int:
                 "status":value.get("status"),
             })
 
+    arch_value=capabilities.get("architecture") or {}
+    arch_outputs=arch_value.get("outputs") or []
+    material_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    material_gate={}
+    if material_ref:
+        try:
+            material_gate=read_json((ctx["repository"]/material_ref).resolve())
+        except Exception:
+            material_gate={}
+    if not material_gate.get("all_requirements_locally_confirmed",False):
+        blockers.append({
+            "capability_id":"architecture",
+            "reason":"LOCAL_MATERIAL_SUPPLY_GATE_NOT_PASSED",
+            "status":material_gate.get("status") or "MISSING",
+        })
+
     gate={
-        "schema_version":"phoenix.autonomous-qaqc-release-gate/1.0",
+        "schema_version":"phoenix.autonomous-qaqc-release-gate/1.1",
         "project_id":ctx["project_id"],
         "session_id":ctx["session"].get("session_id"),
         "qaqc_status":"BLOCKED" if blockers else "READY_FOR_HUMAN_REVIEW",

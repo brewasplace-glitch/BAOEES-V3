@@ -7,7 +7,7 @@ not invent code basis, design loads, soil facts, member sizes or approval.
 from __future__ import annotations
 from typing import Any
 
-VERSION="1.0.0"
+VERSION="1.1.0"
 
 def generate_structural_project_profile(*, project_id:str, architectural_model:dict[str,Any], project_context:dict[str,Any]) -> dict[str,Any]:
     building=architectural_model.get("building") or {}
@@ -65,6 +65,14 @@ def generate_structural_project_profile(*, project_id:str, architectural_model:d
             "soil_profile":None,
             "groundwater":None,
             "foundation_advice":None,
+        },
+        "local_material_policy":{
+            "status":"REQUIRES_LOCAL_MATERIAL_SUPPLY_INTELLIGENCE",
+            "local_availability_required":True,
+            "import_is_not_local":True,
+            "structural_products_require_engineering_material_id":True,
+            "material_substitution_requires_recalculation":True,
+            "selection_register":None,
         },
         "automatic_structural_approval":False,
         "professional_structural_review_required":True,

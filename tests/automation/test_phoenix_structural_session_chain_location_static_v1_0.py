@@ -32,8 +32,8 @@ class StaticTests(unittest.TestCase):
         self.assertIn('"automatic_cadastral_inference":False',text)
 
     def test_05_runtime_1_8_4_gate(self):
-        self.assertIn('VERSION = "1.8.4"',SERVER.read_text(encoding="utf-8"))
-        self.assertIn('value.get("version") != "1.8.4"',LAUNCHER.read_text(encoding="utf-8"))
+        self.assertIn('VERSION = "1.8.5"',SERVER.read_text(encoding="utf-8"))
+        self.assertIn('value.get("version") != "1.8.5"',LAUNCHER.read_text(encoding="utf-8"))
 
     def test_06_zero_idle_polling_preserved(self):
         js=ROOT/"phoenix"/"local_app"/"static"/"official_start_v3_0"/"PROJECT_PHOENIX_official_start_v3_visual_v3_0_2.js"

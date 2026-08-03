@@ -1,0 +1,50 @@
+{
+  "engine_id": "PHX-LOCAL-MATERIAL-PRODUCT-SUPPLY-INTELLIGENCE",
+  "version": "1.0.0",
+  "runtime_version": "1.8.5",
+  "selection_hierarchy": [
+    "CITY",
+    "REGION",
+    "COUNTRY",
+    "REGIONAL_IMPORT",
+    "INTERNATIONAL_IMPORT"
+  ],
+  "freshness": {
+    "default_max_age_days": 30
+  },
+  "selection": {
+    "allow_probable_for_final": false,
+    "allow_import_as_local": false,
+    "automatic_product_substitution": false
+  },
+  "structural": {
+    "engineering_material_id_required": true,
+    "technical_properties_required": true,
+    "local_material_confirmation_required_before_solver_material_use": true
+  },
+  "change_control": {
+    "substitution_requires_structural_recalculation_if_structural": true,
+    "substitution_requires_cost_recalculation": true,
+    "substitution_requires_schedule_recalculation_if_lead_time_changes": true,
+    "substitution_requires_qaqc": true
+  },
+  "remote": {
+    "timeout_seconds": 8,
+    "maximum_bytes": 5000000
+  },
+  "release": {
+    "all_required_materials_must_be_local_availability_confirmed": true,
+    "imports_require_explicit_approval": true,
+    "automatic_professional_approval": false,
+    "production_release": "LOCKED"
+  },
+  "revision": "FIXED_R1",
+  "fixed_r1": {
+    "root_cause": "legacy regression expected cost planning PASSED with current price evidence but without local material availability evidence",
+    "production_behavior_changed": false,
+    "price_evidence_only_expected": "BLOCKED_INPUT",
+    "price_plus_local_material_supply_evidence_expected": "PASSED",
+    "automatic_product_substitution": false,
+    "production_release": "LOCKED"
+  }
+}

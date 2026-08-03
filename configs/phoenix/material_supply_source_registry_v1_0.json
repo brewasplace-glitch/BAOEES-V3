@@ -1,0 +1,38 @@
+{
+  "schema_version": "phoenix.material-supply-source-registry/1.0",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "PROJECT_INPUT_MATERIAL_SUPPLY",
+      "kind": "filesystem_glob",
+      "glob": "inputs/material_supply/**/*.json",
+      "priority": 500,
+      "max_age_days": 30,
+      "enabled": true,
+      "purpose": "Project/local supplier snapshots supplied or generated for this repository."
+    },
+    {
+      "source_id": "MANAGED_MATERIAL_SUPPLY_DATA",
+      "kind": "filesystem_glob",
+      "glob": "data/material_supply/**/*.json",
+      "priority": 400,
+      "max_age_days": 30,
+      "enabled": true,
+      "purpose": "Managed local/regional supplier and product catalogs."
+    },
+    {
+      "source_id": "CONFIGURED_MATERIAL_SUPPLY_CATALOGS",
+      "kind": "filesystem_glob",
+      "glob": "configs/phoenix/material_supply_catalog/**/*.json",
+      "priority": 300,
+      "max_age_days": 30,
+      "enabled": true,
+      "purpose": "Repository-configured product/supply catalogs."
+    }
+  ],
+  "remote_source_contract": {
+    "supported_kind": "https_json",
+    "default_enabled": false,
+    "rule": "Authoritative supplier/distributor/provider feeds must be explicitly configured; Phoenix ships no fabricated live stock endpoint."
+  }
+}

@@ -15,6 +15,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from .local_material_supply_intelligence import selected_engineering_material_ids
+
 VERSION="1.0.0"
 
 STAGES=[
@@ -250,6 +252,7 @@ def run_structural_chain(
     v80_model_path:Path,
     architectural_model_path:Path,
     detailed_elements_path:Path,
+    material_selection_path:Path|None=None,
 )->ChainResult:
     repository=repository.resolve();workspace=workspace.resolve();output_dir=output_dir.resolve()
     output_dir.mkdir(parents=True,exist_ok=True)
@@ -307,6 +310,21 @@ def run_structural_chain(
         return ChainResult("FAILED",completed,"8.2.0",outputs,[{"reason":"STRUCTURAL_V8_2_EXECUTION_FAILED","message":f"v8.2 stopte met exitcode {rc}."}],[],register)
     register["stages"][1].update({"status":"PASSED","input_source":action_source});outputs.append(_repo_ref(v82_out,repository));completed="8.2.0"
 
+    material_selection={}
+    if material_selection_path is not None and material_selection_path.is_file():
+        try:
+            material_selection=_read(material_selection_path)
+        except Exception:
+            material_selection={}
+    if not material_selection.get("all_structural_requirements_locally_confirmed",False):
+        register["stages"][2]["status"]="BLOCKED_INPUT"
+        return _block(
+            "LOCAL_STRUCTURAL_MATERIAL_AVAILABILITY_REQUIRED",
+            "v8.2 kan zijn afgerond, maar vóór solvermateriaalgebruik moeten alle constructieve materialen/producten lokaal bevestigd zijn.",
+            completed,"8.3.0",outputs,register,
+            {"material_selection":_repo_ref(material_selection_path,repository) if material_selection_path else None}
+        )
+
     solver_input,solver_source=_section(candidates,"structural_analysis_basis",("solver_basis","element_assignments","solver_adapters","execution_policy"))
     if not solver_input:
         tp=workspace/"inputs"/"structural"/"structural_analysis_basis_REQUIRED.json"
@@ -322,6 +340,18 @@ def run_structural_chain(
         });outputs.append(_repo_ref(tp,repository))
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block("STRUCTURAL_SOLVER_BASIS_AND_ELEMENT_ASSIGNMENTS_REQUIRED","Expliciete solverbasis, materialen, doorsneden en elementtoewijzingen zijn vereist voor v8.3.",completed,"8.3.0",outputs,register)
+
+    local_engineering_ids=selected_engineering_material_ids(material_selection)
+    solver_materials=set(str(x) for x in (solver_input.get("solver_basis") or {}).get("materials",{}).keys())
+    unconfirmed_solver_materials=sorted(x for x in solver_materials if x not in local_engineering_ids)
+    if unconfirmed_solver_materials:
+        register["stages"][2]["status"]="BLOCKED_INPUT"
+        return _block(
+            "STRUCTURAL_SOLVER_MATERIAL_NOT_LOCALLY_CONFIRMED",
+            "Solverbasis verwijst naar materialen die niet als lokaal verkrijgbare geselecteerde engineering-materialen zijn bevestigd.",
+            completed,"8.3.0",outputs,register,
+            {"unconfirmed_material_ids":unconfirmed_solver_materials}
+        )
 
     analytical_for_solver,missing_assignments=_apply_assignments(_read(v81_out),solver_input)
     if missing_assignments:
