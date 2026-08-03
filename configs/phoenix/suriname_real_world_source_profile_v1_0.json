@@ -1,6 +1,6 @@
 {
   "schema_version": "phoenix.suriname-real-world-source-profile/1.0",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "verified_builder_date": "2026-08-03",
   "country_code": "SR",
   "region_name": "Paramaribo",
@@ -82,8 +82,48 @@
       "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/",
       "source_name": "Government of Suriname – Bouwwetten en regels",
       "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_BUILDING_MATERIALS",
+      "category": "material_supply",
+      "url": "https://webshop.kuldipsingh.net/nl/bouwmaterialen",
+      "source_name": "Kuldipsingh – openbare bouwmaterialenwebshop",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_BUILDING_PRICES",
+      "category": "market_prices",
+      "url": "https://webshop.kuldipsingh.net/nl/bouwmaterialen",
+      "source_name": "Kuldipsingh – actuele openbare SRD bouwmateriaalprijzen",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_READYMIX_CAPABILITY",
+      "category": "material_supply",
+      "url": "https://kuldipsingh.net/en/ruwbouw/concrete-mortar/",
+      "source_name": "Kuldipsingh Readymix – public concrete mortar capability evidence",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_PRECAST_PRESTRESSED_CAPABILITY",
+      "category": "material_supply",
+      "url": "https://kuldipsingh.net/en/",
+      "source_name": "Kuldipsingh – public concrete products and pre-stressed concrete capability evidence",
+      "confidence": "HIGH"
     }
   ],
   "engineering_rule": "Commercial supplier/product evidence is not equivalent to structural engineering qualification. Specific grades, strength classes and normative design values remain separately gated.",
-  "production_release": "LOCKED"
+  "production_release": "LOCKED",
+  "kuldipsingh": {
+    "supplier_id": "KULDIPSINGH-SR",
+    "supplier_name": "Kuldipsingh N.V.",
+    "roles": [
+      "building_materials",
+      "public_srd_prices",
+      "ready_mix_concrete",
+      "concrete_products",
+      "prestressed_concrete"
+    ],
+    "engineering_rule": "Commercial/capability evidence does not create structural engineering qualification; specific grades, sections and design values remain gated."
+  }
 }

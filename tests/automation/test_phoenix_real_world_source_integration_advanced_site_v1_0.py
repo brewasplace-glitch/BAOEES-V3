@@ -76,4 +76,27 @@ class RealWorldSourceAdvancedSiteTests(unittest.TestCase):
             self.assertEqual(result.status,"NO_NEW_EVIDENCE")
         finally:td.cleanup()
 
+
+    def test_06_kuldipsingh_style_html_normalizes_srd_price_and_store_availability(self):
+        raw=("UNITED Cement 40 kg 126416 SRD 354,55 excl. BTW "
+             "Alleen beschikbaar in de winkels "
+             "Betonnen U-Goot 3000x700x600mm C30/37 SRD 12.377,75 excl. BTW "
+             "Alleen beschikbaar in de winkels").encode()
+        provider={
+            "provider_id":"KULDIPSINGH-TEST",
+            "country_code":"SR","region_name":"Paramaribo","municipality":"Paramaribo",
+            "currency":"SRD","source_name":"Kuldipsingh test",
+            "url":"https://webshop.kuldipsingh.net/nl/bouwmaterialen",
+            "taxes_included":False
+        }
+        catalog=normalize_material_catalog(raw,provider,"2026-08-03T12:00:00+00:00")
+        self.assertTrue(catalog["products"])
+        self.assertTrue(any(x["availability_status"]=="AVAILABLE_TO_ORDER" for x in catalog["products"]))
+        ratebook=normalize_market_ratebook(raw,provider,"2026-08-03T12:00:00+00:00")
+        prices=[x["unit_price"] for x in ratebook["prices"]]
+        self.assertIn(354.55,prices)
+        self.assertIn(12377.75,prices)
+        self.assertFalse(ratebook["metadata"]["taxes_included"])
+
+
 if __name__=="__main__":unittest.main()

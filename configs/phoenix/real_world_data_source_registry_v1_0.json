@@ -1,6 +1,6 @@
 {
   "schema_version": "phoenix.real-world-data-source-registry/1.1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "providers": [
     {
       "provider_id": "SR_BESTBUY_CEMENT_MATERIALS",
@@ -237,6 +237,115 @@
       "source_name": "Government of Suriname – Bouwwetten en regels",
       "title": "Suriname building laws and regulations index",
       "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_BUILDING_MATERIALS",
+      "category": "material_supply",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://webshop.kuldipsingh.net/nl/bouwmaterialen",
+      "source_name": "Kuldipsingh – openbare bouwmaterialenwebshop",
+      "supplier_id": "KULDIPSINGH-SR",
+      "supplier_name": "Kuldipsingh N.V.",
+      "confidence": "HIGH",
+      "taxes_included": false,
+      "transport_included": false
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_BUILDING_PRICES",
+      "category": "market_prices",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://webshop.kuldipsingh.net/nl/bouwmaterialen",
+      "source_name": "Kuldipsingh – actuele openbare SRD bouwmateriaalprijzen",
+      "title": "Kuldipsingh Suriname Building Materials Market Snapshot",
+      "confidence": "HIGH",
+      "taxes_included": false,
+      "transport_included": false
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_READYMIX_CAPABILITY",
+      "category": "material_supply",
+      "response_type": "html_capability",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://kuldipsingh.net/en/ruwbouw/concrete-mortar/",
+      "source_name": "Kuldipsingh Readymix – public concrete mortar capability evidence",
+      "supplier_id": "KULDIPSINGH-SR",
+      "supplier_name": "Kuldipsingh Readymix N.V.",
+      "confidence": "HIGH",
+      "capability_records": [
+        {
+          "product_id": "KULDIPSINGH-READYMIX-CAPABILITY",
+          "description": "Local ready-mix concrete mortar capability; specific mix/strength class requires project evidence",
+          "material_family": "structural_concrete",
+          "availability_status": "AVAILABLE_TO_ORDER",
+          "unit": "m3",
+          "technical_properties": {
+            "supplier_laboratory_quality_control_claimed": true,
+            "specific_mix_design_required": true,
+            "specific_strength_class_required": true,
+            "engineering_material_id_required_before_solver_use": true
+          }
+        }
+      ]
+    },
+    {
+      "provider_id": "SR_KULDIPSINGH_PRECAST_PRESTRESSED_CAPABILITY",
+      "category": "material_supply",
+      "response_type": "html_capability",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://kuldipsingh.net/en/",
+      "source_name": "Kuldipsingh – public concrete products and pre-stressed concrete capability evidence",
+      "supplier_id": "KULDIPSINGH-SR",
+      "supplier_name": "Kuldipsingh N.V.",
+      "confidence": "HIGH",
+      "capability_records": [
+        {
+          "product_id": "KULDIPSINGH-PRECAST-PRESTRESSED-CAPABILITY",
+          "description": "Local concrete products / prestressed concrete capability including piles, sheet piles and floor slabs",
+          "material_family": "structural_concrete",
+          "availability_status": "AVAILABLE_TO_ORDER",
+          "unit": "project_quote",
+          "technical_properties": {
+            "specific_element_design_required": true,
+            "specific_concrete_grade_required": true,
+            "specific_reinforcement_or_prestress_design_required": true,
+            "engineering_material_id_required_before_solver_use": true
+          }
+        }
+      ]
     }
   ],
   "remote": {
@@ -260,5 +369,14 @@
     "test_mode_disables_runtime_live_sources": true
   },
   "source_profile": "SURINAME_PUBLIC_CONSTRUCTION_SOURCES_v1.0",
-  "note": "Public source profile is explicit configuration, not implicit web search. Runtime fetches may fail safely without fabricating data."
+  "note": "Public source profile is explicit configuration, not implicit web search. Runtime fetches may fail safely without fabricating data.",
+  "kuldipsingh_integration": {
+    "revision": "KULDIPSINGH_R1",
+    "public_webshop_prices_srd": true,
+    "commercial_material_availability": true,
+    "readymix_capability": true,
+    "precast_prestressed_capability": true,
+    "tax_handling": "PUBLIC_WEBSHOP_PRICES_MARKED_EXCL_BTW",
+    "engineering_qualification_is_separate": true
+  }
 }

@@ -17,6 +17,10 @@ class StaticTests(unittest.TestCase):
     def test_01_suriname_sources_are_explicitly_configured(self):
         reg=json.loads(REG.read_text(encoding="utf-8"));ids={x["provider_id"] for x in reg["providers"]}
         self.assertIn("SR_BESTBUY_CEMENT_PRICES",ids);self.assertIn("SR_VABI_BLOCKS_PRICES",ids);self.assertIn("SR_SUBEMA_READY_MIX_CAPABILITY",ids);self.assertIn("SR_GOV_BUILDING_LAWS",ids)
+        self.assertIn("SR_KULDIPSINGH_BUILDING_MATERIALS",ids)
+        self.assertIn("SR_KULDIPSINGH_BUILDING_PRICES",ids)
+        self.assertIn("SR_KULDIPSINGH_READYMIX_CAPABILITY",ids)
+        self.assertIn("SR_KULDIPSINGH_PRECAST_PRESTRESSED_CAPABILITY",ids)
     def test_02_live_sources_disabled_in_test_mode(self):
         text=ACQ.read_text(encoding="utf-8");self.assertIn("PHOENIX_TEST_MODE",text);self.assertIn("TEST_MODE_LIVE_FETCH_DISABLED",text)
     def test_03_no_implicit_web_search(self):

@@ -110,6 +110,10 @@ def _availability(segment:str)->str:
     low=str(segment or '').casefold()
     if any(x in low for x in ('uitverkocht','out of stock','niet beschikbaar')):return 'OUT_OF_STOCK'
     if any(x in low for x in ('beperkte voorraad','limited stock')):return 'LIMITED_STOCK'
+    # Kuldipsingh public webshop uses 'Alleen beschikbaar in de winkels' for
+    # locally available store products. Treat this as commercial availability,
+    # never as structural engineering qualification.
+    if 'alleen beschikbaar in de winkels' in low:return 'AVAILABLE_TO_ORDER'
     if any(x in low for x in ('beschikbaar','toevoegen','add to cart','select options','bestel')):return 'AVAILABLE_TO_ORDER'
     return 'UNKNOWN'
 

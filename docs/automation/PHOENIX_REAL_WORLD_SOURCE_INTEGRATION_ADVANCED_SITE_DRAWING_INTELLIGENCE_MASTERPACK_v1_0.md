@@ -70,3 +70,24 @@ professioneel genormaliseerde jurisdiction-matching `action_load_input` beschikb
 - geen normwaarde-fabricatie;
 - geen stille materiaal-substitutie;
 - production release blijft LOCKED.
+
+## KULDIPSINGH R1 — Suriname source expansion
+
+Kuldipsingh is added as an explicit Suriname real-world supplier source.
+
+Configured evidence:
+- Kuldipsingh building-material webshop as `material_supply`;
+- the same public SRD product listings as `market_prices`;
+- Kuldipsingh Readymix public concrete-mortar capability;
+- Kuldipsingh concrete/prestressed-product public capability.
+
+Kuldipsingh webshop prices are marked `taxes_included=false`, because the
+public listings state prices excluding BTW.
+
+The phrase `Alleen beschikbaar in de winkels` is normalized as commercial
+`AVAILABLE_TO_ORDER` evidence for local-material availability. This does not
+create an `engineering_material_id` and therefore cannot by itself qualify a
+structural material for solver use.
+
+Structural grade, strength class, section properties and project-specific
+concrete mix/design remain separately gated.
