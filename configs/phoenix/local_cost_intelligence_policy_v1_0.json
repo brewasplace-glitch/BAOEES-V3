@@ -1,0 +1,53 @@
+{
+  "engine_id": "PHX-LOCAL-COST-INTELLIGENCE-CURRENCY-MARKET-PRICING",
+  "version": "1.0.0",
+  "runtime_version": "1.8.3",
+  "pricing_hierarchy": [
+    "CITY",
+    "REGION",
+    "COUNTRY"
+  ],
+  "freshness": {
+    "default_max_age_days": 90,
+    "rule": "valid_until may explicitly extend a source's current validity; otherwise age limit applies"
+  },
+  "selection": {
+    "maximum_selected_ratebooks": 3
+  },
+  "fx": {
+    "international_reference_fallback_allowed": false,
+    "silent_fx_conversion_for_local_costs": false,
+    "fx_quote_source_and_date_required_if_explicitly_enabled": true
+  },
+  "remote": {
+    "timeout_seconds": 8,
+    "maximum_bytes": 5000000
+  },
+  "tax": {
+    "automatic_tax_application": false,
+    "jurisdiction_and_source_rule_required": true
+  },
+  "contracts": {
+    "project_country_required": true,
+    "currency_from_explicit_or_validated_geography_only": true,
+    "ui_locale_must_not_define_currency": true,
+    "current_local_market_price_source_required": true,
+    "source_date_required": true,
+    "source_geography_required": true,
+    "source_currency_must_match_project_currency": true,
+    "stale_prices_must_block": true,
+    "price_source_traceability_per_line": true,
+    "professional_review_required": true,
+    "production_release": "LOCKED"
+  },
+  "revision": "FIXED_R1",
+  "fixed_r1": {
+    "root_cause": "obsolete regression expected Cost Planning PASSED from context-derived currency plus dummy generic ratebook",
+    "production_behavior_changed": false,
+    "currency_without_current_local_price_data": "BLOCKED_INPUT",
+    "current_local_price_evidence": "PASSED",
+    "silent_fx_fallback": false,
+    "automatic_tax_fabrication": false,
+    "production_release": "LOCKED"
+  }
+}

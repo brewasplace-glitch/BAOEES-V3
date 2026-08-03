@@ -26,6 +26,7 @@ from .adapter_runtime import (
 )
 from .architectural_bootstrap import generate_architectural_bootstrap
 from .project_context import generate_project_context
+from .local_cost_intelligence import build_local_cost_market_context, calculate_cost_items
 from .structural_profile import generate_structural_project_profile
 from .drawing_production import produce_architectural_drawings
 
@@ -573,14 +574,45 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
     arch=(state.get("capabilities") or {}).get("architecture") or {}
     arch_outputs=arch.get("outputs") or []
     model_ref=next((x for x in arch_outputs if x.endswith("/architectural_model.json")),None)
+    project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
 
-    ratebook_candidates=list((ctx["repository"]/"configs"/"phoenix").rglob("*ratebook*.json")) if (ctx["repository"]/"configs"/"phoenix").is_dir() else []
+    project_context={}
+    if project_context_ref:
+        path=(ctx["repository"]/project_context_ref).resolve()
+        if path.is_file():
+            try:
+                project_context=read_json(path)
+            except Exception:
+                project_context={}
+
+    market=build_local_cost_market_context(
+        repository=ctx["repository"],
+        project_id=ctx["project_id"],
+        project_context=project_context,
+        manifest=ctx["manifest"],
+    )
+
+    market_path=ctx["output_dir"]/"local_cost_market_context.json"
+    sources_path=ctx["output_dir"]/"local_cost_price_source_register.json"
+    write_json(market_path,market.market_context)
+    write_json(sources_path,market.source_register)
+
+    currency=market.market_context.get("project_currency")
+    if currency and ctx["manifest"].get("currency")!=currency:
+        _update_project_manifest(ctx,{"currency":currency,"currency_basis":"LOCAL_COST_INTELLIGENCE_FROM_PROJECT_GEOGRAPHY"})
+
     register={
-        "schema_version":"phoenix.cost-planning-session-input-register/1.0",
+        "schema_version":"phoenix.cost-planning-session-input-register/1.1",
         "project_id":ctx["project_id"],
         "architectural_model":model_ref,
-        "ratebook_candidates":[repo_ref(x,ctx["repository"]) for x in ratebook_candidates[:30]],
-        "currency":ctx["manifest"].get("currency"),
+        "project_context":project_context_ref,
+        "currency":currency,
+        "pricing_level":market.market_context.get("selected_pricing_level"),
+        "pricing_as_of_date":market.market_context.get("as_of_date"),
+        "pricing_gate":market.market_context.get("pricing_gate"),
+        "fx_used":market.market_context.get("fx_used",False),
+        "market_context":repo_ref(market_path,ctx["repository"]),
+        "price_source_register":repo_ref(sources_path,ctx["repository"]),
         "status":"INPUT_CHECK",
     }
     reg_path=ctx["output_dir"]/"cost_planning_input_register.json"
@@ -588,35 +620,90 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
 
     blockers=[]
     if not model_ref:
-        blockers.append({"reason":"ARCHITECTURAL_MODEL_REQUIRED","message":"Kosten/hoeveelheden vereisen een projectmodel of gevalideerde hoeveelheden."})
-    if not ratebook_candidates:
-        blockers.append({"reason":"RATEBOOK_REQUIRED","message":"Geen generiek Phoenix-ratebook gevonden."})
-    if not ctx["manifest"].get("currency"):
-        blockers.append({"reason":"CURRENCY_REQUIRED","message":"Projectvaluta is niet vastgelegd."})
+        blockers.append({
+            "reason":"ARCHITECTURAL_MODEL_REQUIRED",
+            "message":"Kosten/hoeveelheden vereisen een projectmodel of gevalideerde hoeveelheden."
+        })
+    blockers.extend(market.blockers)
+
+    outputs=[
+        repo_ref(reg_path,ctx["repository"]),
+        repo_ref(market_path,ctx["repository"]),
+        repo_ref(sources_path,ctx["repository"]),
+    ]
 
     if blockers:
         return finish(
             ctx,capability_id=cap,label=label,status="BLOCKED_INPUT",
-            outputs=[repo_ref(reg_path,ctx["repository"])],blockers=blockers,
+            outputs=outputs,blockers=blockers,warnings=market.warnings,
+            metadata={
+                "local_cost_intelligence_version":"1.0.0",
+                "project_currency":currency,
+                "pricing_gate":market.market_context.get("pricing_gate"),
+                "fx_used":False,
+            },
         )
 
+    # If a validated quantity take-off is present, price it immediately.
+    quantity_ref=next(
+        (x for x in arch_outputs if x.endswith("/quantity_takeoff.json") or x.endswith("/bill_of_quantities.json")),
+        None
+    )
+    calculation_ref=None
+    if quantity_ref:
+        qpath=(ctx["repository"]/quantity_ref).resolve()
+        try:
+            qvalue=read_json(qpath)
+            quantity_items=qvalue.get("items") if isinstance(qvalue,dict) else None
+        except Exception:
+            quantity_items=None
+        if isinstance(quantity_items,list):
+            calc=calculate_cost_items(quantity_items=quantity_items,market_result=market)
+            calc_path=ctx["output_dir"]/"local_cost_calculation.json"
+            write_json(calc_path,calc)
+            outputs.append(repo_ref(calc_path,ctx["repository"]))
+            calculation_ref=repo_ref(calc_path,ctx["repository"])
+            if calc.get("status")!="PASSED":
+                return finish(
+                    ctx,capability_id=cap,label=label,status="BLOCKED_INPUT",
+                    outputs=outputs,blockers=list(calc.get("blockers") or []),warnings=market.warnings,
+                    metadata={"local_cost_intelligence_version":"1.0.0","project_currency":currency},
+                )
+
     plan={
-        "schema_version":"phoenix.cost-planning-session-plan/1.0",
+        "schema_version":"phoenix.cost-planning-session-plan/1.1",
         "project_id":ctx["project_id"],
         "model":model_ref,
-        "ratebook":repo_ref(ratebook_candidates[0],ctx["repository"]),
-        "currency":ctx["manifest"]["currency"],
-        "cost_estimate_status":"READY_FOR_COST_ENGINE",
+        "project_context":project_context_ref,
+        "market_context":repo_ref(market_path,ctx["repository"]),
+        "price_source_register":repo_ref(sources_path,ctx["repository"]),
+        "currency":currency,
+        "pricing_level":market.market_context["selected_pricing_level"],
+        "primary_ratebook":market.market_context["primary_ratebook"],
+        "fx_used":False,
+        "international_fx_fallback":False,
+        "automatic_tax_application":False,
+        "local_price_traceability_required":True,
+        "cost_calculation":calculation_ref,
+        "cost_estimate_status":"READY_FOR_LOCAL_MARKET_COST_ENGINE" if calculation_ref is None else "LOCAL_COST_CALCULATION_AVAILABLE",
         "schedule_status":"READY_FOR_PLANNING_ENGINE",
         "professional_review_required":True,
+        "production_release":"LOCKED",
     }
     plan_path=ctx["output_dir"]/"cost_planning_plan.json"
     write_json(plan_path,plan)
+    outputs.append(repo_ref(plan_path,ctx["repository"]))
     return finish(
         ctx,capability_id=cap,label=label,status="PASSED",
-        outputs=[repo_ref(reg_path,ctx["repository"]),repo_ref(plan_path,ctx["repository"])],
+        outputs=outputs,warnings=market.warnings,
+        metadata={
+            "local_cost_intelligence_version":"1.0.0",
+            "project_currency":currency,
+            "pricing_level":market.market_context["selected_pricing_level"],
+            "pricing_as_of_date":market.market_context["as_of_date"],
+            "fx_used":False,
+        },
     )
-
 
 def run_reporting(ctx: dict[str, Any]) -> int:
     cap="reporting"

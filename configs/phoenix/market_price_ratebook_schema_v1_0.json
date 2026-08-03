@@ -1,0 +1,61 @@
+{
+  "schema_version": "phoenix.market-price-ratebook-schema/1.0",
+  "required_metadata": [
+    "ratebook_id",
+    "title",
+    "country_code",
+    "currency",
+    "effective_date",
+    "source_name"
+  ],
+  "optional_metadata": [
+    "region_name",
+    "city",
+    "valid_until",
+    "source_url",
+    "confidence",
+    "taxes_included",
+    "transport_included"
+  ],
+  "required_price_fields": [
+    "item_code",
+    "description",
+    "unit",
+    "unit_price"
+  ],
+  "price_components": [
+    "material",
+    "labour",
+    "equipment",
+    "transport",
+    "subcontractor",
+    "other"
+  ],
+  "example": {
+    "metadata": {
+      "ratebook_id": "EXAMPLE-NL-REGION-2026Q3",
+      "title": "VOORBEELD - geen echte prijsdata",
+      "country_code": "NL",
+      "region_name": "Voorbeeldregio",
+      "currency": "EUR",
+      "effective_date": "2026-08-01",
+      "valid_until": "2026-10-31",
+      "source_name": "Vervang door echte lokale bron",
+      "confidence": "LOW",
+      "taxes_included": false
+    },
+    "prices": [
+      {
+        "item_code": "EXAMPLE-001",
+        "description": "VOORBEELDREGEL - NIET GEBRUIKEN ALS MARKTPRIJS",
+        "unit": "m3",
+        "unit_price": 0.0,
+        "components": {
+          "material": 0.0,
+          "labour": 0.0
+        }
+      }
+    ]
+  },
+  "warning": "The example is schema documentation only and must never be installed as a selectable ratebook."
+}

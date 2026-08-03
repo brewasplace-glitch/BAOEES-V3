@@ -1,0 +1,227 @@
+{
+  "schema_version": "phoenix.currency-jurisdiction-catalog/1.0",
+  "version": "1.0.0",
+  "rule": "Currency may be derived only from explicit/validated project country or territory, never from UI locale.",
+  "jurisdictions": [
+    {
+      "country_code": "NL",
+      "name": "Nederland",
+      "currency_code": "EUR"
+    },
+    {
+      "country_code": "SR",
+      "name": "Suriname",
+      "currency_code": "SRD"
+    },
+    {
+      "country_code": "BE",
+      "name": "België",
+      "currency_code": "EUR"
+    },
+    {
+      "country_code": "DE",
+      "name": "Duitsland",
+      "currency_code": "EUR"
+    },
+    {
+      "country_code": "FR",
+      "name": "Frankrijk",
+      "currency_code": "EUR"
+    },
+    {
+      "country_code": "US",
+      "name": "Verenigde Staten",
+      "currency_code": "USD"
+    },
+    {
+      "country_code": "GB",
+      "name": "Verenigd Koninkrijk",
+      "currency_code": "GBP"
+    },
+    {
+      "country_code": "AW",
+      "name": "Aruba",
+      "currency_code": "AWG"
+    },
+    {
+      "country_code": "CW",
+      "name": "Curaçao",
+      "currency_code": "XCG"
+    },
+    {
+      "country_code": "SX",
+      "name": "Sint Maarten",
+      "currency_code": "XCG"
+    },
+    {
+      "country_code": "BQ",
+      "name": "Caribisch Nederland",
+      "currency_code": "USD"
+    },
+    {
+      "country_code": "GF",
+      "name": "Frans-Guyana",
+      "currency_code": "EUR"
+    },
+    {
+      "country_code": "GY",
+      "name": "Guyana",
+      "currency_code": "GYD"
+    },
+    {
+      "country_code": "BR",
+      "name": "Brazilië",
+      "currency_code": "BRL"
+    },
+    {
+      "country_code": "TT",
+      "name": "Trinidad en Tobago",
+      "currency_code": "TTD"
+    },
+    {
+      "country_code": "BB",
+      "name": "Barbados",
+      "currency_code": "BBD"
+    },
+    {
+      "country_code": "JM",
+      "name": "Jamaica",
+      "currency_code": "JMD"
+    },
+    {
+      "country_code": "BS",
+      "name": "Bahama's",
+      "currency_code": "BSD"
+    },
+    {
+      "country_code": "DO",
+      "name": "Dominicaanse Republiek",
+      "currency_code": "DOP"
+    },
+    {
+      "country_code": "CA",
+      "name": "Canada",
+      "currency_code": "CAD"
+    },
+    {
+      "country_code": "MX",
+      "name": "Mexico",
+      "currency_code": "MXN"
+    },
+    {
+      "country_code": "CH",
+      "name": "Zwitserland",
+      "currency_code": "CHF"
+    },
+    {
+      "country_code": "NO",
+      "name": "Noorwegen",
+      "currency_code": "NOK"
+    },
+    {
+      "country_code": "SE",
+      "name": "Zweden",
+      "currency_code": "SEK"
+    },
+    {
+      "country_code": "DK",
+      "name": "Denemarken",
+      "currency_code": "DKK"
+    },
+    {
+      "country_code": "PL",
+      "name": "Polen",
+      "currency_code": "PLN"
+    },
+    {
+      "country_code": "CZ",
+      "name": "Tsjechië",
+      "currency_code": "CZK"
+    },
+    {
+      "country_code": "HU",
+      "name": "Hongarije",
+      "currency_code": "HUF"
+    },
+    {
+      "country_code": "RO",
+      "name": "Roemenië",
+      "currency_code": "RON"
+    },
+    {
+      "country_code": "TR",
+      "name": "Turkije",
+      "currency_code": "TRY"
+    },
+    {
+      "country_code": "AE",
+      "name": "Verenigde Arabische Emiraten",
+      "currency_code": "AED"
+    },
+    {
+      "country_code": "SA",
+      "name": "Saoedi-Arabië",
+      "currency_code": "SAR"
+    },
+    {
+      "country_code": "ZA",
+      "name": "Zuid-Afrika",
+      "currency_code": "ZAR"
+    },
+    {
+      "country_code": "IN",
+      "name": "India",
+      "currency_code": "INR"
+    },
+    {
+      "country_code": "CN",
+      "name": "China",
+      "currency_code": "CNY"
+    },
+    {
+      "country_code": "JP",
+      "name": "Japan",
+      "currency_code": "JPY"
+    },
+    {
+      "country_code": "SG",
+      "name": "Singapore",
+      "currency_code": "SGD"
+    },
+    {
+      "country_code": "AU",
+      "name": "Australië",
+      "currency_code": "AUD"
+    },
+    {
+      "country_code": "NZ",
+      "name": "Nieuw-Zeeland",
+      "currency_code": "NZD"
+    },
+    {
+      "country_code": "ID",
+      "name": "Indonesië",
+      "currency_code": "IDR"
+    },
+    {
+      "country_code": "MY",
+      "name": "Maleisië",
+      "currency_code": "MYR"
+    },
+    {
+      "country_code": "TH",
+      "name": "Thailand",
+      "currency_code": "THB"
+    },
+    {
+      "country_code": "PH",
+      "name": "Filipijnen",
+      "currency_code": "PHP"
+    },
+    {
+      "country_code": "KR",
+      "name": "Zuid-Korea",
+      "currency_code": "KRW"
+    }
+  ]
+}

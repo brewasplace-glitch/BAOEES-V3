@@ -154,9 +154,21 @@ class ProjectContextStructuralDrawingTests(unittest.TestCase):
             self.assertEqual(m["location"],"Amsterdam, Nederland")
         finally:td.cleanup()
 
-    def test_09_permit_and_cost_can_consume_context_derived_from_explicit_location(self):
+    def test_09_permit_and_cost_consume_context_but_cost_requires_current_local_price_evidence(self):
         td,repo,session,sf=self.make_repo("Locatie: Amsterdam, Nederland\nPerceel 20 x 30 m\nOntwerp een vrijstaande woning van twee bouwlagen.")
         try:
+            # The temporary repository must use the installed Local Cost Intelligence
+            # source/policy contracts, just like the real repository.
+            for name in (
+                "local_cost_intelligence_policy_v1_0.json",
+                "currency_jurisdiction_catalog_v1_0.json",
+                "market_price_source_registry_v1_0.json",
+            ):
+                (repo/"configs/phoenix"/name).write_text(
+                    (ROOT/"configs/phoenix"/name).read_text(encoding="utf-8"),
+                    encoding="utf-8",
+                )
+
             ws=repo/session["bootstrap"]["workspace"]
             arch_out=ws/"results/session_adapters/architecture"
             self.assertEqual(run_adapter("architecture",repo,sf,ws,arch_out),0)
@@ -166,9 +178,51 @@ class ProjectContextStructuralDrawingTests(unittest.TestCase):
                     "status":"PASSED","outputs":arch_result["outputs"],"metadata":arch_result["metadata"]
                 }}
             }),encoding="utf-8")
+
             self.assertEqual(run_adapter("permit",repo,sf,ws,ws/"results/session_adapters/permit"),0)
-            (repo/"configs/phoenix/generic_ratebook.json").write_text(json.dumps({"version":"test"}),encoding="utf-8")
-            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,ws/"results/session_adapters/cost_planning"),0)
+
+            # Explicit geography correctly derives EUR, but currency alone must
+            # not falsely pass a cost estimate without current local price data.
+            cost_out=ws/"results/session_adapters/cost_planning"
+            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,cost_out),10)
+            blocked=json.loads((cost_out/"adapter_result.json").read_text())
+            self.assertEqual(blocked["status"],"BLOCKED_INPUT")
+            self.assertTrue(any(
+                item.get("reason")=="CURRENT_LOCAL_MARKET_PRICE_DATA_REQUIRED"
+                for item in blocked.get("blockers",[])
+            ))
+
+            # Add a valid current NL/EUR test ratebook with explicit evidence.
+            market_dir=repo/"inputs"/"market_prices"
+            market_dir.mkdir(parents=True,exist_ok=True)
+            ratebook={
+                "metadata":{
+                    "ratebook_id":"TEST-NL-CURRENT",
+                    "title":"Current NL test pricebook",
+                    "country_code":"NL",
+                    "currency":"EUR",
+                    "effective_date":"2026-01-01",
+                    "valid_until":"2099-12-31",
+                    "source_name":"TEST LOCAL PRICE SOURCE",
+                    "confidence":"HIGH",
+                    "taxes_included":False
+                },
+                "prices":[{
+                    "item_code":"TEST-001",
+                    "description":"Test local construction item",
+                    "unit":"st",
+                    "unit_price":100.0
+                }]
+            }
+            (market_dir/"nl_current_test_ratebook.json").write_text(
+                json.dumps(ratebook),encoding="utf-8"
+            )
+
+            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,cost_out),0)
+            passed=json.loads((cost_out/"adapter_result.json").read_text())
+            self.assertEqual(passed["status"],"PASSED")
+            self.assertEqual(passed["metadata"]["project_currency"],"EUR")
+            self.assertFalse(passed["metadata"]["fx_used"])
         finally:td.cleanup()
 
 if __name__=="__main__":unittest.main()

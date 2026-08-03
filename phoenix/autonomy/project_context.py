@@ -10,7 +10,7 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 @dataclass
 class ProjectContextResult:
@@ -24,12 +24,33 @@ def _clean_lines(brief: str) -> list[str]:
 
 def _country(text: str) -> tuple[str | None, str]:
     low=text.lower()
-    if re.search(r"\b(nederland|netherlands)\b", low): return "NL","EXPLICIT_BRIEF"
-    if re.search(r"\b(suriname)\b", low): return "SR","EXPLICIT_BRIEF"
-    if re.search(r"\b(belgi[eë]|belgium)\b", low): return "BE","EXPLICIT_BRIEF"
-    if re.search(r"\b(duitsland|germany)\b", low): return "DE","EXPLICIT_BRIEF"
-    if re.search(r"\b(france|frankrijk)\b", low): return "FR","EXPLICIT_BRIEF"
-    if re.search(r"\b(united states|verenigde staten|usa|u\.s\.)\b", low): return "US","EXPLICIT_BRIEF"
+    patterns=[
+        ("NL",r"\b(nederland|netherlands)\b"),
+        ("SR",r"\b(suriname)\b"),
+        ("BE",r"\b(belgi[eë]|belgium)\b"),
+        ("DE",r"\b(duitsland|germany)\b"),
+        ("FR",r"\b(france|frankrijk)\b"),
+        ("US",r"\b(united states|verenigde staten|usa|u\.s\.)\b"),
+        ("GB",r"\b(united kingdom|verenigd koninkrijk|groot[- ]?brittanni[eë]|uk)\b"),
+        ("AW",r"\b(aruba)\b"),
+        ("CW",r"\b(cura[cç]ao)\b"),
+        ("SX",r"\b(sint maarten|saint martin dutch)\b"),
+        ("BQ",r"\b(caribisch nederland|bonaire|sint eustatius|saba)\b"),
+        ("GF",r"\b(frans[- ]?guyana|french guiana)\b"),
+        ("GY",r"\b(guyana)\b"),
+        ("BR",r"\b(brazili[eë]|brazil)\b"),
+        ("TT",r"\b(trinidad(?: en| and)? tobago)\b"),
+    ]
+    for code,pattern in patterns:
+        if re.search(pattern,low):
+            return code,"EXPLICIT_BRIEF"
+    return None,"MISSING"
+
+def _region(lines: list[str]) -> tuple[str | None,str]:
+    for line in lines:
+        m=re.match(r"(?i)^(?:regio|provincie|district|gebiedsdeel|region)\s*[:=-]\s*(.+)$",line)
+        if m and m.group(1).strip():
+            return m.group(1).strip(),"EXPLICIT_BRIEF"
     return None,"MISSING"
 
 def _location(lines: list[str]) -> tuple[str | None,str]:
@@ -46,7 +67,7 @@ def _currency(text: str,country_code: str | None) -> tuple[str | None,str]:
     if re.search(r"\beuro(?:'s)?\b|€",low): return "EUR","EXPLICIT_BRIEF"
     if re.search(r"\bsurinam(?:e|ese)\s+dollar\b|\bsrd\b",low): return "SRD","EXPLICIT_BRIEF"
     if re.search(r"\bus\s*dollar\b|\busd\b",low): return "USD","EXPLICIT_BRIEF"
-    mapping={"NL":"EUR","BE":"EUR","DE":"EUR","FR":"EUR","SR":"SRD","US":"USD"}
+    mapping={"NL":"EUR","BE":"EUR","DE":"EUR","FR":"EUR","SR":"SRD","US":"USD","GB":"GBP","AW":"AWG","CW":"XCG","SX":"XCG","BQ":"USD","GF":"EUR","GY":"GYD","BR":"BRL","TT":"TTD"}
     if country_code in mapping:
         return mapping[country_code],"DERIVED_FROM_EXPLICIT_COUNTRY"
     return None,"MISSING"
@@ -99,6 +120,7 @@ def generate_project_context(*, project_id:str, brief:str, architectural_model:d
     lines=_clean_lines(brief)
     text="\n".join(lines)
     location,location_basis=_location(lines)
+    region,region_basis=_region(lines)
     country_code,country_basis=_country(text)
     currency,currency_basis=_currency(text,country_code)
     plot_w,plot_d,plot_basis=_plot_dimensions(text)
@@ -134,6 +156,8 @@ def generate_project_context(*, project_id:str, brief:str, architectural_model:d
         "project_location_basis":location_basis,
         "country_code":country_code,
         "country_basis":country_basis,
+        "region":region,
+        "region_basis":region_basis,
         "currency":currency,
         "currency_basis":currency_basis,
         "jurisdiction_status":"PARTIAL" if country_code else "MISSING",
@@ -182,5 +206,6 @@ def generate_project_context(*, project_id:str, brief:str, architectural_model:d
     updates={"project_context_status":"AVAILABLE_CANDIDATE"}
     if location: updates["location"]=location
     if country_code: updates["country_code"]=country_code
+    if region: updates["region"]=region
     if currency: updates["currency"]=currency
     return ProjectContextResult(context,assumptions,site,updates)

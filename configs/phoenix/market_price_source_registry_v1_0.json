@@ -1,0 +1,38 @@
+{
+  "schema_version": "phoenix.market-price-source-registry/1.0",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "PROJECT_INPUT_MARKET_PRICES",
+      "kind": "filesystem_glob",
+      "glob": "inputs/market_prices/**/*.json",
+      "priority": 400,
+      "max_age_days": 90,
+      "enabled": true,
+      "purpose": "Project-specific/local current price snapshots supplied or generated for this repository."
+    },
+    {
+      "source_id": "PROJECT_DATA_MARKET_PRICES",
+      "kind": "filesystem_glob",
+      "glob": "data/market_prices/**/*.json",
+      "priority": 300,
+      "max_age_days": 90,
+      "enabled": true,
+      "purpose": "Managed Phoenix local/regional/country ratebooks."
+    },
+    {
+      "source_id": "CONFIGURED_MARKET_RATEBOOKS",
+      "kind": "filesystem_glob",
+      "glob": "configs/phoenix/market_price_ratebooks/**/*.json",
+      "priority": 200,
+      "max_age_days": 90,
+      "enabled": true,
+      "purpose": "Repository-configured ratebooks."
+    }
+  ],
+  "remote_source_contract": {
+    "supported_kind": "https_json",
+    "default_enabled": false,
+    "note": "Add authoritative supplier/official/provider feeds explicitly; Phoenix ships no fabricated live-price endpoint."
+  }
+}

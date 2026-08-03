@@ -1,0 +1,7 @@
+{
+  "schema_version": "phoenix.fx-source-registry/1.0",
+  "version": "1.0.0",
+  "international_reference_fallback_enabled": false,
+  "sources": [],
+  "rule": "Local price data in project currency is required by default. FX fallback must be explicitly enabled and evidenced."
+}
