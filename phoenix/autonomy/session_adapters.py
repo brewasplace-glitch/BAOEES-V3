@@ -342,12 +342,18 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     metadata["all_structural_materials_locally_confirmed"]=material_result.selection_register.get(
         "all_structural_requirements_locally_confirmed",False
     )
+    metadata["all_structural_materials_engineering_qualified"]=material_result.selection_register.get(
+        "all_structural_requirements_engineering_qualified",False
+    )
 
     profile_value.setdefault("local_material_policy",{}).update({
         "status":material_result.status,
         "selection_register":repo_ref(material_selection_path,ctx["repository"]),
         "all_structural_requirements_locally_confirmed":material_result.selection_register.get(
             "all_structural_requirements_locally_confirmed",False
+        ),
+        "all_structural_requirements_engineering_qualified":material_result.selection_register.get(
+            "all_structural_requirements_engineering_qualified",False
         ),
         "automatic_product_substitution":False,
         "material_substitution_requires_recalculation":True,
@@ -844,6 +850,12 @@ def run_closure(ctx: dict[str, Any]) -> int:
             "capability_id":"architecture",
             "reason":"LOCAL_MATERIAL_SUPPLY_GATE_NOT_PASSED",
             "status":material_gate.get("status") or "MISSING",
+        })
+    if not material_gate.get("all_structural_requirements_engineering_qualified",False):
+        blockers.append({
+            "capability_id":"structural_engineering",
+            "reason":"LOCAL_STRUCTURAL_PRODUCT_TECHNICAL_EVIDENCE_REQUIRED",
+            "status":"TECHNICAL_PRODUCT_EVIDENCE_REQUIRED",
         })
 
     gate={

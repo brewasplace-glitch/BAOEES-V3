@@ -1,23 +1,264 @@
 {
-  "schema_version": "phoenix.real-world-data-source-registry/1.0",
-  "version": "1.0.0",
-  "providers": [],
+  "schema_version": "phoenix.real-world-data-source-registry/1.1",
+  "version": "1.1.0",
+  "providers": [
+    {
+      "provider_id": "SR_BESTBUY_CEMENT_MATERIALS",
+      "category": "material_supply",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://bestbuy.sr/s/cement-meer",
+      "source_name": "Best Buy Suriname – Cement & Beton / Wapening & Metaal",
+      "supplier_id": "BESTBUY-SR",
+      "supplier_name": "Best Buy Suriname",
+      "confidence": "HIGH",
+      "taxes_included": true
+    },
+    {
+      "provider_id": "SR_BESTBUY_CEMENT_PRICES",
+      "category": "market_prices",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://bestbuy.sr/s/cement-meer",
+      "source_name": "Best Buy Suriname – actuele openbare productprijzen",
+      "title": "Best Buy Suriname Cement/Wapening Market Snapshot",
+      "confidence": "HIGH",
+      "taxes_included": true
+    },
+    {
+      "provider_id": "SR_BESTBUY_TIMBER_MATERIALS",
+      "category": "material_supply",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://bestbuy.sr/s/hout",
+      "source_name": "Best Buy Suriname – Hout",
+      "supplier_id": "BESTBUY-SR",
+      "supplier_name": "Best Buy Suriname",
+      "confidence": "HIGH",
+      "taxes_included": true
+    },
+    {
+      "provider_id": "SR_BESTBUY_TIMBER_PRICES",
+      "category": "market_prices",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://bestbuy.sr/s/hout",
+      "source_name": "Best Buy Suriname – Houtprijzen",
+      "title": "Best Buy Suriname Timber Market Snapshot",
+      "confidence": "HIGH",
+      "taxes_included": true
+    },
+    {
+      "provider_id": "SR_VABI_BLOCKS_MATERIALS",
+      "category": "material_supply",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://www.vabi.sr/en/bouwstenen/",
+      "source_name": "N.V. VABI – Building Blocks",
+      "supplier_id": "VABI-SR",
+      "supplier_name": "N.V. VABI",
+      "confidence": "HIGH",
+      "taxes_included": true
+    },
+    {
+      "provider_id": "SR_VABI_BLOCKS_PRICES",
+      "category": "market_prices",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://www.vabi.sr/en/bouwstenen/",
+      "source_name": "N.V. VABI – openbare bouwsteenprijzen",
+      "title": "VABI Building Blocks Market Snapshot",
+      "confidence": "HIGH",
+      "taxes_included": true
+    },
+    {
+      "provider_id": "SR_HORIZON_MARKET_PRICES",
+      "category": "market_prices",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://www.horizon.sr/",
+      "source_name": "Horizon.sr – bouwmaterialenplatform",
+      "title": "Horizon Suriname Market Snapshot",
+      "confidence": "MEDIUM",
+      "taxes_included": null
+    },
+    {
+      "provider_id": "SR_HORIZON_MATERIALS",
+      "category": "material_supply",
+      "response_type": "html_products",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://www.horizon.sr/",
+      "source_name": "Horizon.sr – bouwmaterialenplatform",
+      "supplier_id": "HORIZON-SR",
+      "supplier_name": "Horizon.sr",
+      "confidence": "MEDIUM"
+    },
+    {
+      "provider_id": "SR_SUBEMA_READY_MIX_CAPABILITY",
+      "category": "material_supply",
+      "response_type": "html_capability",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "SRD",
+      "url": "https://www.subema.sr/bedrijfsprofiel/",
+      "source_name": "N.V. SUBEMA – public company/product capability evidence",
+      "supplier_id": "SUBEMA-SR",
+      "supplier_name": "N.V. SUBEMA",
+      "confidence": "HIGH",
+      "capability_records": [
+        {
+          "product_id": "SUBEMA-READY-MIX-CAPABILITY",
+          "description": "Ready-mix concrete capability C8/10 through C53/65 (supplier public capability evidence)",
+          "material_family": "structural_concrete",
+          "availability_status": "AVAILABLE_TO_ORDER",
+          "unit": "m3",
+          "technical_properties": {
+            "declared_grade_range": "C8/10-C53/65",
+            "supplier_standard_claim": "NEN-EN",
+            "specific_mix_design_required": true
+          }
+        }
+      ]
+    },
+    {
+      "provider_id": "SR_HURRICANE_STEEL_CAPABILITY",
+      "category": "material_supply",
+      "response_type": "html_capability",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "currency": "USD",
+      "url": "https://www.hurricanesteel.com/",
+      "source_name": "Hurricane Steel – local steel profiling/building material capability",
+      "supplier_id": "HURRICANE-STEEL-SR",
+      "supplier_name": "Hurricane Steel",
+      "confidence": "MEDIUM",
+      "capability_records": [
+        {
+          "product_id": "HURRICANE-STEEL-PROFILE-CAPABILITY",
+          "description": "Local galvanized steel profiling/building-material manufacturing capability",
+          "material_family": "structural_steel_section",
+          "availability_status": "AVAILABLE_TO_ORDER",
+          "unit": "project_quote",
+          "technical_properties": {
+            "specific_section_and_grade_required": true
+          }
+        }
+      ]
+    },
+    {
+      "provider_id": "SR_GOV_BUILDING_LAWS",
+      "category": "regulatory_reference",
+      "response_type": "html_regulatory_reference",
+      "enabled": true,
+      "runtime_live_source": true,
+      "country_codes": [
+        "SR"
+      ],
+      "country_code": "SR",
+      "region_name": "Paramaribo",
+      "municipality": "Paramaribo",
+      "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/",
+      "source_name": "Government of Suriname – Bouwwetten en regels",
+      "title": "Suriname building laws and regulations index",
+      "confidence": "HIGH"
+    }
+  ],
   "remote": {
-    "timeout_seconds": 8,
-    "maximum_bytes": 5000000
+    "timeout_seconds": 12,
+    "maximum_bytes": 8000000,
+    "max_unique_urls_per_run": 8
   },
   "categories": [
     "market_prices",
     "material_supply",
     "structural_action_load",
-    "site_context"
+    "site_context",
+    "regulatory_reference"
   ],
   "rules": {
     "https_only": true,
     "explicit_or_configured_sources_only": true,
     "web_search_is_not_implicitly_performed": true,
     "source_provenance_required": true,
-    "sha256_required": true
+    "sha256_required": true,
+    "test_mode_disables_runtime_live_sources": true
   },
-  "note": "Configure authoritative providers explicitly or upload machine-readable evidence/source manifests. No fabricated provider is shipped."
+  "source_profile": "SURINAME_PUBLIC_CONSTRUCTION_SOURCES_v1.0",
+  "note": "Public source profile is explicit configuration, not implicit web search. Runtime fetches may fail safely without fabricating data."
 }

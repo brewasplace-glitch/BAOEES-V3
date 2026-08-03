@@ -1,0 +1,24 @@
+{
+  "engine_id": "PHX-REAL-WORLD-SOURCE-INTEGRATION-ADVANCED-SITE-DRAWING-INTELLIGENCE",
+  "version": "1.0.0",
+  "runtime_version": "1.8.7",
+  "advanced_pdf": {
+    "pymupdf_required": true,
+    "pypdf_fallback": true,
+    "vector_scale_geometry": true,
+    "ocr_false_pass": false,
+    "cadastral_false_pass": false
+  },
+  "source_integration": {
+    "public_suriname_profile": true,
+    "implicit_web_search": false,
+    "configured_https_sources": true,
+    "test_mode_disables_live_fetch": true
+  },
+  "material_contract": {
+    "commercial_availability_separated_from_engineering_qualification": true,
+    "structural_solver_requires_engineering_qualification": true,
+    "cost_plan_may_use_commercial_local_availability": true
+  },
+  "production_release": "LOCKED"
+}

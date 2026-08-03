@@ -29,7 +29,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 CONFIRMED_SOURCE_STATES = {"IN_STOCK", "AVAILABLE_TO_ORDER"}
 PROBABLE_SOURCE_STATES = {"LIMITED_STOCK"}
@@ -460,19 +460,21 @@ def build_local_material_supply_context(
         matches=[p for p in products if str(p.get("material_family") or "")==family]
         matches.sort(key=lambda x:x["selection_score"],reverse=True)
 
-        confirmed=[
-            p for p in matches
-            if p["availability_status"]=="LOCAL_AVAILABILITY_CONFIRMED"
-            and (not req["technical_properties_required"] or p["structural_technical_properties_complete"])
-        ]
+        confirmed=[p for p in matches if p["availability_status"]=="LOCAL_AVAILABILITY_CONFIRMED"]
         selected=confirmed[0] if confirmed else None
 
         if selected:
+            engineering_qualified=(
+                not req["technical_properties_required"]
+                or bool(selected.get("structural_technical_properties_complete"))
+            )
             selections.append({
                 "requirement_id":req["requirement_id"],
                 "element_role":req["element_role"],
                 "material_family":family,
                 "selection_status":"LOCAL_AVAILABILITY_CONFIRMED",
+                "commercial_availability_confirmed":True,
+                "engineering_qualification_status":"QUALIFIED" if engineering_qualified else "TECHNICAL_PRODUCT_EVIDENCE_REQUIRED",
                 "selected_product":selected,
                 "alternatives":[
                     {k:v for k,v in p.items() if k!="technical_properties"}
@@ -480,6 +482,12 @@ def build_local_material_supply_context(
                 ],
                 "substitution_policy":"RECALCULATION_AND_REVIEW_REQUIRED",
             })
+            if req["technical_properties_required"] and not engineering_qualified:
+                blockers.append({
+                    "reason":"LOCAL_STRUCTURAL_PRODUCT_TECHNICAL_EVIDENCE_REQUIRED",
+                    "requirement_id":req["requirement_id"],"material_family":family,
+                    "message":f"{family} is commercieel lokaal verkrijgbaar, maar product-/sterkteklasse-evidence ontbreekt voor constructieve vrijgave."
+                })
             continue
 
         import_candidates=[
@@ -517,6 +525,8 @@ def build_local_material_supply_context(
             "element_role":req["element_role"],
             "material_family":family,
             "selection_status":status,
+            "commercial_availability_confirmed":False,
+            "engineering_qualification_status":"NOT_QUALIFIED",
             "selected_product":None,
             "candidates":[{k:v for k,v in p.items() if k!="technical_properties"} for p in candidates],
             "substitution_policy":"RECALCULATION_AND_REVIEW_REQUIRED",
@@ -531,16 +541,16 @@ def build_local_material_supply_context(
     all_confirmed=bool(requirements["requirements"]) and all(
         x["selection_status"]=="LOCAL_AVAILABILITY_CONFIRMED" for x in selections
     )
-    structural_confirmed=all(
-        any(
-            s["requirement_id"]==req["requirement_id"]
-            and s["selection_status"]=="LOCAL_AVAILABILITY_CONFIRMED"
-            for s in selections
-        )
+    structural_commercial_confirmed=all(
+        any(s["requirement_id"]==req["requirement_id"] and s["selection_status"]=="LOCAL_AVAILABILITY_CONFIRMED" for s in selections)
+        for req in requirements["requirements"] if req["structural"]
+    )
+    structural_engineering_qualified=all(
+        any(s["requirement_id"]==req["requirement_id"] and s.get("engineering_qualification_status")=="QUALIFIED" for s in selections)
         for req in requirements["requirements"] if req["structural"]
     )
 
-    status="PASSED" if geography["country_code"] and all_confirmed else "BLOCKED"
+    status="PASSED" if geography["country_code"] and all_confirmed and structural_engineering_qualified else "BLOCKED"
     selection_register={
         "schema_version":"phoenix.local-material-selection-register/1.0",
         "engine_version":VERSION,
@@ -551,7 +561,9 @@ def build_local_material_supply_context(
         "local_means":["CITY","REGION","COUNTRY"],
         "status":status,
         "all_requirements_locally_confirmed":all_confirmed,
-        "all_structural_requirements_locally_confirmed":structural_confirmed,
+        "all_requirements_commercially_available":all_confirmed,
+        "all_structural_requirements_locally_confirmed":structural_commercial_confirmed,
+        "all_structural_requirements_engineering_qualified":structural_engineering_qualified,
         "selections":selections,
         "automatic_import_approval":False,
         "automatic_product_substitution":False,

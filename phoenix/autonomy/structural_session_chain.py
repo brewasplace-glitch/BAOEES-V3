@@ -338,11 +338,11 @@ def run_structural_chain(
             material_selection=_read(material_selection_path)
         except Exception:
             material_selection={}
-    if not material_selection.get("all_structural_requirements_locally_confirmed",False):
+    if not material_selection.get("all_structural_requirements_engineering_qualified",False):
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block(
             "LOCAL_STRUCTURAL_MATERIAL_AVAILABILITY_REQUIRED",
-            "v8.2 kan zijn afgerond, maar vóór solvermateriaalgebruik moeten alle constructieve materialen/producten lokaal bevestigd zijn.",
+            "v8.2 kan zijn afgerond, maar vóór solvermateriaalgebruik moeten constructieve producten lokaal beschikbaar én technisch engineering-gekwalificeerd zijn.",
             completed,"8.3.0",outputs,register,
             {"material_selection":_repo_ref(material_selection_path,repository) if material_selection_path else None}
         )

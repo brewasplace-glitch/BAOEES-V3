@@ -18,7 +18,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-VERSION="1.0.0"
+VERSION="1.1.0"
 
 @dataclass
 class SiteParcelResult:
@@ -220,18 +220,103 @@ def _dxf_site(path:Path)->tuple[dict[str,Any]|None,list[str]]:
         "dxf_insunits":unit_code,
     },warnings
 
-def _pdf_text(path:Path)->tuple[str|None,str|None]:
+def _pdf_scale(text:str)->tuple[float|None,str|None]:
+    m=re.search(r"(?i)\b(?:schaal|scale)\s*[:=]?\s*1\s*[:/]\s*(\d{2,6})\b",str(text or ""))
+    if not m:return None,None
+    value=float(m.group(1))
+    return value,"EXPLICIT_DRAWING_SCALE"
+
+def _street_candidates(text:str)->list[str]:
+    found=[]
+    for m in re.finditer(r"(?i)\b([A-ZÀ-ÿ][A-Za-zÀ-ÿ0-9.'’\- ]{1,60}(?:straat|weg|laan|dreef|rijweg|gracht|avenue))\b",str(text or "")):
+        value=re.sub(r"\s+"," ",m.group(1)).strip()
+        if value not in found:found.append(value)
+    return found[:10]
+
+def _rect_candidate_from_drawings(page,scale_value:float|None,explicit_dims:tuple[float|None,float|None]):
+    if scale_value is None:return None
+    page_rect=page.rect
+    candidates=[]
+    expected=[x for x in explicit_dims if x]
+    for drawing in page.get_drawings():
+        rect=drawing.get("rect")
+        if rect is None:continue
+        w=float(rect.width);h=float(rect.height)
+        if w<20 or h<20:continue
+        # Exclude page border / title block sized rectangles.
+        if w>page_rect.width*0.94 and h>page_rect.height*0.94:continue
+        # A closed vector path or a rectangle command is stronger evidence.
+        items=drawing.get("items") or []
+        has_rect=any(item and item[0]=='re' for item in items)
+        closed=bool(drawing.get("closePath")) or has_rect
+        if not closed:continue
+        factor=0.0254/72.0*scale_value
+        wm=w*factor;hm=h*factor
+        if not (2<=wm<=5000 and 2<=hm<=5000):continue
+        score=50
+        if has_rect:score+=30
+        if expected and len(expected)>=2:
+            a,b=expected[0],expected[1]
+            err=min(abs(wm-a)/max(a,1)+abs(hm-b)/max(b,1),abs(wm-b)/max(b,1)+abs(hm-a)/max(a,1))
+            score+=max(0,200-int(err*200))
+        candidates.append((score,wm,hm,rect))
+    return max(candidates,key=lambda x:x[0]) if candidates else None
+
+def _pdf_advanced(path:Path)->tuple[dict[str,Any]|None,list[str]]:
+    warnings=[]
+    try:
+        import fitz
+    except Exception:
+        return None,["PYMUPDF_REQUIRED_FOR_ADVANCED_PDF_SITE_INTELLIGENCE"]
+    try:
+        doc=fitz.open(str(path))
+    except Exception as exc:
+        return None,[f"PDF_OPEN_FAILED:{exc}"]
+    best=None
+    for page_index,page in enumerate(doc):
+        text=page.get_text("text") or ""
+        width,depth=_dimensions_from_text(text)
+        north,north_basis=_north_from_text(text)
+        scale_value,scale_basis=_pdf_scale(text)
+        streets=_street_candidates(text)
+        rect_candidate=_rect_candidate_from_drawings(page,scale_value,(width,depth))
+        source="PDF_TEXT_EVIDENCE"
+        score=0
+        if width and depth:score+=160
+        if scale_value:score+=40
+        if north is not None:score+=40
+        if streets:score+=20
+        data={
+            "width_m":width,"depth_m":depth,"north_angle_deg":north,"north_basis":north_basis,
+            "drawing_scale":scale_value,"drawing_scale_basis":scale_basis,
+            "street_candidates":streets,"source_type":source,"pdf_page":page_index+1,
+            "pdf_text_extractor":"PyMuPDF","vector_geometry_extractor":"PyMuPDF",
+        }
+        if rect_candidate:
+            rscore,wm,hm,rect=rect_candidate
+            score+=rscore
+            data["vector_rectangle_candidate_m"]={"width_m":round(wm,3),"depth_m":round(hm,3)}
+            if not width or not depth:
+                data["width_m"]=round(wm,3);data["depth_m"]=round(hm,3)
+                data["source_type"]="PDF_VECTOR_SCALE_EVIDENCE"
+        if data.get("width_m") and data.get("depth_m"):
+            data["score"]=score
+            if best is None or score>best[0]:best=(score,data)
+    doc.close()
+    if best:return best[1],warnings
+
+    # Fallback text-only parser for PDFs where PyMuPDF yields no usable geometry.
     try:
         from pypdf import PdfReader
-        reader=PdfReader(str(path))
-        return "\n".join((p.extract_text() or "") for p in reader.pages),"pypdf"
-    except Exception:
-        try:
-            from PyPDF2 import PdfReader
-            reader=PdfReader(str(path))
-            return "\n".join((p.extract_text() or "") for p in reader.pages),"PyPDF2"
-        except Exception:
-            return None,None
+        reader=PdfReader(str(path));text="\n".join((p.extract_text() or "") for p in reader.pages)
+        width,depth=_dimensions_from_text(text);north,north_basis=_north_from_text(text);scale_value,scale_basis=_pdf_scale(text)
+        if width and depth:
+            return {"width_m":width,"depth_m":depth,"north_angle_deg":north,"north_basis":north_basis,
+                    "drawing_scale":scale_value,"drawing_scale_basis":scale_basis,
+                    "street_candidates":_street_candidates(text),"source_type":"PDF_TEXT_EVIDENCE","pdf_text_extractor":"pypdf"},warnings
+    except Exception as exc:
+        warnings.append(f"PYPDF_FALLBACK_FAILED:{exc}")
+    return None,warnings or ["PDF_NO_VALIDATED_SITE_FACTS"]
 
 def analyze_site_drawings(
     *,
@@ -253,18 +338,8 @@ def analyze_site_drawings(
             elif suffix==".dxf":
                 data,dxf_warnings=_dxf_site(path);warnings.extend(dxf_warnings)
             elif suffix==".pdf":
-                text,extractor=_pdf_text(path)
-                if text:
-                    width,depth=_dimensions_from_text(text)
-                    north,north_basis=_north_from_text(text)
-                    if width and depth:
-                        data={
-                            "width_m":width,"depth_m":depth,
-                            "north_angle_deg":north,"north_basis":north_basis,
-                            "source_type":"PDF_TEXT_EVIDENCE","pdf_text_extractor":extractor,
-                        }
-                else:
-                    warnings.append(f"PDF_TEXT_EXTRACTION_UNAVAILABLE:{path.name}")
+                data,pdf_warnings=_pdf_advanced(path)
+                warnings.extend(f"{x}:{path.name}" for x in pdf_warnings)
             elif suffix==".dwg":
                 warnings.append(f"DWG_TO_DXF_CONVERSION_REQUIRED:{path.name}")
             elif suffix in {".png",".jpg",".jpeg",".webp"}:
@@ -310,6 +385,8 @@ def analyze_site_drawings(
     site["status"]="SITE_DRAWING_EVIDENCE"
     site["site_evidence_source"]=source.relative_to(repository).as_posix() if repository in source.parents else str(source)
     site["site_evidence_type"]=data.get("source_type")
+    site["drawing_scale"]=data.get("drawing_scale")
+    site["street_candidates"]=data.get("street_candidates") or []
     site.setdefault("plot",{})
     site["plot"].update({
         "width_m":data["width_m"],"depth_m":data["depth_m"],
@@ -344,6 +421,10 @@ def analyze_site_drawings(
         "selected_type":data.get("source_type"),
         "plot_width_m":data["width_m"],"plot_depth_m":data["depth_m"],
         "north_angle_deg":data.get("north_angle_deg"),
+        "drawing_scale":data.get("drawing_scale"),
+        "street_candidates":data.get("street_candidates") or [],
+        "pdf_page":data.get("pdf_page"),
+        "vector_rectangle_candidate_m":data.get("vector_rectangle_candidate_m"),
         "legal_boundary_confirmed":False,
         "cadastral_validation":False,
         "planning_validation":False,

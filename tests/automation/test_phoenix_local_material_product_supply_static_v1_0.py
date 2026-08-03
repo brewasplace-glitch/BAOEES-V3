@@ -41,8 +41,8 @@ class LocalMaterialStaticTests(unittest.TestCase):
         self.assertIn('"recalculation_required_if_substituted":True',text)
 
     def test_07_runtime_1_8_5_gate(self):
-        self.assertIn('VERSION = "1.8.6"',SERVER.read_text(encoding="utf-8"))
-        self.assertIn('value.get("version") != "1.8.6"',LAUNCHER.read_text(encoding="utf-8"))
+        self.assertIn('VERSION = "1.8.7"',SERVER.read_text(encoding="utf-8"))
+        self.assertIn('value.get("version") != "1.8.7"',LAUNCHER.read_text(encoding="utf-8"))
 
     def test_08_zero_idle_polling_preserved(self):
         js=ROOT/"phoenix"/"local_app"/"static"/"official_start_v3_0"/"PROJECT_PHOENIX_official_start_v3_visual_v3_0_2.js"

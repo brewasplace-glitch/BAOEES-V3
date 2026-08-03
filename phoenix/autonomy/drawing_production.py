@@ -153,8 +153,13 @@ def _site_plan(project_id:str,model:dict[str,Any],site:dict[str,Any],out:Path)->
     scale=min(28.0,650/max(pw,1),520/max(pd,1));ox=100;oy=120
     svg=_svg_header("SITUATIE / TERREINCONTEXT · CONCEPT")
     svg += [f'<rect x="{ox}" y="{oy}" width="{pw*scale:.1f}" height="{pd*scale:.1f}" fill="none" stroke="#111" stroke-width="2"/>',
-            f'<rect x="{ox+bx*scale:.1f}" y="{oy+(pd-by-bd)*scale:.1f}" width="{bw*scale:.1f}" height="{bd*scale:.1f}" fill="none" stroke="#111" stroke-width="3"/>',
-            f'<text x="{ox+pw*scale+35:.1f}" y="{oy+30:.1f}" font-family="Arial" font-size="18">N ↑</text>']
+            f'<rect x="{ox+bx*scale:.1f}" y="{oy+(pd-by-bd)*scale:.1f}" width="{bw*scale:.1f}" height="{bd*scale:.1f}" fill="none" stroke="#111" stroke-width="3"/>']
+    orientation=site.get("orientation") or {}
+    north=orientation.get("north_angle_deg") if isinstance(orientation,dict) else None
+    if north is not None:
+        svg += [f'<text x="{ox+pw*scale+35:.1f}" y="{oy+30:.1f}" font-family="Arial" font-size="16">N {float(north):.1f}°</text>']
+    else:
+        svg += [f'<text x="{ox+pw*scale+35:.1f}" y="{oy+30:.1f}" font-family="Arial" font-size="12">NOORDRICHTING NIET GEVALIDEERD</text>']
     if site.get("status")=="SCHEMATIC_ASSUMPTION":
         svg += [f'<text x="{ox}" y="{oy+pd*scale+35:.1f}" font-family="Arial" font-size="12" font-weight="bold">LET OP: SCHEMATISCHE PERCEELCONTEXT — GEEN KADASTRALE / JURIDISCHE GRENS</text>']
     else:
@@ -184,7 +189,7 @@ def produce_architectural_drawings(*,project_id:str,architectural_model:dict[str
         if site_context.get("status")=="SCHEMATIC_ASSUMPTION":
             coverage["site_plan"]={"status":"BLOCKED","stage":"SCHEMATIC_ONLY","reason":"SITE_FACTS_REQUIRED_FOR_SITUATION_PLAN","message":"Schematische situatietekening geproduceerd, maar echte perceel-/locatiegegevens ontbreken."}
         else:
-            coverage["site_plan"]={"status":"PASSED","stage":"CONCEPT_FOR_REVIEW","reason":None,"message":"Situatietekening uit opgegeven perceelafmetingen geproduceerd; kadastrale/planningsvalidatie blijft vereist."}
+            coverage["site_plan"]={"status":"PASSED","stage":"CONCEPT_FOR_REVIEW","reason":None,"message":"Situatietekening uit site-evidence geproduceerd; kadastrale/planningsvalidatie en eventueel ontbrekende noordrichting blijven ter controle."}
     if "dwg_dxf" in requested:
         dxf=[p for p in files if p.suffix.lower()==".dxf"]
         coverage["dwg_dxf"]={"status":"PASSED" if dxf else "BLOCKED","stage":"CONCEPT_FOR_REVIEW","reason":None if dxf else "CAD_EXPORT_EMPTY","message":"DXF-concepttekeningen geproduceerd." if dxf else "Geen DXF-tekeningen geproduceerd."}

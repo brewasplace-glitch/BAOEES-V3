@@ -1,0 +1,89 @@
+{
+  "schema_version": "phoenix.suriname-real-world-source-profile/1.0",
+  "version": "1.0.0",
+  "verified_builder_date": "2026-08-03",
+  "country_code": "SR",
+  "region_name": "Paramaribo",
+  "currency": "SRD",
+  "public_sources": [
+    {
+      "provider_id": "SR_BESTBUY_CEMENT_MATERIALS",
+      "category": "material_supply",
+      "url": "https://bestbuy.sr/s/cement-meer",
+      "source_name": "Best Buy Suriname – Cement & Beton / Wapening & Metaal",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_BESTBUY_CEMENT_PRICES",
+      "category": "market_prices",
+      "url": "https://bestbuy.sr/s/cement-meer",
+      "source_name": "Best Buy Suriname – actuele openbare productprijzen",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_BESTBUY_TIMBER_MATERIALS",
+      "category": "material_supply",
+      "url": "https://bestbuy.sr/s/hout",
+      "source_name": "Best Buy Suriname – Hout",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_BESTBUY_TIMBER_PRICES",
+      "category": "market_prices",
+      "url": "https://bestbuy.sr/s/hout",
+      "source_name": "Best Buy Suriname – Houtprijzen",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_VABI_BLOCKS_MATERIALS",
+      "category": "material_supply",
+      "url": "https://www.vabi.sr/en/bouwstenen/",
+      "source_name": "N.V. VABI – Building Blocks",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_VABI_BLOCKS_PRICES",
+      "category": "market_prices",
+      "url": "https://www.vabi.sr/en/bouwstenen/",
+      "source_name": "N.V. VABI – openbare bouwsteenprijzen",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_HORIZON_MARKET_PRICES",
+      "category": "market_prices",
+      "url": "https://www.horizon.sr/",
+      "source_name": "Horizon.sr – bouwmaterialenplatform",
+      "confidence": "MEDIUM"
+    },
+    {
+      "provider_id": "SR_HORIZON_MATERIALS",
+      "category": "material_supply",
+      "url": "https://www.horizon.sr/",
+      "source_name": "Horizon.sr – bouwmaterialenplatform",
+      "confidence": "MEDIUM"
+    },
+    {
+      "provider_id": "SR_SUBEMA_READY_MIX_CAPABILITY",
+      "category": "material_supply",
+      "url": "https://www.subema.sr/bedrijfsprofiel/",
+      "source_name": "N.V. SUBEMA – public company/product capability evidence",
+      "confidence": "HIGH"
+    },
+    {
+      "provider_id": "SR_HURRICANE_STEEL_CAPABILITY",
+      "category": "material_supply",
+      "url": "https://www.hurricanesteel.com/",
+      "source_name": "Hurricane Steel – local steel profiling/building material capability",
+      "confidence": "MEDIUM"
+    },
+    {
+      "provider_id": "SR_GOV_BUILDING_LAWS",
+      "category": "regulatory_reference",
+      "url": "https://gov.sr/ministeries/ministerie-van-openbare-werken-en-ruimtelijke-ordening/bouwen-in-suriname/bouwwetten-en-regels/",
+      "source_name": "Government of Suriname – Bouwwetten en regels",
+      "confidence": "HIGH"
+    }
+  ],
+  "engineering_rule": "Commercial supplier/product evidence is not equivalent to structural engineering qualification. Specific grades, strength classes and normative design values remain separately gated.",
+  "production_release": "LOCKED"
+}

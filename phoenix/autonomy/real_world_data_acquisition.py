@@ -11,6 +11,8 @@ import csv
 import hashlib
 import io
 import json
+import os
+import re
 import shutil
 import urllib.request
 from dataclasses import dataclass
@@ -18,12 +20,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-VERSION = "1.0.0"
+from .public_html_source_integration import normalize_material_catalog, normalize_market_ratebook, visible_text
+
+VERSION = "1.1.0"
 SUPPORTED_CATEGORIES = {
     "market_prices",
     "material_supply",
     "structural_action_load",
     "site_context",
+    "regulatory_reference",
 }
 
 @dataclass
@@ -87,7 +92,12 @@ def _url(provider: dict[str,Any], geography: dict[str,Any], project_id: str) -> 
 def _fetch(url: str, *, timeout: float, maximum_bytes: int, response_type: str) -> tuple[bytes,Any]:
     if not url.lower().startswith("https://"):
         raise ValueError("Only HTTPS remote real-world sources are allowed.")
-    request=urllib.request.Request(url,headers={"User-Agent":"Project-Phoenix-Real-World-Acquisition/1.0"})
+    request=urllib.request.Request(url,headers={
+        "User-Agent":"Project-Phoenix-Real-World-Acquisition/1.1",
+        "Accept":"text/html,application/json,text/csv;q=0.9,*/*;q=0.5",
+        "Accept-Language":"nl,en;q=0.8",
+        "Cache-Control":"no-cache",
+    })
     with urllib.request.urlopen(request,timeout=timeout) as response:
         raw=response.read(maximum_bytes+1)
     if len(raw)>maximum_bytes:
@@ -97,6 +107,8 @@ def _fetch(url: str, *, timeout: float, maximum_bytes: int, response_type: str) 
     elif response_type=="csv":
         text=raw.decode("utf-8-sig")
         parsed={"rows":list(csv.DictReader(io.StringIO(text)))}
+    elif response_type in {"html_products","html_capability","html_regulatory_reference"}:
+        parsed={"_raw_html":True}
     else:
         raise ValueError(f"Unsupported response_type: {response_type}")
     if not isinstance(parsed,dict):
@@ -109,6 +121,7 @@ def _destination(repository: Path, category: str, project_id: str) -> Path:
         "material_supply":repository/"inputs"/"material_supply"/"acquired"/project_id,
         "structural_action_load":repository/"inputs"/"structural_action_load"/"acquired"/project_id,
         "site_context":repository/"inputs"/"site_context"/"acquired"/project_id,
+        "regulatory_reference":repository/"inputs"/"regulatory_reference"/"acquired"/project_id,
     }
     return mapping[category]
 
@@ -189,6 +202,8 @@ def acquire_real_world_data(
     providers=[]
     providers.extend(x for x in cfg.get("providers",[]) if isinstance(x,dict))
     providers.extend(_source_manifests(upload_paths))
+    test_mode=os.environ.get("PHOENIX_TEST_MODE","").strip()=="1"
+    fetch_cache:dict[str,bytes]={}
 
     for provider in providers:
         if not provider.get("enabled",True):
@@ -206,8 +221,37 @@ def acquire_real_world_data(
             entries.append({"provider_id":provider_id,"category":category,"status":"SKIPPED","reason":"URL_REQUIRED"})
             continue
         response_type=str(provider.get("response_type") or "json").lower()
+        if test_mode and provider.get("runtime_live_source",False):
+            entries.append({"provider_id":provider_id,"category":category,"status":"SKIPPED","reason":"TEST_MODE_LIVE_FETCH_DISABLED"})
+            continue
         try:
-            raw,value=_fetch(url,timeout=timeout,maximum_bytes=maximum_bytes,response_type=response_type)
+            if url in fetch_cache:
+                raw=fetch_cache[url]
+                if response_type in {"html_products","html_capability","html_regulatory_reference"}:value={"_raw_html":True}
+                else:
+                    raw,value=_fetch(url,timeout=timeout,maximum_bytes=maximum_bytes,response_type=response_type)
+            else:
+                raw,value=_fetch(url,timeout=timeout,maximum_bytes=maximum_bytes,response_type=response_type)
+                fetch_cache[url]=raw
+            if response_type in {"html_products","html_capability"}:
+                if category=="material_supply":
+                    value=normalize_material_catalog(raw,provider,now)
+                elif category=="market_prices":
+                    value=normalize_market_ratebook(raw,provider,now)
+                else:
+                    raise ValueError("HTML product source must target material_supply or market_prices")
+            elif response_type=="html_regulatory_reference":
+                text,_=visible_text(raw)
+                value={
+                    "schema_version":"phoenix.regulatory-reference-snapshot/1.0",
+                    "provider_id":provider_id,"country_code":geography.get("country_code"),
+                    "source_url":url,"acquired_at":now,
+                    "title":provider.get("title") or provider.get("source_name") or provider_id,
+                    "text_excerpt":text[:12000],
+                    "normative_values_normalized":False,
+                    "professional_interpretation_required":True,
+                    "production_release":"LOCKED",
+                }
             dest_dir=_destination(repository,category,project_id)
             dest_dir.mkdir(parents=True,exist_ok=True)
             digest=hashlib.sha256(raw).hexdigest()
@@ -223,6 +267,7 @@ def acquire_real_world_data(
                 "sha256":digest,
                 "acquired_at":now,
                 "remote":True,
+                "response_type":response_type,
             })
         except Exception as exc:
             entries.append({
@@ -245,6 +290,7 @@ def acquire_real_world_data(
         "acquired_count":sum(1 for x in entries if x.get("status")=="ACQUIRED"),
         "failed_count":sum(1 for x in entries if x.get("status")=="FAILED"),
         "web_search_used":False,
+        "live_configured_source_fetch_used":any(x.get("remote") and x.get("status")=="ACQUIRED" for x in entries),
         "only_explicit_or_configured_sources":True,
         "professional_review_required":True,
         "production_release":"LOCKED",

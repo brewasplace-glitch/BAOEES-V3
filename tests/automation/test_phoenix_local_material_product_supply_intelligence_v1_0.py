@@ -173,6 +173,8 @@ class LocalMaterialSupplyTests(unittest.TestCase):
                 as_of_date="2026-08-03",
             )
             self.assertEqual(result.status,"BLOCKED")
+            self.assertTrue(result.selection_register["all_requirements_commercially_available"])
+            self.assertFalse(result.selection_register["all_structural_requirements_engineering_qualified"])
         finally: td.cleanup()
 
     def test_08_selected_engineering_ids_are_exposed_for_solver_gate(self):
