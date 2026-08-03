@@ -1,0 +1,21 @@
+{
+  "engine_id": "PHX-AUTONOMOUS-STRUCTURAL-ACTION-LOAD-BASIS",
+  "version": "1.0.0",
+  "freshness": {
+    "default_max_age_days": 3650
+  },
+  "requirements": {
+    "jurisdiction_match": true,
+    "effective_date": true,
+    "current_status_or_valid_until": true,
+    "source_name": true,
+    "actions": true,
+    "combinations": true,
+    "self_weight_action": true
+  },
+  "automatic_norm_value_invention": false,
+  "automatic_wind_value_invention": false,
+  "automatic_imposed_load_invention": false,
+  "automatic_combination_factor_invention": false,
+  "production_release": "LOCKED"
+}

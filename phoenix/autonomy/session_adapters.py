@@ -32,6 +32,8 @@ from .drawing_production import produce_architectural_drawings
 from .location_intelligence import resolve_location_intelligence
 from .structural_session_chain import run_structural_chain
 from .local_material_supply_intelligence import build_local_material_supply_context
+from .real_world_data_acquisition import acquire_real_world_data
+from .site_parcel_intelligence import analyze_site_drawings
 
 
 
@@ -227,6 +229,32 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         project_context=context_result.context,
     )
     context_result.context.setdefault("facts",{}).update(location_result.fact_updates)
+
+    # Acquire explicitly configured / uploaded real-world evidence before
+    # material, cost and structural downstream adapters consume it.
+    acquisition_result=acquire_real_world_data(
+        repository=ctx["repository"],
+        project_id=ctx["project_id"],
+        project_context=context_result.context,
+        manifest=ctx.get("manifest") or {},
+        upload_paths=uploads,
+    )
+    acquisition_path=out/"real_world_data_acquisition_register.json"
+    write_json(acquisition_path,acquisition_result.register)
+
+    # Extract site/parcel facts from uploaded machine-readable site drawings.
+    site_result=analyze_site_drawings(
+        project_id=ctx["project_id"],
+        upload_paths=uploads,
+        base_site_context=context_result.site_context,
+        brief=str(ctx["session"].get("brief") or ""),
+        repository=ctx["repository"],
+    )
+    context_result.site_context=site_result.site_context
+    site_evidence_path=out/"site_parcel_evidence_register.json"
+    write_json(site_evidence_path,site_result.evidence_register)
+    context_result.context["site_context_status"]=context_result.site_context.get("status")
+
     location_path=out/"location_intelligence.json"
     write_json(location_path,location_result.record)
     context_path=out/"project_context.json"
@@ -241,18 +269,26 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         repo_ref(context_assumptions_path,ctx["repository"]),
         repo_ref(site_context_path,ctx["repository"]),
         repo_ref(location_path,ctx["repository"]),
+        repo_ref(acquisition_path,ctx["repository"]),
+        repo_ref(site_evidence_path,ctx["repository"]),
     ])
     metadata["project_context"]=repo_ref(context_path,ctx["repository"])
     metadata["site_context"]=repo_ref(site_context_path,ctx["repository"])
     metadata["project_context_version"]="1.1.0"
     metadata["location_intelligence"]=repo_ref(location_path,ctx["repository"])
     metadata["location_intelligence_status"]=location_result.status
+    metadata["real_world_data_acquisition"]=repo_ref(acquisition_path,ctx["repository"])
+    metadata["real_world_acquired_count"]=acquisition_result.register.get("acquired_count",0)
+    metadata["site_parcel_evidence"]=repo_ref(site_evidence_path,ctx["repository"])
+    metadata["site_parcel_intelligence_status"]=site_result.status
 
     manifest_updates=dict(context_result.manifest_updates)
     manifest_updates.update(location_result.manifest_updates)
     manifest_updates.update({
         "project_context":repo_ref(context_path,ctx["repository"]),
         "site_context":repo_ref(site_context_path,ctx["repository"]),
+        "real_world_data_acquisition":repo_ref(acquisition_path,ctx["repository"]),
+        "site_parcel_evidence":repo_ref(site_evidence_path,ctx["repository"]),
     })
     _update_project_manifest(ctx,manifest_updates)
 
@@ -355,6 +391,8 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         "project_context":metadata.get("project_context"),
         "site_context":metadata.get("site_context"),
         "drawing_register":metadata.get("drawing_register"),
+        "real_world_data_acquisition":metadata.get("real_world_data_acquisition"),
+        "site_parcel_evidence":metadata.get("site_parcel_evidence"),
         "generation_mode": metadata["generation_mode"],
         "assumptions_register": metadata.get("assumptions_register"),
         "approval_state": "CANDIDATE_ONLY",
@@ -400,6 +438,8 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
     drawing_register_ref=next((x for x in arch_outputs if x.endswith("/architectural_drawing_register.json")),None)
     location_intelligence_ref=next((x for x in arch_outputs if x.endswith("/location_intelligence.json")),None)
     local_material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    real_world_acquisition_ref=next((x for x in arch_outputs if x.endswith("/real_world_data_acquisition_register.json")),None)
+    site_parcel_evidence_ref=next((x for x in arch_outputs if x.endswith("/site_parcel_evidence_register.json")),None)
 
     twin = {
         "schema_version": "phoenix.central-project-digital-twin/1.1",
@@ -412,6 +452,8 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
         "architectural_drawing_register":drawing_register_ref,
         "location_intelligence":location_intelligence_ref,
         "local_material_selection_register":local_material_selection_ref,
+        "real_world_data_acquisition":real_world_acquisition_ref,
+        "site_parcel_evidence":site_parcel_evidence_ref,
         "structural_model": None,
         "permit_state": None,
         "cost_planning_state": None,
@@ -451,6 +493,7 @@ def run_structural(ctx: dict[str, Any]) -> int:
     detail_ref=next((x for x in arch_outputs if x.endswith("/detailed_elements.json")),None)
     profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
     material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
 
     blockers=[]
     if not model_ref: blockers.append({"reason":"ARCHITECTURAL_MODEL_REQUIRED","message":"Constructieve keten vereist architectuurmodel."})
@@ -507,6 +550,7 @@ def run_structural(ctx: dict[str, Any]) -> int:
         architectural_model_path=ctx["repository"]/model_ref,
         detailed_elements_path=ctx["repository"]/detail_ref,
         material_selection_path=(ctx["repository"]/material_selection_ref) if material_selection_ref else None,
+        project_context_path=(ctx["repository"]/project_context_ref) if project_context_ref else None,
     )
     stage_path=ctx["output_dir"]/"validated_v8_1_to_v8_12"/"stage_register.json"
     write_json(stage_path,chain.stage_register)

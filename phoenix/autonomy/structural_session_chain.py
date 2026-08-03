@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from .local_material_supply_intelligence import selected_engineering_material_ids
+from .structural_action_load_basis import build_structural_action_load_basis
 
 VERSION="1.0.0"
 
@@ -253,6 +254,7 @@ def run_structural_chain(
     architectural_model_path:Path,
     detailed_elements_path:Path,
     material_selection_path:Path|None=None,
+    project_context_path:Path|None=None,
 )->ChainResult:
     repository=repository.resolve();workspace=workspace.resolve();output_dir=output_dir.resolve()
     output_dir.mkdir(parents=True,exist_ok=True)
@@ -288,19 +290,39 @@ def run_structural_chain(
 
     action_input,action_source=_section(candidates,"action_load_input",("basis","unit_system","actions","combinations"))
     if not action_input or not action_input.get("actions") or not action_input.get("combinations"):
-        template={
-            "schema_version":"phoenix.structural-action-load-input-template/1.0",
-            "action_load_input":{
-                "basis":"REQUIRED_EXPLICIT_PROJECT_OR_NORMATIVE_BASIS",
-                "unit_system":{"length":"m","force":"kN","moment":"kNm","stress":"kPa","mass":"kg"},
-                "actions":[],
-                "combinations":[],
-            },
-            "note":"Phoenix vult belastingswaarden en normatieve combinatiefactoren niet stilzwijgend in."
-        }
-        tp=workspace/"inputs"/"structural"/"action_load_input_REQUIRED.json";_write(tp,template);outputs.append(_repo_ref(tp,repository))
-        register["stages"][1]["status"]="BLOCKED_INPUT"
-        return _block("STRUCTURAL_ACTION_LOAD_INPUT_REQUIRED","v8.1 is geslaagd; expliciete projectspecifieke belastingen en combinaties zijn vereist voor v8.2.",completed,"8.2.0",outputs,register)
+        project_context={}
+        if project_context_path is not None and project_context_path.is_file():
+            try:project_context=_read(project_context_path)
+            except Exception:project_context={}
+        acquired_basis=build_structural_action_load_basis(
+            repository=repository,
+            project_id=project_id,
+            project_context=project_context,
+        )
+        basis_register_path=output_dir/"v8_2"/"structural_action_load_source_register.json"
+        _write(basis_register_path,acquired_basis.source_register)
+        outputs.append(_repo_ref(basis_register_path,repository))
+        if acquired_basis.status=="PASSED" and acquired_basis.action_load_input:
+            action_input=acquired_basis.action_load_input
+            action_source=(acquired_basis.source_register.get("selected") or {}).get("source_reference") or "AUTONOMOUS_REAL_WORLD_LOAD_BASIS"
+        else:
+            template={
+                "schema_version":"phoenix.structural-action-load-input-template/1.1",
+                "action_load_input":{
+                    "basis":"REQUIRED_EXPLICIT_PROJECT_OR_CURRENT_NORMATIVE_BASIS",
+                    "unit_system":{"length":"m","force":"kN","moment":"kNm","stress":"kPa","mass":"kg"},
+                    "actions":[],
+                    "combinations":[],
+                },
+                "note":"Phoenix vult belastingswaarden en normatieve combinatiefactoren niet stilzwijgend in."
+            }
+            tp=workspace/"inputs"/"structural"/"action_load_input_REQUIRED.json";_write(tp,template);outputs.append(_repo_ref(tp,repository))
+            register["stages"][1]["status"]="BLOCKED_INPUT"
+            blocker=acquired_basis.blockers[0] if acquired_basis.blockers else {
+                "reason":"CURRENT_STRUCTURAL_ACTION_LOAD_BASIS_REQUIRED",
+                "message":"Actuele projectspecifieke belastings-/combinatiebasis vereist voor v8.2."
+            }
+            return _block(blocker["reason"],blocker["message"],completed,"8.2.0",outputs,register,blocker)
 
     v82_payload={"analytical_model":_read(v81_out),"action_load_input":action_input}
     v82_in=output_dir/"v8_2"/"input.json";v82_out=output_dir/"v8_2"/"action_load_model.json"

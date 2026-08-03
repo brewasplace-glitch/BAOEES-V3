@@ -1,0 +1,25 @@
+{
+  "engine_id": "PHX-SITE-DRAWING-PARCEL-INTELLIGENCE",
+  "version": "1.0.0",
+  "accepted_machine_formats": [
+    "json",
+    "geojson",
+    "dxf"
+  ],
+  "conditional_formats": [
+    "pdf"
+  ],
+  "requires_conversion": [
+    "dwg"
+  ],
+  "raster_geometry_requires_external_or_ai_extractor": [
+    "png",
+    "jpg",
+    "jpeg",
+    "webp"
+  ],
+  "cadastral_boundary_may_be_assumed": false,
+  "planning_setbacks_may_be_assumed": false,
+  "professional_review_required": true,
+  "production_release": "LOCKED"
+}

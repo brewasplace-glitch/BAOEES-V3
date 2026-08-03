@@ -1,0 +1,39 @@
+{
+  "schema_version": "phoenix.structural-action-load-source-schema/1.0",
+  "required_metadata": [
+    "basis_id",
+    "country_code",
+    "source_name",
+    "effective_date"
+  ],
+  "current_status_rule": "Provide valid_until >= run date OR status=ACTIVE with freshness review.",
+  "required_action_load_input": [
+    "basis",
+    "unit_system",
+    "actions",
+    "combinations"
+  ],
+  "required_action_kinds": "At least one explicit self_weight action plus all project/code-required actions.",
+  "example": {
+    "metadata": {
+      "basis_id": "EXAMPLE-ONLY",
+      "country_code": "NL",
+      "source_name": "VOORBEELD — GEEN NORMBRON",
+      "effective_date": "2026-01-01",
+      "status": "INACTIVE"
+    },
+    "action_load_input": {
+      "basis": "EXAMPLE_ONLY_DO_NOT_USE",
+      "unit_system": {
+        "length": "m",
+        "force": "kN",
+        "moment": "kNm",
+        "stress": "kPa",
+        "mass": "kg"
+      },
+      "actions": [],
+      "combinations": []
+    }
+  },
+  "warning": "No normative values are shipped in this schema example."
+}

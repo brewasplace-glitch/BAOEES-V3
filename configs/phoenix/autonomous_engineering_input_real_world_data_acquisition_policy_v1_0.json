@@ -1,0 +1,18 @@
+{
+  "engine_id": "PHX-AUTONOMOUS-ENGINEERING-INPUT-REAL-WORLD-DATA-ACQUISITION",
+  "version": "1.0.0",
+  "runtime_version": "1.8.6",
+  "components": {
+    "real_world_data_acquisition": "1.0.0",
+    "site_drawing_parcel_intelligence": "1.0.0",
+    "structural_action_load_basis": "1.0.0"
+  },
+  "hard_rules": {
+    "only_explicit_or_configured_sources": true,
+    "no_fabricated_live_data": true,
+    "no_fabricated_norm_values": true,
+    "no_fabricated_cadastral_facts": true,
+    "source_provenance_required": true,
+    "production_release": "LOCKED"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "phoenix.real-world-data-source-registry/1.0",
+  "version": "1.0.0",
+  "providers": [],
+  "remote": {
+    "timeout_seconds": 8,
+    "maximum_bytes": 5000000
+  },
+  "categories": [
+    "market_prices",
+    "material_supply",
+    "structural_action_load",
+    "site_context"
+  ],
+  "rules": {
+    "https_only": true,
+    "explicit_or_configured_sources_only": true,
+    "web_search_is_not_implicitly_performed": true,
+    "source_provenance_required": true,
+    "sha256_required": true
+  },
+  "note": "Configure authoritative providers explicitly or upload machine-readable evidence/source manifests. No fabricated provider is shipped."
+}

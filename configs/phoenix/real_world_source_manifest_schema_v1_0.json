@@ -1,0 +1,19 @@
+{
+  "schema_version": "phoenix.real-world-source-manifest-schema/1.0",
+  "example": {
+    "schema_version": "phoenix.real-world-source-manifest/1.0",
+    "sources": [
+      {
+        "provider_id": "EXAMPLE_NOT_ACTIVE",
+        "category": "material_supply",
+        "enabled": false,
+        "country_codes": [
+          "SR"
+        ],
+        "url": "https://example.invalid/feed.json",
+        "response_type": "json"
+      }
+    ]
+  },
+  "warning": "Example URL is documentation only and is disabled. Replace with a real authoritative HTTPS source."
+}
