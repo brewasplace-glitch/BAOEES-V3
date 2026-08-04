@@ -20,6 +20,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .desired_output_evidence import validate_desired_output_evidence
+
 
 def utc_now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -609,21 +611,41 @@ class AutonomousProjectOrchestrator:
             else:
                 status = "PASSED"
 
+            evidence_validation = validate_desired_output_evidence(
+                repository=self.repository,
+                workspace=workspace,
+                output_id=output_id,
+                capability_states=capability_states,
+            )
+            if status == "PASSED" and str(evidence_validation.get("status") or "").upper() != "PASSED":
+                status = "BLOCKED"
+
             output_states[output_id] = {
                 "status": status,
                 "required_capabilities": required,
                 "capability_states": states,
                 "adapter_output_coverage": explicit_coverage,
+                "evidence_validation": evidence_validation,
             }
-            if status == "BLOCKED" and required and all(x == "PASSED" for x in states) and explicit_coverage:
-                first = next((x for x in explicit_coverage if str(x.get("status") or "").upper() != "PASSED"), explicit_coverage[0])
-                output_level_blockers.append({
-                    "capability_id":"desired_output",
-                    "output_id":output_id,
-                    "label":output_id,
-                    "reason":first.get("reason") or "DESIRED_OUTPUT_NOT_FINAL",
-                    "message":first.get("message") or "Gewenste uitvoer is nog niet definitief geproduceerd.",
-                })
+            if status == "BLOCKED" and required and all(x == "PASSED" for x in states):
+                if str(evidence_validation.get("status") or "").upper() != "PASSED":
+                    output_level_blockers.append({
+                        "capability_id":"desired_output",
+                        "output_id":output_id,
+                        "label":output_id,
+                        "reason":evidence_validation.get("reason") or "DESIRED_OUTPUT_ARTIFACT_REQUIRED",
+                        "message":"Capability is uitgevoerd, maar een concreet gevalideerd outputartifact ontbreekt of de output-gate is nog niet gereed.",
+                        "evidence":evidence_validation.get("evidence") or [],
+                    })
+                elif explicit_coverage:
+                    first = next((x for x in explicit_coverage if str(x.get("status") or "").upper() != "PASSED"), explicit_coverage[0])
+                    output_level_blockers.append({
+                        "capability_id":"desired_output",
+                        "output_id":output_id,
+                        "label":output_id,
+                        "reason":first.get("reason") or "DESIRED_OUTPUT_NOT_FINAL",
+                        "message":first.get("message") or "Gewenste uitvoer is nog niet definitief geproduceerd.",
+                    })
 
         blockers.extend(output_level_blockers)
         plan["blocker_count"] = len(blockers)

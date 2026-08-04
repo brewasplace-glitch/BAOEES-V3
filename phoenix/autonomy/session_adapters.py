@@ -34,6 +34,8 @@ from .structural_session_chain import run_structural_chain
 from .local_material_supply_intelligence import build_local_material_supply_context
 from .real_world_data_acquisition import acquire_real_world_data
 from .site_parcel_intelligence import analyze_site_drawings
+from .local_product_qualification import prepare_local_product_qualification_overlay
+from .suriname_structural_load_basis import ensure_suriname_structural_load_basis
 
 
 
@@ -311,6 +313,22 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     )
     metadata["structural_profile_version"]="1.1.0"
 
+    # Local Product Qualification Overlay. This normalizes only explicit supplier
+    # evidence already acquired for this project; it does not invent stock, product
+    # class or technical properties. The overlay is written before the material
+    # supply engine discovers project-runtime catalogs.
+    qualification=prepare_local_product_qualification_overlay(
+        ctx,
+        project_context=context_result.context,
+    )
+    qualification_register_ref=qualification.get("register")
+    qualification_overlay_ref=qualification.get("overlay")
+    if qualification_register_ref:
+        outputs.append(str(qualification_register_ref))
+    metadata["local_product_qualification_register"]=qualification_register_ref
+    metadata["local_product_qualification_overlay"]=qualification_overlay_ref
+    metadata["local_product_qualification_version"]="1.0.0"
+
     # Local Material / Product / Supply Intelligence.
     # Concept geometry may continue when availability is unresolved, but final/release
     # gates and structural material use may not treat unconfirmed products as final.
@@ -501,6 +519,14 @@ def run_structural(ctx: dict[str, Any]) -> int:
     material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
     project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
 
+    # Install a project-scoped Suriname interim structural load source before the
+    # v8.1->v8.12 chain asks the Structural Action & Load Basis Engine for v8.2.
+    # Non-Suriname/non-residential projects remain unaffected and no professional
+    # approval is implied.
+    sr_load_basis=ensure_suriname_structural_load_basis(
+        ctx, project_context_ref=project_context_ref
+    )
+
     blockers=[]
     if not model_ref: blockers.append({"reason":"ARCHITECTURAL_MODEL_REQUIRED","message":"Constructieve keten vereist architectuurmodel."})
     if not detail_ref: blockers.append({"reason":"DETAILED_ELEMENTS_REQUIRED","message":"Constructieve afleiding vereist gedetailleerde bouwkundige elementen."})
@@ -561,19 +587,23 @@ def run_structural(ctx: dict[str, Any]) -> int:
     stage_path=ctx["output_dir"]/"validated_v8_1_to_v8_12"/"stage_register.json"
     write_json(stage_path,chain.stage_register)
     outputs=[repo_ref(chain_manifest_path,ctx["repository"]),repo_ref(v80_model,ctx["repository"]),repo_ref(stage_path,ctx["repository"])]
+    if sr_load_basis.get("register"):
+        outputs.append(str(sr_load_basis["register"]))
+    if sr_load_basis.get("source"):
+        outputs.append(str(sr_load_basis["source"]))
     outputs.extend(chain.outputs)
 
     if chain.status=="FAILED":
         return finish(ctx,capability_id=cap,label=label,status="FAILED",outputs=outputs,blockers=chain.blockers,
                       metadata={"completed_through":chain.completed_through,"next_stage":chain.next_stage,"session_chain_version":"1.0.0",
-                                "legacy_pilot_dependency":False})
+                                "legacy_pilot_dependency":False,"suriname_structural_load_basis":sr_load_basis})
     if chain.status=="BLOCKED":
         return finish(ctx,capability_id=cap,label=label,status="BLOCKED",outputs=outputs,blockers=chain.blockers,warnings=chain.warnings,
                       metadata={"completed_through":chain.completed_through,"next_stage":chain.next_stage,"session_chain_version":"1.0.0",
-                                "generic_cross_version_mapping_blocker_removed":True,"legacy_pilot_dependency":False})
+                                "generic_cross_version_mapping_blocker_removed":True,"legacy_pilot_dependency":False,"suriname_structural_load_basis":sr_load_basis})
     return finish(ctx,capability_id=cap,label=label,status="PASSED",outputs=outputs,warnings=chain.warnings,
                   metadata={"completed_through":"8.12.0","session_chain_version":"1.0.0",
-                            "legacy_pilot_dependency":False,
+                            "legacy_pilot_dependency":False,"suriname_structural_load_basis":sr_load_basis,
                             "automatic_professional_approval":False,"production_release":"LOCKED"})
 
 

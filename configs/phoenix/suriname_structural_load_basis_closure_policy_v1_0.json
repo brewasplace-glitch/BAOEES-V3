@@ -1,0 +1,40 @@
+{
+  "schema_version": "phoenix.suriname-structural-load-basis-closure-policy/1.0",
+  "version": "1.0.0",
+  "scope": {
+    "country_code": "SR",
+    "project_types": ["BOUW", "BUILDING"],
+    "interim_profile": "LOW_RISE_RESIDENTIAL"
+  },
+  "load_basis": {
+    "methodology": "USER_APPROVED_DUTCH_EUROCODE_STYLE_INTERIM_ENGINEERING_POLICY",
+    "verified_as_current_suriname_law": false,
+    "reference_practice_evidence": [
+      "SR-REF-STRUCTUURPLUS-2026",
+      "SR-REF-NEA-ARCHI-2022"
+    ],
+    "residential_imposed_floor_action_kN_m2": 1.75,
+    "reference_wind_pressure_kN_m2": 0.45,
+    "uls_permanent_factor": 1.20,
+    "uls_variable_factor": 1.50,
+    "sls_permanent_factor": 1.00,
+    "sls_variable_factor": 1.00,
+    "snow_action": "EXCLUDED_UNLESS_PROJECT_SPECIFIC_EVIDENCE_REQUIRES_OTHERWISE",
+    "professional_review_required": true,
+    "production_release": "LOCKED"
+  },
+  "local_product_qualification": {
+    "availability_may_only_come_from_explicit_supplier_evidence": true,
+    "engineering_material_id_requires_explicit_grade_or_technical_property": true,
+    "automatic_product_substitution": false,
+    "commercial_availability_and_engineering_qualification_are_separate": true
+  },
+  "deliverable_evidence": {
+    "capability_pass_without_artifact_is_not_output_pass": true,
+    "minimum_baseline_manifest_is_machine_resolved_from_registered_artifacts": true,
+    "professional_review_is_not_machine_generated": true,
+    "project_zip_requires_real_zip_artifact": true,
+    "viewer_3d_requires_real_viewer_artifact": true,
+    "auto_video_requires_real_video_artifact": true
+  }
+}

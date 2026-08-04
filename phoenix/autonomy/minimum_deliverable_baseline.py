@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from phoenix.autonomy.suriname_structural_knowledge import is_suriname_building_context
+from phoenix.autonomy.deliverable_evidence_resolver import build_minimum_deliverable_manifest
 
 
 VALID = {
@@ -115,7 +116,14 @@ def evaluate_and_write_baseline(ctx: dict[str, Any]) -> dict[str, Any] | None:
     repo = _repo(ctx)
     ws = _workspace(ctx)
     baseline = _read_json(repo / "configs/phoenix/building_minimum_deliverable_baseline_v1_0.json")
+    # Preserve a deliberately supplied project manifest. Only when no explicit
+    # manifest exists may Phoenix resolve registered artifacts automatically.
+    # This keeps user/project decisions authoritative while eliminating manual
+    # duplicate evidence entry for ordinary autonomous runs.
     explicit_manifest = _load_explicit_manifest(ws)
+    if not explicit_manifest.get("_source_path"):
+        build_minimum_deliverable_manifest(ctx)
+        explicit_manifest = _load_explicit_manifest(ws)
     explicit = _explicit_item_map(explicit_manifest)
 
     specs = []
