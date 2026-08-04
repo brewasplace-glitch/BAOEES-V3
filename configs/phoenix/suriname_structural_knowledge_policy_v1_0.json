@@ -1,0 +1,69 @@
+{
+  "schema_version": "phoenix.suriname-structural-knowledge-policy/1.0",
+  "version": "1.0.0",
+  "scope": {
+    "country_code": "SR",
+    "project_types": [
+      "BOUW",
+      "BUILDING"
+    ]
+  },
+  "principles": {
+    "reference_documents_are_practice_evidence_not_automatic_law": true,
+    "project_specific_values_must_not_be_promoted_to_global_defaults": true,
+    "normative_code_basis_requires_explicit_current_project_source_or_approved_policy": true,
+    "professional_engineering_review_required": true,
+    "automatic_professional_approval": false,
+    "production_release_requires_minimum_deliverable_gate": true
+  },
+  "knowledge_layers": [
+    {
+      "id": "TEMPLATE_DELIVERY_KNOWLEDGE",
+      "may_be_reused": true,
+      "examples": [
+        "report structure",
+        "drawing set structure",
+        "table structure",
+        "QA presentation level"
+      ]
+    },
+    {
+      "id": "ENGINEERING_PRACTICE_EVIDENCE",
+      "may_be_reused": true,
+      "requires_validation": true,
+      "examples": [
+        "NEN/TGB practice",
+        "Eurocode practice",
+        "UGT/BGT workflow",
+        "foundation design workflow"
+      ]
+    },
+    {
+      "id": "PROJECT_SPECIFIC_VALUES",
+      "may_be_reused_as_default": false,
+      "examples": [
+        "wind pressure",
+        "concrete class",
+        "reinforcement choice",
+        "foundation dimensions",
+        "soil layers"
+      ]
+    }
+  ],
+  "suriname_interim_load_policy": {
+    "status": "USER_APPROVED_ENGINEERING_POLICY_REQUIRING_PROFESSIONAL_REVIEW",
+    "statement": "For Suriname projects Phoenix may use Dutch/Eurocode-style load-combination methodology as an engineering policy basis, with snow action excluded unless project-specific evidence requires otherwise.",
+    "legal_or_authority_status_verified": false,
+    "silent_normative_claim_forbidden": true,
+    "automatic_professional_approval": false
+  },
+  "release_gate": {
+    "enforce_for_autonomous_suriname_building_projects": true,
+    "allowed_item_statuses": [
+      "GENERATED_AND_VALIDATED",
+      "NOT_APPLICABLE_WITH_REASON",
+      "BLOCKED_WITH_EXPLICIT_REASON"
+    ],
+    "release_ready_only_when_no_blocked_items": true
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "phoenix.suriname-structural-reference-evidence-catalog/1.0",
+  "version": "1.0.0",
+  "country_code": "SR",
+  "references": [
+    {
+      "id": "SR-REF-STRUCTUURPLUS-2026",
+      "source_file": "01 CONSTRUCTIERAPPORT constructie Roger_260531_165317.pdf",
+      "classification": "ENGINEERING_PRACTICE_EVIDENCE",
+      "verified_as_current_law": false,
+      "reusable_knowledge": [
+        "constructive report structure",
+        "load inventory presentation",
+        "UGT/BGT result presentation",
+        "slab/beam/column/foundation calculation workflow",
+        "steel roof/truss calculation presentation",
+        "3D model and calculation figures"
+      ],
+      "observed_practice": {
+        "code_families": [
+          "NEN 6702",
+          "NEN 6720",
+          "NEN 6770",
+          "NEN 6772"
+        ],
+        "materials_examples": [
+          "C20/25",
+          "FeB400",
+          "S235"
+        ],
+        "project_specific_values_are_not_defaults": true
+      }
+    },
+    {
+      "id": "SR-REF-NEA-ARCHI-2022",
+      "source_file": "22029 - Architect - Funderingsberekening Woonhuis Virolastraat-KV-24aug22 + att.pdf",
+      "classification": "ENGINEERING_PRACTICE_EVIDENCE",
+      "verified_as_current_law": false,
+      "reusable_knowledge": [
+        "Eurocode-oriented report structure",
+        "foundation and geotechnical reporting",
+        "reaction-force handoff",
+        "soil-profile and foundation-type presentation",
+        "structural model/report appendix structure",
+        "structural drawings appendix concept"
+      ],
+      "observed_practice": {
+        "code_families": [
+          "NEN-EN 1990",
+          "NEN-EN 1991",
+          "NEN-EN 1992",
+          "NEN-EN 1993",
+          "NEN-EN 1994",
+          "NEN-EN 1995",
+          "NEN-EN 1996",
+          "NEN-EN 1997"
+        ],
+        "classification_examples": [
+          "CC2a",
+          "RC2",
+          "GC2",
+          "50-year design life"
+        ],
+        "project_specific_values_are_not_defaults": true
+      }
+    },
+    {
+      "id": "SR-REF-ANIJSTRAAT-616-DRAWING-SET-2026",
+      "source_file": "plafond 3.5 m ow tekening Huis Wartes Anijstraat 616(1).pdf",
+      "classification": "TEMPLATE_DELIVERY_KNOWLEDGE",
+      "verified_as_minimum_delivery_reference": true,
+      "reusable_knowledge": [
+        "A3 sheet layout",
+        "drawing numbering",
+        "dimensioned plan presentation",
+        "foundation drawing",
+        "sewerage drawing",
+        "facades",
+        "roof plan",
+        "sections",
+        "construction details",
+        "septic tank",
+        "door/window schedule",
+        "information/finishes plan",
+        "water plan",
+        "air-conditioning plan",
+        "electrical plan",
+        "site plan with location image"
+      ],
+      "sheet_count_reference": 15
+    }
+  ],
+  "safety": {
+    "copy_project_specific_numbers_as_universal_defaults": false,
+    "copy_unverified_code_basis_as_law": false,
+    "professional_review_required": true
+  }
+}

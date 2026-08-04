@@ -904,3 +904,77 @@ def run_adapter(
         raise KeyError(f"Unknown Phoenix Session Adapter capability: {capability_id}")
     ctx=load_session_context(repository,session_file,workspace,output_dir)
     return int(RUNNERS[capability_id](ctx))
+
+# PHOENIX_SURINAME_MINIMUM_DELIVERABLE_BASELINE_HOOK_v1_0
+# Added by Phoenix Suriname Structural Knowledge & Minimum Deliverable Baseline
+# Masterpack v1.0. This hook never grants professional approval or production
+# release; it can only preserve an existing result or make a passing closure
+# fail-safe BLOCKED when the Suriname minimum-deliverable baseline is incomplete.
+try:
+    from phoenix.autonomy.suriname_structural_knowledge import (
+        is_suriname_building_context as _phx_sr_is_building_context,
+        write_suriname_structural_knowledge_register as _phx_sr_write_knowledge_register,
+    )
+    from phoenix.autonomy.minimum_deliverable_baseline import (
+        evaluate_and_write_baseline as _phx_sr_evaluate_minimum_baseline,
+    )
+
+    _phx_sr_original_closure_runner = RUNNERS.get("closure")
+
+    if _phx_sr_original_closure_runner is not None:
+        def _phx_sr_baseline_closure_runner(ctx):
+            original_rc = int(_phx_sr_original_closure_runner(ctx))
+
+            if not _phx_sr_is_building_context(ctx):
+                return original_rc
+
+            try:
+                _phx_sr_write_knowledge_register(ctx)
+                baseline = _phx_sr_evaluate_minimum_baseline(ctx)
+            except Exception as exc:
+                # Evaluation failures may never become a false PASS.
+                workspace = ctx.get("workspace")
+                if workspace:
+                    from pathlib import Path as _PhxPath
+                    import json as _phx_json
+
+                    p = (
+                        _PhxPath(workspace)
+                        / "results"
+                        / "session_adapters"
+                        / "closure"
+                    )
+                    p.mkdir(parents=True, exist_ok=True)
+                    (
+                        p / "minimum_deliverable_release_gate_overlay.json"
+                    ).write_text(
+                        _phx_json.dumps(
+                            {
+                                "schema_version": (
+                                    "phoenix.minimum-deliverable-release-gate-overlay/1.0"
+                                ),
+                                "gate_status": "BLOCKED",
+                                "release_ready": False,
+                                "baseline_content_complete": False,
+                                "reason": "BASELINE_GATE_EVALUATION_ERROR",
+                                "detail": str(exc),
+                                "automatic_professional_approval": False,
+                                "production_release": "LOCKED",
+                            },
+                            indent=2,
+                        )
+                        + "\n",
+                        encoding="utf-8",
+                    )
+                return 10 if original_rc == 0 else original_rc
+
+            if baseline and baseline.get("status") != "PASSED":
+                return 10 if original_rc == 0 else original_rc
+
+            return original_rc
+
+        RUNNERS["closure"] = _phx_sr_baseline_closure_runner
+except Exception:
+    # Import-time safety: existing Phoenix remains available. The existing
+    # production-release lock remains authoritative.
+    pass

@@ -1,0 +1,186 @@
+{
+  "schema_version": "phoenix.building-minimum-deliverable-baseline/1.0",
+  "version": "1.0.0",
+  "baseline_id": "SR-BUILDING-MINIMUM-DELIVERABLE-BASELINE-1.0",
+  "country_code": "SR",
+  "project_types": [
+    "BOUW",
+    "BUILDING"
+  ],
+  "purpose": "Minimum Phoenix delivery baseline derived from user-provided Suriname reference reports and drawing set.",
+  "status_contract": {
+    "GENERATED_AND_VALIDATED": "Output exists, is registered, validated, and traceable to project evidence/calculation/model.",
+    "NOT_APPLICABLE_WITH_REASON": "Output is demonstrably not applicable and an explicit project-specific reason is recorded.",
+    "BLOCKED_WITH_EXPLICIT_REASON": "Required output cannot yet be completed; blocker and missing evidence are explicit."
+  },
+  "drawing_baseline": {
+    "reference_sheet_count": 15,
+    "items": [
+      {
+        "id": "B01_FLOOR_PLAN",
+        "label": "Gemaatvoerde plattegrond(en)",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B02_FOUNDATION_PLAN",
+        "label": "Funderingsplan met maatvoering, materialen en wapening",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B03_SEWERAGE_PLAN",
+        "label": "Riolering/RWA/septische voorzieningen",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B04_B05_FACADES",
+        "label": "Alle relevante gevels",
+        "required": true,
+        "minimum_sheets": 2
+      },
+      {
+        "id": "B06_ROOF_PLAN",
+        "label": "Kap-/dakplan",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B07_SECTIONS",
+        "label": "Maatgevende doorsneden",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B08_DETAILS",
+        "label": "Bouwkundige en constructieve details",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B09_SEPTIC_TANK",
+        "label": "Septictank/afvalwaterdetail indien van toepassing",
+        "required": false,
+        "conditional": "on_site_wastewater"
+      },
+      {
+        "id": "B10_OPENING_SCHEDULE",
+        "label": "Kozijnen-/deur-/raamstaat",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B11_INFORMATION_FINISHES",
+        "label": "Informatie-/afwerkingsplan",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B12_WATER_PLAN",
+        "label": "Waterinstallatieplan",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "B13_HVAC_PLAN",
+        "label": "Airco/HVAC-plan indien van toepassing",
+        "required": false,
+        "conditional": "mechanical_cooling"
+      },
+      {
+        "id": "B14_ELECTRICAL_PLAN",
+        "label": "Elektraplan",
+        "required": true,
+        "minimum_sheets": 1
+      },
+      {
+        "id": "S01_SITE_PLAN",
+        "label": "Situatietekening met perceel, oriëntatie en locatiecontext",
+        "required": true,
+        "minimum_sheets": 1
+      }
+    ]
+  },
+  "structural_report_baseline": [
+    {
+      "id": "STR_PROJECT_SCOPE",
+      "label": "Projectgegevens, scope en constructieve omschrijving",
+      "required": true
+    },
+    {
+      "id": "STR_CODE_BASIS",
+      "label": "Expliciete normen, uitgangspunten, gevolg-/betrouwbaarheidsklasse en ontwerpduur",
+      "required": true
+    },
+    {
+      "id": "STR_MATERIALS",
+      "label": "Materiaalsterkten en technische eigenschappen",
+      "required": true
+    },
+    {
+      "id": "STR_LOADS",
+      "label": "Belastingen, belastingsgevallen en combinaties",
+      "required": true
+    },
+    {
+      "id": "STR_MODEL",
+      "label": "Constructief model, geometrie, steunpunten en stabiliteitssysteem",
+      "required": true
+    },
+    {
+      "id": "STR_UGT_BGT",
+      "label": "UGT- en BGT-resultaten/controles",
+      "required": true
+    },
+    {
+      "id": "STR_SLABS",
+      "label": "Vloer-/plaatontwerp en wapening waar van toepassing",
+      "required": false,
+      "conditional": "slabs_present"
+    },
+    {
+      "id": "STR_BEAMS",
+      "label": "Balkontwerp",
+      "required": false,
+      "conditional": "beams_present"
+    },
+    {
+      "id": "STR_COLUMNS",
+      "label": "Kolomontwerp",
+      "required": false,
+      "conditional": "columns_present"
+    },
+    {
+      "id": "STR_ROOF_STRUCTURE",
+      "label": "Kap-/dakconstructie en stabiliteit",
+      "required": true
+    },
+    {
+      "id": "STR_FOUNDATION",
+      "label": "Fundering, reactiekrachten, grondspanning/geotechnische onderbouwing en wapening",
+      "required": true
+    },
+    {
+      "id": "STR_CONNECTIONS",
+      "label": "Verbindingen/opleggingen waar maatgevend",
+      "required": false,
+      "conditional": "engineered_connections"
+    },
+    {
+      "id": "STR_DRAWINGS",
+      "label": "Constructietekeningen en details gekoppeld aan berekeningen",
+      "required": true
+    },
+    {
+      "id": "STR_QA_REVIEW",
+      "label": "QA/QC, conclusies, beperkingen en professionele reviewstatus",
+      "required": true
+    }
+  ],
+  "release_rule": {
+    "production_release_ready": "all applicable items GENERATED_AND_VALIDATED or NOT_APPLICABLE_WITH_REASON",
+    "blocked_if_any": "BLOCKED_WITH_EXPLICIT_REASON",
+    "automatic_professional_approval": false
+  }
+}
