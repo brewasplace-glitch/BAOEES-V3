@@ -98,10 +98,30 @@ def _load_remote_json(url: str, timeout: float, maximum_bytes: int) -> dict[str,
         raise ValueError("Remote material/supply JSON root must be an object.")
     return value
 
-def _discover_catalogs(repository: Path, policy: dict[str,Any]) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
+def _discover_catalogs(repository: Path, policy: dict[str,Any], project_id: str | None = None) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
     registry=_source_registry(repository)
     found=[]
     failures=[]
+    if project_id:
+        runtime_root=repository/"projects"/"runtime"/project_id/"sources"/"material_supply"
+        if runtime_root.is_dir():
+            for path in sorted(runtime_root.rglob("*.json")):
+                try:
+                    found.append({
+                        "source_id":"PROJECT_RUNTIME_MATERIAL_SUPPLY",
+                        "source_kind":"project_runtime",
+                        "source_priority":1000,
+                        "source_max_age_days":30,
+                        "source_reference":path.relative_to(repository).as_posix(),
+                        "catalog":_read_json(path),
+                    })
+                except Exception as exc:
+                    failures.append({
+                        "source_id":"PROJECT_RUNTIME_MATERIAL_SUPPLY",
+                        "reference":str(path),
+                        "reason":"INVALID_MATERIAL_SUPPLY_CATALOG",
+                        "message":str(exc),
+                    })
     remote=policy.get("remote") or {}
     timeout=float(remote.get("timeout_seconds",8))
     maximum_bytes=int(remote.get("maximum_bytes",5_000_000))
@@ -430,7 +450,7 @@ def build_local_material_supply_context(
             "message":"Projectland/gebiedsdeel is vereist voordat lokale materiaal- en productbeschikbaarheid kan worden bevestigd.",
         })
 
-    discovered,source_failures=_discover_catalogs(repository,policy)
+    discovered,source_failures=_discover_catalogs(repository,policy,project_id)
     products=[]
     rejections=list(source_failures)
     if geography["country_code"]:

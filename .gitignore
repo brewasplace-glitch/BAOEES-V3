@@ -29,3 +29,11 @@ artifacts/runtime/
 
 # PROJECT PHOENIX official start v3 runtime
 phoenix/local_app/static/official_start_v3_0/phoenix_start_screen_runtime.json
+
+# Phoenix generated real-world evidence (runtime/project state)
+/projects/runtime/*/sources/
+/inputs/market_prices/acquired/
+/inputs/material_supply/acquired/
+/inputs/regulatory_reference/acquired/
+/inputs/structural_action_load/acquired/
+/inputs/site_context/acquired/

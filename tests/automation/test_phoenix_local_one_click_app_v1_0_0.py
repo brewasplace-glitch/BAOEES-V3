@@ -26,7 +26,7 @@ class PhoenixLocalOneClickAppTests(unittest.TestCase):
         self.assertEqual(8765, CONFIG["preferred_port"])
 
     def test_twelve_workflows_registered(self):
-        self.assertEqual(12, len(CONFIG["workflows"]))
+        self.assertEqual(13, len(CONFIG["workflows"]))
 
     def test_real_production_workflow_is_visible(self):
         self.assertIn(

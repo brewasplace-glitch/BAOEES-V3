@@ -41,8 +41,8 @@ class EngineeringRealWorldTests(unittest.TestCase):
                 manifest={},upload_paths=[price,material]
             )
             self.assertEqual(result.register["acquired_count"],2)
-            self.assertTrue((repo/"inputs"/"market_prices"/"acquired"/"P1").is_dir())
-            self.assertTrue((repo/"inputs"/"material_supply"/"acquired"/"P1").is_dir())
+            self.assertTrue((repo/"projects"/"runtime"/"P1"/"sources"/"market_prices").is_dir())
+            self.assertTrue((repo/"projects"/"runtime"/"P1"/"sources"/"material_supply").is_dir())
         finally:td.cleanup()
 
     def test_02_no_provider_means_no_fabricated_live_data(self):

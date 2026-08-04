@@ -126,10 +126,30 @@ def _load_remote_json(url: str, timeout: float, maximum_bytes: int) -> dict[str,
         raise ValueError("Remote market price source JSON root must be an object.")
     return value
 
-def _discover_ratebooks(repository: Path, policy: dict[str,Any]) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
+def _discover_ratebooks(repository: Path, policy: dict[str,Any], project_id: str | None = None) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
     registry=_registry(repository)
     discovered=[]
     failures=[]
+    if project_id:
+        runtime_root=repository/"projects"/"runtime"/project_id/"sources"/"market_prices"
+        if runtime_root.is_dir():
+            for path in sorted(runtime_root.rglob("*.json")):
+                try:
+                    discovered.append({
+                        "source_id":"PROJECT_RUNTIME_MARKET_PRICES",
+                        "source_kind":"project_runtime",
+                        "source_priority":1000,
+                        "source_max_age_days":90,
+                        "source_reference":path.relative_to(repository).as_posix(),
+                        "ratebook":_read_json(path),
+                    })
+                except Exception as exc:
+                    failures.append({
+                        "source_id":"PROJECT_RUNTIME_MARKET_PRICES",
+                        "reference":str(path),
+                        "reason":"INVALID_RATEBOOK_JSON",
+                        "message":str(exc),
+                    })
     remote_cfg=policy.get("remote") or {}
     timeout=float(remote_cfg.get("timeout_seconds",8))
     maximum_bytes=int(remote_cfg.get("maximum_bytes",5_000_000))
@@ -316,7 +336,7 @@ def build_local_cost_market_context(
             "as_of_date":as_of.isoformat(),"geography":geography,"pricing_gate":"BLOCKED",
         },{"sources":[],"rejections":[]},[],blockers,warnings)
 
-    discovered,source_failures=_discover_ratebooks(repository,policy)
+    discovered,source_failures=_discover_ratebooks(repository,policy,project_id)
     accepted=[]
     rejections=list(source_failures)
     for candidate in discovered:

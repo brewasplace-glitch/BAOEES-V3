@@ -11,7 +11,7 @@ def root():
 class T(unittest.TestCase):
     def test_registry(self):
         d=json.loads((root()/"configs/phoenix/ai_runtime_registry_v13_0.json").read_text(encoding="utf-8-sig"))
-        self.assertEqual(d["registry_version"],"v13.0")
+        self.assertEqual(d["registry_version"],"v13.1")
         self.assertGreaterEqual(len(d["engines"]),4)
     def test_import(self):
         p=root()/"apps/brewster_engineering_wizard/project_analyzer/phoenix_ai_runtime_v13_0.py"

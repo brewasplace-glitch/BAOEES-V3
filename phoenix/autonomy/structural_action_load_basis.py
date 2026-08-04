@@ -41,6 +41,7 @@ def _policy(repository:Path)->dict[str,Any]:
 
 def _sources(repository:Path,project_id:str)->list[Path]:
     roots=[
+        repository/"projects"/"runtime"/project_id/"sources"/"structural_action_load",
         repository/"inputs"/"structural_action_load",
         repository/"data"/"structural_action_load",
         repository/"configs"/"phoenix"/"structural_action_load_catalog",

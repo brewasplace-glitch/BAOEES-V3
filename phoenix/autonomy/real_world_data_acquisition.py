@@ -116,14 +116,13 @@ def _fetch(url: str, *, timeout: float, maximum_bytes: int, response_type: str) 
     return raw,parsed
 
 def _destination(repository: Path, category: str, project_id: str) -> Path:
-    mapping={
-        "market_prices":repository/"inputs"/"market_prices"/"acquired"/project_id,
-        "material_supply":repository/"inputs"/"material_supply"/"acquired"/project_id,
-        "structural_action_load":repository/"inputs"/"structural_action_load"/"acquired"/project_id,
-        "site_context":repository/"inputs"/"site_context"/"acquired"/project_id,
-        "regulatory_reference":repository/"inputs"/"regulatory_reference"/"acquired"/project_id,
+    allowed={
+        "market_prices","material_supply","structural_action_load",
+        "site_context","regulatory_reference",
     }
-    return mapping[category]
+    if category not in allowed:
+        raise KeyError(category)
+    return repository/"projects"/"runtime"/project_id/"sources"/category
 
 def _classify_uploaded_json(value: dict[str,Any]) -> str|None:
     schema=str(value.get("schema_version") or "").lower()

@@ -1,0 +1,20 @@
+{
+  "schema_version": "phoenix.real-world-evidence-persistence-policy/1.0",
+  "version": "1.0.0",
+  "runtime_evidence_root": "projects/runtime/<project_id>/sources",
+  "categories": [
+    "market_prices",
+    "material_supply",
+    "regulatory_reference",
+    "structural_action_load",
+    "site_context"
+  ],
+  "rules": {
+    "dynamic_acquired_evidence_must_not_dirty_git_repository": true,
+    "project_isolation_required": true,
+    "sha256_traceability_required": true,
+    "cross_project_source_leakage_forbidden": true,
+    "legacy_repository_input_acquired_paths_are_compatibility_only": true,
+    "production_release": "LOCKED"
+  }
+}
