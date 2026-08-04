@@ -1,0 +1,60 @@
+{
+  "schema_version": "phoenix.global-material-candidate-source-schema/1.0",
+  "required_for_selection": [
+    "material_family",
+    "availability_status",
+    "engineering_material_id",
+    "technical_properties",
+    "certifications",
+    "supplier_name",
+    "country_code",
+    "quote_quantity",
+    "unit",
+    "landed_cost evidence"
+  ],
+  "accepted_landed_cost_forms": {
+    "explicit_delivered_total": {
+      "fields": [
+        "landed_cost.landed_cost_total_srd OR landed_cost.delivered_total",
+        "landed_cost.delivered_to"
+      ]
+    },
+    "calculated": {
+      "product": [
+        "unit_price",
+        "currency",
+        "quote_quantity"
+      ],
+      "logistics": [
+        "packing",
+        "origin_inland",
+        "export_handling",
+        "freight",
+        "insurance",
+        "destination_handling",
+        "brokerage",
+        "last_mile"
+      ],
+      "import": [
+        "duty_amount OR duty_rate+duty_basis=CIF",
+        "tax_amount OR tax_rate+tax_basis=CIF_PLUS_DUTY"
+      ],
+      "fx": [
+        "current project FX evidence when source currency != project currency"
+      ]
+    }
+  },
+  "certification_example": {
+    "standard": "EN 10080",
+    "certificate_id": "SUPPLIER-CERT-ID",
+    "evidence_url": "https://supplier.example/certificate"
+  },
+  "safety": {
+    "invented_certificate": false,
+    "invented_freight": false,
+    "invented_duty": false,
+    "invented_tax": false,
+    "invented_fx": false,
+    "automatic_ordering": false
+  }
+}

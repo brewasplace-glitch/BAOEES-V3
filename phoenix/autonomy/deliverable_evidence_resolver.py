@@ -136,7 +136,10 @@ def build_minimum_deliverable_manifest(ctx: dict[str, Any]) -> dict[str, Any]:
 
     structural_candidates = _read(structural_root / "v8_0_structural_derivation" / "model" / "structural_candidate_model.json")
     stage_register = _read(structural_root / "validated_v8_1_to_v8_12" / "stage_register.json")
-    material_register = _read(arch_root / "local_material_selection_register.json")
+    material_path = arch_root / "structural_material_selection_register.json"
+    if not material_path.is_file():
+        material_path = arch_root / "local_material_selection_register.json"
+    material_register = _read(material_path)
     load_register = _read(structural_root / "validated_v8_1_to_v8_12" / "v8_2" / "structural_action_load_source_register.json")
 
     structural_rules = {
@@ -156,7 +159,7 @@ def build_minimum_deliverable_manifest(ctx: dict[str, Any]) -> dict[str, Any]:
         complete = len(evidence) == len(paths)
         items.append(_entry(item_id, labels[item_id], "GENERATED_AND_VALIDATED" if complete else "BLOCKED_WITH_EXPLICIT_REASON", None if complete else "STRUCTURAL_STAGE_EVIDENCE_REQUIRED", evidence))
 
-    material_evidence = _existing([arch_root / "local_material_selection_register.json"], repo)
+    material_evidence = _existing([material_path], repo)
     material_ok = bool(material_register.get("all_structural_requirements_engineering_qualified"))
     items.append(_entry("STR_MATERIALS", labels["STR_MATERIALS"], "GENERATED_AND_VALIDATED" if material_ok and material_evidence else "BLOCKED_WITH_EXPLICIT_REASON", None if material_ok else "LOCAL_STRUCTURAL_PRODUCT_TECHNICAL_EVIDENCE_REQUIRED", material_evidence))
 

@@ -1,0 +1,64 @@
+{
+  "schema_version": "phoenix.global-material-sourcing-policy/1.0",
+  "engine_version": "1.0.0",
+  "strategy": {
+    "local_first": true,
+    "international_fallback_when_local_unavailable_or_unqualified": true,
+    "selection_rule": "LOWEST_COMPLETE_LANDED_COST_TO_PROJECT_DESTINATION_AMONG_TECHNICALLY_VALID_CERTIFIED_OPTIONS",
+    "search_sequence": [
+      "PROJECT_LOCAL_EVIDENCE",
+      "CARICOM_AND_REGIONAL",
+      "AMERICAS",
+      "EUROPE",
+      "ASIA",
+      "OTHER_CONFIGURED_GLOBAL_SOURCES"
+    ],
+    "search_sequence_is_discovery_order_only": true,
+    "cheapest_valid_landed_option_wins_across_all_discovered_regions": true
+  },
+  "freshness": {
+    "availability_max_age_days": 30,
+    "price_max_age_days": 30,
+    "freight_max_age_days": 14,
+    "fx_max_age_days": 7
+  },
+  "landed_cost": {
+    "destination_default_for_surimane": "Paramaribo",
+    "mandatory_import_components": [
+      "packing",
+      "origin_inland",
+      "export_handling",
+      "freight",
+      "insurance",
+      "destination_handling",
+      "brokerage",
+      "last_mile"
+    ],
+    "customs_duty_must_be_explicit_amount_or_explicit_rate_with_basis": true,
+    "import_tax_must_be_explicit_amount_or_explicit_rate_with_basis": true,
+    "silent_tax_fabrication": false,
+    "silent_duty_fabrication": false,
+    "silent_freight_fabrication": false,
+    "silent_fx_fabrication": false
+  },
+  "technical_gate": {
+    "certification_evidence_required": true,
+    "engineering_material_id_required_for_structural_solver_use": true,
+    "structural_properties_required": true,
+    "ready_mix_finished_product_import_default": "BLOCKED_UNLESS_EXPLICITLY_IMPORTABLE"
+  },
+  "source_acquisition": {
+    "configured_https_json_sources_enabled": true,
+    "manifest_field": "global_material_source_urls",
+    "implicit_web_search": false,
+    "https_timeout_seconds": 12,
+    "https_max_bytes": 5000000
+  },
+  "procurement": {
+    "automatic_ordering": false,
+    "automatic_payment": false,
+    "automatic_product_substitution": false,
+    "professional_review_required": true
+  },
+  "production_release": "LOCKED"
+}

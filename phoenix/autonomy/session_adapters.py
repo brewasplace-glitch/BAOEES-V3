@@ -35,6 +35,7 @@ from .local_material_supply_intelligence import build_local_material_supply_cont
 from .real_world_data_acquisition import acquire_real_world_data
 from .site_parcel_intelligence import analyze_site_drawings
 from .local_product_qualification import prepare_local_product_qualification_overlay
+from .global_material_sourcing import build_global_material_sourcing_context
 from .suriname_structural_load_basis import ensure_suriname_structural_load_basis
 
 
@@ -364,6 +365,40 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         "all_structural_requirements_engineering_qualified",False
     )
 
+    # Global fallback sourcing: local first, then only explicit certified supplier
+    # evidence with complete landed-cost evidence to the project destination.
+    global_material_result=build_global_material_sourcing_context(
+        repository=ctx["repository"], workspace=ctx["workspace"], project_id=ctx["project_id"],
+        project_context=context_result.context,
+        local_selection_register=material_result.selection_register,
+        manifest=ctx.get("manifest") or {},
+    )
+    global_sourcing_path=out/"global_material_sourcing_register.json"
+    global_comparison_path=out/"global_material_candidate_comparison.json"
+    landed_cost_path=out/"landed_cost_register.json"
+    structural_material_path=out/"structural_material_selection_register.json"
+    write_json(global_sourcing_path,global_material_result.sourcing_register)
+    write_json(global_comparison_path,global_material_result.candidate_comparison)
+    write_json(landed_cost_path,global_material_result.landed_cost_register)
+    write_json(structural_material_path,global_material_result.structural_selection_register)
+    outputs.extend([
+        repo_ref(global_sourcing_path,ctx["repository"]),
+        repo_ref(global_comparison_path,ctx["repository"]),
+        repo_ref(landed_cost_path,ctx["repository"]),
+        repo_ref(structural_material_path,ctx["repository"]),
+    ])
+    metadata["global_material_sourcing_version"]="1.0.0"
+    metadata["global_material_sourcing_register"]=repo_ref(global_sourcing_path,ctx["repository"])
+    metadata["landed_cost_register"]=repo_ref(landed_cost_path,ctx["repository"])
+    metadata["structural_material_selection_register"]=repo_ref(structural_material_path,ctx["repository"])
+    metadata["material_supply_gate"]=global_material_result.status
+    metadata["all_material_requirements_supply_confirmed"]=global_material_result.structural_selection_register.get(
+        "all_requirements_supply_confirmed",False
+    )
+    metadata["all_structural_materials_engineering_qualified"]=global_material_result.structural_selection_register.get(
+        "all_structural_requirements_engineering_qualified",False
+    )
+
     profile_value.setdefault("local_material_policy",{}).update({
         "status":material_result.status,
         "selection_register":repo_ref(material_selection_path,ctx["repository"]),
@@ -411,7 +446,11 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         "detailed_elements": metadata.get("detailed_elements"),
         "structural_project_profile": metadata.get("structural_project_profile"),
         "local_material_selection_register": metadata.get("local_material_selection_register"),
+        "structural_material_selection_register": metadata.get("structural_material_selection_register"),
+        "global_material_sourcing_register": metadata.get("global_material_sourcing_register"),
+        "landed_cost_register": metadata.get("landed_cost_register"),
         "local_material_supply_gate": metadata.get("local_material_supply_gate"),
+        "material_supply_gate": metadata.get("material_supply_gate"),
         "project_context":metadata.get("project_context"),
         "site_context":metadata.get("site_context"),
         "drawing_register":metadata.get("drawing_register"),
@@ -462,6 +501,9 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
     drawing_register_ref=next((x for x in arch_outputs if x.endswith("/architectural_drawing_register.json")),None)
     location_intelligence_ref=next((x for x in arch_outputs if x.endswith("/location_intelligence.json")),None)
     local_material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    structural_material_selection_ref=next((x for x in arch_outputs if x.endswith("/structural_material_selection_register.json")),None)
+    global_material_sourcing_ref=next((x for x in arch_outputs if x.endswith("/global_material_sourcing_register.json")),None)
+    landed_cost_ref=next((x for x in arch_outputs if x.endswith("/landed_cost_register.json")),None)
     real_world_acquisition_ref=next((x for x in arch_outputs if x.endswith("/real_world_data_acquisition_register.json")),None)
     site_parcel_evidence_ref=next((x for x in arch_outputs if x.endswith("/site_parcel_evidence_register.json")),None)
 
@@ -476,6 +518,9 @@ def run_digital_twin(ctx: dict[str, Any]) -> int:
         "architectural_drawing_register":drawing_register_ref,
         "location_intelligence":location_intelligence_ref,
         "local_material_selection_register":local_material_selection_ref,
+        "structural_material_selection_register":structural_material_selection_ref,
+        "global_material_sourcing_register":global_material_sourcing_ref,
+        "landed_cost_register":landed_cost_ref,
         "real_world_data_acquisition":real_world_acquisition_ref,
         "site_parcel_evidence":site_parcel_evidence_ref,
         "structural_model": None,
@@ -516,7 +561,10 @@ def run_structural(ctx: dict[str, Any]) -> int:
     model_ref=next((x for x in arch_outputs if x.endswith("/architectural_model.json")),None)
     detail_ref=next((x for x in arch_outputs if x.endswith("/detailed_elements.json")),None)
     profile_ref=next((x for x in arch_outputs if x.endswith("/structural_project_profile.json")),None)
-    material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    material_selection_ref=(
+        next((x for x in arch_outputs if x.endswith("/structural_material_selection_register.json")),None)
+        or next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    )
     project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
 
     # Install a project-scoped Suriname interim structural load source before the
@@ -554,7 +602,9 @@ def run_structural(ctx: dict[str, Any]) -> int:
     chain_manifest={"schema_version":"phoenix.structural-session-adapter-chain/2.0","project_id":ctx["project_id"],"chain":discovery,
                     "validated_session_chain_version":"1.0.0","legacy_pilot_dependency": False,
                     "local_material_selection_register":material_selection_ref,
+                    "material_selection_register":material_selection_ref,
                     "local_material_availability_required":True,
+                    "local_or_imported_material_supply_required":True,
                     "automatic_structural_approval":False,"structural_release":"LOCKED"}
     chain_manifest_path=ctx["output_dir"]/"structural_v8_chain_manifest.json";write_json(chain_manifest_path,chain_manifest)
     if blockers:
@@ -670,7 +720,13 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
     arch_outputs=arch.get("outputs") or []
     model_ref=next((x for x in arch_outputs if x.endswith("/architectural_model.json")),None)
     project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
-    material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    local_material_selection_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    material_selection_ref=(
+        next((x for x in arch_outputs if x.endswith("/structural_material_selection_register.json")),None)
+        or local_material_selection_ref
+    )
+    global_sourcing_ref=next((x for x in arch_outputs if x.endswith("/global_material_sourcing_register.json")),None)
+    landed_cost_ref=next((x for x in arch_outputs if x.endswith("/landed_cost_register.json")),None)
 
     project_context={}
     if project_context_ref:
@@ -709,7 +765,10 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "fx_used":market.market_context.get("fx_used",False),
         "market_context":repo_ref(market_path,ctx["repository"]),
         "price_source_register":repo_ref(sources_path,ctx["repository"]),
-        "local_material_selection_register":material_selection_ref,
+        "local_material_selection_register":local_material_selection_ref,
+        "material_selection_register":material_selection_ref,
+        "global_material_sourcing_register":global_sourcing_ref,
+        "landed_cost_register":landed_cost_ref,
         "status":"INPUT_CHECK",
     }
     reg_path=ctx["output_dir"]/"cost_planning_input_register.json"
@@ -727,10 +786,19 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
             material_selection=read_json((ctx["repository"]/material_selection_ref).resolve())
         except Exception:
             material_selection={}
-    if not material_selection_ref or not material_selection.get("all_requirements_locally_confirmed",False):
+    material_supply_confirmed=bool(
+        material_selection.get("all_requirements_supply_confirmed",False)
+        or material_selection.get("all_requirements_locally_confirmed",False)
+    )
+    if not material_selection_ref or not material_supply_confirmed:
         blockers.append({
             "reason":"LOCAL_MATERIAL_AVAILABILITY_REQUIRED_FOR_COST_PLAN",
-            "message":"Kostenplanning mag niet als projectspecifiek lokaal plan doorgaan zolang vereiste materialen/producten niet lokaal bevestigd zijn.",
+            "message":"Kostenplanning vereist bevestigde lokale of geïmporteerde levering; de legacy reason-code blijft behouden voor API/testcompatibiliteit en importopties vereisen complete landed-cost evidence tot Paramaribo.",
+        })
+    if material_selection.get("all_imported_selections_landed_cost_complete") is False:
+        blockers.append({
+            "reason":"IMPORTED_MATERIAL_LANDED_COST_EVIDENCE_REQUIRED",
+            "message":"Een of meer importselecties missen complete vracht-, invoer-, belasting-, inklarings- of last-mile evidence.",
         })
     blockers.extend(market.blockers)
 
@@ -793,7 +861,11 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "automatic_tax_application":False,
         "local_price_traceability_required":True,
         "local_material_availability_required":True,
-        "local_material_selection_register":material_selection_ref,
+        "local_material_selection_register":local_material_selection_ref,
+        "local_or_imported_material_supply_required":True,
+        "material_selection_register":material_selection_ref,
+        "global_material_sourcing_register":global_sourcing_ref,
+        "landed_cost_register":landed_cost_ref,
         "cost_calculation":calculation_ref,
         "cost_estimate_status":"READY_FOR_LOCAL_MARKET_COST_ENGINE" if calculation_ref is None else "LOCAL_COST_CALCULATION_AVAILABLE",
         "schedule_status":"READY_FOR_PLANNING_ENGINE",
@@ -868,14 +940,21 @@ def run_closure(ctx: dict[str, Any]) -> int:
 
     arch_value=capabilities.get("architecture") or {}
     arch_outputs=arch_value.get("outputs") or []
-    material_ref=next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    material_ref=(
+        next((x for x in arch_outputs if x.endswith("/structural_material_selection_register.json")),None)
+        or next((x for x in arch_outputs if x.endswith("/local_material_selection_register.json")),None)
+    )
     material_gate={}
     if material_ref:
         try:
             material_gate=read_json((ctx["repository"]/material_ref).resolve())
         except Exception:
             material_gate={}
-    if not material_gate.get("all_requirements_locally_confirmed",False):
+    material_supply_ok=bool(
+        material_gate.get("all_requirements_supply_confirmed",False)
+        or material_gate.get("all_requirements_locally_confirmed",False)
+    )
+    if not material_supply_ok:
         blockers.append({
             "capability_id":"architecture",
             "reason":"LOCAL_MATERIAL_SUPPLY_GATE_NOT_PASSED",

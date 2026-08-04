@@ -342,7 +342,7 @@ def run_structural_chain(
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block(
             "LOCAL_STRUCTURAL_MATERIAL_AVAILABILITY_REQUIRED",
-            "v8.2 kan zijn afgerond, maar vóór solvermateriaalgebruik moeten constructieve producten lokaal beschikbaar én technisch engineering-gekwalificeerd zijn.",
+            "v8.2 kan zijn afgerond, maar vóór solvermateriaalgebruik moeten constructieve producten lokaal of via import beschikbaar, gecertificeerd en technisch engineering-gekwalificeerd zijn.",
             completed,"8.3.0",outputs,register,
             {"material_selection":_repo_ref(material_selection_path,repository) if material_selection_path else None}
         )
@@ -363,14 +363,14 @@ def run_structural_chain(
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block("STRUCTURAL_SOLVER_BASIS_AND_ELEMENT_ASSIGNMENTS_REQUIRED","Expliciete solverbasis, materialen, doorsneden en elementtoewijzingen zijn vereist voor v8.3.",completed,"8.3.0",outputs,register)
 
-    local_engineering_ids=selected_engineering_material_ids(material_selection)
+    qualified_engineering_ids=selected_engineering_material_ids(material_selection)
     solver_materials=set(str(x) for x in (solver_input.get("solver_basis") or {}).get("materials",{}).keys())
-    unconfirmed_solver_materials=sorted(x for x in solver_materials if x not in local_engineering_ids)
+    unconfirmed_solver_materials=sorted(x for x in solver_materials if x not in qualified_engineering_ids)
     if unconfirmed_solver_materials:
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block(
             "STRUCTURAL_SOLVER_MATERIAL_NOT_LOCALLY_CONFIRMED",
-            "Solverbasis verwijst naar materialen die niet als lokaal verkrijgbare geselecteerde engineering-materialen zijn bevestigd.",
+            "Solverbasis verwijst naar materialen die niet als geselecteerde, leverbare en engineering-gekwalificeerde materialen zijn bevestigd; de legacy reason-code blijft behouden voor compatibiliteit.",
             completed,"8.3.0",outputs,register,
             {"unconfirmed_material_ids":unconfirmed_solver_materials}
         )

@@ -1,0 +1,30 @@
+{
+  "schema_version": "phoenix.global-supplier-source-registry/1.0",
+  "version": "1.0.0",
+  "providers": [
+    {
+      "provider_id": "PROJECT_RUNTIME_GLOBAL_MATERIAL_SUPPLY",
+      "type": "PROJECT_RUNTIME_JSON",
+      "enabled": true,
+      "path": "projects/runtime/<project_id>/sources/global_material_supply/**/*.json"
+    },
+    {
+      "provider_id": "PROJECT_RUNTIME_IMPORT_CANDIDATES",
+      "type": "PROJECT_RUNTIME_JSON",
+      "enabled": true,
+      "path": "projects/runtime/<project_id>/sources/import_candidates/**/*.json"
+    },
+    {
+      "provider_id": "CONFIGURED_HTTPS_JSON_FEEDS",
+      "type": "HTTPS_JSON",
+      "enabled": true,
+      "configuration": "project_manifest.global_material_source_urls",
+      "notes": "Alleen expliciet geconfigureerde HTTPS-JSON feeds; geen impliciete zoekmachine of onbeheerde scraping."
+    }
+  ],
+  "implicit_web_search_provider": {
+    "enabled": false,
+    "reason": "Geen betrouwbare generieke zoek-API is vooraf geconfigureerd. Onbevestigde webresultaten mogen geen engineering-/kostenevidence worden."
+  },
+  "automatic_ordering": false
+}
