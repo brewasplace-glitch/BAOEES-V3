@@ -1,0 +1,127 @@
+{
+  "schema_version": "phoenix.european-certified-supply-priority-policy/1.0",
+  "engine_version": "1.0.0",
+  "local_supply": {
+    "qualified_local_supply_remains_first_choice": true
+  },
+  "international_discovery_priority": [
+    {
+      "priority": 1,
+      "region": "NETHERLANDS",
+      "country_codes": [
+        "NL"
+      ]
+    },
+    {
+      "priority": 2,
+      "region": "BELGIUM",
+      "country_codes": [
+        "BE"
+      ]
+    },
+    {
+      "priority": 3,
+      "region": "EUROPEAN_UNION",
+      "country_codes": [
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK"
+      ]
+    },
+    {
+      "priority": 4,
+      "region": "OTHER_GLOBAL",
+      "country_codes": []
+    }
+  ],
+  "selection": {
+    "primary_rule": "LOWEST_COMPLETE_LANDED_COST_TO_PROJECT_DESTINATION_AMONG_TECHNICALLY_VALID_CERTIFIED_OPTIONS",
+    "eu_priority_is": "DISCOVERY_ORDER_AND_EQUAL_COST_TIE_BREAK",
+    "non_eu_may_win_when": "STRICTLY_LOWER_COMPLETE_LANDED_COST_OR_NO_VALID_EU_OPTION"
+  },
+  "material_rules": {
+    "reinforcement_steel": {
+      "preferred_import_origin": "EU",
+      "minimum_technical_evidence": [
+        "engineering_material_id",
+        "declared_grade",
+        "yield_strength",
+        "certification_or_DoP"
+      ]
+    },
+    "structural_timber": {
+      "preferred_import_origin": "EU",
+      "minimum_technical_evidence": [
+        "engineering_material_id",
+        "strength_class",
+        "moisture_or_service_condition_evidence",
+        "certification_or_DoP"
+      ]
+    },
+    "structural_steel_section": {
+      "preferred_import_origin": "EU",
+      "minimum_technical_evidence": [
+        "engineering_material_id",
+        "steel_grade",
+        "section_properties",
+        "certification_or_DoP"
+      ]
+    },
+    "ready_mix_concrete": {
+      "preferred_supply": "LOCAL_PRODUCTION",
+      "finished_product_import_default": "BLOCKED"
+    }
+  },
+  "landed_cost_destination": {
+    "suriname_default": "Paramaribo",
+    "must_include_when_applicable": [
+      "product_price",
+      "packing",
+      "origin_inland",
+      "export_handling",
+      "freight",
+      "insurance",
+      "destination_handling",
+      "customs_duty",
+      "import_tax",
+      "brokerage_clearance",
+      "last_mile"
+    ]
+  },
+  "safety": {
+    "automatic_ordering": false,
+    "automatic_payment": false,
+    "automatic_product_substitution": false,
+    "automatic_professional_approval": false,
+    "certificate_fabrication": false,
+    "technical_property_fabrication": false,
+    "freight_fabrication": false,
+    "customs_fabrication": false,
+    "fx_fabrication": false,
+    "production_release": "LOCKED"
+  }
+}
