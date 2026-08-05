@@ -1087,3 +1087,16 @@ except Exception:
     # Import-time safety: existing Phoenix remains available. The existing
     # production-release lock remains authoritative.
     pass
+
+# PHOENIX_LANDED_COST_FALSE_PASS_GUARD_v1_0
+# Prevent a vacuous PASSED landed-cost gate when imports are required but no complete import exists.
+import functools as _phoenix_landed_guard_functools
+from phoenix.autonomy.landed_cost_gate_guard import postprocess_adapter_result as _phoenix_landed_guard_postprocess
+
+_phoenix_landed_guard_original_run_architecture = run_architecture
+
+@_phoenix_landed_guard_functools.wraps(_phoenix_landed_guard_original_run_architecture)
+def run_architecture(*args, **kwargs):
+    _phoenix_landed_result = _phoenix_landed_guard_original_run_architecture(*args, **kwargs)
+    return _phoenix_landed_guard_postprocess(_phoenix_landed_result, args=args, kwargs=kwargs)
+# END PHOENIX_LANDED_COST_FALSE_PASS_GUARD_v1_0

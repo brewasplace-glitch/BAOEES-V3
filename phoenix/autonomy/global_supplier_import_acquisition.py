@@ -157,3 +157,25 @@ def acquire_global_supplier_import_evidence(*,repository:Path,workspace:Path,pro
     for r in reqreg["requests"]:
         if r["material_family"] not in fam:blockers.append({"requirement_id":r.get("requirement_id"),"material_family":r["material_family"],"reason":"GLOBAL_PRODUCT_CANDIDATE_REQUIRED"})
     status="PASSED" if (not reqreg["request_count"] or (candidates and not blockers)) else "BLOCKED";out={"schema_version":"phoenix.global-supplier-import-acquisition-register/1.0","engine_version":VERSION,"project_id":project_id,"status":status,"destination":dest,"provider_count":len(providers),"active_supplier_discovery_provider":active,"request_count":reqreg["request_count"],"candidate_count":len(candidates),"written_catalogs":written,"provider_runs":runs,"blockers":blockers,"implicit_search_engine":False,"certification_fabrication":False,"hs_code_fabrication":False,"freight_fabrication":False,"customs_rate_fabrication":False,"automatic_ordering":False,"automatic_payment":False,"professional_review_required":True,"production_release":"LOCKED"};rd=workspace/"sources"/"import_acquisition";_write(rd/"global_supplier_discovery_request_register.json",reqreg);_write(rd/"global_supplier_import_acquisition_register.json",out);return AcquisitionResult(status,out,reqreg,written,blockers)
+
+# PHOENIX_STRUCTURED_PRODUCT_EVIDENCE_INTEGRATION_v1_0
+# Search results are discovery-only. Direct source evidence is required before engineering qualification.
+import functools as _phoenix_structured_evidence_functools
+from phoenix.autonomy.structured_product_evidence_acquisition import enhance_acquisition_result as _phoenix_structured_evidence_enhance
+
+_phoenix_structured_evidence_original_acquire_global_supplier_import_evidence = acquire_global_supplier_import_evidence
+
+@_phoenix_structured_evidence_functools.wraps(_phoenix_structured_evidence_original_acquire_global_supplier_import_evidence)
+def acquire_global_supplier_import_evidence(*args, **kwargs):
+    _phoenix_base_result = _phoenix_structured_evidence_original_acquire_global_supplier_import_evidence(*args, **kwargs)
+    try:
+        return _phoenix_structured_evidence_enhance(_phoenix_base_result, args=args, kwargs=kwargs)
+    except Exception as _phoenix_structured_evidence_exc:
+        # Fail-safe: never turn an acquisition error into a pass. Do not expose credentials or source bodies.
+        if isinstance(_phoenix_base_result, dict):
+            _phoenix_base_result["structured_product_evidence_enabled"] = True
+            _phoenix_base_result["structured_product_evidence_runtime_status"] = "BLOCKED"
+            _phoenix_base_result["structured_product_evidence_runtime_error"] = type(_phoenix_structured_evidence_exc).__name__
+            _phoenix_base_result["production_release"] = "LOCKED"
+        return _phoenix_base_result
+# END PHOENIX_STRUCTURED_PRODUCT_EVIDENCE_INTEGRATION_v1_0

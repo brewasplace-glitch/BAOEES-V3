@@ -1,0 +1,63 @@
+{
+  "schema_version": "phoenix.structured-product-evidence-material-route-policy/1.0",
+  "version": "1.0.0",
+  "effective_date": "2026-08-05",
+  "principles": {
+    "local_first": true,
+    "international_fallback": true,
+    "international_priority": ["NETHERLANDS", "BELGIUM", "EU27", "GLOBAL"],
+    "final_selection_basis": "LOWEST_COMPLETE_LANDED_COST_AMONG_TECHNICALLY_VALID_CERTIFIED_OPTIONS",
+    "search_snippet_is_not_engineering_evidence": true,
+    "direct_source_fetch_required": true,
+    "technical_document_or_product_page_evidence_required": true,
+    "fabricate_certificates": false,
+    "fabricate_material_properties": false,
+    "fabricate_freight": false,
+    "fabricate_customs": false,
+    "fabricate_tax": false,
+    "fabricate_fx": false,
+    "automatic_ordering": false,
+    "automatic_payment": false,
+    "automatic_professional_approval": false,
+    "production_release": "LOCKED"
+  },
+  "routing": {
+    "structural_concrete": {
+      "primary": "SURINAME_LOCAL_READY_MIX_TECHNICAL_QUALIFICATION",
+      "ordinary_ready_mix_international_import": false,
+      "special_prefab_or_component_import_requires_explicit_importability_evidence": true
+    },
+    "masonry_unit": {
+      "primary": "SURINAME_LOCAL_TECHNICAL_QUALIFICATION",
+      "fallback": ["NETHERLANDS", "BELGIUM", "EU27", "GLOBAL"]
+    },
+    "structural_timber": {
+      "primary": "SURINAME_LOCAL",
+      "fallback": ["NETHERLANDS", "BELGIUM", "EU27", "GLOBAL"],
+      "technical_examples": ["EN 338 strength class", "EN 14081", "DoP/CE or equivalent technical evidence"]
+    },
+    "reinforcement_steel": {
+      "primary": "SURINAME_LOCAL",
+      "fallback": ["NETHERLANDS", "BELGIUM", "EU27", "GLOBAL"],
+      "technical_examples": ["B500B/B500C or project-equivalent grade", "EN 10080/recognized product standard", "mill/inspection certificate or equivalent evidence"]
+    }
+  },
+  "landed_cost_gate": {
+    "empty_selected_imports_may_pass": false,
+    "when_import_required_and_no_complete_import": "BLOCKED",
+    "when_no_import_required": "NOT_APPLICABLE",
+    "required_components": [
+      "product_cost",
+      "packing_or_origin_handling_if_applicable",
+      "freight_cost",
+      "insurance_if_applicable",
+      "destination_cost",
+      "customs_duty",
+      "tax",
+      "brokerage_or_clearance_if_applicable",
+      "last_mile_if_applicable",
+      "fx_rate",
+      "total_landed_cost"
+    ]
+  }
+}
