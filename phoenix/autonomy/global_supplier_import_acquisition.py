@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote_plus
 import hashlib, json, os, urllib.request
+from phoenix.autonomy.european_certified_supply_priority import european_discovery_queries
+# PHOENIX_EUROPEAN_DISCOVERY_QUERY_PRIORITY_v1_0
 
 VERSION = "1.0.0"
 FAMILIES = {"masonry_unit","structural_concrete","reinforcement_steel","structural_timber","structural_steel_section"}
@@ -27,6 +29,10 @@ def _read(p:Path)->dict[str,Any]:
 def _write(p:Path,v:Any)->None:
     p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
 
+def _repo_ref(path:Path,repository:Path)->str:
+    try:return path.resolve().relative_to(repository.resolve()).as_posix()
+    except ValueError:return str(path.resolve())
+
 def _dest(ctx:dict[str,Any])->dict[str,Any]:
     f=ctx.get("facts") if isinstance(ctx,dict) else {};f=f if isinstance(f,dict) else {}
     return {"country_code":str(f.get("country_code") or "").upper() or None,"city":f.get("municipality") or f.get("city") or "Paramaribo","location":f.get("project_location") or f.get("location") or "Paramaribo, Suriname","currency":str(f.get("currency") or "SRD").upper()}
@@ -43,7 +49,10 @@ def unresolved(local:dict[str,Any])->list[dict[str,Any]]:
 def build_request_register(project_id:str,ctx:dict[str,Any],local:dict[str,Any])->dict[str,Any]:
     d=_dest(ctx);rows=[]
     for r in unresolved(local):
-        fam=str(r.get("material_family") or "");rows.append({"requirement_id":r.get("requirement_id"),"material_family":fam,"element_role":r.get("element_role"),"queries":[f"{t} supplier price delivery {d['city']} Suriname" for t in TERMS.get(fam,[fam.replace('_',' ')])],"required_evidence":["supplier_identity","product_identity","availability","engineering_material_id","technical_properties","certification","current_price","origin_country","hs_code","freight_to_destination","insurance","customs_duty","import_tax","brokerage","last_mile","current_fx_if_needed"]})
+        fam=str(r.get("material_family") or "")
+        base_queries=[f"{t} supplier price delivery {d['city']} Suriname" for t in TERMS.get(fam,[fam.replace('_',' ')])]
+        queries=[q for base in base_queries for q in european_discovery_queries(base,fam)]
+        rows.append({"requirement_id":r.get("requirement_id"),"material_family":fam,"element_role":r.get("element_role"),"queries":queries,"discovery_priority":["NL","BE","EU27","GLOBAL"],"required_evidence":["supplier_identity","product_identity","availability","engineering_material_id","technical_properties","certification","current_price","origin_country","hs_code","freight_to_destination","insurance","customs_duty","import_tax","brokerage","last_mile","current_fx_if_needed"]})
     return {"schema_version":"phoenix.global-supplier-discovery-request-register/1.0","project_id":project_id,"created_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat(),"destination":d,"request_count":len(rows),"requests":rows,"automatic_ordering":False,"production_release":"LOCKED"}
 
 def _cfg(repo:Path,name:str)->dict[str,Any]:
