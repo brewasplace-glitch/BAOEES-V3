@@ -6,12 +6,16 @@
       "provider_id": "BRAVE_WEB_SEARCH_API",
       "label": "Brave Search API supplier discovery",
       "category": "SUPPLIER_DISCOVERY",
-      "enabled": false,
+      "enabled": true,
       "method": "GET",
       "url_template": "https://api.search.brave.com/res/v1/web/search?q={query}&count=10",
       "api_key_env": "PHOENIX_BRAVE_SEARCH_API_KEY",
       "api_key_header": "X-Subscription-Token",
-      "response_mode": "SEARCH_RESULTS"
+      "response_mode": "SEARCH_RESULTS",
+      "credential_storage": "WINDOWS_USER_ENVIRONMENT_VARIABLE",
+      "credential_logging": false,
+      "credential_repository_storage": false,
+      "activation_status": "ACTIVE_WHEN_CREDENTIAL_AVAILABLE"
     },
     {
       "provider_id": "SERPER_GOOGLE_SEARCH_API",
@@ -23,7 +27,11 @@
       "api_key_env": "PHOENIX_SERPER_API_KEY",
       "api_key_header": "X-API-KEY",
       "response_mode": "SEARCH_RESULTS",
-      "body_template": {"q": "{query}", "num": 10}
+      "body_template": {
+        "q": "{query}",
+        "num": 10
+      },
+      "activation_status": "OPTIONAL_FALLBACK_DISABLED"
     }
   ],
   "project_manifest_fields": [
@@ -33,11 +41,25 @@
     "customs_source_urls"
   ],
   "authoritative_reference_sources": [
-    {"source_id":"SR_ASYCUDA_ONLINE_TARIFF","url":"https://asycuda.belastingdienst.sr/portal/services/tariff/sections.jsf"},
-    {"source_id":"SR_GOV_IMPORT_EXPORT_CONTROL","url":"https://gov.sr/bekendmaking/informatie-invoer-uitvoer-en-doorvoer-van-goederen/"},
-    {"source_id":"SR_GOV_CUSTOMS","url":"https://gov.sr/thema/douane/"},
-    {"source_id":"SR_IMPORT_DUTY_LAW","url":"https://gov.sr/document/wet-tarief-van-invoerrechten/"}
+    {
+      "source_id": "SR_ASYCUDA_ONLINE_TARIFF",
+      "url": "https://asycuda.belastingdienst.sr/portal/services/tariff/sections.jsf"
+    },
+    {
+      "source_id": "SR_GOV_IMPORT_EXPORT_CONTROL",
+      "url": "https://gov.sr/bekendmaking/informatie-invoer-uitvoer-en-doorvoer-van-goederen/"
+    },
+    {
+      "source_id": "SR_GOV_CUSTOMS",
+      "url": "https://gov.sr/thema/douane/"
+    },
+    {
+      "source_id": "SR_IMPORT_DUTY_LAW",
+      "url": "https://gov.sr/document/wet-tarief-van-invoerrechten/"
+    }
   ],
   "automatic_ordering": false,
-  "automatic_payment": false
+  "automatic_payment": false,
+  "primary_supplier_discovery_provider": "BRAVE_WEB_SEARCH_API",
+  "supplier_discovery_fail_safe": "BLOCK_WHEN_PROVIDER_OR_CREDENTIAL_UNAVAILABLE"
 }
