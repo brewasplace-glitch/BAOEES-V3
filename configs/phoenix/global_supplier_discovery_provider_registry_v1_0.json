@@ -1,0 +1,43 @@
+{
+  "schema_version": "phoenix.global-supplier-discovery-provider-registry/1.0",
+  "version": "1.0.0",
+  "providers": [
+    {
+      "provider_id": "BRAVE_WEB_SEARCH_API",
+      "label": "Brave Search API supplier discovery",
+      "category": "SUPPLIER_DISCOVERY",
+      "enabled": false,
+      "method": "GET",
+      "url_template": "https://api.search.brave.com/res/v1/web/search?q={query}&count=10",
+      "api_key_env": "PHOENIX_BRAVE_SEARCH_API_KEY",
+      "api_key_header": "X-Subscription-Token",
+      "response_mode": "SEARCH_RESULTS"
+    },
+    {
+      "provider_id": "SERPER_GOOGLE_SEARCH_API",
+      "label": "Serper Google Search API supplier discovery",
+      "category": "SUPPLIER_DISCOVERY",
+      "enabled": false,
+      "method": "POST",
+      "url_template": "https://google.serper.dev/search",
+      "api_key_env": "PHOENIX_SERPER_API_KEY",
+      "api_key_header": "X-API-KEY",
+      "response_mode": "SEARCH_RESULTS",
+      "body_template": {"q": "{query}", "num": 10}
+    }
+  ],
+  "project_manifest_fields": [
+    "global_supplier_discovery_urls",
+    "certification_source_urls",
+    "freight_quote_source_urls",
+    "customs_source_urls"
+  ],
+  "authoritative_reference_sources": [
+    {"source_id":"SR_ASYCUDA_ONLINE_TARIFF","url":"https://asycuda.belastingdienst.sr/portal/services/tariff/sections.jsf"},
+    {"source_id":"SR_GOV_IMPORT_EXPORT_CONTROL","url":"https://gov.sr/bekendmaking/informatie-invoer-uitvoer-en-doorvoer-van-goederen/"},
+    {"source_id":"SR_GOV_CUSTOMS","url":"https://gov.sr/thema/douane/"},
+    {"source_id":"SR_IMPORT_DUTY_LAW","url":"https://gov.sr/document/wet-tarief-van-invoerrechten/"}
+  ],
+  "automatic_ordering": false,
+  "automatic_payment": false
+}

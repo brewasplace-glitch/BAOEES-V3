@@ -1,0 +1,8 @@
+{
+  "schema_version": "phoenix.global-import-evidence-provider-schema/1.0",
+  "supplier_product_minimum_fields": ["product_id","supplier_name","material_family","availability_status","country_code","unit_price","currency"],
+  "engineering_qualification_fields": ["engineering_material_id","technical_properties","certifications"],
+  "freight_fields": ["packing","origin_inland","export_handling","freight","insurance","destination_handling","brokerage","last_mile","freight_quote_date"],
+  "customs_fields": ["hs_code","duty_amount_or_rate","tax_amount_or_rate","source_url","as_of_date"],
+  "warning": "Schema fields define required evidence; no example values are loaded as project facts."
+}

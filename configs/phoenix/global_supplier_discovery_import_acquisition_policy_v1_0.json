@@ -1,0 +1,27 @@
+{
+  "schema_version": "phoenix.global-supplier-discovery-import-acquisition-policy/1.0",
+  "engine_version": "1.0.0",
+  "https_timeout_seconds": 15,
+  "https_max_bytes": 5000000,
+  "strategy": {
+    "local_first": true,
+    "international_fallback": true,
+    "selection_engine": "existing_global_material_sourcing_v1_0",
+    "selection_basis": "LOWEST_COMPLETE_LANDED_COST_AMONG_TECHNICALLY_VALID_CERTIFIED_OPTIONS"
+  },
+  "safety": {
+    "implicit_search_engine": false,
+    "search_result_snippet_is_engineering_evidence": false,
+    "certificate_fabrication": false,
+    "technical_property_fabrication": false,
+    "hs_code_fabrication": false,
+    "freight_fabrication": false,
+    "customs_rate_fabrication": false,
+    "tax_fabrication": false,
+    "fx_fabrication": false,
+    "automatic_ordering": false,
+    "automatic_payment": false,
+    "automatic_professional_approval": false,
+    "production_release": "LOCKED"
+  }
+}

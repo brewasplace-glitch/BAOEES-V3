@@ -1,0 +1,3 @@
+# Phoenix Global Supplier Discovery, Certification Evidence, Freight & Customs Import Cost Acquisition v1.0
+
+Bouwt de acquisitielaag vóór de bestaande Global Material Sourcing engine. Alleen expliciet geconfigureerde HTTPS catalogi/search-API's en gestructureerde certificatie-, freight- en customs-feeds worden gebruikt. Geen leverancier, certificaat, sterktewaarde, HS-code, freight, invoerrecht, belasting of FX wordt verzonnen. Officiële Suriname-referenties (ASYCUDA, overheid import/export, Douane, Wet tarief van invoerrechten) zijn geregistreerd als bronreferenties. Automatisch bestellen/betalen en professionele goedkeuring blijven uit; productievrijgave blijft LOCKED.
