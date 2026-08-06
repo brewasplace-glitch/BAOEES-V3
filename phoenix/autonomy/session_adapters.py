@@ -7,6 +7,7 @@ from __future__ import annotations
 from phoenix.autonomy.material_certification_engineering_mode import (
     cost_certification_block_should_apply as _phoenix_material_mode_cost_gate,
 )
+from phoenix.autonomy.material_certification_engineering_mode import split_cost_blockers_for_continuation as _phoenix_split_cost_blockers, continue_cost_calculation_with_unresolved_prices as _phoenix_continue_cost_calculation
 
 import json
 import re
@@ -752,7 +753,11 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
     write_json(market_path,market.market_context)
     write_json(sources_path,market.source_register)
 
-    currency=market.market_context.get("project_currency")
+    currency=(
+        market.market_context.get("project_currency")
+        or ((market.market_context.get("geography") or {}).get("currency") if isinstance(market.market_context.get("geography"),dict) else None)
+        or ctx["manifest"].get("currency")
+    )
     if currency and ctx["manifest"].get("currency")!=currency:
         _update_project_manifest(ctx,{"currency":currency,"currency_basis":"LOCAL_COST_INTELLIGENCE_FROM_PROJECT_GEOGRAPHY"})
 
@@ -803,7 +808,13 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
             "reason":"IMPORTED_MATERIAL_LANDED_COST_EVIDENCE_REQUIRED",
             "message":"Een of meer importselecties missen complete vracht-, invoer-, belasting-, inklarings- of last-mile evidence.",
         })
-    blockers.extend(market.blockers)
+    _phoenix_market_hard_blockers, _phoenix_unresolved_price_evidence = _phoenix_split_cost_blockers(market.blockers)
+    blockers.extend(_phoenix_market_hard_blockers)
+    price_evidence_status = "UNRESOLVED" if _phoenix_unresolved_price_evidence else "CONFIRMED"
+    register["price_evidence_status"] = price_evidence_status
+    register["unresolved_price_evidence"] = _phoenix_unresolved_price_evidence
+    register["price_fabricated"] = False
+    write_json(reg_path,register)
 
     outputs=[
         repo_ref(reg_path,ctx["repository"]),
@@ -829,6 +840,7 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         None
     )
     calculation_ref=None
+    calculation_status=None
     if quantity_ref:
         qpath=(ctx["repository"]/quantity_ref).resolve()
         try:
@@ -838,11 +850,13 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
             quantity_items=None
         if isinstance(quantity_items,list):
             calc=calculate_cost_items(quantity_items=quantity_items,market_result=market)
+            calc,_phoenix_calc_should_block=_phoenix_continue_cost_calculation(calc)
+            calculation_status=calc.get("status") if isinstance(calc,dict) else None
             calc_path=ctx["output_dir"]/"local_cost_calculation.json"
             write_json(calc_path,calc)
             outputs.append(repo_ref(calc_path,ctx["repository"]))
             calculation_ref=repo_ref(calc_path,ctx["repository"])
-            if calc.get("status")!="PASSED":
+            if _phoenix_calc_should_block:
                 return finish(
                     ctx,capability_id=cap,label=label,status="BLOCKED_INPUT",
                     outputs=outputs,blockers=list(calc.get("blockers") or []),warnings=market.warnings,
@@ -857,8 +871,8 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "market_context":repo_ref(market_path,ctx["repository"]),
         "price_source_register":repo_ref(sources_path,ctx["repository"]),
         "currency":currency,
-        "pricing_level":market.market_context["selected_pricing_level"],
-        "primary_ratebook":market.market_context["primary_ratebook"],
+        "pricing_level":market.market_context.get("selected_pricing_level"),
+        "primary_ratebook":market.market_context.get("primary_ratebook"),
         "fx_used":False,
         "international_fx_fallback":False,
         "automatic_tax_application":False,
@@ -870,7 +884,15 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "global_material_sourcing_register":global_sourcing_ref,
         "landed_cost_register":landed_cost_ref,
         "cost_calculation":calculation_ref,
-        "cost_estimate_status":"READY_FOR_LOCAL_MARKET_COST_ENGINE" if calculation_ref is None else "LOCAL_COST_CALCULATION_AVAILABLE",
+        "price_evidence_status":price_evidence_status,
+        "unresolved_price_evidence":_phoenix_unresolved_price_evidence,
+        "price_fabricated":False,
+        "cost_estimate_status":(
+            "PARTIAL_UNRESOLVED_PRICES" if calculation_status=="PARTIAL_UNRESOLVED_PRICES"
+            else "PRICE_EVIDENCE_UNRESOLVED_ESTIMATE_CONTINUES" if price_evidence_status=="UNRESOLVED"
+            else "READY_FOR_LOCAL_MARKET_COST_ENGINE" if calculation_ref is None
+            else "LOCAL_COST_CALCULATION_AVAILABLE"
+        ),
         "schedule_status":"READY_FOR_PLANNING_ENGINE",
         "professional_review_required":True,
         "production_release":"LOCKED",
@@ -884,7 +906,7 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         metadata={
             "local_cost_intelligence_version":"1.0.0",
             "project_currency":currency,
-            "pricing_level":market.market_context["selected_pricing_level"],
+            "pricing_level":market.market_context.get("selected_pricing_level"),
             "pricing_as_of_date":market.market_context["as_of_date"],
             "fx_used":False,
         },
@@ -1135,3 +1157,9 @@ def run_cost_planning(*args, **kwargs):
     _result = _phoenix_material_mode_original_run_cost_planning(*args, **kwargs)
     return _phoenix_material_mode_cost_postprocess(_result, args=args, kwargs=kwargs)
 # END PHOENIX_MATERIAL_ENGINEERING_CONTINUATION_v1_1
+# PHOENIX_COST_PRICE_RUNTIME_CONTINUATION_FIXED_R4
+# RUNNERS was created before the R4 wrappers; rebind public adapters to the wrapped callables.
+RUNNERS["architecture"] = run_architecture
+RUNNERS["structural_engineering"] = run_structural
+RUNNERS["cost_planning"] = run_cost_planning
+# Missing current price evidence remains unresolved, never fabricated, and does not block estimate/planning generation.

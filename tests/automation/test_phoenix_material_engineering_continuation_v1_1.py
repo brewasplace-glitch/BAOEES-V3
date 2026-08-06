@@ -32,6 +32,18 @@ class MaterialEngineeringContinuationTests(unittest.TestCase):
         (a/"architectural_session_intake.json").write_text(json.dumps({"material_certification_mode":mode}),encoding="utf-8")
         return ws
 
+    def test_explicit_temp_workspace_wins_over_inferred_repository_reference(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            ws=root/"projects"/"runtime"/"P1"
+            ws.mkdir(parents=True)
+            context={
+                "evidence":"projects/runtime/OTHER/results/x.json",
+                "ctx":{"workspace":ws,"project_id":"P1"},
+            }
+            resolved=m.resolve_workspace(context)
+            self.assertEqual(resolved,ws.resolve())
+
     def test_unknown_availability_does_not_block_relaxed_engineering(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td); ws=self._workspace(root,unknown=True)
@@ -75,11 +87,14 @@ class MaterialEngineeringContinuationTests(unittest.TestCase):
                 self.assertEqual(reg["available_alternative_count"],0)
                 self.assertEqual(reg["unavailable_material_count"],1)
 
-    def test_missing_design_class_can_still_block_for_design_basis_not_availability(self):
+    def test_missing_design_class_does_not_trigger_certification_or_availability_gate(self):
         with tempfile.TemporaryDirectory() as td:
             root=Path(td); ws=self._workspace(root,unknown=True,design_class="")
             with patch.object(m,"PROJECT_ROOT",root):
-                self.assertTrue(m.structural_certification_block_should_apply({"workspace":str(ws),"material_certification_mode":m.MODE_UNCERTIFIED}))
+                self.assertFalse(m.structural_certification_block_should_apply({"workspace":str(ws),"material_certification_mode":m.MODE_UNCERTIFIED}))
+                gaps=m.build_design_material_basis_gap_register(ws)
+                self.assertEqual(gaps["design_basis_gap_count"],1)
+                self.assertEqual(gaps["gaps"][0]["status"],"STRUCTURAL_DESIGN_MATERIAL_BASIS_REQUIRED")
 
     def test_unknown_availability_does_not_block_cost_generation(self):
         with tempfile.TemporaryDirectory() as td:
@@ -94,6 +109,14 @@ class MaterialEngineeringContinuationTests(unittest.TestCase):
                 reg=m.build_uncertified_material_register(ws)
                 self.assertEqual(reg["materials"][0]["unit_price"],100)
                 self.assertEqual(reg["materials"][0]["certification_status"],"UNCERTIFIED")
+
+    def test_uncertified_register_reference_uses_normalizing_repo_ref_helper(self):
+        source=Path(m.__file__).read_text(encoding="utf-8")
+        start=source.index("def build_uncertified_material_register")
+        end=source.index("def ", start + 4) if "def " in source[start + 4:] else len(source)
+        body=source[start:end]
+        self.assertIn("_repo_ref_for_workspace(", body)
+        self.assertNotIn(".relative_to(_repository_root_for_workspace(workspace))", body)
 
     def test_structural_postprocess_keeps_release_locked(self):
         with tempfile.TemporaryDirectory() as td:

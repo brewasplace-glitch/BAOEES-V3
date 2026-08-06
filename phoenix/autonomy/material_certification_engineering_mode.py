@@ -64,6 +64,39 @@ def resolve_mode(context: Any) -> str:
     return MODE_CERTIFIED
 
 
+def _repository_root_for_workspace(workspace: Path) -> Path:
+    """Return the repository owning ``projects/runtime/<project_id>``.
+
+    Production workspaces live under PROJECT_ROOT, while regression tests may construct
+    an isolated temporary repository. Evidence refs must remain relative to the repository
+    that actually owns the workspace.
+    """
+    try:
+        if workspace.parent.name == "runtime" and workspace.parent.parent.name == "projects":
+            return workspace.parent.parent.parent.resolve()
+    except Exception:
+        pass
+    return PROJECT_ROOT.resolve()
+
+
+def _repo_ref_for_workspace(path: Path, workspace: Path) -> str:
+    root=_repository_root_for_workspace(workspace)
+    try:
+        return path.resolve().relative_to(root).as_posix()
+    except Exception:
+        return path.as_posix()
+
+
+def _repository_root_for_project_path(path: Path) -> Path:
+    resolved=path.resolve()
+    parts=resolved.parts
+    for idx in range(len(parts)-1):
+        if str(parts[idx]).lower()=="projects" and str(parts[idx+1]).lower()=="runtime":
+            if idx>0:
+                return Path(*parts[:idx])
+    return PROJECT_ROOT.resolve()
+
+
 def _candidate_workspace_from_string(value: str) -> Path | None:
     norm = value.replace("\\", "/")
     token = "projects/runtime/"
@@ -80,33 +113,48 @@ def _candidate_workspace_from_string(value: str) -> Path | None:
 
 
 def resolve_workspace(context: Any) -> Path | None:
+    """Resolve the project workspace, preferring explicit context fields.
+
+    Adapter locals can contain many repository-relative evidence references such as
+    ``projects/runtime/<id>/...`` before the actual ``ctx["workspace"]`` value is
+    encountered by a recursive walk. Those references must never override an explicit
+    workspace supplied by the adapter, especially in isolated/temp-repository tests.
+    """
+    walked=list(_walk(context))
     project_ids: list[str] = []
-    for item in _walk(context):
-        if isinstance(item, Mapping):
-            for key in ("workspace", "project_workspace"):
-                value = item.get(key)
-                if isinstance(value, str):
-                    candidate = Path(value)
-                    if not candidate.is_absolute():
-                        candidate = PROJECT_ROOT / candidate
-                    if "projects" in candidate.parts and "runtime" in candidate.parts:
-                        return candidate
-            value = item.get("project_id")
-            if isinstance(value, str) and value.strip():
-                project_ids.append(value.strip())
-        elif isinstance(item, Path):
-            candidate = _candidate_workspace_from_string(str(item))
+
+    # First pass: explicit workspace fields are authoritative. Support both Path and str.
+    for item in walked:
+        if not isinstance(item, Mapping):
+            continue
+        for key in ("workspace", "project_workspace"):
+            value=item.get(key)
+            if isinstance(value,(str,Path)) and str(value).strip():
+                candidate=Path(value)
+                if not candidate.is_absolute():
+                    candidate=PROJECT_ROOT/candidate
+                if "projects" in candidate.parts and "runtime" in candidate.parts:
+                    return candidate.resolve()
+        value=item.get("project_id")
+        if isinstance(value,str) and value.strip():
+            project_ids.append(value.strip())
+
+    # Second pass: infer from evidence references only when no explicit workspace exists.
+    for item in walked:
+        if isinstance(item,Path):
+            candidate=_candidate_workspace_from_string(str(item))
             if candidate:
                 return candidate
-        elif isinstance(item, str):
-            candidate = _candidate_workspace_from_string(item)
+        elif isinstance(item,str):
+            candidate=_candidate_workspace_from_string(item)
             if candidate:
                 return candidate
+
     for project_id in project_ids:
-        candidate = PROJECT_ROOT / "projects" / "runtime" / project_id
+        candidate=PROJECT_ROOT/"projects"/"runtime"/project_id
         if candidate.exists():
             return candidate
-    return (PROJECT_ROOT / "projects" / "runtime" / project_ids[0]) if project_ids else None
+    return (PROJECT_ROOT/"projects"/"runtime"/project_ids[0]) if project_ids else None
 
 
 def _mode_from_workspace(workspace: Path | None) -> str:
@@ -444,7 +492,7 @@ def resolve_material_availability(workspace: Path, mode: str | None = None) -> d
 
     if isinstance(data, MutableMapping) and path:
         data["material_availability_engineering_policy"] = "NON_BLOCKING_FOR_DESIGN"
-        data["material_availability_resolution_register"] = availability_path.relative_to(PROJECT_ROOT).as_posix()
+        data["material_availability_resolution_register"] = _repo_ref_for_workspace(availability_path, workspace)
         data["unavailable_material_count"] = len(unavailable)
         data["available_alternative_material_count"] = len(alternatives)
         _write_json(path, data)
@@ -482,12 +530,67 @@ def _extract_class_from_value(family: str, value: Any) -> str | None:
     return None
 
 
+_DESIGN_KEY_HINTS = (
+    "required", "design", "specified", "strength", "grade", "class",
+    "characteristic", "material_basis", "solver_material", "engineering_material",
+)
+_SUPPLY_KEY_HINTS = (
+    "supplier", "product", "candidate", "alternative", "availability", "price",
+    "cost", "source_url", "source_reference", "certification", "commercial",
+)
+
+
+def _design_only_projection(value: Any) -> Any:
+    """Keep design/specification fields and exclude procurement/supplier evidence.
+
+    This prevents supplier capability strings (for example a range of concrete classes)
+    from silently becoming the project's required design class.
+    """
+    if isinstance(value, Mapping):
+        projected: dict[str, Any] = {}
+        for key, item in value.items():
+            key_text = str(key).lower()
+            if any(token in key_text for token in _SUPPLY_KEY_HINTS):
+                continue
+            if any(token in key_text for token in _DESIGN_KEY_HINTS):
+                projected[str(key)] = item
+                continue
+            if isinstance(item, (Mapping, list, tuple)):
+                child = _design_only_projection(item)
+                if child not in ({}, [], (), None):
+                    projected[str(key)] = child
+        return projected
+    if isinstance(value, list):
+        return [item for item in (_design_only_projection(v) for v in value) if item not in ({}, [], (), None)]
+    if isinstance(value, tuple):
+        return tuple(item for item in (_design_only_projection(v) for v in value) if item not in ({}, [], (), None))
+    return value
+
+
+def _explicit_selection_design_fields(selection: Mapping[str, Any]) -> dict[str, Any]:
+    allowed = {}
+    for key, value in selection.items():
+        key_text = str(key).lower()
+        if any(token in key_text for token in _SUPPLY_KEY_HINTS):
+            continue
+        if any(token in key_text for token in _DESIGN_KEY_HINTS):
+            allowed[str(key)] = value
+    return allowed
+
+
 def resolve_required_design_class(workspace: Path, selection: Mapping[str, Any]) -> str | None:
+    """Resolve a required *design* class without learning it from supplier evidence.
+
+    Procurement evidence may prove availability, price or certification. It may not define
+    the structural design requirement. The design class must originate from an explicit
+    requirement/specification/handoff/profile field.
+    """
     family = str(selection.get("material_family") or "")
-    # Prefer requirement/selection-specific evidence.
-    direct = _extract_class_from_value(family, selection)
+
+    direct = _extract_class_from_value(family, _explicit_selection_design_fields(selection))
     if direct:
         return direct
+
     base = workspace / "results" / "session_adapters" / "architecture"
     for name in (
         "local_material_requirements.json",
@@ -499,21 +602,62 @@ def resolve_required_design_class(workspace: Path, selection: Mapping[str, Any])
         data = _read_json(path) if path.is_file() else None
         if data is None:
             continue
-        # First narrow to matching family / requirement id when possible.
         req_id = str(selection.get("requirement_id") or "")
         matching: list[Any] = []
         for item in _walk(data):
-            if isinstance(item, Mapping):
-                blob = json.dumps(item, ensure_ascii=False, default=str).lower()
-                if req_id and req_id.lower() in blob:
-                    matching.append(item)
-                elif family and family.lower() in blob:
-                    matching.append(item)
+            if not isinstance(item, Mapping):
+                continue
+            blob = json.dumps(item, ensure_ascii=False, default=str).lower()
+            if req_id and req_id.lower() in blob:
+                matching.append(item)
+            elif family and family.lower() in blob:
+                matching.append(item)
         for item in matching:
-            found = _extract_class_from_value(family, item)
+            found = _extract_class_from_value(family, _design_only_projection(item))
             if found:
                 return found
     return None
+
+
+def build_design_material_basis_gap_register(workspace: Path) -> dict[str, Any]:
+    path = _selection_register(workspace)
+    data = _read_json(path) if path else None
+    selections = data.get("selections", []) if isinstance(data, Mapping) else []
+    gaps: list[dict[str, Any]] = []
+    resolved: list[dict[str, Any]] = []
+    for selection in selections:
+        if not isinstance(selection, Mapping):
+            continue
+        design_class = resolve_required_design_class(workspace, selection)
+        row = {
+            "requirement_id": selection.get("requirement_id"),
+            "material_family": selection.get("material_family"),
+            "element_role": selection.get("element_role"),
+            "required_design_class": design_class,
+            "availability_blocks_engineering": False,
+        }
+        if design_class:
+            row["status"] = "DESIGN_CLASS_RESOLVED"
+            resolved.append(row)
+        else:
+            row["status"] = "STRUCTURAL_DESIGN_MATERIAL_BASIS_REQUIRED"
+            row["reason"] = "No explicit required material/strength class found in design/specification sources; supplier evidence is intentionally excluded as a design-basis source."
+            gaps.append(row)
+    register = {
+        "schema_version": "phoenix.structural-design-material-basis-gap-register/1.0",
+        "project_id": workspace.name,
+        "generated_utc": _now(),
+        "availability_or_certification_block": False,
+        "design_basis_gap_count": len(gaps),
+        "resolved_design_class_count": len(resolved),
+        "gaps": gaps,
+        "resolved": resolved,
+        "supplier_capability_may_define_design_class": False,
+        "production_release": "LOCKED_IF_DESIGN_BASIS_OR_MATERIAL_VERIFICATION_IS_UNRESOLVED",
+    }
+    out = workspace / "results" / "session_adapters" / "architecture" / "structural_design_material_basis_gap_register.json"
+    _write_json(out, register)
+    return register
 
 
 def _product_field(selection: Mapping[str, Any], key: str) -> Any:
@@ -576,9 +720,9 @@ def build_uncertified_material_register(workspace: Path) -> dict[str, Any]:
     if isinstance(data, MutableMapping) and path:
         data["material_certification_mode"] = MODE_UNCERTIFIED
         data["uncertified_material_count"] = len(records)
-        data["uncertified_material_register"] = str(
-            (workspace / "results" / "session_adapters" / "architecture" / "uncertified_materials_register.json")
-            .relative_to(PROJECT_ROOT).as_posix()
+        data["uncertified_material_register"] = _repo_ref_for_workspace(
+            workspace / "results" / "session_adapters" / "architecture" / "uncertified_materials_register.json",
+            workspace,
         )
         _write_json(path, data)
 
@@ -633,7 +777,7 @@ def _append_outputs(result: Any, paths: Iterable[Path]) -> Any:
     if isinstance(outputs, list):
         for path in paths:
             try:
-                rel = path.relative_to(PROJECT_ROOT).as_posix()
+                rel = path.resolve().relative_to(_repository_root_for_project_path(path)).as_posix()
             except Exception:
                 rel = str(path)
             if path.exists() and rel not in outputs:
@@ -648,8 +792,10 @@ def postprocess_architecture_result(result: Any, *, args: Any = (), kwargs: Any 
     if not workspace:
         return result
     availability = resolve_material_availability(workspace, mode)
+    design_basis = build_design_material_basis_gap_register(workspace)
     base = workspace / "results" / "session_adapters" / "architecture"
     _append_outputs(result, [
+        base / "structural_design_material_basis_gap_register.json",
         base / "material_availability_resolution_register.json",
         base / "unavailable_materials_register.json",
         base / "unavailable_materials_register.csv",
@@ -671,6 +817,7 @@ def postprocess_architecture_result(result: Any, *, args: Any = (), kwargs: Any 
             meta["material_availability_blocks_engineering"] = False
             meta["available_alternative_material_count"] = availability.get("available_alternative_count", 0)
             meta["unavailable_material_count"] = availability.get("unavailable_material_count", 0)
+            meta["structural_design_material_basis_gap_count"] = design_basis.get("design_basis_gap_count", 0)
             meta["uncertified_material_count"] = register.get("count", 0) if isinstance(register, Mapping) else 0
             meta["production_release"] = "LOCKED"
     return result
@@ -702,9 +849,35 @@ def _all_structural_requirements_eligible(workspace: Path, mode: str) -> bool:
 
 
 def structural_certification_block_should_apply(local_context: Mapping[str, Any]) -> bool:
+    """Certification/availability gate only. Missing design basis is not this gate's job.
+
+    In relaxed mode, selected available uncertified products and unavailable products are
+    allowed to continue through this gate. In strict mode, only an actually selected,
+    available but unqualified product triggers the certification gate. Unknown/unavailable
+    supply never triggers this gate; it remains a procurement/release issue.
+    """
     mode = mode_from_context(local_context)
     workspace = resolve_workspace(local_context)
-    return not (workspace and _all_structural_requirements_eligible(workspace, mode))
+    if not workspace:
+        return True
+    resolve_material_availability(workspace, mode)
+    path = _selection_register(workspace)
+    data = _read_json(path) if path else None
+    selections = data.get("selections", []) if isinstance(data, Mapping) else []
+    if not selections:
+        return True
+    build_design_material_basis_gap_register(workspace)
+    if mode == MODE_UNCERTIFIED:
+        build_uncertified_material_register(workspace)
+        return False
+    for selection in selections:
+        if not isinstance(selection, Mapping):
+            return True
+        if _qualified(selection):
+            continue
+        if _commercially_available(selection) and isinstance(selection.get("selected_product"), Mapping):
+            return True
+    return False
 
 
 def cost_certification_block_should_apply(local_context: Mapping[str, Any]) -> bool:
@@ -732,6 +905,75 @@ def cost_certification_block_should_apply(local_context: Mapping[str, Any]) -> b
             return True
     return False
 
+
+
+# PHOENIX_COST_PRICE_EVIDENCE_CONTINUATION_FIXED_R4
+_PRICE_EVIDENCE_NONBLOCKING_REASONS = {
+    "CURRENT_LOCAL_MARKET_PRICE_DATA_REQUIRED",
+    "LOCAL_MARKET_PRICE_DATA_STALE",
+    "LOCAL_MARKET_PRICE_CURRENCY_MISMATCH",
+    "QUANTITY_PRICE_MATCH_REQUIRED",
+}
+
+
+def split_cost_blockers_for_continuation(blockers: Any) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Split hard cost blockers from missing/stale/mismatched price evidence.
+
+    Price evidence gaps remain explicit and auditable but do not stop estimate/planning generation.
+    Location, currency-mapping, invalid quantity, malformed data and other non-price-evidence faults remain blockers.
+    """
+    hard: list[dict[str, Any]] = []
+    unresolved: list[dict[str, Any]] = []
+    for raw in list(blockers or []):
+        if not isinstance(raw, Mapping):
+            hard.append({"reason": "UNKNOWN_COST_BLOCKER", "detail": str(raw)})
+            continue
+        item = dict(raw)
+        reason = str(item.get("reason") or "").upper()
+        if reason in _PRICE_EVIDENCE_NONBLOCKING_REASONS:
+            item["original_reason"] = reason
+            item["reason"] = "PRICE_EVIDENCE_UNRESOLVED"
+            item["cost_generation_blocking"] = False
+            item["price_fabricated"] = False
+            unresolved.append(item)
+        else:
+            hard.append(item)
+    return hard, unresolved
+
+
+def continue_cost_calculation_with_unresolved_prices(calc: Any) -> tuple[Any, bool]:
+    """Return (possibly normalized calculation, should_block).
+
+    A calculation containing only missing price matches continues as a partial estimate.
+    Invalid quantities and other non-price-evidence errors remain blocking. No price or total is invented.
+    """
+    if not isinstance(calc, MutableMapping):
+        return calc, True
+    hard, unresolved = split_cost_blockers_for_continuation(calc.get("blockers") or [])
+    if hard:
+        return calc, True
+    if unresolved:
+        calc["original_status"] = calc.get("status")
+        calc["status"] = "PARTIAL_UNRESOLVED_PRICES"
+        calc["blockers"] = []
+        calc["unresolved_price_evidence"] = unresolved
+        calc["price_fabricated"] = False
+        calc["estimate_completeness"] = "PARTIAL"
+        calc["professional_review_required"] = True
+        calc["production_release"] = "LOCKED"
+        return calc, False
+    return calc, str(calc.get("status") or "").upper() != "PASSED"
+
+
+def price_evidence_status_from_market_blockers(blockers: Any) -> dict[str, Any]:
+    hard, unresolved = split_cost_blockers_for_continuation(blockers)
+    return {
+        "status": "UNRESOLVED" if unresolved else "CONFIRMED",
+        "hard_blocker_count": len(hard),
+        "unresolved_count": len(unresolved),
+        "unresolved": unresolved,
+        "price_fabricated": False,
+    }
 
 def _availability_disclaimer_markdown(register: Mapping[str, Any]) -> str:
     lines = [
@@ -816,6 +1058,7 @@ def postprocess_structural_result(result: Any, *, args: Any = (), kwargs: Any = 
     if not workspace:
         return result
     availability = resolve_material_availability(workspace, mode)
+    design_basis = build_design_material_basis_gap_register(workspace)
     uncertified = build_uncertified_material_register(workspace) if mode == MODE_UNCERTIFIED else {
         "count": 0, "materials": [], "unresolved_design_class_requirements": []
     }
@@ -839,7 +1082,9 @@ def postprocess_structural_result(result: Any, *, args: Any = (), kwargs: Any = 
     availability_md.parent.mkdir(parents=True, exist_ok=True)
     availability_md.write_text("# Constructieve materiaalbeschikbaarheid\n" + _availability_disclaimer_markdown(availability), encoding="utf-8")
 
-    outputs = [availability_json, availability_md]
+    design_basis_json = out_dir / "structural_design_material_basis_gap_register.json"
+    _write_json(design_basis_json, design_basis)
+    outputs = [availability_json, availability_md, design_basis_json]
     if mode == MODE_UNCERTIFIED:
         report_json = out_dir / "uncertified_material_design_assumption_report.json"
         report_md = out_dir / "uncertified_material_design_assumption_report.md"
@@ -880,6 +1125,13 @@ def postprocess_structural_result(result: Any, *, args: Any = (), kwargs: Any = 
     if isinstance(result, MutableMapping):
         warnings = result.setdefault("warnings", [])
         if isinstance(warnings, list):
+            if design_basis.get("design_basis_gap_count", 0):
+                warning = {
+                    "reason": "STRUCTURAL_DESIGN_MATERIAL_BASIS_REQUIRED",
+                    "message": "Een of meer vereiste ontwerp-/sterkteklassen ontbreken. Dit is geen materiaalbeschikbaarheids- of certificatieblokkade; supplier/product evidence wordt niet gebruikt om de ontwerpklasse te verzinnen. De solver mag pas echte materiaalwaarden gebruiken nadat de ontwerpgrondslag is vastgesteld.",
+                }
+                if warning not in warnings:
+                    warnings.append(warning)
             if availability.get("unavailable_material_count", 0):
                 warning = {
                     "reason": "MATERIAL_AVAILABILITY_UNRESOLVED_DESIGN_CONTINUES",
@@ -900,6 +1152,7 @@ def postprocess_structural_result(result: Any, *, args: Any = (), kwargs: Any = 
             meta["material_availability_blocks_engineering"] = False
             meta["available_alternative_material_count"] = availability.get("available_alternative_count", 0)
             meta["unavailable_material_count"] = availability.get("unavailable_material_count", 0)
+            meta["structural_design_material_basis_gap_count"] = design_basis.get("design_basis_gap_count", 0)
             meta["uncertified_material_count"] = uncertified.get("count", 0)
             meta["production_release"] = "LOCKED"
         result["production_release"] = "LOCKED"

@@ -154,8 +154,8 @@ class ProjectContextStructuralDrawingTests(unittest.TestCase):
             self.assertEqual(m["location"],"Amsterdam, Nederland")
         finally:td.cleanup()
 
-    def test_09_permit_and_cost_consume_context_but_cost_requires_current_local_price_evidence(self):
-        td,repo,session,sf=self.make_repo("Locatie: Amsterdam, Nederland\nPerceel 20 x 30 m\nOntwerp een vrijstaande woning van twee bouwlagen.")
+    def test_09_permit_and_cost_consume_context_and_cost_continues_with_unresolved_price_evidence(self):
+        td,repo,session,sf=self.make_repo("Locatie: Amsterdam, Nederland\nPerceel 20 x 30 m\nOntwerp een vrijstaande woning van twee bouwlagen.\n[PHOENIX_MATERIAL_CERTIFICATION_MODE=UNCERTIFIED_DESIGN_ASSUMPTION_ALLOWED]")
         try:
             # The temporary repository must use the installed Local Cost Intelligence
             # source/policy contracts, just like the real repository.
@@ -181,16 +181,16 @@ class ProjectContextStructuralDrawingTests(unittest.TestCase):
 
             self.assertEqual(run_adapter("permit",repo,sf,ws,ws/"results/session_adapters/permit"),0)
 
-            # Explicit geography correctly derives EUR, but currency alone must
-            # not falsely pass a cost estimate without current local price data.
+            # Explicit geography correctly derives EUR. Missing current local price evidence
+            # is now an auditable unresolved cost input, not an adapter blocker. Phoenix must
+            # continue without inventing a price.
             cost_out=ws/"results/session_adapters/cost_planning"
-            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,cost_out),10)
-            blocked=json.loads((cost_out/"adapter_result.json").read_text())
-            self.assertEqual(blocked["status"],"BLOCKED_INPUT")
-            self.assertTrue(any(
-                item.get("reason")=="CURRENT_LOCAL_MARKET_PRICE_DATA_REQUIRED"
-                for item in blocked.get("blockers",[])
-            ))
+            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,cost_out),0)
+            unresolved=json.loads((cost_out/"adapter_result.json").read_text())
+            self.assertEqual(unresolved["status"],"PASSED")
+            cost_input=json.loads((cost_out/"cost_planning_input_register.json").read_text())
+            self.assertEqual(cost_input["price_evidence_status"],"UNRESOLVED")
+            self.assertFalse(cost_input.get("price_fabricated",True))
 
             # Add a valid current NL/EUR test ratebook with explicit evidence.
             market_dir=repo/"inputs"/"market_prices"
@@ -218,16 +218,17 @@ class ProjectContextStructuralDrawingTests(unittest.TestCase):
                 json.dumps(ratebook),encoding="utf-8"
             )
 
-            # Price evidence alone is no longer sufficient after Local Material,
-            # Product & Supply Intelligence. Cost Planning must remain blocked
-            # until the actual required project materials/products are locally
-            # confirmed as well.
-            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,cost_out),10)
-            material_blocked=json.loads((cost_out/"adapter_result.json").read_text())
-            self.assertEqual(material_blocked["status"],"BLOCKED_INPUT")
-            self.assertTrue(any(
+            # Current price evidence is now available. Material availability is independent:
+            # unknown/unavailable supply may remain unresolved, but Cost Planning continues and
+            # must not fabricate supply or price data.
+            self.assertEqual(run_adapter("cost_planning",repo,sf,ws,cost_out),0)
+            price_confirmed=json.loads((cost_out/"adapter_result.json").read_text())
+            self.assertEqual(price_confirmed["status"],"PASSED")
+            cost_input=json.loads((cost_out/"cost_planning_input_register.json").read_text())
+            self.assertEqual(cost_input["price_evidence_status"],"CONFIRMED")
+            self.assertFalse(any(
                 item.get("reason")=="LOCAL_MATERIAL_AVAILABILITY_REQUIRED_FOR_COST_PLAN"
-                for item in material_blocked.get("blockers",[])
+                for item in price_confirmed.get("blockers",[])
             ))
 
             # Install the same material/supply source contracts in the temporary
