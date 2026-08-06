@@ -6,6 +6,11 @@ stability checks, connection checks, geotechnical data, foundation design,
 professional review or release authorization.
 """
 from __future__ import annotations
+from phoenix.autonomy.autonomous_solver_basis_v8_3 import (
+    apply_solver_basis_to_analytical_model as _phoenix_apply_solver_basis_to_analytical_model,
+    build_autonomous_solver_basis as _phoenix_build_autonomous_solver_basis,
+    normalize_support_candidates_for_solver as _phoenix_normalize_support_candidates_for_solver,
+)
 from phoenix.autonomy.material_certification_engineering_mode import (
     structural_certification_block_should_apply as _phoenix_material_mode_structural_gate,
 )
@@ -351,25 +356,60 @@ def run_structural_chain(
         )
 
     solver_input,solver_source=_section(candidates,"structural_analysis_basis",("solver_basis","element_assignments","solver_adapters","execution_policy"))
+    # PHOENIX_V8_3_AUTONOMOUS_SOLVER_BASIS_V1_0
     if not solver_input:
-        tp=workspace/"inputs"/"structural"/"structural_analysis_basis_REQUIRED.json"
-        _write(tp,{
-            "schema_version":"phoenix.structural-analysis-basis-template/1.0",
-            "structural_analysis_basis":{
-                "solver_basis":{"basis":"EXPLICIT_REQUIRED","analysis_type":"LINEAR_STATIC","materials":{},"sections":{}},
-                "element_assignments":{"by_id":{},"by_type":{}},
-                "solver_adapters":["opensees","calculix"],
-                "execution_policy":{"allow_execution":False,"require_explicit_cli_opt_in":True},
-            },
-            "note":"Materiaalstijfheden, doorsneden en solveruitvoering worden niet door Phoenix verzonnen."
-        });outputs.append(_repo_ref(tp,repository))
-        register["stages"][2]["status"]="BLOCKED_INPUT"
-        return _block("STRUCTURAL_SOLVER_BASIS_AND_ELEMENT_ASSIGNMENTS_REQUIRED","Expliciete solverbasis, materialen, doorsneden en elementtoewijzingen zijn vereist voor v8.3.",completed,"8.3.0",outputs,register)
-
+        _phoenix_autonomous_basis = _phoenix_build_autonomous_solver_basis(
+            repository=repository,
+            workspace=workspace,
+            project_id=project_id,
+            analytical_model=_read(v81_out),
+            action_load_model=_read(v82_out),
+            material_selection=material_selection,
+            candidates=candidates,
+        )
+        _phoenix_basis_register = _phoenix_autonomous_basis.get("register") or {}
+        _phoenix_basis_register_path = output_dir/"v8_3"/"autonomous_solver_basis_register.json"
+        _write(_phoenix_basis_register_path,_phoenix_basis_register)
+        outputs.append(_repo_ref(_phoenix_basis_register_path,repository))
+        if _phoenix_autonomous_basis.get("status") == "PASSED":
+            solver_input = _phoenix_autonomous_basis["structural_analysis_basis"]
+            solver_source = "AUTONOMOUS_SOLVER_BASIS_V1_0"
+            _phoenix_basis_path = output_dir/"v8_3"/"autonomous_structural_analysis_basis.json"
+            _write(_phoenix_basis_path,{
+                "schema_version":"phoenix.structural-analysis-basis-autonomous/1.0",
+                "structural_analysis_basis":solver_input,
+                "provenance":_phoenix_basis_register,
+            })
+            outputs.append(_repo_ref(_phoenix_basis_path,repository))
+        else:
+            tp=workspace/"inputs"/"structural"/"structural_analysis_basis_REQUIRED.json"
+            _write(tp,{
+                "schema_version":"phoenix.structural-analysis-basis-template/1.1",
+                "structural_analysis_basis":_phoenix_autonomous_basis.get("structural_analysis_basis") or {
+                    "solver_basis":{"basis":"EXPLICIT_REQUIRED","analysis_type":"LINEAR_STATIC","materials":{},"sections":{}},
+                    "element_assignments":{"by_id":{},"by_type":{}},
+                    "solver_adapters":["opensees","calculix"],
+                    "execution_policy":{"allow_execution":False,"require_explicit_cli_opt_in":True},
+                },
+                "blockers":_phoenix_autonomous_basis.get("blockers") or [],
+                "note":"Phoenix invents no missing solver material properties, design classes or element sections.",
+            })
+            outputs.append(_repo_ref(tp,repository))
+            register["stages"][2]["status"]="BLOCKED_INPUT"
+            _phoenix_blockers=_phoenix_autonomous_basis.get("blockers") or [{
+                "reason":"STRUCTURAL_SOLVER_BASIS_AND_ELEMENT_ASSIGNMENTS_REQUIRED",
+                "message":"Traceable solver materials, sections and element assignments are required for v8.3.",
+            }]
+            _phoenix_primary=_phoenix_blockers[0]
+            return _block(
+                _phoenix_primary.get("reason") or "STRUCTURAL_SOLVER_BASIS_AND_ELEMENT_ASSIGNMENTS_REQUIRED",
+                _phoenix_primary.get("message") or "Traceable solver basis required for v8.3.",
+                completed,"8.3.0",outputs,register,_phoenix_primary
+            )
     qualified_engineering_ids=selected_engineering_material_ids(material_selection)
     solver_materials=set(str(x) for x in (solver_input.get("solver_basis") or {}).get("materials",{}).keys())
     unconfirmed_solver_materials=sorted(x for x in solver_materials if x not in qualified_engineering_ids)
-    if unconfirmed_solver_materials:
+    if (_phoenix_material_mode_structural_gate(locals())) and unconfirmed_solver_materials:
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block(
             "STRUCTURAL_SOLVER_MATERIAL_NOT_LOCALLY_CONFIRMED",
@@ -378,7 +418,11 @@ def run_structural_chain(
             {"unconfirmed_material_ids":unconfirmed_solver_materials}
         )
 
-    analytical_for_solver,missing_assignments=_apply_assignments(_read(v81_out),solver_input)
+    if solver_source == "AUTONOMOUS_SOLVER_BASIS_V1_0":
+        analytical_for_solver,missing_assignments=_phoenix_apply_solver_basis_to_analytical_model(_read(v81_out),solver_input)
+    else:
+        analytical_for_solver,missing_assignments=_apply_assignments(_read(v81_out),solver_input)
+    analytical_for_solver=_phoenix_normalize_support_candidates_for_solver(analytical_for_solver)
     if missing_assignments:
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block("STRUCTURAL_SOLVER_ELEMENT_ASSIGNMENTS_INCOMPLETE","Niet alle analytische elementen hebben expliciete material_id en section_id.",completed,"8.3.0",outputs,register,{"missing_element_ids":missing_assignments[:50]})

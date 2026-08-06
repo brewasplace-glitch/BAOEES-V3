@@ -1,0 +1,80 @@
+{
+  "schema_version": "phoenix.structural-solver-reference-basis/1.0",
+  "policy_version": "1.0.0",
+  "purpose": "Reference-grounded linear-elastic concept-analysis properties and preliminary sizing rules for Phoenix v8.3. These are not product verification, certification, required design classes, code-compliance claims, or construction release values.",
+  "reference_materials": {
+    "reinforced_concrete": {
+      "material_id": "MAT-RC-C20-25-REFERENCE",
+      "analysis_reference_class": "C20/25",
+      "elastic_modulus_kN_m2": 30000000.0,
+      "poisson_ratio": 0.2,
+      "density_kg_m3": 2500.0,
+      "source_references": [
+        {
+          "source_id": "SR-STRUCTURAL-REFERENCE-REPORT-01",
+          "description": "Suriname two-storey residential structural reference report lists concrete class C20/25 for the reference project.",
+          "use": "ANALYSIS_REFERENCE_CLASS_ONLY_NOT_PROJECT_REQUIRED_CLASS"
+        },
+        {
+          "source_id": "SCIA-MATERIAL-LIBRARY-C20-25",
+          "description": "SCIA XML material library entry C20/25: density 2500 kg/m3, E 30 GPa, Poisson ratio 0.20.",
+          "use": "LINEAR_ELASTIC_REFERENCE_PROPERTIES"
+        }
+      ],
+      "product_properties_verified": false,
+      "required_design_class": null,
+      "review_required": true
+    },
+    "masonry": {
+      "material_id": "MAT-MASONRY-GENERIC-REFERENCE",
+      "analysis_reference_class": "GENERIC_MASONRY_REFERENCE",
+      "elastic_modulus_kN_m2": 3100000.0,
+      "poisson_ratio": 0.25,
+      "density_kg_m3": 650.0,
+      "source_references": [
+        {
+          "source_id": "SCIA-MATERIAL-LIBRARY-GENERIC-MASONRY",
+          "description": "SCIA XML generic masonry material entry: density 650 kg/m3, E 3.1 GPa, Poisson ratio 0.25.",
+          "use": "LINEAR_ELASTIC_REFERENCE_PROPERTIES_ONLY"
+        }
+      ],
+      "product_properties_verified": false,
+      "required_design_class": null,
+      "code_verification_material_class_status": "UNRESOLVED",
+      "review_required": true
+    }
+  },
+  "preliminary_section_rules": {
+    "column": {
+      "default_square_width_m": 0.25,
+      "basis": "PHOENIX_LEGACY_PRELIMINARY_ELEMENT_SIZING_REFERENCE",
+      "review_required": true
+    },
+    "beam": {
+      "height_span_ratio": 0.1,
+      "minimum_height_m": 0.3,
+      "maximum_height_m": 0.8,
+      "minimum_width_m": 0.25,
+      "width_height_ratio": 0.45,
+      "rounding_increment_m": 0.05,
+      "basis": "PHOENIX_LEGACY_PRELIMINARY_ELEMENT_SIZING_REFERENCE",
+      "review_required": true
+    },
+    "slab": {
+      "thickness_span_factor": 0.035,
+      "minimum_thickness_m": 0.16,
+      "maximum_thickness_m": 0.35,
+      "rounding_increment_m": 0.01,
+      "basis": "PHOENIX_LEGACY_PRELIMINARY_ELEMENT_SIZING_REFERENCE",
+      "review_required": true
+    }
+  },
+  "hard_rules": {
+    "supplier_capability_may_define_design_class": false,
+    "supplier_price_may_define_design_class": false,
+    "missing_solver_property_may_be_invented": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_professional_approval": false,
+    "production_release": "LOCKED"
+  }
+}
