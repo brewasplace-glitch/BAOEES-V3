@@ -225,6 +225,41 @@ class AutonomousSolverBasisV83Tests(unittest.TestCase):
         self.assertEqual(normalized["supports"][0]["dofs"], ["UX", "UY", "UZ", "RX", "RY", "RZ"])
         self.assertTrue(normalized["supports"][0]["review_required"])
 
+    def test_v81_top_level_candidate_maps_are_consumed_for_element_assignments(self) -> None:
+        model = json.loads(json.dumps(self.model))
+        # Mirror the real v8.1 PAT contract: member material/section candidates may
+        # be stored in top-level maps instead of duplicated on each member.
+        material_candidates = {}
+        section_candidates = {}
+        for member in model["members"]:
+            material_candidates[member["id"]] = member.pop("material_candidate")
+            section_candidates[member["id"]] = member.pop("section_candidate")
+
+        # Also prove a shell candidate can be recovered from the same top-level map.
+        material_candidates["S1"] = model["shells"][0].pop("material_candidate")
+        model["material_candidates"] = material_candidates
+        model["section_candidates"] = section_candidates
+
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(
+            os.environ,
+            {"PHOENIX_MATERIAL_CERTIFICATION_MODE": "UNCERTIFIED_DESIGN_ASSUMPTION_ALLOWED"},
+            clear=False,
+        ):
+            result = build_autonomous_solver_basis(
+                repository=self.repo,
+                workspace=self._workspace(tmp),
+                project_id="TEST",
+                analytical_model=model,
+                action_load_model=self.action,
+                material_selection={},
+            )
+
+        self.assertEqual(result["status"], "PASSED")
+        by_id = result["structural_analysis_basis"]["element_assignments"]["by_id"]
+        self.assertEqual(set(by_id), {"M1", "M2", "S1"})
+        self.assertEqual(result["register"]["assigned_element_count"], 3)
+        self.assertEqual(result["register"]["blockers"], [])
+
     def test_generated_basis_is_accepted_by_real_v83_package_builder(self) -> None:
         runner_path = self.repo / "runners" / "PROJECT_PHOENIX_structural_solver_input_analysis_v8_3_0.py"
         if not runner_path.is_file():

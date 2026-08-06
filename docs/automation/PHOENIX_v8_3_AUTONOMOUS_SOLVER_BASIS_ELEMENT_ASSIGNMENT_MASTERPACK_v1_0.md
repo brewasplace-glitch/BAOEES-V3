@@ -52,3 +52,11 @@ Voor `PHOENIX-PAT-001` in relaxed mode moet de oude materiaalbeschikbaarheids/ce
 - geen auto-ordering/payment;
 - geen auto professional approval;
 - geen productie-/for-construction release.
+
+## FIXED R3 — v8.1 candidate-map compatibility
+
+The analytical-model contract may store candidate material/section assignments in top-level `material_candidates` and `section_candidates` maps. v8.3 now consumes those maps as fallback when an element-local field is absent. Element-local values always win. This is schema normalization only; no material, section, strength, or certification value is invented.
+
+## FIXED R4 — idempotent release staging
+
+Installer release validation now distinguishes required path presence from actual Git changes. A path already identical to HEAD is valid and is not required to appear in the staged diff. Unexpected staged paths remain forbidden, all required v8.3 paths must exist, and at least one intended v8.3 change must be staged before commit.

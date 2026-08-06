@@ -421,13 +421,44 @@ def _shell_section(
     }, {"role": shell_type or "shell", "rule": source, "thickness_m": t}
 
 
+def _element_candidate_view(model: Mapping[str, Any], raw: Mapping[str, Any]) -> Dict[str, Any]:
+    """Return an element view enriched from v8.1 top-level candidate maps.
+
+    v8.1 historically stores some candidate assignments both as element-local fields
+    and as top-level ``material_candidates`` / ``section_candidates`` maps.  v8.3 must
+    consume both representations without mutating the original analytical artifact.
+    Element-local fields always win.
+    """
+    element = dict(raw)
+    element_id = str(element.get("id") or "").strip()
+    if not element_id:
+        return element
+
+    candidate_maps = (
+        ("material_candidate", "material_candidates"),
+        ("section_candidate", "section_candidates"),
+        ("thickness_candidate", "thickness_candidates"),
+    )
+    for field, map_name in candidate_maps:
+        current = element.get(field)
+        if current not in (None, ""):
+            continue
+        mapping = model.get(map_name) or {}
+        if isinstance(mapping, Mapping) and element_id in mapping:
+            element[field] = mapping[element_id]
+
+    return element
+
+
 def _all_elements(model: Mapping[str, Any]) -> Iterable[Tuple[str, Dict[str, Any], str]]:
     for raw in _items(model.get("members")):
         if isinstance(raw, dict) and raw.get("id"):
-            yield str(raw["id"]), raw, "member"
+            element = _element_candidate_view(model, raw)
+            yield str(element["id"]), element, "member"
     for raw in _items(model.get("shells")):
         if isinstance(raw, dict) and raw.get("id"):
-            yield str(raw["id"]), raw, "shell"
+            element = _element_candidate_view(model, raw)
+            yield str(element["id"]), element, "shell"
 
 
 def build_autonomous_solver_basis(
