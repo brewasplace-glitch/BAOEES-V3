@@ -6,6 +6,9 @@ stability checks, connection checks, geotechnical data, foundation design,
 professional review or release authorization.
 """
 from __future__ import annotations
+from phoenix.autonomy.material_certification_engineering_mode import (
+    structural_certification_block_should_apply as _phoenix_material_mode_structural_gate,
+)
 
 import json
 import re
@@ -338,7 +341,7 @@ def run_structural_chain(
             material_selection=_read(material_selection_path)
         except Exception:
             material_selection={}
-    if not material_selection.get("all_structural_requirements_engineering_qualified",False):
+    if (_phoenix_material_mode_structural_gate(locals())) and (not material_selection.get("all_structural_requirements_engineering_qualified",False)):
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block(
             "LOCAL_STRUCTURAL_MATERIAL_AVAILABILITY_REQUIRED",

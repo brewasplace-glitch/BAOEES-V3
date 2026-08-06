@@ -630,6 +630,25 @@ class PhoenixLocalApplication:
             server_version = "ProjectPhoenixLocal/1.6"
 
             def do_GET(self):
+                # PHOENIX_CONSOLE_RETURN_ENDPOINT_v1_1
+                if getattr(self, 'path', '').split('?', 1)[0] == '/api/console/activate':
+                    import json as _phoenix_console_json
+                    from phoenix.local_app.console_return_bridge import activate_registered_console as _phoenix_activate_console
+                    try:
+                        _result = _phoenix_activate_console()
+                        _status = 200 if _result.get('ok') else 500
+                    except Exception as _exc:
+                        _result = {'ok': False, 'status': 'CONSOLE_ACTIVATION_ERROR', 'message': type(_exc).__name__}
+                        _status = 500
+                    _body = _phoenix_console_json.dumps(_result, ensure_ascii=False).encode('utf-8')
+                    self.send_response(_status)
+                    self.send_header('Content-Type', 'application/json; charset=utf-8')
+                    self.send_header('Content-Length', str(len(_body)))
+                    self.send_header('Cache-Control', 'no-store')
+                    self.end_headers()
+                    self.wfile.write(_body)
+                    return
+                # END PHOENIX_CONSOLE_RETURN_ENDPOINT_v1_1
                 parsed = urllib.parse.urlparse(self.path)
 
                 if parsed.path in {"/", "/index.html"}:

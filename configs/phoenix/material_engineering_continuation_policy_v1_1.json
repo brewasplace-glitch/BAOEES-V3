@@ -1,0 +1,56 @@
+{
+  "schema_version": "phoenix.material-engineering-continuation-policy/1.1",
+  "default_mode": "CERTIFIED_REQUIRED",
+  "dashboard_control": {
+    "id": "phoenix-certified-materials",
+    "label": "GECERTIFICEERD",
+    "default_checked": true
+  },
+  "certification_modes": {
+    "CERTIFIED_REQUIRED": {
+      "certification_gate": "STRICT_FOR_SELECTED_AVAILABLE_PRODUCTS",
+      "description": "Beschikbare geselecteerde constructieve producten moeten volgens de bestaande strikte Phoenix-gate technisch/certificerend gekwalificeerd zijn. Onbekende/onbeschikbare supply blokkeert ontwerpengineering niet meer; die blijft een procurement/release issue."
+    },
+    "UNCERTIFIED_DESIGN_ASSUMPTION_ALLOWED": {
+      "certification_gate": "RELAXED_FOR_AVAILABLE_PRODUCTS_WITH_REQUIRED_DESIGN_CLASS",
+      "required_design_class_must_be_resolved": true,
+      "actual_product_properties_claimed_as_verified": false,
+      "material_state_annotation": "UNCERTIFIED",
+      "cost_policy": "Include confirmed price of available local/selected alternative; never invent missing prices.",
+      "structural_policy": "Use required design class as explicit unverified design assumption.",
+      "construction_release": "LOCKED_PENDING_MATERIAL_VERIFICATION"
+    }
+  },
+  "availability_continuation": {
+    "enabled": true,
+    "applies_in_both_certification_modes": true,
+    "unknown_or_unavailable_blocks_engineering": false,
+    "first_action": "Search acquired local/global project evidence for same-family available alternative.",
+    "certified_mode_alternative_requirement": "Alternative must be engineering-qualified/certified to be auto-selected.",
+    "uncertified_mode_alternative_requirement": "Available same-family alternative may be selected with explicit uncertified design-class assumption.",
+    "alternative_selection": "LOCAL_FIRST_THEN_KNOWN_PRICE; RECALCULATION_REQUIRED",
+    "if_no_available_alternative": "Continue engineering using required material/design class as procurement-unresolved design placeholder.",
+    "availability_claim_fabrication": false,
+    "price_fabrication": false,
+    "cost_behavior": "Generate estimate; include confirmed prices; explicitly flag unavailable/unpriced material rows rather than blocking.",
+    "procurement_release": "LOCKED_PENDING_AVAILABILITY_RESOLUTION"
+  },
+  "registers": {
+    "uncertified_json": "uncertified_materials_register.json",
+    "uncertified_csv": "uncertified_materials_register.csv",
+    "availability_resolution": "material_availability_resolution_register.json",
+    "unavailable_json": "unavailable_materials_register.json",
+    "unavailable_csv": "unavailable_materials_register.csv",
+    "available_alternatives_json": "available_alternative_materials_register.json",
+    "available_alternatives_csv": "available_alternative_materials_register.csv"
+  },
+  "console_return": {
+    "dashboard_button": "↩ POWERSHELL",
+    "endpoint": "/api/console/activate",
+    "fallback": "Open new PowerShell in repository if registered console no longer exists."
+  },
+  "automatic_ordering": false,
+  "automatic_payment": false,
+  "automatic_professional_approval": false,
+  "production_release": "LOCKED"
+}

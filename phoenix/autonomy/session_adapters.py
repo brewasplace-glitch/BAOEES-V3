@@ -4,6 +4,9 @@ Seven adapters consume the same project session/workspace contract.
 They never fabricate professional approval and never invoke project-specific pilot runners.
 """
 from __future__ import annotations
+from phoenix.autonomy.material_certification_engineering_mode import (
+    cost_certification_block_should_apply as _phoenix_material_mode_cost_gate,
+)
 
 import json
 import re
@@ -790,7 +793,7 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         material_selection.get("all_requirements_supply_confirmed",False)
         or material_selection.get("all_requirements_locally_confirmed",False)
     )
-    if not material_selection_ref or not material_supply_confirmed:
+    if (_phoenix_material_mode_cost_gate(locals())) and (not material_selection_ref or not material_supply_confirmed):
         blockers.append({
             "reason":"LOCAL_MATERIAL_AVAILABILITY_REQUIRED_FOR_COST_PLAN",
             "message":"Kostenplanning vereist bevestigde lokale of geïmporteerde levering; de legacy reason-code blijft behouden voor API/testcompatibiliteit en importopties vereisen complete landed-cost evidence tot Paramaribo.",
@@ -1100,3 +1103,35 @@ def run_architecture(*args, **kwargs):
     _phoenix_landed_result = _phoenix_landed_guard_original_run_architecture(*args, **kwargs)
     return _phoenix_landed_guard_postprocess(_phoenix_landed_result, args=args, kwargs=kwargs)
 # END PHOENIX_LANDED_COST_FALSE_PASS_GUARD_v1_0
+
+# PHOENIX_MATERIAL_ENGINEERING_CONTINUATION_v1_1
+# FIXED R2: accepts the live public structural adapter alias run_structural and resolves blocker targets repository-wide. Structural material availability
+# may be enforced in a dedicated runner instead of directly in session_adapters.py.
+# Material certification and availability are orthogonal. Availability never blocks design engineering;
+# unresolved supply remains a procurement/release issue. Product properties are never represented
+# as verified without evidence.
+import functools as _phoenix_material_mode_functools
+from phoenix.autonomy.material_certification_engineering_mode import (
+    postprocess_architecture_result as _phoenix_material_mode_architecture_postprocess,
+    postprocess_structural_result as _phoenix_material_mode_structural_postprocess,
+    postprocess_cost_result as _phoenix_material_mode_cost_postprocess,
+)
+
+_phoenix_material_mode_original_run_architecture = run_architecture
+@_phoenix_material_mode_functools.wraps(_phoenix_material_mode_original_run_architecture)
+def run_architecture(*args, **kwargs):
+    _result = _phoenix_material_mode_original_run_architecture(*args, **kwargs)
+    return _phoenix_material_mode_architecture_postprocess(_result, args=args, kwargs=kwargs)
+
+_phoenix_material_mode_original_run_structural = run_structural
+@_phoenix_material_mode_functools.wraps(_phoenix_material_mode_original_run_structural)
+def run_structural(*args, **kwargs):
+    _result = _phoenix_material_mode_original_run_structural(*args, **kwargs)
+    return _phoenix_material_mode_structural_postprocess(_result, args=args, kwargs=kwargs)
+
+_phoenix_material_mode_original_run_cost_planning = run_cost_planning
+@_phoenix_material_mode_functools.wraps(_phoenix_material_mode_original_run_cost_planning)
+def run_cost_planning(*args, **kwargs):
+    _result = _phoenix_material_mode_original_run_cost_planning(*args, **kwargs)
+    return _phoenix_material_mode_cost_postprocess(_result, args=args, kwargs=kwargs)
+# END PHOENIX_MATERIAL_ENGINEERING_CONTINUATION_v1_1
