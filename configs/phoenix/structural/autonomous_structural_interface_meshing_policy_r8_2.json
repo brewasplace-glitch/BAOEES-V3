@@ -1,0 +1,29 @@
+{
+  "schema_version": "phoenix.autonomous-structural-interface-meshing-policy/1.0",
+  "engine": "PHX-AUTONOMOUS-STRUCTURAL-INTERFACE-MESHING-R8.2",
+  "geometry_tolerance_m": 1e-6,
+  "interior_face_allowed_shell_types": [
+    "slab_panel"
+  ],
+  "require_unique_interior_shell_face": true,
+  "member_segment_split_policy": "EXISTING_ENDPOINT_ON_EXISTING_SEGMENT_ONLY",
+  "shell_edge_insertion_policy": "EXISTING_ENDPOINT_ON_EXISTING_EDGE_ONLY",
+  "shell_face_insertion_policy": "EXISTING_ENDPOINT_INSIDE_UNIQUE_ALLOWED_EXISTING_FACE_ONLY",
+  "shell_output_mesh": "TRIANGULATED_3_NODE_SHELLS_WHEN_REPAIR_REQUIRED",
+  "distributed_action_remap": {
+    "supported_kinds": ["self_weight", "line", "area"],
+    "preserve_per_unit_magnitude": true,
+    "unknown_element_target_action_policy": "FAIL_CLOSED"
+  },
+  "automatic_new_support_generation": false,
+  "automatic_new_column_generation": false,
+  "automatic_new_member_design": false,
+  "automatic_member_endpoint_relocation": false,
+  "automatic_rigid_link_or_tie_generation": false,
+  "automatic_solver_constraint_invention": false,
+  "automatic_code_compliance_claim": false,
+  "automatic_structural_approval": false,
+  "professional_structural_review_required": true,
+  "for_construction_release": "LOCKED",
+  "production_release": "LOCKED"
+}

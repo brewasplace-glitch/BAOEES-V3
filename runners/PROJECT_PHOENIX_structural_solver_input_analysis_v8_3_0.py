@@ -107,6 +107,7 @@ def _element_maps(model: Mapping[str, Any], nodes: Mapping[str, Any]) -> Tuple[D
             "material_id": _text(raw.get("material_id"), f"member {element_id} material_id"),
             "section_id": _text(raw.get("section_id"), f"member {element_id} section_id"),
         }
+    # PHOENIX_R8_2_TRIANGULAR_SHELL_SOLVER_SUPPORT_V1_0
     for idx, raw in enumerate(_items(model.get("shells")), 1):
         if not isinstance(raw, dict):
             raise ValueError("analytical_model.shells entries must be objects")
@@ -114,10 +115,13 @@ def _element_maps(model: Mapping[str, Any], nodes: Mapping[str, Any]) -> Tuple[D
         if element_id in shells or element_id in members:
             raise ValueError(f"Duplicate analytical element id: {element_id}")
         node_ids = [_text(v, f"shell {element_id} node id") for v in _items(raw.get("node_ids"))]
-        if len(node_ids) != 4:
-            raise ValueError(f"Shell {element_id} requires exactly four nodes for v8.3.0 adapters")
-        if any(n not in nodes for n in node_ids):
-            raise ValueError(f"Shell {element_id} references an unknown node")
+        if len(node_ids) not in (3, 4):
+            raise ValueError(f"Shell {element_id} must have 3 or 4 nodes")
+        if len(set(node_ids)) != len(node_ids):
+            raise ValueError(f"Shell {element_id} has duplicate node ids")
+        for node_id in node_ids:
+            if node_id not in nodes:
+                raise ValueError(f"Shell {element_id} references unknown node {node_id}")
         shells[element_id] = {
             **deepcopy(raw),
             "id": element_id,
@@ -397,7 +401,12 @@ def _opensees_model_lines(nodes: Mapping[str, Any], members: Mapping[str, Any], 
     for shell_id in sorted(shells):
         s = shells[shell_id]
         n = [node_tags[v] for v in s["node_ids"]]
-        lines.append(f"element ShellMITC4 {shell_tags[shell_id]} {' '.join(map(str, n))} {shell_section_tags[s['section_id']]} ;# {shell_id}")
+        if len(n) == 3:
+            lines.append(f"element ShellDKGT {shell_tags[shell_id]} {' '.join(map(str, n))} {shell_section_tags[s['section_id']]} ;# {shell_id}")
+        elif len(n) == 4:
+            lines.append(f"element ShellMITC4 {shell_tags[shell_id]} {' '.join(map(str, n))} {shell_section_tags[s['section_id']]} ;# {shell_id}")
+        else:
+            raise ValueError(f"OpenSees shell {shell_id} must have 3 or 4 nodes")
     manifest = {
         "node_tags": dict(node_tags),
         "member_tags": dict(member_tags),
@@ -482,7 +491,8 @@ def _calculix_decks(payload: Mapping[str, Any], nodes: Mapping[str, Any], member
         for shell_id in sorted(shells):
             s = shells[shell_id]
             tags = [node_tags[n] for n in s["node_ids"]]
-            lines += [f"*ELEMENT, TYPE=S4, ELSET=E_{shell_id}", f"{shell_offset + shell_tags[shell_id]}, {', '.join(map(str, tags))}"]
+            shell_element_type = "S3" if len(tags) == 3 else "S4"
+            lines += [f"*ELEMENT, TYPE={shell_element_type}, ELSET=E_{shell_id}", f"{shell_offset + shell_tags[shell_id]}, {', '.join(map(str, tags))}"]
         lines += ["*NSET, NSET=NALL"]
         lines.extend(_calculix_id_lines(node_tags[n] for n in sorted(nodes)))
         for material_id in sorted(materials):

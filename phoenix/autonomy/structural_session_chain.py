@@ -382,7 +382,7 @@ def run_structural_chain(
             workspace=workspace,
             project_id=project_id,
             analytical_model=_read(v81_out),
-            action_load_model=_read(v82_out),
+            action_load_model=action_load_for_solver,
             material_selection=material_selection,
             candidates=candidates,
         )
@@ -468,33 +468,113 @@ def run_structural_chain(
     outputs.append(
         _repo_ref(_phx_r81_register_path,repository)
     )
+    # PHOENIX_R8_2_GEOMETRY_GROUNDED_INTERFACE_MESHING_V1_0
+    action_load_for_solver=_read(v82_out)
     if _phx_r81.get("status")!="PASSED":
-        register["stages"][2]["status"]="BLOCKED_INPUT"
-        _phx_r81_blockers=_phx_r81.get("blockers") or [{
-            "reason":"STRUCTURAL_LOAD_PATH_UNRESOLVED",
-            "message":(
-                "De structurele topologie of support-load-path "
-                "is niet solverveilig opgelost."
-            ),
-        }]
-        _phx_r81_primary=_phx_r81_blockers[0]
-        return _block(
-            _phx_r81_primary.get("reason")
-            or "STRUCTURAL_LOAD_PATH_UNRESOLVED",
-            _phx_r81_primary.get("message")
-            or "Structurele load path is niet opgelost.",
-            completed,
-            "8.3.0",
-            outputs,
-            register,
-            _phx_r81_primary,
+        _phx_r81_blockers=_phx_r81.get("blockers") or []
+        _phx_r81_reasons={
+            str(x.get("reason") or "")
+            for x in _phx_r81_blockers
+            if isinstance(x,dict)
+        }
+        _phx_r82_allowed_reasons={
+            "STRUCTURAL_LOAD_PATH_UNRESOLVED",
+            "STRUCTURAL_UNANCHORED_COMPONENTS",
+        }
+        _phx_r82_may_repair=(
+            "STRUCTURAL_LOAD_PATH_UNRESOLVED" in _phx_r81_reasons
+            and _phx_r81_reasons.issubset(_phx_r82_allowed_reasons)
         )
+        if not _phx_r82_may_repair:
+            register["stages"][2]["status"]="BLOCKED_INPUT"
+            _phx_r81_primary=(_phx_r81_blockers or [{
+                "reason":"STRUCTURAL_LOAD_PATH_UNRESOLVED",
+                "message":"Structurele load path is niet opgelost.",
+            }])[0]
+            return _block(
+                _phx_r81_primary.get("reason")
+                or "STRUCTURAL_LOAD_PATH_UNRESOLVED",
+                _phx_r81_primary.get("message")
+                or "Structurele load path is niet opgelost.",
+                completed,"8.3.0",outputs,register,_phx_r81_primary
+            )
+
+        from phoenix.autonomy.autonomous_structural_interface_meshing_v8_1_r82 import (
+            repair_geometry_grounded_interfaces,
+        )
+        _phx_r82_policy=_read(
+            repository/"configs"/"phoenix"/"structural"/
+            "autonomous_structural_interface_meshing_policy_r8_2.json"
+        )
+        _phx_r82=repair_geometry_grounded_interfaces(
+            project_id=project_id,
+            analytical_model=analytical_for_solver,
+            action_load_model=action_load_for_solver,
+            r8_1_register=_phx_r81["register"],
+            policy=_phx_r82_policy,
+        )
+        _phx_r82_register_path=(
+            output_dir/"v8_2"/"structural_interface_meshing_r8_2.json"
+        )
+        _write(_phx_r82_register_path,_phx_r82["register"])
+        outputs.append(_repo_ref(_phx_r82_register_path,repository))
+
+        if _phx_r82.get("status")!="PASSED":
+            register["stages"][2]["status"]="BLOCKED_INPUT"
+            _phx_r82_blockers=_phx_r82.get("blockers") or [{
+                "reason":"STRUCTURAL_INTERFACE_GEOMETRY_EVIDENCE_REQUIRED",
+                "message":"R8.2 kon de interface niet met bestaande geometrische evidence meshen.",
+            }]
+            _phx_r82_primary=_phx_r82_blockers[0]
+            return _block(
+                _phx_r82_primary.get("reason")
+                or "STRUCTURAL_INTERFACE_GEOMETRY_EVIDENCE_REQUIRED",
+                _phx_r82_primary.get("message")
+                or "Geometrische interface-evidence vereist.",
+                completed,"8.3.0",outputs,register,_phx_r82_primary
+            )
+
+        analytical_for_solver=_phx_r82["analytical_model"]
+        action_load_for_solver=_phx_r82["action_load_model"]
+        _phx_r82_action_path=(
+            output_dir/"v8_2"/"action_load_model_for_solver_r8_2.json"
+        )
+        _write(_phx_r82_action_path,action_load_for_solver)
+        outputs.append(_repo_ref(_phx_r82_action_path,repository))
+
+        # Re-run the conservative R8.1 topology gate on the repaired mesh.
+        _phx_r81_post=repair_structural_topology_for_solver(
+            project_id=project_id,
+            analytical_model=analytical_for_solver,
+            policy=_phx_r81_policy,
+        )
+        analytical_for_solver=_phx_r81_post["analytical_model"]
+        _phx_r81_post_path=(
+            output_dir/"v8_2"/
+            "structural_topology_support_repair_r8_1_post_r8_2.json"
+        )
+        _write(_phx_r81_post_path,_phx_r81_post["register"])
+        outputs.append(_repo_ref(_phx_r81_post_path,repository))
+        if _phx_r81_post.get("status")!="PASSED":
+            register["stages"][2]["status"]="BLOCKED_INPUT"
+            _phx_post_blockers=_phx_r81_post.get("blockers") or [{
+                "reason":"STRUCTURAL_LOAD_PATH_UNRESOLVED",
+                "message":"Post-R8.2 topology-validatie blijft geblokkeerd.",
+            }]
+            _phx_post_primary=_phx_post_blockers[0]
+            return _block(
+                _phx_post_primary.get("reason")
+                or "STRUCTURAL_LOAD_PATH_UNRESOLVED",
+                _phx_post_primary.get("message")
+                or "Post-R8.2 structurele load path is niet opgelost.",
+                completed,"8.3.0",outputs,register,_phx_post_primary
+            )
 
     v83_payload={
         "project_id":project_id,
         "analytical_model":analytical_for_solver,
         "solver_basis":solver_input["solver_basis"],
-        "action_load_model":_read(v82_out),
+        "action_load_model":action_load_for_solver,
         "solver_adapters":solver_input["solver_adapters"],
         "execution_policy":solver_input["execution_policy"],
     }
@@ -561,7 +641,7 @@ def run_structural_chain(
 
     v84_payload={
         "project_id":project_id,"source_engine":"PHX-STRUCT-SOLVER-INPUT-ANALYSIS-V8.3.0",
-        "analytical_model":analytical_for_solver,"action_load_model":_read(v82_out),
+        "analytical_model":analytical_for_solver,"action_load_model":action_load_for_solver,
         "analysis_result_sets":results_input["analysis_result_sets"],
         "validation_policy":results_input["validation_policy"],
         "expected_case_resultants_kN":results_input.get("expected_case_resultants_kN",{}),
