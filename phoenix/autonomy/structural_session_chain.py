@@ -356,6 +356,23 @@ def run_structural_chain(
         )
 
     solver_input,solver_source=_section(candidates,"structural_analysis_basis",("solver_basis","element_assignments","solver_adapters","execution_policy"))
+    # PHOENIX_V8_3_IGNORE_STALE_REQUIRED_TEMPLATE_V1_0
+    # A durable *_REQUIRED template from an earlier blocked PAT is not engineering input.
+    # Ignore only the canonical empty EXPLICIT_REQUIRED placeholder so autonomous
+    # generation can run. Explicit/manual non-placeholder solver bases are preserved.
+    if solver_input:
+        _phoenix_solver_basis_probe = solver_input.get("solver_basis") or {}
+        _phoenix_assignment_probe = solver_input.get("element_assignments") or {}
+        _phoenix_is_stale_required_template = (
+            str(_phoenix_solver_basis_probe.get("basis") or "").upper() == "EXPLICIT_REQUIRED"
+            and not (_phoenix_solver_basis_probe.get("materials") or {})
+            and not (_phoenix_solver_basis_probe.get("sections") or {})
+            and not (_phoenix_assignment_probe.get("by_id") or {})
+            and not (_phoenix_assignment_probe.get("by_type") or {})
+        )
+        if _phoenix_is_stale_required_template:
+            solver_input = None
+            solver_source = None
     # PHOENIX_V8_3_AUTONOMOUS_SOLVER_BASIS_V1_0
     if not solver_input:
         _phoenix_autonomous_basis = _phoenix_build_autonomous_solver_basis(

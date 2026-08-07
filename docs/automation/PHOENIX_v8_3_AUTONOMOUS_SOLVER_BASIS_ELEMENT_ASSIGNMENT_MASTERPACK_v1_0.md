@@ -60,3 +60,7 @@ The analytical-model contract may store candidate material/section assignments i
 ## FIXED R4 — idempotent release staging
 
 Installer release validation now distinguishes required path presence from actual Git changes. A path already identical to HEAD is valid and is not required to appear in the staged diff. Unexpected staged paths remain forbidden, all required v8.3 paths must exist, and at least one intended v8.3 change must be staged before commit.
+
+## FIXED R5 — stale REQUIRED-template shadowing
+
+A blocked PAT can persist `inputs/structural/structural_analysis_basis_REQUIRED.json`. Because that placeholder contains the expected structural-analysis-basis keys, candidate discovery can mistake it for explicit input and skip autonomous generation. R5 ignores only the canonical empty `EXPLICIT_REQUIRED` placeholder: no materials, no sections, no by-id assignments, and no by-type assignments. Explicit/manual non-placeholder bases keep precedence. No persisted file is deleted.
