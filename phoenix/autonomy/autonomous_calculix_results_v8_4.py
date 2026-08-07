@@ -486,6 +486,17 @@ def _raw_outputs(case_dir: Path) -> list[Path]:
     allowed = {".inp", ".dat", ".frd", ".sta", ".cvg", ".12d", ".out", ".txt"}
     return sorted(p for p in case_dir.iterdir() if p.is_file() and p.suffix.lower() in allowed)
 
+def _calculix_case_deck_path(solver_package_dir: Path, case_id: str) -> Path:
+    """Resolve the exact v8.3 CalculiX base-case deck.
+
+    The v8.3 writer stores solver files under:
+        solver_package/<solver>/<filename>
+    so CalculiX decks live in solver_package/calculix/calculix_<case>.inp.
+    No recursive/fuzzy guessing is used.
+    """
+    return Path(solver_package_dir) / "calculix" / f"calculix_{case_id}.inp"
+
+
 def build_autonomous_calculix_results(
     *,
     repository: Path,
@@ -554,12 +565,15 @@ def build_autonomous_calculix_results(
 
         normalized: list[dict[str, Any]] = []
         for case_id in case_ids:
-            source_deck = solver_package_dir / f"calculix_{case_id}.inp"
+            source_deck = _calculix_case_deck_path(solver_package_dir, case_id)
             if not source_deck.is_file():
                 raise AutonomousCalculixBlocked(
                     "CALCULIX_BASE_CASE_DECK_REQUIRED",
                     f"CalculiX basisdeck ontbreekt voor load case {case_id}.",
-                    {"expected": str(source_deck)},
+                    {
+                        "expected": str(source_deck),
+                        "v8_3_solver_layout": "solver_package/calculix/calculix_<case_id>.inp",
+                    },
                 )
             case_dir = evidence_root / _safe_case_token(case_id)
             case_dir.mkdir(parents=True, exist_ok=True)

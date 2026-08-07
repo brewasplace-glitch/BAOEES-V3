@@ -25,3 +25,7 @@ Executable discovery:
 ## FIXED R2 — native CalculiX FRD section-force parsing
 
 The first Windows real-smoke proved that CalculiX itself executed successfully but the FRD section-force parser rejected the native fixed-width ASCII record layout. R2 parses FRD `-1` node/value records without relying on whitespace and normalizes the CalculiX `SZX` component label to Phoenix `SXZ`. Solver execution and raw-evidence requirements are unchanged.
+
+## FIXED R3 — v8.3 solver-package directory contract
+
+The v8.3 writer persists solver files below a solver-specific directory. CalculiX base-case decks therefore live at `v8_3/solver_package/calculix/calculix_<case_id>.inp`. R3 aligns the autonomous v8.4 executor with that exact durable layout. No recursive or fuzzy filename search is used and no solver input is synthesized.

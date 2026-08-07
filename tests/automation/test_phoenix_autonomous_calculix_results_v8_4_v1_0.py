@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest import mock
 
 from phoenix.autonomy.autonomous_calculix_results_v8_4 import (
+    _calculix_case_deck_path,
     _instrument_deck,
     _section_force_components,
     _stress_envelope,
@@ -68,7 +69,14 @@ class AutonomousCalculixV84Tests(unittest.TestCase):
         self.assertNotIn("SZX", p[1])
         self.assertEqual(set(_section_force_components(p[1])), {"V1", "V2", "N", "T", "M2", "M1"})
 
-    def test_08_stress_envelope_is_numeric_solver_data(self):
+    def test_08_v83_calculix_deck_resolves_from_solver_subdirectory(self):
+        base = Path("solver_package")
+        self.assertEqual(
+            _calculix_case_deck_path(base, "LC-G"),
+            base / "calculix" / "calculix_LC-G.inp",
+        )
+
+    def test_09_stress_envelope_is_numeric_solver_data(self):
         env = _stress_envelope([[1,2,3,4,5,6],[-2,3,-4,5,-6,7]])
         self.assertEqual(env["SXX_MIN"], -2.0)
         self.assertEqual(env["SXX_MAX"], 1.0)
