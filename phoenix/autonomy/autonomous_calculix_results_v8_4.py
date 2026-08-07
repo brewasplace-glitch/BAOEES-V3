@@ -152,6 +152,56 @@ def _mapping_from_manifest(manifest: Mapping[str, Any]) -> dict[str, Any]:
         )
     return mapping
 
+def _calculix_set_data_lines(values: Sequence[int], max_entries: int = 16) -> list[str]:
+    """Return deterministic CalculiX set data lines within the parser entry limit."""
+    if max_entries <= 0:
+        raise ValueError("max_entries must be positive")
+    entries = [str(int(value)) for value in values]
+    return [
+        ", ".join(entries[index:index + max_entries])
+        for index in range(0, len(entries), max_entries)
+    ]
+
+
+def _validate_calculix_set_card_width(text: str, max_entries: int = 16) -> None:
+    """Reject NSET/ELSET data rows that exceed CalculiX's 16-entry line limit."""
+    if max_entries <= 0:
+        raise ValueError("max_entries must be positive")
+
+    active_set_keyword = None
+    for line_number, raw_line in enumerate(text.splitlines(), 1):
+        line = raw_line.strip()
+        if not line or line.startswith("**"):
+            continue
+
+        if line.startswith("*"):
+            keyword = line.upper()
+            if keyword.startswith("*NSET") or keyword.startswith("*ELSET"):
+                active_set_keyword = line
+            else:
+                active_set_keyword = None
+            continue
+
+        if active_set_keyword is None:
+            continue
+
+        entry_count = len([part for part in line.split(",") if part.strip()])
+        if entry_count > max_entries:
+            raise AutonomousCalculixBlocked(
+                "CALCULIX_SET_DATA_LINE_TOO_WIDE",
+                (
+                    f"CalculiX set-dataregel {line_number} bevat {entry_count} entries; "
+                    f"maximum is {max_entries}."
+                ),
+                {
+                    "line_number": line_number,
+                    "entry_count": entry_count,
+                    "maximum_entries": max_entries,
+                    "set_keyword": active_set_keyword,
+                    "line": line,
+                },
+            )
+
 def _instrument_deck(text: str, *, support_tags: Sequence[int], element_ids: Sequence[str]) -> str:
     if "*END STEP" not in text.upper():
         raise AutonomousCalculixBlocked("CALCULIX_DECK_END_STEP_REQUIRED", "CalculiX basisdeck bevat geen *END STEP.")
@@ -161,7 +211,8 @@ def _instrument_deck(text: str, *, support_tags: Sequence[int], element_ids: Seq
     step_pos = upper.find("*STEP")
     if step_pos < 0:
         raise AutonomousCalculixBlocked("CALCULIX_DECK_STEP_REQUIRED", "CalculiX basisdeck bevat geen *STEP.")
-    support_card = "\n*NSET, NSET=PHX_SUPPORT_NODES\n" + ", ".join(str(int(x)) for x in support_tags) + "\n"
+    support_lines = _calculix_set_data_lines(support_tags)
+    support_card = "\n*NSET, NSET=PHX_SUPPORT_NODES\n" + "\n".join(support_lines) + "\n"
     text = text[:step_pos] + support_card + text[step_pos:]
     end_pos = text.upper().rfind("*END STEP")
     lines = [
@@ -182,7 +233,9 @@ def _instrument_deck(text: str, *, support_tags: Sequence[int], element_ids: Seq
         "** END PHOENIX v8.4 AUTONOMOUS RAW-EVIDENCE OUTPUT",
         "",
     ]
-    return text[:end_pos] + "\n".join(lines) + text[end_pos:]
+    instrumented = text[:end_pos] + "\n".join(lines) + text[end_pos:]
+    _validate_calculix_set_card_width(instrumented)
+    return instrumented
 
 def _f(value: str) -> float:
     return float(value.replace("D", "E").replace("d", "e"))
