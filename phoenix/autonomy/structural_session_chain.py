@@ -26,6 +26,8 @@ from typing import Any
 from .local_material_supply_intelligence import selected_engineering_material_ids
 from .structural_action_load_basis import build_structural_action_load_basis
 
+from .autonomous_calculix_results_v8_4 import autonomous_calculix_execution_enabled as _phoenix_v84_calculix_enabled, build_autonomous_calculix_results as _phoenix_build_autonomous_calculix_results
+
 VERSION="1.0.0"
 
 STAGES=[
@@ -461,6 +463,44 @@ def run_structural_chain(
     register["stages"][2].update({"status":"PASSED","input_source":solver_source});outputs.append(_repo_ref(manifest,repository));completed="8.3.0"
 
     results_input,results_source=_section(candidates,"structural_analysis_results",("analysis_result_sets","validation_policy"))
+    # PHOENIX_V8_4_AUTONOMOUS_CALCULIX_RESULTS_V1_0
+    # A durable *_REQUIRED v8.4 template is not real solver evidence.
+    if results_input:
+        _phx_v84_sets = results_input.get("analysis_result_sets") or []
+        _phx_v84_policy = results_input.get("validation_policy") or {}
+        _phx_v84_expected = results_input.get("expected_case_resultants_kN") or {}
+        if not _phx_v84_sets and not _phx_v84_policy and not _phx_v84_expected:
+            results_input = None
+            results_source = None
+
+    if not results_input and _phoenix_v84_calculix_enabled(session):
+        _phx_v84_auto = _phoenix_build_autonomous_calculix_results(
+            repository=repository,
+            project_id=project_id,
+            analytical_model=analytical_for_solver,
+            action_load_model=_read(v82_out),
+            solver_package_dir=v83_dir,
+            output_dir=output_dir/"v8_4",
+        )
+        for _phx_artifact in (_phx_v84_auto.get("artifacts") or []):
+            if _phx_artifact not in outputs:
+                outputs.append(_phx_artifact)
+        if _phx_v84_auto.get("status") == "PASSED" and _phx_v84_auto.get("structural_analysis_results"):
+            results_input = _phx_v84_auto["structural_analysis_results"]
+            results_source = "AUTONOMOUS_CALCULIX_RESULTS_V1_0"
+        else:
+            register["stages"][3]["status"]="BLOCKED_INPUT"
+            _phx_blockers = _phx_v84_auto.get("blockers") or [{
+                "reason":"CALCULIX_AUTONOMOUS_RESULTS_REQUIRED",
+                "message":"Echte CalculiX-resultaten en traceerbare normalisatie zijn vereist voor v8.4.",
+            }]
+            _phx_primary = _phx_blockers[0]
+            return _block(
+                _phx_primary.get("reason") or "CALCULIX_AUTONOMOUS_RESULTS_REQUIRED",
+                _phx_primary.get("message") or "Echte CalculiX-resultaten vereist.",
+                completed,"8.4.0",outputs,register,_phx_primary
+            )
+
     if not results_input:
         tp=workspace/"inputs"/"structural"/"structural_analysis_results_REQUIRED.json"
         _write(tp,{
