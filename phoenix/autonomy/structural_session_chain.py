@@ -529,24 +529,45 @@ def run_structural_chain(
 
     member_input,member_source=_section(candidates,"member_verification_input",("code_basis","verification_rules","verification_policy"))
     if not member_input:
-        from phoenix.autonomy.autonomous_member_verification_prerequisite_v8_5 import derive_member_verification_prerequisite
-        prerequisite = derive_member_verification_prerequisite(
-            project_id=project_id,
-            analytical_model=analytical_for_solver,
-            architecture=arch,
+        from phoenix.autonomy.autonomous_rc_design_candidate_v8_5_r8 import (
+            AutonomousRCDesignBlocked,
+            derive_rc_design_candidate,
         )
-        prerequisite_path=output_dir/"v8_5"/"member_verification_input_requirement.json"
-        _write(prerequisite_path,prerequisite)
-        outputs.append(_repo_ref(prerequisite_path,repository))
-        register["stages"][4]["status"]="BLOCKED_INPUT"
-        return _block(
-            prerequisite.get("reason","STRUCTURAL_CODE_BASIS_AND_MEMBER_VERIFICATION_RULES_REQUIRED"),
-            prerequisite.get("message","Expliciete codebasis en member-verification regels zijn vereist voor v8.5."),
-            completed,
-            "8.5.0",
-            outputs,
-            register,
-        )
+        try:
+            v84_for_r8=_read(v84_out)
+            v83_for_r8=_read(output_dir/"v8_3"/"input.json")
+            r8_policy=_read(repository/"configs"/"phoenix"/"structural"/"autonomous_rc_design_candidate_policy_v8_5_r8.json")
+            r8_candidate=derive_rc_design_candidate(
+                project_id=project_id,
+                analytical_model=analytical_for_solver,
+                solver_basis=v83_for_r8.get("solver_basis",{}),
+                combination_results=v84_for_r8.get("synthesized_combination_results",{}),
+                analysis_validation_state=v84_for_r8.get("validation_state",""),
+                policy=r8_policy,
+            )
+        except AutonomousRCDesignBlocked as exc:
+            prerequisite_path=output_dir/"v8_5"/"member_verification_input_requirement.json"
+            prerequisite={
+                "schema_version":"phoenix.autonomous-rc-design-candidate-blocker/1.0",
+                "project_id":project_id,
+                "status":"BLOCKED_INPUT",
+                "reason":exc.reason,
+                "message":exc.message,
+                "evidence":exc.evidence,
+                "automatic_code_compliance_claim":False,
+                "automatic_structural_approval":False,
+                "production_release":"LOCKED",
+            }
+            _write(prerequisite_path,prerequisite)
+            outputs.append(_repo_ref(prerequisite_path,repository))
+            register["stages"][4]["status"]="BLOCKED_INPUT"
+            return _block(exc.reason,exc.message,completed,"8.5.0",outputs,register)
+
+        r8_path=output_dir/"v8_5"/"rc_design_candidate.json"
+        _write(r8_path,r8_candidate)
+        outputs.append(_repo_ref(r8_path,repository))
+        member_input=r8_candidate["member_verification_input"]
+        member_source=_repo_ref(r8_path,repository)
     v84=_read(v84_out)
     v85_payload={
         "project_id":project_id,"source_engine":"PHX-STRUCT-ANALYSIS-RESULTS-VALIDATION-V8.4.0",

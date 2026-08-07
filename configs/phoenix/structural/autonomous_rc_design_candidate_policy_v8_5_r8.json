@@ -1,0 +1,56 @@
+{
+  "schema_version": "phoenix.autonomous-rc-design-candidate-policy/1.0",
+  "version": "1.0.0",
+  "scope": {
+    "country_code": "SR",
+    "project_types": [
+      "BOUW",
+      "BUILDING"
+    ],
+    "engine": "PHX-AUTONOMOUS-RC-DESIGN-CANDIDATE-V8.5-R8"
+  },
+  "code_basis": {
+    "jurisdiction": "Suriname / Paramaribo",
+    "standard_set": "Eurocode 2 methodology reference: NEN-EN 1992-1-1 with current Dutch National Annex A2:2025",
+    "edition": "NEN-EN 1992-1-1:2005+C2:2011+A1:2015 / NB:2016+A1:2020+A2:2025",
+    "source_reference": "NEN_CURRENT_NATIONAL_ANNEX_IDENTITY_VERIFIED_2025-05-01; PHOENIX_R8_INTERIM_NUMERICAL_POLICY_REQUIRES_ENGINEERING_REVIEW",
+    "status": "ENGINEERING_DESIGN_CANDIDATE_NOT_VERIFIED_AS_SURINAME_LEGAL_CODE"
+  },
+  "standard_identity_evidence": {
+    "publisher": "NEN",
+    "publication_date": "2025-05-01",
+    "status": "CURRENT/DEFINITIVE_IDENTITY_VERIFIED",
+    "copyrighted_normative_content_embedded": false
+  },
+  "numerical_parameter_status": "PHOENIX_INTERIM_ENGINEERING_CANDIDATE_ASSUMPTIONS_NOT_CLAIMED_AS_DUTCH_NDP_VALUES",
+  "candidate_parameters": {
+    "reinforcement_grade": "B500B-CANDIDATE-ASSUMPTION",
+    "reinforcement_fyk_mpa": 500.0,
+    "gamma_c": 1.5,
+    "gamma_s": 1.15,
+    "alpha_cc": 1.0,
+    "nominal_cover_mm": 35.0,
+    "beam_min_longitudinal_ratio": 0.002,
+    "column_min_longitudinal_ratio": 0.01,
+    "max_longitudinal_ratio": 0.04,
+    "screening_lever_arm_factor": 0.85,
+    "candidate_stirrup_diameter_mm": 8.0,
+    "candidate_stirrup_legs": 2,
+    "candidate_stirrup_spacing_mm": 150.0,
+    "column_effective_length_factor": 1.0,
+    "screening_concrete_elastic_modulus_mpa": 30000.0,
+    "beam_vertical_displacement_limit_ratio": 250.0,
+    "column_displacement_limit_ratio": 300.0,
+    "member_slenderness_screen_limit": 120.0
+  },
+  "safety": {
+    "local_reinforcement_product_availability_verified": false,
+    "suriname_legal_status_verified": false,
+    "automatic_normative_value_invention": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "engineering_review_required": true,
+    "for_construction_release": "LOCKED",
+    "production_release": "LOCKED"
+  }
+}
