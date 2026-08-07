@@ -529,8 +529,24 @@ def run_structural_chain(
 
     member_input,member_source=_section(candidates,"member_verification_input",("code_basis","verification_rules","verification_policy"))
     if not member_input:
+        from phoenix.autonomy.autonomous_member_verification_prerequisite_v8_5 import derive_member_verification_prerequisite
+        prerequisite = derive_member_verification_prerequisite(
+            project_id=project_id,
+            analytical_model=analytical_for_solver,
+            architecture=arch,
+        )
+        prerequisite_path=output_dir/"v8_5"/"member_verification_input_requirement.json"
+        _write(prerequisite_path,prerequisite)
+        outputs.append(_repo_ref(prerequisite_path,repository))
         register["stages"][4]["status"]="BLOCKED_INPUT"
-        return _block("STRUCTURAL_CODE_BASIS_AND_MEMBER_VERIFICATION_RULES_REQUIRED","Expliciete codebasis en member-verification regels zijn vereist voor v8.5.",completed,"8.5.0",outputs,register)
+        return _block(
+            prerequisite.get("reason","STRUCTURAL_CODE_BASIS_AND_MEMBER_VERIFICATION_RULES_REQUIRED"),
+            prerequisite.get("message","Expliciete codebasis en member-verification regels zijn vereist voor v8.5."),
+            completed,
+            "8.5.0",
+            outputs,
+            register,
+        )
     v84=_read(v84_out)
     v85_payload={
         "project_id":project_id,"source_engine":"PHX-STRUCT-ANALYSIS-RESULTS-VALIDATION-V8.4.0",
