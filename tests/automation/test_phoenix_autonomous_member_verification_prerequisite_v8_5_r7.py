@@ -95,9 +95,20 @@ class TestAutonomousMemberVerificationPrerequisiteV85R7(unittest.TestCase):
         chain = (
             repository / "phoenix" / "autonomy" / "structural_session_chain.py"
         ).read_text(encoding="utf-8")
-        self.assertIn("autonomous_member_verification_prerequisite_v8_5", chain)
+
+        # R8 supersedes the direct R7 chain hook while preserving the
+        # fail-closed prerequisite behavior as a successor path.
+        self.assertTrue(
+            "autonomous_member_verification_prerequisite_v8_5" in chain
+            or "autonomous_rc_design_candidate_v8_5_r8" in chain,
+            "Expected R7 prerequisite integration or its R8 successor integration",
+        )
         self.assertIn("member_verification_input_requirement.json", chain)
-        self.assertIn("derive_member_verification_prerequisite", chain)
+        self.assertTrue(
+            "derive_member_verification_prerequisite" in chain
+            or "derive_rc_design_candidate" in chain,
+            "Expected R7 prerequisite derivation or its R8 successor derivation",
+        )
 
 
 if __name__ == "__main__":

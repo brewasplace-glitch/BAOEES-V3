@@ -446,6 +446,50 @@ def run_structural_chain(
         register["stages"][2]["status"]="BLOCKED_INPUT"
         return _block("STRUCTURAL_SOLVER_ELEMENT_ASSIGNMENTS_INCOMPLETE","Niet alle analytische elementen hebben expliciete material_id en section_id.",completed,"8.3.0",outputs,register,{"missing_element_ids":missing_assignments[:50]})
 
+    # PHOENIX_R8_1_STRUCTURAL_TOPOLOGY_SUPPORT_REPAIR_GATE_V1_0
+    from phoenix.autonomy.autonomous_structural_topology_support_repair_v8_1_r81 import (
+        repair_structural_topology_for_solver,
+    )
+    _phx_r81_policy=_read(
+        repository/"configs"/"phoenix"/"structural"/
+        "autonomous_structural_topology_support_repair_policy_r8_1.json"
+    )
+    _phx_r81=repair_structural_topology_for_solver(
+        project_id=project_id,
+        analytical_model=analytical_for_solver,
+        policy=_phx_r81_policy,
+    )
+    analytical_for_solver=_phx_r81["analytical_model"]
+    _phx_r81_register_path=(
+        output_dir/"v8_2"/
+        "structural_topology_support_repair_r8_1.json"
+    )
+    _write(_phx_r81_register_path,_phx_r81["register"])
+    outputs.append(
+        _repo_ref(_phx_r81_register_path,repository)
+    )
+    if _phx_r81.get("status")!="PASSED":
+        register["stages"][2]["status"]="BLOCKED_INPUT"
+        _phx_r81_blockers=_phx_r81.get("blockers") or [{
+            "reason":"STRUCTURAL_LOAD_PATH_UNRESOLVED",
+            "message":(
+                "De structurele topologie of support-load-path "
+                "is niet solverveilig opgelost."
+            ),
+        }]
+        _phx_r81_primary=_phx_r81_blockers[0]
+        return _block(
+            _phx_r81_primary.get("reason")
+            or "STRUCTURAL_LOAD_PATH_UNRESOLVED",
+            _phx_r81_primary.get("message")
+            or "Structurele load path is niet opgelost.",
+            completed,
+            "8.3.0",
+            outputs,
+            register,
+            _phx_r81_primary,
+        )
+
     v83_payload={
         "project_id":project_id,
         "analytical_model":analytical_for_solver,

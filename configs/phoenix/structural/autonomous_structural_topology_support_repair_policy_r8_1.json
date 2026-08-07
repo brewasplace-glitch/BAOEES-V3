@@ -1,0 +1,21 @@
+{
+  "schema_version": "phoenix.autonomous-structural-topology-support-repair-policy/1.0",
+  "engine": "PHX-AUTONOMOUS-STRUCTURAL-TOPOLOGY-SUPPORT-REPAIR-R8.1",
+  "coordinate_tolerance_m": 1e-06,
+  "geometric_interface_detection_tolerance_m": 1e-06,
+  "foundation_plane_tolerance_m": 1e-06,
+  "geometry_grounded_edge_beam_derivation": true,
+  "provisional_fixed_base_supports_only_on_lowest_column_base_plane": true,
+  "require_member_endpoint_shared_node_or_support": true,
+  "require_every_structural_component_anchored": true,
+  "automatic_new_support_generation": false,
+  "automatic_new_column_generation": false,
+  "automatic_solver_constraint_invention": false,
+  "automatic_shell_mesh_rewrite": false,
+  "unmeshed_shell_or_member_interface_policy": "BLOCK_AND_REPORT",
+  "automatic_code_compliance_claim": false,
+  "automatic_structural_approval": false,
+  "engineering_review_required": true,
+  "for_construction_release": "LOCKED",
+  "production_release": "LOCKED"
+}

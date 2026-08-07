@@ -100,31 +100,70 @@ def slab_panels(arch,profile):
             })
     return rows
 
+# PHOENIX_R8_1_CONNECTED_EDGE_BEAM_DERIVATION_V1_0
 def beams_from_spaces(arch,profile):
-    rows=[]
-    n=1
+    """Derive preliminary edge beams terminating at architectural corners.
+
+    If a slab spans in its short direction, its candidate support beams are the
+    two opposing edges parallel to the long direction. Shared identical edges
+    are de-duplicated. The result stays CANDIDATE_ONLY / review-required.
+    """
+    material=profile["assumptions"]["default_beam_material"]
+    edge_map={}
+    order=[]
     for s in arch.get("storeys",[]):
+        storey_id=s["storey_id"]
         for r in s.get("spaces",[]):
             x=float(r.get("x_m",0));y=float(r.get("y_m",0))
             w=float(r.get("width_m",0));d=float(r.get("depth_m",0))
-            if w<=0 or d<=0: continue
+            if w<=0 or d<=0:
+                continue
             if w>=d:
-                start={"x_m":x,"y_m":y+d/2};end={"x_m":x+w,"y_m":y+d/2}
+                segments=[((x,y),(x+w,y)),((x,y+d),(x+w,y+d))]
             else:
-                start={"x_m":x+w/2,"y_m":y};end={"x_m":x+w/2,"y_m":y+d}
-            rows.append({
-                "structural_id":f"SB-{n:04d}",
-                "storey_id":s["storey_id"],
-                "architectural_space_id":r.get("space_id",""),
-                "start_x_m":round(start["x_m"],3),
-                "start_y_m":round(start["y_m"],3),
-                "end_x_m":round(end["x_m"],3),
-                "end_y_m":round(end["y_m"],3),
-                "candidate_span_m":round(dist(start,end),3),
-                "material_hypothesis":profile["assumptions"]["default_beam_material"],
-                "confidence":"LOW",
-                "requires_review":True
-            });n+=1
+                segments=[((x,y),(x,y+d)),((x+w,y),(x+w,y+d))]
+            for a,b in segments:
+                a=(round(a[0],3),round(a[1],3))
+                b=(round(b[0],3),round(b[1],3))
+                if b<a:
+                    a,b=b,a
+                key=(storey_id,a,b)
+                space_id=str(r.get("space_id",""))
+                if key not in edge_map:
+                    edge_map[key]={
+                        "storey_id":storey_id,
+                        "architectural_space_ids":[space_id] if space_id else [],
+                        "start":a,
+                        "end":b,
+                    }
+                    order.append(key)
+                elif (
+                    space_id
+                    and space_id not in edge_map[key]["architectural_space_ids"]
+                ):
+                    edge_map[key]["architectural_space_ids"].append(space_id)
+
+    rows=[]
+    for n,key in enumerate(order,1):
+        item=edge_map[key]
+        a=item["start"];b=item["end"]
+        spaces="|".join(item["architectural_space_ids"])
+        rows.append({
+            "structural_id":f"SB-{n:04d}",
+            "storey_id":item["storey_id"],
+            "architectural_space_id":spaces,
+            "start_x_m":a[0],
+            "start_y_m":a[1],
+            "end_x_m":b[0],
+            "end_y_m":b[1],
+            "candidate_span_m":round(
+                math.hypot(b[0]-a[0],b[1]-a[1]),3
+            ),
+            "material_hypothesis":material,
+            "confidence":"LOW",
+            "requires_review":True,
+            "topology_basis":"SPACE_EDGE_SUPPORT_LINE",
+        })
     return rows
 
 def roof_supports(arch,profile):
@@ -208,7 +247,7 @@ def main():
     csvw(out/"registers/column_candidate_register.csv",
          ["structural_id","storey_id","x_m","y_m","material_hypothesis","grid_target_m","confidence","requires_review"],columns)
     csvw(out/"registers/beam_candidate_register.csv",
-         ["structural_id","storey_id","architectural_space_id","start_x_m","start_y_m","end_x_m","end_y_m","candidate_span_m","material_hypothesis","confidence","requires_review"],beams)
+         ["structural_id","storey_id","architectural_space_id","start_x_m","start_y_m","end_x_m","end_y_m","candidate_span_m","material_hypothesis","confidence","requires_review","topology_basis"],beams)
     csvw(out/"registers/slab_panel_register.csv",
          ["panel_id","storey_id","architectural_space_id","width_m","depth_m","candidate_span_m","candidate_span_direction","material_hypothesis","preferred_span_ok","requires_review"],slabs)
     csvw(out/"registers/roof_support_candidate_register.csv",

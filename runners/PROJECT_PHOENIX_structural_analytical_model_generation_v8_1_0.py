@@ -84,6 +84,67 @@ def _polygon(item: Dict[str, Any]) -> Sequence[Any]:
     return points
 
 
+
+# PHOENIX_R8_1_FOUNDATION_PLANE_SUPPORT_FILTER_V1_0
+def _filter_provisional_column_base_supports(
+    node_rows: Sequence[Dict[str, Any]],
+    support_rows: Sequence[Dict[str, Any]],
+    tolerance: float,
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    node_by_id = {
+        str(n["id"]): n
+        for n in node_rows
+        if n.get("id")
+    }
+    provisional = [
+        s
+        for s in support_rows
+        if "PROVISIONAL_FIXED_BASE" in str(s.get("type") or "").upper()
+        and str(s.get("node_id") or "") in node_by_id
+    ]
+    if not provisional:
+        return list(support_rows), {
+            "foundation_elevation_m": None,
+            "removed_provisional_support_count": 0,
+            "removed_provisional_support_ids": [],
+            "automatic_new_support_generation": False,
+        }
+
+    foundation_z = min(
+        float(node_by_id[str(s["node_id"])].get("z", 0.0))
+        for s in provisional
+    )
+    kept: List[Dict[str, Any]] = []
+    removed: List[str] = []
+
+    for support in support_rows:
+        if "PROVISIONAL_FIXED_BASE" not in str(
+            support.get("type") or ""
+        ).upper():
+            kept.append(dict(support))
+            continue
+
+        node = node_by_id.get(str(support.get("node_id") or ""))
+        if (
+            node is not None
+            and abs(float(node.get("z", 0.0)) - foundation_z)
+            <= tolerance
+        ):
+            kept.append(dict(support))
+        else:
+            removed.append(str(support.get("id") or ""))
+
+    return kept, {
+        "foundation_elevation_m": foundation_z,
+        "removed_provisional_support_count": len(
+            [x for x in removed if x]
+        ),
+        "removed_provisional_support_ids": [
+            x for x in removed if x
+        ],
+        "automatic_new_support_generation": False,
+    }
+
 def build_analytical_model(payload: Dict[str, Any]) -> Dict[str, Any]:
     policy = payload.get("analytical_model_policy", {})
     tolerance = float(policy.get("coordinate_tolerance_m", 1e-6))
@@ -169,6 +230,12 @@ def build_analytical_model(payload: Dict[str, Any]) -> Dict[str, Any]:
             "approval_state": "CANDIDATE_ONLY",
         })
 
+    supports, support_filter = _filter_provisional_column_base_supports(
+        nodes.nodes,
+        supports,
+        tolerance,
+    )
+
     # Connectivity graph: node -> touching analytical elements.
     connectivity: Dict[str, List[str]] = {n["id"]: [] for n in nodes.nodes}
     for m in members:
@@ -200,6 +267,7 @@ def build_analytical_model(payload: Dict[str, Any]) -> Dict[str, Any]:
         "members": members,
         "shells": shells,
         "support_candidates": supports,
+        "support_filter": support_filter,
         "connectivity": connectivity,
         "load_path_graph": {"mode": "TOPOLOGICAL_ONLY", "edges": load_path_edges},
         "material_candidates": material_candidates,
