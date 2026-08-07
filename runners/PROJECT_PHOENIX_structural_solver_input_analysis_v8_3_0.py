@@ -440,6 +440,32 @@ def _opensees_decks(payload: Mapping[str, Any], nodes: Mapping[str, Any], member
     return files, tag_manifest
 
 
+def _calculix_id_lines(values, max_entries: int = 16) -> List[str]:
+    """Return CalculiX set-data lines with no more than max_entries values per line."""
+    if max_entries <= 0:
+        raise ValueError("max_entries must be positive")
+    entries = [str(value) for value in values]
+    return [
+        ", ".join(entries[index:index + max_entries])
+        for index in range(0, len(entries), max_entries)
+    ]
+
+
+def _validate_calculix_data_line_width(lines, max_entries: int = 16) -> None:
+    """Reject generated CalculiX data records that exceed the parser entry limit."""
+    if max_entries <= 0:
+        raise ValueError("max_entries must be positive")
+    for line_number, raw_line in enumerate(lines, 1):
+        line = str(raw_line).strip()
+        if not line or line.startswith("*"):
+            continue
+        entry_count = len(line.split(","))
+        if entry_count > max_entries:
+            raise ValueError(
+                f"CalculiX data line {line_number} contains {entry_count} entries; "
+                f"maximum is {max_entries}: {line}"
+            )
+
 def _calculix_decks(payload: Mapping[str, Any], nodes: Mapping[str, Any], members: Mapping[str, Any], shells: Mapping[str, Any], materials: Mapping[str, Any], sections: Mapping[str, Any], nodal_loads: Mapping[str, Any]) -> Tuple[Dict[str, str], Dict[str, Any]]:
     node_tags, member_tags, shell_tags = _tags(nodes), _tags(members), _tags(shells)
     supports = _items((payload.get("analytical_model") or {}).get("supports"))
@@ -458,7 +484,7 @@ def _calculix_decks(payload: Mapping[str, Any], nodes: Mapping[str, Any], member
             tags = [node_tags[n] for n in s["node_ids"]]
             lines += [f"*ELEMENT, TYPE=S4, ELSET=E_{shell_id}", f"{shell_offset + shell_tags[shell_id]}, {', '.join(map(str, tags))}"]
         lines += ["*NSET, NSET=NALL"]
-        lines.append(", ".join(str(node_tags[n]) for n in sorted(nodes)))
+        lines.extend(_calculix_id_lines(node_tags[n] for n in sorted(nodes)))
         for material_id in sorted(materials):
             mat = materials[material_id]
             lines += [f"*MATERIAL, NAME={material_id}", "*ELASTIC", f"{mat['E']:.12g}, {mat['nu']:.12g}"]
@@ -492,6 +518,7 @@ def _calculix_decks(payload: Mapping[str, Any], nodes: Mapping[str, Any], member
                 if abs(value) > 1e-15:
                     lines.append(f"{node_tags[node_id]}, {dof_index}, {value:.12g}")
         lines += ["*NODE FILE", "U, RF", "*EL FILE", "S, E", "*END STEP"]
+        _validate_calculix_data_line_width(lines)
         files[f"calculix_{case_id}.inp"] = "\n".join(lines) + "\n"
     manifest = {"node_tags": node_tags, "member_tags": member_tags, "shell_tags": shell_tags}
     return files, manifest
