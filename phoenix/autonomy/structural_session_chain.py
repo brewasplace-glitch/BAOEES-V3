@@ -342,6 +342,11 @@ def run_structural_chain(
         return ChainResult("FAILED",completed,"8.2.0",outputs,[{"reason":"STRUCTURAL_V8_2_EXECUTION_FAILED","message":f"v8.2 stopte met exitcode {rc}."}],[],register)
     register["stages"][1].update({"status":"PASSED","input_source":action_source});outputs.append(_repo_ref(v82_out,repository));completed="8.2.0"
 
+    # PHOENIX_R8_2_1_RUNTIME_CHAIN_INTEGRITY_FIX_V1_1
+    # v8.2 generated the authoritative action/load model for all downstream
+    # solver-basis, topology, meshing, solver-package and v8.4 evidence paths.
+    action_load_for_solver=_read(v82_out)
+
     material_selection={}
     if material_selection_path is not None and material_selection_path.is_file():
         try:
@@ -469,7 +474,6 @@ def run_structural_chain(
         _repo_ref(_phx_r81_register_path,repository)
     )
     # PHOENIX_R8_2_GEOMETRY_GROUNDED_INTERFACE_MESHING_V1_0
-    action_load_for_solver=_read(v82_out)
     if _phx_r81.get("status")!="PASSED":
         _phx_r81_blockers=_phx_r81.get("blockers") or []
         _phx_r81_reasons={
@@ -602,7 +606,7 @@ def run_structural_chain(
             repository=repository,
             project_id=project_id,
             analytical_model=analytical_for_solver,
-            action_load_model=_read(v82_out),
+            action_load_model=action_load_for_solver,
             solver_package_dir=v83_dir,
             output_dir=output_dir/"v8_4",
         )

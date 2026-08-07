@@ -9,6 +9,11 @@ This layer closes the gap between the Official Start Screen and project engines:
 """
 from __future__ import annotations
 
+from .session_result_integrity_r821 import (
+    prepare_adapter_result_path as _phx_r821_prepare_adapter_result_path,
+    validate_adapter_result_session as _phx_r821_validate_adapter_result_session,
+)
+
 import json
 import re
 import secrets
@@ -492,6 +497,9 @@ class AutonomousProjectOrchestrator:
                 continue
 
             adapter_root = workspace / "results" / "session_adapters" / cap_id
+            # PHOENIX_R8_2_1_SESSION_RESULT_INTEGRITY_GUARD_V1_1
+            _phx_r821_adapter_result_path = adapter_root / "adapter_result.json"
+            _phx_r821_prepare_adapter_result_path(_phx_r821_adapter_result_path)
             log_path = workspace / "logs" / f"session_adapter_{cap_id}.log"
             rc, result = self._run_adapter(
                 runner_ref=availability["runner"],
@@ -553,6 +561,12 @@ class AutonomousProjectOrchestrator:
                 "log": log_path.relative_to(self.repository).as_posix(),
             }
             produced.extend(outputs)
+            if _phx_r821_adapter_result_path.is_file():
+                _phx_r821_validate_adapter_result_session(
+                    _phx_r821_adapter_result_path,
+                    str(session.get("session_id") or ""),
+                    cap_id,
+                )
             self._write_adapter_state(workspace, session, bootstrap, capability_states)
 
             pct = min(92, 5 + round((idx / total) * 80))
