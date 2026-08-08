@@ -1,0 +1,66 @@
+{
+  "schema_version": "phoenix.autonomous-global-stability-evidence-policy/1.0",
+  "engine": "PHX-AUTONOMOUS-GLOBAL-STABILITY-EVIDENCE-R9",
+  "version": "R9.0.0",
+  "accepted_member_verification_states": [
+    "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+  ],
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "v8_6_policy": {
+    "acceptable_member_verification_states": [
+      "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+    ],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "SOFT_STOREY_STIFFNESS_RATIO",
+      "STOREY_STABILITY_INDEX",
+      "TORSIONAL_DRIFT_RATIO",
+      "WEAK_STOREY_STRENGTH_RATIO"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "derivation": {
+    "coordinate_tolerance_m": 1e-06,
+    "derive_topology_load_path": true,
+    "derive_diaphragm_connectivity": true,
+    "derive_first_order_floor_response": true,
+    "run_real_calculix_nlgeom_second_order": true,
+    "run_global_buckling_eigenvalue": false,
+    "global_buckling_reason": "R9 v1.0 does not fabricate or approximate a critical-load eigenvalue; explicit or future verified eigenvalue evidence is required.",
+    "derive_weak_storey_strength": false,
+    "derive_alternate_load_path_capacity": false
+  },
+  "acceptance": {
+    "auto_promote_topology_boolean_checks": false,
+    "auto_promote_floor_nodal_spread_to_torsional_check": false,
+    "require_explicit_numeric_limits": true,
+    "require_explicit_normative_reference": true,
+    "forbid_generic_example_as_project_evidence": true
+  },
+  "forbidden_project_evidence_paths": [
+    "configs/projects/generic_building_structural_global_stability_v8_6_0.json"
+  ],
+  "safety": {
+    "normative_limits_invented": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}

@@ -27,6 +27,7 @@ from .local_material_supply_intelligence import selected_engineering_material_id
 from .structural_action_load_basis import build_structural_action_load_basis
 
 from .autonomous_calculix_results_v8_4 import autonomous_calculix_execution_enabled as _phoenix_v84_calculix_enabled, build_autonomous_calculix_results as _phoenix_build_autonomous_calculix_results
+from .autonomous_global_stability_evidence_r9 import build_autonomous_global_stability_evidence as _phoenix_build_r9_global_stability_evidence
 
 VERSION="1.0.0"
 
@@ -723,6 +724,39 @@ def run_structural_chain(
     prior_outputs={"8.5.0":_read(v85_out)}
     for offset,(version,section_name,required,reason,folder,filename) in enumerate(definitions,start=5):
         section,source=_section(candidates,section_name,required)
+        # PHOENIX_R9_GLOBAL_STABILITY_EVIDENCE_V1_0
+        if not section and version=="8.6.0":
+            _phx_r9=_phoenix_build_r9_global_stability_evidence(
+                repository=repository,
+                project_id=project_id,
+                analytical_model=analytical_for_solver,
+                action_load_model=action_load_for_solver,
+                analysis_validation=_read(v84_out),
+                member_verification=prior_outputs["8.5.0"],
+                architecture=arch,
+                candidates=candidates,
+                v84_evidence_dir=output_dir/"v8_4"/"solver_evidence"/"calculix",
+                output_dir=output_dir/"v8_6"/"r9_evidence",
+                policy_path=repository/"configs"/"phoenix"/"structural"/"autonomous_global_stability_evidence_policy_r9.json",
+            )
+            _phx_r9_path=output_dir/"v8_6"/"r9_global_stability_evidence.json"
+            _write(_phx_r9_path,_phx_r9)
+            outputs.append(_repo_ref(_phx_r9_path,repository))
+            if _phx_r9.get("status")=="PASSED" and isinstance(_phx_r9.get("global_stability_input"),dict):
+                section=_phx_r9["global_stability_input"]
+                source="AUTONOMOUS_GLOBAL_STABILITY_EVIDENCE_R9"
+            else:
+                _phx_r9_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
+                _write(_phx_r9_template,_phx_r9.get("required_input_template") or {})
+                outputs.append(_repo_ref(_phx_r9_template,repository))
+                register["stages"][offset]["status"]="BLOCKED_INPUT"
+                _phx_r9_blockers=_phx_r9.get("blockers") or [{"reason":"R9_GLOBAL_STABILITY_EVIDENCE_INCOMPLETE","message":"R9 global-stability evidence is incomplete."}]
+                _phx_r9_primary=_phx_r9_blockers[0]
+                return _block(
+                    _phx_r9_primary.get("reason") or "R9_GLOBAL_STABILITY_EVIDENCE_INCOMPLETE",
+                    _phx_r9_primary.get("message") or "R9 global-stability evidence is incomplete.",
+                    completed,version,outputs,register,_phx_r9_primary
+                )
         if not section:
             register["stages"][offset]["status"]="BLOCKED_INPUT"
             message={
