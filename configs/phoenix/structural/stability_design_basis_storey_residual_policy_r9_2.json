@@ -1,0 +1,61 @@
+{
+  "schema_version": "phoenix.stability-design-basis-storey-completeness-residual-policy/1.0",
+  "engine": "PHX-STABILITY-DESIGN-BASIS-STOREY-COMPLETENESS-RESIDUAL-R9.2",
+  "version": "R9.2.0",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "derivation": {
+    "coordinate_tolerance_m": 1e-06,
+    "require_top_of_top_storey_structural_boundary_when_height_explicit": true,
+    "require_vertical_load_path_candidate_for_each_storey_interval": true,
+    "torsional_numerical_drift_floor_m": 1e-10,
+    "exclude_base_support_level_from_torsional_candidate": true,
+    "rederive_floor_response_on_expected_structural_levels": true,
+    "rederive_storey_mechanics_on_expected_structural_levels": true,
+    "derive_storey_strength_capacity": false,
+    "promote_topological_removal_to_alternate_path_capacity": false
+  },
+  "v8_6_policy": {
+    "acceptable_member_verification_states": [
+      "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+    ],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "SOFT_STOREY_STIFFNESS_RATIO",
+      "STOREY_STABILITY_INDEX",
+      "TORSIONAL_DRIFT_RATIO",
+      "WEAK_STOREY_STRENGTH_RATIO"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "forbidden_project_evidence_paths": [
+    "configs/projects/generic_building_structural_global_stability_v8_6_0.json"
+  ],
+  "safety": {
+    "normative_values_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "generic_example_limits_forbidden": true,
+    "structural_storey_model_completeness_must_pass": true,
+    "storey_strength_invention_forbidden": true,
+    "alternate_path_capacity_invention_forbidden": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}
