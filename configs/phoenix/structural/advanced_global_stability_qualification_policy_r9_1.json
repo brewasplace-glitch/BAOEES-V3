@@ -1,0 +1,66 @@
+{
+  "schema_version": "phoenix.advanced-global-stability-evidence-qualification-policy/1.0",
+  "engine": "PHX-ADVANCED-GLOBAL-STABILITY-EVIDENCE-COMPLETION-R9.1",
+  "version": "R9.1.0",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "derivation": {
+    "coordinate_tolerance_m": 1e-06,
+    "derive_storey_mechanics_from_v8_3_nodal_load_ledger": true,
+    "derive_adjacent_storey_stiffness_ratios": true,
+    "reuse_r9_real_calculix_nlgeom_second_order": true,
+    "run_real_calculix_linear_buckling": true,
+    "derive_topological_single_member_removal_redundancy": true,
+    "derive_weak_storey_strength_capacity": false,
+    "weak_storey_strength_reason": "No verified storey lateral-strength-capacity aggregation method is available in R9.1; explicit engineering evidence is required.",
+    "promote_topological_member_removal_to_alternate_path_capacity": false
+  },
+  "qualification_states": [
+    "EVIDENCE_AVAILABLE",
+    "ENGINEERING_REFERENCE_REQUIRED",
+    "LIMIT_REFERENCE_REQUIRED",
+    "REFERENCE_METHOD_AND_LIMIT_REQUIRED",
+    "ANALYSIS_REQUIRED",
+    "QUALIFIED_FOR_V8_6"
+  ],
+  "v8_6_policy": {
+    "acceptable_member_verification_states": [
+      "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+    ],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "SOFT_STOREY_STIFFNESS_RATIO",
+      "STOREY_STABILITY_INDEX",
+      "TORSIONAL_DRIFT_RATIO",
+      "WEAK_STOREY_STRENGTH_RATIO"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "forbidden_project_evidence_paths": [
+    "configs/projects/generic_building_structural_global_stability_v8_6_0.json"
+  ],
+  "safety": {
+    "normative_values_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "generic_example_limits_forbidden": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}
