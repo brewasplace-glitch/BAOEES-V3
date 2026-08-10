@@ -1,0 +1,281 @@
+{
+  "schema_version": "phoenix.suriname.structural-rule-registry/1.0",
+  "registry_id": "PHX-SURINAME-STRUCTURAL-RULES-v1.0",
+  "jurisdiction": "Suriname",
+  "location_scope": {
+    "paramaribo": {
+      "source": "SR-SUR-BW-1956-001",
+      "source_pointer": "Bouwwet 1956, Article 10",
+      "scope_status": "SOURCE_TEXT_SUPPORTS_APPLICABILITY",
+      "current_2026_status": "NOT_EXTERNALLY_VERIFIED"
+    }
+  },
+  "unit_normalization": {
+    "historical_weight_notation": {
+      "conversion": "1 kgf = 9.80665 N",
+      "status": "COMPUTATIONAL_NORMALIZATION_NOT_SOURCE_TEXT"
+    }
+  },
+  "rules": [
+    {
+      "rule_id": "SUR-BW-A1-PERMIT",
+      "category": "PERMIT",
+      "source_id": "SR-SUR-BW-1956-001",
+      "source_pointer": "Bouwwet 1956, Article 1",
+      "summary": "Prior written building permission is required, subject to source-text exceptions and planning hierarchy.",
+      "automatic_use": "PERMIT_WORKFLOW_REQUIREMENT"
+    },
+    {
+      "rule_id": "SUR-BB1-A12-A14-DRAWINGS",
+      "category": "PERMIT_DOCUMENTATION",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Articles 12-14",
+      "summary": "Permit submissions require project particulars, drawings and where needed calculations, including foundation/structural/site information.",
+      "automatic_use": "DOCUMENT_REQUIREMENT_CHECK"
+    },
+    {
+      "rule_id": "SUR-BB1-A26-STRENGTH",
+      "category": "STRUCTURAL_BASIS",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 26",
+      "summary": "Strength calculation is required under the decree rules; additional conditions can be imposed for other materials and loads.",
+      "automatic_use": "STRUCTURAL_REQUIREMENT_EVIDENCE",
+      "does_not_establish_eurocode_legal_adoption": true
+    },
+    {
+      "rule_id": "SUR-BB1-A27-BUCKLING",
+      "category": "BUCKLING",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 27",
+      "summary": "Where buckling danger exists, the structural member must be checked for buckling.",
+      "automatic_use": "APPLICABILITY_EVIDENCE_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A28-DEFLECTION-STEEL-VARIABLE",
+      "category": "DEFLECTION",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 28(2)",
+      "summary": "Steel beam deflection due to variable load maximum L/600.",
+      "source_value": {
+        "ratio_denominator": 600,
+        "load_scope": "variable"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A28-DEFLECTION-STEEL-WALL-BEARING",
+      "category": "DEFLECTION",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 28(2)",
+      "summary": "Wall-bearing steel beam total-load deflection maximum L/500.",
+      "source_value": {
+        "ratio_denominator": 500,
+        "load_scope": "total"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A29-SELFWEIGHT-RC",
+      "category": "SELF_WEIGHT",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 29",
+      "material": "reinforced_concrete",
+      "source_value": {
+        "value": 2400,
+        "unit": "kg/m3"
+      },
+      "normalized_si": {
+        "value": 23.53596,
+        "unit": "kN/m3"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A29-SELFWEIGHT-STEEL",
+      "category": "SELF_WEIGHT",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 29",
+      "material": "steel",
+      "source_value": {
+        "value": 7850,
+        "unit": "kg/m3"
+      },
+      "normalized_si": {
+        "value": 76.9822025,
+        "unit": "kN/m3"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A30-LIVE-RESIDENTIAL-ATTIC",
+      "category": "LIVE_LOAD",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 30(1)",
+      "occupancy": "residential_attic",
+      "source_value": {
+        "value": 150,
+        "unit": "kg/m2"
+      },
+      "normalized_si": {
+        "value": 1.4709975,
+        "unit": "kN/m2"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A30-LIVE-RESIDENTIAL-FLOOR",
+      "category": "LIVE_LOAD",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 30(1)",
+      "occupancy": "residential_floor",
+      "source_value": {
+        "value": 200,
+        "unit": "kg/m2"
+      },
+      "normalized_si": {
+        "value": 1.96133,
+        "unit": "kN/m2"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A30-LIVE-RESIDENTIAL-STAIRS",
+      "category": "LIVE_LOAD",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 30(1)",
+      "occupancy": "residential_stairs_corridors",
+      "source_value": {
+        "value": 200,
+        "unit": "kg/m2"
+      },
+      "normalized_si": {
+        "value": 1.96133,
+        "unit": "kN/m2"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A30-LIVE-RESIDENTIAL-BALCONY",
+      "category": "LIVE_LOAD",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 30(1)",
+      "occupancy": "residential_cantilever_balcony",
+      "source_value": {
+        "value": 300,
+        "unit": "kg/m2"
+      },
+      "normalized_si": {
+        "value": 2.941995,
+        "unit": "kN/m2"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY"
+    },
+    {
+      "rule_id": "SUR-BB1-A30-WIND-BASE",
+      "category": "WIND",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 30(5)-(7)",
+      "summary": "Wind pressure/suction uses base stuwdruk and coefficients.",
+      "source_value": {
+        "base_stuwdruk": 60,
+        "unit": "kg/m2",
+        "height_range": "up to 20 m"
+      },
+      "normalized_si": {
+        "base_stuwdruk": 0.588399,
+        "unit": "kN/m2"
+      },
+      "height_rule": {
+        "20_to_40_m_increment": 1.5,
+        "unit": "kg/m2 per metre above 20 m",
+        "normalized_si_increment": 0.014709975,
+        "normalized_unit": "kN/m2 per metre"
+      },
+      "overturning_multiplier": 1.25,
+      "automatic_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY",
+      "automatic_replacement_of_eurocode_wind_model": false
+    },
+    {
+      "rule_id": "SUR-BB1-A41-HEIGHT",
+      "category": "ARCHITECTURE",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 41",
+      "summary": "General minimum storey/room height in dwelling rules is 2.75 m.",
+      "source_value": {
+        "general_minimum": 2.75,
+        "unit": "m"
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_CHECK"
+    },
+    {
+      "rule_id": "SUR-BB1-A43-STAIRS",
+      "category": "STAIRS",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 43",
+      "summary": "Dwelling stair rules include minimum tread, maximum riser and minimum clear width.",
+      "source_value": {
+        "minimum_tread_m": 0.16,
+        "maximum_riser_m": 0.21,
+        "minimum_clear_width_m": 0.8
+      },
+      "automatic_use": "TRACEABLE_LOCAL_RULE_CHECK"
+    },
+    {
+      "rule_id": "SUR-BB1-A55-FOUNDATION",
+      "category": "FOUNDATION",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 55",
+      "summary": "Foundations must bear on competent ground or an adequate ground-supported system sized to structure and soil conditions.",
+      "automatic_use": "FOUNDATION_DESIGN_REQUIREMENT_EVIDENCE"
+    },
+    {
+      "rule_id": "SUR-BB1-A57-SHALLOW-FOUNDATION-WIDTH",
+      "category": "FOUNDATION",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 57",
+      "summary": "Minimum width relationships are stated for shallow foundations under load-bearing walls, including a 0.40 m minimum in the cited cases.",
+      "automatic_use": "TRACEABLE_LOCAL_RULE_CHECK",
+      "requires_project_geometry_mapping": true
+    },
+    {
+      "rule_id": "SUR-BB1-A65-DRAINAGE",
+      "category": "DRAINAGE",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 65",
+      "summary": "Dwellings require adequate drainage for rainwater and domestic wastewater to a designated sewer or public water.",
+      "automatic_use": "DRAINAGE_REQUIREMENT_EVIDENCE"
+    }
+  ],
+  "r9_4_local_source_bridge": {
+    "legal_applicability_in_suriname": "PRIMARY_SOURCE_TEXT_AVAILABLE_CURRENT_2026_STATUS_NOT_EXTERNALLY_VERIFIED",
+    "eurocode_2_legal_adoption": "NOT_ESTABLISHED_BY_UPLOADED_PRIMARY_SOURCES",
+    "GLOBAL_BUCKLING_FACTOR": {
+      "local_source_support": "Bouwbesluit no. 1 Article 27 supports a buckling check when buckling danger exists.",
+      "v8_6_acceptance_limit": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "SECOND_ORDER_AMPLIFICATION": {
+      "local_v8_6_limit": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "STOREY_STABILITY_INDEX": {
+      "local_v8_6_limit": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "TORSIONAL_DRIFT_RATIO": {
+      "local_v8_6_limit": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "SOFT_STOREY_STIFFNESS_RATIO": {
+      "local_v8_6_limit": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "WEAK_STOREY_STRENGTH_RATIO": {
+      "local_v8_6_limit": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "DIAPHRAGM_CONTINUITY": {
+      "local_v8_6_method": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "LOAD_PATH_CONTINUITY": {
+      "local_v8_6_method": "NOT_ESTABLISHED_BY_SOURCE"
+    },
+    "ALTERNATE_LOAD_PATH_EVIDENCE": {
+      "local_v8_6_method": "NOT_ESTABLISHED_BY_SOURCE"
+    }
+  }
+}

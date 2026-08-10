@@ -1,0 +1,39 @@
+{
+  "schema_version": "phoenix.bib.jurisdiction-knowledge/1.0",
+  "knowledge_id": "PHX-BIB-SURINAME-v1.0",
+  "jurisdiction": "Suriname",
+  "summary": {
+    "primary_sources": 2,
+    "background_sources": 1,
+    "selected_machine_readable_rules": 18,
+    "current_legal_status_verified_for_2026": false,
+    "eurocode_2_legal_adoption_established_by_primary_sources": false
+  },
+  "domains": [
+    "building_permit",
+    "permit_documentation",
+    "structural_strength",
+    "buckling",
+    "deflection",
+    "material_unit_weights",
+    "floor_live_loads",
+    "wind",
+    "foundation",
+    "architecture",
+    "stairs",
+    "drainage"
+  ],
+  "calculation_integration": {
+    "mode": "QUERYABLE_TRACEABLE_BIB_LAYER",
+    "project_location_trigger": [
+      "Suriname",
+      "Paramaribo"
+    ],
+    "automatic_numeric_override": false,
+    "dual_basis_comparison": true,
+    "future_r9_5_input": true
+  },
+  "source_registry": "outputs/bib/index/suriname_regulatory_source_registry_v1_0.json",
+  "rule_registry": "configs/phoenix/jurisdictions/suriname/suriname_structural_rule_registry_v1_0.json",
+  "policy": "configs/phoenix/jurisdictions/suriname/suriname_regulatory_use_policy_v1_0.json"
+}

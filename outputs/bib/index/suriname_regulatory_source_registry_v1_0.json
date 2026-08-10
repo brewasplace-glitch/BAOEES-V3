@@ -1,0 +1,67 @@
+{
+  "schema_version": "phoenix.bib.source-registry/1.0",
+  "registry_id": "PHX-BIB-SURINAME-REGULATORY-SOURCES-v1.0",
+  "jurisdiction": "Suriname",
+  "source_precedence_policy": [
+    "PRIMARY_LEGISLATION_USER_PROVIDED",
+    "PRIMARY_REGULATION_USER_PROVIDED",
+    "UNVERIFIED_SECONDARY_BACKGROUND"
+  ],
+  "sources": [
+    {
+      "source_id": "SR-SUR-BW-1956-001",
+      "title": "Bouwwet 1956",
+      "file": "outputs/bib/sources/jurisdictions/suriname/primary/surinaamse_bouwwet_1956.pdf",
+      "sha256": "8ab927752e08814f9edb387a556f0b2a07eddf73750e893ba8b1d2a6d66ff75f",
+      "source_class": "PRIMARY_LEGISLATION_USER_PROVIDED",
+      "authority_type": "LEGISLATION",
+      "document_date": "1956-04-06",
+      "amendment_notation_in_uploaded_copy": [
+        "G.B. 1957 no. 67",
+        "G.B. 1972 no. 96",
+        "S.B. 1980 no. 116",
+        "S.B. 2002 no. 72"
+      ],
+      "text_scope_evidence": {
+        "paramaribo": "Article 10 text states applicability to district Paramaribo."
+      },
+      "current_2026_legal_status": "NOT_EXTERNALLY_VERIFIED",
+      "automatic_numeric_use": false,
+      "automatic_legal_conclusion": false
+    },
+    {
+      "source_id": "SR-SUR-BB1-1956-001",
+      "title": "Bouwbesluit no. 1",
+      "file": "outputs/bib/sources/jurisdictions/suriname/primary/surinaams_bouwbesluit_no1_1956.pdf",
+      "sha256": "5a6e004c32bcfce6d3bea69b09f511edd3825e96d2450e1e6a5c922ce79cee90",
+      "source_class": "PRIMARY_REGULATION_USER_PROVIDED",
+      "authority_type": "STATE_DECREE_BUILDING_REGULATIONS",
+      "document_date": "1956-11-26",
+      "amendment_notation_in_uploaded_copy": [
+        "G.B. 1970 no. 67",
+        "S.B. 2002 no. 93"
+      ],
+      "current_2026_legal_status": "NOT_EXTERNALLY_VERIFIED",
+      "automatic_numeric_use": "TRACEABLE_LOCAL_RULE_COMPARISON_ONLY",
+      "automatic_override_of_engineering_standard": false,
+      "conflict_requires_review": true
+    },
+    {
+      "source_id": "SR-SUR-BG-2026-001",
+      "title": "Voor de Phoenix BIB - achtergrondinformatie Suriname",
+      "file": "outputs/bib/sources/jurisdictions/suriname/background/voor_de_phoenix_bib.txt",
+      "sha256": "622cd37731426b75d5103266f7171a374d029019fb8cfb25ce4e58fde84acb06",
+      "source_class": "UNVERIFIED_SECONDARY_BACKGROUND",
+      "authority_type": "BACKGROUND_INFORMATION",
+      "current_2026_legal_status": "NOT_APPLICABLE_AS_LEGAL_AUTHORITY",
+      "automatic_numeric_use": false,
+      "automatic_normative_use": false,
+      "use": [
+        "research_direction",
+        "candidate_engineering_policy",
+        "source_verification_prompt"
+      ],
+      "note": "Contains AI-generated statements; do not promote numerical or legal propositions without independent traceable evidence."
+    }
+  ]
+}

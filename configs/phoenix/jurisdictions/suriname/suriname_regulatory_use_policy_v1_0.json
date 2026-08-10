@@ -1,0 +1,37 @@
+{
+  "schema_version": "phoenix.suriname.regulatory-use-policy/1.0",
+  "policy_id": "PHX-SURINAME-REGULATORY-USE-v1.0",
+  "jurisdiction": "Suriname",
+  "principles": {
+    "preserve_original_sources": true,
+    "primary_sources_precede_background_information": true,
+    "background_ai_numeric_auto_use": false,
+    "background_ai_legal_auto_use": false,
+    "no_silent_conflict_resolution": true,
+    "no_automatic_eurocode_legal_adoption_claim": true,
+    "no_automatic_surinaame_current_law_status_claim_without_verification": true,
+    "trace_every_used_rule_to_source_id_and_article": true
+  },
+  "calculation_mode": "DUAL_BASIS_COMPARE_AND_TRACE",
+  "calculation_behavior": {
+    "primary_local_numeric_rules": "MAY_BE_USED_AS_TRACEABLE_LOCAL_COMPARISON_INPUT_WHEN_PROJECT_MAPPING_IS_VALID",
+    "foreign_or_eurocode_methodology": "PROJECT_ENGINEERING_METHOD_CANDIDATE_UNLESS_TRACEABLY_ACCEPTED",
+    "automatic_override_between_local_rule_and_foreign_standard": false,
+    "conflict_action": "BLOCK_OR_REQUIRE_ENGINEERING_REVIEW",
+    "missing_mapping_action": "DO_NOT_APPLY_NUMERIC_RULE",
+    "unit_conversion": "USE_EXPLICIT_RECORDED_CONVERSION_ONLY"
+  },
+  "r9_4_r9_5": {
+    "use_primary_surinaame_sources_as_applicability_evidence": true,
+    "use_primary_surinaame_sources_as_v8_6_limit_only_when_exact_check_and_limit_are_explicit": true,
+    "use_background_file_for_v8_6_limit": false,
+    "seismic_applicability": "NOT_RESOLVED_BY_CURRENT_UPLOAD_SET",
+    "legal_applicability_of_eurocode_2": "NOT_RESOLVED_BY_CURRENT_UPLOAD_SET"
+  },
+  "release": {
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "professional_review_required": true,
+    "production_release": "LOCKED"
+  }
+}
