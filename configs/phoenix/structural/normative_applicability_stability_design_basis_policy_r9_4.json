@@ -1,0 +1,155 @@
+{
+  "schema_version": "phoenix.normative-applicability-stability-design-basis-policy/1.0",
+  "engine": "PHX-NORMATIVE-APPLICABILITY-STABILITY-DESIGN-BASIS-QUALIFICATION-R9.4",
+  "version": "R9.4.0",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "allowed_applicability_states": [
+    "APPLICABLE",
+    "SUPPLEMENTAL_ENGINEERING_POLICY",
+    "NOT_APPLICABLE"
+  ],
+  "allowed_reference_types": [
+    "LICENSED_STANDARD_SOURCE",
+    "PROJECT_ENGINEERING_POLICY",
+    "AUTHORITY_APPROVED_PROJECT_BASIS"
+  ],
+  "seismic_style_check_types": [
+    "TORSIONAL_DRIFT_RATIO",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "robustness_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "LOAD_PATH_CONTINUITY"
+  ],
+  "check_profiles": {
+    "SECOND_ORDER_AMPLIFICATION": {
+      "applicability_candidate": "GENERAL_STABILITY_ENGINEERING_CANDIDATE",
+      "source_scope_candidates": [
+        "NEN_EN_1990_1_2025_A1_2026",
+        "NEN_EN_1992_1_1_NB_A2_2025"
+      ],
+      "acceptance_criteria_fields": [
+        "max_amplification_factor"
+      ]
+    },
+    "GLOBAL_BUCKLING_FACTOR": {
+      "applicability_candidate": "SUPPLEMENTAL_ENGINEERING_POLICY_CANDIDATE",
+      "source_scope_candidates": [
+        "NEN_EN_1990_1_2025_A1_2026",
+        "NEN_EN_1992_1_1_NB_A2_2025"
+      ],
+      "acceptance_criteria_fields": [
+        "minimum_critical_load_factor"
+      ]
+    },
+    "STOREY_STABILITY_INDEX": {
+      "applicability_candidate": "SUPPLEMENTAL_ENGINEERING_POLICY_CANDIDATE",
+      "source_scope_candidates": [
+        "NEN_EN_1990_1_2025_A1_2026",
+        "NEN_EN_1992_1_1_NB_A2_2025"
+      ],
+      "acceptance_criteria_fields": [
+        "max_stability_index"
+      ]
+    },
+    "TORSIONAL_DRIFT_RATIO": {
+      "applicability_candidate": "SEISMIC_STYLE_CHECK_REQUIRES_SEISMIC_APPLICABILITY_DECISION",
+      "source_scope_candidates": [
+        "JRC_EUROCODE_8_SEISMIC_SCOPE"
+      ],
+      "acceptance_criteria_fields": [
+        "max_torsional_drift_ratio"
+      ]
+    },
+    "SOFT_STOREY_STIFFNESS_RATIO": {
+      "applicability_candidate": "SEISMIC_STYLE_CHECK_REQUIRES_SEISMIC_APPLICABILITY_DECISION",
+      "source_scope_candidates": [
+        "JRC_EUROCODE_8_SEISMIC_SCOPE"
+      ],
+      "acceptance_criteria_fields": [
+        "minimum_ratio"
+      ]
+    },
+    "WEAK_STOREY_STRENGTH_RATIO": {
+      "applicability_candidate": "SEISMIC_STYLE_CHECK_REQUIRES_SEISMIC_APPLICABILITY_DECISION",
+      "source_scope_candidates": [
+        "JRC_EUROCODE_8_SEISMIC_SCOPE"
+      ],
+      "acceptance_criteria_fields": [
+        "minimum_ratio"
+      ]
+    },
+    "DIAPHRAGM_CONTINUITY": {
+      "applicability_candidate": "ROBUSTNESS_SCOPE_CANDIDATE",
+      "source_scope_candidates": [
+        "NEN_EN_1990_1_2025_A1_2026",
+        "NEN_EN_1991_1_7_2026"
+      ],
+      "acceptance_criteria_fields": []
+    },
+    "LOAD_PATH_CONTINUITY": {
+      "applicability_candidate": "ROBUSTNESS_SCOPE_CANDIDATE",
+      "source_scope_candidates": [
+        "NEN_EN_1990_1_2025_A1_2026",
+        "NEN_EN_1991_1_7_2026"
+      ],
+      "acceptance_criteria_fields": []
+    },
+    "ALTERNATE_LOAD_PATH_EVIDENCE": {
+      "applicability_candidate": "ROBUSTNESS_METHOD_CANDIDATE_REQUIRES_ENGINEERING_METHOD_ACCEPTANCE",
+      "source_scope_candidates": [
+        "NEN_EN_1990_1_2025_A1_2026",
+        "NEN_EN_1991_1_7_2026"
+      ],
+      "acceptance_criteria_fields": [
+        "minimum_residual_capacity_proxy_ratio"
+      ]
+    }
+  },
+  "v8_6_policy": {
+    "acceptable_member_verification_states": [
+      "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+    ],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "SOFT_STOREY_STIFFNESS_RATIO",
+      "STOREY_STABILITY_INDEX",
+      "TORSIONAL_DRIFT_RATIO",
+      "WEAK_STOREY_STRENGTH_RATIO"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "forbidden_project_evidence_paths": [
+    "configs/projects/generic_building_structural_global_stability_v8_6_0.json"
+  ],
+  "safety": {
+    "public_source_scope_is_not_exact_limit_evidence": true,
+    "legal_applicability_in_suriname_must_not_be_invented": true,
+    "national_annex_ndp_values_must_not_be_invented": true,
+    "not_applicable_does_not_auto_waive_v8_6_mandatory_check": true,
+    "r8_screening_strength_remains_candidate_only": true,
+    "alternate_path_screening_is_not_redistribution_analysis": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}

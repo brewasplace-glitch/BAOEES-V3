@@ -1,0 +1,54 @@
+{
+  "schema_version": "phoenix.normative-applicability-public-source-registry/1.0",
+  "engine": "PHX-NORMATIVE-APPLICABILITY-STABILITY-DESIGN-BASIS-QUALIFICATION-R9.4",
+  "snapshot_date": "2026-08-10",
+  "limitations": [
+    "Public metadata/scope statements are evidence of document identity and broad scope only.",
+    "No copyrighted National Annex parameter values or clause text are embedded.",
+    "Legal applicability of Dutch/European standards in Suriname is NOT VERIFIED.",
+    "Exact project limits require a licensed source or an explicit traceable engineering policy."
+  ],
+  "sources": {
+    "NEN_EN_1990_1_2025_A1_2026": {
+      "title": "NEN-EN 1990-1:2025+A1:2026 en",
+      "publisher": "NEN",
+      "status": "CURRENT",
+      "publication_date": "2026-04-01",
+      "url": "https://www.nen.nl/en/nen-en-1990-1-2025-a1-2026-en-350215",
+      "public_scope_summary": "Establishes principles and requirements for safety, serviceability, robustness and durability and basis for limit-state verification.",
+      "exact_limits_embedded": false
+    },
+    "NEN_EN_1991_1_7_2026": {
+      "title": "NEN-EN 1991-1-7:2026 en",
+      "publisher": "NEN",
+      "status": "FINAL",
+      "publication_date": "2026-04-01",
+      "url": "https://www.nen.nl/nen-en-1991-1-7-2026-en-343756",
+      "public_scope_summary": "Covers identifiable accidental actions and includes rules on tying systems and key members plus risk-assessment information.",
+      "exact_limits_embedded": false
+    },
+    "NEN_EN_1992_1_1_NB_A2_2025": {
+      "title": "NEN-EN 1992-1-1:2005+C2:2011+A1:2015/NB:2016+A1:2020+A2:2025 nl",
+      "publisher": "NEN",
+      "status": "CURRENT",
+      "publication_date": "2025-05-01",
+      "url": "https://www.nen.nl/en/nen-en-1992-1-1-2005-c2-2011-a1-2015-nb-2016-a1-2020-a2-2025-nl-338114",
+      "public_scope_summary": "Dutch National Annex to Eurocode 2 Part 1-1; specifies Dutch choices and nationally determined parameter values.",
+      "exact_limits_embedded": false,
+      "jurisdiction_scope": "NETHERLANDS"
+    },
+    "JRC_EUROCODE_8_SEISMIC_SCOPE": {
+      "title": "Eurocode 8: Design of structures for earthquake resistance",
+      "publisher": "European Commission Joint Research Centre",
+      "status": "PUBLIC_SCOPE_REFERENCE",
+      "url": "https://eurocodes.jrc.ec.europa.eu/EN-Eurocodes/eurocode-8-design-structures-earthquake-resistance",
+      "public_scope_summary": "Eurocode 8 applies to design and construction of buildings and civil engineering works in seismic regions.",
+      "exact_limits_embedded": false
+    }
+  },
+  "jurisdiction_status": {
+    "project_jurisdiction": "Suriname / Paramaribo",
+    "dutch_or_eurocode_legal_applicability_in_suriname": "NOT_VERIFIED",
+    "permitted_current_use": "ENGINEERING_DESIGN_CANDIDATE_ONLY_WITH_PROFESSIONAL_REVIEW"
+  }
+}

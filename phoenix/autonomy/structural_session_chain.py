@@ -31,6 +31,7 @@ from .autonomous_global_stability_evidence_r9 import build_autonomous_global_sta
 from .advanced_global_stability_qualification_r9_1 import build_advanced_stability_qualification as _phoenix_build_r9_1_stability_qualification
 from .stability_design_basis_storey_residual_r9_2 import build_stability_design_basis_storey_residual as _phoenix_build_r9_2_stability_design_basis_storey_residual
 from .residual_capacity_stability_design_basis_r9_3 import build_residual_capacity_stability_design_basis as _phoenix_build_r9_3_residual_capacity_stability_design_basis
+from .normative_applicability_stability_design_basis_r9_4 import build_normative_applicability_stability_design_basis as _phoenix_build_r9_4_normative_applicability_stability_design_basis
 
 VERSION="1.0.0"
 
@@ -826,17 +827,44 @@ def run_structural_chain(
                             section=_phx_r93["global_stability_input"]
                             source="RESIDUAL_CAPACITY_STABILITY_DESIGN_BASIS_R9_3"
                         else:
-                            _phx_r93_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
-                            _write(_phx_r93_template,_phx_r93.get("required_input_template") or _phx_r92.get("required_input_template") or {})
-                            outputs.append(_repo_ref(_phx_r93_template,repository))
-                            register["stages"][offset]["status"]="BLOCKED_INPUT"
+                            # PHOENIX_R9_4_NORMATIVE_APPLICABILITY_STABILITY_DESIGN_BASIS_QUALIFICATION_V1_0
                             _phx_r93_blockers=_phx_r93.get("blockers") or [{"reason":"R9_3_STABILITY_DESIGN_BASIS_QUALIFICATION_REQUIRED","message":"R9.3 residual-capacity/stability design-basis qualification is incomplete."}]
                             _phx_r93_primary=_phx_r93_blockers[0]
-                            return _block(
-                                _phx_r93_primary.get("reason") or "R9_3_STABILITY_DESIGN_BASIS_QUALIFICATION_REQUIRED",
-                                _phx_r93_primary.get("message") or "R9.3 residual-capacity/stability design-basis qualification is incomplete.",
-                                completed,version,outputs,register,_phx_r93_primary
+                            if _phx_r93_primary.get("reason")!="R9_3_STABILITY_DESIGN_BASIS_QUALIFICATION_REQUIRED":
+                                _phx_r93_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
+                                _write(_phx_r93_template,_phx_r93.get("required_input_template") or _phx_r92.get("required_input_template") or {})
+                                outputs.append(_repo_ref(_phx_r93_template,repository))
+                                register["stages"][offset]["status"]="BLOCKED_INPUT"
+                                return _block(
+                                    _phx_r93_primary.get("reason") or "R9_3_STABILITY_DESIGN_BASIS_QUALIFICATION_REQUIRED",
+                                    _phx_r93_primary.get("message") or "R9.3 residual-capacity/stability design-basis qualification is incomplete.",
+                                    completed,version,outputs,register,_phx_r93_primary
+                                )
+                            _phx_r94=_phoenix_build_r9_4_normative_applicability_stability_design_basis(
+                                project_id=project_id,
+                                r93_qualification=_phx_r93,
+                                candidates=candidates,
+                                policy_path=repository/"configs"/"phoenix"/"structural"/"normative_applicability_stability_design_basis_policy_r9_4.json",
+                                source_registry_path=repository/"configs"/"phoenix"/"structural"/"normative_applicability_public_source_registry_r9_4.json",
                             )
+                            _phx_r94_path=output_dir/"v8_6"/"r9_4_normative_applicability_stability_design_basis.json"
+                            _write(_phx_r94_path,_phx_r94)
+                            outputs.append(_repo_ref(_phx_r94_path,repository))
+                            if _phx_r94.get("status")=="PASSED" and isinstance(_phx_r94.get("global_stability_input"),dict):
+                                section=_phx_r94["global_stability_input"]
+                                source="NORMATIVE_APPLICABILITY_STABILITY_DESIGN_BASIS_R9_4"
+                            else:
+                                _phx_r94_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
+                                _write(_phx_r94_template,_phx_r94.get("required_input_template") or _phx_r93.get("required_input_template") or {})
+                                outputs.append(_repo_ref(_phx_r94_template,repository))
+                                register["stages"][offset]["status"]="BLOCKED_INPUT"
+                                _phx_r94_blockers=_phx_r94.get("blockers") or [{"reason":"R9_4_NORMATIVE_APPLICABILITY_OR_DESIGN_BASIS_INPUT_REQUIRED","message":"R9.4 normative applicability/stability design-basis qualification is incomplete."}]
+                                _phx_r94_primary=_phx_r94_blockers[0]
+                                return _block(
+                                    _phx_r94_primary.get("reason") or "R9_4_NORMATIVE_APPLICABILITY_OR_DESIGN_BASIS_INPUT_REQUIRED",
+                                    _phx_r94_primary.get("message") or "R9.4 normative applicability/stability design-basis qualification is incomplete.",
+                                    completed,version,outputs,register,_phx_r94_primary
+                                )
         if not section:
             register["stages"][offset]["status"]="BLOCKED_INPUT"
             message={
