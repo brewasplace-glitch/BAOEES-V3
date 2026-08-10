@@ -1,0 +1,78 @@
+{
+  "schema_version": "phoenix.r9-5-project-stability-design-basis-decision-input/1.0",
+  "section": "r9_5_project_stability_design_basis_decision",
+  "purpose": "Explicit user/professional design-basis decisions with traceable source qualification; no default limit values.",
+  "required_top_level_fields": [
+    "decision_id",
+    "jurisdictional_basis",
+    "seismic_applicability",
+    "source_records",
+    "checks"
+  ],
+  "source_record_types": {
+    "LICENSED_STANDARD_SOURCE": {
+      "required": [
+        "reference_type",
+        "reference",
+        "source_file",
+        "sha256",
+        "clause_reference",
+        "licensed_use_confirmed",
+        "extraction_reviewed"
+      ]
+    },
+    "PROJECT_ENGINEERING_POLICY": {
+      "required": [
+        "reference_type",
+        "reference",
+        "project_policy_approved",
+        "approval_reference",
+        "scope"
+      ]
+    },
+    "AUTHORITY_APPROVED_PROJECT_BASIS": {
+      "required_one_of": [
+        [
+          "bib_source_id",
+          "source_pointer"
+        ],
+        [
+          "source_file",
+          "sha256",
+          "source_pointer",
+          "authority_basis_confirmed"
+        ]
+      ]
+    }
+  },
+  "check_record": {
+    "required": [
+      "applicability",
+      "methodology_accepted",
+      "primary_source_record_id",
+      "acceptance_criteria",
+      "criteria_traceability"
+    ],
+    "alternate_path_additional_required": [
+      "alternate_path_verified",
+      "independent_engineering_evidence_reference",
+      "independent_engineering_evidence_file",
+      "independent_engineering_evidence_sha256",
+      "independent_review_status",
+      "independent_review_reference"
+    ],
+    "weak_storey_additional_required": [
+      "screening_proxy_accepted_for_candidate_gate",
+      "screening_proxy_review_reference"
+    ]
+  },
+  "notes": [
+    "Exact numerical limits are intentionally absent from this schema.",
+    "A licensed standard source must be locally traceable and checksum-verified before its extracted parameter can be used.",
+    "A project engineering policy may define candidate-gate criteria only when explicitly approved and referenced.",
+    "Suriname BIB primary sources may support applicability/methodology only to the extent their text actually supports it.",
+    "The uploaded Suriname background AI text is never a normative source.",
+    "NOT_APPLICABLE does not automatically remove a mandatory v8.6 check.",
+    "Professional structural review and production lock remain mandatory."
+  ]
+}

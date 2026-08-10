@@ -1,0 +1,119 @@
+{
+  "schema_version": "phoenix.project-stability-design-basis-decision-policy/1.0",
+  "engine": "PHX-PROJECT-STABILITY-DESIGN-BASIS-DECISION-LICENSED-SOURCE-QUALIFICATION-R9.5",
+  "version": "R9.5.0",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "allowed_reference_types": [
+    "LICENSED_STANDARD_SOURCE",
+    "PROJECT_ENGINEERING_POLICY",
+    "AUTHORITY_APPROVED_PROJECT_BASIS"
+  ],
+  "allowed_applicability_states": [
+    "APPLICABLE",
+    "SUPPLEMENTAL_ENGINEERING_POLICY",
+    "NOT_APPLICABLE"
+  ],
+  "allowed_seismic_scope_states": [
+    "APPLICABLE",
+    "NOT_APPLICABLE",
+    "ENGINEERING_POLICY_APPLIED"
+  ],
+  "acceptance_criteria_fields": {
+    "SECOND_ORDER_AMPLIFICATION": [
+      "max_amplification_factor"
+    ],
+    "GLOBAL_BUCKLING_FACTOR": [
+      "minimum_critical_load_factor"
+    ],
+    "STOREY_STABILITY_INDEX": [
+      "max_stability_index"
+    ],
+    "TORSIONAL_DRIFT_RATIO": [
+      "max_torsional_drift_ratio"
+    ],
+    "SOFT_STOREY_STIFFNESS_RATIO": [
+      "minimum_ratio"
+    ],
+    "WEAK_STOREY_STRENGTH_RATIO": [
+      "minimum_ratio"
+    ],
+    "DIAPHRAGM_CONTINUITY": [],
+    "LOAD_PATH_CONTINUITY": [],
+    "ALTERNATE_LOAD_PATH_EVIDENCE": [
+      "minimum_residual_capacity_proxy_ratio"
+    ]
+  },
+  "seismic_style_check_types": [
+    "TORSIONAL_DRIFT_RATIO",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "forbidden_primary_source_paths": [
+    "configs/projects/generic_building_structural_global_stability_v8_6_0.json",
+    "outputs/bib/sources/jurisdictions/suriname/background/voor_de_phoenix_bib.txt"
+  ],
+  "suriname_bib_support": {
+    "GLOBAL_BUCKLING_FACTOR": {
+      "rule_id": "SUR-BB1-A27-BUCKLING",
+      "source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 27",
+      "support_scope": "CHECK_APPLICABILITY_ONLY",
+      "exact_v8_6_acceptance_limit_available": false
+    }
+  },
+  "source_validation": {
+    "LICENSED_STANDARD_SOURCE": {
+      "require_source_file": true,
+      "require_sha256": true,
+      "require_clause_reference": true,
+      "require_licensed_use_confirmed": true,
+      "require_extraction_reviewed": true
+    },
+    "PROJECT_ENGINEERING_POLICY": {
+      "require_project_policy_approved": true,
+      "require_approval_reference": true,
+      "require_scope": true
+    },
+    "AUTHORITY_APPROVED_PROJECT_BASIS": {
+      "allow_registered_primary_bib_source": true,
+      "require_source_pointer": true
+    }
+  },
+  "alternate_path": {
+    "require_actual_independent_engineering_evidence_file": true,
+    "require_sha256": true,
+    "require_independent_review_status": "REVIEWED",
+    "r9_3_screening_alone_is_sufficient": false
+  },
+  "weak_storey": {
+    "r8_screening_proxy_is_code_strength": false,
+    "require_explicit_candidate_gate_acceptance": true
+  },
+  "legal_status": {
+    "suriname_current_2026_status": "NOT_EXTERNALLY_VERIFIED",
+    "eurocode_2_legal_adoption": "NOT_ESTABLISHED_BY_UPLOADED_PRIMARY_SOURCES"
+  },
+  "safety": {
+    "normative_limit_invention": false,
+    "copyrighted_national_annex_value_invention": false,
+    "background_ai_source_as_normative_input": false,
+    "not_applicable_auto_waives_v8_6": false,
+    "r8_screening_promoted_to_code_strength": false,
+    "r9_3_alternate_path_screening_promoted_to_redistributed_analysis": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}
