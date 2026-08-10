@@ -1,0 +1,116 @@
+{
+  "schema_version": "phoenix.project-stability-design-basis-input-evidence-qualification-policy/1.0",
+  "engine": "PHX-PROJECT-STABILITY-DESIGN-BASIS-INPUT-EVIDENCE-QUALIFICATION-R9.5.1",
+  "version": "R9.5.1",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "known_jurisdictional_basis": {
+    "project_jurisdiction": "Suriname / Paramaribo",
+    "engineering_design_methodology": "Eurocode 2 based",
+    "current_2026_surinaame_legal_status": "NOT_EXTERNALLY_VERIFIED",
+    "eurocode_2_legal_adoption": "NOT_ESTABLISHED_BY_UPLOADED_PRIMARY_SOURCES",
+    "qualification_scope": "ENGINEERING_DESIGN_CANDIDATE_ONLY",
+    "professional_review": "REQUIRED"
+  },
+  "suriname_primary_records_to_seed": {
+    "SURINAME_BOUWBESLUIT_A26_STRENGTH": {
+      "reference_type": "AUTHORITY_APPROVED_PROJECT_BASIS",
+      "reference": "Suriname Bouwbesluit no. 1",
+      "bib_source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 26",
+      "support_scope": "GENERAL_STRUCTURAL_STRENGTH_CALCULATION_REQUIREMENT_ONLY"
+    },
+    "SURINAME_BOUWBESLUIT_A27_BUCKLING": {
+      "reference_type": "AUTHORITY_APPROVED_PROJECT_BASIS",
+      "reference": "Suriname Bouwbesluit no. 1",
+      "bib_source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 27",
+      "support_scope": "BUCKLING_CHECK_APPLICABILITY_ONLY"
+    }
+  },
+  "check_prefill": {
+    "GLOBAL_BUCKLING_FACTOR": {
+      "supporting_source_record_ids": [
+        "SURINAME_BOUWBESLUIT_A27_BUCKLING"
+      ],
+      "local_primary_support_note": "Article 27 supports the need for a buckling check when buckling danger exists; it does not establish the R9/v8.6 eigenvalue acceptance limit."
+    }
+  },
+  "consolidated_input_packages": {
+    "PKG-A-STABILITY-METHODOLOGY-DECISION": {
+      "purpose": "Explicit engineering-method applicability and methodology acceptance for non-seismic stability/robustness checks.",
+      "checks": [
+        "DIAPHRAGM_CONTINUITY",
+        "GLOBAL_BUCKLING_FACTOR",
+        "LOAD_PATH_CONTINUITY",
+        "SECOND_ORDER_AMPLIFICATION",
+        "STOREY_STABILITY_INDEX"
+      ],
+      "acceptable_source_types": [
+        "LICENSED_STANDARD_SOURCE",
+        "PROJECT_ENGINEERING_POLICY",
+        "AUTHORITY_APPROVED_PROJECT_BASIS"
+      ]
+    },
+    "PKG-B-NUMERICAL-ACCEPTANCE-CRITERIA": {
+      "purpose": "Traceable numerical criteria for second-order amplification, eigenvalue buckling and storey stability index.",
+      "checks": [
+        "GLOBAL_BUCKLING_FACTOR",
+        "SECOND_ORDER_AMPLIFICATION",
+        "STOREY_STABILITY_INDEX"
+      ],
+      "must_not_use": [
+        "generic v8.6 example values",
+        "unverified background AI values"
+      ]
+    },
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA": {
+      "purpose": "Explicit seismic applicability decision plus traceable criteria if seismic-style checks remain in project scope.",
+      "checks": [
+        "SOFT_STOREY_STIFFNESS_RATIO",
+        "TORSIONAL_DRIFT_RATIO",
+        "WEAK_STOREY_STRENGTH_RATIO"
+      ],
+      "status": "NOT_RESOLVED_BY_CURRENT_SURINAME_UPLOAD_SET"
+    },
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW": {
+      "purpose": "Professional review of whether the R8/R9.3 candidate screening proxy may be used for the candidate gate.",
+      "checks": [
+        "WEAK_STOREY_STRENGTH_RATIO"
+      ],
+      "code_strength_claim": false
+    },
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE": {
+      "purpose": "Independent engineering evidence and REVIEWED reference for alternate-path capacity.",
+      "checks": [
+        "ALTERNATE_LOAD_PATH_EVIDENCE"
+      ],
+      "r9_3_screening_alone_sufficient": false
+    }
+  },
+  "safety": {
+    "normative_limit_invention": false,
+    "automatic_seismic_applicability_decision": false,
+    "automatic_project_policy_approval": false,
+    "background_ai_source_as_normative_input": false,
+    "not_applicable_auto_waives_v8_6": false,
+    "r8_screening_promoted_to_code_strength": false,
+    "r9_3_alternate_path_screening_promoted_to_redistributed_analysis": false,
+    "existing_r9_5_gate_preserved": true,
+    "existing_r9_4_gate_preserved": true,
+    "existing_v8_6_verifier_preserved": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}

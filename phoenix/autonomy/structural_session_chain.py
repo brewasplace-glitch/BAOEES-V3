@@ -33,6 +33,7 @@ from .stability_design_basis_storey_residual_r9_2 import build_stability_design_
 from .residual_capacity_stability_design_basis_r9_3 import build_residual_capacity_stability_design_basis as _phoenix_build_r9_3_residual_capacity_stability_design_basis
 from .normative_applicability_stability_design_basis_r9_4 import build_normative_applicability_stability_design_basis as _phoenix_build_r9_4_normative_applicability_stability_design_basis
 from .project_stability_design_basis_decision_r9_5 import build_project_stability_design_basis_decision as _phoenix_build_r9_5_project_stability_design_basis_decision
+from .project_stability_design_basis_input_evidence_qualification_r9_5_1 import build_project_stability_design_basis_input_evidence_qualification as _phoenix_build_r9_5_1_project_stability_design_basis_input_evidence_qualification
 
 VERSION="1.0.0"
 
@@ -887,16 +888,31 @@ def run_structural_chain(
                                     section=_phx_r95["global_stability_input"]
                                     source="PROJECT_STABILITY_DESIGN_BASIS_DECISION_R9_5"
                                 else:
+                                    # PHOENIX_R9_5_1_PROJECT_STABILITY_DESIGN_BASIS_INPUT_EVIDENCE_QUALIFICATION_V1_0
+                                    _phx_r951=_phoenix_build_r9_5_1_project_stability_design_basis_input_evidence_qualification(
+                                        project_id=project_id,
+                                        r95_result=_phx_r95,
+                                        policy_path=repository/"configs"/"phoenix"/"structural"/"project_stability_design_basis_input_evidence_qualification_policy_r9_5_1.json",
+                                    )
+                                    _phx_r951_path=output_dir/"v8_6"/"r9_5_1_project_stability_design_basis_input_evidence_qualification.json"
+                                    _write(_phx_r951_path,_phx_r951)
+                                    outputs.append(_repo_ref(_phx_r951_path,repository))
                                     _phx_r95_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
-                                    _write(_phx_r95_template,_phx_r95.get("required_input_template") or _phx_r94.get("required_input_template") or {})
+                                    _write(
+                                        _phx_r95_template,
+                                        _phx_r951.get("prefilled_project_input")
+                                        or _phx_r95.get("required_input_template")
+                                        or _phx_r94.get("required_input_template")
+                                        or {},
+                                    )
                                     outputs.append(_repo_ref(_phx_r95_template,repository))
                                     register["stages"][offset]["status"]="BLOCKED_INPUT"
-                                    _phx_r95_blockers=_phx_r95.get("blockers") or [{"reason":"R9_5_PROJECT_STABILITY_DESIGN_BASIS_DECISION_REQUIRED","message":"R9.5 project stability design-basis decision/source qualification is incomplete."}]
-                                    _phx_r95_primary=_phx_r95_blockers[0]
+                                    _phx_r951_blockers=_phx_r951.get("blockers") or _phx_r95.get("blockers") or [{"reason":"R9_5_1_EXPLICIT_SOURCE_REVIEW_AND_DESIGN_BASIS_INPUT_REQUIRED","message":"R9.5.1 project stability source/review/design-basis input is incomplete."}]
+                                    _phx_r951_primary=_phx_r951_blockers[0]
                                     return _block(
-                                        _phx_r95_primary.get("reason") or "R9_5_PROJECT_STABILITY_DESIGN_BASIS_DECISION_REQUIRED",
-                                        _phx_r95_primary.get("message") or "R9.5 project stability design-basis decision/source qualification is incomplete.",
-                                        completed,version,outputs,register,_phx_r95_primary
+                                        _phx_r951_primary.get("reason") or "R9_5_1_EXPLICIT_SOURCE_REVIEW_AND_DESIGN_BASIS_INPUT_REQUIRED",
+                                        _phx_r951_primary.get("message") or "R9.5.1 project stability source/review/design-basis input is incomplete.",
+                                        completed,version,outputs,register,_phx_r951_primary
                                     )
         if not section:
             register["stages"][offset]["status"]="BLOCKED_INPUT"

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phoenix.project-stability-design-basis-input-evidence-qualification-r9-5-1.schema.json",
+  "title": "Project Phoenix R9.5.1 input and evidence qualification",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "engine",
+    "project_id",
+    "status",
+    "prefilled_project_input",
+    "evidence_requirement_matrix",
+    "summary",
+    "safety"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "phoenix.project-stability-design-basis-input-evidence-qualification/1.0"
+    },
+    "engine": {
+      "const": "PHX-PROJECT-STABILITY-DESIGN-BASIS-INPUT-EVIDENCE-QUALIFICATION-R9.5.1"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASSED",
+        "BLOCKED"
+      ]
+    },
+    "prefilled_project_input": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "evidence_requirement_matrix": {
+      "type": "object"
+    },
+    "consolidated_input_packages": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}
