@@ -30,6 +30,7 @@ from .autonomous_calculix_results_v8_4 import autonomous_calculix_execution_enab
 from .autonomous_global_stability_evidence_r9 import build_autonomous_global_stability_evidence as _phoenix_build_r9_global_stability_evidence
 from .advanced_global_stability_qualification_r9_1 import build_advanced_stability_qualification as _phoenix_build_r9_1_stability_qualification
 from .stability_design_basis_storey_residual_r9_2 import build_stability_design_basis_storey_residual as _phoenix_build_r9_2_stability_design_basis_storey_residual
+from .residual_capacity_stability_design_basis_r9_3 import build_residual_capacity_stability_design_basis as _phoenix_build_r9_3_residual_capacity_stability_design_basis
 
 VERSION="1.0.0"
 
@@ -792,17 +793,50 @@ def run_structural_chain(
                         section=_phx_r92["global_stability_input"]
                         source="STABILITY_DESIGN_BASIS_STOREY_RESIDUAL_R9_2"
                     else:
-                        _phx_r92_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
-                        _write(_phx_r92_template,_phx_r92.get("required_input_template") or _phx_r91.get("required_input_template") or _phx_r9.get("required_input_template") or {})
-                        outputs.append(_repo_ref(_phx_r92_template,repository))
-                        register["stages"][offset]["status"]="BLOCKED_INPUT"
+                        # PHOENIX_R9_3_RESIDUAL_CAPACITY_STABILITY_DESIGN_BASIS_QUALIFICATION_V1_0
                         _phx_r92_blockers=_phx_r92.get("blockers") or [{"reason":"R9_2_STABILITY_DESIGN_BASIS_OR_RESIDUAL_EVIDENCE_REQUIRED","message":"R9.2 stability design-basis/storey residual evidence is incomplete."}]
                         _phx_r92_primary=_phx_r92_blockers[0]
-                        return _block(
-                            _phx_r92_primary.get("reason") or "R9_2_STABILITY_DESIGN_BASIS_OR_RESIDUAL_EVIDENCE_REQUIRED",
-                            _phx_r92_primary.get("message") or "R9.2 stability design-basis/storey residual evidence is incomplete.",
-                            completed,version,outputs,register,_phx_r92_primary
+                        if _phx_r92_primary.get("reason")!="R9_2_STABILITY_DESIGN_BASIS_OR_RESIDUAL_EVIDENCE_REQUIRED":
+                            _phx_r92_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
+                            _write(_phx_r92_template,_phx_r92.get("required_input_template") or _phx_r91.get("required_input_template") or _phx_r9.get("required_input_template") or {})
+                            outputs.append(_repo_ref(_phx_r92_template,repository))
+                            register["stages"][offset]["status"]="BLOCKED_INPUT"
+                            return _block(
+                                _phx_r92_primary.get("reason") or "R9_2_STABILITY_DESIGN_BASIS_OR_RESIDUAL_EVIDENCE_REQUIRED",
+                                _phx_r92_primary.get("message") or "R9.2 stability design-basis/storey residual evidence is incomplete.",
+                                completed,version,outputs,register,_phx_r92_primary
+                            )
+                        _phx_r93_rc_path=output_dir/"v8_5"/"rc_design_candidate.json"
+                        _phx_r93_mv_path=output_dir/"v8_5"/"member_verification.json"
+                        _phx_r93_rc=_read(_phx_r93_rc_path) if _phx_r93_rc_path.is_file() else {}
+                        _phx_r93_mv=_read(_phx_r93_mv_path) if _phx_r93_mv_path.is_file() else {}
+                        _phx_r93=_phoenix_build_r9_3_residual_capacity_stability_design_basis(
+                            project_id=project_id,
+                            r91_qualification=_phx_r91,
+                            r92_qualification=_phx_r92,
+                            rc_design_candidate=_phx_r93_rc,
+                            member_verification=_phx_r93_mv,
+                            candidates=candidates,
+                            policy_path=repository/"configs"/"phoenix"/"structural"/"residual_capacity_stability_design_basis_policy_r9_3.json",
                         )
+                        _phx_r93_path=output_dir/"v8_6"/"r9_3_residual_capacity_stability_design_basis.json"
+                        _write(_phx_r93_path,_phx_r93)
+                        outputs.append(_repo_ref(_phx_r93_path,repository))
+                        if _phx_r93.get("status")=="PASSED" and isinstance(_phx_r93.get("global_stability_input"),dict):
+                            section=_phx_r93["global_stability_input"]
+                            source="RESIDUAL_CAPACITY_STABILITY_DESIGN_BASIS_R9_3"
+                        else:
+                            _phx_r93_template=workspace/"inputs"/"structural"/"global_stability_engineering_input_REQUIRED.json"
+                            _write(_phx_r93_template,_phx_r93.get("required_input_template") or _phx_r92.get("required_input_template") or {})
+                            outputs.append(_repo_ref(_phx_r93_template,repository))
+                            register["stages"][offset]["status"]="BLOCKED_INPUT"
+                            _phx_r93_blockers=_phx_r93.get("blockers") or [{"reason":"R9_3_STABILITY_DESIGN_BASIS_QUALIFICATION_REQUIRED","message":"R9.3 residual-capacity/stability design-basis qualification is incomplete."}]
+                            _phx_r93_primary=_phx_r93_blockers[0]
+                            return _block(
+                                _phx_r93_primary.get("reason") or "R9_3_STABILITY_DESIGN_BASIS_QUALIFICATION_REQUIRED",
+                                _phx_r93_primary.get("message") or "R9.3 residual-capacity/stability design-basis qualification is incomplete.",
+                                completed,version,outputs,register,_phx_r93_primary
+                            )
         if not section:
             register["stages"][offset]["status"]="BLOCKED_INPUT"
             message={

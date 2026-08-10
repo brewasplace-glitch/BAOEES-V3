@@ -1,0 +1,56 @@
+{
+  "schema_version": "phoenix.residual-capacity-stability-design-basis-policy/1.0",
+  "engine": "PHX-RESIDUAL-CAPACITY-STABILITY-DESIGN-BASIS-QUALIFICATION-R9.3",
+  "version": "R9.3.0",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "derivation": {
+    "weak_storey_capacity_proxy_method": "MIN(VY_Rd,VZ_Rd,MY_Rd/h,MZ_Rd/h)_R8_SCREENING_PROXY",
+    "weak_storey_proxy_is_normative_strength": false,
+    "alternate_path_method": "TOPOLOGY_PLUS_TRACEABLE_CAPACITY_RESERVE_SCREENING",
+    "alternate_path_screening_includes_load_redistribution": false,
+    "promote_screening_to_v8_6_without_explicit_project_acceptance": false
+  },
+  "v8_6_policy": {
+    "acceptable_member_verification_states": [
+      "MEMBER_VERIFICATION_CANDIDATE_PASSED"
+    ],
+    "require_normative_reference": true,
+    "mandatory_check_types": [
+      "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "SOFT_STOREY_STIFFNESS_RATIO",
+      "STOREY_STABILITY_INDEX",
+      "TORSIONAL_DRIFT_RATIO",
+      "WEAK_STOREY_STRENGTH_RATIO"
+    ],
+    "pass_tolerance": 1e-12
+  },
+  "forbidden_project_evidence_paths": [
+    "configs/projects/generic_building_structural_global_stability_v8_6_0.json"
+  ],
+  "safety": {
+    "normative_values_must_be_explicit": true,
+    "normative_source_reference_required": true,
+    "generic_example_limits_forbidden": true,
+    "r8_screening_resistance_is_candidate_only": true,
+    "member_removal_load_redistribution_invention_forbidden": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_robustness_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}
