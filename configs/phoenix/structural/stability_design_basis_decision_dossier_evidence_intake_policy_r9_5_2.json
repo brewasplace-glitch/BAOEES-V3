@@ -1,0 +1,155 @@
+{
+  "schema_version": "phoenix.stability-design-basis-decision-dossier-evidence-intake-policy/1.0",
+  "engine": "PHX-STABILITY-DESIGN-BASIS-DECISION-DOSSIER-EVIDENCE-INTAKE-R9.5.2",
+  "version": "R9.5.2",
+  "required_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "DIAPHRAGM_CONTINUITY",
+    "GLOBAL_BUCKLING_FACTOR",
+    "LOAD_PATH_CONTINUITY",
+    "SECOND_ORDER_AMPLIFICATION",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "STOREY_STABILITY_INDEX",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "package_definitions": {
+    "PKG-A-STABILITY-METHODOLOGY-DECISION": {
+      "label": "Stability methodology decision",
+      "purpose": "Formaliseer applicability en geaccepteerde engineering-methodiek voor niet-seismische stability/robustness checks.",
+      "checks": [
+        "DIAPHRAGM_CONTINUITY",
+        "GLOBAL_BUCKLING_FACTOR",
+        "LOAD_PATH_CONTINUITY",
+        "SECOND_ORDER_AMPLIFICATION",
+        "STOREY_STABILITY_INDEX"
+      ],
+      "required_input_fields": [
+        "decision_status",
+        "methodology_reference_type",
+        "methodology_reference",
+        "approval_or_clause_reference",
+        "scope"
+      ],
+      "acceptable_source_types": [
+        "LICENSED_STANDARD_SOURCE",
+        "PROJECT_ENGINEERING_POLICY",
+        "AUTHORITY_APPROVED_PROJECT_BASIS"
+      ]
+    },
+    "PKG-B-NUMERICAL-ACCEPTANCE-CRITERIA": {
+      "label": "Numerical acceptance criteria",
+      "purpose": "Traceerbare numerieke criteria voor second-order amplification, eigenvalue buckling en storey stability index.",
+      "checks": [
+        "GLOBAL_BUCKLING_FACTOR",
+        "SECOND_ORDER_AMPLIFICATION",
+        "STOREY_STABILITY_INDEX"
+      ],
+      "required_input_fields": [
+        "source_record_id",
+        "source_file",
+        "sha256",
+        "clause_reference",
+        "licensed_use_confirmed",
+        "extraction_reviewed",
+        "criteria"
+      ],
+      "forbidden_shortcuts": [
+        "generic v8.6 example values",
+        "unverified background AI values",
+        "untraceable copied limit values"
+      ]
+    },
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA": {
+      "label": "Seismic scope and criteria",
+      "purpose": "Expliciete professional-scope beslissing over seismic applicability; alleen bij toepasselijkheid mogen traceerbare criteria worden ingevoerd.",
+      "checks": [
+        "SOFT_STOREY_STIFFNESS_RATIO",
+        "TORSIONAL_DRIFT_RATIO",
+        "WEAK_STOREY_STRENGTH_RATIO"
+      ],
+      "required_input_fields": [
+        "seismic_applicability_status",
+        "reference_type",
+        "reference",
+        "source_record_id",
+        "professional_scope_reviewed",
+        "scope_review_reference",
+        "criteria_if_applicable"
+      ],
+      "current_source_state": "NOT_RESOLVED_BY_CURRENT_SURINAME_UPLOAD_SET"
+    },
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW": {
+      "label": "Weak-storey screening review",
+      "purpose": "Professionele review van de R8/R9.3 kandidaat-screeningproxy voor de candidate gate.",
+      "checks": [
+        "WEAK_STOREY_STRENGTH_RATIO"
+      ],
+      "required_input_fields": [
+        "screening_proxy_accepted_for_candidate_gate",
+        "screening_proxy_review_reference",
+        "reviewer_scope",
+        "review_status"
+      ],
+      "automatic_code_strength_claim": false
+    },
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE": {
+      "label": "Alternate-path independent evidence",
+      "purpose": "Onafhankelijke engineering evidence en REVIEWED-referentie voor alternate-path capacity.",
+      "checks": [
+        "ALTERNATE_LOAD_PATH_EVIDENCE"
+      ],
+      "required_input_fields": [
+        "independent_engineering_evidence_reference",
+        "repository_relative_source_file",
+        "sha256",
+        "independent_review_status",
+        "independent_review_reference",
+        "independently_verified_alternate_path",
+        "acceptance_criterion_and_traceability"
+      ],
+      "r9_3_screening_alone_sufficient": false
+    }
+  },
+  "known_project_basis": {
+    "project_jurisdiction": "Suriname / Paramaribo",
+    "engineering_design_methodology": "Eurocode 2 based",
+    "current_2026_surinaame_legal_status": "NOT_EXTERNALLY_VERIFIED",
+    "eurocode_2_legal_adoption": "NOT_ESTABLISHED_BY_UPLOADED_PRIMARY_SOURCES",
+    "qualification_scope": "ENGINEERING_DESIGN_CANDIDATE_ONLY",
+    "professional_review": "REQUIRED"
+  },
+  "known_local_primary_evidence": [
+    {
+      "record_id": "SURINAME_BOUWBESLUIT_A26_STRENGTH",
+      "bib_source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 26",
+      "support_scope": "GENERAL_STRUCTURAL_STRENGTH_CALCULATION_REQUIREMENT_ONLY"
+    },
+    {
+      "record_id": "SURINAME_BOUWBESLUIT_A27_BUCKLING",
+      "bib_source_id": "SR-SUR-BB1-1956-001",
+      "source_pointer": "Bouwbesluit no. 1, Article 27",
+      "support_scope": "BUCKLING_CHECK_APPLICABILITY_ONLY"
+    }
+  ],
+  "safety": {
+    "technical_analysis_required_count_expected": 0,
+    "normative_limit_invention": false,
+    "automatic_seismic_applicability_decision": false,
+    "automatic_project_policy_approval": false,
+    "automatic_professional_review": false,
+    "background_ai_source_as_normative_input": false,
+    "not_applicable_auto_waives_v8_6": false,
+    "weak_storey_screening_promoted_to_code_strength": false,
+    "alternate_path_screening_promoted_to_redistributed_analysis": false,
+    "existing_r9_5_1_gate_preserved": true,
+    "existing_r9_5_gate_preserved": true,
+    "existing_r9_4_gate_preserved": true,
+    "existing_v8_6_verifier_preserved": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}

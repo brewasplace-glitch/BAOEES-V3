@@ -34,6 +34,7 @@ from .residual_capacity_stability_design_basis_r9_3 import build_residual_capaci
 from .normative_applicability_stability_design_basis_r9_4 import build_normative_applicability_stability_design_basis as _phoenix_build_r9_4_normative_applicability_stability_design_basis
 from .project_stability_design_basis_decision_r9_5 import build_project_stability_design_basis_decision as _phoenix_build_r9_5_project_stability_design_basis_decision
 from .project_stability_design_basis_input_evidence_qualification_r9_5_1 import build_project_stability_design_basis_input_evidence_qualification as _phoenix_build_r9_5_1_project_stability_design_basis_input_evidence_qualification
+from .stability_design_basis_decision_dossier_evidence_intake_r9_5_2 import build_stability_design_basis_decision_dossier_evidence_intake as _phoenix_build_r9_5_2_stability_design_basis_decision_dossier_evidence_intake, render_decision_dossier_markdown as _phoenix_render_r9_5_2_decision_dossier_markdown
 
 VERSION="1.0.0"
 
@@ -907,12 +908,30 @@ def run_structural_chain(
                                     )
                                     outputs.append(_repo_ref(_phx_r95_template,repository))
                                     register["stages"][offset]["status"]="BLOCKED_INPUT"
-                                    _phx_r951_blockers=_phx_r951.get("blockers") or _phx_r95.get("blockers") or [{"reason":"R9_5_1_EXPLICIT_SOURCE_REVIEW_AND_DESIGN_BASIS_INPUT_REQUIRED","message":"R9.5.1 project stability source/review/design-basis input is incomplete."}]
-                                    _phx_r951_primary=_phx_r951_blockers[0]
+                                    # PHOENIX_R9_5_2_STABILITY_DESIGN_BASIS_DECISION_DOSSIER_EVIDENCE_INTAKE_V1_0
+                                    _phx_r952_intake_path=workspace/"inputs"/"structural"/"stability_design_basis_evidence_intake_REQUIRED.json"
+                                    _phx_r952_existing_intake=_read(_phx_r952_intake_path) if _phx_r952_intake_path.is_file() else {}
+                                    _phx_r952=_phoenix_build_r9_5_2_stability_design_basis_decision_dossier_evidence_intake(
+                                        project_id=project_id,
+                                        r951_result=_phx_r951,
+                                        policy_path=repository/"configs"/"phoenix"/"structural"/"stability_design_basis_decision_dossier_evidence_intake_policy_r9_5_2.json",
+                                        existing_intake=_phx_r952_existing_intake,
+                                    )
+                                    _phx_r952_path=output_dir/"v8_6"/"r9_5_2_stability_design_basis_decision_dossier_evidence_intake.json"
+                                    _write(_phx_r952_path,_phx_r952)
+                                    outputs.append(_repo_ref(_phx_r952_path,repository))
+                                    _write(_phx_r952_intake_path,_phx_r952.get("evidence_intake") or {})
+                                    outputs.append(_repo_ref(_phx_r952_intake_path,repository))
+                                    _phx_r952_dossier_path=workspace/"inputs"/"structural"/"stability_design_basis_decision_dossier_REQUIRED.md"
+                                    _phx_r952_dossier_path.parent.mkdir(parents=True,exist_ok=True)
+                                    _phx_r952_dossier_path.write_text(_phoenix_render_r9_5_2_decision_dossier_markdown(_phx_r952),encoding='utf-8')
+                                    outputs.append(_repo_ref(_phx_r952_dossier_path,repository))
+                                    _phx_r952_blockers=_phx_r952.get("blockers") or _phx_r951.get("blockers") or [{"reason":"R9_5_2_STABILITY_DESIGN_BASIS_EVIDENCE_INTAKE_REQUIRED","message":"R9.5.2 stability design-basis evidence intake is incomplete."}]
+                                    _phx_r952_primary=_phx_r952_blockers[0]
                                     return _block(
-                                        _phx_r951_primary.get("reason") or "R9_5_1_EXPLICIT_SOURCE_REVIEW_AND_DESIGN_BASIS_INPUT_REQUIRED",
-                                        _phx_r951_primary.get("message") or "R9.5.1 project stability source/review/design-basis input is incomplete.",
-                                        completed,version,outputs,register,_phx_r951_primary
+                                        _phx_r952_primary.get("reason") or "R9_5_2_STABILITY_DESIGN_BASIS_EVIDENCE_INTAKE_REQUIRED",
+                                        _phx_r952_primary.get("message") or "R9.5.2 stability design-basis evidence intake is incomplete.",
+                                        completed,version,outputs,register,_phx_r952_primary
                                     )
         if not section:
             register["stages"][offset]["status"]="BLOCKED_INPUT"

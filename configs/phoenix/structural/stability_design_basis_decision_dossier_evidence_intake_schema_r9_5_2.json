@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phoenix.stability-design-basis-decision-dossier-evidence-intake-r9-5-2.schema.json",
+  "title": "Project Phoenix R9.5.2 Stability Design-Basis Decision Dossier & Evidence Intake",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "engine",
+    "project_id",
+    "status",
+    "decision_dossier",
+    "evidence_intake",
+    "summary",
+    "safety"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "phoenix.stability-design-basis-decision-dossier-evidence-intake/1.0"
+    },
+    "engine": {
+      "const": "PHX-STABILITY-DESIGN-BASIS-DECISION-DOSSIER-EVIDENCE-INTAKE-R9.5.2"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASSED",
+        "BLOCKED"
+      ]
+    },
+    "decision_dossier": {
+      "type": "object"
+    },
+    "evidence_intake": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}
