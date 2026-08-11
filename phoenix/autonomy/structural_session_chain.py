@@ -35,6 +35,7 @@ from .normative_applicability_stability_design_basis_r9_4 import build_normative
 from .project_stability_design_basis_decision_r9_5 import build_project_stability_design_basis_decision as _phoenix_build_r9_5_project_stability_design_basis_decision
 from .project_stability_design_basis_input_evidence_qualification_r9_5_1 import build_project_stability_design_basis_input_evidence_qualification as _phoenix_build_r9_5_1_project_stability_design_basis_input_evidence_qualification
 from .stability_design_basis_decision_dossier_evidence_intake_r9_5_2 import build_stability_design_basis_decision_dossier_evidence_intake as _phoenix_build_r9_5_2_stability_design_basis_decision_dossier_evidence_intake, render_decision_dossier_markdown as _phoenix_render_r9_5_2_decision_dossier_markdown
+from .stability_ab_project_policy_integration_r9_5_2_2 import apply_ab_project_policy_to_workspace as _phoenix_apply_r9_5_2_2_ab_policy_to_workspace, apply_ab_project_policy_to_r9_5_2_result as _phoenix_apply_r9_5_2_2_ab_policy_to_r9_5_2_result, render_licensed_clause_extract_request as _phoenix_render_r9_5_2_2_licensed_clause_extract_request
 
 VERSION="1.0.0"
 
@@ -870,6 +871,7 @@ def run_structural_chain(
                                         _phx_r94_primary.get("message") or "R9.4 normative applicability/stability design-basis qualification is incomplete.",
                                         completed,version,outputs,register,_phx_r94_primary
                                     )
+                                _phx_r9522_pre=_phoenix_apply_r9_5_2_2_ab_policy_to_workspace(workspace=workspace,policy_path=repository/"configs"/"phoenix"/"structural"/stability_ab_project_policy_r9_5_2_2.json)  # PHOENIX_R9_5_2_2_AB_PROJECT_POLICY_PRE_R9_5_V1_1
                                 _phx_r95=_phoenix_build_r9_5_project_stability_design_basis_decision(
                                     project_id=project_id,
                                     r93_qualification=_phx_r93,
@@ -917,6 +919,11 @@ def run_structural_chain(
                                         policy_path=repository/"configs"/"phoenix"/"structural"/"stability_design_basis_decision_dossier_evidence_intake_policy_r9_5_2.json",
                                         existing_intake=_phx_r952_existing_intake,
                                     )
+                                    _phx_r952=_phoenix_apply_r9_5_2_2_ab_policy_to_r9_5_2_result(r952_result=_phx_r952,policy_path=repository/"configs"/"phoenix"/"structural"/stability_ab_project_policy_r9_5_2_2.json)  # PHOENIX_R9_5_2_2_AB_PROJECT_POLICY_POST_R9_5_2_V1_1
+                                    _phx_r9522_request_path=workspace/"inputs"/"structural"/"licensed_ec2_clause_extract_REQUIRED.md"
+                                    _phx_r9522_request_path.parent.mkdir(parents=True,exist_ok=True)
+                                    _phx_r9522_request_path.write_text(_phoenix_render_r9_5_2_2_licensed_clause_extract_request(_phx_r952),encoding='utf-8')
+                                    outputs.append(_repo_ref(_phx_r9522_request_path,repository))
                                     _phx_r952_path=output_dir/"v8_6"/"r9_5_2_stability_design_basis_decision_dossier_evidence_intake.json"
                                     _write(_phx_r952_path,_phx_r952)
                                     outputs.append(_repo_ref(_phx_r952_path,repository))

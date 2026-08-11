@@ -1,0 +1,72 @@
+{
+  "schema_version": "phoenix.stability-ab-project-policy/1.0",
+  "policy_id": "PHX-PAT-001-STABILITY-METHODOLOGY-EC2-BASED-v1.0",
+  "engine": "PHX-STABILITY-A-B-PROJECT-POLICY-INTEGRATION-R9.5.2.2",
+  "version": "R9.5.2.2",
+  "project_id": "PHOENIX-PAT-001",
+  "jurisdiction": "Suriname / Paramaribo",
+  "decision_origin": {
+    "type": "USER_APPROVED_PROJECT_ENGINEERING_POLICY",
+    "decision_date": "2026-08-11",
+    "decision_reference": "USER_GO_A_B_PROJECT_POLICY_INTEGRATION_2026-08-11",
+    "qualification_scope": "ENGINEERING_DESIGN_CANDIDATE_ONLY"
+  },
+  "package_a": {
+    "package_id": "PKG-A-STABILITY-METHODOLOGY-DECISION",
+    "decision_status": "APPROVED_FOR_ENGINEERING_DESIGN_CANDIDATE_ONLY",
+    "methodology_reference_type": "PROJECT_ENGINEERING_POLICY",
+    "methodology_reference": "PHX-PAT-001-STABILITY-METHODOLOGY-EC2-BASED-v1.0",
+    "approval_or_clause_reference": "USER_GO_A_B_PROJECT_POLICY_INTEGRATION_2026-08-11; Eurocode-2-based Section 5.8 stability/second-order framework; Suriname Bouwbesluit no.1 Articles 26/27 as local supporting basis.",
+    "scope": [
+      "DIAPHRAGM_CONTINUITY",
+      "GLOBAL_BUCKLING_FACTOR",
+      "LOAD_PATH_CONTINUITY",
+      "SECOND_ORDER_AMPLIFICATION",
+      "STOREY_STABILITY_INDEX"
+    ]
+  },
+  "package_b": {
+    "package_id": "PKG-B-NUMERICAL-ACCEPTANCE-CRITERIA",
+    "status": "PROJECT_POLICY_CRITERIA_APPROVED_LICENSED_SOURCE_TRACEABILITY_REQUIRED",
+    "candidate_criteria": {
+      "SECOND_ORDER_AMPLIFICATION": {
+        "max_amplification_factor": 1.1,
+        "classification": "DIRECT_PUBLIC_SUPPORT_FOR_PROJECT_POLICY",
+        "policy_basis": "EC2 second-order significance / magnification mapping used by the approved project policy."
+      },
+      "GLOBAL_BUCKLING_FACTOR": {
+        "minimum_critical_load_factor": 11.0,
+        "classification": "MATHEMATICALLY_DERIVED_PROJECT_POLICY_PROXY_NOT_LITERAL_EC2_LIMIT",
+        "policy_basis": "Derived from f=1/(1-NEd/NB) with f<=1.1; not a literal EC2 alpha_cr limit."
+      },
+      "STOREY_STABILITY_INDEX": {
+        "max_stability_index": 0.1,
+        "classification": "ENGINEERING_PROXY_MAPPING_NOT_LITERAL_EC2_STOREY_INDEX_LIMIT",
+        "policy_basis": "Maps the 10% second-order significance concept to Phoenix PDelta/(Vh); not a literal EC2 storey-index rule."
+      }
+    },
+    "licensed_source_traceability": {
+      "required_for_final_r9_5_qualification": true,
+      "source_record_id": null,
+      "source_file": null,
+      "sha256": null,
+      "clause_reference": null,
+      "licensed_use_confirmed": false,
+      "extraction_reviewed": false
+    }
+  },
+  "safety": {
+    "write_candidate_values_to_r9_5_acceptance_criteria_before_licensed_traceability": false,
+    "automatic_licensed_source_confirmation": false,
+    "automatic_extraction_review_confirmation": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "professional_structural_review_required": true,
+    "existing_r9_5_2_gate_preserved": true,
+    "existing_r9_5_1_gate_preserved": true,
+    "existing_r9_5_gate_preserved": true,
+    "existing_r9_4_gate_preserved": true,
+    "existing_v8_6_verifier_preserved": true,
+    "production_release": "LOCKED"
+  }
+}
