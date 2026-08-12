@@ -5,6 +5,11 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
+from .package_b_licensed_source_traceability_r9_5_2_3 import (
+    apply_package_b_traceability_to_r9_5_required_input_document as _phoenix_apply_r9_5_2_3_package_b_to_r9_5_input,
+    apply_package_b_traceability_to_r9_5_2_result as _phoenix_apply_r9_5_2_3_package_b_to_r9_5_2_result,
+)
+
 ENGINE_ID = "PHX-STABILITY-A-B-PROJECT-POLICY-INTEGRATION-R9.5.2.2"
 VERSION = "R9.5.2.2"
 POLICY_SOURCE_RECORD_ID = "PROJECT_STABILITY_POLICY_REQUIRED"
@@ -164,6 +169,13 @@ def apply_ab_project_policy_to_workspace(
 
     original = _read_json(path)
     updated = apply_ab_policy_to_r9_5_required_input_document(original, policy)
+    repo_root = Path(policy_path).resolve().parents[3]
+    traceability_registry_path = repo_root / "configs" / "phoenix" / "structural" / "package_b_licensed_source_traceability_r9_5_2_3.json"
+    updated = _phoenix_apply_r9_5_2_3_package_b_to_r9_5_input(
+        updated,
+        repo_root=repo_root,
+        registry_path=traceability_registry_path,
+    )
 
     if updated == original:
         return {
@@ -322,6 +334,13 @@ def apply_ab_project_policy_to_r9_5_2_result(
     }
     intake["intake_metadata"] = metadata
     result["evidence_intake"] = intake
+    repo_root = Path(policy_path).resolve().parents[3]
+    traceability_registry_path = repo_root / "configs" / "phoenix" / "structural" / "package_b_licensed_source_traceability_r9_5_2_3.json"
+    result = _phoenix_apply_r9_5_2_3_package_b_to_r9_5_2_result(
+        result,
+        repo_root=repo_root,
+        registry_path=traceability_registry_path,
+    )
 
     result["r9_5_2_2"] = {
         "engine": ENGINE_ID,

@@ -1,0 +1,110 @@
+{
+  "schema_version": "phoenix.package-b-licensed-source-traceability/1.0",
+  "registry_id": "PHX-PAT-001-PKG-B-NEN-EC2-TRACEABILITY-v1.0",
+  "engine_version": "R9.5.2.3",
+  "project_id": "PHOENIX-PAT-001",
+  "jurisdiction": "Suriname / Paramaribo",
+  "source_record_id": "NEN_EC2_STABILITY_PACKAGE_B_LICENSED_EXTRACT",
+  "standard_identity": {
+    "displayed_title": "NEN-EN 1992-1-1:2005+C2:2011+A1:2015/NB:2016+A1:2020+A2:2025 nl",
+    "source_platform": "NEN Connect",
+    "identity_evidence_raw_file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/raw/01_NEN_CONNECT_NB_IDENTITY_5_8_3_3_5_8_5.jpg",
+    "legal_status_in_suriname": "NOT_ESTABLISHED_BY_THIS_SOURCE_PACKAGE",
+    "project_use_status": "ENGINEERING_DESIGN_CANDIDATE_ONLY"
+  },
+  "licensed_use": {
+    "confirmed": true,
+    "confirmation_text": "IK BEVESTIG LICENSED USE - GO PACKAGE B TRACEABILITY",
+    "confirmed_by": "PROJECT_USER",
+    "confirmed_date": "2026-08-12",
+    "scope": "User-provided NEN Connect screenshots in this Package B evidence bundle."
+  },
+  "extraction_review": {
+    "reviewed": true,
+    "review_type": "SOURCE_TO_CLAUSE_TRACEABILITY_REVIEW",
+    "reviewed_by": "OPENAI_ASSISTANT_SOURCE_EXTRACTION_REVIEW",
+    "review_date": "2026-08-12",
+    "scope": "Clause identification, source-bundle integrity, and project-policy mapping only.",
+    "professional_structural_review": false,
+    "automatic_structural_approval": false
+  },
+  "bundle_source": {
+    "source_file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/PHOENIX_PACKAGE_B_NEN_LICENSED_SOURCE_EVIDENCE_v1_0.pdf",
+    "local_file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/PHOENIX_PACKAGE_B_NEN_LICENSED_SOURCE_EVIDENCE_v1_0.pdf",
+    "file_path": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/PHOENIX_PACKAGE_B_NEN_LICENSED_SOURCE_EVIDENCE_v1_0.pdf",
+    "repo_relative_path": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/PHOENIX_PACKAGE_B_NEN_LICENSED_SOURCE_EVIDENCE_v1_0.pdf",
+    "sha256": "84cbdf08066f6cf9ce07d4f993ce7b0c87d723648abbcb76e76196a4044b1929",
+    "checksum_sha256": "84cbdf08066f6cf9ce07d4f993ce7b0c87d723648abbcb76e76196a4044b1929",
+    "source_sha256": "84cbdf08066f6cf9ce07d4f993ce7b0c87d723648abbcb76e76196a4044b1929",
+    "clause_reference": "NEN-EN 1992-1-1 5.8.2(6); 5.8.7.3; Dutch NB A2:2025 context 5.8.3.3, 5.8.5, 5.8.6, 5.8.7.2",
+    "clause_references": [
+      "NEN-EN 1992-1-1 5.8.2(6)",
+      "NEN-EN 1992-1-1 5.8.7.3",
+      "Dutch National Annex A2:2025 - 5.8.3.3",
+      "Dutch National Annex A2:2025 - 5.8.5",
+      "Dutch National Annex A2:2025 - 5.8.6",
+      "Dutch National Annex A2:2025 - 5.8.7.2"
+    ],
+    "licensed_use_confirmed": true,
+    "extraction_reviewed": true,
+    "review_status": "REVIEWED",
+    "source_class": "LICENSED_STANDARD_EXTRACT_USER_PROVIDED",
+    "reference_type": "LICENSED_STANDARD_EXTRACT",
+    "raw_evidence_files": [
+      {
+        "file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/raw/01_NEN_CONNECT_NB_IDENTITY_5_8_3_3_5_8_5.jpg",
+        "sha256": "a14ea4cdba234e9a778270de310cd49914a4b78a25096309af2ae974f852ff1d"
+      },
+      {
+        "file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/raw/02_NEN_CONNECT_NB_5_8_6_5_8_7_2_RESTRICTION.jpg",
+        "sha256": "a678b05df0333ebafe4302d532696c69faeb790017c6d61c399515bca18cf3be"
+      },
+      {
+        "file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/raw/03_NEN_CONNECT_EC2_5_8_2_6_SECOND_ORDER_10_PERCENT.jpg",
+        "sha256": "e0dd7fabdceacbef3a8181361ccf7d54134ff87bd76d5536fb54390610044c9c"
+      },
+      {
+        "file": "outputs/bib/sources/standards/licensed/nen_en_1992_1_1_package_b/raw/04_NEN_CONNECT_EC2_5_8_7_3_MOMENT_MAGNIFICATION.jpg",
+        "sha256": "a7ee44b15c428c2aac3dcc22dc8444d393967cc7952c703eb9afe91fab7fc1b9"
+      }
+    ]
+  },
+  "criteria_traceability": {
+    "SECOND_ORDER_AMPLIFICATION": {
+      "field": "max_amplification_factor",
+      "value": 1.1,
+      "source_record_id": "NEN_EC2_STABILITY_PACKAGE_B_LICENSED_EXTRACT",
+      "clause_reference": "NEN-EN 1992-1-1 5.8.2(6)",
+      "classification": "PROJECT_ENGINEERING_POLICY_DIRECT_MAPPING",
+      "mapping_note": "10% second-order significance criterion mapped to a maximum total/first-order amplification factor of 1.10.",
+      "literal_standard_limit_claim": false
+    },
+    "GLOBAL_BUCKLING_FACTOR": {
+      "field": "minimum_critical_load_factor",
+      "value": 11.0,
+      "source_record_id": "NEN_EC2_STABILITY_PACKAGE_B_LICENSED_EXTRACT",
+      "clause_reference": "NEN-EN 1992-1-1 5.8.7.3 together with 5.8.2(6)",
+      "classification": "DERIVED_PROJECT_ENGINEERING_POLICY_PROXY",
+      "derivation": "For beta=1: magnification=1/(1-NEd/NB). Requiring magnification <=1.10 gives NB/NEd >=11.0.",
+      "literal_standard_limit_claim": false
+    },
+    "STOREY_STABILITY_INDEX": {
+      "field": "max_stability_index",
+      "value": 0.1,
+      "source_record_id": "NEN_EC2_STABILITY_PACKAGE_B_LICENSED_EXTRACT",
+      "clause_reference": "NEN-EN 1992-1-1 5.8.2(6), with building second-order context from Dutch NB A2:2025 5.8.3.3",
+      "classification": "PROJECT_ENGINEERING_POLICY_PROXY",
+      "mapping_note": "Phoenix PDelta/(Vh) proxy maps the 10% second-order significance concept to a project-policy storey index.",
+      "literal_standard_limit_claim": false
+    }
+  },
+  "safety": {
+    "professional_structural_review_required": true,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "legal_adoption_in_suriname_claim": false,
+    "production_release": "LOCKED",
+    "criteria_promotion_allowed_only_after_bundle_hash_validation": true,
+    "tamper_fail_closed": true
+  }
+}

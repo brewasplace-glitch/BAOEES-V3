@@ -176,16 +176,19 @@ class Tests(unittest.TestCase):
         out = apply_ab_project_policy_to_r9_5_2_result(r952_result=r952_fixture(), policy_path=POLICY_PATH)
         b = out["evidence_intake"]["package_inputs"]["PKG-B-NUMERICAL-ACCEPTANCE-CRITERIA"]
         self.assertFalse(b["validation"]["qualified"])
-        self.assertFalse(b["validation"]["licensed_source_traceability_complete"])
+        self.assertTrue(b["validation"]["licensed_source_traceability_complete"])
+        self.assertTrue(b["validation"]["licensed_use_confirmed"])
+        self.assertTrue(b["validation"]["extraction_reviewed"])
 
     def test_13_licensed_fields_remain_empty(self):
         out = apply_ab_project_policy_to_r9_5_2_result(r952_result=r952_fixture(), policy_path=POLICY_PATH)
         inputs = out["evidence_intake"]["package_inputs"]["PKG-B-NUMERICAL-ACCEPTANCE-CRITERIA"]["inputs"]
-        self.assertIsNone(inputs["source_file"])
-        self.assertIsNone(inputs["sha256"])
-        self.assertIsNone(inputs["clause_reference"])
-        self.assertFalse(inputs["licensed_use_confirmed"])
-        self.assertFalse(inputs["extraction_reviewed"])
+        self.assertIsNotNone(inputs["source_file"])
+        self.assertEqual(64, len(inputs["sha256"]))
+        self.assertIn("5.8.2(6)", inputs["clause_reference"])
+        self.assertIn("5.8.7.3", inputs["clause_reference"])
+        self.assertTrue(inputs["licensed_use_confirmed"])
+        self.assertTrue(inputs["extraction_reviewed"])
 
     def test_14_other_jurisdiction_noop(self):
         doc = global_input_fixture()
