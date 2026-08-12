@@ -1,0 +1,40 @@
+{
+  "schema_version": "phoenix.package-e-alternate-path-independent-evidence-policy/1.0",
+  "engine": "PHX-PACKAGE-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE-R9.5.2.5",
+  "version": "R9.5.2.5",
+  "project_scope": "PHOENIX-PAT-001",
+  "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+  "check_type": "ALTERNATE_LOAD_PATH_EVIDENCE",
+  "allowed_applicability": [
+    "APPLICABLE",
+    "NOT_APPLICABLE"
+  ],
+  "required_independent_review_status": "REVIEWED",
+  "required_evidence_origin": [
+    "EXTERNAL_INDEPENDENT_ENGINEERING",
+    "INDEPENDENT_PROFESSIONAL_REVIEW"
+  ],
+  "allowed_r9_5_source_record_types": [
+    "LICENSED_STANDARD_SOURCE",
+    "PROJECT_ENGINEERING_POLICY",
+    "AUTHORITY_APPROVED_PROJECT_BASIS"
+  ],
+  "r9_3_screening": {
+    "classification": "INTERNAL_SCREENING_ONLY",
+    "sufficient_as_independent_evidence": false,
+    "may_be_promoted_to_redistributed_member_removal_analysis": false
+  },
+  "safety": {
+    "not_applicable_auto_waives_v8_6": false,
+    "phoenix_generated_evidence_may_satisfy_independence": false,
+    "automatic_independent_review_claim": false,
+    "automatic_professional_review_claim": false,
+    "automatic_alternate_path_verification_claim": false,
+    "automatic_acceptance_criterion_invention": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_structural_approval": false,
+    "automatic_seismic_scope_decision": false,
+    "professional_structural_review_required": true,
+    "production_release": "LOCKED"
+  }
+}

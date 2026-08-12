@@ -1,0 +1,59 @@
+{
+  "schema_version": "phoenix.package-e-alternate-path-independent-evidence-input/1.0",
+  "project_id": null,
+  "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+  "check_type": "ALTERNATE_LOAD_PATH_EVIDENCE",
+  "status": "REQUIRED_EXTERNAL_OR_INDEPENDENT_ENGINEERING_EVIDENCE",
+  "decision": {
+    "applicability": null,
+    "methodology_accepted": false,
+    "methodology_acceptance_reference": null,
+    "primary_source_record_id": null,
+    "supporting_source_record_ids": [],
+    "acceptance_criteria": {
+      "minimum_residual_capacity_proxy_ratio": null
+    },
+    "criteria_traceability": {
+      "minimum_residual_capacity_proxy_ratio": {
+        "source_record_id": null,
+        "clause_reference": null
+      }
+    },
+    "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+    "alternate_path_verified": false,
+    "independent_engineering_evidence_reference": null,
+    "independent_engineering_evidence_file": null,
+    "independent_engineering_evidence_sha256": null,
+    "independent_review_status": null,
+    "independent_review_reference": null
+  },
+  "source_records": {
+    "PACKAGE_E_PRIMARY_SOURCE_REQUIRED": {
+      "reference_type": null,
+      "reference": null,
+      "source_file": null,
+      "sha256": null,
+      "clause_reference": null,
+      "licensed_use_confirmed": false,
+      "extraction_reviewed": false,
+      "project_policy_approved": false,
+      "approval_reference": null,
+      "scope": null,
+      "authority_basis_confirmed": false,
+      "source_pointer": null
+    }
+  },
+  "independence_attestation": {
+    "evidence_origin": null,
+    "phoenix_generated": null,
+    "independent_from_phoenix_analysis": null,
+    "reviewer_or_organization": null,
+    "attestation_reference": null
+  },
+  "notes": [
+    "R9.3 alternate-path screening is internal screening context only and is not independent redistributed member-removal evidence.",
+    "Do not invent the minimum residual-capacity proxy ratio; it requires a traceable project/source basis.",
+    "NOT_APPLICABLE does not automatically waive the mandatory v8.6 check set.",
+    "Professional structural review remains required; production release remains locked."
+  ]
+}

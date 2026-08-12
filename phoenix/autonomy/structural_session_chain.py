@@ -36,6 +36,7 @@ from .project_stability_design_basis_decision_r9_5 import build_project_stabilit
 from .project_stability_design_basis_input_evidence_qualification_r9_5_1 import build_project_stability_design_basis_input_evidence_qualification as _phoenix_build_r9_5_1_project_stability_design_basis_input_evidence_qualification
 from .stability_design_basis_decision_dossier_evidence_intake_r9_5_2 import build_stability_design_basis_decision_dossier_evidence_intake as _phoenix_build_r9_5_2_stability_design_basis_decision_dossier_evidence_intake, render_decision_dossier_markdown as _phoenix_render_r9_5_2_decision_dossier_markdown
 from .runtime_input_merge_r9_5_requalification_r9_5_2_4 import build_runtime_input_merge_r9_5_requalification as _phoenix_build_r9_5_2_4_runtime_input_merge_r9_5_requalification
+from .package_e_alternate_path_independent_evidence_r9_5_2_5 import build_package_e_alternate_path_independent_evidence as _phoenix_build_r9_5_2_5_package_e_alternate_path_independent_evidence, render_package_e_dossier_markdown as _phoenix_render_r9_5_2_5_package_e_dossier_markdown
 from .stability_ab_project_policy_integration_r9_5_2_2 import apply_ab_project_policy_to_workspace as _phoenix_apply_r9_5_2_2_ab_policy_to_workspace, apply_ab_project_policy_to_r9_5_2_result as _phoenix_apply_r9_5_2_2_ab_policy_to_r9_5_2_result, render_licensed_clause_extract_request as _phoenix_render_r9_5_2_2_licensed_clause_extract_request
 
 VERSION="1.0.0"
@@ -973,13 +974,44 @@ def run_structural_chain(
                                         section=_phx_r95['global_stability_input']
                                         source="PROJECT_STABILITY_DESIGN_BASIS_DECISION_R9_5_2_4_REQUALIFIED"
                                     else:
+                                        # PHOENIX_R9_5_2_5_PACKAGE_E_ALTERNATE_PATH_INDEPENDENT_EVIDENCE_V1_0
+                                        _phx_r9525=_phoenix_build_r9_5_2_5_package_e_alternate_path_independent_evidence(
+                                            project_id=project_id,
+                                            workspace=workspace,
+                                            repository_root=repository,
+                                            r93_qualification=_phx_r93,
+                                            r94_initial=_phx_r94,
+                                            r9524_result=_phx_r9524,
+                                            r952_result=_phx_r952,
+                                            r95_policy_path=repository/"configs"/"phoenix"/"structural"/"project_stability_design_basis_decision_policy_r9_5.json",
+                                            package_e_policy_path=repository/"configs"/"phoenix"/"structural"/"package_e_alternate_path_independent_evidence_policy_r9_5_2_5.json",
+                                            suriname_rule_registry_path=repository/"configs"/"phoenix"/"jurisdictions"/"suriname"/"suriname_structural_rule_registry_v1_0.json",
+                                            suriname_source_registry_path=repository/"outputs"/"bib"/"index"/"suriname_regulatory_source_registry_v1_0.json",
+                                            r94_policy_path=repository/"configs"/"phoenix"/"structural"/"normative_applicability_stability_design_basis_policy_r9_4.json",
+                                            r94_public_source_registry_path=repository/"configs"/"phoenix"/"structural"/"normative_applicability_public_source_registry_r9_4.json",
+                                        )
+                                        _phx_r9525_path=output_dir/"v8_6"/"r9_5_2_5_package_e_alternate_path_independent_evidence.json"
+                                        _write(_phx_r9525_path,_phx_r9525)
+                                        outputs.append(_repo_ref(_phx_r9525_path,repository))
+                                        _phx_r9525_dossier_path=output_dir/"v8_6"/"r9_5_2_5_package_e_alternate_path_independent_evidence.md"
+                                        _phx_r9525_dossier_path.write_text(_phoenix_render_r9_5_2_5_package_e_dossier_markdown(_phx_r9525),encoding='utf-8')
+                                        outputs.append(_repo_ref(_phx_r9525_dossier_path,repository))
+                                        _phx_r95_e=_phx_r9525.get('r9_5_requalified')
+                                        if isinstance(_phx_r95_e,dict):
+                                            _write(_phx_r95_path,_phx_r95_e)
+                                        _phx_r952_e=_phx_r9525.get('r9_5_2_requalified')
+                                        if isinstance(_phx_r952_e,dict):
+                                            _phx_r952=_phx_r952_e
+                                            _write(_phx_r952_path,_phx_r952)
+                                            _write(_phx_r952_intake_path,_phx_r952.get('evidence_intake') or {})
+                                            _phx_r952_dossier_path.write_text(_phoenix_render_r9_5_2_decision_dossier_markdown(_phx_r952),encoding='utf-8')
                                         register["stages"][offset]["status"]="BLOCKED_INPUT"
-                                        _phx_r9524_blockers=_phx_r9524.get("blockers") or [{"reason":"R9_5_2_4_REQUALIFICATION_REMAINING_INPUT_REQUIRED","message":"R9.5.2.4 requalification remains incomplete."}]
-                                        _phx_r9524_primary=_phx_r9524_blockers[0]
+                                        _phx_r9525_blockers=_phx_r9525.get("blockers") or [{"reason":"R9_5_2_5_PACKAGE_E_OR_REMAINING_INPUT_REQUIRED","message":"R9.5.2.5 Package E or remaining stability input is required."}]
+                                        _phx_r9525_primary=_phx_r9525_blockers[0]
                                         return _block(
-                                            _phx_r9524_primary.get("reason") or "R9_5_2_4_REQUALIFICATION_REMAINING_INPUT_REQUIRED",
-                                            _phx_r9524_primary.get("message") or "R9.5.2.4 runtime input merge/requalification remains incomplete.",
-                                            completed,version,outputs,register,_phx_r9524_primary
+                                            _phx_r9525_primary.get("reason") or "R9_5_2_5_PACKAGE_E_OR_REMAINING_INPUT_REQUIRED",
+                                            _phx_r9525_primary.get("message") or "R9.5.2.5 Package E or remaining stability input is required.",
+                                            completed,version,outputs,register,_phx_r9525_primary
                                         )
         if not section:
             register["stages"][offset]["status"]="BLOCKED_INPUT"
