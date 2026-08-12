@@ -1,0 +1,46 @@
+{
+  "schema_version": "phoenix.pat001-real-cde-existing-evidence-context/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "preparation_status": "EXISTING_EVIDENCE_INVENTORIED_PROFESSIONAL_INPUT_STILL_REQUIRED",
+  "source_files": {
+    "r9_5_2_4_requalification": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_2_4_runtime_input_merge_r9_5_requalification.json",
+    "legacy_r9_5_2_evidence_intake": "projects/runtime/PHOENIX-PAT-001/inputs/structural/stability_design_basis_evidence_intake_REQUIRED.json",
+    "r9_5_decision": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_project_stability_design_basis_decision.json",
+    "r9_3_technical_evidence": null
+  },
+  "technical_analysis_required_count": 0,
+  "r9_5_status": "BLOCKED",
+  "unresolved_check_types": [
+    "ALTERNATE_LOAD_PATH_EVIDENCE",
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "unresolved_package_ids": [
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE"
+  ],
+  "package_b_traceability_complete": true,
+  "existing_r9_3_evidence_references": {
+    "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE": true,
+    "R9.3:SOFT_STOREY_STIFFNESS_RATIO": true,
+    "R9.3:TORSIONAL_DRIFT_RATIO": true,
+    "R9.3:WEAK_STOREY_STRENGTH_RATIO": true
+  },
+  "interpretation_boundaries": [
+    "R8/R9.3 weak-storey strength is candidate screening only unless professionally accepted for the candidate gate.",
+    "R9.3 alternate-path screening is not independent redistributed/nonlinear alternate-path proof.",
+    "Seismic applicability and criteria require explicit traceable professional input."
+  ],
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_seismic_applicability_decision": false,
+    "automatic_numerical_criteria_generation": false,
+    "automatic_screening_proxy_acceptance": false,
+    "automatic_independent_evidence_generation": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "phoenix.pat001-real-cde-gap-register/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "status": "PROFESSIONAL_EVIDENCE_REQUIRED",
+  "technical_analysis_required_count": 0,
+  "packages": {
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA": {
+      "status": "OPEN",
+      "missing_requirements": [
+        "seismic_applicability_status",
+        "reference_type",
+        "reference",
+        "source_record_id",
+        "scope_review_reference",
+        "professional_scope_reviewed"
+      ],
+      "invalid_requirements": []
+    },
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW": {
+      "status": "OPEN",
+      "missing_requirements": [
+        "screening_proxy_accepted_for_candidate_gate",
+        "screening_proxy_review_reference",
+        "reviewer_scope",
+        "review_status"
+      ],
+      "invalid_requirements": []
+    },
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE": {
+      "status": "OPEN",
+      "missing_requirements": [
+        "independent_engineering_evidence_reference",
+        "repository_relative_source_file",
+        "sha256",
+        "independent_review_reference",
+        "independent_review_status",
+        "independently_verified_alternate_path",
+        "acceptance_criterion_and_traceability"
+      ],
+      "invalid_requirements": []
+    }
+  },
+  "all_intake_fields_ready_for_existing_validators": false,
+  "automatic_requalification_started": false,
+  "next_authority": "Existing Package E/C/D validators, then R9.5.2.8 controlled evidence gate.",
+  "production_release": "LOCKED",
+  "for_construction_release": "LOCKED"
+}
