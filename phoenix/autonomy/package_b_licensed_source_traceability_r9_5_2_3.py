@@ -117,7 +117,7 @@ def _source_record(registry: Mapping[str, Any]) -> dict[str, Any]:
     licensed = _mapping(registry.get("licensed_use"))
     review = _mapping(registry.get("extraction_review"))
     return {
-        "reference_type": "LICENSED_STANDARD_EXTRACT",
+        "reference_type": "LICENSED_STANDARD_SOURCE",
         "reference": identity.get("displayed_title"),
         "source_class": bundle.get("source_class"),
         "source_file": bundle.get("source_file"),
@@ -171,11 +171,18 @@ def apply_package_b_traceability_to_r9_5_required_input_document(
     registry = _read_json(Path(registry_path))
 
     out = deepcopy(dict(document))
-    if str(out.get("project_id") or "") != str(registry.get("project_id") or ""):
-        return out
-
     root = _mapping(out.get("r9_5_project_stability_design_basis_decision"))
     if not root:
+        return out
+
+    document_project_id = str(
+        out.get("project_id")
+        or root.get("project_id")
+        or ""
+    ).strip()
+    registry_project_id = str(registry.get("project_id") or "").strip()
+
+    if document_project_id and document_project_id != registry_project_id:
         return out
 
     source_record_id = str(registry.get("source_record_id"))

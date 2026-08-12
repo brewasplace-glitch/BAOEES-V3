@@ -112,7 +112,7 @@ def apply_ab_policy_to_r9_5_required_input_document(
         if not row:
             continue
         if _empty(row.get("applicability")):
-            row["applicability"] = True
+            row["applicability"] = "APPLICABLE"
         if _empty(row.get("methodology_acceptance_reference")):
             row["methodology_accepted"] = True
             row["methodology_acceptance_reference"] = POLICY_SOURCE_RECORD_ID
@@ -302,7 +302,7 @@ def apply_ab_project_policy_to_r9_5_2_result(
         if not row:
             continue
         if _empty(row.get("applicability")):
-            row["applicability"] = True
+            row["applicability"] = "APPLICABLE"
         if _empty(row.get("methodology_acceptance_reference")):
             row["methodology_accepted"] = True
             row["methodology_acceptance_reference"] = POLICY_SOURCE_RECORD_ID
