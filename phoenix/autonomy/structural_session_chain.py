@@ -948,7 +948,7 @@ def run_structural_chain(
                                         r95_policy_path=repository/"configs"/"phoenix"/"structural"/"project_stability_design_basis_decision_policy_r9_5.json",
                                         r951_policy_path=repository/"configs"/"phoenix"/"structural"/"project_stability_design_basis_input_evidence_qualification_policy_r9_5_1.json",
                                         r952_policy_path=repository/"configs"/"phoenix"/"structural"/"stability_design_basis_decision_dossier_evidence_intake_policy_r9_5_2.json",
-                                        ab_policy_path=repository/"configs"/"phoenix"/"structural"/"stability_ab_project_policy_r9_5_2_2.json",
+                                        ab_policy_path=repository.joinpath("configs","phoenix","structural","stability_ab_project_policy_r9_5_2_2.json"),
                                         package_b_registry_path=repository/"configs"/"phoenix"/"structural"/"package_b_licensed_source_traceability_r9_5_2_3.json",
                                         suriname_rule_registry_path=repository/"configs"/"phoenix"/"jurisdictions"/"suriname"/"suriname_structural_rule_registry_v1_0.json",
                                         suriname_source_registry_path=repository/"outputs"/"bib"/"index"/"suriname_regulatory_source_registry_v1_0.json",
