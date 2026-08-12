@@ -1,0 +1,13 @@
+{
+  "schema_version": "phoenix.remaining-evidence-gate-consolidation/1.0",
+  "engine_version": "R9.5.2.8",
+  "package_id": "PKG-R9.5-REMAINING-EVIDENCE-GATE-CONSOLIDATION",
+  "status": "INPUT_DISCOVERY_REQUIRED",
+  "required_packages": [
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE"
+  ],
+  "human_input_policy": "NO_NEW_ENGINEERED_VALUES_CREATED_BY_R9_5_2_8",
+  "requalification_policy": "ONLY_AFTER_ALL_REMAINING_EVIDENCE_GATES_EXPLICITLY_SATISFIED"
+}

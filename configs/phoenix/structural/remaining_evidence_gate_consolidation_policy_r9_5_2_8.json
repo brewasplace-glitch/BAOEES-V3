@@ -1,0 +1,35 @@
+{
+  "schema_version": "phoenix.remaining-evidence-gate-consolidation-policy/1.0",
+  "engine_version": "R9.5.2.8",
+  "package_id": "PKG-R9.5-REMAINING-EVIDENCE-GATE-CONSOLIDATION",
+  "purpose": "Consolidate Package C, D and E evidence gates and invoke the existing controlled R9.5 requalification only when all remaining evidence gates are explicitly satisfied.",
+  "required_package_gates": [
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE"
+  ],
+  "requalification_rules": {
+    "all_three_gates_must_be_explicitly_eligible": true,
+    "missing_or_ambiguous_input_blocks_requalification": true,
+    "existing_r9_5_requalification_engine_result_is_authoritative": true,
+    "automatic_r9_5_success_claim": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_professional_approval": false
+  },
+  "safety": {
+    "automatic_seismic_applicability_decision": false,
+    "automatic_numerical_criteria_generation": false,
+    "automatic_screening_proxy_acceptance": false,
+    "automatic_independent_evidence_generation": false,
+    "automatic_reviewer_identity_generation": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  },
+  "legacy_contracts": {
+    "r9_5_2_2_path_literal_contract_preserved": true,
+    "package_c_gate_preserved": true,
+    "package_d_gate_preserved": true,
+    "package_e_gate_preserved": true,
+    "r9_4_and_v8_6_gates_preserved": true
+  }
+}
