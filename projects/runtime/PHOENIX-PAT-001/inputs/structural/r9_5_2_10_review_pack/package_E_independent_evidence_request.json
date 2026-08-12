@@ -1,0 +1,31 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-package-e-independent-evidence-request/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+  "status": "INDEPENDENT_EVIDENCE_REQUIRED",
+  "existing_internal_screening": {
+    "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+    "existing_reference_flag": true,
+    "located_source_count": 5,
+    "classification": "INTERNAL_SCREENING_ONLY",
+    "may_be_used_as_independent_evidence": false
+  },
+  "required_external_deliverables": [
+    "independent engineering evidence reference",
+    "repository-relative evidence source file",
+    "SHA-256 of the exact submitted source file",
+    "independent review status and review reference",
+    "explicit independently_verified_alternate_path decision",
+    "acceptance criterion plus source-record and clause/reference traceability",
+    "reviewer identity, role, organization, date and signature reference",
+    "independence confirmation and independence basis"
+  ],
+  "acceptance_boundary": {
+    "phoenix_does_not_define_the_engineering_criterion": true,
+    "phoenix_does_not_claim_independence_without_returned_evidence": true,
+    "existing_package_e_validator_remains_authoritative": true,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  },
+  "return_file": "package_e_independent_evidence_RETURN_REQUIRED.json"
+}

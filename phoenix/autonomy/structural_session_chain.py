@@ -36,6 +36,7 @@ from .project_stability_design_basis_decision_r9_5 import build_project_stabilit
 from .project_stability_design_basis_input_evidence_qualification_r9_5_1 import build_project_stability_design_basis_input_evidence_qualification as _phoenix_build_r9_5_1_project_stability_design_basis_input_evidence_qualification
 from .stability_design_basis_decision_dossier_evidence_intake_r9_5_2 import build_stability_design_basis_decision_dossier_evidence_intake as _phoenix_build_r9_5_2_stability_design_basis_decision_dossier_evidence_intake, render_decision_dossier_markdown as _phoenix_render_r9_5_2_decision_dossier_markdown
 from .runtime_input_merge_r9_5_requalification_r9_5_2_4 import build_runtime_input_merge_r9_5_requalification as _phoenix_build_r9_5_2_4_runtime_input_merge_r9_5_requalification
+from phoenix.autonomy.professional_cde_review_dossier_r9_5_2_10 import run_professional_cde_review_dossier_r9_5_2_10 as _phoenix_run_professional_cde_review_dossier_r9_5_2_10
 from phoenix.autonomy.combined_cde_evidence_intake_r9_5_2_9 import run_combined_cde_evidence_intake_r9_5_2_9 as _phoenix_run_combined_cde_evidence_intake_r9_5_2_9
 from .package_e_alternate_path_independent_evidence_r9_5_2_5 import build_package_e_alternate_path_independent_evidence as _phoenix_build_r9_5_2_5_package_e_alternate_path_independent_evidence, render_package_e_dossier_markdown as _phoenix_render_r9_5_2_5_package_e_dossier_markdown
 from phoenix.autonomy.package_c_seismic_scope_criteria_r9_5_2_6 import run_package_c_seismic_scope_criteria_r9_5_2_6 as _phoenix_run_package_c_seismic_scope_criteria_r9_5_2_6
@@ -979,6 +980,7 @@ def run_structural_chain(
                                         source="PROJECT_STABILITY_DESIGN_BASIS_DECISION_R9_5_2_4_REQUALIFIED"
                                     else:
                                         # PHOENIX_R9_5_2_5_PACKAGE_E_ALTERNATE_PATH_INDEPENDENT_EVIDENCE_V1_0
+                                        _phoenix_r9_5_2_10_review = _phoenix_run_professional_cde_review_dossier_r9_5_2_10(locals())
                                         _phoenix_r9_5_2_9_intake = _phoenix_run_combined_cde_evidence_intake_r9_5_2_9(locals())
                                         _phx_r9525=_phoenix_build_r9_5_2_5_package_e_alternate_path_independent_evidence(
                                             project_id=project_id,

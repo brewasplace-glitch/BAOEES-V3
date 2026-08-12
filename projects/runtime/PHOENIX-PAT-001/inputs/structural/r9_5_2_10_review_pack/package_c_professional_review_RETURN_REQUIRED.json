@@ -1,0 +1,42 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-package-c-professional-review-return/1.0",
+  "engine_version": "R9.5.2.10",
+  "package_id": "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+  "submission_confirmed": false,
+  "review_record": {
+    "reviewer_name": null,
+    "reviewer_organization": null,
+    "reviewer_role": null,
+    "review_date": null,
+    "signature_reference": null
+  },
+  "package_input": {
+    "package_id": "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+    "status": "INPUT_REQUIRED",
+    "seismic_applicability_status": "INPUT_REQUIRED",
+    "reference_type": null,
+    "reference": null,
+    "source_record_id": null,
+    "professional_scope_reviewed": false,
+    "scope_review_reference": null,
+    "criteria_if_applicable": {
+      "SOFT_STOREY_STIFFNESS_RATIO": {
+        "minimum_ratio": null,
+        "source_record_id": null,
+        "clause_reference": null
+      },
+      "TORSIONAL_DRIFT_RATIO": {
+        "max_torsional_drift_ratio": null,
+        "source_record_id": null,
+        "clause_reference": null
+      },
+      "WEAK_STOREY_STRENGTH_RATIO": {
+        "minimum_ratio": null,
+        "source_record_id": null,
+        "clause_reference": null
+      }
+    },
+    "review_note": null
+  },
+  "declaration": "This file records explicit human/professional input. Phoenix does not author the decision."
+}

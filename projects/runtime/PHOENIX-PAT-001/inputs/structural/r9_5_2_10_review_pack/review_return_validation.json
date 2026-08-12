@@ -1,0 +1,53 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-review-return-validation/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "status": "AWAITING_CONFIRMED_PROFESSIONAL_OR_INDEPENDENT_RETURNS",
+  "submissions": {
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA": {
+      "package_id": "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+      "status": "NOT_SUBMITTED",
+      "submission_confirmed": false,
+      "missing_requirements": [],
+      "invalid_requirements": [],
+      "mechanical_merge_performed": false
+    },
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW": {
+      "package_id": "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+      "status": "NOT_SUBMITTED",
+      "submission_confirmed": false,
+      "missing_requirements": [],
+      "invalid_requirements": [],
+      "mechanical_merge_performed": false
+    },
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE": {
+      "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+      "status": "NOT_SUBMITTED",
+      "submission_confirmed": false,
+      "missing_requirements": [],
+      "invalid_requirements": [],
+      "mechanical_merge_performed": false
+    }
+  },
+  "merged_package_ids": [],
+  "combined_intake_changed": false,
+  "automatic_r9_5_requalification_started": false,
+  "automatic_gate_promotion": false,
+  "next_runtime_authorities": [
+    "R9.5.2.9 combined intake normalization",
+    "Package E R9.5.2.5",
+    "Package C R9.5.2.6",
+    "Package D R9.5.2.7",
+    "R9.5.2.8 remaining evidence gate and controlled R9.5 requalification"
+  ],
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_seismic_applicability_decision": false,
+    "automatic_numerical_criteria_generation": false,
+    "automatic_screening_proxy_acceptance": false,
+    "automatic_independent_evidence_generation": false,
+    "automatic_r9_5_success_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

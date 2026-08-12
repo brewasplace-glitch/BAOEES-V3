@@ -1,0 +1,31 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-package-e-independent-evidence-return/1.0",
+  "engine_version": "R9.5.2.10",
+  "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+  "submission_confirmed": false,
+  "review_record": {
+    "reviewer_name": null,
+    "reviewer_organization": null,
+    "reviewer_role": null,
+    "review_date": null,
+    "signature_reference": null,
+    "independence_confirmed": false,
+    "independence_basis": null
+  },
+  "package_input": {
+    "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+    "status": "INPUT_REQUIRED",
+    "independent_engineering_evidence_reference": null,
+    "repository_relative_source_file": null,
+    "sha256": null,
+    "independent_review_status": "INPUT_REQUIRED",
+    "independent_review_reference": null,
+    "independently_verified_alternate_path": null,
+    "acceptance_criterion_and_traceability": {
+      "minimum_residual_capacity_proxy_ratio": null,
+      "source_record_id": null,
+      "clause_reference": null
+    },
+    "review_note": null
+  }
+}

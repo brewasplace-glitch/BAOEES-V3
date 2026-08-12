@@ -1,0 +1,31 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-professional-cd-review-dossier/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "status": "PROFESSIONAL_REVIEW_REQUIRED",
+  "packages": [
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW"
+  ],
+  "evidence_manifest": "existing_evidence_manifest.json",
+  "package_c_required_decision": {
+    "seismic_applicability_status": [
+      "APPLICABLE",
+      "NOT_APPLICABLE"
+    ],
+    "traceable_scope_review_required": true,
+    "criteria_required_only_if_applicable": true
+  },
+  "package_d_required_decision": {
+    "weak_storey_candidate_proxy_review_required": true,
+    "explicit_accept_or_reject_required": true,
+    "candidate_gate_only": true
+  },
+  "return_files": [
+    "package_c_professional_review_RETURN_REQUIRED.json",
+    "package_d_weak_storey_review_RETURN_REQUIRED.json"
+  ],
+  "automatic_professional_approval": false,
+  "automatic_code_compliance_claim": false,
+  "production_release": "LOCKED",
+  "for_construction_release": "LOCKED"
+}

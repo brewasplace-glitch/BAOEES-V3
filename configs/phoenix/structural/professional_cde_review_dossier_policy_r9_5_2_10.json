@@ -1,0 +1,39 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-professional-cde-review-policy/1.0",
+  "engine_version": "R9.5.2.10",
+  "package_id": "PKG-R9.5-CDE-PROFESSIONAL-REVIEW-DOSSIER",
+  "purpose": "Prepare professional Package C/D review material and a Package E independent evidence request, then mechanically validate explicit review returns before existing R9.5 validators execute.",
+  "runtime_order": [
+    "R9.5.2.10 review dossier / review return integrity processing",
+    "R9.5.2.9 combined intake normalization",
+    "Package E R9.5.2.5",
+    "Package C R9.5.2.6",
+    "Package D R9.5.2.7",
+    "R9.5.2.8 remaining evidence gate and controlled R9.5 requalification"
+  ],
+  "mechanical_merge_rules": {
+    "submission_confirmed_must_be_true": true,
+    "reviewer_identity_and_signature_reference_required": true,
+    "package_e_independence_confirmation_required": true,
+    "package_e_source_file_must_exist": true,
+    "package_e_sha256_must_match": true,
+    "mechanical_merge_is_not_gate_promotion": true
+  },
+  "authoritative_validators": {
+    "package_e": "R9.5.2.5",
+    "package_c": "R9.5.2.6",
+    "package_d": "R9.5.2.7",
+    "remaining_evidence_gate": "R9.5.2.8"
+  },
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_seismic_applicability_decision": false,
+    "automatic_numerical_criteria_generation": false,
+    "automatic_screening_proxy_acceptance": false,
+    "automatic_independent_evidence_generation": false,
+    "automatic_r9_5_success_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

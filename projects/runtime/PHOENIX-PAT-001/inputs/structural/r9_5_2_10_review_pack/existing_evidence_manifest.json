@@ -1,0 +1,794 @@
+{
+  "schema_version": "phoenix.r9-5-2-10-existing-evidence-manifest/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "status": "EXISTING_EVIDENCE_INVENTORIED_NOT_PROFESSIONALLY_APPROVED",
+  "source_manifest": [
+    {
+      "label": "r9_5_2_4_requalification",
+      "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_2_4_runtime_input_merge_r9_5_requalification.json",
+      "sha256": "bc99a03527ea57f4edd53a4f15902209261576716b7d684054b081de62a9b1b9"
+    },
+    {
+      "label": "legacy_r9_5_2_evidence_intake",
+      "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/stability_design_basis_evidence_intake_REQUIRED.json",
+      "sha256": "d4131dfce28248d35ee7258fbe5bc70346808ae22e7afe9da0ea811417e605cc"
+    },
+    {
+      "label": "r9_5_decision",
+      "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_project_stability_design_basis_decision.json",
+      "sha256": "36aec1885a9839b718b2dafc8c9a2e4e6c4c1517a99520c58eee3681b6d4572f"
+    }
+  ],
+  "check_evidence": {
+    "ALTERNATE_LOAD_PATH_EVIDENCE": {
+      "check_type": "ALTERNATE_LOAD_PATH_EVIDENCE",
+      "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+      "existing_reference_flag": true,
+      "located_source_count": 5,
+      "located_sources": [
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/global_stability_engineering_input_REQUIRED.json",
+          "sha256": "ef4c68b5dc6a7060b0dcb7a49e5a0ea2b2161e9a0655db05cd14260894f63bff",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/stability_design_basis_evidence_intake_REQUIRED.json",
+          "sha256": "d4131dfce28248d35ee7258fbe5bc70346808ae22e7afe9da0ea811417e605cc",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_4_normative_applicability_stability_design_basis.json",
+          "sha256": "a32ecd9fec257eb0e5ff886851772715d173fe031307b67cca91a281da7d864b",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "reference_type": null,
+              "reference": null,
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_1_project_stability_design_basis_input_evidence_qualification.json",
+          "sha256": "115ad3b31d1fb4cd698b18ae0d6954380e47b9c0b7003b9aaa791373eb078fc5",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_2_4_runtime_input_merge_r9_5_requalification.json",
+          "sha256": "bc99a03527ea57f4edd53a4f15902209261576716b7d684054b081de62a9b1b9",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_residual_capacity_proxy_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_residual_capacity_proxy_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:ALTERNATE_LOAD_PATH_EVIDENCE",
+              "available_surinaame_primary_support": [],
+              "alternate_path_verified": false,
+              "independent_engineering_evidence_reference": null,
+              "independent_engineering_evidence_file": null,
+              "independent_engineering_evidence_sha256": null,
+              "independent_review_status": null,
+              "independent_review_reference": null
+            }
+          ]
+        }
+      ],
+      "interpretation": "INTERNAL_SCREENING_ONLY"
+    },
+    "SOFT_STOREY_STIFFNESS_RATIO": {
+      "check_type": "SOFT_STOREY_STIFFNESS_RATIO",
+      "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+      "existing_reference_flag": true,
+      "located_source_count": 5,
+      "located_sources": [
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/global_stability_engineering_input_REQUIRED.json",
+          "sha256": "ef4c68b5dc6a7060b0dcb7a49e5a0ea2b2161e9a0655db05cd14260894f63bff",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/stability_design_basis_evidence_intake_REQUIRED.json",
+          "sha256": "d4131dfce28248d35ee7258fbe5bc70346808ae22e7afe9da0ea811417e605cc",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_4_normative_applicability_stability_design_basis.json",
+          "sha256": "a32ecd9fec257eb0e5ff886851772715d173fe031307b67cca91a281da7d864b",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "reference_type": null,
+              "reference": null,
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO"
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_1_project_stability_design_basis_input_evidence_qualification.json",
+          "sha256": "115ad3b31d1fb4cd698b18ae0d6954380e47b9c0b7003b9aaa791373eb078fc5",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_2_4_runtime_input_merge_r9_5_requalification.json",
+          "sha256": "bc99a03527ea57f4edd53a4f15902209261576716b7d684054b081de62a9b1b9",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:SOFT_STOREY_STIFFNESS_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        }
+      ],
+      "interpretation": "TECHNICAL_EVIDENCE_REQUIRES_PROFESSIONAL_SCOPE_OR_CRITERION_DECISION"
+    },
+    "TORSIONAL_DRIFT_RATIO": {
+      "check_type": "TORSIONAL_DRIFT_RATIO",
+      "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+      "existing_reference_flag": true,
+      "located_source_count": 5,
+      "located_sources": [
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/global_stability_engineering_input_REQUIRED.json",
+          "sha256": "ef4c68b5dc6a7060b0dcb7a49e5a0ea2b2161e9a0655db05cd14260894f63bff",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/stability_design_basis_evidence_intake_REQUIRED.json",
+          "sha256": "d4131dfce28248d35ee7258fbe5bc70346808ae22e7afe9da0ea811417e605cc",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_4_normative_applicability_stability_design_basis.json",
+          "sha256": "a32ecd9fec257eb0e5ff886851772715d173fe031307b67cca91a281da7d864b",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "reference_type": null,
+              "reference": null,
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO"
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_1_project_stability_design_basis_input_evidence_qualification.json",
+          "sha256": "115ad3b31d1fb4cd698b18ae0d6954380e47b9c0b7003b9aaa791373eb078fc5",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_2_4_runtime_input_merge_r9_5_requalification.json",
+          "sha256": "bc99a03527ea57f4edd53a4f15902209261576716b7d684054b081de62a9b1b9",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "max_torsional_drift_ratio": null
+              },
+              "criteria_traceability": {
+                "max_torsional_drift_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:TORSIONAL_DRIFT_RATIO",
+              "available_surinaame_primary_support": []
+            }
+          ]
+        }
+      ],
+      "interpretation": "TECHNICAL_EVIDENCE_REQUIRES_PROFESSIONAL_SCOPE_OR_CRITERION_DECISION"
+    },
+    "WEAK_STOREY_STRENGTH_RATIO": {
+      "check_type": "WEAK_STOREY_STRENGTH_RATIO",
+      "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+      "existing_reference_flag": true,
+      "located_source_count": 5,
+      "located_sources": [
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/global_stability_engineering_input_REQUIRED.json",
+          "sha256": "ef4c68b5dc6a7060b0dcb7a49e5a0ea2b2161e9a0655db05cd14260894f63bff",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/stability_design_basis_evidence_intake_REQUIRED.json",
+          "sha256": "d4131dfce28248d35ee7258fbe5bc70346808ae22e7afe9da0ea811417e605cc",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_4_normative_applicability_stability_design_basis.json",
+          "sha256": "a32ecd9fec257eb0e5ff886851772715d173fe031307b67cca91a281da7d864b",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "reference_type": null,
+              "reference": null,
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO"
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_1_project_stability_design_basis_input_evidence_qualification.json",
+          "sha256": "115ad3b31d1fb4cd698b18ae0d6954380e47b9c0b7003b9aaa791373eb078fc5",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            }
+          ]
+        },
+        {
+          "source_file": "projects/runtime/PHOENIX-PAT-001/results/session_adapters/structural_engineering/validated_v8_1_to_v8_12/v8_6/r9_5_2_4_runtime_input_merge_r9_5_requalification.json",
+          "sha256": "bc99a03527ea57f4edd53a4f15902209261576716b7d684054b081de62a9b1b9",
+          "snapshots": [
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            },
+            {
+              "applicability": null,
+              "methodology_accepted": false,
+              "methodology_acceptance_reference": null,
+              "primary_source_record_id": null,
+              "supporting_source_record_ids": [],
+              "acceptance_criteria": {
+                "minimum_ratio": null
+              },
+              "criteria_traceability": {
+                "minimum_ratio": {
+                  "source_record_id": null,
+                  "clause_reference": null
+                }
+              },
+              "evidence_reference": "R9.3:WEAK_STOREY_STRENGTH_RATIO",
+              "available_surinaame_primary_support": [],
+              "screening_proxy_accepted_for_candidate_gate": false,
+              "screening_proxy_review_reference": null
+            }
+          ]
+        }
+      ],
+      "interpretation": "TECHNICAL_EVIDENCE_REQUIRES_PROFESSIONAL_SCOPE_OR_CRITERION_DECISION"
+    }
+  },
+  "safety": {
+    "technical_evidence_is_not_professional_approval": true,
+    "weak_storey_screening_is_candidate_only": true,
+    "alternate_path_screening_is_not_independent_evidence": true,
+    "automatic_code_compliance_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
