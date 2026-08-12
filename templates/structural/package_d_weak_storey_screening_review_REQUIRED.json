@@ -1,0 +1,12 @@
+{
+  "schema_version": "phoenix.package-d-weak-storey-screening-review-input/1.0",
+  "engine_version": "R9.5.2.7",
+  "package_id": "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+  "check": "WEAK_STOREY_STRENGTH_RATIO",
+  "status": "INPUT_REQUIRED",
+  "screening_proxy_accepted_for_candidate_gate": null,
+  "screening_proxy_review_reference": null,
+  "reviewer_scope": null,
+  "review_status": "INPUT_REQUIRED",
+  "review_note": null
+}

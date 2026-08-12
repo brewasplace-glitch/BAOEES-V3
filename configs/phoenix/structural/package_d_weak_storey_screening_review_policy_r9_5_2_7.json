@@ -1,0 +1,45 @@
+{
+  "schema_version": "phoenix.package-d-weak-storey-screening-review-policy/1.0",
+  "engine_version": "R9.5.2.7",
+  "package_id": "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+  "check": "WEAK_STOREY_STRENGTH_RATIO",
+  "purpose": "Record and validate an explicitly supplied professional review of the existing weak-storey candidate screening proxy for candidate-gate use only.",
+  "required_inputs": [
+    "screening_proxy_accepted_for_candidate_gate",
+    "screening_proxy_review_reference",
+    "reviewer_scope",
+    "review_status"
+  ],
+  "allowed_review_status": [
+    "INPUT_REQUIRED",
+    "REVIEWED_ACCEPTED_FOR_CANDIDATE_GATE",
+    "REVIEWED_NOT_ACCEPTED_FOR_CANDIDATE_GATE"
+  ],
+  "review_semantics": {
+    "candidate_gate_only": true,
+    "does_not_establish_code_compliance": true,
+    "does_not_establish_final_professional_approval": true,
+    "does_not_replace_independent_alternate_path_evidence": true,
+    "does_not_validate_or_invent_normative_numerical_criteria": true
+  },
+  "qualification_rules": {
+    "review_reference_required_when_reviewed": true,
+    "reviewer_scope_required_when_reviewed": true,
+    "explicit_boolean_acceptance_required_when_reviewed": true,
+    "review_status_must_match_boolean_acceptance": true,
+    "automatic_screening_proxy_acceptance": false,
+    "automatic_reviewer_identity_generation": false,
+    "automatic_professional_review": false,
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_r9_5_promotion": false,
+    "production_release": "LOCKED"
+  },
+  "promotion_policy": {
+    "accepted_complete_review_may_be_marked_eligible_for_later_r9_5_promotion": true,
+    "framework_must_not_auto_promote_to_r9_5": true,
+    "package_c_gate_preserved": true,
+    "package_e_gate_preserved": true,
+    "existing_r9_5_r9_4_v8_6_gates_preserved": true
+  }
+}
