@@ -1,0 +1,42 @@
+{
+  "schema_version": "phoenix.package-c-seismic-scope-criteria-policy/1.0",
+  "engine_version": "R9.5.2.6",
+  "package_id": "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+  "checks": [
+    "SOFT_STOREY_STIFFNESS_RATIO",
+    "TORSIONAL_DRIFT_RATIO",
+    "WEAK_STOREY_STRENGTH_RATIO"
+  ],
+  "purpose": "Collect an explicit professionally reviewed seismic applicability decision and, only when applicable, traceable numerical criteria for the three seismic candidate checks.",
+  "allowed_seismic_applicability_status": [
+    "INPUT_REQUIRED",
+    "APPLICABLE",
+    "NOT_APPLICABLE"
+  ],
+  "qualification_rules": {
+    "professional_scope_review_required": true,
+    "scope_review_reference_required": true,
+    "reference_type_required": true,
+    "reference_required": true,
+    "source_record_id_required": true,
+    "criteria_required_when_applicable": true,
+    "criteria_forbidden_as_automatic_defaults": true,
+    "automatic_not_applicable_decision": false,
+    "automatic_normative_value_insertion": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_professional_approval": false,
+    "production_release": "LOCKED"
+  },
+  "applicable_criteria": {
+    "SOFT_STOREY_STIFFNESS_RATIO": "minimum_ratio",
+    "TORSIONAL_DRIFT_RATIO": "max_torsional_drift_ratio",
+    "WEAK_STOREY_STRENGTH_RATIO": "minimum_ratio"
+  },
+  "promotion_policy": {
+    "framework_may_assess_intake_completeness": true,
+    "framework_may_mark_eligible_for_r9_5_promotion": true,
+    "framework_must_not_auto_promote_to_r9_5": true,
+    "r9_5_r9_4_v8_6_gates_preserved": true,
+    "weak_storey_package_d_review_gate_preserved": true
+  }
+}

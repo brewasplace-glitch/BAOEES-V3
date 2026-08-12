@@ -37,6 +37,7 @@ from .project_stability_design_basis_input_evidence_qualification_r9_5_1 import 
 from .stability_design_basis_decision_dossier_evidence_intake_r9_5_2 import build_stability_design_basis_decision_dossier_evidence_intake as _phoenix_build_r9_5_2_stability_design_basis_decision_dossier_evidence_intake, render_decision_dossier_markdown as _phoenix_render_r9_5_2_decision_dossier_markdown
 from .runtime_input_merge_r9_5_requalification_r9_5_2_4 import build_runtime_input_merge_r9_5_requalification as _phoenix_build_r9_5_2_4_runtime_input_merge_r9_5_requalification
 from .package_e_alternate_path_independent_evidence_r9_5_2_5 import build_package_e_alternate_path_independent_evidence as _phoenix_build_r9_5_2_5_package_e_alternate_path_independent_evidence, render_package_e_dossier_markdown as _phoenix_render_r9_5_2_5_package_e_dossier_markdown
+from phoenix.autonomy.package_c_seismic_scope_criteria_r9_5_2_6 import run_package_c_seismic_scope_criteria_r9_5_2_6 as _phoenix_run_package_c_seismic_scope_criteria_r9_5_2_6
 from .stability_ab_project_policy_integration_r9_5_2_2 import apply_ab_project_policy_to_workspace as _phoenix_apply_r9_5_2_2_ab_policy_to_workspace, apply_ab_project_policy_to_r9_5_2_result as _phoenix_apply_r9_5_2_2_ab_policy_to_r9_5_2_result, render_licensed_clause_extract_request as _phoenix_render_r9_5_2_2_licensed_clause_extract_request
 
 VERSION="1.0.0"
@@ -995,6 +996,7 @@ def run_structural_chain(
                                         outputs.append(_repo_ref(_phx_r9525_path,repository))
                                         _phx_r9525_dossier_path=output_dir/"v8_6"/"r9_5_2_5_package_e_alternate_path_independent_evidence.md"
                                         _phx_r9525_dossier_path.write_text(_phoenix_render_r9_5_2_5_package_e_dossier_markdown(_phx_r9525),encoding='utf-8')
+                                        _phoenix_package_c_r9_5_2_6 = _phoenix_run_package_c_seismic_scope_criteria_r9_5_2_6(locals())
                                         outputs.append(_repo_ref(_phx_r9525_dossier_path,repository))
                                         _phx_r95_e=_phx_r9525.get('r9_5_requalified')
                                         if isinstance(_phx_r95_e,dict):
