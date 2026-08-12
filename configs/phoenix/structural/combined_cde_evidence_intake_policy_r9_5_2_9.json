@@ -1,0 +1,38 @@
+{
+  "schema_version": "phoenix.r9-5-cde-combined-evidence-intake-policy/1.0",
+  "engine_version": "R9.5.2.9",
+  "package_id": "PKG-R9.5-CDE-COMBINED-EVIDENCE-INTAKE",
+  "purpose": "Provide one combined professional evidence intake for Packages C, D and E without replacing any existing package-specific validator or the R9.5.2.8 evidence gate.",
+  "runtime_order": [
+    "R9.5.2.9 combined intake normalization",
+    "Package E independent evidence validation",
+    "Package C seismic scope and criteria validation",
+    "Package D weak-storey screening review validation",
+    "R9.5.2.8 remaining evidence gate and controlled R9.5 requalification"
+  ],
+  "authoritative_validators": {
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA": "R9.5.2.6",
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW": "R9.5.2.7",
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE": "R9.5.2.5",
+    "remaining_evidence_gate_and_requalification": "R9.5.2.8"
+  },
+  "input_location": "workspace/inputs/structural/r9_5_remaining_evidence_combined_intake_REQUIRED.json",
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_seismic_applicability_decision": false,
+    "automatic_numerical_criteria_generation": false,
+    "automatic_screening_proxy_acceptance": false,
+    "automatic_independent_evidence_generation": false,
+    "automatic_r9_5_success_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  },
+  "legacy_contracts": {
+    "r9_5_2_2_path_literal_contract_preserved": true,
+    "package_c_validator_preserved": true,
+    "package_d_validator_preserved": true,
+    "package_e_validator_preserved": true,
+    "r9_5_2_8_gate_preserved": true
+  }
+}

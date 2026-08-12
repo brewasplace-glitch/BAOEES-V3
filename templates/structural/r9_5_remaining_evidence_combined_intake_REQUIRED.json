@@ -1,0 +1,76 @@
+{
+  "schema_version": "phoenix.r9-5-cde-combined-evidence-intake/1.0",
+  "engine_version": "R9.5.2.9",
+  "package_id": "PKG-R9.5-CDE-COMBINED-EVIDENCE-INTAKE",
+  "status": "INPUT_REQUIRED",
+  "project_id": null,
+  "bundle_reference": null,
+  "package_inputs": {
+    "PKG-C-SEISMIC-SCOPE-AND-CRITERIA": {
+      "schema_version": "phoenix.package-c-seismic-scope-criteria-input/1.0",
+      "engine_version": "R9.5.2.6",
+      "package_id": "PKG-C-SEISMIC-SCOPE-AND-CRITERIA",
+      "status": "INPUT_REQUIRED",
+      "seismic_applicability_status": "INPUT_REQUIRED",
+      "reference_type": null,
+      "reference": null,
+      "source_record_id": null,
+      "professional_scope_reviewed": false,
+      "scope_review_reference": null,
+      "criteria_if_applicable": {
+        "SOFT_STOREY_STIFFNESS_RATIO": {
+          "minimum_ratio": null,
+          "source_record_id": null,
+          "clause_reference": null
+        },
+        "TORSIONAL_DRIFT_RATIO": {
+          "max_torsional_drift_ratio": null,
+          "source_record_id": null,
+          "clause_reference": null
+        },
+        "WEAK_STOREY_STRENGTH_RATIO": {
+          "minimum_ratio": null,
+          "source_record_id": null,
+          "clause_reference": null
+        }
+      },
+      "review_note": null
+    },
+    "PKG-D-WEAK-STOREY-SCREENING-REVIEW": {
+      "schema_version": "phoenix.package-d-weak-storey-screening-review-input/1.0",
+      "engine_version": "R9.5.2.7",
+      "package_id": "PKG-D-WEAK-STOREY-SCREENING-REVIEW",
+      "check": "WEAK_STOREY_STRENGTH_RATIO",
+      "status": "INPUT_REQUIRED",
+      "screening_proxy_accepted_for_candidate_gate": null,
+      "screening_proxy_review_reference": null,
+      "reviewer_scope": null,
+      "review_status": "INPUT_REQUIRED",
+      "review_note": null
+    },
+    "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE": {
+      "schema_version": "phoenix.package-e-alternate-path-independent-evidence-input/1.0",
+      "engine_version": "R9.5.2.5",
+      "package_id": "PKG-E-ALTERNATE-PATH-INDEPENDENT-EVIDENCE",
+      "status": "INPUT_REQUIRED",
+      "independent_engineering_evidence_reference": null,
+      "repository_relative_source_file": null,
+      "sha256": null,
+      "independent_review_status": "INPUT_REQUIRED",
+      "independent_review_reference": null,
+      "independently_verified_alternate_path": null,
+      "acceptance_criterion_and_traceability": null,
+      "review_note": null
+    }
+  },
+  "declarations": {
+    "no_automatic_professional_approval": true,
+    "no_automatic_code_compliance_claim": true,
+    "no_automatic_seismic_applicability_decision": true,
+    "no_automatic_numerical_criteria_generation": true,
+    "no_automatic_screening_proxy_acceptance": true,
+    "no_automatic_independent_evidence_generation": true,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
