@@ -1,0 +1,55 @@
+{
+  "schema_version": "phoenix.analytical-benchmark-registry/1.0",
+  "benchmarks": [
+    {
+      "id": "AN-BEAM-SS-UDL-001",
+      "type": "SIMPLY_SUPPORTED_BEAM_UDL",
+      "required_inputs": [
+        "q_N_per_m",
+        "L_m"
+      ],
+      "outputs": [
+        "total_load_N",
+        "reaction_each_N",
+        "max_moment_Nm"
+      ],
+      "formulae": [
+        "W = q*L",
+        "R_A = R_B = q*L/2",
+        "M_max = q*L^2/8"
+      ]
+    },
+    {
+      "id": "AN-BEAM-CANT-POINT-001",
+      "type": "CANTILEVER_END_POINT_LOAD",
+      "required_inputs": [
+        "P_N",
+        "L_m"
+      ],
+      "optional_inputs": [
+        "E_Pa",
+        "I_m4"
+      ],
+      "outputs": [
+        "reaction_N",
+        "fixed_end_moment_Nm",
+        "tip_deflection_m_if_EI"
+      ]
+    },
+    {
+      "id": "AN-BAR-AXIAL-001",
+      "type": "AXIAL_BAR",
+      "required_inputs": [
+        "P_N",
+        "L_m",
+        "E_Pa",
+        "A_m2"
+      ],
+      "outputs": [
+        "axial_stress_Pa",
+        "elongation_m"
+      ]
+    }
+  ],
+  "boundary": "These are classical idealized verification relations, not automatic project-code acceptance criteria."
+}

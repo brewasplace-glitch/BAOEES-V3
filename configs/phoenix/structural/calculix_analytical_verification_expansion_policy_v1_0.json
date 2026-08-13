@@ -1,0 +1,47 @@
+{
+  "schema_version": "phoenix.calculix-analytical-verification-expansion-policy/1.0",
+  "version": "1.0.0",
+  "required_baseline": "5a495d330ff4a6fbc635b3a1b4fa6691b59bc9ff",
+  "engine_ids": [
+    "PHX-STRUCTURAL-ANALYTICAL-VERIFICATION",
+    "PHX-CALCULIX-REFERENCE-VERIFICATION"
+  ],
+  "analytical_scope": {
+    "supported_reference_idealizations": [
+      "SIMPLY_SUPPORTED_BEAM_UDL",
+      "CANTILEVER_END_POINT_LOAD",
+      "AXIAL_BAR"
+    ],
+    "unsupported_behavior": "ANALYTICAL_SCOPE_NOT_SUPPORTED",
+    "automatic_normative_acceptance_limits": false,
+    "automatic_project_scope_inference": false
+  },
+  "calculix": {
+    "live_solver_during_install": false,
+    "explicit_live_authorization_required": true,
+    "phoenix_test_mode_disables_live_solver": true,
+    "raw_solver_evidence_required": true,
+    "second_solver_role": "TECHNICAL_NUMERICAL_CROSSCHECK_NOT_PROFESSIONAL_REVIEW"
+  },
+  "golden_beam": {
+    "reference_model_id": "PHX-GOLDEN-SCIA-BEAM-001",
+    "source_manifest": "reference_models/structural/scia/beam_v1_0/reference_model_manifest.json",
+    "analytical_reference": {
+      "q_N_per_m": 1000.0,
+      "L_m": 5.0,
+      "reaction_each_N": 2500.0,
+      "max_moment_Nm": 3125.0
+    },
+    "calculix_reference_mesh": {
+      "element_type": "B31",
+      "element_count": 100
+    },
+    "test_tolerance_scope": "SOFTWARE_GOLDEN_REFERENCE_ONLY_NOT_GENERAL_ENGINEERING"
+  },
+  "safety": {
+    "professional_approval": "NOT_AUTOMATIC",
+    "code_compliance_claim": "NOT_AUTOMATIC",
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
