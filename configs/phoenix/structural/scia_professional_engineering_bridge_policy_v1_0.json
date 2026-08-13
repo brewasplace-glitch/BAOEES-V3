@@ -1,0 +1,52 @@
+{
+  "schema_version": "phoenix.scia-professional-engineering-bridge-policy/1.0",
+  "version": "1.0.0",
+  "engine_id": "PHX-SCIA-PROFESSIONAL-ENGINEERING-BRIDGE",
+  "integration_mode": "ESA_XML_FIRST_WITH_OPTIONAL_LATER_OPENAPI_ADM",
+  "target_runtime": {
+    "product": "SCIA Engineer 18.1",
+    "esa_xml_executable": "C:\\Program Files (x86)\\SCIA\\Engineer18.1\\ESA_XML.exe",
+    "open_api_detected": false,
+    "adm_detected": true,
+    "scia_19_1_automatic_execution_enabled": false
+  },
+  "supported_v1_analysis_types": [
+    "LIN",
+    "NEL"
+  ],
+  "supported_v1_document_exports": [
+    "PDF",
+    "RTF",
+    "HTML",
+    "TXT"
+  ],
+  "engineering_report_strategy": {
+    "direct_newer_sd_switch_assumed_for_18_1": false,
+    "project_embedded_batch_external_regeneration_export_supported_as_expected_evidence": true,
+    "reason": "Avoid assuming newer ESA_XML Engineering Report CLI switches are present in SCIA 18.1."
+  },
+  "execution_contract": {
+    "seed_esa_required": true,
+    "optional_input_xml": true,
+    "optional_output_xml": true,
+    "working_copy_required": true,
+    "raw_stdout_stderr_log_required": true,
+    "sha256_manifest_required": true,
+    "zero_exit_is_not_verification": true,
+    "missing_expected_output_is_failure": true
+  },
+  "status_model": [
+    "READY_FOR_SCIA_EXECUTION",
+    "CALCULATED_UNVERIFIED",
+    "SCIA_EXECUTION_FAILED",
+    "INVALID_CALCULATION_PLAN"
+  ],
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_verification_claim": false,
+    "automatic_cross_verification_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

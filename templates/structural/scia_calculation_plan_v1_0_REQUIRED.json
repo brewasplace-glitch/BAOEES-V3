@@ -1,0 +1,20 @@
+{
+  "schema_version": "phoenix.scia-calculation-plan/1.0",
+  "project_id": "REPLACE_PROJECT_ID",
+  "analysis_type": "LIN",
+  "seed_esa": "projects/runtime/REPLACE_PROJECT_ID/inputs/structural/scia/base_model.esa",
+  "input_xml": null,
+  "evidence_root": "projects/runtime/REPLACE_PROJECT_ID/results/scia/run_001",
+  "document_export": {
+    "type": "PDF",
+    "output_file": "projects/runtime/REPLACE_PROJECT_ID/results/scia/run_001/scia_document.pdf",
+    "document_name": null
+  },
+  "output_xml": null,
+  "output_xml_format": null,
+  "expected_project_generated_exports": [],
+  "notes": [
+    "Use NEL only when the prepared SCIA project/model and engineering basis require it.",
+    "SCIA success is CALCULATED_UNVERIFIED until Phoenix independent verification and professional review are completed."
+  ]
+}
