@@ -1,0 +1,28 @@
+{
+  "schema_version": "phoenix.calculix-reaction-equilibrium-hardening-policy/1.1",
+  "version": "1.1.0",
+  "required_baseline": "e85f1b1078594a43837bee6cfe8b5bbb0f630a87",
+  "engine_id": "PHX-CALCULIX-REACTION-EQUILIBRIUM-HARDENING",
+  "golden_reference": {
+    "reference_model_id": "PHX-GOLDEN-SCIA-BEAM-001",
+    "expected_applied_vertical_load_N": -5000.0,
+    "observed_support_force_total_N": 4950.0,
+    "observed_direct_support_cload_total_N": -50.0,
+    "reconstruction": "reported_support_force_z - direct_support_cload_z",
+    "expected_reconstructed_total_N": 5000.0,
+    "expected_each_support_reaction_N": 2500.0,
+    "software_test_tolerance_N": 5.0,
+    "tolerance_scope": "SOFTWARE_GOLDEN_REFERENCE_ONLY_NOT_GENERAL_ENGINEERING"
+  },
+  "raw_evidence": {
+    "immutable": true,
+    "hash_required": true,
+    "solver_result_overwrite": false
+  },
+  "safety": {
+    "professional_approval": "NOT_AUTOMATIC",
+    "code_compliance_claim": "NOT_AUTOMATIC",
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
