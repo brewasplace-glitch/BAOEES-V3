@@ -1,0 +1,41 @@
+{
+  "schema_version": "phoenix.structural-independent-verification-policy/1.0",
+  "version": "1.0.0",
+  "engine_id": "PHX-STRUCTURAL-INDEPENDENT-VERIFICATION",
+  "purpose": "Technical/numerical verification of structural calculation evidence before professional review.",
+  "verification_levels": {
+    "CALCULATED_UNVERIFIED": "Primary solver completed; no independent technical verification claim.",
+    "TECHNICALLY_VERIFIED": "All required technical checks passed, but no passing SCIA/CalculiX second-solver comparison was required/performed.",
+    "TECHNICALLY_CROSS_VERIFIED": "All required technical checks passed and required SCIA/CalculiX second-solver comparisons passed.",
+    "PROFESSIONALLY_REVIEWED": "Outside this engine; requires controlled professional review."
+  },
+  "categories": [
+    "source_evidence",
+    "global_equilibrium",
+    "analytical_spot_checks",
+    "load_path",
+    "solver_health",
+    "scia_calculix_cross_check",
+    "mesh_convergence",
+    "sensitivity",
+    "evidence_integrity"
+  ],
+  "criterion_policy": {
+    "automatic_default_tolerances": false,
+    "project_specific_explicit_tolerances_required": true,
+    "not_applicable_requires_rationale": true,
+    "not_applicable_requires_source_record_id": true
+  },
+  "second_solver_boundary": {
+    "calculix_is_secondary_numerical_verification_engine": true,
+    "second_solver_match_is_independent_professional_review": false
+  },
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_for_construction_release": false,
+    "automatic_production_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

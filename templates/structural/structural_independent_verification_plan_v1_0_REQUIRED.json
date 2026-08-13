@@ -1,0 +1,100 @@
+{
+  "schema_version": "phoenix.structural-independent-verification-plan/1.0",
+  "project_id": "REPLACE_PROJECT_ID",
+  "categories": {
+    "source_evidence": {
+      "applicability": "REQUIRED",
+      "scia_run_result": "projects/runtime/REPLACE_PROJECT_ID/results/scia/run_001/scia_run_result.json"
+    },
+    "global_equilibrium": {
+      "applicability": "REQUIRED",
+      "cases": [
+        {
+          "case_id": "REPLACE_CASE",
+          "applied": {
+            "Fx": null,
+            "Fy": null,
+            "Fz": null,
+            "Mx": null,
+            "My": null,
+            "Mz": null
+          },
+          "reactions": {
+            "Fx": null,
+            "Fy": null,
+            "Fz": null,
+            "Mx": null,
+            "My": null,
+            "Mz": null
+          },
+          "tolerances": {
+            "Fx": {
+              "mode": "ALL",
+              "absolute": null,
+              "relative": null
+            },
+            "Fy": {
+              "mode": "ALL",
+              "absolute": null,
+              "relative": null
+            },
+            "Fz": {
+              "mode": "ALL",
+              "absolute": null,
+              "relative": null
+            },
+            "Mx": {
+              "mode": "ALL",
+              "absolute": null,
+              "relative": null
+            },
+            "My": {
+              "mode": "ALL",
+              "absolute": null,
+              "relative": null
+            },
+            "Mz": {
+              "mode": "ALL",
+              "absolute": null,
+              "relative": null
+            }
+          }
+        }
+      ]
+    },
+    "analytical_spot_checks": {
+      "applicability": "REQUIRED",
+      "checks": []
+    },
+    "load_path": {
+      "applicability": "REQUIRED",
+      "paths": []
+    },
+    "solver_health": {
+      "applicability": "REQUIRED",
+      "log_files": [],
+      "blocking_patterns": []
+    },
+    "scia_calculix_cross_check": {
+      "applicability": "REQUIRED",
+      "comparisons": []
+    },
+    "mesh_convergence": {
+      "applicability": "REQUIRED",
+      "studies": []
+    },
+    "sensitivity": {
+      "applicability": "REQUIRED",
+      "studies": []
+    },
+    "evidence_integrity": {
+      "applicability": "REQUIRED",
+      "files": []
+    }
+  },
+  "notes": [
+    "No tolerance values are generated automatically.",
+    "If a category is not applicable, set applicability to NOT_APPLICABLE and provide both rationale and source_record_id.",
+    "TECHNICALLY_CROSS_VERIFIED is not professional approval or a code-compliance claim."
+  ]
+}
