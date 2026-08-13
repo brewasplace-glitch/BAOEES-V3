@@ -1,0 +1,19 @@
+{
+  "schema_version": "phoenix.professional-review-return/1.0",
+  "engine_version": "1.0.0",
+  "project_id": "REPLACE_PROJECT_ID",
+  "dossier_reference": "REPLACE_DOSSIER_REFERENCE",
+  "submission_confirmed": false,
+  "review_record": {
+    "reviewer_name": null,
+    "reviewer_organization": null,
+    "reviewer_role": null,
+    "review_date": null,
+    "signature_reference": null,
+    "professional_scope": null
+  },
+  "decision": "INPUT_REQUIRED",
+  "review_comment": null,
+  "reviewed_replacement_files": [],
+  "declaration": "This return is human/professional input. Phoenix does not author the professional decision."
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "phoenix.professional-dossier-plan/1.0",
+  "project_id": "REPLACE_PROJECT_ID",
+  "dossier_reference": "REPLACE_PROJECT_ID-STRUCTURAL-PROFESSIONAL-REVIEW-001",
+  "scia_run_result": "projects/runtime/REPLACE_PROJECT_ID/results/scia/run_001/scia_run_result.json",
+  "verification_result": "projects/runtime/REPLACE_PROJECT_ID/results/verification/structural_independent_verification_result.json",
+  "dossier_root": "projects/runtime/REPLACE_PROJECT_ID/review/structural/review_001",
+  "deliverables": [
+    {
+      "role": "STRUCTURAL_BASIS_PDF",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "STRUCTURAL_CALCULATION_PDF",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "EDITABLE_REPORT_DOCX",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "SCIA_ESA",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "LOADS_AND_COMBINATIONS",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "PHOENIX_QA_QC",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "SCIA_CALCULIX_VERIFICATION",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "ANALYTICAL_SPOT_CHECKS",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "EVIDENCE_MANIFEST",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "OPEN_REVIEW_POINTS",
+      "path": null,
+      "required": true
+    }
+  ],
+  "notes": [
+    "The dossier is immutable after packaging.",
+    "Returned changed files are copied into a separate returned directory.",
+    "A professional review return never automatically releases Production or FOR-CONSTRUCTION."
+  ]
+}

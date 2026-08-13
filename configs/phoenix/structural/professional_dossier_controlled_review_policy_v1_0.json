@@ -1,0 +1,48 @@
+{
+  "schema_version": "phoenix.professional-dossier-controlled-review-policy/1.0",
+  "version": "1.0.0",
+  "engine_id": "PHX-PROFESSIONAL-DOSSIER-CONTROLLED-REVIEW",
+  "prerequisites": {
+    "scia_bridge": "SCIA Professional Engineering Bridge v1.0",
+    "technical_verification": "Structural Independent Verification v1.0"
+  },
+  "eligible_technical_statuses": [
+    "TECHNICALLY_VERIFIED",
+    "TECHNICALLY_CROSS_VERIFIED"
+  ],
+  "standard_reviewer_deliverables": [
+    "STRUCTURAL_BASIS_PDF",
+    "STRUCTURAL_CALCULATION_PDF",
+    "EDITABLE_REPORT_DOCX",
+    "SCIA_ESA",
+    "LOADS_AND_COMBINATIONS",
+    "PHOENIX_QA_QC",
+    "SCIA_CALCULIX_VERIFICATION",
+    "ANALYTICAL_SPOT_CHECKS",
+    "EVIDENCE_MANIFEST",
+    "OPEN_REVIEW_POINTS",
+    "REVIEWER_RETURN"
+  ],
+  "review_decisions": [
+    "REVIEWED_WITHOUT_CHANGES",
+    "REVIEWED_WITH_CHANGES",
+    "RECALCULATION_REQUIRED",
+    "REJECTED"
+  ],
+  "controlled_return": {
+    "human_submission_confirmed_required": true,
+    "reviewer_identity_required": true,
+    "signature_reference_required": true,
+    "professional_scope_required": true,
+    "changed_files_copied_not_overwritten": true,
+    "changed_files_sha256_compared": true,
+    "reviewed_with_changes_requires_content_change": true
+  },
+  "release_boundary": {
+    "professional_review_return_automatically_releases_production": false,
+    "professional_review_return_automatically_releases_for_construction": false,
+    "automatic_code_compliance_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
