@@ -1,0 +1,15 @@
+{
+  "schema_version": "phoenix.scia-project-preparation-request/1.0",
+  "canonical_model": "REQUIRED_PATH_TO_CANONICAL_MODEL_JSON",
+  "output_root": "REQUIRED_OUTPUT_DIRECTORY",
+  "seed_esa": "OPTIONAL_EXISTING_SCIA_PROJECT_SEED_ESA",
+  "xml_update": "OPTIONAL_SCIA_XML_UPDATE_FILE",
+  "xml_definition": "OPTIONAL_SCIA_XML_DEF_FILE",
+  "analysis_scope": "REQUIRED_PROJECT_SPECIFIC_VALUE_EXAMPLE_LIN",
+  "esa_xml_path": "C:\\Program Files (x86)\\SCIA\\Engineer18.1\\ESA_XML.exe",
+  "notes": [
+    "No binary ESA synthesis is performed.",
+    "No live SCIA calculation is started by preparation.",
+    "Analysis scope must be project-specific and explicit."
+  ]
+}

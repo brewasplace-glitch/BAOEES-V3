@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phoenix://schemas/structural/canonical_structural_model_v1_0",
+  "title": "PROJECT PHOENIX Canonical Structural Model v1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "model_id",
+    "units",
+    "nodes",
+    "materials",
+    "sections",
+    "members",
+    "supports",
+    "load_cases",
+    "nodal_loads",
+    "line_loads",
+    "load_combinations",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "phoenix.canonical-structural-model/1.0"
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "type": "object",
+      "required": [
+        "length",
+        "force"
+      ],
+      "properties": {
+        "length": {
+          "type": "string",
+          "minLength": 1
+        },
+        "force": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mass": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "x",
+          "y",
+          "z"
+        ]
+      }
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "start_node",
+          "end_node",
+          "material",
+          "section"
+        ]
+      }
+    },
+    "supports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "node"
+        ]
+      }
+    },
+    "load_cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "nodal_loads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "node",
+          "load_case"
+        ]
+      }
+    },
+    "line_loads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "member",
+          "load_case"
+        ]
+      }
+    },
+    "load_combinations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "terms"
+        ]
+      }
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

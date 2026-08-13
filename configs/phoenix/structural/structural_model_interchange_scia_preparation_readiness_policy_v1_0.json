@@ -1,0 +1,60 @@
+{
+  "schema_version": "phoenix.structural-interchange-scia-preparation-readiness-policy/1.0",
+  "version": "1.0.0",
+  "required_baseline": "f676a2bd070e5cbf4dea3f2adbe9b8b7f73a7f10",
+  "engine_ids": [
+    "PHX-STRUCTURAL-MODEL-INTERCHANGE-SCIA-PREPARATION",
+    "PHX-SCIA-ENVIRONMENT-READINESS"
+  ],
+  "purpose": [
+    "solver-neutral canonical structural model validation",
+    "deterministic SCIA project preparation and evidence packaging",
+    "read-only SCIA installation/license-environment readiness observation",
+    "explicitly authorized controlled SCIA environment probe"
+  ],
+  "canonical_model": {
+    "schema": "templates/structural/canonical_structural_model_v1_0.schema.json",
+    "cross_reference_validation": true,
+    "deterministic_sha256": true,
+    "automatic_normative_assumptions": false
+  },
+  "scia_preparation": {
+    "binary_esa_synthesis": "PROHIBITED",
+    "seed_esa_exact_copy": true,
+    "xml_def_exact_copy": true,
+    "project_specific_analysis_scope": "REQUIRED",
+    "command_plan_only": true,
+    "live_execution_during_preparation": false,
+    "max_preparation_status_without_real_seed": "SCIA_MODEL_BUILD_REQUIRED"
+  },
+  "scia_environment_readiness": {
+    "target": "SCIA Engineer 18.1 / ESA_XML",
+    "default_esa_xml": "C:\\Program Files (x86)\\SCIA\\Engineer18.1\\ESA_XML.exe",
+    "default_esa": "C:\\Program Files (x86)\\SCIA\\Engineer18.1\\ESA.exe",
+    "default_lockman": "C:\\Program Files (x86)\\SCIA\\Engineer18.1\\Lockman.exe",
+    "service_actions": "OBSERVE_ONLY_NEVER_START_STOP_OR_RECONFIGURE",
+    "license_changes": "PROHIBITED",
+    "live_probe": "EXPLICIT_ALLOW_LIVE_PROBE_REQUIRED",
+    "exit_codes_scia_18_1_builtin_help": {
+      "0": "Succeeded",
+      "1": "Unable to initialize MFC",
+      "2": "Missing arguments",
+      "3": "Invalid arguments",
+      "4": "Unable to open ProjectFile",
+      "5": "Calculation failed",
+      "6": "Unable to initialize application environment",
+      "7": "Error during update ProjectFile by XMLUpdateFile",
+      "8": "Error during create export outputs",
+      "9": "Error during create XML outputs",
+      "10": "Error during update ProjectFile by XLSX Update"
+    }
+  },
+  "safety": {
+    "professional_approval": "NOT_AUTOMATIC",
+    "code_compliance_claim": "NOT_AUTOMATIC",
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED",
+    "pat001_project_evidence_from_reference_models": false,
+    "solver_readiness_is_engineering_approval": false
+  }
+}
