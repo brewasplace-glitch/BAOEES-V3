@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<def_project xmlns="http://www.scia.cz">
+   
+   <def_container id="{BC16B3C6-F464-11D4-94D3-000000000000}" clsid="{BC16B3C6-F464-11D4-94D3-000000000000}" progid="DataAddLoad.EP_LineForceLine.1">
+      
+      <def_table id="CFA8D02A-AFCB-4A72-98C7-CF454B1D3BD7" name="xml\default" type="vertical" clsid="{BC16B3C6-F464-11D4-94D3-000000000000}" progid="DataAddLoad.EP_LineForceLine.1" size="15">
+         
+         
+         <def_property x="0" name="Name" type="string" id="{4364BC01-AAB7-11D4-B3D9-00104BC3B531}"/>
+         
+         
+         <def_property x="1" name="Member" type="ref" id="{5BE4E6FE-0434-4AF7-8A3F-036B057CCB1E}">
+         <def_ref id="{ECB5D684-7357-11D4-9F6C-00104BC3B443}" progid="EP_DSG_Elements.EP_Beam.1"/>
+         </def_property>
+         
+         
+         <def_property x="2" name="Load case" type="ref" id="{AACF96D6-D986-421C-9FF2-D0B696A6B1F6}">
+         <def_ref id="{0908D21F-481F-11D4-AB84-00C06C452330}" progid="DataSetScia.EP_LoadCase.1"/>
+         </def_property>
+         
+         
+         <def_property x="3" name="Direction" type="enum" flag="262144" id="{49F8017D-A4E5-11D4-A43A-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="X"/>
+         <it_enum v="2" t="Z"/>
+         </def_enum>
+         </def_property>
+         
+         
+         <def_property x="4" name="Type" type="enum" flag="262144" id="{49F8017C-A4E5-11D4-A43A-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="Force"/>
+         <it_enum v="1" t="Self weight"/>
+         </def_enum>
+         </def_property>
+         
+         
+         <def_property x="5" name="Distribution" type="enum" id="{49F80185-A4E5-11D4-A43A-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="Uniform"/>
+         <it_enum v="1" t="Trapez"/>
+         </def_enum>
+         </def_property>
+         
+         
+         <def_property x="6" name="Value - P@1" type="param" flag="65536" id="{49F80183-A4E5-11D4-A43A-000000000000}"/>
+         
+         
+         <def_property x="7" name="System" type="enum" id="{ACC6FEC0-B7FC-11D4-ADD9-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="GCS"/>
+         <it_enum v="1" t="LCS"/>
+         </def_enum>
+         </def_property>
+         
+         
+         <def_property x="8" name="Location" type="enum" id="{F68C16F1-8E6D-11D4-A419-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="Length"/>
+         <it_enum v="1" t="Projection"/>
+         </def_enum>
+         </def_property>
+         
+         
+         <def_property x="9" name="Position x1" type="param" flag="65536" id="{EDA4B5AE-8A80-11D4-A414-000000000000}"/>
+         
+         
+         <def_property x="10" name="Position x2" type="param" flag="65536" id="{F68C16F0-8E6D-11D4-A419-000000000000}"/>
+         
+         
+         <def_property x="11" name="Coord. definition" type="enum" id="{EDA4B5AB-8A80-11D4-A414-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="Abso"/>
+         <it_enum v="1" t="Rela"/>
+         </def_enum>
+         </def_property>
+         
+         
+         <def_property x="12" name="Origin" type="enum" id="{EDA4B5AA-8A80-11D4-A414-000000000000}">
+         <def_enum size="2">
+         <it_enum v="0" t="From start"/>
+         <it_enum v="1" t="From end"/>
+         </def_enum>
+         </def_property>
+         
+      </def_table>
+   </def_container>
+</def_project>

@@ -1,0 +1,75 @@
+{
+  "schema_version": "phoenix.scia-beam-reference-model/1.0",
+  "reference_model_id": "PHX-GOLDEN-SCIA-BEAM-001",
+  "classification": "GOLDEN_REFERENCE_MODEL_SOFTWARE_VALIDATION_ONLY",
+  "source_files": {
+    "Beam.esa": "413d7660d39274c49b9b52c8d919e29a795e39fd7d481b5a0a26e6a22460ff5a",
+    "Beam.xml": "b601b81ceb51e7dbf7da35d8c7e04f018bc9db726e60a368f4a32a4d3428c54d",
+    "Beam.xml.def": "37742fd6a9bf4ffb881b16c7523ecac837cdc72283eb2772e7b0da435122b719",
+    "Beam_preview.jpg": "e2ffbc8b8e7c563e8d7f6015599753011ef974ab4f9cf0bad4b8b79b01f0e2c3"
+  },
+  "source_observations": {
+    "xml": {
+      "def_uri": "Beam.xml.def",
+      "load_name": "LF1",
+      "member": "B1",
+      "load_case": "LC1",
+      "direction": "Z",
+      "type": "Force",
+      "distribution": "Uniform",
+      "value": -1000.0,
+      "system": "GCS",
+      "location": "Length",
+      "position_x1": 0.0,
+      "position_x2": 1.0,
+      "coord_definition": "Rela",
+      "origin": "From start"
+    },
+    "existing_scia_calculation_protocol": {
+      "analysis": "Linear calculation",
+      "load_case": "LC1",
+      "loads_kN": [
+        0.0,
+        0.0,
+        -5.0
+      ],
+      "reactions_in_nodes_kN": [
+        0.0,
+        0.0,
+        5.0
+      ]
+    },
+    "embedded_preview_sha256": "e2ffbc8b8e7c563e8d7f6015599753011ef974ab4f9cf0bad4b8b79b01f0e2c3",
+    "support_topology_declaration": {
+      "type": "SIMPLY_SUPPORTED_BEAM",
+      "basis": "Embedded Beam.esa preview supplied with reference model; left pinned/right roller visual topology.",
+      "engineering_project_claim": false
+    }
+  },
+  "derived_reference_targets": {
+    "line_load_N_per_m": -1000.0,
+    "total_vertical_load_N": -5000.0,
+    "span_m": 5.0,
+    "support_reaction_each_N": 2500.0,
+    "max_sagging_moment_Nm": 3125.0,
+    "derivation": {
+      "span": "abs(total load / uniform line load) = 5000 / 1000 = 5 m",
+      "reaction_each": "qL/2 for symmetric simply supported reference beam",
+      "max_moment": "qL^2/8 for symmetric simply supported reference beam"
+    }
+  },
+  "benchmark_tolerances": {
+    "scope": "SOFTWARE_REFERENCE_TEST_ONLY_NOT_GENERAL_ENGINEERING_TOLERANCE",
+    "scia_equilibrium_absolute_N": 1.0,
+    "scia_known_total_load_absolute_N": 1.0,
+    "calculix_total_reaction_absolute_N": 5.0,
+    "scia_calculix_total_reaction_absolute_N": 5.0
+  },
+  "safety": {
+    "not_pat001_project_evidence": true,
+    "not_professional_approval": true,
+    "not_code_compliance_claim": true,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

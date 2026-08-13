@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<project xmlns="http://www.scia.cz">
+   
+   <def uri="Beam.xml.def"/>
+   
+   <container id="{BC16B3C6-F464-11D4-94D3-000000000000}" t="DataAddLoad.EP_LineForceLine.1">
+      
+      <table id="CFA8D02A-AFCB-4A72-98C7-CF454B1D3BD7" t="DataAddLoad.EP_LineForceLine.1">
+         
+         <h>
+            <h0 t="Name"/>
+            <h1 t="Member"/>
+            <h2 t="Load case"/>
+            <h3 t="Direction"/>
+            <h4 t="Type"/>
+            <h5 t="Distribution"/>
+            <h6 t="Value - P@1"/>
+            <h7 t="System"/>
+            <h8 t="Location"/>
+            <h9 t="Position x1"/>
+            <h10 t="Position x2"/>
+            <h11 t="Coord. definition"/>
+            <h12 t="Origin"/></h>
+         <obj id="1" nm="LF1">
+            <p0 v="LF1"/>
+            <p1 i="1" n="B1"/>
+            <p2 i="1" n="LC1"/>
+            <p3 v="2" t="Z"/>
+            <p4 v="0" t="Force"/>
+            <p5 v="0" t="Uniform"/>
+            <p6 v="-1000"/>
+            <p7 v="0" t="GCS"/>
+            <p8 v="0" t="Length"/>
+            <p9 v="0"/>
+            <p10 v="1"/>
+            <p11 v="1" t="Rela"/>
+            <p12 v="0" t="From start"/></obj>
+      </table>
+   </container>
+</project> 

@@ -1,0 +1,6 @@
+# Immutable external Golden Reference source artifacts
+# Preserve exact bytes and exclude source whitespace from Git text linting.
+Beam.esa binary
+Beam.xml binary
+Beam.xml.def binary
+Beam_preview.jpg binary

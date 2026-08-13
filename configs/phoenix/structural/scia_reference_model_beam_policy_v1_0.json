@@ -1,0 +1,34 @@
+{
+  "schema_version": "phoenix.scia-reference-beam-policy/1.0",
+  "version": "1.0.0",
+  "engine_id": "PHX-SCIA-REFERENCE-BEAM-VALIDATION",
+  "reference_model_id": "PHX-GOLDEN-SCIA-BEAM-001",
+  "classification": "SOFTWARE_GOLDEN_REFERENCE_MODEL",
+  "required_baseline": "d6fa925863ee69e936509dd64fd5be29c70d7cf5",
+  "validation_chain": [
+    "REFERENCE_MODEL_SOURCE_VALIDATED",
+    "REFERENCE_MODEL_SCIA_LIVE_VALIDATED",
+    "REFERENCE_MODEL_SCIA_ANALYTICAL_VALIDATED",
+    "TECHNICALLY_CROSS_VERIFIED_REFERENCE_MODEL"
+  ],
+  "scia": {
+    "runtime": "SCIA Engineer 18.1",
+    "integration": "ESA_XML",
+    "analysis": "LIN",
+    "input_xml": "Beam.xml",
+    "input_def": "Beam.xml.def"
+  },
+  "calculix": {
+    "role": "secondary numerical reference cross-check",
+    "beam_elements": 100,
+    "load_mapping": "equivalent nodal loads representing the same 1 kN/m UDL",
+    "professional_review": false
+  },
+  "safety": {
+    "pat001_project_evidence": false,
+    "professional_approval": false,
+    "code_compliance_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
