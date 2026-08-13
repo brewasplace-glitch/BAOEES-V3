@@ -1,0 +1,26 @@
+{
+  "schema_version": "phoenix.structural-scia-e2e-gap-register/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "gaps": [
+    {
+      "gate": "SCIA_SEED",
+      "status": "BLOCKED_SCIA_SEED_REQUIRED",
+      "requirement": "One unambiguous real project .ESA seed under the project runtime tree.",
+      "automatic_fabrication_allowed": false
+    },
+    {
+      "gate": "TECHNICAL_VERIFICATION",
+      "status": "VERIFICATION_PLAN_REQUIRED",
+      "requirement": "projects/runtime/PHOENIX-PAT-001/inputs/structural/scia_e2e_v1_0/structural_independent_verification_plan_REQUIRED.json",
+      "note": "Explicit project evidence and tolerances are required; Phoenix supplies no default engineering tolerances."
+    },
+    {
+      "gate": "PROFESSIONAL_DOSSIER",
+      "status": "DOSSIER_PLAN_REQUIRED",
+      "requirement": "projects/runtime/PHOENIX-PAT-001/inputs/structural/scia_e2e_v1_0/professional_dossier_plan_REQUIRED.json",
+      "note": "Required PDF/DOCX/ESA/evidence deliverables must physically exist before packaging."
+    }
+  ],
+  "production_release": "LOCKED",
+  "for_construction_release": "LOCKED"
+}

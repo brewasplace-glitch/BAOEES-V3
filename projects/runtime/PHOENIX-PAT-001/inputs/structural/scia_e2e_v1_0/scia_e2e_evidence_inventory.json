@@ -1,0 +1,18 @@
+{
+  "schema_version": "phoenix.structural-scia-e2e-evidence-inventory/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "esa_candidates": [],
+  "selected_seed": null,
+  "verification_plan_discovered": null,
+  "dossier_plan_discovered": null,
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_project_analysis_scope_decision": false,
+    "automatic_verification_tolerance_generation": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "phoenix.structural-scia-e2e-control/1.0",
+  "engine_version": "1.0.0",
+  "project_id": "PHOENIX-PAT-001",
+  "execution_mode": "REAL_PROJECT_E2E",
+  "scia": {
+    "seed_esa": null,
+    "analysis_type": "LIN",
+    "analysis_scope_note": "LIN is used only for the first live E2E pipeline baseline. It is not an automatic final project analysis-scope decision.",
+    "input_xml": null,
+    "document_export": null,
+    "output_xml": null,
+    "output_xml_format": null,
+    "expected_project_generated_exports": [],
+    "timeout_seconds": 3600
+  },
+  "verification": {
+    "plan_path": null,
+    "required_for_technical_gate": true
+  },
+  "professional_dossier": {
+    "plan_path": null,
+    "required_for_review_gate": true
+  },
+  "automatic_professional_review": false,
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_project_analysis_scope_decision": false,
+    "automatic_verification_tolerance_generation": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "phoenix.structural-scia-e2e-readiness/1.0",
+  "engine_id": "PHX-STRUCTURAL-SCIA-END-TO-END",
+  "engine_version": "1.0.0",
+  "project_id": "PHOENIX-PAT-001",
+  "status": "BLOCKED_SCIA_SEED_REQUIRED",
+  "scia_seed_ready": false,
+  "live_scia_baseline_ready": false,
+  "technical_verification_plan_discovered": false,
+  "professional_dossier_plan_discovered": false,
+  "full_e2e_without_further_input_ready": false,
+  "control_file": "projects/runtime/PHOENIX-PAT-001/inputs/structural/scia_e2e_v1_0/scia_e2e_control_REQUIRED.json",
+  "gap_count": 3,
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_project_analysis_scope_decision": false,
+    "automatic_verification_tolerance_generation": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

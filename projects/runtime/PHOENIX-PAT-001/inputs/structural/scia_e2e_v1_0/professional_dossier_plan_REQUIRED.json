@@ -1,0 +1,61 @@
+{
+  "schema_version": "phoenix.professional-dossier-plan/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "dossier_reference": "PHOENIX-PAT-001-STRUCTURAL-PROFESSIONAL-REVIEW-001",
+  "scia_run_result": "projects/runtime/PHOENIX-PAT-001/results/scia/e2e_v1_0/run_001/scia_run_result.json",
+  "verification_result": "projects/runtime/PHOENIX-PAT-001/results/verification/e2e_v1_0/structural_independent_verification_result.json",
+  "dossier_root": "projects/runtime/PHOENIX-PAT-001/review/structural/e2e_v1_0/review_001",
+  "deliverables": [
+    {
+      "role": "STRUCTURAL_BASIS_PDF",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "STRUCTURAL_CALCULATION_PDF",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "EDITABLE_REPORT_DOCX",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "SCIA_ESA",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "LOADS_AND_COMBINATIONS",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "PHOENIX_QA_QC",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "SCIA_CALCULIX_VERIFICATION",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "ANALYTICAL_SPOT_CHECKS",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "EVIDENCE_MANIFEST",
+      "path": null,
+      "required": true
+    },
+    {
+      "role": "OPEN_REVIEW_POINTS",
+      "path": null,
+      "required": true
+    }
+  ],
+  "safety_note": "Professional dossier packaging requires actual files; placeholders do not pass."
+}

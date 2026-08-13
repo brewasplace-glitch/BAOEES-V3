@@ -1,0 +1,43 @@
+{
+  "schema_version": "phoenix.structural-independent-verification-plan/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "categories": {
+    "source_evidence": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "global_equilibrium": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "analytical_spot_checks": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "load_path": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "solver_health": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "scia_calculix_cross_check": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "mesh_convergence": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "sensitivity": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    },
+    "evidence_integrity": {
+      "applicability": "INPUT_REQUIRED",
+      "note": "Set REQUIRED with genuine project evidence/criteria, or NOT_APPLICABLE with rationale + source_record_id."
+    }
+  },
+  "safety_note": "No default engineering tolerances may be invented."
+}

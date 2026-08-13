@@ -1,0 +1,44 @@
+{
+  "schema_version": "phoenix.structural-scia-end-to-end-policy/1.0",
+  "version": "1.0.0",
+  "engine_id": "PHX-STRUCTURAL-SCIA-END-TO-END",
+  "first_project": "PHOENIX-PAT-001",
+  "generic_after_success": true,
+  "prerequisites": [
+    "SCIA Professional Engineering Bridge v1.0",
+    "Structural Independent Verification v1.0",
+    "Professional Dossier & Controlled Review v1.0"
+  ],
+  "state_machine": [
+    "BLOCKED_SCIA_SEED_REQUIRED",
+    "BLOCKED_SCIA_SEED_SELECTION_REQUIRED",
+    "READY_FOR_LIVE_SCIA_BASELINE",
+    "CALCULATED_UNVERIFIED_VERIFICATION_INPUT_REQUIRED",
+    "TECHNICALLY_VERIFIED_DOSSIER_INPUT_REQUIRED",
+    "TECHNICALLY_CROSS_VERIFIED_DOSSIER_INPUT_REQUIRED",
+    "READY_FOR_PROFESSIONAL_REVIEW"
+  ],
+  "scia_seed_policy": {
+    "fabricate_esa_seed": false,
+    "auto_select_only_one_high_confidence_project_scoped_seed": true,
+    "results_or_review_artifacts_are_not_auto_selected": true
+  },
+  "first_live_run": {
+    "analysis_type": "LIN",
+    "purpose": "E2E pipeline baseline only",
+    "final_project_analysis_scope_decision": false
+  },
+  "verification_policy": {
+    "default_tolerances": false,
+    "explicit_project_criteria_required": true,
+    "calculix_second_solver_is_not_professional_review": true
+  },
+  "professional_review": {
+    "simulated_by_phoenix": false,
+    "human_return_required": true
+  },
+  "release": {
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
