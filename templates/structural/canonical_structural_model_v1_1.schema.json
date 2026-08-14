@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "phoenix.canonical-structural-model/1.1",
+  "title": "Project Phoenix Canonical Structural Model v1.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "model_id",
+    "units",
+    "nodes",
+    "materials",
+    "sections",
+    "members",
+    "shells",
+    "supports",
+    "load_cases",
+    "load_actions",
+    "load_combinations",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "phoenix.canonical-structural-model/1.1"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "type": "object",
+      "required": [
+        "length",
+        "force"
+      ],
+      "properties": {
+        "length": {
+          "type": "string",
+          "minLength": 1
+        },
+        "force": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mass": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "moment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stress": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "nodes": {
+      "type": "array"
+    },
+    "materials": {
+      "type": "array"
+    },
+    "sections": {
+      "type": "array"
+    },
+    "members": {
+      "type": "array"
+    },
+    "shells": {
+      "type": "array"
+    },
+    "supports": {
+      "type": "array"
+    },
+    "load_cases": {
+      "type": "array"
+    },
+    "load_actions": {
+      "type": "array"
+    },
+    "load_combinations": {
+      "type": "array"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

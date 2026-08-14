@@ -1,0 +1,60 @@
+{
+  "schema_version": "phoenix.pat001-canonicalization-adapter-harvest-hardening-policy/1.2",
+  "version": "1.2.0",
+  "required_baseline": "c215de4fd3989428fe3b9e6d559187fc8305fab5",
+  "project_id": "PHOENIX-PAT-001",
+  "engine_id": "PHX-PAT001-CANONICALIZATION-ADAPTER-HARVEST-HARDENING",
+  "canonical_model": {
+    "schema_version": "phoenix.canonical-structural-model/1.1",
+    "preserve_shells": true,
+    "preserve_candidate_review_flags": true,
+    "preserve_source_ids": true,
+    "source_project_id_must_match": true,
+    "deterministic_sha256": true,
+    "no_design_value_invention": true
+  },
+  "identity_hardening": {
+    "generic_name_field_allowed": false,
+    "accepted_project_name_fields": [
+      "project_name",
+      "project_title"
+    ],
+    "accepted_structural_scope_fields": [
+      "structural_scope"
+    ],
+    "required_template_sources_authoritative": false,
+    "conflicts_auto_resolved": false
+  },
+  "analysis_scope_hardening": {
+    "authoritative_source": "v8_3.input.solver_basis.analysis_type",
+    "mapping": {
+      "LINEAR_STATIC": "LIN",
+      "LIN": "LIN"
+    },
+    "load_case_analysis_type_is_global_scope": false,
+    "required_template_is_authoritative": false,
+    "unknown_values_fail_closed": true
+  },
+  "calculix_adapter_registration": {
+    "adapter_id": "PAT001-LEGACY-V8_3-CALCULIX-PROJECT-ADAPTER-v1",
+    "requires_v8_3_input": true,
+    "requires_calculix_declared_in_solver_adapters": true,
+    "requires_legacy_runner": true,
+    "requires_solver_package_manifest": true,
+    "requires_existing_project_calculix_deck": true,
+    "live_execution_required_for_registration": false,
+    "golden_reference_not_accepted": true
+  },
+  "scia": {
+    "seed_gap_closed_by_this_pack": false,
+    "historical_or_reference_esa_auto_accepted": false
+  },
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
