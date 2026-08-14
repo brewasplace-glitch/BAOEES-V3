@@ -1,0 +1,57 @@
+{
+  "schema_version": "phoenix.scia-environment-readiness-hardening-policy/1.1",
+  "version": "1.1.0",
+  "required_baseline": "f0a1b578ebf5a659597a64e5c7a68a311787b42c",
+  "engine_id": "PHX-SCIA-ENVIRONMENT-READINESS-HARDENING",
+  "target": "SCIA Engineer 18.1 / ESA_XML",
+  "principles": {
+    "runtime_present_is_not_solver_ready": true,
+    "license_server_reachable_is_not_solver_ready": true,
+    "service_running_is_not_solver_ready": true,
+    "live_environment_ready_requires_successful_explicit_probe": true
+  },
+  "observation": {
+    "service_actions": "READ_ONLY_NEVER_START_STOP_OR_RECONFIGURE",
+    "license_changes": "PROHIBITED",
+    "tcp_probe": "READ_ONLY",
+    "runtime_help_probe": "EXPLICIT_ALLOW_RUNTIME_HELP_REQUIRED",
+    "live_solver_probe": "EXPLICIT_ALLOW_LIVE_PROBE_REQUIRED"
+  },
+  "scia_18_1_exit_code_contract": {
+    "0": "Succeeded",
+    "1": "Unable to initialize MFC",
+    "2": "Missing arguments",
+    "3": "Invalid arguments",
+    "4": "Unable to open ProjectFile",
+    "5": "Calculation failed",
+    "6": "Unable to initialize application environment",
+    "7": "Error during update ProjectFile by XMLUpdateFile",
+    "8": "Error during create export outputs",
+    "9": "Error during create XML outputs",
+    "10": "Error during update ProjectFile by XLSX Update"
+  },
+  "statuses": [
+    "SCIA_RUNTIME_NOT_FOUND",
+    "SCIA_RUNTIME_PRESENT_HELP_NOT_PROBED",
+    "SCIA_RUNTIME_HELP_CONTRACT_VALIDATED",
+    "SCIA_RUNTIME_HELP_CONTRACT_UNEXPECTED",
+    "SCIA_LICENSE_TARGET_REQUIRED",
+    "BLOCKED_SCIA_LOCAL_LICENSE_SERVICE_STOPPED",
+    "BLOCKED_SCIA_LICENSE_SERVER_UNREACHABLE",
+    "SCIA_LICENSE_ENDPOINT_REACHABLE_PROBE_REQUIRED",
+    "SCIA_LIVE_PROBE_EXPLICIT_AUTHORIZATION_REQUIRED",
+    "BLOCKED_SCIA_APPLICATION_ENVIRONMENT",
+    "BLOCKED_SCIA_PROJECT_OPEN",
+    "BLOCKED_SCIA_CALCULATION",
+    "SCIA_LIVE_ENVIRONMENT_READY",
+    "SCIA_LIVE_PROBE_FAILED"
+  ],
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
