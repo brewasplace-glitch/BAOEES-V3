@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Iterable
 import argparse, hashlib, json, os, re, shutil, subprocess
 
-VERSION="1.0.1"
+VERSION="1.0.2"
 ENGINE_ID="PHX-PAT001-OPENSEES-LIVE-EVIDENCE"
 PROJECT_ID="PHOENIX-PAT-001"
 ADAPTER_ID="PAT001-OPENSEES-LIVE-PROJECT-ADAPTER-v1"
@@ -17,8 +17,11 @@ NORM_FAIL="BLOCKED_OPENSEES_NORMALIZATION_INCOMPLETE"
 QUALIFIED="PAT001_OPENSEES_LIVE_EXECUTION_NORMALIZED_ADAPTER_QUALIFIED"
 SAFETY={"source_v8_3_decks_overwritten":False,"live_execution_without_explicit_opt_in":False,"golden_reference_used_as_pat001_evidence":False,"automatic_professional_approval":False,"automatic_code_compliance_claim":False,"independent_verification_claimed":False,"production_release":"LOCKED","for_construction_release":"LOCKED","scia_gap_changed":False}
 
-MEMBER=re.compile(r"^\s*element\s+(?!ShellMITC4\b)\S+\s+(?P<tag>\d+)\b.*?;#\s*(?P<id>M\S+)\s*$",re.I)
-SHELL=re.compile(r"^\s*element\s+ShellMITC4\s+(?P<tag>\d+)\b(?P<rest>.*?);#\s*(?P<id>S\S+)\s*$",re.I)
+# Phoenix element identity is authoritative for hardening classification.
+# Do not infer shell-ness from one specific OpenSees command such as ShellMITC4:
+# PAT-001 also contains triangular ShellDKGT elements.
+MEMBER=re.compile(r"^\s*element\s+(?P<etype>\S+)\s+(?P<tag>\d+)\b(?P<rest>.*?);#\s*(?P<id>M\S+)\s*$",re.I)
+SHELL=re.compile(r"^\s*element\s+(?P<etype>\S+)\s+(?P<tag>\d+)\b(?P<rest>.*?);#\s*(?P<id>S\S+)\s*$",re.I)
 NODE=re.compile(r"^PHX_NODE\s+(?P<id>\S+)\s+DISP\s+(?P<disp>.*?)\s+REACTION\s+(?P<reaction>.*?)\s*$")
 EL=re.compile(r"^PHX_ELEMENT_(?P<kind>FORCE|STRESS)\s+(?P<etype>MEMBER|SHELL)\s+(?P<id>\S+)\s+TAG\s+(?P<tag>\d+)\s+VALUES\s+\{(?P<values>.*)\}\s*$")
 LOAD=re.compile(r"^\s*load\s+\d+\s+(?P<fx>[-+0-9.eE]+)\s+(?P<fy>[-+0-9.eE]+)\s+(?P<fz>[-+0-9.eE]+)\b.*?;#\s*(?P<id>\S+)\s*$",re.I)
@@ -77,24 +80,72 @@ def discover_executable(explicit:str|None=None)->dict[str,Any]:
     return {"status":NO_EXE,"path":None,"sha256":None,"source":None,"checked":checked}
 
 def tag_maps(text:str)->dict[str,Any]:
-    m={};s={}
+    m={};s={}; mt={}; st={}
     for line in text.splitlines():
         a=MEMBER.match(line); b=SHELL.match(line)
-        if a:m[a.group("id")]=int(a.group("tag"))
-        elif b:s[b.group("id")]=int(b.group("tag"))
+        if a:
+            i=a.group("id")
+            if i in m: raise ValueError(f"Duplicate Phoenix member declaration in OpenSees deck: {i}")
+            m[i]=int(a.group("tag")); mt[i]=a.group("etype")
+        elif b:
+            i=b.group("id")
+            if i in s: raise ValueError(f"Duplicate Phoenix shell declaration in OpenSees deck: {i}")
+            s[i]=int(b.group("tag")); st[i]=b.group("etype")
     collisions=sorted(set(m.values())&set(s.values()))
     sx={k:(max(m.values(),default=0)+i if collisions else v) for i,(k,v) in enumerate(sorted(s.items()),1)}
     allv=list(m.values())+list(sx.values())
     if len(allv)!=len(set(allv)):raise ValueError("OpenSees element tags remain non-unique.")
-    return {"source_member_tags":m,"source_shell_tags":s,"execution_member_tags":dict(m),"execution_shell_tags":sx,"source_collisions":collisions,"repair_applied":bool(collisions),"repair_method":"DETERMINISTIC_OFFSET_AFTER_MAX_MEMBER_TAG" if collisions else "NOT_REQUIRED"}
+    type_counts={}
+    for etype in st.values(): type_counts[etype]=type_counts.get(etype,0)+1
+    return {
+        "source_member_tags":m,
+        "source_shell_tags":s,
+        "source_member_element_types":mt,
+        "source_shell_element_types":st,
+        "source_shell_type_counts":dict(sorted(type_counts.items())),
+        "execution_member_tags":dict(m),
+        "execution_shell_tags":sx,
+        "source_collisions":collisions,
+        "repair_applied":bool(collisions),
+        "repair_method":"DETERMINISTIC_OFFSET_AFTER_MAX_MEMBER_TAG" if collisions else "NOT_REQUIRED",
+    }
+
+def assert_model_coverage(tags:dict[str,Any],expected_members:Iterable[str],expected_shells:Iterable[str])->dict[str,Any]:
+    em=set(str(x) for x in expected_members); es=set(str(x) for x in expected_shells)
+    om=set(tags["source_member_tags"]); os=set(tags["source_shell_tags"])
+    missing_members=sorted(em-om); extra_members=sorted(om-em)
+    missing_shells=sorted(es-os); extra_shells=sorted(os-es)
+    complete=not(missing_members or extra_members or missing_shells or extra_shells)
+    result={
+        "complete":complete,
+        "expected_member_count":len(em),
+        "observed_member_count":len(om),
+        "expected_shell_count":len(es),
+        "observed_shell_count":len(os),
+        "expected_element_count":len(em)+len(es),
+        "observed_element_count":len(om)+len(os),
+        "missing_members":missing_members,
+        "extra_members":extra_members,
+        "missing_shells":missing_shells,
+        "extra_shells":extra_shells,
+        "shell_type_counts":tags.get("source_shell_type_counts") or {},
+    }
+    if not complete:
+        raise ValueError(
+            "OpenSees deck model coverage mismatch: "
+            f"members {len(om)}/{len(em)}, shells {len(os)}/{len(es)}, "
+            f"missing_members={missing_members}, missing_shells={missing_shells}, "
+            f"extra_members={extra_members}, extra_shells={extra_shells}"
+        )
+    return result
 
 def harden_deck(text:str)->tuple[str,dict[str,Any]]:
     t=tag_maps(text); out=[]; patched=0; reactions=False
     for line in text.splitlines():
         b=SHELL.match(line)
         if b:
-            sid=b.group("id"); pre=line[:len(line)-len(line.lstrip())]
-            line=f"{pre}element ShellMITC4 {t['execution_shell_tags'][sid]}{b.group('rest')} ;# {sid}"; patched+=1
+            sid=b.group("id"); pre=line[:len(line)-len(line.lstrip())]; etype=b.group("etype")
+            line=f"{pre}element {etype} {t['execution_shell_tags'][sid]}{b.group('rest')} ;# {sid}"; patched+=1
         if not reactions and 'puts "PHX_NODE ' in line: out.append("reactions"); reactions=True
         out.append(line)
     if t["source_shell_tags"] and patched!=len(t["source_shell_tags"]):raise ValueError("Shell patch incomplete.")
@@ -156,18 +207,31 @@ def sources(repo:Path)->dict[str,Any]:
     if "opensees" not in [str(x).lower() for x in (v.get("solver_adapters") or [])]:raise ValueError("OpenSees not declared.")
     a=v.get("analytical_model") or {}; ac=v.get("action_load_model") or {}
     nodes=sorted(str(x["id"]) for x in a.get("nodes",[]) if isinstance(x,dict) and x.get("id"))
+    members=sorted(str(x["id"]) for x in a.get("members",[]) if isinstance(x,dict) and x.get("id"))
+    shells=sorted(str(x["id"]) for x in a.get("shells",[]) if isinstance(x,dict) and x.get("id"))
     cases=sorted(str(x["id"]) for x in ac.get("load_cases",[]) if isinstance(x,dict) and x.get("id"))
     decks=sorted(package.rglob("opensees_*.tcl"))
     dcase=sorted(p.stem[len("opensees_"):] for p in decks)
     if not decks or dcase!=cases:raise ValueError(f"OpenSees deck/load case mismatch: {dcase} vs {cases}")
-    return {"v83":v83,"contract":contract,"decks":decks,"nodes":nodes,"cases":cases,"v83_sha256":sha(v83),"contract_sha256":sha(contract)}
+    if not members: raise ValueError("PAT-001 v8.3 contains no members for OpenSees coverage validation.")
+    if not shells: raise ValueError("PAT-001 v8.3 contains no shells for OpenSees coverage validation.")
+    return {"v83":v83,"contract":contract,"decks":decks,"nodes":nodes,"members":members,"shells":shells,"cases":cases,"v83_sha256":sha(v83),"contract_sha256":sha(contract)}
 
 def prepare(repo:Path,s:dict[str,Any],out:Path)->list[dict[str,Any]]:
     records=[]
     for src in s["decks"]:
         cid=src.stem[len("opensees_"):]; d=out/"prepared_cases"/cid; d.mkdir(parents=True,exist_ok=True)
-        text=src.read_text(encoding="utf-8"); hard,audit=harden_deck(text)
+        text=src.read_text(encoding="utf-8")
+        source_tags=tag_maps(text)
+        source_coverage=assert_model_coverage(source_tags,s["members"],s["shells"])
+        hard,audit=harden_deck(text)
+        hardened_tags=tag_maps(hard)
+        hardened_coverage=assert_model_coverage(hardened_tags,s["members"],s["shells"])
+        all_tags=list(hardened_tags["execution_member_tags"].values())+list(hardened_tags["execution_shell_tags"].values())
+        if len(all_tags)!=len(set(all_tags)): raise ValueError("Hardened OpenSees deck contains duplicate element tags.")
         sp=d/"source_deck.tcl"; ep=d/"execution_deck.tcl"; sp.write_text(text,encoding="utf-8"); ep.write_text(hard,encoding="utf-8")
+        audit["source_model_coverage"]=source_coverage
+        audit["hardened_model_coverage"]=hardened_coverage
         rec={"case_id":cid,"source_reference":rr(src,repo),"source_sha256":sha(src),"source_copy_sha256":sha(sp),"execution_deck_sha256":sha(ep),"hardening":audit}; wj(d/"preparation_manifest.json",rec); records.append(rec)
     return records
 
@@ -196,7 +260,7 @@ def probe(exe:Path,out:Path)->dict[str,Any]:
 
 def run(repo:Path,out:Path,explicit:str|None,allow:bool,timeout:int=180)->dict[str,Any]:
     repo=repo.resolve(); out=out.resolve(); out.mkdir(parents=True,exist_ok=True); s=sources(repo); exe=discover_executable(explicit); prep=prepare(repo,s,out)
-    readiness={"schema_version":"phoenix.pat001-opensees-readiness/1.0","project_id":PROJECT_ID,"source_v8_3":rr(s["v83"],repo),"source_v8_3_sha256":s["v83_sha256"],"source_contract":rr(s["contract"],repo),"source_contract_sha256":s["contract_sha256"],"load_cases":s["cases"],"node_count":len(s["nodes"]),"prepared_case_count":len(prep),"executable_discovery":exe,"explicit_live_execution_opt_in":allow,"source_decks_overwritten":False}; wj(out/"pat001_opensees_readiness_v1_0.json",readiness)
+    readiness={"schema_version":"phoenix.pat001-opensees-readiness/1.0","project_id":PROJECT_ID,"source_v8_3":rr(s["v83"],repo),"source_v8_3_sha256":s["v83_sha256"],"source_contract":rr(s["contract"],repo),"source_contract_sha256":s["contract_sha256"],"load_cases":s["cases"],"node_count":len(s["nodes"]),"member_count":len(s["members"]),"shell_count":len(s["shells"]),"element_count":len(s["members"])+len(s["shells"]),"prepared_case_count":len(prep),"executable_discovery":exe,"explicit_live_execution_opt_in":allow,"source_decks_overwritten":False}; wj(out/"pat001_opensees_readiness_v1_0.json",readiness)
     cases=[]; p=None
     if exe["path"] is None:status=NO_EXE
     elif not allow:status=READY

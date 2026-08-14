@@ -1,6 +1,6 @@
 {
   "schema_version": "phoenix.pat001-opensees-live-evidence-policy/1.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "required_baseline": "e71839f6037d8cad40dec81985e1747bc0e19c0a",
   "project_id": "PHOENIX-PAT-001",
   "project_name": "Anijsstraat",
@@ -48,7 +48,7 @@
     "for_construction_release": "LOCKED",
     "scia_gap_changed": false
   },
-  "fixed_revision": "R1",
+  "fixed_revision": "R5",
   "console_stream_semantics": {
     "opensees_3_8_may_emit_semantic_output_to_stderr": true,
     "semantic_parsing_uses_stdout_and_stderr": true,
@@ -57,5 +57,25 @@
     "analysis_marker_accepted_from_either_stream": true,
     "evidence_marker_accepted_from_either_stream": true,
     "normalization_reads_combined_semantic_stream": true
+  },
+  "element_tag_hardening": {
+    "classification_authority": "PHOENIX_ELEMENT_ID_PREFIX",
+    "member_id_prefix": "M",
+    "shell_id_prefix": "S",
+    "shell_command_whitelist_used": false,
+    "preserve_original_opensees_element_command": true,
+    "supported_observed_shell_commands": [
+      "ShellMITC4",
+      "ShellDKGT"
+    ],
+    "all_source_members_must_be_recognized": true,
+    "all_source_shells_must_be_recognized": true,
+    "all_execution_element_tags_must_be_globally_unique": true,
+    "pat001_expected_counts_from_v8_3": {
+      "nodes": 63,
+      "members": 57,
+      "shells": 54,
+      "elements": 111
+    }
   }
 }
