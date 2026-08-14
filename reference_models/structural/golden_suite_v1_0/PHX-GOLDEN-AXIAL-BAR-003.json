@@ -1,0 +1,23 @@
+{
+  "schema_version": "phoenix.structural-golden-benchmark/1.0",
+  "id": "PHX-GOLDEN-AXIAL-BAR-003",
+  "idealization": "AXIAL_BAR",
+  "inputs": {
+    "P_N": 100000.0,
+    "L_m": 2.0,
+    "E_Pa": 200000000000.0,
+    "A_m2": 0.01
+  },
+  "expected": {
+    "axial_stress_Pa": 10000000.0,
+    "elongation_m": 0.0001
+  },
+  "calculix": {
+    "element_count": 20,
+    "validation_status": "PENDING_LIVE_CALCULIX",
+    "numerical_tolerance": "REQUIRED_BEFORE_NUMERICAL_PASS"
+  },
+  "scia": {
+    "source_available": false
+  }
+}

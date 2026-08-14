@@ -1,0 +1,26 @@
+{
+  "schema_version": "phoenix.structural-golden-benchmark/1.0",
+  "id": "PHX-GOLDEN-CANTILEVER-002",
+  "idealization": "CANTILEVER_END_POINT_LOAD",
+  "inputs": {
+    "P_N": 1000.0,
+    "L_m": 2.0,
+    "E_Pa": 210000000000.0,
+    "I_m4": 8.333333333333335e-06,
+    "section_b_m": 0.1,
+    "section_h_m": 0.1
+  },
+  "expected": {
+    "reaction_N": 1000.0,
+    "fixed_end_moment_Nm": 2000.0,
+    "tip_deflection_m": 0.0015238095238095236
+  },
+  "calculix": {
+    "element_count": 40,
+    "validation_status": "PENDING_LIVE_CALCULIX",
+    "numerical_tolerance": "REQUIRED_BEFORE_NUMERICAL_PASS"
+  },
+  "scia": {
+    "source_available": false
+  }
+}

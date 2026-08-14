@@ -1,0 +1,35 @@
+{
+  "schema_version": "phoenix.structural-golden-reference-suite/1.0",
+  "suite_id": "PHX-STRUCT-GOLDEN-SUITE-001",
+  "version": "1.0.0",
+  "required_baseline": "373913ee780f9670b3af5133ee88b5597dcd2146",
+  "benchmarks": [
+    {
+      "id": "PHX-GOLDEN-SCIA-BEAM-001",
+      "definition": "reference_models/structural/golden_suite_v1_0/PHX-GOLDEN-SCIA-BEAM-001.json",
+      "scia_source_available": true,
+      "existing_calculix_reevaluation": "projects/runtime/REFERENCE-MODELS/CALCULIX-ANALYTICAL-v1_0/calculix/calculix_reference_reevaluation_v1_1.json"
+    },
+    {
+      "id": "PHX-GOLDEN-CANTILEVER-002",
+      "definition": "reference_models/structural/golden_suite_v1_0/PHX-GOLDEN-CANTILEVER-002.json",
+      "scia_source_available": false
+    },
+    {
+      "id": "PHX-GOLDEN-AXIAL-BAR-003",
+      "definition": "reference_models/structural/golden_suite_v1_0/PHX-GOLDEN-AXIAL-BAR-003.json",
+      "scia_source_available": false
+    }
+  ],
+  "rules": {
+    "raw_solver_evidence_required": true,
+    "scia_unavailable_does_not_block_non_scia_benchmarks": true,
+    "new_numerical_tolerances_must_be_explicit_and_benchmark_specific": true
+  },
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
