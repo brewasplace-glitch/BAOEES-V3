@@ -1,0 +1,43 @@
+{
+  "schema_version": "phoenix.pat001-structural-evidence-harvest-bootstrap-policy/1.1",
+  "version": "1.1.0",
+  "required_baseline": "21e41a113eb79bacfe193609c5309f7667b8f114",
+  "project_id": "PHOENIX-PAT-001",
+  "engine_id": "PHX-PAT001-STRUCTURAL-EVIDENCE-HARVEST-BOOTSTRAP",
+  "search_roots": [
+    "projects/runtime/PHOENIX-PAT-001",
+    "configs/projects",
+    "configs/phoenix/structural"
+  ],
+  "autofill_rules": {
+    "explicit_project_identity_required": true,
+    "conflicts_remain_unresolved": true,
+    "canonical_model_requires_exact_schema": "phoenix.canonical-structural-model/1.0",
+    "canonical_model_must_validate": true,
+    "analysis_scope_must_be_explicit_and_unique": true,
+    "scia_seed_requires_project_id_and_matching_sha256": true,
+    "calculix_adapter_requires_explicit_pat001_declaration": true,
+    "provenance_status_from_traceable_source": "TRACEABLE",
+    "no_field_invented": true
+  },
+  "disallowed_as_pat001_evidence": [
+    "reference_models without explicit PAT-001 provenance",
+    "Golden Reference benchmark results",
+    "historical ESA without explicit PAT-001 project identity and SHA256",
+    "generic defaults without project-specific source"
+  ],
+  "write_behavior": {
+    "source_contract_overwrite": false,
+    "bootstrap_contract_version": "v1_1",
+    "audit_manifest_required": true,
+    "live_solver_execution": false
+  },
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
