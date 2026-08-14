@@ -1,0 +1,59 @@
+{
+  "schema_version": "phoenix.pat001-structural-input-contract/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "project_identity": {
+    "name": "REQUIRED",
+    "location": "REQUIRED",
+    "structural_scope": "REQUIRED"
+  },
+  "canonical_structural_model": {
+    "path": "REQUIRED_PATH_TO_CANONICAL_MODEL_JSON"
+  },
+  "provenance": {
+    "geometry": {
+      "status": "REQUIRED",
+      "sources": []
+    },
+    "materials": {
+      "status": "REQUIRED",
+      "sources": []
+    },
+    "sections": {
+      "status": "REQUIRED",
+      "sources": []
+    },
+    "supports_and_boundaries": {
+      "status": "REQUIRED",
+      "sources": []
+    },
+    "load_basis": {
+      "status": "REQUIRED",
+      "sources": []
+    },
+    "load_cases": {
+      "status": "REQUIRED",
+      "sources": []
+    },
+    "load_combinations": {
+      "status": "REQUIRED",
+      "sources": []
+    }
+  },
+  "analysis_scope": {
+    "status": "REQUIRED",
+    "calculation_type": null,
+    "nonlinear_required": null,
+    "stability_required": null,
+    "dynamic_required": null,
+    "seismic_applicability": "PROFESSIONAL_OR_PROJECT_SPECIFIC_DECISION_REQUIRED"
+  },
+  "scia": {
+    "seed_esa": null,
+    "seed_provenance": null,
+    "xml_update": null,
+    "xml_definition": null
+  },
+  "calculix": {
+    "project_adapter": null
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "phoenix.pat001-structural-gap-taxonomy/1.0",
+  "gaps": [
+    {
+      "id": "PAT001-GAP-IDENTITY",
+      "severity": "BLOCKING",
+      "description": "Project identity or structural scope incomplete."
+    },
+    {
+      "id": "PAT001-GAP-CANONICAL",
+      "severity": "BLOCKING",
+      "description": "Canonical Structural Model missing or invalid."
+    },
+    {
+      "id": "PAT001-GAP-PROVENANCE",
+      "severity": "BLOCKING",
+      "description": "Required structural source provenance incomplete."
+    },
+    {
+      "id": "PAT001-GAP-ANALYSIS-SCOPE",
+      "severity": "BLOCKING",
+      "description": "Project-specific analysis scope not explicitly set."
+    },
+    {
+      "id": "PAT001-GAP-SCIA-MODEL",
+      "severity": "BLOCKING_FOR_SCIA",
+      "description": "No qualified PAT-001 SCIA seed/project model and mapping package."
+    },
+    {
+      "id": "PAT001-GAP-CALCULIX-ADAPTER",
+      "severity": "BLOCKING_FOR_CALCULIX",
+      "description": "No PAT-001 arbitrary-project CalculiX adapter declared."
+    }
+  ],
+  "boundary": "A gap may be closed only by traceable project evidence or an implemented project adapter; reference models do not close PAT-001 project gaps."
+}

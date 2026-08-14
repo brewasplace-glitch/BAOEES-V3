@@ -1,0 +1,49 @@
+{
+  "schema_version": "phoenix.pat001-structural-preparation-policy/1.0",
+  "version": "1.0.0",
+  "required_baseline": "443d2553c39bf1bede9b8aecd54c45c1faf396cb",
+  "project_id": "PHOENIX-PAT-001",
+  "engine_id": "PHX-PAT001-STRUCTURAL-PREPARATION",
+  "required_input_categories": [
+    "project_identity",
+    "canonical_structural_model",
+    "geometry_provenance",
+    "materials_provenance",
+    "sections_provenance",
+    "support_boundary_provenance",
+    "load_basis_provenance",
+    "load_cases_provenance",
+    "load_combinations_provenance",
+    "analysis_scope"
+  ],
+  "scia": {
+    "seed_identity_must_be_explicit": true,
+    "historical_esa_may_not_be_auto_labeled_pat001": true,
+    "binary_esa_synthesis": "PROHIBITED",
+    "live_execution_during_preparation": false,
+    "license_environment_may_remain_pending": true
+  },
+  "calculix": {
+    "live_execution_during_preparation": false,
+    "generic_arbitrary_project_adapter_status": "REQUIRED_UNLESS_PROJECT_ADAPTER_EXISTS",
+    "golden_reference_validation_is_not_pat001_evidence": true
+  },
+  "status_machine": [
+    "PAT001_STRUCTURAL_INPUT_CONTRACT_REQUIRED",
+    "PAT001_CANONICAL_MODEL_REQUIRED",
+    "PAT001_CANONICAL_MODEL_INVALID",
+    "PAT001_STRUCTURAL_PROVENANCE_REQUIRED",
+    "PAT001_ANALYSIS_SCOPE_REQUIRED",
+    "PAT001_SCIA_PROJECT_MODEL_REQUIRED",
+    "PAT001_CALCULIX_PROJECT_ADAPTER_REQUIRED",
+    "PAT001_STRUCTURAL_PREPARATION_READY"
+  ],
+  "safety": {
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "automatic_production_release": false,
+    "automatic_for_construction_release": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}
