@@ -63,4 +63,12 @@ class T(unittest.TestCase):
  def test22_safety2(self): self.assertFalse(SAFETY["automatic_professional_approval"])
  def test23_safety3(self): self.assertEqual("LOCKED",SAFETY["production_release"])
  def test24_safety4(self): self.assertFalse(SAFETY["scia_gap_changed"])
+ def test25_combined_stream_preserves_stderr_semantics(self):
+  c=solver_console_output("",STD);self.assertIn("PHOENIX_ANALYSIS_OK",c);self.assertIn("PHX_NODE N0001",c)
+ def test26_marker_stream_detection_stderr(self):
+  r=marker_streams("PHOENIX_OPENSEES_PROBE_OK","","banner\nPHOENIX_OPENSEES_PROBE_OK\n");self.assertFalse(r["stdout"]);self.assertTrue(r["stderr"])
+ def test27_stderr_only_results_normalize(self):
+  h,_=harden_deck(DECK);r=normalize(solver_console_output("",STD),["N0001","N0002","N0003","N0004"],tag_maps(h),h);self.assertEqual("COMPLETE",r["normalization_status"])
+ def test28_stderr_only_markers_qualify(self):
+  h,_=harden_deck(DECK);combined=solver_console_output("",STD);r=normalize(combined,["N0001","N0002","N0003","N0004"],tag_maps(h),h);self.assertTrue(case_ok(0,combined,r)["qualified"])
 if __name__=="__main__":unittest.main()

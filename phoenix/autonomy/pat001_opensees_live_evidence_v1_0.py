@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Iterable
 import argparse, hashlib, json, os, re, shutil, subprocess
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 ENGINE_ID="PHX-PAT001-OPENSEES-LIVE-EVIDENCE"
 PROJECT_ID="PHOENIX-PAT-001"
 ADAPTER_ID="PAT001-OPENSEES-LIVE-PROJECT-ADAPTER-v1"
@@ -44,6 +44,19 @@ def nums(s:str)->list[float]:
         try:out.append(float(x))
         except ValueError:pass
     return out
+
+def solver_console_output(stdout:str|None,stderr:str|None)->str:
+    """Combine OpenSees console streams for semantic parsing while raw streams remain separate."""
+    parts=[]
+    if stdout: parts.append(stdout)
+    if stderr: parts.append(stderr)
+    return "\n".join(parts)
+
+def marker_streams(marker:str,stdout:str|None,stderr:str|None)->dict[str,bool]:
+    return {
+        "stdout": marker in (stdout or ""),
+        "stderr": marker in (stderr or ""),
+    }
 
 def discover_executable(explicit:str|None=None)->dict[str,Any]:
     c=[]
@@ -165,9 +178,21 @@ def probe(exe:Path,out:Path)->dict[str,Any]:
     d=out/"environment_probe"; d.mkdir(parents=True,exist_ok=True); p=d/"probe.tcl"; p.write_text('puts "PHOENIX_OPENSEES_PROBE_OK"\nexit 0\n',encoding="utf-8")
     try:pr=run_proc([str(exe),str(p)],d,30)
     except subprocess.TimeoutExpired:return {"status":PROBE_FAIL,"passed":False,"returncode":124}
-    (d/"stdout.txt").write_text(pr.stdout or "",encoding="utf-8"); (d/"stderr.txt").write_text(pr.stderr or "",encoding="utf-8")
-    ok=pr.returncode==0 and "PHOENIX_OPENSEES_PROBE_OK" in (pr.stdout or "")
-    r={"status":"OPENSEES_ENVIRONMENT_PROBE_PASSED" if ok else PROBE_FAIL,"passed":ok,"returncode":pr.returncode}; wj(d/"probe_result.json",r); return r
+    stdout=pr.stdout or ""; stderr=pr.stderr or ""
+    (d/"stdout.txt").write_text(stdout,encoding="utf-8"); (d/"stderr.txt").write_text(stderr,encoding="utf-8")
+    combined=solver_console_output(stdout,stderr)
+    streams=marker_streams("PHOENIX_OPENSEES_PROBE_OK",stdout,stderr)
+    ok=pr.returncode==0 and "PHOENIX_OPENSEES_PROBE_OK" in combined
+    r={
+        "status":"OPENSEES_ENVIRONMENT_PROBE_PASSED" if ok else PROBE_FAIL,
+        "passed":ok,
+        "returncode":pr.returncode,
+        "marker_streams":streams,
+        "semantic_parse_streams":["stdout","stderr"],
+        "raw_streams_preserved_separately":True,
+        "probe_script":"probe.tcl",
+    }
+    wj(d/"probe_result.json",r); return r
 
 def run(repo:Path,out:Path,explicit:str|None,allow:bool,timeout:int=180)->dict[str,Any]:
     repo=repo.resolve(); out=out.resolve(); out.mkdir(parents=True,exist_ok=True); s=sources(repo); exe=discover_executable(explicit); prep=prepare(repo,s,out)
@@ -187,8 +212,9 @@ def run(repo:Path,out:Path,explicit:str|None,allow:bool,timeout:int=180)->dict[s
                 try:pr=run_proc([exe["path"],str(ep)],d,timeout); timed=False
                 except subprocess.TimeoutExpired as ex: pr=subprocess.CompletedProcess([exe["path"],str(ep)],124,ex.stdout or "",(ex.stderr or "")+"\nPHOENIX_TIMEOUT"); timed=True
                 stdout=pr.stdout or ""; stderr=pr.stderr or ""; (d/"stdout.txt").write_text(stdout,encoding="utf-8"); (d/"stderr.txt").write_text(stderr,encoding="utf-8")
-                tags=tag_maps(ep.read_text(encoding="utf-8")); norm=normalize(stdout,s["nodes"],tags,ep.read_text(encoding="utf-8")); norm.update({"project_id":PROJECT_ID,"case_id":cid,"source_v8_3_sha256":s["v83_sha256"],"source_deck_sha256":sha(sp),"execution_deck_sha256":sha(ep)}); wj(d/"normalized_results.json",norm)
-                q=case_ok(pr.returncode,stdout,norm); ev={"schema_version":"phoenix.opensees-raw-evidence-case/1.0","project_id":PROJECT_ID,"case_id":cid,"started_at":started,"finished_at":now(),"timed_out":timed,"returncode":pr.returncode,"command":[exe["path"],str(ep)],"executable_sha256":exe["sha256"],"source_deck_sha256":sha(sp),"execution_deck_sha256":sha(ep),"stdout_sha256":sha(d/"stdout.txt"),"stderr_sha256":sha(d/"stderr.txt"),"normalized_results_sha256":sha(d/"normalized_results.json"),"qualification":q,"hardening":rec["hardening"]}; wj(d/"raw_evidence_manifest.json",ev); cases.append(ev)
+                semantic_output=solver_console_output(stdout,stderr)
+                tags=tag_maps(ep.read_text(encoding="utf-8")); norm=normalize(semantic_output,s["nodes"],tags,ep.read_text(encoding="utf-8")); norm.update({"project_id":PROJECT_ID,"case_id":cid,"source_v8_3_sha256":s["v83_sha256"],"source_deck_sha256":sha(sp),"execution_deck_sha256":sha(ep),"semantic_parse_streams":["stdout","stderr"],"raw_streams_preserved_separately":True}); wj(d/"normalized_results.json",norm)
+                q=case_ok(pr.returncode,semantic_output,norm); ev={"schema_version":"phoenix.opensees-raw-evidence-case/1.0","project_id":PROJECT_ID,"case_id":cid,"started_at":started,"finished_at":now(),"timed_out":timed,"returncode":pr.returncode,"command":[exe["path"],str(ep)],"executable_sha256":exe["sha256"],"source_deck_sha256":sha(sp),"execution_deck_sha256":sha(ep),"stdout_sha256":sha(d/"stdout.txt"),"stderr_sha256":sha(d/"stderr.txt"),"normalized_results_sha256":sha(d/"normalized_results.json"),"semantic_parse_streams":["stdout","stderr"],"analysis_marker_streams":marker_streams("PHOENIX_ANALYSIS_OK",stdout,stderr),"evidence_marker_streams":marker_streams("PHOENIX_EVIDENCE_CAPTURE_OK",stdout,stderr),"raw_streams_preserved_separately":True,"qualification":q,"hardening":rec["hardening"]}; wj(d/"raw_evidence_manifest.json",ev); cases.append(ev)
             if not all(x["qualification"]["qualified"] for x in cases):
                 status=EXEC_FAIL if any(not x["qualification"]["returncode_zero"] for x in cases) else NORM_FAIL
     qualified=status==QUALIFIED

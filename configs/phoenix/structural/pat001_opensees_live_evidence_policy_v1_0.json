@@ -1,6 +1,6 @@
 {
   "schema_version": "phoenix.pat001-opensees-live-evidence-policy/1.0",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "required_baseline": "e71839f6037d8cad40dec81985e1747bc0e19c0a",
   "project_id": "PHOENIX-PAT-001",
   "project_name": "Anijsstraat",
@@ -47,5 +47,15 @@
     "production_release": "LOCKED",
     "for_construction_release": "LOCKED",
     "scia_gap_changed": false
+  },
+  "fixed_revision": "R1",
+  "console_stream_semantics": {
+    "opensees_3_8_may_emit_semantic_output_to_stderr": true,
+    "semantic_parsing_uses_stdout_and_stderr": true,
+    "raw_stdout_and_stderr_preserved_separately": true,
+    "probe_marker_accepted_from_either_stream": true,
+    "analysis_marker_accepted_from_either_stream": true,
+    "evidence_marker_accepted_from_either_stream": true,
+    "normalization_reads_combined_semantic_stream": true
   }
 }

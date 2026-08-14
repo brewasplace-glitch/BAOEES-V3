@@ -31,3 +31,25 @@ The adapter is qualified only when every base case exits zero, emits `PHOENIX_AN
 Qualified technical state: `CALCULATED_UNVERIFIED`.
 
 No professional approval, code-compliance or independent-verification claim is created. `PAT001-GAP-SCIA-MODEL` is unchanged. Production and FOR-CONSTRUCTION remain LOCKED.
+
+
+## FIXED R1 — OpenSees 3.8 console-stream compatibility
+
+Real PAT-001 environment evidence showed OpenSees 3.8.0 64-bit returning exit code 0 while writing
+its banner and `PHOENIX_OPENSEES_PROBE_OK` marker to stderr rather than stdout.
+
+The original v1.0 implementation incorrectly treated stdout as the only semantic solver stream.
+
+FIXED R1 now:
+
+- accepts probe markers from stdout or stderr;
+- parses live PAT-001 node/element result markers from the combined semantic console stream;
+- accepts analysis/evidence markers from either stream;
+- preserves raw stdout and raw stderr as separate files and SHA-256 evidence;
+- records which stream contained each marker;
+- does not merge or overwrite the stored raw evidence files;
+- makes no engineering or release-status change.
+
+The OpenSees probe script is named `probe.tcl`.
+
+Engine version after this fix: `1.0.1`.
