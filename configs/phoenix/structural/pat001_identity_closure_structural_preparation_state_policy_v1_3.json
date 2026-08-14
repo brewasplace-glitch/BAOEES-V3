@@ -1,0 +1,34 @@
+{
+  "schema_version": "phoenix.pat001-identity-closure-structural-preparation-state-policy/1.3",
+  "version": "1.3.0",
+  "required_baseline": "5b0cc499d39b3f07deceb75e4f6fc9812cc06ab9",
+  "project_id": "PHOENIX-PAT-001",
+  "identity_declaration": "configs/projects/pat001_project_identity_declaration_v1_3.json",
+  "required_project_name": "Anijsstraat",
+  "required_structural_scope": "Constructief ontwerp en analyse van de volledige draagconstructie, inclusief fundering, kolommen, balken, vloeren/daken, stabiliteit en belastingafdracht.",
+  "source_contract": "projects/runtime/PHOENIX-PAT-001/structural_canonicalization_v1_2/pat001_structural_input_contract_v1_2.json",
+  "canonical_model": "projects/runtime/PHOENIX-PAT-001/structural_canonicalization_v1_2/pat001_canonical_structural_model_v1_1.json",
+  "identity_rules": {
+    "project_owner_decision_is_authoritative": true,
+    "generic_name_fields_are_authoritative": false,
+    "runtime_source_contract_overwrite": false,
+    "existing_location_must_be_preserved": true,
+    "identity_values_must_match_declaration_exactly": true
+  },
+  "preparation_rules": {
+    "canonical_must_remain_valid": true,
+    "analysis_scope_must_remain_confirmed": true,
+    "calculix_adapter_must_remain_qualified": true,
+    "provenance_must_remain_complete": true,
+    "scia_gap_may_remain_open": true,
+    "expected_remaining_gap_if_all_other_gates_pass": "PAT001-GAP-SCIA-MODEL"
+  },
+  "safety": {
+    "automatic_live_scia": false,
+    "automatic_live_calculix": false,
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED"
+  }
+}

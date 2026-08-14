@@ -1,0 +1,13 @@
+{
+  "schema_version": "phoenix.project-identity-declaration/1.0",
+  "project_id": "PHOENIX-PAT-001",
+  "project_name": "Anijsstraat",
+  "structural_scope": "Constructief ontwerp en analyse van de volledige draagconstructie, inclusief fundering, kolommen, balken, vloeren/daken, stabiliteit en belastingafdracht.",
+  "decision_source": "USER_STRATEGIC_DECISION",
+  "decision_date": "2026-08-14",
+  "authority": "PROJECT_OWNER",
+  "purpose": "PAT001_STRUCTURAL_IDENTITY_CLOSURE",
+  "automatic_inference": false,
+  "automatic_professional_approval": false,
+  "automatic_code_compliance_claim": false
+}
