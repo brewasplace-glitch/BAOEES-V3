@@ -1,0 +1,51 @@
+{
+  "schema_version": "phoenix.pat001-opensees-live-evidence-policy/1.0",
+  "version": "1.0.0",
+  "required_baseline": "e71839f6037d8cad40dec81985e1747bc0e19c0a",
+  "project_id": "PHOENIX-PAT-001",
+  "project_name": "Anijsstraat",
+  "engine_id": "PHX-PAT001-OPENSEES-LIVE-EVIDENCE",
+  "adapter_id": "PAT001-OPENSEES-LIVE-PROJECT-ADAPTER-v1",
+  "execution": {
+    "explicit_live_execution_opt_in_required": true,
+    "source_decks_overwritten": false,
+    "timeout_seconds_per_case": 180
+  },
+  "deck_hardening": {
+    "mixed_frame_shell_element_tags_must_be_globally_unique": true,
+    "shell_tag_collision_repair": "DETERMINISTIC_OFFSET_AFTER_MAX_MEMBER_TAG",
+    "reaction_command_inserted_before_nodeReaction_capture": true,
+    "element_response_capture_is_best_effort": true
+  },
+  "raw_evidence": {
+    "stdout_required": true,
+    "stderr_required": true,
+    "source_deck_required": true,
+    "execution_deck_required": true,
+    "executable_hash_required": true
+  },
+  "normalization": {
+    "node_displacements_required_for_all_nodes": true,
+    "node_reactions_required_for_all_nodes": true,
+    "element_forces_best_effort": true,
+    "element_stresses_best_effort": true,
+    "equilibrium_residual_reported_without_acceptance_tolerance": true
+  },
+  "qualification": {
+    "all_base_cases_must_exit_zero": true,
+    "analysis_ok_marker_required": true,
+    "evidence_capture_ok_marker_required": true,
+    "node_normalization_complete_required": true,
+    "technical_state_if_qualified": "CALCULATED_UNVERIFIED",
+    "professional_verification_claimed": false,
+    "independent_verification_claimed": false
+  },
+  "safety": {
+    "golden_reference_counts_as_pat001_evidence": false,
+    "automatic_professional_approval": false,
+    "automatic_code_compliance_claim": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED",
+    "scia_gap_changed": false
+  }
+}
