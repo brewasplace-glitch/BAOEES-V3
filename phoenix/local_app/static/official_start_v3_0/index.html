@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PROJECT PHOENIX 3.0.2 — Official Start</title>
+<title>PROJECT PHOENIX 3.0.2 — Official Start · DE TV</title>
 <style>
 :root{
   --bg:#040b15;--panel:#081526;--panel2:#0b1d33;--line:#153b60;--text:#f4f8ff;--muted:#8aa6c0;
@@ -41,7 +41,7 @@ button,input,textarea,select{font:inherit}
 .status{background:rgba(6,17,30,.92);border:1px solid #12355c;border-radius:14px;padding:9px 11px;box-shadow:var(--shadow)}
 .status small{display:block;color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.08em}
 .status strong{display:block;margin-top:5px}
-.mainwrap{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:10px;min-height:0;align-items:start}
+.mainwrap{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:10px;min-height:0;align-items:start}
 .center{display:grid;grid-template-rows:auto auto auto auto auto;gap:10px;min-height:0}
 .panel{background:rgba(6,17,30,.92);border:1px solid #0e2a49;border-radius:18px;padding:14px;box-shadow:var(--shadow);min-width:0}
 .panel h2{margin:0 0 12px;font-size:15px;color:#f2e2b9;letter-spacing:.05em;text-transform:uppercase}
@@ -86,6 +86,31 @@ button,input,textarea,select{font:inherit}
 linear-gradient(180deg,rgba(4,16,30,.2),rgba(4,16,30,.65)),
 url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1000&q=80") center/cover}
 .imagepanel .overlay{height:100%;display:flex;align-items:flex-end;padding:16px;font-weight:700;color:#f4f8ff;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.tvpanel{border-radius:18px;border:1px solid #1b5684;background:linear-gradient(180deg,#020811,#061728);overflow:hidden;box-shadow:var(--shadow);min-height:300px;display:flex;flex-direction:column}
+.tvhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:linear-gradient(90deg,#092846,#071522);border-bottom:1px solid #17496f}
+.tvtitle{display:flex;align-items:center;gap:9px;font-weight:900;letter-spacing:.08em;color:#f8fbff}
+.tvtitle .screenicon{width:24px;height:18px;border:2px solid #58c2ff;border-radius:4px;display:inline-block;position:relative}
+.tvtitle .screenicon:after{content:"";position:absolute;width:10px;height:2px;background:#58c2ff;left:5px;bottom:-5px}
+.tvstatus{font-size:10px;padding:5px 8px;border-radius:999px;border:1px solid #256b47;background:#06261a;color:#7de5a8;font-weight:800}
+.tvstage{position:relative;min-height:214px;background:#000;display:grid;place-items:center;overflow:hidden}
+.tvstage iframe,.tvstage img,.tvstage video{width:100%;height:214px;border:0;object-fit:contain;background:#000}
+.tvstage pre{margin:0;width:100%;height:214px;overflow:auto;border:0;border-radius:0;background:#02070c;color:#d7ebff;font-size:11px}
+.tvempty{padding:22px;text-align:center;color:#9bb5cb}
+.tvempty strong{display:block;color:#fff;font-size:18px;margin-bottom:6px}
+.tvmeta{padding:8px 11px;border-top:1px solid #103a5d;border-bottom:1px solid #103a5d;background:#05111d;color:#a9c5dc;font-size:11px;min-height:34px;word-break:break-word}
+.tvcontrols{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:9px;background:#061522}
+.tvbtn{border:1px solid #245477;background:#09253e;color:#eef8ff;border-radius:9px;padding:7px 5px;font-weight:800;font-size:10px;cursor:pointer}
+.tvbtn:hover{border-color:#25b6ff}
+.tvcommand{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px;padding:0 9px 10px;background:#061522}
+.tvcommand input{min-width:0;border:1px solid #214a68;border-radius:9px;background:#020d17;color:#fff;padding:8px 9px;font-size:11px}
+.tvcommand button{border:1px solid #2d6083;border-radius:9px;background:#0b2b47;color:#fff;padding:7px 9px;cursor:pointer}
+.tvhint{padding:0 10px 10px;background:#061522;color:#7596b1;font-size:10px}
+.tvexternal{padding:24px;text-align:center;color:#d9eafb}
+.tvexternal strong{display:block;font-size:15px;margin-bottom:8px}
+.tvexternal button{margin-top:12px}
+.tvpanel:fullscreen{width:100vw;height:100vh;border-radius:0;background:#000}
+.tvpanel:fullscreen .tvstage{flex:1;min-height:0}
+.tvpanel:fullscreen .tvstage iframe,.tvpanel:fullscreen .tvstage img,.tvpanel:fullscreen .tvstage video,.tvpanel:fullscreen .tvstage pre{height:calc(100vh - 168px);max-height:none}
 .modlist{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .modbtn{padding:14px;border-radius:14px;border:1px solid #12355c;background:#071525;color:#eef7ff;cursor:pointer;text-align:left;min-height:88px}
 .modbtn:hover{border-color:#27b4ff}
@@ -120,6 +145,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
 }
 @media(max-width:980px){
   .types,.modus,.outputgroups,.twocol,.startbar,.modlist,.statusgrid{grid-template-columns:1fr}
+  .tvcontrols{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -267,7 +293,29 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
       </section>
 
       <aside class="sidepanel">
-        <div class="imagepanel"><div class="overlay">Visuele Phoenix-identiteit hersteld — stabiele UI zonder flikkeren</div></div>
+        <div class="tvpanel" id="phoenixTvPanel">
+          <div class="tvhead">
+            <div class="tvtitle"><span class="screenicon"></span><span>DE TV</span></div>
+            <div class="tvstatus" id="phoenixTvStatus">GEREED</div>
+          </div>
+          <div class="tvstage" id="phoenixTvStage">
+            <div class="tvempty"><strong>DE TV</strong>Selecteer output of geef een spraak-/tekstcommando.</div>
+          </div>
+          <div class="tvmeta" id="phoenixTvMeta">Geen output geselecteerd.</div>
+          <div class="tvcontrols">
+            <button class="tvbtn" id="phoenixTvSelected">AANGEVINKT</button>
+            <button class="tvbtn" id="phoenixTvPrev">◀ VORIGE</button>
+            <button class="tvbtn" id="phoenixTvNext">VOLGENDE ▶</button>
+            <button class="tvbtn" id="phoenixTvPlay">PRESENTATIE</button>
+            <button class="tvbtn" id="phoenixTvFullscreen">⛶ VOL SCHERM</button>
+          </div>
+          <div class="tvcommand">
+            <input id="phoenixTvCommand" type="text" autocomplete="off" placeholder="Bijv. 'toon plattegronden'">
+            <button id="phoenixTvCommandGo" title="Voer TV-commando uit">TOON</button>
+            <button id="phoenixTvMic" title="Spraakcommando voor DE TV">🎤</button>
+          </div>
+          <div class="tvhint">PRESENTATIE-vinkjes vormen de playlist · tekst/spraak kan alle aangevinkte GEWENSTE OUTPUT oproepen.</div>
+        </div>
 
         <div class="panel">
           <h2>Phoenix Modules</h2>
@@ -311,7 +359,10 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
     if (document.getElementById('phoenix-material-mode-toolbar')) return;
     const bar = document.createElement('div');
     bar.id = 'phoenix-material-mode-toolbar';
-    bar.style.cssText = 'position:fixed;top:82px;right:22px;z-index:2147483000;display:flex;gap:8px;align-items:center;font:600 12px system-ui,Segoe UI,sans-serif;';
+    bar.style.cssText = 'position:fixed;top:82px;left:238px;right:auto;z-index:2147483000;display:flex;gap:8px;align-items:center;font:600 12px system-ui,Segoe UI,sans-serif;';
+    const placeToolbar = () => { bar.style.left = window.innerWidth <= 1280 ? '18px' : '238px'; };
+    placeToolbar();
+    window.addEventListener('resize', placeToolbar);
     const mode = document.createElement('label');
     mode.style.cssText = 'display:flex;align-items:center;gap:7px;padding:9px 11px;border:1px solid #24435c;border-radius:10px;background:#071827;color:#dceaf6;box-shadow:0 6px 24px rgba(0,0,0,.24);cursor:pointer;';
     mode.title = 'Aangevinkt: strikte certificatie voor geselecteerde beschikbare producten. Uitgevinkt: beschikbare ongecertificeerde producten mogen met expliciete ontwerpklasse-aannames worden doorgerekend. Onbekende/onbeschikbare materialen blokkeren ontwerpengineering niet: Phoenix zoekt een beschikbaar alternatief en gebruikt anders een expliciete procurement-unresolved ontwerpplaceholder. Uitvoeringsvrijgave blijft geblokkeerd.';
@@ -366,5 +417,262 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
 })();
 </script>
 <!-- END PHOENIX_MATERIAL_ENGINEERING_CONTINUATION_DASHBOARD_v1_1 -->
+<!-- PHOENIX_DE_TV_OUTPUT_VIEWER_v1_0 -->
+<script id="phoenix-de-tv-output-viewer-v1-0">
+(() => {
+  'use strict';
+
+  const TV = {
+    registry: null, queue: [], index: -1, timer: null, recognition: null,
+    presentationIds: new Set(), knownIds: new Set(), labelById: new Map(), idByLabel: new Map(),
+  };
+  const $ = (id) => document.getElementById(id);
+  const normalize = (value) => String(value || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ').trim();
+
+  function catalogGroups() {
+    return Array.isArray(window.PHOENIX_DESIRED_OUTPUTS) ? window.PHOENIX_DESIRED_OUTPUTS : [];
+  }
+  function buildCatalogMaps() {
+    TV.knownIds.clear(); TV.labelById.clear(); TV.idByLabel.clear(); TV.presentationIds.clear();
+    for (const group of catalogGroups()) {
+      for (const item of (group.items || [])) {
+        if (!item || !item.id) continue;
+        const id = String(item.id), label = String(item.label || id);
+        TV.knownIds.add(id); TV.labelById.set(id, label); TV.idByLabel.set(normalize(label), id);
+        if (String(group.group || '').toUpperCase() === 'PRESENTATIE') TV.presentationIds.add(id);
+      }
+    }
+  }
+  function checkboxOutputId(cb) {
+    for (const candidate of [cb.dataset && cb.dataset.outputId, cb.value, cb.name, cb.id]) {
+      const value = String(candidate || '').trim();
+      if (TV.knownIds.has(value)) return value;
+    }
+    const row = cb.closest('.outputitem') || cb.parentElement;
+    const text = normalize(row ? row.textContent : '');
+    for (const [label, id] of TV.idByLabel.entries()) {
+      if (text === label || text.includes(label)) return id;
+    }
+    return null;
+  }
+  function selectedOutputIds() {
+    const root = $('desiredOutputGroups');
+    if (!root) return [];
+    const result = [];
+    for (const cb of root.querySelectorAll('input[type="checkbox"]:checked')) {
+      const id = checkboxOutputId(cb);
+      if (id && !result.includes(id)) result.push(id);
+    }
+    return result;
+  }
+  function setStatus(text, mode='ok') {
+    const el = $('phoenixTvStatus'); if (!el) return; el.textContent = text;
+    if (mode === 'warn') {
+      el.style.borderColor='#7d5b1f'; el.style.background='#2a1d06'; el.style.color='#ffcd61';
+    } else if (mode === 'bad') {
+      el.style.borderColor='#7a3030'; el.style.background='#2b0d0d'; el.style.color='#ff9b9b';
+    } else {
+      el.style.borderColor='#256b47'; el.style.background='#06261a'; el.style.color='#7de5a8';
+    }
+  }
+  function showEmpty(title, message, mode='warn') {
+    const stage=$('phoenixTvStage'); if (!stage) return; stage.innerHTML='';
+    const box=document.createElement('div'); box.className='tvempty';
+    const strong=document.createElement('strong'); strong.textContent=title;
+    const text=document.createElement('div'); text.textContent=message;
+    box.append(strong,text); stage.appendChild(box);
+    $('phoenixTvMeta').textContent=message; setStatus(title,mode);
+  }
+  async function loadRegistry(force=false) {
+    if (TV.registry && !force) return TV.registry;
+    const response=await fetch('/api/tv/catalog',{cache:'no-store'});
+    if (!response.ok) throw new Error('DE TV outputregister kon niet worden geladen.');
+    TV.registry=await response.json();
+    if (Array.isArray(TV.registry.presentation_output_ids)) {
+      TV.presentationIds=new Set(TV.registry.presentation_output_ids.map(String));
+    }
+    return TV.registry;
+  }
+  function artifactsFor(ids) {
+    const wanted=new Set(ids || []);
+    if (!TV.registry || !Array.isArray(TV.registry.items)) return [];
+    return TV.registry.items.filter(item => Array.isArray(item.output_ids) &&
+      item.output_ids.some(id => wanted.has(String(id))));
+  }
+  function setQueue(items) {
+    const seen=new Set(); TV.queue=[];
+    for (const item of items || []) {
+      if (!item || !item.relative_path || seen.has(item.relative_path)) continue;
+      seen.add(item.relative_path); TV.queue.push(item);
+    }
+    TV.index=TV.queue.length ? 0 : -1;
+  }
+  async function openExternal(item) {
+    const response=await fetch('/api/tv/open',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','X-Phoenix-Token':window.PHOENIX_SESSION_TOKEN},
+      body:JSON.stringify({relative_path:item.relative_path}),
+    });
+    if (!response.ok) showEmpty('OPENEN MISLUKT','Phoenix kon dit bestand niet lokaal openen.','bad');
+  }
+  async function renderItem(item) {
+    const stage=$('phoenixTvStage'), meta=$('phoenixTvMeta'); if (!stage || !item) return;
+    stage.innerHTML=''; const url=String(item.file_url || ''), kind=String(item.preview_kind || 'external');
+    let node;
+    if (kind === 'pdf' || kind === 'html') {
+      node=document.createElement('iframe'); node.src=url; node.title=item.name || 'Phoenix output';
+      if (kind === 'html') node.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-popups');
+    } else if (kind === 'image') {
+      node=document.createElement('img'); node.src=url; node.alt=item.name || 'Phoenix output';
+    } else if (kind === 'video') {
+      node=document.createElement('video'); node.src=url; node.controls=true; node.autoplay=true; node.muted=true;
+    } else if (kind === 'text') {
+      node=document.createElement('pre'); node.textContent='Output laden…';
+      fetch(url,{cache:'no-store'}).then(r=>r.text()).then(text=>{
+        node.textContent=text.length>220000 ? text.slice(0,220000)+'\n\n[DE TV: preview afgekapt]' : text;
+      }).catch(()=>{node.textContent='Tekstpreview kon niet worden geladen.';});
+    } else {
+      node=document.createElement('div'); node.className='tvexternal';
+      const strong=document.createElement('strong'); strong.textContent=item.name || 'Phoenix output';
+      const text=document.createElement('div');
+      text.textContent='Dit bestandsformaat heeft geen browser-native preview. DE TV toont het artifact en kan het lokaal openen.';
+      const button=document.createElement('button'); button.className='toolbtn'; button.textContent='OPEN BESTAND';
+      button.addEventListener('click',()=>openExternal(item)); node.append(strong,text,button);
+    }
+    stage.appendChild(node);
+    meta.textContent=`${TV.index+1}/${TV.queue.length} · ${item.name} · ${item.relative_path}`;
+    setStatus('TOONT OUTPUT','ok');
+  }
+  function showCurrent() {
+    if (TV.index < 0 || !TV.queue.length) {
+      showEmpty('GEEN OUTPUT','Geen beschikbaar artifact gevonden voor de huidige selectie.','warn'); return;
+    }
+    if (TV.index >= TV.queue.length) TV.index=0;
+    if (TV.index < 0) TV.index=TV.queue.length-1;
+    renderItem(TV.queue[TV.index]);
+  }
+  function next(){if(TV.queue.length){TV.index=(TV.index+1)%TV.queue.length;showCurrent();}}
+  function prev(){if(TV.queue.length){TV.index=(TV.index-1+TV.queue.length)%TV.queue.length;showCurrent();}}
+  async function showIds(ids,label='AANGEVINKTE OUTPUT') {
+    await loadRegistry(true);
+    const allowed=new Set(selectedOutputIds());
+    const requested=(ids || []).filter(id=>allowed.has(id));
+    if (!requested.length) {
+      showEmpty('NIET AANGEVINKT',`${label}: deze output staat niet aangevinkt onder GEWENSTE OUTPUT.`,'warn'); return;
+    }
+    const items=artifactsFor(requested); setQueue(items);
+    if (!items.length) {
+      showEmpty('NOG GEEN ARTIFACT',`${label} is aangevinkt, maar Phoenix heeft nog geen bestaand outputartifact gevonden.`,'warn'); return;
+    }
+    showCurrent();
+  }
+  async function showAllSelected() {
+    const selected=selectedOutputIds();
+    if (!selected.length) {showEmpty('GEEN SELECTIE','Vink eerst output aan onder GEWENSTE OUTPUT.','warn');return;}
+    await loadRegistry(true); setQueue(artifactsFor(selected));
+    if (!TV.queue.length) {showEmpty('NOG GEEN ARTIFACT','Voor de aangevinkte output is nog geen bestaand artifact gevonden.','warn');return;}
+    showCurrent();
+  }
+  async function startPresentation() {
+    await loadRegistry(true);
+    const selected=selectedOutputIds().filter(id=>TV.presentationIds.has(id));
+    if (!selected.length) {showEmpty('PRESENTATIE LEEG','Vink één of meer onderdelen aan onder PRESENTATIE.','warn');return;}
+    setQueue(artifactsFor(selected));
+    if (!TV.queue.length) {showEmpty('PRESENTATIE WACHT','De PRESENTATIE-output is geselecteerd maar nog niet als artifact beschikbaar.','warn');return;}
+    if (TV.timer) clearInterval(TV.timer); showCurrent(); TV.timer=setInterval(next,9000); setStatus('PRESENTATIE','ok');
+  }
+  function stopPresentation(){if(TV.timer)clearInterval(TV.timer);TV.timer=null;setStatus('PAUZE','ok');}
+  async function fullscreen() {
+    const panel=$('phoenixTvPanel'); if (!panel) return;
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else if (panel.requestFullscreen) await panel.requestFullscreen();
+    } catch (_) {showEmpty('VOL SCHERM','De browser heeft volledig scherm geweigerd.','warn');}
+  }
+  function resolveCommandOutputIds(command) {
+    const n=normalize(command);
+    const aliases=new Map([
+      ['pdf','drawing_pdf'],['pdf tekening','drawing_pdf'],['pdf tekeningen','drawing_pdf'],
+      ['rapport','reports'],['rapporten','reports'],['berekening','calculations'],['berekeningen','calculations'],
+      ['constructieve berekening','structural_analysis'],['constructieve berekeningen','structural_analysis'],
+      ['situatie','site_plan'],['situatietekening','site_plan'],['plattegrond','floor_plans'],['plattegronden','floor_plans'],
+      ['gevel','facades'],['gevels','facades'],['doorsnede','sections'],['doorsneden','sections'],
+      ['details','details'],['constructietekeningen','structural_drawings'],['funderingstekeningen','foundation_drawings'],
+      ['infra tekeningen','infra_drawings'],['digital twin','digital_twin_output'],['ifc','ifc_bim'],['bim','ifc_bim'],
+      ['dwg','dwg_dxf'],['dxf','dwg_dxf'],['fundering','foundation_design'],['verkeer','traffic_parking'],
+      ['parkeren','traffic_parking'],['riolering','drainage'],['afwatering','drainage'],['aerius','aerius'],
+      ['vergunning','permit_analysis'],['kosten','cost_estimate'],['kostenraming','cost_estimate'],
+      ['planning','planning'],['hoeveelheden','quantities'],['3d viewer','viewer_3d'],['3d','viewer_3d'],
+      ['walk through','walkthrough'],['walkthrough','walkthrough'],['drive through','drivethrough'],
+      ['drivethrough','drivethrough'],['vogelvlucht','bird_view'],['video','auto_video'],
+      ['qa qc','qaqc_output'],['bronvermelding','source_evidence'],['review','engineering_review_package'],
+      ['release package','release_package'],['project zip','project_zip'],
+    ]);
+    const matches=[];
+    for (const [alias,id] of aliases) if (n.includes(alias) && !matches.includes(id)) matches.push(id);
+    for (const [label,id] of TV.idByLabel.entries()) if (n.includes(label) && !matches.includes(id)) matches.push(id);
+    return matches;
+  }
+  async function executeCommand(raw) {
+    const command=normalize(raw); if (!command) return;
+    if (command.includes('verlaat volledig scherm') || command.includes('sluit volledig scherm')) {
+      if (document.fullscreenElement) await document.exitFullscreen(); return;
+    }
+    if (command.includes('volledig scherm') || command.includes('vol scherm') || command.includes('full screen') || command==='fullscreen') {
+      await fullscreen(); return;
+    }
+    if (command==='volgende' || command.includes('volgende output')) {next();return;}
+    if (command==='vorige' || command.includes('vorige output')) {prev();return;}
+    if (command.includes('stop presentatie') || command.includes('pauze presentatie')) {stopPresentation();return;}
+    if (command.includes('start presentatie') || command==='presentatie') {await startPresentation();return;}
+    if (command.includes('toon alles') || command.includes('toon aangevinkt') || command.includes('alle aangevinkte')) {
+      await showAllSelected();return;
+    }
+    const ids=resolveCommandOutputIds(command);
+    if (ids.length) {await showIds(ids,raw);return;}
+    showEmpty('COMMANDO ONBEKEND',`DE TV begrijpt "${raw}" nog niet. Probeer bijvoorbeeld "toon plattegronden".`,'warn');
+  }
+  function setupSpeech() {
+    const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+    const mic=$('phoenixTvMic'); if (!mic) return;
+    if (!SpeechRecognition) {
+      mic.title='Spraakherkenning is niet beschikbaar in deze browser; tekstinvoer blijft beschikbaar.';
+      mic.addEventListener('click',()=>showEmpty('SPRAAK NIET BESCHIKBAAR','Gebruik het tekstveld van DE TV.','warn')); return;
+    }
+    const recognition=new SpeechRecognition(); recognition.lang='nl-NL'; recognition.interimResults=false; recognition.maxAlternatives=1;
+    recognition.addEventListener('result',(event)=>{
+      const text=event.results && event.results[0] && event.results[0][0] ? event.results[0][0].transcript : '';
+      $('phoenixTvCommand').value=text; executeCommand(text);
+    });
+    recognition.addEventListener('start',()=>{mic.textContent='●';setStatus('LUISTERT','ok');});
+    recognition.addEventListener('end',()=>{mic.textContent='🎤';if(!TV.timer)setStatus('GEREED','ok');});
+    recognition.addEventListener('error',()=>{mic.textContent='🎤';setStatus('SPRAAKFOUT','warn');});
+    mic.addEventListener('click',()=>{try{recognition.start();}catch(_){}});
+    TV.recognition=recognition;
+  }
+  function setup() {
+    buildCatalogMaps();
+    $('phoenixTvSelected')?.addEventListener('click',showAllSelected);
+    $('phoenixTvPrev')?.addEventListener('click',prev);
+    $('phoenixTvNext')?.addEventListener('click',next);
+    $('phoenixTvPlay')?.addEventListener('click',()=>TV.timer?stopPresentation():startPresentation());
+    $('phoenixTvFullscreen')?.addEventListener('click',fullscreen);
+    $('phoenixTvCommandGo')?.addEventListener('click',()=>executeCommand($('phoenixTvCommand').value));
+    $('phoenixTvCommand')?.addEventListener('keydown',(event)=>{if(event.key==='Enter')executeCommand(event.currentTarget.value);});
+    $('desiredOutputGroups')?.addEventListener('change',()=>{
+      const selected=selectedOutputIds(); $('phoenixTvMeta').textContent=`${selected.length} gewenste outputselectie(s) aangevinkt.`;
+    });
+    setupSpeech();
+    loadRegistry(false).then(registry=>{
+      $('phoenixTvMeta').textContent=`DE TV gereed · ${registry.artifact_count || 0} bestaande outputartifact(en) geregistreerd.`;
+    }).catch(()=>setStatus('REGISTER OFFLINE','warn'));
+  }
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',setup,{once:true});
+  else setup();
+})();
+</script>
+<!-- END PHOENIX_DE_TV_OUTPUT_VIEWER_v1_0 -->
 </body>
 </html>

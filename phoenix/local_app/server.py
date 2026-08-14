@@ -83,6 +83,11 @@ class PhoenixLocalApplication:
                 "speech_input": "browser_capability",
                 "results_panel": True,
                 "desired_output_selection": True,
+                "de_tv_output_viewer": "1.0.2",
+                "de_tv_fullscreen": True,
+                "de_tv_text_commands": True,
+                "de_tv_speech_commands": "browser_capability",
+                "drawing_pdf_desired_output": True,
                 "autonomous_project_bootstrap": True,
                 "session_driven_orchestrator": "1.1.0",
                 "generic_session_adapter_masterpack": "1.0.0",
@@ -453,6 +458,17 @@ class PhoenixLocalApplication:
         if not isinstance(desired_outputs, list):
             raise ValueError("desired_outputs moet een lijst zijn.")
 
+        requested_desired_outputs = [
+            str(item).strip() for item in desired_outputs if str(item).strip()
+        ]
+        drawing_pdf_requested = "drawing_pdf" in requested_desired_outputs
+        # drawing_pdf is a format preference for drawing/model deliverables, not a
+        # separate engineering capability. Keep it out of capability gating while
+        # preserving the explicit UI request in the session evidence.
+        desired_outputs = [
+            item for item in requested_desired_outputs if item != "drawing_pdf"
+        ]
+
         now = datetime.now(timezone.utc)
         session_id = f"PHX-{now.strftime('%Y%m%dT%H%M%SZ')}-{secrets.token_hex(4)}"
         root = self.repository / "outputs" / "runtime" / "phoenix_start_v3_sessions"
@@ -471,6 +487,10 @@ class PhoenixLocalApplication:
             "selected_project": selected_project,
             "upload_batch": upload_batch,
             "desired_outputs": desired_outputs,
+            "desired_output_ui_selection": requested_desired_outputs,
+            "output_format_preferences": {
+                "drawing_pdf": drawing_pdf_requested,
+            },
             "status": (
                 "READY_FOR_AUTONOMOUS_ORCHESTRATION"
                 if project_mode == "autonomous"
@@ -596,6 +616,224 @@ class PhoenixLocalApplication:
         )
         return manifest
 
+
+    # -------------------- DE TV output registry --------------------
+    def _tv_repo_relative(self, path: Path) -> str:
+        """Return a repository-relative path using OS-canonical path spellings.
+
+        On Windows the same physical path may be exposed as both a long path
+        (C:\\Users\\brewasplace\\...) and an 8.3 alias (C:\\Users\\BREWAS~1\\...).
+        pathlib.Path.relative_to() is lexical and therefore rejects that pair.
+        os.path.realpath() canonicalizes the Windows path spelling before the
+        repository containment comparison.
+        """
+        canonical_repo = Path(os.path.realpath(self.repository))
+        canonical_path = Path(os.path.realpath(path))
+        try:
+            return canonical_path.relative_to(canonical_repo).as_posix()
+        except ValueError as error:
+            raise RuntimeError(
+                f"DE TV artifact ligt buiten de repository: {path}"
+            ) from error
+
+    def tv_output_registry(self) -> dict[str, Any]:
+        """Build a read-only registry of Phoenix output artifacts for DE TV.
+
+        The registry never fabricates results: only existing files below controlled
+        Phoenix output roots are exposed. One artifact may map to multiple desired
+        output IDs so the TV can respond to both presentation and engineering queries.
+        """
+        roots = [
+            self.repository / "outputs" / "runtime",
+            self.repository / "outputs" / "projects",
+            self.repository / "projects" / "runtime",
+            self.repository / "reports",
+            self.repository / "artifacts",
+        ]
+        allowed_suffixes = {
+            ".html", ".htm", ".pdf", ".png", ".jpg", ".jpeg", ".gif", ".svg",
+            ".mp4", ".webm", ".mov",
+            ".txt", ".log", ".json", ".csv", ".md",
+            ".docx", ".xlsx", ".zip", ".ifc", ".dxf", ".dwg", ".gltf", ".glb",
+        }
+        items: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        max_items = 750
+
+        candidates: list[Path] = []
+        for root in roots:
+            if not root.is_dir():
+                continue
+            for path in root.rglob("*"):
+                if not path.is_file() or path.suffix.lower() not in allowed_suffixes:
+                    continue
+                relative = self._tv_repo_relative(path)
+                if relative in seen:
+                    continue
+                seen.add(relative)
+                candidates.append(path)
+
+        def sort_key(path: Path) -> tuple[int, str]:
+            try:
+                stamp = path.stat().st_mtime_ns
+            except OSError:
+                stamp = 0
+            return stamp, str(path).lower()
+
+        candidates.sort(key=sort_key, reverse=True)
+
+        for path in candidates[:max_items]:
+            try:
+                stat = path.stat()
+            except OSError:
+                continue
+            relative = self._tv_repo_relative(path)
+            output_ids = self._tv_output_ids(path)
+            items.append({
+                "name": path.name,
+                "relative_path": relative,
+                "size_bytes": stat.st_size,
+                "modified_utc": datetime.fromtimestamp(
+                    stat.st_mtime, tz=timezone.utc
+                ).isoformat(),
+                "category": self._result_category(path),
+                "preview_kind": self._tv_preview_kind(path),
+                "mime_type": mimetypes.guess_type(path.name)[0] or "application/octet-stream",
+                "output_ids": output_ids,
+                "file_url": "/api/tv/file/" + "/".join(
+                    urllib.parse.quote(part, safe="") for part in relative.split("/")
+                ),
+            })
+
+        presentation_ids = []
+        for group in self.desired_output_catalog():
+            if group.get("group") == "PRESENTATIE":
+                presentation_ids = [
+                    str(item.get("id"))
+                    for item in group.get("items", [])
+                    if item.get("id")
+                ]
+                break
+
+        return {
+            "tv_name": "DE TV",
+            "status": "READY",
+            "artifact_count": len(items),
+            "items": items,
+            "desired_output_catalog": self.desired_output_catalog(),
+            "presentation_output_ids": presentation_ids,
+            "fullscreen_supported": True,
+            "speech_input": "browser_capability",
+            "text_input": True,
+            "source_policy": "EXISTING_ARTIFACTS_ONLY_NO_FABRICATION",
+        }
+
+    def resolve_tv_file(self, relative: str) -> Path:
+        relative = urllib.parse.unquote(str(relative or "")).replace("\\", "/").lstrip("/")
+        path = self._safe_repo_path(relative)
+        allowed_roots = [
+            (self.repository / "outputs").resolve(),
+            (self.repository / "projects" / "runtime").resolve(),
+            (self.repository / "reports").resolve(),
+            (self.repository / "artifacts").resolve(),
+        ]
+        if not any(path == root or root in path.parents for root in allowed_roots):
+            raise FileNotFoundError("DE TV mag alleen gecontroleerde Phoenix-output tonen.")
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        return path
+
+    def open_tv_output(self, relative: str) -> dict[str, Any]:
+        path = self.resolve_tv_file(relative)
+        self._open_path(path)
+        return {
+            "opened": str(path),
+            "relative_path": self._tv_repo_relative(path),
+            "tv_name": "DE TV",
+        }
+
+    def _tv_output_ids(self, path: Path) -> list[str]:
+        relative = self._tv_repo_relative(path).lower()
+        name = path.name.lower()
+        suffix = path.suffix.lower()
+        haystack = f"{relative} {name}"
+        ids: set[str] = set()
+
+        keyword_map = {
+            "reports": ("report", "rapport", "memo"),
+            "calculations": ("calculation", "berekening", "calculated", "result"),
+            "specifications": ("specification", "bestek", "spec_"),
+            "tender_docs": ("tender", "aanbested"),
+            "permit_dossier": ("permit", "vergunning", "bopa", "dossier"),
+            "cost_estimate": ("cost_estimate", "kostenraming", "estimate", "raming"),
+            "planning": ("planning", "schedule"),
+            "quantities": ("quantity", "quantities", "hoeveel", "boq"),
+            "site_plan": ("site_plan", "situatie", "siteplan"),
+            "floor_plans": ("floor_plan", "floorplan", "plattegrond"),
+            "facades": ("facade", "gevel"),
+            "sections": ("section", "doorsnede"),
+            "details": ("detailtekening", "detail_drawing", "/details/", "_detail"),
+            "structural_drawings": ("structural_drawing", "constructietekening"),
+            "foundation_drawings": ("foundation_drawing", "funderingstekening"),
+            "infra_drawings": ("infra_drawing", "terreintekening", "road_drawing"),
+            "digital_twin_output": ("digital_twin", "digital-twin"),
+            "ifc_bim": (".ifc", "bim"),
+            "structural_analysis": ("structural", "opensees", "calculix", "scia", "analysis"),
+            "foundation_design": ("foundation", "fundering"),
+            "traffic_parking": ("traffic", "parking", "verkeer", "parkeren"),
+            "drainage": ("drainage", "riolering", "afwatering"),
+            "aerius": ("aerius",),
+            "permit_analysis": ("permit_analysis", "vergunninganalyse"),
+            "cost_optimization": ("cost_optimization", "kostenoptimalisatie"),
+            "variant_analysis": ("variant", "variantenanalyse"),
+            "viewer_3d": ("viewer", "3d", "model_browser", "digital_twin"),
+            "walkthrough": ("walkthrough", "walk-through", "walk_through"),
+            "drivethrough": ("drivethrough", "drive-through", "drive_through"),
+            "bird_view": ("bird_view", "birdview", "vogelvlucht", "bird-eye"),
+            "auto_video": ("video", "presentatie", "presentation"),
+            "qaqc_output": ("qaqc", "qa_qc", "qa-qc", "quality"),
+            "source_evidence": ("source", "evidence", "bronvermelding", "bronregister"),
+            "engineering_review_package": ("engineering_review", "review_package", "verification", "review_dossier"),
+            "release_package": ("release_package", "/release/", "_release"),
+        }
+        for output_id, keywords in keyword_map.items():
+            if any(keyword in haystack for keyword in keywords):
+                ids.add(output_id)
+
+        if suffix in {".dwg", ".dxf"}:
+            ids.add("dwg_dxf")
+        if suffix == ".ifc":
+            ids.add("ifc_bim")
+        if suffix == ".zip":
+            ids.add("project_zip")
+        if suffix in {".mp4", ".webm", ".mov"}:
+            ids.add("auto_video")
+
+        drawing_markers = (
+            "drawing", "tekening", "floor", "plattegrond", "facade", "gevel",
+            "section", "doorsnede", "site_plan", "situatie", "foundation",
+            "fundering", "structural", "constructie", "infra", "terrein", "/02_drawings/",
+        )
+        if suffix == ".pdf" and any(marker in haystack for marker in drawing_markers):
+            ids.add("drawing_pdf")
+
+        return sorted(ids)
+
+    @staticmethod
+    def _tv_preview_kind(path: Path) -> str:
+        suffix = path.suffix.lower()
+        if suffix == ".pdf":
+            return "pdf"
+        if suffix in {".png", ".jpg", ".jpeg", ".gif", ".svg"}:
+            return "image"
+        if suffix in {".mp4", ".webm", ".mov"}:
+            return "video"
+        if suffix in {".html", ".htm"}:
+            return "html"
+        if suffix in {".txt", ".log", ".json", ".csv", ".md"}:
+            return "text"
+        return "external"
+
     def render_dashboard(self) -> str:
         rendered, info = self.dashboard.render(token=self.token)
         self.dashboard_info = info
@@ -678,6 +916,14 @@ class PhoenixLocalApplication:
                     self._json(application.progress_snapshot())
                 elif parsed.path == "/api/results":
                     self._json(application.results_snapshot())
+                elif parsed.path == "/api/tv/catalog":
+                    self._json(application.tv_output_registry())
+                elif parsed.path.startswith("/api/tv/file/"):
+                    relative = parsed.path[len("/api/tv/file/") :]
+                    try:
+                        self._file(application.resolve_tv_file(relative))
+                    except FileNotFoundError as error:
+                        self._json({"error": str(error)}, HTTPStatus.NOT_FOUND)
                 elif parsed.path == "/api/desired-outputs":
                     self._json({
                         "catalog": application.desired_output_catalog(),
@@ -722,6 +968,8 @@ class PhoenixLocalApplication:
                         elif parsed.path.startswith("/api/modules/") and parsed.path.endswith("/open"):
                             module_id = parsed.path.split("/")[3]
                             self._json(application.open_module(module_id))
+                        elif parsed.path == "/api/tv/open":
+                            self._json(application.open_tv_output(str(body.get("relative_path", ""))))
                         elif parsed.path == "/api/project-analysis/start":
                             self._json(application.create_analysis_session(body), HTTPStatus.CREATED)
                         elif parsed.path == "/api/autonomous/start":
@@ -809,6 +1057,7 @@ class PhoenixLocalApplication:
                 {"id": "digital_twin_output", "label": "Digital Twin"},
                 {"id": "ifc_bim", "label": "IFC / BIM"},
                 {"id": "dwg_dxf", "label": "DWG / DXF"},
+                {"id": "drawing_pdf", "label": "PDF"},
             ]},
             {"group": "ANALYSES", "items": [
                 {"id": "structural_analysis", "label": "Constructieve berekeningen"},
@@ -881,9 +1130,13 @@ class PhoenixLocalApplication:
             return "drawing_model"
         if suffix in {".xlsx", ".csv"}:
             return "table"
-        if suffix in {".png", ".jpg", ".jpeg"}:
+        if suffix in {".png", ".jpg", ".jpeg", ".gif", ".svg"}:
             return "image"
-        if suffix in {".json", ".log", ".html"}:
+        if suffix in {".mp4", ".webm", ".mov"}:
+            return "video"
+        if suffix in {".gltf", ".glb"}:
+            return "drawing_model"
+        if suffix in {".json", ".log", ".html", ".htm", ".md"}:
             return "data_log"
         if suffix in {".zip"}:
             return "archive"

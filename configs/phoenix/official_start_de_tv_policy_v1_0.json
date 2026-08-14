@@ -1,0 +1,60 @@
+{
+  "policy_name": "Project Phoenix Official Start DE TV Presentation Output Viewer Policy",
+  "policy_version": "1.0.2",
+  "start_screen_version": "3.1.0",
+  "local_app_version": "1.8.8",
+  "tv_name": "DE TV",
+  "artifact_policy": "EXISTING_ARTIFACTS_ONLY_NO_FABRICATION",
+  "presentation_selection_source": "GEWENSTE_OUTPUT/PRESENTATIE_CHECKBOXES",
+  "text_commands": true,
+  "speech_commands": "BROWSER_CAPABILITY_WITH_TEXT_FALLBACK",
+  "fullscreen": true,
+  "checked_desired_output_access_only": true,
+  "drawing_model_pdf_checkbox": {
+    "id": "drawing_pdf",
+    "label": "PDF",
+    "group": "TEKENINGEN / MODELLEN",
+    "semantics": "FORMAT_PREFERENCE_NOT_ENGINEERING_CAPABILITY"
+  },
+  "toolbar_relocation": {
+    "controls": [
+      "GECERTIFICEERD",
+      "POWERSHELL"
+    ],
+    "desktop_left_px": 238,
+    "compact_left_px": 18
+  },
+  "supported_native_preview_kinds": [
+    "pdf",
+    "image",
+    "video",
+    "html",
+    "text"
+  ],
+  "non_native_preview": "ARTIFACT_CARD_WITH_LOCAL_OPEN_ACTION",
+  "changes_professional_approval": false,
+  "changes_code_compliance_claim": false,
+  "changes_independent_verification_claim": false,
+  "production_release": "LOCKED",
+  "for_construction_release": "LOCKED",
+  "scia_gap_changed": false,
+  "live_solver_execution_during_install": false,
+  "fixed_revision": "R2",
+  "windows_path_alias_handling": {
+    "method": "os.path.realpath",
+    "handles_8_3_and_long_path_aliases": true,
+    "repository_containment_still_required": true
+  },
+  "installer_recovery": {
+    "recognizes_failed_v1_0_residue_only": true,
+    "unexpected_changes_still_block": true,
+    "untracked_new_files_removed_without_git_restore_pathspec_error": true
+  },
+  "runtime_compatibility": {
+    "phoenix_local_app_version": "1.8.7",
+    "official_start_version": "3.0.2",
+    "reason": "DE TV is a backward-compatible feature addition; existing launcher and regression version gates remain authoritative.",
+    "legacy_version_gates_modified": false
+  },
+  "de_tv_version": "1.0.2"
+}
