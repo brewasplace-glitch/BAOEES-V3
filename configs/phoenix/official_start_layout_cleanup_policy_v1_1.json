@@ -1,0 +1,41 @@
+{
+  "policy_name": "Project Phoenix Official Start DE TV Layout Cleanup",
+  "policy_version": "1.1.1",
+  "required_baseline": "3b27b0e340bdc41745fb1f7700d39522e399eb6f",
+  "compatibility": {
+    "phoenix_local_app": "1.8.7",
+    "official_start": "3.0.2",
+    "de_tv": "1.0.2",
+    "legacy_version_gates_modified": false
+  },
+  "layout_contract": {
+    "certified_and_powershell_position": "IN_FLOW_ABOVE_CIVIEL_AND_INFRA",
+    "fixed_toolbar_forbidden": true,
+    "panel_overlap_forbidden": true,
+    "projecttype_grid_uses_minmax_zero": true,
+    "long_section_labels_wrap": true,
+    "phoenix_modules_position": "BOTTOM_OF_RIGHT_COLUMN_AFTER_PROJECTS",
+    "phoenix_modules_default_state": "COLLAPSED",
+    "tv_controls_wrap_without_overlap": true
+  },
+  "safety": {
+    "de_tv_functionality_changed": false,
+    "professional_approval_changed": false,
+    "code_compliance_claim_changed": false,
+    "production_release": "LOCKED",
+    "for_construction_release": "LOCKED",
+    "live_solver_execution_during_install": false
+  },
+  "fixed_revision": "R2",
+  "regression_contract_migration": {
+    "legacy_test": "tests/automation/test_phoenix_official_start_de_tv_v1_0.py",
+    "obsolete_expectation_removed": "left:238px;right:auto",
+    "new_expectation": "IN_FLOW_ABOVE_CIVIEL_AND_INFRA",
+    "ui_behavior_changed_from_v1_1": false
+  },
+  "fixed_r2": {
+    "change": "Dedicated layout test now expects policy_version 1.1.1.",
+    "ui_changed": false,
+    "regression_contract_changed": false
+  }
+}

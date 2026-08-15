@@ -45,29 +45,35 @@ button,input,textarea,select{font:inherit}
 .center{display:grid;grid-template-rows:auto auto auto auto auto;gap:10px;min-height:0}
 .panel{background:rgba(6,17,30,.92);border:1px solid #0e2a49;border-radius:18px;padding:14px;box-shadow:var(--shadow);min-width:0}
 .panel h2{margin:0 0 12px;font-size:15px;color:#f2e2b9;letter-spacing:.05em;text-transform:uppercase}
-.sectionlabel{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.badge{width:24px;height:24px;border-radius:7px;background:#244bff;color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px}
-.types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sectionlabel{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;min-width:0;flex-wrap:wrap}
+.sectionlabel>div:last-child{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.badge{width:auto;min-width:24px;max-width:100%;height:24px;padding:0 7px;border-radius:7px;background:#244bff;color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px;white-space:nowrap;flex:0 0 auto}
+.projecttype-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 10px;min-width:0}
+.projecttype-actions-slot{grid-column:2/4;display:flex;justify-content:flex-end;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.projecttype-inline-toolbar{position:static!important;display:flex;justify-content:flex-end;align-items:center;gap:8px;flex-wrap:wrap;max-width:100%;font:600 12px system-ui,"Segoe UI",sans-serif}
+.types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .typecard{border-radius:14px;border:1px solid #1c446e;background:#071626;padding:13px;cursor:pointer;position:relative;overflow:hidden;min-height:118px}
 .typecard.active{box-shadow:0 0 0 1px var(--cyan),0 0 20px rgba(37,182,255,.18)}
 .typecard h3{margin:0 0 8px;font-size:16px}
 .typecard ul{margin:0;padding-left:18px;color:#c9d8ea;font-size:12px}
 .typecard .icon{position:absolute;left:18px;bottom:18px;font-size:44px;opacity:.8}
 .type-bouw h3{color:#48a4ff}.type-civiel h3{color:#8cd532}.type-infra h3{color:#ff962b}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.twocol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.twocol>*,.types>*,.modus>*,.outputgroups>*,.mainwrap>*,.sidepanel>*{min-width:0;max-width:100%}
+textarea,select,input{max-width:100%}
 .dropzone,.speechbox{border:1px solid #12355c;border-radius:14px;padding:13px;background:#050f1c;min-height:132px}
 .dropzone .big,.speechbox .big{font-size:16px;font-weight:700;text-align:center;margin:16px 0 8px}
 .dropzone .fmt{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
 .fmt span{border:1px solid #274665;border-radius:6px;padding:3px 6px;font-size:11px;color:#c5d4e4}
 .bigmic{font-size:38px;text-align:center;margin-top:10px;color:#61b9ff}
-.modus{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.modus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .modecard{border:1px solid #12355c;border-radius:14px;padding:11px;background:#06111f;cursor:pointer;min-height:98px}
 .modecard.active{box-shadow:0 0 0 1px #25b6ff;background:linear-gradient(180deg,#0b1e36,#071321)}
 .modecard h3{margin:0 0 10px;font-size:15px}
 .modecard p{margin:0;color:#b7c7da;font-size:12px}
 .outputtoolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .toolbtn{padding:8px 10px;border-radius:10px;border:1px solid #25496d;background:#0a2037;color:#eef7ff;cursor:pointer}
-.outputgroups{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.outputgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .outputgroup{border:1px solid #12355c;border-radius:14px;padding:11px;background:#05111e}
 .outputgroup h3{margin:0 0 10px;font-size:13px;color:#cfe5ff}
 .outputitem{display:flex;align-items:center;gap:7px;margin:5px 0;color:#dfebf7}
@@ -81,7 +87,7 @@ button,input,textarea,select{font:inherit}
 .primarybtn{background:linear-gradient(90deg,#2642ff,#2e84ff);color:#fff}
 .secondarybtn{background:#0b2038;color:#e6f3ff;border:1px solid #25527e}
 .resultsrow{display:flex;gap:12px}
-.sidepanel{display:grid;grid-template-rows:auto auto auto auto;gap:10px;min-height:0;align-content:start}
+.sidepanel{display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:10px;min-height:0;align-content:start}
 .imagepanel{border-radius:18px;border:1px solid #103154;overflow:hidden;min-height:190px;background:
 linear-gradient(180deg,rgba(4,16,30,.2),rgba(4,16,30,.65)),
 url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1000&q=80") center/cover}
@@ -98,8 +104,8 @@ url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fi
 .tvempty{padding:22px;text-align:center;color:#9bb5cb}
 .tvempty strong{display:block;color:#fff;font-size:18px;margin-bottom:6px}
 .tvmeta{padding:8px 11px;border-top:1px solid #103a5d;border-bottom:1px solid #103a5d;background:#05111d;color:#a9c5dc;font-size:11px;min-height:34px;word-break:break-word}
-.tvcontrols{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:9px;background:#061522}
-.tvbtn{border:1px solid #245477;background:#09253e;color:#eef8ff;border-radius:9px;padding:7px 5px;font-weight:800;font-size:10px;cursor:pointer}
+.tvcontrols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:9px;background:#061522}
+.tvbtn{min-width:0;border:1px solid #245477;background:#09253e;color:#eef8ff;border-radius:9px;padding:7px 5px;font-weight:800;font-size:10px;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
 .tvbtn:hover{border-color:#25b6ff}
 .tvcommand{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px;padding:0 9px 10px;background:#061522}
 .tvcommand input{min-width:0;border:1px solid #214a68;border-radius:9px;background:#020d17;color:#fff;padding:8px 9px;font-size:11px}
@@ -111,7 +117,14 @@ url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fi
 .tvpanel:fullscreen{width:100vw;height:100vh;border-radius:0;background:#000}
 .tvpanel:fullscreen .tvstage{flex:1;min-height:0}
 .tvpanel:fullscreen .tvstage iframe,.tvpanel:fullscreen .tvstage img,.tvpanel:fullscreen .tvstage video,.tvpanel:fullscreen .tvstage pre{height:calc(100vh - 168px);max-height:none}
-.modlist{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.phoenix-modules-collapsible{padding:0;overflow:hidden}
+.phoenix-modules-collapsible>summary{list-style:none;cursor:pointer;padding:14px 16px;font-size:15px;color:#f2e2b9;letter-spacing:.05em;text-transform:uppercase;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none}
+.phoenix-modules-collapsible>summary::-webkit-details-marker{display:none}
+.phoenix-modules-collapsible>summary::after{content:"▸";color:#79c9ff;font-size:18px;transition:transform .18s ease}
+.phoenix-modules-collapsible[open]>summary::after{transform:rotate(90deg)}
+.phoenix-modules-collapsible[open]>summary{border-bottom:1px solid #12355c}
+.phoenix-modules-body{padding:12px 14px 14px}
+.modlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .modbtn{padding:14px;border-radius:14px;border:1px solid #12355c;background:#071525;color:#eef7ff;cursor:pointer;text-align:left;min-height:88px}
 .modbtn:hover{border-color:#27b4ff}
 .modbtn .name{font-weight:800}.modbtn .sub{display:block;margin-top:6px;color:#9fb9d3;font-size:12px}
@@ -145,7 +158,10 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
 }
 @media(max-width:980px){
   .types,.modus,.outputgroups,.twocol,.startbar,.modlist,.statusgrid{grid-template-columns:1fr}
-  .tvcontrols{grid-template-columns:repeat(3,1fr)}
+  .projecttype-actions{grid-template-columns:1fr}
+  .projecttype-actions-slot{grid-column:1;justify-content:flex-start}
+  .projecttype-inline-toolbar{justify-content:flex-start}
+  .tvcontrols{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -208,6 +224,9 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
         <div class="panel">
           <h2>Nieuw Project</h2>
           <div class="sectionlabel"><div class="badge">1</div><div>SELECTEER PROJECTTYPE</div></div>
+          <div class="projecttype-actions" aria-label="Projecttype acties">
+            <div class="projecttype-actions-slot" id="phoenixProjectTypeActions"></div>
+          </div>
           <div class="types">
             <button class="typecard type-bouw active" data-type="BOUW">
               <h3>BOUW</h3>
@@ -317,11 +336,6 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
           <div class="tvhint">PRESENTATIE-vinkjes vormen de playlist · tekst/spraak kan alle aangevinkte GEWENSTE OUTPUT oproepen.</div>
         </div>
 
-        <div class="panel">
-          <h2>Phoenix Modules</h2>
-          <div class="modlist" id="moduleGrid"></div>
-        </div>
-
         <div class="panel scrollpanel">
           <h2>Beschikbare Workflows</h2>
           <div id="workflowList"></div>
@@ -331,6 +345,13 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
           <h2>Projecten</h2>
           <div id="projectList"></div>
         </div>
+
+        <details class="panel phoenix-modules-collapsible" id="phoenixModulesPanel">
+          <summary>PHOENIX MODULES</summary>
+          <div class="phoenix-modules-body">
+            <div class="modlist" id="moduleGrid"></div>
+          </div>
+        </details>
       </aside>
     </div>
   </main>
@@ -359,10 +380,7 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
     if (document.getElementById('phoenix-material-mode-toolbar')) return;
     const bar = document.createElement('div');
     bar.id = 'phoenix-material-mode-toolbar';
-    bar.style.cssText = 'position:fixed;top:82px;left:238px;right:auto;z-index:2147483000;display:flex;gap:8px;align-items:center;font:600 12px system-ui,Segoe UI,sans-serif;';
-    const placeToolbar = () => { bar.style.left = window.innerWidth <= 1280 ? '18px' : '238px'; };
-    placeToolbar();
-    window.addEventListener('resize', placeToolbar);
+    bar.className = 'projecttype-inline-toolbar';
     const mode = document.createElement('label');
     mode.style.cssText = 'display:flex;align-items:center;gap:7px;padding:9px 11px;border:1px solid #24435c;border-radius:10px;background:#071827;color:#dceaf6;box-shadow:0 6px 24px rgba(0,0,0,.24);cursor:pointer;';
     mode.title = 'Aangevinkt: strikte certificatie voor geselecteerde beschikbare producten. Uitgevinkt: beschikbare ongecertificeerde producten mogen met expliciete ontwerpklasse-aannames worden doorgerekend. Onbekende/onbeschikbare materialen blokkeren ontwerpengineering niet: Phoenix zoekt een beschikbaar alternatief en gebruikt anders een expliciete procurement-unresolved ontwerpplaceholder. Uitvoeringsvrijgave blijft geblokkeerd.';
@@ -386,7 +404,9 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
       finally { setTimeout(() => { ps.disabled = false; }, 500); }
     });
     bar.append(mode, ps);
-    document.body.appendChild(bar);
+    const target = document.getElementById('phoenixProjectTypeActions');
+    if (target) target.appendChild(bar);
+    else document.querySelector('.types')?.before(bar);
   }
   const nativeFetch = window.fetch.bind(window);
   window.fetch = function(input, init) {

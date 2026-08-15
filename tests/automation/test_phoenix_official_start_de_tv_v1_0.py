@@ -66,10 +66,19 @@ class OfficialStartDeTvTests(unittest.TestCase):
         self.assertIn("showAllSelected", self.html)
         self.assertIn("NIET AANGEVINKT", self.html)
 
-    def test_08_certified_and_powershell_toolbar_moves_left(self) -> None:
-        self.assertIn("left:238px;right:auto", self.html)
+    def test_08_certified_and_powershell_toolbar_moves_into_projecttype_flow(self) -> None:
+        self.assertNotIn("position:fixed;top:82px;left:238px", self.html)
+        self.assertIn('id="phoenixProjectTypeActions"', self.html)
+        self.assertIn("projecttype-inline-toolbar", self.html)
+        self.assertIn("target.appendChild(bar)", self.html)
         self.assertIn("phoenix-certified-materials", self.html)
         self.assertIn("phoenix-return-powershell", self.html)
+
+        action = self.html.index('id="phoenixProjectTypeActions"')
+        civiel = self.html.index('class="typecard type-civiel"')
+        infra = self.html.index('class="typecard type-infra"')
+        self.assertLess(action, civiel)
+        self.assertLess(action, infra)
 
     def test_09_pdf_desired_output_exists(self) -> None:
         app = self.bare_app(ROOT)
@@ -170,6 +179,12 @@ class OfficialStartDeTvTests(unittest.TestCase):
         self.assertEqual("1.8.7", self.policy["runtime_compatibility"]["phoenix_local_app_version"])
         self.assertEqual("3.0.2", self.policy["runtime_compatibility"]["official_start_version"])
         self.assertFalse(self.policy["runtime_compatibility"]["legacy_version_gates_modified"])
+
+    def test_22_layout_cleanup_contract_is_backward_compatible(self) -> None:
+        self.assertIn('id="phoenixProjectTypeActions"', self.html)
+        self.assertNotIn("left:238px;right:auto", self.html)
+        self.assertIn('<details class="panel phoenix-modules-collapsible"', self.html)
+        self.assertIn("<summary>PHOENIX MODULES</summary>", self.html)
 
 if __name__ == "__main__":
     unittest.main()
