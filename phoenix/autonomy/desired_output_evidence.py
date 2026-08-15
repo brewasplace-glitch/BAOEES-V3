@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .visual_output_artifact_generation import ensure_auto_video_artifact, ensure_viewer_3d_artifact
+
 VERSION = "1.0.0"
 
 
@@ -106,6 +108,9 @@ def validate_desired_output_evidence(
         evidence = _existing(repository, [x for x in structural if any(k in x for k in ("analysis_validation.json", "member_verification.json"))])
     elif oid == "viewer_3d":
         evidence = _refs(_find(workspace, ("viewer", "3d_viewer"), (".html", ".gltf", ".glb")), repository)
+        if not evidence:
+            ensure_viewer_3d_artifact(repository, workspace)
+            evidence = _refs(_find(workspace, ("viewer", "3d_viewer"), (".html", ".gltf", ".glb")), repository)
         reason = "REAL_3D_VIEWER_ARTIFACT_REQUIRED"
     elif oid == "qaqc_output":
         evidence = _existing(repository, [x for x in closure if x.endswith("qaqc_release_gate.json")])
@@ -127,7 +132,10 @@ def validate_desired_output_evidence(
     elif oid == "foundation_drawings":
         evidence = _refs(_find(workspace / "results" / "session_adapters" / "structural_engineering", ("foundation", "fundering"), (".dxf", ".svg", ".pdf", ".dwg")), repository)
     elif oid == "auto_video":
-        evidence = _refs([p for p in workspace.rglob("*") if p.is_file() and p.suffix.casefold() in {".mp4", ".webm", ".mov"} and p.stat().st_size > 0], repository)
+        evidence = _refs([p for p in workspace.rglob("*") if p.is_file() and p.suffix.casefold() in {".mp4", ".webm", ".mov", ".avi"} and p.stat().st_size > 0], repository)
+        if not evidence:
+            ensure_auto_video_artifact(repository, workspace)
+            evidence = _refs([p for p in workspace.rglob("*") if p.is_file() and p.suffix.casefold() in {".mp4", ".webm", ".mov", ".avi"} and p.stat().st_size > 0], repository)
         reason = "AUTOMATIC_VIDEO_ARTIFACT_REQUIRED"
     elif oid == "foundation_design":
         evidence = _existing(repository, [x for x in structural if x.endswith("foundation_design_report.json")])
