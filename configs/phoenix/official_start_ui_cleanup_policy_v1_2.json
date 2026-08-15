@@ -1,0 +1,19 @@
+{
+  "policy_name": "Project Phoenix Official Start UI Cleanup",
+  "version": "1.2",
+  "baseline": "58d7f4663f1ab8e324928aac14b34d947b35ac86",
+  "official_start_file": "phoenix/local_app/static/official_start_v3_0/index.html",
+  "requirements": {
+    "de_tv_preserved": true,
+    "phoenix_modules_collapsed_by_default": true,
+    "available_workflows_at_bottom": true,
+    "available_workflows_collapsed_by_default": true,
+    "workflow_list_dom_id_preserved": true,
+    "module_grid_dom_id_preserved": true
+  },
+  "release_behavior": {
+    "fail_closed": true,
+    "commit_only_after_tests": true,
+    "push_only_after_commit": true
+  }
+}
