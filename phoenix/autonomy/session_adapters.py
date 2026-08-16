@@ -4,6 +4,7 @@ Seven adapters consume the same project session/workspace contract.
 They never fabricate professional approval and never invoke project-specific pilot runners.
 """
 from __future__ import annotations
+from phoenix.architecture.real_multivariant_design_engine_v1_0 import run_multivariant_design_from_scope as _phoenix_real_multivariant_design
 from phoenix.autonomy.material_certification_engineering_mode import (
     cost_certification_block_should_apply as _phoenix_material_mode_cost_gate,
 )
@@ -177,6 +178,11 @@ def run_architecture(ctx: dict[str, Any]) -> int:
                 "reason": "CAD_BIM_IMPORT_ADAPTER_REQUIRED",
                 "message": "CAD/BIM-bron is aanwezig, maar moet eerst naar het generieke architectuurmodel worden vertaald.",
             })
+        # PHOENIX_REAL_ARCHITECTURAL_MULTI_VARIANT_DESIGN_ENGINE_v1_0
+        try:
+            _phoenix_real_multivariant_design(locals(), __file__)
+        except Exception as _phoenix_design_exc:
+            raise RuntimeError(f'REAL_ARCHITECTURAL_MULTI_VARIANT_DESIGN_FAILED: {_phoenix_design_exc}') from _phoenix_design_exc
         return finish(
             ctx, capability_id=cap, label=label, status="BLOCKED_INPUT",
             outputs=[repo_ref(intake_path, ctx["repository"])],
@@ -476,6 +482,11 @@ def run_architecture(ctx: dict[str, Any]) -> int:
     if context_result.site_context.get("status")=="SCHEMATIC_ASSUMPTION":
         warnings.append("Site plan is schematic only because real plot/location facts were not supplied.")
 
+    # PHOENIX_REAL_ARCHITECTURAL_MULTI_VARIANT_DESIGN_ENGINE_v1_0
+    try:
+        _phoenix_real_multivariant_design(locals(), __file__)
+    except Exception as _phoenix_design_exc:
+        raise RuntimeError(f'REAL_ARCHITECTURAL_MULTI_VARIANT_DESIGN_FAILED: {_phoenix_design_exc}') from _phoenix_design_exc
     return finish(
         ctx, capability_id=cap, label=label, status="PASSED",
         outputs=outputs,
