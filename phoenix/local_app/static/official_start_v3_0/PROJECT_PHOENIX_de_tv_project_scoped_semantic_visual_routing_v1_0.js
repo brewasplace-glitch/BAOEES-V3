@@ -1,12 +1,14 @@
-// PROJECT PHOENIX DE TV AUTHORITATIVE ACTIVE PROJECT CONTEXT + COMMAND NORMALIZATION v1.0 R1
+// PROJECT PHOENIX DE TV DIRECT VISUAL ARTIFACT OPEN + RENDER BRIDGE v1.0
 (() => {
   'use strict';
 
-  const VERSION = '1.1.1';
+  const VERSION = '1.2.0';
   const PROJECT_RE = /\bPHOENIX-PAT-\d+\b/i;
-  let busy = false;
+  const MAX_SEEK_STEPS = 1200;
+
   let lastKind = null;
   let lastProject = null;
+  let seekToken = 0;
 
   // Backward-compatible regression contract:
   // cross-project fallback is verboden
@@ -31,14 +33,12 @@
   }
 
   function authoritativeActiveProjectId() {
-    // 1. Current orchestrator progress is authoritative.
     for (const id of ['progressStep', 'progressLabel']) {
       const node = document.getElementById(id);
       const pid = projectIdFromText(node ? node.textContent : '');
       if (pid) return pid;
     }
 
-    // 2. Visible active session/result modal is authoritative.
     const modal = document.getElementById('modal');
     if (modal) {
       const style = getComputedStyle(modal);
@@ -49,26 +49,26 @@
       }
     }
 
-    // 3. Explicit current-project controls, but never catalog entries.
     const direct = [];
     document.querySelectorAll(
       '[data-current-project],[data-active-project],[data-project-id],select,input'
     ).forEach(el => {
       if (el.closest && el.closest('#projectList')) return;
-      const vals = [
+      const values = [
         el.dataset?.currentProject,
         el.dataset?.activeProject,
         el.dataset?.projectId,
         el.value
       ];
-      for (const raw of vals) {
+      for (const raw of values) {
         const pid = projectIdFromText(raw);
         if (pid) direct.push(pid);
       }
     });
+
     if (direct.length) return direct[direct.length - 1];
 
-    // 4. Never infer the active project from #projectList.
+    // Never infer the active project from #projectList.
     return null;
   }
 
@@ -104,89 +104,140 @@
   function artifactFor(pid, kind, dxf = false) {
     const base = `projects/runtime/${pid}`;
 
-    if (kind === 'viewer_3d') {
+    if (kind === 'viewer_3d')
       return `${base}/results/generated_visual_media/viewer_3d/phoenix_3d_viewer.html`;
-    }
 
-    if (kind === 'auto_video') {
+    if (kind === 'auto_video')
       return `${base}/results/generated_visual_media/auto_video/phoenix_automatic_video.avi`;
-    }
 
-    if (kind === 'site_plan') {
-      // Keep this exact expression for backward-compatible regression contract:
+    if (kind === 'site_plan')
       return `${base}/results/session_adapters/architecture/drawings/site_plan.${dxf?'dxf':'svg'}`;
-    }
 
     return null;
   }
 
-  function gate(title, msg) {
+  function gate(title, message) {
     const stage = document.getElementById('phoenixTvStage');
     const meta = document.getElementById('phoenixTvMeta');
+
     if (stage) {
       stage.innerHTML =
-        `<div style="padding:18px;color:#dceeff"><strong>${title}</strong><br>${msg}</div>`;
+        `<div style="padding:18px;color:#dceeff;font-family:Segoe UI,Arial,sans-serif">` +
+        `<strong>${title}</strong><br>${message}</div>`;
     }
-    if (meta) {
-      meta.textContent = `PROJECT-SCOPED QUALITY GATE · ${msg}`;
-    }
+    if (meta) meta.textContent = `DIRECT ARTIFACT BRIDGE · ${message}`;
   }
 
-  function submit(path) {
-    if (busy || !path) return false;
-
-    const input = document.getElementById('phoenixTvCommand');
-    const button = document.getElementById('phoenixTvCommandGo');
-    if (!input || !button) return false;
-
-    busy = true;
-    input.value = `toon ${path}`;
-
-    setTimeout(() => {
-      button.click();
-      setTimeout(() => {
-        busy = false;
-      }, 700);
-    }, 20);
-
-    return true;
-  }
-
-  function interceptSemantic(ev) {
-    if (busy) return;
-
-    const button = ev.target?.closest?.('#phoenixTvCommandGo');
-    if (!button) return;
-
-    const input = document.getElementById('phoenixTvCommand');
-    if (!input) return;
-
-    const kind = semanticKind(input.value);
-    if (!kind) return;
-
-    const pid = authoritativeActiveProjectId();
-
-    ev.preventDefault();
-    ev.stopImmediatePropagation();
-
-    if (!pid) {
-      gate(
-        'DE TV PROJECT-SCOPE GEBLOKKEERD',
-        'Geen authoritative actieve projectsessie gevonden; cross-project fallback is verboden.'
-      );
-      return;
-    }
-
-    lastKind = kind;
-    lastProject = pid;
-    submit(artifactFor(pid, kind, false));
-  }
-
-  function metaArtifact() {
+  function currentArtifactPath() {
     const meta = document.getElementById('phoenixTvMeta');
-    const text = normPath(meta?.textContent);
-    const m = text.match(/projects\/runtime\/(PHOENIX-PAT-\d+)\/[^·\s]+/i);
-    return m ? { path: m[0], pid: m[1].toUpperCase() } : null;
+    const text = normPath(meta ? meta.textContent : '');
+
+    const projectPath = text.match(/projects\/runtime\/PHOENIX-PAT-\d+\/[^·\r\n]+/i);
+    if (projectPath) return projectPath[0].trim();
+
+    const outputPath = text.match(/outputs\/[^·\r\n]+/i);
+    if (outputPath) return outputPath[0].trim();
+
+    return '';
+  }
+
+  function sameArtifact(actual, wanted) {
+    const a = normPath(actual).toLowerCase();
+    const w = normPath(wanted).toLowerCase();
+    return !!a && !!w && (a === w || a.endsWith('/' + w) || w.endsWith('/' + a));
+  }
+
+  function parsePosition() {
+    const meta = document.getElementById('phoenixTvMeta');
+    const text = String(meta ? meta.textContent : '');
+    const m = text.match(/\b(\d+)\s*\/\s*(\d+)\b/);
+    return m ? { index: Number(m[1]), total: Number(m[2]) } : null;
+  }
+
+  function waitForMetaChange(previous, token, timeout = 900) {
+    return new Promise(resolve => {
+      const meta = document.getElementById('phoenixTvMeta');
+      if (!meta || token !== seekToken) {
+        resolve(false);
+        return;
+      }
+
+      let done = false;
+      const finish = changed => {
+        if (done) return;
+        done = true;
+        observer.disconnect();
+        clearTimeout(timer);
+        resolve(changed);
+      };
+
+      const observer = new MutationObserver(() => {
+        const now = String(meta.textContent || '');
+        if (now !== previous) finish(true);
+      });
+
+      observer.observe(meta, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+
+      const timer = setTimeout(() => finish(false), timeout);
+    });
+  }
+
+  async function seekExactArtifact(path) {
+    const wanted = normPath(path);
+    const next = document.getElementById('phoenixTvNext');
+    const meta = document.getElementById('phoenixTvMeta');
+
+    if (!next || !meta || !wanted) {
+      gate('DE TV DIRECT ARTIFACT BRIDGE GEBLOKKEERD',
+        'Bestaande TV-carrouselrenderer kon niet worden gevonden.');
+      return false;
+    }
+
+    const token = ++seekToken;
+    const initial = currentArtifactPath();
+
+    if (sameArtifact(initial, wanted)) {
+      return true;
+    }
+
+    const pos = parsePosition();
+    const max = Math.min(
+      MAX_SEEK_STEPS,
+      pos && pos.total > 0 ? pos.total + 2 : MAX_SEEK_STEPS
+    );
+
+    for (let step = 0; step < max; step++) {
+      if (token !== seekToken) return false;
+
+      const beforeText = String(meta.textContent || '');
+      next.click();
+      await waitForMetaChange(beforeText, token);
+
+      const actual = currentArtifactPath();
+      if (sameArtifact(actual, wanted)) {
+        const pid = projectIdFromText(actual);
+        if (lastProject && pid && pid !== lastProject) {
+          gate(
+            'DE TV CROSS-PROJECT ROUTING GEBLOKKEERD',
+            `Artifact ${pid} geweigerd; authoritative actieve project is ${lastProject}.`
+          );
+          return false;
+        }
+        return true;
+      }
+
+      if (actual && sameArtifact(actual, initial) && step > 1) break;
+    }
+
+    gate(
+      'DE TV ARTIFACT NIET GEVONDEN',
+      `Het exacte artifact voor ${lastProject || 'het actieve project'} staat niet in de huidige TV-artifactlijst: ${wanted}`
+    );
+    return false;
   }
 
   function blankFraction(img) {
@@ -212,9 +263,7 @@
         if (
           data[i + 3] > 15 &&
           (data[i] < 235 || data[i + 1] < 235 || data[i + 2] < 235)
-        ) {
-          ink++;
-        }
+        ) ink++;
       }
 
       return ink / total;
@@ -223,93 +272,72 @@
     }
   }
 
-  function postRouteCheck() {
-    if (!lastProject || busy) return;
+  async function runSitePlanQualityGate(pid) {
+    const stage = document.getElementById('phoenixTvStage');
+    if (!stage) return;
 
-    const authoritative = authoritativeActiveProjectId();
-    if (authoritative && authoritative !== lastProject) {
-      lastProject = authoritative;
-      submit(artifactFor(lastProject, lastKind, false));
-      return;
-    }
+    const img = stage.querySelector('img');
+    if (!img) return;
 
-    const artifact = metaArtifact();
-    if (artifact && artifact.pid !== lastProject) {
-      gate(
-        'DE TV CROSS-PROJECT ROUTING GEBLOKKEERD',
-        `Artifact ${artifact.pid} geweigerd; authoritative actieve project is ${lastProject}.`
-      );
-      setTimeout(() => submit(artifactFor(lastProject, lastKind, false)), 50);
-      return;
-    }
-
-    if (lastKind === 'site_plan') {
-      const img = document.getElementById('phoenixTvStage')?.querySelector('img');
-      if (!img) return;
-
-      const run = () => {
-        const fraction = blankFraction(img);
-        if (fraction !== null && fraction < 0.0035) {
-          gate(
-            'SITUATIETEKENING KWALITEITSGATE',
-            `SVG voor ${lastProject} is vrijwel blanco (${(fraction * 100).toFixed(2)}% beeldinhoud). Project-eigen DXF wordt geopend.`
-          );
-          setTimeout(
-            () => submit(artifactFor(lastProject, 'site_plan', true)),
-            80
-          );
-        }
-      };
-
-      if (img.complete) {
-        setTimeout(run, 80);
-      } else {
-        img.addEventListener('load', () => setTimeout(run, 80), { once: true });
+    const evaluate = async () => {
+      const fraction = blankFraction(img);
+      if (fraction !== null && fraction < 0.0035) {
+        gate(
+          'SITUATIETEKENING KWALITEITSGATE',
+          `SVG voor ${pid} is vrijwel blanco (${(fraction * 100).toFixed(2)}% beeldinhoud). Project-eigen DXF wordt geopend via de bestaande DE TV-renderer.`
+        );
+        await seekExactArtifact(artifactFor(pid, 'site_plan', true));
       }
+    };
+
+    if (img.complete) {
+      setTimeout(evaluate, 100);
+    } else {
+      img.addEventListener('load', () => setTimeout(evaluate, 100), { once: true });
     }
+  }
+
+  async function openSemantic(kind) {
+    const pid = authoritativeActiveProjectId();
+
+    if (!pid) {
+      gate(
+        'DE TV PROJECT-SCOPE GEBLOKKEERD',
+        'Geen authoritative actieve projectsessie gevonden; cross-project fallback is verboden.'
+      );
+      return;
+    }
+
+    lastKind = kind;
+    lastProject = pid;
+
+    const wanted = artifactFor(pid, kind, false);
+    const found = await seekExactArtifact(wanted);
+
+    if (found && kind === 'site_plan') {
+      runSitePlanQualityGate(pid);
+    }
+  }
+
+  function interceptSemantic(ev) {
+    const button = ev.target?.closest?.('#phoenixTvCommandGo');
+    if (!button) return;
+
+    const input = document.getElementById('phoenixTvCommand');
+    if (!input) return;
+
+    const kind = semanticKind(input.value);
+    if (!kind) return;
+
+    // Important: do not forward a filesystem/artifact path to the legacy text parser.
+    ev.preventDefault();
+    ev.stopImmediatePropagation();
+
+    openSemantic(kind);
   }
 
   function start() {
     document.addEventListener('click', interceptSemantic, true);
-
-    const observer = new MutationObserver(postRouteCheck);
-    const stage = document.getElementById('phoenixTvStage');
-    const meta = document.getElementById('phoenixTvMeta');
-    const progressStep = document.getElementById('progressStep');
-    const progressLabel = document.getElementById('progressLabel');
-
-    if (stage) {
-      observer.observe(stage, {
-        childList: true,
-        subtree: true,
-        characterData: true,
-        attributes: true
-      });
-    }
-
-    if (meta) {
-      observer.observe(meta, {
-        childList: true,
-        subtree: true,
-        characterData: true
-      });
-    }
-
-    if (progressStep) {
-      observer.observe(progressStep, {
-        childList: true,
-        subtree: true,
-        characterData: true
-      });
-    }
-
-    if (progressLabel) {
-      observer.observe(progressLabel, {
-        childList: true,
-        subtree: true,
-        characterData: true
-      });
-    }
   }
 
   if (document.readyState === 'loading') {
@@ -324,6 +352,8 @@
     semanticKind,
     projectIdFromText,
     authoritativeActiveProjectId,
-    artifactFor
+    artifactFor,
+    currentArtifactPath,
+    seekExactArtifact
   };
 })();
