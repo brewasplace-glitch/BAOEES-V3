@@ -7,6 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 from phoenix.engines.engine_discovery_v1_0 import discover_engine as _phoenix_discover_engine
+from phoenix.engines.visual_engine_discovery_v1_0 import discover_executable as _phoenix_visual_discover_executable, discover_comfyui as _phoenix_visual_discover_comfyui
 
 VERSION="1.0.0"
 
@@ -54,6 +55,17 @@ def evaluate_registry(registry_path:Path):
                   "discovery_source":deep.get("discovery_source"),
                   "discovery_evidence":deep.get("evidence",{})
                 })
+                if not deep["available"]:
+                    state["status_note"]="REGISTERED_BUT_NOT_DISCOVERED"
+            # PHOENIX_VISUAL_DESIGN_STACK_v1_0
+            elif e["id"] in {"blender","freecad","sweethome3d"}:
+                deep=_phoenix_visual_discover_executable(e["id"],repository)
+                state.update(deep)
+                if not deep["available"]:
+                    state["status_note"]="REGISTERED_BUT_NOT_DISCOVERED"
+            elif e["id"]=="comfyui":
+                deep=_phoenix_visual_discover_comfyui(repository)
+                state.update(deep)
                 if not deep["available"]:
                     state["status_note"]="REGISTERED_BUT_NOT_DISCOVERED"
             else:

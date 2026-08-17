@@ -1,12 +1,13 @@
 {
   "schema_version": "phoenix.open-source-engine-registry/1.0",
-  "registry_version": "1.1.0",
+  "registry_version": "1.2.0",
   "policy": {
     "phoenix_role": "AUTONOMOUS_ENGINEERING_ORCHESTRATOR",
     "specialist_engine_reimplementation": "AVOID_WHEN_MATURE_OPEN_SOURCE_ENGINE_EXISTS",
     "authoritative_architectural_geometry": "IFC",
     "production_release": "LOCKED",
-    "discovery_rule": "DISCOVER_BEFORE_DECLARE_UNAVAILABLE"
+    "discovery_rule": "DISCOVER_BEFORE_DECLARE_UNAVAILABLE",
+    "architectural_visual_rule": "IFC_SOURCE_OF_TRUTH_VISUALS_ARE_DERIVED"
   },
   "engines": [
     {
@@ -174,14 +175,16 @@
     {
       "id": "blender",
       "name": "Blender",
-      "tier": "DISCIPLINE_ON_DEMAND",
+      "tier": "RECOMMENDED_VISUAL_CORE",
       "kind": "executable",
       "executables": [
-        "blender",
-        "blender.exe"
+        "blender.exe",
+        "blender"
       ],
       "capabilities": [
-        "RENDER",
+        "IFC_DERIVED_RENDERING",
+        "EXTERIOR",
+        "INTERIOR",
         "ANIMATION"
       ],
       "license": "GPL",
@@ -190,15 +193,18 @@
     {
       "id": "freecad",
       "name": "FreeCAD",
-      "tier": "DISCIPLINE_ON_DEMAND",
+      "tier": "OPTIONAL_AUTHORING",
       "kind": "executable",
       "executables": [
+        "FreeCAD.exe",
+        "freecad.exe",
         "FreeCAD",
-        "FreeCAD.exe"
+        "freecad"
       ],
       "capabilities": [
         "PARAMETRIC_CAD",
-        "STEP"
+        "STEP",
+        "BIM_REVIEW"
       ],
       "license": "LGPL/GPL mixed",
       "source": "https://www.freecad.org/"
@@ -217,6 +223,36 @@
       ],
       "license": "GPL",
       "source": "https://librecad.org/"
+    },
+    {
+      "id": "sweethome3d",
+      "name": "Sweet Home 3D",
+      "tier": "OPTIONAL_INTERIOR",
+      "kind": "executable",
+      "executables": [
+        "SweetHome3D.exe",
+        "SweetHome3D",
+        "sweethome3d"
+      ],
+      "capabilities": [
+        "INTERIOR_LAYOUT",
+        "FURNITURE",
+        "INTERIOR_VISUALIZATION"
+      ],
+      "license": "GPL"
+    },
+    {
+      "id": "comfyui",
+      "name": "ComfyUI",
+      "tier": "OPTIONAL_AI_VISUAL",
+      "kind": "service_or_python_app",
+      "capabilities": [
+        "AI_IMAGE",
+        "AI_IMAGE_TO_IMAGE",
+        "AI_CONCEPT_VARIANTS",
+        "AI_VIDEO"
+      ],
+      "license": "GPL-3.0"
     }
   ],
   "official_external_services": [

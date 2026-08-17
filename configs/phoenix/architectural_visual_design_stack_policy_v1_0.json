@@ -1,0 +1,86 @@
+{
+  "schema_version": "phoenix.architectural-visual-design-stack/1.0",
+  "stack_version": "1.0.0",
+  "baseline": "d698c42e50b21d549bd9ef1fe76370c0dcef6c4c",
+  "authoritative_geometry": "IFC",
+  "principles": [
+    "IFC_REMAINS_SOURCE_OF_TRUTH",
+    "VISUAL_AI_MUST_NOT_SILENTLY_CHANGE_BUILDING_GEOMETRY",
+    "OPEN_SOURCE_ENGINES_ARE_DISCOVERED_BEFORE_DECLARED_UNAVAILABLE",
+    "OPTIONAL_VISUAL_ENGINES_DO_NOT_BLOCK_CORE_PROJECT_EXECUTION",
+    "AI_OUTPUT_IS_PRESENTATION_OR_CONCEPT_EVIDENCE_UNLESS_PROMOTED_BY_QA"
+  ],
+  "engines": {
+    "blender": {
+      "tier": "RECOMMENDED_VISUAL_CORE",
+      "role": [
+        "IFC_DERIVED_RENDERING",
+        "EXTERIOR",
+        "INTERIOR",
+        "ANIMATION"
+      ],
+      "executables": [
+        "blender.exe",
+        "blender"
+      ],
+      "environment_variables": [
+        "BLENDER_HOME"
+      ]
+    },
+    "freecad": {
+      "tier": "OPTIONAL_AUTHORING",
+      "role": [
+        "PARAMETRIC_CAD",
+        "STEP",
+        "BIM_REVIEW"
+      ],
+      "executables": [
+        "FreeCAD.exe",
+        "freecad.exe",
+        "FreeCAD",
+        "freecad"
+      ],
+      "environment_variables": [
+        "FREECAD_HOME"
+      ]
+    },
+    "sweethome3d": {
+      "tier": "OPTIONAL_INTERIOR",
+      "role": [
+        "INTERIOR_LAYOUT",
+        "FURNITURE",
+        "INTERIOR_VISUALIZATION"
+      ],
+      "executables": [
+        "SweetHome3D.exe",
+        "SweetHome3D",
+        "sweethome3d"
+      ],
+      "environment_variables": [
+        "SWEETHOME3D_HOME"
+      ]
+    },
+    "comfyui": {
+      "tier": "OPTIONAL_AI_VISUAL",
+      "role": [
+        "AI_IMAGE",
+        "AI_IMAGE_TO_IMAGE",
+        "AI_CONCEPT_VARIANTS",
+        "AI_VIDEO"
+      ],
+      "detection": [
+        "COMFYUI_HOME",
+        "COMFYUI_URL",
+        "repository scan"
+      ],
+      "default_url": "http://127.0.0.1:8188"
+    }
+  },
+  "presentation_contract": {
+    "authoritative_model": "IFC",
+    "derived_render": "PRESENTATION_ARTIFACT",
+    "ai_generated_image": "CONCEPT_OR_PRESENTATION_ARTIFACT",
+    "professional_review_required": true,
+    "production_release": "LOCKED"
+  }
+}
