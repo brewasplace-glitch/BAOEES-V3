@@ -1,0 +1,12 @@
+{
+  "schema_version": "phoenix.de-tv-seek-exact-visual-ready-bridge/1.0",
+  "required_baseline": "1564c2b9b4c00c9af3e7c4a3ef2c495f51fbc195",
+  "direct_http_artifact_routes": "DISABLED",
+  "artifact_open_authority": "EXISTING_SEEK_EXACT_ARTIFACT_BRIDGE",
+  "visual_ready_required": true,
+  "seek_timeout_ms": 8000,
+  "visual_ready_timeout_ms": 7000,
+  "loading_mask_must_release": true,
+  "normal_stage_max_height_px": 560,
+  "production_release": "LOCKED"
+}
