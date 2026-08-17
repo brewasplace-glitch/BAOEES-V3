@@ -1,0 +1,12 @@
+{
+  "schema_version": "phoenix.de-tv-direct-authoritative-png-render-bridge/1.0",
+  "required_baseline": "8e9c49234ca4558583e84edfff4b5f8432d9e830",
+  "project_id": "PHOENIX-PAT-002",
+  "authority": "IFC_GEOMETRY__BLENDER_PRESENTATION",
+  "direct_png_render": true,
+  "responsive_stage": true,
+  "controls_must_remain_visible": true,
+  "presentation_interval_seconds": 7,
+  "technical_artifacts_in_presentation": false,
+  "production_release": "LOCKED"
+}
