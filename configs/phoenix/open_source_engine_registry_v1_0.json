@@ -1,11 +1,12 @@
 {
   "schema_version": "phoenix.open-source-engine-registry/1.0",
-  "registry_version": "1.0.0",
+  "registry_version": "1.1.0",
   "policy": {
     "phoenix_role": "AUTONOMOUS_ENGINEERING_ORCHESTRATOR",
     "specialist_engine_reimplementation": "AVOID_WHEN_MATURE_OPEN_SOURCE_ENGINE_EXISTS",
     "authoritative_architectural_geometry": "IFC",
-    "production_release": "LOCKED"
+    "production_release": "LOCKED",
+    "discovery_rule": "DISCOVER_BEFORE_DECLARE_UNAVAILABLE"
   },
   "engines": [
     {
@@ -36,7 +37,11 @@
         "STRUCTURAL_FEM"
       ],
       "license": "GPL",
-      "source": "https://www.calculix.de/"
+      "source": "https://www.calculix.de/",
+      "discovery": {
+        "strategy": "PATH_ENV_REPOSITORY_WINDOWS_SCAN",
+        "adapter": "phoenix.engines.adapters.calculix_adapter_v1_0"
+      }
     },
     {
       "id": "gmsh",
@@ -52,7 +57,11 @@
         "GEOMETRY"
       ],
       "license": "GPL",
-      "source": "https://gmsh.info/"
+      "source": "https://gmsh.info/",
+      "discovery": {
+        "strategy": "PATH_ENV_REPOSITORY_WINDOWS_SCAN",
+        "adapter": "phoenix.engines.adapters.gmsh_adapter_v1_0"
+      }
     },
     {
       "id": "qgis",
@@ -69,7 +78,11 @@
         "CARTOGRAPHY"
       ],
       "license": "GPL",
-      "source": "https://qgis.org/"
+      "source": "https://qgis.org/",
+      "discovery": {
+        "strategy": "PATH_ENV_REPOSITORY_WINDOWS_SCAN",
+        "adapter": "phoenix.engines.adapters.qgis_adapter_v1_0"
+      }
     },
     {
       "id": "opensees",

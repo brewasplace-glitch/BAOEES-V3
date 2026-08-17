@@ -1,0 +1,65 @@
+{
+  "schema_version": "phoenix.open-source-engine-discovery-policy/1.0",
+  "policy_version": "1.0.0",
+  "baseline": "bd27cee9d8a01d2c0637bfa88d3cb398aef740e1",
+  "principles": [
+    "DISCOVER_BEFORE_DECLARE_UNAVAILABLE",
+    "PATH_IS_NOT_THE_ONLY_SOURCE_OF_TRUTH",
+    "DO_NOT_INSTALL_OPTIONAL_ENGINES_IN_FOUNDATION",
+    "REQUIRED_ENGINE_STATE_MUST_INCLUDE_DISCOVERY_EVIDENCE",
+    "ENGINE_ADAPTERS_MUST_BE_FAIL_CLOSED"
+  ],
+  "engines": {
+    "calculix": {
+      "required": true,
+      "executables": [
+        "ccx.exe",
+        "ccx"
+      ],
+      "environment_variables": [
+        "CCX_HOME",
+        "CALCULIX_HOME"
+      ],
+      "capabilities": [
+        "STRUCTURAL_FEM",
+        "STATIC",
+        "NONLINEAR",
+        "THERMAL"
+      ]
+    },
+    "gmsh": {
+      "required": false,
+      "executables": [
+        "gmsh.exe",
+        "gmsh"
+      ],
+      "environment_variables": [
+        "GMSH_HOME"
+      ],
+      "capabilities": [
+        "MESHING",
+        "GEOMETRY",
+        "MESH_CONVERSION"
+      ]
+    },
+    "qgis": {
+      "required": false,
+      "executables": [
+        "qgis_process.exe",
+        "qgis_process",
+        "qgis-bin.exe",
+        "qgis.exe"
+      ],
+      "environment_variables": [
+        "QGIS_PREFIX_PATH",
+        "OSGEO4W_ROOT"
+      ],
+      "capabilities": [
+        "GIS",
+        "SPATIAL_ANALYSIS",
+        "CARTOGRAPHY",
+        "PROCESSING"
+      ]
+    }
+  }
+}

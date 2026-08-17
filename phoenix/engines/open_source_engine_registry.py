@@ -6,6 +6,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from phoenix.engines.engine_discovery_v1_0 import discover_engine as _phoenix_discover_engine
 
 VERSION="1.0.0"
 
@@ -43,10 +44,23 @@ def evaluate_registry(registry_path:Path):
         if e["id"]=="ifcopenshell":
             state.update(_probe_python("ifcopenshell"))
         else:
-            exe=_which(e.get("executables",[]),repository)
-            state["available"]=bool(exe)
-            if exe:state["executable"]=exe
-            if not exe:state["status_note"]="REGISTERED_NOT_REQUIRED_FOR_CURRENT_DISCIPLINE"
+            # PHOENIX_DEEP_ENGINE_DISCOVERY_v1_0
+            if e["id"] in {"calculix","gmsh","qgis"}:
+                deep=_phoenix_discover_engine(e["id"],repository)
+                state.update({
+                  "available":deep["available"],
+                  "executable":deep.get("executable"),
+                  "version":deep.get("version"),
+                  "discovery_source":deep.get("discovery_source"),
+                  "discovery_evidence":deep.get("evidence",{})
+                })
+                if not deep["available"]:
+                    state["status_note"]="REGISTERED_BUT_NOT_DISCOVERED"
+            else:
+                exe=_which(e.get("executables",[]),repository)
+                state["available"]=bool(exe)
+                if exe:state["executable"]=exe
+                if not exe:state["status_note"]="REGISTERED_NOT_REQUIRED_FOR_CURRENT_DISCIPLINE"
         states.append(state)
     required=[s for s in states if s["tier"]=="REQUIRED_CORE"]
     return {
