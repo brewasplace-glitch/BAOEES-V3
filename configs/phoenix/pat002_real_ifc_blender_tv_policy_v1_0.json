@@ -1,0 +1,36 @@
+{
+  "schema_version": "phoenix.pat002-real-ifc-blender-tv/1.0",
+  "version": "1.0.0",
+  "baseline": "440591ada89420ff557906be0a99d89fcd2c416a",
+  "authoritative_geometry": "IFC",
+  "presentation_engine": "Blender",
+  "required_outputs": [
+    "exterior_front",
+    "exterior_rear",
+    "bird_view",
+    "interior_cutaway"
+  ],
+  "tv_commands": {
+    "toon ontwerp": "exterior_front",
+    "toon exterieur": "exterior_front",
+    "toon interieur": "interior_cutaway",
+    "toon variant b": "exterior_front",
+    "toon 3d": "exterior_front",
+    "toon vogelvlucht": "bird_view"
+  },
+  "rules": [
+    "IFC_REMAINS_AUTHORITATIVE",
+    "BLENDER_OUTPUT_IS_PRESENTATION_ONLY",
+    "ACTIVE_PROJECT_SCOPE_REQUIRED",
+    "NO_CROSS_PROJECT_ARTIFACT_ROUTING",
+    "NO_JSON_AS_PRIMARY_VISUAL_WHEN_RENDER_EXISTS",
+    "PRODUCTION_RELEASE_LOCKED",
+    "CYCLES_CLI_BOOTSTRAP_REQUIRED",
+    "AUTONOMOUS_RENDER_USES_CYCLES_CPU",
+    "DO_NOT_USE_ENUM_ITEMS_AS_CYCLES_CAPABILITY_AUTHORITY"
+  ],
+  "render_backend": "BLENDER_CYCLES_CPU",
+  "gpu_dependency": "NOT_REQUIRED_FOR_AUTONOMOUS_RENDER",
+  "cycles_bootstrap": "BLENDER_CLI_-E_CYCLES",
+  "cycles_capability_authority": "RUNTIME_ENGINE_STATE_NOT_ENUM_ITEMS"
+}

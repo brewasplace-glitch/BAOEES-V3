@@ -1,5 +1,6 @@
 from __future__ import annotations
 from phoenix.architecture.ifc_authoritative_model_adapter_v1_0 import generate_authoritative_ifc as _phoenix_generate_authoritative_ifc
+from phoenix.engines.pat002_blender_presentation_v1_0 import activate_blender_presentation as _phoenix_activate_pat002_blender_presentation
 from phoenix.architecture.bim_lite_model_v1_0 import enrich_workspace as _phoenix_bim_lite_enrich
 import json
 from pathlib import Path
@@ -154,6 +155,8 @@ def run_multivariant_design(repository,workspace):
     _phoenix_bim_lite_enrich(workspace, arch, selected, variants)
     # PHOENIX_IFC_AUTHORITATIVE_MODEL_MIGRATION_v1_0
     _phoenix_generate_authoritative_ifc(workspace, arch, selected, variants)
+    # PHOENIX_PAT002_REAL_IFC_BLENDER_PRESENTATION_v1_0
+    _phoenix_activate_pat002_blender_presentation(repository, workspace, arch, selected, variants)
     _write(arch/'design_variants_index.json',idx); _write(arch/'selected_design_variant.json',selected); return {'status':'PASSED',**idx}
 
 def run_multivariant_design_from_scope(scope,source_file=None):
