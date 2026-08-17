@@ -1,0 +1,45 @@
+{
+  "schema_version": "phoenix.de-tv-authoritative-visual-media-router/1.0",
+  "version": "1.0.0",
+  "baseline": "86c474d5a96660198d142fed1b80cf4c55622e51",
+  "active_project_scope_required": true,
+  "pat002_authoritative_playlist": [
+    "phoenix_exterior_front.png",
+    "phoenix_exterior_rear.png",
+    "phoenix_bird_view.png",
+    "phoenix_interior_cutaway.png"
+  ],
+  "excluded_from_pat002_presentation": [
+    "*.json",
+    "*.txt",
+    "*.log",
+    "*.csv",
+    "*.xml",
+    "*manifest*",
+    "*evidence*",
+    "*adapter_result*",
+    "legacy_walkthrough_html",
+    "legacy_drivethrough_html",
+    "legacy_auto_video_html"
+  ],
+  "commands": {
+    "toon ontwerp": "phoenix_exterior_front.png",
+    "toon exterieur": "phoenix_exterior_front.png",
+    "toon variant b": "phoenix_exterior_front.png",
+    "toon 3d": "phoenix_exterior_front.png",
+    "toon interieur": "phoenix_interior_cutaway.png",
+    "toon vogelvlucht": "phoenix_bird_view.png",
+    "toon achterzijde": "phoenix_exterior_rear.png",
+    "toon achtergevel": "phoenix_exterior_rear.png"
+  },
+  "rules": [
+    "WINDOW_CAPTURE_OWNS_TV_CONTROLS",
+    "PRESENTATION_PREV_NEXT_USE_SAME_AUTHORITATIVE_CATALOG",
+    "TECHNICAL_ARTIFACTS_NEVER_ENTER_AUTHORITATIVE_CATALOG",
+    "PAT002_BLENDER_RENDERS_OVERRIDE_LEGACY_SCHEMATIC_HTML",
+    "EXACT_KNOWN_VISUAL_PATH_OPENS_DIRECTLY",
+    "HANDLED_COMMANDS_CANNOT_FALL_THROUGH_TO_LEGACY_ROUTER",
+    "IFC_REMAINS_AUTHORITATIVE_GEOMETRY",
+    "PRODUCTION_RELEASE_LOCKED"
+  ]
+}
