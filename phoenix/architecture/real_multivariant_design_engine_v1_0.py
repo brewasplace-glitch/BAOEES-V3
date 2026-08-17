@@ -1,4 +1,5 @@
 from __future__ import annotations
+from phoenix.architecture.ifc_authoritative_model_adapter_v1_0 import generate_authoritative_ifc as _phoenix_generate_authoritative_ifc
 from phoenix.architecture.bim_lite_model_v1_0 import enrich_workspace as _phoenix_bim_lite_enrich
 import json
 from pathlib import Path
@@ -151,6 +152,8 @@ def run_multivariant_design(repository,workspace):
     idx={'schema_version':SCHEMA,'engine_version':VERSION,'project_id':workspace.name,'variant_count':len(variants),'selected_variant':selected['variant']['id'],'selection_basis':'highest_balanced_concept_score','variants':[{'id':x['variant']['id'],'name':x['variant']['name'],'strategy':x['variant']['strategy'],'score':x['variant']['score'],'gross_floor_area_m2':x['gross_floor_area_m2'],'viewer_3d':x['files']['viewer_3d']} for x in variants],'published_viewer_3d':viewer,'quality_gate':{'status':'PASSED','minimum_variant_count':3,'actual_variant_count':len(variants),'requires_nonempty_floor_plans':True,'requires_nonplaceholder_3d_geometry':True,'candidate_only':True,'professional_review_required':True,'production_release':'LOCKED'}}
     # PHOENIX_BIM_LITE_STRICT_PRESENTATION_v1_0
     _phoenix_bim_lite_enrich(workspace, arch, selected, variants)
+    # PHOENIX_IFC_AUTHORITATIVE_MODEL_MIGRATION_v1_0
+    _phoenix_generate_authoritative_ifc(workspace, arch, selected, variants)
     _write(arch/'design_variants_index.json',idx); _write(arch/'selected_design_variant.json',selected); return {'status':'PASSED',**idx}
 
 def run_multivariant_design_from_scope(scope,source_file=None):

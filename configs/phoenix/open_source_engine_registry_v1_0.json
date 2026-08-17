@@ -1,0 +1,221 @@
+{
+  "schema_version": "phoenix.open-source-engine-registry/1.0",
+  "registry_version": "1.0.0",
+  "policy": {
+    "phoenix_role": "AUTONOMOUS_ENGINEERING_ORCHESTRATOR",
+    "specialist_engine_reimplementation": "AVOID_WHEN_MATURE_OPEN_SOURCE_ENGINE_EXISTS",
+    "authoritative_architectural_geometry": "IFC",
+    "production_release": "LOCKED"
+  },
+  "engines": [
+    {
+      "id": "ifcopenshell",
+      "name": "IfcOpenShell",
+      "tier": "REQUIRED_CORE",
+      "kind": "python_package",
+      "probe": "import ifcopenshell",
+      "capabilities": [
+        "IFC_READ",
+        "IFC_WRITE",
+        "IFC_AUTHORING",
+        "IFC_GEOMETRY"
+      ],
+      "license": "LGPL-3.0-or-later",
+      "source": "https://ifcopenshell.org/"
+    },
+    {
+      "id": "calculix",
+      "name": "CalculiX",
+      "tier": "REQUIRED_CORE",
+      "kind": "executable",
+      "executables": [
+        "ccx",
+        "ccx.exe"
+      ],
+      "capabilities": [
+        "STRUCTURAL_FEM"
+      ],
+      "license": "GPL",
+      "source": "https://www.calculix.de/"
+    },
+    {
+      "id": "gmsh",
+      "name": "Gmsh",
+      "tier": "RECOMMENDED_CORE",
+      "kind": "executable_or_python",
+      "executables": [
+        "gmsh",
+        "gmsh.exe"
+      ],
+      "capabilities": [
+        "MESHING",
+        "GEOMETRY"
+      ],
+      "license": "GPL",
+      "source": "https://gmsh.info/"
+    },
+    {
+      "id": "qgis",
+      "name": "QGIS / PyQGIS",
+      "tier": "RECOMMENDED_CORE",
+      "kind": "executable_or_python",
+      "executables": [
+        "qgis_process",
+        "qgis_process.exe"
+      ],
+      "capabilities": [
+        "GIS",
+        "SPATIAL_ANALYSIS",
+        "CARTOGRAPHY"
+      ],
+      "license": "GPL",
+      "source": "https://qgis.org/"
+    },
+    {
+      "id": "opensees",
+      "name": "OpenSees",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "OpenSees",
+        "OpenSees.exe"
+      ],
+      "capabilities": [
+        "NONLINEAR_STRUCTURAL",
+        "SEISMIC"
+      ],
+      "license": "BSD-style",
+      "source": "https://opensees.berkeley.edu/"
+    },
+    {
+      "id": "energyplus",
+      "name": "EnergyPlus",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "energyplus",
+        "energyplus.exe"
+      ],
+      "capabilities": [
+        "BUILDING_ENERGY"
+      ],
+      "license": "BSD-style",
+      "source": "https://energyplus.net/"
+    },
+    {
+      "id": "openfoam",
+      "name": "OpenFOAM",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "simpleFoam",
+        "simpleFoam.exe"
+      ],
+      "capabilities": [
+        "CFD",
+        "WIND",
+        "VENTILATION"
+      ],
+      "license": "GPL",
+      "source": "https://openfoam.org/"
+    },
+    {
+      "id": "epanet",
+      "name": "EPANET",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "external_engine",
+      "capabilities": [
+        "PRESSURIZED_WATER_NETWORKS"
+      ],
+      "license": "Public domain / EPA distribution terms",
+      "source": "https://www.epa.gov/water-research/epanet"
+    },
+    {
+      "id": "swmm",
+      "name": "EPA SWMM",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "external_engine",
+      "capabilities": [
+        "STORMWATER",
+        "SEWER",
+        "DRAINAGE"
+      ],
+      "license": "Public domain / EPA distribution terms",
+      "source": "https://www.epa.gov/water-research/storm-water-management-model-swmm"
+    },
+    {
+      "id": "sumo",
+      "name": "Eclipse SUMO",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "sumo",
+        "sumo.exe"
+      ],
+      "capabilities": [
+        "TRAFFIC_SIMULATION"
+      ],
+      "license": "EPL-2.0",
+      "source": "https://eclipse.dev/sumo/"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "blender",
+        "blender.exe"
+      ],
+      "capabilities": [
+        "RENDER",
+        "ANIMATION"
+      ],
+      "license": "GPL",
+      "source": "https://www.blender.org/"
+    },
+    {
+      "id": "freecad",
+      "name": "FreeCAD",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "FreeCAD",
+        "FreeCAD.exe"
+      ],
+      "capabilities": [
+        "PARAMETRIC_CAD",
+        "STEP"
+      ],
+      "license": "LGPL/GPL mixed",
+      "source": "https://www.freecad.org/"
+    },
+    {
+      "id": "librecad",
+      "name": "LibreCAD",
+      "tier": "DISCIPLINE_ON_DEMAND",
+      "kind": "executable",
+      "executables": [
+        "librecad",
+        "LibreCAD.exe"
+      ],
+      "capabilities": [
+        "DXF_2D_CAD"
+      ],
+      "license": "GPL",
+      "source": "https://librecad.org/"
+    }
+  ],
+  "official_external_services": [
+    {
+      "id": "aerius",
+      "name": "AERIUS",
+      "role": "AUTHORITATIVE_OFFICIAL_SERVICE"
+    },
+    {
+      "id": "dso",
+      "name": "DSO / Regels op de kaart",
+      "role": "AUTHORITATIVE_OFFICIAL_SERVICE"
+    }
+  ]
+}

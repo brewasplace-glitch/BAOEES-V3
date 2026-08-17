@@ -1,0 +1,38 @@
+{
+  "schema_version": "phoenix.dependency-license-manifest/1.0",
+  "manifest_version": "1.0.0",
+  "commercial_distribution_review_required": true,
+  "rule": "External-engine and library redistribution must be reviewed against the actual license before commercial release.",
+  "dependencies": [
+    {
+      "id": "ifcopenshell",
+      "license": "LGPL-3.0-or-later",
+      "integration": "PYTHON_LIBRARY",
+      "redistribution_review_required": true
+    },
+    {
+      "id": "calculix",
+      "license": "GPL",
+      "integration": "EXTERNAL_EXECUTABLE",
+      "redistribution_review_required": true
+    },
+    {
+      "id": "gmsh",
+      "license": "GPL",
+      "integration": "EXTERNAL_EXECUTABLE_OR_API",
+      "redistribution_review_required": true
+    },
+    {
+      "id": "qgis",
+      "license": "GPL",
+      "integration": "EXTERNAL_EXECUTABLE_OR_API",
+      "redistribution_review_required": true
+    },
+    {
+      "id": "blender",
+      "license": "GPL",
+      "integration": "EXTERNAL_EXECUTABLE",
+      "redistribution_review_required": true
+    }
+  ]
+}
