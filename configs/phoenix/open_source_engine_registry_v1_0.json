@@ -1,13 +1,14 @@
 {
   "schema_version": "phoenix.open-source-engine-registry/1.0",
-  "registry_version": "1.2.0",
+  "registry_version": "1.3.0",
   "policy": {
     "phoenix_role": "AUTONOMOUS_ENGINEERING_ORCHESTRATOR",
     "specialist_engine_reimplementation": "AVOID_WHEN_MATURE_OPEN_SOURCE_ENGINE_EXISTS",
     "authoritative_architectural_geometry": "IFC",
     "production_release": "LOCKED",
     "discovery_rule": "DISCOVER_BEFORE_DECLARE_UNAVAILABLE",
-    "architectural_visual_rule": "IFC_SOURCE_OF_TRUTH_VISUALS_ARE_DERIVED"
+    "architectural_visual_rule": "IFC_SOURCE_OF_TRUTH_VISUALS_ARE_DERIVED",
+    "visual_provisioning": "WINGET_WHEN_AVAILABLE_VERIFY_AFTER_INSTALL"
   },
   "engines": [
     {
@@ -188,7 +189,12 @@
         "ANIMATION"
       ],
       "license": "GPL",
-      "source": "https://www.blender.org/"
+      "source": "https://www.blender.org/",
+      "provisioning": {
+        "method": "WINGET",
+        "package_id": "BlenderFoundation.Blender",
+        "auto_install_models": null
+      }
     },
     {
       "id": "freecad",
@@ -239,7 +245,12 @@
         "FURNITURE",
         "INTERIOR_VISUALIZATION"
       ],
-      "license": "GPL"
+      "license": "GPL",
+      "provisioning": {
+        "method": "WINGET",
+        "package_id": "eTeks.SweetHome3D",
+        "auto_install_models": null
+      }
     },
     {
       "id": "comfyui",
@@ -252,7 +263,12 @@
         "AI_CONCEPT_VARIANTS",
         "AI_VIDEO"
       ],
-      "license": "GPL-3.0"
+      "license": "GPL-3.0",
+      "provisioning": {
+        "method": "WINGET",
+        "package_id": "Comfy.ComfyUI-Desktop",
+        "auto_install_models": false
+      }
     }
   ],
   "official_external_services": [

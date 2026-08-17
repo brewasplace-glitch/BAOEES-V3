@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from phoenix.engines.engine_discovery_v1_0 import discover_engine as _phoenix_discover_engine
 from phoenix.engines.visual_engine_discovery_v1_0 import discover_executable as _phoenix_visual_discover_executable, discover_comfyui as _phoenix_visual_discover_comfyui
+from phoenix.engines.visual_engine_provisioning_v1_0 import winget_list as _phoenix_winget_list
 
 VERSION="1.0.0"
 
@@ -66,8 +67,13 @@ def evaluate_registry(registry_path:Path):
             elif e["id"]=="comfyui":
                 deep=_phoenix_visual_discover_comfyui(repository)
                 state.update(deep)
-                if not deep["available"]:
+                # PHOENIX_VISUAL_ENGINE_PROVISIONING_v1_0
+                pkg=_phoenix_winget_list("comfyui")
+                state["desktop_package_installed"]=bool(pkg.get("listed"))
+                if not deep["available"] and not state["desktop_package_installed"]:
                     state["status_note"]="REGISTERED_BUT_NOT_DISCOVERED"
+                elif not deep["available"] and state["desktop_package_installed"]:
+                    state["status_note"]="DESKTOP_INSTALLED_INITIALIZATION_REQUIRED"
             else:
                 exe=_which(e.get("executables",[]),repository)
                 state["available"]=bool(exe)

@@ -1,0 +1,34 @@
+{
+  "schema_version": "phoenix.visual-engine-provisioning/1.0",
+  "version": "1.0.0",
+  "baseline": "d61bc1df9e77aa0eec4cb2c5f63c8ec76087db6f",
+  "engines": {
+    "blender": {
+      "required": true,
+      "winget_id": "BlenderFoundation.Blender",
+      "role": "RECOMMENDED_VISUAL_CORE",
+      "post_install_requirement": "HEADLESS_SMOKE_PASS"
+    },
+    "sweethome3d": {
+      "required": false,
+      "winget_id": "eTeks.SweetHome3D",
+      "role": "OPTIONAL_INTERIOR",
+      "post_install_requirement": "DISCOVERABLE"
+    },
+    "comfyui": {
+      "required": false,
+      "winget_id": "Comfy.ComfyUI-Desktop",
+      "role": "OPTIONAL_AI_VISUAL",
+      "post_install_requirement": "DISCOVERABLE_OR_DESKTOP_INSTALLED",
+      "models_auto_install": false
+    }
+  },
+  "rules": [
+    "NO_MODEL_WEIGHTS_AUTO_DOWNLOAD",
+    "NO_GUI_VERSION_PROBES",
+    "IFC_REMAINS_AUTHORITATIVE",
+    "BLENDER_HEADLESS_RENDER_MUST_BE_TESTED",
+    "OPTIONAL_ENGINE_PROVISION_FAILURE_IS_WARNING",
+    "PRODUCTION_RELEASE_REMAINS_LOCKED"
+  ]
+}
