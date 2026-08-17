@@ -1,0 +1,9 @@
+{
+  "name": "phoenix-de-tv-open-source-media-player",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@xiboplayer/renderer": "0.7.23",
+    "@xiboplayer/proxy": "0.7.23"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "phoenix.de-tv-open-source-media-player/1.0",
+  "required_baseline": "4908669b0e63eb2f37b690fea48a41ade9cfea9f",
+  "engine": "XIBO_PLAYER_SDK",
+  "xibo_renderer_version": "0.7.23",
+  "xibo_proxy_version": "0.7.23",
+  "license": "AGPL-3.0-or-later",
+  "local_sidecar_port": 8770,
+  "media_roots": [
+    "projects/runtime",
+    "outputs"
+  ],
+  "path_traversal": "DENY",
+  "legacy_tv_artifact_carousel": "BYPASSED_FOR_PRESENTATION",
+  "production_release": "LOCKED"
+}
