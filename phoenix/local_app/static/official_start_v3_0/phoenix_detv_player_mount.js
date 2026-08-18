@@ -72,7 +72,7 @@ function findControlAnchor(card){
 function removeOldMounts(card){
   document.querySelectorAll("#phoenixOpenSourceMediaPlayer,#phoenixOpenSourceMediaPlayerMount").forEach(n=>n.remove());
   if(!card)return;
-  card.querySelectorAll("[data-phoenix-tv-loading-mask],#phoenixTvVisualReadyOverlay,#phoenixTvAuthoritativeOverlay").forEach(n=>n.remove());
+  card.querySelectorAll("[data-phoenix-tv-loading-mask],.phoenix-tv-loading-mask,#phoenixTvVisualReadyOverlay,#phoenixTvAuthoritativeOverlay,#phoenixTvVisualOnlyOverlay").forEach(n=>n.remove());
 }
 
 function makeMount(card,anchor){
@@ -261,4 +261,147 @@ window.PHOENIX_DE_TV_OPEN_SOURCE_PLAYER_MOUNT_REPAIR_V1_0={
   window.addEventListener("load", function () { attempt("window-load"); }, { once: true });
   document.addEventListener("phoenix:sidecar-ready", function () { schedule("sidecar-ready"); });
   document.addEventListener("phoenix:player-ready", function () { attempt("player-ready"); });
+})();
+/* PHOENIX DE TV SINGLE VISUAL AUTHORITY NON-RECURSIVE PARENT BRIDGE v1.0
+   Important: no recursive DOM attribute observer is used here.
+   The existing sidecar iframe is the sole PAT-002 presentation authority. */
+;(function phoenixSingleVisualAuthorityNonRecursiveBridge(){
+  "use strict";
+  const SIDECAR_ORIGIN="http://127.0.0.1:8770";
+  let activationScheduled=false;
+
+  function frame(){ return document.getElementById("phoenixOpenSourceMediaPlayer"); }
+  function setStatus(text){
+    const n=document.getElementById("phoenixTvStatus");
+    if(n) n.textContent=text;
+  }
+  function setMeta(text){
+    const n=document.getElementById("phoenixTvMeta");
+    if(n) n.textContent=text;
+  }
+  function clearKnownLoading(){
+    [
+      "phoenixTvVisualOnlyOverlay",
+      "phoenixTvVisualReadyOverlay",
+      "phoenixTvAuthoritativeOverlay"
+    ].forEach(id=>{
+      const n=document.getElementById(id);
+      if(n) n.remove();
+    });
+    document.querySelectorAll("[data-phoenix-tv-loading-mask],.phoenix-tv-loading-mask").forEach(n=>n.remove());
+    const stage=document.getElementById("phoenixTvStage");
+    if(stage){
+      stage.style.removeProperty("visibility");
+      stage.removeAttribute("aria-busy");
+    }
+  }
+  function showOuterControls(){
+    const panel=document.getElementById("phoenixTvPanel");
+    if(!panel) return;
+    panel.querySelectorAll(".tvcontrols,.tvcommand,.tvhint").forEach(n=>{
+      n.style.removeProperty("display");
+      n.style.removeProperty("visibility");
+      n.style.removeProperty("opacity");
+    });
+  }
+  function activateOnce(){
+    clearKnownLoading();
+    showOuterControls();
+    const f=frame();
+    if(!f) return false;
+    const mount=document.getElementById("phoenixOpenSourceMediaPlayerMount");
+    if(mount){
+      mount.style.minHeight="360px";
+      mount.style.height="clamp(360px,48vh,620px)";
+      mount.style.display="block";
+    }
+    f.style.display="block";
+    f.style.width="100%";
+    f.style.height="100%";
+    setStatus("OPEN-SOURCE PLAYER");
+    return true;
+  }
+  function scheduleActivation(){
+    if(activationScheduled) return;
+    activationScheduled=true;
+    setTimeout(()=>{activateOnce();},0);
+    setTimeout(()=>{activateOnce();},250);
+    setTimeout(()=>{activateOnce();},1000);
+  }
+  function send(action,value){
+    const f=frame();
+    if(!f || !f.contentWindow){
+      setStatus("PLAYER WACHT");
+      return false;
+    }
+    clearKnownLoading();
+    showOuterControls();
+    f.contentWindow.postMessage({
+      type:"phoenix-detv-command",
+      action:String(action||""),
+      value:String(value||"")
+    },SIDECAR_ORIGIN);
+    return true;
+  }
+  function actionFor(button){
+    if(!button) return "";
+    const id=String(button.id||"");
+    if(id==="phoenixTvPrev") return "prev";
+    if(id==="phoenixTvNext") return "next";
+    if(id==="phoenixTvPlay") return "play";
+    if(id==="phoenixTvCommandGo") return "command";
+    return "";
+  }
+  function onClick(ev){
+    const b=ev.target && ev.target.closest ? ev.target.closest("button") : null;
+    const action=actionFor(b);
+    if(!action || !frame()) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+    ev.stopImmediatePropagation();
+
+    const input=document.getElementById("phoenixTvCommand");
+    send(action,action==="command" && input ? input.value : "");
+  }
+  function onKey(ev){
+    const input=document.getElementById("phoenixTvCommand");
+    if(!input || ev.target!==input || ev.key!=="Enter" || !frame()) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+    ev.stopImmediatePropagation();
+    send("command",input.value);
+  }
+
+  document.addEventListener("click",onClick,true);
+  document.addEventListener("keydown",onKey,true);
+
+  window.addEventListener("message",ev=>{
+    if(ev.origin!==SIDECAR_ORIGIN || !ev.data || typeof ev.data!=="object") return;
+    if(ev.data.type==="phoenix-detv-player-ready"){
+      clearKnownLoading();
+      showOuterControls();
+      setStatus("GEREED");
+      if(ev.data.label) setMeta(String(ev.data.label));
+    }else if(ev.data.type==="phoenix-detv-player-state"){
+      clearKnownLoading();
+      showOuterControls();
+      if(ev.data.state) setStatus(String(ev.data.state));
+      if(ev.data.label) setMeta(String(ev.data.label));
+    }
+  });
+
+  window.addEventListener("load",scheduleActivation,{once:true});
+  document.addEventListener("phoenix:detv-player-mount",scheduleActivation,{once:true});
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",scheduleActivation,{once:true});
+  }else{
+    scheduleActivation();
+  }
+
+  window.PHOENIX_DE_TV_SINGLE_VISUAL_AUTHORITY_NONRECURSIVE_V1_0={
+    activateOnce,send,clearKnownLoading,showOuterControls
+  };
 })();
