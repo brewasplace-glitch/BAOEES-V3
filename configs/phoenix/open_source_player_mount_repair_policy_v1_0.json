@@ -1,0 +1,12 @@
+{
+  "schema_version": "phoenix.de-tv-open-source-player-mount-repair/1.0",
+  "required_baseline": "7ac0fd28987241a8c568746c8b3a266d126a4ebd",
+  "primary_open_source_engine": "Xibo Player SDK",
+  "fallback_open_source_engine": "Anthias",
+  "sidecar_health_required": true,
+  "sidecar_url": "http://127.0.0.1:8770",
+  "mount_strategy": "ROBUST_TV_CARD_DISCOVERY",
+  "legacy_display": "HIDDEN_AFTER_SUCCESSFUL_MOUNT",
+  "controls": "PRESERVED",
+  "production_release": "LOCKED"
+}
