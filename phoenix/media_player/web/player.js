@@ -38,38 +38,4 @@ document.getElementById("show").onclick=()=>{const n=cmd(document.getElementById
 document.getElementById("command").onkeydown=e=>{if(e.key==="Enter")document.getElementById("show").click()};
 document.getElementById("full").onclick=()=>document.documentElement.requestFullscreen?.();
 window.PHOENIX_OPEN_SOURCE_MEDIA_PLAYER={render,play,stop,cmd,items};
-
-/* PHOENIX DE TV SIDECAR PARENT COMMAND BRIDGE v1.0 */
-function phoenixParentState(state,label){
-  try{
-    parent.postMessage({
-      type:"phoenix-detv-player-state",
-      state:String(state||"GEREED"),
-      label:String(label||"")
-    },"http://127.0.0.1:8765");
-  }catch(_){}
-}
-window.addEventListener("message",ev=>{
-  if(!["http://127.0.0.1:8765","http://localhost:8765"].includes(ev.origin)) return;
-  const d=ev.data;
-  if(!d || d.type!=="phoenix-detv-command") return;
-  const action=String(d.action||"");
-  if(action==="prev"){
-    stop(); render(i-1);
-  }else if(action==="next"){
-    stop(); render(i+1);
-  }else if(action==="play"){
-    play();
-  }else if(action==="command"){
-    const n=cmd(String(d.value||""));
-    if(n>=0){ stop(); render(n); }
-  }
-  phoenixParentState("GEREED",meta ? meta.textContent : "");
-});
-try{
-  parent.postMessage({
-    type:"phoenix-detv-player-ready",
-    project
-  },"http://127.0.0.1:8765");
-}catch(_){}
 })();
