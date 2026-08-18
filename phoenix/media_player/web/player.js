@@ -16,8 +16,12 @@ function render(n){
  stage.innerHTML="";
  const img=document.createElement("img");
  img.alt=x.label;
- img.onload=()=>meta.textContent=`${i+1}/${items.length} · ${x.label}`;
- img.onerror=()=>{stage.textContent="MEDIA NIET BESCHIKBAAR";meta.textContent=x.file;};
+ img.onload=()=>{
+   const liveLabel=`${i+1}/${items.length} Â· ${x.label}`;
+   meta.textContent=liveLabel;
+   if(typeof phoenixParentState==="function") phoenixParentState("GEREED",liveLabel);
+ };
+ img.onerror=()=>{stage.textContent="MEDIA NIET BESCHIKBAAR";meta.textContent=x.file;if(typeof phoenixParentState==="function")phoenixParentState("MEDIA NIET BESCHIKBAAR",x.file);};
  img.src=mediaUrl(x.file);
  stage.appendChild(img);
 }
@@ -75,4 +79,90 @@ window.addEventListener("load",()=>{
     },"http://127.0.0.1:8765");
   }catch(_){}
 },{once:true});
+
+/* PHOENIX DE TV LIVE META SYNC v1.0
+   Embedded mode removes duplicate sidecar controls while keeping the player engine,
+   rendering logic and hidden internal meta source intact. */
+const phoenixEmbeddedMode=(new URLSearchParams(location.search).get("embedded")==="1");
+
+function phoenixUiNorm(value){
+  return String(value||"").trim().toLowerCase().replace(/\s+/g," ");
+}
+
+function phoenixCommonAncestor(nodes){
+  const valid=(nodes||[]).filter(Boolean);
+  if(!valid.length)return null;
+  let n=valid[0];
+  while(n && n!==document.documentElement){
+    if(valid.every(x=>n.contains(x)))return n;
+    n=n.parentElement;
+  }
+  return null;
+}
+
+function phoenixHideEmbeddedGroup(nodes){
+  const valid=(nodes||[]).filter(Boolean);
+  if(!valid.length)return;
+
+  const common=phoenixCommonAncestor(valid);
+  const unsafe=common && (
+    common===document.body ||
+    common===document.documentElement ||
+    common.querySelector("#stage,#meta,img,video,canvas,iframe")
+  );
+
+  if(common && !unsafe){
+    common.dataset.phoenixEmbeddedHidden="1";
+    common.style.display="none";
+    return;
+  }
+
+  valid.forEach(n=>{
+    n.dataset.phoenixEmbeddedHidden="1";
+    n.style.display="none";
+  });
+}
+
+function phoenixApplyEmbeddedUiConsolidation(){
+  if(!phoenixEmbeddedMode)return false;
+
+  document.documentElement.dataset.phoenixEmbedded="1";
+  document.documentElement.style.overflow="hidden";
+  if(document.body)document.body.style.overflow="hidden";
+
+  const navButtons=[...document.querySelectorAll("button")].filter(button=>{
+    const text=phoenixUiNorm(button.textContent);
+    return (
+      text.includes("vorige") ||
+      text.includes("volgende") ||
+      text.includes("presentatie") ||
+      text.includes("vol scherm") ||
+      text.includes("fullscreen")
+    );
+  });
+
+  phoenixHideEmbeddedGroup(navButtons);
+
+  const command=document.getElementById("command");
+  const show=document.getElementById("show");
+  phoenixHideEmbeddedGroup([command,show]);
+
+  // Parent Phoenix owns the visible metadata line in embedded mode.
+  // Keep this node alive as the authoritative state source for postMessage.
+  if(meta){
+    meta.dataset.phoenixEmbeddedMetaSource="1";
+    meta.style.display="none";
+  }
+
+  return true;
+}
+
+if(phoenixEmbeddedMode){
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",phoenixApplyEmbeddedUiConsolidation,{once:true});
+  }else{
+    phoenixApplyEmbeddedUiConsolidation();
+  }
+  window.addEventListener("load",phoenixApplyEmbeddedUiConsolidation,{once:true});
+}
 })();

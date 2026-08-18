@@ -88,7 +88,7 @@ function makeMount(card,anchor){
   const iframe=document.createElement("iframe");
   iframe.id="phoenixOpenSourceMediaPlayer";
   iframe.title="PHOENIX DE TV Open-Source Media Player";
-  iframe.src=`${SIDECAR}/player/?project=${encodeURIComponent(activeProject())}`;
+  iframe.src=`${SIDECAR}/player/?project=${encodeURIComponent(activeProject())}&embedded=1`;
   iframe.style.cssText="display:block;width:100%;height:100%;border:0;background:#02070d;";
   iframe.setAttribute("allow","fullscreen");
   mount.appendChild(iframe);
