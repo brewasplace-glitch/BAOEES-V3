@@ -1,0 +1,13 @@
+PACK=PROJECT PHOENIX DE TV OPEN-SOURCE PLAYER STATIC ROUTE CORRECTION + HARD MOUNT ACTIVATION v1.0 R4
+UTC=2026-08-18T22:34:36Z
+BASELINE_BRANCH=project-phoenix
+BASELINE_HEAD=02ef34c621f8c972f6c1b1b1e44fc978154e26e4
+ENTRY_HTML=phoenix\local_app\static\official_start_v3_0\index.html
+DISCOVERED_MOUNT_JS=phoenix\local_app\static\official_start_v3_0\PROJECT_PHOENIX_de_tv_open_source_player_robust_mount_activation_repair_v1_0.js
+CANONICAL_MOUNT_JS=phoenix\local_app\static\official_start_v3_0\phoenix_detv_player_mount.js
+CANONICAL_ROUTE=./phoenix_detv_player_mount.js
+STATIC_ROUTE_CORRECTION=PASS
+HARD_MOUNT_ACTIVATION=PASS
+GIT_DIFF_CHECK=PASS
+SECRET_SCAN=PASS
+TARGETED_TESTS=PYTEST_NOT_INSTALLED_SYNTAX_PASS
