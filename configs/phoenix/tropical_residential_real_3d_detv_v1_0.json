@@ -1,0 +1,60 @@
+{
+  "engine_id": "PHOENIX-TROPICAL-RESIDENTIAL-REAL-3D-DE-TV",
+  "version": "1.0.0",
+  "status": "REAL_3D_RENDER_AND_DE_TV_PRESENTATION",
+  "baseline_required": "3f6dabe44b3b12363bad47092dcd93aa4de5e540",
+  "open_source_first": {
+    "primary_3d_render": {
+      "engine": "Blender",
+      "license": "GPL",
+      "execution": "Blender 5.2 background rendering, Cycles CPU",
+      "device_policy": "CPU_REQUIRED_FOR_HEADLESS_AUTOMATION",
+      "reason": "Avoid OpenGL/GPU shader-extension dependency seen with EEVEE on the validated Windows host."
+    },
+    "bim_cad_refinement": {
+      "engine": "FreeCAD",
+      "license": "LGPL-2.1-or-later",
+      "execution": "Primary: FreeCAD bundled Python interpreter; fallback: FreeCADCmd",
+      "runtime_reason": "Avoid FreeCADCmd 1.1.x .py command-line loader inconsistency"
+    },
+    "browser_3d_fallback_reviewed": {
+      "engine": "three.js",
+      "license": "MIT",
+      "decision": "deferred; existing DE TV sidecar is reused to avoid reopening the closed player architecture"
+    }
+  },
+  "de_tv": {
+    "core_player_patch": false,
+    "canonical_media": [
+      "phoenix_exterior_front.png",
+      "phoenix_exterior_rear.png",
+      "phoenix_bird_view.png",
+      "phoenix_interior_cutaway.png"
+    ],
+    "media_encoding": "APNG",
+    "variant_cycle": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "single_visual_authority_preserved": true
+  },
+  "render_features": [
+    "real wall openings",
+    "door and window fillings",
+    "tropical external shading",
+    "covered veranda",
+    "gable hip and shed tropical roofs",
+    "strategy-specific materials",
+    "front rear bird and interior-cutaway cameras",
+    "variant label in camera view"
+  ],
+  "governance": {
+    "professional_approval": "NOT_AUTOMATIC",
+    "code_compliance": "NOT_AUTOMATIC",
+    "production": "LOCKED",
+    "for_construction": "LOCKED"
+  }
+}

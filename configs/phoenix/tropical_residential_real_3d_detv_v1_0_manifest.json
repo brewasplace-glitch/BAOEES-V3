@@ -1,0 +1,43 @@
+{
+  "pack": "PROJECT PHOENIX TROPICAL RESIDENTIAL REAL 3D DESIGN + DE TV PRESENTATION PIPELINE v1.0",
+  "version": "1.0.0",
+  "required_branch": "project-phoenix",
+  "required_head": "3f6dabe44b3b12363bad47092dcd93aa4de5e540",
+  "modified_files": [
+    "phoenix/design/tropical_residential/freecad_bridge.py"
+  ],
+  "new_files": [
+    "phoenix/design/tropical_residential/apng_writer.py",
+    "phoenix/design/tropical_residential/blender_tropical_scene_script.py",
+    "phoenix/design/tropical_residential/tropical_3d_detv_pipeline.py",
+    "phoenix/design/tropical_residential/tropical_3d_detv_cli.py",
+    "configs/phoenix/tropical_residential_real_3d_detv_v1_0.json",
+    "docs/architecture/PHOENIX_TROPICAL_RESIDENTIAL_REAL_3D_DE_TV_PRESENTATION_v1_0.md",
+    "runners/PROJECT_PHOENIX_tropical_residential_real_3d_detv_v1_0.ps1",
+    "tests/automation/test_phoenix_tropical_residential_real_3d_detv_v1_0.py"
+  ],
+  "de_tv_core_files_modified": false,
+  "installer_revision": "R6",
+  "freecad_runtime_acceptance": {
+    "primary": "BUNDLED_FREECAD_PYTHON",
+    "fallback": "FREECADCMD_FALLBACK",
+    "success_requires": [
+      "exit_code_0",
+      "PHOENIX_FREECAD_HANDOFF_OK",
+      "nonempty_fcstd"
+    ]
+  },
+  "blender_runtime_acceptance": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "quick_samples": 8,
+    "normal_samples": 48,
+    "success_requires": [
+      "exit_code_0",
+      "CYCLES_CPU_RUNTIME_EVIDENCE",
+      "four_valid_png_renders_per_variant",
+      "valid_blend_output"
+    ],
+    "reason": "Bypass host OpenGL GL_ARB_shader_draw_parameters blocker."
+  }
+}
