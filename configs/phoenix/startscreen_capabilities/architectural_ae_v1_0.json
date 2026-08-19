@@ -1,0 +1,22 @@
+{
+  "id": "architectural_ae",
+  "label": "Autonome A–E Architectuur",
+  "description": "Genereert A–E ontwerpen en levert de aanbevolen variant via IFC, FreeCAD, Blender en DE TV.",
+  "category": "BOUWKUNDIG",
+  "project_types": [
+    "BOUW"
+  ],
+  "required_files": [
+    "phoenix/design/tropical_residential/project_orchestration.py",
+    "phoenix/design/tropical_residential/project_orchestration_cli.py",
+    "phoenix/design/tropical_residential/tropical_3d_detv_pipeline.py",
+    "phoenix/design/tropical_residential/freecad_bridge.py",
+    "phoenix/design/tropical_residential/blender_tropical_scene_script.py"
+  ],
+  "action": {
+    "kind": "project_api_post",
+    "path": "/api/architectural-orchestration/start",
+    "requires_project": true
+  },
+  "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION"
+}

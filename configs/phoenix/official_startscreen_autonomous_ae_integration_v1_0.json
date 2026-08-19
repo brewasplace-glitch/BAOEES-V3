@@ -1,0 +1,43 @@
+{
+  "engine": "PROJECT_PHOENIX_OFFICIAL_STARTSCREEN_AUTONOMOUS_AE_ORCHESTRATION_INTEGRATION_v1_0",
+  "baseline": "1700bba119cff33329fc4f2b9d71aa4369d89bf5",
+  "official_route": "/start-v3/",
+  "registry_root": "configs/phoenix/startscreen_capabilities",
+  "runtime_root": "projects/runtime",
+  "frontend_dependency_policy": {
+    "selected": "existing_local_vanilla_js_fetch",
+    "reviewed": [
+      {
+        "name": "htmx",
+        "license": "0BSD",
+        "decision": "not_added"
+      },
+      {
+        "name": "Alpine.js",
+        "license": "MIT",
+        "decision": "not_added"
+      }
+    ],
+    "reason": "Phoenix-specific integration dominates the work; no additional UI framework is required."
+  },
+  "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
+  "production_locked": true,
+  "for_construction_locked": true,
+  "installer_revision": "R3",
+  "version_patch_policy": "OBSERVE_ONLY_DO_NOT_REWRITE",
+  "live_smoke_project_source": "status.projects -> configs/projects",
+  "project_catalog": {
+    "source": "configs/projects/*.json",
+    "exclude_index_files": true,
+    "require_project_identity": true,
+    "accepted_identity_shapes": [
+      "project_id",
+      "id",
+      "project.project_id",
+      "project.id",
+      "metadata.project_id",
+      "metadata.id"
+    ],
+    "ui_source": "status.architectural_orchestration.projects"
+  }
+}

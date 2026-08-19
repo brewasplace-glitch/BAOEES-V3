@@ -1,0 +1,266 @@
+"""Architectural A-E orchestration jobs for the local Phoenix runtime."""
+from __future__ import annotations
+import json, os, subprocess, sys, threading, uuid
+from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+RELEASE_STATUS = "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION"
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
+@dataclass
+class ArchitecturalOrchestrationJob:
+    job_id: str
+    project_file: str
+    project_id: str
+    status: str
+    started_at: str
+    output_dir: str
+    log_path: str
+    command: list[str]
+    finished_at: str | None = None
+    return_code: int | None = None
+    error: str | None = None
+    recommended_variant_id: str | None = None
+    delivery_manifest: str | None = None
+    release_status: str = RELEASE_STATUS
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+class ArchitecturalOrchestrationRuntime:
+    def __init__(self, repository: Path):
+        self.repository = Path(repository).resolve()
+        self.runtime_root = self.repository / "projects" / "runtime"
+        self.jobs_root = self.runtime_root / "_architectural_orchestration_jobs"
+        self._jobs: dict[str, ArchitecturalOrchestrationJob] = {}
+        self._lock = threading.Lock()
+        self._active_job_id: str | None = None
+
+    def required_files(self) -> list[str]:
+        return [
+            "phoenix/design/tropical_residential/project_orchestration.py",
+            "phoenix/design/tropical_residential/project_orchestration_cli.py",
+            "phoenix/design/tropical_residential/tropical_3d_detv_pipeline.py",
+            "phoenix/design/tropical_residential/freecad_bridge.py",
+            "phoenix/design/tropical_residential/blender_tropical_scene_script.py",
+        ]
+
+    def capability(self) -> dict[str, Any]:
+        missing = [rel for rel in self.required_files() if not (self.repository / rel).is_file()]
+        return {
+            "id": "architectural_ae",
+            "available": not missing,
+            "status": "READY" if not missing else "UNAVAILABLE",
+            "missing_required_files": missing,
+            "runtime_root": self.runtime_root.relative_to(self.repository).as_posix(),
+            "release_status": RELEASE_STATUS,
+            "production_locked": True,
+            "for_construction_locked": True,
+        }
+
+    @staticmethod
+    def _project_identity(project: dict[str, Any]) -> tuple[str, str]:
+        candidates = [
+            project,
+            project.get("project") if isinstance(project.get("project"), dict) else {},
+            project.get("metadata") if isinstance(project.get("metadata"), dict) else {},
+        ]
+        for candidate in candidates:
+            project_id = str(
+                candidate.get("project_id") or candidate.get("id") or ""
+            ).strip()
+            if not project_id:
+                continue
+            project_name = str(
+                candidate.get("project_name")
+                or candidate.get("name")
+                or project.get("project_name")
+                or project.get("name")
+                or project_id
+            ).strip()
+            return project_id, project_name or project_id
+        return "", ""
+
+    def project_catalog(self) -> list[dict[str, Any]]:
+        projects_root = self.repository / "configs" / "projects"
+        if not projects_root.is_dir():
+            return []
+
+        catalog: list[dict[str, Any]] = []
+        seen: set[str] = set()
+
+        for path in sorted(projects_root.glob("*.json")):
+            if "index" in path.stem.lower():
+                continue
+            try:
+                project = json.loads(path.read_text(encoding="utf-8-sig"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            if not isinstance(project, dict):
+                continue
+
+            project_id, project_name = self._project_identity(project)
+            if not project_id or project_id in seen:
+                continue
+
+            catalog.append({
+                "project_id": project_id,
+                "name": project_name,
+                "file": path.relative_to(self.repository).as_posix(),
+                "architectural_ae_ready": True,
+            })
+            seen.add(project_id)
+
+        return catalog
+
+    def describe(self) -> dict[str, Any]:
+        latest = self.latest()
+        return {
+            **self.capability(),
+            "projects": self.project_catalog(),
+            "active_job_id": self._active_job_id,
+            "latest_job": latest.to_dict() if latest else None,
+        }
+
+    def _resolve_project(self, project_file: str) -> tuple[Path, dict[str, Any]]:
+        raw = str(project_file or "").strip()
+        if not raw:
+            raise ValueError("project_file is verplicht.")
+        path = (self.repository / raw).resolve()
+        projects_root = (self.repository / "configs" / "projects").resolve()
+        if projects_root not in path.parents:
+            raise ValueError("Projectconfiguratie moet onder configs/projects staan.")
+        if path.suffix.lower() != ".json" or not path.is_file():
+            raise FileNotFoundError(path)
+        try:
+            project = json.loads(path.read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError) as error:
+            raise ValueError(f"Ongeldige project-JSON: {path.name}") from error
+        if not isinstance(project, dict):
+            raise ValueError("Projectconfiguratie moet een JSON-object zijn.")
+
+        project_id, _project_name = self._project_identity(project)
+        if not project_id:
+            raise ValueError(
+                "Projectconfiguratie bevat geen geldige projectidentiteit "
+                "(project_id/id, eventueel onder project/metadata)."
+            )
+        return path, project
+
+    def plan(self, project_file: str) -> dict[str, Any]:
+        capability = self.capability()
+        if not capability["available"]:
+            raise RuntimeError("Architectural A-E orchestration is niet beschikbaar: " + ", ".join(capability["missing_required_files"]))
+        path, project = self._resolve_project(project_file)
+        project_id, _project_name = self._project_identity(project)
+        command = [
+            sys.executable, "-m",
+            "phoenix.design.tropical_residential.project_orchestration_cli",
+            "--project-json", str(path),
+            "--runtime-root", str(self.runtime_root),
+        ]
+        manifest = self.runtime_root / project_id / "delivery" / "architectural_ae_v1_0" / "delivery_manifest.json"
+        return {
+            "project_id": project_id,
+            "project_file": path.relative_to(self.repository).as_posix(),
+            "command": command,
+            "runtime_root": self.runtime_root.relative_to(self.repository).as_posix(),
+            "delivery_manifest": manifest.relative_to(self.repository).as_posix(),
+            "release_status": RELEASE_STATUS,
+            "production_locked": True,
+            "for_construction_locked": True,
+        }
+
+    def start(self, project_file: str) -> ArchitecturalOrchestrationJob:
+        plan = self.plan(project_file)
+        with self._lock:
+            if self._active_job_id:
+                active = self._jobs.get(self._active_job_id)
+                if active and active.status in {"QUEUED", "RUNNING"}:
+                    raise RuntimeError(f"Er draait al een architectuur-orchestration: {active.job_id}")
+            job_id = uuid.uuid4().hex[:12]
+            stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            job_dir = self.jobs_root / f"{stamp}_{job_id}"
+            job_dir.mkdir(parents=True, exist_ok=False)
+            log_path = job_dir / "workflow.log"
+            job = ArchitecturalOrchestrationJob(
+                job_id=job_id,
+                project_file=plan["project_file"],
+                project_id=plan["project_id"],
+                status="QUEUED",
+                started_at=utc_now(),
+                output_dir=f"projects/runtime/{plan['project_id']}",
+                log_path=log_path.relative_to(self.repository).as_posix(),
+                command=plan["command"],
+            )
+            self._jobs[job_id] = job
+            self._active_job_id = job_id
+            self._persist(job)
+            threading.Thread(target=self._run, args=(job, log_path), daemon=True).start()
+            return job
+
+    def get(self, job_id: str) -> ArchitecturalOrchestrationJob | None:
+        if job_id in self._jobs:
+            return self._jobs[job_id]
+        path = self.jobs_root / f"{job_id}.json"
+        return self._load_job(path) if path.is_file() else None
+
+    def latest(self) -> ArchitecturalOrchestrationJob | None:
+        if self._jobs:
+            return sorted(self._jobs.values(), key=lambda item: item.started_at)[-1]
+        path = self.jobs_root / "latest_job.json"
+        return self._load_job(path) if path.is_file() else None
+
+    def _run(self, job: ArchitecturalOrchestrationJob, log_path: Path) -> None:
+        job.status = "RUNNING"
+        self._persist(job)
+        environment = dict(os.environ)
+        environment["PYTHONDONTWRITEBYTECODE"] = "1"
+        old_pp = environment.get("PYTHONPATH", "")
+        environment["PYTHONPATH"] = str(self.repository) if not old_pp else str(self.repository) + os.pathsep + old_pp
+        try:
+            with log_path.open("w", encoding="utf-8", newline="\n") as log:
+                log.write("PROJECT PHOENIX ARCHITECTURAL A-E ORCHESTRATION\n")
+                log.write("Command: " + json.dumps(job.command) + "\n\n")
+                log.flush()
+                process = subprocess.Popen(job.command, cwd=self.repository, env=environment, stdout=log, stderr=subprocess.STDOUT, shell=False)
+                return_code = process.wait()
+            job.return_code = return_code
+            if return_code != 0:
+                job.status = "FAILED"
+                job.error = f"Orchestration stopte met exitcode {return_code}."
+            else:
+                manifest = self.runtime_root / job.project_id / "delivery" / "architectural_ae_v1_0" / "delivery_manifest.json"
+                if not manifest.is_file():
+                    job.status = "FAILED"
+                    job.error = "Delivery manifest ontbreekt na geslaagde proces-exit."
+                else:
+                    value = json.loads(manifest.read_text(encoding="utf-8"))
+                    job.recommended_variant_id = str(value.get("recommended_variant_id", "")) or None
+                    job.delivery_manifest = manifest.relative_to(self.repository).as_posix()
+                    job.status = "PASSED"
+        except Exception as error:
+            job.status = "FAILED"
+            job.error = str(error)
+        finally:
+            job.finished_at = utc_now()
+            with self._lock:
+                if self._active_job_id == job.job_id:
+                    self._active_job_id = None
+            self._persist(job)
+
+    def _persist(self, job: ArchitecturalOrchestrationJob) -> None:
+        self.jobs_root.mkdir(parents=True, exist_ok=True)
+        payload = json.dumps(job.to_dict(), ensure_ascii=False, indent=2) + "\n"
+        (self.jobs_root / f"{job.job_id}.json").write_text(payload, encoding="utf-8", newline="\n")
+        (self.jobs_root / "latest_job.json").write_text(payload, encoding="utf-8", newline="\n")
+
+    @staticmethod
+    def _load_job(path: Path) -> ArchitecturalOrchestrationJob | None:
+        try:
+            return ArchitecturalOrchestrationJob(**json.loads(path.read_text(encoding="utf-8")))
+        except (OSError, TypeError, ValueError, json.JSONDecodeError):
+            return None

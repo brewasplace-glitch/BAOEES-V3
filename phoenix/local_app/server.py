@@ -27,6 +27,8 @@ from typing import Any
 
 from .dashboard_adapter import DashboardAdapter
 from .workflow_registry import WorkflowRegistry
+from .architectural_orchestration_runtime import ArchitecturalOrchestrationRuntime
+from .capability_registry import StartCapabilityRegistry
 from phoenix.autonomy.session_orchestrator import AutonomousProjectOrchestrator
 
 
@@ -40,6 +42,8 @@ class PhoenixLocalApplication:
         self.token = secrets.token_urlsafe(24)
         self.dashboard = DashboardAdapter(self.repository, config)
         self.workflows = WorkflowRegistry(self.repository, config)
+        self.architectural_orchestration = ArchitecturalOrchestrationRuntime(self.repository)
+        self.start_capabilities = StartCapabilityRegistry(self.repository)
         autonomy_config = self.repository / "configs" / "phoenix" / "autonomous_project_orchestrator_v1_0.json"
         self.autonomy = (
             AutonomousProjectOrchestrator(self.repository, autonomy_config)
@@ -75,6 +79,8 @@ class PhoenixLocalApplication:
             ],
             "latest_job": latest.to_dict() if latest else None,
             "production_orchestrator": self._orchestrator_status(),
+            "architectural_orchestration": self.architectural_orchestration.describe(),
+            "start_capabilities": self.start_capabilities.describe(),
             "official_start": {
                 "route": "/start-v3/",
                 "functional_controls": True,
@@ -937,6 +943,15 @@ class PhoenixLocalApplication:
                         self._json(application.module_view(module_id))
                     except KeyError as error:
                         self._json({"error": str(error)}, HTTPStatus.NOT_FOUND)
+                elif parsed.path == "/api/architectural-orchestration/status":
+                    self._json(application.architectural_orchestration.describe())
+                elif parsed.path.startswith("/api/architectural-orchestration/jobs/"):
+                    job_id = parsed.path.rsplit("/", 1)[-1]
+                    job = application.architectural_orchestration.get(job_id)
+                    if job is None:
+                        self._json({"error": "Architectural orchestration job niet gevonden."}, HTTPStatus.NOT_FOUND)
+                    else:
+                        self._json(job.to_dict())
                 elif parsed.path.startswith("/api/jobs/"):
                     job_id = parsed.path.rsplit("/", 1)[-1]
                     job = application.workflows.get(job_id)
@@ -977,6 +992,13 @@ class PhoenixLocalApplication:
                                 application.start_autonomous_session(str(body.get("session_id", ""))),
                                 HTTPStatus.ACCEPTED,
                             )
+                        elif parsed.path == "/api/architectural-orchestration/start":
+                            project_file = str(body.get("project_file", ""))
+                            if bool(body.get("validate_only")):
+                                self._json(application.architectural_orchestration.plan(project_file))
+                            else:
+                                job = application.architectural_orchestration.start(project_file)
+                                self._json(job.to_dict(), HTTPStatus.ACCEPTED)
                         elif parsed.path == "/api/shutdown":
                             self._json({"status": "shutting_down"})
                             threading.Thread(target=application.server.shutdown, daemon=True).start()
