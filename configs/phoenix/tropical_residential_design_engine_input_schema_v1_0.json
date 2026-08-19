@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phoenix Tropical Residential Design Engine Input",
+  "type": "object",
+  "required": [
+    "project_id",
+    "climate_profile",
+    "site",
+    "program"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "climate_profile": {
+      "enum": [
+        "hot_humid",
+        "monsoon",
+        "tropical_savanna",
+        "coastal_tropical"
+      ]
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "width_m",
+        "depth_m"
+      ],
+      "properties": {
+        "width_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "depth_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "north_deg": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360
+        },
+        "flood_risk": {
+          "type": "boolean",
+          "default": false
+        },
+        "cyclone_risk": {
+          "type": "boolean",
+          "default": false
+        },
+        "coastal_exposure": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "program": {
+      "type": "object",
+      "required": [
+        "target_floor_area_m2",
+        "bedrooms",
+        "bathrooms"
+      ],
+      "properties": {
+        "target_floor_area_m2": {
+          "type": "number",
+          "exclusiveMinimum": 20
+        },
+        "bedrooms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bathrooms": {
+          "type": "number",
+          "minimum": 1
+        },
+        "storeys": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "parking_spaces": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "veranda": {
+          "type": "boolean",
+          "default": true
+        },
+        "open_plan": {
+          "type": "boolean",
+          "default": true
+        },
+        "courtyard": {
+          "type": "boolean",
+          "default": false
+        },
+        "budget_tier": {
+          "enum": [
+            "economy",
+            "standard",
+            "premium"
+          ]
+        },
+        "style": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

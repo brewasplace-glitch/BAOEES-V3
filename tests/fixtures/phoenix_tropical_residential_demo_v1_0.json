@@ -1,0 +1,26 @@
+{
+  "project_id": "PHOENIX-TROPICAL-VILLA-DEMO-001",
+  "climate_profile": "hot_humid",
+  "site": {
+    "width_m": 24,
+    "depth_m": 38,
+    "north_deg": 0,
+    "flood_risk": true,
+    "cyclone_risk": false,
+    "coastal_exposure": false
+  },
+  "program": {
+    "target_floor_area_m2": 220,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "storeys": 2,
+    "parking_spaces": 2
+  },
+  "preferences": {
+    "veranda": true,
+    "open_plan": true,
+    "courtyard": false,
+    "budget_tier": "standard",
+    "style": "contemporary tropical"
+  }
+}

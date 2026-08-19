@@ -1,0 +1,28 @@
+{
+  "engine_id": "PHOENIX-TROPICAL-RESIDENTIAL-DESIGN-ENGINE",
+  "version": "1.0.0",
+  "status": "FOUNDATION_OPERATIONAL_CONCEPT_ONLY",
+  "variants": {
+    "A": "PASSIVE_COOLING",
+    "B": "LOW_COST",
+    "C": "RESILIENCE",
+    "D": "INDOOR_OUTDOOR",
+    "E": "BALANCED"
+  },
+  "open_source_first": {
+    "ifc_primary": "IfcOpenShell LGPL-3.0-or-later",
+    "ifc_fallback": "FreeCAD LGPL-2.0-or-later",
+    "geometry_primary": "Shapely BSD-3-Clause",
+    "graph_primary": "NetworkX BSD-3-Clause",
+    "optimisation_primary": "pymoo Apache-2.0",
+    "performance_future": "EnergyPlus open source"
+  },
+  "dependency_policy": "DETECT_ONLY_NO_SILENT_INSTALL",
+  "dashboard_policy": "STATUS_DATA_ONLY_NO_MANUAL_START_HTML_PATCH",
+  "governance": {
+    "professional_approval": "NOT_AUTOMATIC",
+    "code_compliance": "NOT_AUTOMATIC",
+    "production": "LOCKED",
+    "for_construction": "LOCKED"
+  }
+}
