@@ -1,0 +1,28 @@
+{
+  "engine": "PROJECT_PHOENIX_AUTONOMOUS_ARCHITECTURAL_PROJECT_ORCHESTRATION_REAL_PROJECT_AE_DELIVERY_v1_0",
+  "baseline_required": "2db9e7a748c8ed436e76932b0e39a8977ef9dd75",
+  "runtime_root": "projects/runtime",
+  "delivery_subtree": "delivery/architectural_ae_v1_0",
+  "variant_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "single_pipeline_authority": "generate_tropical_real_3d_detv_package",
+  "open_source_first": {
+    "spatial_primary": "Shapely",
+    "ifc_primary": "IfcOpenShell",
+    "bim_fallback": "FreeCAD bundled Python primary / FreeCADCmd fallback",
+    "render_primary": "Blender Cycles CPU",
+    "presentation": "Phoenix DE TV sidecar",
+    "browser_fallback_reviewed_not_added": "three.js"
+  },
+  "governance": {
+    "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
+    "production_locked": true,
+    "for_construction_locked": true,
+    "professional_approval_automatic": false
+  }
+}
