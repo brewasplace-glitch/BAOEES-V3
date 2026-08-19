@@ -1,0 +1,43 @@
+{
+  "engine_id": "PHOENIX-TROPICAL-RESIDENTIAL-REAL-SPATIAL-IFC",
+  "version": "1.0.0",
+  "status": "REAL_SPATIAL_LAYOUT_IFC_AUTHORING",
+  "requires_foundation": "1.0.0",
+  "open_source_first": {
+    "spatial_primary": {
+      "engine": "Shapely",
+      "license": "BSD-3-Clause"
+    },
+    "spatial_graph_optional": {
+      "engine": "NetworkX",
+      "license": "BSD-3-Clause"
+    },
+    "ifc_primary": {
+      "engine": "IfcOpenShell",
+      "license": "LGPL-3.0-or-later"
+    },
+    "bim_fallback": {
+      "engine": "FreeCAD",
+      "license": "LGPL-2.1-or-later"
+    },
+    "visual_downstream": {
+      "engine": "Blender",
+      "license": "GPL"
+    }
+  },
+  "dependency_policy": "NO_SILENT_INSTALL",
+  "outputs": [
+    "A-E real spatial layouts",
+    "A-E IFC4 candidate models",
+    "recommended authoritative IFC",
+    "FreeCAD FCStd handoff when discovered",
+    "Blender .blend handoff when discovered",
+    "Digital Twin patch"
+  ],
+  "governance": {
+    "professional_approval": "NOT_AUTOMATIC",
+    "code_compliance": "NOT_AUTOMATIC",
+    "production": "LOCKED",
+    "for_construction": "LOCKED"
+  }
+}

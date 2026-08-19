@@ -1,0 +1,26 @@
+{
+  "pack": "PROJECT PHOENIX TROPICAL RESIDENTIAL REAL SPATIAL LAYOUT + AUTHORITATIVE IFC AUTHORING v1.0",
+  "required_branch": "project-phoenix",
+  "required_baseline": "bda90c4456e44ebf6c04537045d4a052d5f1c070",
+  "version": "1.0.0",
+  "new_files": [
+    "configs/phoenix/tropical_residential_real_spatial_ifc_v1_0.json",
+    "docs/architecture/PHOENIX_TROPICAL_RESIDENTIAL_REAL_SPATIAL_LAYOUT_AUTHORITATIVE_IFC_v1_0.md",
+    "phoenix/design/tropical_residential/blender_bridge.py",
+    "phoenix/design/tropical_residential/freecad_bridge.py",
+    "phoenix/design/tropical_residential/ifc_author.py",
+    "phoenix/design/tropical_residential/real_cli.py",
+    "phoenix/design/tropical_residential/real_output.py",
+    "phoenix/design/tropical_residential/real_pipeline.py",
+    "phoenix/design/tropical_residential/real_spatial.py",
+    "phoenix/design/tropical_residential/tool_discovery.py",
+    "runners/PROJECT_PHOENIX_tropical_residential_real_spatial_ifc_v1_0.ps1",
+    "tests/automation/test_phoenix_tropical_residential_real_spatial_ifc_v1_0.py"
+  ],
+  "installer_revision": "R2",
+  "foundation_api_contract": {
+    "variant_generator": "generate_variants",
+    "selector": "select_balanced",
+    "room_program": "derived_by_real_spatial_layer"
+  }
+}
