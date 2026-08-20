@@ -1,0 +1,57 @@
+/* PROJECT PHOENIX — official start screen output layout + pointer stability v1.0 */
+
+#phoenix-output-mode-row.phoenix-output-mode-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+#phoenix-output-mode-row > .phoenix-output-choice {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 720px) {
+  #phoenix-output-mode-row.phoenix-output-mode-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+  Fine-pointer stabilization.
+  Keep intentional color/opacity feedback, but do not animate geometry/filter/shadow
+  when the pointer crosses interactive cards. This prevents hover-driven compositor
+  churn without changing click, focus, keyboard, polling, or DE TV behavior.
+*/
+@media (hover: hover) and (pointer: fine) {
+  html.phoenix-pointer-stable body :where(
+    button,
+    a,
+    [role="button"],
+    [class*="card"],
+    [class*="tile"],
+    [class*="option"],
+    [class*="choice"]
+  ) {
+    will-change: auto !important;
+    transition-property: color, background-color, border-color, opacity !important;
+  }
+
+  html.phoenix-pointer-stable body :where(
+    button,
+    a,
+    [role="button"],
+    [class*="card"],
+    [class*="tile"],
+    [class*="option"],
+    [class*="choice"]
+  ):hover {
+    transform: none !important;
+    filter: none !important;
+  }
+}

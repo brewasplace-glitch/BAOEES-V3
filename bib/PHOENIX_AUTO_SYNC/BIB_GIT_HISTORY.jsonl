@@ -1,3 +1,4 @@
+{"commit": "9dc0c4179b648e4589149aac36a0cb89d7e8b9cf", "date": "2026-08-21T00:34:51+02:00", "subject": "fix(bib): finalize canonical managed-root auto-sync"}
 {"commit": "6b08a98dc2a1fabfd3d5516aa2207107233bec15", "date": "2026-08-20T22:29:51+02:00", "subject": "feat(bib): add automatic knowledge backfill and pre-commit sync"}
 {"commit": "e98d5ef688010789898a0e47e5451efd134779e5", "date": "2026-08-20T21:42:17+02:00", "subject": "fix(start): stabilize A-E screen and preserve legacy integration contracts"}
 {"commit": "5debd33bdd6ccac4bb3bf35bd4ca2788c57f6901", "date": "2026-08-20T01:45:11+02:00", "subject": "feat(start): integrate autonomous A-E orchestration into official start screen"}
@@ -497,4 +498,3 @@
 {"commit": "ede84a606fa864d4ad59f857c91ee870e625fc6d", "date": "2026-06-20T15:44:27+02:00", "subject": "chore: migrate BAOEES V3 and connect core engines"}
 {"commit": "8c5ce572a05c27c8d7f55d2c0ba50f05205b0373", "date": "2026-06-19T16:39:37+02:00", "subject": "Merge remote-tracking branch 'origin/baoees-v3' into baoees-v3"}
 {"commit": "5bf017fdf580691a3eba001ff0abd2e29e32d662", "date": "2026-06-19T14:39:39+02:00", "subject": "Auto stash before rebase of \"master\""}
-{"commit": "a87cc3c89e0c78c762dee9af7a3e58b5875db5ca", "date": "2026-06-19T14:39:39+02:00", "subject": "Auto stash before rebase of \"master\""}

@@ -9149,6 +9149,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "c38887f5d47e4b8ca8d0c2b7f5657f477f3944fe",
+      "path": "docs/automation/PHOENIX_START_OUTPUT_LAYOUT_POINTER_STABILITY_v1_0.md",
+      "sha256": "6826cdc0cc07d836f690042b3663bbf2d19d467d56cf4842402cfaf41a4bfd12"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "3d5c688954d1d34081c8664c46ef238a403618ef",
+      "path": "docs/automation/PHOENIX_START_OUTPUT_LAYOUT_POINTER_STABILITY_v1_0_EVIDENCE.txt",
+      "sha256": "bf71fc1330e2a65877e019f0793b0ea40e133db75381391a7477cdb9f2331cb1"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ad6a4f7d8874a0786026077a0d4991da771a03ab",
       "path": "docs/automation/PHOENIX_STRUCTURAL_GOLDEN_REFERENCE_SUITE_MASTERPACK_v1_0.md",
       "sha256": "fca1b44f06dbba2c3197793b9f13ce053362f0ade3b15ccb192de8e1df2321b1"
@@ -16196,7 +16214,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b0b9a80379fe52937af130e50db6d8c688b09347",
+      "git_oid": "4c3685b817d980c713e76412bb9cd826f11ebbc1",
       "path": "phoenix/local_app/static/official_start_v3_0/index.html",
       "sha256": null
     },
@@ -16207,6 +16225,24 @@
       "git_mode": "100644",
       "git_oid": "56d7bd3c8fe45eb030d41af25a5d5e07a4f0219e",
       "path": "phoenix/local_app/static/official_start_v3_0/phoenix_detv_player_mount.js",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "1f376f358ba3d377f108a635869d9fbc03e583c4",
+      "path": "phoenix/local_app/static/official_start_v3_0/phoenix_output_layout_stability.css",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "7c56dd4e48566d4070657913c4fa3a70ec2312a1",
+      "path": "phoenix/local_app/static/official_start_v3_0/phoenix_output_layout_stability.js",
       "sha256": null
     },
     {
@@ -22937,6 +22973,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "3fc068238087df9a5c52f44f09a72b672c38a86c",
+      "path": "tests/automation/test_phoenix_start_output_layout_stability_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "d7cd19bb970b278518eacbe276042c1610ae2c0e",
       "path": "tests/automation/test_phoenix_steel_axial_design_engine_wave11_v1_0.py",
       "sha256": null
@@ -24455,5 +24500,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "4758bba8eb9b33cef5e17feb4ad7b7d407b8d3a169a4cdeb2f0aeb6caa94a453"
+  "source_digest": "048503425a500adcb6baedd51c8b4732eb802f30c8aaaf308173a36a1cfdd501"
 }

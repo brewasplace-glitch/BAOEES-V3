@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PROJECT PHOENIX 3.0.2 — Official Start · DE TV</title>
+<title>PROJECT PHOENIX 3.0.2 â€” Official Start Â· DE TV</title>
 <style>
 :root{
   --bg:#040b15;--panel:#081526;--panel2:#0b1d33;--line:#153b60;--text:#f4f8ff;--muted:#8aa6c0;
@@ -120,7 +120,7 @@ url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fi
 .phoenix-modules-collapsible{padding:0;overflow:hidden}
 .phoenix-modules-collapsible>summary{list-style:none;cursor:pointer;padding:14px 16px;font-size:15px;color:#f2e2b9;letter-spacing:.05em;text-transform:uppercase;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none}
 .phoenix-modules-collapsible>summary::-webkit-details-marker{display:none}
-.phoenix-modules-collapsible>summary::after{content:"▸";color:#79c9ff;font-size:18px;transition:transform .18s ease}
+.phoenix-modules-collapsible>summary::after{content:"â–¸";color:#79c9ff;font-size:18px;transition:transform .18s ease}
 .phoenix-modules-collapsible[open]>summary::after{transform:rotate(90deg)}
 .phoenix-modules-collapsible[open]>summary{border-bottom:1px solid #12355c}
 .phoenix-modules-body{padding:12px 14px 14px}
@@ -164,6 +164,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
   .tvcontrols{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
+  <link rel="stylesheet" href="./phoenix_output_layout_stability.css?v=1.0.0">
 </head>
 <body>
 <div class="app">
@@ -176,22 +177,22 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
       </div>
     </div>
     <nav class="nav" id="leftNav">
-      <button class="navbtn active" data-module="new_project"><span class="navicon">⌂</span>Nieuw Project</button>
-      <button class="navbtn" data-module="projects"><span class="navicon">⛁</span>Projecten</button>
-      <button class="navbtn" data-module="digital_twin"><span class="navicon">⌘</span>Digital Twin</button>
-      <button class="navbtn" data-module="ai_agents"><span class="navicon">✦</span>AI Agents</button>
-      <button class="navbtn" data-module="simulations"><span class="navicon">◌</span>Simulaties</button>
-      <button class="navbtn" data-module="documents"><span class="navicon">☰</span>Documenten</button>
-      <button class="navbtn" data-module="reports"><span class="navicon">▤</span>Rapporten</button>
-      <button class="navbtn" data-module="asset_management"><span class="navicon">☷</span>Asset Management</button>
-      <button class="navbtn" data-module="dashboard"><span class="navicon">◫</span>Dashboard</button>
-      <button class="navbtn" data-module="settings"><span class="navicon">⚙</span>Instellingen</button>
-      <button class="navbtn" id="resultsNav"><span class="navicon">✓</span>Resultaten</button>
+      <button class="navbtn active" data-module="new_project"><span class="navicon">âŒ‚</span>Nieuw Project</button>
+      <button class="navbtn" data-module="projects"><span class="navicon">â›</span>Projecten</button>
+      <button class="navbtn" data-module="digital_twin"><span class="navicon">âŒ˜</span>Digital Twin</button>
+      <button class="navbtn" data-module="ai_agents"><span class="navicon">âœ¦</span>AI Agents</button>
+      <button class="navbtn" data-module="simulations"><span class="navicon">â—Œ</span>Simulaties</button>
+      <button class="navbtn" data-module="documents"><span class="navicon">â˜°</span>Documenten</button>
+      <button class="navbtn" data-module="reports"><span class="navicon">â–¤</span>Rapporten</button>
+      <button class="navbtn" data-module="asset_management"><span class="navicon">â˜·</span>Asset Management</button>
+      <button class="navbtn" data-module="dashboard"><span class="navicon">â—«</span>Dashboard</button>
+      <button class="navbtn" data-module="settings"><span class="navicon">âš™</span>Instellingen</button>
+      <button class="navbtn" id="resultsNav"><span class="navicon">âœ“</span>Resultaten</button>
     </nav>
     <div class="sidecards">
       <div class="minicard">
         <div class="title">Systeemstatus</div>
-        <div class="value" id="sysCard">● Runtime verbinden...</div>
+        <div class="value" id="sysCard">â— Runtime verbinden...</div>
       </div>
       <div class="minicard">
         <div class="title">Phoenix Core</div>
@@ -208,15 +209,15 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
       </div>
       <div class="topchips">
         <div class="chip" id="chipRuntime">RUNTIME CONNECTING</div>
-        <button class="toolbtn" id="manualRefreshBtn" title="Vernieuw status handmatig">↻ STATUS</button>
+        <button class="toolbtn" id="manualRefreshBtn" title="Vernieuw status handmatig">â†» STATUS</button>
       </div>
     </div>
 
     <div class="statusgrid">
-      <div class="status"><small>Repository</small><strong id="gitState">—</strong></div>
-      <div class="status"><small>Branch</small><strong id="branchState">—</strong></div>
-      <div class="status"><small>Local Runtime</small><strong id="runtimeState">—</strong></div>
-      <div class="status"><small>Production</small><strong style="color:var(--amber)">PAT PENDING · RELEASE LOCKED</strong></div>
+      <div class="status"><small>Repository</small><strong id="gitState">â€”</strong></div>
+      <div class="status"><small>Branch</small><strong id="branchState">â€”</strong></div>
+      <div class="status"><small>Local Runtime</small><strong id="runtimeState">â€”</strong></div>
+      <div class="status"><small>Production</small><strong style="color:var(--amber)">PAT PENDING Â· RELEASE LOCKED</strong></div>
     </div>
 
     <div class="mainwrap">
@@ -231,17 +232,17 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
             <button class="typecard type-bouw active" data-type="BOUW">
               <h3>BOUW</h3>
               <ul><li>Woningbouw</li><li>Utiliteitsbouw</li><li>Industrie</li><li>Hoogbouw</li><li>Renovatie</li><li>Transformatie</li></ul>
-              <div class="icon">🏢</div>
+              <div class="icon">ðŸ¢</div>
             </button>
             <button class="typecard type-civiel" data-type="CIVIEL">
               <h3>CIVIEL</h3>
               <ul><li>Bruggen</li><li>Kademuren</li><li>Keerwanden</li><li>Waterbouwkundige constructies</li><li>Tunnels</li><li>Kunstwerken</li></ul>
-              <div class="icon">🌉</div>
+              <div class="icon">ðŸŒ‰</div>
             </button>
             <button class="typecard type-infra" data-type="INFRA">
               <h3>INFRA</h3>
               <ul><li>Wegen</li><li>Parkeerterreinen</li><li>Rotondes</li><li>Verkeersknooppunten</li><li>Fietsinfrastructuur</li><li>Railinfrastructuur</li></ul>
-              <div class="icon">🛣</div>
+              <div class="icon">ðŸ›£</div>
             </button>
           </div>
         </div>
@@ -259,7 +260,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
           <div class="panel">
             <div class="sectionlabel"><div class="badge">3</div><div>SPRAAK INVOER PROJECTOMSCHRIJVING</div></div>
             <div class="speechbox">
-              <div class="bigmic">🎤</div>
+              <div class="bigmic">ðŸŽ¤</div>
               <div class="big" style="margin-top:8px">Klik op de microfoon om te beginnen</div>
               <div style="text-align:center;color:#a8bfd9">Phoenix zet uw spraak automatisch om naar projectdefinitie, PvE, disciplines en vergunningstrategie.</div>
               <div style="text-align:center;margin-top:12px"><button class="toolbtn" id="speechBtn">SPRAAK STARTEN</button></div>
@@ -323,17 +324,17 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
           <div class="tvmeta" id="phoenixTvMeta">Geen output geselecteerd.</div>
           <div class="tvcontrols">
             <button class="tvbtn" id="phoenixTvSelected">AANGEVINKT</button>
-            <button class="tvbtn" id="phoenixTvPrev">◀ VORIGE</button>
-            <button class="tvbtn" id="phoenixTvNext">VOLGENDE ▶</button>
+            <button class="tvbtn" id="phoenixTvPrev">â—€ VORIGE</button>
+            <button class="tvbtn" id="phoenixTvNext">VOLGENDE â–¶</button>
             <button class="tvbtn" id="phoenixTvPlay">PRESENTATIE</button>
-            <button class="tvbtn" id="phoenixTvFullscreen">⛶ VOL SCHERM</button>
+            <button class="tvbtn" id="phoenixTvFullscreen">â›¶ VOL SCHERM</button>
           </div>
           <div class="tvcommand">
             <input id="phoenixTvCommand" type="text" autocomplete="off" placeholder="Bijv. 'toon plattegronden'">
             <button id="phoenixTvCommandGo" title="Voer TV-commando uit">TOON</button>
-            <button id="phoenixTvMic" title="Spraakcommando voor DE TV">🎤</button>
+            <button id="phoenixTvMic" title="Spraakcommando voor DE TV">ðŸŽ¤</button>
           </div>
-          <div class="tvhint">PRESENTATIE-vinkjes vormen de playlist · tekst/spraak kan alle aangevinkte GEWENSTE OUTPUT oproepen.</div>
+          <div class="tvhint">PRESENTATIE-vinkjes vormen de playlist Â· tekst/spraak kan alle aangevinkte GEWENSTE OUTPUT oproepen.</div>
         </div>
 
 
@@ -361,7 +362,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
 </div>
 
 <div class="toast" id="toast"></div>
-<div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">Phoenix</h2><button class="close" id="modalClose">×</button></div><div id="modalBody"></div></div></div>
+<div class="modal" id="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">Phoenix</h2><button class="close" id="modalClose">Ã—</button></div><div id="modalBody"></div></div></div>
 
 <script>
 window.PHOENIX_SESSION_TOKEN="__PHOENIX_SESSION_TOKEN__";
@@ -394,7 +395,7 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
     const txt = document.createElement('span'); txt.textContent = 'GECERTIFICEERD';
     mode.append(cb, txt);
     const ps = document.createElement('button');
-    ps.id = 'phoenix-return-powershell'; ps.type = 'button'; ps.textContent = '↩ POWERSHELL';
+    ps.id = 'phoenix-return-powershell'; ps.type = 'button'; ps.textContent = 'â†© POWERSHELL';
     ps.title = 'Terug naar de PowerShell-console waarmee deze Phoenix-runtime is gestart.';
     ps.style.cssText = 'padding:9px 11px;border:1px solid #31556f;border-radius:10px;background:#0b2234;color:#e6f3fb;font:700 12px system-ui,Segoe UI,sans-serif;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.24);';
     ps.addEventListener('click', async () => {
@@ -552,7 +553,7 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
     } else if (kind === 'video') {
       node=document.createElement('video'); node.src=url; node.controls=true; node.autoplay=true; node.muted=true;
     } else if (kind === 'text') {
-      node=document.createElement('pre'); node.textContent='Output laden…';
+      node=document.createElement('pre'); node.textContent='Output ladenâ€¦';
       fetch(url,{cache:'no-store'}).then(r=>r.text()).then(text=>{
         node.textContent=text.length>220000 ? text.slice(0,220000)+'\n\n[DE TV: preview afgekapt]' : text;
       }).catch(()=>{node.textContent='Tekstpreview kon niet worden geladen.';});
@@ -565,7 +566,7 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
       button.addEventListener('click',()=>openExternal(item)); node.append(strong,text,button);
     }
     stage.appendChild(node);
-    meta.textContent=`${TV.index+1}/${TV.queue.length} · ${item.name} · ${item.relative_path}`;
+    meta.textContent=`${TV.index+1}/${TV.queue.length} Â· ${item.name} Â· ${item.relative_path}`;
     setStatus('TOONT OUTPUT','ok');
   }
   function showCurrent() {
@@ -601,7 +602,7 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
   async function startPresentation() {
     await loadRegistry(true);
     const selected=selectedOutputIds().filter(id=>TV.presentationIds.has(id));
-    if (!selected.length) {showEmpty('PRESENTATIE LEEG','Vink één of meer onderdelen aan onder PRESENTATIE.','warn');return;}
+    if (!selected.length) {showEmpty('PRESENTATIE LEEG','Vink Ã©Ã©n of meer onderdelen aan onder PRESENTATIE.','warn');return;}
     setQueue(artifactsFor(selected));
     if (!TV.queue.length) {showEmpty('PRESENTATIE WACHT','De PRESENTATIE-output is geselecteerd maar nog niet als artifact beschikbaar.','warn');return;}
     if (TV.timer) clearInterval(TV.timer); showCurrent(); TV.timer=setInterval(next,9000); setStatus('PRESENTATIE','ok');
@@ -669,9 +670,9 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
       const text=event.results && event.results[0] && event.results[0][0] ? event.results[0][0].transcript : '';
       $('phoenixTvCommand').value=text; executeCommand(text);
     });
-    recognition.addEventListener('start',()=>{mic.textContent='●';setStatus('LUISTERT','ok');});
-    recognition.addEventListener('end',()=>{mic.textContent='🎤';if(!TV.timer)setStatus('GEREED','ok');});
-    recognition.addEventListener('error',()=>{mic.textContent='🎤';setStatus('SPRAAKFOUT','warn');});
+    recognition.addEventListener('start',()=>{mic.textContent='â—';setStatus('LUISTERT','ok');});
+    recognition.addEventListener('end',()=>{mic.textContent='ðŸŽ¤';if(!TV.timer)setStatus('GEREED','ok');});
+    recognition.addEventListener('error',()=>{mic.textContent='ðŸŽ¤';setStatus('SPRAAKFOUT','warn');});
     mic.addEventListener('click',()=>{try{recognition.start();}catch(_){}});
     TV.recognition=recognition;
   }
@@ -689,7 +690,7 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
     });
     setupSpeech();
     loadRegistry(false).then(registry=>{
-      $('phoenixTvMeta').textContent=`DE TV gereed · ${registry.artifact_count || 0} bestaande outputartifact(en) geregistreerd.`;
+      $('phoenixTvMeta').textContent=`DE TV gereed Â· ${registry.artifact_count || 0} bestaande outputartifact(en) geregistreerd.`;
     }).catch(()=>setStatus('REGISTER OFFLINE','warn'));
   }
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',setup,{once:true});
@@ -730,5 +731,6 @@ window.PHOENIX_START_CAPABILITY_BOOTSTRAP=Object.freeze({
 });
 </script>
 <script src="PROJECT_PHOENIX_start_capability_registry_v1_0.js"></script>
+  <script src="./phoenix_output_layout_stability.js?v=1.0.0" defer></script>
 </body>
 </html>
