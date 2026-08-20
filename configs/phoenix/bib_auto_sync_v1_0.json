@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "name": "PROJECT PHOENIX BIB AUTO-SYNC + KNOWLEDGE INGESTION",
+  "managed_root": "BIB/PHOENIX_AUTO_SYNC",
+  "primary_search": {
+    "engine": "SQLite FTS5",
+    "integration": "Python stdlib sqlite3",
+    "license": "Public Domain (SQLite)",
+    "external_install": false
+  },
+  "fallback_search": {
+    "engine": "git grep over tracked BIB_KNOWLEDGE_FALLBACK.jsonl",
+    "integration": "existing Git",
+    "license": "GPL-2.0",
+    "external_install": false
+  },
+  "evaluated_alternate": {
+    "engine": "Tantivy / tantivy-py",
+    "license": "MIT",
+    "status": "active in 2026",
+    "decision": "not required",
+    "reason": "additional Rust/Python binary dependency not needed at current repository scale"
+  },
+  "auto_sync": {
+    "mechanism": "repo-managed pre-commit hook",
+    "hooks_path": ".githooks",
+    "snapshot": "Git index",
+    "stage_managed_bib": true
+  },
+  "coverage": {
+    "full_text": [
+      "docs/**",
+      "configs/**",
+      "existing BIB/bib/knowledge/PKB roots",
+      "root-level knowledge text",
+      "recent Git commit subjects"
+    ],
+    "fingerprint_only": [
+      "tracked Phoenix source code",
+      "runners/scripts",
+      "tests"
+    ],
+    "excluded": [
+      "projects/runtime/**",
+      "outputs/runtime/**",
+      "runtime/cache/build",
+      "managed BIB outputs as source input"
+    ],
+    "binary_policy": "DOCX stdlib XML; PDF optional pypdf else metadata/hash only"
+  },
+  "security": {
+    "high_signal_secret_redaction": true,
+    "secret_scan_before_commit": true
+  },
+  "release_gates": [
+    "BIB_FULL_BACKFILL=PASS",
+    "BIB_CURRENT_BASELINE=PASS",
+    "BIB_KNOWLEDGE_INDEX=PASS",
+    "BIB_AUTO_SYNC=ENABLED",
+    "BIB_UP_TO_DATE=YES"
+  ]
+}

@@ -1,0 +1,500 @@
+{"commit": "e98d5ef688010789898a0e47e5451efd134779e5", "date": "2026-08-20T21:42:17+02:00", "subject": "fix(start): stabilize A-E screen and preserve legacy integration contracts"}
+{"commit": "5debd33bdd6ccac4bb3bf35bd4ca2788c57f6901", "date": "2026-08-20T01:45:11+02:00", "subject": "feat(start): integrate autonomous A-E orchestration into official start screen"}
+{"commit": "1700bba119cff33329fc4f2b9d71aa4369d89bf5", "date": "2026-08-20T01:11:03+02:00", "subject": "feat(architecture): add autonomous orchestration for real project A-E delivery"}
+{"commit": "2db9e7a748c8ed436e76932b0e39a8977ef9dd75", "date": "2026-08-20T00:18:22+02:00", "subject": "feat(architecture): add tropical real 3d and de tv presentation pipeline"}
+{"commit": "3f6dabe44b3b12363bad47092dcd93aa4de5e540", "date": "2026-08-19T23:05:31+02:00", "subject": "feat(architecture): add real tropical spatial layout and IFC authoring"}
+{"commit": "bda90c4456e44ebf6c04537045d4a052d5f1c070", "date": "2026-08-19T22:32:33+02:00", "subject": "feat(architecture): add tropical residential design engine foundation"}
+{"commit": "19fca5670f27c49181a92e15ae956294f3006285", "date": "2026-08-19T01:36:54+02:00", "subject": "fix(tv): consolidate presentation UI and sync live meta"}
+{"commit": "b411bd3204021d128ed62f64d820e0947a1d626f", "date": "2026-08-19T01:14:13+02:00", "subject": "fix(tv): enforce single visual authority without recursive observer"}
+{"commit": "f1845dac9400e51eae19e131d7124ddda92b547a", "date": "2026-08-19T01:10:39+02:00", "subject": "Revert \"fix(tv): enforce single visual authority and bridge presentation controls\""}
+{"commit": "7d7eef5df6769f1efb6fe8b19d72160c78a2dc5a", "date": "2026-08-19T00:59:43+02:00", "subject": "fix(tv): enforce single visual authority and bridge presentation controls"}
+{"commit": "dd42fe158a7fbdf1a7caed111f2ba42431701a65", "date": "2026-08-19T00:36:00+02:00", "subject": "docs(tv): add static route hard-mount installation evidence"}
+{"commit": "b6ff0f7dc0015bf840cae5a1f810da669e522359", "date": "2026-08-19T00:34:37+02:00", "subject": "fix(tv): correct open-source player static route and hard-mount activation"}
+{"commit": "02ef34c621f8c972f6c1b1b1e44fc978154e26e4", "date": "2026-08-18T22:26:09+02:00", "subject": "fix(tv): robustly mount open-source media player in DE TV"}
+{"commit": "7ac0fd28987241a8c568746c8b3a266d126a4ebd", "date": "2026-08-18T01:10:18+02:00", "subject": "feat(tv): add open-source media player engine and safe media sidecar"}
+{"commit": "4908669b0e63eb2f37b690fea48a41ade9cfea9f", "date": "2026-08-17T23:58:21+02:00", "subject": "fix(tv): use seek-exact visual-ready bridge with loading failsafe"}
+{"commit": "1564c2b9b4c00c9af3e7c4a3ef2c495f51fbc195", "date": "2026-08-17T23:35:16+02:00", "subject": "fix(tv): direct PAT-002 PNG render and responsive controls"}
+{"commit": "8e9c49234ca4558583e84edfff4b5f8432d9e830", "date": "2026-08-17T23:07:46+02:00", "subject": "fix(tv): add authoritative PAT-002 visual media router"}
+{"commit": "86c474d5a96660198d142fed1b80cf4c55622e51", "date": "2026-08-17T21:58:54+02:00", "subject": "fix(tv): suppress technical artifacts from visual presentation"}
+{"commit": "9af2f4e407846d630a269fd6af69664ca78d0550", "date": "2026-08-17T18:39:23+02:00", "subject": "fix(tv): correct PAT-002 JavaScript regex contract test r9"}
+{"commit": "440591ada89420ff557906be0a99d89fcd2c416a", "date": "2026-08-17T16:14:26+02:00", "subject": "feat(visual): provision Blender Sweet Home 3D and ComfyUI integration"}
+{"commit": "d61bc1df9e77aa0eec4cb2c5f63c8ec76087db6f", "date": "2026-08-17T15:44:51+02:00", "subject": "feat(visual): add safe open-source architectural visual design stack r1"}
+{"commit": "d698c42e50b21d549bd9ef1fe76370c0dcef6c4c", "date": "2026-08-17T14:35:47+02:00", "subject": "feat(engines): add safe discovery and CalculiX Gmsh QGIS adapters r1"}
+{"commit": "bd27cee9d8a01d2c0637bfa88d3cb398aef740e1", "date": "2026-08-17T13:18:02+02:00", "subject": "feat(architecture): establish open-source engine registry and IFC authority r2"}
+{"commit": "dd898581aa61b86698edf64cf22dd898de3f6375", "date": "2026-08-17T12:13:43+02:00", "subject": "feat(architecture): add BIM-lite model and strict presentation contract r2"}
+{"commit": "6f32446ced05148d5c8327a8ff7c94ea377cdbe6", "date": "2026-08-16T23:51:52+02:00", "subject": "feat(architecture): add real multi-variant design generation r2"}
+{"commit": "daa0b267f0f0d9e9646a759b0d3560f08a723e0b", "date": "2026-08-16T02:08:47+02:00", "subject": "fix(tv): bridge semantic visual artifacts to existing renderer"}
+{"commit": "e22fb53fcff56d5bbf7ed3de270e3819b5a17374", "date": "2026-08-16T01:46:03+02:00", "subject": "fix(tv): preserve routing contracts with authoritative project context"}
+{"commit": "c0e4cc0f2f12dc6668f365809743da0d3680017e", "date": "2026-08-16T00:45:53+02:00", "subject": "fix(tv): enforce project-scoped semantic visual routing"}
+{"commit": "b32dc46f6a463430e7bef7d9c41ff56e4caec780", "date": "2026-08-15T18:19:18+02:00", "subject": "fix(tv): prioritize visual artifacts over technical evidence"}
+{"commit": "956e0bc8e9364d9e4388ec0fc5dbd7c60154d9d9", "date": "2026-08-15T17:22:25+02:00", "subject": "fix(runtime): generate real viewer and auto-video artifacts"}
+{"commit": "020380432b70a4333e6cb60fae8949adf8816d48", "date": "2026-08-15T14:00:53+02:00", "subject": "fix(ui): finalize official start layout cleanup v1.2"}
+{"commit": "58d7f4663f1ab8e324928aac14b34d947b35ac86", "date": "2026-08-15T02:47:22+02:00", "subject": "fix(ui): finalize Phoenix start layout cleanup v1.1 R2"}
+{"commit": "3b27b0e340bdc41745fb1f7700d39522e399eb6f", "date": "2026-08-15T00:40:33+02:00", "subject": "feat(ui): add DE TV presentation output viewer v1.0 R2"}
+{"commit": "d4514179bb97237f2958eb0b224f5d787dbd90a7", "date": "2026-08-14T15:12:39+02:00", "subject": "fix(structural): harden OpenSees mixed shell element tags v1.0 R5"}
+{"commit": "32f8f1572210c0da2cf06598c43eb679f6c06138", "date": "2026-08-14T14:58:20+02:00", "subject": "fix(structural): resolve OpenSees preflight paths absolutely v1.0 R4"}
+{"commit": "a887a25783b69d31df0bc1cc262a8e8e06661ba0", "date": "2026-08-14T13:22:17+02:00", "subject": "feat(structural): add PAT-001 OpenSees live evidence route v1.0"}
+{"commit": "e71839f6037d8cad40dec81985e1747bc0e19c0a", "date": "2026-08-14T12:54:55+02:00", "subject": "feat(structural): close PAT-001 identity and preparation state v1.3"}
+{"commit": "5b0cc499d39b3f07deceb75e4f6fc9812cc06ab9", "date": "2026-08-14T12:11:27+02:00", "subject": "feat(structural): add PAT-001 canonical model and adapter hardening v1.2"}
+{"commit": "c215de4fd3989428fe3b9e6d559187fc8305fab5", "date": "2026-08-14T11:45:20+02:00", "subject": "feat(structural): add PAT-001 evidence harvest bootstrap v1.1"}
+{"commit": "21e41a113eb79bacfe193609c5309f7667b8f114", "date": "2026-08-14T11:27:58+02:00", "subject": "feat(structural): add PAT-001 structural preparation v1.0"}
+{"commit": "443d2553c39bf1bede9b8aecd54c45c1faf396cb", "date": "2026-08-14T11:22:39+02:00", "subject": "feat(structural): add Golden Reference Suite v1.0"}
+{"commit": "373913ee780f9670b3af5133ee88b5597dcd2146", "date": "2026-08-14T11:15:26+02:00", "subject": "feat(structural): harden SCIA environment readiness v1.1"}
+{"commit": "f0a1b578ebf5a659597a64e5c7a68a311787b42c", "date": "2026-08-14T01:51:26+02:00", "subject": "fix(structural): harden CalculiX reaction equilibrium parsing v1.1"}
+{"commit": "e85f1b1078594a43837bee6cfe8b5bbb0f630a87", "date": "2026-08-14T00:08:40+02:00", "subject": "feat(structural): expand CalculiX and analytical verification v1.0"}
+{"commit": "5a495d330ff4a6fbc635b3a1b4fa6691b59bc9ff", "date": "2026-08-13T23:51:12+02:00", "subject": "feat(structural): add model interchange and SCIA preparation readiness v1.0"}
+{"commit": "f676a2bd070e5cbf4dea3f2adbe9b8b7f73a7f10", "date": "2026-08-13T22:29:12+02:00", "subject": "feat(structural): add SCIA Beam golden reference validation v1.0"}
+{"commit": "d6fa925863ee69e936509dd64fd5be29c70d7cf5", "date": "2026-08-13T18:05:23+02:00", "subject": "feat(structural): add PAT-001 SCIA end-to-end orchestration v1.0"}
+{"commit": "33ee6e420823a26eed2bfb18bbb723e3e7a2d025", "date": "2026-08-13T17:25:18+02:00", "subject": "feat(structural): add professional dossier controlled review v1.0"}
+{"commit": "6f6c0e749742170299766a9b97db4aa5dcba9b71", "date": "2026-08-13T17:13:00+02:00", "subject": "feat(structural): add independent verification engine v1.0"}
+{"commit": "b1a0605d8cadd349e7b5baca22e71397a18dbcef", "date": "2026-08-13T17:01:48+02:00", "subject": "feat(structural): add SCIA professional engineering bridge v1.0"}
+{"commit": "e8581a3e14bdb4ca92671aeaeb0094e67ddb5551", "date": "2026-08-13T00:47:29+02:00", "subject": "feat(structural): add professional CDE review dossier R9.5.2.10"}
+{"commit": "dcd742e845014cf13b1c6ec04371c8e9d912ea1b", "date": "2026-08-12T23:53:07+02:00", "subject": "feat(structural): prepare PHOENIX-PAT-001 real CDE evidence intake"}
+{"commit": "cf5f86dd97280f9dea38a672c63e78a30a9d22f4", "date": "2026-08-12T23:38:30+02:00", "subject": "feat(structural): add combined CDE evidence intake R9.5.2.9"}
+{"commit": "80ec01b456707e7dcef0a8e327e9cf0819d73b38", "date": "2026-08-12T23:24:53+02:00", "subject": "feat(structural): add remaining evidence gate consolidation R9.5.2.8"}
+{"commit": "9fda167dc85c7c9a05a1f1bcd3ff742df23b1fe7", "date": "2026-08-12T23:08:10+02:00", "subject": "feat(structural): add Package D weak-storey screening review R9.5.2.7"}
+{"commit": "b66a3fcebde7a80323b31d1c68beb7cbf3f2dcd2", "date": "2026-08-12T22:48:12+02:00", "subject": "feat(structural): add Package C seismic scope framework R9.5.2.6"}
+{"commit": "76ad62617c87fa4c5449fab9e6bad39340d56fb6", "date": "2026-08-12T22:32:48+02:00", "subject": "fix(structural): restore R9.5.2 path literal contract"}
+{"commit": "b9879d71fefb74dde9a106fbd2adebb43e05f200", "date": "2026-08-12T13:42:26+02:00", "subject": "feat(structural): add Package E independent evidence framework R9.5.2.5"}
+{"commit": "7938997d629410eca900084bf4bac08f8e630a42", "date": "2026-08-12T11:48:31+02:00", "subject": "feat(structural): add R9.5.2.4 runtime merge requalification"}
+{"commit": "f4ae06d490e3d465404bf1f49122731c8a75b34e", "date": "2026-08-12T02:25:01+02:00", "subject": "feat(structural): add Package B licensed source traceability R9.5.2.3"}
+{"commit": "e4d8651b227764a2b75b3fa0b21239a5476a985d", "date": "2026-08-11T22:50:07+02:00", "subject": "fix(structural): repair R9.5.2.2 policy path literal"}
+{"commit": "218bcbf2ccbb27d5f73d9273c531b801e83b6534", "date": "2026-08-11T22:21:21+02:00", "subject": "feat(structural): integrate stability A+B project policy R9.5.2.2"}
+{"commit": "ca9990c83cba66ec9385db65a5b8fc48424ca6a4", "date": "2026-08-10T23:55:54+02:00", "subject": "feat(structural): add stability decision dossier intake R9.5.2"}
+{"commit": "566d458192c079793dc3fa5d964091f4b2b48064", "date": "2026-08-10T23:32:27+02:00", "subject": "feat(structural): add stability input evidence qualification R9.5.1"}
+{"commit": "3e2a6cbe2eab81948a55c706d156b670b8baca9d", "date": "2026-08-10T22:34:12+02:00", "subject": "feat(structural): add project stability design-basis decision R9.5"}
+{"commit": "ecc1e3b5f1a951f06d51344225a00bc94187e250", "date": "2026-08-10T19:17:13+02:00", "subject": "feat(bib): add Suriname regulatory engineering knowledge layer"}
+{"commit": "ab53772fd22f76ea20db33b33d075a5288c9fed5", "date": "2026-08-10T12:13:38+02:00", "subject": "feat(structural): qualify normative stability design basis R9.4"}
+{"commit": "0aff0af5c6da108e01a423597f067f367801f241", "date": "2026-08-10T11:06:01+02:00", "subject": "feat(structural): add residual capacity qualification R9.3"}
+{"commit": "a3fcb1ee078b8f2202c7a09ff66798645974f9a9", "date": "2026-08-09T23:49:31+02:00", "subject": "feat(structural): complete storey stability evidence R9.2"}
+{"commit": "6f4ad2cb49919a11ea9d00cc73f82880e6fd6cc0", "date": "2026-08-09T22:30:09+02:00", "subject": "feat(structural): qualify global stability evidence R9.1"}
+{"commit": "5df1f276b0a027e008efc69cca4d0cd7227822fe", "date": "2026-08-08T17:31:33+02:00", "subject": "feat(structural): add autonomous global stability evidence R9"}
+{"commit": "58d0807e83025d3c0e3365a6c3d9542aeb4c785e", "date": "2026-08-08T01:48:42+02:00", "subject": "fix(structural): enforce R8.2 runtime and session-result integrity R8.2.1"}
+{"commit": "7fed41720bc4f92007e8c4016b518ea1d370c4e7", "date": "2026-08-08T00:18:19+02:00", "subject": "fix(structural): mesh geometry-grounded interfaces R8.2"}
+{"commit": "3bb47554d0c3e8638680cc98009b248c92ca0761", "date": "2026-08-07T23:05:40+02:00", "subject": "fix(structural): repair topology and complete R7 successor regression contract R8.1"}
+{"commit": "0ea5cec4e9e68eb6c412e5c9c34581032248af0d", "date": "2026-08-07T18:11:36+02:00", "subject": "feat(structural): add autonomous RC design candidate engine R8"}
+{"commit": "1ee90c8b8ed8f175303bb9e1528c37ef837539f2", "date": "2026-08-07T17:17:08+02:00", "subject": "feat(structural): add autonomous v8.5 RC verification prerequisite gate"}
+{"commit": "ab12bb9d5dadf143831cc6de3360a8176a29379b", "date": "2026-08-07T16:49:01+02:00", "subject": "fix(structural): wrap v8.4 CalculiX support set data lines"}
+{"commit": "378aee68e23861838f246e9043293cf5c8b12514", "date": "2026-08-07T16:19:01+02:00", "subject": "fix(structural): wrap CalculiX set data lines to 16 entries"}
+{"commit": "1410185ce8c07a6019de50d401a43a24d45fae6c", "date": "2026-08-07T15:08:31+02:00", "subject": "fix(structural): resolve v8.3 CalculiX decks from solver subdirectory"}
+{"commit": "da03cfe92bec64d0ada0db8c28f0863385a83bf0", "date": "2026-08-07T14:44:48+02:00", "subject": "fix(structural): parse native CalculiX FRD section-force records"}
+{"commit": "c4a66bd0c223ed210d4c9b999f0198dc4ac6e780", "date": "2026-08-07T02:25:39+02:00", "subject": "fix(structural): ignore stale required solver-basis templates"}
+{"commit": "7ebc8aa9f9a4cbae1aa57f8c54d66ab5aea97e2a", "date": "2026-08-07T01:49:19+02:00", "subject": "fix(structural): accept idempotent v8.3 staged change scope"}
+{"commit": "4189e63042fc49617dd9ef4af945fc88aa2fa526", "date": "2026-08-07T01:21:56+02:00", "subject": "feat(structural): add autonomous v8.3 solver basis and deterministic regression isolation"}
+{"commit": "1ef92490ce2a04e563c21f275de22c644a97889f", "date": "2026-08-06T22:44:15+02:00", "subject": "fix(materials): normalize workspace refs and preserve nonblocking cost continuation"}
+{"commit": "6e257875dea49f4e98686453c4960755a4cd8ec8", "date": "2026-08-06T15:18:22+02:00", "subject": "feat(ui,materials): add nonblocking material availability continuation v1.1"}
+{"commit": "ef65052d30fb3509231af344f940b46519f61f14", "date": "2026-08-06T00:49:02+02:00", "subject": "feat(materials): add structured product evidence and route intelligence v1.0 fixed-r3"}
+{"commit": "60e67356c685789f86ee9d45791d8c432b78b727", "date": "2026-08-05T14:42:20+02:00", "subject": "feat(materials): securely activate Brave supplier discovery provider v1.0"}
+{"commit": "7c8286aa3cc6c76dff743cbb0bfb62186b249a2f", "date": "2026-08-05T13:54:44+02:00", "subject": "fix(materials): integrate European supplier discovery query priority r1"}
+{"commit": "afd37640d50268e83590f9e419d4dc1ff12237df", "date": "2026-08-05T13:39:33+02:00", "subject": "feat(materials): add supplier discovery freight customs acquisition v1.0"}
+{"commit": "968a142f2415b7718bd5485250cf938a445a90ad", "date": "2026-08-05T13:34:59+02:00", "subject": "feat(materials): add European certified supply priority and import optimization v1.0"}
+{"commit": "d89a63c8d3d0bdca1899398eb58e06b3324d9f29", "date": "2026-08-05T00:57:40+02:00", "subject": "feat(materials): add global sourcing certification landed cost intelligence v1.0 fixed-r1"}
+{"commit": "ba66c0a5d548a5c437b0eaad88fa9092b9ae83c3", "date": "2026-08-04T23:47:36+02:00", "subject": "feat(core): add Suriname load basis product qualification and deliverable evidence closure v1.0 fixed-r1"}
+{"commit": "0efb6dcb31a79951976f93e36eba5c44eee487c5", "date": "2026-08-04T02:58:08+02:00", "subject": "feat(knowledge): add Suriname structural knowledge and minimum deliverable baseline v1.0 fixed-r1"}
+{"commit": "bb88ec3f3afa11a02d5a72f4b9f4c1e017888e20", "date": "2026-08-04T02:18:52+02:00", "subject": "fix(runtime): finalize real-world evidence persistence and v34 graph test hygiene v1.0 fixed-r8"}
+{"commit": "b09d96f2717f7f6c3c200954414ba6d2f48b4a80", "date": "2026-08-03T15:31:26+02:00", "subject": "feat(core): integrate real-world sources and advanced site drawing intelligence v1.0"}
+{"commit": "f0e75849b982075bb3af32f0e6759731f93c49e4", "date": "2026-08-03T15:30:32+02:00", "subject": "feat(core): integrate real-world sources and advanced site drawing intelligence v1.0"}
+{"commit": "a5aa177dfca3bd4271e8d10ba8848d0b7058d8f9", "date": "2026-08-03T14:23:44+02:00", "subject": "feat(core): add autonomous engineering input and real-world data acquisition v1.0"}
+{"commit": "9059a8026c90f64f3dccc4bfbd7cf46ff955747d", "date": "2026-08-03T13:02:50+02:00", "subject": "feat(materials): add local material product and supply intelligence v1.0 fixed-r1"}
+{"commit": "bc7e2fa3079da345b25708b4f30867d591d2b1e4", "date": "2026-08-03T12:35:20+02:00", "subject": "feat(structural): add v8.1-v8.12 session chain and location intelligence v1.0 fixed-r1"}
+{"commit": "67d5e7a46d0e939ab32163f1d3eb8699c5387873", "date": "2026-08-03T02:56:55+02:00", "subject": "feat(cost): add local currency and current market pricing intelligence v1.0 fixed-r1"}
+{"commit": "3482d006749b0904ed3ab01d7eade52b7f568f17", "date": "2026-08-03T01:42:18+02:00", "subject": "feat(core): add autonomous project context structural profile and drawing production v1.0"}
+{"commit": "901a9c77aec68e42be768523cab093e09a8f5dd6", "date": "2026-08-03T00:46:25+02:00", "subject": "feat(core): add autonomous architectural bootstrap and PAT continuation v1.0 fixed-r1"}
+{"commit": "b107a6c36b852131e4401687a5972fba4faf6ea6", "date": "2026-08-02T23:53:06+02:00", "subject": "feat(ui): make Phoenix frontend Dutch by default v1.0"}
+{"commit": "8834e05ee6a12bf34c29f2ccd294cb2b7df82897", "date": "2026-08-02T23:13:08+02:00", "subject": "feat(core): add generic session adapter masterpack v1.0 fixed-r1"}
+{"commit": "4e2a1c2b14d36edf4d36cd9c6e44a3c7cd2ef7be", "date": "2026-08-02T18:22:59+02:00", "subject": "feat(core): add autonomous project bootstrap and session-driven orchestrator v1.0 fixed-r2"}
+{"commit": "10da3b3eed49aa2366cc6521e464e764efa34669", "date": "2026-08-02T17:18:21+02:00", "subject": "chore(test): purge legacy project results before PAT"}
+{"commit": "4664d95d0f4f75d4181e26b9dce724696ac1566f", "date": "2026-08-02T15:00:01+02:00", "subject": "test(ui): align Phoenix v3.0.2 zero-idle-polling contract R4"}
+{"commit": "2f5c18d2b93594f2bf2bfb930f5e2e766f5e8336", "date": "2026-08-02T14:42:11+02:00", "subject": "fix(ui): eliminate Phoenix v3.0.2 flicker and restore vertical scrolling R2"}
+{"commit": "b8e9869a99963759a195be53307825a3203add41", "date": "2026-08-02T14:31:17+02:00", "subject": "feat(ui): upgrade Phoenix official start screen to v3.0.2 visual stability and module routing"}
+{"commit": "21fedbab60a7c25c2c2aa5aea9144d551aff3c38", "date": "2026-08-02T13:13:57+02:00", "subject": "fix(ui): make Phoenix official start screen fully functional v3.0.1"}
+{"commit": "f0932449b19d1d1f189baca4bfc8ed878585f477", "date": "2026-08-02T01:15:41+02:00", "subject": "feat(ui): add working Phoenix 3.0 official start screen with autosync"}
+{"commit": "5165a6bef07a91a70c984416039a7152201a534c", "date": "2026-08-01T23:45:28+02:00", "subject": "feat(structural): add revision change impact IFC package engine v8.12.0"}
+{"commit": "6421dd27116b49d9e5d58f3bad0591f5e4bf3414", "date": "2026-08-01T23:36:10+02:00", "subject": "feat(structural): add engineering review approval release control engine v8.11.0"}
+{"commit": "e99ab3a11273ddac6f91f580454b00cf541f6b6e", "date": "2026-08-01T23:14:59+02:00", "subject": "feat(structural): add drawing calculation package engineering QAQC engine v8.10.0"}
+{"commit": "2b64c31780cc74865f54526407c9d39632a039d3", "date": "2026-08-01T23:01:05+02:00", "subject": "feat(structural): add foundation design reinforcement detailing engine v8.9.0"}
+{"commit": "024a534701dda7d32cd004cf5926f67d9bedc994", "date": "2026-08-01T22:44:05+02:00", "subject": "feat(structural): add foundation interface soil-support verification engine v8.8.0"}
+{"commit": "cb9855c2c6d2ab244fbd7e6b9b95509014083d85", "date": "2026-08-01T22:35:40+02:00", "subject": "feat(structural): add connection support joint verification engine v8.7.0"}
+{"commit": "714571c8bf8410740c1c853e9a8c298c96af4040", "date": "2026-08-01T22:24:08+02:00", "subject": "feat(structural): add global stability second-order robustness engine v8.6.0"}
+{"commit": "3afb26a45e7d4ef4ac5858bcfaf865809b033cba", "date": "2026-08-01T22:17:50+02:00", "subject": "feat(structural): add code limit-state member verification engine v8.5.0"}
+{"commit": "4944a40311a6d59b2dd94ee8cac8e4794518bc44", "date": "2026-08-01T22:05:31+02:00", "subject": "feat(structural): add analysis results validation engine v8.4.0"}
+{"commit": "42406f2334537e36de1a6c2f06a7988236a688e8", "date": "2026-08-01T21:54:31+02:00", "subject": "feat(structural): add solver input and analysis engine v8.3.0"}
+{"commit": "a88c0f59fcd749c0408bdc898336da13a7c6d606", "date": "2026-08-01T21:44:37+02:00", "subject": "feat(structural): add action and load model generation engine v8.2.0"}
+{"commit": "3a4fcdd78701b73edcc8de73517c3873fa73ae28", "date": "2026-08-01T18:35:41+02:00", "subject": "feat(structural): add structural analytical model generation engine v8.1.0"}
+{"commit": "5e43276706c94ed4c9b0def1e7127b239e8b93e7", "date": "2026-08-01T18:02:49+02:00", "subject": "feat(structural): add architectural-to-structural derivation engine v8.0.0"}
+{"commit": "b2ee3f9bc59c40a2f8bddc0fda9477a3b12ebda0", "date": "2026-08-01T16:52:07+02:00", "subject": "feat(operations): add lifecycle cost performance optimization engine v7.4.0"}
+{"commit": "8acd1d71e4ef61d64c05604934a5a851af1d8e6c", "date": "2026-08-01T16:46:21+02:00", "subject": "feat(operations): add asset fm maintenance digital twin engine v7.3.0"}
+{"commit": "75f792b33b85472797311d6988d4e72dac29ffc1", "date": "2026-08-01T16:40:31+02:00", "subject": "feat(construction): add progress ncr handover as-built engine v7.2.0"}
+{"commit": "95c1088ffd628437e7e4d2f0eb8741394bea31b8", "date": "2026-08-01T16:24:45+02:00", "subject": "feat(construction): add coordination clash qaqc field release engine v7.1.0"}
+{"commit": "8cf2b211040e644872e4e897c949706575c8f388", "date": "2026-08-01T16:09:39+02:00", "subject": "feat(execution): add drawing detail specification release engine v7.0.0"}
+{"commit": "eba609ec9e2525453bd5978f7010b1b0810311bd", "date": "2026-08-01T15:45:13+02:00", "subject": "feat(permit): add dossier document control submission engine v6.9.0"}
+{"commit": "82399131a7204b615f491f63a94d0c6b2af36fa2", "date": "2026-08-01T15:26:22+02:00", "subject": "feat(permit): add project jurisdiction rule profile and evidence engine v6.8.0"}
+{"commit": "1788509b0adc214028127f88cc0d99b39d355baf", "date": "2026-08-01T15:14:34+02:00", "subject": "fix(architecture): recover compliance installer parser v6.7.1"}
+{"commit": "4f413cb2995273e4293b229e356dacbe1155784e", "date": "2026-08-01T15:03:16+02:00", "subject": "fix(installer): rebuild detailed architecture installer structure v6.6.5"}
+{"commit": "0923d7c366bed6833843d90303e0cdc39a638351", "date": "2026-08-01T01:38:48+02:00", "subject": "fix(tests): align defensive writer tests with AST semantics v6.5.2"}
+{"commit": "c6beb4334802276356821aa63ac7b7c829e322b0", "date": "2026-08-01T00:15:35+02:00", "subject": "feat(evidence): add intake and review workflow v6.4.0"}
+{"commit": "d0545101f81370257f1411993ec84acd8dd33d20", "date": "2026-08-01T00:06:08+02:00", "subject": "fix(evidence): recover Python resolver for evidence closure v6.3.1"}
+{"commit": "99aac2ee18cc0a450a78be6b825c0f6830b82f3a", "date": "2026-07-31T21:02:19+02:00", "subject": "feat(pipeline): add real project execution pipeline v6.2.0"}
+{"commit": "651eb225a2f0470d233f5c38d1cfbcb632db1e5b", "date": "2026-07-31T17:45:05+02:00", "subject": "feat(orchestration): add unified multi-engine production orchestrator v6.1.0"}
+{"commit": "461e7dc1556271eaaba0bba5a86354e8c6d78b02", "date": "2026-07-31T17:11:14+02:00", "subject": "fix(tests): align CalculiX verified acceptance contract v6.0.4"}
+{"commit": "babf0d30a363ff3dd16dc844665071692c4caf29", "date": "2026-07-31T16:02:49+02:00", "subject": "fix(engines): request EnergyPlus SQLite output v5.6.7"}
+{"commit": "0db5ff16fddd3ce9eedc941713656337ae381ae1", "date": "2026-07-30T21:58:16+02:00", "subject": "fix(engines): use dedicated Python 3.12 OpenSees runtime v5.5.5"}
+{"commit": "f0908ab3458cd9671ece717000961da93da57417", "date": "2026-07-30T15:44:36+02:00", "subject": "fix(engines): force CalculiX SPOOLES solver v5.4.9"}
+{"commit": "084225921064ceacd0dd7d12821e42d43a1e19da", "date": "2026-07-30T00:01:30+02:00", "subject": "test(engines): align QGIS detector config path v5.3.12"}
+{"commit": "f78908c4767ddb69199d57c2ca74fc87517d15bb", "date": "2026-07-29T14:43:38+02:00", "subject": "fix(engines): correct FreeCAD acceptance test indentation v5.2.5"}
+{"commit": "fb7d7bb12621c511190f61754fa29d92a25c88a6", "date": "2026-07-29T13:27:54+02:00", "subject": "fix(core): isolate IfcOpenShell detection tests v5.0.2"}
+{"commit": "eb593f0664b6813d2f9b191b1f3c9fc5254f87ac", "date": "2026-07-29T01:31:17+02:00", "subject": "feat(core): add controlled third-party engine setup v5.1.0"}
+{"commit": "726d07a65aab862fbb81779aae7407c98f1e401f", "date": "2026-07-29T01:16:58+02:00", "subject": "feat(core): add open-source engine adapter layer v5.0.0"}
+{"commit": "6c3a6bb11bbd7bfb673d809908b2a4f577b0726e", "date": "2026-07-29T01:02:01+02:00", "subject": "feat(architecture): add integrated model Bbl and drawing suite v4.0.2"}
+{"commit": "077eca5bd8dd6c37450068070b6264cd438c7a89", "date": "2026-07-28T23:31:30+02:00", "subject": "feat(ui): install official Phoenix v2.0 start screen and desktop shortcut"}
+{"commit": "d0784c9ee1b52e224b14ff6e403b593f8e981d62", "date": "2026-07-28T16:25:25+02:00", "subject": "fix(bb35): make professional evidence checksum ordering cross-platform v2.3.1"}
+{"commit": "de707996cf0112e5b6c5579a6e25658898dbf010", "date": "2026-07-28T15:38:24+02:00", "subject": "fix(structural): remove runtime cache payload and harden package hygiene v1.0.2"}
+{"commit": "0ca2ff7027dc5d2a73452a593876f7fce12f49d6", "date": "2026-07-28T14:30:12+02:00", "subject": "feat(structural): add reinforced concrete beam design engine v1.0.0"}
+{"commit": "5457980f8783bf899960eecc8f75edef22b1fd09", "date": "2026-07-28T13:10:12+02:00", "subject": "feat(bb35): add accelerated technical design A-D masterpack v3.0.0"}
+{"commit": "9657bdcba894bdd6cd26da37805b943e090f95cc", "date": "2026-07-28T11:08:24+02:00", "subject": "docs(bb35): add professional evidence replacement programme v2.2.0"}
+{"commit": "41540ea12585c73907b438e2001d212e452b5261", "date": "2026-07-28T10:45:53+02:00", "subject": "feat(orchestration): add unified production and revision control v1.0.0"}
+{"commit": "849b4f85079124f9121a23b23e4f1965ba9da67d", "date": "2026-07-28T10:21:43+02:00", "subject": "feat(phoenix): add model-driven calculation workbook engine v1.0.0"}
+{"commit": "cf212dc859ea6046235f1bc938a9ebe6f436c920", "date": "2026-07-28T00:55:32+02:00", "subject": "feat(phoenix): add central geometric project model v1.0.0"}
+{"commit": "175d8d9ce70f7a9b0a808bc5bdee22692b3d7f22", "date": "2026-07-28T00:11:00+02:00", "subject": "feat(phoenix): add real drawings and reports production engine v1.0.0"}
+{"commit": "7c88c08a840f991419231b85ea657f12e89cb9a5", "date": "2026-07-27T23:48:44+02:00", "subject": "feat(local-app): add one-click Phoenix dashboard runtime v1.0.0"}
+{"commit": "082d87f68320563751171b2bac4a44e6eb7b6efd", "date": "2026-07-27T22:13:02+02:00", "subject": "docs(bb35): approve integrated concept dossier v2.1.0"}
+{"commit": "c1469337504d1677d069d50e5a816ca9dede6724", "date": "2026-07-27T22:02:29+02:00", "subject": "fix(bb35): use immutable source snapshot for dossier v2.0.2"}
+{"commit": "a3af0e6f774978c5baf981ba9f2225a2312b7358", "date": "2026-07-27T16:47:52+02:00", "subject": "test(bb35): add full concept evidence simulation v1.9.0"}
+{"commit": "bc84098b368b76737e39c5a05c30b38b9f5d26f0", "date": "2026-07-27T13:59:49+02:00", "subject": "test(bb35): add parallel preparation workpacks v1.8.0"}
+{"commit": "4372048ca35d032536f2231c5f59ad26ceb35e6a", "date": "2026-07-27T13:41:20+02:00", "subject": "test(bb35): approve downstream preparation decisions v1.7.0"}
+{"commit": "9f6fe8cb5b3d4b235e876599c95b1d27e34e21f3", "date": "2026-07-27T13:06:07+02:00", "subject": "test(bb35): approve REQ-107 occupancy and use decision v1.6.0"}
+{"commit": "08794e5c383f98ab89eff1f91ce889f48317df11", "date": "2026-07-27T12:07:11+02:00", "subject": "test(bb35): add evidence validation and closure plan v1.5.0"}
+{"commit": "5d428e3818130d34dd6f581e03d0c41d708a3634", "date": "2026-07-27T11:48:17+02:00", "subject": "test(bb35): install sequential review and evidence intake v1.4.4"}
+{"commit": "aa7cba786e404b99c2a35672a8449a5459cae6f6", "date": "2026-07-27T02:15:28+02:00", "subject": "fix(bb35): make Moskee concept dossier ZIP headers canonical v1.3.3"}
+{"commit": "3778c22d45b3c510589e47cf21cd5c359ac6f6c5", "date": "2026-07-27T00:49:23+02:00", "subject": "test(bb35): add Moskee Bunschoten verified-input gate v1.2.0"}
+{"commit": "ea9b96fc28fbd811c39cd5f53067bb9f5cb0deef", "date": "2026-07-27T00:35:18+02:00", "subject": "feat(bb35): set Moskee Bunschoten scope to 7x10m two-storey extension"}
+{"commit": "3050af3bcad949d7edf5a0f89380061552f5bc9c", "date": "2026-07-27T00:29:25+02:00", "subject": "test(bb35): start Moskee Bunschoten real-project pilot baseline v1.0.2"}
+{"commit": "76d621a7d4ef0172526371c08786645e8cf96b25", "date": "2026-07-27T00:05:29+02:00", "subject": "feat(bb31-bb36): add Commercial Release Masterpack v1.0.0"}
+{"commit": "f6f1b6b3d95c3cc891d5166cbd128cd865701f51", "date": "2026-07-26T23:48:44+02:00", "subject": "feat(bb26-bb30): add commercial building delivery foundations v1.0.0"}
+{"commit": "1d7b50adfb24e181bc566b1589a8fc46e024a651", "date": "2026-07-26T23:23:04+02:00", "subject": "feat(bb25): add Procurement and Tendering Engine v1.0.0"}
+{"commit": "f7e7c54594121949f30460eac229537dcdd465c7", "date": "2026-07-26T20:00:03+02:00", "subject": "feat(bb24): add Construction Planning and Scheduling Engine v1.0.0"}
+{"commit": "cf00d48f891475ed08f0cd3a4739edb54ec4e8cb", "date": "2026-07-26T17:30:47+02:00", "subject": "feat(bb23): add Construction Documentation Engine v1.0.0"}
+{"commit": "462ffcb78dc05edd6ee5a765d9c36fefa30cbc28", "date": "2026-07-26T17:12:33+02:00", "subject": "feat(bb22): add BIM Coordination Engine v1.0.0"}
+{"commit": "23a814ad0b64db364c8e72ba81426ff1af8382f5", "date": "2026-07-26T16:42:10+02:00", "subject": "feat(bb21): add Cost Estimation Engine v1.0.0"}
+{"commit": "0240ed72ed9c7005e89228213bac1c5fc0b17108", "date": "2026-07-26T16:19:32+02:00", "subject": "feat(bb20): add Quantity Take-Off Engine v1.0.0"}
+{"commit": "f59fa35a75015c51975207eac0c5dd91a3f36985", "date": "2026-07-26T16:03:38+02:00", "subject": "feat(bb19): add Structural Design Engine v1.0.0"}
+{"commit": "6f43835123e1fd373e850dcbad465d81c66fe5d4", "date": "2026-07-26T16:03:36+02:00", "subject": "feat(bb18.1): add Architectural Drawing Engine v1.0.0"}
+{"commit": "f9b0e13debbb34d52e8a9f79ecce3542237281c6", "date": "2026-07-26T16:03:33+02:00", "subject": "feat(bb17.4): add Jurisdiction Rulepack Compiler v1.0.0"}
+{"commit": "9b2acf99bde011f75a08279a6c1a772629cfaddd", "date": "2026-07-26T15:34:34+02:00", "subject": "feat(bb17.3): add source acquisition and rule mapping v1.0.0"}
+{"commit": "19dbd061b24a1c60c284beeccb230a42a0010ec9", "date": "2026-07-26T15:16:33+02:00", "subject": "feat(bb18): add Phoenix Release Framework v1.0.0"}
+{"commit": "cba7303f9220e23551b0e518a36283a03d8e638c", "date": "2026-07-26T15:16:31+02:00", "subject": "feat(bb17.2): add Multi-Jurisdiction Codepack Foundation v1.0.0"}
+{"commit": "53e53f3e5f4575ccc7228647fd2d15f68df31390", "date": "2026-07-26T15:16:27+02:00", "subject": "feat(bb17.1): add Codepack Governance Source Registry v1.0.0"}
+{"commit": "8d6482f3316444948451b6ad6b951b46fbb2288e", "date": "2026-07-26T14:22:31+02:00", "subject": "feat(bb17): add Building Code Engine v1.0.0"}
+{"commit": "48f4cc40fea9c4e09cf9ebff98aae579699996b3", "date": "2026-07-26T03:26:41+02:00", "subject": "feat(toolchain): add Phoenix Toolchain Dependency Manager v1.0.0"}
+{"commit": "6f05bcdc1b8a6fcb479f4dbab9ff1499c447991e", "date": "2026-07-26T02:58:42+02:00", "subject": "feat(bb16): add Building Model Engine v1.0.2"}
+{"commit": "28c146c92b63fd737ded416a6a70c7f374ed5a72", "date": "2026-07-25T02:02:41+02:00", "subject": "feat: add BB15 Phoenix Multi-Physics Coordination Engine"}
+{"commit": "e6162dd0db187847bc92adc29b6a899dbdc670b7", "date": "2026-07-24T18:43:11+02:00", "subject": "feat: add BB14 Phoenix CalculiX Finite Element Engine"}
+{"commit": "fecd1236761232f900c41cb66dc97d43f6c87782", "date": "2026-07-24T15:19:07+02:00", "subject": "feat: add BB13 Phoenix OpenSees Structural Analysis Engine"}
+{"commit": "c40e5f7c54ecb361d25bbcc1b4758734f0027c9b", "date": "2026-07-24T02:08:59+02:00", "subject": "feat: add BB12 Phoenix QGIS Integration Engine"}
+{"commit": "ba279ee45d8ad581802048c2fd128fe8e07f8464", "date": "2026-07-24T01:52:22+02:00", "subject": "feat: add BB11 Phoenix AI Workflow Engine"}
+{"commit": "a9cec16b4ec24906b09b5fac6493d46f79ad4e50", "date": "2026-07-24T01:44:27+02:00", "subject": "feat: add BB10 Phoenix Knowledge Graph Engine"}
+{"commit": "97e6c371d4815ef438197d6270eb897f2779b5ec", "date": "2026-07-24T01:33:22+02:00", "subject": "docs: add BB9A automation documentation"}
+{"commit": "e6f5c5f28ade1d572b53701744570f0df19b8d34", "date": "2026-07-24T01:30:03+02:00", "subject": "docs: add BB9A Phoenix Knowledge Base and Build System"}
+{"commit": "24ab62757eb5a480caf1f19c195e4d5ea33cd9c1", "date": "2026-07-24T01:23:07+02:00", "subject": "feat: add BB9 digital twin core engine"}
+{"commit": "ea6c15509a3f6de025d91685a52fbaf872182931", "date": "2026-07-24T00:14:05+02:00", "subject": "feat: add Phoenix Core v2.0 BB8 runtime orchestrator"}
+{"commit": "e513c9c6a62409c79e16d326fe94dbd1f164dad7", "date": "2026-07-23T23:56:02+02:00", "subject": "feat: add Phoenix Core v2.0 BB7 development console automation"}
+{"commit": "0a22e27e800db5db0ec4c02d0a4731867f3a8fac", "date": "2026-07-23T23:04:02+02:00", "subject": "feat: add Phoenix Core v2.0 BB6 Blender visualization"}
+{"commit": "ed57fbfd017d3ffed934e43061bc24966412eb5d", "date": "2026-07-23T22:51:28+02:00", "subject": "feat: add Phoenix Core v2.0 BB5 IfcOpenShell BIM integration"}
+{"commit": "8b4c9817f86fb661d05617ad0e78af862feb1ee6", "date": "2026-07-23T17:57:44+02:00", "subject": "feat: add Phoenix Core v2.0 BB4 FreeCAD integration"}
+{"commit": "623d8460de8bfcd3af166e247f4c7f5398b0ef53", "date": "2026-07-23T17:48:38+02:00", "subject": "feat: add Phoenix Core v2.0 BB3 adapter framework"}
+{"commit": "b55e23519074bd5a9cb686e165588c2adb583355", "date": "2026-07-23T17:17:26+02:00", "subject": "feat: add Phoenix Core v2.0 BB2 application discovery"}
+{"commit": "891423c5df513a2e7d1843635a9200810697159b", "date": "2026-07-23T17:04:36+02:00", "subject": "feat: add Phoenix Package Manager v1 and complete BB1"}
+{"commit": "ac55ff468d762d5c1b7caf203b53d18d84bb13bf", "date": "2026-07-23T15:15:38+02:00", "subject": "feat: add Phoenix Permit & Compliance Engine Wave 15.8"}
+{"commit": "de7c16d7779d233444f0598ac8ebba9ef9cff942", "date": "2026-07-23T15:00:57+02:00", "subject": "feat: add Phoenix Digital Twin Synchronization Engine Wave 15.7"}
+{"commit": "d074107303fac607cb86d327d5735501481ff627", "date": "2026-07-23T14:33:05+02:00", "subject": "feat: add Phoenix Autonomous Design Orchestrator Wave 15.6"}
+{"commit": "e1b10a0b6b826995fc1d1e2ba5c02ef8d145ff9b", "date": "2026-07-23T01:07:01+02:00", "subject": "feat: add Phoenix Autonomous Decision Engine Wave 15.5"}
+{"commit": "62810a99720d87f1ef44add1a02e297f45dd5975", "date": "2026-07-22T23:48:52+02:00", "subject": "feat: add Phoenix Decision Intelligence Engine Wave 15.4"}
+{"commit": "d3550f8972692ef2732932213634f1c76478fd99", "date": "2026-07-22T21:17:56+02:00", "subject": "feat: add Phoenix Cost Carbon Optimization Engine Wave 15.3"}
+{"commit": "3bcdb13ea10ce83fdbec0cb07e90baa1ba2e51b3", "date": "2026-07-22T16:46:51+02:00", "subject": "feat: add Phoenix Multi-Material Design Engine Wave 15.2"}
+{"commit": "8a3f3e5447bb6a067db24b3bf3f705d96234e6b3", "date": "2026-07-22T12:29:04+02:00", "subject": "feat: add Phoenix Update Manager PUM v1.0.0"}
+{"commit": "8ed04952ae1c45520f34246b5ad00cd21792135b", "date": "2026-07-22T11:23:43+02:00", "subject": "fix: consolidate Phoenix Validation Engine PVE v1.0.5"}
+{"commit": "538001378c2ecfe674ab0bf63976d820ac69f3ce", "date": "2026-07-21T23:42:08+02:00", "subject": "feat: recover Wave 15.1 and add PRB PRM release infrastructure"}
+{"commit": "a21239cf4e14708913f0e915d33cde777011d103", "date": "2026-07-21T22:36:26+02:00", "subject": "feat(phoenix): add automatic drawing generation wave 14"}
+{"commit": "9c40c20ba6804c6b8fe4c07bf9fa9681f9447708", "date": "2026-07-21T22:20:36+02:00", "subject": "feat(phoenix): add BIM IFC synchronization wave 13"}
+{"commit": "2d81b8ad6e1761c99470616a79e923365d69195b", "date": "2026-07-21T19:26:52+02:00", "subject": "feat(phoenix): add timber masonry axial design wave 12"}
+{"commit": "fd4009cd377a79d3cd2dd8e3dda5168c87390f90", "date": "2026-07-21T19:14:56+02:00", "subject": "feat(phoenix): add steel axial design wave 11"}
+{"commit": "cc72f7a93b3e60b9292a9e9617e7ed2a1bdd162a", "date": "2026-07-21T19:02:33+02:00", "subject": "fix(phoenix): install concrete axial design wave 10 v1.0.1"}
+{"commit": "5e15686b39182bc757afc41e957db0ca3e4d73bf", "date": "2026-07-21T18:23:05+02:00", "subject": "feat(phoenix): add reference solver execution wave 9"}
+{"commit": "644077321264d11be0b442fee02a47eb23d710a1", "date": "2026-07-21T18:05:48+02:00", "subject": "feat(phoenix): add structural solver contract wave 8"}
+{"commit": "7602958531043c2b8ab6214f39468d0126e1b0e0", "date": "2026-07-21T17:29:05+02:00", "subject": "feat(phoenix): add structural analysis bootstrap wave 7"}
+{"commit": "d3ff6cba410c8bc15db54e884084cc25a5746a50", "date": "2026-07-21T17:11:43+02:00", "subject": "fix(phoenix): normalize foundation adapter wave 6.2"}
+{"commit": "a879122e3eacee3c4206ef418eeb3d50b7b17440", "date": "2026-07-21T16:37:28+02:00", "subject": "feat(phoenix): add geotechnical bootstrap adapter wave 5 v1.0"}
+{"commit": "e4922babb296b160db88020f4ecda52bdbd79307", "date": "2026-07-21T13:03:10+02:00", "subject": "feat(phoenix): add GIS bootstrap adapter wave 4 v1.0"}
+{"commit": "de6bf1b85fd7a3e30a67f0bc5494c5b6b82cb7b7", "date": "2026-07-21T12:55:47+02:00", "subject": "feat(phoenix): add autonomous delivery pipeline wave 3 v1.0"}
+{"commit": "e5fd3818be7c6896ac48c68c1bd88654bf32c089", "date": "2026-07-21T12:49:49+02:00", "subject": "feat(phoenix): add PXO runtime wave 2 v1.0"}
+{"commit": "218498089abe2c9d0d3795b6c6a9914f2197a02e", "date": "2026-07-21T12:43:21+02:00", "subject": "feat(phoenix): add orchestrator PXO v1.0"}
+{"commit": "e1b0d39b8783b805a64d9a193f3cdf8417443121", "date": "2026-07-21T12:38:02+02:00", "subject": "feat(phoenix): add project generator PPG v1.0"}
+{"commit": "03dea7132b1957f080897bce3bfbec0eff99f6d4", "date": "2026-07-21T12:26:47+02:00", "subject": "feat(phoenix): add autonomous project delivery contract v1.0"}
+{"commit": "c1b3e93bc34d73982e2d87834b8def8842b27a69", "date": "2026-07-21T02:08:56+02:00", "subject": "feat(engineering-kernel): add steel design wave 1"}
+{"commit": "a76a32bddcbf9d8a983e8b250d6d08dc53c07c48", "date": "2026-07-21T02:02:23+02:00", "subject": "test(engineering-kernel): finalize numerical test policy v1.1b"}
+{"commit": "2027e6054c9198957d5f7b5765edf0828012182f", "date": "2026-07-21T01:46:08+02:00", "subject": "feat(engineering-kernel): add reinforced concrete wave 1"}
+{"commit": "c0c0ec9eede7d20b3a1e64833084be572b50e2e9", "date": "2026-07-21T01:27:53+02:00", "subject": "feat(engineering-kernel): add foundation design wave 1"}
+{"commit": "81da98a8246366e61528f83d4287e058dfe81ae1", "date": "2026-07-21T01:12:02+02:00", "subject": "feat(engineering-kernel): add hydraulics drainage wave 1"}
+{"commit": "7ffc4d9ff4b842f0a91d4d3662966a0f9f35ed33", "date": "2026-07-21T01:05:11+02:00", "subject": "feat(engineering-kernel): add structural engine wave 1"}
+{"commit": "f0723afab638b307de4e4f143d950307012f3f15", "date": "2026-07-21T00:50:51+02:00", "subject": "feat(engineering-kernel): add geo engine wave 1"}
+{"commit": "7caf67bb3803d746d6eca645a37f54cb5647d68a", "date": "2026-07-21T00:45:45+02:00", "subject": "feat(engineering-kernel): add validation wave 1"}
+{"commit": "94d5eeea3a21e99a1b03b70916a23639acdc8945", "date": "2026-07-21T00:31:11+02:00", "subject": "feat(engineering-kernel): add loads wave 1"}
+{"commit": "a82ad9003aacc4edd699c524e945f3c79cce3939", "date": "2026-07-21T00:25:54+02:00", "subject": "feat(engineering-kernel): add materials wave 1"}
+{"commit": "58b619d26b36da6b8ae44d577ff4cd7d11ea8ba2", "date": "2026-07-21T00:04:55+02:00", "subject": "feat(engineering-kernel): add geometry wave 1"}
+{"commit": "a9736de65316631eea66204bff7dde575c98092d", "date": "2026-07-20T23:54:04+02:00", "subject": "feat(engineering-kernel): add mathematics wave 1"}
+{"commit": "25fe56fbadf77abf93b9dfcabc17522a18f58491", "date": "2026-07-20T23:46:17+02:00", "subject": "feat(engineering-kernel): add PEK factory and units wave 1"}
+{"commit": "8ae464201c5f3ababb8f6aa133b5dfa873404c60", "date": "2026-07-20T23:30:33+02:00", "subject": "feat(engineering-kernel): add EKMS v1.0 foundation registry"}
+{"commit": "c1b6d20e1e6832785b86606eeefd72bafa1da89b", "date": "2026-07-20T10:25:48+02:00", "subject": "fix: repair Phoenix release CLI import and finalize PDK"}
+{"commit": "da42a4bbad3e592831216733fd904174ea3eb667", "date": "2026-07-19T23:59:44+02:00", "subject": "feat: add updater package discovery reports and rollback"}
+{"commit": "ac82e5f0a39821702386a4d03a22a9b35df94abf", "date": "2026-07-19T23:46:10+02:00", "subject": "feat: add Phoenix updater runtime policy with path normalization fix"}
+{"commit": "1ee668c58c390ccfd85ba21f2e71c32809284f3d", "date": "2026-07-19T23:10:24+02:00", "subject": "docs: add Phoenix Updater v1.1 documentation"}
+{"commit": "605514e9dd109831b4fcc10a2c58b1b06f00a412", "date": "2026-07-19T22:37:00+02:00", "subject": "chore: finalize Phoenix updater repository cleanup"}
+{"commit": "6f505f96d3dd851b31d3ce45c102541b901757a7", "date": "2026-07-19T00:51:18+02:00", "subject": "feat: add Phoenix Updater v1.1 package automation"}
+{"commit": "69b894e6f0ba1338c1c553d9c9643c90ff929b8b", "date": "2026-07-19T00:41:14+02:00", "subject": "feat: establish Phoenix development platform baseline"}
+{"commit": "303348632225756ab2923c4680168d987081b5a7", "date": "2026-07-18T11:52:33+02:00", "subject": "feat: finalize Phoenix Core v33.2 repository cleanup"}
+{"commit": "2759a6b8c08ddbf5ede19a3fec9ce398405aaa16", "date": "2026-07-17T22:47:41+02:00", "subject": "feat: Phoenix Core v32.0 Digital Twin"}
+{"commit": "e96d248e9b8f7a3d19d8c926abd80262ffbb4fde", "date": "2026-07-17T02:22:42+02:00", "subject": "fix: Phoenix Core v31.1 Kernel stabilization"}
+{"commit": "2f412683cba63ed82fc8c3de3f024b4179fe38c1", "date": "2026-07-17T02:13:37+02:00", "subject": "fix: Phoenix Core v31.1 Kernel import and test recovery"}
+{"commit": "516b1cff88ba787e3563e89053cb474483b025ac", "date": "2026-07-17T00:54:26+02:00", "subject": "feat: Phoenix Core v30.0 Auto Release Pipeline"}
+{"commit": "b01d2f1853fda430e1d3cc6dce4854f7974051c5", "date": "2026-07-17T00:40:05+02:00", "subject": "feat: Phoenix Core v29.0 Autonomous Patch Generation Engine"}
+{"commit": "82f6103a0121efe79ff13581acb1834d11534443", "date": "2026-07-17T00:33:06+02:00", "subject": "feat: Phoenix Core v29.0 Autonomous Patch Generation Engine"}
+{"commit": "63f31ac948899985993f7a2e65bc20e879c16a86", "date": "2026-07-16T22:50:50+02:00", "subject": "feat: Phoenix Core v28.0 Autonomous Development Engine"}
+{"commit": "6d8adefed870bdba2a8168dd4e12a0661c011791", "date": "2026-07-16T22:42:57+02:00", "subject": "feat: Phoenix Core v28.0 Autonomous Development Engine"}
+{"commit": "8077b40977d89b8f8f103e15abff899e3e44ed37", "date": "2026-07-16T15:44:41+02:00", "subject": "chore: finalize Phoenix Core v27.0 runtime evidence"}
+{"commit": "ab96d67d03cf7fa406b67e0c099bc0cb9b2c56df", "date": "2026-07-16T15:42:00+02:00", "subject": "feat: Phoenix Core v27.0 Autonomous Program Manager"}
+{"commit": "28f94e0e70ce6454f44cd6fc50486fc30bb1f508", "date": "2026-07-16T12:33:25+02:00", "subject": "feat: Phoenix Core v27.0 Autonomous Program Manager"}
+{"commit": "4fc677060b35313be86eff10f05f99eafee1f1db", "date": "2026-07-16T12:08:51+02:00", "subject": "feat: Phoenix Core v26.0 Executive Controller"}
+{"commit": "1859d510a7130cbd0bc2e0ea81579e0f78f67709", "date": "2026-07-16T11:48:00+02:00", "subject": "feat: Phoenix Core v26.0 Executive Controller"}
+{"commit": "a609aa1079a1c6296e1ca24d3dbab02d54d615eb", "date": "2026-07-16T11:14:27+02:00", "subject": "chore: finalize Phoenix Core v25.0 runtime evidence"}
+{"commit": "5bcfe7894d5c6580947b4c7f486f00e7bf5502f8", "date": "2026-07-16T11:10:02+02:00", "subject": "feat: Phoenix Core v25.0 Autonomous Decision and Planning Engine"}
+{"commit": "5ec2f793f0eeccd9cd8561acf007efcb0c35c953", "date": "2026-07-16T10:39:49+02:00", "subject": "feat: Phoenix Core v24.0 Autonomous Project Memory Engine"}
+{"commit": "0416604054cee969d513b4c85cdbb982fcf29582", "date": "2026-07-16T10:36:28+02:00", "subject": "feat: Phoenix Core v24.0 Autonomous Project Memory Engine"}
+{"commit": "76a2dcb33327f9e3b168294e6b8cb3df4674634f", "date": "2026-07-16T02:55:06+02:00", "subject": "feat: Phoenix Core v23.0 Deterministic Runtime and Release Finalization"}
+{"commit": "ec3e2db043eb6c64e15cce8c6825a7bae085a841", "date": "2026-07-16T02:55:01+02:00", "subject": "chore: finalize Phoenix Core v22.0 runtime evidence"}
+{"commit": "00f0bb670a9935daf9bfb923fe78b433c4bb9123", "date": "2026-07-16T02:46:21+02:00", "subject": "feat: Phoenix Core v22.0 Autonomous System Integration Engine"}
+{"commit": "252f989adcf8a64d1be41517848c806212778875", "date": "2026-07-16T02:36:42+02:00", "subject": "feat: Phoenix Core v21.0 Autonomous Release and Git Finalization Engine"}
+{"commit": "2b66afeee2b81b6bb1003f958dc9e3a645f18859", "date": "2026-07-16T02:32:47+02:00", "subject": "feat: Phoenix Core v21.0 Autonomous Release and Git Finalization Engine"}
+{"commit": "fb85c7a22b9d988f09c60685735b1654bbdbbfc7", "date": "2026-07-16T02:26:22+02:00", "subject": "chore: add remaining Phoenix Core v20.0 artifacts"}
+{"commit": "333fc35612b6c890ac5eb11416cf74728c3e68c8", "date": "2026-07-16T02:22:58+02:00", "subject": "feat: Phoenix Core v20.0 Full Autonomous Project Engine"}
+{"commit": "99406d7a7d6857b3c0138c212188756d5a8a357a", "date": "2026-07-16T02:00:51+02:00", "subject": "feat: Phoenix Core v19.0 Autonomous Multi-Agent Orchestrator"}
+{"commit": "35a86f70c91f9badb1650aafb445b99bcbe36057", "date": "2026-07-16T01:49:56+02:00", "subject": "feat: Phoenix Core v18.0 Knowledge Graph and Reasoning Engine"}
+{"commit": "e1ff6a0e5a6036414f979e8b7e9c0797b3b1cce0", "date": "2026-07-15T22:22:06+02:00", "subject": "feat: Phoenix Core v17.0 Autonomous Learning Engine"}
+{"commit": "c5d2d9aa060c7b23e7d73abbeca02891efbc470e", "date": "2026-07-12T23:49:58+02:00", "subject": "feat: Phoenix Core v16.0 Workflow Supervisor & Recovery Manager"}
+{"commit": "493d824f1b748305a67e4ed3301bf9f3994c24f1", "date": "2026-07-12T22:50:44+02:00", "subject": "feat: Phoenix Core v15.0 Autonomous Execution Engine"}
+{"commit": "5d78dfbd9b688224ac55add85064920a2360a8e8", "date": "2026-07-12T22:01:52+02:00", "subject": "feat: Phoenix Core v14.0 Autonomous AI Planning Engine"}
+{"commit": "71f9b19f70c9d119840cd97420d111a4e6769bb4", "date": "2026-07-12T21:09:45+02:00", "subject": "feat: Phoenix Core v13.1 Runtime Registry Validator"}
+{"commit": "87b2b48adbda9292a8787588cc401dda84f0fbae", "date": "2026-07-12T19:23:12+02:00", "subject": "feat: Phoenix Core v12.0 Engine Intelligence (Capability Registry, Engine Discovery, Module Selection)"}
+{"commit": "f05f40bf697e823dc07c237d4e40f9cf3b4086a2", "date": "2026-07-12T12:07:12+02:00", "subject": "feat: Phoenix Core v11.0 Autonomous Workflow Engine"}
+{"commit": "3ee73e7ac0a9e7d5168cf5b9644c6cadd496625b", "date": "2026-07-12T01:54:02+02:00", "subject": "feat: Phoenix Core v10.1 (Update Center, Main Runner, Kernel, Registry)"}
+{"commit": "136047dc7cc5776afd78545ce29f2bfada9c555d", "date": "2026-07-09T01:59:18+02:00", "subject": "feat: add Phoenix runner repair advisor engine v8.2"}
+{"commit": "8ef234eaf2722177075a37f84e21af4d58ef6436", "date": "2026-07-09T01:41:05+02:00", "subject": "feat: add Phoenix runner validation engine v8.1"}
+{"commit": "d992a96e897ee37dc7670fcc86737d11f110edee", "date": "2026-07-09T01:28:16+02:00", "subject": "feat: add runner validation scaffold"}
+{"commit": "8864e921417cb8b3007637c9f7abf108fb69a7b8", "date": "2026-07-09T01:25:02+02:00", "subject": "feat: add Phoenix task autopilot engine v8.0"}
+{"commit": "019a62080293e420ee5fcd9cfd3a3577fb81eb42", "date": "2026-07-09T01:05:05+02:00", "subject": "feat: add Phoenix task status and roadmap update engine v7.9"}
+{"commit": "5c23667f1683d232ea7b294cebc7a59411065687", "date": "2026-07-09T00:44:51+02:00", "subject": "feat: add Phoenix automated task builder v7.8"}
+{"commit": "1aaebbfee03a228a6ae19f84d34d58bb7fcd7038", "date": "2026-07-09T00:23:49+02:00", "subject": "feat: add Phoenix task executor and build script factory v7.7"}
+{"commit": "7b18a2b5c469c78773428f6ef019a31a88be999a", "date": "2026-07-09T00:21:39+02:00", "subject": "feat: add Phoenix task executor and build script factory v7.7"}
+{"commit": "991ad08b71d1b80667594937a27eceef87cfa839", "date": "2026-07-08T23:08:49+02:00", "subject": "feat: add CAD drawing export engine v7.5"}
+{"commit": "a8d4277df9264ca5464278333e6ff2620d283926", "date": "2026-07-08T22:53:08+02:00", "subject": "docs: add phoenix geometry documentation"}
+{"commit": "806aaad4725d8612520467148bc9bf1d771225f3", "date": "2026-07-08T02:05:47+02:00", "subject": "feat: add phoenix geometry engine v1.0"}
+{"commit": "454e0e58fa8f6782f7f2225bfb254036be9570c1", "date": "2026-07-08T02:05:45+02:00", "subject": "chore: stabilize before phoenix geometry engine v1.0"}
+{"commit": "21483edcea72aa45ad4e4f6c3752e8ae20f92fb1", "date": "2026-07-08T01:41:56+02:00", "subject": "feat: add architectural suite v1.2 pdf dxf digital twin exports"}
+{"commit": "1277542a75aa15f39c017ac8bde5ba63960f888b", "date": "2026-07-08T01:41:54+02:00", "subject": "chore: stabilize before architectural suite v1.2 build"}
+{"commit": "e20f63bd335979ca3e844c7b40038891aa7fbc0c", "date": "2026-07-08T01:39:34+02:00", "subject": "feat: add architectural suite v1.2 pdf dxf digital twin exports"}
+{"commit": "3b06f1776c023e821cc1d9ffcae8d2255a13d0e7", "date": "2026-07-08T01:39:31+02:00", "subject": "chore: stabilize before architectural suite v1.2 build"}
+{"commit": "535b1066a0f9bd63009f1c9371a1795a6d770bef", "date": "2026-07-08T01:20:36+02:00", "subject": "feat: extend architectural suite to v1.1 drawing concept engines"}
+{"commit": "3c92aa62c88b3999b275058c7fb2b617aa0fb76e", "date": "2026-07-08T01:20:34+02:00", "subject": "chore: stabilize before architectural suite v1.1 build"}
+{"commit": "3b5a41d3eb2dcb45a3c31e1e3d29126ab4bb7d15", "date": "2026-07-08T01:02:37+02:00", "subject": "feat: implement architectural suite v1.0 core workflow"}
+{"commit": "0010accd72b4e405d7708c29fc8eafcc6b956d92", "date": "2026-07-08T01:02:35+02:00", "subject": "chore: stabilize before architectural suite v1.0 build"}
+{"commit": "65f75bb9fff57a01d3a4999dc91c569f90ba2edc", "date": "2026-07-08T00:52:13+02:00", "subject": "docs: add Phoenix Development Kit documentation"}
+{"commit": "56ff311f56390a092f7065161333c2d72f338465", "date": "2026-07-08T00:50:50+02:00", "subject": "feat: add phoenix development kit v1 and bootstrap architectural suite"}
+{"commit": "5f7a23979ef26b0382706de49a6e8a02136c0f9e", "date": "2026-07-08T00:50:47+02:00", "subject": "chore: stabilize before phoenix development kit v1.0"}
+{"commit": "fd3efdb7aa6b9c306a4e12f595c25fc82bf691bc", "date": "2026-07-08T00:44:14+02:00", "subject": "spec: add executable architectural master specification v1.0"}
+{"commit": "43bfc80ed07f084401919974c4ebdb8b8cba4e1d", "date": "2026-07-08T00:27:58+02:00", "subject": "feat: add phoenix intelligence layer v1 with pkb bib integration"}
+{"commit": "6af3a3676a0f4c36a472f64f3e7d9c16c8301784", "date": "2026-07-08T00:27:56+02:00", "subject": "chore: stabilize before phoenix intelligence layer v1.0"}
+{"commit": "751a08f577dbff2f0abdbf017cc0ea8c37ae8a67", "date": "2026-07-08T00:18:23+02:00", "subject": "docs: add Project Phoenix documentation"}
+{"commit": "7f84c55e20caaa986da165c59f7b433f6128256f", "date": "2026-07-08T00:04:30+02:00", "subject": "chore: start migration to project phoenix repository structure"}
+{"commit": "30445ee876820368b16e9c245971939fbc29fabe", "date": "2026-07-08T00:04:29+02:00", "subject": "chore: stabilize before project phoenix repository migration"}
+{"commit": "18668f958e3f86710b3c8ce8fe5d7c8d3656ec35", "date": "2026-07-07T23:33:47+02:00", "subject": "feat: upgrade phoenix core to v1.1 manager layer"}
+{"commit": "5b7ec20297d03e45506ae1e33dbca28de1e33a7e", "date": "2026-07-07T23:33:46+02:00", "subject": "docs: add phoenix core documentation"}
+{"commit": "e514da1bd7b9bd33b6028efee0d1a0a74010c910", "date": "2026-07-07T23:22:54+02:00", "subject": "feat: add phoenix core v1 update engine"}
+{"commit": "2be6fca10cd7ea0656f4bac18742f357e8311e26", "date": "2026-07-07T23:22:52+02:00", "subject": "chore: stabilize workspace before phoenix core v1.0"}
+{"commit": "ee52bb538bfe08c8bb3a89e545453077e5fc2331", "date": "2026-07-06T21:59:39+02:00", "subject": "feat: add structural engine v7.4"}
+{"commit": "159f71cbc84c8fb47b24f6e228fc889ee29bb655", "date": "2026-07-06T21:39:40+02:00", "subject": "feat: add foundation engine v7.3"}
+{"commit": "fed9f8d63e9fd3133e58bec145f27a6131dc000f", "date": "2026-07-06T18:01:33+02:00", "subject": "feat: add project context builder and geotechniek engine v7.2"}
+{"commit": "aa65e27abcdf5fd03e75c4e09e1ab4a057d93841", "date": "2026-07-06T17:46:15+02:00", "subject": "feat: add project context builder engine v7.1"}
+{"commit": "ed85da6ab8e4ef60d8ff429e93c3be3e847f57a1", "date": "2026-07-06T17:26:20+02:00", "subject": "feat: add project intake engine v7.0"}
+{"commit": "cf3a4133ffe5c621841567bbc33d2f7e4093696e", "date": "2026-07-06T15:23:19+02:00", "subject": "feat: add module registry and engine dashboard v6.9"}
+{"commit": "8a2fe606f202738f875d2ce3b8a058ef4871bddb", "date": "2026-07-06T12:41:57+02:00", "subject": "feat: add Brewster Build Progress Tracker Engine v1"}
+{"commit": "1dc56fcaade29a7dc80b5bbd01d7a7295d64a908", "date": "2026-07-06T02:01:28+02:00", "subject": "feat: connect Brewster Auto Build Script Factory Engine to BAOEES Core"}
+{"commit": "bb52abf36fe2f51cd062bd1ef437986bce7f2353", "date": "2026-07-06T01:54:01+02:00", "subject": "feat: add Brewster Auto Build Script Factory Engine v1"}
+{"commit": "07829a2fb74e91c9f10b589efd525381a59b1f38", "date": "2026-07-06T01:42:35+02:00", "subject": "feat: connect Brewster Task Orchestrator Engine to BAOEES Core"}
+{"commit": "759eef202ead15580a0fadc00bfee3d7bbc998a7", "date": "2026-07-06T01:33:03+02:00", "subject": "feat: add Brewster Task Orchestrator Engine v1"}
+{"commit": "976cf63c3d98ea75b61ba8a8eadb7147147da19d", "date": "2026-07-06T01:09:15+02:00", "subject": "feat: connect Brewster Automation Roadmap Engine to BAOEES Core"}
+{"commit": "b76124db508c233e0cbc9fc783022be38d3df3bf", "date": "2026-07-06T01:01:23+02:00", "subject": "feat: add Brewster Automation Roadmap Engine v1"}
+{"commit": "d5f1344b57eaa35b00bbf407e5f8f0456fb71dd7", "date": "2026-07-05T22:30:16+02:00", "subject": "feat: add Phoenix UI Mapping Engine v1"}
+{"commit": "5c4cbc67a0be874126513da2583ecb148e8bad61", "date": "2026-07-05T18:38:27+02:00", "subject": "chore: add Phoenix Bridge connector helper"}
+{"commit": "dac5fb687e1e1e3543aa6025ed1f2946ea8028df", "date": "2026-07-05T15:22:19+02:00", "subject": "feat: connect Phoenix Bridge Engine to BAOEES Core"}
+{"commit": "238ee32588dfe945dec0635b1629552ebfa6880e", "date": "2026-07-05T15:13:44+02:00", "subject": "feat: add Phoenix Bridge Engine v1"}
+{"commit": "d09963ab1a537efc7f0aef113df06c976dda16de", "date": "2026-07-05T14:47:47+02:00", "subject": "feat: connect Structural Project Output Package Engine to BAOEES Core"}
+{"commit": "a9df77c78d3fd783d4d6df6c697f28d27a729a49", "date": "2026-07-05T14:29:35+02:00", "subject": "feat: add Structural Project Output Package Engine v1"}
+{"commit": "fd1a0b7f9fbc7af5e09f39598a90f0705adb26d6", "date": "2026-07-05T14:12:28+02:00", "subject": "feat: stabilize structural chain and connect QAQC engine"}
+{"commit": "0e9d9e8c40f897005c4587b02b9f885836238eaa", "date": "2026-07-05T13:36:45+02:00", "subject": "feat: add Structural QAQC Engine v1"}
+{"commit": "c0ddad4e1369203b86ddc76a471cfbd719a03fb8", "date": "2026-07-05T13:23:52+02:00", "subject": "feat: add deep knowledge harvest engine v6.8"}
+{"commit": "2a8c083c643c136c9ad893a9885d6ee9c4c91c42", "date": "2026-07-05T01:22:08+02:00", "subject": "chore: refresh knowledge and runners after auto repair v6.7"}
+{"commit": "8f646814427dcacfe8ad9f8750392a9a21bf0782", "date": "2026-07-05T01:18:26+02:00", "subject": "feat: add error diagnostics and auto repair engine v6.7"}
+{"commit": "86ac2bc6f2d0ab9e0e13c6fed15be08833bc15bf", "date": "2026-07-05T00:47:23+02:00", "subject": "feat: migrate brewster engineering wizard knowledge to bib v6.6"}
+{"commit": "a4c24fd1934e55c3759e5648656884cfe8d6ad6a", "date": "2026-07-05T00:35:40+02:00", "subject": "chore: refresh project outputs after health check v6.5"}
+{"commit": "691f63232b3627e2e0f6910c0476872bf3c2460a", "date": "2026-07-05T00:31:37+02:00", "subject": "feat: add project analysis health check v6.5"}
+{"commit": "30ea88e29aa3f514b89892a19a3c644bbfca6b93", "date": "2026-07-05T00:03:39+02:00", "subject": "feat: connect full project analysis flow to start runner v6.4"}
+{"commit": "4c44d6673f4eb778e343eb226018ea0ed6c2076c", "date": "2026-07-04T18:23:24+02:00", "subject": "feat: connect project package to start dashboard v6.3"}
+{"commit": "f308ee6a10d4ff3364ecd18ecc1c07f9ee8450c2", "date": "2026-07-04T18:01:45+02:00", "subject": "feat: connect Structural CAD Export Engine to BAOEES Core"}
+{"commit": "c1575a8b2a8c88f3b5fc0353b244d40708802260", "date": "2026-07-04T17:55:22+02:00", "subject": "feat: add Structural CAD Export Engine v1"}
+{"commit": "57beaaa5eef04fd11350fb709f23c534135ac032", "date": "2026-07-04T17:43:39+02:00", "subject": "feat: connect Structural Drawing Package Engine to BAOEES Core"}
+{"commit": "2fc8d0e6320d5805c182b4a3bd1f208eaed50f4b", "date": "2026-07-04T17:30:25+02:00", "subject": "feat: add Structural Drawing Package Engine v1"}
+{"commit": "1296a7c58c244d1cd54593867bde6cdb06cd6387", "date": "2026-07-04T16:51:44+02:00", "subject": "feat: connect Structural Calculation Report Engine to BAOEES Core"}
+{"commit": "a719986fa923933ad79a16b61e39ebf66c7216ed", "date": "2026-07-04T16:33:44+02:00", "subject": "feat: add Structural Calculation Report Engine v1"}
+{"commit": "c44778eb48ac46b524b925c5beb8f063d42ed609", "date": "2026-07-04T16:17:10+02:00", "subject": "feat: connect Structural Reinforcement Engine to BAOEES Core"}
+{"commit": "4d0947a9fdb79a2290501610f358a266f4f0b4c8", "date": "2026-07-04T15:21:48+02:00", "subject": "feat: add Structural Reinforcement Engine v1"}
+{"commit": "3f7955cd6a364d3d096ba1b3d84d073c60b12b8c", "date": "2026-07-04T13:35:42+02:00", "subject": "feat: connect Structural Element Sizing Engine to BAOEES Core"}
+{"commit": "9b01010afe616ef9a6339ef99dfa0a8c8b539253", "date": "2026-07-04T13:18:01+02:00", "subject": "feat: add Structural Element Sizing Engine v1"}
+{"commit": "01a2cb83c7c0b6d067e5017f7e97496e7a65bfcb", "date": "2026-07-04T02:45:26+02:00", "subject": "feat: connect Foundation Verification Engine to BAOEES Core"}
+{"commit": "67c4bc57af69f62e55cfd3455cf679be47138218", "date": "2026-07-04T02:41:03+02:00", "subject": "feat: add Foundation Verification Engine v1"}
+{"commit": "1f79a35b78c60bd2c08724e3d986652fcb44b148", "date": "2026-07-04T02:33:03+02:00", "subject": "feat: connect Foundation Design Engine to BAOEES Core"}
+{"commit": "59dda29d9bbbfaf29c4b9778af81340a2a243764", "date": "2026-07-04T02:28:30+02:00", "subject": "feat: add Foundation Design Engine v1"}
+{"commit": "ff12aff24c7949de5df22291097a89d5b16c9c25", "date": "2026-07-04T02:21:49+02:00", "subject": "feat: connect Foundation Load Transfer Engine to BAOEES Core"}
+{"commit": "b81daa4242db8c6a9e7411a8551ede9e5a0ca156", "date": "2026-07-04T02:12:47+02:00", "subject": "feat: add Foundation Load Transfer Engine v1"}
+{"commit": "11a5ecaf6212900384c75fad067ff6508153711f", "date": "2026-07-04T01:47:13+02:00", "subject": "feat: connect Element Load Engine to BAOEES Core"}
+{"commit": "6e45035bf2835d52eb2b019e4d5d8fbd2a9d26ef", "date": "2026-07-04T01:36:35+02:00", "subject": "feat: add Element Load Engine v1"}
+{"commit": "308328ae80a398db769155b75a7475881da5ab2f", "date": "2026-07-03T23:59:48+02:00", "subject": "feat: connect Structural Load Engine to BAOEES Core"}
+{"commit": "51a132077cdaee3bee004f1e93e8f9acf5b09e17", "date": "2026-07-03T23:01:46+02:00", "subject": "feat: add Structural Load Engine v1"}
+{"commit": "6e5a0b310a4f377be1572e61eb1a5fe27a213725", "date": "2026-07-03T11:38:26+02:00", "subject": "feat: connect Building Technical Engine to BAOEES Core"}
+{"commit": "81a8ebc7cba04a57379d6e4e6210a32f331ae353", "date": "2026-07-03T10:51:03+02:00", "subject": "feat: add Building Technical Engine v1"}
+{"commit": "eed5236d735a818085d604cbb88c86dbd5fdca14", "date": "2026-07-02T23:22:57+02:00", "subject": "feat: add auto repair engine and refresh project outputs"}
+{"commit": "5b41c3bf1d63d2c3ce13bb29fc7a5f66d8dd9283", "date": "2026-07-02T13:10:32+02:00", "subject": "feat: connect evidence and project package export v6.2"}
+{"commit": "fea9e26792b6bdd90c35282f7236ff1c2e27c195", "date": "2026-07-02T12:31:31+02:00", "subject": "feat: export project report to docx and pdf v6.1"}
+{"commit": "dced2c523776ebb1812aa171876024d886b8bdd3", "date": "2026-07-01T22:32:59+02:00", "subject": "feat: connect aaie bib workflow output to project report v6.0"}
+{"commit": "b3e5a41d982931192adbde0de4712b3342e0dcc4", "date": "2026-07-01T22:15:42+02:00", "subject": "chore: update project analyzer workflow outputs v5.9"}
+{"commit": "806291e85f074daa031c8bb745f47cf9d266d324", "date": "2026-07-01T22:12:16+02:00", "subject": "feat: connect aaie bib output to project analyzer workflow v5.9"}
+{"commit": "8ae2d65bdd22a68c57975d11371bd1340a308788", "date": "2026-06-30T18:28:27+02:00", "subject": "fix: include aaie bib assumption loader v5.8"}
+{"commit": "8692bc1297bcdbeca5beab953515dbbe487c4b59", "date": "2026-06-30T18:26:19+02:00", "subject": "feat: make aaie use bib knowledge before assumptions v5.8"}
+{"commit": "ab97481a2ce4258ff449d4df96a671ea3c8dd80a", "date": "2026-06-30T17:38:49+02:00", "subject": "feat: connect bib knowledge index to start analysis v5.7"}
+{"commit": "f699324efe8826b0ef4a4bf2c1ad764f25b9711b", "date": "2026-06-30T16:52:54+02:00", "subject": "feat: add bib intake reader v5.6"}
+{"commit": "808fd080c1164c1a56b8026901732d9d6d167c68", "date": "2026-06-30T16:35:55+02:00", "subject": "feat: add filled chat knowledge intake v5.5"}
+{"commit": "c975e989d20677ddf5c7b41e6ddbd980ce078f91", "date": "2026-06-28T00:57:56+02:00", "subject": "feat: add bib import wizard v5.4"}
+{"commit": "1e0599910f88d6bf7e646b399d30b72a4f9df48f", "date": "2026-06-27T23:56:45+02:00", "subject": "feat: improve project launcher dashboard v5.3"}
+{"commit": "9830a2c4a2f49dc9c6424601f4c749172eb0ac4b", "date": "2026-06-27T23:01:19+02:00", "subject": "feat: improve launcher home dashboard v5.2"}
+{"commit": "b08008e274f1e58ea61f865e63c24c154a17bde7", "date": "2026-06-27T18:38:18+02:00", "subject": "feat: add launcher instructions for local start runner v5.1"}
+{"commit": "cad126cacfa27858adf565b006902e1469cde9eb", "date": "2026-06-27T18:26:30+02:00", "subject": "feat: add local start project analysis runner v5.0"}
+{"commit": "fff658ed82f2862485ea55d9cdc196a96820e92e", "date": "2026-06-27T17:23:50+02:00", "subject": "chore: refresh generated launcher outputs v4.9"}
+{"commit": "4ed0b9a29d7eb16a43d41c93fccd70499ab8ae7b", "date": "2026-06-27T17:05:37+02:00", "subject": "feat: show start project analysis in launcher v4.9"}
+{"commit": "760c7b02e490663205787ca61ac4d14e71cf005e", "date": "2026-06-27T16:54:09+02:00", "subject": "chore: refresh generated start analysis outputs v4.8"}
+{"commit": "a8130ebbb79d9c883f6450f85237356709f33acd", "date": "2026-06-27T16:17:02+02:00", "subject": "feat: add central start project analysis engine v4.8"}
+{"commit": "28e517865c5969b826bfe46caf5bc7527ed9a018", "date": "2026-06-27T16:02:45+02:00", "subject": "feat: connect central workflow outputs to launcher v4.7"}
+{"commit": "cf6f8890824e7300c9a836ca7a13a313eeead063", "date": "2026-06-27T15:50:25+02:00", "subject": "feat: connect evidence package to analyzer workflow v4.6"}
+{"commit": "a32ef913e64cc62c197750e9dd3058c0dee7038d", "date": "2026-06-27T15:26:55+02:00", "subject": "feat: add project package evidence workflow v4.5"}
+{"commit": "587567b83f343b915e3f7857094692d501938761", "date": "2026-06-27T14:49:52+02:00", "subject": "feat: connect project analyzer workflow to launcher v4.4"}
+{"commit": "60abafad5b0c3a0a0a3094cb9d052667a9572715", "date": "2026-06-27T13:12:19+02:00", "subject": "chore: update project analyzer workflow outputs v4.3"}
+{"commit": "b92006a1fb6059fed64fdbd2fdde52710962bbba", "date": "2026-06-27T13:04:53+02:00", "subject": "feat: add project analyzer workflow v4.3"}
+{"commit": "c472d46cf61678305bc4f01a9722abe5b95536ae", "date": "2026-06-27T11:59:52+02:00", "subject": "feat: add project report DOCX PDF export engine v4.2"}
+{"commit": "2b3064c6a538b9c1f4a3a703e4ab6982774d6589", "date": "2026-06-27T11:00:09+02:00", "subject": "feat: add project report BIB engine v4.1"}
+{"commit": "18fb8a962b836eee06faf7289d083a2ae3e845a7", "date": "2026-06-27T00:56:34+02:00", "subject": "feat: add geo foundation BIB engine v4.0"}
+{"commit": "fd36b8c750c86ae77ad48686eef88daf84a46593", "date": "2026-06-27T00:42:51+02:00", "subject": "feat: add AAIE BIB assumption loader v3.9"}
+{"commit": "4717654fa791443a964c77fb1ebbf0deff04df7e", "date": "2026-06-27T00:29:20+02:00", "subject": "feat: add project analyzer BIB context loader v3.8"}
+{"commit": "bf6638b6fa908237ce83d0777646d6ad148dbe1a", "date": "2026-06-27T00:15:38+02:00", "subject": "feat: add BIB project analyzer bridge v3.7"}
+{"commit": "cf1e8c34044be72fcf2cb02824d8913f8c6f421f", "date": "2026-06-27T00:00:01+02:00", "subject": "feat: add Project Phoenix BIB knowledge source engine v3.6"}
+{"commit": "472527dcd3973ac5eba62f4b37f21357bb0ed58d", "date": "2026-06-26T23:46:24+02:00", "subject": "feat: add Project Phoenix BIB workflow runner v3.5"}
+{"commit": "7a7c6b5b42e6e4aa806b3aa226cd9768052c490f", "date": "2026-06-26T23:34:36+02:00", "subject": "feat: integrate BIB QA QC in full export runner v3.4"}
+{"commit": "ad88bee49efa3fae5483a263fcf77a26fc66f06e", "date": "2026-06-26T23:26:04+02:00", "subject": "feat: integrate BIB QA QC in full export runner v3.4"}
+{"commit": "25f9553b26c80de9ec6f7654492bde426774b0bc", "date": "2026-06-26T20:07:59+02:00", "subject": "feat: add Project Phoenix BIB QA QC engine v3.3"}
+{"commit": "b781d432893813d63b6f10de6ef8176ac6c3130d", "date": "2026-06-26T19:57:57+02:00", "subject": "feat: connect Project Phoenix BIB to launcher v3.2"}
+{"commit": "7f975d16b7f15256d63be196cde9e9615899461a", "date": "2026-06-26T19:52:29+02:00", "subject": "feat: connect Project Phoenix BIB to launcher v3.2"}
+{"commit": "6b326d8713153042b9615ed1ecb1fc89a0c57ebf", "date": "2026-06-26T19:45:44+02:00", "subject": "feat: add Project Phoenix BIB full export runner v3.1"}
+{"commit": "42b520e4f217873bbc7b46d7e404d7d9ef735ae0", "date": "2026-06-26T19:39:16+02:00", "subject": "feat: add Project Phoenix BIB PDF export v3.0"}
+{"commit": "232da22a519a504c5decebaa0308cec5202554d2", "date": "2026-06-26T19:33:17+02:00", "subject": "feat: add Project Phoenix BIB DOCX export v2.9"}
+{"commit": "a65e6d5b9883025015ed2617c6500887b86551fc", "date": "2026-06-26T19:24:46+02:00", "subject": "feat: add Project Phoenix BIB export engine v2.8"}
+{"commit": "0077c6885ac08d9754b4b444d108f257ea284f42", "date": "2026-06-26T19:11:35+02:00", "subject": "docs: design Project Phoenix BIB export engine v2.7"}
+{"commit": "0c1d49ee7bca97c7bde07a2e92656d386d10b6b6", "date": "2026-06-26T19:06:32+02:00", "subject": "docs: expand Project Phoenix BIB master knowledge v2.6"}
+{"commit": "ff37afc0eeff5535f7d7a47cce5d8d6f00dc1456", "date": "2026-06-26T19:01:25+02:00", "subject": "docs: add Project Phoenix BIB index and export plan v2.5"}
+{"commit": "3bea0c48fc505f526c4c22fa841f8008fac5fb9d", "date": "2026-06-26T18:50:43+02:00", "subject": "docs: add Project Phoenix BIB lessons and source evidence v2.4"}
+{"commit": "e6102f9577605cfdc6e514f9c9aad35e74c9f402", "date": "2026-06-26T18:43:52+02:00", "subject": "docs: add Project Phoenix BIB workflows and templates v2.3"}
+{"commit": "83aa24c18bcd03e6775e11f87c174e3c1cc1a48b", "date": "2026-06-26T18:35:39+02:00", "subject": "docs: add Project Phoenix BIB engine knowledge v2.2"}
+{"commit": "20469307e9c5ccaf79eeecb5d2bcd5558f71d440", "date": "2026-06-26T18:29:14+02:00", "subject": "docs: add Project Phoenix BIB standards and assumptions v2.1"}
+{"commit": "0101655688703e5ffa4d4327616174ebc3f978cd", "date": "2026-06-26T17:14:07+02:00", "subject": "docs: add Project Phoenix BIB project knowledge v2.0"}
+{"commit": "88c32812894e27dee7ed4f3cc6cc23f4a257477d", "date": "2026-06-26T16:47:49+02:00", "subject": "docs: add Project Phoenix BIB core knowledge v1.9"}
+{"commit": "b14841d013db131028f3132fe73c63d8d09251d2", "date": "2026-06-26T15:14:09+02:00", "subject": "fix: rebuild HTML dashboard export engine for Project Phoenix v1.6"}
+{"commit": "de57cea3faf2d3855a288def06e196d4f275d889", "date": "2026-06-26T14:06:23+02:00", "subject": "feat: rebrand Project Phoenix launcher v1.5"}
+{"commit": "9435d938885fb9edf8b15c426bcc747f7b056193", "date": "2026-06-26T13:51:12+02:00", "subject": "feat: add Project Phoenix start dashboard v1.4"}
+{"commit": "0240d2fe5bfedf94e53c12a6795218e10b40b66c", "date": "2026-06-26T12:42:56+02:00", "subject": "docs: add Project Phoenix repository baseline and Plutostraat output evidence"}
+{"commit": "8f6986181e07b8359ec26d002e40d600785ab367", "date": "2026-06-25T15:37:40+02:00", "subject": "feat: upgrade HTML dashboard with audit checksum and git evidence"}
+{"commit": "15e6fd8c250886feac9dca249881c6f7f3247217", "date": "2026-06-25T00:16:44+02:00", "subject": "feat: add Project Git Evidence Engine v1"}
+{"commit": "912a10b9f41492ac241ba963bb5c0ea41c0cba3b", "date": "2026-06-24T23:56:36+02:00", "subject": "feat: add Project Checksum File Integrity Engine v1"}
+{"commit": "61821687510806e8cef5758de2639ccfc4a73338", "date": "2026-06-24T23:39:14+02:00", "subject": "feat: add Project Audit Trail Engine v1"}
+{"commit": "021a277269a2f783cd02596d5e81c84d824da4af", "date": "2026-06-24T18:47:45+02:00", "subject": "feat: add Project Index Startpage Engine v1"}
+{"commit": "3d35b6259fc761d078c387a8ed1f5f54be1b3fd2", "date": "2026-06-24T18:11:47+02:00", "subject": "feat: add Project HTML Dashboard Export Engine v1"}
+{"commit": "1062ea29e728592689656c55cbd8c776ca134ef2", "date": "2026-06-24T17:48:33+02:00", "subject": "feat: add Project XLSX Export Engine v1"}
+{"commit": "c19311e29b00daa3fda21d1a2ab24ad1bed8a92f", "date": "2026-06-24T17:38:27+02:00", "subject": "feat: add Project XLSX Export Engine v1"}
+{"commit": "69a96f3a19da1101e76ad65384bcfc7c3e656125", "date": "2026-06-24T17:35:10+02:00", "subject": "feat: add Project CSV Excel Export Engine v1"}
+{"commit": "38785e7ca5c67dafc1214e67a2b0f11121334efd", "date": "2026-06-24T17:09:21+02:00", "subject": "feat: add Project CSV Excel Export Engine v1"}
+{"commit": "7414fca0089b260133f57a2bbf883974fa7cdb6d", "date": "2026-06-24T15:57:56+02:00", "subject": "feat: add Project Drawing PDF Writer Engine v1"}
+{"commit": "71e348f8b4fc958855d5edfcb20b8f896b3d1b66", "date": "2026-06-24T14:53:22+02:00", "subject": "feat: add Project DXF Writer Engine v1"}
+{"commit": "a984cfd21ff56591ae2b58186d3cbb94134bfff8", "date": "2026-06-24T13:19:26+02:00", "subject": "feat: add PDF DOCX Report Export Engine v1"}
+{"commit": "d98ac9776a68fd1ce664b753f7561d53caa17572", "date": "2026-06-24T12:57:01+02:00", "subject": "feat: add Project Report Writer Engine v1"}
+{"commit": "40eaab5ca12c79dbe4a9464c7f53f8713146f9ca", "date": "2026-06-24T01:20:57+02:00", "subject": "feat: upgrade Project ZIP Engine with real ZIP export"}
+{"commit": "f13b075ed695b8c5ebeb52aa22beb43e53bc5316", "date": "2026-06-24T01:01:56+02:00", "subject": "feat: add Project File Writer JSON Export Engine v1"}
+{"commit": "312564fdea3ab6e21b3c05205dea0f21d16b61f3", "date": "2026-06-24T00:47:33+02:00", "subject": "feat: add Project Storage Output Folder Engine v1"}
+{"commit": "009abea86aa01a341e38cdfebffb79d41f868e98", "date": "2026-06-24T00:34:45+02:00", "subject": "feat: add command line project launcher"}
+{"commit": "bb120ec52a989944edab35bd9c8a85e538c7fff2", "date": "2026-06-23T23:58:58+02:00", "subject": "feat: add project library JSON configs"}
+{"commit": "4e9e7c4ab82cd8feef22327fa81fddd5aacee4b9", "date": "2026-06-23T23:52:02+02:00", "subject": "feat: add Project Selector Library Engine v1"}
+{"commit": "bcb9587600fc7b44b220936bfc932e7572644154", "date": "2026-06-23T23:37:43+02:00", "subject": "feat: add JSON project input configuration"}
+{"commit": "f76a75e0d9cb93e2f0600179ae104ac51f747b90", "date": "2026-06-23T23:14:57+02:00", "subject": "feat: add Project Configuration Input Engine v1"}
+{"commit": "743e6531851aab9748e45c97dc40ae7368284455", "date": "2026-06-23T22:59:42+02:00", "subject": "feat: add Runtime Orchestration Engine v1"}
+{"commit": "c76341ca8956037da42f543d5c94ce39cfd20a3a", "date": "2026-06-23T01:24:24+02:00", "subject": "feat: add Autonomous Learning Knowledge Engine v1"}
+{"commit": "fcffe127604c1682bd61f0b5405626bb6b636171", "date": "2026-06-23T01:05:21+02:00", "subject": "feat: add Global Codes Standards Engine v1"}
+{"commit": "95222a544a1d73b65b05c30196d01b553927bcbd", "date": "2026-06-23T00:45:17+02:00", "subject": "feat: add Sustainability Climate Engine v1"}
+{"commit": "6e0406f505cbcdc2178249fad3da03e1ec77abb8", "date": "2026-06-23T00:36:32+02:00", "subject": "feat: add Asset Management Maintenance Engine v1"}
+{"commit": "12ec25829149a54d8327c84989a375b536b518ce", "date": "2026-06-23T00:16:32+02:00", "subject": "feat: add Asset Management Maintenance Engine v1"}
+{"commit": "a5fd1360a4b0ce1c240b0bf118eb266750507aaa", "date": "2026-06-22T23:42:37+02:00", "subject": "feat: add As Built Oplever Engine v1"}
+{"commit": "9d3af3eea7d90133330817c9555369a2f4790454", "date": "2026-06-22T23:07:21+02:00", "subject": "feat: add Site Monitoring Progress Engine v1"}
+{"commit": "5f22b41b2f2697917988f08edac77a23f70b2e27", "date": "2026-06-22T22:48:53+02:00", "subject": "feat: add Construction Execution Engine v1"}
+{"commit": "a3290812586bb85e395c41ea0aa76831722830d1", "date": "2026-06-22T22:20:31+02:00", "subject": "feat: add Contract Agreement Engine v1"}
+{"commit": "d57cb98af75c81cd3cb24b3fd3517fad5852d837", "date": "2026-06-22T22:06:39+02:00", "subject": "feat: add Tender Procurement Engine v1"}
+{"commit": "0a7ae90ddf4e83428abe5d1f868652a7e8bf3b70", "date": "2026-06-22T15:58:51+02:00", "subject": "feat: add Specification Bestek Engine v1"}
+{"commit": "a3de00b5cb1e905b9eebbdce6d666bd666fc7524", "date": "2026-06-22T15:44:50+02:00", "subject": "feat: add Quantity BOQ Engine v1"}
+{"commit": "6f3e7765abe4b5df3850645cb578299ad6a92889", "date": "2026-06-21T18:14:58+02:00", "subject": "docs: update BAOEES V3 project structure"}
+{"commit": "19db98d8e5d2f8a591f35f0e7c610747adb83d66", "date": "2026-06-21T17:54:10+02:00", "subject": "feat: add Validation QA QC Engine v1"}
+{"commit": "d1c9d1f22139526acd167ae4c375dbda2a430d0e", "date": "2026-06-21T17:37:01+02:00", "subject": "feat: add GIS Map Engine v1"}
+{"commit": "c686848dde9cbc9d62b151219253e7dd6cf96ca1", "date": "2026-06-21T16:50:50+02:00", "subject": "feat: add AERIUS Stikstof Engine v1"}
+{"commit": "07feed190d977e2b27e90d558830ef03b3f5236e", "date": "2026-06-21T16:25:02+02:00", "subject": "feat: add Drainage and Sewerage Engine v1"}
+{"commit": "33e671d427887a2cb2cc158748753876686aba7f", "date": "2026-06-21T16:11:34+02:00", "subject": "feat: add Traffic and Parking Engine v1"}
+{"commit": "16ed61ef6ae05427b21996361967008da11456d4", "date": "2026-06-21T15:47:52+02:00", "subject": "feat: add Planning Engine v1"}
+{"commit": "ca3d870bc7ee4c5d7abfbe81866b79a6cabfdcf3", "date": "2026-06-21T15:18:04+02:00", "subject": "feat: add Cost Estimate Engine v1"}
+{"commit": "bd1b35ce6cc80d2b39adae310e13c2be57f07031", "date": "2026-06-21T14:52:36+02:00", "subject": "feat: upgrade Structural Engine with real structural checks v1.1"}
+{"commit": "3cc3ddae6f9d8b55b59f9874f87cacf3654c0f45", "date": "2026-06-21T14:43:14+02:00", "subject": "feat: upgrade Geo Engine with real foundation calculations v1.1"}
+{"commit": "5e45acf149ed68526620dd4f1eaac4c6ea903f8a", "date": "2026-06-21T14:03:41+02:00", "subject": "feat: add CAD DXF Export Engine v1"}
+{"commit": "4a7b2ca7bdafffcfc3eafad111a3887f7c883f7d", "date": "2026-06-21T13:46:50+02:00", "subject": "docs: add BAOEES V3 project structure"}
+{"commit": "595a1a4db8c4c633a674c513d322a6ad0af15d99", "date": "2026-06-21T13:43:00+02:00", "subject": "feat: upgrade Document Export Engine to professional DOCX PDF v1.1"}
+{"commit": "664c758232f4b0ced0095b77998a4c9178ba5259", "date": "2026-06-21T13:07:46+02:00", "subject": "docs: update BAOEES V3 README"}
+{"commit": "7879e51e42e34d5747c3d07ba425203937ec10fc", "date": "2026-06-21T12:46:22+02:00", "subject": "chore: add BAOEES V3 stable test runner"}
+{"commit": "ff79817b305c32b994c071805335d6e7259d6bb7", "date": "2026-06-21T12:24:00+02:00", "subject": "feat: add Drawing Export Engine v1"}
+{"commit": "c2a4384bbd41fd835c9fff0e670aeaa79a8c152b", "date": "2026-06-21T11:23:43+02:00", "subject": "feat: add basic Document Export Engine v1"}
+{"commit": "9419e59fcf539e2a88518a873779a182eb8dec2b", "date": "2026-06-21T00:24:33+02:00", "subject": "feat: add Project ZIP Engine v1"}
+{"commit": "ab48d906ece943515e175456065d87cf6b7d91ec", "date": "2026-06-21T00:06:35+02:00", "subject": "feat: add Project Export Engine v1"}
+{"commit": "6c58b2f77690e39a3debd64690eb28ac2e74de9b", "date": "2026-06-20T23:13:43+02:00", "subject": "feat: add Reporting Engine v1 report structure"}
+{"commit": "f40c0d56b399cc6a585c7828364a53a3966502c6", "date": "2026-06-20T21:57:42+02:00", "subject": "feat: add Permit Engine v1 permit strategy"}
+{"commit": "255cc35ad2fa3df105967fe1f5b0695294926733", "date": "2026-06-20T21:34:26+02:00", "subject": "feat: add Structural Engine v1 foundation assessment"}
+{"commit": "08b4e4b2802d9e8d93cf29145c87e8c037043b6c", "date": "2026-06-20T21:21:08+02:00", "subject": "feat: add Geo Engine v1 geotechnical analysis"}
+{"commit": "bac8cdb27701207f373d71a02cd1bc32bac69d4b", "date": "2026-06-20T20:27:51+02:00", "subject": "feat: add Workflow Engine v1 orchestration"}
+{"commit": "ae7c90c7d2bbfbc04635ea71d4ff9d79a18d7263", "date": "2026-06-20T20:13:42+02:00", "subject": "feat: add Variant Engine v1 design options"}
+{"commit": "fd184f9d8d077ad9a040dd505423588a19c00864", "date": "2026-06-20T19:59:59+02:00", "subject": "feat: add STEE v1 source register"}
+{"commit": "652a6a33ca449216346e83c97057f1cb1f212f46", "date": "2026-06-20T19:42:03+02:00", "subject": "feat: add Digital Twin v1 project data core"}
+{"commit": "df6a9fc9b0017ab9f6af238758da2190da696155", "date": "2026-06-20T19:30:10+02:00", "subject": "feat: add AAIE v1 inference engine"}
+{"commit": "8a3ceb7f901bd9a397d1b82bbeac5ec85212c106", "date": "2026-06-20T18:51:32+02:00", "subject": "chore: remove python cache files"}
+{"commit": "7a73d57281c89ff293f6dbb6d28b193f0cc22176", "date": "2026-06-20T18:38:59+02:00", "subject": "chore: remove python cache files from repository"}
+{"commit": "81921a7272953b26731d7dcff6737ec7978c39df", "date": "2026-06-20T18:34:47+02:00", "subject": "chore: add gitignore"}
+{"commit": "2019b3e97249d277196cbe28703a3bf421f206c3", "date": "2026-06-20T17:48:28+02:00", "subject": "feat: add BAOEES project analyzer v1"}
+{"commit": "ede84a606fa864d4ad59f857c91ee870e625fc6d", "date": "2026-06-20T15:44:27+02:00", "subject": "chore: migrate BAOEES V3 and connect core engines"}
+{"commit": "8c5ce572a05c27c8d7f55d2c0ba50f05205b0373", "date": "2026-06-19T16:39:37+02:00", "subject": "Merge remote-tracking branch 'origin/baoees-v3' into baoees-v3"}
+{"commit": "5bf017fdf580691a3eba001ff0abd2e29e32d662", "date": "2026-06-19T14:39:39+02:00", "subject": "Auto stash before rebase of \"master\""}
+{"commit": "a87cc3c89e0c78c762dee9af7a3e58b5875db5ca", "date": "2026-06-19T14:39:39+02:00", "subject": "Auto stash before rebase of \"master\""}
+{"commit": "d7490e4d980a577b40421285aac71ecbc043bd41", "date": "2026-06-19T14:13:32+02:00", "subject": "docs: Add v1.2 upgrade scripts, README, and documentation"}

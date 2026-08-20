@@ -1,0 +1,29 @@
+{
+  "binary_policy": "DOCX extracted with stdlib XML; PDF via optional pypdf, otherwise metadata/hash only",
+  "discovered_existing_bib_roots": [
+    "bib",
+    "knowledge",
+    "outputs/bib",
+    "outputs/knowledge",
+    "phoenix/knowledge",
+    "phoenix/knowledge_graph",
+    "phoenix_intelligence/bib",
+    "phoenix_intelligence/knowledge_graph",
+    "phoenix_intelligence/pkb",
+    "tests/knowledge_graph",
+    "project_phoenix/intelligence/bib",
+    "project_phoenix/intelligence/knowledge_graph",
+    "project_phoenix/intelligence/pkb"
+  ],
+  "full_content_policy": [
+    "docs/**",
+    "configs/**",
+    "BIB/bib/knowledge/PKB-like roots",
+    "root-level knowledge text"
+  ],
+  "managed_bib_root": "BIB/PHOENIX_AUTO_SYNC",
+  "schema_version": "1.0",
+  "source_metadata_policy": [
+    "tracked Phoenix code/scripts/tests fingerprinted by Git object id"
+  ]
+}

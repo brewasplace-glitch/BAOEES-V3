@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+repo="$(git rev-parse --show-toplevel)"
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo/runners/PROJECT_PHOENIX_bib_precommit_v1_0.ps1" -Repo "$repo"
