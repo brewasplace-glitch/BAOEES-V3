@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "name": "PROJECT PHOENIX BIB AUTO-SYNC + KNOWLEDGE INGESTION",
-  "managed_root": "BIB/PHOENIX_AUTO_SYNC",
+  "managed_root": "bib/PHOENIX_AUTO_SYNC",
   "primary_search": {
     "engine": "SQLite FTS5",
     "integration": "Python stdlib sqlite3",

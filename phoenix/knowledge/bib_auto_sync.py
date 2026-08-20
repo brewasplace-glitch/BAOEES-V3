@@ -4,7 +4,7 @@ from pathlib import Path, PurePosixPath
 from xml.etree import ElementTree as ET
 
 SCHEMA_VERSION="1.0"
-MANAGED_REL="BIB/PHOENIX_AUTO_SYNC"
+MANAGED_REL="bib/PHOENIX_AUTO_SYNC"
 RUNTIME_REL=f"{MANAGED_REL}/runtime"
 TEXT_EXTENSIONS={".md",".txt",".rst",".json",".jsonl",".yaml",".yml",".toml",".ini",".cfg",".csv",".xml",".html",".htm",".sql",".docx",".pdf"}
 SOURCE_EXTENSIONS=TEXT_EXTENSIONS|{".py",".ps1",".psm1",".js",".mjs",".cjs",".ts",".tsx",".jsx",".css",".scss",".sh",".bat",".cmd",".psd1",".ps1xml",".xsd"}

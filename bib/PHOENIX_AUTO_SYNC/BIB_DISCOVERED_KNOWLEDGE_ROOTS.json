@@ -21,7 +21,7 @@
     "BIB/bib/knowledge/PKB-like roots",
     "root-level knowledge text"
   ],
-  "managed_bib_root": "BIB/PHOENIX_AUTO_SYNC",
+  "managed_bib_root": "bib/PHOENIX_AUTO_SYNC",
   "schema_version": "1.0",
   "source_metadata_policy": [
     "tracked Phoenix code/scripts/tests fingerprinted by Git object id"
