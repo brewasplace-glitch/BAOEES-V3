@@ -5,7 +5,7 @@ const BOOT = window.PHOENIX_START_CAPABILITY_BOOTSTRAP || {};
 const TOKEN = String(BOOT.token || "");
 const ROOT_ID = "phoenix-start-capability-drawer";
 const STYLE_ID = "phoenix-start-capability-style";
-const STATUS_POLL_MS = 6000;
+const STATUS_POLL_MS = 600000;
 
 let lastCapabilityKey = "";
 let lastProjectKey = "";
