@@ -228,6 +228,184 @@ class ArchitecturalOrchestrationRuntime:
 
         return manifest
 
+    def _structural_bridge_tokens(self, project: dict[str, Any]) -> list[str]:
+        metadata = project.get("metadata") if isinstance(project.get("metadata"), dict) else {}
+        activation = metadata.get("phoenix_structural_capability_activation")
+        activation = activation if isinstance(activation, dict) else {}
+        if str(activation.get("route") or "") != "structural_engineering":
+            return []
+
+        config_path = (
+            self.repository
+            / "configs"
+            / "phoenix"
+            / "autonomous_project_orchestrator_v1_0.json"
+        )
+        if not config_path.is_file():
+            raise RuntimeError(
+                "Structural bridge requires autonomous_project_orchestrator_v1_0.json"
+            )
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        output_map = config.get("output_capability_map")
+        if not isinstance(output_map, dict):
+            raise RuntimeError("Structural bridge output_capability_map ontbreekt.")
+
+        requested = project.get("requested_outputs")
+        requested = requested if isinstance(requested, list) else []
+        tokens: list[str] = []
+        for item in requested:
+            token = str(item)
+            mapped = output_map.get(token)
+            if isinstance(mapped, list) and "structural_engineering" in [
+                str(value) for value in mapped
+            ]:
+                tokens.append(token)
+        return list(dict.fromkeys(tokens))
+
+    def _run_structural_capability_bridge(
+        self,
+        job: ArchitecturalOrchestrationJob,
+        project: dict[str, Any],
+        log_path: Path,
+    ) -> dict[str, Any] | None:
+        tokens = self._structural_bridge_tokens(project)
+        if not tokens:
+            return None
+
+        runner = (
+            self.repository
+            / "runners"
+            / "PROJECT_PHOENIX_autonomous_session_orchestrator_v1_0_0.py"
+        )
+        if not runner.is_file():
+            raise RuntimeError(
+                "Structural bridge runner ontbreekt: "
+                + runner.relative_to(self.repository).as_posix()
+            )
+
+        bridge_root = log_path.parent / "structural_session_bridge"
+        bridge_root.mkdir(parents=True, exist_ok=True)
+        session_file = bridge_root / "session.json"
+        output_dir = bridge_root / "output"
+
+        session = {
+            "session_id": f"PHX-AE-BRIDGE-{job.job_id}",
+            "project_type": "BOUW",
+            "project_mode": "autonomous",
+            "brief": job.project_id,
+            "selected_project": job.project_id,
+            "desired_outputs": tokens,
+            "status": "READY_FOR_AUTONOMOUS_ORCHESTRATION",
+            "bridge": {
+                "schema_version": "phoenix.architectural-to-session-bridge/1.0",
+                "source_job_id": job.job_id,
+                "source_project_file": job.project_file,
+                "scope": "STRUCTURAL_ENGINEERING_ONLY",
+                "production_release": "LOCKED",
+                "for_construction": "LOCKED",
+            },
+        }
+        session_file.write_text(
+            json.dumps(session, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        command = [
+            sys.executable,
+            str(runner),
+            "--session-file",
+            str(session_file),
+            "--output-dir",
+            str(output_dir),
+            "--expect-session-orchestrated",
+        ]
+
+        with log_path.open("a", encoding="utf-8", newline="\n") as log:
+            log.write("\nPHOENIX_STRUCTURAL_SESSION_BRIDGE=START\n")
+            log.write("Structural desired outputs: " + json.dumps(tokens) + "\n")
+            log.write("Bridge session: " + str(session_file) + "\n")
+            log.write("Bridge command: " + json.dumps(command) + "\n")
+            log.flush()
+            process = subprocess.run(
+                command,
+                cwd=self.repository,
+                env={
+                    **os.environ,
+                    "PYTHONDONTWRITEBYTECODE": "1",
+                    "PYTHONPATH": (
+                        str(self.repository)
+                        if not os.environ.get("PYTHONPATH")
+                        else str(self.repository)
+                        + os.pathsep
+                        + os.environ["PYTHONPATH"]
+                    ),
+                },
+                stdout=log,
+                stderr=subprocess.STDOUT,
+                text=True,
+                check=False,
+            )
+            log.write(
+                "PHOENIX_STRUCTURAL_SESSION_BRIDGE_RETURN_CODE="
+                + str(process.returncode)
+                + "\n"
+            )
+
+        project_runtime = self.runtime_root / job.project_id
+        adapter_dir = (
+            project_runtime
+            / "results"
+            / "session_adapters"
+            / "structural_engineering"
+        )
+        inp_files = sorted(project_runtime.rglob("*.inp")) if project_runtime.is_dir() else []
+
+        result = {
+            "schema_version": "phoenix.architectural-to-session-bridge-result/1.0",
+            "project_id": job.project_id,
+            "job_id": job.job_id,
+            "desired_outputs": tokens,
+            "return_code": int(process.returncode),
+            "structural_adapter_dir": (
+                adapter_dir.relative_to(self.repository).as_posix()
+                if adapter_dir.exists()
+                else None
+            ),
+            "project_scoped_inp": [
+                path.relative_to(self.repository).as_posix() for path in inp_files
+            ],
+            "passed": (
+                int(process.returncode) == 0
+                and adapter_dir.is_dir()
+                and bool(inp_files)
+            ),
+            "production_release": "LOCKED",
+            "for_construction": "LOCKED",
+        }
+        (bridge_root / "bridge_result.json").write_text(
+            json.dumps(result, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        with log_path.open("a", encoding="utf-8", newline="\n") as log:
+            log.write(
+                "PHOENIX_STRUCTURAL_ADAPTER_DIR_EXISTS="
+                + ("YES" if adapter_dir.is_dir() else "NO")
+                + "\n"
+            )
+            log.write(
+                "PHOENIX_PROJECT_SCOPED_INP_COUNT="
+                + str(len(inp_files))
+                + "\n"
+            )
+            log.write(
+                "PHOENIX_STRUCTURAL_SESSION_BRIDGE="
+                + ("PASS" if result["passed"] else "FAILED")
+                + "\n"
+            )
+
+        return result
+
     def plan(self, project_file: str) -> dict[str, Any]:
         capability = self.capability()
         if not capability["available"]:
@@ -325,7 +503,15 @@ class ArchitecturalOrchestrationRuntime:
                     value = json.loads(manifest.read_text(encoding="utf-8"))
                     job.recommended_variant_id = str(value.get("recommended_variant_id", "")) or None
                     job.delivery_manifest = manifest.relative_to(self.repository).as_posix()
-                    job.status = "PASSED"
+                    _project_path, project = self._resolve_project(job.project_file)
+                    bridge = self._run_structural_capability_bridge(job, project, log_path)
+                    if bridge is not None and not bool(bridge.get("passed")):
+                        job.status = "FAILED"
+                        job.error = (
+                            "Structural session bridge faalde na geslaagde architectuur-orchestration."
+                        )
+                    else:
+                        job.status = "PASSED"
         except Exception as error:
             job.status = "FAILED"
             job.error = str(error)

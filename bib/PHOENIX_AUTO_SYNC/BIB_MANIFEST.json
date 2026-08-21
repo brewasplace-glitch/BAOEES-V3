@@ -9275,6 +9275,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "1271864be09d428d254e0eac1b8464722d361e22",
+      "path": "docs/automation/PHOENIX_REAL_PROJECTFLOW_STRUCTURAL_SESSION_BRIDGE_REPAIR_v1_0.md",
+      "sha256": "a99fa64eec83895797ffe6f83f940ceba7b49cd27ec210e43f3ea462a0f4c3ce"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "9ddb263854bd6f65340e165e96768e7c492f45a1",
+      "path": "docs/automation/PHOENIX_REAL_PROJECTFLOW_STRUCTURAL_SESSION_BRIDGE_REPAIR_v1_0_EVIDENCE.txt",
+      "sha256": "10d8aefa313f89132388972f62d31188e50b693cf71538fca5345c9519f2128c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "f91734c5eb988d26d3bd945a405a6eb3edead92c",
       "path": "docs/automation/PHOENIX_REAL_WORLD_EVIDENCE_PERSISTENCE_CLEAN_REPOSITORY_FIX_v1_0.md",
       "sha256": "50ae753daa920c351518da04107d3bcf32cf36bdd32283cf5bc01140bd61d6d3"
@@ -16376,7 +16394,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "a77f0b199c145d558bf1c55a10d019ca54f1cf73",
+      "git_oid": "c2030dcb0f496b17e8d54e7457ce59bb2eda0121",
       "path": "phoenix/local_app/architectural_orchestration_runtime.py",
       "sha256": null
     },
@@ -23171,6 +23189,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "3bcfc82b64c94791327560a822fbc70976f11aad",
+      "path": "tests/automation/test_phoenix_real_projectflow_structural_session_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "b4abc83a65121ea44722b5928e0d53edbead0bc0",
       "path": "tests/automation/test_phoenix_real_world_evidence_persistence_clean_repo_v1_0.py",
       "sha256": null
@@ -24887,5 +24914,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "0eb0d0957186c29f68378289c3c41d4224877aae91bfb0bd2b480c15b5aa9e4b"
+  "source_digest": "9bfa34265c5641dc54f8afa438e351dc3c63440e6e7abc7cd9e5aff93927eec8"
 }
