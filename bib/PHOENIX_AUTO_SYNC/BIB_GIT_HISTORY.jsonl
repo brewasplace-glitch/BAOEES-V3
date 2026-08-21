@@ -1,3 +1,4 @@
+{"commit": "c83450d8c48e01a81d668a53a4f2e81370273e23", "date": "2026-08-21T13:11:36+02:00", "subject": "fix(validation): repair Moskee E2E browser evidence and project binding"}
 {"commit": "c6c5f875a26fe9a882d1cedcd7ff623a4a34988b", "date": "2026-08-21T12:50:05+02:00", "subject": "feat(validation): bind Moskee Bunschoten real-project E2E"}
 {"commit": "99ba54c911fbb1e080a66961b6a5a5306c6bc0c7", "date": "2026-08-21T11:56:12+02:00", "subject": "fix(validation): enforce strict E2E tool path attribution"}
 {"commit": "c747697b932a99575797e0522c52f5906e94db73", "date": "2026-08-21T11:45:56+02:00", "subject": "fix(validation): expand real-project E2E runtime discovery"}
@@ -497,4 +498,3 @@
 {"commit": "fd184f9d8d077ad9a040dd505423588a19c00864", "date": "2026-06-20T19:59:59+02:00", "subject": "feat: add STEE v1 source register"}
 {"commit": "652a6a33ca449216346e83c97057f1cb1f212f46", "date": "2026-06-20T19:42:03+02:00", "subject": "feat: add Digital Twin v1 project data core"}
 {"commit": "df6a9fc9b0017ab9f6af238758da2190da696155", "date": "2026-06-20T19:30:10+02:00", "subject": "feat: add AAIE v1 inference engine"}
-{"commit": "8a3ceb7f901bd9a397d1b82bbeac5ec85212c106", "date": "2026-06-20T18:51:32+02:00", "subject": "chore: remove python cache files"}

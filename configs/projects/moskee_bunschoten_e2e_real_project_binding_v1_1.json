@@ -86,6 +86,13 @@
       "purpose": "Real-project E2E execution binding for official AUTONOME PHOENIX-FLOW",
       "production_locked": true,
       "for_construction_locked": true
+    },
+    "phoenix_architectural_engine_route": {
+      "route": "NONRESIDENTIAL_REUSE_V1",
+      "reason": "v1.4/v1.5 real-project evidence: tropical residential semantics incompatible; reuse existing generic Phoenix architecture components",
+      "canonical_project_file": "configs/projects/moskee_bunschoten.json",
+      "production_locked": true,
+      "for_construction_locked": true
     }
   }
 }
