@@ -19,9 +19,39 @@ def look_at(obj,pt=(0,0,3)):
     obj.rotation_euler=direction.to_track_quat('-Z','Y').to_euler()
 look_at(cam)
 scene=bpy.context.scene
-scene.render.engine='BLENDER_EEVEE_NEXT'
+_phoenix_engine_candidates = ('CYCLES', 'BLENDER_EEVEE_NEXT', 'BLENDER_EEVEE', 'BLENDER_WORKBENCH')
+_phoenix_selected_engine = None
+for _phoenix_engine in _phoenix_engine_candidates:
+    try:
+        scene.render.engine = _phoenix_engine
+        _phoenix_selected_engine = _phoenix_engine
+        break
+    except (TypeError, ValueError):
+        continue
+if _phoenix_selected_engine is None:
+    raise RuntimeError('PHOENIX_NO_SUPPORTED_BLENDER_RENDER_ENGINE')
+if _phoenix_selected_engine == 'CYCLES':
+    try:
+        scene.cycles.device = 'CPU'
+    except Exception:
+        pass
+    try:
+        scene.cycles.samples = 16
+    except Exception:
+        pass
+    try:
+        scene.cycles.use_denoising = False
+    except Exception:
+        pass
+print('PHOENIX_RENDER_ENGINE=' + _phoenix_selected_engine)
+print('PHOENIX_RENDER_DEVICE=' + ('CPU' if _phoenix_selected_engine == 'CYCLES' else 'DEFAULT'))
+
 scene.render.resolution_x=1280;scene.render.resolution_y=720;scene.render.resolution_percentage=100
 scene.render.filepath=str(out)
 scene.render.image_settings.file_format='PNG'
-scene.world.color=(0.06,0.09,0.13)
+if scene.world is None:
+    scene.world = bpy.data.worlds.new('PHOENIX_WORLD')
+scene.world.color = (0.06,0.09,0.13)
+print('PHOENIX_WORLD_READY=PASS')
+
 bpy.ops.render.render(write_still=True)

@@ -8222,6 +8222,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "6aadac0c1d218cc559790660c899ec5785c2a080",
+      "path": "docs/automation/PHOENIX_BLENDER_5_2_CYCLES_CPU_RENDER_REPAIR_v1_0_R2.md",
+      "sha256": "23df2e445f0f6a7f662572e4b18e954b1876968f4dc0133d9aacb41426059834"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "9f55a880834168c4d39e98ce85e714cce37c6f61",
+      "path": "docs/automation/PHOENIX_BLENDER_5_2_CYCLES_CPU_RENDER_REPAIR_v1_0_R2_EVIDENCE.txt",
+      "sha256": "7af228f7a3e102742040177f7180263f4299bb1e95fc5b74f4a88645b5210d22"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "4fce15cf28f741cea78ad5bfab48df2d049bf2b7",
       "path": "docs/automation/PHOENIX_CALCULIX_ANALYTICAL_VERIFICATION_EXPANSION_MASTERPACK_v1_0.md",
       "sha256": "015d888d1316962ac3d9ccca87ac0c7fd2121c24314748264dd57d8b70082803"
@@ -15998,7 +16016,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "02e24a513276d220de2b05b520d46ec2259e981d",
+      "git_oid": "9dc66ca717fb1f4d50edc21a400796c4dac06ab7",
       "path": "phoenix/engines/adapters/blender_phoenix_render_script_v1_0.py",
       "sha256": null
     },
@@ -22037,6 +22055,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "2d3770aa1095b650ef72c40b84a3b479e7b558ca",
+      "path": "tests/automation/test_phoenix_blender_5_2_cycles_cpu_render_v1_0_R2.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "403057f87b7a343dd009d806a8b6dbc1174d2c92",
       "path": "tests/automation/test_phoenix_calculix_analytical_verification_expansion_v1_0.py",
       "sha256": null
@@ -24779,5 +24806,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "b2d1b9e8819f80397fbe8de4f47727a40d63237762b81d2df32874f8419b7c9b"
+  "source_digest": "af804c593df5d9af51bc50b49d9d037cacdbbc7eb94ea11a8d5fa7fc7029264b"
 }
