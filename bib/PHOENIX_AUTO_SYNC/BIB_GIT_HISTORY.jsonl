@@ -1,3 +1,4 @@
+{"commit": "c747697b932a99575797e0522c52f5906e94db73", "date": "2026-08-21T11:45:56+02:00", "subject": "fix(validation): expand real-project E2E runtime discovery"}
 {"commit": "54b2ac361c2bb49c4eb43fe129ea38fb516dad7e", "date": "2026-08-21T11:36:41+02:00", "subject": "feat(validation): prepare real-project end-to-end evidence harness"}
 {"commit": "791be38ebcccea67f019f0a716c6691c98745ed4", "date": "2026-08-21T11:17:14+02:00", "subject": "fix(start): stop periodic visual refresh and release trapped pointer"}
 {"commit": "91421bda612759da48c1dfeec1bdb7b6704dec83", "date": "2026-08-21T01:10:37+02:00", "subject": "fix(start): align autonomous flow with standard and stabilize pointer hover"}
@@ -497,4 +498,3 @@
 {"commit": "8a3ceb7f901bd9a397d1b82bbeac5ec85212c106", "date": "2026-06-20T18:51:32+02:00", "subject": "chore: remove python cache files"}
 {"commit": "7a73d57281c89ff293f6dbb6d28b193f0cc22176", "date": "2026-06-20T18:38:59+02:00", "subject": "chore: remove python cache files from repository"}
 {"commit": "81921a7272953b26731d7dcff6737ec7978c39df", "date": "2026-06-20T18:34:47+02:00", "subject": "chore: add gitignore"}
-{"commit": "2019b3e97249d277196cbe28703a3bf421f206c3", "date": "2026-06-20T17:48:28+02:00", "subject": "feat: add BAOEES project analyzer v1"}

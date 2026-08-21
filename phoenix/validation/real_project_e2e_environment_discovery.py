@@ -10,18 +10,33 @@ import re
 import shutil
 import subprocess
 
-TOOL_PATTERNS = {
-    "freecad": ("FreeCADCmd.exe", "FreeCAD.exe", "FreeCADCmd", "FreeCAD"),
-    "blender": ("blender.exe", "blender"),
-    "calculix": ("ccx.exe", "ccx_*.exe", "ccx"),
+TOOL_RULES = {
+    "freecad": {
+        "glob": ("FreeCADCmd.exe", "FreeCAD.exe", "FreeCADCmd", "FreeCAD"),
+        "basename_rx": re.compile(r"(?i)^freecad(?:cmd)?(?:\.exe)?$"),
+        "version_args": ("--version",),
+    },
+    "blender": {
+        "glob": ("blender.exe", "blender"),
+        "basename_rx": re.compile(r"(?i)^blender(?:\.exe)?$"),
+        "version_args": ("--version",),
+    },
+    "calculix": {
+        "glob": ("ccx.exe", "ccx_*.exe", "ccx"),
+        "basename_rx": re.compile(r"(?i)^ccx(?:_[0-9A-Za-z.\-]+)?(?:\.exe)?$"),
+        "version_args": ("-v",),
+    },
 }
 
-def unique_existing(paths):
+def is_tool_binary(tool: str, path: Path) -> bool:
+    return bool(TOOL_RULES[tool]["basename_rx"].match(path.name))
+
+def unique_tool_paths(tool: str, paths):
     seen = set()
     out = []
-    for p in paths:
-        p = Path(p)
-        if not p.exists():
+    for raw in paths:
+        p = Path(raw)
+        if not p.exists() or not p.is_file() or not is_tool_binary(tool, p):
             continue
         try:
             rp = p.resolve()
@@ -34,35 +49,28 @@ def unique_existing(paths):
         out.append(str(rp))
     return out
 
-def command_candidates(names):
+def path_candidates(tool: str):
     out = []
-    for name in names:
+    for name in TOOL_RULES[tool]["glob"]:
         hit = shutil.which(name)
         if hit:
             out.append(Path(hit))
     return out
 
-def repo_candidates(repo, patterns):
+def repo_candidates(repo: Path, tool: str):
     out = []
-    search_roots = [
-        repo / "tools",
-        repo / "vendor",
-        repo / "engines",
-        repo / "apps",
-        repo / "phoenix",
-        repo / "runners",
-    ]
-    for root in search_roots:
+    roots = [repo / "tools", repo / "vendor", repo / "engines", repo / "apps", repo / "phoenix"]
+    for root in roots:
         if not root.exists():
             continue
-        for pattern in patterns:
+        for pattern in TOOL_RULES[tool]["glob"]:
             try:
-                out.extend(p for p in root.rglob(pattern) if p.is_file())
+                out.extend(p for p in root.rglob(pattern) if p.is_file() and is_tool_binary(tool, p))
             except OSError:
                 pass
     return out
 
-def common_windows_candidates(patterns):
+def common_windows_candidates(tool: str):
     if os.name != "nt":
         return []
     roots = []
@@ -82,22 +90,22 @@ def common_windows_candidates(patterns):
         except OSError:
             pass
         for base in bases:
-            for child in (base, base / "bin"):
-                if not child.exists():
+            for candidate_root in (base, base / "bin"):
+                if not candidate_root.exists():
                     continue
-                for pattern in patterns:
+                for pattern in TOOL_RULES[tool]["glob"]:
                     try:
-                        out.extend(p for p in child.glob(pattern) if p.is_file())
+                        out.extend(
+                            p for p in candidate_root.glob(pattern)
+                            if p.is_file() and is_tool_binary(tool, p)
+                        )
                     except OSError:
                         pass
     return out
 
-def configured_path_candidates(repo, tool):
-    keywords = {
-        "freecad": ("freecadcmd", "freecad.exe", "freecad"),
-        "blender": ("blender.exe", "blender"),
-        "calculix": ("ccx.exe", "ccx_", "calculix"),
-    }[tool]
+def configured_candidates(repo: Path, tool: str):
+    # Extract Windows executable paths, but attribute them only if the executable
+    # basename itself matches the requested tool. Keyword proximity alone is forbidden.
     path_rx = re.compile(r'(?i)([A-Z]:[\\/][^"\'`\r\n]+?\.(?:exe|cmd|bat))')
     out = []
     for suffix in ("*.json", "*.ps1", "*.py", "*.md", "*.txt"):
@@ -109,39 +117,55 @@ def configured_path_candidates(repo, tool):
                 text = path.read_text(encoding="utf-8", errors="ignore")
             except OSError:
                 continue
-            low = text.lower()
-            if not any(k in low for k in keywords):
-                continue
             for match in path_rx.findall(text):
                 candidate = Path(match.replace("\\\\", "\\"))
-                if candidate.exists():
+                if candidate.exists() and is_tool_binary(tool, candidate):
                     out.append(candidate)
     return out
 
-def detect_tool(repo, tool):
-    patterns = TOOL_PATTERNS[tool]
-    found = []
-    found.extend(command_candidates(patterns))
-    found.extend(repo_candidates(repo, patterns))
-    found.extend(common_windows_candidates(patterns))
-    found.extend(configured_path_candidates(repo, tool))
-    paths = unique_existing(found)
+def version_probe(tool: str, executable: str):
+    args = list(TOOL_RULES[tool]["version_args"])
+    try:
+        cp = subprocess.run(
+            [executable] + args,
+            text=True,
+            capture_output=True,
+            timeout=8,
+        )
+        text = (cp.stdout + cp.stderr).strip()
+        # Some native tools use non-zero status for informational version output.
+        return {
+            "attempted": True,
+            "exit_code": cp.returncode,
+            "output": text[:500],
+        }
+    except Exception as exc:
+        return {"attempted": True, "exit_code": 127, "output": str(exc)[:500]}
+
+def detect_tool(repo: Path, tool: str):
+    paths = []
+    paths.extend(path_candidates(tool))
+    paths.extend(repo_candidates(repo, tool))
+    paths.extend(common_windows_candidates(tool))
+    paths.extend(configured_candidates(repo, tool))
+    paths = unique_tool_paths(tool, paths)
+
+    probes = {p: version_probe(tool, p) for p in paths}
     return {
         "available": bool(paths),
         "paths": paths,
         "preferred": paths[0] if paths else "",
+        "version_probes": probes,
+        "strict_basename_attribution": True,
     }
 
-def detect_browser_backends(repo):
+def detect_browser_backends(repo: Path):
     playwright_py = importlib.util.find_spec("playwright") is not None
     selenium_py = importlib.util.find_spec("selenium") is not None
 
     playwright_cli = []
     for base in (repo, Path.cwd()):
-        for rel in (
-            Path("node_modules/.bin/playwright.cmd"),
-            Path("node_modules/.bin/playwright"),
-        ):
+        for rel in (Path("node_modules/.bin/playwright.cmd"), Path("node_modules/.bin/playwright")):
             p = base / rel
             if p.exists():
                 playwright_cli.append(str(p.resolve()))
@@ -149,13 +173,7 @@ def detect_browser_backends(repo):
     npm = shutil.which("npm.cmd") or shutil.which("npm")
     if npm:
         try:
-            cp = subprocess.run(
-                [npm, "root", "-g"],
-                cwd=repo,
-                text=True,
-                capture_output=True,
-                timeout=8,
-            )
+            cp = subprocess.run([npm, "root", "-g"], cwd=repo, text=True, capture_output=True, timeout=8)
             if cp.returncode == 0:
                 root = Path(cp.stdout.strip())
                 for rel in (Path("playwright/cli.js"), Path("playwright-core/cli.js")):
@@ -165,12 +183,11 @@ def detect_browser_backends(repo):
         except Exception:
             pass
 
-    playwright_cli = list(dict.fromkeys(playwright_cli))
     return {
         "playwright_primary": {
             "available": bool(playwright_py or playwright_cli),
             "python_module": playwright_py,
-            "cli_paths": playwright_cli,
+            "cli_paths": list(dict.fromkeys(playwright_cli)),
             "network_fetch_attempted": False,
         },
         "selenium_fallback": {
@@ -179,7 +196,7 @@ def detect_browser_backends(repo):
         },
     }
 
-def project_identity(path):
+def project_identity(path: Path):
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
@@ -189,7 +206,7 @@ def project_identity(path):
     name = str(data.get("name") or identity.get("name") or pid)
     return pid, name
 
-def classify_projects(repo):
+def classify_projects(repo: Path):
     real_roots = []
     for filename in ("bruynzeel_waterfront.json", "moskee_bunschoten.json", "plutostraat.json"):
         path = repo / "configs" / "projects" / filename
@@ -214,9 +231,8 @@ def classify_projects(repo):
                 "classification": "pilot_or_validation_project",
             })
 
-    total = len(list((repo / "configs" / "projects").glob("*.json")))
     return {
-        "all_config_count": total,
+        "all_config_count": len(list((repo / "configs" / "projects").glob("*.json"))),
         "real_root_candidates": real_roots,
         "pilot_candidates": pilots,
         "selection_required": True,
@@ -231,11 +247,7 @@ def main():
     repo = Path(ns.repo).resolve()
     result = {
         "browser_evidence": detect_browser_backends(repo),
-        "tools": {
-            "freecad": detect_tool(repo, "freecad"),
-            "blender": detect_tool(repo, "blender"),
-            "calculix": detect_tool(repo, "calculix"),
-        },
+        "tools": {tool: detect_tool(repo, tool) for tool in ("freecad", "blender", "calculix")},
         "projects": classify_projects(repo),
         "release": {"production": "LOCKED", "for_construction": "LOCKED"},
     }
@@ -246,15 +258,16 @@ def main():
         out.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
 
     print("E2E_RUNTIME_DISCOVERY=PASS")
-    pw = result["browser_evidence"]["playwright_primary"]
-    se = result["browser_evidence"]["selenium_fallback"]
-    print("PLAYWRIGHT_PRIMARY=" + ("AVAILABLE" if pw["available"] else "NOT_DETECTED"))
+    print("STRICT_TOOL_PATH_ATTRIBUTION=PASS")
+    print("PLAYWRIGHT_PRIMARY=" + ("AVAILABLE" if result["browser_evidence"]["playwright_primary"]["available"] else "NOT_DETECTED"))
     print("PLAYWRIGHT_NETWORK_FETCH_ATTEMPTED=NO")
-    print("SELENIUM_FALLBACK=" + ("AVAILABLE" if se["available"] else "NOT_DETECTED"))
+    print("SELENIUM_FALLBACK=" + ("AVAILABLE" if result["browser_evidence"]["selenium_fallback"]["available"] else "NOT_DETECTED"))
 
     for tool in ("freecad", "blender", "calculix"):
         info = result["tools"][tool]
         print(tool.upper() + "=" + ("AVAILABLE" if info["available"] else "NOT_DETECTED"))
+        if info["preferred"]:
+            print(tool.upper() + "_PREFERRED=" + info["preferred"])
         for path in info["paths"]:
             print(tool.upper() + "_PATH=" + path)
 

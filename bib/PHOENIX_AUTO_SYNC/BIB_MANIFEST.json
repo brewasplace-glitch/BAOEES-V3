@@ -9077,6 +9077,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "f55d4300fab81a534350ae976d8a75d85dddb3a9",
+      "path": "docs/automation/PHOENIX_REAL_PROJECT_E2E_PATH_ATTRIBUTION_REPAIR_v1_2.md",
+      "sha256": "d7a8fc0d400ef39f5c6ce443c96151a73f282afb221902732ffcba46c77fc99f"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "1265ed0690b2426c90ee26db4896ae075885f1de",
+      "path": "docs/automation/PHOENIX_REAL_PROJECT_E2E_PATH_ATTRIBUTION_REPAIR_v1_2_EVIDENCE.txt",
+      "sha256": "9ffaa80921d629468cf9782ce59725462871771fc2e18de9a079e4afd37a7fa2"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "f9f40ed40d9408d34864f034603a4165b7c42325",
       "path": "docs/automation/PHOENIX_REAL_PROJECT_E2E_RUNTIME_DISCOVERY_v1_1.md",
       "sha256": "b5f9b3cf7cfed27020ef8d4b3765f2dc2e1c600766e4ef099c105d0d1f9330c9"
@@ -17771,7 +17789,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "6ac4dd1db8e3a13405e5a39ce0d8e02ffc13db03",
+      "git_oid": "b2145011fdcf09e3a22a449852a704a625341fb0",
       "path": "phoenix/validation/real_project_e2e_environment_discovery.py",
       "sha256": null
     },
@@ -22910,6 +22928,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "83fa721e1ce1a7e9b957c6cf7c6c9ea001fa8138",
+      "path": "tests/automation/test_phoenix_real_project_e2e_path_attribution_v1_2.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4f783efd0a79e3683faed4a3953546bedbe3b873",
       "path": "tests/automation/test_phoenix_real_project_e2e_readiness_v1_0.py",
       "sha256": null
@@ -24635,5 +24662,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "3ac1b07521f804c2d5dbefcf106f732ab7373bd6b486ddcea72415d8b6169ef5"
+  "source_digest": "6ec9c8db845f71d21981f1b9a0ce19984eecae42d7b54532be00cc3d0e3904bf"
 }
