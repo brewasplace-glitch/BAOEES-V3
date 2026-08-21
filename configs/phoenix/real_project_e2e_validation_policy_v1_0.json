@@ -1,0 +1,60 @@
+{
+  "id": "PROJECT_PHOENIX_REAL_PROJECT_E2E_VALIDATION_HARNESS_v1_0",
+  "baseline_binding": "791be38ebcccea67f019f0a716c6691c98745ed4",
+  "browser_evidence": {
+    "primary": {
+      "engine": "Playwright",
+      "license": "Apache-2.0",
+      "evidence": [
+        "screenshots",
+        "video",
+        "trace",
+        "console",
+        "network"
+      ]
+    },
+    "fallback": {
+      "engine": "Selenium WebDriver",
+      "license": "Apache-2.0",
+      "evidence": [
+        "screenshots",
+        "browser_logs_when_available"
+      ]
+    },
+    "installation_policy": "detect_only_in_harness_install; do_not_auto_install"
+  },
+  "required_chain": [
+    "visual_stability_evidence",
+    "real_project_identity",
+    "A_to_E_variants",
+    "recommended_variant",
+    "authoritative_IFC",
+    "FreeCAD",
+    "Blender",
+    "DE_TV_visual_route",
+    "drawing_viewer",
+    "CalculiX_if_structural_scope",
+    "raw_solver_evidence",
+    "normalized_results",
+    "reports",
+    "delivery_manifest",
+    "BIB_currentness",
+    "final_sha256_evidence_manifest"
+  ],
+  "visual_gates": {
+    "json_is_not_visual_proof": true,
+    "blank_visual_fails": true,
+    "project_scope_required": true,
+    "viewer_must_resolve_underlying_artifact": true
+  },
+  "selection": {
+    "project_source": "configs/projects/*.json",
+    "auto_select": false,
+    "reason": "real-project validation must not silently choose among multiple project configs"
+  },
+  "release": {
+    "production_release": "LOCKED",
+    "for_construction": "LOCKED",
+    "label": "CONCEPT ONLY / NOT FOR CONSTRUCTION"
+  }
+}
