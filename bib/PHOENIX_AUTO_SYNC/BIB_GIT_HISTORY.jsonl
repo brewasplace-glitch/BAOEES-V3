@@ -1,3 +1,4 @@
+{"commit": "9b23fd9ecc05d6ea20495fbc69dd708c271456ce", "date": "2026-08-21T17:22:25+02:00", "subject": "fix(blender): use Cycles CPU for Blender 5.2 headless render"}
 {"commit": "1a9ddb44256f05e6e355d4e5ee3818c3521aa10e", "date": "2026-08-21T15:47:22+02:00", "subject": "feat(architecture): route Moskee through nonresidential reuse pipeline"}
 {"commit": "c83450d8c48e01a81d668a53a4f2e81370273e23", "date": "2026-08-21T13:11:36+02:00", "subject": "fix(validation): repair Moskee E2E browser evidence and project binding"}
 {"commit": "c6c5f875a26fe9a882d1cedcd7ff623a4a34988b", "date": "2026-08-21T12:50:05+02:00", "subject": "feat(validation): bind Moskee Bunschoten real-project E2E"}
@@ -497,4 +498,3 @@
 {"commit": "bac8cdb27701207f373d71a02cd1bc32bac69d4b", "date": "2026-06-20T20:27:51+02:00", "subject": "feat: add Workflow Engine v1 orchestration"}
 {"commit": "ae7c90c7d2bbfbc04635ea71d4ff9d79a18d7263", "date": "2026-06-20T20:13:42+02:00", "subject": "feat: add Variant Engine v1 design options"}
 {"commit": "fd184f9d8d077ad9a040dd505423588a19c00864", "date": "2026-06-20T19:59:59+02:00", "subject": "feat: add STEE v1 source register"}
-{"commit": "652a6a33ca449216346e83c97057f1cb1f212f46", "date": "2026-06-20T19:42:03+02:00", "subject": "feat: add Digital Twin v1 project data core"}

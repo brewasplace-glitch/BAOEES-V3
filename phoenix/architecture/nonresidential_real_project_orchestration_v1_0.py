@@ -195,26 +195,62 @@ def _selected_contract(project_id: str, model: Dict[str, Any], spec: Dict[str, A
 
 
 def _freecad_handoff(ifc_path: Path, output: Path, scratch: Path) -> None:
+    """Create a FreeCAD handoff derived from the authoritative IFC."""
     freecad = Path(r"C:\Program Files\FreeCAD 1.1\bin\freecadcmd.exe")
     if not freecad.is_file():
         raise RuntimeError(f"FreeCAD strict runtime missing: {freecad}")
+
+    from phoenix.engines.ifc_visual_mesh_adapter_v1_0 import ifc_to_obj
+
+    output = Path(output).resolve()
+    scratch = Path(scratch).resolve()
+    scratch.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+    obj_path = scratch / "freecad_nonresidential_ifc_derived.obj"
+    mesh_evidence = ifc_to_obj(Path(ifc_path).resolve(), obj_path)
+    if not obj_path.is_file() or obj_path.stat().st_size < 1000:
+        raise RuntimeError(f"FreeCAD handoff derived OBJ missing or too small: {mesh_evidence}")
+
     script = scratch / "freecad_nonresidential_handoff.py"
     script.write_text(
         "import FreeCAD as App\n"
-        "import Import\n"
+        "import Mesh\n"
         "doc=App.newDocument('PHOENIX_NONRESIDENTIAL_E2E')\n"
-        f"Import.insert({str(ifc_path)!r}, doc.Name)\n"
+        f"mesh=Mesh.Mesh({str(obj_path)!r})\n"
+        "obj=doc.addObject('Mesh::Feature','IFC_DERIVED_MESH')\n"
+        "obj.Label='IFC-derived presentation mesh - authoritative source remains IFC'\n"
+        "obj.Mesh=mesh\n"
         "doc.recompute()\n"
         f"doc.saveAs({str(output)!r})\n"
-        "print('FREECAD_NONRESIDENTIAL_HANDOFF=PASS')\n",
+        "print('FREECAD_NONRESIDENTIAL_HANDOFF=PASS')\n"
+        "print('FREECAD_HANDOFF_ROLE=IFC_DERIVED_PRESENTATION_MESH')\n"
+        "print('FREECAD_OBJECT_COUNT=' + str(len(doc.Objects)))\n",
         encoding="utf-8",
     )
-    cp = subprocess.run([str(freecad), str(script)], cwd=scratch, text=True, capture_output=True, timeout=600)
-    if cp.returncode != 0:
-        raise RuntimeError(f"FreeCAD handoff failed ({cp.returncode}): {cp.stdout[-6000:]} {cp.stderr[-6000:]}")
-    if not output.is_file() or output.stat().st_size < 1000:
-        raise RuntimeError("FreeCAD handoff output missing or too small")
 
+    cp = subprocess.run(
+        [str(freecad), str(script)],
+        cwd=scratch,
+        text=True,
+        capture_output=True,
+        timeout=600,
+    )
+    if cp.returncode != 0:
+        raise RuntimeError(
+            f"FreeCAD handoff failed ({cp.returncode}): "
+            f"{cp.stdout[-6000:]} {cp.stderr[-6000:]}"
+        )
+    if not output.is_file() or output.stat().st_size < 1000:
+        raise RuntimeError(
+            "FreeCAD handoff output missing or too small; "
+            f"stdout={cp.stdout[-3000:]!r}; stderr={cp.stderr[-3000:]!r}"
+        )
+    if "FREECAD_NONRESIDENTIAL_HANDOFF=PASS" not in cp.stdout:
+        raise RuntimeError(
+            "FreeCAD handoff output exists but PASS evidence is missing; "
+            f"stdout={cp.stdout[-3000:]!r}; stderr={cp.stderr[-3000:]!r}"
+        )
 
 def _detv_viewer(media_dir: Path, project_name: str, variant_entries: List[Dict[str, Any]], recommended_id: str, blender_render: Path) -> Path:
     rows = []

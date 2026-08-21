@@ -8654,6 +8654,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "65f09553ed8d7718b1a8fb98a0a16845e1a8106f",
+      "path": "docs/automation/PHOENIX_FREECAD_IFC_DERIVED_MESH_HANDOFF_REPAIR_v1_0.md",
+      "sha256": "195de27e9645594c4b515e0707f1b8e958ef0205a34c474d2191fb11fe8f9165"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "7744703eede4453abd01a2b259a1e5ee15c72680",
+      "path": "docs/automation/PHOENIX_FREECAD_IFC_DERIVED_MESH_HANDOFF_REPAIR_v1_0_EVIDENCE.txt",
+      "sha256": "a6fa7328dbdff7ab91a4c3ea9338284a00a53482eba74e1865d55b0c3761e846"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "84bd113ba78c2c7a926b62b9e3b33a9b8c7247d1",
       "path": "docs/automation/PHOENIX_GENERIC_SESSION_ADAPTER_MASTERPACK_v1_0.md",
       "sha256": "e82bcbadeb60215e94c4b354a7ba64daa9bd8b1e3e8f4f2845107e9f3a7f2bb7"
@@ -14135,7 +14153,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "097133090f04a543a3a8444482ae53969a7a1adf",
+      "git_oid": "457d640212df9afaac8b7e4c9fc4c8eed5bc445c",
       "path": "phoenix/architecture/nonresidential_real_project_orchestration_v1_0.py",
       "sha256": null
     },
@@ -22442,6 +22460,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "acb517887e4f726e149f983f5978e4e7aea76307",
+      "path": "tests/automation/test_phoenix_freecad_ifc_derived_mesh_handoff_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "f9a30e6dd86eb88593353456d4b9a6bee5a243f3",
       "path": "tests/automation/test_phoenix_frontend_localization_nl_v1_0.py",
       "sha256": null
@@ -24806,5 +24833,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "af804c593df5d9af51bc50b49d9d037cacdbbc7eb94ea11a8d5fa7fc7029264b"
+  "source_digest": "ba3164dbb46108679bea963b0913a0c53d7e26642eb6eed79bd080720888111d"
 }
