@@ -8150,6 +8150,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "ac0a3ef5b3eea97e13e06678e638fa6643e9c5ea",
+      "path": "docs/automation/PHOENIX_ARCHITECTURAL_DELIVERY_MANIFEST_COLLECTOR_CONTRACT_REPAIR_v1_0.md",
+      "sha256": "b3f05a455e05dd1425efb74068f2b18bb9a4345509a11b53c88da797b4819d7d"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "57562a8ab4938273125a0e2f90b4371e3e2ba6c7",
+      "path": "docs/automation/PHOENIX_ARCHITECTURAL_DELIVERY_MANIFEST_COLLECTOR_CONTRACT_REPAIR_v1_0_EVIDENCE.txt",
+      "sha256": "74b4d18cacf0bc9a8f2e207960eee7773eb93ca5bdf559cc08a1413fa9f8e4d2"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "4003cbb5df31cd7ed6ade19335a529441a83d6ce",
       "path": "docs/automation/PHOENIX_AUTONOMOUS_ARCHITECTURAL_BOOTSTRAP_PAT_CONTINUATION_MASTERPACK_v1_0.md",
       "sha256": "5e043ae20a1cb380dcad2fb7d694f5f8b1c1413c5d76b07115eb830771bf6993"
@@ -16340,7 +16358,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "7b7f91d39a45672deae0cb901afe2a692f94944f",
+      "git_oid": "a77f0b199c145d558bf1c55a10d019ca54f1cf73",
       "path": "phoenix/local_app/architectural_orchestration_runtime.py",
       "sha256": null
     },
@@ -21812,6 +21830,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4267d8c54ad85de3d6e20bb0a423ecaaca4bcb25",
+      "path": "tests/automation/test_phoenix_architectural_manifest_collector_contract_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "3857a82ad45a2208ab1383e51f7de877d52235c3",
       "path": "tests/automation/test_phoenix_architectural_visual_design_stack_v1_0.py",
       "sha256": null
@@ -24833,5 +24860,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "ba3164dbb46108679bea963b0913a0c53d7e26642eb6eed79bd080720888111d"
+  "source_digest": "4a42e2a6d7c9a53bd4423a76bd973b0be7ec1d77f3fd2dab91c7e59476da3ce0"
 }

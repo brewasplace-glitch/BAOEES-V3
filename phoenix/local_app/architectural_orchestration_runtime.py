@@ -150,6 +150,84 @@ class ArchitecturalOrchestrationRuntime:
             )
         return path, project
 
+    @staticmethod
+    def _delivery_folder(project: dict[str, Any]) -> str:
+        metadata = project.get("metadata") if isinstance(project.get("metadata"), dict) else {}
+        route_value = metadata.get("phoenix_architectural_engine_route")
+        route_config = route_value if isinstance(route_value, dict) else {}
+        route = str(route_config.get("route") or "")
+        if route == "NONRESIDENTIAL_REUSE_V1":
+            return "nonresidential_reuse_v1"
+        return "architectural_ae_v1_0"
+
+    def _planned_delivery_manifest(self, project_id: str, project: dict[str, Any]) -> Path:
+        return (
+            self.runtime_root
+            / project_id
+            / "delivery"
+            / self._delivery_folder(project)
+            / "delivery_manifest.json"
+        )
+
+    def _result_manifest_from_log(
+        self,
+        job: ArchitecturalOrchestrationJob,
+        log_path: Path,
+    ) -> Path | None:
+        try:
+            text = log_path.read_text(encoding="utf-8")
+        except OSError:
+            return None
+
+        payload_text = text.split("\n\n", 1)[1].strip() if "\n\n" in text else text.strip()
+        decoder = json.JSONDecoder()
+        payload = None
+        for offset, char in enumerate(payload_text):
+            if char != "{":
+                continue
+            try:
+                candidate, _end = decoder.raw_decode(payload_text[offset:])
+            except json.JSONDecodeError:
+                continue
+            if isinstance(candidate, dict) and (
+                candidate.get("manifest_path") or candidate.get("delivery_manifest")
+            ):
+                payload = candidate
+                break
+
+        if payload is None:
+            return None
+
+        payload_project_id = str(payload.get("project_id") or "")
+        if payload_project_id and payload_project_id != job.project_id:
+            raise RuntimeError(
+                "Architectural orchestration result project_id mismatch: "
+                f"{payload_project_id!r} != {job.project_id!r}"
+            )
+
+        manifest_value = payload.get("manifest_path") or payload.get("delivery_manifest")
+        manifest = Path(str(manifest_value))
+        if not manifest.is_absolute():
+            manifest = self.repository / manifest
+        manifest = manifest.resolve()
+
+        project_runtime = (self.runtime_root / job.project_id).resolve()
+        try:
+            manifest.relative_to(project_runtime)
+        except ValueError as error:
+            raise RuntimeError(
+                "Architectural orchestration manifest escapes project runtime: "
+                + str(manifest)
+            ) from error
+
+        if manifest.name != "delivery_manifest.json":
+            raise RuntimeError(
+                "Architectural orchestration result does not reference delivery_manifest.json: "
+                + str(manifest)
+            )
+
+        return manifest
+
     def plan(self, project_file: str) -> dict[str, Any]:
         capability = self.capability()
         if not capability["available"]:
@@ -162,7 +240,7 @@ class ArchitecturalOrchestrationRuntime:
             "--project-json", str(path),
             "--runtime-root", str(self.runtime_root),
         ]
-        manifest = self.runtime_root / project_id / "delivery" / "architectural_ae_v1_0" / "delivery_manifest.json"
+        manifest = self._planned_delivery_manifest(project_id, project)
         return {
             "project_id": project_id,
             "project_file": path.relative_to(self.repository).as_posix(),
@@ -233,10 +311,16 @@ class ArchitecturalOrchestrationRuntime:
                 job.status = "FAILED"
                 job.error = f"Orchestration stopte met exitcode {return_code}."
             else:
-                manifest = self.runtime_root / job.project_id / "delivery" / "architectural_ae_v1_0" / "delivery_manifest.json"
+                manifest = self._result_manifest_from_log(job, log_path)
+                if manifest is None:
+                    _project_path, project = self._resolve_project(job.project_file)
+                    manifest = self._planned_delivery_manifest(job.project_id, project)
                 if not manifest.is_file():
                     job.status = "FAILED"
-                    job.error = "Delivery manifest ontbreekt na geslaagde proces-exit."
+                    job.error = (
+                        "Delivery manifest ontbreekt na geslaagde proces-exit: "
+                        + str(manifest)
+                    )
                 else:
                     value = json.loads(manifest.read_text(encoding="utf-8"))
                     job.recommended_variant_id = str(value.get("recommended_variant_id", "")) or None
