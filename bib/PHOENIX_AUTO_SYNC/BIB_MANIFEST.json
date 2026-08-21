@@ -6512,9 +6512,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "7aa96fd9440c4306c48a5cc2495d11d91971fd88",
+      "git_oid": "fd9919a70196027274fc5f242b679d85b799e9b4",
       "path": "configs/projects/moskee_bunschoten_e2e_real_project_binding_v1_1.json",
-      "sha256": "2c1c68cf74e0693f6cc82591ba48b9c5e30a9e3ccd99df93743741da9641bf54"
+      "sha256": "b9f41b0f8c970b081de65ab661d5ec3166f0a1a58cf2da9206e91192ede33654"
     },
     {
       "chunks": 1,
@@ -8819,6 +8819,24 @@
       "git_oid": "5e59d09bf4b4e9097503591d41b1eb83d2bc40e7",
       "path": "docs/automation/PHOENIX_MOSKEE_BUNSCHOTEN_REAL_PROJECT_E2E_v1_0.md",
       "sha256": "10b18599cdc38086c8f1f947ac9246a85e3670838df9ceec4feb7367203fd021"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "75f1de37681e1985c2d395bd92b3d4d292ca818c",
+      "path": "docs/automation/PHOENIX_MOSKEE_STRUCTURAL_CAPABILITY_ACTIVATION_REPAIR_v1_0.md",
+      "sha256": "b5dd8583b1cb8fa0a247adf76b8c5e78921eef485aa6415653ee9ab97ccf38ed"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "08e081d2bca0812ad1c93133258338871df244ab",
+      "path": "docs/automation/PHOENIX_MOSKEE_STRUCTURAL_CAPABILITY_ACTIVATION_REPAIR_v1_0_EVIDENCE.txt",
+      "sha256": "97d4f15b8ce65ec1b1f1e9f3e321c8184ff579264ac93be9e258fddcdad8ab40"
     },
     {
       "chunks": 1,
@@ -22721,6 +22739,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "700410a98f211067f58a738914f5dce903291b13",
+      "path": "tests/automation/test_phoenix_moskee_structural_capability_activation_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "2d0e1ece167d58f854dff431e1b05136afb52713",
       "path": "tests/automation/test_phoenix_multi_agent_orchestrator_v19_0.py",
       "sha256": null
@@ -24860,5 +24887,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "4a42e2a6d7c9a53bd4423a76bd973b0be7ec1d77f3fd2dab91c7e59476da3ce0"
+  "source_digest": "0eb0d0957186c29f68378289c3c41d4224877aae91bfb0bd2b480c15b5aa9e4b"
 }

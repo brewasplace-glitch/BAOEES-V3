@@ -33,7 +33,12 @@
     "PDF/DOCX",
     "DWG/DXF/SKP",
     "project ZIP",
-    "bronvermelding"
+    "bronvermelding",
+    "calculations",
+    "structural_drawings",
+    "foundation_drawings",
+    "structural_analysis",
+    "foundation_design"
   ],
   "data_completeness_mode": "Bekende gegevens + Open Data + AI-aannames",
   "geo_input_mode": "grondwaterstand en geo-informatie automatisch genereren",
@@ -93,6 +98,22 @@
       "canonical_project_file": "configs/projects/moskee_bunschoten.json",
       "production_locked": true,
       "for_construction_locked": true
+    },
+    "phoenix_structural_capability_activation": {
+      "version": "1.0",
+      "route": "structural_engineering",
+      "desired_output_tokens": [
+        "calculations",
+        "structural_drawings",
+        "foundation_drawings",
+        "structural_analysis",
+        "foundation_design"
+      ],
+      "purpose": "Activate the existing generic structural v8.0-v8.12 session capability for the Moskee real-project validation binding so project-scoped solver input can be generated and executed by the existing CalculiX path.",
+      "calculix_primary": "C:\\Program Files\\FreeCAD 1.1\\bin\\ccx.exe",
+      "calculix_fallback": "C:\\msys64\\mingw64\\bin\\ccx.exe",
+      "production_release": "LOCKED",
+      "for_construction": "LOCKED"
     }
   }
 }
