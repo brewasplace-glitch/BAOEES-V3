@@ -9077,6 +9077,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "f9f40ed40d9408d34864f034603a4165b7c42325",
+      "path": "docs/automation/PHOENIX_REAL_PROJECT_E2E_RUNTIME_DISCOVERY_v1_1.md",
+      "sha256": "b5f9b3cf7cfed27020ef8d4b3765f2dc2e1c600766e4ef099c105d0d1f9330c9"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "50828db632c133d7e192d427269b7881d625f84c",
+      "path": "docs/automation/PHOENIX_REAL_PROJECT_E2E_RUNTIME_DISCOVERY_v1_1_EVIDENCE.txt",
+      "sha256": "31c36e62d33d3dce730aae443410cf99f63ccd4bc90a3fe3f43212d8037730a6"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "223616fbafc1a3e2197c20bc7d7dc9ba2c8ffe4b",
       "path": "docs/automation/PHOENIX_REAL_PROJECT_E2E_VALIDATION_HARNESS_v1_0.md",
       "sha256": "da4bd3cc6885a1873583d7f5f3555bd2c1ec20d48b4e3e37402049ea2e81cbef"
@@ -17753,6 +17771,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "6ac4dd1db8e3a13405e5a39ce0d8e02ffc13db03",
+      "path": "phoenix/validation/real_project_e2e_environment_discovery.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "7acca89ec6fd2782341d753747983aa93abd9e88",
       "path": "phoenix/validation/real_project_e2e_readiness.py",
       "sha256": null
@@ -19762,6 +19789,15 @@
       "git_mode": "100644",
       "git_oid": "6995203c1ad7ca93413b8d6cfb2180521add90bb",
       "path": "runners/PROJECT_PHOENIX_project_specific_jurisdiction_rule_profile_permit_evidence_v6_8_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "d791f346cda39465844a2be42b6e6a25784517bb",
+      "path": "runners/PROJECT_PHOENIX_real_project_e2e_environment_discovery_v1_1.ps1",
       "sha256": null
     },
     {
@@ -22865,6 +22901,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "5ad2fc332f1d01fffaa21be4367e76dab97a433c",
+      "path": "tests/automation/test_phoenix_real_project_e2e_environment_discovery_v1_1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4f783efd0a79e3683faed4a3953546bedbe3b873",
       "path": "tests/automation/test_phoenix_real_project_e2e_readiness_v1_0.py",
       "sha256": null
@@ -24590,5 +24635,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "b368b1ed2f19e1b0cc3d91e640e9118eb25617b4d325c01c313c799f037b53c7"
+  "source_digest": "3ac1b07521f804c2d5dbefcf106f732ab7373bd6b486ddcea72415d8b6169ef5"
 }
