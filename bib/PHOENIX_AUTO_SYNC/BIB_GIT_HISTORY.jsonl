@@ -1,3 +1,4 @@
+{"commit": "99ba54c911fbb1e080a66961b6a5a5306c6bc0c7", "date": "2026-08-21T11:56:12+02:00", "subject": "fix(validation): enforce strict E2E tool path attribution"}
 {"commit": "c747697b932a99575797e0522c52f5906e94db73", "date": "2026-08-21T11:45:56+02:00", "subject": "fix(validation): expand real-project E2E runtime discovery"}
 {"commit": "54b2ac361c2bb49c4eb43fe129ea38fb516dad7e", "date": "2026-08-21T11:36:41+02:00", "subject": "feat(validation): prepare real-project end-to-end evidence harness"}
 {"commit": "791be38ebcccea67f019f0a716c6691c98745ed4", "date": "2026-08-21T11:17:14+02:00", "subject": "fix(start): stop periodic visual refresh and release trapped pointer"}
@@ -497,4 +498,3 @@
 {"commit": "df6a9fc9b0017ab9f6af238758da2190da696155", "date": "2026-06-20T19:30:10+02:00", "subject": "feat: add AAIE v1 inference engine"}
 {"commit": "8a3ceb7f901bd9a397d1b82bbeac5ec85212c106", "date": "2026-06-20T18:51:32+02:00", "subject": "chore: remove python cache files"}
 {"commit": "7a73d57281c89ff293f6dbb6d28b193f0cc22176", "date": "2026-06-20T18:38:59+02:00", "subject": "chore: remove python cache files from repository"}
-{"commit": "81921a7272953b26731d7dcff6737ec7978c39df", "date": "2026-06-20T18:34:47+02:00", "subject": "chore: add gitignore"}

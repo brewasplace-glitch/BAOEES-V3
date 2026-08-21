@@ -1,0 +1,25 @@
+{
+  "id": "PROJECT_PHOENIX_MOSKEE_BUNSCHOTEN_REAL_PROJECT_E2E_v1_0",
+  "bound_baseline": "99ba54c911fbb1e080a66961b6a5a5306c6bc0c7",
+  "project_file": "configs/projects/moskee_bunschoten.json",
+  "selection": "EXPLICIT_USER_GO",
+  "browser": {
+    "primary": "Playwright",
+    "primary_license": "Apache-2.0",
+    "fallback": "Selenium WebDriver",
+    "fallback_license": "Apache-2.0",
+    "venv": "C:\\PHOENIX-ENGINES\\BrowserEvidence\\venv",
+    "cache": "C:\\PHOENIX-ENGINES\\BrowserEvidence\\browsers"
+  },
+  "runtime": {
+    "freecad": "C:\\Program Files\\FreeCAD 1.1\\bin\\freecadcmd.exe",
+    "blender": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "calculix_primary": "C:\\Program Files\\FreeCAD 1.1\\bin\\ccx.exe",
+    "calculix_fallback": "C:\\msys64\\mingw64\\bin\\ccx.exe"
+  },
+  "evidence_root": "C:\\PHOENIX-E2E-EVIDENCE\\MOSKEE_BUNSCHOTEN",
+  "release": {
+    "production": "LOCKED",
+    "for_construction": "LOCKED"
+  }
+}
