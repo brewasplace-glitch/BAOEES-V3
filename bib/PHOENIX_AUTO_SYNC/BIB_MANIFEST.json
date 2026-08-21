@@ -9338,6 +9338,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "6ac44bc54d97aa08e845b276f6c9366aa789d26d",
+      "path": "docs/automation/PHOENIX_ROUTE_AWARE_SCHEMA_V8_COMPATIBILITY_BRIDGE_REPAIR_v1_0.md",
+      "sha256": "defd4cede4b966916a8fb7bcaaf978210747ca5b595156b176d7ea9670273739"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "de42fee0667a9ce190e6681a600b495770b7b828",
+      "path": "docs/automation/PHOENIX_ROUTE_AWARE_SCHEMA_V8_COMPATIBILITY_BRIDGE_REPAIR_v1_0_EVIDENCE.txt",
+      "sha256": "4dfbf8607683db8e6d81f1c125938abd8654210c50e32f8674a579718603f179"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "21b8c614dc550a1a5d5996c30a20bdde4a37a3d5",
       "path": "docs/automation/PHOENIX_SCIA_ENVIRONMENT_READINESS_HARDENING_MASTERPACK_v1_1.md",
       "sha256": "9130ff89475c9f5aa37b38d5606544474d2b9570b3547d939d8136fbbde93e2c"
@@ -14369,6 +14387,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "7d410739c3edc5f70f3205f34afcf76050bb57c4",
+      "path": "phoenix/autonomy/canonical_v4_structural_bridge.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "827e7b6e0c0eee4a8062c814b9440e578ab34bef",
       "path": "phoenix/autonomy/combined_cde_evidence_intake_r9_5_2_9.py",
       "sha256": null
@@ -16394,7 +16421,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "c2030dcb0f496b17e8d54e7457ce59bb2eda0121",
+      "git_oid": "108f0a2c610e446c3ec3435d9a44ae48628aa2bc",
       "path": "phoenix/local_app/architectural_orchestration_runtime.py",
       "sha256": null
     },
@@ -22172,6 +22199,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "9a326e4f0ef563f79de5d5230bbeeff4392845f5",
+      "path": "tests/automation/test_phoenix_canonical_v4_structural_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "dbd58f80f6441ab27e30be9d9c8789421d3f5c1a",
       "path": "tests/automation/test_phoenix_combined_cde_evidence_intake_r9_5_2_9.py",
       "sha256": null
@@ -23189,7 +23225,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "3bcfc82b64c94791327560a822fbc70976f11aad",
+      "git_oid": "4fdd139613bc80ecf489837499caefaecf6e9233",
       "path": "tests/automation/test_phoenix_real_projectflow_structural_session_bridge_v1_0.py",
       "sha256": null
     },
@@ -24914,5 +24950,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "9bfa34265c5641dc54f8afa438e351dc3c63440e6e7abc7cd9e5aff93927eec8"
+  "source_digest": "e2e5e9e89b6849624fb9e3eb3bcb74af3544328a2e472dae2497c4a4b1156617"
 }

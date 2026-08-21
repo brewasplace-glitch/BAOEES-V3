@@ -272,6 +272,12 @@ class ArchitecturalOrchestrationRuntime:
         if not tokens:
             return None
 
+        from phoenix.autonomy.canonical_v4_structural_bridge import (
+            cleanup_bridge_upload,
+            prepare_isolated_structural_bridge,
+            publish_structural_bridge_outputs,
+        )
+
         runner = (
             self.repository
             / "runners"
@@ -287,6 +293,7 @@ class ArchitecturalOrchestrationRuntime:
         bridge_root.mkdir(parents=True, exist_ok=True)
         session_file = bridge_root / "session.json"
         output_dir = bridge_root / "output"
+        project_runtime = self.runtime_root / job.project_id
 
         session = {
             "session_id": f"PHX-AE-BRIDGE-{job.job_id}",
@@ -297,14 +304,22 @@ class ArchitecturalOrchestrationRuntime:
             "desired_outputs": tokens,
             "status": "READY_FOR_AUTONOMOUS_ORCHESTRATION",
             "bridge": {
-                "schema_version": "phoenix.architectural-to-session-bridge/1.0",
+                "schema_version": "phoenix.architectural-to-session-bridge/1.1",
                 "source_job_id": job.job_id,
                 "source_project_file": job.project_file,
                 "scope": "STRUCTURAL_ENGINEERING_ONLY",
+                "primary_ae_workspace_overwrite": False,
                 "production_release": "LOCKED",
                 "for_construction": "LOCKED",
             },
         }
+
+        preparation = prepare_isolated_structural_bridge(
+            repository=self.repository,
+            project_runtime=project_runtime,
+            bridge_root=bridge_root,
+            session=session,
+        )
         session_file.write_text(
             json.dumps(session, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
@@ -320,65 +335,113 @@ class ArchitecturalOrchestrationRuntime:
             "--expect-session-orchestrated",
         ]
 
-        with log_path.open("a", encoding="utf-8", newline="\n") as log:
-            log.write("\nPHOENIX_STRUCTURAL_SESSION_BRIDGE=START\n")
-            log.write("Structural desired outputs: " + json.dumps(tokens) + "\n")
-            log.write("Bridge session: " + str(session_file) + "\n")
-            log.write("Bridge command: " + json.dumps(command) + "\n")
-            log.flush()
-            process = subprocess.run(
-                command,
-                cwd=self.repository,
-                env={
-                    **os.environ,
-                    "PYTHONDONTWRITEBYTECODE": "1",
-                    "PYTHONPATH": (
-                        str(self.repository)
-                        if not os.environ.get("PYTHONPATH")
-                        else str(self.repository)
-                        + os.pathsep
-                        + os.environ["PYTHONPATH"]
-                    ),
-                },
-                stdout=log,
-                stderr=subprocess.STDOUT,
-                text=True,
-                check=False,
-            )
-            log.write(
-                "PHOENIX_STRUCTURAL_SESSION_BRIDGE_RETURN_CODE="
-                + str(process.returncode)
-                + "\n"
-            )
+        process_return_code = 99
+        try:
+            with log_path.open("a", encoding="utf-8", newline="\n") as log:
+                log.write("\nPHOENIX_STRUCTURAL_SESSION_BRIDGE=START\n")
+                log.write("Structural desired outputs: " + json.dumps(tokens) + "\n")
+                log.write(
+                    "Bridge canonical source: "
+                    + str(preparation["source_path"])
+                    + "\n"
+                )
+                log.write(
+                    "Bridge normalized SHA256: "
+                    + str(preparation["normalized_sha256"])
+                    + "\n"
+                )
+                log.write(
+                    "Bridge isolated workspace: "
+                    + str(preparation["workspace"])
+                    + "\n"
+                )
+                log.write("Bridge session: " + str(session_file) + "\n")
+                log.write("Bridge command: " + json.dumps(command) + "\n")
+                log.flush()
+                process = subprocess.run(
+                    command,
+                    cwd=self.repository,
+                    env={
+                        **os.environ,
+                        "PYTHONDONTWRITEBYTECODE": "1",
+                        "PYTHONPATH": (
+                            str(self.repository)
+                            if not os.environ.get("PYTHONPATH")
+                            else str(self.repository)
+                            + os.pathsep
+                            + os.environ["PYTHONPATH"]
+                        ),
+                    },
+                    stdout=log,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    check=False,
+                )
+                process_return_code = int(process.returncode)
+                log.write(
+                    "PHOENIX_STRUCTURAL_SESSION_BRIDGE_RETURN_CODE="
+                    + str(process_return_code)
+                    + "\n"
+                )
+        finally:
+            cleanup_bridge_upload(preparation)
 
-        project_runtime = self.runtime_root / job.project_id
-        adapter_dir = (
-            project_runtime
-            / "results"
-            / "session_adapters"
-            / "structural_engineering"
+        publication = publish_structural_bridge_outputs(
+            repository=self.repository,
+            project_runtime=project_runtime,
+            preparation=preparation,
+            runner_return_code=process_return_code,
+            session_id=session["session_id"],
         )
-        inp_files = sorted(project_runtime.rglob("*.inp")) if project_runtime.is_dir() else []
+
+        isolated_adapter = publication["isolated_structural_adapter_dir"]
+        isolated_inp = publication["isolated_inp"]
+        published_adapter = publication["published_structural_adapter_dir"]
+        published_inp = publication["published_inp"]
 
         result = {
-            "schema_version": "phoenix.architectural-to-session-bridge-result/1.0",
+            "schema_version": "phoenix.architectural-to-session-bridge-result/1.1",
             "project_id": job.project_id,
             "job_id": job.job_id,
             "desired_outputs": tokens,
-            "return_code": int(process.returncode),
-            "structural_adapter_dir": (
-                adapter_dir.relative_to(self.repository).as_posix()
-                if adapter_dir.exists()
+            "return_code": process_return_code,
+            "bridge_workspace": (
+                isolated_adapter.parents[2].relative_to(self.repository).as_posix()
+                if isolated_adapter.exists()
+                else Path(preparation["workspace"]).relative_to(self.repository).as_posix()
+            ),
+            "source_canonical_model": str(preparation["source_path"]),
+            "source_canonical_sha256": preparation["source_sha256"],
+            "recommended_variant_id": preparation["recommended_variant_id"],
+            "normalized_model_sha256": preparation["normalized_sha256"],
+            "normalization_stats": preparation["stats"],
+            "isolated_structural_adapter_dir": (
+                isolated_adapter.relative_to(self.repository).as_posix()
+                if isolated_adapter.exists()
+                else None
+            ),
+            "isolated_project_scoped_inp": [
+                path.relative_to(self.repository).as_posix()
+                for path in isolated_inp
+            ],
+            "published_structural_adapter_dir": (
+                published_adapter.relative_to(self.repository).as_posix()
+                if published_adapter.exists()
                 else None
             ),
             "project_scoped_inp": [
-                path.relative_to(self.repository).as_posix() for path in inp_files
+                path.relative_to(self.repository).as_posix()
+                for path in published_inp
             ],
+            "published": bool(publication["published"]),
             "passed": (
-                int(process.returncode) == 0
-                and adapter_dir.is_dir()
-                and bool(inp_files)
+                process_return_code == 0
+                and isolated_adapter.is_dir()
+                and bool(isolated_inp)
+                and published_adapter.is_dir()
+                and bool(published_inp)
             ),
+            "primary_ae_workspace_overwrite": False,
             "production_release": "LOCKED",
             "for_construction": "LOCKED",
         }
@@ -389,13 +452,23 @@ class ArchitecturalOrchestrationRuntime:
 
         with log_path.open("a", encoding="utf-8", newline="\n") as log:
             log.write(
+                "PHOENIX_STRUCTURAL_ISOLATED_ADAPTER_DIR_EXISTS="
+                + ("YES" if isolated_adapter.is_dir() else "NO")
+                + "\n"
+            )
+            log.write(
+                "PHOENIX_STRUCTURAL_ISOLATED_INP_COUNT="
+                + str(len(isolated_inp))
+                + "\n"
+            )
+            log.write(
                 "PHOENIX_STRUCTURAL_ADAPTER_DIR_EXISTS="
-                + ("YES" if adapter_dir.is_dir() else "NO")
+                + ("YES" if published_adapter.is_dir() else "NO")
                 + "\n"
             )
             log.write(
                 "PHOENIX_PROJECT_SCOPED_INP_COUNT="
-                + str(len(inp_files))
+                + str(len(published_inp))
                 + "\n"
             )
             log.write(
