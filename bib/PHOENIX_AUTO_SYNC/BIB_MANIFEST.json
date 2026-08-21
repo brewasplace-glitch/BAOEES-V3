@@ -6512,6 +6512,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "9c8e7b1cbfc9c358aaa2572945ded07ea40bdda6",
+      "path": "configs/projects/moskee_bunschoten_e2e_real_project_binding_v1_1.json",
+      "sha256": "65d8b61e319497e4ae25f72628bb629721412852ab9a781d7b8687cef231329e"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "e9ddf0c6cfd6d28c35d7c8d123598ca8be85ce42",
       "path": "configs/projects/moskee_bunschoten_evidence_validation_closure_plan_v1_5_0.json",
       "sha256": "70b39fd2850b099fe6c002fb88649dfb3b72c1c962185b313d8731917863c8b3"
@@ -8720,6 +8729,24 @@
       "git_oid": "d0ab5cd570fb9cc2dcf6d5ada1892b2b21fda803",
       "path": "docs/automation/PHOENIX_MODEL_DRIVEN_CALCULATION_WORKBOOK_ENGINE_v1_0_0.md",
       "sha256": "d654ed47f4909ed31f522efe06e1301b758e4db3d4ac8a848d826ab559605ace"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "db49fa93342933bcf6a906614050c6c8185c2e2e",
+      "path": "docs/automation/PHOENIX_MOSKEE_BUNSCHOTEN_REAL_PROJECT_E2E_BLOCKER_REPAIR_v1_1.md",
+      "sha256": "5fa3f1b2ec864917e35ac43810f764ca9c4e32ec41d7e9c4c541ef2db1ced58a"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "6eb55083cc8fd811e2f27c746e243da107a98185",
+      "path": "docs/automation/PHOENIX_MOSKEE_BUNSCHOTEN_REAL_PROJECT_E2E_BLOCKER_REPAIR_v1_1_EVIDENCE.txt",
+      "sha256": "a1a90cdf1216f487caad8ad1cca199198c2495638f179261df8f424ee5057925"
     },
     {
       "chunks": 1,
@@ -17816,7 +17843,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b1c5d5ff769cd83a074fa85b7287a972cfba0adc",
+      "git_oid": "bbdf0c7e1a13cacbc6786152178f852243bd2db3",
       "path": "phoenix/validation/moskee_bunschoten_real_project_e2e_v1_0.py",
       "sha256": null
     },
@@ -22568,7 +22595,16 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "1574e291357496687bbafc3c93a0f651142e595d",
+      "git_oid": "3918ef1e8e052420d81d4a89a8caae7aa8eca03e",
+      "path": "tests/automation/test_phoenix_moskee_bunschoten_e2e_blocker_repair_v1_1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "d330029ecc34e54bda48b2b15fb03799b5832e46",
       "path": "tests/automation/test_phoenix_moskee_bunschoten_real_project_e2e_v1_0.py",
       "sha256": null
     },
@@ -24707,5 +24743,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "dc5fa9b7cf5564e7e3c9882512e5514b0426a8645cdfb4e27223df4490397fd2"
+  "source_digest": "ab3056f2ccbcb383097d4e3637188d73fc34b837a0930910ef5a032616b9eff4"
 }

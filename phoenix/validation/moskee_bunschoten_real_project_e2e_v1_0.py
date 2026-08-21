@@ -1,7 +1,8 @@
 from __future__ import annotations
 import argparse, hashlib, json, os, re, shutil, struct, subprocess, time, urllib.request, zlib
 from pathlib import Path
-PROJECT_FILE="configs/projects/moskee_bunschoten.json"
+CANONICAL_PROJECT_FILE="configs/projects/moskee_bunschoten.json"
+PROJECT_FILE="configs/projects/moskee_bunschoten_e2e_real_project_binding_v1_1.json"
 TOKENS=("moskee","bunschoten","hbm-2026-001","hbm_2026_001")
 OK={"completed","complete","succeeded","success","passed","done"}; BAD={"failed","failure","error","blocked","cancelled","canceled"}
 def sha(p):
@@ -179,7 +180,7 @@ def finddeck(repo,c):
 def ccx(deck,exe,edir):
  w=edir/'calculix_work';w.mkdir();cpdeck=w/deck.name;shutil.copy2(deck,cpdeck);cp=subprocess.run([str(exe),'-i',cpdeck.stem],cwd=w,text=True,capture_output=True,timeout=900);(edir/'calculix_stdout.txt').write_text(cp.stdout,encoding='utf-8',errors='replace');(edir/'calculix_stderr.txt').write_text(cp.stderr,encoding='utf-8',errors='replace');raw=[p for p in w.iterdir() if p.is_file()];return {'exit_code':cp.returncode,'success':cp.returncode==0 and any(p.suffix.lower() in {'.frd','.dat','.sta'} for p in raw),'deck':str(deck),'exe':str(exe),'raw':[{ 'path':str(p),'sha256':sha(p)} for p in raw]}
 def main():
- a=argparse.ArgumentParser();a.add_argument('--repo',required=True);a.add_argument('--evidence-root',required=True);a.add_argument('--calculix',required=True);a.add_argument('--calculix-fallback',default='');a.add_argument('--timeout-seconds',type=int,default=1800);n=a.parse_args();repo=Path(n.repo).resolve();edir=Path(n.evidence_root)/('RUN_'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime()));edir.mkdir(parents=True);state={'project':PROJECT_FILE,'repo':str(repo),'result':'STARTED','production':'LOCKED','for_construction':'LOCKED'};dump(edir/'00_state.json',state)
+ a=argparse.ArgumentParser();a.add_argument('--repo',required=True);a.add_argument('--evidence-root',required=True);a.add_argument('--calculix',required=True);a.add_argument('--calculix-fallback',default='');a.add_argument('--timeout-seconds',type=int,default=1800);n=a.parse_args();repo=Path(n.repo).resolve();edir=Path(n.evidence_root)/('RUN_'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime()));edir.mkdir(parents=True);state={'project':PROJECT_FILE,'canonical_project':CANONICAL_PROJECT_FILE,'repo':str(repo),'result':'STARTED','production':'LOCKED','for_construction':'LOCKED'};dump(edir/'00_state.json',state)
  b=baseurl(repo)
  if not b:start(repo);b=waitbase(repo)
  if not b:state['result']='BLOCKED_OFFICIAL_START';dump(edir/'FINAL_E2E_RESULT.json',state);print('E2E_RUNTIME_RESULT=BLOCKED_OFFICIAL_START');print('E2E_EVIDENCE_DIR='+str(edir));return 20
