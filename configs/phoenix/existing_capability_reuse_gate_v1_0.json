@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "PROJECT_PHOENIX_EXISTING_CAPABILITY_REUSE_GATE",
+  "decisions": [
+    "REUSE",
+    "REPAIR",
+    "EXTEND",
+    "BUILD"
+  ],
+  "default_build_preflight_required_decision": "BUILD",
+  "fail_closed_on_dirty_worktree": true,
+  "fail_closed_on_discovery_without_proven_contract": true,
+  "runtime_dependencies": [
+    "python-stdlib",
+    "git"
+  ],
+  "optional_open_source_references": [
+    {
+      "name": "ripgrep",
+      "license": "MIT OR Unlicense",
+      "role": "fast recursive source-search reference"
+    },
+    {
+      "name": "Semgrep/Opengrep",
+      "license": "LGPL-2.1 family",
+      "role": "optional deeper structural-code-analysis fallback"
+    }
+  ],
+  "release_status": "CONCEPT ONLY / NOT FOR CONSTRUCTION"
+}
