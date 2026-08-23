@@ -8681,18 +8681,18 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "ead8abfd1bb480108f12d6f4af3985382d5daadd",
+      "git_oid": "dd7c146878918837cb91b09707f12ce43428dd9b",
       "path": "docs/automation/PHOENIX_EXISTING_CAPABILITY_REUSE_GATE_v1_0.md",
-      "sha256": "d748135d9f58f6570a8e207f464d08f76f5474ec72d9a6af63289c90927c65cd"
+      "sha256": "117396e49e0105653304b8b86437a3e3d57ca4a36ba37a3a7d501e6b4cd0709b"
     },
     {
       "chunks": 1,
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "a061fa1da498f4cc5f61c284b288ecd91efe89ef",
+      "git_oid": "7776d891af5febdc2939e898f63ef7a205011b98",
       "path": "docs/automation/PHOENIX_EXISTING_CAPABILITY_REUSE_GATE_v1_0_EVIDENCE.txt",
-      "sha256": "093f166664665fe68859bc370e57695d581bbe50ee218f559295684717b89f0f"
+      "sha256": "dca5f36ebf4570798c690a9902d85ec7322b9aace4d5f13e563021c232957174"
     },
     {
       "chunks": 1,
@@ -16277,7 +16277,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "211bd5e66166e95ae320956c2a54361927cdfe09",
+      "git_oid": "90ea059ae61215fd1ed5529c30582059cf63ee90",
       "path": "phoenix/governance/existing_capability_reuse_gate.py",
       "sha256": null
     },
@@ -22595,7 +22595,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "3a7ca1ecea09f45f091a14b781f9df6439e99576",
+      "git_oid": "9db7816247baadefe67bc0b07c433bfb40f496c8",
       "path": "tests/automation/test_phoenix_existing_capability_reuse_gate_v1_0.py",
       "sha256": null
     },
@@ -25004,5 +25004,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "f438d70655d18e72feec93b7ab43b8c2384857bb1c99c6d69dab4a69076a08bf"
+  "source_digest": "68602c08d24ccbe3151f2efbc782b086cb939a151be1d6057a928ce3560856f1"
 }

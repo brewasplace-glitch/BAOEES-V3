@@ -292,7 +292,7 @@ def _load_spec(args: argparse.Namespace) -> dict[str, Any]:
     if args.spec and args.spec_json:
         raise GateError("use either --spec or --spec-json, not both")
     if args.spec:
-        return json.loads(Path(args.spec).read_text(encoding="utf-8"))
+        return json.loads(Path(args.spec).read_text(encoding="utf-8-sig"))
     if args.spec_json:
         return json.loads(args.spec_json)
     raise GateError("--spec or --spec-json is required")

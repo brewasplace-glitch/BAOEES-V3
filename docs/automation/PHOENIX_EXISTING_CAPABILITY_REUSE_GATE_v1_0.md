@@ -71,3 +71,9 @@ Phoenix v1.0 adds no new runtime dependency. Git and the Python standard library
 This is a software-governance gate only. It does not claim code compliance, professional approval, or construction readiness.
 
 Release status: `CONCEPT ONLY / NOT FOR CONSTRUCTION`.
+
+## UTF-8 BOM compatibility
+
+Capability spec files are read with `utf-8-sig`. This accepts both ordinary UTF-8 and UTF-8 files with a BOM, including JSON written by Windows PowerShell 5.1 `Set-Content -Encoding UTF8`.
+
+This is a compatibility repair only; it does not change `REUSE`, `REPAIR`, `EXTEND`, or `BUILD` classification semantics.

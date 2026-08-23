@@ -7,7 +7,7 @@ import unittest
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from phoenix.governance.existing_capability_reuse_gate import GateError, classify, validate_spec
+from phoenix.governance.existing_capability_reuse_gate import GateError, _load_spec, classify, validate_spec
 
 
 def git(repo: Path, *args: str) -> None:
@@ -144,6 +144,18 @@ class ExistingCapabilityReuseGateTests(unittest.TestCase):
                 run_tests=False,
             )
 
+    def test_spec_file_with_utf8_bom_is_accepted(self):
+        import argparse
+
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "spec.json"
+            path.write_text(
+                '{"capability_id":"PHX.TEST.BOM","keywords":["BOM"]}',
+                encoding="utf-8-sig",
+            )
+            args = argparse.Namespace(spec=str(path), spec_json=None)
+            loaded = _load_spec(args)
+            self.assertEqual("PHX.TEST.BOM", loaded["capability_id"])
     def test_unsafe_path_is_rejected(self):
         with self.assertRaises(GateError):
             validate_spec(
