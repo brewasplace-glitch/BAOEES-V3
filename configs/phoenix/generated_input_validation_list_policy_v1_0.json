@@ -1,0 +1,38 @@
+{
+  "schema_version": "phoenix.generated-input-validation-list-policy/1.0",
+  "capability_id": "PHX.AUTONOMOUS_INPUT_GENERATION_VALIDATION_LOOP.C05",
+  "purpose": "Generate one deterministic human-validation list from Phoenix-generated candidate inputs before final validated output.",
+  "classifications": [
+    "AUTO_DERIVED",
+    "SOURCE_BACKED_CANDIDATE",
+    "ASSUMED_CANDIDATE",
+    "HUMAN_REQUIRED",
+    "PROFESSIONAL_REVIEW_REQUIRED"
+  ],
+  "review_actions": [
+    "CONFIRM",
+    "MODIFY",
+    "NOT_APPLICABLE",
+    "DEFER"
+  ],
+  "open_source_first": {
+    "primary": {
+      "name": "Pydantic",
+      "license": "MIT",
+      "role": "Preferred optional typed/schema validation backend when already available"
+    },
+    "fallback": {
+      "name": "python-jsonschema",
+      "license": "MIT",
+      "role": "Fallback optional JSON Schema validator when already available"
+    },
+    "mandatory_new_dependency": false,
+    "reason": "C05 only needs deterministic list construction; existing Phoenix engines already provide generation, DOCX, intake, merge, JSON and audit functions."
+  },
+  "safety": {
+    "concept_only_until_review": true,
+    "automatic_professional_review_claim": false,
+    "automatic_approval": false,
+    "production_release": "LOCKED"
+  }
+}

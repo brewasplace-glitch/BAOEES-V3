@@ -4244,6 +4244,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "635797843bd5e5f34a24b1ec6bae477b4e852dfa",
+      "path": "configs/phoenix/generated_input_validation_list_policy_v1_0.json",
+      "sha256": "cff5df49f7d17e2d499f1c40aabb391a42a07aca6a924cccfb2280285e6b5b78"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "4c782899fc6a260bcda0196f80ab2809b6cc176d",
       "path": "configs/phoenix/generic_session_adapter_masterpack_policy_v1_0.json",
       "sha256": "feb0ef24f460d44341edd33cb0318fe3448b003437ae689c100273fc345c210a"
@@ -8711,6 +8720,15 @@
       "git_oid": "7744703eede4453abd01a2b259a1e5ee15c72680",
       "path": "docs/automation/PHOENIX_FREECAD_IFC_DERIVED_MESH_HANDOFF_REPAIR_v1_0_EVIDENCE.txt",
       "sha256": "a6fa7328dbdff7ab91a4c3ea9338284a00a53482eba74e1865d55b0c3761e846"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "2a223824f8b8533ebcbbf8f3a2e8f692a996961e",
+      "path": "docs/automation/PHOENIX_GENERATED_INPUT_VALIDATION_LIST_C05_EXTENSION_v1_0.md",
+      "sha256": "ce3c6a42c51aec1a57a0b78fcb82b96c819b9e6a9b7549439baf765d225767bf"
     },
     {
       "chunks": 1,
@@ -14468,6 +14486,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "c57ff750e86f809265af9fbcc592844fbdeb311d",
+      "path": "phoenix/autonomy/generated_input_validation_list_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "ae9c650f11ea7e68a14f24302fc37dc328f1a464",
       "path": "phoenix/autonomy/global_material_sourcing.py",
       "sha256": null
@@ -19913,6 +19940,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "b1ce6491b466f8a1eded701b484997bde12fbdbe",
+      "path": "runners/PROJECT_PHOENIX_generated_input_validation_list_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "dd2f6ce7c496451c317629b577fa34e5f6169e00",
       "path": "runners/PROJECT_PHOENIX_lifecycle_cost_energy_performance_condition_optimization_v7_4_0.py",
       "sha256": null
@@ -22640,6 +22676,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "1bafe899d9368a51d13c525c5429042d4bc35060",
+      "path": "tests/automation/test_phoenix_generated_input_validation_list_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "249894678e63d2f0fd8e9abceeb3f5189a44d46b",
       "path": "tests/automation/test_phoenix_generic_session_adapter_masterpack_static_v1_0.py",
       "sha256": null
@@ -25004,5 +25049,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "68602c08d24ccbe3151f2efbc782b086cb939a151be1d6057a928ce3560856f1"
+  "source_digest": "b9ebc9e13dd1546f41d6bfb0a6ba350928765bcadcfc6eef9f4b8f1f70e8fee7"
 }
