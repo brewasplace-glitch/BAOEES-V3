@@ -1,3 +1,4 @@
+{"commit": "33757ede115c8113c2be024f70c77e8a188427ba", "date": "2026-08-24T21:39:13+02:00", "subject": "feat(governance): add generated input validation list"}
 {"commit": "f928860258a330cfaa0c7c57aed59e9e3e7da5e3", "date": "2026-08-24T00:25:59+02:00", "subject": "fix(governance): accept UTF-8 BOM capability specs"}
 {"commit": "c708f41b1e8abb4bd23ac4978104eec71da48bd4", "date": "2026-08-24T00:13:39+02:00", "subject": "feat(governance): add existing capability reuse gate v1.0"}
 {"commit": "ba690682a6ba19f719f5f9218b3e8e5a7e8e3d0f", "date": "2026-08-22T01:52:12+02:00", "subject": "fix(structural): bridge canonical A-E model into v8 session contract"}
@@ -497,4 +498,3 @@
 {"commit": "ff79817b305c32b994c071805335d6e7259d6bb7", "date": "2026-06-21T12:24:00+02:00", "subject": "feat: add Drawing Export Engine v1"}
 {"commit": "c2a4384bbd41fd835c9fff0e670aeaa79a8c152b", "date": "2026-06-21T11:23:43+02:00", "subject": "feat: add basic Document Export Engine v1"}
 {"commit": "9419e59fcf539e2a88518a873779a182eb8dec2b", "date": "2026-06-21T00:24:33+02:00", "subject": "feat: add Project ZIP Engine v1"}
-{"commit": "ab48d906ece943515e175456065d87cf6b7d91ec", "date": "2026-06-21T00:06:35+02:00", "subject": "feat: add Project Export Engine v1"}

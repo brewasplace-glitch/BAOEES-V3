@@ -1,0 +1,37 @@
+{
+  "schema_version": "phoenix.package-e-c05-docx-review-bridge-policy/1.0",
+  "capability_id": "PHX.PACKAGE_E.C05_DOCX_REVIEW_BRIDGE",
+  "purpose": "Connect the existing C05 generated-input validation list to a reviewer-friendly DOCX round-trip for Package E.",
+  "reuse": {
+    "C05": "phoenix/autonomy/generated_input_validation_list_v1_0.py",
+    "package_e": "phoenix/autonomy/package_e_alternate_path_independent_evidence_r9_5_2_5.py",
+    "professional_review_gate": "phoenix/autonomy/professional_dossier_controlled_review_v1_0.py",
+    "python_docx_dependency": "existing project dependency"
+  },
+  "open_source_first": {
+    "primary": {
+      "name": "python-docx",
+      "license": "MIT",
+      "role": "DOCX create/update and structured table round-trip"
+    },
+    "alternative_reviewed": {
+      "name": "docx2python",
+      "role": "DOCX extraction alternative",
+      "decision": "not added because existing python-docx dependency already covers the required structured round-trip"
+    },
+    "new_dependency_required": false
+  },
+  "review_actions": [
+    "CONFIRM",
+    "MODIFY",
+    "NOT_APPLICABLE",
+    "DEFER"
+  ],
+  "safety": {
+    "r9_3_screening_is_independent_evidence": false,
+    "automatic_professional_review_claim": false,
+    "automatic_acceptance_criterion_invention": false,
+    "automatic_approval": false,
+    "production_release": "LOCKED"
+  }
+}
