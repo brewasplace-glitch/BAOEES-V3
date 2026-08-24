@@ -1,0 +1,71 @@
+{
+  "schema_version": "phoenix.autonomous-build-manifest/1.0",
+  "build_id": "PHX-NEXT-BUILD-ID",
+  "title": "Describe the Phoenix build capability",
+  "branch": "project-phoenix",
+  "baseline": "7cd6e8e0f3f8c0b8dee107495e86969281555b65",
+  "classification": "EXTEND",
+  "commit_message": "feat(example): autonomous Phoenix build",
+  "expected_scope": [
+    "phoenix/example/new_capability.py",
+    "tests/automation/test_phoenix_example_new_capability.py"
+  ],
+  "existing_markers": [
+    "phoenix/example"
+  ],
+  "required_contracts": [
+    "phoenix/example/new_capability.py"
+  ],
+  "health_checks": [],
+  "steps": [
+    {
+      "id": "install_capability",
+      "kind": "build",
+      "description": "Run a repository-contained deterministic build installer.",
+      "max_attempts": 2,
+      "command": {
+        "argv": [
+          "powershell",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/EXAMPLE_BUILD_STEP.ps1"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 900
+      },
+      "repair_actions": [
+        {
+          "argv": [
+            "powershell",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "scripts/EXAMPLE_REPAIR_STEP.ps1"
+          ],
+          "cwd": ".",
+          "timeout_seconds": 600
+        }
+      ]
+    }
+  ],
+  "impact_tests": [
+    {
+      "id": "impact_tests",
+      "kind": "test",
+      "command": {
+        "argv": [
+          "python",
+          "tests/automation/test_phoenix_example_new_capability.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 600
+      }
+    }
+  ],
+  "smoke_tests": [],
+  "auto_commit": true,
+  "auto_push": true,
+  "rollback_on_failure": true,
+  "allow_reuse_noop": true
+}

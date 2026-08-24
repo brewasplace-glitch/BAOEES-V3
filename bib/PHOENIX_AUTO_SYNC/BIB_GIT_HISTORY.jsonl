@@ -1,3 +1,4 @@
+{"commit": "7cd6e8e0f3f8c0b8dee107495e86969281555b65", "date": "2026-08-24T23:26:55+02:00", "subject": "feat(office): wire LibreOffice default document routing"}
 {"commit": "955be9a7cb879bee48b7fee3ce1fc9237332257f", "date": "2026-08-24T23:01:20+02:00", "subject": "feat(office): integrate LibreOffice document adapter"}
 {"commit": "2483a3bd5c05e9945d1506a6412ecddbd199ce4e", "date": "2026-08-24T21:52:45+02:00", "subject": "feat(review): bridge C05 validation list to Package E DOCX review"}
 {"commit": "33757ede115c8113c2be024f70c77e8a188427ba", "date": "2026-08-24T21:39:13+02:00", "subject": "feat(governance): add generated input validation list"}
@@ -497,4 +498,3 @@
 {"commit": "595a1a4db8c4c633a674c513d322a6ad0af15d99", "date": "2026-06-21T13:43:00+02:00", "subject": "feat: upgrade Document Export Engine to professional DOCX PDF v1.1"}
 {"commit": "664c758232f4b0ced0095b77998a4c9178ba5259", "date": "2026-06-21T13:07:46+02:00", "subject": "docs: update BAOEES V3 README"}
 {"commit": "7879e51e42e34d5747c3d07ba425203937ec10fc", "date": "2026-06-21T12:46:22+02:00", "subject": "chore: add BAOEES V3 stable test runner"}
-{"commit": "ff79817b305c32b994c071805335d6e7259d6bb7", "date": "2026-06-21T12:24:00+02:00", "subject": "feat: add Drawing Export Engine v1"}

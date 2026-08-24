@@ -1,0 +1,62 @@
+{
+  "schema_version": "phoenix.autonomous-build-orchestrator-policy/1.0",
+  "capability_id": "PHX.AUTONOMOUS_BUILD_ORCHESTRATOR_SELF_HEALING",
+  "classification": "EXTEND",
+  "purpose": "Centralize Phoenix software-build orchestration, deterministic self-healing, verification, rollback, commit/push and evidence.",
+  "open_source_first": {
+    "primary_candidate": {
+      "name": "Prefect",
+      "license": "Apache-2.0",
+      "fit": "Strong general workflow orchestration, retries, state and observability.",
+      "decision": "NOT_MANDATORY_FOR_V1",
+      "reason": "Phoenix already has repo-specific governance, rollback, tests, BIB and git gates. Adding Prefect now would increase dependency surface without replacing those Phoenix-specific controls."
+    },
+    "fallback_candidate": {
+      "name": "Dagster",
+      "license": "Apache-2.0",
+      "fit": "Strong orchestration, observability and lineage.",
+      "decision": "NOT_MANDATORY_FOR_V1",
+      "reason": "Useful later for distributed orchestration, but too broad for the local git-governed build loop."
+    },
+    "v1_runtime": "PYTHON_STANDARD_LIBRARY_PLUS_EXISTING_PHOENIX_CAPABILITIES"
+  },
+  "state_machine": [
+    "DISCOVER",
+    "CLASSIFY",
+    "PREFLIGHT",
+    "EXECUTE",
+    "HEAL",
+    "VERIFY",
+    "SCOPE",
+    "STAGE",
+    "SECRET_SCAN",
+    "REMOTE_RACE_GUARD",
+    "COMMIT",
+    "PUSH",
+    "FINAL"
+  ],
+  "self_healing": {
+    "mode": "DETERMINISTIC_REGISTERED_REPAIRS_ONLY",
+    "max_attempts_per_step": 5,
+    "arbitrary_code_generation": false,
+    "repair_actions_must_be_declared_in_manifest": true,
+    "rollback_before_push_on_failure": true
+  },
+  "safety": {
+    "forbid_force_push": true,
+    "forbid_manifest_git_reset_hard": true,
+    "forbid_manifest_git_clean_fdx": true,
+    "forbid_inline_powershell_command": true,
+    "exact_scope_required": true,
+    "secret_scan_required": true,
+    "remote_race_guard_required": true,
+    "professional_approval_claim": false,
+    "production_release_claim": false
+  },
+  "future_queue_contract": {
+    "queue_item_output": "AUTONOMOUS_BUILD_MANIFEST",
+    "orchestrator_entrypoint": "runners/PROJECT_PHOENIX_autonomous_build_orchestrator_v1_0.py run --manifest <path>",
+    "queue_owns_strategy": true,
+    "orchestrator_owns_execution_and_recovery": true
+  }
+}
