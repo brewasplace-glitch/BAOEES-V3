@@ -1240,9 +1240,8 @@ class PhoenixLocalApplication:
 
     @staticmethod
     def _open_path(path: Path) -> None:
-        if os.name == "nt":
-            os.startfile(str(path))
-        elif sys.platform == "darwin":  # pragma: no cover
-            subprocess.Popen(["open", str(path)])
-        else:  # pragma: no cover
-            subprocess.Popen(["xdg-open", str(path)])
+        from phoenix.engines.adapters.libreoffice_document_router_v1_0 import (
+            open_document_path,
+        )
+
+        open_document_path(path)

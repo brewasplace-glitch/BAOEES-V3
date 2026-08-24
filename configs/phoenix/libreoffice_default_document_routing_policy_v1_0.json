@@ -1,0 +1,37 @@
+{
+  "schema_version": "phoenix.libreoffice-default-document-routing-policy/1.0",
+  "capability_id": "PHX.OFFICE.DEFAULT_DOCUMENT_ROUTING",
+  "classification": "EXTEND_ROUTING_ONLY",
+  "routing": {
+    "office_extensions": [
+      ".doc",
+      ".docx",
+      ".odt",
+      ".rtf",
+      ".xls",
+      ".xlsx",
+      ".ods",
+      ".csv",
+      ".ppt",
+      ".pptx",
+      ".odp"
+    ],
+    "office_open_engine": "LibreOfficeOfficeAdapter",
+    "pdf_open_engine": "SYSTEM_DEFAULT",
+    "other_open_engine": "SYSTEM_DEFAULT"
+  },
+  "document_export_engine": {
+    "native_generators_replaced": false,
+    "libreoffice_bridge_exposed": true
+  },
+  "package_e_review": {
+    "docx_remains_editable_review_source": true,
+    "automatic_pdf_companion": true,
+    "pdf_companion_failure_is_nonfatal": true
+  },
+  "safety": {
+    "do_not_build_new_office_engine": true,
+    "do_not_replace_native_phoenix_generators": true,
+    "production_release_claim": false
+  }
+}

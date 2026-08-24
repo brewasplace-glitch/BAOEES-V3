@@ -22,6 +22,9 @@ from docx import Document
 from phoenix.autonomy.generated_input_validation_list_v1_0 import (
     build_validation_list,
 )
+from phoenix.engines.adapters.libreoffice_document_router_v1_0 import (
+    create_pdf_companion,
+)
 
 SCHEMA_VERSION = "phoenix.package-e-c05-docx-review-bridge/1.0"
 RETURN_SCHEMA_VERSION = "phoenix.package-e-c05-reviewed-input/1.0"
@@ -452,15 +455,47 @@ def prepare_package_e_review(
     docx_path = output / "PHOENIX_PACKAGE_E_INPUT_VALIDATION_REVIEW_FORM.docx"
     create_review_docx(validation, docx_path)
 
+    review_pdf_path = None
+    review_pdf_conversion = {
+        "status": "NOT_CREATED",
+        "engine": "LibreOffice",
+        "error": None,
+    }
+    try:
+        review_pdf_conversion = create_pdf_companion(docx_path, output)
+        candidate_pdf = Path(review_pdf_conversion["output"])
+        if candidate_pdf.is_file() and candidate_pdf.stat().st_size > 0:
+            review_pdf_path = candidate_pdf
+        else:
+            review_pdf_conversion = {
+                **review_pdf_conversion,
+                "status": "FAILED_OUTPUT_VALIDATION",
+                "error": "LibreOffice did not produce a non-empty PDF companion.",
+            }
+    except Exception as exc:
+        review_pdf_conversion = {
+            "status": "FAILED_NONFATAL",
+            "engine": "LibreOffice",
+            "error": str(exc),
+        }
+
+    manifest_files = [
+        {"name": candidate_path.name, "sha256": _sha256(candidate_path)},
+        {"name": validation_path.name, "sha256": _sha256(validation_path)},
+        {"name": docx_path.name, "sha256": _sha256(docx_path)},
+    ]
+    if review_pdf_path is not None:
+        manifest_files.append({
+            "name": review_pdf_path.name,
+            "sha256": _sha256(review_pdf_path),
+        })
+
     manifest = {
         "schema_version": "phoenix.package-e-c05-review-manifest/1.0",
         "project_id": project_id,
         "package_id": PACKAGE_ID,
-        "files": [
-            {"name": candidate_path.name, "sha256": _sha256(candidate_path)},
-            {"name": validation_path.name, "sha256": _sha256(validation_path)},
-            {"name": docx_path.name, "sha256": _sha256(docx_path)},
-        ],
+        "files": manifest_files,
+        "review_pdf_companion": review_pdf_conversion,
         "next_action": "REVIEWER_VALIDATES_OR_CORRECTS_DOCX_AND_RETURNS_IT",
         "production_release": "LOCKED",
     }
@@ -471,6 +506,7 @@ def prepare_package_e_review(
         "candidate_json": str(candidate_path),
         "validation_json": str(validation_path),
         "review_docx": str(docx_path),
+        "review_pdf": str(review_pdf_path) if review_pdf_path is not None else "",
         "manifest_json": str(manifest_path),
     }
 

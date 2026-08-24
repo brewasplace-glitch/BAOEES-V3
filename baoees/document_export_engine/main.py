@@ -2,11 +2,29 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+from baoees.document_export_engine.libreoffice_bridge import (
+    DocumentExportLibreOfficeBridge,
+)
+
 
 class DocumentExportEngine:
 
     def __init__(self):
         self.document_result = {}
+        self.office_bridge = DocumentExportLibreOfficeBridge()
+
+    def convert_office_document(self, input_path, target_format, output_dir):
+        return self.office_bridge.convert_office_document(
+            input_path,
+            target_format,
+            output_dir,
+        )
+
+    def open_office_document(self, input_path):
+        return self.office_bridge.open_office_document(input_path)
+
+    def libreoffice_capability(self):
+        return self.office_bridge.libreoffice_capability()
 
     def create_documents(self, project_result=None, reporting_result=None, export_result=None):
         project_result = project_result or {}
