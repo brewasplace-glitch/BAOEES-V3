@@ -440,7 +440,16 @@ class AutonomousBuildOrchestrator:
         )
 
     def _changed_scope(self) -> list[str]:
-        status = self._git_text("status", "--porcelain=v1", "--untracked-files=all")
+        result = self._git("status", "--porcelain=v1", "--untracked-files=all")
+        if not result.ok:
+            raise BuildOrchestratorError(
+                "git status --porcelain=v1 failed: "
+                f"{(result.stderr or result.stdout).strip()}"
+            )
+        # Do not use _git_text() here. Its .strip() is correct for scalar git
+        # values but would remove the first porcelain status column when the
+        # first line begins with a space, e.g. " M path".
+        status = result.stdout
         changed: list[str] = []
         for raw in status.splitlines():
             if len(raw) < 4:

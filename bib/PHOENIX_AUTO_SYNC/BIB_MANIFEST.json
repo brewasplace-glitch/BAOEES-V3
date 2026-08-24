@@ -8267,6 +8267,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "a3e533d93cbc2bef57502f5dd545b8be1ab5abcc",
+      "path": "docs/automation/PHOENIX_AUTONOMOUS_BUILD_ORCHESTRATOR_SCOPE_PARSER_REPAIR_v1_0_R1.md",
+      "sha256": "51498412a34d69b359817e14f62d566881c6140c81fda67f578379bf1e3ad36a"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "2f192d1f066cb213f8a91a491ec9b7f06689945e",
       "path": "docs/automation/PHOENIX_AUTONOMOUS_BUILD_ORCHESTRATOR_SELF_HEALING_v1_0.md",
       "sha256": "2cc25314f06d5abb3f782c19e1caebb95c7e6a03e5ec314724f1e79810aec834"
@@ -14468,7 +14477,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "0681857c6e5bbeff676e645f9cee30a7b5feba44",
+      "git_oid": "e59acbff053eff6bff5fd8fc780a326d04b0af6b",
       "path": "phoenix/autonomy/autonomous_build_orchestrator_v1_0.py",
       "sha256": null
     },
@@ -22208,6 +22217,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "f765b31beedf5023cec32bf7a51f56388465f909",
+      "path": "tests/automation/test_phoenix_autonomous_build_orchestrator_scope_parser_regression_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "7639e61c50cb2ce314ca06de8b453978bd826d8e",
       "path": "tests/automation/test_phoenix_autonomous_build_orchestrator_v1_0.py",
       "sha256": null
@@ -25256,5 +25274,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "e18de8138ff5b394040af1544be178ac90dc036e08d63502d291a52146370b0a"
+  "source_digest": "83ab8780b4dac7cc48736ae2d941ced198938f2727f013a4b1ea913ffcd9cf09"
 }
