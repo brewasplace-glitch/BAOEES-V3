@@ -5063,6 +5063,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "429270efc720df74ba6e24efefb67543b2cd149d",
+      "path": "configs/phoenix/professional_country_aware_end_to_end_policy_v1_0.json",
+      "sha256": "4b9e53c8ae7078ca470607e941ea15c5b6ae84d9aee220613f98ef48dbdcb569"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "067c994d54f2f57fc7f5d575c9fe6ba2937e65c8",
       "path": "configs/phoenix/professional_evidence_closure_engine_v6_3_0.json",
       "sha256": "eff431063e990260b5025214597712d2064e50725a93fd0d61edaaf308ef607c"
@@ -5507,6 +5516,15 @@
       "git_oid": "283985a6539150452b740eada00d64bacd64f304",
       "path": "configs/phoenix/startscreen_capabilities/architectural_ae_v1_0.json",
       "sha256": "0fb3a8e996bb9f65c832026ce9f0dd84059b85c434c0582edaa09a488775eff7"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "eb2a47ab356926efed9cb23d5b4008ac7026f379",
+      "path": "configs/phoenix/startscreen_capabilities/professional_country_aware_end_to_end_ab_v1_0.json",
+      "sha256": "0b7091ca7caa7a77a1ddd09cb140b9f414637724d46a5be6b73f7b6e6582b60c"
     },
     {
       "chunks": 1,
@@ -9143,6 +9161,15 @@
       "git_oid": "e7f7e44d9f4ed16d2492f874c53cb110bbdf6c7b",
       "path": "docs/automation/PHOENIX_PAT_001_STRUCTURAL_PREPARATION_MASTERPACK_v1_0.md",
       "sha256": "5bc67a026a6c00076059b99edc7e44951701228f3f71fd10e8e565a331c0a714"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "7051bf6ba135fb4b7528b174c6469b1deb511894",
+      "path": "docs/automation/PHOENIX_PROFESSIONAL_COUNTRY_AWARE_END_TO_END_AB_ROUTING_v1_0.md",
+      "sha256": "972b260f50c0bf681dae27340f640ee68ff4ef2a3e1a981394f192f63f3ab209"
     },
     {
       "chunks": 1,
@@ -16673,6 +16700,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "353adb36d5f187a267aa0e03252b9da25a33f664",
+      "path": "phoenix/local_app/professional_output_level_contract_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "f542ed4f0a2ffbdabd56ffd0b0ae0a37f314553a",
       "path": "phoenix/local_app/server.py",
       "sha256": null
@@ -16835,7 +16871,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "7ddeeadcc4fb6ec8b4a8acd941fa135179dcb97d",
+      "git_oid": "511294eb3fb66bc26444995b328c7cf4ec41fcc3",
       "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_official_start_v3_visual_v3_0_2.js",
       "sha256": null
     },
@@ -16846,6 +16882,15 @@
       "git_mode": "100644",
       "git_oid": "54e8afe729b102aaedb5af432a39e199ca76ff3d",
       "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_pat002_blender_tv_activation_v1_0.js",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "85b1a1f461e9d7f359876d23e954d2a0b9f1f8b7",
+      "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_professional_country_aware_end_to_end_ab_v1_0.js",
       "sha256": null
     },
     {
@@ -23414,6 +23459,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "05ce62fd5f4c4ee11f0ff09e503f6323d812a9b0",
+      "path": "tests/automation/test_phoenix_professional_country_aware_end_to_end_ab_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "c7079b21020328dbe37b586093998ece52a31f43",
       "path": "tests/automation/test_phoenix_professional_dossier_controlled_review_v1_0.py",
       "sha256": null
@@ -25274,5 +25328,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "83ab8780b4dac7cc48736ae2d941ced198938f2727f013a4b1ea913ffcd9cf09"
+  "source_digest": "30c81e5d1e13d99cea8a5a45231a8895ab2801c6f53530c5619129012f75b991"
 }

@@ -1,0 +1,90 @@
+{
+  "schema_version": "phoenix.professional-country-aware-end-to-end-policy/1.0",
+  "capability_id": "PHX.PROFESSIONAL_COUNTRY_AWARE_DESIGN_TO_CONSTRUCTION_COST",
+  "classification": "EXTEND_ROUTING_ONLY",
+  "default_output_level": "A",
+  "levels": {
+    "A": {
+      "label_nl": "Professionele projectoutput",
+      "formal_release": false,
+      "initial_state": "A-PROFESSIONAL",
+      "description": "Professioneel uitgewerkt projectpakket zonder claim van formele uitvoeringsvrijgave."
+    },
+    "B": {
+      "label_nl": "Formeel gecontroleerd / voor uitvoering",
+      "formal_release_target": true,
+      "initial_state": "B-PENDING",
+      "states": [
+        "B-PENDING",
+        "B-RELEASED",
+        "B-REVIEW-REQUIRED"
+      ],
+      "fail_closed": true,
+      "automatic_professional_approval": false,
+      "automatic_for_construction_release": false
+    }
+  },
+  "same_project_transition": {
+    "A_to_B": true,
+    "new_project_required": false
+  },
+  "revision_invalidation": {
+    "from": "B-RELEASED",
+    "to": "B-REVIEW-REQUIRED",
+    "trigger": "relevant_project_revision_change"
+  },
+  "country_aware_costing": {
+    "required": true,
+    "project_country_must_be_explicit_or_project-derived": true,
+    "currency_must_be_explicit_or_country-derived": true,
+    "price_date_required": true,
+    "current_local_price_evidence_preferred": true,
+    "missing_required_local_cost_evidence": "BLOCKED_INPUT",
+    "synthetic_test_ratebook_not_professional_evidence": true
+  },
+  "reuse": {
+    "architecture": true,
+    "drawings": true,
+    "bim_ifc": true,
+    "structural": true,
+    "structural_report": true,
+    "specification": true,
+    "specification_drawings": true,
+    "quantities": true,
+    "cost_estimation": true,
+    "office_exports": true,
+    "cad_exports": true,
+    "qaqc": true,
+    "source_traceability": true,
+    "release_gates": true,
+    "final_package": true
+  },
+  "required_professional_A_deliverable_intents": [
+    "project_intake",
+    "design_variants",
+    "site_plan",
+    "floor_plans",
+    "elevations",
+    "sections",
+    "viewer_3d_or_bim",
+    "structural_analysis",
+    "structural_report",
+    "structural_drawings",
+    "specification",
+    "specification_drawings",
+    "quantities",
+    "cost_estimate",
+    "qaqc",
+    "source_evidence",
+    "docx_pdf",
+    "cad",
+    "xlsx",
+    "project_zip"
+  ],
+  "B_additional_intents": [
+    "engineering_review_package",
+    "professional_review",
+    "release_package",
+    "revision_change_impact"
+  ]
+}

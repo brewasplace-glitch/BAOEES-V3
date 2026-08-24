@@ -554,3 +554,13 @@ $("startBtn").onclick = async () => {
   }
 })();
 })();
+// PROJECT PHOENIX PROFESSIONAL COUNTRY-AWARE END-TO-END A/B ROUTING v1.0
+(() => {
+  const id = "phoenix-professional-country-aware-ab-v1";
+  if (document.getElementById(id)) return;
+  const script = document.createElement("script");
+  script.id = id;
+  script.src = "/start-v3/PROJECT_PHOENIX_professional_country_aware_end_to_end_ab_v1_0.js";
+  script.async = false;
+  (document.head || document.documentElement).appendChild(script);
+})();

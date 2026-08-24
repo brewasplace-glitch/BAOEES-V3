@@ -1,0 +1,22 @@
+{
+  "schema_version": "phoenix.startscreen-capability/1.0",
+  "capability_id": "professional_country_aware_end_to_end_ab_v1_0",
+  "title_nl": "PROFESSIONELE OUTPUTNIVEAU A / B",
+  "default": "A",
+  "options": [
+    {
+      "id": "A",
+      "label": "A — Professionele projectoutput",
+      "state": "A-PROFESSIONAL"
+    },
+    {
+      "id": "B",
+      "label": "B — Formeel gecontroleerd / voor uitvoering",
+      "state": "B-PENDING",
+      "fail_closed": true
+    }
+  ],
+  "same_project_A_to_B": true,
+  "released_change_invalidation": "B-RELEASED -> B-REVIEW-REQUIRED",
+  "country_aware_costing_required": true
+}
