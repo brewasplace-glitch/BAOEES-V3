@@ -1,0 +1,48 @@
+{
+  "schema_version": "phoenix.libreoffice-office-adapter-policy/1.0",
+  "capability_id": "PHX.OFFICE.LIBREOFFICE_ADAPTER",
+  "classification": "EXTEND",
+  "purpose": "Connect installed LibreOffice to the existing Phoenix document export stack for open-source Office document opening and headless conversion.",
+  "engine": {
+    "primary": "LibreOffice",
+    "windows_headless_route": "soffice.com",
+    "gui_route": "soffice.exe",
+    "isolated_profile_required": true
+  },
+  "formats": {
+    "inputs": [
+      "doc",
+      "docx",
+      "odt",
+      "rtf",
+      "txt",
+      "xls",
+      "xlsx",
+      "ods",
+      "csv",
+      "ppt",
+      "pptx",
+      "odp"
+    ],
+    "targets": [
+      "pdf",
+      "docx",
+      "xlsx",
+      "pptx",
+      "odt",
+      "ods",
+      "odp"
+    ]
+  },
+  "dependencies": {
+    "libreoffice": "external installed open-source application",
+    "openpyxl_required": false,
+    "microsoft_office_required": false
+  },
+  "safety": {
+    "conversion_must_produce_real_output_file": true,
+    "nonzero_process_exit_fails": true,
+    "zero_byte_output_fails": true,
+    "production_release_claim": false
+  }
+}

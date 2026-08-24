@@ -1445,6 +1445,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "b4c3e65737b9663fd2720071297570fda809c0c6",
+      "path": "baoees/document_export_engine/libreoffice_bridge.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "8ff5b8ac757532ff7c80fba1916531239797ee8c",
       "path": "baoees/document_export_engine/main.py",
       "sha256": null
@@ -4472,6 +4481,15 @@
       "git_oid": "4f6f8ab65b347e67d8d45396b25c5e6a56314fa2",
       "path": "configs/phoenix/knowledge_reasoning_policy_v18_0.json",
       "sha256": "a6306ffa63ad3fb9ff153a18a318a42d2158769faf34b8624acb111be96a4827"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "48271ff8a57325cf7f3fa5c8eefa267738fcb17a",
+      "path": "configs/phoenix/libreoffice_office_adapter_policy_v1_0.json",
+      "sha256": "3fa26d6a3e4923df30f2c7d1d85229244b7df96f90e1e53361900abff319d8e7"
     },
     {
       "chunks": 1,
@@ -8783,6 +8801,15 @@
       "git_oid": "4123bad4d9006883c41c64476e166594eceeec3d",
       "path": "docs/automation/PHOENIX_KERNEL_v10_0.md",
       "sha256": "859c9f03845aba8ea1984ec608aa14ea193f43f424c8416055b81125660b293a"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "01d367b02416c7eafaa7a32a5a943697059051be",
+      "path": "docs/automation/PHOENIX_LIBREOFFICE_OFFICE_ADAPTER_v1_0.md",
+      "sha256": "dae865d3b51dc2513630d36511406338419493f511f2bf0046bfad768e9b2889"
     },
     {
       "chunks": 1,
@@ -16250,6 +16277,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "d78a0bb3cbca16a9bc5cbd19eb28026761f49db4",
+      "path": "phoenix/engines/adapters/libreoffice_office_adapter_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "02cf0dee74f1f74a75fd5137150d4425ea6cc1ca",
       "path": "phoenix/engines/adapters/qgis_adapter_v1_0.py",
       "sha256": null
@@ -19976,6 +20012,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "a108e808fec4281a7dacaa6d4b0d46afa2d1a25b",
+      "path": "runners/PROJECT_PHOENIX_libreoffice_office_adapter_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "dd2f6ce7c496451c317629b577fa34e5f6169e00",
       "path": "runners/PROJECT_PHOENIX_lifecycle_cost_energy_performance_condition_optimization_v7_4_0.py",
       "sha256": null
@@ -22829,6 +22874,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "24aa91039d793d9f41d40657891494232f25e0fc",
+      "path": "tests/automation/test_phoenix_libreoffice_office_adapter_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "61b78a83a2b55adff8965d28847bbe6c4ec29889",
       "path": "tests/automation/test_phoenix_local_cost_intelligence_currency_market_pricing_v1_0.py",
       "sha256": null
@@ -25094,5 +25148,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "84cf63026cc13b6c38a2fba306d8e26669c270eb103fd8cfa19c6cc9f96da86c"
+  "source_digest": "fc03c00309cd57ce4311107be7f1e0962d077c59d1db4fe7e8ba062eae5f80f0"
 }
