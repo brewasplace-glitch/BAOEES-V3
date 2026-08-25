@@ -9041,6 +9041,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "514e2e9e4ebd3385c78b8a63ca95925923ce8452",
+      "path": "docs/automation/PHOENIX_NL_PDOK_SITE_ACQUISITION_BRIDGE_v1_0.md",
+      "sha256": "07ace073f8f1a30c0c6ad245fb2150c42a7ac188158b7a08c98974f89bb752dc"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "1a0567c9d1a5dac697c42cd1aa525ea9b4700dcc",
       "path": "docs/automation/PHOENIX_NONRESIDENTIAL_REUSE_ROUTER_v1_0.md",
       "sha256": "38412cbb55e2244553f8829cc66702bb58865182ce6ed22c52fd0eb6ad6572d1"
@@ -14774,6 +14783,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "da4dcc1374790221ea789617ac8cfa1f99275309",
+      "path": "phoenix/autonomy/nl_pdok_site_acquisition_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "0d58102532be68786e3f357c99ec54513c7723b9",
       "path": "phoenix/autonomy/nonresidential_session_architecture_bridge_v1_0.py",
       "sha256": null
@@ -14990,7 +15008,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "bdbd6e015342e6c33017096f55f90752ac1c1a52",
+      "git_oid": "6f17728463e0a51aa507269d1f66f4db6843d735",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -23270,6 +23288,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "1c60ef43933899fdeccdaaec0a6814a2fea3df5d",
+      "path": "tests/automation/test_phoenix_nl_pdok_site_acquisition_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "14e96b93721bd9a7c48c3b565310e2ce233b3a1c",
+      "path": "tests/automation/test_phoenix_nl_pdok_site_acquisition_wiring_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "62b3f557099cab5b06b6f2353f57205dc98aaf8b",
       "path": "tests/automation/test_phoenix_nonresidential_reuse_router_v1_0.py",
       "sha256": null
@@ -25427,5 +25463,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "9ea7de04acf8b3cbbf219c06e2c9be206085b4edaf45ce2c6b67bf17bbbb95a8"
+  "source_digest": "35bf8cbd18062c0b153d9672b2f05706062cdacd7fd39b48bcebc76fbba4f0a5"
 }

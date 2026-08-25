@@ -42,6 +42,7 @@ from .structural_session_chain import run_structural_chain
 from .local_material_supply_intelligence import build_local_material_supply_context
 from .real_world_data_acquisition import acquire_real_world_data
 from .site_parcel_intelligence import analyze_site_drawings
+from .nl_pdok_site_acquisition_v1_0 import acquire_nl_pdok_site_evidence
 from .local_product_qualification import prepare_local_product_qualification_overlay
 from .global_material_sourcing import build_global_material_sourcing_context
 from .suriname_structural_load_basis import ensure_suriname_structural_load_basis
@@ -294,6 +295,25 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         brief=str(ctx["session"].get("brief") or ""),
         repository=ctx["repository"],
     )
+    # Netherlands open-data extension: when uploads did not provide real site geometry,
+    # attempt PDOK address -> BRK parcel evidence. This is Level-A candidate evidence
+    # only; legal/cadastral validation remains false.
+    pdok_result=acquire_nl_pdok_site_evidence(
+        project_id=ctx["project_id"],
+        project_context=context_result.context,
+        base_site_context=site_result.site_context,
+        existing_evidence_register=site_result.evidence_register,
+        output_dir=out,
+    )
+    if pdok_result.applied:
+        site_result.status=pdok_result.status
+        site_result.site_context=pdok_result.site_context
+        site_result.evidence_register=pdok_result.evidence_register
+        site_result.warnings.extend(pdok_result.warnings)
+        for pdok_path in pdok_result.output_files:
+            outputs.append(repo_ref(pdok_path,ctx["repository"]))
+    elif pdok_result.warnings:
+        site_result.warnings.extend(pdok_result.warnings)
     context_result.site_context=site_result.site_context
     site_evidence_path=out/"site_parcel_evidence_register.json"
     write_json(site_evidence_path,site_result.evidence_register)
