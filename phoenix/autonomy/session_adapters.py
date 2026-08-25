@@ -32,6 +32,7 @@ from .adapter_runtime import (
 from .architectural_bootstrap import generate_architectural_bootstrap
 from .nonresidential_session_architecture_bridge_v1_0 import resolve_nonresidential_session_architecture
 from .project_context import generate_project_context
+from .selected_project_context_bridge_v1_0 import resolve_selected_project_context, merge_selected_project_facts
 from .local_cost_intelligence import build_local_cost_market_context, calculate_cost_items
 from .structural_profile import generate_structural_project_profile
 from .drawing_production import produce_architectural_drawings
@@ -260,6 +261,9 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         brief=str(ctx["session"].get("brief") or ""),
         architectural_model=model_value,
     )
+    selected_project_context=resolve_selected_project_context(ctx)
+    if selected_project_context.get("status") == "PASSED":
+        merge_selected_project_facts(context_result.context, selected_project_context)
     location_result=resolve_location_intelligence(
         repository=ctx["repository"],
         project_id=ctx["project_id"],

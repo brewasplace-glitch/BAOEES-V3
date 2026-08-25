@@ -9581,6 +9581,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "a19a0c26acb7d0ff993ced1a89bf51131557628e",
+      "path": "docs/automation/PHOENIX_SELECTED_PROJECT_LOCATION_JURISDICTION_CONTEXT_PROPAGATION_REPAIR_v1_0.md",
+      "sha256": "850c629900e63da2ccc59112768f0cbd00c12e6c67c6121f72e98253a55ae9a8"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "c38887f5d47e4b8ca8d0c2b7f5657f477f3944fe",
       "path": "docs/automation/PHOENIX_START_OUTPUT_LAYOUT_POINTER_STABILITY_v1_0.md",
       "sha256": "6826cdc0cc07d836f690042b3663bbf2d19d467d56cf4842402cfaf41a4bfd12"
@@ -14945,7 +14954,16 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "86a03cf962be458fb146d624b29c8df8826aeba4",
+      "git_oid": "fc49a16afa934f0e4966633ec8dba50597f6f9ce",
+      "path": "phoenix/autonomy/selected_project_context_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "7715a54f9e73dd8eb45be8d7219829ffd33160fd",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -23792,6 +23810,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "f6bdda2cf2b1002b5c5b60b3eeb55d25d7f3e8a0",
+      "path": "tests/automation/test_phoenix_selected_project_location_context_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "152d4d254155a4d6f9a8e316573451f7d57051a2",
       "path": "tests/automation/test_phoenix_stability_ab_project_policy_integration_r9_5_2_2.py",
       "sha256": null
@@ -25355,5 +25382,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "b910e4cf899be1535cdd74dd586f87705efb255ac0ca5e7ad6803d2635dd7adb"
+  "source_digest": "ec19d240465640d161ec1f82957c73e0077218291de6c96f53746f9f054b2121"
 }
