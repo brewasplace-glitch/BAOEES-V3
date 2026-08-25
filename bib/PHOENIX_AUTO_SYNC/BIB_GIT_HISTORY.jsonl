@@ -1,3 +1,4 @@
+{"commit": "b46cf15ea38cc72c4b2e951a7a5e7fa56280f714", "date": "2026-08-25T01:17:01+02:00", "subject": "feat(workflow): wire professional country-aware A/B end-to-end flow"}
 {"commit": "df25c2ef7f7796cb595967888d2ba9dfdbbab083", "date": "2026-08-25T01:14:52+02:00", "subject": "fix(automation): preserve porcelain status prefix in scope parser"}
 {"commit": "3233de3491e52bae9baa9defdc26696f1d67c9c3", "date": "2026-08-24T23:57:12+02:00", "subject": "feat(automation): add autonomous build orchestrator self-healing loop"}
 {"commit": "7cd6e8e0f3f8c0b8dee107495e86969281555b65", "date": "2026-08-24T23:26:55+02:00", "subject": "feat(office): wire LibreOffice default document routing"}
@@ -497,4 +498,3 @@
 {"commit": "3cc3ddae6f9d8b55b59f9874f87cacf3654c0f45", "date": "2026-06-21T14:43:14+02:00", "subject": "feat: upgrade Geo Engine with real foundation calculations v1.1"}
 {"commit": "5e45acf149ed68526620dd4f1eaac4c6ea903f8a", "date": "2026-06-21T14:03:41+02:00", "subject": "feat: add CAD DXF Export Engine v1"}
 {"commit": "4a7b2ca7bdafffcfc3eafad111a3887f7c883f7d", "date": "2026-06-21T13:46:50+02:00", "subject": "docs: add BAOEES V3 project structure"}
-{"commit": "595a1a4db8c4c633a674c513d322a6ad0af15d99", "date": "2026-06-21T13:43:00+02:00", "subject": "feat: upgrade Document Export Engine to professional DOCX PDF v1.1"}

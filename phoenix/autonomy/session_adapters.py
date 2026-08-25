@@ -30,6 +30,7 @@ from .adapter_runtime import (
     write_json,
 )
 from .architectural_bootstrap import generate_architectural_bootstrap
+from .nonresidential_session_architecture_bridge_v1_0 import resolve_nonresidential_session_architecture
 from .project_context import generate_project_context
 from .local_cost_intelligence import build_local_cost_market_context, calculate_cost_items
 from .structural_profile import generate_structural_project_profile
@@ -148,6 +149,31 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         if profile_source is None and _structural_profile_candidate(value):
             profile_source, profile_value = path, value
 
+    route_bridge = None
+    if model_source is None:
+        route_bridge = resolve_nonresidential_session_architecture(ctx)
+        if route_bridge.get("matched"):
+            if route_bridge.get("status") != "PASSED":
+                bridge_outputs = [repo_ref(intake_path, ctx["repository"])]
+                evidence_path = route_bridge.get("evidence_path")
+                if evidence_path:
+                    bridge_outputs.append(repo_ref(evidence_path, ctx["repository"]))
+                return finish(
+                    ctx,
+                    capability_id=cap,
+                    label=label,
+                    status="BLOCKED_INPUT",
+                    outputs=bridge_outputs,
+                    blockers=[{
+                        "reason": route_bridge.get("reason") or "NONRESIDENTIAL_ARCHITECTURE_ROUTE_BLOCKED",
+                        "message": route_bridge.get("message") or "Nonresidential project route kon geen veilig projectgebonden architectuurmodel leveren.",
+                        "route": route_bridge.get("route") or "NONRESIDENTIAL_REUSE_V1",
+                    }],
+                )
+            model_source = route_bridge["model_source_path"]
+            model_value = route_bridge["model"]
+            detail_source = route_bridge["detail_source_path"]
+            detail_value = route_bridge["detailed_elements"]
     if model_source is None and str(ctx["session"].get("project_mode") or "").lower() == "autonomous":
         generated = generate_architectural_bootstrap(
             project_id=ctx["project_id"],

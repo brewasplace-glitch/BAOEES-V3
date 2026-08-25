@@ -8879,6 +8879,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "4d6717b01f5910e14a1e9b4a3909e65f351c34fc",
+      "path": "docs/automation/PHOENIX_LEVEL_A_NONRESIDENTIAL_ARCHITECTURE_ROUTE_CONTEXT_BRIDGE_REPAIR_v1_0.md",
+      "sha256": "8e6242b362e5d044426627de500b9f322df234bfbb84e5e221bdace269dd0e53"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "3768fbbc4566c570f3f73f75ec570879bcbdfdb3",
       "path": "docs/automation/PHOENIX_LIBREOFFICE_DEFAULT_DOCUMENT_ROUTING_WIRING_v1_0.md",
       "sha256": "9e3feee9997d0fc51a48184b213f97493e0a0eafc2e926882277bf417ea642d2"
@@ -14729,6 +14738,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "0d58102532be68786e3f357c99ec54513c7723b9",
+      "path": "phoenix/autonomy/nonresidential_session_architecture_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "017f81bbb3d09cfae3753d68c4d46d2b6404e7ee",
       "path": "phoenix/autonomy/normative_applicability_stability_design_basis_r9_4.py",
       "sha256": null
@@ -14927,7 +14945,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "542efb3fe67511de3151b01e2dc0a1526926414c",
+      "git_oid": "86a03cf962be458fb146d624b29c8df8826aeba4",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -23036,6 +23054,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "3e37c482d36b0798d8ce91b2bad3394a289e422e",
+      "path": "tests/automation/test_phoenix_level_a_nonresidential_architecture_route_context_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "172101c3027f82db2023bd4bead6e483e140c3b1",
       "path": "tests/automation/test_phoenix_libreoffice_default_document_routing_v1_0.py",
       "sha256": null
@@ -25328,5 +25355,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "30c81e5d1e13d99cea8a5a45231a8895ab2801c6f53530c5619129012f75b991"
+  "source_digest": "b910e4cf899be1535cdd74dd586f87705efb255ac0ca5e7ad6803d2635dd7adb"
 }
