@@ -1,3 +1,4 @@
+{"commit": "33a7ad4b62bada5a826e860c73a44241967e9255", "date": "2026-08-25T23:32:00+02:00", "subject": "fix(projectflow): propagate selected project location context"}
 {"commit": "6cce67f7578f55b58b5cd4b05219724b56345c5e", "date": "2026-08-25T18:17:45+02:00", "subject": "fix(projectflow): bridge nonresidential project context into session architecture"}
 {"commit": "b46cf15ea38cc72c4b2e951a7a5e7fa56280f714", "date": "2026-08-25T01:17:01+02:00", "subject": "feat(workflow): wire professional country-aware A/B end-to-end flow"}
 {"commit": "df25c2ef7f7796cb595967888d2ba9dfdbbab083", "date": "2026-08-25T01:14:52+02:00", "subject": "fix(automation): preserve porcelain status prefix in scope parser"}
@@ -497,4 +498,3 @@
 {"commit": "ca3d870bc7ee4c5d7abfbe81866b79a6cabfdcf3", "date": "2026-06-21T15:18:04+02:00", "subject": "feat: add Cost Estimate Engine v1"}
 {"commit": "bd1b35ce6cc80d2b39adae310e13c2be57f07031", "date": "2026-06-21T14:52:36+02:00", "subject": "feat: upgrade Structural Engine with real structural checks v1.1"}
 {"commit": "3cc3ddae6f9d8b55b59f9874f87cacf3654c0f45", "date": "2026-06-21T14:43:14+02:00", "subject": "feat: upgrade Geo Engine with real foundation calculations v1.1"}
-{"commit": "5e45acf149ed68526620dd4f1eaac4c6ea903f8a", "date": "2026-06-21T14:03:41+02:00", "subject": "feat: add CAD DXF Export Engine v1"}

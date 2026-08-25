@@ -33,6 +33,7 @@ from .architectural_bootstrap import generate_architectural_bootstrap
 from .nonresidential_session_architecture_bridge_v1_0 import resolve_nonresidential_session_architecture
 from .project_context import generate_project_context
 from .selected_project_context_bridge_v1_0 import resolve_selected_project_context, merge_selected_project_facts
+from .cost_estimate_artifact_bridge_v1_0 import emit_level_a_cost_estimate_artifact
 from .local_cost_intelligence import build_local_cost_market_context, calculate_cost_items
 from .structural_profile import generate_structural_project_profile
 from .drawing_production import produce_architectural_drawings
@@ -938,9 +939,17 @@ def run_cost_planning(ctx: dict[str, Any]) -> int:
         "professional_review_required":True,
         "production_release":"LOCKED",
     }
+    cost_estimate_path=emit_level_a_cost_estimate_artifact(
+        output_dir=ctx["output_dir"],
+        project_id=ctx["project_id"],
+        session_id=ctx["session"].get("session_id"),
+        plan=plan,
+    )
+    plan["cost_estimate_artifact"]=repo_ref(cost_estimate_path,ctx["repository"])
     plan_path=ctx["output_dir"]/"cost_planning_plan.json"
     write_json(plan_path,plan)
     outputs.append(repo_ref(plan_path,ctx["repository"]))
+    outputs.append(repo_ref(cost_estimate_path,ctx["repository"]))
     return finish(
         ctx,capability_id=cap,label=label,status="PASSED",
         outputs=outputs,warnings=market.warnings,

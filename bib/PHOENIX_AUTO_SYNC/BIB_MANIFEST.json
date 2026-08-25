@@ -8879,6 +8879,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "ed42310e3308d64d335dd4f23e9d2dc0cac5da74",
+      "path": "docs/automation/PHOENIX_LEVEL_A_COST_ESTIMATE_ARTIFACT_PROJECTION_REPAIR_v1_0.md",
+      "sha256": "1a9e86a0c8733a58ab19b1c6b3ae6977bffe27d964628dc32a859c6dca2e2bd1"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "4d6717b01f5910e14a1e9b4a3909e65f351c34fc",
       "path": "docs/automation/PHOENIX_LEVEL_A_NONRESIDENTIAL_ARCHITECTURE_ROUTE_CONTEXT_BRIDGE_REPAIR_v1_0.md",
       "sha256": "8e6242b362e5d044426627de500b9f322df234bfbb84e5e221bdace269dd0e53"
@@ -14612,6 +14621,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "29f3c07f16688d5d228258afe2fb70b322747400",
+      "path": "phoenix/autonomy/cost_estimate_artifact_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "a2c093cc34da56d67f03b68ea85ecf20a62f0540",
       "path": "phoenix/autonomy/deliverable_evidence_resolver.py",
       "sha256": null
@@ -14963,7 +14981,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "7715a54f9e73dd8eb45be8d7219829ffd33160fd",
+      "git_oid": "bdbd6e015342e6c33017096f55f90752ac1c1a52",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -23072,6 +23090,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "03a94d1ec523e99c62efd2a4f45997a9a51af494",
+      "path": "tests/automation/test_phoenix_level_a_cost_estimate_artifact_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "3e37c482d36b0798d8ce91b2bad3394a289e422e",
       "path": "tests/automation/test_phoenix_level_a_nonresidential_architecture_route_context_bridge_v1_0.py",
       "sha256": null
@@ -25382,5 +25409,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "ec19d240465640d161ec1f82957c73e0077218291de6c96f53746f9f054b2121"
+  "source_digest": "b9f9f1da51dbe639452b4ae51e6849872849e3677150a2b7b4c2e3c2955046d4"
 }
