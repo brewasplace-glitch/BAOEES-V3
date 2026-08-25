@@ -8726,6 +8726,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "bf194f337695479d5b99dc5c7c5133c05833bacf",
+      "path": "docs/automation/PHOENIX_COST_ESTIMATE_DESIRED_OUTPUT_EVIDENCE_RESOLVER_REPAIR_v1_0.md",
+      "sha256": "4b06161239ee4319c54bf03f2b6c1bd71f030b23d0cd6969641e1aad6ea5e7ed"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "0ca8d6fb34a6f03e9a3f917ded842836b2aa28ee",
       "path": "docs/automation/PHOENIX_COST_PRICE_RUNTIME_CONTINUATION_FIXED_R4.md",
       "sha256": "2bd45dfd115b4c7cbfd721cf3839b60a8097abab62b57f78f1e821cd2202be47"
@@ -14639,7 +14648,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "0a4b8e02d0acd4b636d35f9c0127d1ddb7cf4826",
+      "git_oid": "8e722301d0552763653a02aad295498c108273e9",
       "path": "phoenix/autonomy/desired_output_evidence.py",
       "sha256": null
     },
@@ -22694,6 +22703,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "2268425bbb94e4d864a9f5f9a40b30c93ad07570",
+      "path": "tests/automation/test_phoenix_cost_estimate_desired_output_evidence_resolver_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "5d3e9e6fe5f09fc71749fba951db230301d39b99",
       "path": "tests/automation/test_phoenix_cost_runtime_continuation_v1_0.py",
       "sha256": null
@@ -25409,5 +25427,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "b9f9f1da51dbe639452b4ae51e6849872849e3677150a2b7b4c2e3c2955046d4"
+  "source_digest": "9ea7de04acf8b3cbbf219c06e2c9be206085b4edaf45ce2c6b67bf17bbbb95a8"
 }

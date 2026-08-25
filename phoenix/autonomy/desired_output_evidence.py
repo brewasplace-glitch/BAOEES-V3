@@ -89,7 +89,21 @@ def validate_desired_output_evidence(
         if len(evidence) < 2:
             evidence = []
     elif oid == "cost_estimate":
-        evidence = _existing(repository, [x for x in cost if x.endswith("local_cost_calculation.json")])
+        legacy = _existing(repository, [x for x in cost if x.endswith("local_cost_calculation.json")])
+        level_a = _existing(repository, [x for x in cost if x.endswith("cost_estimate.json")])
+        safe_level_a = []
+        for ref in level_a:
+            payload = _read((repository / ref).resolve())
+            pricing_rules = payload.get("pricing_rules") or {}
+            if (
+                str(payload.get("schema_version") or "").startswith("phoenix.level-a-cost-estimate-artifact/")
+                and str(payload.get("artifact_type") or "").upper() == "COST_ESTIMATE"
+                and pricing_rules.get("price_fabricated") is False
+                and payload.get("automatic_professional_approval") is False
+                and str(payload.get("production_release") or "").upper() == "LOCKED"
+            ):
+                safe_level_a.append(ref)
+        evidence = sorted(set(legacy + safe_level_a))
     elif oid == "site_plan":
         evidence = _existing(repository, [x for x in arch if "/drawings/site_plan." in x])
     elif oid == "floor_plans":
