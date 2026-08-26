@@ -42,6 +42,7 @@ from .structural_session_chain import run_structural_chain
 from .local_material_supply_intelligence import build_local_material_supply_context
 from .real_world_data_acquisition import acquire_real_world_data
 from .site_parcel_intelligence import analyze_site_drawings
+from .level_a_project_zip_artifact_bridge_v1_0 import emit_level_a_project_zip_artifact
 from .nl_pdok_site_acquisition_v1_0 import acquire_nl_pdok_site_evidence
 from .local_product_qualification import prepare_local_product_qualification_overlay
 from .global_material_sourcing import build_global_material_sourcing_context
@@ -1076,11 +1077,22 @@ def run_closure(ctx: dict[str, Any]) -> int:
     }
     gate_path=ctx["output_dir"]/"qaqc_release_gate.json"
     write_json(gate_path,gate)
+    project_zip_path,project_zip_manifest_path=emit_level_a_project_zip_artifact(
+        workspace=ctx["workspace"],
+        output_dir=ctx["output_dir"],
+        project_id=ctx["project_id"],
+        session_id=ctx["session"].get("session_id"),
+        qaqc_gate_path=gate_path,
+    )
 
     # Control adapter itself passed: it correctly enforces the release lock.
     return finish(
         ctx,capability_id=cap,label=label,status="PASSED",
-        outputs=[repo_ref(gate_path,ctx["repository"])],
+        outputs=[
+            repo_ref(gate_path,ctx["repository"]),
+            repo_ref(project_zip_path,ctx["repository"]),
+            repo_ref(project_zip_manifest_path,ctx["repository"]),
+        ],
         warnings=["Release remains locked; human review and successful PAT are mandatory."],
         metadata={"upstream_blocker_count":len(blockers),"release":"LOCKED"},
     )

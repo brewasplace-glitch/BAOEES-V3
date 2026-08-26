@@ -1,3 +1,4 @@
+{"commit": "2d03d95e31c49e5930c989d37a5390a61dfb0b21", "date": "2026-08-26T01:59:46+02:00", "subject": "feat(site): add NL PDOK parcel evidence acquisition bridge"}
 {"commit": "f086bffc1d66cf1a506815917c4b9323c083b778", "date": "2026-08-26T00:36:01+02:00", "subject": "fix(cost): recognize safe Level-A cost estimate evidence"}
 {"commit": "7c25006f2495892c9a0e732f38f2b986dba38aeb", "date": "2026-08-26T00:08:02+02:00", "subject": "fix(cost): emit Level-A estimate artifact with unresolved price evidence"}
 {"commit": "33a7ad4b62bada5a826e860c73a44241967e9255", "date": "2026-08-25T23:32:00+02:00", "subject": "fix(projectflow): propagate selected project location context"}
@@ -497,4 +498,3 @@
 {"commit": "07feed190d977e2b27e90d558830ef03b3f5236e", "date": "2026-06-21T16:25:02+02:00", "subject": "feat: add Drainage and Sewerage Engine v1"}
 {"commit": "33e671d427887a2cb2cc158748753876686aba7f", "date": "2026-06-21T16:11:34+02:00", "subject": "feat: add Traffic and Parking Engine v1"}
 {"commit": "16ed61ef6ae05427b21996361967008da11456d4", "date": "2026-06-21T15:47:52+02:00", "subject": "feat: add Planning Engine v1"}
-{"commit": "ca3d870bc7ee4c5d7abfbe81866b79a6cabfdcf3", "date": "2026-06-21T15:18:04+02:00", "subject": "feat: add Cost Estimate Engine v1"}

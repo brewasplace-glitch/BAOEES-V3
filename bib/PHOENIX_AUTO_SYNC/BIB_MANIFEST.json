@@ -8906,6 +8906,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "12f083d82e02074c7ae463a3f1f723e551e79321",
+      "path": "docs/automation/PHOENIX_LEVEL_A_PROJECT_ZIP_ARTIFACT_BRIDGE_v1_0.md",
+      "sha256": "9e89ab7713e08a710fe59e12eec43a9b1db0a44ffffd0c5484639d232c3f4c13"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "3768fbbc4566c570f3f73f75ec570879bcbdfdb3",
       "path": "docs/automation/PHOENIX_LIBREOFFICE_DEFAULT_DOCUMENT_ROUTING_WIRING_v1_0.md",
       "sha256": "9e3feee9997d0fc51a48184b213f97493e0a0eafc2e926882277bf417ea642d2"
@@ -14720,6 +14729,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "1baeaff3da6d78f5feb45f241adefcb55786d709",
+      "path": "phoenix/autonomy/level_a_project_zip_artifact_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "192b8a6c42f54e7cbaf683b0470d3c38069914f8",
       "path": "phoenix/autonomy/local_cost_intelligence.py",
       "sha256": null
@@ -15008,7 +15026,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "6f17728463e0a51aa507269d1f66f4db6843d735",
+      "git_oid": "0f0a06ed98510efc747a9873e0274710552c45a1",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -23144,6 +23162,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "0073ebf8dbd4bc700b313799c34661f515af9ecc",
+      "path": "tests/automation/test_phoenix_level_a_project_zip_artifact_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "5bb30b6984ac7c34260555d94df292a158fdd0d0",
+      "path": "tests/automation/test_phoenix_level_a_project_zip_artifact_wiring_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "172101c3027f82db2023bd4bead6e483e140c3b1",
       "path": "tests/automation/test_phoenix_libreoffice_default_document_routing_v1_0.py",
       "sha256": null
@@ -25463,5 +25499,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "35bf8cbd18062c0b153d9672b2f05706062cdacd7fd39b48bcebc76fbba4f0a5"
+  "source_digest": "29102beabfb64473e7ee79dccd4131b27024d86da473eace9c6311a04b4a72ff"
 }
