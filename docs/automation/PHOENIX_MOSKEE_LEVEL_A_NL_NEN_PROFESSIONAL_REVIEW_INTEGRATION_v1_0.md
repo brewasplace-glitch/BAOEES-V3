@@ -21,3 +21,13 @@ This masterpack extends the existing Level-A and structural v8.0-v8.12 chain. It
 - `PROFESSIONAL_REVIEW_REQUIRED`
 - No automatic professional approval
 - No invented norm values or silent Dutch NDP defaults
+
+## Source-derived v8.3 review input repair
+
+- Derives only explicit, traceable material/section facts already present in project evidence.
+- Generates an element-by-element professional input schedule for unresolved v8.3 requirements.
+- Generates a controlled technical-specification draft and QA/QC blocker report without inventing engineering values.
+- A solver register no longer counts as a CalculiX deck; solver evidence requires a real `.inp` file.
+- Architectural drawing registers no longer satisfy the structural-drawing requirement.
+- Identical same-name artifacts are content-deduplicated and ZIP member names are collision-free.
+- Solver execution, formal release and for-construction release remain locked pending confirmed source-backed input.

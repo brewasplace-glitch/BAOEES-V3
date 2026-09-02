@@ -637,6 +637,7 @@ def run_structural(ctx: dict[str, Any]) -> int:
     # PHOENIX_NL_NEN_PROFESSIONAL_REVIEW_INTEGRATION_v1_0
     from phoenix.autonomy.nl_nen_professional_review_package_integration import (
         prepare_nl_professional_review_basis,
+        build_structural_review_input_pack,
         build_professional_review_package,
     )
     nl_review_basis=prepare_nl_professional_review_basis(
@@ -725,8 +726,17 @@ def run_structural(ctx: dict[str, Any]) -> int:
         for path in nl_review_basis.get("paths", []):
             outputs.append(repo_ref(Path(path),ctx["repository"]))
     outputs.extend(chain.outputs)
+    nl_review_input_pack={"status":"NOT_APPLICABLE","paths":[]}
     nl_review_package={"status":"NOT_APPLICABLE","paths":[]}
     if nl_review_basis.get("status") != "NOT_APPLICABLE":
+        nl_review_input_pack=build_structural_review_input_pack(
+            repository=ctx["repository"],
+            workspace=ctx["workspace"],
+            output_dir=ctx["output_dir"],
+            project_id=ctx["project_id"],
+        )
+        for path in nl_review_input_pack.get("paths", []):
+            outputs.append(repo_ref(Path(path),ctx["repository"]))
         nl_review_package=build_professional_review_package(
             repository=ctx["repository"],
             workspace=ctx["workspace"],

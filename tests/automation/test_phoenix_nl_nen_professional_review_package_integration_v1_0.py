@@ -5,6 +5,7 @@ import unittest
 
 from phoenix.autonomy.nl_nen_professional_review_package_integration import (
     build_professional_review_package,
+    build_structural_review_input_pack,
     prepare_nl_professional_review_basis,
 )
 
@@ -114,6 +115,72 @@ class NLNENProfessionalReviewIntegrationTests(unittest.TestCase):
         self.assertIn("runtime.start(args.project_json)", source)
         self.assertIn('bridge_root = job_root / "structural_session_bridge"', source)
         self.assertNotIn("project_orchestration_cli", source)
+
+
+    def test_08_source_derived_pack_records_missing_elements_without_invention(self):
+        with tempfile.TemporaryDirectory() as td:
+            workspace = Path(td) / "workspace"
+            output = workspace / "results/session_adapters/structural_engineering"
+            required = workspace / "inputs/structural/structural_analysis_basis_REQUIRED.json"
+            required.parent.mkdir(parents=True)
+            required.write_text(json.dumps({"blockers": [{"reason": "INPUT_REQUIRED", "missing_element_ids": ["M0001"]}]}), encoding="utf-8")
+            action = workspace / "inputs/structural/action_load_input_REQUIRED.json"
+            action.write_text(json.dumps({"basis": "NL_NEN_BIB_PROFESSIONAL_REVIEW_CANDIDATE", "explicit_unresolved_items": ["ULS_MAPPING"]}), encoding="utf-8")
+            model = output / "v8_0_structural_derivation/model/structural_candidate_model.json"
+            model.parent.mkdir(parents=True)
+            model.write_text(json.dumps({"elements": [{"id": "M0001", "material": "GENERIC"}]}), encoding="utf-8")
+            result = build_structural_review_input_pack(repository=ROOT, workspace=workspace, output_dir=output, project_id="P1")
+            self.assertEqual(result["status"], "REVIEW_INPUT_REQUIRED")
+            pack = json.loads(result["pack"].read_text(encoding="utf-8"))
+            self.assertEqual(pack["invented_values"], [])
+            self.assertFalse(pack["solver_execution_allowed"])
+            self.assertEqual(pack["missing_element_count"], 1)
+            self.assertEqual(pack["element_input_schedule"][0]["source_derived_values"], {})
+            self.assertTrue(result["technical_specification"].is_file())
+            self.assertTrue(result["qaqc"].is_file())
+
+    def test_09_solver_register_does_not_count_as_solver_evidence(self):
+        with tempfile.TemporaryDirectory() as td:
+            workspace = Path(td) / "workspace"
+            output = workspace / "results/session_adapters/structural_engineering"
+            solver = output / "validated/v8_3/autonomous_solver_basis_register.json"
+            solver.parent.mkdir(parents=True)
+            solver.write_text("{}", encoding="utf-8")
+            result = build_professional_review_package(repository=ROOT, workspace=workspace, output_dir=output, project_id="P1")
+            self.assertIn("solver_evidence", result["missing_required_outputs"])
+
+    def test_10_archive_names_are_unique_and_identical_same_name_sources_are_deduplicated(self):
+        with tempfile.TemporaryDirectory() as td:
+            workspace = Path(td) / "workspace"
+            output = workspace / "results/session_adapters/structural_engineering"
+            samples = {
+                "reports/structural_calculation_report.json": "calc",
+                "drawings/structural_drawing.svg": "<svg/>",
+                "details/member_detail_and_dimensions.json": "detail",
+                "registers/action_load_combination_register.json": "loads",
+                "schedules/material_section_schedule.csv": "schedule",
+                "specification/technical_specification.md": "spec",
+                "qaqc/structural_qaqc_report.json": "qaqc",
+                "registers/assumptions_sources_deviations_register.json": "register",
+                "models/a/central_project_digital_twin.json": "same-twin",
+                "models/b/central_project_digital_twin.json": "same-twin",
+                "solver/calculix_LC-G.inp": "*HEADING",
+            }
+            for rel, value in samples.items():
+                path = workspace / "results" / rel
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(value, encoding="utf-8")
+            result = build_professional_review_package(repository=ROOT, workspace=workspace, output_dir=output, project_id="P1")
+            self.assertEqual(result["deduplicated_source_count"], 1)
+            import zipfile
+            with zipfile.ZipFile(result["zip"]) as archive:
+                names = archive.namelist()
+            self.assertEqual(len(names), len(set(names)))
+
+    def test_11_session_adapter_wires_source_derived_pack_before_package(self):
+        source = (ROOT / "phoenix/autonomy/session_adapters.py").read_text(encoding="utf-8-sig")
+        self.assertIn("build_structural_review_input_pack", source)
+        self.assertLess(source.index("nl_review_input_pack=build_structural_review_input_pack"), source.index("nl_review_package=build_professional_review_package"))
 
 
 if __name__ == "__main__":
