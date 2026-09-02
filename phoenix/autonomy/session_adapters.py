@@ -634,6 +634,19 @@ def run_structural(ctx: dict[str, Any]) -> int:
     )
     project_context_ref=next((x for x in arch_outputs if x.endswith("/project_context.json")),None)
 
+    # PHOENIX_NL_NEN_PROFESSIONAL_REVIEW_INTEGRATION_v1_0
+    from phoenix.autonomy.nl_nen_professional_review_package_integration import (
+        prepare_nl_professional_review_basis,
+        build_professional_review_package,
+    )
+    nl_review_basis=prepare_nl_professional_review_basis(
+        repository=ctx["repository"],
+        session=ctx["session"],
+        workspace=ctx["workspace"],
+        output_dir=ctx["output_dir"],
+        project_context_path=(ctx["repository"]/project_context_ref) if project_context_ref else None,
+    )
+
     # Install a project-scoped Suriname interim structural load source before the
     # v8.1->v8.12 chain asks the Structural Action & Load Basis Engine for v8.2.
     # Non-Suriname/non-residential projects remain unaffected and no professional
@@ -708,7 +721,20 @@ def run_structural(ctx: dict[str, Any]) -> int:
         outputs.append(str(sr_load_basis["register"]))
     if sr_load_basis.get("source"):
         outputs.append(str(sr_load_basis["source"]))
+    if nl_review_basis.get("status") != "NOT_APPLICABLE":
+        for path in nl_review_basis.get("paths", []):
+            outputs.append(repo_ref(Path(path),ctx["repository"]))
     outputs.extend(chain.outputs)
+    nl_review_package={"status":"NOT_APPLICABLE","paths":[]}
+    if nl_review_basis.get("status") != "NOT_APPLICABLE":
+        nl_review_package=build_professional_review_package(
+            repository=ctx["repository"],
+            workspace=ctx["workspace"],
+            output_dir=ctx["output_dir"],
+            project_id=ctx["project_id"],
+        )
+        for path in nl_review_package.get("paths", []):
+            outputs.append(repo_ref(Path(path),ctx["repository"]))
 
     if chain.status=="FAILED":
         return finish(ctx,capability_id=cap,label=label,status="FAILED",outputs=outputs,blockers=chain.blockers,

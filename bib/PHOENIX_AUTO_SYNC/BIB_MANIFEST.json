@@ -9041,6 +9041,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "e0a4ae63dfd009b4dd6cb3ed6dd692acfd55a54a",
+      "path": "docs/automation/PHOENIX_MOSKEE_LEVEL_A_NL_NEN_PROFESSIONAL_REVIEW_INTEGRATION_v1_0.md",
+      "sha256": "a6cf400145be00cc7d17ff0f8ab6022c1c5563daaf5ddd7a072735fdeffbece5"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "75f1de37681e1985c2d395bd92b3d4d292ca818c",
       "path": "docs/automation/PHOENIX_MOSKEE_STRUCTURAL_CAPABILITY_ACTIVATION_REPAIR_v1_0.md",
       "sha256": "b5dd8583b1cb8fa0a247adf76b8c5e78921eef485aa6415653ee9ab97ccf38ed"
@@ -14828,6 +14837,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "c176636158dc04a3f5264d42a57f0cb2ed815b79",
+      "path": "phoenix/autonomy/nl_nen_professional_review_package_integration.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "367ce226dd34502c052725c50f43a868d3d64c94",
       "path": "phoenix/autonomy/nl_nen_regulatory_review_bridge.py",
       "sha256": null
@@ -15071,7 +15089,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "0f0a06ed98510efc747a9873e0274710552c45a1",
+      "git_oid": "ad812191cabb87c082853bcc9d5578851e8b71f1",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -20318,6 +20336,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "12ce84bf54ee939022f56b2f2dfd70506d6dbade",
+      "path": "runners/PROJECT_PHOENIX_moskee_level_a_professional_review_package_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "57ba50307e844b0b0da312e4385b270d4b6f2bd8",
       "path": "runners/PROJECT_PHOENIX_multi_engine_qualification_v6_0_0.py",
       "sha256": null
@@ -23369,6 +23396,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "5b9bb75089c71f26bd08cc35edf5d70b6513de77",
+      "path": "tests/automation/test_phoenix_nl_nen_professional_review_package_integration_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "2ac41cf64ee807e6c3c0d4df777f9aa94f54b752",
       "path": "tests/automation/test_phoenix_nl_nen_regulatory_review_release_v1_0.py",
       "sha256": null
@@ -25553,5 +25589,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "0aa95b269b5611193a6fe5a1a7e4982cd5dd2cf784bcd08a4be9d1e7d9e096b6"
+  "source_digest": "293db0194ea7cd0e9d3744fc1469c214df1c76fc57aed0bafcbb6110d3be6f95"
 }

@@ -1,3 +1,4 @@
+{"commit": "673197f21275dc0c185b9cf7d0ab4a234f9e86fc", "date": "2026-09-02T11:04:45+02:00", "subject": "fix(acquisition): isolate regression fixture from configured providers"}
 {"commit": "c0d75760bc95fe964bbf5523cabe504bae722cdf", "date": "2026-08-26T02:50:50+02:00", "subject": "fix(closure): emit Level-A candidate project ZIP artifact"}
 {"commit": "2d03d95e31c49e5930c989d37a5390a61dfb0b21", "date": "2026-08-26T01:59:46+02:00", "subject": "feat(site): add NL PDOK parcel evidence acquisition bridge"}
 {"commit": "f086bffc1d66cf1a506815917c4b9323c083b778", "date": "2026-08-26T00:36:01+02:00", "subject": "fix(cost): recognize safe Level-A cost estimate evidence"}
@@ -497,4 +498,3 @@
 {"commit": "d1c9d1f22139526acd167ae4c375dbda2a430d0e", "date": "2026-06-21T17:37:01+02:00", "subject": "feat: add GIS Map Engine v1"}
 {"commit": "c686848dde9cbc9d62b151219253e7dd6cf96ca1", "date": "2026-06-21T16:50:50+02:00", "subject": "feat: add AERIUS Stikstof Engine v1"}
 {"commit": "07feed190d977e2b27e90d558830ef03b3f5236e", "date": "2026-06-21T16:25:02+02:00", "subject": "feat: add Drainage and Sewerage Engine v1"}
-{"commit": "33e671d427887a2cb2cc158748753876686aba7f", "date": "2026-06-21T16:11:34+02:00", "subject": "feat: add Traffic and Parking Engine v1"}
