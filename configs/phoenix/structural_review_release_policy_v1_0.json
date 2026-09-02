@@ -1,0 +1,6 @@
+{
+  "schema_version": "phoenix.structural-review-release-policy/1.0",
+  "phase_a": {"id":"PROFESSIONAL_REVIEW_PACKAGE","purpose":"Generate a complete design candidate package for review by structural engineer and architect.","required_outputs":["structural_calculation_report","structural_drawings","details_and_dimensions","load_and_combination_register","material_and_section_schedule","technical_specification","qaqc_report","assumptions_sources_deviations_register","digital_models","solver_evidence"],"release_state":"NOT_FOR_CONSTRUCTION","formal_release":"LOCKED","professional_review_required":true},
+  "review_return": {"required_evidence":["reviewer_identity_or_organization","review_document_reference","review_document_version","review_date","review_comments_or_markups","accepted_or_corrected_design_inputs","source_artifact_hashes"],"creates_new_controlled_baseline":true,"silent_assumption_replacement":false},
+  "phase_b": {"id":"REVIEWED_FINAL_RELEASE_RUN","entry_gate":"PROFESSIONAL_REVIEW_INPUT_ACCEPTED","steps":["ingest_review_return","create_reviewed_project_baseline","recalculate","regenerate_drawings","regenerate_report_and_specification","rerun_qaqc","compare_against_review_package","evaluate_release_gate"],"automatic_professional_approval":false,"for_construction_release_requires_explicit_external_approval_evidence":true}
+}

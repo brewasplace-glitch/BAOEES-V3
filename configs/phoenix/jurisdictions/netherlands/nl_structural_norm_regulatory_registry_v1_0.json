@@ -1,0 +1,21 @@
+{
+  "schema_version": "phoenix.nl-structural-norm-regulatory-registry/1.0",
+  "country_code": "NL",
+  "jurisdiction": "Netherlands",
+  "governance": {
+    "technical_publication_status_is_not_regulatory_applicability": true,
+    "regulatory_applicability_requires_explicit_evidence": true,
+    "national_annex_required_where_nationally_determined_parameters_apply": true,
+    "drafts_are_never_formal_project_code_basis": true,
+    "automatic_professional_approval": false,
+    "for_construction_release_default": "LOCKED"
+  },
+  "sources": [
+    {"source_id":"PHX-NL-EC0-2026-TECH","standard":"NEN-EN 1990-1:2025+A1:2026 en","discipline":"basis_of_design_and_combinations","technical_status":"CURRENT_TECHNICAL_SOURCE","regulatory_status":"SEPARATE_VERIFICATION_REQUIRED","national_annex_status":"PROJECT_APPLICABILITY_NOT_SILENTLY_ASSUMED","bib_id":"PHX-BIB-STRUCT-VIDEO-20260827-16","allowed_use":["WORKFLOW_VALIDATION","PROFESSIONAL_REVIEW_PACKAGE"],"formal_release_use":false},
+    {"source_id":"PHX-NL-EC1-IMPOSED-2019-NB","standard":"NEN-EN 1991-1-1+C1+C11:2019/NB:2019 nl","discipline":"imposed_loads","technical_status":"NL_NATIONAL_ANNEX_EVIDENCE","regulatory_status":"VERIFY_AGAINST_CURRENT_DUTCH_BUILDING_REGULATION","bib_id":"PHX-BIB-STRUCT-VIDEO-20260827-18","observed_values":{"category_C_qk_kN_m2":5.0,"category_C_Qk_kN":7.0},"project_mapping_required":["C_SUBCATEGORY"],"allowed_use":["WORKFLOW_VALIDATION","PROFESSIONAL_REVIEW_PACKAGE"],"formal_release_use":false},
+    {"source_id":"PHX-NL-EC1-SNOW-2019-NB","standard":"NEN-EN 1991-1-3+C1+A1:2019/NB:2019 nl","discipline":"snow","technical_status":"NL_NATIONAL_ANNEX_EVIDENCE","regulatory_status":"VERIFY_AGAINST_CURRENT_DUTCH_BUILDING_REGULATION","bib_id":"PHX-BIB-STRUCT-VIDEO-20260827-14","observed_values":{"sk_kN_m2":0.7,"Ce":1.0,"Ct":1.0},"project_mapping_required":["ROOF_GEOMETRY","MU_SHAPE_FACTOR"],"allowed_use":["WORKFLOW_VALIDATION","PROFESSIONAL_REVIEW_PACKAGE"],"formal_release_use":false},
+    {"source_id":"PHX-NL-EC1-WIND-FIRSTGEN-NB","standard":"NEN-EN 1991-1-4 first-generation + applicable NL NB/NDP","discipline":"wind","technical_status":"WITHDRAWN_AT_PUBLISHER_LEVEL_OR_SUPERSEDED_TECHNICALLY","regulatory_status":"MAY_REMAIN_APPLICABLE_WHILE_DUTCH_REGULATION_REFERENCES_FIRST_GENERATION","national_annex_role":"CURRENT_REGULATORY_CANDIDATE_PENDING_REGULATORY_VERIFICATION","allowed_use":["PROFESSIONAL_REVIEW_PACKAGE"],"formal_release_use":false},
+    {"source_id":"PHX-NL-EC1-WIND-2026","standard":"NEN-EN 1991-1-4:2026 en","discipline":"wind","technical_status":"CURRENT_TECHNICAL_SOURCE","regulatory_status":"SECOND_GENERATION_REGULATORY_TRANSITION_PENDING","national_annex_status":"SECOND_GENERATION_NL_NATIONAL_ANNEX_NOT_YET_PROVEN_IN_PROJECT_EVIDENCE","bib_id":"PHX-BIB-STRUCT-VIDEO-20260827-17","allowed_use":["TECHNICAL_REFERENCE","PROFESSIONAL_REVIEW_PACKAGE"],"formal_release_use":false},
+    {"source_id":"PHX-NL-EC1-WIND-2026-DRAFT-A1","standard":"NEN-EN 1991-1-4:2026/Ontw. A1:2026","discipline":"wind","technical_status":"DRAFT","regulatory_status":"NOT_FORMAL_PROJECT_CODE_BASIS","allowed_use":["FUTURE_CHANGE_AWARENESS"],"formal_release_use":false}
+  ]
+}

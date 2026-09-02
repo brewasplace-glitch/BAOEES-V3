@@ -14,12 +14,18 @@ class EngineeringRealWorldTests(unittest.TestCase):
         td=tempfile.TemporaryDirectory()
         repo=pathlib.Path(td.name)
         (repo/"configs"/"phoenix").mkdir(parents=True)
-        for name in (
-            "real_world_data_source_registry_v1_0.json",
-            "structural_action_load_basis_policy_v1_0.json",
-        ):
-            src=ROOT/"configs"/"phoenix"/name
-            (repo/"configs"/"phoenix"/name).write_text(src.read_text(encoding="utf-8"),encoding="utf-8")
+        policy_name="structural_action_load_basis_policy_v1_0.json"
+        policy_src=ROOT/"configs"/"phoenix"/policy_name
+        (repo/"configs"/"phoenix"/policy_name).write_text(
+            policy_src.read_text(encoding="utf-8"),encoding="utf-8"
+        )
+        registry_name="real_world_data_source_registry_v1_0.json"
+        registry_src=ROOT/"configs"/"phoenix"/registry_name
+        registry=json.loads(registry_src.read_text(encoding="utf-8"))
+        registry["providers"]=[]
+        (repo/"configs"/"phoenix"/registry_name).write_text(
+            json.dumps(registry,indent=2)+"\n",encoding="utf-8"
+        )
         return td,repo
 
     def context(self):
