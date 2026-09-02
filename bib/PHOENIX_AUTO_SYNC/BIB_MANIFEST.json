@@ -9869,6 +9869,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "80dc68b9d5bd9c152a72e31ff777399aacbc8856",
+      "path": "docs/automation/PHOENIX_V8_1_WALL_GEOMETRY_MAPPING_REPAIR_v1_0.md",
+      "sha256": "0bfcf8e14ccfa378d84ccdb20613a206ff8a4365927b5d864ed0c81dbe437522"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "851038980c97b0bd29878019a0a07bb732877009",
       "path": "docs/automation/PHOENIX_v8_3_AUTONOMOUS_SOLVER_BASIS_ELEMENT_ASSIGNMENT_MASTERPACK_v1_0.md",
       "sha256": "9e8f922787285f327ac2ff5cee63b986505f82b5d71b2970ade95c62b04e5806"
@@ -15224,7 +15233,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "98bfdc80c16dad0891100fd720a8dc5f1e029d2f",
+      "git_oid": "2e304f48a5496815e83f9e49a191161eccd106c2",
       "path": "phoenix/autonomy/structural_session_chain.py",
       "sha256": null
     },
@@ -24305,6 +24314,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "e22ddb3ae75bae5d01882c07a5c862d177925aed",
+      "path": "tests/automation/test_phoenix_v8_1_wall_geometry_mapping_repair_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4a142c7b02f8b252dfe7bc150c86650019b59c1f",
       "path": "tests/automation/test_phoenix_validation_engine_pve_v1_0_0.py",
       "sha256": null
@@ -25589,5 +25607,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "6240fdcc6b24e7452537b9e10a45e8e4a882cfaaa005d5812881320e6f418432"
+  "source_digest": "d0e61d39b8eae62444dc1906c7813d7282deaa19fa0b547aa098cefa6b583274"
 }

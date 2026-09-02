@@ -1,3 +1,4 @@
+{"commit": "9d029e665e7f4f0654ae66a6e21f94cbe9cb8d1d", "date": "2026-09-02T13:23:53+02:00", "subject": "fix(structural): derive review input pack without invented values"}
 {"commit": "a6c654e5735a791fd6dd17a34f0153e733ac3f4b", "date": "2026-09-02T12:07:12+02:00", "subject": "feat(structural): wire NL NEN professional review package"}
 {"commit": "673197f21275dc0c185b9cf7d0ab4a234f9e86fc", "date": "2026-09-02T11:04:45+02:00", "subject": "fix(acquisition): isolate regression fixture from configured providers"}
 {"commit": "c0d75760bc95fe964bbf5523cabe504bae722cdf", "date": "2026-08-26T02:50:50+02:00", "subject": "fix(closure): emit Level-A candidate project ZIP artifact"}
@@ -497,4 +498,3 @@
 {"commit": "6f3e7765abe4b5df3850645cb578299ad6a92889", "date": "2026-06-21T18:14:58+02:00", "subject": "docs: update BAOEES V3 project structure"}
 {"commit": "19db98d8e5d2f8a591f35f0e7c610747adb83d66", "date": "2026-06-21T17:54:10+02:00", "subject": "feat: add Validation QA QC Engine v1"}
 {"commit": "d1c9d1f22139526acd167ae4c375dbda2a430d0e", "date": "2026-06-21T17:37:01+02:00", "subject": "feat: add GIS Map Engine v1"}
-{"commit": "c686848dde9cbc9d62b151219253e7dd6cf96ca1", "date": "2026-06-21T16:50:50+02:00", "subject": "feat: add AERIUS Stikstof Engine v1"}

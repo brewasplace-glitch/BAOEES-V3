@@ -16,12 +16,12 @@
     "project_phoenix/intelligence/pkb"
   ],
   "branch": "project-phoenix",
-  "chunk_count": 1589,
-  "extracted_file_count": 934,
+  "chunk_count": 1590,
+  "extracted_file_count": 935,
   "fallback_backend": "git_grep_over_tracked_jsonl",
-  "full_content_file_count": 939,
+  "full_content_file_count": 940,
   "git_history_entries": 500,
-  "head_observed_before_commit": "a6c654e5735a791fd6dd17a34f0153e733ac3f4b",
+  "head_observed_before_commit": "9d029e665e7f4f0654ae66a6e21f94cbe9cb8d1d",
   "managed_root": "bib/PHOENIX_AUTO_SYNC",
   "metadata_only_file_count": 5,
   "mode": "git-index",
@@ -29,7 +29,7 @@
   "release_status": "KNOWLEDGE_INDEX_ONLY_NO_PRODUCTION_RELEASE",
   "schema_version": "1.0",
   "secret_redactions": 0,
-  "source_digest": "6240fdcc6b24e7452537b9e10a45e8e4a882cfaaa005d5812881320e6f418432",
-  "source_file_count": 2843,
-  "source_metadata_file_count": 1904
+  "source_digest": "d0e61d39b8eae62444dc1906c7813d7282deaa19fa0b547aa098cefa6b583274",
+  "source_file_count": 2845,
+  "source_metadata_file_count": 1905
 }

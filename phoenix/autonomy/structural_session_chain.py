@@ -112,6 +112,72 @@ def _detail_wall_map(detailed:dict[str,Any])->dict[str,dict[str,Any]]:
             if isinstance(wall,dict) and wall.get("element_id"): out[str(wall["element_id"])]=wall
     return out
 
+# PHOENIX_V8_1_WALL_GEOMETRY_SOURCE_CONTRACT_v1_0
+def _wall_geometry_number(value:Any,label:str)->float:
+    if isinstance(value,bool):
+        raise ValueError(f"{label} must be a finite number")
+    try:
+        number=float(value)
+    except (TypeError,ValueError) as exc:
+        raise ValueError(f"{label} must be a finite number") from exc
+    if number!=number or abs(number)==float("inf"):
+        raise ValueError(f"{label} must be a finite number")
+    return number
+
+def _wall_xy_point(value:Any,label:str)->tuple[float,float]:
+    if not isinstance(value,(list,tuple)) or len(value)<2:
+        raise ValueError(f"{label} must contain explicit x and y coordinates")
+    return (
+        _wall_geometry_number(value[0],f"{label}[0]"),
+        _wall_geometry_number(value[1],f"{label}[1]"),
+    )
+
+def _wall_endpoints(wall:dict[str,Any])->tuple[tuple[float,float],tuple[float,float],str]:
+    has_canonical="start" in wall or "end" in wall
+    if has_canonical:
+        if "start" not in wall or "end" not in wall:
+            raise ValueError("canonical wall geometry requires both start and end")
+        start=_wall_xy_point(wall["start"],"start")
+        end=_wall_xy_point(wall["end"],"end")
+        schema="start_end_xy"
+    else:
+        keys=("x1_m","y1_m","x2_m","y2_m")
+        if not all(key in wall for key in keys):
+            raise ValueError("wall geometry requires start/end or all four legacy endpoint scalars")
+        start=(
+            _wall_geometry_number(wall["x1_m"],"x1_m"),
+            _wall_geometry_number(wall["y1_m"],"y1_m"),
+        )
+        end=(
+            _wall_geometry_number(wall["x2_m"],"x2_m"),
+            _wall_geometry_number(wall["y2_m"],"y2_m"),
+        )
+        schema="legacy_explicit_endpoint_scalars"
+    dx=end[0]-start[0];dy=end[1]-start[1]
+    length=(dx*dx+dy*dy)**0.5
+    if length<=1e-9:
+        raise ValueError("wall endpoints must be distinct")
+    if wall.get("length_m") is not None:
+        declared=_wall_geometry_number(wall["length_m"],"length_m")
+        if declared<=0.0:
+            raise ValueError("length_m must be positive")
+        if abs(length-declared)>max(1e-6,abs(declared)*1e-6):
+            raise ValueError(f"endpoint length {length} does not match length_m {declared}")
+    return start,end,schema
+
+def _wall_height(wall:dict[str,Any],item:dict[str,Any])->tuple[float,str]:
+    if wall.get("height_m") is not None:
+        height=_wall_geometry_number(wall["height_m"],"height_m")
+        source="detailed_wall_height_m"
+    elif item.get("height_m") is not None:
+        height=_wall_geometry_number(item["height_m"],"height_m")
+        source="v8_0_wall_height_m"
+    else:
+        raise ValueError("wall geometry requires an explicit source height_m")
+    if height<=0.0:
+        raise ValueError("height_m must be positive")
+    return height,source
+
 def _space_map(architectural_model:dict[str,Any])->dict[str,dict[str,Any]]:
     out={}
     for storey in architectural_model.get("storeys",[]):
@@ -126,6 +192,8 @@ def build_v81_input(v80:dict[str,Any],architectural_model:dict[str,Any],detailed
     spaces=_space_map(architectural_model)
     candidates={"columns":[],"beams":[],"loadbearing_walls":[],"slab_panels":[],"stability_zones":list(v80.get("stability_zones") or [])}
     mapping_warnings=[]
+    wall_geometry_schemas:set[str]=set()
+    wall_height_sources:set[str]=set()
 
     def zinfo(storey_id:str)->tuple[float,float]:
         s=storeys.get(storey_id,{})
@@ -165,14 +233,22 @@ def build_v81_input(v80:dict[str,Any],architectural_model:dict[str,Any],detailed
             mapping_warnings.append(f"Wall geometry missing for {item.get('structural_id')}")
             continue
         sid=str(item.get("storey_id") or wall.get("storey_id") or "")
-        z,h=zinfo(sid)
-        x1,y1=wall.get("x1_m",0),wall.get("y1_m",0);x2,y2=wall.get("x2_m",0),wall.get("y2_m",0)
+        z,_=zinfo(sid)
+        try:
+            (x1,y1),(x2,y2),wall_geometry_schema=_wall_endpoints(wall)
+            h,wall_height_source=_wall_height(wall,item)
+        except ValueError as exc:
+            raise ValueError(f"Wall geometry invalid for {item.get('structural_id')}: {exc}") from exc
+        wall_geometry_schemas.add(wall_geometry_schema)
+        wall_height_sources.add(wall_height_source)
         candidates["loadbearing_walls"].append({
             "id":item.get("structural_id"),
             "polygon":[[x1,y1,z],[x2,y2,z],[x2,y2,z+h],[x1,y1,z+h]],
             "material_candidate":item.get("material_hypothesis"),
             "thickness_candidate":item.get("thickness_m"),
             "source_v8_0_id":item.get("structural_id"),
+            "source_geometry_schema":wall_geometry_schema,
+            "source_height_schema":wall_height_source,
         })
 
     for item in v80.get("slabs",[]):
@@ -206,6 +282,13 @@ def build_v81_input(v80:dict[str,Any],architectural_model:dict[str,Any],detailed
         "source_schema":v80.get("schema_version"),
         "geometry_sources":["v8.0 structural candidate","architectural_model","detailed_elements"],
         "design_values_invented":False,
+        "wall_geometry_contract":{
+            "source_backed":True,
+            "mapped_wall_count":len(candidates["loadbearing_walls"]),
+            "source_schemas":sorted(wall_geometry_schemas),
+            "height_sources":sorted(wall_height_sources),
+            "silent_zero_fallback":False,
+        },
         "warnings":mapping_warnings,
     }
     return payload,mapping
