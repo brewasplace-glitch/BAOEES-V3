@@ -1,0 +1,25 @@
+{
+  "schema": "PHOENIX_R10_2_QUALITY_GATE_1.0",
+  "required_views": [
+    "street_corner",
+    "rear",
+    "side",
+    "courtyard_or_patio",
+    "aerial"
+  ],
+  "thresholds": {
+    "visible_building_ratio_min": 0.35,
+    "useful_context_ratio_min": 0.10,
+    "occlusion_ratio_max": 0.40
+  },
+  "booleans_required": {
+    "camera_collision": false,
+    "target_landmark_visible": true,
+    "view_purpose_pass": true
+  },
+  "retry_policy": {
+    "max_attempts_per_view": 5,
+    "auto_reframe": true,
+    "auto_retarget": true
+  }
+}

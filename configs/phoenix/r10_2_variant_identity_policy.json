@@ -1,0 +1,11 @@
+{
+  "schema": "PHOENIX_R10_2_VARIANT_IDENTITY_1.0",
+  "variants": {
+    "A": "tropical_modern_courtyard_house",
+    "B": "contemporary_paramaribo_veranda_house",
+    "C": "breezeway_pavilion_house",
+    "D": "tropical_screen_and_patio_house",
+    "E": "biophilic_climate_house"
+  },
+  "rule": "Refine existing identities; do not collapse them into one generic massing solution."
+}
