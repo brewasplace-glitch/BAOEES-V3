@@ -206,6 +206,69 @@ def _next_id(openings: List[Dict[str, Any]], code: str, prefix: str) -> str:
     return f"{code}-{prefix}{max(nums, default=0)+1:02d}"
 
 
+
+
+def _normalize_opening_record(o: Dict[str, Any], expected_collection: Optional[str] = None) -> Dict[str, Any]:
+    """Normalize production/legacy opening records to the authoritative R2D R4 schema.
+
+    Production manifests historically used ``kind`` without ``opening_type`` in some
+    structured collections.  Downstream CAD/Blender code requires ``opening_type``.
+    This adapter is fail-closed for ambiguous records and never changes geometry.
+    """
+    rec = o
+    raw = rec.get("opening_type")
+    kind = str(rec.get("kind", "")).strip().lower()
+    oid = str(rec.get("opening_id", "")).strip().upper()
+
+    if raw is not None and str(raw).strip():
+        typ = str(raw).strip().upper()
+    elif kind == "window" or "-W" in oid or expected_collection == "windows":
+        typ = "WINDOW"
+    elif kind == "open_passage":
+        typ = "OPEN_PASSAGE"
+    elif kind in {"door", "sliding_door", "front_door", "rear_garden_door", "side_service_door"} \
+            or "-D" in oid or expected_collection in {"doors_internal", "doors_external"}:
+        typ = "DOOR"
+    else:
+        raise RuntimeError(
+            f"opening schema cannot determine opening_type: opening_id={rec.get('opening_id')} kind={rec.get('kind')} collection={expected_collection}"
+        )
+
+    if typ not in {"WINDOW", "DOOR", "OPEN_PASSAGE"}:
+        raise RuntimeError(f"unsupported opening_type {typ}: opening_id={rec.get('opening_id')}")
+    if expected_collection == "windows" and typ != "WINDOW":
+        raise RuntimeError(f"window collection contains non-window {rec.get('opening_id')}: {typ}")
+    if expected_collection == "doors_external" and typ != "DOOR":
+        raise RuntimeError(f"external-door collection contains non-door {rec.get('opening_id')}: {typ}")
+    if expected_collection == "doors_internal" and typ not in {"DOOR", "OPEN_PASSAGE"}:
+        raise RuntimeError(f"internal-door collection contains invalid opening {rec.get('opening_id')}: {typ}")
+
+    rec["opening_type"] = typ
+    if not kind:
+        if typ == "WINDOW": rec["kind"] = "window"
+        elif typ == "OPEN_PASSAGE": rec["kind"] = "open_passage"
+        else: rec["kind"] = "door"
+    return rec
+
+
+def _normalize_variant_opening_schema(v: Dict[str, Any], code: str) -> None:
+    collections = (
+        ("windows", "windows"),
+        ("doors_internal_ground", "doors_internal"),
+        ("doors_internal_upper", "doors_internal"),
+        ("doors_external", "doors_external"),
+    )
+    for key, expected in collections:
+        rows = v.get(key, [])
+        if rows is None:
+            rows = []
+        if not isinstance(rows, list):
+            raise RuntimeError(f"{code}: opening collection {key} is not a list")
+        for rec in rows:
+            if not isinstance(rec, dict):
+                raise RuntimeError(f"{code}: opening collection {key} contains non-object record")
+            _normalize_opening_record(rec, expected)
+
 def _is_door(o: Dict[str, Any]) -> bool:
     return o.get("opening_type") == "DOOR" or o.get("kind") in {"door", "sliding_door", "front_door", "rear_garden_door", "side_service_door"}
 
@@ -590,6 +653,11 @@ def apply_rules(manifest: Dict[str, Any], policy: Optional[Dict[str, Any]] = Non
         rooms_by_level = v.get("rooms", {})
         ground_rooms = rooms_by_level.get("ground", [])
         upper_rooms = rooms_by_level.get("upper", [])
+        # Normalize legacy/production structured opening records before any rule logic.
+        # Some real-project manifests carry ``kind`` but omit ``opening_type``.
+        # The normalized manifest is the single contract consumed by SVG/FreeCAD/Blender.
+        _normalize_variant_opening_schema(v, code)
+
         # Start from current structured collections, not from a stale combined list.
         ground_doors = deepcopy(v.get("doors_internal_ground", []))
         upper_doors = deepcopy(v.get("doors_internal_upper", []))

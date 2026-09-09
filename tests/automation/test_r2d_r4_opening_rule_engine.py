@@ -102,6 +102,22 @@ class R2DR4RuleEngineTests(unittest.TestCase):
         }
         self.assertFalse(_spans_overlap(ground, upper))
 
+    def test_production_kind_only_schema_is_normalized_before_downstream_cad(self):
+        m = fixture()
+        v = m["variants"]["A"]
+        # Mirror the production structured-collection shape that triggered R2 host authority:
+        # kind is present but opening_type is absent.
+        for key in ("windows", "doors_internal_ground", "doors_internal_upper", "doors_external"):
+            for rec in v.get(key, []):
+                rec.pop("opening_type", None)
+        repaired, report = apply_rules(m)
+        out = repaired["variants"]["A"]["openings"]
+        self.assertTrue(out)
+        self.assertTrue(all(o.get("opening_type") in {"WINDOW", "DOOR", "OPEN_PASSAGE"} for o in out))
+        self.assertTrue(all(o.get("opening_type") == "WINDOW" for o in repaired["variants"]["A"]["windows"]))
+        self.assertTrue(all(o.get("opening_type") == "DOOR" for o in repaired["variants"]["A"]["doors_external"]))
+        self.assertEqual(report["status"], "PASS_AUTOREPAIRED_MACHINE_RULES_VISUAL_REVIEW_REQUIRED")
+
     def test_bathroom_without_exterior_boundary_fails_closed(self):
         m = fixture()
         # Put bathroom in a fully internal location by replacing rooms with a ring around it.
