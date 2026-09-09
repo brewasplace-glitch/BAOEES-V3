@@ -1,0 +1,28 @@
+{
+  "schema": "PHOENIX_R2D_R4_OPENING_POLICY_1.0",
+  "window_color": "#00D9FF",
+  "exterior_door_color": "#C69C6D",
+  "interior_door_color": "#A53B28",
+  "wall_thickness_m": 0.16,
+  "required_links_by_variant": {
+    "A": [["woonkamer", "keuken_eetruimte"]],
+    "B": [["woonkamer", "keuken_eetruimte"]],
+    "C": [["trap", "keuken_eetruimte"]],
+    "D": [["trap", "keuken_eetruimte"]],
+    "E": [["woonkamer", "keuken_eetruimte"]]
+  },
+  "rules": {
+    "windows_exterior_only": true,
+    "exterior_windows_always_cyan": true,
+    "exterior_doors_always_light_brown": true,
+    "bathroom_minimum_exterior_window_count": 1,
+    "minimum_rear_or_side_door_per_design": 1,
+    "all_rooms_reachable_by_swing_or_sliding_door": true,
+    "open_passage_does_not_satisfy_room_access": true,
+    "duplicate_doors_forbidden": true,
+    "long_cyan_3d_artifact_forbidden": true,
+    "opening_ids_authoritative_across_2d_cad_3d": true,
+    "visual_review_required": true,
+    "construction_release_locked": true
+  }
+}

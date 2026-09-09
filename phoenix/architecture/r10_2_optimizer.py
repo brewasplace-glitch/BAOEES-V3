@@ -5,6 +5,8 @@ from typing import Any, Dict, List
 from pathlib import Path
 import json
 
+from phoenix.architecture.r2d_r4_opening_rule_engine import WINDOW_COLOR, EXTERIOR_DOOR_COLOR
+
 
 @dataclass(frozen=True)
 class VariantIntent:
@@ -43,6 +45,7 @@ def refine_variant(variant_code: str, source_design: Dict[str, Any]) -> Dict[str
         "r10_2_architectural_quality_optimizer",
         "site_climate_facade_refinement",
         "camera_composition_gate_required",
+        "r2d_r4_permanent_opening_rule_engine_required",
         intent.identity,
     ])
     refined["variant_code"] = variant_code
@@ -66,6 +69,19 @@ def refine_variant(variant_code: str, source_design: Dict[str, Any]) -> Dict[str
         ],
         "climate_devices": intent.climate_devices,
         "site_goals": intent.site_goals,
+        "opening_rule_engine": {
+            "engine": "PHOENIX_R2D_R4_PERMANENT_OPENING_RULE_ENGINE_1.0",
+            "required_before_cad_or_render": True,
+            "windows_exterior_only": True,
+            "window_color": WINDOW_COLOR,
+            "exterior_door_color": EXTERIOR_DOOR_COLOR,
+            "bathroom_minimum_exterior_window_count": 1,
+            "minimum_rear_or_side_door_per_design": 1,
+            "all_rooms_reachable_by_swing_or_sliding_door": True,
+            "open_passage_does_not_satisfy_room_access": True,
+            "opening_ids_authoritative_across_2d_cad_3d": True,
+            "visual_review_required": True,
+        },
     }
     return refined
 
