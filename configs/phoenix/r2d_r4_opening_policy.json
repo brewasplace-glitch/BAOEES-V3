@@ -5,11 +5,36 @@
   "interior_door_color": "#A53B28",
   "wall_thickness_m": 0.16,
   "required_links_by_variant": {
-    "A": [["woonkamer", "keuken_eetruimte"]],
-    "B": [["woonkamer", "keuken_eetruimte"]],
-    "C": [["trap", "keuken_eetruimte"]],
-    "D": [["trap", "keuken_eetruimte"]],
-    "E": [["woonkamer", "keuken_eetruimte"]]
+    "A": [
+      [
+        "woonkamer",
+        "keuken_eetruimte"
+      ]
+    ],
+    "B": [
+      [
+        "woonkamer",
+        "keuken_eetruimte"
+      ]
+    ],
+    "C": [
+      [
+        "trap",
+        "keuken_eetruimte"
+      ]
+    ],
+    "D": [
+      [
+        "trap",
+        "keuken_eetruimte"
+      ]
+    ],
+    "E": [
+      [
+        "woonkamer",
+        "keuken_eetruimte"
+      ]
+    ]
   },
   "rules": {
     "windows_exterior_only": true,
@@ -23,6 +48,9 @@
     "long_cyan_3d_artifact_forbidden": true,
     "opening_ids_authoritative_across_2d_cad_3d": true,
     "visual_review_required": true,
-    "construction_release_locked": true
+    "construction_release_locked": true,
+    "missing_exterior_window_host_resolution": "SYNTHESIZE_LOCAL_HOST_ONLY_WITH_EXACT_GLOBAL_ROOM_UNION_EXTERIOR_PROOF",
+    "window_host_synthesis_local_only": true,
+    "window_host_synthesis_internal_forbidden": true
   }
 }

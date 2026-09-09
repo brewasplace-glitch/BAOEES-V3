@@ -15,6 +15,9 @@ class PolicyContractTests(unittest.TestCase):
         self.assertTrue(r['all_rooms_reachable_by_swing_or_sliding_door'])
         self.assertTrue(r['opening_ids_authoritative_across_2d_cad_3d'])
         self.assertTrue(r['construction_release_locked'])
+        self.assertEqual(r['missing_exterior_window_host_resolution'], 'SYNTHESIZE_LOCAL_HOST_ONLY_WITH_EXACT_GLOBAL_ROOM_UNION_EXTERIOR_PROOF')
+        self.assertTrue(r['window_host_synthesis_local_only'])
+        self.assertTrue(r['window_host_synthesis_internal_forbidden'])
 
 if __name__ == '__main__':
     unittest.main()

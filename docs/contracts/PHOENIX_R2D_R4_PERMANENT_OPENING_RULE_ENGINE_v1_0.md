@@ -31,6 +31,10 @@ R2D R4 converts recurring visual-review corrections into permanent, fail-closed 
 ### Exterior windows
 A window passes only when five samples across its full width pass a global-room-union XOR test: one side occupied, one side empty, with a consistent outside side. A window on a shared/internal wall is removed before CAD/3D generation.
 
+
+### Missing CAD host for a proven exterior window
+If the rule engine proves a window lies on an exact exterior segment of the global room union but the legacy CAD model has no wall host or bounded void at that location, Phoenix may synthesize only a **local exterior window host wall** around that opening. The host must be derived from the exact exposed room-union boundary, retain adequate jamb capacity, and remain local to the opening; Phoenix may not invent a whole facade. Windows on internal/shared boundaries remain forbidden. The same synthesized host authority is consumed by FreeCAD and Blender using the same opening ID.
+
 ### Bathroom window auto-repair
 If a bathroom has an exposed exterior segment, Phoenix places a collision-free window on that segment and records the repair in `R2D_R4_RULE_ENGINE_REPORT.json`. If no exterior segment exists, the run fails closed before heavy CAD/render work.
 

@@ -5225,9 +5225,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "8351c733c4a639bcecd7250861f9a4d3aa43db0c",
+      "git_oid": "92f01a0cbd7a44637f88b03e3d59d7f4b0b1c7e8",
       "path": "configs/phoenix/r2d_r4_opening_policy.json",
-      "sha256": "642d9120daad8208daf727a3d0e8f205e6ddfd90b6805ec30b7de26d0c399213"
+      "sha256": "c487c0120240f4692b139cfd10e1c01c9396b807628f66f62ad1f8c27ba038ec"
     },
     {
       "chunks": 1,
@@ -9977,9 +9977,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "303be150e1079e992e6529376c2652af99ba6130",
+      "git_oid": "5223a80bddd88278dbcce0eb8835645170d0fbfc",
       "path": "docs/contracts/PHOENIX_R2D_R4_PERMANENT_OPENING_RULE_ENGINE_v1_0.md",
-      "sha256": "a2b603cbe3d2b97c94706add9ae7db8134d009f8a3aa66252f7d8376f3962c90"
+      "sha256": "cd235669b8ec282a6cdda889ed7afe517d28a627ab58ed645eae8677095e4fcb"
     },
     {
       "chunks": 1,
@@ -14578,6 +14578,15 @@
       "git_mode": "100644",
       "git_oid": "ef0d0d1735aacf5ec3ff4d4a9d2a6370aa20a0b2",
       "path": "phoenix/architecture/r10_2_variant_sheet_builder.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "2dd902eb9437dd0564fd9c9a2514d47b4bd2e7a5",
+      "path": "phoenix/architecture/r2d_r4_host_authority.py",
       "sha256": null
     },
     {
@@ -24539,7 +24548,16 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b8c47f18a0bba30438497f1d50bc031b1c73518b",
+      "git_oid": "db1dfe3799d3bda18819469cf7737d55a94cda0c",
+      "path": "tests/automation/test_r2d_r4_host_authority.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "93240072dd6f713ee597931d44c0bda58c8ba8f5",
       "path": "tests/automation/test_r2d_r4_opening_policy_contract.py",
       "sha256": null
     },
@@ -25778,5 +25796,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "ae9bf0109b0b0bbae9a8ee1dbfd24485b1e6a0e9b37677cbb6e792ffec0635cd"
+  "source_digest": "0e02624205f97cf862f64f0db523ab657866607fc4ce08562f545f4e1c1c7cac"
 }
