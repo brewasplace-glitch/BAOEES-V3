@@ -276,7 +276,27 @@ def _reachable(g: Dict[str, Set[str]], start: str) -> Set[str]:
     return seen
 
 
-def _safe_center_on_segment(seg: Segment, width: float, openings: List[Dict[str, Any]], margin: float = 0.18) -> Optional[Tuple[float, float]]:
+def _opening_level(o: Dict[str, Any]) -> Optional[str]:
+    level = o.get("level")
+    if level in {"ground", "upper"}:
+        return str(level)
+    storey = o.get("storey")
+    if storey == 0:
+        return "ground"
+    if storey == 1:
+        return "upper"
+    return None
+
+
+def _same_collision_level(o: Dict[str, Any], target_level: Optional[str]) -> bool:
+    if target_level is None:
+        return True
+    existing = _opening_level(o)
+    # Unknown legacy openings remain conservative blockers; known other-storey openings do not.
+    return existing is None or existing == target_level
+
+
+def _safe_center_on_segment(seg: Segment, width: float, openings: List[Dict[str, Any]], margin: float = 0.18, level: Optional[str] = None) -> Optional[Tuple[float, float]]:
     if seg.length < width + 2*margin:
         return None
     candidates = [(seg.lo+seg.hi)/2.0, seg.lo+margin+width/2.0, seg.hi-margin-width/2.0]
@@ -284,6 +304,8 @@ def _safe_center_on_segment(seg: Segment, width: float, openings: List[Dict[str,
         lo, hi = t-width/2.0, t+width/2.0
         collision = False
         for o in openings:
+            if not _same_collision_level(o, level):
+                continue
             if o.get("orientation") != seg.orientation:
                 continue
             cx, cy = map(float, o.get("center_xy", (999,999)))
@@ -301,6 +323,9 @@ def _safe_center_on_segment(seg: Segment, width: float, openings: List[Dict[str,
 
 def _same_wall(a: Dict[str, Any], b: Dict[str, Any], tol: float = 0.08) -> bool:
     if a.get("orientation") != b.get("orientation"):
+        return False
+    al, bl = _opening_level(a), _opening_level(b)
+    if al is not None and bl is not None and al != bl:
         return False
     acx, acy = map(float, a.get("center_xy", (999,999)))
     bcx, bcy = map(float, b.get("center_xy", (999,999)))
@@ -336,7 +361,7 @@ def _resolve_overlapping_internal_doors(code: str, level: str, rooms: List[List[
             segs=sorted(shared_boundaries(rooms,str(aa),str(bb)),key=lambda q:q.length,reverse=True)
             blockers=[o for o in other_openings + doors if o is not d and o.get("opening_id") != d.get("opening_id")]
             for seg in segs:
-                center=_safe_center_on_segment(seg,float(d.get("width_m",.9)),blockers,margin=.18)
+                center=_safe_center_on_segment(seg,float(d.get("width_m",.9)),blockers,margin=.18,level=level)
                 if center is None:
                     continue
                 old=list(d.get("center_xy",[]))
@@ -381,7 +406,7 @@ def _ensure_pair_door(code: str, level: str, rooms: List[List[Any]], doors: List
         raise RuntimeError(f"{code} {level}: required access pair {a}<->{b} has no exact shared room boundary")
     for seg in sorted(segs, key=lambda s: s.length, reverse=True):
         width = 1.00 if set((a,b)) == set(("woonkamer","keuken_eetruimte")) else 0.90
-        center = _safe_center_on_segment(seg, width, all_openings)
+        center = _safe_center_on_segment(seg, width, all_openings, level=level)
         if center is None:
             continue
         oid = _next_id(all_openings, code, "DG" if level == "ground" else "DU")
@@ -420,7 +445,7 @@ def _repair_reachability(code: str, level: str, rooms: List[List[Any]], doors: L
         candidates.sort(reverse=True, key=lambda x: x[0])
         placed = False
         for _, a, b, seg in candidates:
-            center = _safe_center_on_segment(seg, 0.90, all_openings)
+            center = _safe_center_on_segment(seg, 0.90, all_openings, level=level)
             if center is None:
                 continue
             oid = _next_id(all_openings, code, "DG" if level == "ground" else "DU")
@@ -467,14 +492,14 @@ def _room_has_window(room_name: str, windows: List[Dict[str, Any]], rooms: List[
 
 
 def _add_bathroom_window(code: str, level: str, room_name: str, rooms: List[List[Any]], windows: List[Dict[str, Any]], all_openings: List[Dict[str, Any]], report: List[Dict[str, Any]]) -> None:
-    if _room_has_window(room_name, windows, rooms):
+    if _room_has_window(room_name, [w for w in windows if _opening_level(w) == level], rooms):
         return
     segs = sorted(exterior_segments_for_room(rooms, room_name), key=lambda s: s.length, reverse=True)
     if not segs:
         raise RuntimeError(f"{code} {level} {room_name}: bathroom has no exterior boundary; room relayout required before a legal window can be added")
     for seg in segs:
         width = min(1.05, max(0.70, seg.length - 0.40))
-        center = _safe_center_on_segment(seg, width, all_openings, margin=0.15)
+        center = _safe_center_on_segment(seg, width, all_openings, margin=0.15, level=level)
         if center is None:
             continue
         oid = _next_id(all_openings, code, "W")
@@ -519,7 +544,7 @@ def _ensure_side_or_rear_door(code: str, rooms: List[List[Any]], doors_external:
         segs.sort(key=lambda s: (0 if s.side == "N" else 1, -s.length))
         for seg in segs:
             width = 1.00
-            center = _safe_center_on_segment(seg, width, all_openings, margin=0.18)
+            center = _safe_center_on_segment(seg, width, all_openings, margin=0.18, level="ground")
             if center is None:
                 continue
             oid = _next_id(all_openings, code, "DE")

@@ -1,3 +1,4 @@
+{"commit": "d6540c48de3e0c326aad603fd6f2e14e62f2c1f1", "date": "2026-09-09T11:36:10+02:00", "subject": "feat(architecture): install R2D R4 permanent opening rule engine"}
 {"commit": "2671c196e24e9da1cbcbe39de7fa7cb9d8d0629a", "date": "2026-09-06T13:59:56+02:00", "subject": "feat(architecture): install R10.2 quality optimizer and camera QA gate"}
 {"commit": "f2f632b08ed93900845f159ba17feb0d699a56f9", "date": "2026-09-02T23:02:16+02:00", "subject": "fix(structural): map source-backed wall endpoints into v8.1"}
 {"commit": "9d029e665e7f4f0654ae66a6e21f94cbe9cb8d1d", "date": "2026-09-02T13:23:53+02:00", "subject": "fix(structural): derive review input pack without invented values"}
@@ -497,4 +498,3 @@
 {"commit": "d57cb98af75c81cd3cb24b3fd3517fad5852d837", "date": "2026-06-22T22:06:39+02:00", "subject": "feat: add Tender Procurement Engine v1"}
 {"commit": "0a7ae90ddf4e83428abe5d1f868652a7e8bf3b70", "date": "2026-06-22T15:58:51+02:00", "subject": "feat: add Specification Bestek Engine v1"}
 {"commit": "a3de00b5cb1e905b9eebbdce6d666bd666fc7524", "date": "2026-06-22T15:44:50+02:00", "subject": "feat: add Quantity BOQ Engine v1"}
-{"commit": "6f3e7765abe4b5df3850645cb578299ad6a92889", "date": "2026-06-21T18:14:58+02:00", "subject": "docs: update BAOEES V3 project structure"}

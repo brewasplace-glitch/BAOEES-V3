@@ -5,6 +5,9 @@ from phoenix.architecture.r2d_r4_opening_rule_engine import (
     apply_rules,
     WINDOW_COLOR,
     EXTERIOR_DOOR_COLOR,
+    Segment,
+    _safe_center_on_segment,
+    _spans_overlap,
 )
 
 
@@ -76,6 +79,28 @@ class R2DR4RuleEngineTests(unittest.TestCase):
         repaired,report=apply_rules(m)
         self.assertTrue(any(a.get("action") in {"RELOCATE_OVERLAPPING_DOOR","ADD_CIRCULATION_DOOR"} for a in report["actions"]))
         self.assertEqual(report["variants"]["A"]["unreachable_ground"],[])
+
+
+    def test_cross_storey_opening_does_not_block_upper_window_capacity(self):
+        seg = Segment("H", 0.0, 0.0, 2.0)
+        ground = {
+            "opening_id": "C-DE99", "opening_type": "DOOR", "kind": "front_door",
+            "level": "ground", "storey": 0, "orientation": "H",
+            "center_xy": [1.0, 0.0], "width_m": 1.0,
+        }
+        self.assertIsNotNone(_safe_center_on_segment(seg, 0.8, [ground], margin=0.15, level="upper"))
+        self.assertIsNone(_safe_center_on_segment(seg, 0.8, [ground], margin=0.15, level="ground"))
+
+    def test_cross_storey_geometry_is_not_an_overlap(self):
+        ground = {
+            "opening_id": "X-DG01", "level": "ground", "storey": 0,
+            "orientation": "H", "center_xy": [1.0, 0.0], "width_m": 1.0,
+        }
+        upper = {
+            "opening_id": "X-W01", "level": "upper", "storey": 1,
+            "orientation": "H", "center_xy": [1.0, 0.0], "width_m": 1.0,
+        }
+        self.assertFalse(_spans_overlap(ground, upper))
 
     def test_bathroom_without_exterior_boundary_fails_closed(self):
         m = fixture()
