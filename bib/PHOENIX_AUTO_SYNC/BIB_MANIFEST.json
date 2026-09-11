@@ -3389,6 +3389,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "5e59c218656182f6266a518d5626da23ea1f45dd",
+      "path": "configs/phoenix/anijstraat_616_structural_derivation_load_v1.json",
+      "sha256": "4d20bcfb88a6b8a8b42a3de4f95f0e988bf38e4831b5957b15e86c6b6bfe5308"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "9b04c78bf3fa154b45c40d2644d3805666edd29e",
       "path": "configs/phoenix/anijstraat_616_structural_input_gap_v1.json",
       "sha256": "358c8683956cbe7feff80074ece15ddf489694d48183f0699050663f8642fa6d"
@@ -8312,9 +8321,27 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "2b7fd1b03653085834d7d5db4ff9f13c06cd4e6f",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_DERIVATION_LOAD_MODEL.md",
+      "sha256": "adac5c3c015cb2b7d313fa850441e7a96899640c276e55c305908335849d1d46"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ede2a54a7c86baa93ccad2fee13b866afffb9153",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_INPUT_GAP.md",
       "sha256": "28a934b6c3d923ff01cf1417f0748f319f9ef13e2238a6ab1e8a3aa04cf893f7"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "e258ca2efb1529c058ef629ad5a121ec36d9e0d2",
+      "path": "docs/automation/PHOENIX_4_41_STRUCTURAL_DERIVATION_OPEN_SOURCE_REVIEW.md",
+      "sha256": "c61f04360b5b8fd91d8ce6bb0e4b5ca96a2cc19d1c61c55c2a9cf1ff1f20b47c"
     },
     {
       "chunks": 1,
@@ -18311,6 +18338,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "cfc32e63bd40ea52da0411d8fc25cb7478412777",
+      "path": "phoenix/structural_derivation_load/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "5302673072fd7141d27b2b5b79de9cb923e76694",
+      "path": "phoenix/structural_derivation_load/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "a5f62aa981bfb8200f27742b1bf9e1bfa198d0ea",
       "path": "phoenix/structural_design/__init__.py",
       "sha256": null
@@ -19852,6 +19897,15 @@
       "git_mode": "100644",
       "git_oid": "10fdc6f01fef4a6e55cb227d847a8f1ab24c1e18",
       "path": "RUN_PROJECT_PHOENIX_REAL_PROJECT_PIPELINE_v6_2_0.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "e902906116a9fcb54ffeaa8c8ae866d335c49ca4",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_structural_derivation_load.ps1",
       "sha256": null
     },
     {
@@ -22516,6 +22570,15 @@
       "git_mode": "100644",
       "git_oid": "52d03b1dbaaab8d56bfae60a1b4e65ff84458c8d",
       "path": "tests/automation/test_permit_dossier_assembly_document_control_submission_v6_9_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "0f1f92487e8262f0174b48dfc30631786644e95a",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_derivation_load.py",
       "sha256": null
     },
     {
@@ -25859,5 +25922,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "8ce9a729960d05750f81508875f539eb864525db4ea79062f1f912bd06c1d513"
+  "source_digest": "0734215036b67462e23d59fcd929677264c8d06ad25fc4a6c7041cfa39a5984a"
 }

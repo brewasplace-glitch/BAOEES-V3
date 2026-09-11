@@ -1,0 +1,66 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_DERIVATION_LOAD_CONFIG_1.0",
+  "geometry": {
+    "x_grid_intervals_m": [
+      4.15,
+      0.65,
+      0.45,
+      1.55,
+      1,
+      1,
+      1.15,
+      0.35,
+      1.9,
+      3.4,
+      0.5,
+      2
+    ],
+    "y_grid_intervals_m": [
+      2.9,
+      1,
+      1,
+      0.55,
+      2.15,
+      3.6,
+      2.5
+    ]
+  },
+  "load_constants": {
+    "concrete_density_kN_m3": 25.0,
+    "masonry_density_kN_m3": 20.0,
+    "screed_density_kN_m3": 20.0,
+    "tile_density_kN_m3": 22.0,
+    "adhesive_density_kN_m3": 20.0,
+    "roof_sheet_kN_m2": 0.12,
+    "roof_timber_allowance_kN_m2": 0.18,
+    "ceiling_allowance_kN_m2": 0.15,
+    "roof_misc_allowance_kN_m2": 0.1,
+    "air_density_kg_m3": 1.225
+  },
+  "loads": {
+    "residential_floor_qk_kN_m2": 2.0,
+    "roof_imposed_qk_kN_m2": 0.4
+  },
+  "wind_sensitivity": {
+    "basic_velocity_scenarios_m_s": [
+      30,
+      35,
+      40
+    ]
+  },
+  "soil_sensitivity": {
+    "allowable_bearing_kPa": [
+      75,
+      100,
+      150
+    ],
+    "groundwater_depth_scenarios_m": [
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "tank": {
+    "preliminary_total_gravity_factor": 1.2
+  }
+}
