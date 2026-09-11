@@ -3389,6 +3389,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "9b04c78bf3fa154b45c40d2644d3805666edd29e",
+      "path": "configs/phoenix/anijstraat_616_structural_input_gap_v1.json",
+      "sha256": "358c8683956cbe7feff80074ece15ddf489694d48183f0699050663f8642fa6d"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ae4d49301f32042b85bab5c1c0b1d80d02f027bf",
       "path": "configs/phoenix/architectural_compliance_fire_accessibility_building_physics_v6_7_0.json",
       "sha256": "c6d209914ce8c1af0129a0be5efd03c5c4afc99a8094e60dd2f3b5d59ee21a92"
@@ -18311,6 +18320,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4fed069cda3df5f6a2bf3b6bb4d6fa67663364f3",
+      "path": "phoenix/structural_input_gap/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "7555d495c7669a4013a80ebf42ba4a30d2d71249",
+      "path": "phoenix/structural_input_gap/analyzer.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "5ce86d1a1e2ccec3905323e3a1762cefba5610e0",
       "path": "phoenix/toolchain/__init__.py",
       "sha256": null
@@ -19807,6 +19834,15 @@
       "git_mode": "100644",
       "git_oid": "10fdc6f01fef4a6e55cb227d847a8f1ab24c1e18",
       "path": "RUN_PROJECT_PHOENIX_REAL_PROJECT_PIPELINE_v6_2_0.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "313479983d2f5955df34d7a253567ea556d5466d",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_structural_gap.ps1",
       "sha256": null
     },
     {
@@ -22462,6 +22498,15 @@
       "git_mode": "100644",
       "git_oid": "52d03b1dbaaab8d56bfae60a1b4e65ff84458c8d",
       "path": "tests/automation/test_permit_dossier_assembly_document_control_submission_v6_9_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "93d5830df9bc4a55a99ec19b2f819d410db83445",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_gap.py",
       "sha256": null
     },
     {
@@ -25796,5 +25841,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "0e02624205f97cf862f64f0db523ab657866607fc4ce08562f545f4e1c1c7cac"
+  "source_digest": "6783079b6d186307044d4a446feb02466d8a520f010c3181f08bd914e5befae7"
 }

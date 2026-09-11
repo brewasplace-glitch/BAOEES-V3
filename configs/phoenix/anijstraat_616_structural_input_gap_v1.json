@@ -1,0 +1,49 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_GAP_CONFIG_1.0",
+  "project_context": {
+    "project_name": "Woonhuis Anijstraat #616",
+    "project_type": "vrijstaande woning",
+    "location": {
+      "city": "Paramaribo",
+      "country": "Suriname",
+      "status": "PRELIMINARY_LOCATION_CONTEXT; CONFIRM_FOR_RELEASE"
+    },
+    "source_authority": "architectural design PDF",
+    "calculation_status": "PRELIMINARY_NOT_FOR_CONSTRUCTION"
+  },
+  "source_contract": {
+    "minimum_pages": 15,
+    "required_sheet_markers": [
+      "PLATTEGROND",
+      "FUNDERING",
+      "KAPPLAN",
+      "DOORSNEDEN",
+      "DETAILS",
+      "SITUATIE EN GOOGLE FOTO"
+    ]
+  },
+  "user_authority": {
+    "geotechnical": {
+      "report_available": false,
+      "phoenix_may_estimate_preliminary": true
+    },
+    "timber": {
+      "species_known": false,
+      "strength_class_known": false,
+      "phoenix_may_estimate_preliminary": true
+    },
+    "durotank": {
+      "volume_m3": 2.0,
+      "elevated": true,
+      "support_geometry_known": false
+    }
+  },
+  "calculation_constants": {
+    "water_unit_weight_kN_m3": 9.81
+  },
+  "governance": {
+    "existing_dimensions_are_verified": false,
+    "for_construction_release": "LOCKED",
+    "professional_structural_review_required": true
+  }
+}
