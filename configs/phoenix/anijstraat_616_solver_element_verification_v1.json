@@ -1,0 +1,49 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_SOLVER_ELEMENT_VERIFICATION_CONFIG_1.0",
+  "span_sensitivity_m": [
+    1.55,
+    2.0,
+    3.4
+  ],
+  "ringbeam_roof_tributary_width_m": 1.7,
+  "column_tributary_area_m2": 12.24,
+  "column_associated_ringbeam_length_m": 7.0,
+  "wind_projected_width_m": 3.4,
+  "materials": {
+    "concrete_density_kN_m3": 25.0,
+    "fck_mpa": 20.0,
+    "gamma_c": 1.5,
+    "fyk_mpa": 500.0,
+    "gamma_s": 1.15
+  },
+  "timber_proxy": {
+    "class": "C18_PROXY",
+    "fmk_mpa": 18.0,
+    "Emean_mpa": 9000.0,
+    "kmod": 0.8,
+    "gamma_m": 1.3,
+    "roof_member_spacing_m": 0.9,
+    "deflection_limit_ratio": 250.0
+  },
+  "rc_ringbeam_proxy": {
+    "cover_mm": 25.0,
+    "assumed_bar_dia_mm": 10.0
+  },
+  "column_proxy": {
+    "demand_envelope_factor": 2.0
+  },
+  "solver_policy": {
+    "preferred": "OpenSeesPy==3.8.0.0",
+    "operational_runtime_fallback": "PyNiteFEA==3.0.0",
+    "independent_fallback": "CalculiX local ccx executable if available",
+    "acceptance_rule": "At least one real open-source FE solver must execute and pass analytical cross-check; PyNite execution is mandatory while OpenSees Windows native runtime remains blocked.",
+    "pynite_execution_required": true,
+    "calculix_execution_required": false,
+    "calculix_deck_required": true
+  },
+  "governance": {
+    "preliminary_not_for_construction": true,
+    "professional_structural_review_required": true,
+    "for_construction_release": "LOCKED"
+  }
+}

@@ -3389,6 +3389,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "357f2b5261e2dd290790c91ef857d6f2c3a1342f",
+      "path": "configs/phoenix/anijstraat_616_solver_element_verification_v1.json",
+      "sha256": "3f6b17abd9085b9adc2b00262f2921450b16c915d49d39dea91f0d4b4480ec95"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "5e59c218656182f6266a518d5626da23ea1f45dd",
       "path": "configs/phoenix/anijstraat_616_structural_derivation_load_v1.json",
       "sha256": "4d20bcfb88a6b8a8b42a3de4f95f0e988bf38e4831b5957b15e86c6b6bfe5308"
@@ -8321,6 +8330,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "d99bfd44a0d15f9727820f2ba5dc0172c4729e49",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_SOLVER_ELEMENT_VERIFICATION.md",
+      "sha256": "e3acb67e7455b09351ee125b1382a0fc62f327ee08d3550b66b4ca2c8944f04d"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "2b7fd1b03653085834d7d5db4ff9f13c06cd4e6f",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_DERIVATION_LOAD_MODEL.md",
       "sha256": "adac5c3c015cb2b7d313fa850441e7a96899640c276e55c305908335849d1d46"
@@ -8333,6 +8351,15 @@
       "git_oid": "ede2a54a7c86baa93ccad2fee13b866afffb9153",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_INPUT_GAP.md",
       "sha256": "28a934b6c3d923ff01cf1417f0748f319f9ef13e2238a6ab1e8a3aa04cf893f7"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "a9200663070d75371e8e6211fd4adb7e4750beb3",
+      "path": "docs/automation/PHOENIX_4_41_SOLVER_OPEN_SOURCE_REVIEW.md",
+      "sha256": "d90167782841db5fbec09117d136c8eb2d7a9de89735a302d57e86d842c78165"
     },
     {
       "chunks": 1,
@@ -18401,6 +18428,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "cf867cbaaf6cee3409811dca42697deef2ae5ab0",
+      "path": "phoenix/structural_solver_verification/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "611d70d1614902ffbba9bb4663febb1be3b1c05d",
+      "path": "phoenix/structural_solver_verification/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "5ce86d1a1e2ccec3905323e3a1762cefba5610e0",
       "path": "phoenix/toolchain/__init__.py",
       "sha256": null
@@ -19897,6 +19942,15 @@
       "git_mode": "100644",
       "git_oid": "10fdc6f01fef4a6e55cb227d847a8f1ab24c1e18",
       "path": "RUN_PROJECT_PHOENIX_REAL_PROJECT_PIPELINE_v6_2_0.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "2ceeef3ca2da191bbffa82f00c560ca282c26d13",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_solver_element_verification.ps1",
       "sha256": null
     },
     {
@@ -22570,6 +22624,15 @@
       "git_mode": "100644",
       "git_oid": "52d03b1dbaaab8d56bfae60a1b4e65ff84458c8d",
       "path": "tests/automation/test_permit_dossier_assembly_document_control_submission_v6_9_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "38a1cf63933d381f55a847758abe2b950a3abb09",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_solver_element_verification.py",
       "sha256": null
     },
     {
@@ -25922,5 +25985,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "0734215036b67462e23d59fcd929677264c8d06ad25fc4a6c7041cfa39a5984a"
+  "source_digest": "ee983a7b64c6a5e3039b014d0c290d11cc025d7489fb2b904cadf500c1f6952b"
 }

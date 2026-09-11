@@ -1,3 +1,4 @@
+{"commit": "0aa122e38a4ce64f4655ac94f435a24420119783", "date": "2026-09-12T00:52:41+02:00", "subject": "feat(structural): derive Anijstraat 616 structural load model"}
 {"commit": "55d5451f0be43805378ed37e0d3f6f39f3618a1d", "date": "2026-09-11T23:57:05+02:00", "subject": "docs(structural): add Anijstraat 616 gap-analysis documentation"}
 {"commit": "2434450a6e27efa2905215e06e640f54c506254a", "date": "2026-09-11T23:38:35+02:00", "subject": "feat(structural): add Anijstraat 616 input gap analysis"}
 {"commit": "e52a4fae9e25a6346007a57da4f6380bae6111c3", "date": "2026-09-09T13:46:46+02:00", "subject": "fix(architecture): authorize proven exterior window hosts"}
@@ -497,4 +498,3 @@
 {"commit": "6e0406f505cbcdc2178249fad3da03e1ec77abb8", "date": "2026-06-23T00:36:32+02:00", "subject": "feat: add Asset Management Maintenance Engine v1"}
 {"commit": "12ec25829149a54d8327c84989a375b536b518ce", "date": "2026-06-23T00:16:32+02:00", "subject": "feat: add Asset Management Maintenance Engine v1"}
 {"commit": "a5fd1360a4b0ce1c240b0bf118eb266750507aaa", "date": "2026-06-22T23:42:37+02:00", "subject": "feat: add As Built Oplever Engine v1"}
-{"commit": "9d3af3eea7d90133330817c9555369a2f4790454", "date": "2026-06-22T23:07:21+02:00", "subject": "feat: add Site Monitoring Progress Engine v1"}
