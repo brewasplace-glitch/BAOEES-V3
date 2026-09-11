@@ -3407,6 +3407,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "70e9ac12d33e5c5a31fb4710bd5c6d361165eb4d",
+      "path": "configs/phoenix/anijstraat_616_structural_design_consolidation_v1.json",
+      "sha256": "99973d41a00d9ff55718d0f516fd176b5d799c83fefb60b6e5ec1cec950e43d5"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "9b04c78bf3fa154b45c40d2644d3805666edd29e",
       "path": "configs/phoenix/anijstraat_616_structural_input_gap_v1.json",
       "sha256": "358c8683956cbe7feff80074ece15ddf489694d48183f0699050663f8642fa6d"
@@ -8348,6 +8357,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "eae2b48899a4f0796f2b60e225a66d67085f15df",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_DESIGN_CONSOLIDATION_DRAWINGS.md",
+      "sha256": "23f252c59748ad13dd9e576fa1c473b3b25f21a06d58815dbcd94d9b4622850b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ede2a54a7c86baa93ccad2fee13b866afffb9153",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_INPUT_GAP.md",
       "sha256": "28a934b6c3d923ff01cf1417f0748f319f9ef13e2238a6ab1e8a3aa04cf893f7"
@@ -8369,6 +8387,15 @@
       "git_oid": "e258ca2efb1529c058ef629ad5a121ec36d9e0d2",
       "path": "docs/automation/PHOENIX_4_41_STRUCTURAL_DERIVATION_OPEN_SOURCE_REVIEW.md",
       "sha256": "c61f04360b5b8fd91d8ce6bb0e4b5ca96a2cc19d1c61c55c2a9cf1ff1f20b47c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "a0422ac5101ab28866cedf1cf7c62b5bdf1c3a3f",
+      "path": "docs/automation/PHOENIX_4_41_STRUCTURAL_DRAWING_OPEN_SOURCE_REVIEW.md",
+      "sha256": "8becdecddd88e857ebbda55539525399f6e296e28ee24281c509e520f3d4e110"
     },
     {
       "chunks": 1,
@@ -18410,6 +18437,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "c8f48bdb2970902c985cadcc6c5b6a38ad8f2064",
+      "path": "phoenix/structural_design_consolidation/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "73999cd3f44d6585e0952554350038454a506359",
+      "path": "phoenix/structural_design_consolidation/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4fed069cda3df5f6a2bf3b6bb4d6fa67663364f3",
       "path": "phoenix/structural_input_gap/__init__.py",
       "sha256": null
@@ -19960,6 +20005,15 @@
       "git_mode": "100644",
       "git_oid": "e902906116a9fcb54ffeaa8c8ae866d335c49ca4",
       "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_structural_derivation_load.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "6792ce59c1a1e8de5362a77bbd0b9c96195199c7",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_structural_design_consolidation.ps1",
       "sha256": null
     },
     {
@@ -22642,6 +22696,15 @@
       "git_mode": "100644",
       "git_oid": "0f1f92487e8262f0174b48dfc30631786644e95a",
       "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_derivation_load.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "bc18d958f580c4de09b0c5e09f5013bc53a93fc1",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_design_consolidation.py",
       "sha256": null
     },
     {
@@ -25985,5 +26048,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "ee983a7b64c6a5e3039b014d0c290d11cc025d7489fb2b904cadf500c1f6952b"
+  "source_digest": "1d506ed165a5ad75abf92929c572944100ca4ad78bce00e9a4df5137b2a9654d"
 }

@@ -1,0 +1,32 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_DESIGN_CONSOLIDATION_CONFIG_1.0",
+  "unproven_roof_span_m": 3.4,
+  "timber_proxy": {
+    "class": "C18_PROXY",
+    "fmk_mpa": 18.0,
+    "E_mpa": 9000.0,
+    "kmod": 0.8,
+    "gamma_m": 1.3,
+    "spacing_m": 0.9,
+    "deflection_limit_ratio": 250.0
+  },
+  "materials": {
+    "fyk_mpa": 500.0,
+    "gamma_s": 1.15
+  },
+  "ringbeam": {
+    "preferred_section_mm": [
+      150,
+      200
+    ],
+    "top_reinforcement": "2\u00d812",
+    "bottom_reinforcement": "2\u00d812",
+    "ties": "\u00d88-150",
+    "cover_mm": 25.0
+  },
+  "governance": {
+    "preliminary_not_for_construction": true,
+    "professional_structural_review_required": true,
+    "for_construction_release": "LOCKED"
+  }
+}
