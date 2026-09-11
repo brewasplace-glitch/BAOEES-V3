@@ -1,3 +1,4 @@
+{"commit": "2434450a6e27efa2905215e06e640f54c506254a", "date": "2026-09-11T23:38:35+02:00", "subject": "feat(structural): add Anijstraat 616 input gap analysis"}
 {"commit": "e52a4fae9e25a6346007a57da4f6380bae6111c3", "date": "2026-09-09T13:46:46+02:00", "subject": "fix(architecture): authorize proven exterior window hosts"}
 {"commit": "255ba64913c9b1397dae0ac863b99e449b3208c3", "date": "2026-09-09T12:45:38+02:00", "subject": "fix(architecture): normalize R2D R4 opening schema before CAD"}
 {"commit": "536ad69f1c08a52ee5d4088286b5e4c46c394e25", "date": "2026-09-09T12:25:57+02:00", "subject": "fix(architecture): scope R2D R4 opening collisions by storey"}
@@ -497,4 +498,3 @@
 {"commit": "a5fd1360a4b0ce1c240b0bf118eb266750507aaa", "date": "2026-06-22T23:42:37+02:00", "subject": "feat: add As Built Oplever Engine v1"}
 {"commit": "9d3af3eea7d90133330817c9555369a2f4790454", "date": "2026-06-22T23:07:21+02:00", "subject": "feat: add Site Monitoring Progress Engine v1"}
 {"commit": "5f22b41b2f2697917988f08edac77a23f70b2e27", "date": "2026-06-22T22:48:53+02:00", "subject": "feat: add Construction Execution Engine v1"}
-{"commit": "a3290812586bb85e395c41ea0aa76831722830d1", "date": "2026-06-22T22:20:31+02:00", "subject": "feat: add Contract Agreement Engine v1"}

@@ -8303,6 +8303,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "811855fca98e8110348f790efebb56a0f6a5caa6",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_OPEN_SOURCE_REVIEW.md",
+      "sha256": "48ca304291e2308ddd2ca862d4e674d684ccaf78160c6ac6994cb60027f37144"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "ede2a54a7c86baa93ccad2fee13b866afffb9153",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_INPUT_GAP.md",
+      "sha256": "28a934b6c3d923ff01cf1417f0748f319f9ef13e2238a6ab1e8a3aa04cf893f7"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ac0a3ef5b3eea97e13e06678e638fa6643e9c5ea",
       "path": "docs/automation/PHOENIX_ARCHITECTURAL_DELIVERY_MANIFEST_COLLECTOR_CONTRACT_REPAIR_v1_0.md",
       "sha256": "b3f05a455e05dd1425efb74068f2b18bb9a4345509a11b53c88da797b4819d7d"
@@ -25841,5 +25859,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "6783079b6d186307044d4a446feb02466d8a520f010c3181f08bd914e5befae7"
+  "source_digest": "8ce9a729960d05750f81508875f539eb864525db4ea79062f1f912bd06c1d513"
 }

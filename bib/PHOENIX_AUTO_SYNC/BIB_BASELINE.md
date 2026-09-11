@@ -1,12 +1,12 @@
 # PROJECT PHOENIX BIB CURRENT BASELINE
 
 - Branch: `project-phoenix`
-- HEAD observed before containing commit: `e52a4fae9e25a6346007a57da4f6380bae6111c3`
+- HEAD observed before containing commit: `2434450a6e27efa2905215e06e640f54c506254a`
 - Snapshot mode: `git-index`
-- Knowledge source digest: `6783079b6d186307044d4a446feb02466d8a520f010c3181f08bd914e5befae7`
-- Source files fingerprinted: `2871`
-- Full-content knowledge files: `946`
-- Search chunks: `1596`
+- Knowledge source digest: `8ce9a729960d05750f81508875f539eb864525db4ea79062f1f912bd06c1d513`
+- Source files fingerprinted: `2873`
+- Full-content knowledge files: `948`
+- Search chunks: `1598`
 - Primary: `sqlite_fts5`
 - Fallback: `git grep`
 
