@@ -1,0 +1,41 @@
+{
+  "schema": "PHOENIX_4_41_DETV_CAD_VIEWER_BRIDGE_1.0",
+  "capability_id": "PHX-DETV-CAD-001",
+  "baseline": "f2b449b1ea39a3ab01f08f76015b5aa69c572087",
+  "loopback": {
+    "host": "127.0.0.1",
+    "port": 8765,
+    "bind_scope": "LOOPBACK_ONLY",
+    "session_token": "EPHEMERAL_RUNTIME_ONLY"
+  },
+  "viewer": {
+    "embedded_renderer": "ezdxf_1.4.4_to_SVG",
+    "dwg_converter": "GNU_LibreDWG_0.14",
+    "external_viewer": "LibreCAD_2.2.1.5",
+    "features": [
+      "universal_file_picker",
+      "project_scoped_routing",
+      "zoom",
+      "pan",
+      "layer_toggle",
+      "open_in_librecad",
+      "dxf_strict_recover",
+      "dwg_degraded_status"
+    ]
+  },
+  "buttons": [
+    "Project CAD",
+    "Open CAD bestand\u2026"
+  ],
+  "quality_gate": "NO_SILENT_PROJECT_GUESS",
+  "open_source_review": {
+    "candidate": "dxf-viewer_1.0.48_MPL-2.0",
+    "alternative": "dxf-parser_1.1.2_MIT",
+    "selected": "reuse_ezdxf_libredwg_librecad"
+  },
+  "runtime_dependencies": {
+    "ezdxf": "1.4.4",
+    "Pillow": "12.3.0",
+    "purpose": "ezdxf.addons.drawing SVG rendering"
+  }
+}

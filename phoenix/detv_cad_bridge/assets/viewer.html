@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PHOENIX DE TV CAD Viewer</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}*{box-sizing:border-box}
+body{margin:0;background:#0b1118;color:#e8eef6;height:100vh;display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+header{display:flex;gap:8px;align-items:center;padding:10px 12px;background:#111a24;border-bottom:1px solid #263241;flex-wrap:wrap}
+button{border:1px solid #34465a;background:#1b2a3b;color:#fff;border-radius:8px;padding:8px 11px;cursor:pointer;font-weight:600}
+button:hover{background:#263a50}.status{margin-left:auto;font-size:13px}.warn{color:#ffcc66}.bad{color:#ff7b72}
+main{min-height:0;display:grid;grid-template-columns:260px 1fr}aside{overflow:auto;border-right:1px solid #263241;padding:10px;background:#0f1720}
+#canvas{position:relative;overflow:hidden;background:#dfe5eb;min-width:0}#svg-wrap{position:absolute;inset:0;transform-origin:0 0;cursor:grab}
+#svg-wrap.dragging{cursor:grabbing}#svg-wrap svg{width:100%;height:100%;display:block;background:#fff}
+.layer{display:flex;gap:8px;align-items:center;padding:3px 0;font-size:13px}.muted{color:#aab6c2;font-size:12px}
+#project-list button{width:100%;text-align:left;margin:3px 0;font-weight:500}
+#empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#53616f;font-size:18px;text-align:center;padding:30px;pointer-events:none}
+@media(max-width:800px){main{grid-template-columns:1fr}aside{display:none}}
+</style>
+</head>
+<body>
+<header>
+<button id="choose">Open bestand…</button><button id="project">Projecttekeningen</button>
+<button id="fit">Passend</button><button id="plus">＋</button><button id="minus">－</button>
+<button id="librecad" disabled>Open in LibreCAD</button><span id="title">Geen tekening geladen</span>
+<span id="status" class="status">PHOENIX CAD</span><input id="file" type="file" accept=".dxf,.dwg" hidden>
+</header>
+<main><aside><h3 style="margin-top:0">Lagen</h3><div id="layers" class="muted">Nog geen lagen.</div><hr style="border-color:#263241">
+<h3>Project</h3><div id="project-state" class="muted">Nog niet geladen.</div><div id="project-list"></div></aside>
+<div id="canvas"><div id="svg-wrap"></div><div id="empty">Open een DXF/DWG of kies een tekening uit het actieve Phoenix-project.</div></div></main>
+<script>
+const TOKEN=__TOKEN_JSON__,MODE=__MODE_JSON__,PROJECT_HINT=__HINT_JSON__,$=id=>document.getElementById(id);
+let currentSession=null,currentLayers=[],scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
+async function api(path,opt={}){opt.headers=Object.assign({},opt.headers||{},{"X-Phoenix-Token":TOKEN});const r=await fetch(path,opt);let d=null;try{d=await r.json()}catch(_){}
+if(!r.ok)throw new Error((d&&d.error)||`HTTP ${r.status}`);return d}
+function status(t,k=""){$("status").textContent=t;$("status").className="status "+k}
+function transform(){$("svg-wrap").style.transform=`translate(${tx}px,${ty}px) scale(${scale})`}function fit(){scale=1;tx=0;ty=0;transform()}
+function layers(){const b=$("layers");if(!currentLayers.length){b.innerHTML='<span class="muted">Geen lagen beschikbaar.</span>';return}b.innerHTML="";
+for(const n of currentLayers){const l=document.createElement("label");l.className="layer";const c=document.createElement("input");c.type="checkbox";c.checked=true;c.dataset.layer=n;c.onchange=rerender;const s=document.createElement("span");s.textContent=n;l.append(c,s);b.append(l)}}
+function show(d){currentSession=d.session_id||currentSession;currentLayers=d.layers||[];$("title").textContent=d.name||"CAD tekening";$("librecad").disabled=!currentSession;
+if(d.svg){$("svg-wrap").innerHTML=d.svg;$("empty").style.display="none";fit();status(`${d.source_format} · ${d.embedded_status} · ${d.read_mode||""}`)}
+else{$("svg-wrap").innerHTML="";$("empty").style.display="flex";$("empty").textContent="Deze DWG kon niet betrouwbaar embedded worden weergegeven. Gebruik Open in LibreCAD.";status(d.embedded_status||"DEGRADED","warn")}layers()}
+async function rerender(){if(!currentSession)return;const ls=[...$("layers").querySelectorAll("input:checked")].map(x=>x.dataset.layer);
+try{status("Lagen renderen…");const d=await api("/api/rerender",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session_id:currentSession,layers:ls})});
+if(d.svg){$("svg-wrap").innerHTML=d.svg;$("empty").style.display="none";fit();status(`Lagen actief: ${ls.length}`)}}catch(e){status(e.message,"bad")}}
+async function upload(f){if(!f||!/\.(dxf|dwg)$/i.test(f.name))return;const form=new FormData();form.append("file",f,f.name);
+try{status("Bestand verwerken…");show(await api("/api/upload",{method:"POST",body:form}))}catch(e){status(e.message,"bad");$("empty").style.display="flex";$("empty").textContent=e.message}}
+async function projectFiles(){try{status("Projectcontext zoeken…");const d=await api("/api/project-files?project_hint="+encodeURIComponent(PROJECT_HINT));$("project-state").textContent=`${d.context.status} · ${d.routing} · ${d.quality_gate}`;
+const l=$("project-list");l.innerHTML="";for(const i of d.files||[]){const b=document.createElement("button");b.textContent=i.path;b.onclick=()=>openProject(i.path);l.append(b)}
+if(!(d.files||[]).length)l.innerHTML='<div class="muted">Geen projectgebonden DXF/DWG gevonden.</div>';status(d.quality_gate,d.quality_gate.startsWith("PASS")?"":"warn")}catch(e){status(e.message,"bad")}}
+async function openProject(path){try{status("Projecttekening laden…");show(await api("/api/open-project",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({path})}))}catch(e){status(e.message,"bad")}}
+$("choose").onclick=()=>{$("file").value="";$("file").click()};$("file").onchange=()=>upload($("file").files&&$("file").files[0]);$("project").onclick=projectFiles;$("fit").onclick=fit;
+$("plus").onclick=()=>{scale=Math.min(20,scale*1.25);transform()};$("minus").onclick=()=>{scale=Math.max(.05,scale/1.25);transform()};
+$("librecad").onclick=async()=>{if(!currentSession)return;try{await api("/api/open-librecad",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session_id:currentSession})});status("LibreCAD gestart")}catch(e){status(e.message,"bad")}};
+const c=$("canvas");c.onwheel=e=>{e.preventDefault();scale=Math.max(.05,Math.min(20,scale*(e.deltaY<0?1.12:1/1.12)));transform()};
+c.onpointerdown=e=>{dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;$("svg-wrap").classList.add("dragging");c.setPointerCapture(e.pointerId)};
+c.onpointermove=e=>{if(dragging){tx=e.clientX-sx;ty=e.clientY-sy;transform()}};c.onpointerup=()=>{dragging=false;$("svg-wrap").classList.remove("dragging")};
+window.addEventListener("message",e=>{if(e.data&&e.data.type==="phoenix-cad-file"&&e.data.file)upload(e.data.file)});
+if(MODE==="project")projectFiles();
+</script></body></html>
