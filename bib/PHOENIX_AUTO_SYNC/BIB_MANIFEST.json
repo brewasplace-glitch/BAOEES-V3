@@ -3434,6 +3434,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "405f4205dfecfb1eab8009daebd0540d39afa271",
+      "path": "configs/phoenix/anijstraat_616_structural_qa_bim_v1.json",
+      "sha256": "9f00e1186aef5da46d17b27a762c7021643318ee1098b8f875b8ce62bd4c01b7"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ae4d49301f32042b85bab5c1c0b1d80d02f027bf",
       "path": "configs/phoenix/architectural_compliance_fire_accessibility_building_physics_v6_7_0.json",
       "sha256": "c6d209914ce8c1af0129a0be5efd03c5c4afc99a8094e60dd2f3b5d59ee21a92"
@@ -8402,6 +8411,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "f4637b6251bc15d01b43fb87f85098fd1313256c",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_QA_RELEASE_GATE_BIM.md",
+      "sha256": "105644810ae5d44cb20b333da013852a4a87885ff78c8a1fc75ff10b3e42803b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "a9200663070d75371e8e6211fd4adb7e4750beb3",
       "path": "docs/automation/PHOENIX_4_41_SOLVER_OPEN_SOURCE_REVIEW.md",
       "sha256": "d90167782841db5fbec09117d136c8eb2d7a9de89735a302d57e86d842c78165"
@@ -8423,6 +8441,15 @@
       "git_oid": "a0422ac5101ab28866cedf1cf7c62b5bdf1c3a3f",
       "path": "docs/automation/PHOENIX_4_41_STRUCTURAL_DRAWING_OPEN_SOURCE_REVIEW.md",
       "sha256": "8becdecddd88e857ebbda55539525399f6e296e28ee24281c509e520f3d4e110"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "8cf9417220dba61dbf3cdc01e26ed8a8609a4f3f",
+      "path": "docs/automation/PHOENIX_4_41_STRUCTURAL_QA_BIM_OPEN_SOURCE_REVIEW.md",
+      "sha256": "baea2bee1c4fb843acd5cf76ab224e51b3f5b2f78ff13b604df97eac2f9f2ea4"
     },
     {
       "chunks": 1,
@@ -18518,6 +18545,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "c1d66d045afb12517c23725d0028e4652340c83a",
+      "path": "phoenix/structural_qa_bim/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "4ab264cd935669dfaf956e23c4a690536cd3c252",
+      "path": "phoenix/structural_qa_bim/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "cf867cbaaf6cee3409811dca42697deef2ae5ab0",
       "path": "phoenix/structural_solver_verification/__init__.py",
       "sha256": null
@@ -20077,6 +20122,15 @@
       "git_mode": "100644",
       "git_oid": "313479983d2f5955df34d7a253567ea556d5466d",
       "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_structural_gap.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "e2cdf9b6b18c4c61512a77f8684b644143792c3b",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_structural_qa_bim.ps1",
       "sha256": null
     },
     {
@@ -22777,6 +22831,15 @@
       "git_mode": "100644",
       "git_oid": "93d5830df9bc4a55a99ec19b2f819d410db83445",
       "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_gap.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "e54979fe913a13d0ff89bf650309f7f37587c0c7",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_qa_bim.py",
       "sha256": null
     },
     {
@@ -26111,5 +26174,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "94eaddf33fd8d57dfa85c5e31df4923179b68928d7ca83c58d006b5cb81594b4"
+  "source_digest": "07c8aebfdd0b9208af00e467abc514309f8c89e55646af82eebc117eb60a6789"
 }

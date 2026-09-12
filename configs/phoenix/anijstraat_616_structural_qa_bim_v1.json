@@ -1,0 +1,18 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_QA_BIM_CONFIG_1.0",
+  "runtime": {
+    "ifcopenshell": "0.8.5",
+    "ifctester": "0.8.5"
+  },
+  "bim_policy": {
+    "ifc_schema": "IFC4",
+    "bim_status": "PRELIMINARY_QA_HANDOFF",
+    "geometry_policy": "IFC metadata/proxy handoff + prior-stage GLB/OBJ/STL visual coordination evidence",
+    "ids_validation_required": true
+  },
+  "release_policy": {
+    "qa_gate_may_pass_with_release_hold": true,
+    "construction_release_requires_zero_open_mandatory_holds": true,
+    "professional_structural_review_required": true
+  }
+}
