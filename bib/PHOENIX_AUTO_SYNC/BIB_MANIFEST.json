@@ -4883,6 +4883,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "ecb025ec455849d14b19209f33b4f35baa48745a",
+      "path": "configs/phoenix/open_source_cad_viewer_v1.json",
+      "sha256": "0b812cf0e7e5c9b86f235e0998bc1a8f319c015ded7535ee566525a036bcb736"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "7a229a56a20db2d92d70949c80c0850b2ff306c8",
       "path": "configs/phoenix/open_source_engine_adapter_layer_v5_0_0.json",
       "sha256": "5560e30266b8011a4cc44eac57aad919d14cc66decad665472fa6256bdfc887c"
@@ -8465,6 +8474,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "9409c3fd6bd9210bcf97a9c313b538e6ceed3379",
+      "path": "docs/automation/PHOENIX_4_41_DXF_DWG_OPEN_SOURCE_REVIEW.md",
+      "sha256": "42178a98248527e015bb3c42171119a9736e4b33d5de7dbaba3ecec459e52a5e"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "1867550b481d8c5b98ec9f20818ffd96be4024c8",
       "path": "docs/automation/PHOENIX_4_41_EXTERNAL_RELEASE_EVIDENCE_OPEN_SOURCE_REVIEW.md",
       "sha256": "ec2760008fa4944f6c4552e8c3853a3b8df827c1e3be1079b99edc50f2bab44c"
@@ -8477,6 +8495,15 @@
       "git_oid": "804abf600868567992a019592f7d97b1527da27d",
       "path": "docs/automation/PHOENIX_4_41_FINAL_STRUCTURAL_PACKAGE_OPEN_SOURCE_REVIEW.md",
       "sha256": "2672aca7bab9fde697e2c1aff9a6b757593954af424c95b68a812b4fc7f07b7f"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "fcfad6ff6fed183222627e6f0affba138002e5bc",
+      "path": "docs/automation/PHOENIX_4_41_OPEN_SOURCE_DXF_DWG_VIEWER_INTEGRATION.md",
+      "sha256": "b238b79c6b67647c80f3a282593bd8b553429512579f82cf65213865972a69c8"
     },
     {
       "chunks": 1,
@@ -15998,6 +16025,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "0c19e0a3310a939c6bef804e10bc8937d0e3aeb3",
+      "path": "phoenix/cad_viewer/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "3846a044d667bc5146c2ef8aa4e318de31cbec87",
+      "path": "phoenix/cad_viewer/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "c9873e5ee47e47fc5ca0ab4fdd2e4670cd722384",
       "path": "phoenix/calculations/__init__.py",
       "sha256": null
@@ -20255,6 +20300,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "81aeee0839f167e9eb141348392029db2b2e62c6",
+      "path": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "f55dbac923da368975989aa470d5845ea594fb78",
+      "path": "runners/PROJECT_PHOENIX_4_41_cad_viewer_install_and_selftest.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "c1f749c5b9e4baa1fd3b09151c11c118d65e1440",
       "path": "runners/PROJECT_PHOENIX_architectural_compliance_fire_accessibility_building_physics_v6_7_0.py",
       "sha256": null
@@ -22975,6 +23038,15 @@
       "git_mode": "100644",
       "git_oid": "e54979fe913a13d0ff89bf650309f7f37587c0c7",
       "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_qa_bim.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "41dfade5c833a0bf98c236dd9ac7a057ac801b22",
+      "path": "tests/automation/test_phoenix_441_open_source_cad_viewer.py",
       "sha256": null
     },
     {
@@ -26309,5 +26381,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "e322867d3fcffbaac4ac23f6b34ff50d0ae03a4f241681c2380998eaad17d278"
+  "source_digest": "844d0e38224e9b475dae77ca54589c015b6bd7e036e792b7460ce0c83e963a6c"
 }

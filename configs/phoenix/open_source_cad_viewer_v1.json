@@ -1,0 +1,39 @@
+{
+  "schema": "PHOENIX_4_41_OPEN_SOURCE_CAD_VIEWER_CONFIG_1.0",
+  "capability_id": "PHX-CAD-VIEWER-001",
+  "formats": [
+    "DXF",
+    "DWG"
+  ],
+  "primary_interactive_viewer": {
+    "name": "LibreCAD",
+    "version": "2.2.1.5",
+    "license": "GPL-2.0",
+    "winget_id": "LibreCAD.LibreCAD"
+  },
+  "dwg_machine_backend": {
+    "name": "GNU LibreDWG",
+    "version": "0.14",
+    "license": "GPL-3.0-or-later",
+    "url": "https://github.com/LibreDWG/libredwg/releases/download/0.14/libredwg-0.14-win64.zip",
+    "sha256": "1ad7e15344d20b3426c3435b078d82fb84b35062815946b2cca9c5fc9810fea8"
+  },
+  "dxf_machine_backend": {
+    "name": "ezdxf",
+    "version": "1.4.4",
+    "license": "MIT"
+  },
+  "runtime_config": "%LOCALAPPDATA%\\PROJECT-PHOENIX\\cad_viewer\\cad_viewer_runtime.json",
+  "commands": {
+    "open": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1 -FilePath <file>",
+    "inspect": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1 -FilePath <file> -Mode Inspect",
+    "convert_dwg": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1 -FilePath <file.dwg> -Mode Convert"
+  },
+  "capability_semantics": {
+    "dxf_interactive_open": "ENABLED",
+    "dwg_interactive_open": "ENABLED_VIA_LIBRECAD",
+    "dxf_machine_inspect": "ENABLED_STRICT_WITH_RECOVER_FALLBACK",
+    "dwg_machine_inspect": "BEST_EFFORT_VIA_LIBREDWG_TO_DXF",
+    "known_limitation": "LibreDWG 0.14 may emit DXF with invalid/duplicate handles for some DWG files; interactive LibreCAD viewing remains independent."
+  }
+}
