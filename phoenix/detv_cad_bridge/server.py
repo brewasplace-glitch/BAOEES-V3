@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, json, os, re, secrets, shutil, subprocess, sys, tempfile, threading, urllib.parse, uuid, xml.etree.ElementTree as ET
+import argparse, json, math, os, re, secrets, shutil, subprocess, sys, tempfile, threading, traceback, urllib.parse, uuid, xml.etree.ElementTree as ET
 from email import policy
 from email.parser import BytesParser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-VERSION="1.1.0"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
+VERSION="1.2.0"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
 SESSIONS={}; LOCK=threading.Lock()
 
 def bootstrap(repo):
@@ -28,29 +28,320 @@ def safe_name(n):
 
 def read_doc(path):
     import ezdxf
-    try: return ezdxf.readfile(path),"STRICT",[]
-    except Exception as a:
+    try:
+        return ezdxf.readfile(path),"STRICT",[]
+    except Exception as strict_error:
         from ezdxf import recover
         try:
             doc,aud=recover.readfile(path)
             return doc,"RECOVER",[str(x) for x in getattr(aud,"errors",[])[:50]]
-        except Exception as b:
-            raise RuntimeError(f"DXF_PARSE_FAILED_STRICT_AND_RECOVER: strict={a}; recover={b}") from b
+        except Exception as recover_error:
+            raise RuntimeError(
+                f"DXF_PARSE_FAILED_STRICT_AND_RECOVER: strict={strict_error}; recover={recover_error}"
+            ) from recover_error
 
-def render_svg(path,layers=None):
+def entity_inventory(doc):
+    counts={}
+    for entity in doc.modelspace():
+        t=entity.dxftype()
+        counts[t]=counts.get(t,0)+1
+    return dict(sorted(counts.items()))
+
+def _layer_names(doc):
+    return [str(x.dxf.name) for x in doc.layers]
+
+def _selected_filter(selected):
+    selected=set(selected or [])
+    if not selected:
+        return None
+    def filt(entity):
+        try:
+            return str(entity.dxf.layer) in selected
+        except Exception:
+            return True
+    return filt
+
+def _safe_frontend_draw(frontend,ctx,msp,filter_func=None):
+    skipped=[]
+    ctx.set_current_layout(msp)
+    frontend.set_background(ctx.current_layout_properties.background_color)
+    frontend.parent_stack=[]
+    for entity in msp:
+        if filter_func is not None:
+            try:
+                if not filter_func(entity):
+                    continue
+            except Exception:
+                pass
+        try:
+            frontend.draw_entities([entity])
+        except Exception as exc:
+            skipped.append({
+                "type":entity.dxftype(),
+                "handle":str(getattr(entity.dxf,"handle","") or ""),
+                "layer":str(getattr(entity.dxf,"layer","") or ""),
+                "error":f"{type(exc).__name__}: {exc}",
+            })
+    frontend.pipeline.finalize()
+    return skipped
+
+def render_svg_resilient(path,layers=None):
     from ezdxf.addons.drawing import Frontend,RenderContext,svg,layout
     from ezdxf.addons.drawing.config import Configuration,BackgroundPolicy
-    doc,mode,errs=read_doc(path); msp=doc.modelspace()
-    names=[str(x.dxf.name) for x in doc.layers]; selected=set(layers or [])
-    filt=None
-    if selected:
-        def filt(e):
-            try: return str(e.dxf.layer) in selected
-            except Exception: return True
-    ctx=RenderContext(doc); page=layout.Page(1400,900,units=layout.Units.px)
-    backend=svg.SVGRenderBackend(page,layout.Settings(fit_page=True,output_layers=False))
-    Frontend(ctx,backend,config=Configuration(background_policy=BackgroundPolicy.WHITE)).draw_layout(msp,filter_func=filt)
-    return {"svg":ET.tostring(backend.get_xml_root_element(),encoding="unicode"),"layers":names,"read_mode":mode,"recovery_errors":errs,"dxfversion":str(doc.dxfversion)}
+    doc,mode,errs=read_doc(path)
+    msp=doc.modelspace()
+    names=_layer_names(doc)
+    filt=_selected_filter(layers)
+    attempts=[]
+
+    # Attempt A: official SVGBackend API from ezdxf documentation.
+    try:
+        ctx=RenderContext(doc)
+        backend=svg.SVGBackend()
+        frontend=Frontend(
+            ctx,
+            backend,
+            config=Configuration(background_policy=BackgroundPolicy.WHITE),
+        )
+        skipped=_safe_frontend_draw(frontend,ctx,msp,filt)
+        page=layout.Page(1400,900,units=layout.Units.px)
+        svg_text=backend.get_string(
+            page,
+            settings=layout.Settings(fit_page=True,output_layers=False),
+        )
+        if "<svg" not in svg_text:
+            raise RuntimeError("SVGBackend produced no SVG root")
+        return {
+            "svg":svg_text,
+            "layers":names,
+            "read_mode":mode,
+            "recovery_errors":errs,
+            "dxfversion":str(doc.dxfversion),
+            "renderer":"EZDXF_SVGBACKEND_SAFE",
+            "skipped_entities":skipped,
+            "primary_attempts":attempts,
+            "inventory":entity_inventory(doc),
+        }
+    except Exception as exc:
+        attempts.append({
+            "renderer":"EZDXF_SVGBACKEND_SAFE",
+            "error":f"{type(exc).__name__}: {exc}",
+            "traceback":traceback.format_exc(limit=20),
+        })
+
+    # Attempt B: legacy SVGRenderBackend used by Phoenix before this repair.
+    try:
+        ctx=RenderContext(doc)
+        page=layout.Page(1400,900,units=layout.Units.px)
+        backend=svg.SVGRenderBackend(
+            page,
+            layout.Settings(fit_page=True,output_layers=False),
+        )
+        frontend=Frontend(
+            ctx,
+            backend,
+            config=Configuration(background_policy=BackgroundPolicy.WHITE),
+        )
+        skipped=_safe_frontend_draw(frontend,ctx,msp,filt)
+        svg_text=ET.tostring(
+            backend.get_xml_root_element(),
+            encoding="unicode",
+        )
+        if "<svg" not in svg_text:
+            raise RuntimeError("SVGRenderBackend produced no SVG root")
+        return {
+            "svg":svg_text,
+            "layers":names,
+            "read_mode":mode,
+            "recovery_errors":errs,
+            "dxfversion":str(doc.dxfversion),
+            "renderer":"EZDXF_SVGRENDERBACKEND_SAFE",
+            "skipped_entities":skipped,
+            "primary_attempts":attempts,
+            "inventory":entity_inventory(doc),
+        }
+    except Exception as exc:
+        attempts.append({
+            "renderer":"EZDXF_SVGRENDERBACKEND_SAFE",
+            "error":f"{type(exc).__name__}: {exc}",
+            "traceback":traceback.format_exc(limit=20),
+        })
+
+    raise RuntimeError(json.dumps({
+        "status":"FAILED_EZDXF_SVG_RENDER",
+        "attempts":attempts,
+        "inventory":entity_inventory(doc),
+        "read_mode":mode,
+        "recovery_errors":errs,
+        "dxfversion":str(doc.dxfversion),
+    },ensure_ascii=False))
+
+def _aci_color(index):
+    palette={
+        1:"#ff3b30",2:"#ffd60a",3:"#32d74b",4:"#64d2ff",
+        5:"#0a84ff",6:"#bf5af2",7:"#f5f5f5",8:"#9d9d9d",9:"#d1d1d6"
+    }
+    try:
+        i=abs(int(index))
+    except Exception:
+        i=7
+    return palette.get(i,"#e7eef7")
+
+def _entity_color(entity):
+    try:
+        rgb=entity.rgb
+        if rgb:
+            return "#{:02x}{:02x}{:02x}".format(*rgb)
+    except Exception:
+        pass
+    try:
+        return _aci_color(entity.dxf.color)
+    except Exception:
+        return "#e7eef7"
+
+def _layer_of(entity):
+    try:
+        return str(entity.dxf.layer)
+    except Exception:
+        return "0"
+
+def _point(v):
+    return [float(v[0]),float(v[1])]
+
+def _add_bounds(bounds,x,y):
+    if math.isfinite(x) and math.isfinite(y):
+        bounds[0]=min(bounds[0],x);bounds[1]=min(bounds[1],y)
+        bounds[2]=max(bounds[2],x);bounds[3]=max(bounds[3],y)
+
+def _append_line(out,bounds,a,b,entity):
+    a=_point(a);b=_point(b)
+    _add_bounds(bounds,*a);_add_bounds(bounds,*b)
+    out.append({"type":"line","a":a,"b":b,"layer":_layer_of(entity),"color":_entity_color(entity)})
+
+def _primitive_entity(entity,out,bounds,skipped,depth=0):
+    if depth>4:
+        skipped.append({"type":entity.dxftype(),"reason":"max virtual entity depth"})
+        return
+    t=entity.dxftype()
+    layer=_layer_of(entity); color=_entity_color(entity)
+    try:
+        if t=="LINE":
+            _append_line(out,bounds,entity.dxf.start,entity.dxf.end,entity);return
+        if t=="CIRCLE":
+            c=_point(entity.dxf.center);r=float(entity.dxf.radius)
+            _add_bounds(bounds,c[0]-r,c[1]-r);_add_bounds(bounds,c[0]+r,c[1]+r)
+            out.append({"type":"circle","c":c,"r":r,"layer":layer,"color":color});return
+        if t=="ARC":
+            c=_point(entity.dxf.center);r=float(entity.dxf.radius)
+            _add_bounds(bounds,c[0]-r,c[1]-r);_add_bounds(bounds,c[0]+r,c[1]+r)
+            out.append({
+                "type":"arc","c":c,"r":r,
+                "start":float(entity.dxf.start_angle),
+                "end":float(entity.dxf.end_angle),
+                "layer":layer,"color":color,
+            });return
+        if t=="LWPOLYLINE":
+            pts=[[float(x),float(y)] for x,y,*_ in entity.get_points("xy")]
+            for x,y in pts:_add_bounds(bounds,x,y)
+            if len(pts)>=2:
+                out.append({"type":"polyline","pts":pts,"closed":bool(entity.closed),"layer":layer,"color":color})
+            return
+        if t=="POLYLINE":
+            pts=[_point(v.dxf.location) for v in entity.vertices]
+            for x,y in pts:_add_bounds(bounds,x,y)
+            if len(pts)>=2:
+                out.append({"type":"polyline","pts":pts,"closed":bool(entity.is_closed),"layer":layer,"color":color})
+            return
+        if t=="POINT":
+            p=_point(entity.dxf.location);_add_bounds(bounds,*p)
+            out.append({"type":"point","p":p,"layer":layer,"color":color});return
+        if t=="TEXT":
+            p=_point(entity.dxf.insert);_add_bounds(bounds,*p)
+            out.append({
+                "type":"text","p":p,"text":str(entity.dxf.text),
+                "height":float(getattr(entity.dxf,"height",1.0) or 1.0),
+                "rotation":float(getattr(entity.dxf,"rotation",0.0) or 0.0),
+                "layer":layer,"color":color,
+            });return
+        if t=="MTEXT":
+            p=_point(entity.dxf.insert);_add_bounds(bounds,*p)
+            try:text=entity.plain_text()
+            except Exception:text=str(getattr(entity,"text",""))
+            out.append({
+                "type":"text","p":p,"text":text,
+                "height":float(getattr(entity.dxf,"char_height",1.0) or 1.0),
+                "rotation":float(getattr(entity.dxf,"rotation",0.0) or 0.0),
+                "layer":layer,"color":color,
+            });return
+        if t in {"SOLID","TRACE","3DFACE"}:
+            pts=[]
+            for attr in ("vtx0","vtx1","vtx2","vtx3"):
+                if hasattr(entity.dxf,attr):
+                    pts.append(_point(getattr(entity.dxf,attr)))
+            for x,y in pts:_add_bounds(bounds,x,y)
+            if len(pts)>=3:
+                out.append({"type":"polygon","pts":pts,"layer":layer,"color":color})
+            return
+        if t in {"INSERT","DIMENSION","LEADER","MLEADER","MULTILEADER"}:
+            try:
+                children=list(entity.virtual_entities())
+            except Exception as exc:
+                skipped.append({"type":t,"layer":layer,"reason":f"virtual_entities: {type(exc).__name__}: {exc}"})
+                return
+            for child in children:
+                _primitive_entity(child,out,bounds,skipped,depth+1)
+            return
+        if t in {"ELLIPSE","SPLINE"}:
+            try:
+                from ezdxf.path import make_path
+                pts=[_point(p) for p in make_path(entity).flattening(0.25)]
+                for x,y in pts:_add_bounds(bounds,x,y)
+                if len(pts)>=2:
+                    out.append({"type":"polyline","pts":pts,"closed":False,"layer":layer,"color":color})
+                return
+            except Exception as exc:
+                skipped.append({"type":t,"layer":layer,"reason":f"path flatten: {type(exc).__name__}: {exc}"})
+                return
+        skipped.append({"type":t,"layer":layer,"reason":"unsupported primitive fallback entity"})
+    except Exception as exc:
+        skipped.append({"type":t,"layer":layer,"reason":f"{type(exc).__name__}: {exc}"})
+
+def extract_browser_primitives(path,layers=None):
+    doc,mode,errs=read_doc(path)
+    selected=set(layers or [])
+    out=[]; skipped=[]; bounds=[math.inf,math.inf,-math.inf,-math.inf]
+    for entity in doc.modelspace():
+        if selected:
+            try:
+                if str(entity.dxf.layer) not in selected:
+                    continue
+            except Exception:
+                pass
+        _primitive_entity(entity,out,bounds,skipped)
+    valid=all(math.isfinite(x) for x in bounds) and bounds[2]>=bounds[0] and bounds[3]>=bounds[1]
+    if not valid:
+        bounds=[0.0,0.0,1.0,1.0]
+    return {
+        "browser_primitives":out,
+        "primitive_bounds":bounds,
+        "primitive_skipped":skipped,
+        "layers":_layer_names(doc),
+        "read_mode":mode,
+        "recovery_errors":errs,
+        "dxfversion":str(doc.dxfversion),
+        "inventory":entity_inventory(doc),
+        "renderer":"PHOENIX_BROWSER_PRIMITIVE_CANVAS",
+    }
+
+def write_render_diagnostics(session,src,payload):
+    data={
+        "schema":"PHOENIX_CAD_RENDER_DIAGNOSTICS_1.0",
+        "source":str(src),
+        "result":payload,
+    }
+    p=session/"render_diagnostics.json"
+    p.write_text(json.dumps(data,indent=2,ensure_ascii=False),encoding="utf-8")
+    return p
 
 def convert_dwg(src,dst,rt):
     exe=Path(rt["libredwg_dwg2dxf_exe"]); p=subprocess.run([str(exe),"-y","-o",str(dst),str(src)],capture_output=True,text=True)
@@ -64,16 +355,100 @@ def open_librecad(src,rt):
 
 def process_source(src,session,rt):
     ext=src.suffix.lower()
-    if ext not in ALLOWED: raise RuntimeError("Only DXF/DWG supported")
-    render=src; conversion="NOT_REQUIRED"
+    if ext not in ALLOWED:
+        raise RuntimeError("Only DXF/DWG supported")
+
+    render=src
+    conversion="NOT_REQUIRED"
     if ext==".dwg":
-        render=session/f"{src.stem}_libredwg.dxf"; convert_dwg(src,render,rt); conversion="PASS"
+        render=session/f"{src.stem}_libredwg.dxf"
+        convert_dwg(src,render,rt)
+        conversion="PASS"
+
+    primary_error=None
+    primary_detail=None
     try:
-        r=render_svg(render); embedded="PASS"; err=None
-    except Exception as e:
-        r={"svg":"","layers":[],"read_mode":"FAILED","recovery_errors":[],"dxfversion":""}
-        embedded="DEGRADED_DWG_CONVERSION_OUTPUT_UNPARSABLE" if ext==".dwg" else "FAILED_DXF_RENDER"; err=str(e)
-    return {"source":src,"render_source":render,"source_format":ext[1:].upper(),"conversion_status":conversion,"embedded_status":embedded,"error":err,**r}
+        r=render_svg_resilient(render)
+        payload={
+            "source":src,
+            "render_source":render,
+            "source_format":ext[1:].upper(),
+            "conversion_status":conversion,
+            "embedded_status":"PASS",
+            "error":None,
+            "primary_error":None,
+            "fallback_used":False,
+            **r,
+        }
+        diag=write_render_diagnostics(session,src,{
+            "embedded_status":"PASS",
+            "renderer":r.get("renderer"),
+            "inventory":r.get("inventory"),
+            "skipped_entities":r.get("skipped_entities"),
+            "primary_attempts":r.get("primary_attempts"),
+        })
+        payload["diagnostics_file"]=str(diag)
+        return payload
+    except Exception as exc:
+        primary_error=f"{type(exc).__name__}: {exc}"
+        try:
+            primary_detail=json.loads(str(exc))
+        except Exception:
+            primary_detail={"error":str(exc)}
+
+    try:
+        fallback=extract_browser_primitives(render)
+        if not fallback["browser_primitives"]:
+            raise RuntimeError("primitive fallback produced zero drawable primitives")
+        status="PASS_BROWSER_PRIMITIVE_FALLBACK"
+        payload={
+            "source":src,
+            "render_source":render,
+            "source_format":ext[1:].upper(),
+            "conversion_status":conversion,
+            "embedded_status":status,
+            "error":None,
+            "primary_error":primary_error,
+            "primary_detail":primary_detail,
+            "fallback_used":True,
+            "svg":"",
+            **fallback,
+        }
+        diag=write_render_diagnostics(session,src,{
+            "embedded_status":status,
+            "primary_error":primary_error,
+            "primary_detail":primary_detail,
+            "primitive_count":len(fallback["browser_primitives"]),
+            "primitive_skipped":fallback["primitive_skipped"],
+            "inventory":fallback["inventory"],
+        })
+        payload["diagnostics_file"]=str(diag)
+        return payload
+    except Exception as fallback_exc:
+        failed_status="DEGRADED_DWG_CONVERSION_OUTPUT_UNPARSABLE" if ext==".dwg" else "FAILED_DXF_RENDER"
+        payload={
+            "source":src,
+            "render_source":render,
+            "source_format":ext[1:].upper(),
+            "conversion_status":conversion,
+            "embedded_status":failed_status,
+            "error":f"{type(fallback_exc).__name__}: {fallback_exc}",
+            "primary_error":primary_error,
+            "primary_detail":primary_detail,
+            "fallback_used":True,
+            "svg":"",
+            "browser_primitives":[],
+            "primitive_bounds":[0,0,1,1],
+            "primitive_skipped":[],
+            "layers":[],
+            "read_mode":"FAILED",
+            "recovery_errors":[],
+            "dxfversion":"",
+            "renderer":"FAILED",
+        }
+        diag=write_render_diagnostics(session,src,payload)
+        payload["diagnostics_file"]=str(diag)
+        return payload
 
 def project_context(repo,hint=""):
     if hint.strip(): return {"status":"HINT_FROM_DE_TV","tokens":[hint.strip()],"sources":["DE_TV_RUNTIME_HINT"]}
@@ -115,7 +490,7 @@ def viewer_page(repo,token,mode,hint):
     return t.replace("__TOKEN_JSON__",json.dumps(token)).replace("__MODE_JSON__",json.dumps(mode)).replace("__HINT_JSON__",json.dumps(hint))
 
 class H(BaseHTTPRequestHandler):
-    server_version="PHOENIX-DETV-CAD/1.1"
+    server_version="PHOENIX-DETV-CAD/1.2"
     CORS_ALLOWED_ORIGINS={
         "http://127.0.0.1:8766",
         "http://localhost:8766",
@@ -213,7 +588,33 @@ class H(BaseHTTPRequestHandler):
         x=self.body_json(); sid=str(x.get("session_id",""))
         with LOCK: rec=SESSIONS.get(sid)
         if not rec: raise ValueError("Unknown CAD session")
-        r=render_svg(Path(rec["render_source"]),x.get("layers",[])); self.js({"session_id":sid,"svg":r["svg"],"layers":r["layers"],"read_mode":r["read_mode"]})
+        path=Path(rec["render_source"])
+        layers=x.get("layers",[])
+        try:
+            r=render_svg_resilient(path,layers)
+            self.js({
+                "session_id":sid,
+                "embedded_status":"PASS",
+                "renderer":r["renderer"],
+                "svg":r["svg"],
+                "browser_primitives":[],
+                "primitive_bounds":[0,0,1,1],
+                "layers":r["layers"],
+                "read_mode":r["read_mode"],
+            })
+        except Exception as primary:
+            f=extract_browser_primitives(path,layers)
+            self.js({
+                "session_id":sid,
+                "embedded_status":"PASS_BROWSER_PRIMITIVE_FALLBACK",
+                "renderer":f["renderer"],
+                "svg":"",
+                "browser_primitives":f["browser_primitives"],
+                "primitive_bounds":f["primitive_bounds"],
+                "layers":f["layers"],
+                "read_mode":f["read_mode"],
+                "primary_error":str(primary),
+            })
     def open_lc(self):
         sid=str(self.body_json().get("session_id",""))
         with LOCK: rec=SESSIONS.get(sid)
@@ -223,10 +624,26 @@ class H(BaseHTTPRequestHandler):
 def self_test(repo):
     bootstrap(repo); import ezdxf
     with tempfile.TemporaryDirectory() as td:
-        p=Path(td)/"x.dxf"; doc=ezdxf.new("R2010"); doc.layers.add("PHX_WALLS"); doc.modelspace().add_line((0,0),(10,10),dxfattribs={"layer":"PHX_WALLS"}); doc.saveas(p)
-        r=render_svg(p); assert "<svg" in r["svg"] and "PHX_WALLS" in r["layers"]
-        h=viewer_page(Path(repo),"tok","file",""); assert "Open bestand" in h and "Open in LibreCAD" in h
-    print("PHOENIX_4_41_DETV_CAD_SIDECAR_SELF_TEST=PASS")
+        p=Path(td)/"x.dxf"
+        doc=ezdxf.new("R2010")
+        doc.layers.add("PHX_WALLS")
+        msp=doc.modelspace()
+        msp.add_line((0,0),(10,10),dxfattribs={"layer":"PHX_WALLS"})
+        msp.add_circle((5,5),2,dxfattribs={"layer":"PHX_WALLS"})
+        msp.add_text("PHOENIX",dxfattribs={"height":1.0,"layer":"PHX_WALLS"}).set_placement((1,8))
+        doc.saveas(p)
+
+        r=render_svg_resilient(p)
+        assert "<svg" in r["svg"] and "PHX_WALLS" in r["layers"]
+
+        f=extract_browser_primitives(p)
+        assert len(f["browser_primitives"])>=3
+        assert f["renderer"]=="PHOENIX_BROWSER_PRIMITIVE_CANVAS"
+
+        h=viewer_page(Path(repo),"tok","file","")
+        assert "Open bestand" in h and "Open in LibreCAD" in h
+        assert "renderPrimitiveCanvas" in h
+    print("PHOENIX_4_41_DETV_CAD_RENDER_COMPAT_SELF_TEST=PASS")
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--repo-root",type=Path,default=Path(r"C:\PROJECT-PHOENIX")); ap.add_argument("--port",type=int,default=DEFAULT_PORT); ap.add_argument("--self-test",action="store_true"); a=ap.parse_args()

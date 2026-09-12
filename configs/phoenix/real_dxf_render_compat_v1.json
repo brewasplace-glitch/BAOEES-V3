@@ -1,0 +1,42 @@
+{
+  "schema": "PHOENIX_4_41_REAL_DXF_RENDER_COMPAT_1.0",
+  "baseline": "38f9e0fe841b1d0a4c587772b618316a28746e05",
+  "sidecar_version": "1.2.0",
+  "render_chain": [
+    "EZDXF_SVGBACKEND_SAFE",
+    "EZDXF_SVGRENDERBACKEND_SAFE",
+    "PHOENIX_BROWSER_PRIMITIVE_CANVAS",
+    "LIBRECAD_EXTERNAL_FALLBACK"
+  ],
+  "diagnostics": {
+    "file": "render_diagnostics.json",
+    "per_session": true,
+    "entity_inventory": true,
+    "skipped_entity_log": true,
+    "traceback_primary_attempts": true
+  },
+  "primitive_fallback_entities": [
+    "LINE",
+    "CIRCLE",
+    "ARC",
+    "LWPOLYLINE",
+    "POLYLINE",
+    "POINT",
+    "TEXT",
+    "MTEXT",
+    "SOLID",
+    "TRACE",
+    "3DFACE",
+    "INSERT",
+    "DIMENSION",
+    "LEADER",
+    "MLEADER",
+    "MULTILEADER",
+    "ELLIPSE",
+    "SPLINE"
+  ],
+  "open_source_review": {
+    "ezdxf": "1.4.4 MIT - selected primary and primitive source",
+    "dxf-viewer": "1.0.48 MPL-2.0 - reviewed, deferred because it adds Node/WebGL dependency chain"
+  }
+}

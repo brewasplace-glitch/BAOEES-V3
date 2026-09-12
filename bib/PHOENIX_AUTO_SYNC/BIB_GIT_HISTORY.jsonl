@@ -1,3 +1,4 @@
+{"commit": "38f9e0fe841b1d0a4c587772b618316a28746e05", "date": "2026-09-13T01:04:01+02:00", "subject": "fix(tv): hard-mount embedded DXF viewer in DE TV"}
 {"commit": "908840c9c1db8d8eea0a57c7b3b57b6e6684b5d9", "date": "2026-09-13T00:40:24+02:00", "subject": "fix(start): sync runtime version and enable CAD sidecar CORS"}
 {"commit": "e7bd5eead42092fa3876c0abd2a29f216e631fea", "date": "2026-09-13T00:05:24+02:00", "subject": "fix(start): canonicalize Phoenix 4.41 UTF-8 UI and native DE TV CAD"}
 {"commit": "b1da9593850c9cf9a500c0200e810d5986a5000f", "date": "2026-09-12T23:40:57+02:00", "subject": "feat(tv): embed DXF DWG CAD viewer in DE TV"}
@@ -497,4 +498,3 @@
 {"commit": "f13b075ed695b8c5ebeb52aa22beb43e53bc5316", "date": "2026-06-24T01:01:56+02:00", "subject": "feat: add Project File Writer JSON Export Engine v1"}
 {"commit": "312564fdea3ab6e21b3c05205dea0f21d16b61f3", "date": "2026-06-24T00:47:33+02:00", "subject": "feat: add Project Storage Output Folder Engine v1"}
 {"commit": "009abea86aa01a341e38cdfebffb79d41f868e98", "date": "2026-06-24T00:34:45+02:00", "subject": "feat: add command line project launcher"}
-{"commit": "bb120ec52a989944edab35bd9c8a85e538c7fff2", "date": "2026-06-23T23:58:58+02:00", "subject": "feat: add project library JSON configs"}

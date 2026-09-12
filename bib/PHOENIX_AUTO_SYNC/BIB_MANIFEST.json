@@ -5342,6 +5342,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "d5e91af3fd5ab44bde182e5253d2c9a35d9af6cb",
+      "path": "configs/phoenix/real_dxf_render_compat_v1.json",
+      "sha256": "8484930d5e067428f5cc52719648c719d78edfc2ab863481922273e15a25c69b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "52399145f72973a4a333b6b742f8dd6e8e0aaf21",
       "path": "configs/phoenix/real_project_e2e_validation_policy_v1_0.json",
       "sha256": "76c6214c4b9af5524f26208f2f2c9e41b97820671a9931307e38de89b0f1acf1"
@@ -8564,6 +8573,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "59419cdd5508e54d9d0aef77381e030ee0f677dd",
+      "path": "docs/automation/PHOENIX_4_41_DXF_RENDER_OPEN_SOURCE_REVIEW.md",
+      "sha256": "2e1efa486b628354e200d114003791d82e0badb15b15351fbfdd3621c836311c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "1867550b481d8c5b98ec9f20818ffd96be4024c8",
       "path": "docs/automation/PHOENIX_4_41_EXTERNAL_RELEASE_EVIDENCE_OPEN_SOURCE_REVIEW.md",
       "sha256": "ec2760008fa4944f6c4552e8c3853a3b8df827c1e3be1079b99edc50f2bab44c"
@@ -8585,6 +8603,15 @@
       "git_oid": "fcfad6ff6fed183222627e6f0affba138002e5bc",
       "path": "docs/automation/PHOENIX_4_41_OPEN_SOURCE_DXF_DWG_VIEWER_INTEGRATION.md",
       "sha256": "b238b79c6b67647c80f3a282593bd8b553429512579f82cf65213865972a69c8"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "24cfa1d85243320b3c5c75c0bf5b905c6482fd1b",
+      "path": "docs/automation/PHOENIX_4_41_REAL_DXF_EMBEDDED_RENDER_COMPATIBILITY.md",
+      "sha256": "196ef5eadc2339126e1d54e528599a9a0bf91b6be770a0bf5689273802fdb4e1"
     },
     {
       "chunks": 1,
@@ -16844,7 +16871,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "5a9ea88e250919b3e6fca002a5a22fb94432623d",
+      "git_oid": "8f2e30e25361f8b712594812e4eb852620bd3f3a",
       "path": "phoenix/detv_cad_bridge/__init__.py",
       "sha256": null
     },
@@ -16862,7 +16889,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "44facd78cc4484aa6a298aa2912c68d85c689fd1",
+      "git_oid": "22be2738416d947348caab07e649f98c7650e9c2",
       "path": "phoenix/detv_cad_bridge/assets/viewer.html",
       "sha256": null
     },
@@ -16889,7 +16916,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "fe0f98d65cfa8162e78cb34c54a5e01792f89f09",
+      "git_oid": "0eda94da7ff9dcb68d24d26b4a85d6f8d4e10de0",
       "path": "phoenix/detv_cad_bridge/server.py",
       "sha256": null
     },
@@ -17438,7 +17465,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "4dd4cf7955c33409f580e14694e5fdfaa0915225",
+      "git_oid": "e496e1177e65e8c6e6760584a0a19c84df4e1ae4",
       "path": "phoenix/local_app/static/official_start_v3_0/index.html",
       "sha256": null
     },
@@ -23288,6 +23315,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4fb2766b0168f361c8c6ceb94e91387f38d9974a",
+      "path": "tests/automation/test_phoenix_441_real_dxf_render_compat.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "e563deb4ba580608b74d5c3c9c5bec2ab5ef17db",
       "path": "tests/automation/test_phoenix_441_start_runtime_cors.py",
       "sha256": null
@@ -26633,5 +26669,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "dc631bca8be76157851e0e607f991c4d553575847279175c25bde9b712c07835"
+  "source_digest": "f32c3c9e71369351113c134a7697aeb4cc41bf7e8eb521ff3cd1bbb32f86a278"
 }
