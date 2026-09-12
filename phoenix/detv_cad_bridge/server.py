@@ -6,7 +6,7 @@ from email.parser import BytesParser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-VERSION="1.0.0"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
+VERSION="1.1.0"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
 SESSIONS={}; LOCK=threading.Lock()
 
 def bootstrap(repo):
@@ -115,14 +115,52 @@ def viewer_page(repo,token,mode,hint):
     return t.replace("__TOKEN_JSON__",json.dumps(token)).replace("__MODE_JSON__",json.dumps(mode)).replace("__HINT_JSON__",json.dumps(hint))
 
 class H(BaseHTTPRequestHandler):
-    server_version="PHOENIX-DETV-CAD/1.0"
+    server_version="PHOENIX-DETV-CAD/1.1"
+    CORS_ALLOWED_ORIGINS={
+        "http://127.0.0.1:8766",
+        "http://localhost:8766",
+    }
     def log_message(self,fmt,*args): pass
     @property
     def app(self): return self.server.app
+    def cors_headers(self):
+        origin=self.headers.get("Origin","")
+        if origin in self.CORS_ALLOWED_ORIGINS:
+            self.send_header("Access-Control-Allow-Origin",origin)
+            self.send_header("Vary","Origin")
+            self.send_header("Access-Control-Allow-Methods","GET, POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers","Content-Type, X-Phoenix-Token")
+            self.send_header("Access-Control-Max-Age","600")
     def js(self,o,status=200):
-        b=json.dumps(o,ensure_ascii=False).encode(); self.send_response(status); self.send_header("Content-Type","application/json; charset=utf-8"); self.send_header("Content-Length",str(len(b))); self.send_header("Cache-Control","no-store"); self.end_headers(); self.wfile.write(b)
+        b=json.dumps(o,ensure_ascii=False).encode()
+        self.send_response(status)
+        self.cors_headers()
+        self.send_header("Content-Type","application/json; charset=utf-8")
+        self.send_header("Content-Length",str(len(b)))
+        self.send_header("Cache-Control","no-store")
+        self.end_headers()
+        self.wfile.write(b)
     def ht(self,t):
-        b=t.encode(); self.send_response(200); self.send_header("Content-Type","text/html; charset=utf-8"); self.send_header("Content-Length",str(len(b))); self.send_header("Cache-Control","no-store"); self.send_header("Content-Security-Policy","frame-ancestors *"); self.end_headers(); self.wfile.write(b)
+        b=t.encode()
+        self.send_response(200)
+        self.cors_headers()
+        self.send_header("Content-Type","text/html; charset=utf-8")
+        self.send_header("Content-Length",str(len(b)))
+        self.send_header("Cache-Control","no-store")
+        self.send_header("Content-Security-Policy","frame-ancestors *")
+        self.end_headers()
+        self.wfile.write(b)
+    def do_OPTIONS(self):
+        origin=self.headers.get("Origin","")
+        if origin not in self.CORS_ALLOWED_ORIGINS:
+            self.send_response(403)
+            self.send_header("Content-Length","0")
+            self.end_headers()
+            return
+        self.send_response(204)
+        self.cors_headers()
+        self.send_header("Content-Length","0")
+        self.end_headers()
     def token(self): return secrets.compare_digest(self.headers.get("X-Phoenix-Token",""),self.app["token"])
     def need(self):
         if self.token(): return True

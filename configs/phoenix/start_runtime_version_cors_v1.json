@@ -1,0 +1,21 @@
+{
+  "schema": "PHOENIX_4_41_START_RUNTIME_VERSION_CORS_1.0",
+  "baseline": "e7bd5eead42092fa3876c0abd2a29f216e631fea",
+  "visible_start_version": "START v4.41",
+  "engine_runtime_version": "PRESERVE_EXISTING",
+  "cad_sidecar": {
+    "version": "1.1.0",
+    "host": "127.0.0.1",
+    "port": 8765,
+    "cors_allowed_origins": [
+      "http://127.0.0.1:8766",
+      "http://localhost:8766"
+    ],
+    "wildcard_origin": false
+  },
+  "out_of_scope": [
+    "PLAYER OFFLINE media-player state",
+    "CAD rendering semantics",
+    "structural release gates"
+  ]
+}

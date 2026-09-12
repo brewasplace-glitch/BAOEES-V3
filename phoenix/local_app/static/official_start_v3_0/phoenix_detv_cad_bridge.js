@@ -56,6 +56,23 @@ function repairNode(node){
 function repairDocumentText(){repairNode(document.body)}
 window.repairDocumentText=repairDocumentText;
 
+function syncRuntimeVersionText(root=document.body){
+  if(!root)return;
+  const repair=node=>{
+    if(node.nodeType!==Node.TEXT_NODE)return;
+    const before=node.nodeValue||"";
+    const after=before
+      .replace(/START\s+v3\.0\.2/g,"START v4.41")
+      .replace(/START\s+v3\.0(?!\d)/g,"START v4.41");
+    if(after!==before)node.nodeValue=after;
+  };
+  if(root.nodeType===Node.TEXT_NODE){repair(root);return}
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+  let node;
+  while((node=walker.nextNode()))repair(node);
+}
+window.syncRuntimeVersionText=syncRuntimeVersionText;
+
 const style=document.createElement("style");
 style.textContent=`
 #phoenix-cad-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 8px 10px;padding:8px;border-top:1px solid rgba(120,170,220,.22);position:static!important;right:auto!important;bottom:auto!important;z-index:auto!important}
@@ -152,12 +169,26 @@ function installNativeControls(){
 }
 async function health(){
   try{
-    const r=await fetch(`${SIDECAR}/health`,{cache:"no-store"}),j=await r.json();
-    if(dot)dot.style.background=j.status==="PASS"?"#2ecc71":"#f39c12";
-  }catch(_){if(dot)dot.style.background="#e74c3c"}
+    const r=await fetch(`${SIDECAR}/health`,{cache:"no-store",mode:"cors"});
+    if(!r.ok)throw new Error(`CAD sidecar HTTP ${r.status}`);
+    const j=await r.json();
+    const ok=j.status==="PASS"&&j.service==="PHOENIX_DETV_CAD_SIDECAR";
+    if(dot){
+      dot.style.background=ok?"#2ecc71":"#f39c12";
+      dot.title=ok?`CAD sidecar ${j.version||""} connected`:"CAD sidecar unhealthy";
+    }
+    return ok;
+  }catch(err){
+    if(dot){
+      dot.style.background="#e74c3c";
+      dot.title=`CAD sidecar browser health failed: ${err.message||err}`;
+    }
+    return false;
+  }
 }
 function activate(){
   repairDocumentText();
+  syncRuntimeVersionText(document.body);
   installNativeControls();
   health();
 }
