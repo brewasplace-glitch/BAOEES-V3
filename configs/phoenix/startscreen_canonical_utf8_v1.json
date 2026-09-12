@@ -1,0 +1,38 @@
+{
+  "schema": "PHOENIX_4_41_STARTSCREEN_CANONICAL_UTF8_1.0",
+  "baseline": "b1da9593850c9cf9a500c0200e810d5986a5000f",
+  "canonical_served_host": "phoenix/local_app/static/official_start_v3_0/index.html",
+  "served_route_observed": "/start-v3/",
+  "product_version": "4.41",
+  "encoding": "UTF-8",
+  "mojibake_primary": {
+    "tool": "ftfy",
+    "version": "6.3.1",
+    "license": "Apache-2.0",
+    "mode": "fix_encoding"
+  },
+  "encoding_fallback": {
+    "tool": "charset-normalizer",
+    "version": "3.5.1",
+    "license": "MIT"
+  },
+  "detv_cad": {
+    "integration": "NATIVE_INSIDE_DE_TV_PANEL",
+    "floating_toolbar": false,
+    "buttons": [
+      "Project CAD",
+      "Open CAD bestand\u2026"
+    ],
+    "sidecar": "http://127.0.0.1:8765"
+  },
+  "quality_gates": [
+    "canonical host contains PHOENIX 4.41 branding",
+    "canonical host has zero known mojibake markers",
+    "UTF-8 meta declaration present",
+    "bridge is cache-busted",
+    "native DE TV CAD controls present",
+    "no fixed-position CAD toolbar",
+    "sidecar remains healthy",
+    "exact git scope and BIB guards"
+  ]
+}

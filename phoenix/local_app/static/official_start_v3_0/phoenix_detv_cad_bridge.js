@@ -1,57 +1,178 @@
 (() => {
 "use strict";
-if (window.__PHOENIX_DETV_CAD_BRIDGE_V1__) return;
-window.__PHOENIX_DETV_CAD_BRIDGE_V1__=true;
+if (window.__PHOENIX_DETV_CAD_NATIVE_V441__) return;
+window.__PHOENIX_DETV_CAD_NATIVE_V441__=true;
+
 const SIDECAR="http://127.0.0.1:8765";
+const SUSPICIOUS=/Ã|Â|ðŸ|â€|âœ|â˜|âš|â†|â‡|âŒ|â”|â–|â—|ï¸|�/;
+
+function cp1252Byte(ch){
+  const c=ch.codePointAt(0);
+  const inv={
+    0x20AC:0x80,0x201A:0x82,0x0192:0x83,0x201E:0x84,0x2026:0x85,
+    0x2020:0x86,0x2021:0x87,0x02C6:0x88,0x2030:0x89,0x0160:0x8A,
+    0x2039:0x8B,0x0152:0x8C,0x017D:0x8E,0x2018:0x91,0x2019:0x92,
+    0x201C:0x93,0x201D:0x94,0x2022:0x95,0x2013:0x96,0x2014:0x97,
+    0x02DC:0x98,0x2122:0x99,0x0161:0x9A,0x203A:0x9B,0x0153:0x9C,
+    0x017E:0x9E,0x0178:0x9F
+  };
+  if(inv[c]!==undefined)return inv[c];
+  return c<=255?c:null;
+}
+function decodeCp1252Utf8(text){
+  const bytes=[];
+  for(const ch of text){
+    const b=cp1252Byte(ch);
+    if(b===null)return text;
+    bytes.push(b);
+  }
+  try{return new TextDecoder("utf-8",{fatal:true}).decode(new Uint8Array(bytes))}
+  catch(_){return text}
+}
+function cleanText(text){
+  if(!text||!SUSPICIOUS.test(text))return text;
+  let out=decodeCp1252Utf8(text);
+  if(out!==text)return out;
+
+  // If an already-damaged icon prefix is incomplete and cannot be recovered,
+  // remove only the short mojibake prefix before a readable label.
+  out=text.replace(
+    /^\s*(?:Ã.|Â.|ð\S{0,7}|â\S{0,7}|ï\S{0,5}|�+)\s+(?=[A-Za-zÀ-ÿ])/,
+    ""
+  );
+  return out;
+}
+function repairNode(node){
+  if(node.nodeType===Node.TEXT_NODE){
+    const fixed=cleanText(node.nodeValue);
+    if(fixed!==node.nodeValue)node.nodeValue=fixed;
+    return;
+  }
+  if(node.nodeType!==Node.ELEMENT_NODE)return;
+  if(["SCRIPT","STYLE","TEXTAREA","IFRAME"].includes(node.tagName))return;
+  const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
+  let n; while((n=walker.nextNode()))repairNode(n);
+}
+function repairDocumentText(){repairNode(document.body)}
+window.repairDocumentText=repairDocumentText;
+
 const style=document.createElement("style");
 style.textContent=`
-#phoenix-cad-toolbar{position:fixed;right:18px;bottom:18px;z-index:2147483000;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-#phoenix-cad-toolbar button{border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:650;box-shadow:0 8px 28px rgba(0,0,0,.28);background:#17202a;color:#fff}
-#phoenix-cad-modal{position:fixed;inset:0;z-index:2147483100;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:20px}
+#phoenix-cad-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 8px 10px;padding:8px;border-top:1px solid rgba(120,170,220,.22);position:static!important;right:auto!important;bottom:auto!important;z-index:auto!important}
+#phoenix-cad-toolbar button{border:1px solid #28567c;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:700;background:#0d2a42;color:#eaf6ff}
+#phoenix-cad-toolbar button:hover{background:#123a59}
+#phoenix-cad-status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;background:#888;margin-right:6px}
+#phoenix-cad-modal{position:fixed;inset:0;z-index:2147483100;background:rgba(0,0,0,.74);display:none;align-items:center;justify-content:center;padding:20px}
 #phoenix-cad-modal.open{display:flex}
 #phoenix-cad-shell{width:min(1500px,96vw);height:min(920px,94vh);border-radius:14px;overflow:hidden;background:#0d1117;box-shadow:0 24px 80px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.15);position:relative}
 #phoenix-cad-frame{width:100%;height:100%;border:0;background:#fff}
-#phoenix-cad-close{position:absolute;right:10px;top:10px;z-index:3;border-radius:999px;border:0;width:38px;height:38px;background:#111827;color:#fff;cursor:pointer;font-size:20px}
-#phoenix-cad-status-dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:#888;margin-right:7px}`;
+#phoenix-cad-close{position:absolute;right:10px;top:10px;z-index:3;border-radius:999px;border:0;width:38px;height:38px;background:#111827;color:#fff;cursor:pointer;font-size:20px}`;
 document.head.appendChild(style);
 
-const toolbar=document.createElement("div"); toolbar.id="phoenix-cad-toolbar";
-const projectBtn=document.createElement("button"); projectBtn.type="button"; projectBtn.innerHTML='<span id="phoenix-cad-status-dot"></span>Project CAD';
-const openBtn=document.createElement("button"); openBtn.type="button"; openBtn.textContent="Open CAD bestand…";
-const hidden=document.createElement("input"); hidden.type="file"; hidden.accept=".dxf,.dwg"; hidden.style.display="none";
-toolbar.append(projectBtn,openBtn,hidden); document.body.appendChild(toolbar);
-
-const modal=document.createElement("div"); modal.id="phoenix-cad-modal";
-modal.innerHTML='<div id="phoenix-cad-shell"><button id="phoenix-cad-close" title="Sluiten">×</button><iframe id="phoenix-cad-frame" title="PHOENIX DE TV CAD Viewer"></iframe></div>';
-document.body.appendChild(modal);
-const frame=modal.querySelector("#phoenix-cad-frame"), close=modal.querySelector("#phoenix-cad-close"), dot=projectBtn.querySelector("#phoenix-cad-status-dot");
-
+function exactText(el,text){
+  return (el.textContent||"").trim().replace(/\s+/g," ")===text;
+}
+function findDeTvAnchor(){
+  const nodes=[...document.querySelectorAll("h1,h2,h3,h4,strong,span,div")];
+  return nodes.find(el=>exactText(el,"DE TV"))||null;
+}
+function findDeTvPanel(){
+  const anchor=findDeTvAnchor();
+  if(!anchor)return null;
+  let cur=anchor;
+  for(let i=0;i<7&&cur;i++,cur=cur.parentElement){
+    const r=cur.getBoundingClientRect();
+    const txt=(cur.textContent||"");
+    if(r.width>=250&&r.height>=220&&txt.includes("DE TV"))return cur;
+  }
+  return anchor.parentElement;
+}
 function resolveProjectHint(){
   const g=[window.PHOENIX_ACTIVE_PROJECT_ID,window.__PHOENIX_ACTIVE_PROJECT_ID__,window.activeProjectId,window.currentProjectId].filter(Boolean);
   if(g.length)return String(g[0]);
   try{
     for(let i=0;i<localStorage.length;i++){
-      const k=localStorage.key(i); if(!k||!/active.*project|project.*active|current.*project/i.test(k))continue;
+      const k=localStorage.key(i);
+      if(!k||!/active.*project|project.*active|current.*project/i.test(k))continue;
       const v=localStorage.getItem(k); if(!v)continue;
-      try{const o=JSON.parse(v); for(const key of ["project_id","projectId","id","slug","name"])if(o&&o[key])return String(o[key]);}
-      catch(_){if(v.length<160)return v;}
+      try{
+        const o=JSON.parse(v);
+        for(const key of ["project_id","projectId","id","slug","name"]){
+          if(o&&o[key])return String(o[key]);
+        }
+      }catch(_){if(v.length<160)return v}
     }
   }catch(_){}
   return "";
 }
+
+let frame=null,modal=null,hidden=null,dot=null;
+function ensureModal(){
+  if(modal)return;
+  modal=document.createElement("div");modal.id="phoenix-cad-modal";
+  modal.innerHTML='<div id="phoenix-cad-shell"><button id="phoenix-cad-close" title="Sluiten">×</button><iframe id="phoenix-cad-frame" title="PHOENIX DE TV CAD Viewer"></iframe></div>';
+  document.body.appendChild(modal);
+  frame=modal.querySelector("#phoenix-cad-frame");
+  modal.querySelector("#phoenix-cad-close").onclick=()=>{modal.classList.remove("open");frame.src="about:blank"};
+  modal.onclick=e=>{if(e.target===modal)modal.querySelector("#phoenix-cad-close").click()};
+}
 function openModal(mode,file){
-  modal.classList.add("open");
+  ensureModal(); modal.classList.add("open");
   frame.src=`${SIDECAR}/viewer?mode=${encodeURIComponent(mode)}&project_hint=${encodeURIComponent(resolveProjectHint())}`;
   if(file){
     frame.addEventListener("load",()=>setTimeout(()=>frame.contentWindow.postMessage({type:"phoenix-cad-file",file},SIDECAR),120),{once:true});
   }
 }
-projectBtn.onclick=()=>openModal("project");
-openBtn.onclick=()=>{hidden.value="";hidden.click();};
-hidden.onchange=()=>{const f=hidden.files&&hidden.files[0]; if(!f)return; if(!/\.(dxf|dwg)$/i.test(f.name)){alert("Kies een DXF- of DWG-bestand.");return;} openModal("handoff",f);};
-close.onclick=()=>{modal.classList.remove("open");frame.src="about:blank";};
-modal.onclick=e=>{if(e.target===modal)close.click();};
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))close.click();});
-async function health(){try{const r=await fetch(`${SIDECAR}/health`,{cache:"no-store"});const j=await r.json();dot.style.background=j.status==="PASS"?"#2ecc71":"#f39c12";}catch(_){dot.style.background="#e74c3c";}}
-health(); setInterval(health,15000);
+function installNativeControls(){
+  const old=document.getElementById("phoenix-cad-toolbar");
+  if(old&&old.dataset.native==="1")return true;
+  if(old)old.remove();
+
+  const panel=findDeTvPanel();
+  if(!panel)return false;
+
+  const toolbar=document.createElement("div");
+  toolbar.id="phoenix-cad-toolbar";toolbar.dataset.native="1";toolbar.dataset.integration="DETV_NATIVE_CAD_CONTROLS";
+  const project=document.createElement("button");project.type="button";project.innerHTML='<span id="phoenix-cad-status-dot"></span>Project CAD';
+  const open=document.createElement("button");open.type="button";open.textContent="Open CAD bestand…";
+  hidden=document.createElement("input");hidden.type="file";hidden.accept=".dxf,.dwg";hidden.style.display="none";
+
+  toolbar.append(project,open,hidden);
+  panel.appendChild(toolbar);
+  dot=project.querySelector("#phoenix-cad-status-dot");
+  project.onclick=()=>openModal("project");
+  open.onclick=()=>{hidden.value="";hidden.click()};
+  hidden.onchange=()=>{
+    const f=hidden.files&&hidden.files[0];
+    if(!f)return;
+    if(!/\.(dxf|dwg)$/i.test(f.name)){alert("Kies een DXF- of DWG-bestand.");return}
+    openModal("handoff",f);
+  };
+  return true;
+}
+async function health(){
+  try{
+    const r=await fetch(`${SIDECAR}/health`,{cache:"no-store"}),j=await r.json();
+    if(dot)dot.style.background=j.status==="PASS"?"#2ecc71":"#f39c12";
+  }catch(_){if(dot)dot.style.background="#e74c3c"}
+}
+function activate(){
+  repairDocumentText();
+  installNativeControls();
+  health();
+}
+activate();
+let scheduled=false;
+const observer=new MutationObserver(()=>{
+  if(scheduled)return;
+  scheduled=true;
+  setTimeout(()=>{scheduled=false;activate()},80);
+});
+observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+setInterval(health,15000);
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&modal&&modal.classList.contains("open")){
+    modal.querySelector("#phoenix-cad-close").click();
+  }
+});
 })();

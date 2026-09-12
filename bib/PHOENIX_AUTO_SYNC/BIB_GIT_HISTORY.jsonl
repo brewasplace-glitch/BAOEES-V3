@@ -1,3 +1,4 @@
+{"commit": "b1da9593850c9cf9a500c0200e810d5986a5000f", "date": "2026-09-12T23:40:57+02:00", "subject": "feat(tv): embed DXF DWG CAD viewer in DE TV"}
 {"commit": "f2b449b1ea39a3ab01f08f76015b5aa69c572087", "date": "2026-09-12T22:39:16+02:00", "subject": "feat(cad): add open-source DXF DWG viewer bridge"}
 {"commit": "b675da91a73218fee33e29048884cb0bec9bdcff", "date": "2026-09-12T21:28:06+02:00", "subject": "feat(structural): add Anijstraat 616 external evidence approval gate"}
 {"commit": "b50e38d425430c870190c8616f9b1aafb82e1676", "date": "2026-09-12T16:40:00+02:00", "subject": "feat(structural): assemble Anijstraat 616 final preliminary package"}
@@ -497,4 +498,3 @@
 {"commit": "bb120ec52a989944edab35bd9c8a85e538c7fff2", "date": "2026-06-23T23:58:58+02:00", "subject": "feat: add project library JSON configs"}
 {"commit": "4e9e7c4ab82cd8feef22327fa81fddd5aacee4b9", "date": "2026-06-23T23:52:02+02:00", "subject": "feat: add Project Selector Library Engine v1"}
 {"commit": "bcb9587600fc7b44b220936bfc932e7572644154", "date": "2026-06-23T23:37:43+02:00", "subject": "feat: add JSON project input configuration"}
-{"commit": "f76a75e0d9cb93e2f0600179ae104ac51f747b90", "date": "2026-06-23T23:14:57+02:00", "subject": "feat: add Project Configuration Input Engine v1"}

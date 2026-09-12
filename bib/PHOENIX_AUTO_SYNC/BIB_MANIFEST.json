@@ -5648,6 +5648,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "1e76e4a1865ba976969ea4288c477cffc1c83a97",
+      "path": "configs/phoenix/startscreen_canonical_utf8_v1.json",
+      "sha256": "a455faba9ba5da22292fa9087574599abe0be1293a8ae82e3344a01c9c5fd374"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "283985a6539150452b740eada00d64bacd64f304",
       "path": "configs/phoenix/startscreen_capabilities/architectural_ae_v1_0.json",
       "sha256": "0fb3a8e996bb9f65c832026ce9f0dd84059b85c434c0582edaa09a488775eff7"
@@ -8540,6 +8549,24 @@
       "git_oid": "a9200663070d75371e8e6211fd4adb7e4750beb3",
       "path": "docs/automation/PHOENIX_4_41_SOLVER_OPEN_SOURCE_REVIEW.md",
       "sha256": "d90167782841db5fbec09117d136c8eb2d7a9de89735a302d57e86d842c78165"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "72d417e203e1a2d035b890c98c9f920a361c76a7",
+      "path": "docs/automation/PHOENIX_4_41_STARTSCREEN_CANONICAL_UTF8_DETV_NATIVE.md",
+      "sha256": "2830df91f585a9b69a04946de32b2caf95f77a6be6520ba3b04bb736e3d17738"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "c54d1624c927af50bf4edd4355b5848cdbcd7d7b",
+      "path": "docs/automation/PHOENIX_4_41_STARTSCREEN_UTF8_OPEN_SOURCE_REVIEW.md",
+      "sha256": "88cc699d19888fcf79d4470ea981c99f250189f78e3ad1f5148c856b698761a1"
     },
     {
       "chunks": 1,
@@ -17348,7 +17375,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "02768d5fe0118ac8e46b0a0486d40bcf6a0f4bf4",
+      "git_oid": "7c15a0a546a5dd5242f3a27c5fe22035d04ab368",
       "path": "phoenix/local_app/static/official_start_v3_0/index.html",
       "sha256": null
     },
@@ -17357,7 +17384,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "a3eb9619b7d30ff0541f3338bcff8b9a97c8dd38",
+      "git_oid": "25b86ea5a1b5c8b771f16dd7f8fde24e36de888c",
       "path": "phoenix/local_app/static/official_start_v3_0/phoenix_detv_cad_bridge.js",
       "sha256": null
     },
@@ -18592,6 +18619,24 @@
       "git_mode": "100644",
       "git_oid": "5fb21e09c11292e7b18f5a81bdda4393d00861e8",
       "path": "phoenix/source_mapping/registry.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "e41637544661fb8f2fde9564de2ea3bba8aabe6f",
+      "path": "phoenix/startscreen_repair/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "ec2ba2aaa0235383013228989aee122c24f2c47e",
+      "path": "phoenix/startscreen_repair/repair.py",
       "sha256": null
     },
     {
@@ -23153,6 +23198,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4cf4558b37e053d357287a8c35a9a48113a6a61c",
+      "path": "tests/automation/test_phoenix_441_startscreen_utf8_native_detv.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "bcc2ee1ba85f55db208b1f00dc8349f0f480e8b8",
       "path": "tests/automation/test_phoenix_advanced_global_stability_qualification_r9_1.py",
       "sha256": null
@@ -26480,5 +26534,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "be33a90665f82f13193ae8f2614d2b792f5410baeddc96887435f04d651fae87"
+  "source_digest": "082d2b3f65b1329a3ef4764107a52ae552204a2ec7f1556b36358fe32a2c8862"
 }
