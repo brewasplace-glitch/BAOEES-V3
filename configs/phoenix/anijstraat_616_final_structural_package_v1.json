@@ -1,0 +1,15 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_FINAL_STRUCTURAL_PACKAGE_CONFIG_1.0",
+  "release_policy": {
+    "never_fabricate_authority_or_site_evidence": true,
+    "construction_release_requires_zero_open_mandatory_holds": true,
+    "professional_structural_review_required": true,
+    "package_status_with_open_holds": "FINAL_PRELIMINARY_STRUCTURAL_PACKAGE"
+  },
+  "runtime": {
+    "python_docx": "1.2.0",
+    "reportlab": "5.0.1",
+    "pypdf": "5.9.0",
+    "bcf_client": "0.8.5_OPTIONAL_REUSE_FROM_QA_BIM_RUNTIME"
+  }
+}

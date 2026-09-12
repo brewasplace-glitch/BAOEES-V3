@@ -3398,6 +3398,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "3cffa55f528e583d15f59a9d5bc1e95e8b9bb07b",
+      "path": "configs/phoenix/anijstraat_616_final_structural_package_v1.json",
+      "sha256": "ee28408df0901b941c4dc3e54cd69428072b78ec2bfb5ab187f9acbfdba4ea71"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "357f2b5261e2dd290790c91ef857d6f2c3a1342f",
       "path": "configs/phoenix/anijstraat_616_solver_element_verification_v1.json",
       "sha256": "3f6b17abd9085b9adc2b00262f2921450b16c915d49d39dea91f0d4b4480ec95"
@@ -8375,6 +8384,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "50cdd924ba2498481eecf9aa4a227b4db7683a2a",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_RELEASE_HOLD_CLOSURE_FINAL_STRUCTURAL_PACKAGE.md",
+      "sha256": "e24dc16fca0c5a33b50071e38cf72fce0b141d1ad1d7ee05c98fb0bf25560ded"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "d99bfd44a0d15f9727820f2ba5dc0172c4729e49",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_SOLVER_ELEMENT_VERIFICATION.md",
       "sha256": "e3acb67e7455b09351ee125b1382a0fc62f327ee08d3550b66b4ca2c8944f04d"
@@ -8414,6 +8432,15 @@
       "git_oid": "f4637b6251bc15d01b43fb87f85098fd1313256c",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_QA_RELEASE_GATE_BIM.md",
       "sha256": "105644810ae5d44cb20b333da013852a4a87885ff78c8a1fc75ff10b3e42803b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "804abf600868567992a019592f7d97b1527da27d",
+      "path": "docs/automation/PHOENIX_4_41_FINAL_STRUCTURAL_PACKAGE_OPEN_SOURCE_REVIEW.md",
+      "sha256": "2672aca7bab9fde697e2c1aff9a6b757593954af424c95b68a812b4fc7f07b7f"
     },
     {
       "chunks": 1,
@@ -18527,6 +18554,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "b74ef866041f313433567d6fa6372341bf7d5bcc",
+      "path": "phoenix/structural_final_package/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "b7adf23c62424a1e06eb89942e96e1be72d4ee47",
+      "path": "phoenix/structural_final_package/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4fed069cda3df5f6a2bf3b6bb4d6fa67663364f3",
       "path": "phoenix/structural_input_gap/__init__.py",
       "sha256": null
@@ -20086,6 +20131,15 @@
       "git_mode": "100644",
       "git_oid": "026253a4a93ddbf3bcc1b308e484d2b020c439df",
       "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_3d_structural_model_report.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "1ecaf4b3485ce99f0dca5235c99089d0c43ea1b9",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_final_structural_package.ps1",
       "sha256": null
     },
     {
@@ -22795,6 +22849,15 @@
       "git_mode": "100644",
       "git_oid": "dd1d176597abe2190b1d35aed4ffb7cfad07abe7",
       "path": "tests/automation/test_phoenix_441_anijstraat_616_3d_structural_report.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "83cc4095208a9892c2665a9ec56c02e8d5563db1",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_final_structural_package.py",
       "sha256": null
     },
     {
@@ -26174,5 +26237,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "07c8aebfdd0b9208af00e467abc514309f8c89e55646af82eebc117eb60a6789"
+  "source_digest": "8088751cead151068c3ef29b55e14cc78c5e90b49a482614120f45fcabf9b5ec"
 }
