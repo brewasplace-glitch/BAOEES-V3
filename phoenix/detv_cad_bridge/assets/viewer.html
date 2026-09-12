@@ -16,6 +16,16 @@ main{min-height:0;display:grid;grid-template-columns:260px 1fr}aside{overflow:au
 #project-list button{width:100%;text-align:left;margin:3px 0;font-weight:500}
 #empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#53616f;font-size:18px;text-align:center;padding:30px;pointer-events:none}
 @media(max-width:800px){main{grid-template-columns:1fr}aside{display:none}}
+html.compact body{grid-template-rows:auto 1fr}
+html.compact header{padding:5px 38px 5px 6px;gap:5px;min-height:34px}
+html.compact header button{padding:4px 7px;font-size:11px}
+html.compact #choose,html.compact #project{display:none}
+html.compact header #title{font-size:11px;max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html.compact header #status{font-size:10px;margin-left:auto;max-width:42%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html.compact main{grid-template-columns:1fr}
+html.compact aside{display:none}
+html.compact #canvas{background:#070b0f}
+
 </style>
 </head>
 <body>
@@ -30,6 +40,15 @@ main{min-height:0;display:grid;grid-template-columns:260px 1fr}aside{overflow:au
 <div id="canvas"><div id="svg-wrap"></div><div id="empty">Open een DXF/DWG of kies een tekening uit het actieve Phoenix-project.</div></div></main>
 <script>
 const TOKEN=__TOKEN_JSON__,MODE=__MODE_JSON__,PROJECT_HINT=__HINT_JSON__,$=id=>document.getElementById(id);
+const PARAMS=new URLSearchParams(location.search);
+const COMPACT=PARAMS.get("compact")==="1";
+const HARDMOUNT=PARAMS.get("hardmount")==="1";
+const ALLOWED_PARENT_ORIGINS=new Set(["http://127.0.0.1:8766","http://localhost:8766"]);
+if(COMPACT)document.documentElement.classList.add("compact");
+function parentPost(payload){
+  if(window.parent===window)return;
+  window.parent.postMessage(Object.assign({protocol:"v1"},payload),"*");
+}
 let currentSession=null,currentLayers=[],scale=1,tx=0,ty=0,dragging=false,sx=0,sy=0;
 async function api(path,opt={}){opt.headers=Object.assign({},opt.headers||{},{"X-Phoenix-Token":TOKEN});const r=await fetch(path,opt);let d=null;try{d=await r.json()}catch(_){}
 if(!r.ok)throw new Error((d&&d.error)||`HTTP ${r.status}`);return d}
@@ -38,16 +57,17 @@ function transform(){$("svg-wrap").style.transform=`translate(${tx}px,${ty}px) s
 function layers(){const b=$("layers");if(!currentLayers.length){b.innerHTML='<span class="muted">Geen lagen beschikbaar.</span>';return}b.innerHTML="";
 for(const n of currentLayers){const l=document.createElement("label");l.className="layer";const c=document.createElement("input");c.type="checkbox";c.checked=true;c.dataset.layer=n;c.onchange=rerender;const s=document.createElement("span");s.textContent=n;l.append(c,s);b.append(l)}}
 function show(d){currentSession=d.session_id||currentSession;currentLayers=d.layers||[];$("title").textContent=d.name||"CAD tekening";$("librecad").disabled=!currentSession;
-if(d.svg){$("svg-wrap").innerHTML=d.svg;$("empty").style.display="none";fit();status(`${d.source_format} · ${d.embedded_status} · ${d.read_mode||""}`)}
-else{$("svg-wrap").innerHTML="";$("empty").style.display="flex";$("empty").textContent="Deze DWG kon niet betrouwbaar embedded worden weergegeven. Gebruik Open in LibreCAD.";status(d.embedded_status||"DEGRADED","warn")}layers()}
+if(d.svg){$("svg-wrap").innerHTML=d.svg;const root=$("svg-wrap").querySelector("svg");if(root){root.setAttribute("preserveAspectRatio","xMidYMid meet");root.style.width="100%";root.style.height="100%"}$("empty").style.display="none";fit();status(`${d.source_format} · ${d.embedded_status} · ${d.read_mode||""}`)}
+else{$("svg-wrap").innerHTML="";$("empty").style.display="flex";$("empty").textContent="Deze DWG kon niet betrouwbaar embedded worden weergegeven. Gebruik Open in LibreCAD.";status(d.embedded_status||"DEGRADED","warn")}layers();
+parentPost({type:"phoenix-cad-file-loaded",name:d.name||"",embedded_status:d.embedded_status||"",has_svg:!!d.svg,source_format:d.source_format||""});}
 async function rerender(){if(!currentSession)return;const ls=[...$("layers").querySelectorAll("input:checked")].map(x=>x.dataset.layer);
 try{status("Lagen renderen…");const d=await api("/api/rerender",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({session_id:currentSession,layers:ls})});
 if(d.svg){$("svg-wrap").innerHTML=d.svg;$("empty").style.display="none";fit();status(`Lagen actief: ${ls.length}`)}}catch(e){status(e.message,"bad")}}
 async function upload(f){if(!f||!/\.(dxf|dwg)$/i.test(f.name))return;const form=new FormData();form.append("file",f,f.name);
-try{status("Bestand verwerken…");show(await api("/api/upload",{method:"POST",body:form}))}catch(e){status(e.message,"bad");$("empty").style.display="flex";$("empty").textContent=e.message}}
+try{status("Bestand verwerken…");show(await api("/api/upload",{method:"POST",body:form}))}catch(e){status(e.message,"bad");$("empty").style.display="flex";$("empty").textContent=e.message;parentPost({type:"phoenix-cad-file-error",name:f.name,error:e.message||String(e)})}}
 async function projectFiles(){try{status("Projectcontext zoeken…");const d=await api("/api/project-files?project_hint="+encodeURIComponent(PROJECT_HINT));$("project-state").textContent=`${d.context.status} · ${d.routing} · ${d.quality_gate}`;
 const l=$("project-list");l.innerHTML="";for(const i of d.files||[]){const b=document.createElement("button");b.textContent=i.path;b.onclick=()=>openProject(i.path);l.append(b)}
-if(!(d.files||[]).length)l.innerHTML='<div class="muted">Geen projectgebonden DXF/DWG gevonden.</div>';status(d.quality_gate,d.quality_gate.startsWith("PASS")?"":"warn")}catch(e){status(e.message,"bad")}}
+if(!(d.files||[]).length)l.innerHTML='<div class="muted">Geen projectgebonden DXF/DWG gevonden.</div>';status(d.quality_gate,d.quality_gate.startsWith("PASS")?"":"warn");parentPost({type:"phoenix-cad-project-loaded",count:(d.files||[]).length,quality_gate:d.quality_gate||""})}catch(e){status(e.message,"bad");parentPost({type:"phoenix-cad-file-error",error:e.message||String(e)})}}
 async function openProject(path){try{status("Projecttekening laden…");show(await api("/api/open-project",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({path})}))}catch(e){status(e.message,"bad")}}
 $("choose").onclick=()=>{$("file").value="";$("file").click()};$("file").onchange=()=>upload($("file").files&&$("file").files[0]);$("project").onclick=projectFiles;$("fit").onclick=fit;
 $("plus").onclick=()=>{scale=Math.min(20,scale*1.25);transform()};$("minus").onclick=()=>{scale=Math.max(.05,scale/1.25);transform()};
@@ -55,6 +75,11 @@ $("librecad").onclick=async()=>{if(!currentSession)return;try{await api("/api/op
 const c=$("canvas");c.onwheel=e=>{e.preventDefault();scale=Math.max(.05,Math.min(20,scale*(e.deltaY<0?1.12:1/1.12)));transform()};
 c.onpointerdown=e=>{dragging=true;sx=e.clientX-tx;sy=e.clientY-ty;$("svg-wrap").classList.add("dragging");c.setPointerCapture(e.pointerId)};
 c.onpointermove=e=>{if(dragging){tx=e.clientX-sx;ty=e.clientY-sy;transform()}};c.onpointerup=()=>{dragging=false;$("svg-wrap").classList.remove("dragging")};
-window.addEventListener("message",e=>{if(e.data&&e.data.type==="phoenix-cad-file"&&e.data.file)upload(e.data.file)});
+window.addEventListener("message",e=>{
+  if(e.source!==window.parent)return;
+  if(!ALLOWED_PARENT_ORIGINS.has(e.origin))return;
+  if(e.data&&e.data.type==="phoenix-cad-file"&&e.data.protocol==="v1"&&e.data.file)upload(e.data.file);
+});
+parentPost({type:"phoenix-cad-viewer-ready",compact:COMPACT,hardmount:HARDMOUNT});
 if(MODE==="project")projectFiles();
 </script></body></html>

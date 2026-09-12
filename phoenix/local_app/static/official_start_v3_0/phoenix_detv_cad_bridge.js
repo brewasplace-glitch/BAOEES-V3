@@ -2,6 +2,7 @@
 "use strict";
 if (window.__PHOENIX_DETV_CAD_NATIVE_V441__) return;
 window.__PHOENIX_DETV_CAD_NATIVE_V441__=true;
+window.__PHOENIX_DETV_CAD_HARD_MOUNT_V1__=true;
 
 const SIDECAR="http://127.0.0.1:8765";
 const SUSPICIOUS=/Ã|Â|ðŸ|â€|âœ|â˜|âš|â†|â‡|âŒ|â”|â–|â—|ï¸|�/;
@@ -79,11 +80,12 @@ style.textContent=`
 #phoenix-cad-toolbar button{border:1px solid #28567c;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:700;background:#0d2a42;color:#eaf6ff}
 #phoenix-cad-toolbar button:hover{background:#123a59}
 #phoenix-cad-status-dot{width:8px;height:8px;border-radius:50%;display:inline-block;background:#888;margin-right:6px}
-#phoenix-cad-modal{position:fixed;inset:0;z-index:2147483100;background:rgba(0,0,0,.74);display:none;align-items:center;justify-content:center;padding:20px}
-#phoenix-cad-modal.open{display:flex}
-#phoenix-cad-shell{width:min(1500px,96vw);height:min(920px,94vh);border-radius:14px;overflow:hidden;background:#0d1117;box-shadow:0 24px 80px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.15);position:relative}
-#phoenix-cad-frame{width:100%;height:100%;border:0;background:#fff}
-#phoenix-cad-close{position:absolute;right:10px;top:10px;z-index:3;border-radius:999px;border:0;width:38px;height:38px;background:#111827;color:#fff;cursor:pointer;font-size:20px}`;
+#phoenix-cad-detv-mount{position:absolute;inset:0;z-index:40;background:#071019;overflow:hidden;border-radius:inherit;min-height:150px}
+#phoenix-cad-frame{width:100%;height:100%;border:0;background:#0b1118;display:block}
+#phoenix-cad-mount-close{position:absolute;right:7px;top:7px;z-index:45;border-radius:999px;border:1px solid rgba(255,255,255,.28);width:30px;height:30px;background:#101c29;color:#fff;cursor:pointer;font-size:18px;line-height:26px;padding:0}
+#phoenix-cad-mount-state{position:absolute;left:8px;top:8px;z-index:44;padding:4px 7px;border-radius:6px;background:rgba(3,12,20,.82);color:#a9d8ff;font:600 11px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;pointer-events:none}
+#phoenix-cad-detv-mount[data-ready="1"] #phoenix-cad-mount-state{opacity:.18}
+#phoenix-cad-detv-mount[data-ready="1"]:hover #phoenix-cad-mount-state{opacity:1}`;
 document.head.appendChild(style);
 
 function exactText(el,text){
@@ -123,23 +125,105 @@ function resolveProjectHint(){
   return "";
 }
 
-let frame=null,modal=null,hidden=null,dot=null;
-function ensureModal(){
-  if(modal)return;
-  modal=document.createElement("div");modal.id="phoenix-cad-modal";
-  modal.innerHTML='<div id="phoenix-cad-shell"><button id="phoenix-cad-close" title="Sluiten">×</button><iframe id="phoenix-cad-frame" title="PHOENIX DE TV CAD Viewer"></iframe></div>';
-  document.body.appendChild(modal);
-  frame=modal.querySelector("#phoenix-cad-frame");
-  modal.querySelector("#phoenix-cad-close").onclick=()=>{modal.classList.remove("open");frame.src="about:blank"};
-  modal.onclick=e=>{if(e.target===modal)modal.querySelector("#phoenix-cad-close").click()};
+let frame=null,hidden=null,dot=null,mount=null,pendingFile=null,viewerReady=false;
+let mountHost=null,mountState=null;
+window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__={
+  protocol:"v1",mode:"IDLE",viewerReady:false,lastFile:"",lastResult:"",mountTarget:""
+};
+
+function findDeTvViewport(panel){
+  if(!panel)return null;
+  const candidates=[...panel.querySelectorAll("div,section,main,article")].filter(el=>{
+    if(el.id==="phoenix-cad-toolbar"||el.closest("#phoenix-cad-toolbar"))return false;
+    const r=el.getBoundingClientRect();
+    if(r.width<240||r.height<120)return false;
+    const text=(el.textContent||"").replace(/\s+/g," ").trim();
+    return text.includes("Selecteer output")&&text.includes("DE TV");
+  });
+  candidates.sort((a,b)=>{
+    const ar=a.getBoundingClientRect(),br=b.getBoundingClientRect();
+    return (ar.width*ar.height)-(br.width*br.height);
+  });
+  if(candidates.length)return candidates[0];
+
+  const dark=[...panel.querySelectorAll("div,section,main,article")].filter(el=>{
+    if(el.id==="phoenix-cad-toolbar"||el.closest("#phoenix-cad-toolbar"))return false;
+    const r=el.getBoundingClientRect();
+    if(r.width<240||r.height<120)return false;
+    const bg=getComputedStyle(el).backgroundColor;
+    const nums=(bg.match(/\d+/g)||[]).map(Number);
+    return nums.length>=3&&nums[0]<35&&nums[1]<40&&nums[2]<45;
+  });
+  dark.sort((a,b)=>{
+    const ar=a.getBoundingClientRect(),br=b.getBoundingClientRect();
+    return (ar.width*ar.height)-(br.width*br.height);
+  });
+  return dark[0]||null;
 }
-function openModal(mode,file){
-  ensureModal(); modal.classList.add("open");
-  frame.src=`${SIDECAR}/viewer?mode=${encodeURIComponent(mode)}&project_hint=${encodeURIComponent(resolveProjectHint())}`;
-  if(file){
-    frame.addEventListener("load",()=>setTimeout(()=>frame.contentWindow.postMessage({type:"phoenix-cad-file",file},SIDECAR),120),{once:true});
-  }
+
+function removeCadMount(){
+  if(mount&&mount.isConnected)mount.remove();
+  mount=null;frame=null;mountState=null;pendingFile=null;viewerReady=false;mountHost=null;
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.mode="IDLE";
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.viewerReady=false;
 }
+
+function ensureHardMount(){
+  const panel=findDeTvPanel();
+  if(!panel)throw new Error("DE TV panel niet gevonden");
+  let target=findDeTvViewport(panel);
+  let targetKind="DE_TV_VIEWPORT";
+  if(!target){target=panel;targetKind="DE_TV_PANEL_FALLBACK"}
+
+  if(mount&&mount.isConnected&&mountHost===target)return mount;
+  removeCadMount();
+
+  const position=getComputedStyle(target).position;
+  if(position==="static"||!position)target.style.position="relative";
+  target.style.overflow="hidden";
+
+  mount=document.createElement("div");
+  mount.id="phoenix-cad-detv-mount";
+  mount.dataset.ready="0";
+  mount.dataset.mountTarget=targetKind;
+  mount.innerHTML='<div id="phoenix-cad-mount-state">CAD VIEWER STARTEN…</div><button id="phoenix-cad-mount-close" title="Terug naar DE TV">×</button><iframe id="phoenix-cad-frame" title="PHOENIX DE TV Embedded CAD Viewer"></iframe>';
+  target.appendChild(mount);
+
+  mountHost=target;
+  frame=mount.querySelector("#phoenix-cad-frame");
+  mountState=mount.querySelector("#phoenix-cad-mount-state");
+  mount.querySelector("#phoenix-cad-mount-close").onclick=removeCadMount;
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.mountTarget=targetKind;
+  return mount;
+}
+
+function updateMountState(text){
+  if(mountState)mountState.textContent=text;
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.lastResult=text;
+}
+
+function sendPendingFile(){
+  if(!viewerReady||!pendingFile||!frame||!frame.contentWindow)return false;
+  updateMountState(`DXF/DWG LADEN · ${pendingFile.name}`);
+  frame.contentWindow.postMessage(
+    {type:"phoenix-cad-file",protocol:"v1",file:pendingFile},
+    SIDECAR
+  );
+  return true;
+}
+
+function hardMountViewer(mode,file){
+  ensureHardMount();
+  pendingFile=file||null;
+  viewerReady=false;
+  mount.dataset.ready="0";
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.mode=mode;
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.viewerReady=false;
+  window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.lastFile=file?file.name:"";
+  updateMountState(file?`VIEWER STARTEN · ${file.name}`:"VIEWER STARTEN");
+  frame.src=`${SIDECAR}/viewer?mode=${encodeURIComponent(mode)}&compact=1&hardmount=1&project_hint=${encodeURIComponent(resolveProjectHint())}`;
+}
+
 function installNativeControls(){
   const old=document.getElementById("phoenix-cad-toolbar");
   if(old&&old.dataset.native==="1")return true;
@@ -157,16 +241,42 @@ function installNativeControls(){
   toolbar.append(project,open,hidden);
   panel.appendChild(toolbar);
   dot=project.querySelector("#phoenix-cad-status-dot");
-  project.onclick=()=>openModal("project");
+  project.onclick=()=>hardMountViewer("project");
   open.onclick=()=>{hidden.value="";hidden.click()};
   hidden.onchange=()=>{
     const f=hidden.files&&hidden.files[0];
     if(!f)return;
     if(!/\.(dxf|dwg)$/i.test(f.name)){alert("Kies een DXF- of DWG-bestand.");return}
-    openModal("handoff",f);
+    hardMountViewer("handoff",f);
   };
   return true;
 }
+window.addEventListener("message",event=>{
+  if(event.origin!==SIDECAR)return;
+  if(!frame||event.source!==frame.contentWindow)return;
+  const data=event.data||{};
+  if(data.type==="phoenix-cad-viewer-ready"){
+    viewerReady=true;
+    if(mount)mount.dataset.ready="1";
+    window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.viewerReady=true;
+    updateMountState("CAD VIEWER GEREED");
+    sendPendingFile();
+    return;
+  }
+  if(data.type==="phoenix-cad-file-loaded"){
+    updateMountState(`${data.name||"CAD"} · ${data.embedded_status||"PASS"}`);
+    window.__PHOENIX_DETV_CAD_HARD_MOUNT_STATUS__.lastFile=data.name||"";
+    return;
+  }
+  if(data.type==="phoenix-cad-file-error"){
+    updateMountState(`CAD FOUT · ${data.error||"onbekend"}`);
+    return;
+  }
+  if(data.type==="phoenix-cad-project-loaded"){
+    updateMountState(`PROJECT CAD · ${data.count||0} bestand(en)`);
+  }
+});
+
 async function health(){
   try{
     const r=await fetch(`${SIDECAR}/health`,{cache:"no-store",mode:"cors"});
@@ -202,8 +312,8 @@ const observer=new MutationObserver(()=>{
 observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
 setInterval(health,15000);
 document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"&&modal&&modal.classList.contains("open")){
-    modal.querySelector("#phoenix-cad-close").click();
-  }
+  if(e.key==="Escape"&&mount&&mount.isConnected)removeCadMount();
 });
 })();
+
+// DETV_HARD_MOUNT_CAD_VIEWER_PROTOCOL=v1

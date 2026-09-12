@@ -1,0 +1,16 @@
+{
+  "schema": "PHOENIX_4_41_DETV_EMBEDDED_DXF_HARDMOUNT_1.0",
+  "baseline": "908840c9c1db8d8eea0a57c7b3b57b6e6684b5d9",
+  "renderer": "ezdxf_1.4.4_svg_existing",
+  "external_fallback": "LibreCAD_2.2.1.5",
+  "mount_target": "DE_TV_OUTPUT_VIEWPORT",
+  "mount_fallback": "DE_TV_PANEL",
+  "body_level_modal": false,
+  "handoff_protocol": "V1_READY_FILE_LOADED",
+  "compact_viewer": true,
+  "origin_validation": true,
+  "open_source_review": {
+    "dxf-viewer": "1.0.48 MPL-2.0 reviewed",
+    "decision": "reuse existing ezdxf pipeline for mount/handoff repair"
+  }
+}

@@ -4181,6 +4181,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "a8d4e871c7ab14a39f9d7b37920eaa3b8489982d",
+      "path": "configs/phoenix/detv_embedded_dxf_hardmount_v1.json",
+      "sha256": "4136e90467ffbb5889d2bbc1cb151c7ce4a727a89530d0741a947e30d5c1ce8a"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "23dfccfde5d857cf16375defc82c475687dd8f98",
       "path": "configs/phoenix/development_capability_registry_v28_0.json",
       "sha256": "3b9e5f8c77c46bb440a372141dbb401e7ac9357848e85da21e796a835a4efafa"
@@ -8522,6 +8531,24 @@
       "git_oid": "bc3943affa2b1281dd26041d11f6ea9c8b4750d1",
       "path": "docs/automation/PHOENIX_4_41_DETV_CAD_CORS_OPEN_SOURCE_REVIEW.md",
       "sha256": "f26e7c85b6b87246cbea77325c00037ac2bcdac62ee5b67114edffb383fba733"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "121801a66e616bf05199457ee7c8418b5b903b54",
+      "path": "docs/automation/PHOENIX_4_41_DETV_EMBEDDED_DXF_HARDMOUNT_DIRECT_HANDOFF.md",
+      "sha256": "c80287de87f2d279f912465962ea794c6be2e8fbfd959cee819ef9cf8374cace"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "ddec8413fbff45d943299e97953ccb60a79c6d3d",
+      "path": "docs/automation/PHOENIX_4_41_DETV_EMBEDDED_DXF_OPEN_SOURCE_REVIEW.md",
+      "sha256": "25d47e022dc7028e170ed3ca74e8aa8e8224f77c6ee71dffff356c5da77e1bb5"
     },
     {
       "chunks": 1,
@@ -16817,7 +16844,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "76120febd506d25d5a4af784fad70b79336f8ac2",
+      "git_oid": "5a9ea88e250919b3e6fca002a5a22fb94432623d",
       "path": "phoenix/detv_cad_bridge/__init__.py",
       "sha256": null
     },
@@ -16835,8 +16862,17 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "aad67014674a148e94c80d345383470b7c0281b6",
+      "git_oid": "44facd78cc4484aa6a298aa2912c68d85c689fd1",
       "path": "phoenix/detv_cad_bridge/assets/viewer.html",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "26fbb261e0054acfb654e52e88c0c9bde3e461a5",
+      "path": "phoenix/detv_cad_bridge/hardmount_patch.py",
       "sha256": null
     },
     {
@@ -17402,7 +17438,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "5c771b719b4766fb276103f10c42351f4cf1ffbd",
+      "git_oid": "4dd4cf7955c33409f580e14694e5fdfaa0915225",
       "path": "phoenix/local_app/static/official_start_v3_0/index.html",
       "sha256": null
     },
@@ -17411,7 +17447,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "7cc867cd3bba34a872ba5e00a25e67be48d0f550",
+      "git_oid": "12e17a5d469985cc805e828a87ea023801413e87",
       "path": "phoenix/local_app/static/official_start_v3_0/phoenix_detv_cad_bridge.js",
       "sha256": null
     },
@@ -23234,6 +23270,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "58ce75fc7e6ecf5c28988061a295fe820b184c10",
+      "path": "tests/automation/test_phoenix_441_detv_embedded_dxf_hardmount.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "41dfade5c833a0bf98c236dd9ac7a057ac801b22",
       "path": "tests/automation/test_phoenix_441_open_source_cad_viewer.py",
       "sha256": null
@@ -26588,5 +26633,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "49945c1d9221a5ba7b9acb1a2d6dc491d31c5af326b566c7cea0fcf9ed8bdade"
+  "source_digest": "dc631bca8be76157851e0e607f991c4d553575847279175c25bde9b712c07835"
 }
