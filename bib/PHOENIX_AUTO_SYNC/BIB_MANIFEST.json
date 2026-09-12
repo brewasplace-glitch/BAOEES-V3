@@ -3389,6 +3389,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "fa783f63ebff7baf1a800c05fab2016310e12ccf",
+      "path": "configs/phoenix/anijstraat_616_3d_structural_report_v1.json",
+      "sha256": "1b8549cefa5d561b4156c95f94e683e0b857014534e41f4f55e4cda1b3b0a6da"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "357f2b5261e2dd290790c91ef857d6f2c3a1342f",
       "path": "configs/phoenix/anijstraat_616_solver_element_verification_v1.json",
       "sha256": "3f6b17abd9085b9adc2b00262f2921450b16c915d49d39dea91f0d4b4480ec95"
@@ -8324,6 +8333,24 @@
       "git_oid": "f068ef67c8f0d26e4d09da8e5d747635926d1dbe",
       "path": "docs/architecture/PHOENIX_VISUAL_ENGINE_PROVISIONING_BLENDER_SWEETHOME3D_COMFYUI_v1_0.md",
       "sha256": "b49c860f542b2202d2510fe3d4a6108806d8935d7b412fa84b4db1a0b8446526"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "21e955cef8aa0436dbbe1e11c01c20c07612a997",
+      "path": "docs/automation/PHOENIX_4_41_3D_REPORT_OPEN_SOURCE_REVIEW.md",
+      "sha256": "6c61187d2b9e7c8dee6aab6f9a78e622264f7d58913c13bc107f7e5132af5d88"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "2e0f6d24a583d76078c380166f11bd040e105eed",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_3D_STRUCTURAL_MODEL_CALCULATION_REPORT.md",
+      "sha256": "e245f3a09d12432abb980b7d323d7d607923b3820e5ed8b3e2af69176eaabf6b"
     },
     {
       "chunks": 1,
@@ -18392,6 +18419,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "0df9bcaa6603e44803b1eb4e03ac942faee85b37",
+      "path": "phoenix/structural_3d_report/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "8390152f9b56c8dc1016ef691dedd688882c9d98",
+      "path": "phoenix/structural_3d_report/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "cfc32e63bd40ea52da0411d8fc25cb7478412777",
       "path": "phoenix/structural_derivation_load/__init__.py",
       "sha256": null
@@ -19987,6 +20032,15 @@
       "git_mode": "100644",
       "git_oid": "10fdc6f01fef4a6e55cb227d847a8f1ab24c1e18",
       "path": "RUN_PROJECT_PHOENIX_REAL_PROJECT_PIPELINE_v6_2_0.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "026253a4a93ddbf3bcc1b308e484d2b020c439df",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_3d_structural_model_report.ps1",
       "sha256": null
     },
     {
@@ -22678,6 +22732,15 @@
       "git_mode": "100644",
       "git_oid": "52d03b1dbaaab8d56bfae60a1b4e65ff84458c8d",
       "path": "tests/automation/test_permit_dossier_assembly_document_control_submission_v6_9_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "dd1d176597abe2190b1d35aed4ffb7cfad07abe7",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_3d_structural_report.py",
       "sha256": null
     },
     {
@@ -26048,5 +26111,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "1d506ed165a5ad75abf92929c572944100ca4ad78bce00e9a4df5137b2a9654d"
+  "source_digest": "94eaddf33fd8d57dfa85c5e31df4923179b68928d7ca83c58d006b5cb81594b4"
 }

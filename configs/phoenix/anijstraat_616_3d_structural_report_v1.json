@@ -1,0 +1,26 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_3D_STRUCTURAL_REPORT_CONFIG_1.0",
+  "runtime": {
+    "trimesh": "5.1.0",
+    "python_docx": "1.2.0",
+    "reportlab": "5.0.1",
+    "pillow": "12.3.0"
+  },
+  "model_policy": {
+    "completeness": "PARTIAL_VERIFIED_STRUCTURAL_COORDINATION_MODEL",
+    "interior_vectors": "OMIT_UNTIL_STRUCTURALLY_MAPPED",
+    "roof_geometry": "REFERENCE_LEVEL_ONLY_UNTIL_TOPOLOGY_PROVEN",
+    "tank_location": "OMIT_UNTIL_LOCATION_AND_SUPPORT_GEOMETRY_PROVEN"
+  },
+  "report_policy": {
+    "docx_required": true,
+    "pdf_required": true,
+    "source_traceability_required": true,
+    "release_hold_matrix_required": true
+  },
+  "governance": {
+    "preliminary_not_for_construction": true,
+    "professional_structural_review_required": true,
+    "for_construction_release": "LOCKED"
+  }
+}
