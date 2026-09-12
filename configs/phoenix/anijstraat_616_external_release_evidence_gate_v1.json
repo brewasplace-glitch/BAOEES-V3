@@ -1,0 +1,17 @@
+{
+  "schema": "PHOENIX_4_41_ANIJSTRAAT_616_EXTERNAL_RELEASE_EVIDENCE_GATE_CONFIG_1.0",
+  "runtime": {
+    "jsonschema": "4.26.0",
+    "cryptography": "50.0.1",
+    "python_docx": "1.2.0",
+    "reportlab": "5.0.1",
+    "pypdf": "5.9.0"
+  },
+  "governance": {
+    "evidence_file_presence_is_not_hold_closure": true,
+    "schema_validity_is_not_authority_acceptance": true,
+    "signature_verification_is_integrity_evidence_not_professional_qualification": true,
+    "construction_release_requires_explicit_controlled_release_action": true,
+    "for_construction_release": "LOCKED"
+  }
+}

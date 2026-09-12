@@ -3398,9 +3398,27 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "49f5df3d6ef081bbc46dd00b1eca80b37455998b",
+      "path": "configs/phoenix/anijstraat_616_external_release_evidence_gate_v1.json",
+      "sha256": "53de60c00c2a84d7fa900c9a76227fa163d548c4026332d93c4c10458fb76d2c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "3cffa55f528e583d15f59a9d5bc1e95e8b9bb07b",
       "path": "configs/phoenix/anijstraat_616_final_structural_package_v1.json",
       "sha256": "ee28408df0901b941c4dc3e54cd69428072b78ec2bfb5ab187f9acbfdba4ea71"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "3d182f4ea06df953a0ff1ccd60c2966df31652ce",
+      "path": "configs/phoenix/anijstraat_616_release_evidence_submission_schema_v1.json",
+      "sha256": "6c2224a30d4c62cca392ab951facf84a09bfc8a31f3ea1dbc86c1b21715086d5"
     },
     {
       "chunks": 1,
@@ -8375,6 +8393,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "eb1cff8caa493c3071f0a84c385f06369ae198af",
+      "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_EXTERNAL_RELEASE_EVIDENCE_FINAL_APPROVAL_GATE.md",
+      "sha256": "9cef0aecca2abbe5831dcd5da70c624aa3f47c58d964883e53589ca0a0bbc50e"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "811855fca98e8110348f790efebb56a0f6a5caa6",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_OPEN_SOURCE_REVIEW.md",
       "sha256": "48ca304291e2308ddd2ca862d4e674d684ccaf78160c6ac6994cb60027f37144"
@@ -8432,6 +8459,15 @@
       "git_oid": "f4637b6251bc15d01b43fb87f85098fd1313256c",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_QA_RELEASE_GATE_BIM.md",
       "sha256": "105644810ae5d44cb20b333da013852a4a87885ff78c8a1fc75ff10b3e42803b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "1867550b481d8c5b98ec9f20818ffd96be4024c8",
+      "path": "docs/automation/PHOENIX_4_41_EXTERNAL_RELEASE_EVIDENCE_OPEN_SOURCE_REVIEW.md",
+      "sha256": "ec2760008fa4944f6c4552e8c3853a3b8df827c1e3be1079b99edc50f2bab44c"
     },
     {
       "chunks": 1,
@@ -18608,6 +18644,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "c6687f5efb89d353bd6325355ccb9886dd2dc33a",
+      "path": "phoenix/structural_release_evidence/__init__.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "f0c1d5fd2f8ef102b34a3b529eed8435c3d8e680",
+      "path": "phoenix/structural_release_evidence/engine.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "cf867cbaaf6cee3409811dca42697deef2ae5ab0",
       "path": "phoenix/structural_solver_verification/__init__.py",
       "sha256": null
@@ -20131,6 +20185,15 @@
       "git_mode": "100644",
       "git_oid": "026253a4a93ddbf3bcc1b308e484d2b020c439df",
       "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_3d_structural_model_report.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "2ec645c22f7ea4eef9f6661333bbd0cd737e7926",
+      "path": "runners/PROJECT_PHOENIX_4_41_anijstraat_616_external_release_evidence_gate.ps1",
       "sha256": null
     },
     {
@@ -22849,6 +22912,15 @@
       "git_mode": "100644",
       "git_oid": "dd1d176597abe2190b1d35aed4ffb7cfad07abe7",
       "path": "tests/automation/test_phoenix_441_anijstraat_616_3d_structural_report.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "1e0987550ade1d363ce12d412ad2a292e651eb87",
+      "path": "tests/automation/test_phoenix_441_anijstraat_616_external_release_evidence_gate.py",
       "sha256": null
     },
     {
@@ -26237,5 +26309,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "8088751cead151068c3ef29b55e14cc78c5e90b49a482614120f45fcabf9b5ec"
+  "source_digest": "e322867d3fcffbaac4ac23f6b34ff50d0ae03a4f241681c2380998eaad17d278"
 }
