@@ -5720,6 +5720,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "0e62992f1b625b07386133712fbcfe7a13f223a7",
+      "path": "configs/phoenix/startscreen_idle_stability_v1.json",
+      "sha256": "ce76b8a258a8541b4800df3a7a59ae2ffe9b06a20e4b65233f0c778bc770c2aa"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "db97a5236a08f7b107b76902cb11e5e62be60aa4",
       "path": "configs/phoenix/steel_axial_design_engine_wave11_v1_0.json",
       "sha256": "d13049d01d61efeea7b4d26b5fc71a62add5c84117bd77baad52e7fa0cee7eeb"
@@ -8684,6 +8693,15 @@
       "git_oid": "72d417e203e1a2d035b890c98c9f920a361c76a7",
       "path": "docs/automation/PHOENIX_4_41_STARTSCREEN_CANONICAL_UTF8_DETV_NATIVE.md",
       "sha256": "2830df91f585a9b69a04946de32b2caf95f77a6be6520ba3b04bb736e3d17738"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "90b12b9fa1af944a9b3c671bbc4c7c090a7a8174",
+      "path": "docs/automation/PHOENIX_4_41_STARTSCREEN_IDLE_STABILITY_NON_INTRUSIVE_CAD_OBSERVER.md",
+      "sha256": "752951ab30c14dea5b080998eacfa5aea4e291c767ea8f6c27b5d6aaf19e893e"
     },
     {
       "chunks": 1,
@@ -17510,7 +17528,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "e496e1177e65e8c6e6760584a0a19c84df4e1ae4",
+      "git_oid": "7693cec4bae28c8c0e53797ccd97c8fab01e9932",
       "path": "phoenix/local_app/static/official_start_v3_0/index.html",
       "sha256": null
     },
@@ -17519,7 +17537,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "12e17a5d469985cc805e828a87ea023801413e87",
+      "git_oid": "f92dd799ec4f2306bee4cb714445f78ee811f608",
       "path": "phoenix/local_app/static/official_start_v3_0/phoenix_detv_cad_bridge.js",
       "sha256": null
     },
@@ -23396,6 +23414,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "fccdd842a1a135097aa8cc2477f8830503a4983c",
+      "path": "tests/automation/test_phoenix_441_startscreen_idle_stability.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4cf4558b37e053d357287a8c35a9a48113a6a61c",
       "path": "tests/automation/test_phoenix_441_startscreen_utf8_native_detv.py",
       "sha256": null
@@ -26732,5 +26759,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "8f3e292f2d91ede2fece50810dbde8d01dd61ee91cff3d30790f5b2ac2ef8667"
+  "source_digest": "ecbb29dbe0507aee0c0d316be0cc835c2e2a63680bdd236fab3cab16a28f2928"
 }

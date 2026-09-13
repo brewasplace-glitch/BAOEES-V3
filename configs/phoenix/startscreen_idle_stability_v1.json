@@ -1,0 +1,34 @@
+{
+  "schema": "PHOENIX_4_41_STARTSCREEN_IDLE_STABILITY_1.0",
+  "baseline": "5facd3b88c4e5d4ddcc23b4ad67f09738d937eb6",
+  "goal": "prevent start-screen flicker and background interference while preserving working DXF/DWG DE TV",
+  "selected_implementation": {
+    "mutation_observer": "native browser MutationObserver, bounded childList-only windows",
+    "page_visibility": "native Page Visibility API",
+    "health_schedule_seconds": 60,
+    "health_paused_when_hidden": true,
+    "global_characterdata_observer": false,
+    "permanent_global_subtree_observer": false,
+    "focus_or_foreground_calls": false
+  },
+  "open_source_review": [
+    {
+      "candidate": "dom-mutations",
+      "license": "MIT",
+      "decision": "not adopted; wrapper around native MutationObserver adds unnecessary dependency"
+    },
+    {
+      "candidate": "mutation-summary",
+      "license": "Apache-2.0",
+      "decision": "not adopted; broader/older abstraction unnecessary for narrow Phoenix lifecycle repair"
+    }
+  ],
+  "preserved": [
+    "DXF embedded rendering",
+    "DWG conversion/rendering",
+    "LibreCAD tolerant DXF->SVG fallback",
+    "DE TV hard-mount",
+    "CAD sidecar CORS",
+    "Open in LibreCAD fallback"
+  ]
+}

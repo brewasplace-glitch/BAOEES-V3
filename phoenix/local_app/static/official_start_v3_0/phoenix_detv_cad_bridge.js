@@ -226,7 +226,10 @@ function hardMountViewer(mode,file){
 
 function installNativeControls(){
   const old=document.getElementById("phoenix-cad-toolbar");
-  if(old&&old.dataset.native==="1")return true;
+  if(old&&old.dataset.native==="1"){
+    dot=old.querySelector("#phoenix-cad-status-dot");
+    return true;
+  }
   if(old)old.remove();
 
   const panel=findDeTvPanel();
@@ -277,40 +280,226 @@ window.addEventListener("message",event=>{
   }
 });
 
-async function health(){
-  try{
-    const r=await fetch(`${SIDECAR}/health`,{cache:"no-store",mode:"cors"});
-    if(!r.ok)throw new Error(`CAD sidecar HTTP ${r.status}`);
-    const j=await r.json();
-    const ok=j.status==="PASS"&&j.service==="PHOENIX_DETV_CAD_SIDECAR";
-    if(dot){
-      dot.style.background=ok?"#2ecc71":"#f39c12";
-      dot.title=ok?`CAD sidecar ${j.version||""} connected`:"CAD sidecar unhealthy";
-    }
-    return ok;
-  }catch(err){
-    if(dot){
-      dot.style.background="#e74c3c";
-      dot.title=`CAD sidecar browser health failed: ${err.message||err}`;
-    }
-    return false;
-  }
-}
-function activate(){
+let healthInFlight=null;
+let healthTimer=null;
+let ensureTimer=null;
+let bootstrapObserver=null;
+let bootstrapObserverTimer=null;
+let initialTextRepairDone=false;
+
+const stability=window.__PHOENIX_DETV_CAD_STABILITY_V1__={
+  mode:"NON_INTRUSIVE",
+  activations:0,
+  observerStarts:0,
+  observerCallbacks:0,
+  observerDisconnects:0,
+  healthRequests:0,
+  hiddenHealthSkips:0,
+  lastReason:"",
+  observerActive:false
+};
+
+function runInitialTextRepair(){
+  if(initialTextRepairDone)return;
+  initialTextRepairDone=true;
   repairDocumentText();
   syncRuntimeVersionText(document.body);
-  installNativeControls();
-  health();
 }
-activate();
-let scheduled=false;
-const observer=new MutationObserver(()=>{
-  if(scheduled)return;
-  scheduled=true;
-  setTimeout(()=>{scheduled=false;activate()},80);
+
+async function health(){
+  if(document.hidden){
+    stability.hiddenHealthSkips++;
+    return null;
+  }
+  if(healthInFlight)return healthInFlight;
+
+  stability.healthRequests++;
+  healthInFlight=(async()=>{
+    try{
+      const r=await fetch(`${SIDECAR}/health`,{cache:"no-store",mode:"cors"});
+      if(!r.ok)throw new Error(`CAD sidecar HTTP ${r.status}`);
+      const j=await r.json();
+      const ok=j.status==="PASS"&&j.service==="PHOENIX_DETV_CAD_SIDECAR";
+      if(dot){
+        dot.style.background=ok?"#2ecc71":"#f39c12";
+        dot.title=ok?`CAD sidecar ${j.version||""} connected`:"CAD sidecar unhealthy";
+      }
+      return ok;
+    }catch(err){
+      if(dot){
+        dot.style.background="#e74c3c";
+        dot.title=`CAD sidecar browser health failed: ${err.message||err}`;
+      }
+      return false;
+    }finally{
+      healthInFlight=null;
+    }
+  })();
+  return healthInFlight;
+}
+
+function stopHealthTimer(){
+  if(healthTimer!==null){
+    clearTimeout(healthTimer);
+    healthTimer=null;
+  }
+}
+
+function scheduleHealth(delay=60000){
+  stopHealthTimer();
+  if(document.hidden)return;
+  healthTimer=setTimeout(async()=>{
+    healthTimer=null;
+    await health();
+    scheduleHealth(60000);
+  },delay);
+}
+
+function stopBootstrapObserver(reason="stop"){
+  if(bootstrapObserver){
+    bootstrapObserver.disconnect();
+    bootstrapObserver=null;
+    stability.observerDisconnects++;
+  }
+  if(bootstrapObserverTimer!==null){
+    clearTimeout(bootstrapObserverTimer);
+    bootstrapObserverTimer=null;
+  }
+  stability.observerActive=false;
+  stability.lastReason=reason;
+}
+
+function nodeLooksRelevant(node){
+  if(!node||node.nodeType!==Node.ELEMENT_NODE)return false;
+  if(node.id==="phoenix-cad-toolbar"||node.id==="phoenix-cad-detv-mount")return true;
+  if(node.querySelector&&node.querySelector("#phoenix-cad-toolbar,#phoenix-cad-detv-mount"))return true;
+  const text=(node.textContent||"").replace(/\s+/g," ").slice(0,1200);
+  return text.includes("DE TV")||text.includes("Selecteer output");
+}
+
+function scheduleEnsure(reason="unspecified",delay=120){
+  if(ensureTimer!==null)clearTimeout(ensureTimer);
+  ensureTimer=setTimeout(()=>{
+    ensureTimer=null;
+    if(document.hidden)return;
+    stability.activations++;
+    stability.lastReason=reason;
+
+    const mounted=installNativeControls();
+    if(mounted){
+      stopBootstrapObserver("cad-controls-mounted");
+      health();
+      scheduleHealth(60000);
+      return;
+    }
+    startBootstrapObserver("detv-panel-not-ready",2500);
+  },delay);
+}
+
+function startBootstrapObserver(reason="bootstrap",ttl=2500){
+  stopBootstrapObserver("observer-rearm");
+  if(document.hidden)return;
+
+  const root=document.body||document.documentElement;
+  if(!root)return;
+
+  stability.observerStarts++;
+  stability.observerActive=true;
+  stability.lastReason=reason;
+
+  bootstrapObserver=new MutationObserver(records=>{
+    stability.observerCallbacks++;
+    if(document.hidden)return;
+
+    // Once the native toolbar exists, observation is no longer useful.
+    if(document.getElementById("phoenix-cad-toolbar")){
+      stopBootstrapObserver("toolbar-present");
+      return;
+    }
+
+    const relevant=records.some(record=>{
+      for(const node of [...record.addedNodes,...record.removedNodes]){
+        if(nodeLooksRelevant(node))return true;
+      }
+      return false;
+    });
+    if(relevant)scheduleEnsure("bounded-detv-dom-change",80);
+  });
+
+  // Deliberately childList-only. No characterData observation.
+  // The subtree observer exists only for a short bootstrap/navigation window.
+  bootstrapObserver.observe(root,{childList:true,subtree:true});
+  bootstrapObserverTimer=setTimeout(
+    ()=>stopBootstrapObserver("observer-timeout"),
+    ttl
+  );
+}
+
+function relevantNavigationTarget(target){
+  if(!target||!target.closest)return false;
+  const el=target.closest("button,a,[role='button'],summary,select");
+  if(!el)return false;
+  if(el.closest("#phoenix-cad-toolbar,#phoenix-cad-detv-mount"))return false;
+
+  const label=[
+    el.textContent||"",
+    el.getAttribute("aria-label")||"",
+    el.getAttribute("title")||""
+  ].join(" ").replace(/\s+/g," ").toLowerCase();
+
+  return /(project|dashboard|digitale|digital twin|simulatie|document|rapport|asset|resultaat|instelling|nieuw|kies|de tv)/i.test(label);
+}
+
+function onRelevantNavigation(event){
+  if(!relevantNavigationTarget(event.target))return;
+  startBootstrapObserver("navigation-click",3000);
+  scheduleEnsure("navigation-click",180);
+}
+
+function cleanupStabilityRuntime(){
+  stopBootstrapObserver("cleanup");
+  stopHealthTimer();
+  if(ensureTimer!==null){
+    clearTimeout(ensureTimer);
+    ensureTimer=null;
+  }
+}
+
+runInitialTextRepair();
+scheduleEnsure("initial-load",0);
+scheduleHealth(1000);
+
+document.addEventListener("click",onRelevantNavigation,true);
+window.addEventListener("popstate",()=>{
+  startBootstrapObserver("popstate",3000);
+  scheduleEnsure("popstate",120);
 });
-observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
-setInterval(health,15000);
+window.addEventListener("hashchange",()=>{
+  startBootstrapObserver("hashchange",3000);
+  scheduleEnsure("hashchange",120);
+});
+window.addEventListener("pageshow",()=>{
+  scheduleEnsure("pageshow",60);
+});
+
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){
+    stopBootstrapObserver("document-hidden");
+    stopHealthTimer();
+    if(ensureTimer!==null){
+      clearTimeout(ensureTimer);
+      ensureTimer=null;
+    }
+    return;
+  }
+  scheduleEnsure("document-visible",80);
+  health();
+  scheduleHealth(60000);
+});
+
+window.addEventListener("pagehide",cleanupStabilityRuntime);
+window.addEventListener("beforeunload",cleanupStabilityRuntime);
+
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"&&mount&&mount.isConnected)removeCadMount();
 });
