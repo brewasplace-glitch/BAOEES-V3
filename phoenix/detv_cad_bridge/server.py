@@ -6,7 +6,7 @@ from email.parser import BytesParser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-VERSION="1.2.0"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
+VERSION="1.2.1"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
 SESSIONS={}; LOCK=threading.Lock()
 
 def bootstrap(repo):
@@ -333,11 +333,20 @@ def extract_browser_primitives(path,layers=None):
         "renderer":"PHOENIX_BROWSER_PRIMITIVE_CANVAS",
     }
 
+def json_safe(value):
+    if isinstance(value,Path):
+        return str(value)
+    if isinstance(value,dict):
+        return {str(k):json_safe(v) for k,v in value.items()}
+    if isinstance(value,(list,tuple,set)):
+        return [json_safe(v) for v in value]
+    return value
+
 def write_render_diagnostics(session,src,payload):
     data={
-        "schema":"PHOENIX_CAD_RENDER_DIAGNOSTICS_1.0",
+        "schema":"PHOENIX_CAD_RENDER_DIAGNOSTICS_1.1",
         "source":str(src),
-        "result":payload,
+        "result":json_safe(payload),
     }
     p=session/"render_diagnostics.json"
     p.write_text(json.dumps(data,indent=2,ensure_ascii=False),encoding="utf-8")
@@ -370,8 +379,8 @@ def process_source(src,session,rt):
     try:
         r=render_svg_resilient(render)
         payload={
-            "source":src,
-            "render_source":render,
+            "source":str(src),
+            "render_source":str(render),
             "source_format":ext[1:].upper(),
             "conversion_status":conversion,
             "embedded_status":"PASS",
@@ -402,8 +411,8 @@ def process_source(src,session,rt):
             raise RuntimeError("primitive fallback produced zero drawable primitives")
         status="PASS_BROWSER_PRIMITIVE_FALLBACK"
         payload={
-            "source":src,
-            "render_source":render,
+            "source":str(src),
+            "render_source":str(render),
             "source_format":ext[1:].upper(),
             "conversion_status":conversion,
             "embedded_status":status,
@@ -427,8 +436,8 @@ def process_source(src,session,rt):
     except Exception as fallback_exc:
         failed_status="DEGRADED_DWG_CONVERSION_OUTPUT_UNPARSABLE" if ext==".dwg" else "FAILED_DXF_RENDER"
         payload={
-            "source":src,
-            "render_source":render,
+            "source":str(src),
+            "render_source":str(render),
             "source_format":ext[1:].upper(),
             "conversion_status":conversion,
             "embedded_status":failed_status,
@@ -490,7 +499,7 @@ def viewer_page(repo,token,mode,hint):
     return t.replace("__TOKEN_JSON__",json.dumps(token)).replace("__MODE_JSON__",json.dumps(mode)).replace("__HINT_JSON__",json.dumps(hint))
 
 class H(BaseHTTPRequestHandler):
-    server_version="PHOENIX-DETV-CAD/1.2"
+    server_version="PHOENIX-DETV-CAD/1.2.1"
     CORS_ALLOWED_ORIGINS={
         "http://127.0.0.1:8766",
         "http://localhost:8766",
@@ -507,7 +516,7 @@ class H(BaseHTTPRequestHandler):
             self.send_header("Access-Control-Allow-Headers","Content-Type, X-Phoenix-Token")
             self.send_header("Access-Control-Max-Age","600")
     def js(self,o,status=200):
-        b=json.dumps(o,ensure_ascii=False).encode()
+        b=json.dumps(json_safe(o),ensure_ascii=False).encode()
         self.send_response(status)
         self.cors_headers()
         self.send_header("Content-Type","application/json; charset=utf-8")
@@ -643,7 +652,7 @@ def self_test(repo):
         h=viewer_page(Path(repo),"tok","file","")
         assert "Open bestand" in h and "Open in LibreCAD" in h
         assert "renderPrimitiveCanvas" in h
-    print("PHOENIX_4_41_DETV_CAD_RENDER_COMPAT_SELF_TEST=PASS")
+    print("PHOENIX_4_41_DETV_CAD_RENDER_COMPAT_JSONSAFE_SELF_TEST=PASS")
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--repo-root",type=Path,default=Path(r"C:\PROJECT-PHOENIX")); ap.add_argument("--port",type=int,default=DEFAULT_PORT); ap.add_argument("--self-test",action="store_true"); a=ap.parse_args()

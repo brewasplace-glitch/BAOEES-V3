@@ -1,0 +1,13 @@
+{
+  "schema": "PHOENIX_4_41_REAL_DXF_JSONSAFE_FIX_R1",
+  "baseline": "40f195f63055792a894154d89bfcce1c5a70a489",
+  "sidecar_version": "1.2.1",
+  "diagnostics_schema": "PHOENIX_CAD_RENDER_DIAGNOSTICS_1.1",
+  "fixes": [
+    "recursively normalize pathlib.Path values to strings",
+    "source/render_source returned as strings in all renderer branches",
+    "HTTP JSON writer uses JSON-safe normalization",
+    "forced dual-render-failure regression retains underlying errors"
+  ],
+  "render_chain": "UNCHANGED"
+}

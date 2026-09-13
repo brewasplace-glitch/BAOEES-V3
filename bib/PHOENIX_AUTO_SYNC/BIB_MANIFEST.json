@@ -5351,6 +5351,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "6ee941a65ea36b47588fd0d1d7963e3a852a990a",
+      "path": "configs/phoenix/real_dxf_render_jsonsafe_fix_r1.json",
+      "sha256": "424c5812638ee2e0ce9bba17e84a9aded3bc48f75aced7007d7e566e5ace0f1c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "52399145f72973a4a333b6b742f8dd6e8e0aaf21",
       "path": "configs/phoenix/real_project_e2e_validation_policy_v1_0.json",
       "sha256": "76c6214c4b9af5524f26208f2f2c9e41b97820671a9931307e38de89b0f1acf1"
@@ -8612,6 +8621,15 @@
       "git_oid": "24cfa1d85243320b3c5c75c0bf5b905c6482fd1b",
       "path": "docs/automation/PHOENIX_4_41_REAL_DXF_EMBEDDED_RENDER_COMPATIBILITY.md",
       "sha256": "196ef5eadc2339126e1d54e528599a9a0bf91b6be770a0bf5689273802fdb4e1"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "adb96afe66c0bae96e5aa4a395a1dd22eb4144c7",
+      "path": "docs/automation/PHOENIX_4_41_REAL_DXF_RENDER_JSONSAFE_FIX_R1.md",
+      "sha256": "006ea9cd6fcb27b3e4d637f615118814276266cbf73e336e82e42400b9d29e32"
     },
     {
       "chunks": 1,
@@ -16916,7 +16934,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "0eda94da7ff9dcb68d24d26b4a85d6f8d4e10de0",
+      "git_oid": "c62ddcc5373079e4cb146e500f1b74e40ea2e632",
       "path": "phoenix/detv_cad_bridge/server.py",
       "sha256": null
     },
@@ -23324,6 +23342,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4ade5d742edabf5dea43b7bb6b6f969daae6f4fc",
+      "path": "tests/automation/test_phoenix_441_real_dxf_render_jsonsafe_fix_r1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "e563deb4ba580608b74d5c3c9c5bec2ab5ef17db",
       "path": "tests/automation/test_phoenix_441_start_runtime_cors.py",
       "sha256": null
@@ -26669,5 +26696,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "f32c3c9e71369351113c134a7697aeb4cc41bf7e8eb521ff3cd1bbb32f86a278"
+  "source_digest": "5192103dd2f51bdbe01eb5eb33bc49cd8e2d6d14691ee4eb0ce26881639c2748"
 }
