@@ -6,7 +6,7 @@ from email.parser import BytesParser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-VERSION="1.2.1"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
+VERSION="1.3.0"; DEFAULT_PORT=8765; MAX_UPLOAD=100*1024*1024; ALLOWED={".dxf",".dwg"}
 SESSIONS={}; LOCK=threading.Lock()
 
 def bootstrap(repo):
@@ -362,6 +362,89 @@ def open_librecad(src,rt):
     if not exe.exists(): raise RuntimeError("LibreCAD executable missing")
     subprocess.Popen([str(exe),str(src)],close_fds=True)
 
+def _svg_local_name(tag):
+    return str(tag).split("}",1)[-1].lower()
+
+def sanitize_librecad_svg(svg_text):
+    text=re.sub(r"<!DOCTYPE[^>]*(?:\[[\s\S]*?\]\s*)?>","",svg_text,flags=re.I)
+    try:
+        root=ET.fromstring(text)
+    except Exception as exc:
+        raise RuntimeError(f"LIBRECAD_SVG_XML_PARSE_FAILED: {type(exc).__name__}: {exc}") from exc
+    if _svg_local_name(root.tag)!="svg":
+        raise RuntimeError(f"LIBRECAD_SVG_INVALID_ROOT: {root.tag}")
+
+    ns_match=re.match(r"\{([^}]+)\}",str(root.tag))
+    if ns_match:
+        try: ET.register_namespace("",ns_match.group(1))
+        except Exception: pass
+
+    forbidden={"script","foreignobject","iframe","object","embed"}
+    for parent in list(root.iter()):
+        for child in list(parent):
+            if _svg_local_name(child.tag) in forbidden:
+                parent.remove(child)
+        for attr in list(parent.attrib):
+            local=_svg_local_name(attr)
+            value=str(parent.attrib.get(attr,"")).strip().lower()
+            if local.startswith("on"):
+                del parent.attrib[attr]
+            elif local=="href" and value.startswith(("http:","https:","javascript:","data:","//")):
+                del parent.attrib[attr]
+
+    out=ET.tostring(root,encoding="unicode")
+    if "<svg" not in out:
+        raise RuntimeError("LIBRECAD_SVG_SANITIZE_PRODUCED_NO_SVG")
+    return out
+
+def librecad_dxf_to_svg(src,session,rt):
+    exe=Path(rt.get("librecad_exe",""))
+    if not exe.exists():
+        raise RuntimeError("LibreCAD executable missing")
+    if Path(src).suffix.lower()!=".dxf":
+        raise RuntimeError("LibreCAD tolerant embedded fallback requires DXF input")
+
+    # LibreCAD 2.2.1.5 has a Windows --outfile bug for absolute output paths.
+    # Use a bare relative filename and verify the file beside the input DXF.
+    out_name=f"{Path(src).stem}.phoenix-librecad-{uuid.uuid4().hex[:10]}.svg"
+    expected=Path(src).parent/out_name
+    if expected.exists():
+        expected.unlink()
+
+    cmd=[str(exe),"dxf2svg","--outfile",out_name,str(src)]
+    proc=subprocess.run(
+        cmd,
+        cwd=str(Path(src).parent),
+        capture_output=True,
+        text=True,
+        timeout=45,
+    )
+    if proc.returncode!=0:
+        raise RuntimeError(
+            "LIBRECAD_DXF2SVG_FAILED: "
+            +(proc.stderr or proc.stdout or f"exit={proc.returncode}").strip()
+        )
+    if not expected.exists() or expected.stat().st_size<=0:
+        raise RuntimeError(
+            "LIBRECAD_DXF2SVG_NO_OUTPUT: command exited successfully but SVG was not created"
+        )
+
+    raw=expected.read_text(encoding="utf-8-sig",errors="replace")
+    svg_text=sanitize_librecad_svg(raw)
+    return {
+        "svg":svg_text,
+        "layers":[],
+        "read_mode":"LIBRECAD_LIBDXFRW_TOLERANT",
+        "recovery_errors":[],
+        "dxfversion":"",
+        "renderer":"LIBRECAD_DXF2SVG_LIBDXFRW",
+        "librecad_svg_file":str(expected),
+        "librecad_svg_bytes":int(expected.stat().st_size),
+        "librecad_stdout":proc.stdout[-4000:] if proc.stdout else "",
+        "librecad_stderr":proc.stderr[-4000:] if proc.stderr else "",
+        "librecad_command_mode":"RELATIVE_OUTFILE_BESIDE_INPUT",
+    }
+
 def process_source(src,session,rt):
     ext=src.suffix.lower()
     if ext not in ALLOWED:
@@ -376,6 +459,9 @@ def process_source(src,session,rt):
 
     primary_error=None
     primary_detail=None
+    secondary_error=None
+
+    # 1. Primary: ezdxf SVG rendering.
     try:
         r=render_svg_resilient(render)
         payload={
@@ -386,6 +472,7 @@ def process_source(src,session,rt):
             "embedded_status":"PASS",
             "error":None,
             "primary_error":None,
+            "secondary_error":None,
             "fallback_used":False,
             **r,
         }
@@ -405,6 +492,7 @@ def process_source(src,session,rt):
         except Exception:
             primary_detail={"error":str(exc)}
 
+    # 2. Secondary: browser primitive fallback generated through ezdxf.
     try:
         fallback=extract_browser_primitives(render)
         if not fallback["browser_primitives"]:
@@ -419,6 +507,7 @@ def process_source(src,session,rt):
             "error":None,
             "primary_error":primary_error,
             "primary_detail":primary_detail,
+            "secondary_error":None,
             "fallback_used":True,
             "svg":"",
             **fallback,
@@ -434,30 +523,73 @@ def process_source(src,session,rt):
         payload["diagnostics_file"]=str(diag)
         return payload
     except Exception as fallback_exc:
-        failed_status="DEGRADED_DWG_CONVERSION_OUTPUT_UNPARSABLE" if ext==".dwg" else "FAILED_DXF_RENDER"
+        secondary_error=f"{type(fallback_exc).__name__}: {fallback_exc}"
+
+    # 3. Tertiary: LibreCAD/libdxfrw tolerant DXF -> SVG conversion.
+    #    This is independent of ezdxf parsing and is specifically intended
+    #    for DXF files LibreCAD can open but ezdxf cannot parse/recover.
+    try:
+        lc=librecad_dxf_to_svg(render,session,rt)
+        status="PASS_LIBRECAD_SVG_FALLBACK"
         payload={
             "source":str(src),
             "render_source":str(render),
             "source_format":ext[1:].upper(),
             "conversion_status":conversion,
-            "embedded_status":failed_status,
-            "error":f"{type(fallback_exc).__name__}: {fallback_exc}",
+            "embedded_status":status,
+            "error":None,
             "primary_error":primary_error,
             "primary_detail":primary_detail,
+            "secondary_error":secondary_error,
             "fallback_used":True,
-            "svg":"",
             "browser_primitives":[],
             "primitive_bounds":[0,0,1,1],
             "primitive_skipped":[],
-            "layers":[],
-            "read_mode":"FAILED",
-            "recovery_errors":[],
-            "dxfversion":"",
-            "renderer":"FAILED",
+            **lc,
         }
-        diag=write_render_diagnostics(session,src,payload)
+        diag=write_render_diagnostics(session,src,{
+            "embedded_status":status,
+            "renderer":lc.get("renderer"),
+            "primary_error":primary_error,
+            "primary_detail":primary_detail,
+            "secondary_error":secondary_error,
+            "librecad_svg_file":lc.get("librecad_svg_file"),
+            "librecad_svg_bytes":lc.get("librecad_svg_bytes"),
+            "librecad_command_mode":lc.get("librecad_command_mode"),
+            "librecad_stdout":lc.get("librecad_stdout"),
+            "librecad_stderr":lc.get("librecad_stderr"),
+        })
         payload["diagnostics_file"]=str(diag)
         return payload
+    except Exception as librecad_exc:
+        tertiary_error=f"{type(librecad_exc).__name__}: {librecad_exc}"
+
+    failed_status="DEGRADED_DWG_CONVERSION_OUTPUT_UNPARSABLE" if ext==".dwg" else "FAILED_DXF_RENDER"
+    payload={
+        "source":str(src),
+        "render_source":str(render),
+        "source_format":ext[1:].upper(),
+        "conversion_status":conversion,
+        "embedded_status":failed_status,
+        "error":tertiary_error,
+        "primary_error":primary_error,
+        "primary_detail":primary_detail,
+        "secondary_error":secondary_error,
+        "tertiary_error":tertiary_error,
+        "fallback_used":True,
+        "svg":"",
+        "browser_primitives":[],
+        "primitive_bounds":[0,0,1,1],
+        "primitive_skipped":[],
+        "layers":[],
+        "read_mode":"FAILED",
+        "recovery_errors":[],
+        "dxfversion":"",
+        "renderer":"FAILED",
+    }
+    diag=write_render_diagnostics(session,src,payload)
+    payload["diagnostics_file"]=str(diag)
+    return payload
 
 def project_context(repo,hint=""):
     if hint.strip(): return {"status":"HINT_FROM_DE_TV","tokens":[hint.strip()],"sources":["DE_TV_RUNTIME_HINT"]}
@@ -499,7 +631,7 @@ def viewer_page(repo,token,mode,hint):
     return t.replace("__TOKEN_JSON__",json.dumps(token)).replace("__MODE_JSON__",json.dumps(mode)).replace("__HINT_JSON__",json.dumps(hint))
 
 class H(BaseHTTPRequestHandler):
-    server_version="PHOENIX-DETV-CAD/1.2.1"
+    server_version="PHOENIX-DETV-CAD/1.3"
     CORS_ALLOWED_ORIGINS={
         "http://127.0.0.1:8766",
         "http://localhost:8766",
@@ -652,14 +784,46 @@ def self_test(repo):
         h=viewer_page(Path(repo),"tok","file","")
         assert "Open bestand" in h and "Open in LibreCAD" in h
         assert "renderPrimitiveCanvas" in h
-    print("PHOENIX_4_41_DETV_CAD_RENDER_COMPAT_JSONSAFE_SELF_TEST=PASS")
+    print("PHOENIX_4_41_DETV_CAD_LIBRECAD_TOLERANT_SELF_TEST=PASS")
+
+
+def probe_librecad_svg(input_path,rt):
+    src=Path(input_path).resolve()
+    if not src.exists() or src.suffix.lower()!=".dxf":
+        raise RuntimeError("Probe requires an existing DXF file")
+    with tempfile.TemporaryDirectory(prefix="phoenix_librecad_svg_probe_") as td:
+        d=Path(td)
+        copy=d/safe_name(src.name)
+        shutil.copy2(src,copy)
+        r=librecad_dxf_to_svg(copy,d,rt)
+        return {
+            "status":"PASS",
+            "source":str(src),
+            "renderer":r["renderer"],
+            "svg_bytes":r["librecad_svg_bytes"],
+            "command_mode":r["librecad_command_mode"],
+        }
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--repo-root",type=Path,default=Path(r"C:\PROJECT-PHOENIX")); ap.add_argument("--port",type=int,default=DEFAULT_PORT); ap.add_argument("--self-test",action="store_true"); a=ap.parse_args()
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--repo-root",type=Path,default=Path(r"C:\PROJECT-PHOENIX"))
+    ap.add_argument("--port",type=int,default=DEFAULT_PORT)
+    ap.add_argument("--self-test",action="store_true")
+    ap.add_argument("--probe-librecad-svg",type=Path)
+    a=ap.parse_args()
     repo=a.repo_root.resolve(); bootstrap(repo)
-    if a.self_test: self_test(repo); return 0
-    rt=runtime_config(); local=Path(os.environ.get("LOCALAPPDATA",str(Path.home()))); sessions=local/"PROJECT-PHOENIX"/"cad_viewer"/"detv_sessions"; sessions.mkdir(parents=True,exist_ok=True)
-    s=ThreadingHTTPServer(("127.0.0.1",a.port),H); s.app={"repo":repo,"runtime":rt,"sessions":sessions,"token":secrets.token_urlsafe(32)}
+    if a.self_test:
+        self_test(repo); return 0
+    rt=runtime_config()
+    if a.probe_librecad_svg:
+        print(json.dumps(probe_librecad_svg(a.probe_librecad_svg,rt),indent=2))
+        print("PHOENIX_LIBRECAD_TOLERANT_SVG_PROBE=PASS")
+        return 0
+    local=Path(os.environ.get("LOCALAPPDATA",str(Path.home())))
+    sessions=local/"PROJECT-PHOENIX"/"cad_viewer"/"detv_sessions"
+    sessions.mkdir(parents=True,exist_ok=True)
+    s=ThreadingHTTPServer(("127.0.0.1",a.port),H)
+    s.app={"repo":repo,"runtime":rt,"sessions":sessions,"token":secrets.token_urlsafe(32)}
     print(f"PHOENIX_DETV_CAD_SIDECAR=LISTENING http://127.0.0.1:{a.port}")
     try: s.serve_forever(poll_interval=.25)
     finally: s.server_close()

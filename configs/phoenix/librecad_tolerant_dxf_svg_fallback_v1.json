@@ -1,0 +1,25 @@
+{
+  "schema": "PHOENIX_4_41_LIBRECAD_TOLERANT_DXF_SVG_FALLBACK_1.0",
+  "prepared_against_baseline": "febf9003163fa32f77eb2d33fa76f755af6d5c34",
+  "sidecar_target_version": "1.3.0",
+  "status": "PREPARED_NOT_EXECUTED",
+  "render_chain": [
+    "EZDXF_SVG_SAFE",
+    "PHOENIX_BROWSER_PRIMITIVE_CANVAS",
+    "LIBRECAD_DXF2SVG_LIBDXFRW",
+    "LIBRECAD_EXTERNAL_OPEN"
+  ],
+  "librecad": {
+    "version_expected": "2.2.1.5",
+    "command": "LibreCAD.exe dxf2svg --outfile <relative-name.svg> <session-copy.dxf>",
+    "absolute_outfile_workaround": true,
+    "output_location": "beside session-copy input DXF",
+    "source_file_mutation": false,
+    "verify_file_exists_and_nonzero": true,
+    "sanitize_svg_before_embed": true
+  },
+  "real_file_probe": {
+    "when_installed": "automatically probe newest failed DXF session when present",
+    "required_if_candidate_found": true
+  }
+}

@@ -4622,6 +4622,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "6e474c4257b3c356ea894e1360af7a1ea7664731",
+      "path": "configs/phoenix/librecad_tolerant_dxf_svg_fallback_v1.json",
+      "sha256": "4283d2df024c3143c7c6d50d6ebbd796fad34c53631e5c06eabfd9b7f70001af"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "408eda15845945991d5b3dc8ef226690fe249031",
       "path": "configs/phoenix/libreoffice_default_document_routing_policy_v1_0.json",
       "sha256": "42d337c48bc3de96fadf95582b11c591c1ed6dc60f8536f4400108216ad59cf2"
@@ -8603,6 +8612,24 @@
       "git_oid": "804abf600868567992a019592f7d97b1527da27d",
       "path": "docs/automation/PHOENIX_4_41_FINAL_STRUCTURAL_PACKAGE_OPEN_SOURCE_REVIEW.md",
       "sha256": "2672aca7bab9fde697e2c1aff9a6b757593954af424c95b68a812b4fc7f07b7f"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "5025b60f5d715c00f497284f2d15d69da0121828",
+      "path": "docs/automation/PHOENIX_4_41_LIBRECAD_DXF2SVG_OPEN_SOURCE_REVIEW.md",
+      "sha256": "7935babc2aae2614e5996d0818dc031246ac115e56db72617bb5e65f2c866308"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "ff319710150d2906c572fbb153a10e4030a05276",
+      "path": "docs/automation/PHOENIX_4_41_LIBRECAD_TOLERANT_DXF_SVG_EMBEDDED_FALLBACK.md",
+      "sha256": "732ba4673218907ba5b018b1c0117503724732f57105d40d45cd626737624469"
     },
     {
       "chunks": 1,
@@ -16934,7 +16961,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "c62ddcc5373079e4cb146e500f1b74e40ea2e632",
+      "git_oid": "a59be1f40b0146ac5ab413be03557c292efe8fef",
       "path": "phoenix/detv_cad_bridge/server.py",
       "sha256": null
     },
@@ -23324,6 +23351,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "f7f52b204380ba992d7f6802f9ae4b7decb8e3a3",
+      "path": "tests/automation/test_phoenix_441_librecad_tolerant_svg_fallback.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "41dfade5c833a0bf98c236dd9ac7a057ac801b22",
       "path": "tests/automation/test_phoenix_441_open_source_cad_viewer.py",
       "sha256": null
@@ -26696,5 +26732,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "5192103dd2f51bdbe01eb5eb33bc49cd8e2d6d14691ee4eb0ce26881639c2748"
+  "source_digest": "8f3e292f2d91ede2fece50810dbde8d01dd61ee91cff3d30790f5b2ac2ef8667"
 }
