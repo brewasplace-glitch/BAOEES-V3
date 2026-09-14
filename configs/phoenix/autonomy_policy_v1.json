@@ -1,0 +1,33 @@
+{
+  "schema": "PHOENIX_AUTONOMY_POLICY_V1",
+  "version": "1.0.0",
+  "default_mode": "dry-run",
+  "low_risk_auto_enabled": false,
+  "require_clean_worktree": true,
+  "require_remote_sync": true,
+  "max_repair_attempts": 3,
+  "protected_paths": [
+    ".git/",
+    "bib/",
+    "phoenix/local_app/static/official_start_v3_0/phoenix_detv_cad_bridge.js",
+    "runners/"
+  ],
+  "critical_terms": [
+    "production release",
+    "for construction",
+    "professional approval",
+    "secret",
+    "credential",
+    "token",
+    "password",
+    "delete repository",
+    "force push"
+  ],
+  "v1_execution_policy": {
+    "dry_run": "ENABLED",
+    "low_risk_auto": "LOCKED",
+    "medium": "HUMAN_APPROVAL_REQUIRED",
+    "high": "HUMAN_APPROVAL_REQUIRED",
+    "critical": "BLOCKED"
+  }
+}

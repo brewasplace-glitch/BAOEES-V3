@@ -3713,6 +3713,24 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "cf171eba3992ab9d96e9b156640840c5d6dffb7e",
+      "path": "configs/phoenix/autonomy_open_source_catalog_v1.json",
+      "sha256": "c12e2bff73d59ea9650781c11528b2f558b54638f1a817b5aaeb1c679f0b14cf"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "8f66d3322b3dcc3cf050023b16ab09b9af9f73db",
+      "path": "configs/phoenix/autonomy_policy_v1.json",
+      "sha256": "99316a0e81fe049b1b63b2adaf32c3c6327217dec594faf471deb688fd5942e4"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "9c3d83e49641181f48ec64e4b6a8e5ef7125ca44",
       "path": "configs/phoenix/bib_auto_sync_v1_0.json",
       "sha256": "9f8ed82b4fee25d73ba62d872b2757e797127de96a30eef03df68ead717b5e44"
@@ -8549,6 +8567,15 @@
       "git_oid": "f4637b6251bc15d01b43fb87f85098fd1313256c",
       "path": "docs/automation/PHOENIX_4_41_ANIJSTRAAT_616_STRUCTURAL_QA_RELEASE_GATE_BIM.md",
       "sha256": "105644810ae5d44cb20b333da013852a4a87885ff78c8a1fc75ff10b3e42803b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "d3428aec8b5bc864a37f2c3edaf794fc78645074",
+      "path": "docs/automation/PHOENIX_4_41_AUTONOMOUS_DEVELOPMENT_FOUNDATION_v1_0.md",
+      "sha256": "7be738eb4a28409267fb244d4ded4976de7cb92d784f42e1d43729c61b73315b"
     },
     {
       "chunks": 1,
@@ -15134,7 +15161,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b0a45b8c4912270f4d2dfa4de4e46d12b7f5054f",
+      "git_oid": "8e4c438b1d822177425ce4d294e802abe8e27e53",
       "path": "phoenix/autonomy/__init__.py",
       "sha256": null
     },
@@ -15242,8 +15269,26 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "38c225a89628d17cb8af177917cb1fb9bf927226",
+      "path": "phoenix/autonomy/backlog.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "7d410739c3edc5f70f3205f34afcf76050bb57c4",
       "path": "phoenix/autonomy/canonical_v4_structural_bridge.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "2c74c1ff74b00881e9cdec7c107a0ecf8148946e",
+      "path": "phoenix/autonomy/capability_registry.py",
       "sha256": null
     },
     {
@@ -15262,6 +15307,24 @@
       "git_mode": "100644",
       "git_oid": "29f3c07f16688d5d228258afe2fb70b322747400",
       "path": "phoenix/autonomy/cost_estimate_artifact_bridge_v1_0.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "2a2c74d96636a3647ee22fa1dca32a912af38472",
+      "path": "phoenix/autonomy/cycle.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "5dbfbc7b909d6f37d7d721e55bb6daad32f907e6",
+      "path": "phoenix/autonomy/dashboard.py",
       "sha256": null
     },
     {
@@ -15305,6 +15368,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "50efde5c24674b77866f147cc4d9d580769045ff",
+      "path": "phoenix/autonomy/evidence_gate.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "c57ff750e86f809265af9fbcc592844fbdeb311d",
       "path": "phoenix/autonomy/generated_input_validation_list_v1_0.py",
       "sha256": null
@@ -15334,6 +15406,15 @@
       "git_mode": "100644",
       "git_oid": "c3bfa7f72dab2e311654e77040b93b09c223b029",
       "path": "phoenix/autonomy/landed_cost_gate_guard.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "099fe26030fd02ab0cd212d222e01e578a328ec8",
+      "path": "phoenix/autonomy/learning.py",
       "sha256": null
     },
     {
@@ -15413,6 +15494,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4f9f763fa364ac19f7a178b6086af75c5973cb20",
+      "path": "phoenix/autonomy/models.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "662c25da221649b4cc1901a64400ef9fe858de88",
       "path": "phoenix/autonomy/nl_nen_professional_review_package_integration.py",
       "sha256": null
@@ -15451,6 +15541,15 @@
       "git_mode": "100644",
       "git_oid": "017f81bbb3d09cfae3753d68c4d46d2b6404e7ee",
       "path": "phoenix/autonomy/normative_applicability_stability_design_basis_r9_4.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "09db52c5827842b84f035a76b0ec036d6c3e2c7d",
+      "path": "phoenix/autonomy/opensource_scout.py",
       "sha256": null
     },
     {
@@ -15548,6 +15647,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "d17b7fde2cc06894a9755d5c2ec50275ada0dd09",
+      "path": "phoenix/autonomy/planner.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "6db896fad4c6fb1cf69b7b36a0230e80d16e11d3",
+      "path": "phoenix/autonomy/policy.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "1cacba15981efc5074ae9a528f02f22230bc5582",
       "path": "phoenix/autonomy/professional_cde_review_dossier_r9_5_2_10.py",
       "sha256": null
@@ -15622,6 +15739,15 @@
       "git_mode": "100644",
       "git_oid": "30ae93142a6bd29b6bb79a542b8c27252b82ffd7",
       "path": "phoenix/autonomy/remaining_evidence_gate_consolidation_r9_5_2_8.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "c940b7e62cc06a9afee9ca73f277f1472caa7679",
+      "path": "phoenix/autonomy/repair_fsm.py",
       "sha256": null
     },
     {
@@ -15847,6 +15973,15 @@
       "git_mode": "100644",
       "git_oid": "014b70b151ca8d8cf2fc92392cddec4e55df6d05",
       "path": "phoenix/autonomy/visual_output_artifact_generation.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "c12eb63fd13beed3b7a3121211f45a802b707ad4",
+      "path": "phoenix/autonomy/worktree.py",
       "sha256": null
     },
     {
@@ -20642,6 +20777,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4460bf917dc358a36b07b51a67a7945ad45263fd",
+      "path": "runners/PROJECT_PHOENIX_4_41_autonomous_cycle_v1.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "3bbac88a320053eb4c89eb23d63e737dc148382b",
+      "path": "runners/PROJECT_PHOENIX_4_41_autonomous_development_foundation_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "81aeee0839f167e9eb141348392029db2b2e62c6",
       "path": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1",
       "sha256": null
@@ -23389,6 +23542,15 @@
       "git_mode": "100644",
       "git_oid": "e54979fe913a13d0ff89bf650309f7f37587c0c7",
       "path": "tests/automation/test_phoenix_441_anijstraat_616_structural_qa_bim.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "035962f17a7417c421e8e8c35ae38a9f6976cf61",
+      "path": "tests/automation/test_phoenix_441_autonomous_development_foundation_v1.py",
       "sha256": null
     },
     {
@@ -26813,5 +26975,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "2520cc515b423887f78041c04bf18207daa70a78ed96a713eed469f4f26e5d46"
+  "source_digest": "e124e67862364181acae7623fdfc3a09c24be80e01448e45313bfde18a24c67f"
 }

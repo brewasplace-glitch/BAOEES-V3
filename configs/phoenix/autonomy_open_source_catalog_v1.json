@@ -1,0 +1,71 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_SCOUT_CATALOG_V1",
+  "researched_on": "2026-09-14",
+  "policy": "primary + fallback where practical",
+  "candidates": [
+    {
+      "id": "langgraph",
+      "capability": "orchestration",
+      "role": "primary",
+      "name": "LangGraph",
+      "license": "MIT",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "fit": [
+        "stateful workflows",
+        "durable execution",
+        "human-in-the-loop"
+      ],
+      "integration": "adapter",
+      "runtime_required_in_v1": false
+    },
+    {
+      "id": "prefect",
+      "capability": "orchestration",
+      "role": "fallback",
+      "name": "Prefect",
+      "license": "Apache-2.0",
+      "url": "https://github.com/PrefectHQ/prefect",
+      "fit": [
+        "workflow orchestration",
+        "retries",
+        "scheduling",
+        "event automation"
+      ],
+      "integration": "adapter",
+      "runtime_required_in_v1": false
+    },
+    {
+      "id": "gitpython",
+      "capability": "git",
+      "role": "primary",
+      "name": "GitPython",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/gitpython-developers/GitPython",
+      "fit": [
+        "repository API",
+        "diff/status/refs"
+      ],
+      "integration": "optional-adapter",
+      "runtime_required_in_v1": false
+    },
+    {
+      "id": "dulwich",
+      "capability": "git",
+      "role": "fallback",
+      "name": "Dulwich",
+      "license": "Apache-2.0 OR GPL-2.0-or-later",
+      "url": "https://github.com/jelmer/dulwich",
+      "fit": [
+        "pure Python Git implementation",
+        "repository operations"
+      ],
+      "integration": "optional-adapter",
+      "runtime_required_in_v1": false
+    }
+  ],
+  "v1_decision": {
+    "core": "Phoenix-specific deterministic governance remains standard-library only",
+    "reason": "risk policy, exact-scope gates and Phoenix evidence semantics are product-specific",
+    "oss_reuse": "adapter interfaces are registered now; installation is deferred until integration is exercised"
+  }
+}
