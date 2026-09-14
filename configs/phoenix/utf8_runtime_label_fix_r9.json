@@ -1,0 +1,21 @@
+{
+  "schema": "PHOENIX_4_41_UTF8_RUNTIME_LABEL_FIX_R9",
+  "baseline": "781be57f7d148e700172e8c9dd4a8b2a24136343",
+  "exact_residual": {
+    "codepoints": [
+      "U+00F0",
+      "U+00C5",
+      "U+00B8",
+      "U+008F",
+      "U+00A2"
+    ],
+    "derived_original_utf8": "F0 9F 8F A2",
+    "unicode": "U+1F3E2",
+    "html_entity": "&#x1F3E2;"
+  },
+  "broad_new_regex_added": false,
+  "tag_bounded_navicon_policy_preserved": true,
+  "runtime_guard": "BOUNDED_ONE_SHOT",
+  "protected_bridge": "phoenix/local_app/static/official_start_v3_0/phoenix_detv_cad_bridge.js",
+  "cad_sidecar_expected": "1.3.0"
+}
