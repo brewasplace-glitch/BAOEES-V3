@@ -3713,18 +3713,18 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "cf171eba3992ab9d96e9b156640840c5d6dffb7e",
+      "git_oid": "bdaf03e66e63010626bd21f0079b4bc2b1d331e4",
       "path": "configs/phoenix/autonomy_open_source_catalog_v1.json",
-      "sha256": "c12e2bff73d59ea9650781c11528b2f558b54638f1a817b5aaeb1c679f0b14cf"
+      "sha256": "acb2048ea5bf29c9da001d9cdb12e34423d64e1e185cf52a2c0b5f4dd9a379f4"
     },
     {
       "chunks": 1,
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "8f66d3322b3dcc3cf050023b16ab09b9af9f73db",
+      "git_oid": "6a526e3abacfb6b1f2ae1b9a131f6c668e71fb53",
       "path": "configs/phoenix/autonomy_policy_v1.json",
-      "sha256": "99316a0e81fe049b1b63b2adaf32c3c6327217dec594faf471deb688fd5942e4"
+      "sha256": "6fcea0c1c753616541fe4a95aa94282b398503d3f079576cd465961074d872cd"
     },
     {
       "chunks": 1,
@@ -4724,6 +4724,15 @@
       "git_oid": "a439b3c710d01cf9784c589b8e2c8e2b535c047f",
       "path": "configs/phoenix/location_provider_registry_v1_0.json",
       "sha256": "10d2758c86164ded84f1b7e4ac99a58a3c4f14d2857641013595c8584037c9eb"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "1e57399c6ff9b765dceb9d87aac9487cd254974c",
+      "path": "configs/phoenix/low_risk_execution_policy_v1.json",
+      "sha256": "ebde6f7b47cacbcd3e77ce1ccf375fea882eafd88c00610b6e09f417ec4bce6a"
     },
     {
       "chunks": 1,
@@ -8483,6 +8492,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "e89bb8bb9d00dc6cce53a5f43ec5ff4315d2f394",
+      "path": "docs/automation/LOW_RISK_AUTONOMOUS_EXECUTION_REQUEST_EXAMPLE_v1.json",
+      "sha256": "aa033c87bb6417036ac3a2581d81bb75035bb9791860d68081b014d2edd235fa"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "21e955cef8aa0436dbbe1e11c01c20c07612a997",
       "path": "docs/automation/PHOENIX_4_41_3D_REPORT_OPEN_SOURCE_REVIEW.md",
       "sha256": "6c61187d2b9e7c8dee6aab6f9a78e622264f7d58913c13bc107f7e5132af5d88"
@@ -8675,6 +8693,15 @@
       "git_oid": "ff319710150d2906c572fbb153a10e4030a05276",
       "path": "docs/automation/PHOENIX_4_41_LIBRECAD_TOLERANT_DXF_SVG_EMBEDDED_FALLBACK.md",
       "sha256": "732ba4673218907ba5b018b1c0117503724732f57105d40d45cd626737624469"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "57d2adab0c2d8471c8dbea0c3c8082960e3279e7",
+      "path": "docs/automation/PHOENIX_4_41_LOW_RISK_AUTONOMOUS_EXECUTION_v1_0.md",
+      "sha256": "8f56d6a4ccaf02fa83d61119c3ba4c5353475d086af57daafd5852abeca14f2f"
     },
     {
       "chunks": 1,
@@ -15161,7 +15188,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "8e4c438b1d822177425ce4d294e802abe8e27e53",
+      "git_oid": "3821c98d76f1d2feab2495091dbb4e9797fc6d6c",
       "path": "phoenix/autonomy/__init__.py",
       "sha256": null
     },
@@ -15287,7 +15314,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "2c74c1ff74b00881e9cdec7c107a0ecf8148946e",
+      "git_oid": "ed4b9cd9b36fefe698ad5b9f602583ce40eb555b",
       "path": "phoenix/autonomy/capability_registry.py",
       "sha256": null
     },
@@ -15370,6 +15397,15 @@
       "git_mode": "100644",
       "git_oid": "50efde5c24674b77866f147cc4d9d580769045ff",
       "path": "phoenix/autonomy/evidence_gate.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "010cc90541656b06f33d42ebdb4dc0ed6b70a602",
+      "path": "phoenix/autonomy/executor.py",
       "sha256": null
     },
     {
@@ -15548,7 +15584,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "09db52c5827842b84f035a76b0ec036d6c3e2c7d",
+      "git_oid": "bec0087abe4276e2e6ab091be86986487787be8b",
       "path": "phoenix/autonomy/opensource_scout.py",
       "sha256": null
     },
@@ -15748,6 +15784,15 @@
       "git_mode": "100644",
       "git_oid": "c940b7e62cc06a9afee9ca73f277f1472caa7679",
       "path": "phoenix/autonomy/repair_fsm.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "3d7893b4e1bd49234b0da824b3b032cee4df4ca3",
+      "path": "phoenix/autonomy/request_io.py",
       "sha256": null
     },
     {
@@ -20822,6 +20867,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "03b6503c05fb63a3b9e6622b0ba0ed5045cd0163",
+      "path": "runners/PROJECT_PHOENIX_4_41_low_risk_autonomous_execution_v1.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "dd9180c98f30cbd0f5c852bad527b6b712578169",
+      "path": "runners/PROJECT_PHOENIX_4_41_low_risk_autonomous_execution_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "c1f749c5b9e4baa1fd3b09151c11c118d65e1440",
       "path": "runners/PROJECT_PHOENIX_architectural_compliance_fire_accessibility_building_physics_v6_7_0.py",
       "sha256": null
@@ -23578,6 +23641,15 @@
       "git_mode": "100644",
       "git_oid": "f7f52b204380ba992d7f6802f9ae4b7decb8e3a3",
       "path": "tests/automation/test_phoenix_441_librecad_tolerant_svg_fallback.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "e5b13a7a762363f73afc77d5c0013ae066bd407d",
+      "path": "tests/automation/test_phoenix_441_low_risk_autonomous_execution_v1.py",
       "sha256": null
     },
     {
@@ -26975,5 +27047,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "e124e67862364181acae7623fdfc3a09c24be80e01448e45313bfde18a24c67f"
+  "source_digest": "e3c5d2458b9869f7c649ff6334af3078a52dd5f64169baf6c6a9ffcf4d545805"
 }

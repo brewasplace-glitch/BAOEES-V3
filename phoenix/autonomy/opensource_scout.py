@@ -7,6 +7,16 @@ DEFAULT_CATALOG = {
     "researched_on":"2026-09-14",
     "candidates":[
         {
+            "id":"git-worktree",
+            "capability":"isolated_execution",
+            "role":"primary",
+            "name":"Git worktree",
+            "license":"GPL-2.0",
+            "url":"https://git-scm.com/docs/git-worktree",
+            "fit":["isolated linked worktrees","temporary candidate branches"],
+            "integration":"native-cli",
+        },
+        {
             "id":"langgraph",
             "capability":"orchestration",
             "role":"primary",
@@ -34,6 +44,16 @@ DEFAULT_CATALOG = {
             "license":"BSD-3-Clause",
             "url":"https://github.com/gitpython-developers/GitPython",
             "fit":["repository API","diff/status/refs"],
+            "integration":"optional-adapter",
+        },
+        {
+            "id":"gitpython-isolated",
+            "capability":"isolated_execution",
+            "role":"fallback",
+            "name":"GitPython",
+            "license":"BSD-3-Clause",
+            "url":"https://github.com/gitpython-developers/GitPython",
+            "fit":["repository object model","Git command wrapper"],
             "integration":"optional-adapter",
         },
         {

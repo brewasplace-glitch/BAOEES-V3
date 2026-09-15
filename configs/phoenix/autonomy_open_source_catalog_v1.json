@@ -1,8 +1,23 @@
 {
   "schema": "PHOENIX_OPEN_SOURCE_SCOUT_CATALOG_V1",
-  "researched_on": "2026-09-14",
+  "researched_on": "2026-09-15",
   "policy": "primary + fallback where practical",
   "candidates": [
+    {
+      "id": "git-worktree",
+      "capability": "isolated_execution",
+      "role": "primary",
+      "name": "Git worktree",
+      "license": "GPL-2.0",
+      "url": "https://git-scm.com/docs/git-worktree",
+      "fit": [
+        "isolated linked worktrees",
+        "separate index and HEAD",
+        "temporary candidate branches"
+      ],
+      "integration": "native-cli",
+      "runtime_required_in_v1": true
+    },
     {
       "id": "langgraph",
       "capability": "orchestration",
@@ -61,11 +76,31 @@
       ],
       "integration": "optional-adapter",
       "runtime_required_in_v1": false
+    },
+    {
+      "id": "gitpython-isolated",
+      "capability": "isolated_execution",
+      "role": "fallback",
+      "name": "GitPython",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/gitpython-developers/GitPython",
+      "fit": [
+        "repository object model",
+        "Git command wrapper"
+      ],
+      "integration": "optional-adapter",
+      "runtime_required_in_v1": false
     }
   ],
   "v1_decision": {
     "core": "Phoenix-specific deterministic governance remains standard-library only",
     "reason": "risk policy, exact-scope gates and Phoenix evidence semantics are product-specific",
     "oss_reuse": "adapter interfaces are registered now; installation is deferred until integration is exercised"
+  },
+  "v1_low_risk_execution_decision": {
+    "primary": "native Git worktree",
+    "fallback": "GitPython; Dulwich remains Git implementation fallback",
+    "reason": "native Git already exists in PHOENIX and provides isolated linked worktrees without an extra dependency",
+    "mainline_promotion": "locked"
   }
 }

@@ -1,0 +1,37 @@
+{
+  "schema": "PHOENIX_LOW_RISK_EXECUTION_POLICY_V1",
+  "version": "1.0.0",
+  "enabled": true,
+  "execution_mode": "candidate_branch_only",
+  "mainline_promotion": "LOCKED",
+  "primary_isolation_engine": "native_git_worktree",
+  "fallback_isolation_engine": "gitpython",
+  "allowed_roots": [
+    "docs/automation/autonomous_generated/",
+    "outputs/runtime/autonomy/"
+  ],
+  "allowed_extensions": [
+    ".md",
+    ".txt",
+    ".json"
+  ],
+  "max_files": 5,
+  "max_file_bytes": 65536,
+  "max_total_bytes": 262144,
+  "forbidden_path_segments": [
+    ".git",
+    "bib",
+    "phoenix",
+    "runners",
+    "configs",
+    "tests",
+    ".github"
+  ],
+  "forbidden_content_patterns": [
+    "(?i)password\\s*[:=]",
+    "(?i)secret\\s*[:=]",
+    "(?i)api[_-]?key\\s*[:=]",
+    "(?i)private[_-]?key",
+    "-----BEGIN [A-Z ]*PRIVATE KEY-----"
+  ]
+}

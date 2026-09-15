@@ -2,7 +2,7 @@
   "schema": "PHOENIX_AUTONOMY_POLICY_V1",
   "version": "1.0.0",
   "default_mode": "dry-run",
-  "low_risk_auto_enabled": false,
+  "low_risk_auto_enabled": true,
   "require_clean_worktree": true,
   "require_remote_sync": true,
   "max_repair_attempts": 3,
@@ -25,9 +25,11 @@
   ],
   "v1_execution_policy": {
     "dry_run": "ENABLED",
-    "low_risk_auto": "LOCKED",
-    "medium": "HUMAN_APPROVAL_REQUIRED",
-    "high": "HUMAN_APPROVAL_REQUIRED",
+    "low_risk_auto": "ENABLED_CANDIDATE_BRANCH_ONLY",
+    "medium": "BLOCKED",
+    "high": "BLOCKED",
     "critical": "BLOCKED"
-  }
+  },
+  "low_risk_promotion_to_main": "LOCKED",
+  "main_branch_autonomous_mutation": "LOCKED"
 }
