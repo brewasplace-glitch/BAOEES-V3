@@ -42,3 +42,7 @@ from .execution_planner import GoalSpec, PlanStep, ExecutionPlan, DagAdapter, Au
 from .approval_resume import LocalIntegrityKey, ApprovalResumeEngine
 
 from .execution_orchestrator import OrchestrationStore, ReadOnlyStepExecutor, AutonomousExecutionOrchestrator
+
+from .executor_adapter_registry import ExecutorAdapterDescriptor, UniversalCapabilityExecutorRegistry
+
+from .executor_adapters import AdapterExecutionContext, AdapterExecutionResult, ReadOnlyPlannerAdapter, LowRiskMutationAdapter, MainlinePromotionAdapter

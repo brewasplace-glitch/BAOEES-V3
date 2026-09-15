@@ -1,0 +1,113 @@
+{
+  "schema": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "future_action_default": "DENY_NO_REGISTERED_ADAPTER",
+  "require_complete_active_engine_action_coverage": true,
+  "require_exact_engine_action_binding": true,
+  "require_gateway_for_mutating_adapter": true,
+  "duplicate_plan_dispatch_binding": "DENY",
+  "adapter_contract_version": "1.0.0",
+  "external_plugin_namespace": "phoenix.executor_adapters",
+  "external_plugin_runtime_required": false,
+  "adapters": [
+    {
+      "adapter_id": "builtin.planner.readonly",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.execution_planner",
+      "actions": [
+        "research.inspect",
+        "planning.analyze",
+        "planning.validate",
+        "qa.execute",
+        "qa.inspect"
+      ],
+      "mutation_capable": false,
+      "gateway_required": false,
+      "plan_dispatchable": true,
+      "implementation": "phoenix.autonomy.executor_adapters:ReadOnlyPlannerAdapter",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.lowrisk.plan",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.low_risk_executor",
+      "actions": [
+        "documentation.update",
+        "evidence.generate"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": true,
+      "implementation": "phoenix.autonomy.executor_adapters:LowRiskMutationAdapter",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.lowrisk.self_improvement",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.low_risk_executor",
+      "actions": [
+        "autonomy.self_improvement.low_risk_evidence"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.mainline.promoter",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.mainline_promoter",
+      "actions": [
+        "git.fast_forward_promotion"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": true,
+      "implementation": "phoenix.autonomy.executor_adapters:MainlinePromotionAdapter",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.bib.autosync",
+      "status": "ACTIVE",
+      "engine_id": "bib.auto_sync",
+      "actions": [
+        "bib.auto_sync"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.orchestrator.internal",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.execution_orchestrator",
+      "actions": [
+        "orchestration.checkpoint.write",
+        "approval.request.write"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.approval.resume",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.approval_resume",
+      "actions": [
+        "approval.receipt.write"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    }
+  ]
+}

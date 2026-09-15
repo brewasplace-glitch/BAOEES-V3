@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -23,6 +23,10 @@
       "allowed_path_roots": [
         "docs/automation/autonomous_generated/",
         "outputs/runtime/autonomy/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.lowrisk.plan",
+        "builtin.lowrisk.self_improvement"
       ]
     },
     {
@@ -41,6 +45,9 @@
         "docs/automation/autonomous_generated/",
         "outputs/runtime/autonomy/",
         "bib/PHOENIX_AUTO_SYNC/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.mainline.promoter"
       ]
     },
     {
@@ -63,6 +70,9 @@
         "bib/PHOENIX_AUTO_SYNC/BIB_MANIFEST.json",
         "bib/PHOENIX_AUTO_SYNC/BIB_SYNC_EVIDENCE.txt",
         "bib/PHOENIX_AUTO_SYNC/README.md"
+      ],
+      "executor_adapter_ids": [
+        "builtin.bib.autosync"
       ]
     },
     {
@@ -84,6 +94,9 @@
         "engineering",
         "software",
         "orchestration"
+      ],
+      "executor_adapter_ids": [
+        "builtin.planner.readonly"
       ]
     },
     {
@@ -102,6 +115,9 @@
       "allowed_path_roots": [
         "runtime://orchestration/",
         "runtime://approvals/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.orchestrator.internal"
       ]
     },
     {
@@ -117,6 +133,9 @@
       ],
       "allowed_path_roots": [
         "runtime://approvals/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.approval.resume"
       ]
     }
   ]

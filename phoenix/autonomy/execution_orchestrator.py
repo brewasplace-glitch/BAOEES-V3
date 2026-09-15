@@ -12,6 +12,8 @@ from .policy import AutonomyPolicy
 from .promoter import LowRiskMainlinePromoter, LowRiskMainlinePromotionPolicy
 from .universal_gateway import GatewayAuditLog, MutationIntent, UniversalAutonomyGateway
 from .execution_planner import ExecutionPlan, PlanStep
+from .executor_adapter_registry import UniversalCapabilityExecutorRegistry
+from .executor_adapters import AdapterExecutionContext
 
 def _canonical(data:dict[str,Any])->bytes:
     return json.dumps(data,sort_keys=True,separators=(",",":"),ensure_ascii=False).encode("utf-8")
@@ -95,6 +97,9 @@ class AutonomousExecutionOrchestrator:
         self.gateway=gateway; self.store=OrchestrationStore(self.runtime_root,gateway)
         self.approvals=approval_engine or ApprovalResumeEngine(self.runtime_root,gateway)
         self.read_only=ReadOnlyStepExecutor(self.repo_root)
+        self.executor_registry=UniversalCapabilityExecutorRegistry.from_repo(
+            self.repo_root,host=self
+        )
         if self.policy.get("status")!="ACTIVE" or self.policy.get("fail_closed") is not True:
             raise RuntimeError("orchestrator policy invalid")
         if self.policy.get("automatic_replay_of_in_progress_mutation") is not False:
@@ -266,25 +271,59 @@ class AutonomousExecutionOrchestrator:
                 if step.step_status!="READY":
                     state["status"]="BLOCKED"; state["pause"]={"reason":"UNKNOWN_STEP_STATUS","step_id":sid}
                     self._checkpoint(state,"BLOCKED",state["pause"]); return state
-                if step.mutating:
-                    if backup_receipt is None:
-                        state["status"]="PAUSED_GATES"
-                        state["pause"]={"reason":"BACKUP_RECEIPT_REQUIRED_FOR_MUTATION","step_id":sid}
-                        self._checkpoint(state,"PAUSED_GATES",state["pause"]); return state
-                    if step.engine_id=="autonomy.low_risk_executor" and step.action in {"documentation.update","evidence.generate"}:
-                        self._execute_lowrisk(step,plan,state,Path(backup_receipt),execution_payloads)
-                        continue
-                    if step.engine_id=="autonomy.mainline_promoter" and step.action=="git.fast_forward_promotion":
-                        self._execute_promotion(step,plan,state,Path(backup_receipt))
-                        continue
+
+                resolved=self.executor_registry.resolve(step.engine_id,step.action)
+                if resolved is None:
                     state["status"]="WAITING_EXECUTOR"
-                    state["pause"]={"reason":"NO_SAFE_DISPATCHER_FOR_READY_MUTATION","step_id":sid,
-                                    "engine_id":step.engine_id,"action":step.action}
+                    state["pause"]={
+                        "reason":"NO_REGISTERED_PLAN_EXECUTOR_ADAPTER",
+                        "step_id":sid,"engine_id":step.engine_id,"action":step.action
+                    }
                     self._checkpoint(state,"WAITING_EXECUTOR",state["pause"]); return state
-                ss["status"]="IN_PROGRESS_READ_ONLY"; ss["attempts"]+=1
-                self._checkpoint(state,"READ_ONLY_STEP_START",{"step_id":sid})
-                ss["result"]=self.read_only.execute(step,plan); ss["status"]="COMPLETE"
-                self._checkpoint(state,"READ_ONLY_STEP_COMPLETE",{"step_id":sid})
+
+                descriptor,adapter=resolved
+                if descriptor.mutation_capable!=bool(step.mutating):
+                    state["status"]="BLOCKED"
+                    state["pause"]={
+                        "reason":"ADAPTER_STEP_MUTATION_CAPABILITY_MISMATCH",
+                        "step_id":sid,"adapter_id":descriptor.adapter_id
+                    }
+                    self._checkpoint(state,"BLOCKED",state["pause"]); return state
+
+                if not step.mutating:
+                    ss["status"]="IN_PROGRESS_READ_ONLY"; ss["attempts"]+=1
+                    self._checkpoint(state,"READ_ONLY_STEP_START",{
+                        "step_id":sid,"adapter_id":descriptor.adapter_id
+                    })
+
+                adapter_result=adapter.execute(AdapterExecutionContext(
+                    host=self,plan=plan,step=step,state=state,
+                    backup_receipt=Path(backup_receipt) if backup_receipt else None,
+                    execution_payloads=execution_payloads
+                ))
+
+                if adapter_result.outcome=="PAUSED_GATES":
+                    state["status"]="PAUSED_GATES"
+                    state["pause"]={
+                        "reason":adapter_result.reason or "ADAPTER_GATE_REQUIRED",
+                        "step_id":sid,"adapter_id":descriptor.adapter_id
+                    }
+                    self._checkpoint(state,"PAUSED_GATES",state["pause"]); return state
+
+                if adapter_result.outcome!="COMPLETE":
+                    state["status"]="WAITING_EXECUTOR"
+                    state["pause"]={
+                        "reason":"ADAPTER_DID_NOT_COMPLETE",
+                        "step_id":sid,"adapter_id":descriptor.adapter_id,
+                        "outcome":adapter_result.outcome
+                    }
+                    self._checkpoint(state,"WAITING_EXECUTOR",state["pause"]); return state
+
+                if not step.mutating:
+                    ss["result"]=adapter_result.result; ss["status"]="COMPLETE"
+                    self._checkpoint(state,"READ_ONLY_STEP_COMPLETE",{
+                        "step_id":sid,"adapter_id":descriptor.adapter_id
+                    })
             incomplete=[sid for sid,x in state["step_states"].items() if x["status"] not in self.TERMINAL_STEP]
             if incomplete:
                 state["status"]="WAITING_EXECUTOR"; state["pause"]={"reason":"DEPENDENCY_WAIT","steps":incomplete}

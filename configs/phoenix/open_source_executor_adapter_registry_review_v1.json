@@ -1,0 +1,35 @@
+{
+  "schema": "PHOENIX_EXECUTOR_ADAPTER_OPEN_SOURCE_REVIEW_V1",
+  "review_date": "2026-09-16",
+  "primary": {
+    "name": "pluggy",
+    "repository": "https://github.com/pytest-dev/pluggy",
+    "license": "MIT",
+    "role": "future external executor-adapter hook/registration provider",
+    "fit": [
+      "PluginManager registry",
+      "validated hook specifications",
+      "registered hook implementations",
+      "1-to-N hook dispatch"
+    ],
+    "activation": "OPTIONAL_FUTURE_PROVIDER"
+  },
+  "fallback": {
+    "name": "stevedore",
+    "repository": "https://github.com/openstack/stevedore",
+    "license": "Apache-2.0",
+    "role": "future entry-point based adapter discovery and driver loading",
+    "fit": [
+      "setuptools/importlib entry point discovery",
+      "driver manager",
+      "extension manager",
+      "named extension dispatch"
+    ],
+    "activation": "OPTIONAL_FUTURE_PROVIDER"
+  },
+  "active_v1_backend": {
+    "name": "PHOENIX deterministic machine-readable executor registry",
+    "external_dependency_required": false,
+    "reason": "Keep policy/gateway authority deterministic while exposing a stable adapter contract for later plugin discovery."
+  }
+}

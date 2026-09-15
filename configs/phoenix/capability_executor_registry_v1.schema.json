@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "status",
+    "fail_closed",
+    "future_action_default",
+    "adapters"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1"
+    },
+    "status": {
+      "const": "ACTIVE"
+    },
+    "fail_closed": {
+      "const": true
+    },
+    "adapters": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

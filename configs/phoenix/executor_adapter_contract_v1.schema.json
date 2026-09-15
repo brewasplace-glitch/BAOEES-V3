@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_EXECUTOR_ADAPTER_CONTRACT_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "adapter_id",
+    "status",
+    "engine_id",
+    "actions",
+    "mutation_capable",
+    "gateway_required",
+    "plan_dispatchable",
+    "implementation",
+    "priority"
+  ],
+  "properties": {
+    "adapter_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "DISABLED"
+      ]
+    },
+    "engine_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "mutation_capable": {
+      "type": "boolean"
+    },
+    "gateway_required": {
+      "type": "boolean"
+    },
+    "plan_dispatchable": {
+      "type": "boolean"
+    },
+    "implementation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "priority": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true
+}
