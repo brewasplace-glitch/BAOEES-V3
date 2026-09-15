@@ -1,3 +1,4 @@
+{"commit": "df600d70b453152baa70ee28876605149dc65a27", "date": "2026-09-15T18:04:06+02:00", "subject": "feat(autonomy): enable isolated low-risk candidate execution v1"}
 {"commit": "f17e9dcb055487ce7d4edbc08e513ad4cd6896d4", "date": "2026-09-15T00:20:53+02:00", "subject": "feat(autonomy): add validated autonomous development foundation v1"}
 {"commit": "e897e302431d09e85341dcb9dc5279671bd0f61a", "date": "2026-09-14T22:41:13+02:00", "subject": "fix(start): repair nested UTF-8 residual and v4.41 guard"}
 {"commit": "781be57f7d148e700172e8c9dd4a8b2a24136343", "date": "2026-09-14T01:35:24+02:00", "subject": "fix(start): stabilize DE TV CAD observer and background health"}
@@ -497,4 +498,3 @@
 {"commit": "69a96f3a19da1101e76ad65384bcfc7c3e656125", "date": "2026-06-24T17:35:10+02:00", "subject": "feat: add Project CSV Excel Export Engine v1"}
 {"commit": "38785e7ca5c67dafc1214e67a2b0f11121334efd", "date": "2026-06-24T17:09:21+02:00", "subject": "feat: add Project CSV Excel Export Engine v1"}
 {"commit": "7414fca0089b260133f57a2bbf883974fa7cdb6d", "date": "2026-06-24T15:57:56+02:00", "subject": "feat: add Project Drawing PDF Writer Engine v1"}
-{"commit": "71e348f8b4fc958855d5edfcb20b8f896b3d1b66", "date": "2026-06-24T14:53:22+02:00", "subject": "feat: add Project DXF Writer Engine v1"}

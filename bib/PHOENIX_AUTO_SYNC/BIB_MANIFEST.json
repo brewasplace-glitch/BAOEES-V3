@@ -8492,6 +8492,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "4ba22ed33ae778027a32879ba697e83ec20bec3b",
+      "path": "docs/automation/autonomous_generated/MAINLINE_PROMOTION_INSTALL_PROBE.md",
+      "sha256": "0d718cbce6ae302a8f7a938f2cb8583de28f63d24e8c5c9d84edc7789682964d"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "e89bb8bb9d00dc6cce53a5f43ec5ff4315d2f394",
       "path": "docs/automation/LOW_RISK_AUTONOMOUS_EXECUTION_REQUEST_EXAMPLE_v1.json",
       "sha256": "aa033c87bb6417036ac3a2581d81bb75035bb9791860d68081b014d2edd235fa"
@@ -27047,5 +27056,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "e3c5d2458b9869f7c649ff6334af3078a52dd5f64169baf6c6a9ffcf4d545805"
+  "source_digest": "b420ae7286362148633e3745f4e39ff7da08aaa8f28ff9e0fb9ed1a8b1b14351"
 }
