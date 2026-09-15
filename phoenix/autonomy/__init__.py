@@ -35,3 +35,5 @@ from .self_improvement import LowRiskSelfImprovementPolicy, LowRiskSelfImproveme
 from .decision_engine import ActionRequest, PolicyDecision, PolicyDecisionLog, AutonomyDecisionEngine
 
 from .universal_gateway import MutationIntent, GatewayPermit, GatewayAuditLog, UniversalAutonomyGateway
+
+from .execution_planner import GoalSpec, PlanStep, ExecutionPlan, DagAdapter, AutonomousExecutionPlanner, ExecutionCoordinator

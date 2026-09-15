@@ -22,6 +22,7 @@ DEFAULT_CAPABILITIES = (
     Capability("AUTO-BACKUP-004","Backup-gated autonomous promotion backup","governance","ready",100),
     Capability("AUTO-SELF-IMPROVE-005","Bounded LOW-risk self-improvement loop","orchestration","ready",100),
     Capability("AUTO-POLICY-NORTHSTAR-006","Autonomy Policy + Machine-Readable North Star","governance","ready",100),
+    Capability("AUTO-GOAL-007","Autonomous Execution Planner + Goal Decomposition","planning","ready",100),
     Capability("AUTO-BIB-002","BIB learning-event ingestion","knowledge","planned",70),
 )
 

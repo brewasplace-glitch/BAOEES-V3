@@ -1,0 +1,54 @@
+{
+  "schema": "PHOENIX_EXECUTION_PLANNER_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "north_star_alignment_required": true,
+  "central_policy_evaluation_required_for_every_step": true,
+  "universal_gateway_required_at_every_mutation_boundary": true,
+  "plan_only_does_not_issue_mutation_permits": true,
+  "bounds": {
+    "max_goal_depth": 5,
+    "max_subgoals_per_goal": 12,
+    "max_steps_total": 96,
+    "max_dependencies_per_step": 16,
+    "max_title_chars": 240,
+    "max_objective_chars": 4000
+  },
+  "defaults": {
+    "unknown_goal_type": "generic.analysis",
+    "unknown_mutating_action": "DENY_BY_POLICY",
+    "unregistered_mutating_engine_if_execution_authorized": "DENY",
+    "read_only_unknown_low_action": "POLICY_DECIDES",
+    "partial_plan_allowed": true
+  },
+  "plan_status_precedence": [
+    "BLOCKED",
+    "HUMAN_DECISION_REQUIRED",
+    "GATED",
+    "READY"
+  ],
+  "step_statuses": [
+    "READY",
+    "GATED_PENDING",
+    "ESCALATE",
+    "DENY",
+    "DENY_UNREGISTERED_ENGINE"
+  ],
+  "dag": {
+    "required": true,
+    "cycles": "DENY",
+    "topological_order_required": true,
+    "deterministic_order_required": true,
+    "primary_optional_adapter": "NetworkX",
+    "native_fallback": "Kahn_topological_sort"
+  },
+  "execution_contract": {
+    "planner_never_bypasses_gateway": true,
+    "mutation_execution_ticket_requires_registered_engine": true,
+    "mutation_execution_ticket_requires_gateway": true,
+    "ticket_is_not_a_permit": true,
+    "actual_mutator_must_obtain_one_time_gateway_permit": true,
+    "completed_dependency_evidence_required": true
+  }
+}

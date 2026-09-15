@@ -1,0 +1,284 @@
+{
+  "schema": "PHOENIX_GOAL_TEMPLATE_REGISTRY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "templates": {
+    "generic.analysis": {
+      "description": "Fail-safe generic read-only goal decomposition.",
+      "steps": [
+        {
+          "key": "observe",
+          "title": "Observe current state",
+          "action": "research.inspect",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "research",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [],
+          "gates": []
+        },
+        {
+          "key": "analyze",
+          "title": "Analyze goal and constraints",
+          "action": "planning.analyze",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "planning",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "observe"
+          ],
+          "gates": []
+        },
+        {
+          "key": "validate",
+          "title": "Validate plan against North Star and policy",
+          "action": "planning.validate",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "planning",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "analyze"
+          ],
+          "gates": []
+        }
+      ]
+    },
+    "phoenix.feature_build": {
+      "description": "Governed decomposition for a PHOENIX feature/build objective.",
+      "steps": [
+        {
+          "key": "observe",
+          "title": "Inspect current repository and capability state",
+          "action": "research.inspect",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "research",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [],
+          "gates": []
+        },
+        {
+          "key": "oss",
+          "title": "Research primary and fallback open-source candidates",
+          "action": "research.inspect",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "research",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "observe"
+          ],
+          "gates": []
+        },
+        {
+          "key": "design",
+          "title": "Design bounded implementation plan",
+          "action": "planning.analyze",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "planning",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "oss"
+          ],
+          "gates": []
+        },
+        {
+          "key": "implement",
+          "title": "Implement approved source changes",
+          "action": "source.modify",
+          "risk": "MEDIUM",
+          "mutating": true,
+          "domain": "software",
+          "engine_id": "future.source_change_engine",
+          "depends_on": [
+            "design"
+          ],
+          "gates": [],
+          "paths_context_key": "source_paths"
+        },
+        {
+          "key": "test",
+          "title": "Run compile, unit, regression and scope tests",
+          "action": "qa.execute",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "qa",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "implement"
+          ],
+          "gates": []
+        },
+        {
+          "key": "evidence",
+          "title": "Generate bounded engineering evidence",
+          "action": "evidence.generate",
+          "risk": "LOW",
+          "mutating": true,
+          "domain": "documentation",
+          "engine_id": "autonomy.low_risk_executor",
+          "depends_on": [
+            "test"
+          ],
+          "gates": [
+            "clean_synced",
+            "verified_backup",
+            "open_source_review",
+            "risk_low",
+            "allowlisted_path",
+            "audit_log"
+          ],
+          "default_paths": [
+            "outputs/runtime/autonomy/plans/{goal_id}_evidence.json"
+          ]
+        },
+        {
+          "key": "promote",
+          "title": "Fast-forward-only mainline promotion after all gates",
+          "action": "git.fast_forward_promotion",
+          "risk": "LOW",
+          "mutating": true,
+          "domain": "git",
+          "engine_id": "autonomy.mainline_promoter",
+          "depends_on": [
+            "evidence"
+          ],
+          "gates": [
+            "verified_backup",
+            "candidate_validated",
+            "tests_pass",
+            "evidence_pass",
+            "ff_only",
+            "normal_non_force_push",
+            "remote_race_guard",
+            "audit_log"
+          ]
+        }
+      ]
+    },
+    "phoenix.low_risk_documentation": {
+      "description": "Autonomous LOW-risk documentation/evidence improvement.",
+      "steps": [
+        {
+          "key": "observe",
+          "title": "Inspect current documentation state",
+          "action": "research.inspect",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "research",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [],
+          "gates": []
+        },
+        {
+          "key": "plan",
+          "title": "Plan bounded documentation mutation",
+          "action": "planning.analyze",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "planning",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "observe"
+          ],
+          "gates": []
+        },
+        {
+          "key": "update",
+          "title": "Apply allowlisted documentation mutation",
+          "action": "documentation.update",
+          "risk": "LOW",
+          "mutating": true,
+          "domain": "documentation",
+          "engine_id": "autonomy.low_risk_executor",
+          "depends_on": [
+            "plan"
+          ],
+          "gates": [
+            "clean_synced",
+            "verified_backup",
+            "open_source_review",
+            "risk_low",
+            "allowlisted_path",
+            "audit_log"
+          ],
+          "paths_context_key": "target_paths",
+          "default_paths": [
+            "docs/automation/autonomous_generated/plans/{goal_id}.md"
+          ]
+        },
+        {
+          "key": "validate",
+          "title": "Validate resulting documentation/evidence",
+          "action": "qa.inspect",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "qa",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "update"
+          ],
+          "gates": []
+        }
+      ]
+    },
+    "engineering.design_assist": {
+      "description": "Read-only engineering design-assistance planning; professional release remains outside autonomy.",
+      "steps": [
+        {
+          "key": "inputs",
+          "title": "Inspect project inputs and assumptions",
+          "action": "research.inspect",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "engineering",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [],
+          "gates": []
+        },
+        {
+          "key": "constraints",
+          "title": "Analyze constraints, standards and missing evidence",
+          "action": "planning.analyze",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "engineering",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "inputs"
+          ],
+          "gates": []
+        },
+        {
+          "key": "alternatives",
+          "title": "Develop and compare bounded alternatives",
+          "action": "planning.analyze",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "engineering",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "constraints"
+          ],
+          "gates": []
+        },
+        {
+          "key": "check",
+          "title": "Check assumptions, uncertainty and escalation points",
+          "action": "planning.validate",
+          "risk": "LOW",
+          "mutating": false,
+          "domain": "engineering",
+          "engine_id": "autonomy.execution_planner",
+          "depends_on": [
+            "alternatives"
+          ],
+          "gates": []
+        }
+      ]
+    }
+  }
+}

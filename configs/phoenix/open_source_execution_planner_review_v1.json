@@ -1,0 +1,32 @@
+{
+  "schema": "PHOENIX_EXECUTION_PLANNING_OPEN_SOURCE_REVIEW_V1",
+  "review_date": "2026-09-15",
+  "primary": {
+    "name": "NetworkX",
+    "repository": "https://github.com/networkx/networkx",
+    "license": "BSD-3-Clause",
+    "role": "optional DAG validation/topological-order adapter",
+    "reviewed_release": "3.6.1",
+    "python_requirement_reviewed": ">=3.12, !=3.14.1",
+    "activation": "OPTIONAL_IF_INSTALLED",
+    "reason": "Mature graph algorithms and DAG/topological ordering without coupling PHOENIX policy to a planner runtime."
+  },
+  "fallback_or_richer_future_adapter": {
+    "name": "Unified Planning",
+    "repository": "https://github.com/aiplan4eu/unified-planning",
+    "license": "Apache-2.0",
+    "role": "future symbolic/hierarchical planning adapter",
+    "supports": [
+      "planner-independent modeling",
+      "hierarchical task networks",
+      "scheduling"
+    ],
+    "activation": "DEFERRED_ADAPTER"
+  },
+  "active_v1_backend": {
+    "name": "PHOENIX deterministic planner + native Kahn DAG fallback",
+    "external_dependency_required": false,
+    "networkx_adapter_used_when_available": true,
+    "reason": "No new dependency is required to prove deterministic bounded planning; external engines remain replaceable adapters."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_GOAL_SPEC_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "goal_id",
+    "objective",
+    "goal_type",
+    "domain",
+    "success_criteria"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_GOAL_SPEC_V1"
+    },
+    "goal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "goal_type": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "available_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "context": {
+      "type": "object"
+    },
+    "subgoals": {
+      "type": "array",
+      "items": {
+        "$ref": "#"
+      }
+    }
+  },
+  "additionalProperties": false
+}

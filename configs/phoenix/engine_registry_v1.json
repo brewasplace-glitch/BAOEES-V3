@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -63,6 +63,27 @@
         "bib/PHOENIX_AUTO_SYNC/BIB_MANIFEST.json",
         "bib/PHOENIX_AUTO_SYNC/BIB_SYNC_EVIDENCE.txt",
         "bib/PHOENIX_AUTO_SYNC/README.md"
+      ]
+    },
+    {
+      "engine_id": "autonomy.execution_planner",
+      "status": "ACTIVE",
+      "mutation_capable": false,
+      "gateway_required": false,
+      "allowed_actions": [
+        "research.inspect",
+        "planning.analyze",
+        "planning.validate",
+        "qa.execute",
+        "qa.inspect"
+      ],
+      "allowed_domains": [
+        "planning",
+        "research",
+        "qa",
+        "engineering",
+        "software",
+        "orchestration"
       ]
     }
   ]
