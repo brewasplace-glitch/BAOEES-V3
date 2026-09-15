@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -309,6 +309,72 @@
         ]
       },
       "reason": "Adding or changing mutation-capable engines changes the universal authority boundary."
+    },
+    {
+      "id": "P4-ALLOW-ORCHESTRATION-CHECKPOINT",
+      "priority": 775,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "orchestration.checkpoint.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://orchestration/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "checkpoint_integrity"
+      ],
+      "reason": "Durable orchestration state requires gateway authorization and checkpoint integrity."
+    },
+    {
+      "id": "P4-ALLOW-APPROVAL-REQUEST",
+      "priority": 774,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "approval.request.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://approvals/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "approval_integrity"
+      ],
+      "reason": "Approval requests require integrity-bound gateway authorization."
+    },
+    {
+      "id": "P4-ALLOW-APPROVAL-RECEIPT",
+      "priority": 773,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "approval.receipt.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://approvals/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "approval_integrity"
+      ],
+      "reason": "Approval receipts require integrity-bound gateway authorization."
     }
   ],
   "domain_authority": {
@@ -355,7 +421,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_2_UNIVERSAL_AUTONOMY_GATEWAY",
+  "phase": "PHASE_4_AUTONOMOUS_EXECUTION_ORCHESTRATOR",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -363,5 +429,14 @@
     "declared_domains_required": true,
     "declared_path_scope_required_for_file_mutation": true,
     "unregistered_mutation_effect": "DENY"
+  },
+  "execution_orchestration": {
+    "checkpoint_required": true,
+    "durable_resume_required": true,
+    "approval_receipt_required_for_escalation_resume": true,
+    "approval_cannot_override_deny": true,
+    "approval_cannot_bypass_gateway": true,
+    "mutation_in_progress_replay": "DENY_AUTOMATIC_REPLAY",
+    "unknown_executor": "DENY"
   }
 }

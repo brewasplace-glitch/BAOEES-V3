@@ -1,0 +1,56 @@
+{
+  "schema": "PHOENIX_EXECUTION_ORCHESTRATOR_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "max_steps_per_run": 96,
+  "max_resume_events": 512,
+  "checkpoint_before_mutation": true,
+  "checkpoint_after_step": true,
+  "automatic_replay_of_in_progress_mutation": false,
+  "approval_decisions": [
+    "APPROVE",
+    "REJECT",
+    "DEFER"
+  ],
+  "approval_rules": {
+    "DENY": "NEVER_OVERRIDABLE",
+    "ESCALATE_READ_ONLY_APPROVE": "COMPLETE_HUMAN_DECISION_AND_RESUME",
+    "ESCALATE_MUTATING_APPROVE": "PAUSE_WAITING_APPROVED_MUTATION_EXECUTOR",
+    "REJECT": "TERMINATE_REJECTED",
+    "DEFER": "REMAIN_PAUSED"
+  },
+  "read_only_executor": {
+    "allowed_actions": [
+      "research.inspect",
+      "planning.analyze",
+      "planning.validate",
+      "qa.execute",
+      "qa.inspect"
+    ],
+    "no_arbitrary_shell": true,
+    "no_network": true
+  },
+  "known_mutating_dispatch": {
+    "autonomy.low_risk_executor": [
+      "documentation.update",
+      "evidence.generate"
+    ],
+    "autonomy.mainline_promoter": [
+      "git.fast_forward_promotion"
+    ]
+  },
+  "unknown_executor": "DENY",
+  "runtime_uri_roots": {
+    "state": "runtime://orchestration/",
+    "approvals": "runtime://approvals/"
+  },
+  "approval_receipt": {
+    "hmac_sha256": true,
+    "bind_plan_sha256": true,
+    "bind_step_id": true,
+    "bind_policy_bundle_sha256": true,
+    "bind_request_nonce": true
+  },
+  "external_runtime_dependency_required": false
+}

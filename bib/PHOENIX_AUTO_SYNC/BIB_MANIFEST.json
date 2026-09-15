@@ -3470,6 +3470,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "038cbc936fb2c66c65bcbb06144966054e091651",
+      "path": "configs/phoenix/approval_receipt_v1.schema.json",
+      "sha256": "f535435c7f107743db39e63c57b4dd5a2335d5e7aae18a6f1cd6850dfffd276c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "ae4d49301f32042b85bab5c1c0b1d80d02f027bf",
       "path": "configs/phoenix/architectural_compliance_fire_accessibility_building_physics_v6_7_0.json",
       "sha256": "c6d209914ce8c1af0129a0be5efd03c5c4afc99a8094e60dd2f3b5d59ee21a92"
@@ -3731,9 +3740,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "7dabcad453cdb6ffeda6cf64fbc49183cd5ddaf1",
+      "git_oid": "2519ae0532e0d35c01a2200a499fffc293abf3ae",
       "path": "configs/phoenix/autonomy_policy_v2.json",
-      "sha256": "a1d1c995bb6323c1cdb68695b6465f3e4d4259a9845b102f4748e0341ff8ea04"
+      "sha256": "37cacbe200b3ba0175b2c92b9baa62417102f75f794d7f7ac7fd9fbc231c3e90"
     },
     {
       "chunks": 1,
@@ -4298,9 +4307,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "ab84df9b3ebce672e009ac275c0a9bf175cbacb5",
+      "git_oid": "9f3d147e9715bc2950f5e9fdcd1ad9bf6d6fe30d",
       "path": "configs/phoenix/engine_registry_v1.json",
-      "sha256": "1fb8ba006239d506e93d07017cc763b9ad682a656bea675cfcca050049902930"
+      "sha256": "275c87cc66b123bb20285b718a556dd1f0915a2462c64f485ffb3b962de19477"
     },
     {
       "chunks": 1,
@@ -4328,6 +4337,15 @@
       "git_oid": "699afb244e3c2b17a7733557674aac198e9e1022",
       "path": "configs/phoenix/execution_drawing_detail_library_specification_release_v7_0_0.json",
       "sha256": "6d427be2abe9600c11e5f39d1407dffc86bfe768adf5be3fde53854721477647"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "6e925a1994ddb87230c4ecb2c18d29c56631ad26",
+      "path": "configs/phoenix/execution_orchestrator_policy_v1.json",
+      "sha256": "bcc85827a6aa872899cd60d32b33ae3868fe0a804e855352699dcc37a1f0ed80"
     },
     {
       "chunks": 1,
@@ -4559,9 +4577,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "60b67d2c1bd24b514e32c128e5734f73c53d0aef",
+      "git_oid": "72a6045aa617e14cbbcd693311b30adc31d4d7b9",
       "path": "configs/phoenix/goal_template_registry_v1.json",
-      "sha256": "66732eff822547fe0e9a14ee127a925ad5de5917acfe412eef29eb8d71f88844"
+      "sha256": "672a270760cc9c7ac0a163aa48c4b78c0543e07156e2e096eaef5d8e15f869b4"
     },
     {
       "chunks": 1,
@@ -5081,6 +5099,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "8e4d879a4b4f604bfcc5513e5acef7aed06bb273",
+      "path": "configs/phoenix/open_source_execution_orchestrator_review_v1.json",
+      "sha256": "c8bb61d285d2d50e18aad8ff7141bd70a4ad28abd17a5b7630bb12a60648d1aa"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "30a410f10e5f954835ddc3f8e3208a611c8fb2d2",
       "path": "configs/phoenix/open_source_execution_planner_review_v1.json",
       "sha256": "8bca52fb165ced631246186bc245fb38cba97af3f5118ceff2af092a80959059"
@@ -5147,6 +5174,15 @@
       "git_oid": "41756c2b2b38a8ec535e457902800770bf8777cc",
       "path": "configs/phoenix/optimization_core_wave15_1_v1_0.json",
       "sha256": "cd3f07de76f48b1c97a4707ab6f37586723f7c871c51ef69dcac857511e2c81b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "d82824a5a2b319c105176b7fe5a7d7b835ab2aeb",
+      "path": "configs/phoenix/orchestration_state_v1.schema.json",
+      "sha256": "0e3572eac80586f350fdddc3922285e48a590a3fc904468460e8b341b98b0d26"
     },
     {
       "chunks": 1,
@@ -5333,9 +5369,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "a57c2574b25938d6124197e160bdd3ded744ea0e",
+      "git_oid": "0d80214a74cfc0e96ce5dd9a666b0caf0017e849",
       "path": "configs/phoenix/policy_bundle_manifest_v1.json",
-      "sha256": "c3ead2ef56465d00ecc18222ec7cfdf717dc3b162905773604069a028490a957"
+      "sha256": "209686c1cd05e9e9da7bf38089f2c55750bd5e2e78c44e6f1ebe29dd8f8f5f5e"
     },
     {
       "chunks": 1,
@@ -8972,6 +9008,24 @@
       "git_oid": "f6b8cde08a0787cae7398b018af3815298ac1a89",
       "path": "docs/automation/PHOENIX_4_41_PHASE_3_OPEN_SOURCE_PLANNING_REVIEW_2026_09_15.md",
       "sha256": "4a9fec22f5396c8d850bb6d17c9720a028e295315ae6b99c44e92c1c1f9ee367"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "00c4fc44f2260ea92094a7f85908a6a9896614fa",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_4_AUTONOMOUS_EXECUTION_ORCHESTRATOR_APPROVAL_RESUME_ENGINE_v1_0.md",
+      "sha256": "37e5155551d4a51e77809efec34a12a3a1cce67c5594f16cee21f02d3a6e49f9"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "dbe8282dd5e671ba58025e1bc78d9b7470580623",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_4_OPEN_SOURCE_DURABLE_ORCHESTRATION_REVIEW_2026_09_15.md",
+      "sha256": "f1ec1576fe3b4fadcc3e4ae72c09d2b9ca2ac62ba873e4cdea7ab9342dfc6c63"
     },
     {
       "chunks": 1,
@@ -15449,7 +15503,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "d2b05a5231fad62a40f33ad9ebf8f49a22aaaa45",
+      "git_oid": "da14ae3b499368d0c67296b61e6a55ee183b1a53",
       "path": "phoenix/autonomy/__init__.py",
       "sha256": null
     },
@@ -15469,6 +15523,15 @@
       "git_mode": "100644",
       "git_oid": "2cf042e9469de425e17361b3f76ef7c8c44c7d10",
       "path": "phoenix/autonomy/advanced_global_stability_qualification_r9_1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "7fb38ab88a9eacb9820b652c4933ddd9115db922",
+      "path": "phoenix/autonomy/approval_resume.py",
       "sha256": null
     },
     {
@@ -15575,7 +15638,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "1af027797112182dceef1ba0977a4907144630d9",
+      "git_oid": "4e5787f120b291f39f8267559c8be17ad2fd9e06",
       "path": "phoenix/autonomy/capability_registry.py",
       "sha256": null
     },
@@ -15667,6 +15730,15 @@
       "git_mode": "100644",
       "git_oid": "50efde5c24674b77866f147cc4d9d580769045ff",
       "path": "phoenix/autonomy/evidence_gate.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "b1bcc23464f89c9c96723e0ae12d9002aa1225ec",
+      "path": "phoenix/autonomy/execution_orchestrator.py",
       "sha256": null
     },
     {
@@ -21128,6 +21200,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "892794e80bb682c6059d451dc80648ceaa489ef0",
+      "path": "runners/PROJECT_PHOENIX_4_41_approval_resume_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4460bf917dc358a36b07b51a67a7945ad45263fd",
       "path": "runners/PROJECT_PHOENIX_4_41_autonomous_cycle_v1.ps1",
       "sha256": null
@@ -21139,6 +21220,15 @@
       "git_mode": "100644",
       "git_oid": "3bbac88a320053eb4c89eb23d63e737dc148382b",
       "path": "runners/PROJECT_PHOENIX_4_41_autonomous_development_foundation_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "3aac79364a3fef31db50bb8498bccd1f01b3a216",
+      "path": "runners/PROJECT_PHOENIX_4_41_autonomous_execution_orchestrator_v1.py",
       "sha256": null
     },
     {
@@ -23999,7 +24089,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "990f18aa21127bfd218b73d63b6c8d5c35571fd3",
+      "git_oid": "e2b66607abb801f3d4b9458302bcc1bb97d91b4c",
       "path": "tests/automation/test_phoenix_441_autonomous_execution_planner_v1.py",
       "sha256": null
     },
@@ -24008,7 +24098,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "7c19015e0911f0beec17f2731fd8257016010016",
+      "git_oid": "6739b0fb2e44dde0bd1ffb69330c424f34696662",
       "path": "tests/automation/test_phoenix_441_autonomy_policy_north_star_v1.py",
       "sha256": null
     },
@@ -24028,6 +24118,15 @@
       "git_mode": "100644",
       "git_oid": "58ce75fc7e6ecf5c28988061a295fe820b184c10",
       "path": "tests/automation/test_phoenix_441_detv_embedded_dxf_hardmount.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "bf5937974babd32bf76f148a40e15c2c41d174d1",
+      "path": "tests/automation/test_phoenix_441_execution_orchestrator_approval_resume_v1.py",
       "sha256": null
     },
     {
@@ -27470,5 +27569,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "154a6884787b576c76b6127f68cb14bf25f5e0cc8f73d6f80a490ed709ce2718"
+  "source_digest": "48310f1180ce4e7f259333a1d06f6bfb4a5e45d64b2bc6ad010edf6f3e9160ba"
 }

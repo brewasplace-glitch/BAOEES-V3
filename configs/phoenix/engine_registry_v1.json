@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -84,6 +84,39 @@
         "engineering",
         "software",
         "orchestration"
+      ]
+    },
+    {
+      "engine_id": "autonomy.execution_orchestrator",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "orchestration.checkpoint.write",
+        "approval.request.write"
+      ],
+      "allowed_domains": [
+        "orchestration",
+        "approval"
+      ],
+      "allowed_path_roots": [
+        "runtime://orchestration/",
+        "runtime://approvals/"
+      ]
+    },
+    {
+      "engine_id": "autonomy.approval_resume",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "approval.receipt.write"
+      ],
+      "allowed_domains": [
+        "approval"
+      ],
+      "allowed_path_roots": [
+        "runtime://approvals/"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_GOAL_TEMPLATE_REGISTRY_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "ACTIVE",
   "templates": {
     "generic.analysis": {
@@ -222,6 +222,28 @@
             "update"
           ],
           "gates": []
+        },
+        {
+          "key": "promote",
+          "title": "Promote validated LOW-risk documentation candidate",
+          "action": "git.fast_forward_promotion",
+          "risk": "LOW",
+          "mutating": true,
+          "domain": "git",
+          "engine_id": "autonomy.mainline_promoter",
+          "depends_on": [
+            "validate"
+          ],
+          "gates": [
+            "verified_backup",
+            "candidate_validated",
+            "tests_pass",
+            "evidence_pass",
+            "ff_only",
+            "normal_non_force_push",
+            "remote_race_guard",
+            "audit_log"
+          ]
         }
       ]
     },

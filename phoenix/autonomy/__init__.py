@@ -26,6 +26,7 @@ __all__ = [
     "LowRiskSelfImprovementPolicy","LowRiskSelfImprovementLoop",
     "ActionRequest","PolicyDecision","PolicyDecisionLog","AutonomyDecisionEngine",
     "MutationIntent","GatewayPermit","GatewayAuditLog","UniversalAutonomyGateway",
+    "LocalIntegrityKey","ApprovalResumeEngine","OrchestrationStore","ReadOnlyStepExecutor","AutonomousExecutionOrchestrator",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -37,3 +38,7 @@ from .decision_engine import ActionRequest, PolicyDecision, PolicyDecisionLog, A
 from .universal_gateway import MutationIntent, GatewayPermit, GatewayAuditLog, UniversalAutonomyGateway
 
 from .execution_planner import GoalSpec, PlanStep, ExecutionPlan, DagAdapter, AutonomousExecutionPlanner, ExecutionCoordinator
+
+from .approval_resume import LocalIntegrityKey, ApprovalResumeEngine
+
+from .execution_orchestrator import OrchestrationStore, ReadOnlyStepExecutor, AutonomousExecutionOrchestrator

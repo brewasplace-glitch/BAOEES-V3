@@ -1,0 +1,30 @@
+{
+  "schema": "PHOENIX_EXECUTION_ORCHESTRATOR_OPEN_SOURCE_REVIEW_V1",
+  "review_date": "2026-09-15",
+  "primary": {
+    "name": "Temporal",
+    "repository": "https://github.com/temporalio/temporal",
+    "license": "MIT",
+    "role": "future durable execution / signal-based human-in-the-loop adapter",
+    "fit": [
+      "durable workflow state",
+      "retries and recovery",
+      "signals for human decisions",
+      "resume after worker restart"
+    ],
+    "activation": "DEFERRED_ADAPTER"
+  },
+  "fallback": {
+    "name": "Prefect",
+    "repository": "https://github.com/PrefectHQ/prefect",
+    "license": "Apache-2.0",
+    "python_requirement_reviewed": ">=3.10,<3.15",
+    "role": "future Python-native orchestration / pause-suspend-resume adapter",
+    "activation": "DEFERRED_ADAPTER"
+  },
+  "active_v1_backend": {
+    "name": "PHOENIX local durable checkpoint + HMAC approval receipt engine",
+    "external_dependency_required": false,
+    "reason": "Keep authority boundaries deterministic and dependency-light while exposing stable adapters."
+  }
+}

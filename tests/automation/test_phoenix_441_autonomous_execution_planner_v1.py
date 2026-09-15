@@ -92,7 +92,9 @@ class TestExecutionPlanner(unittest.TestCase):
             "test.unknown.engine",
             available_gates=[
                 "clean_synced","verified_backup","open_source_review",
-                "risk_low","allowlisted_path","audit_log"
+                "risk_low","allowlisted_path","audit_log",
+                "candidate_validated","tests_pass","evidence_pass","ff_only",
+                "normal_non_force_push","remote_race_guard"
             ],
         ))
         self.assertEqual(p.steps[0].policy_effect,"ALLOW_WITH_GATES")
@@ -105,7 +107,9 @@ class TestExecutionPlanner(unittest.TestCase):
             "phoenix.low_risk_documentation",
             available_gates=[
                 "clean_synced","verified_backup","open_source_review",
-                "risk_low","allowlisted_path","audit_log"
+                "risk_low","allowlisted_path","audit_log",
+                "candidate_validated","tests_pass","evidence_pass","ff_only",
+                "normal_non_force_push","remote_race_guard"
             ],
             context={"target_paths":["docs/automation/autonomous_generated/test.md"]},
         )
@@ -229,7 +233,9 @@ class TestExecutionPlanner(unittest.TestCase):
             "phoenix.low_risk_documentation",
             available_gates=[
                 "clean_synced","verified_backup","open_source_review",
-                "risk_low","allowlisted_path","audit_log"
+                "risk_low","allowlisted_path","audit_log",
+                "candidate_validated","tests_pass","evidence_pass","ff_only",
+                "normal_non_force_push","remote_race_guard"
             ],
             context={"target_paths":["docs/automation/autonomous_generated/test.md"]},
         )

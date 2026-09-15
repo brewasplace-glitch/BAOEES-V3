@@ -1,3 +1,4 @@
+{"commit": "2e03f18e5b8ef9e18f6cedcc8c840ea547113856", "date": "2026-09-15T23:51:42+02:00", "subject": "feat(autonomy): add autonomous execution planner and goal decomposition v1"}
 {"commit": "d8de9e4e4cc5ed19c7e690945152143b11b427d2", "date": "2026-09-15T23:03:52+02:00", "subject": "feat(governance): enforce universal autonomy gateway for current and future engines v1"}
 {"commit": "3911c31a0b5d62e37ee38bf1365dd1e6f67287e6", "date": "2026-09-15T21:55:28+02:00", "subject": "feat(governance): add autonomy policy and machine-readable north star v1"}
 {"commit": "96862375b84934bab99ef0f89f105cc24aa464b3", "date": "2026-09-15T20:52:29+02:00", "subject": "feat(autonomy): add bounded low-risk self-improvement loop v1"}
@@ -497,4 +498,3 @@
 {"commit": "15e6fd8c250886feac9dca249881c6f7f3247217", "date": "2026-06-25T00:16:44+02:00", "subject": "feat: add Project Git Evidence Engine v1"}
 {"commit": "912a10b9f41492ac241ba963bb5c0ea41c0cba3b", "date": "2026-06-24T23:56:36+02:00", "subject": "feat: add Project Checksum File Integrity Engine v1"}
 {"commit": "61821687510806e8cef5758de2639ccfc4a73338", "date": "2026-06-24T23:39:14+02:00", "subject": "feat: add Project Audit Trail Engine v1"}
-{"commit": "021a277269a2f783cd02596d5e81c84d824da4af", "date": "2026-06-24T18:47:45+02:00", "subject": "feat: add Project Index Startpage Engine v1"}
