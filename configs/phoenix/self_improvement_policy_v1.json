@@ -20,5 +20,6 @@
     "open_source_primary_candidate": "Prefect",
     "open_source_fallback_candidate": "LangGraph",
     "external_runtime_dependency_required": false
-  }
+  },
+  "central_decision_engine_required": true
 }

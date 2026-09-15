@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_MACHINE_READABLE_NORTH_STAR_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "north_star_id",
+    "version",
+    "status",
+    "mission",
+    "decision_hierarchy",
+    "operating_principles",
+    "non_negotiable_invariants",
+    "machine_contract"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_MACHINE_READABLE_NORTH_STAR_V1"
+    },
+    "north_star_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "ACTIVE",
+        "RETIRED"
+      ]
+    },
+    "mission": {
+      "type": "string",
+      "minLength": 20
+    },
+    "decision_hierarchy": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string"
+      }
+    },
+    "operating_principles": {
+      "type": "array",
+      "minItems": 5
+    },
+    "non_negotiable_invariants": {
+      "type": "array",
+      "minItems": 5
+    },
+    "machine_contract": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_POLICY_ENGINE_REVIEW_V1",
+  "review_date": "2026-09-15",
+  "capability": "central_policy_evaluation",
+  "primary": {
+    "id": "open-policy-agent",
+    "name": "Open Policy Agent",
+    "license": "Apache-2.0",
+    "project": "CNCF graduated",
+    "url": "https://github.com/open-policy-agent/opa",
+    "fit": [
+      "general-purpose policy evaluation",
+      "context-aware decisions",
+      "policy as code",
+      "unified enforcement"
+    ],
+    "phase_1_role": "primary adapter target"
+  },
+  "fallback": {
+    "id": "cedar",
+    "name": "Cedar Policy Language",
+    "license": "Apache-2.0",
+    "url": "https://github.com/cedar-policy/cedar",
+    "fit": [
+      "fine-grained authorization",
+      "schema validation",
+      "analyzable policies",
+      "formal reasoning ecosystem"
+    ],
+    "phase_1_role": "fallback adapter target"
+  },
+  "active_phase_1_runtime": {
+    "name": "Phoenix deterministic bootstrap evaluator",
+    "reason": "Phase 1 establishes the vendor-neutral North Star and authority contract before introducing an external executable dependency. The contract is structured for later OPA/Cedar adapters, while the bootstrap evaluator is fail-closed and fully tested.",
+    "external_dependency_installation": "DEFERRED",
+    "future_primary_adapter": "OPA",
+    "future_fallback_adapter": "Cedar"
+  }
+}

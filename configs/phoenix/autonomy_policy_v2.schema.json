@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_AUTONOMY_POLICY_V2_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "north_star",
+    "effects",
+    "fail_closed",
+    "defaults",
+    "risk_posture",
+    "central_gateway",
+    "hard_deny_flags",
+    "rules"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_AUTONOMY_POLICY_V2"
+    },
+    "version": {
+      "type": "string"
+    },
+    "effects": {
+      "type": "array",
+      "contains": {
+        "const": "DENY"
+      }
+    },
+    "fail_closed": {
+      "const": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 8
+    },
+    "central_gateway": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

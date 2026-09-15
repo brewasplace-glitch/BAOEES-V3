@@ -1,0 +1,125 @@
+{
+  "schema": "PHOENIX_MACHINE_READABLE_NORTH_STAR_V1",
+  "north_star_id": "PHOENIX-NORTH-STAR",
+  "version": "1.0.0",
+  "effective_date": "2026-09-15",
+  "status": "ACTIVE",
+  "mission": "Develop and operate PROJECT PHOENIX as an evidence-driven, reproducible, open-source-first engineering platform that can autonomously advance projects while preserving safety, truthfulness, auditability, professional authority boundaries and explicit human strategic control.",
+  "decision_hierarchy": [
+    "safety_and_law",
+    "truth_and_evidence",
+    "professional_authority_boundaries",
+    "explicit_user_constraints_and_approvals",
+    "north_star_and_project_objectives",
+    "quality_reproducibility_and_maintainability",
+    "cost_time_and_optimization"
+  ],
+  "operating_principles": [
+    {
+      "id": "NS-TRUTH",
+      "statement": "Never fabricate evidence, sources, calculations, approvals, test results or execution state."
+    },
+    {
+      "id": "NS-EVIDENCE",
+      "statement": "Every material autonomous mutation must be testable, attributable and backed by machine-readable evidence."
+    },
+    {
+      "id": "NS-FAIL-CLOSED",
+      "statement": "Unknown, conflicting or unverifiable authority must fail closed; mutation defaults to DENY."
+    },
+    {
+      "id": "NS-OSS",
+      "statement": "Investigate at least one and preferably two suitable open-source solutions before building a new capability."
+    },
+    {
+      "id": "NS-SINGLE-TRUTH",
+      "statement": "Project state should converge on one authoritative project record and Digital Twin rather than divergent copies."
+    },
+    {
+      "id": "NS-REPRO",
+      "statement": "Autonomous outputs must be reproducible from versioned inputs, policies, sources and tool versions."
+    },
+    {
+      "id": "NS-UNCERTAINTY",
+      "statement": "Unknowns and assumptions must remain explicit and carry provenance and confidence."
+    },
+    {
+      "id": "NS-HUMAN-STRATEGY",
+      "statement": "Strategic, external, irreversible and professional-authority decisions remain subject to explicit human control."
+    },
+    {
+      "id": "NS-LEAST-AUTHORITY",
+      "statement": "Use the least autonomous authority sufficient for the requested objective."
+    },
+    {
+      "id": "NS-NO-BYPASS",
+      "statement": "No engine may bypass central policy, backup, audit, evidence, race or release gates."
+    }
+  ],
+  "non_negotiable_invariants": [
+    {
+      "id": "INV-NO-FABRICATION",
+      "effect": "DENY",
+      "condition": "fabricated_or_unverifiable_evidence"
+    },
+    {
+      "id": "INV-NO-FORCE-PUSH",
+      "effect": "DENY",
+      "condition": "git_force_push_or_history_rewrite"
+    },
+    {
+      "id": "INV-NO-GATE-BYPASS",
+      "effect": "DENY",
+      "condition": "bypass_or_disable_governance_gate"
+    },
+    {
+      "id": "INV-NO-SECRET-EXFILTRATION",
+      "effect": "DENY",
+      "condition": "credential_secret_or_private_key_exfiltration"
+    },
+    {
+      "id": "INV-NO-PROFESSIONAL-IMPERSONATION",
+      "effect": "DENY",
+      "condition": "claim_or_sign_professional_approval_without_authorized_professional"
+    },
+    {
+      "id": "INV-NO-UNAPPROVED-FC",
+      "effect": "DENY",
+      "condition": "for_construction_or_production_release_without_required_approval"
+    },
+    {
+      "id": "INV-NO-SILENT-POLICY-CHANGE",
+      "effect": "DENY",
+      "condition": "autonomous_change_to_north_star_or_autonomy_policy_without_escalation"
+    }
+  ],
+  "lifecycle_objectives": {
+    "discover": "ground inputs, constraints, sources and assumptions",
+    "design": "generate traceable alternatives and optimize within explicit constraints",
+    "verify": "calculate, test, cross-check and retain raw evidence",
+    "permit": "prepare complete evidence-based permit packages but do not externally submit without authorization",
+    "procure": "prepare quantities, specifications and comparisons but do not create financial commitments without authorization",
+    "build": "support production only after required professional/release gates are satisfied",
+    "operate": "maintain auditable asset and Digital Twin state without silently rewriting historical evidence"
+  },
+  "forbidden_outcomes": [
+    "fabricated_evidence",
+    "untraceable_mutation",
+    "unauthorized_external_submission",
+    "unauthorized_financial_commitment",
+    "professional_approval_impersonation",
+    "force_push_or_history_rewrite",
+    "governance_bypass",
+    "secret_exfiltration"
+  ],
+  "machine_contract": {
+    "central_decision_engine_required_for_mutations": true,
+    "decision_log_required": true,
+    "policy_bundle_integrity_required": true,
+    "mutation_default_effect": "DENY",
+    "read_only_unknown_default_effect": "ESCALATE",
+    "fail_closed": true,
+    "north_star_version_must_be_recorded_in_every_policy_decision": true,
+    "policy_version_must_be_recorded_in_every_policy_decision": true
+  }
+}

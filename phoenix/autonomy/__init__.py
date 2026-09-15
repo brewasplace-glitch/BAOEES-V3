@@ -24,8 +24,11 @@ __all__ = [
     "LowRiskExecutor","LowRiskExecutionPolicy","TextMutation","load_json_request",
     "LowRiskMainlinePromotionPolicy","LowRiskMainlinePromoter",
     "LowRiskSelfImprovementPolicy","LowRiskSelfImprovementLoop",
+    "ActionRequest","PolicyDecision","PolicyDecisionLog","AutonomyDecisionEngine",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
 
 from .self_improvement import LowRiskSelfImprovementPolicy, LowRiskSelfImprovementLoop
+
+from .decision_engine import ActionRequest, PolicyDecision, PolicyDecisionLog, AutonomyDecisionEngine

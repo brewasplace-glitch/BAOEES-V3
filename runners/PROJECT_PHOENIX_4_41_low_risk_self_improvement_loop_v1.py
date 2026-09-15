@@ -23,6 +23,8 @@ def main() -> int:
         LowRiskSelfImprovementLoop,
         OpenSourceScout,
         LearningStore,
+        AutonomyDecisionEngine,
+        PolicyDecisionLog,
     )
 
     cfg=code_root/"configs/phoenix"
@@ -40,6 +42,10 @@ def main() -> int:
     learning=LearningStore(
         local/"PROJECT-PHOENIX"/"autonomy"/"learning"/"events_v1.jsonl"
     )
+    decision_log=PolicyDecisionLog(
+        local/"PROJECT-PHOENIX"/"autonomy"/"policy_decisions"/"decisions_v1.jsonl"
+    )
+    decision_engine=AutonomyDecisionEngine.from_repo(code_root,decision_log)
 
     loop=LowRiskSelfImprovementLoop(
         repo,
@@ -50,6 +56,7 @@ def main() -> int:
         scout,
         learning,
         runtime_root=local/"PROJECT-PHOENIX"/"autonomy"/"self_improvement",
+        decision_engine=decision_engine,
     )
     result=loop.run_once(args.expected_head,args.backup_receipt)
     print(json.dumps(result,indent=2,ensure_ascii=True))

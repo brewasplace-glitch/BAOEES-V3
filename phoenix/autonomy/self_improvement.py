@@ -35,6 +35,7 @@ class LowRiskSelfImprovementPolicy:
     mainline_promotion: str
     source_self_modification: str
     medium_high_critical: str
+    central_decision_engine_required: bool = False
 
     @classmethod
     def from_json(cls, path: Path) -> "LowRiskSelfImprovementPolicy":
@@ -54,6 +55,7 @@ class LowRiskSelfImprovementPolicy:
             str(d["mainline_promotion"]),
             str(d["source_self_modification"]),
             str(d["medium_high_critical"]),
+            bool(d.get("central_decision_engine_required",False)),
         )
 
 
@@ -84,6 +86,7 @@ class LowRiskSelfImprovementLoop:
         learning: LearningStore,
         registry: CapabilityRegistry | None = None,
         runtime_root: Path | None = None,
+        decision_engine=None,
     ):
         self.repo_root=Path(repo_root).resolve()
         self.autonomy_policy=autonomy_policy
@@ -98,6 +101,7 @@ class LowRiskSelfImprovementLoop:
         self.risk=RiskClassifier(autonomy_policy)
         self.planner=TaskPlanner()
         self.backlog=BacklogGenerator()
+        self.decision_engine=decision_engine
 
     def _select_gap(self) -> tuple[Capability, Task]:
         gaps=self.registry.gaps()
@@ -214,6 +218,27 @@ class LowRiskSelfImprovementLoop:
             raise RuntimeError(f"self-improvement task must classify LOW, got {risk.value}")
 
         plan=self.planner.plan(task)
+
+        if self.self_policy.central_decision_engine_required and self.decision_engine is None:
+            raise RuntimeError("central autonomy decision engine required")
+
+        policy_decision=None
+        if self.decision_engine is not None:
+            from .decision_engine import ActionRequest
+            policy_request=ActionRequest(
+                action="autonomy.self_improvement.low_risk_evidence",
+                risk="LOW",
+                mutating=True,
+                domain="orchestration",
+                paths=(target,),
+                external_effect=False,
+                gates=(
+                    "clean_synced","verified_backup","open_source_review",
+                    "risk_low","allowlisted_path","audit_log",
+                ),
+                metadata={"cycle_id":cycle_id,"capability_id":capability.capability_id},
+            )
+            policy_decision=self.decision_engine.require_authorized(policy_request)
         content=self._render_document(
             cycle_id,snap.head,capability,source_task,target,review,plan
         )
@@ -269,6 +294,7 @@ class LowRiskSelfImprovementLoop:
             },
             "risk":risk.value,
             "risk_evidence":list(evidence),
+            "policy_decision":policy_decision.to_dict() if policy_decision is not None else None,
             "target_path":target,
             "open_source_review":review,
             "plan":plan,

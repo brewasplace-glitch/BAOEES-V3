@@ -1,0 +1,332 @@
+{
+  "schema": "PHOENIX_AUTONOMY_POLICY_V2",
+  "version": "2.0.0",
+  "effective_date": "2026-09-15",
+  "north_star": {
+    "id": "PHOENIX-NORTH-STAR",
+    "version": "1.0.0"
+  },
+  "effects": [
+    "ALLOW",
+    "ALLOW_WITH_GATES",
+    "ESCALATE",
+    "DENY"
+  ],
+  "fail_closed": true,
+  "defaults": {
+    "mutating": "DENY",
+    "read_only": "ESCALATE"
+  },
+  "risk_posture": {
+    "LOW": "rule_controlled",
+    "MEDIUM": "ESCALATE",
+    "HIGH": "DENY",
+    "CRITICAL": "DENY"
+  },
+  "central_gateway": {
+    "required_for_all_mutations": true,
+    "decision_log_required": true,
+    "bundle_integrity_required": true,
+    "deny_if_policy_unavailable": true
+  },
+  "hard_deny_flags": [
+    "fabricate_evidence",
+    "force_push",
+    "history_rewrite",
+    "bypass_gates",
+    "disable_audit",
+    "exfiltrate_secret",
+    "professional_approval_claim",
+    "for_construction_claim_without_release",
+    "delete_repository",
+    "silent_policy_override"
+  ],
+  "low_risk_mutation_roots": [
+    "docs/automation/autonomous_generated/",
+    "outputs/runtime/autonomy/"
+  ],
+  "protected_roots": [
+    ".git/",
+    "phoenix/",
+    "runners/",
+    "configs/",
+    "tests/",
+    ".github/",
+    "bib/"
+  ],
+  "known_bib_governance_side_effect_paths": [
+    "bib/PHOENIX_AUTO_SYNC/BIB_BASELINE.md",
+    "bib/PHOENIX_AUTO_SYNC/BIB_CURRENT_STATE.json",
+    "bib/PHOENIX_AUTO_SYNC/BIB_DISCOVERED_KNOWLEDGE_ROOTS.json",
+    "bib/PHOENIX_AUTO_SYNC/BIB_GIT_HISTORY.jsonl",
+    "bib/PHOENIX_AUTO_SYNC/BIB_KNOWLEDGE_FALLBACK.jsonl",
+    "bib/PHOENIX_AUTO_SYNC/BIB_MANIFEST.json",
+    "bib/PHOENIX_AUTO_SYNC/BIB_SYNC_EVIDENCE.txt",
+    "bib/PHOENIX_AUTO_SYNC/README.md"
+  ],
+  "rules": [
+    {
+      "id": "P2-DENY-POLICY-BYPASS",
+      "priority": 1000,
+      "effect": "DENY",
+      "match": {
+        "actions": [
+          "policy.bypass",
+          "audit.disable",
+          "evidence.fabricate",
+          "git.force_push",
+          "git.history_rewrite",
+          "security.exfiltrate_secret",
+          "repository.delete"
+        ]
+      },
+      "reason": "North Star invariant: governance, evidence, history and secrets may not be bypassed or falsified."
+    },
+    {
+      "id": "P2-DENY-PROFESSIONAL-IMPERSONATION",
+      "priority": 990,
+      "effect": "DENY",
+      "match": {
+        "actions": [
+          "professional.sign",
+          "professional.approve",
+          "release.for_construction.unapproved",
+          "release.production.unapproved"
+        ]
+      },
+      "reason": "Phoenix may not impersonate professional approval or issue an unapproved construction/production release."
+    },
+    {
+      "id": "P2-DENY-CRITICAL",
+      "priority": 980,
+      "effect": "DENY",
+      "match": {
+        "risks": [
+          "CRITICAL"
+        ]
+      },
+      "reason": "CRITICAL autonomous execution is blocked."
+    },
+    {
+      "id": "P2-DENY-HIGH",
+      "priority": 970,
+      "effect": "DENY",
+      "match": {
+        "risks": [
+          "HIGH"
+        ]
+      },
+      "reason": "HIGH autonomous execution is blocked in Phase 1."
+    },
+    {
+      "id": "P2-ESCALATE-POLICY-CHANGE",
+      "priority": 950,
+      "effect": "ESCALATE",
+      "match": {
+        "actions": [
+          "policy.modify",
+          "north_star.modify",
+          "governance.modify"
+        ]
+      },
+      "reason": "Policy and North Star changes are strategic authority decisions."
+    },
+    {
+      "id": "P2-ESCALATE-SOURCE-CODE",
+      "priority": 940,
+      "effect": "ESCALATE",
+      "match": {
+        "actions": [
+          "source.modify",
+          "source.create",
+          "source.delete",
+          "dependency.install",
+          "dependency.upgrade"
+        ]
+      },
+      "reason": "Phoenix source/runtime changes require explicit strategic approval in Phase 1."
+    },
+    {
+      "id": "P2-ESCALATE-EXTERNAL-COMMITMENT",
+      "priority": 930,
+      "effect": "ESCALATE",
+      "match": {
+        "actions": [
+          "permit.submit",
+          "email.send",
+          "message.send",
+          "contract.sign",
+          "purchase.commit",
+          "payment.commit",
+          "public.publish",
+          "production.deploy",
+          "cloud.publish"
+        ]
+      },
+      "reason": "External, public, financial or irreversible actions require explicit human approval."
+    },
+    {
+      "id": "P2-ESCALATE-MEDIUM",
+      "priority": 900,
+      "effect": "ESCALATE",
+      "match": {
+        "risks": [
+          "MEDIUM"
+        ]
+      },
+      "reason": "MEDIUM autonomous execution is not enabled in Phase 1."
+    },
+    {
+      "id": "P2-ALLOW-READ-ONLY-LOW",
+      "priority": 800,
+      "effect": "ALLOW",
+      "match": {
+        "risks": [
+          "LOW"
+        ],
+        "mutating": false,
+        "external_effect": false
+      },
+      "reason": "LOW-risk read-only analysis, research and planning may execute autonomously."
+    },
+    {
+      "id": "P2-ALLOW-BACKUP",
+      "priority": 790,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "backup.create",
+          "backup.verify"
+        ],
+        "risks": [
+          "LOW"
+        ]
+      },
+      "required_gates": [
+        "backup_target_outside_repo",
+        "baseline_identified"
+      ],
+      "reason": "Backup operations are autonomous only when they target an external backup root and bind to a known baseline."
+    },
+    {
+      "id": "P2-ALLOW-LOW-RISK-EVIDENCE",
+      "priority": 780,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.self_improvement.low_risk_evidence",
+          "evidence.generate",
+          "documentation.update"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "docs/automation/autonomous_generated/",
+          "outputs/runtime/autonomy/"
+        ]
+      },
+      "required_gates": [
+        "clean_synced",
+        "verified_backup",
+        "open_source_review",
+        "risk_low",
+        "allowlisted_path",
+        "audit_log"
+      ],
+      "reason": "LOW-risk documentation/evidence mutation is permitted only inside the existing allowlist with full pre-mutation gates."
+    },
+    {
+      "id": "P2-ALLOW-FF-PROMOTION",
+      "priority": 770,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "git.fast_forward_promotion"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true
+      },
+      "required_gates": [
+        "verified_backup",
+        "candidate_validated",
+        "tests_pass",
+        "evidence_pass",
+        "ff_only",
+        "normal_non_force_push",
+        "remote_race_guard",
+        "audit_log"
+      ],
+      "reason": "LOW-risk mainline promotion is permitted only through verified backup-gated fast-forward promotion."
+    },
+    {
+      "id": "P2-ALLOW-BIB-AUTOSYNC",
+      "priority": 760,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "bib.auto_sync"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_exact_allowlist": "known_bib_governance_side_effect_paths"
+      },
+      "required_gates": [
+        "provenance",
+        "exact_allowlist",
+        "no_secret",
+        "audit_log"
+      ],
+      "reason": "BIB auto-sync is allowed only for the exact governance side-effect allowlist."
+    }
+  ],
+  "domain_authority": {
+    "architecture": {
+      "analysis": "ALLOW",
+      "preliminary_design": "ALLOW_WITH_GATES",
+      "issue_for_construction": "DENY"
+    },
+    "structural": {
+      "analysis": "ALLOW",
+      "preliminary_calculation": "ALLOW_WITH_GATES",
+      "professional_approval": "DENY",
+      "for_construction_release": "DENY"
+    },
+    "permits": {
+      "research": "ALLOW",
+      "package_preparation": "ALLOW_WITH_GATES",
+      "external_submission": "ESCALATE"
+    },
+    "cost": {
+      "analysis": "ALLOW",
+      "estimate_preparation": "ALLOW_WITH_GATES",
+      "financial_commitment": "ESCALATE"
+    },
+    "planning": {
+      "analysis": "ALLOW",
+      "schedule_preparation": "ALLOW_WITH_GATES",
+      "external_commitment": "ESCALATE"
+    },
+    "software": {
+      "read_only_analysis": "ALLOW",
+      "low_risk_generated_evidence": "ALLOW_WITH_GATES",
+      "source_change": "ESCALATE",
+      "force_push": "DENY"
+    },
+    "digital_twin": {
+      "read_only_query": "ALLOW",
+      "low_risk_metadata_update": "ALLOW_WITH_GATES",
+      "destructive_history_rewrite": "DENY"
+    },
+    "bib": {
+      "read_only_query": "ALLOW",
+      "exact_auto_sync": "ALLOW_WITH_GATES",
+      "unknown_mutation": "DENY"
+    }
+  }
+}

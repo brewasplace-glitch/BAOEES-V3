@@ -1,0 +1,16 @@
+{
+  "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
+  "version": "1.0.0",
+  "north_star_id": "PHOENIX-NORTH-STAR",
+  "north_star_version": "1.0.0",
+  "policy_version": "2.0.0",
+  "files": {
+    "north_star_v1.json": {
+      "sha256": "c3394bcc9be5aa816864f75600c6acb92cd001c45ecc0e3a5eceeae10884b8fd"
+    },
+    "autonomy_policy_v2.json": {
+      "sha256": "fa730745ae1840c8d01daef4884759374598de8b59a57935568954f8a962e91d"
+    }
+  },
+  "bundle_sha256": "3127af42d2ad481b37979c007e26ed6f09c75d75014351e053c282f914887bb0"
+}
