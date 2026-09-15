@@ -1,0 +1,46 @@
+{
+  "schema": "PHOENIX_LOW_RISK_MAINLINE_PROMOTION_POLICY_V1",
+  "version": "1.0.0",
+  "enabled": true,
+  "mode": "backup_gated_fast_forward_only",
+  "main_branch": "project-phoenix",
+  "candidate_branch_prefix": "auto/lowrisk-low-",
+  "max_commits_ahead": 1,
+  "allowed_status_codes": [
+    "A",
+    "M"
+  ],
+  "allowed_roots": [
+    "docs/automation/autonomous_generated/",
+    "outputs/runtime/autonomy/"
+  ],
+  "allowed_extensions": [
+    ".md",
+    ".txt",
+    ".json"
+  ],
+  "max_files": 5,
+  "max_file_bytes": 65536,
+  "max_total_bytes": 262144,
+  "require_backup_receipt": true,
+  "require_bundle_verified": true,
+  "require_snapshot_verified": true,
+  "promotion_engine": "git_merge_ff_only",
+  "fallback_integration": "gitpython",
+  "delete_candidate_after_success": true,
+  "medium_high_critical": "BLOCKED",
+  "allowed_governance_side_effect_paths": [
+    "bib/PHOENIX_AUTO_SYNC/BIB_BASELINE.md",
+    "bib/PHOENIX_AUTO_SYNC/BIB_CURRENT_STATE.json",
+    "bib/PHOENIX_AUTO_SYNC/BIB_DISCOVERED_KNOWLEDGE_ROOTS.json",
+    "bib/PHOENIX_AUTO_SYNC/BIB_GIT_HISTORY.jsonl",
+    "bib/PHOENIX_AUTO_SYNC/BIB_KNOWLEDGE_FALLBACK.jsonl",
+    "bib/PHOENIX_AUTO_SYNC/BIB_MANIFEST.json",
+    "bib/PHOENIX_AUTO_SYNC/BIB_SYNC_EVIDENCE.txt",
+    "bib/PHOENIX_AUTO_SYNC/README.md"
+  ],
+  "max_governance_files": 8,
+  "max_governance_file_bytes": 8388608,
+  "max_governance_total_bytes": 33554432,
+  "governance_side_effect_rule": "exact_allowlist_only"
+}

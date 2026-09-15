@@ -102,5 +102,12 @@
     "fallback": "GitPython; Dulwich remains Git implementation fallback",
     "reason": "native Git already exists in PHOENIX and provides isolated linked worktrees without an extra dependency",
     "mainline_promotion": "locked"
+  },
+  "v1_low_risk_mainline_promotion_decision": {
+    "primary": "native Git merge --ff-only",
+    "fallback": "GitPython integration wrapper",
+    "backup_primary": "native Git bundle --all plus full filesystem snapshot",
+    "reason": "--ff-only refuses divergent integration; bundle backs up refs while filesystem snapshot preserves local repository state",
+    "force_push": "forbidden"
   }
 }

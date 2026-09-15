@@ -18,7 +18,8 @@ DEFAULT_CAPABILITIES = (
     Capability("AUTO-CYCLE-001","Autonomous Cycle Runner","orchestration","ready",100),
     Capability("AUTO-DASH-001","Autonomy Runtime Dashboard","observability","ready",75),
     Capability("AUTO-LOWRISK-002","LOW-risk autonomous mutation executor","orchestration","ready",100),
-    Capability("AUTO-PROMOTE-003","LOW-risk autonomous mainline promotion","orchestration","locked",95),
+    Capability("AUTO-PROMOTE-003","LOW-risk autonomous mainline promotion","orchestration","ready",100),
+    Capability("AUTO-BACKUP-004","Backup-gated autonomous promotion backup","governance","ready",100),
     Capability("AUTO-BIB-002","BIB learning-event ingestion","knowledge","planned",70),
 )
 

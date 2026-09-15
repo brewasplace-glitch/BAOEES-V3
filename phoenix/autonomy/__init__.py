@@ -22,4 +22,7 @@ __all__ = [
     "TaskPlanner","OpenSourceScout","SafeWorktreeManager","EvidenceGate",
     "AutoRepairFSM","RepairState","LearningStore","AutonomousCycle",
     "LowRiskExecutor","LowRiskExecutionPolicy","TextMutation","load_json_request",
+    "LowRiskMainlinePromotionPolicy","LowRiskMainlinePromoter",
 ]
+
+from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter

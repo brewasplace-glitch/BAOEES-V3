@@ -1,3 +1,4 @@
+{"commit": "27ff67a2b4ca5d49b06bb3b8858a0ca476d2c954", "date": "2026-09-15T18:38:23+02:00", "subject": "chore(autonomy): low-risk candidate LOW-49EF8C99F062"}
 {"commit": "df600d70b453152baa70ee28876605149dc65a27", "date": "2026-09-15T18:04:06+02:00", "subject": "feat(autonomy): enable isolated low-risk candidate execution v1"}
 {"commit": "f17e9dcb055487ce7d4edbc08e513ad4cd6896d4", "date": "2026-09-15T00:20:53+02:00", "subject": "feat(autonomy): add validated autonomous development foundation v1"}
 {"commit": "e897e302431d09e85341dcb9dc5279671bd0f61a", "date": "2026-09-14T22:41:13+02:00", "subject": "fix(start): repair nested UTF-8 residual and v4.41 guard"}
@@ -497,4 +498,3 @@
 {"commit": "c19311e29b00daa3fda21d1a2ab24ad1bed8a92f", "date": "2026-06-24T17:38:27+02:00", "subject": "feat: add Project XLSX Export Engine v1"}
 {"commit": "69a96f3a19da1101e76ad65384bcfc7c3e656125", "date": "2026-06-24T17:35:10+02:00", "subject": "feat: add Project CSV Excel Export Engine v1"}
 {"commit": "38785e7ca5c67dafc1214e67a2b0f11121334efd", "date": "2026-06-24T17:09:21+02:00", "subject": "feat: add Project CSV Excel Export Engine v1"}
-{"commit": "7414fca0089b260133f57a2bbf883974fa7cdb6d", "date": "2026-06-24T15:57:56+02:00", "subject": "feat: add Project Drawing PDF Writer Engine v1"}

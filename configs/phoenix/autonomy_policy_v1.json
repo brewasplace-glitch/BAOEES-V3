@@ -25,11 +25,14 @@
   ],
   "v1_execution_policy": {
     "dry_run": "ENABLED",
-    "low_risk_auto": "ENABLED_CANDIDATE_BRANCH_ONLY",
+    "low_risk_auto": "ENABLED_CANDIDATE_AND_BACKUP_GATED_PROMOTION",
     "medium": "BLOCKED",
     "high": "BLOCKED",
     "critical": "BLOCKED"
   },
-  "low_risk_promotion_to_main": "LOCKED",
-  "main_branch_autonomous_mutation": "LOCKED"
+  "low_risk_promotion_to_main": "ENABLED_FF_ONLY_BACKUP_GATED",
+  "main_branch_autonomous_mutation": "ENABLED_LOW_RISK_PROMOTION_ONLY",
+  "mainline_promotion_requires_full_backup": true,
+  "mainline_promotion_requires_remote_race_guard": true,
+  "mainline_promotion_requires_fast_forward_only": true
 }
