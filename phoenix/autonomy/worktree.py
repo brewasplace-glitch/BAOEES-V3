@@ -18,8 +18,12 @@ class SafeWorktreeManager:
 
     def git(self,*args:str,check:bool=True)->str:
         cp=subprocess.run(
-            ["git","-C",str(self.repo_root),*args],
-            text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT
+            ["git","-c","core.longpaths=true","-C",str(self.repo_root),*args],
+            text=True,
+            encoding="utf-8",
+            errors="strict",
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
         )
         if check and cp.returncode:
             raise RuntimeError(f"git {' '.join(args)} failed: {cp.stdout.strip()}")
@@ -35,8 +39,12 @@ class SafeWorktreeManager:
         head=self.git("rev-parse","HEAD")
         origin=None
         cp=subprocess.run(
-            ["git","-C",str(self.repo_root),"rev-parse",f"origin/{self.branch}"],
-            text=True,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL
+            ["git","-c","core.longpaths=true","-C",str(self.repo_root),"rev-parse",f"origin/{self.branch}"],
+            text=True,
+            encoding="utf-8",
+            errors="strict",
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
         )
         if cp.returncode==0:
             origin=cp.stdout.strip()

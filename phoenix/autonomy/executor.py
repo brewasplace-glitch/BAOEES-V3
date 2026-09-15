@@ -46,7 +46,14 @@ class LowRiskExecutor:
         override=os.environ.get('PHOENIX_AUTONOMY_WORKTREE_ROOT')
         self.worktree_root=Path(override) if override else local/'PXW'
     def git(self,cwd:Path,*args:str,check=True)->str:
-        cp=subprocess.run(['git','-c','core.longpaths=true','-C',str(cwd),*args],text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+        cp=subprocess.run(
+            ['git','-c','core.longpaths=true','-C',str(cwd),*args],
+            text=True,
+            encoding='utf-8',
+            errors='strict',
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
         if check and cp.returncode: raise RuntimeError(f"git {' '.join(args)} failed: {cp.stdout.rstrip()}")
         return cp.stdout.rstrip('\r\n')
     def validate_main(self,expected_head,allowed_main_dirty_paths):

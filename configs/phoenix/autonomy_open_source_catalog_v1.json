@@ -21,7 +21,7 @@
     {
       "id": "langgraph",
       "capability": "orchestration",
-      "role": "primary",
+      "role": "fallback",
       "name": "LangGraph",
       "license": "MIT",
       "url": "https://github.com/langchain-ai/langgraph",
@@ -31,12 +31,13 @@
         "human-in-the-loop"
       ],
       "integration": "adapter",
-      "runtime_required_in_v1": false
+      "runtime_required_in_v1": false,
+      "security_review": "recent 2026 advisories require version/security review before activation"
     },
     {
       "id": "prefect",
       "capability": "orchestration",
-      "role": "fallback",
+      "role": "primary",
       "name": "Prefect",
       "license": "Apache-2.0",
       "url": "https://github.com/PrefectHQ/prefect",
@@ -47,7 +48,9 @@
         "event automation"
       ],
       "integration": "adapter",
-      "runtime_required_in_v1": false
+      "runtime_required_in_v1": false,
+      "python_compatibility_review": "PyPI/project metadata supports Python >=3.10,<3.15 as reviewed 2026-09-15",
+      "maintenance_review": "active"
     },
     {
       "id": "gitpython",
@@ -109,5 +112,13 @@
     "backup_primary": "native Git bundle --all plus full filesystem snapshot",
     "reason": "--ff-only refuses divergent integration; bundle backs up refs while filesystem snapshot preserves local repository state",
     "force_push": "forbidden"
+  },
+  "v1_low_risk_self_improvement_decision": {
+    "workflow_orchestration_primary_candidate": "Prefect",
+    "workflow_orchestration_fallback_candidate": "LangGraph",
+    "active_v1_runtime": "PHOENIX deterministic bounded coordinator reusing existing LOW-risk executor + promoter",
+    "reason": "v1 is a single bounded local cycle and already has deterministic PHOENIX governance, Git isolation and promotion primitives; adding a new runtime dependency is not necessary for correctness. Prefect is the preferred future scheduler/retry adapter; LangGraph remains a fallback after security review.",
+    "external_dependency_installation": "deferred_until_adapter_is_exercised",
+    "medium_high_critical": "BLOCKED"
   }
 }

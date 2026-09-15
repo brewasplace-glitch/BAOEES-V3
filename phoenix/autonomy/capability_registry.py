@@ -20,6 +20,7 @@ DEFAULT_CAPABILITIES = (
     Capability("AUTO-LOWRISK-002","LOW-risk autonomous mutation executor","orchestration","ready",100),
     Capability("AUTO-PROMOTE-003","LOW-risk autonomous mainline promotion","orchestration","ready",100),
     Capability("AUTO-BACKUP-004","Backup-gated autonomous promotion backup","governance","ready",100),
+    Capability("AUTO-SELF-IMPROVE-005","Bounded LOW-risk self-improvement loop","orchestration","ready",100),
     Capability("AUTO-BIB-002","BIB learning-event ingestion","knowledge","planned",70),
 )
 

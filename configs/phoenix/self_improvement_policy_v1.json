@@ -1,0 +1,24 @@
+{
+  "schema": "PHOENIX_LOW_RISK_SELF_IMPROVEMENT_POLICY_V1",
+  "version": "1.0.0",
+  "enabled": true,
+  "mode": "bounded_single_cycle",
+  "max_cycles_per_invocation": 1,
+  "max_candidates_per_cycle": 1,
+  "stop_on_first_failure": true,
+  "require_clean_synced_baseline": true,
+  "require_verified_backup_before_promotion": true,
+  "require_open_source_review": true,
+  "require_low_risk_classification": true,
+  "target_root": "docs/automation/autonomous_generated/self_improvement/",
+  "target_extension": ".md",
+  "mainline_promotion": "ENABLED_FF_ONLY_BACKUP_GATED",
+  "source_self_modification": "BLOCKED",
+  "medium_high_critical": "BLOCKED",
+  "orchestration": {
+    "v1_runtime": "phoenix_deterministic_bounded_coordinator",
+    "open_source_primary_candidate": "Prefect",
+    "open_source_fallback_candidate": "LangGraph",
+    "external_runtime_dependency_required": false
+  }
+}

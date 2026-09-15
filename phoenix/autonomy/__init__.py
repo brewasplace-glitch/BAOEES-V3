@@ -23,6 +23,9 @@ __all__ = [
     "AutoRepairFSM","RepairState","LearningStore","AutonomousCycle",
     "LowRiskExecutor","LowRiskExecutionPolicy","TextMutation","load_json_request",
     "LowRiskMainlinePromotionPolicy","LowRiskMainlinePromoter",
+    "LowRiskSelfImprovementPolicy","LowRiskSelfImprovementLoop",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
+
+from .self_improvement import LowRiskSelfImprovementPolicy, LowRiskSelfImprovementLoop

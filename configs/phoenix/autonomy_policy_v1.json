@@ -34,5 +34,9 @@
   "main_branch_autonomous_mutation": "ENABLED_LOW_RISK_PROMOTION_ONLY",
   "mainline_promotion_requires_full_backup": true,
   "mainline_promotion_requires_remote_race_guard": true,
-  "mainline_promotion_requires_fast_forward_only": true
+  "mainline_promotion_requires_fast_forward_only": true,
+  "low_risk_self_improvement_loop": "ENABLED_BOUNDED_BACKUP_GATED",
+  "self_improvement_source_code": "BLOCKED",
+  "self_improvement_max_cycles_per_invocation": 1,
+  "self_improvement_requires_open_source_review": true
 }
