@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -27,7 +27,15 @@
     "required_for_all_mutations": true,
     "decision_log_required": true,
     "bundle_integrity_required": true,
-    "deny_if_policy_unavailable": true
+    "deny_if_policy_unavailable": true,
+    "required_for_all_current_and_future_mutations": true,
+    "engine_registry_required": true,
+    "future_engine_default": "DENY_UNREGISTERED",
+    "permit_required": true,
+    "permit_one_time_use": true,
+    "permit_exact_binding_required": true,
+    "permit_policy_bundle_binding_required": true,
+    "direct_mutation_bypass_effect": "DENY"
   },
   "hard_deny_flags": [
     "fabricate_evidence",
@@ -39,7 +47,12 @@
     "professional_approval_claim",
     "for_construction_claim_without_release",
     "delete_repository",
-    "silent_policy_override"
+    "silent_policy_override",
+    "unregistered_engine",
+    "gateway_bypass",
+    "permit_reuse",
+    "permit_expired",
+    "permit_binding_mismatch"
   ],
   "low_risk_mutation_roots": [
     "docs/automation/autonomous_generated/",
@@ -283,6 +296,19 @@
         "audit_log"
       ],
       "reason": "BIB auto-sync is allowed only for the exact governance side-effect allowlist."
+    },
+    {
+      "id": "P2-ESCALATE-ENGINE-REGISTRATION",
+      "priority": 955,
+      "effect": "ESCALATE",
+      "match": {
+        "actions": [
+          "engine.register",
+          "engine.registry.modify",
+          "gateway.policy.modify"
+        ]
+      },
+      "reason": "Adding or changing mutation-capable engines changes the universal authority boundary."
     }
   ],
   "domain_authority": {
@@ -328,5 +354,14 @@
       "exact_auto_sync": "ALLOW_WITH_GATES",
       "unknown_mutation": "DENY"
     }
+  },
+  "phase": "PHASE_2_UNIVERSAL_AUTONOMY_GATEWAY",
+  "future_engine_contract": {
+    "mutation_capable_engine_must_be_registered": true,
+    "gateway_required": true,
+    "declared_actions_required": true,
+    "declared_domains_required": true,
+    "declared_path_scope_required_for_file_mutation": true,
+    "unregistered_mutation_effect": "DENY"
   }
 }

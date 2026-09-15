@@ -21,5 +21,6 @@
     "open_source_fallback_candidate": "LangGraph",
     "external_runtime_dependency_required": false
   },
-  "central_decision_engine_required": true
+  "central_decision_engine_required": true,
+  "universal_gateway_required": true
 }

@@ -109,12 +109,15 @@ class AutonomyDecisionEngine:
             raise RuntimeError("policy bundle manifest missing")
         manifest=json.loads(manifest_path.read_text(encoding="utf-8-sig"))
         files=manifest.get("files",{})
-        required=("north_star_v1.json","autonomy_policy_v2.json")
-        for name in required:
+        if not files:
+            raise RuntimeError("policy bundle manifest files missing")
+        for name,meta in sorted(files.items()):
+            if meta.get("required",True) is not True:
+                continue
             path=cfg/name
             if not path.is_file():
                 raise RuntimeError(f"policy bundle file missing: {name}")
-            expected=str(files.get(name,{}).get("sha256","")).lower()
+            expected=str(meta.get("sha256","")).lower()
             actual=_sha256(path)
             if not expected or expected!=actual:
                 raise RuntimeError(f"policy bundle integrity failure: {name}")
@@ -139,6 +142,12 @@ class AutonomyDecisionEngine:
             raise RuntimeError("central decision engine invariant missing")
         if machine.get("mutation_default_effect")!="DENY":
             raise RuntimeError("mutation default must DENY")
+        if machine.get("universal_gateway_required_for_all_current_and_future_engines") is not True:
+            raise RuntimeError("universal current/future engine gateway invariant missing")
+        if machine.get("future_engine_default_if_unregistered")!="DENY":
+            raise RuntimeError("unregistered future engine default must DENY")
+        if machine.get("mutation_permit_required") is not True:
+            raise RuntimeError("mutation permit invariant missing")
         if set(self.policy.get("effects",()))!=EFFECTS:
             raise RuntimeError("policy effect set invalid")
         rules=self.policy.get("rules",[])

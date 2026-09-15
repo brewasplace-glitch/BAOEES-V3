@@ -1,0 +1,69 @@
+{
+  "schema": "PHOENIX_ENGINE_REGISTRY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "future_engine_default": "DENY_UNTIL_REGISTERED",
+  "engines": [
+    {
+      "engine_id": "autonomy.low_risk_executor",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "autonomy.self_improvement.low_risk_evidence",
+        "documentation.update",
+        "evidence.generate"
+      ],
+      "allowed_domains": [
+        "orchestration",
+        "documentation",
+        "software"
+      ],
+      "allowed_path_roots": [
+        "docs/automation/autonomous_generated/",
+        "outputs/runtime/autonomy/"
+      ]
+    },
+    {
+      "engine_id": "autonomy.mainline_promoter",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "git.fast_forward_promotion"
+      ],
+      "allowed_domains": [
+        "git",
+        "orchestration"
+      ],
+      "allowed_path_roots": [
+        "docs/automation/autonomous_generated/",
+        "outputs/runtime/autonomy/",
+        "bib/PHOENIX_AUTO_SYNC/"
+      ]
+    },
+    {
+      "engine_id": "bib.auto_sync",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "bib.auto_sync"
+      ],
+      "allowed_domains": [
+        "bib"
+      ],
+      "allowed_exact_paths": [
+        "bib/PHOENIX_AUTO_SYNC/BIB_BASELINE.md",
+        "bib/PHOENIX_AUTO_SYNC/BIB_CURRENT_STATE.json",
+        "bib/PHOENIX_AUTO_SYNC/BIB_DISCOVERED_KNOWLEDGE_ROOTS.json",
+        "bib/PHOENIX_AUTO_SYNC/BIB_GIT_HISTORY.jsonl",
+        "bib/PHOENIX_AUTO_SYNC/BIB_KNOWLEDGE_FALLBACK.jsonl",
+        "bib/PHOENIX_AUTO_SYNC/BIB_MANIFEST.json",
+        "bib/PHOENIX_AUTO_SYNC/BIB_SYNC_EVIDENCE.txt",
+        "bib/PHOENIX_AUTO_SYNC/README.md"
+      ]
+    }
+  ]
+}

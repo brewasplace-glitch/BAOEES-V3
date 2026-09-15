@@ -36,6 +36,7 @@ class LowRiskSelfImprovementPolicy:
     source_self_modification: str
     medium_high_critical: str
     central_decision_engine_required: bool = False
+    universal_gateway_required: bool = False
 
     @classmethod
     def from_json(cls, path: Path) -> "LowRiskSelfImprovementPolicy":
@@ -56,6 +57,7 @@ class LowRiskSelfImprovementPolicy:
             str(d["source_self_modification"]),
             str(d["medium_high_critical"]),
             bool(d.get("central_decision_engine_required",False)),
+            bool(d.get("universal_gateway_required",False)),
         )
 
 
@@ -87,6 +89,7 @@ class LowRiskSelfImprovementLoop:
         registry: CapabilityRegistry | None = None,
         runtime_root: Path | None = None,
         decision_engine=None,
+        universal_gateway=None,
     ):
         self.repo_root=Path(repo_root).resolve()
         self.autonomy_policy=autonomy_policy
@@ -102,6 +105,7 @@ class LowRiskSelfImprovementLoop:
         self.planner=TaskPlanner()
         self.backlog=BacklogGenerator()
         self.decision_engine=decision_engine
+        self.universal_gateway=universal_gateway
 
     def _select_gap(self) -> tuple[Capability, Task]:
         gaps=self.registry.gaps()
@@ -219,11 +223,43 @@ class LowRiskSelfImprovementLoop:
 
         plan=self.planner.plan(task)
 
-        if self.self_policy.central_decision_engine_required and self.decision_engine is None:
-            raise RuntimeError("central autonomy decision engine required")
+        if self.self_policy.universal_gateway_required and self.universal_gateway is None:
+            raise RuntimeError("universal autonomy gateway required")
 
         policy_decision=None
-        if self.decision_engine is not None:
+        execution_permit=None
+        if self.universal_gateway is not None:
+            from .universal_gateway import MutationIntent
+            execution_intent=MutationIntent(
+                engine_id="autonomy.low_risk_executor",
+                action="autonomy.self_improvement.low_risk_evidence",
+                risk="LOW",
+                domain="orchestration",
+                paths=(target,),
+                gates=(
+                    "clean_synced","verified_backup","open_source_review",
+                    "risk_low","allowlisted_path","audit_log",
+                ),
+                metadata={"cycle_id":cycle_id,"capability_id":capability.capability_id},
+            )
+            execution_permit=self.universal_gateway.authorize(execution_intent)
+            policy_decision=self.universal_gateway.decision_engine.evaluate(
+                __import__("phoenix.autonomy.decision_engine",fromlist=["ActionRequest"]).ActionRequest(
+                    action=execution_intent.action,
+                    risk=execution_intent.risk,
+                    mutating=True,
+                    domain=execution_intent.domain,
+                    paths=execution_intent.paths,
+                    external_effect=False,
+                    gates=execution_intent.gates,
+                    actor=execution_intent.engine_id,
+                    metadata=execution_intent.metadata,
+                ),
+                log=False,
+            )
+        elif self.self_policy.central_decision_engine_required:
+            if self.decision_engine is None:
+                raise RuntimeError("central autonomy decision engine required")
             from .decision_engine import ActionRequest
             policy_request=ActionRequest(
                 action="autonomy.self_improvement.low_risk_evidence",
@@ -239,10 +275,21 @@ class LowRiskSelfImprovementLoop:
                 metadata={"cycle_id":cycle_id,"capability_id":capability.capability_id},
             )
             policy_decision=self.decision_engine.require_authorized(policy_request)
+
         content=self._render_document(
             cycle_id,snap.head,capability,source_task,target,review,plan
         )
         mutation=TextMutation(target,content,"replace")
+
+        task=Task(
+            task_id=task.task_id,
+            title=task.title,
+            capability_id=task.capability_id,
+            action=task.action,
+            paths=task.paths,
+            requested_risk=task.requested_risk,
+            metadata={**task.metadata,"gateway_action":"autonomy.self_improvement.low_risk_evidence"},
+        )
 
         executor=LowRiskExecutor(
             self.repo_root,
@@ -258,6 +305,8 @@ class LowRiskSelfImprovementLoop:
             allowed_main_dirty_paths=(),
             keep_candidate=True,
             publish_candidate=False,
+            gateway=self.universal_gateway,
+            gateway_permit=execution_permit,
         )
 
         promoter=LowRiskMainlinePromoter(
@@ -265,10 +314,34 @@ class LowRiskSelfImprovementLoop:
             self.promotion_policy,
             runtime_root=self.runtime_root/"promotion",
         )
+
+        promotion_permit=None
+        if self.universal_gateway is not None:
+            from .universal_gateway import MutationIntent
+            primary_paths,governance_paths=promoter._paths(
+                snap.head,execution["candidate_branch"]
+            )
+            promotion_paths=tuple(primary_paths)+tuple(governance_paths)
+            promotion_intent=MutationIntent(
+                engine_id="autonomy.mainline_promoter",
+                action="git.fast_forward_promotion",
+                risk="LOW",
+                domain="git",
+                paths=promotion_paths,
+                gates=(
+                    "verified_backup","candidate_validated","tests_pass","evidence_pass",
+                    "ff_only","normal_non_force_push","remote_race_guard","audit_log",
+                ),
+                metadata={"cycle_id":cycle_id,"candidate_commit":execution["candidate_commit"]},
+            )
+            promotion_permit=self.universal_gateway.authorize(promotion_intent)
+
         promotion=promoter.promote(
             execution["candidate_branch"],
             snap.head,
             Path(backup_receipt),
+            gateway=self.universal_gateway,
+            gateway_permit=promotion_permit,
         )
 
         final=self.worktree.snapshot(fetch=True)

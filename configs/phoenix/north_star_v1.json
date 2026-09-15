@@ -54,6 +54,10 @@
     {
       "id": "NS-NO-BYPASS",
       "statement": "No engine may bypass central policy, backup, audit, evidence, race or release gates."
+    },
+    {
+      "id": "NS-UNIVERSAL-GATEWAY",
+      "statement": "Every current and future mutation-capable Phoenix engine must obtain and consume a central gateway permit before mutation; unregistered future engines fail closed."
     }
   ],
   "non_negotiable_invariants": [
@@ -91,6 +95,11 @@
       "id": "INV-NO-SILENT-POLICY-CHANGE",
       "effect": "DENY",
       "condition": "autonomous_change_to_north_star_or_autonomy_policy_without_escalation"
+    },
+    {
+      "id": "INV-NO-UNGATED-ENGINE-MUTATION",
+      "effect": "DENY",
+      "condition": "current_or_future_engine_mutation_without_valid_universal_gateway_permit"
     }
   ],
   "lifecycle_objectives": {
@@ -120,6 +129,12 @@
     "read_only_unknown_default_effect": "ESCALATE",
     "fail_closed": true,
     "north_star_version_must_be_recorded_in_every_policy_decision": true,
-    "policy_version_must_be_recorded_in_every_policy_decision": true
+    "policy_version_must_be_recorded_in_every_policy_decision": true,
+    "universal_gateway_required_for_all_current_and_future_engines": true,
+    "future_engine_default_if_unregistered": "DENY",
+    "mutation_permit_required": true,
+    "mutation_permit_one_time_use": true,
+    "direct_engine_mutation_without_permit": "DENY",
+    "engine_registry_integrity_required": true
   }
 }

@@ -20,10 +20,18 @@ class LowRiskExecutionPolicy:
     allowed_roots:tuple[str,...]; allowed_extensions:tuple[str,...]
     max_files:int; max_file_bytes:int; max_total_bytes:int
     forbidden_path_segments:tuple[str,...]; forbidden_content_patterns:tuple[str,...]
+    universal_gateway_required:bool=False; gateway_engine_id:str='autonomy.low_risk_executor'
     @classmethod
     def from_json(cls,path:Path):
         d=json.loads(Path(path).read_text(encoding='utf-8'))
-        return cls(bool(d['enabled']),str(d['execution_mode']),str(d['mainline_promotion']),tuple(d['allowed_roots']),tuple(d['allowed_extensions']),int(d['max_files']),int(d['max_file_bytes']),int(d['max_total_bytes']),tuple(d['forbidden_path_segments']),tuple(d['forbidden_content_patterns']))
+        return cls(
+            bool(d['enabled']),str(d['execution_mode']),str(d['mainline_promotion']),
+            tuple(d['allowed_roots']),tuple(d['allowed_extensions']),
+            int(d['max_files']),int(d['max_file_bytes']),int(d['max_total_bytes']),
+            tuple(d['forbidden_path_segments']),tuple(d['forbidden_content_patterns']),
+            bool(d.get('universal_gateway_required',False)),
+            str(d.get('gateway_engine_id','autonomy.low_risk_executor')),
+        )
 
 def norm(path:str)->str: return path.replace('\\','/').lstrip('./')
 def status_paths(lines:Iterable[str])->tuple[str,...]:
@@ -87,13 +95,23 @@ class LowRiskExecutor:
             if m.operation!='replace': raise RuntimeError('only replace operation allowed')
             out.append(TextMutation(rel,m.content,m.operation))
         return tuple(out)
-    def execute(self,task:Task,mutations:tuple[TextMutation,...],expected_head=None,allowed_main_dirty_paths=(),keep_candidate=True,publish_candidate=False):
+    def execute(self,task:Task,mutations:tuple[TextMutation,...],expected_head=None,allowed_main_dirty_paths=(),keep_candidate=True,publish_candidate=False,gateway=None,gateway_permit=None):
         execution_id='LOW-'+uuid.uuid4().hex[:12].upper(); report_dir=self.runtime_root/execution_id; report_dir.mkdir(parents=True,exist_ok=True)
         snap,main_dirty=self.validate_main(expected_head,allowed_main_dirty_paths)
         risk,evidence=self.classifier.classify(task)
         if risk!=RiskLevel.LOW: raise RuntimeError(f'risk must be LOW, got {risk.value}')
         if not self.autonomy_policy.low_risk_auto_enabled: raise RuntimeError('central LOW-risk gate locked')
         mutations=self.validate_mutations(mutations); requested=tuple(m.path for m in mutations)
+        if self.execution_policy.universal_gateway_required:
+            if gateway is None or gateway_permit is None:
+                raise RuntimeError('universal autonomy gateway permit required')
+            gateway_action=str(task.metadata.get('gateway_action','documentation.update'))
+            gateway.consume(
+                gateway_permit,
+                engine_id=self.execution_policy.gateway_engine_id,
+                action=gateway_action,
+                paths=requested,
+            )
         branch_name=f'auto/lowrisk-{execution_id.lower()}'; worktree=self.worktree_root/execution_id; worktree.parent.mkdir(parents=True,exist_ok=True)
         if worktree.exists(): shutil.rmtree(worktree)
         created=False

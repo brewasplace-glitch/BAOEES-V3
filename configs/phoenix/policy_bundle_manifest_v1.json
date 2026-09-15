@@ -1,16 +1,32 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
-  "policy_version": "2.0.0",
+  "policy_version": "2.1.0",
+  "gateway_policy_version": "1.0.0",
+  "engine_registry_version": "1.0.0",
   "files": {
     "north_star_v1.json": {
-      "sha256": "c3394bcc9be5aa816864f75600c6acb92cd001c45ecc0e3a5eceeae10884b8fd"
+      "sha256": "71bfef9c31972000ba6779d8b8319becf6382a18e0a532a81a0a66df8706952e",
+      "required": true
     },
     "autonomy_policy_v2.json": {
-      "sha256": "fa730745ae1840c8d01daef4884759374598de8b59a57935568954f8a962e91d"
+      "sha256": "a1d1c995bb6323c1cdb68695b6465f3e4d4259a9845b102f4748e0341ff8ea04",
+      "required": true
+    },
+    "universal_gateway_policy_v1.json": {
+      "sha256": "3766ccc430ac056a5508fd305ecc057ccec6d68948af381f668dbec489a6d227",
+      "required": true
+    },
+    "engine_registry_v1.json": {
+      "sha256": "b6f50e0e6cb3f149b18b7a16d7528669d44e631e269efbcc76a727e03404f29b",
+      "required": true
+    },
+    "future_engine_admission_contract_v1.json": {
+      "sha256": "3dd2114bf435863b448c9fb53742a73644ffc1391c46d640f57ab5a433035c18",
+      "required": true
     }
   },
-  "bundle_sha256": "3127af42d2ad481b37979c007e26ed6f09c75d75014351e053c282f914887bb0"
+  "bundle_sha256": "161d6cf7cbc6ea14a3961f97f34c8d7889f30146ce26a358633c8bd99c9b7c4f"
 }

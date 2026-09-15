@@ -33,5 +33,7 @@
     "(?i)api[_-]?key\\s*[:=]",
     "(?i)private[_-]?key",
     "-----BEGIN [A-Z ]*PRIVATE KEY-----"
-  ]
+  ],
+  "universal_gateway_required": true,
+  "gateway_engine_id": "autonomy.low_risk_executor"
 }

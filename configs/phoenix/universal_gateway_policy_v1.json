@@ -1,0 +1,27 @@
+{
+  "schema": "PHOENIX_UNIVERSAL_AUTONOMY_GATEWAY_POLICY_V1",
+  "version": "1.0.0",
+  "enabled": true,
+  "fail_closed": true,
+  "applies_to": "ALL_CURRENT_AND_FUTURE_MUTATION_CAPABLE_ENGINES",
+  "future_engine_default": "DENY_UNREGISTERED",
+  "permit": {
+    "required": true,
+    "ttl_seconds": 300,
+    "one_time_use": true,
+    "exact_engine_binding": true,
+    "exact_action_binding": true,
+    "exact_path_binding": true,
+    "policy_bundle_binding": true,
+    "decision_binding": true,
+    "audit_issue_and_consume": true
+  },
+  "admission": {
+    "registry_required": true,
+    "gateway_required_for_mutation_capable_engine": true,
+    "allowed_actions_required": true,
+    "allowed_domains_required": true,
+    "new_engine_registration_effect": "ESCALATE",
+    "unregistered_mutation_effect": "DENY"
+  }
+}

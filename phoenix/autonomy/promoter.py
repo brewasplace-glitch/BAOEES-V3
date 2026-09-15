@@ -28,6 +28,8 @@ class LowRiskMainlinePromotionPolicy:
     max_governance_files:int
     max_governance_file_bytes:int
     max_governance_total_bytes:int
+    universal_gateway_required:bool=False
+    gateway_engine_id:str="autonomy.mainline_promoter"
 
     @classmethod
     def from_json(cls,path:Path):
@@ -53,6 +55,8 @@ class LowRiskMainlinePromotionPolicy:
             int(d.get("max_governance_files",0)),
             int(d.get("max_governance_file_bytes",0)),
             int(d.get("max_governance_total_bytes",0)),
+            bool(d.get("universal_gateway_required",False)),
+            str(d.get("gateway_engine_id","autonomy.mainline_promoter")),
         )
 
 class LowRiskMainlinePromoter:
@@ -209,7 +213,7 @@ class LowRiskMainlinePromoter:
         self.git("diff","--check",f"{expected}..{candidate}","--",*all_paths)
         return tuple(primary),tuple(governance)
 
-    def promote(self,candidate_branch:str,expected_head:str,backup_receipt:Path)->dict:
+    def promote(self,candidate_branch:str,expected_head:str,backup_receipt:Path,gateway=None,gateway_permit=None)->dict:
         eid="PROMOTE-"+uuid.uuid4().hex[:12].upper()
         report_dir=self.runtime_root/eid
         report_dir.mkdir(parents=True,exist_ok=True)
@@ -261,6 +265,16 @@ class LowRiskMainlinePromoter:
             raise RuntimeError("REMOTE_RACE_GUARD: origin changed")
         if self._status():
             raise RuntimeError("main became dirty")
+
+        if self.policy.universal_gateway_required:
+            if gateway is None or gateway_permit is None:
+                raise RuntimeError("universal autonomy gateway permit required")
+            gateway.consume(
+                gateway_permit,
+                engine_id=self.policy.gateway_engine_id,
+                action="git.fast_forward_promotion",
+                paths=tuple(primary_paths)+tuple(governance_paths),
+            )
 
         self.git("merge","--ff-only",candidate_branch)
 

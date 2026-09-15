@@ -25,6 +25,7 @@ __all__ = [
     "LowRiskMainlinePromotionPolicy","LowRiskMainlinePromoter",
     "LowRiskSelfImprovementPolicy","LowRiskSelfImprovementLoop",
     "ActionRequest","PolicyDecision","PolicyDecisionLog","AutonomyDecisionEngine",
+    "MutationIntent","GatewayPermit","GatewayAuditLog","UniversalAutonomyGateway",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -32,3 +33,5 @@ from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
 from .self_improvement import LowRiskSelfImprovementPolicy, LowRiskSelfImprovementLoop
 
 from .decision_engine import ActionRequest, PolicyDecision, PolicyDecisionLog, AutonomyDecisionEngine
+
+from .universal_gateway import MutationIntent, GatewayPermit, GatewayAuditLog, UniversalAutonomyGateway

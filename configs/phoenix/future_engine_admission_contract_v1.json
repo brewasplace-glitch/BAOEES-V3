@@ -1,0 +1,27 @@
+{
+  "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
+  "version": "1.0.0",
+  "scope": "ALL_FUTURE_ENGINES",
+  "default_if_not_registered": "DENY",
+  "requirements_for_mutation_capable_engine": [
+    "unique_engine_id",
+    "engine_registry_entry",
+    "gateway_required_true",
+    "declared_allowed_actions",
+    "declared_allowed_domains",
+    "declared_mutation_scope",
+    "central_policy_decision",
+    "one_time_gateway_permit",
+    "permit_consumed_immediately_before_mutation",
+    "policy_decision_log",
+    "gateway_audit_log",
+    "tests_for_ungated_denial"
+  ],
+  "prohibited_patterns": [
+    "silent_policy_bypass",
+    "unregistered_mutation",
+    "permit_reuse",
+    "permit_sharing_between_engines",
+    "permit_action_or_path_rebinding"
+  ]
+}

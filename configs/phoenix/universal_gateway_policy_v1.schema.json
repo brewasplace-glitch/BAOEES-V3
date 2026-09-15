@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_UNIVERSAL_AUTONOMY_GATEWAY_POLICY_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "enabled",
+    "fail_closed",
+    "future_engine_default",
+    "permit",
+    "admission"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_UNIVERSAL_AUTONOMY_GATEWAY_POLICY_V1"
+    },
+    "enabled": {
+      "const": true
+    },
+    "fail_closed": {
+      "const": true
+    },
+    "future_engine_default": {
+      "const": "DENY_UNREGISTERED"
+    }
+  },
+  "additionalProperties": true
+}

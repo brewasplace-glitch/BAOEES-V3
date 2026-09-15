@@ -16,7 +16,7 @@ class TestAutonomyPolicyNorthStar(unittest.TestCase):
         e=engine()
         self.assertEqual(e.north_star["north_star_id"],"PHOENIX-NORTH-STAR")
         self.assertEqual(e.north_star["version"],"1.0.0")
-        self.assertEqual(e.policy["version"],"2.0.0")
+        self.assertEqual(e.policy["version"],"2.1.0")
         self.assertTrue(e.bundle_sha256)
 
     def test_read_only_low_is_allow(self):
@@ -104,7 +104,7 @@ class TestAutonomyPolicyNorthStar(unittest.TestCase):
     def test_decision_contains_provenance(self):
         d=engine().evaluate(ActionRequest("research.inspect","LOW",False),log=False)
         self.assertEqual(d.north_star_version,"1.0.0")
-        self.assertEqual(d.policy_version,"2.0.0")
+        self.assertEqual(d.policy_version,"2.1.0")
         self.assertTrue(d.policy_bundle_sha256)
 
     def test_decision_log_is_jsonl(self):
@@ -116,7 +116,7 @@ class TestAutonomyPolicyNorthStar(unittest.TestCase):
             self.assertEqual(len(rows),1)
             obj=json.loads(rows[0])
             self.assertEqual(obj["decision"]["decision_id"],d.decision_id)
-            self.assertEqual(obj["decision"]["policy_version"],"2.0.0")
+            self.assertEqual(obj["decision"]["policy_version"],"2.1.0")
 
     def test_tampered_bundle_file_is_rejected(self):
         with tempfile.TemporaryDirectory() as td:

@@ -25,6 +25,8 @@ def main() -> int:
         LearningStore,
         AutonomyDecisionEngine,
         PolicyDecisionLog,
+        GatewayAuditLog,
+        UniversalAutonomyGateway,
     )
 
     cfg=code_root/"configs/phoenix"
@@ -46,6 +48,12 @@ def main() -> int:
         local/"PROJECT-PHOENIX"/"autonomy"/"policy_decisions"/"decisions_v1.jsonl"
     )
     decision_engine=AutonomyDecisionEngine.from_repo(code_root,decision_log)
+    gateway_audit=GatewayAuditLog(
+        local/"PROJECT-PHOENIX"/"autonomy"/"universal_gateway"/"audit_v1.jsonl"
+    )
+    universal_gateway=UniversalAutonomyGateway.from_repo(
+        code_root,decision_log=decision_log,audit_log=gateway_audit
+    )
 
     loop=LowRiskSelfImprovementLoop(
         repo,
@@ -57,6 +65,7 @@ def main() -> int:
         learning,
         runtime_root=local/"PROJECT-PHOENIX"/"autonomy"/"self_improvement",
         decision_engine=decision_engine,
+        universal_gateway=universal_gateway,
     )
     result=loop.run_once(args.expected_head,args.backup_receipt)
     print(json.dumps(result,indent=2,ensure_ascii=True))

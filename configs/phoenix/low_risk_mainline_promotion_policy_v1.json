@@ -42,5 +42,7 @@
   "max_governance_files": 8,
   "max_governance_file_bytes": 8388608,
   "max_governance_total_bytes": 33554432,
-  "governance_side_effect_rule": "exact_allowlist_only"
+  "governance_side_effect_rule": "exact_allowlist_only",
+  "universal_gateway_required": true,
+  "gateway_engine_id": "autonomy.mainline_promoter"
 }

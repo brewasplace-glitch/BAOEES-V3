@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_ENGINE_REGISTRY_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "version",
+    "status",
+    "fail_closed",
+    "future_engine_default",
+    "engines"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_ENGINE_REGISTRY_V1"
+    },
+    "status": {
+      "const": "ACTIVE"
+    },
+    "fail_closed": {
+      "const": true
+    },
+    "future_engine_default": {
+      "const": "DENY_UNTIL_REGISTERED"
+    },
+    "engines": {
+      "type": "array",
+      "minItems": 1
+    }
+  },
+  "additionalProperties": true
+}

@@ -192,7 +192,8 @@ class TestSelfImprovementLoop(unittest.TestCase):
                 selfp.require_open_source_review,
                 selfp.require_low_risk_classification,
                 selfp.target_root,selfp.target_extension,
-                selfp.mainline_promotion,"ENABLED",selfp.medium_high_critical
+                selfp.mainline_promotion,"ENABLED",selfp.medium_high_critical,
+                selfp.central_decision_engine_required,False
             )
             loop=LowRiskSelfImprovementLoop(
                 repo,AutonomyPolicy(low_risk_auto_enabled=True),
@@ -235,7 +236,8 @@ class TestSelfImprovementLoop(unittest.TestCase):
                 selfp.require_open_source_review,
                 selfp.require_low_risk_classification,
                 selfp.target_root,selfp.target_extension,
-                selfp.mainline_promotion,selfp.source_self_modification,"ENABLED"
+                selfp.mainline_promotion,selfp.source_self_modification,"ENABLED",
+                selfp.central_decision_engine_required,False
             )
             self.assertEqual(bad.medium_high_critical,"ENABLED")
 
