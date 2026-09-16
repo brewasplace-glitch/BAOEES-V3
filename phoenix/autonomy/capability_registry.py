@@ -25,6 +25,7 @@ DEFAULT_CAPABILITIES = (
     Capability("AUTO-GOAL-007","Autonomous Execution Planner + Goal Decomposition","planning","ready",100),
     Capability("AUTO-ORCH-008","Autonomous Execution Orchestrator + Approval Resume Engine","orchestration","ready",100),
     Capability("AUTO-EXEC-009","Universal Capability Executor Registry + Engine Action Adapters","orchestration","ready",100),
+    Capability("AUTO-ONBOARD-010","Autonomous Engine Onboarding + Capability Discovery + Adapter Generation","orchestration","ready",100),
     Capability("AUTO-BIB-002","BIB learning-event ingestion","knowledge","planned",70),
 )
 

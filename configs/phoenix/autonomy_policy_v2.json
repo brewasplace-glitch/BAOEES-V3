@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -375,6 +375,73 @@
         "approval_integrity"
       ],
       "reason": "Approval receipts require integrity-bound gateway authorization."
+    },
+    {
+      "id": "P6-ALLOW-ENGINE-DISCOVERY-SNAPSHOT",
+      "priority": 772,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "engine.discovery.snapshot.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://engine_onboarding/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "onboarding_integrity"
+      ],
+      "reason": "Discovery snapshots may be persisted only as integrity-bound runtime artifacts."
+    },
+    {
+      "id": "P6-ALLOW-ENGINE-ONBOARDING-PROPOSAL",
+      "priority": 771,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "engine.onboarding.proposal.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://engine_onboarding/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "onboarding_integrity"
+      ],
+      "reason": "Onboarding proposals may be persisted only after bounded admission validation."
+    },
+    {
+      "id": "P6-ALLOW-ADAPTER-SCAFFOLD-STAGING",
+      "priority": 770,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "engine.adapter.scaffold.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://engine_onboarding/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "onboarding_integrity",
+        "admission_tests_pass"
+      ],
+      "reason": "Generated adapter scaffolds are staging artifacts only and do not activate engines."
     }
   ],
   "domain_authority": {
@@ -421,7 +488,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_4_AUTONOMOUS_EXECUTION_ORCHESTRATOR",
+  "phase": "PHASE_6_AUTONOMOUS_ENGINE_ONBOARDING",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -438,5 +505,15 @@
     "approval_cannot_bypass_gateway": true,
     "mutation_in_progress_replay": "DENY_AUTOMATIC_REPLAY",
     "unknown_executor": "DENY"
+  },
+  "engine_onboarding": {
+    "discovery_is_read_only": true,
+    "candidate_manifest_required": true,
+    "adapter_generation_is_staging_only": true,
+    "activation_requires_governed_repository_change": true,
+    "automatic_activation_of_new_mutating_engine": false,
+    "unknown_candidate_default": "DENY",
+    "static_analysis_before_import": true,
+    "arbitrary_plugin_import_during_discovery": false
   }
 }

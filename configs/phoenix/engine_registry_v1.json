@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -136,6 +136,27 @@
       ],
       "executor_adapter_ids": [
         "builtin.approval.resume"
+      ]
+    },
+    {
+      "engine_id": "autonomy.engine_onboarding",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "engine.discovery.snapshot.write",
+        "engine.onboarding.proposal.write",
+        "engine.adapter.scaffold.write"
+      ],
+      "allowed_domains": [
+        "onboarding",
+        "orchestration"
+      ],
+      "allowed_path_roots": [
+        "runtime://engine_onboarding/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.engine.onboarding.internal"
       ]
     }
   ]

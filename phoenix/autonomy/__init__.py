@@ -46,3 +46,5 @@ from .execution_orchestrator import OrchestrationStore, ReadOnlyStepExecutor, Au
 from .executor_adapter_registry import ExecutorAdapterDescriptor, UniversalCapabilityExecutorRegistry
 
 from .executor_adapters import AdapterExecutionContext, AdapterExecutionResult, ReadOnlyPlannerAdapter, LowRiskMutationAdapter, MainlinePromotionAdapter
+
+from .engine_onboarding import DiscoveryRecord, EngineManifestDiscovery, EngineOnboardingService

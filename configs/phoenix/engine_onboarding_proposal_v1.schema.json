@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_ENGINE_ONBOARDING_PROPOSAL_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "proposal_id",
+    "candidate_sha256",
+    "engine_registry_patch",
+    "executor_registry_patch",
+    "admission",
+    "activation"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_ENGINE_ONBOARDING_PROPOSAL_V1"
+    },
+    "activation": {
+      "type": "object"
+    },
+    "admission": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

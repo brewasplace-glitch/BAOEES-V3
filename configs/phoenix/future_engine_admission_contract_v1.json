@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -18,7 +18,11 @@
     "tests_for_ungated_denial",
     "executor_adapter_registry_entry_for_each_active_action",
     "plan_dispatchable_actions_have_executable_adapter",
-    "adapter_engine_action_binding_exact"
+    "adapter_engine_action_binding_exact",
+    "candidate_manifest_passes_schema_and_semantic_validation",
+    "capability_discovery_non_executing",
+    "adapter_generation_staging_only",
+    "admission_report_pass"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -28,7 +32,10 @@
     "permit_action_or_path_rebinding",
     "unregistered_executor_adapter",
     "adapter_action_scope_expansion",
-    "adapter_gateway_bypass"
+    "adapter_gateway_bypass",
+    "dynamic_import_during_untrusted_discovery",
+    "automatic_activation_from_discovery",
+    "generated_adapter_direct_repository_write_without_governed_install"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -37,5 +44,14 @@
     "mutating_adapter_gateway_required": true,
     "adapter_engine_action_binding_exact": true,
     "adapter_cannot_expand_engine_action_scope": true
+  },
+  "autonomous_onboarding_contract": {
+    "candidate_manifest_required": true,
+    "discovery_must_not_import_candidate_code": true,
+    "capability_declarations_explicit": true,
+    "adapter_generation_staging_only": true,
+    "admission_tests_required": true,
+    "repository_activation_requires_governed_change": true,
+    "mutating_engine_automatic_activation": false
   }
 }

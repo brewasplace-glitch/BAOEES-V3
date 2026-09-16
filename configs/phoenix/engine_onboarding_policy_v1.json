@@ -1,0 +1,56 @@
+{
+  "schema": "PHOENIX_ENGINE_ONBOARDING_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "discovery": {
+    "repository_manifest_glob": "**/phoenix_engine_manifest_v1.json",
+    "entry_point_group": "phoenix.engine_manifests",
+    "entry_point_discovery_loads_code": false,
+    "arbitrary_module_import": false,
+    "max_manifests_per_run": 128,
+    "max_manifest_bytes": 262144
+  },
+  "candidate_requirements": {
+    "schema": "PHOENIX_ENGINE_CANDIDATE_MANIFEST_V1",
+    "unique_engine_id": true,
+    "explicit_mutation_capability": true,
+    "allowed_actions_required": true,
+    "allowed_domains_required": true,
+    "mutation_scope_required_if_mutating": true,
+    "adapter_specs_required": true
+  },
+  "adapter_generation": {
+    "mode": "STAGING_ONLY",
+    "generated_root": "runtime://engine_onboarding/generated/",
+    "source_repository_write": false,
+    "activation_write": false,
+    "supported_kinds": [
+      "callable_scaffold",
+      "internal_gateway_managed"
+    ],
+    "mutating_callable_adapter_auto_implementation": false,
+    "read_only_callable_adapter_scaffold": true
+  },
+  "admission": {
+    "phase5_registry_validation_required": true,
+    "future_engine_contract_required": true,
+    "engine_id_collision": "DENY",
+    "adapter_id_collision": "DENY",
+    "action_scope_expansion": "DENY",
+    "mutating_gateway_required": true,
+    "policy_default_deny_is_safe": true,
+    "activation_status_for_source_or_governance_change": "GOVERNED_INSTALL_REQUIRED"
+  },
+  "activation": {
+    "automatic_repository_activation": false,
+    "automatic_mutating_engine_activation": false,
+    "requires_backup_first": true,
+    "requires_exact_scope": true,
+    "requires_tests": true,
+    "requires_gateway_registry_update": true,
+    "requires_executor_registry_update": true,
+    "requires_policy_bundle_integrity_refresh": true
+  },
+  "external_dependency_required": false
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "PHOENIX_ENGINE_DISCOVERY_ONBOARDING_OPEN_SOURCE_REVIEW_V1",
+  "review_date": "2026-09-16",
+  "primary": {
+    "name": "pluggy",
+    "repository": "https://github.com/pytest-dev/pluggy",
+    "license": "MIT",
+    "role": "future live engine/capability hook provider",
+    "fit": [
+      "PluginManager registration",
+      "hook specifications",
+      "validated hook implementations",
+      "hook implementation introspection"
+    ],
+    "activation": "OPTIONAL_FUTURE_PROVIDER"
+  },
+  "fallback": {
+    "name": "stevedore",
+    "repository": "https://github.com/openstack/stevedore",
+    "license": "Apache-2.0",
+    "reviewed_release_series": "2026.1 / 5.6.0",
+    "python_minimum_reviewed": "3.10",
+    "role": "future entry-point discovery and driver loading",
+    "fit": [
+      "entry-point discovery",
+      "driver manager",
+      "extension manager",
+      "conflict resolution"
+    ],
+    "activation": "OPTIONAL_FUTURE_PROVIDER"
+  },
+  "active_v1_backend": {
+    "name": "PHOENIX static manifest discovery + importlib.metadata entry-point enumeration",
+    "imports_plugin_code_during_discovery": false,
+    "external_dependency_required": false,
+    "reason": "Discovery must remain non-executing and fail closed before admission."
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_ENGINE_CANDIDATE_MANIFEST_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "engine_id",
+    "mutation_capable",
+    "gateway_required",
+    "allowed_actions",
+    "allowed_domains",
+    "adapters",
+    "action_profiles"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_ENGINE_CANDIDATE_MANIFEST_V1"
+    },
+    "engine_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "mutation_capable": {
+      "type": "boolean"
+    },
+    "gateway_required": {
+      "type": "boolean"
+    },
+    "allowed_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "allowed_domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "allowed_path_roots": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_exact_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "adapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "adapter_id",
+          "actions",
+          "kind",
+          "mutation_capable",
+          "gateway_required",
+          "plan_dispatchable",
+          "priority"
+        ],
+        "properties": {
+          "adapter_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "kind": {
+            "enum": [
+              "existing_implementation",
+              "callable_scaffold",
+              "internal_gateway_managed"
+            ]
+          },
+          "implementation": {
+            "type": "string"
+          },
+          "mutation_capable": {
+            "type": "boolean"
+          },
+          "gateway_required": {
+            "type": "boolean"
+          },
+          "plan_dispatchable": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "action_profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "action",
+          "risk",
+          "domain",
+          "mutating",
+          "plan_dispatchable"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "risk": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH",
+              "CRITICAL"
+            ]
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mutating": {
+            "type": "boolean"
+          },
+          "plan_dispatchable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
