@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "PHOENIX_ENGINE_ACTIVATION_TRANSACTION_V1_SCHEMA",
+  "type": "object",
+  "required": [
+    "schema",
+    "transaction_id",
+    "baseline",
+    "proposal_id",
+    "proposal_sha256",
+    "status",
+    "implementation_sha256",
+    "planned_paths",
+    "approval_required"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_ENGINE_ACTIVATION_TRANSACTION_V1"
+    },
+    "status": {
+      "enum": [
+        "PROPOSAL_VALIDATED",
+        "IMPLEMENTATION_REQUIRED",
+        "IMPLEMENTATION_READY",
+        "BLOCKED",
+        "READY_FOR_GOVERNED_INSTALL",
+        "ACTIVATION_IN_PROGRESS",
+        "ACTIVATED",
+        "RECOVERY_REQUIRED"
+      ]
+    },
+    "approval_required": {
+      "const": true
+    }
+  },
+  "additionalProperties": true
+}

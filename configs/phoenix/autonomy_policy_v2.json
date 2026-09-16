@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -442,6 +442,74 @@
         "admission_tests_pass"
       ],
       "reason": "Generated adapter scaffolds are staging artifacts only and do not activate engines."
+    },
+    {
+      "id": "P7-ALLOW-ACTIVATION-TRANSACTION",
+      "priority": 769,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "engine.activation.transaction.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://engine_activation/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "activation_integrity"
+      ],
+      "reason": "Activation transactions are integrity-bound runtime artifacts."
+    },
+    {
+      "id": "P7-ALLOW-ACTIVATION-BUNDLE",
+      "priority": 768,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "engine.activation.bundle.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://engine_activation/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "activation_integrity",
+        "implementation_validation"
+      ],
+      "reason": "Validated activation bundles may be staged outside the repository."
+    },
+    {
+      "id": "P7-ALLOW-GOVERNED-ACTIVATION-REPO-APPLY",
+      "priority": 905,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "engine.activation.repository.apply"
+        ],
+        "risks": [
+          "MEDIUM"
+        ],
+        "mutating": true
+      },
+      "required_gates": [
+        "human_approval",
+        "verified_backup",
+        "implementation_validation",
+        "exact_scope",
+        "policy_bundle_integrity",
+        "audit_log"
+      ],
+      "reason": "A governed engine activation may mutate only its exact generated adapter and registry files after explicit approval and verified backup."
     }
   ],
   "domain_authority": {
@@ -488,7 +556,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_6_AUTONOMOUS_ENGINE_ONBOARDING",
+  "phase": "PHASE_7_GOVERNED_ENGINE_ACTIVATION",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -515,5 +583,18 @@
     "unknown_candidate_default": "DENY",
     "static_analysis_before_import": true,
     "arbitrary_plugin_import_during_discovery": false
+  },
+  "engine_activation": {
+    "proposal_must_be_phase6_signed": true,
+    "implementation_static_validation_required": true,
+    "untrusted_implementation_execution_during_validation": false,
+    "governed_install_requires_explicit_human_approval": true,
+    "verified_backup_required_before_repository_mutation": true,
+    "exact_baseline_required": true,
+    "exact_scope_required": true,
+    "registry_and_policy_bundle_integrity_required": true,
+    "policy_deny_cannot_be_auto_weakened": true,
+    "automatic_mutating_engine_activation": false,
+    "interrupted_activation_default": "RECOVERY_REQUIRED"
   }
 }

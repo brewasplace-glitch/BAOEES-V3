@@ -1,0 +1,25 @@
+{
+  "schema": "PHOENIX_ENGINE_ACTIVATION_SANDBOX_OPEN_SOURCE_REVIEW_V1",
+  "review_date": "2026-09-16",
+  "primary_defense_in_depth_candidate": {
+    "name": "RestrictedPython",
+    "version_reviewed": "8.5",
+    "license": "ZPL-2.1",
+    "role": "optional restricted-language evaluator after Phoenix static validation",
+    "activation": "NOT_REQUIRED_V1",
+    "note": "Not treated as an OS security boundary."
+  },
+  "fallback_isolation_candidate": {
+    "name": "Microsoft Execution Containers (MXC)",
+    "repository": "https://github.com/microsoft/mxc",
+    "role": "future OS/VM-backed isolated implementation test provider",
+    "activation": "DEFERRED",
+    "note": "Upstream labels the project early preview and states profiles should not be treated as security boundaries."
+  },
+  "active_v1_strategy": {
+    "candidate_code_executed_during_validation": false,
+    "static_ast_and_contract_validation": true,
+    "post_install_import_test_only_after_governed_repository_write": true,
+    "external_dependency_required": false
+  }
+}

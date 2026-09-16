@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -157,6 +157,33 @@
       ],
       "executor_adapter_ids": [
         "builtin.engine.onboarding.internal"
+      ]
+    },
+    {
+      "engine_id": "autonomy.engine_activation",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "engine.activation.transaction.write",
+        "engine.activation.bundle.write",
+        "engine.activation.repository.apply"
+      ],
+      "allowed_domains": [
+        "activation",
+        "orchestration"
+      ],
+      "allowed_path_roots": [
+        "runtime://engine_activation/",
+        "phoenix/autonomy/generated_adapters/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.engine.activation.internal"
+      ],
+      "allowed_exact_paths": [
+        "configs/phoenix/engine_registry_v1.json",
+        "configs/phoenix/capability_executor_registry_v1.json",
+        "configs/phoenix/policy_bundle_manifest_v1.json"
       ]
     }
   ]

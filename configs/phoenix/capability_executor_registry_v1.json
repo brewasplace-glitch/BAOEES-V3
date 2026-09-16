@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_action_default": "DENY_NO_REGISTERED_ADAPTER",
@@ -117,6 +117,21 @@
         "engine.discovery.snapshot.write",
         "engine.onboarding.proposal.write",
         "engine.adapter.scaffold.write"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engine.activation.internal",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.engine_activation",
+      "actions": [
+        "engine.activation.transaction.write",
+        "engine.activation.bundle.write",
+        "engine.activation.repository.apply"
       ],
       "mutation_capable": true,
       "gateway_required": true,

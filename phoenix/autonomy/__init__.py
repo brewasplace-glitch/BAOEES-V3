@@ -48,3 +48,7 @@ from .executor_adapter_registry import ExecutorAdapterDescriptor, UniversalCapab
 from .executor_adapters import AdapterExecutionContext, AdapterExecutionResult, ReadOnlyPlannerAdapter, LowRiskMutationAdapter, MainlinePromotionAdapter
 
 from .engine_onboarding import DiscoveryRecord, EngineManifestDiscovery, EngineOnboardingService
+
+from .adapter_implementation import AdapterImplementationValidation, AdapterImplementationValidator
+
+from .engine_activation import EngineActivationService

@@ -1,18 +1,18 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
-  "policy_version": "2.3.0",
+  "policy_version": "2.4.0",
   "gateway_policy_version": "1.0.0",
-  "engine_registry_version": "1.4.0",
+  "engine_registry_version": "1.5.0",
   "files": {
     "north_star_v1.json": {
       "sha256": "71bfef9c31972000ba6779d8b8319becf6382a18e0a532a81a0a66df8706952e",
       "required": true
     },
     "autonomy_policy_v2.json": {
-      "sha256": "7cea8ae2d535f742cf6ed52a4a765438506962463e6344586199d2531eb97b6e",
+      "sha256": "0f5b1f54d56876fb1e4f7ffa68fba0f7c457f06c9cd356d7626096807bd15139",
       "required": true
     },
     "universal_gateway_policy_v1.json": {
@@ -20,11 +20,11 @@
       "required": true
     },
     "engine_registry_v1.json": {
-      "sha256": "4497bd1cb51a4ad361848a581de3384e5aebfc6c6c500062a9436aafd76e1471",
+      "sha256": "998028467282bcc9dd2a93b7de7cf8892bb515cc0ba004a6444f15f80f5822dc",
       "required": true
     },
     "future_engine_admission_contract_v1.json": {
-      "sha256": "136350f99a3a8d87fe09e68bea84858e1ddbc88906026a10e90c6d4290066d02",
+      "sha256": "c72a51384e1c3c99b04fff054dc6d5f1dff620e1a56c642a043cb2073d60f2f5",
       "required": true
     },
     "execution_planner_policy_v1.json": {
@@ -40,16 +40,21 @@
       "required": true
     },
     "capability_executor_registry_v1.json": {
-      "sha256": "e5cd85030c704c60d6a6413cc6159c62bf5b1be4f00f686628f402ee885dc82f",
+      "sha256": "b3bc13d18189496521d840787c558dd5060a067fe89f1da7433ecd1c4b5413fe",
       "required": true
     },
     "engine_onboarding_policy_v1.json": {
       "sha256": "af1811ed395a5c45d644ba0096e92d0969b27dd4da05e769c53dbe95044f2e36",
       "required": true
+    },
+    "engine_activation_policy_v1.json": {
+      "sha256": "bf6dd55d1e5168a901288952d53d7b9592301ec29904f72cefc3af797857c163",
+      "required": true
     }
   },
-  "bundle_sha256": "c25e3f605644346793be600418dc3147cfb5d717b2cdc58a3638ecbb7692454c",
-  "capability_executor_registry_version": "1.1.0",
-  "future_engine_admission_contract_version": "1.2.0",
-  "engine_onboarding_policy_version": "1.0.0"
+  "bundle_sha256": "65bb6e42325ae1186216118e136842033318110767aff9af9e28fbb704953e48",
+  "capability_executor_registry_version": "1.2.0",
+  "future_engine_admission_contract_version": "1.3.0",
+  "engine_onboarding_policy_version": "1.0.0",
+  "engine_activation_policy_version": "1.0.0"
 }

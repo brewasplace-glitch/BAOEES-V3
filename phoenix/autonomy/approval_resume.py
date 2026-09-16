@@ -10,20 +10,46 @@ def _safe(value:str) -> str:
     return "".join(ch if ch.isalnum() or ch in "-_." else "-" for ch in str(value))
 
 class LocalIntegrityKey:
-    def __init__(self,path:Path): self.path=Path(path)
-    def load_or_create(self)->bytes:
-        if self.path.is_file():
-            data=self.path.read_bytes()
-            if len(data)<32: raise RuntimeError("local integrity key invalid")
+    def __init__(self,path:Path):
+        self.path=Path(path)
+
+    def _persist_binary(self,data:bytes,mode:str)->None:
+        with self.path.open(mode) as handle:
+            written=handle.write(data)
+            if written!=len(data):
+                raise RuntimeError(f"local integrity key short write: {written}/{len(data)}")
+            handle.flush()
+            os.fsync(handle.fileno())
+
+    def _read_existing(self)->bytes:
+        data=self.path.read_bytes()
+        if len(data)==32:
             return data
+        recovered=data.replace(b"\r\n",b"\n")
+        if len(recovered)==32:
+            self._persist_binary(recovered,"wb")
+            migrated=self.path.read_bytes()
+            if migrated!=recovered:
+                raise RuntimeError("legacy integrity key migration verification failed")
+            return recovered
+        raise RuntimeError(f"local integrity key invalid length: {len(data)} bytes")
+
+    def load_or_create(self)->bytes:
         self.path.parent.mkdir(parents=True,exist_ok=True)
-        data=secrets.token_bytes(32)
-        fd=os.open(str(self.path),os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
         try:
-            os.write(fd,data); os.fsync(fd)
-        finally:
-            os.close(fd)
-        return data
+            return self._read_existing()
+        except FileNotFoundError:
+            pass
+        data=secrets.token_bytes(32)
+        try:
+            self._persist_binary(data,"xb")
+        except FileExistsError:
+            return self._read_existing()
+        persisted=self._read_existing()
+        if not hmac.compare_digest(persisted,data):
+            raise RuntimeError("local integrity key persistence mismatch")
+        return persisted
+
 
 class ApprovalResumeEngine:
     DECISIONS={"APPROVE","REJECT","DEFER"}

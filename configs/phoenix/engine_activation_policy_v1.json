@@ -1,0 +1,80 @@
+{
+  "schema": "PHOENIX_ENGINE_ACTIVATION_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "proposal": {
+    "phase6_signed_proposal_required": true,
+    "admission_status_required": "PASS",
+    "automatic_activation_must_be": false,
+    "policy_denied_actions_must_be_empty": true
+  },
+  "implementation": {
+    "static_ast_validation_required": true,
+    "candidate_code_execution_during_validation": false,
+    "allowed_top_level": [
+      "ImportFrom(__future__)",
+      "ClassDef"
+    ],
+    "forbidden_import_roots": [
+      "os",
+      "subprocess",
+      "socket",
+      "ctypes",
+      "importlib",
+      "sys",
+      "pathlib",
+      "shutil",
+      "tempfile",
+      "urllib",
+      "http",
+      "requests",
+      "multiprocessing"
+    ],
+    "forbidden_calls": [
+      "eval",
+      "exec",
+      "compile",
+      "open",
+      "input",
+      "__import__",
+      "breakpoint",
+      "globals",
+      "locals",
+      "vars"
+    ],
+    "forbidden_ast_nodes": [
+      "With",
+      "AsyncWith",
+      "TryStar",
+      "Global",
+      "Nonlocal",
+      "Lambda",
+      "Yield",
+      "YieldFrom",
+      "Await"
+    ],
+    "decorators": "DENY",
+    "class_bases": "DENY",
+    "activation_import_test_after_static_validation": true
+  },
+  "governed_install": {
+    "explicit_approval_required": true,
+    "verified_backup_required": true,
+    "exact_baseline_required": true,
+    "clean_synced_required": true,
+    "exact_scope_required": true,
+    "normal_non_force_push_only": true,
+    "remote_race_guard_required": true,
+    "rollback_before_commit_on_failure": true,
+    "mutation_auto_replay_after_interruption": false
+  },
+  "eligible_candidates": {
+    "policy_effect_deny": "BLOCK",
+    "missing_implementation": "BLOCK",
+    "admission_failure": "BLOCK",
+    "mutating_candidate_automatic_activation": false
+  },
+  "generated_adapter_root": "phoenix/autonomy/generated_adapters/",
+  "external_dependency_required": false
+}
