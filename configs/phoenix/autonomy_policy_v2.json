@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -510,6 +510,78 @@
         "audit_log"
       ],
       "reason": "A governed engine activation may mutate only its exact generated adapter and registry files after explicit approval and verified backup."
+    },
+    {
+      "id": "P8-ALLOW-ADAPTER-SYNTHESIS-CANDIDATE",
+      "priority": 767,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "adapter.synthesis.candidate.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://adapter_synthesis/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "synthesis_integrity",
+        "static_validation"
+      ],
+      "reason": "Deterministically synthesized read-only adapters may be staged only as integrity-bound runtime candidates."
+    },
+    {
+      "id": "P8-ALLOW-ADAPTER-VERIFICATION-ATTESTATION",
+      "priority": 766,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "adapter.verification.attestation.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://adapter_synthesis/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "synthesis_integrity",
+        "static_validation",
+        "non_executing_verification"
+      ],
+      "reason": "Static attestations are permitted only when candidate code remains unexecuted."
+    },
+    {
+      "id": "P8-ALLOW-GOVERNED-ADAPTER-HANDOFF",
+      "priority": 765,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "adapter.promotion.handoff.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://adapter_synthesis/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "synthesis_integrity",
+        "explicit_approval",
+        "sha_binding",
+        "no_repository_write"
+      ],
+      "reason": "A SHA-bound candidate may be promoted only to Phase-7 review staging, never directly into the repository or activation."
     }
   ],
   "domain_authority": {
@@ -556,7 +628,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_7_GOVERNED_ENGINE_ACTIVATION",
+  "phase": "PHASE_8_ADAPTER_SYNTHESIS_STATIC_VERIFICATION_GOVERNED_HANDOFF",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -596,5 +668,17 @@
     "policy_deny_cannot_be_auto_weakened": true,
     "automatic_mutating_engine_activation": false,
     "interrupted_activation_default": "RECOVERY_REQUIRED"
+  },
+  "adapter_synthesis": {
+    "phase6_signed_proposal_required": true,
+    "deterministic_read_only_synthesis_only": true,
+    "mutation_capable_synthesis": "DENY",
+    "candidate_execution_without_security_boundary": "DENY",
+    "candidate_code_execution_enabled": false,
+    "repository_write_during_synthesis_or_verification": false,
+    "signed_attestation_required": true,
+    "governed_handoff_requires_explicit_sha_bound_approval": true,
+    "handoff_target": "PHASE7_REVIEW_CANDIDATE_ONLY",
+    "automatic_engine_activation": false
   }
 }

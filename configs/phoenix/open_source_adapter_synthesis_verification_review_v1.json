@@ -1,0 +1,39 @@
+{
+  "schema": "PHOENIX_ADAPTER_SYNTHESIS_VERIFICATION_OPEN_SOURCE_REVIEW_V1",
+  "review_date": "2026-09-18",
+  "primary_defense_in_depth_candidate": {
+    "name": "RestrictedPython",
+    "version_reviewed": "8.5",
+    "license": "ZPL-2.1",
+    "url": "https://pypi.org/project/RestrictedPython/",
+    "decision": "OPTIONAL_NOT_INSTALLED",
+    "reason": "Upstream explicitly states that RestrictedPython is not a sandbox or secured environment."
+  },
+  "windows_isolation_candidates": [
+    {
+      "name": "Microsoft eXecution Container (MXC)",
+      "url": "https://github.com/microsoft/mxc",
+      "decision": "DISABLED",
+      "reason": "Upstream calls the repository an early preview, identifies overly permissive generated policies, and says profiles are not security boundaries."
+    },
+    {
+      "name": "Sandboxie Plus",
+      "url": "https://github.com/sandboxie-plus/Sandboxie",
+      "decision": "REVIEWED_NOT_INTEGRATED",
+      "reason": "Windows isolation features are relevant, but Phase 8 has no package-bound, independently attested provider integration."
+    },
+    {
+      "name": "gVisor",
+      "url": "https://github.com/google/gvisor",
+      "decision": "UNAVAILABLE_WINDOWS_NATIVE",
+      "reason": "The supported runtime requires Linux 5.6+ and does not provide a Windows-native backend."
+    }
+  ],
+  "phase8_decision": {
+    "candidate_code_execution": false,
+    "active_mode": "DETERMINISTIC_SYNTHESIS_PLUS_STATIC_VERIFICATION",
+    "governed_promotion_target": "PHASE7_REVIEW_CANDIDATE_ONLY",
+    "automatic_activation": false,
+    "external_dependency_installation": "NONE"
+  }
+}

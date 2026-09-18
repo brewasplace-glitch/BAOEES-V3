@@ -27,6 +27,8 @@ __all__ = [
     "ActionRequest","PolicyDecision","PolicyDecisionLog","AutonomyDecisionEngine",
     "MutationIntent","GatewayPermit","GatewayAuditLog","UniversalAutonomyGateway",
     "LocalIntegrityKey","ApprovalResumeEngine","OrchestrationStore","ReadOnlyStepExecutor","AutonomousExecutionOrchestrator",
+    "IsolatedVerificationProvider","DisabledIsolationProvider","StaticVerificationReport","AdapterStaticVerifier",
+    "DeterministicReadOnlyAdapterSynthesizer","AdapterSynthesisService",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -52,3 +54,7 @@ from .engine_onboarding import DiscoveryRecord, EngineManifestDiscovery, EngineO
 from .adapter_implementation import AdapterImplementationValidation, AdapterImplementationValidator
 
 from .engine_activation import EngineActivationService
+
+from .adapter_verification import IsolatedVerificationProvider, DisabledIsolationProvider, StaticVerificationReport, AdapterStaticVerifier
+
+from .adapter_synthesis import DeterministicReadOnlyAdapterSynthesizer, AdapterSynthesisService

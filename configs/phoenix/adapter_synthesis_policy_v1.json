@@ -1,0 +1,42 @@
+{
+  "schema": "PHOENIX_ADAPTER_SYNTHESIS_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "baseline_binding_required": true,
+  "proposal": {
+    "phase6_signed_proposal_required": true,
+    "admission_status_required": "PASS",
+    "policy_denied_actions_must_be_empty": true,
+    "generated_scaffold_required": true
+  },
+  "synthesis": {
+    "generator": "PHOENIX_DETERMINISTIC_READ_ONLY_ADAPTER_V1",
+    "llm_runtime_required": false,
+    "prompt_spec_digest_required": true,
+    "byte_deterministic_replay_required": true,
+    "mutation_capable_adapter_synthesis": "DENY",
+    "repository_write_during_synthesis": false,
+    "automatic_activation": false
+  },
+  "verification": {
+    "phase7_static_contract_validation_required": true,
+    "exact_generated_source_replay_required": true,
+    "candidate_execution_requires_security_boundary_provider": true,
+    "candidate_execution_without_security_boundary_provider": "DENY",
+    "network_default": "DENY",
+    "repository_write": "DENY",
+    "unknown_side_effect": "DENY"
+  },
+  "promotion": {
+    "target": "PHASE7_REVIEW_CANDIDATE_ONLY",
+    "explicit_approval_required": true,
+    "exact_source_sha256_required": true,
+    "signed_attestation_required": true,
+    "repository_write": false,
+    "activation_transaction_creation": false,
+    "automatic_engine_activation": false
+  },
+  "runtime_root": "runtime://adapter_synthesis/",
+  "external_dependency_required": false
+}

@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -184,6 +184,29 @@
         "configs/phoenix/engine_registry_v1.json",
         "configs/phoenix/capability_executor_registry_v1.json",
         "configs/phoenix/policy_bundle_manifest_v1.json"
+      ]
+    },
+    {
+      "engine_id": "autonomy.adapter_synthesis",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "adapter.synthesis.candidate.write",
+        "adapter.verification.attestation.write",
+        "adapter.promotion.handoff.write"
+      ],
+      "allowed_domains": [
+        "synthesis",
+        "verification",
+        "activation",
+        "orchestration"
+      ],
+      "allowed_path_roots": [
+        "runtime://adapter_synthesis/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.adapter.synthesis.internal"
       ]
     }
   ]

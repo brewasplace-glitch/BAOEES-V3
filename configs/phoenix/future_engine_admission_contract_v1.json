@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -26,7 +26,10 @@
     "phase6_signed_proposal_verified",
     "implementation_contract_pass",
     "engine_activation_transaction_ready",
-    "governed_activation_approval_present"
+    "governed_activation_approval_present",
+    "deterministic_adapter_synthesis_spec_digest",
+    "signed_adapter_verification_attestation",
+    "accepted_security_boundary_before_candidate_execution"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -43,7 +46,11 @@
     "activation_without_verified_backup",
     "activation_without_explicit_approval",
     "policy_deny_auto_weakening",
-    "untrusted_candidate_execution_during_validation"
+    "untrusted_candidate_execution_during_validation",
+    "mutation_capable_adapter_automatic_synthesis",
+    "candidate_execution_without_accepted_security_boundary",
+    "phase8_handoff_direct_repository_write",
+    "phase8_handoff_automatic_activation"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -70,5 +77,16 @@
     "verified_backup_required": true,
     "policy_deny_cannot_be_auto_weakened": true,
     "normal_non_force_push_only": true
+  },
+  "adapter_synthesis_contract": {
+    "phase6_signed_proposal_required": true,
+    "read_only_deterministic_synthesis_only": true,
+    "exact_source_replay_required": true,
+    "candidate_execution_requires_accepted_security_boundary": true,
+    "candidate_execution_enabled_in_v1": false,
+    "signed_attestation_required": true,
+    "governed_handoff_requires_explicit_sha_binding": true,
+    "handoff_repository_write": false,
+    "automatic_activation": false
   }
 }

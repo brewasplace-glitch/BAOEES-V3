@@ -98,7 +98,7 @@ class Phase6Tests(unittest.TestCase):
 
     def test_central_policy_version_23(self):
         d=load("autonomy_policy_v2.json")
-        self.assertEqual(d["version"],"2.4.0")
+        self.assertEqual(d["version"],"2.5.0")
 
     def test_phase6_engine_registered_gateway_required(self):
         d=load("engine_registry_v1.json")
@@ -299,7 +299,7 @@ class Phase6Tests(unittest.TestCase):
         x=d["autonomous_onboarding_contract"]
         self.assertFalse(x["mutating_engine_automatic_activation"])
         self.assertTrue(x["discovery_must_not_import_candidate_code"])
-        self.assertEqual(d["version"],"1.3.0")
+        self.assertEqual(d["version"],"1.4.0")
 
     def test_open_source_review_pluggy_stevedore(self):
         d=load("open_source_engine_discovery_onboarding_review_v1.json")
@@ -316,8 +316,8 @@ class Phase6Tests(unittest.TestCase):
         self.assertEqual(d["engine_onboarding_policy_version"],"1.0.0")
 
     def test_executor_registry_version_11_and_engine_registry_14(self):
-        self.assertEqual(load("capability_executor_registry_v1.json")["version"],"1.2.0")
-        self.assertEqual(load("engine_registry_v1.json")["version"],"1.5.0")
+        self.assertEqual(load("capability_executor_registry_v1.json")["version"],"1.3.0")
+        self.assertEqual(load("engine_registry_v1.json")["version"],"1.6.0")
 
     def test_failed_admission_report_can_persist_without_scaffold(self):
         c=readonly_candidate()

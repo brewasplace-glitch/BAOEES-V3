@@ -1,18 +1,18 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
-  "policy_version": "2.4.0",
+  "policy_version": "2.5.0",
   "gateway_policy_version": "1.0.0",
-  "engine_registry_version": "1.5.0",
+  "engine_registry_version": "1.6.0",
   "files": {
     "north_star_v1.json": {
       "sha256": "71bfef9c31972000ba6779d8b8319becf6382a18e0a532a81a0a66df8706952e",
       "required": true
     },
     "autonomy_policy_v2.json": {
-      "sha256": "0f5b1f54d56876fb1e4f7ffa68fba0f7c457f06c9cd356d7626096807bd15139",
+      "sha256": "29f7c676d1ba880dc1a5fb59097d35450c1b2c54d679c5ce97124bd109c1f20b",
       "required": true
     },
     "universal_gateway_policy_v1.json": {
@@ -20,11 +20,11 @@
       "required": true
     },
     "engine_registry_v1.json": {
-      "sha256": "998028467282bcc9dd2a93b7de7cf8892bb515cc0ba004a6444f15f80f5822dc",
+      "sha256": "5eec9ee6c481d9a56dddb4886b2ea9a59d8fa0f9a4f5f24181ce97ad5a9c47e8",
       "required": true
     },
     "future_engine_admission_contract_v1.json": {
-      "sha256": "c72a51384e1c3c99b04fff054dc6d5f1dff620e1a56c642a043cb2073d60f2f5",
+      "sha256": "4366b278f27ef4b2ee2cd42d8e243d230e2b907fc00e5bff8f79419e1f88ef65",
       "required": true
     },
     "execution_planner_policy_v1.json": {
@@ -40,7 +40,7 @@
       "required": true
     },
     "capability_executor_registry_v1.json": {
-      "sha256": "b3bc13d18189496521d840787c558dd5060a067fe89f1da7433ecd1c4b5413fe",
+      "sha256": "af6b833c0c3f015a562450a34b85db075d97e9df05a141fc7f27917abb1ab850",
       "required": true
     },
     "engine_onboarding_policy_v1.json": {
@@ -50,11 +50,21 @@
     "engine_activation_policy_v1.json": {
       "sha256": "bf6dd55d1e5168a901288952d53d7b9592301ec29904f72cefc3af797857c163",
       "required": true
+    },
+    "adapter_synthesis_policy_v1.json": {
+      "sha256": "835e8330552191965dd7a22f5c90beda460182280372b05cea3a18e4b904badf",
+      "required": true
+    },
+    "adapter_verification_profile_v1.json": {
+      "sha256": "b3f9df539baded026a506c9a49325a58e7ca9b4638634b3bf1dafda980118589",
+      "required": true
     }
   },
-  "bundle_sha256": "65bb6e42325ae1186216118e136842033318110767aff9af9e28fbb704953e48",
-  "capability_executor_registry_version": "1.2.0",
-  "future_engine_admission_contract_version": "1.3.0",
+  "bundle_sha256": "96e4a5e28a0bbd8dd01c2a7287bf18c01868862ab6254d8f2393f76eacc4e90f",
+  "capability_executor_registry_version": "1.3.0",
+  "future_engine_admission_contract_version": "1.4.0",
   "engine_onboarding_policy_version": "1.0.0",
-  "engine_activation_policy_version": "1.0.0"
+  "engine_activation_policy_version": "1.0.0",
+  "adapter_synthesis_policy_version": "1.0.0",
+  "adapter_verification_profile_version": "1.0.0"
 }

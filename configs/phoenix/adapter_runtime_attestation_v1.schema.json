@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/adapter_runtime_attestation_v1.schema.json",
+  "title": "PHOENIX Adapter Runtime Attestation v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "attestation_id",
+    "candidate_id",
+    "source_sha256",
+    "prompt_spec_sha256",
+    "static_validation",
+    "isolation",
+    "deterministic_replay",
+    "candidate_code_executed",
+    "repository_write_performed",
+    "phase7_activation_transaction_eligible",
+    "status",
+    "attestation_sha256",
+    "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "PHOENIX_ADAPTER_RUNTIME_ATTESTATION_V1"},
+    "attestation_id": {"type": "string", "pattern": "^ADPATT-[A-F0-9]{16}$"},
+    "candidate_id": {"type": "string", "pattern": "^ADPCAND-[A-F0-9]{16}$"},
+    "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "prompt_spec_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "candidate_code_executed": {"const": false},
+    "repository_write_performed": {"const": false},
+    "phase7_activation_transaction_eligible": {"const": false},
+    "status": {"const": "STATIC_VERIFIED_EXECUTION_BLOCKED"},
+    "attestation_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": true
+}

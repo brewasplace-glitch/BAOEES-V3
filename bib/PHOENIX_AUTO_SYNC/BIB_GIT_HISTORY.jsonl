@@ -1,3 +1,4 @@
+{"commit": "7f96229cb51db91c7e3dbca6681a2fae7c9dce27", "date": "2026-09-18T23:01:04+02:00", "subject": "fix(autonomy): finalize Windows HMAC and isolated git fixture"}
 {"commit": "3caa337b8c3116309407777f0d8b70265b70b067", "date": "2026-09-16T20:23:27+02:00", "subject": "feat(autonomy): add governed engine activation v1"}
 {"commit": "06fc75724b40de3faf1b1c6db7b3f456f9feee8f", "date": "2026-09-16T12:38:33+02:00", "subject": "feat(autonomy): add autonomous engine onboarding v1"}
 {"commit": "c0601868316171929567382029bd470640abd880", "date": "2026-09-16T01:21:29+02:00", "subject": "feat(autonomy): add universal capability executor registry v1"}
@@ -497,4 +498,3 @@
 {"commit": "b14841d013db131028f3132fe73c63d8d09251d2", "date": "2026-06-26T15:14:09+02:00", "subject": "fix: rebuild HTML dashboard export engine for Project Phoenix v1.6"}
 {"commit": "de57cea3faf2d3855a288def06e196d4f275d889", "date": "2026-06-26T14:06:23+02:00", "subject": "feat: rebrand Project Phoenix launcher v1.5"}
 {"commit": "9435d938885fb9edf8b15c426bcc747f7b056193", "date": "2026-06-26T13:51:12+02:00", "subject": "feat: add Project Phoenix start dashboard v1.4"}
-{"commit": "0240d2fe5bfedf94e53c12a6795218e10b40b66c", "date": "2026-06-26T12:42:56+02:00", "subject": "docs: add Project Phoenix repository baseline and Plutostraat output evidence"}

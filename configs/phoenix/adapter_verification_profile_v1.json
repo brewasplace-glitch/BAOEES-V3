@@ -1,0 +1,45 @@
+{
+  "schema": "PHOENIX_ADAPTER_VERIFICATION_PROFILE_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_STATIC_ONLY",
+  "fail_closed": true,
+  "candidate_execution_enabled": false,
+  "active_provider": {
+    "id": "disabled.no_security_boundary",
+    "version": "1.0.0",
+    "security_boundary": false,
+    "reason": "No reviewed Windows-compatible provider is currently accepted as a PHOENIX security boundary."
+  },
+  "execution_policy": {
+    "network": "DENY",
+    "filesystem": "NO_REPOSITORY_WRITE",
+    "process_spawn": "DENY",
+    "timeout_seconds": 5,
+    "memory_megabytes": 128,
+    "stdout_bytes": 65536,
+    "stderr_bytes": 65536
+  },
+  "defense_in_depth": {
+    "restrictedpython_reviewed_version": "8.5",
+    "restrictedpython_required": false,
+    "restrictedpython_is_security_boundary": false,
+    "phase7_ast_validator_required": true
+  },
+  "provider_candidates": [
+    {
+      "id": "microsoft.mxc",
+      "status": "DISABLED_UPSTREAM_NOT_SECURITY_BOUNDARY",
+      "url": "https://github.com/microsoft/mxc"
+    },
+    {
+      "id": "sandboxie.plus",
+      "status": "REVIEWED_NOT_INTEGRATED",
+      "url": "https://github.com/sandboxie-plus/Sandboxie"
+    },
+    {
+      "id": "google.gvisor",
+      "status": "UNAVAILABLE_WINDOWS_NATIVE",
+      "url": "https://github.com/google/gvisor"
+    }
+  ]
+}
