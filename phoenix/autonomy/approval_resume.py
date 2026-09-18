@@ -13,38 +13,46 @@ class LocalIntegrityKey:
     def __init__(self,path:Path):
         self.path=Path(path)
 
-    def _persist_binary(self,data:bytes,mode:str)->None:
-        with self.path.open(mode) as handle:
-            written=handle.write(data)
-            if written!=len(data):
-                raise RuntimeError(f"local integrity key short write: {written}/{len(data)}")
-            handle.flush()
-            os.fsync(handle.fileno())
-
     def _read_existing(self)->bytes:
         data=self.path.read_bytes()
-        if len(data)==32:
-            return data
-        recovered=data.replace(b"\r\n",b"\n")
-        if len(recovered)==32:
-            self._persist_binary(recovered,"wb")
-            migrated=self.path.read_bytes()
-            if migrated!=recovered:
-                raise RuntimeError("legacy integrity key migration verification failed")
-            return recovered
-        raise RuntimeError(f"local integrity key invalid length: {len(data)} bytes")
+        if len(data)!=32:
+            raise RuntimeError(
+                f"local integrity key invalid length: {len(data)} bytes"
+            )
+        return data
 
     def load_or_create(self)->bytes:
         self.path.parent.mkdir(parents=True,exist_ok=True)
+
         try:
             return self._read_existing()
         except FileNotFoundError:
             pass
+
         data=secrets.token_bytes(32)
+        # Windows CRT file descriptors default to text mode unless O_BINARY
+        # is requested explicitly. A random key byte of 0x0A can otherwise
+        # be expanded to CRLF, persisting 33 bytes instead of exactly 32.
+        flags=os.O_WRONLY|os.O_CREAT|os.O_EXCL|getattr(os,"O_BINARY",0)
         try:
-            self._persist_binary(data,"xb")
+            fd=os.open(str(self.path),flags,0o600)
         except FileExistsError:
+            # Another service/process won the creation race. Use exactly the
+            # persisted key rather than generating a second in-memory key.
             return self._read_existing()
+
+        try:
+            view=memoryview(data)
+            written=0
+            while written<len(data):
+                count=os.write(fd,view[written:])
+                if count<=0:
+                    raise RuntimeError("local integrity key write failed")
+                written+=count
+            os.fsync(fd)
+        finally:
+            os.close(fd)
+
         persisted=self._read_existing()
         if not hmac.compare_digest(persisted,data):
             raise RuntimeError("local integrity key persistence mismatch")

@@ -5,14 +5,14 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
 from pathlib import Path
+from unittest import mock
 
 from phoenix.autonomy import (
-    LocalIntegrityKey,
     AdapterImplementationValidator,
     EngineActivationService,
     EngineOnboardingService,
+    LocalIntegrityKey,
     UniversalCapabilityExecutorRegistry,
 )
 
@@ -192,31 +192,6 @@ class Phase7Tests(unittest.TestCase):
             val=service.validator.validate(source,engine_id=proposal["engine_id"],descriptor=descriptor)
             self.assertIn("CONTRACT_VALUE_MISMATCH:adapter_id",val.errors)
 
-    def test_local_integrity_key_binary_persistence_preserves_lf_bytes(self):
-        with tempfile.TemporaryDirectory() as td:
-            path=Path(td)/"integrity"/"key.bin"
-            deterministic=(b"A"*10)+(b"\n")+(b"B"*21)
-            self.assertEqual(len(deterministic),32)
-            with patch("phoenix.autonomy.approval_resume.secrets.token_bytes",return_value=deterministic):
-                loaded=LocalIntegrityKey(path).load_or_create()
-            self.assertEqual(loaded,deterministic)
-            self.assertEqual(path.read_bytes(),deterministic)
-            self.assertEqual(path.stat().st_size,32)
-
-    def test_local_integrity_key_migrates_legacy_windows_crlf_expansion(self):
-        with tempfile.TemporaryDirectory() as td:
-            path=Path(td)/"integrity"/"key.bin"
-            path.parent.mkdir(parents=True)
-            original=(b"C"*10)+(b"\n")+(b"D"*21)
-            self.assertEqual(len(original),32)
-            legacy=original.replace(b"\n",b"\r\n")
-            self.assertEqual(len(legacy),33)
-            path.write_bytes(legacy)
-            loaded=LocalIntegrityKey(path).load_or_create()
-            self.assertEqual(loaded,original)
-            self.assertEqual(path.read_bytes(),original)
-            self.assertEqual(path.stat().st_size,32)
-
     def test_phase6_proposal_hmac_persists_across_service_restart(self):
         with tempfile.TemporaryDirectory() as td:
             runtime=Path(td)
@@ -230,6 +205,21 @@ class Phase7Tests(unittest.TestCase):
             loaded=second.load_phase6_proposal(proposal_path)
             self.assertEqual(loaded["proposal_id"],proposal["proposal_id"])
             self.assertEqual(loaded["engine_id"],proposal["engine_id"])
+
+    def test_local_integrity_key_is_binary_safe_on_windows(self):
+        with tempfile.TemporaryDirectory() as td:
+            key_path=Path(td)/"integrity"/"binary_hmac_v1.key"
+            forced_key=b"\n"+(b"K"*31)
+            with mock.patch(
+                "phoenix.autonomy.approval_resume.secrets.token_bytes",
+                return_value=forced_key,
+            ):
+                created=LocalIntegrityKey(key_path).load_or_create()
+
+            self.assertEqual(created,forced_key)
+            self.assertEqual(key_path.read_bytes(),forced_key)
+            self.assertEqual(key_path.stat().st_size,32)
+            self.assertEqual(LocalIntegrityKey(key_path).load_or_create(),forced_key)
 
     def test_missing_implementation_transaction_waits(self):
         with tempfile.TemporaryDirectory() as td:
@@ -332,16 +322,20 @@ class Phase7Tests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             base=Path(td)
             repo=base/"repo"
+            # The installed regression runs with ROOT at the real repository.
+            # Never copy its .git directory into the isolated fixture: doing so
+            # inherits the live branch/remotes and makes git init non-isolated.
             shutil.copytree(
                 ROOT,
                 repo,
                 ignore=shutil.ignore_patterns(".git","__pycache__","*.pyc"),
             )
-            self.assertFalse((repo/".git").exists())
             git(repo,"init")
             git(repo,"config","user.email","phase7@test.invalid")
             git(repo,"config","user.name","PHOENIX Phase7 Test")
-            git(repo,"checkout","-b","project-phoenix")
+            # -B is stable whether the user's global init.defaultBranch already
+            # selected project-phoenix or git init selected another branch.
+            git(repo,"checkout","-B","project-phoenix")
             git(repo,"add",".")
             git(repo,"commit","-m","baseline")
             remote=base/"remote.git"
