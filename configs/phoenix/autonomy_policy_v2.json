@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -582,6 +582,31 @@
         "no_repository_write"
       ],
       "reason": "A SHA-bound candidate may be promoted only to Phase-7 review staging, never directly into the repository or activation."
+    },
+    {
+      "id": "P9-ALLOW-LEVEL3-RUNTIME-ATTESTATION",
+      "priority": 764,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.level3.cycle.attestation.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://level3_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "accepted_security_boundary",
+        "static_validation",
+        "deterministic_replay",
+        "no_repository_write"
+      ],
+      "reason": "A LOW-risk runtime proof may persist only an integrity-bound attestation after accepted isolation and deterministic replay."
     }
   ],
   "domain_authority": {
@@ -628,7 +653,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_8_ADAPTER_SYNTHESIS_STATIC_VERIFICATION_GOVERNED_HANDOFF",
+  "phase": "PHASE_9_BOUNDED_LEVEL3_AUTONOMOUS_TASK_CYCLE_ISOLATED_RUNTIME_PROOF",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -679,6 +704,20 @@
     "signed_attestation_required": true,
     "governed_handoff_requires_explicit_sha_bound_approval": true,
     "handoff_target": "PHASE7_REVIEW_CANDIDATE_ONLY",
+    "automatic_engine_activation": false
+  },
+  "level3_autonomous_cycle": {
+    "allowed_risk": "LOW_ONLY",
+    "max_tasks_per_invocation": 1,
+    "max_repair_attempts": 3,
+    "accepted_security_boundary_required": true,
+    "provider_install_during_cycle": "DENY",
+    "image_pull_during_cycle": "DENY",
+    "network_default": "DENY",
+    "repository_write_during_runtime_proof": false,
+    "deterministic_runtime_replay_required": true,
+    "signed_attestation_required": true,
+    "automatic_phase7_transaction": false,
     "automatic_engine_activation": false
   }
 }

@@ -1,6 +1,6 @@
 """PROJECT PHOENIX Autonomous Development Foundation v1.0.0."""
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 from .models import RiskLevel, CycleMode, Task, Decision, Capability, LearningEvent
 from .policy import AutonomyPolicy, RiskClassifier
@@ -29,6 +29,9 @@ __all__ = [
     "LocalIntegrityKey","ApprovalResumeEngine","OrchestrationStore","ReadOnlyStepExecutor","AutonomousExecutionOrchestrator",
     "IsolatedVerificationProvider","DisabledIsolationProvider","StaticVerificationReport","AdapterStaticVerifier",
     "DeterministicReadOnlyAdapterSynthesizer","AdapterSynthesisService",
+    "RuntimeProviderProbe","IsolatedRuntimeProvider","DisabledRuntimeProvider",
+    "PodmanMachineRuntimeProvider","WindowsSandboxRuntimeProvider",
+    "select_runtime_provider","BoundedLevel3CycleService",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -58,3 +61,7 @@ from .engine_activation import EngineActivationService
 from .adapter_verification import IsolatedVerificationProvider, DisabledIsolationProvider, StaticVerificationReport, AdapterStaticVerifier
 
 from .adapter_synthesis import DeterministicReadOnlyAdapterSynthesizer, AdapterSynthesisService
+
+from .isolated_runtime import RuntimeProviderProbe, IsolatedRuntimeProvider, DisabledRuntimeProvider, PodmanMachineRuntimeProvider, WindowsSandboxRuntimeProvider, select_runtime_provider
+
+from .level3_cycle import BoundedLevel3CycleService

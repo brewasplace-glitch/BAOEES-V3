@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_action_default": "DENY_NO_REGISTERED_ADAPTER",
@@ -147,6 +147,19 @@
         "adapter.synthesis.candidate.write",
         "adapter.verification.attestation.write",
         "adapter.promotion.handoff.write"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.level3.cycle.internal",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.level3_cycle",
+      "actions": [
+        "autonomy.level3.cycle.attestation.write"
       ],
       "mutation_capable": true,
       "gateway_required": true,

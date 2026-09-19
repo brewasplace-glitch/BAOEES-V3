@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schema/level3_cycle_attestation_v1.schema.json",
+  "title": "PHOENIX Level-3 Cycle Attestation v1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "attestation_id",
+    "cycle_id",
+    "risk",
+    "candidate_id",
+    "source_sha256",
+    "provider",
+    "execution",
+    "deterministic_runtime_replay",
+    "repair_attempts",
+    "repository_write_performed",
+    "automatic_activation",
+    "status",
+    "attestation_sha256",
+    "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {
+      "const": "PHOENIX_LEVEL3_CYCLE_ATTESTATION_V1"
+    },
+    "risk": {
+      "const": "LOW"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "deterministic_runtime_replay": {
+      "const": "PASS"
+    },
+    "repository_write_performed": {
+      "const": false
+    },
+    "automatic_activation": {
+      "const": false
+    },
+    "status": {
+      "const": "LEVEL3_LOW_RISK_RUNTIME_PROOF_PASS"
+    }
+  }
+}

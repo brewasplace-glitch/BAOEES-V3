@@ -1,0 +1,65 @@
+{
+  "schema": "PHOENIX_ISOLATED_RUNTIME_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_CONDITIONAL",
+  "fail_closed": true,
+  "allowed_risk": [
+    "LOW"
+  ],
+  "candidate_requirements": {
+    "read_only": true,
+    "phase7_static_contract_pass": true,
+    "phase8_deterministic_source_replay_pass": true,
+    "mutation_capable": false,
+    "repository_write": false,
+    "unknown_side_effect": "DENY"
+  },
+  "provider_order": [
+    "containers.podman.machine.rootless",
+    "microsoft.windows_sandbox.hardened"
+  ],
+  "automatic_provider_install": false,
+  "automatic_image_pull": false,
+  "podman": {
+    "license": "Apache-2.0",
+    "windows_machine_required": true,
+    "rootless_connection_required": true,
+    "local_digest_bound_image_required": true,
+    "image_environment_variable": "PHOENIX_PHASE9_PODMAN_IMAGE",
+    "pull_policy": "never",
+    "network": "none",
+    "root_filesystem": "read_only",
+    "capabilities": "drop_all",
+    "no_new_privileges": true,
+    "host_mounts": false
+  },
+  "windows_sandbox": {
+    "fallback": true,
+    "networking": "Disable",
+    "clipboard_redirection": "Disable",
+    "printer_redirection": "Disable",
+    "audio_input": "Disable",
+    "video_input": "Disable",
+    "vGPU": "Disable",
+    "protected_client": "Enable",
+    "input_mapping": "READ_ONLY",
+    "python_mapping": "READ_ONLY",
+    "output_mapping": "EPHEMERAL_OUTSIDE_REPOSITORY"
+  },
+  "execution_limits": {
+    "timeout_seconds": 180,
+    "memory_megabytes": 1024,
+    "cpus": 1,
+    "pids": 32,
+    "stdout_bytes": 65536,
+    "stderr_bytes": 65536,
+    "deterministic_repetitions": 2
+  },
+  "attestation": {
+    "source_sha256_required": true,
+    "nonce_binding_required": true,
+    "provider_probe_required": true,
+    "deterministic_runtime_replay_required": true,
+    "hmac_required": true
+  }
+}

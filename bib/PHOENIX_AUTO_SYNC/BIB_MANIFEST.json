@@ -3767,9 +3767,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "480c9e3910e0c4722f254d309aa8e485ce0202b2",
+      "git_oid": "a3fb4f44c7b7d7ec6292d12c0d21c7d7f0c4b785",
       "path": "configs/phoenix/autonomy_policy_v2.json",
-      "sha256": "29f7c676d1ba880dc1a5fb59097d35450c1b2c54d679c5ce97124bd109c1f20b"
+      "sha256": "859f722fda733ee1d3f33576cb0db9fff5672c1aa88883b363a8addc76464850"
     },
     {
       "chunks": 1,
@@ -3929,9 +3929,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "e21a6df372d48234ce545aadd589d98ccdd208df",
+      "git_oid": "651a058cfeeef41000a3f618f7d4b481b73a49f1",
       "path": "configs/phoenix/capability_executor_registry_v1.json",
-      "sha256": "af6b833c0c3f015a562450a34b85db075d97e9df05a141fc7f27917abb1ab850"
+      "sha256": "30dd0fb63cf71633c809db6459eb790c0f6d707f25a966de4136a00bc00d99da"
     },
     {
       "chunks": 1,
@@ -4397,9 +4397,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "9753c96f221e7d4ca1809c05d04d6551c6b5093d",
+      "git_oid": "211f08959414e764954a250cae345248075d6a21",
       "path": "configs/phoenix/engine_registry_v1.json",
-      "sha256": "5eec9ee6c481d9a56dddb4886b2ea9a59d8fa0f9a4f5f24181ce97ad5a9c47e8"
+      "sha256": "04c9324f84f5caf600d7bbd5cf211a7da5f0b186296fc5c045f745b27194184a"
     },
     {
       "chunks": 1,
@@ -4559,9 +4559,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "8c402eced7739ef8d353ebd1dd7553c791a85027",
+      "git_oid": "be302eba57a97e143e2d759b797db462c2e08801",
       "path": "configs/phoenix/future_engine_admission_contract_v1.json",
-      "sha256": "4366b278f27ef4b2ee2cd42d8e243d230e2b907fc00e5bff8f79419e1f88ef65"
+      "sha256": "4e93f5dd78fa1f9c961b11d8fdcaa8b6a92a9107af1345e6303cb50546023dbd"
     },
     {
       "chunks": 1,
@@ -4697,6 +4697,15 @@
       "git_oid": "097bf53921bbb6e3b2913b2fff0305e3943c3da1",
       "path": "configs/phoenix/integrated_architectural_suite_v4_0_0.json",
       "sha256": "43b30e71f024ab885a990950917ca0fbd5dca0e8bde00f08e70d99dcf68bf402"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "95325d7a150d5cdf0dabf549672f77a825fef745",
+      "path": "configs/phoenix/isolated_runtime_policy_v1.json",
+      "sha256": "293ac6b4d5fc5476a8e5300722c9b2337f4146c5f32c369c6860fb3884dc6596"
     },
     {
       "chunks": 1,
@@ -4841,6 +4850,24 @@
       "git_oid": "4f6f8ab65b347e67d8d45396b25c5e6a56314fa2",
       "path": "configs/phoenix/knowledge_reasoning_policy_v18_0.json",
       "sha256": "a6306ffa63ad3fb9ff153a18a318a42d2158769faf34b8624acb111be96a4827"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "b39dbb8feff6735730a64888909ddd2a2339869b",
+      "path": "configs/phoenix/level3_autonomous_cycle_policy_v1.json",
+      "sha256": "e912fa7542218487ea81d106d612a29de4279054c8477e9960f435da5e7d4711"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "522f1bb5088f0c5301502750e98b48eb61cdd412",
+      "path": "configs/phoenix/level3_cycle_attestation_v1.schema.json",
+      "sha256": "d701b96386accdd86325cd03ba1b64e09ccf9301c0bfd55d2356ab43412aa6b2"
     },
     {
       "chunks": 1,
@@ -5261,6 +5288,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "e49d7c2ba7c751f8b38fac91296684a489e4a8e2",
+      "path": "configs/phoenix/open_source_level3_isolated_runtime_review_v1.json",
+      "sha256": "51d89c646b986c8d5c3045172504a8375d9abae1ad7adb022405682c049623ea"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "84f08ea8bdf8209a39695480528000a2ed8828d3",
       "path": "configs/phoenix/open_source_media_player_policy_v1_0.json",
       "sha256": "76b40fe43c026e837ea068a055cf6d1df9e31b512e768bf182afb82ba4a26d52"
@@ -5513,9 +5549,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "b85f0cb61163f6033870c961ecbefa4c445776fe",
+      "git_oid": "8073b55e8bc8dc4bfcb55fb16c3d3301ef5b9c92",
       "path": "configs/phoenix/policy_bundle_manifest_v1.json",
-      "sha256": "ce70cfed0b84fa3c8e9559c4221e7f4e95a4909464272fcb41aac8e63e5eeadf"
+      "sha256": "cad48f4498cfd5964b11a9d8b154e22a8c985989af676f695e45ea3cda6c8a7e"
     },
     {
       "chunks": 1,
@@ -9242,6 +9278,24 @@
       "git_oid": "0e5eb33000424fb34679dd49fa7234b823486e53",
       "path": "docs/automation/PHOENIX_4_41_PHASE_8_OPEN_SOURCE_ADAPTER_VERIFICATION_REVIEW_2026_09_18.md",
       "sha256": "63dfaafc499db4fda938dd8984431bc437da262a5ced921ec74d03798c032645"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "d05787b1b7ac9a5643aa8696b99b362a3d504df9",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_9_BOUNDED_LEVEL3_AUTONOMOUS_TASK_CYCLE_ISOLATED_RUNTIME_PROOF_v1_0.md",
+      "sha256": "629f889bdb27b9bf8685e49e7e6d1102a1452be2c0a29e0e1c90f83ca52b27a2"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "0b9f4e20c8edcffc102c3f38a8a4281be9eda863",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_9_OPEN_SOURCE_ISOLATED_RUNTIME_REVIEW_2026_09_19.md",
+      "sha256": "a471bb9f31251321cad5847bc7ac2b34b87a91e518994771e2295e66f165f126"
     },
     {
       "chunks": 1,
@@ -15719,7 +15773,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "98b84316a57828d36e627e4dd4db9bc7dee09017",
+      "git_oid": "95c53c6ea267121dd6f977e32e9192caa2aba1ef",
       "path": "phoenix/autonomy/__init__.py",
       "sha256": null
     },
@@ -16079,6 +16133,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "feda5762d69f728a9c0ea880826e88b6e00f35c5",
+      "path": "phoenix/autonomy/isolated_runtime.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "c3bfa7f72dab2e311654e77040b93b09c223b029",
       "path": "phoenix/autonomy/landed_cost_gate_guard.py",
       "sha256": null
@@ -16090,6 +16153,15 @@
       "git_mode": "100644",
       "git_oid": "099fe26030fd02ab0cd212d222e01e578a328ec8",
       "path": "phoenix/autonomy/learning.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "fe9ef3ce02869851634aae1c91ef2ee80e9a7dcf",
+      "path": "phoenix/autonomy/level3_cycle.py",
       "sha256": null
     },
     {
@@ -21560,6 +21632,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "81952552d63daca995806293b4935c8030d3fd58",
+      "path": "runners/PROJECT_PHOENIX_4_41_bounded_level3_isolated_runtime_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "81aeee0839f167e9eb141348392029db2b2e62c6",
       "path": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1",
       "sha256": null
@@ -24341,7 +24422,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "ac89056efaec2a81e283e8bb884d8c00b10666c3",
+      "git_oid": "14478520c82d6b28b6d654c1d1fdf8b19cb6d04e",
       "path": "tests/automation/test_phoenix_441_adapter_synthesis_verification_v1.py",
       "sha256": null
     },
@@ -24431,7 +24512,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "9d38f75214832879cca7abd0ea942763ff99e1bb",
+      "git_oid": "045fb61425229620022403bff42ab678cec461a9",
       "path": "tests/automation/test_phoenix_441_autonomous_engine_onboarding_v1.py",
       "sha256": null
     },
@@ -24449,8 +24530,17 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "d1a3ef1b86900c624044df7c5db925163f503cb3",
+      "git_oid": "628b2c69b561a74f7b3c42599062f229d859a5bf",
       "path": "tests/automation/test_phoenix_441_autonomy_policy_north_star_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "971e5411526d58837e9c66e156b83951522b2546",
+      "path": "tests/automation/test_phoenix_441_bounded_level3_isolated_runtime_v1.py",
       "sha256": null
     },
     {
@@ -24485,7 +24575,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "968fe7a196aa854c2221487d88279108084d2d76",
+      "git_oid": "d2e562c35667cbd0eb7bc6aa10f5f460003ce5c1",
       "path": "tests/automation/test_phoenix_441_governed_engine_activation_v1.py",
       "sha256": null
     },
@@ -24593,7 +24683,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "3b51b79826c539c7e898d20d96fbc95d2964a23f",
+      "git_oid": "0ff382d142aa4efaabe37d126802a4ba79894032",
       "path": "tests/automation/test_phoenix_441_universal_capability_executor_registry_v1.py",
       "sha256": null
     },
@@ -27938,5 +28028,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "c0f0cd3ff9b4386c46910ba7b680ebb2b75a28155c09743cdc0fa0690e491418"
+  "source_digest": "25af1c83c3241496ac366fe999e79c8eaf6289813ac4ea44384a8a4e1147dda2"
 }

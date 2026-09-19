@@ -1,0 +1,63 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_LEVEL3_ISOLATED_RUNTIME_REVIEW_V1",
+  "version": "1.0.0",
+  "reviewed_at": "2026-09-18",
+  "open_source_first": true,
+  "primary": {
+    "id": "containers.podman.machine.rootless",
+    "name": "Podman Machine",
+    "license": "Apache-2.0",
+    "upstream": "https://github.com/containers/podman",
+    "windows_documentation": "https://podman-desktop.io/docs/installation/windows-install",
+    "decision": "CONDITIONAL_ADMISSION",
+    "requirements": [
+      "Windows Podman machine is already installed and running",
+      "active connection is rootless",
+      "container image is already local and bound by sha256 digest",
+      "pull policy is never",
+      "network is none",
+      "root filesystem is read-only",
+      "all capabilities are dropped",
+      "no-new-privileges is enabled",
+      "no host or repository mounts"
+    ]
+  },
+  "fallback": {
+    "id": "microsoft.windows_sandbox.hardened",
+    "name": "Windows Sandbox",
+    "license": "Windows component",
+    "upstream": "https://learn.microsoft.com/windows/security/application-security/application-isolation/windows-sandbox/",
+    "configuration": "https://learn.microsoft.com/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file",
+    "decision": "CONDITIONAL_ADMISSION",
+    "requirements": [
+      "WindowsSandbox.exe is available",
+      "networking is disabled",
+      "clipboard, printers, audio, video and vGPU are disabled",
+      "ProtectedClient is enabled",
+      "candidate input and Python runtime mappings are read-only",
+      "output mapping is an ephemeral directory outside the repository"
+    ]
+  },
+  "not_admitted": [
+    {
+      "id": "microsoft.mxc",
+      "reason": "Upstream preview warning does not support treating profiles as security boundaries."
+    },
+    {
+      "id": "restrictedpython",
+      "reason": "Language restriction is defense in depth, not an operating-system sandbox."
+    },
+    {
+      "id": "native.host.subprocess",
+      "reason": "Host-process execution is not an isolation boundary."
+    }
+  ],
+  "phase9_decision": {
+    "candidate_execution": "CONDITIONAL_FAIL_CLOSED",
+    "automatic_install": false,
+    "automatic_download": false,
+    "risk": "LOW_ONLY",
+    "repository_write_during_runtime_proof": false,
+    "automatic_activation": false
+  }
+}

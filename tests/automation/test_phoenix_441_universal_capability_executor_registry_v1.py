@@ -197,7 +197,7 @@ class Phase5Tests(unittest.TestCase):
         m=load("policy_bundle_manifest_v1.json")
         self.assertIn("capability_executor_registry_v1.json",m["files"])
         self.assertTrue(m["files"]["capability_executor_registry_v1.json"]["required"])
-        self.assertTrue(str(m["capability_executor_registry_version"]).startswith("1.3."))
+        self.assertTrue(str(m["capability_executor_registry_version"]).startswith("1.4."))
 
     def test_future_admission_contract_requires_adapter_coverage(self):
         d=load("future_engine_admission_contract_v1.json")

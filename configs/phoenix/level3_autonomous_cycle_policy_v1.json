@@ -1,0 +1,54 @@
+{
+  "schema": "PHOENIX_LEVEL3_AUTONOMOUS_CYCLE_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_BOUNDED_PROOF",
+  "fail_closed": true,
+  "allowed_risk": [
+    "LOW"
+  ],
+  "medium_risk": "ESCALATE",
+  "high_risk": "DENY",
+  "critical_risk": "DENY",
+  "max_tasks_per_invocation": 1,
+  "max_repair_attempts": 3,
+  "same_failed_patch_retry": "DENY",
+  "new_hypothesis_per_retry_required": true,
+  "rollback_on_confidence_drop": true,
+  "required_stages": [
+    "OBSERVE",
+    "CLASSIFY_LOW",
+    "OPEN_SOURCE_REVIEW",
+    "PLAN",
+    "SYNTHESIZE",
+    "STATIC_VERIFY",
+    "ISOLATED_EXECUTE",
+    "DETERMINISTIC_REPLAY",
+    "EVIDENCE",
+    "LEARN",
+    "HANDOFF_READY"
+  ],
+  "isolation": {
+    "accepted_security_boundary_required": true,
+    "network_default": "DENY",
+    "repository_mount": "DENY",
+    "candidate_is_read_only": true,
+    "provider_install_during_cycle": "DENY",
+    "image_pull_during_cycle": "DENY"
+  },
+  "repository": {
+    "write_during_runtime_proof": false,
+    "commit_during_runtime_proof": false,
+    "push_during_runtime_proof": false,
+    "future_low_risk_mutation_requires_isolated_worktree": true,
+    "future_promotion_requires_existing_ff_only_backup_gate": true
+  },
+  "handoff": {
+    "target": "PHASE7_GOVERNED_REVIEW_ONLY",
+    "explicit_sha_bound_approval_required": true,
+    "automatic_activation": false,
+    "automatic_phase7_transaction": false
+  },
+  "professional_release_claims": "DENY",
+  "for_construction_release": "DENY",
+  "automatic_activation": false
+}

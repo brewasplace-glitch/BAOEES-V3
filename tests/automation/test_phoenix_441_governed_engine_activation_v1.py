@@ -98,7 +98,7 @@ class Phase7Tests(unittest.TestCase):
         self.assertTrue(d["governed_install"]["explicit_approval_required"])
 
     def test_central_policy_version_24(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"],"2.5.0")
+        self.assertEqual(load("autonomy_policy_v2.json")["version"],"2.6.0")
 
     def test_phase7_engine_registered_gateway_required(self):
         d=load("engine_registry_v1.json")
@@ -289,7 +289,7 @@ class Phase7Tests(unittest.TestCase):
 
     def test_future_contract_activation_rules(self):
         d=load("future_engine_admission_contract_v1.json")
-        self.assertEqual(d["version"],"1.4.0")
+        self.assertEqual(d["version"],"1.5.0")
         x=d["governed_activation_contract"]
         self.assertTrue(x["explicit_activation_approval_required"])
         self.assertTrue(x["verified_backup_required"])
