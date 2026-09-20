@@ -1,0 +1,97 @@
+{
+  "schema": "PHOENIX_REPOSITORY_IMPROVEMENT_CYCLE_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_BOUNDED",
+  "fail_closed": true,
+  "allowed_risk": [
+    "LOW"
+  ],
+  "max_cycles_per_invocation": 1,
+  "max_repair_attempts": 3,
+  "same_failed_patch_retry": "DENY",
+  "new_hypothesis_per_retry_required": true,
+  "max_candidate_commits": 1,
+  "allowed_status_codes": [
+    "A",
+    "M"
+  ],
+  "candidate_branch_prefix": "auto/phase10-low-",
+  "lane_a": {
+    "id": "LOW_NON_EXECUTABLE",
+    "automatic_fast_forward_promotion": true,
+    "approval_required": false,
+    "allowed_roots": [
+      "docs/automation/autonomous_generated/",
+      "outputs/runtime/autonomy/"
+    ],
+    "allowed_extensions": [
+      ".md",
+      ".txt",
+      ".json"
+    ],
+    "max_files": 5,
+    "max_file_bytes": 65536,
+    "max_total_bytes": 262144
+  },
+  "lane_b": {
+    "id": "LOW_EXECUTABLE_APPROVAL_BOUND",
+    "automatic_fast_forward_promotion": false,
+    "approval_required": true,
+    "required_source_root": "phoenix/autonomy/generated_adapters/",
+    "allowed_roots": [
+      "phoenix/autonomy/generated_adapters/",
+      "tests/automation/generated_adapters/",
+      "docs/automation/autonomous_generated/"
+    ],
+    "allowed_extensions": [
+      ".py",
+      ".md",
+      ".txt",
+      ".json"
+    ],
+    "max_files": 5,
+    "max_file_bytes": 131072,
+    "max_total_bytes": 393216,
+    "required_gates": [
+      "phase7_static_contract",
+      "accepted_security_boundary",
+      "deterministic_patch_replay",
+      "tests_pass",
+      "explicit_hmac_sha_approval"
+    ]
+  },
+  "worktree": {
+    "strategy": "native_git_worktree",
+    "must_be_outside_main_repository": true,
+    "main_worktree_write_during_candidate_build": "DENY",
+    "force": "DENY",
+    "candidate_commit_before_gates": "DENY"
+  },
+  "isolation": {
+    "accepted_security_boundary_required": true,
+    "network_default": "DENY",
+    "candidate_snapshot_mapping": "READ_ONLY",
+    "output_mapping": "EPHEMERAL_OUTSIDE_REPOSITORY",
+    "deterministic_repetitions": 2,
+    "provider_install_during_cycle": "DENY",
+    "image_pull_during_cycle": "DENY"
+  },
+  "promotion": {
+    "verified_backup_required": true,
+    "remote_race_guard_required": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "history_rewrite": "DENY",
+    "automatic_engine_activation": false
+  },
+  "attestation": {
+    "hmac_sha256_required": true,
+    "patch_sha256_required": true,
+    "baseline_sha_required": true,
+    "provider_identity_required": true,
+    "runtime_root": "runtime://repository_cycle/"
+  },
+  "automatic_engine_activation": false,
+  "professional_release_claims": "DENY",
+  "for_construction_release": "DENY"
+}

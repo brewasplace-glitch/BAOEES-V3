@@ -1,3 +1,4 @@
+{"commit": "9cda9eca36d08049352c8f952a056ca020094e6d", "date": "2026-09-20T00:08:29+02:00", "subject": "feat(autonomy): add bounded level3 isolated runtime proof v1"}
 {"commit": "750935fc29145338018b0adff2c783a17005f66b", "date": "2026-09-18T23:40:23+02:00", "subject": "feat(autonomy): add governed adapter synthesis verification v1"}
 {"commit": "7f96229cb51db91c7e3dbca6681a2fae7c9dce27", "date": "2026-09-18T23:01:04+02:00", "subject": "fix(autonomy): finalize Windows HMAC and isolated git fixture"}
 {"commit": "3caa337b8c3116309407777f0d8b70265b70b067", "date": "2026-09-16T20:23:27+02:00", "subject": "feat(autonomy): add governed engine activation v1"}
@@ -497,4 +498,3 @@
 {"commit": "0101655688703e5ffa4d4327616174ebc3f978cd", "date": "2026-06-26T17:14:07+02:00", "subject": "docs: add Project Phoenix BIB project knowledge v2.0"}
 {"commit": "88c32812894e27dee7ed4f3cc6cc23f4a257477d", "date": "2026-06-26T16:47:49+02:00", "subject": "docs: add Project Phoenix BIB core knowledge v1.9"}
 {"commit": "b14841d013db131028f3132fe73c63d8d09251d2", "date": "2026-06-26T15:14:09+02:00", "subject": "fix: rebuild HTML dashboard export engine for Project Phoenix v1.6"}
-{"commit": "de57cea3faf2d3855a288def06e196d4f275d889", "date": "2026-06-26T14:06:23+02:00", "subject": "feat: rebrand Project Phoenix launcher v1.5"}

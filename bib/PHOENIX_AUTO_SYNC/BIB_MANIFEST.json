@@ -3767,9 +3767,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "a3fb4f44c7b7d7ec6292d12c0d21c7d7f0c4b785",
+      "git_oid": "670fd734aa8e268e26f3d635f62b73932f7df307",
       "path": "configs/phoenix/autonomy_policy_v2.json",
-      "sha256": "859f722fda733ee1d3f33576cb0db9fff5672c1aa88883b363a8addc76464850"
+      "sha256": "48321c696b5b63b37c72f0e4992b769e5b769eb196ab6a261f1aaaf08a215059"
     },
     {
       "chunks": 1,
@@ -3929,9 +3929,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "651a058cfeeef41000a3f618f7d4b481b73a49f1",
+      "git_oid": "bbed24758c7d034b9f42ceacc1f50ed580089dc1",
       "path": "configs/phoenix/capability_executor_registry_v1.json",
-      "sha256": "30dd0fb63cf71633c809db6459eb790c0f6d707f25a966de4136a00bc00d99da"
+      "sha256": "674af97061a77f6e1b9457f149256627bde32849d9e10bba53f30c7bc9e8595a"
     },
     {
       "chunks": 1,
@@ -4397,9 +4397,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "211f08959414e764954a250cae345248075d6a21",
+      "git_oid": "e1d0f692403591602afb72fca7401a17ef19d165",
       "path": "configs/phoenix/engine_registry_v1.json",
-      "sha256": "04c9324f84f5caf600d7bbd5cf211a7da5f0b186296fc5c045f745b27194184a"
+      "sha256": "9993ef32323c99d766f8725dd7d39d1521524e08fe05b3b15be60747c0a40da5"
     },
     {
       "chunks": 1,
@@ -4559,9 +4559,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "be302eba57a97e143e2d759b797db462c2e08801",
+      "git_oid": "bf8490c5f2ac4b06f7f10660d758a6015b2b017e",
       "path": "configs/phoenix/future_engine_admission_contract_v1.json",
-      "sha256": "4e93f5dd78fa1f9c961b11d8fdcaa8b6a92a9107af1345e6303cb50546023dbd"
+      "sha256": "dfc0b994fc3c5c851129608f34bcfc9dae7480856123ef7c4e82f982df87a478"
     },
     {
       "chunks": 1,
@@ -5324,6 +5324,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "bca62e2423536dcf066fcc4f52a3a00032c8a07e",
+      "path": "configs/phoenix/open_source_repository_isolation_review_v1.json",
+      "sha256": "a84f3e0cf0e0e8270585298e617d2408063807c59cb6785a0c269ff6e8fa8fee"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "8aec457d3b83aa549ac8ad00eb67043033239259",
       "path": "configs/phoenix/opensees_engine_setup_v5_5_0.json",
       "sha256": "0a1602b8c94d9e8ab64cfe60912033115ed6796b6b3ea7972678742ea4282f79"
@@ -5549,9 +5558,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "8073b55e8bc8dc4bfcb55fb16c3d3301ef5b9c92",
+      "git_oid": "1511c6408c92d7224996f219151c444fc1a67796",
       "path": "configs/phoenix/policy_bundle_manifest_v1.json",
-      "sha256": "cad48f4498cfd5964b11a9d8b154e22a8c985989af676f695e45ea3cda6c8a7e"
+      "sha256": "388208eab5336694c6cfc6917a315b3c40dbe565cc0d7daa4c7d40e94ca93563"
     },
     {
       "chunks": 1,
@@ -5660,6 +5669,15 @@
       "git_oid": "97217e427a9d1140ea361080a32e881cbb00d717",
       "path": "configs/phoenix/project_specific_jurisdiction_permit_evidence_engine_v6_8_0.json",
       "sha256": "845455ad958338c7f2205c7bd9cbdcf39210e8341cbf177853a8cbb8b8376f70"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "8f56e147eb949bf98f239807689713e597471115",
+      "path": "configs/phoenix/protected_repository_paths_v1.json",
+      "sha256": "ccc64d6d69e04d2de36036fe1cf7d6d48333810fd093f49f72406282c013ddf4"
     },
     {
       "chunks": 1,
@@ -5876,6 +5894,24 @@
       "git_oid": "069299151d1b92bdbd1fefabbf4dd9d1dfcefb60",
       "path": "configs/phoenix/releases/bb18_release_framework_v1_0.json",
       "sha256": "5e0836c4a46593ae49e597d81441830f1462664006cada10ff4960e998e751fb"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "b34bc9fed6088354b351a54bc136af7814537226",
+      "path": "configs/phoenix/repository_cycle_attestation_v1.schema.json",
+      "sha256": "f7d2f8f49cbd0ae0b21c84656e1a9f4901c9863e881fc7432c8cb91591e73c72"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "bdbdd1c3b63166b37ad6ccf0ea46aa4a575ca5b4",
+      "path": "configs/phoenix/repository_improvement_cycle_policy_v1.json",
+      "sha256": "4212b96f1d6c96e8feb24456f454caa78b3f5987238b8521012b8c05da387953"
     },
     {
       "chunks": 1,
@@ -9143,6 +9179,24 @@
       "git_oid": "643c1326f716a4bd6fe7cd58c9e38ca1cd156765",
       "path": "docs/automation/PHOENIX_4_41_OPEN_SOURCE_POLICY_ENGINE_REVIEW_2026_09_15.md",
       "sha256": "f06cfaa210f8a0b61a75c29325aceef6ee38a49cf7456f5b0594a7c3ca3ff00f"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "c594a22060e726d18b4d8fd496dc213036928a08",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_10_BOUNDED_AUTONOMOUS_REPOSITORY_IMPROVEMENT_CYCLE_v1_0.md",
+      "sha256": "2452868bb5f5c070f81e94030b367acc2dd2636cf13f31e85b609606a7cdc1bd"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "ed3c472c0882c5f953ed35d517b787ff454e9e52",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_10_OPEN_SOURCE_REPOSITORY_ISOLATION_REVIEW_2026_09_20.md",
+      "sha256": "1c3651d664b2800dbd50ba01c6d901c880a718ee4094befc050c2237866e046a"
     },
     {
       "chunks": 1,
@@ -15773,7 +15827,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "95c53c6ea267121dd6f977e32e9192caa2aba1ef",
+      "git_oid": "0ee997ad7cfcaf76cd945883ff8191e8c97a444c",
       "path": "phoenix/autonomy/__init__.py",
       "sha256": null
     },
@@ -15937,6 +15991,15 @@
       "git_mode": "100644",
       "git_oid": "8d28e1c4585bc56f91ea836f012564831230b7c1",
       "path": "phoenix/autonomy/capability_registry.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "b794aa095dca26ee5516162f85724744c3de0602",
+      "path": "phoenix/autonomy/change_classifier.py",
       "sha256": null
     },
     {
@@ -16133,7 +16196,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "feda5762d69f728a9c0ea880826e88b6e00f35c5",
+      "git_oid": "7cda766bb374f6ee6128443770984e9bf0371242",
       "path": "phoenix/autonomy/isolated_runtime.py",
       "sha256": null
     },
@@ -16511,6 +16574,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "69987213e7376fbe08e30210a1b9489e1d818e1d",
+      "path": "phoenix/autonomy/repository_cycle.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "3d7893b4e1bd49234b0da824b3b032cee4df4ca3",
       "path": "phoenix/autonomy/request_io.py",
       "sha256": null
@@ -16765,6 +16837,15 @@
       "git_mode": "100644",
       "git_oid": "0707717fa85bc43f46ee3dd6848e0aa9a2ed5162",
       "path": "phoenix/autonomy/worktree.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "2784d2252f00630c9b79e2e7e66ea8d0490d2dce",
+      "path": "phoenix/autonomy/worktree_guard.py",
       "sha256": null
     },
     {
@@ -21641,6 +21722,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "febac290cdb527da3749cad9911186be0e121c5f",
+      "path": "runners/PROJECT_PHOENIX_4_41_bounded_repository_improvement_cycle_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "81aeee0839f167e9eb141348392029db2b2e62c6",
       "path": "runners/PROJECT_PHOENIX_4_41_cad_open.ps1",
       "sha256": null
@@ -24422,7 +24512,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "14478520c82d6b28b6d654c1d1fdf8b19cb6d04e",
+      "git_oid": "a4efc97e3a5646ebfa087a92e69297b76b419729",
       "path": "tests/automation/test_phoenix_441_adapter_synthesis_verification_v1.py",
       "sha256": null
     },
@@ -24512,7 +24602,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "045fb61425229620022403bff42ab678cec461a9",
+      "git_oid": "4a4b7b5c4a6744076f53790e25dc6171f4705b1d",
       "path": "tests/automation/test_phoenix_441_autonomous_engine_onboarding_v1.py",
       "sha256": null
     },
@@ -24530,7 +24620,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "628b2c69b561a74f7b3c42599062f229d859a5bf",
+      "git_oid": "1b366d778a020210c591902cf4ab8eb659e0496a",
       "path": "tests/automation/test_phoenix_441_autonomy_policy_north_star_v1.py",
       "sha256": null
     },
@@ -24539,8 +24629,17 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "971e5411526d58837e9c66e156b83951522b2546",
+      "git_oid": "1f2f6c1133fb7dd5161d4e1f3276e603bc768621",
       "path": "tests/automation/test_phoenix_441_bounded_level3_isolated_runtime_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "a8f9ea5b001f3849f58e168f5ad06e66646a125a",
+      "path": "tests/automation/test_phoenix_441_bounded_repository_improvement_cycle_v1.py",
       "sha256": null
     },
     {
@@ -24575,7 +24674,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "d2e562c35667cbd0eb7bc6aa10f5f460003ce5c1",
+      "git_oid": "c751470003e07d603aa353997d26d3dcac55e4b6",
       "path": "tests/automation/test_phoenix_441_governed_engine_activation_v1.py",
       "sha256": null
     },
@@ -24683,7 +24782,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "0ff382d142aa4efaabe37d126802a4ba79894032",
+      "git_oid": "511ecbd5826c774712b3370fe4b3d28854572e5a",
       "path": "tests/automation/test_phoenix_441_universal_capability_executor_registry_v1.py",
       "sha256": null
     },
@@ -28028,5 +28127,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "25af1c83c3241496ac366fe999e79c8eaf6289813ac4ea44384a8a4e1147dda2"
+  "source_digest": "4dcf9aa94ef9ae6800b6f98a9e8ea1f05f8dc86510cd7cc4779f66aa49294c5b"
 }

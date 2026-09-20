@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/repository_cycle_attestation_v1.schema.json",
+  "title": "PROJECT PHOENIX Repository Improvement Cycle Attestation v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "attestation_id",
+    "cycle_id",
+    "baseline_sha",
+    "lane",
+    "paths",
+    "patch_sha256",
+    "deterministic_patch_replay",
+    "accepted_security_boundary",
+    "main_worktree_unchanged_during_verification",
+    "automatic_engine_activation",
+    "status",
+    "attestation_sha256",
+    "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "PHOENIX_REPOSITORY_CYCLE_ATTESTATION_V1"},
+    "attestation_id": {"type": "string", "pattern": "^RCA-[A-F0-9]{16}$"},
+    "cycle_id": {"type": "string", "pattern": "^RCYCLE-[A-F0-9]{16}$"},
+    "baseline_sha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "lane": {"enum": ["LOW_NON_EXECUTABLE", "LOW_EXECUTABLE_APPROVAL_BOUND"]},
+    "paths": {"type": "array", "minItems": 1, "maxItems": 5, "items": {"type": "string"}},
+    "patch_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "deterministic_patch_replay": {"const": "PASS"},
+    "accepted_security_boundary": {"const": true},
+    "main_worktree_unchanged_during_verification": {"const": true},
+    "automatic_engine_activation": {"const": false},
+    "status": {"enum": ["LANE_A_PROMOTION_ELIGIBLE", "LANE_B_APPROVAL_REQUIRED", "PROMOTED"]},
+    "attestation_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": true
+}

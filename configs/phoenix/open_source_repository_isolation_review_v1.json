@@ -1,0 +1,48 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_REPOSITORY_ISOLATION_REVIEW_V1",
+  "version": "1.0.0",
+  "review_date": "2026-09-20",
+  "status": "ACCEPTED_WITH_BOUNDED_CONTROLS",
+  "primary": {
+    "component": "Git CLI worktree and merge",
+    "license": "GPL-2.0-only",
+    "upstream": "https://git-scm.com/",
+    "decision": "ACCEPT_PRIMARY",
+    "uses": [
+      "linked candidate worktree",
+      "porcelain status",
+      "binary patch generation",
+      "fast-forward-only merge",
+      "normal non-force push"
+    ]
+  },
+  "fallback": {
+    "component": "GitPython",
+    "license": "BSD-3-Clause",
+    "upstream": "https://github.com/gitpython-developers/GitPython",
+    "decision": "INSPECTION_FALLBACK_ONLY",
+    "may_not_replace": [
+      "native remote-race guard",
+      "native ancestry verification",
+      "native fast-forward gate",
+      "native push verification"
+    ]
+  },
+  "rejected_custom_scope": [
+    "custom Git object database",
+    "custom merge algorithm",
+    "custom credential manager",
+    "custom repository transport"
+  ],
+  "security_controls": [
+    "candidate worktree outside main repository",
+    "protected-path classifier",
+    "symlink and junction denial",
+    "accepted isolation provider",
+    "deterministic patch replay",
+    "verified backup before promotion",
+    "remote-race guard",
+    "fast-forward only",
+    "normal non-force push only"
+  ]
+}

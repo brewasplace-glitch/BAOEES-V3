@@ -377,6 +377,31 @@ class WindowsSandboxRuntimeProvider:
             "</Configuration>\n"
         )
 
+    @staticmethod
+    def build_run_script(python_relative: str) -> str:
+        """Publish the result first and the atomic completion marker last."""
+        return (
+            "$ErrorActionPreference='Stop'\n"
+            "$out='C:\\PhoenixOutput\\stdout.txt'\n"
+            "$err='C:\\PhoenixOutput\\stderr.txt'\n"
+            "$result='C:\\PhoenixOutput\\result.json'\n"
+            "$resultTmp='C:\\PhoenixOutput\\result.json.tmp'\n"
+            "$wrapperPath='C:\\PhoenixOutput\\wrapper.json'\n"
+            "$wrapperTmp='C:\\PhoenixOutput\\wrapper.json.tmp'\n"
+            f"$python='C:\\PhoenixPython\\{python_relative}'\n"
+            "$lines=@(& $python -I -B 'C:\\PhoenixInput\\harness.py' 2> $err)\n"
+            "$code=$LASTEXITCODE\n"
+            "$utf8=New-Object System.Text.UTF8Encoding($false)\n"
+            "[IO.File]::WriteAllLines($out,@($lines),$utf8)\n"
+            "if($code -eq 0 -and $lines.Count -gt 0){\n"
+            "  [IO.File]::WriteAllText($resultTmp,\"$($lines[-1])\",$utf8)\n"
+            "  [IO.File]::Move($resultTmp,$result)\n"
+            "}\n"
+            "$wrapper=[ordered]@{schema='PHOENIX_PHASE9_WSB_WRAPPER_V1';exit_code=$code;completed=$true}\n"
+            "[IO.File]::WriteAllText($wrapperTmp,($wrapper|ConvertTo-Json -Compress),$utf8)\n"
+            "[IO.File]::Move($wrapperTmp,$wrapperPath)\n"
+        )
+
     def execute(self, source: str, request: dict[str, Any]) -> dict[str, Any]:
         probe = self.probe()
         if not probe.execution_enabled:
@@ -391,19 +416,7 @@ class WindowsSandboxRuntimeProvider:
         (input_dir / "harness.py").write_text(harness, encoding="utf-8", newline="\n")
         python_root = Path(sys.base_prefix).resolve()
         python_relative = str(Path(sys.executable).resolve().relative_to(python_root)).replace("/", "\\")
-        run_ps1 = (
-            "$ErrorActionPreference='Stop'\n"
-            "$out='C:\\PhoenixOutput\\stdout.txt'\n"
-            "$err='C:\\PhoenixOutput\\stderr.txt'\n"
-            f"$python='C:\\PhoenixPython\\{python_relative}'\n"
-            "$lines=@(& $python -I -B 'C:\\PhoenixInput\\harness.py' 2> $err)\n"
-            "$code=$LASTEXITCODE\n"
-            "$utf8=New-Object System.Text.UTF8Encoding($false)\n"
-            "[IO.File]::WriteAllLines($out,@($lines),$utf8)\n"
-            "$wrapper=[ordered]@{schema='PHOENIX_PHASE9_WSB_WRAPPER_V1';exit_code=$code;completed=$true}\n"
-            "[IO.File]::WriteAllText('C:\\PhoenixOutput\\wrapper.json',($wrapper|ConvertTo-Json -Compress),$utf8)\n"
-            "if($code -eq 0 -and $lines.Count -gt 0){[IO.File]::WriteAllText('C:\\PhoenixOutput\\result.json',\"$($lines[-1])\",$utf8)}\n"
-        )
+        run_ps1 = self.build_run_script(python_relative)
         (input_dir / "run.ps1").write_text(run_ps1, encoding="utf-8-sig", newline="\r\n")
         config = self.build_wsb_config(input_dir, output_dir, python_root)
         config_path = root / "phase9.wsb"
@@ -422,10 +435,17 @@ class WindowsSandboxRuntimeProvider:
             if not wrapper_path.is_file():
                 raise TimeoutError("WINDOWS_SANDBOX_CANDIDATE_TIMEOUT_OR_EARLY_EXIT")
             wrapper = json.loads(wrapper_path.read_text(encoding="utf-8-sig"))
-            if int(wrapper.get("exit_code", -1)) != 0 or not result_path.is_file():
+            wrapper_exit = int(wrapper.get("exit_code", -1))
+            if wrapper_exit != 0 or not result_path.is_file():
                 stderr_path = output_dir / "stderr.txt"
                 stderr = stderr_path.read_text(encoding="utf-8-sig") if stderr_path.is_file() else ""
-                raise RuntimeError("WINDOWS_SANDBOX_CANDIDATE_FAILED:" + stderr[-1000:])
+                state = (
+                    f"exit_code={wrapper_exit};"
+                    f"result_present={str(result_path.is_file()).lower()}"
+                )
+                raise RuntimeError(
+                    "WINDOWS_SANDBOX_CANDIDATE_FAILED:" + state + ":" + stderr[-1000:]
+                )
             result = json.loads(result_path.read_text(encoding="utf-8-sig"))
         finally:
             if process.poll() is None:

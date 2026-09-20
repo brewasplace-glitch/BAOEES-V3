@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -33,7 +33,12 @@
     "runtime_provider_probe_pass",
     "runtime_nonce_binding",
     "deterministic_runtime_replay_pass",
-    "signed_level3_cycle_attestation"
+    "signed_level3_cycle_attestation",
+    "candidate_worktree_outside_main_repository",
+    "protected_repository_path_gate",
+    "deterministic_patch_replay_pass",
+    "repository_cycle_attestation_signed",
+    "lane_b_executable_change_sha_approval"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -59,7 +64,14 @@
     "runtime_provider_auto_install",
     "runtime_image_auto_pull",
     "phase9_runtime_proof_repository_write",
-    "phase9_automatic_activation"
+    "phase9_automatic_activation",
+    "phase10_main_worktree_write_during_candidate_build",
+    "phase10_protected_path_mutation",
+    "phase10_symlink_or_junction_escape",
+    "phase10_lane_b_automatic_promotion",
+    "phase10_non_fast_forward_promotion",
+    "phase10_force_push",
+    "phase10_automatic_activation"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -107,6 +119,22 @@
     "deterministic_repetitions": 2,
     "signed_attestation_required": true,
     "repository_write_during_proof": false,
+    "automatic_activation": false
+  },
+  "repository_improvement_cycle_contract": {
+    "low_risk_only": true,
+    "one_cycle_per_invocation": true,
+    "candidate_worktree_outside_main_required": true,
+    "main_worktree_write_during_candidate_build": false,
+    "protected_path_gate_required": true,
+    "symlink_and_junction_mutation": "DENY",
+    "accepted_security_boundary_required": true,
+    "deterministic_patch_replay_required": true,
+    "lane_a_non_executable_auto_promotion": "GATED_FAST_FORWARD_ONLY",
+    "lane_b_executable_promotion": "EXPLICIT_HMAC_SHA_APPROVAL_REQUIRED",
+    "remote_race_guard_required": true,
+    "normal_non_force_push_only": true,
+    "automatic_policy_or_registry_change": false,
     "automatic_activation": false
   }
 }

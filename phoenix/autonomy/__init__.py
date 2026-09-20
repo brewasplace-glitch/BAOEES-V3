@@ -1,6 +1,6 @@
 """PROJECT PHOENIX Autonomous Development Foundation v1.0.0."""
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 from .models import RiskLevel, CycleMode, Task, Decision, Capability, LearningEvent
 from .policy import AutonomyPolicy, RiskClassifier
@@ -32,6 +32,10 @@ __all__ = [
     "RuntimeProviderProbe","IsolatedRuntimeProvider","DisabledRuntimeProvider",
     "PodmanMachineRuntimeProvider","WindowsSandboxRuntimeProvider",
     "select_runtime_provider","BoundedLevel3CycleService",
+    "ChangeRecord","ChangeClassification","RepositoryChangeClassifier",
+    "normalize_repository_path","GuardedRepositorySnapshot","CandidateWorktree",
+    "GuardedWorktreeManager","initialize_fixture_repository",
+    "BoundedRepositoryImprovementCycleService","build_patch_probe_source",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -65,3 +69,9 @@ from .adapter_synthesis import DeterministicReadOnlyAdapterSynthesizer, AdapterS
 from .isolated_runtime import RuntimeProviderProbe, IsolatedRuntimeProvider, DisabledRuntimeProvider, PodmanMachineRuntimeProvider, WindowsSandboxRuntimeProvider, select_runtime_provider
 
 from .level3_cycle import BoundedLevel3CycleService
+
+from .change_classifier import ChangeRecord, ChangeClassification, RepositoryChangeClassifier, normalize_repository_path
+
+from .worktree_guard import GuardedRepositorySnapshot, CandidateWorktree, GuardedWorktreeManager, initialize_fixture_repository
+
+from .repository_cycle import BoundedRepositoryImprovementCycleService, build_patch_probe_source

@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -52,7 +52,10 @@
     "gateway_bypass",
     "permit_reuse",
     "permit_expired",
-    "permit_binding_mismatch"
+    "permit_binding_mismatch",
+    "protected_repository_path",
+    "symlink_or_junction_escape",
+    "non_fast_forward_promotion"
   ],
   "low_risk_mutation_roots": [
     "docs/automation/autonomous_generated/",
@@ -607,6 +610,57 @@
         "no_repository_write"
       ],
       "reason": "A LOW-risk runtime proof may persist only an integrity-bound attestation after accepted isolation and deterministic replay."
+    },
+    {
+      "id": "P10-ALLOW-ISOLATED-CANDIDATE-WRITE",
+      "priority": 763,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.repository.candidate.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "worktree://phase10/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "clean_synced",
+        "verified_backup",
+        "impact_lock",
+        "protected_path_gate",
+        "candidate_worktree_outside_main"
+      ],
+      "reason": "A LOW-risk candidate may mutate only its isolated Phase-10 worktree after exact impact and protected-path admission."
+    },
+    {
+      "id": "P10-ALLOW-REPOSITORY-CYCLE-ATTESTATION",
+      "priority": 762,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.repository.cycle.attestation.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://repository_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "accepted_security_boundary",
+        "protected_path_gate",
+        "deterministic_patch_replay",
+        "main_worktree_unchanged"
+      ],
+      "reason": "A bounded repository cycle may persist only an integrity-bound attestation after isolated verification and deterministic patch replay."
     }
   ],
   "domain_authority": {
@@ -653,7 +707,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_9_BOUNDED_LEVEL3_AUTONOMOUS_TASK_CYCLE_ISOLATED_RUNTIME_PROOF",
+  "phase": "PHASE_10_BOUNDED_AUTONOMOUS_REPOSITORY_IMPROVEMENT_CYCLE",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -718,6 +772,23 @@
     "deterministic_runtime_replay_required": true,
     "signed_attestation_required": true,
     "automatic_phase7_transaction": false,
+    "automatic_engine_activation": false
+  },
+  "repository_improvement_cycle": {
+    "allowed_risk": "LOW_ONLY",
+    "max_cycles_per_invocation": 1,
+    "max_repair_attempts": 3,
+    "candidate_worktree_outside_main_required": true,
+    "protected_path_gate_required": true,
+    "accepted_security_boundary_required": true,
+    "deterministic_patch_replay_required": true,
+    "lane_a_non_executable_fast_forward_eligible": true,
+    "lane_b_executable_sha_approval_required": true,
+    "remote_race_guard_required": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "automatic_policy_change": false,
+    "automatic_registry_change": false,
     "automatic_engine_activation": false
   }
 }

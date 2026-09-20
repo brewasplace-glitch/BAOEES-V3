@@ -214,6 +214,14 @@ class Phase9Tests(unittest.TestCase):
         xml = provider.build_wsb_config(Path("C:/input"), Path("C:/output"), Path("C:/python"))
         self.assertEqual(xml.count("<ReadOnly>true</ReadOnly>"), 2)
         self.assertEqual(xml.count("<ReadOnly>false</ReadOnly>"), 1)
+        script = provider.build_run_script("python.exe")
+        result_write = script.index("WriteAllText($resultTmp")
+        result_publish = script.index("Move($resultTmp,$result)")
+        wrapper_write = script.index("WriteAllText($wrapperTmp")
+        wrapper_publish = script.index("Move($wrapperTmp,$wrapperPath)")
+        self.assertLess(result_write, result_publish)
+        self.assertLess(result_publish, wrapper_write)
+        self.assertLess(wrapper_write, wrapper_publish)
 
     def test_podman_requires_digest_bound_image(self):
         policy = load("isolated_runtime_policy_v1.json")
@@ -250,10 +258,10 @@ class Phase9Tests(unittest.TestCase):
         self.assertTrue(probe.security_boundary)
 
     def test_phase9_versions_advance(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"], "2.6.0")
-        self.assertEqual(load("engine_registry_v1.json")["version"], "1.7.0")
-        self.assertEqual(load("capability_executor_registry_v1.json")["version"], "1.4.0")
-        self.assertEqual(load("future_engine_admission_contract_v1.json")["version"], "1.5.0")
+        self.assertGreaterEqual(load("autonomy_policy_v2.json")["version"], "2.6.0")
+        self.assertGreaterEqual(load("engine_registry_v1.json")["version"], "1.7.0")
+        self.assertGreaterEqual(load("capability_executor_registry_v1.json")["version"], "1.4.0")
+        self.assertGreaterEqual(load("future_engine_admission_contract_v1.json")["version"], "1.5.0")
 
     def test_level3_engine_and_adapter_are_gateway_bound(self):
         engines = load("engine_registry_v1.json")["engines"]

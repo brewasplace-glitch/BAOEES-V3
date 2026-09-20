@@ -108,12 +108,12 @@ class Phase8Tests(unittest.TestCase):
         self.assertFalse(review["phase8_decision"]["candidate_code_execution"])
 
     def test_policy_versions_advance(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"], "2.6.0")
-        self.assertEqual(load("engine_registry_v1.json")["version"], "1.7.0")
-        self.assertEqual(
+        self.assertGreaterEqual(load("autonomy_policy_v2.json")["version"], "2.6.0")
+        self.assertGreaterEqual(load("engine_registry_v1.json")["version"], "1.7.0")
+        self.assertGreaterEqual(
             load("capability_executor_registry_v1.json")["version"], "1.4.0"
         )
-        self.assertEqual(
+        self.assertGreaterEqual(
             load("future_engine_admission_contract_v1.json")["version"], "1.5.0"
         )
 

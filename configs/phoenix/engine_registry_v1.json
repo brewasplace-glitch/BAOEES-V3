@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -227,6 +227,28 @@
       ],
       "executor_adapter_ids": [
         "builtin.level3.cycle.internal"
+      ]
+    },
+    {
+      "engine_id": "autonomy.repository_cycle",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "autonomy.repository.candidate.write",
+        "autonomy.repository.cycle.attestation.write"
+      ],
+      "allowed_domains": [
+        "software",
+        "orchestration",
+        "verification"
+      ],
+      "allowed_path_roots": [
+        "worktree://phase10/",
+        "runtime://repository_cycle/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.repository.cycle.internal"
       ]
     }
   ]
