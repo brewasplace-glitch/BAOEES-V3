@@ -1,0 +1,28 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_MULTI_AGENT_DAG_REVIEW_V1",
+  "review_date": "2026-09-20",
+  "status": "ACCEPTED_BOUNDED",
+  "selected_primary": "python.graphlib.TopologicalSorter",
+  "decision": "EMBED_STDLIB_BOUNDED_SCHEDULER",
+  "primary": {
+    "name": "Python graphlib.TopologicalSorter",
+    "license": "PSF-2.0",
+    "url": "https://docs.python.org/3/library/graphlib.html",
+    "decision": "ADOPT_RUNTIME_PRIMARY"
+  },
+  "parallel_executor": {
+    "name": "Python concurrent.futures.ThreadPoolExecutor",
+    "license": "PSF-2.0",
+    "url": "https://docs.python.org/3/library/concurrent.futures.html",
+    "decision": "ADOPT_BOUNDED"
+  },
+  "fallback": {
+    "name": "NetworkX",
+    "license": "BSD-3-Clause",
+    "url": "https://networkx.org/documentation/stable/reference/algorithms/dag.html",
+    "decision": "INSPECTION_ONLY_NOT_RUNTIME_REQUIRED"
+  },
+  "rejected_heavy_orchestrators": ["Apache Airflow", "Dagster", "Prefect"],
+  "reason": "Phase 11 requires an embedded bounded scheduler, not an external orchestration service.",
+  "automatic_dependency_install": false
+}

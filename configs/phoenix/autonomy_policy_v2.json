@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -661,6 +661,32 @@
         "main_worktree_unchanged"
       ],
       "reason": "A bounded repository cycle may persist only an integrity-bound attestation after isolated verification and deterministic patch replay."
+    },
+    {
+      "id": "P11-ALLOW-MULTI-AGENT-DAG-ATTESTATION",
+      "priority": 761,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.multi_agent.dag.attestation.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://multi_agent_dag/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "accepted_security_boundary",
+        "dag_cycle_free",
+        "deterministic_replay",
+        "parallel_bound",
+        "read_only_agents"
+      ],
+      "reason": "A bounded multi-agent DAG may persist only a signed runtime attestation after cycle, determinism, isolation, and parallel-bound gates pass."
     }
   ],
   "domain_authority": {
@@ -707,7 +733,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_10_BOUNDED_AUTONOMOUS_REPOSITORY_IMPROVEMENT_CYCLE",
+  "phase": "PHASE_11_BOUNDED_MULTI_AGENT_DAG_ORCHESTRATION",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -787,6 +813,23 @@
     "remote_race_guard_required": true,
     "fast_forward_only": true,
     "normal_non_force_push_only": true,
+    "automatic_policy_change": false,
+    "automatic_registry_change": false,
+    "automatic_engine_activation": false
+  },
+  "multi_agent_dag": {
+    "allowed_risk": "LOW_ONLY",
+    "read_only_specialized_agents_only": true,
+    "max_tasks_per_dag": 12,
+    "max_parallel_workers": 3,
+    "max_dag_depth": 5,
+    "accepted_security_boundary_required": true,
+    "deterministic_repetitions": 2,
+    "dependency_cycle_effect": "DENY",
+    "agent_failure_effect": "CANCEL_DEPENDENTS_AND_DENY",
+    "network_default": "DENY",
+    "repository_write_during_dag": false,
+    "signed_attestation_required": true,
     "automatic_policy_change": false,
     "automatic_registry_change": false,
     "automatic_engine_activation": false

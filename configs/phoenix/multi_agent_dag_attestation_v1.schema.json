@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/multi_agent_dag_attestation_v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "attestation_id", "baseline_sha", "dag_sha256",
+    "result_sha256", "parallel_overlap_proven", "provider",
+    "repository_write_performed", "automatic_engine_activation",
+    "attestation_sha256", "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "PHOENIX_MULTI_AGENT_DAG_ATTESTATION_V1"},
+    "baseline_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dag_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "parallel_overlap_proven": {"const": true},
+    "repository_write_performed": {"const": false},
+    "automatic_engine_activation": {"const": false},
+    "attestation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -126,13 +126,16 @@ class Phase10RepositoryCycleTests(unittest.TestCase):
         self.assertTrue(self.protected["deny_symlinks_and_junctions"])
 
     def test_03_phase10_versions_advance(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"], "2.7.0")
-        self.assertEqual(load("engine_registry_v1.json")["version"], "1.8.0")
-        self.assertEqual(
-            load("capability_executor_registry_v1.json")["version"], "1.5.0"
+        version = lambda name: tuple(
+            int(x) for x in load(name)["version"].split(".")
         )
-        self.assertEqual(
-            load("future_engine_admission_contract_v1.json")["version"], "1.6.0"
+        self.assertGreaterEqual(version("autonomy_policy_v2.json"), (2, 7, 0))
+        self.assertGreaterEqual(version("engine_registry_v1.json"), (1, 8, 0))
+        self.assertGreaterEqual(
+            version("capability_executor_registry_v1.json"), (1, 5, 0)
+        )
+        self.assertGreaterEqual(
+            version("future_engine_admission_contract_v1.json"), (1, 6, 0)
         )
 
     def test_04_registry_coverage_complete(self):

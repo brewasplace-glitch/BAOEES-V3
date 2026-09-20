@@ -1,0 +1,44 @@
+{
+  "schema": "PHOENIX_MULTI_AGENT_DAG_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_BOUNDED",
+  "fail_closed": true,
+  "allowed_risk": ["LOW"],
+  "read_only_tasks_only": true,
+  "max_tasks_per_dag": 12,
+  "max_parallel_workers": 3,
+  "max_dependencies_per_task": 4,
+  "max_dependents_per_task": 4,
+  "max_dag_depth": 5,
+  "max_task_payload_bytes": 16384,
+  "max_task_seconds": 5,
+  "max_total_seconds": 30,
+  "deterministic_repetitions": 2,
+  "scheduler": {
+    "primary": "python.graphlib.TopologicalSorter",
+    "parallel_executor": "python.concurrent.futures.ThreadPoolExecutor",
+    "fallback_inspection_only": "networkx",
+    "ready_batch_order": "LEXICOGRAPHIC",
+    "result_merge_order": "TASK_ID_LEXICOGRAPHIC"
+  },
+  "execution": {
+    "accepted_security_boundary_required_for_live_proof": true,
+    "network": "DENY",
+    "arbitrary_shell": "DENY",
+    "repository_write": "DENY",
+    "nested_executor_submission": "DENY",
+    "shared_mutable_task_state": "DENY",
+    "failure_mode": "FAIL_CLOSED_CANCEL_NOT_STARTED",
+    "mutation_tasks": "SERIAL_GOVERNED_HANDOFF_ONLY"
+  },
+  "attestation": {
+    "hmac_sha256_required": true,
+    "dag_sha256_required": true,
+    "result_sha256_required": true,
+    "provider_identity_required": true,
+    "runtime_root": "runtime://multi_agent_dag/"
+  },
+  "automatic_policy_change": false,
+  "automatic_registry_change": false,
+  "automatic_engine_activation": false
+}

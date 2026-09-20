@@ -1,6 +1,6 @@
 """PROJECT PHOENIX Autonomous Development Foundation v1.0.0."""
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
 from .models import RiskLevel, CycleMode, Task, Decision, Capability, LearningEvent
 from .policy import AutonomyPolicy, RiskClassifier
@@ -36,6 +36,9 @@ __all__ = [
     "normalize_repository_path","GuardedRepositorySnapshot","CandidateWorktree",
     "GuardedWorktreeManager","initialize_fixture_repository",
     "BoundedRepositoryImprovementCycleService","build_patch_probe_source",
+    "AgentTaskSpec","AgentTaskResult","SpecializedAgentRegistry",
+    "DagExecutionResult","BoundedDagScheduler",
+    "BoundedMultiAgentDagService","build_parallel_dag_probe_source","phase11_fixture_tasks",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -75,3 +78,9 @@ from .change_classifier import ChangeRecord, ChangeClassification, RepositoryCha
 from .worktree_guard import GuardedRepositorySnapshot, CandidateWorktree, GuardedWorktreeManager, initialize_fixture_repository
 
 from .repository_cycle import BoundedRepositoryImprovementCycleService, build_patch_probe_source
+
+from .specialized_agents import AgentTaskSpec, AgentTaskResult, SpecializedAgentRegistry
+
+from .dag_scheduler import DagExecutionResult, BoundedDagScheduler
+
+from .multi_agent_orchestrator import BoundedMultiAgentDagService, build_parallel_dag_probe_source, phase11_fixture_tasks

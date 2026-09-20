@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -38,7 +38,13 @@
     "protected_repository_path_gate",
     "deterministic_patch_replay_pass",
     "repository_cycle_attestation_signed",
-    "lane_b_executable_change_sha_approval"
+    "lane_b_executable_change_sha_approval",
+    "bounded_multi_agent_dag_policy",
+    "specialized_agent_registry_binding",
+    "dag_cycle_gate_pass",
+    "bounded_parallel_worker_proof",
+    "deterministic_multi_agent_replay_pass",
+    "signed_multi_agent_dag_attestation"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -71,7 +77,13 @@
     "phase10_lane_b_automatic_promotion",
     "phase10_non_fast_forward_promotion",
     "phase10_force_push",
-    "phase10_automatic_activation"
+    "phase10_automatic_activation",
+    "phase11_unbounded_task_fanout",
+    "phase11_parallel_repository_mutation",
+    "phase11_shared_mutable_agent_state",
+    "phase11_network_access",
+    "phase11_nested_executor_creation",
+    "phase11_automatic_activation"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -134,6 +146,21 @@
     "lane_b_executable_promotion": "EXPLICIT_HMAC_SHA_APPROVAL_REQUIRED",
     "remote_race_guard_required": true,
     "normal_non_force_push_only": true,
+    "automatic_policy_or_registry_change": false,
+    "automatic_activation": false
+  },
+  "multi_agent_dag_contract": {
+    "low_risk_only": true,
+    "read_only_specialized_agents_only": true,
+    "bounded_task_count_required": true,
+    "bounded_parallel_workers_required": true,
+    "cycle_detection_required": true,
+    "immutable_dependency_results_required": true,
+    "deterministic_result_merge_required": true,
+    "accepted_security_boundary_required": true,
+    "network_default": "DENY",
+    "repository_write_during_execution": false,
+    "signed_attestation_required": true,
     "automatic_policy_or_registry_change": false,
     "automatic_activation": false
   }

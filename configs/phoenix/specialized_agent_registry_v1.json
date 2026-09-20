@@ -1,0 +1,49 @@
+{
+  "schema": "PHOENIX_SPECIALIZED_AGENT_REGISTRY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "fail_closed": true,
+  "unknown_agent_default": "DENY",
+  "agents": [
+    {
+      "agent_id": "agent.context.observer",
+      "role": "context_observation",
+      "status": "ACTIVE",
+      "read_only": true,
+      "actions": ["research.inspect"],
+      "implementation": "builtin.deterministic_digest"
+    },
+    {
+      "agent_id": "agent.research.specialist",
+      "role": "bounded_research",
+      "status": "ACTIVE",
+      "read_only": true,
+      "actions": ["research.inspect"],
+      "implementation": "builtin.deterministic_digest"
+    },
+    {
+      "agent_id": "agent.planning.specialist",
+      "role": "dependency_planning",
+      "status": "ACTIVE",
+      "read_only": true,
+      "actions": ["planning.analyze", "planning.validate"],
+      "implementation": "builtin.deterministic_digest"
+    },
+    {
+      "agent_id": "agent.qa.specialist",
+      "role": "quality_verification",
+      "status": "ACTIVE",
+      "read_only": true,
+      "actions": ["qa.inspect", "qa.execute"],
+      "implementation": "builtin.deterministic_digest"
+    },
+    {
+      "agent_id": "agent.evidence.merger",
+      "role": "deterministic_evidence_merge",
+      "status": "ACTIVE",
+      "read_only": true,
+      "actions": ["evidence.merge"],
+      "implementation": "builtin.deterministic_digest"
+    }
+  ]
+}

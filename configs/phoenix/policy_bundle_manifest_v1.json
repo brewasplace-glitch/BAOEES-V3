@@ -1,18 +1,18 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
-  "policy_version": "2.7.0",
+  "policy_version": "2.8.0",
   "gateway_policy_version": "1.0.0",
-  "engine_registry_version": "1.8.0",
+  "engine_registry_version": "1.9.0",
   "files": {
     "north_star_v1.json": {
       "sha256": "71bfef9c31972000ba6779d8b8319becf6382a18e0a532a81a0a66df8706952e",
       "required": true
     },
     "autonomy_policy_v2.json": {
-      "sha256": "48321c696b5b63b37c72f0e4992b769e5b769eb196ab6a261f1aaaf08a215059",
+      "sha256": "4c04762c0ae3b74754eda5aad43b91a7a962bae01692a65311121c9b57d0204e",
       "required": true
     },
     "universal_gateway_policy_v1.json": {
@@ -20,11 +20,11 @@
       "required": true
     },
     "engine_registry_v1.json": {
-      "sha256": "9993ef32323c99d766f8725dd7d39d1521524e08fe05b3b15be60747c0a40da5",
+      "sha256": "41acf6a0e8f6f9d7e8246968bf4154696d0c0c155814b10c6a53b96de315c944",
       "required": true
     },
     "future_engine_admission_contract_v1.json": {
-      "sha256": "dfc0b994fc3c5c851129608f34bcfc9dae7480856123ef7c4e82f982df87a478",
+      "sha256": "8eb0fb45904d791f69ceba580b272fa03d7ac2be622147ab7acbda1faf42cd5d",
       "required": true
     },
     "execution_planner_policy_v1.json": {
@@ -40,7 +40,7 @@
       "required": true
     },
     "capability_executor_registry_v1.json": {
-      "sha256": "674af97061a77f6e1b9457f149256627bde32849d9e10bba53f30c7bc9e8595a",
+      "sha256": "199b6f6122c84610c4bd4f2d69edfca57b17ccbb689a7981c6867c0f769dd6ef",
       "required": true
     },
     "engine_onboarding_policy_v1.json": {
@@ -74,11 +74,19 @@
     "protected_repository_paths_v1.json": {
       "sha256": "ccc64d6d69e04d2de36036fe1cf7d6d48333810fd093f49f72406282c013ddf4",
       "required": true
+    },
+    "multi_agent_dag_policy_v1.json": {
+      "sha256": "1405da5aaa7e5f9707aec063d733a7be5bc2369562eb2f0efd70a7797b8ef947",
+      "required": true
+    },
+    "specialized_agent_registry_v1.json": {
+      "sha256": "c037cba5c275b69e235d74ff8b65ccec543e8c12d7b92f0ac34790eef5d0f30d",
+      "required": true
     }
   },
-  "bundle_sha256": "67bbcfaa65911cde993bad706632886919bc8dcb1b5029dbfff25649dc208cbc",
-  "capability_executor_registry_version": "1.5.0",
-  "future_engine_admission_contract_version": "1.6.0",
+  "bundle_sha256": "33a55ab58f9dd42f3197dc6c0c0ec6f925e4eff59c7a187d8ec4e81b1301445e",
+  "capability_executor_registry_version": "1.6.0",
+  "future_engine_admission_contract_version": "1.7.0",
   "engine_onboarding_policy_version": "1.0.0",
   "engine_activation_policy_version": "1.0.0",
   "adapter_synthesis_policy_version": "1.0.0",
@@ -86,5 +94,7 @@
   "isolated_runtime_policy_version": "1.0.0",
   "level3_autonomous_cycle_policy_version": "1.0.0",
   "repository_improvement_cycle_policy_version": "1.0.0",
-  "protected_repository_paths_version": "1.0.0"
+  "protected_repository_paths_version": "1.0.0",
+  "multi_agent_dag_policy_version": "1.0.0",
+  "specialized_agent_registry_version": "1.0.0"
 }
