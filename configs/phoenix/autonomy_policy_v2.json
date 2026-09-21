@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -687,6 +687,84 @@
         "read_only_agents"
       ],
       "reason": "A bounded multi-agent DAG may persist only a signed runtime attestation after cycle, determinism, isolation, and parallel-bound gates pass."
+    },
+    {
+      "id": "P12-ALLOW-BACKLOG-SELECTION",
+      "priority": 760,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.backlog.selection.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://backlog_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "exact_baseline",
+        "backlog_integrity",
+        "deterministic_selection"
+      ],
+      "reason": "A deterministic single-task selection may persist only as an integrity-bound runtime receipt."
+    },
+    {
+      "id": "P12-ALLOW-BACKLOG-CANDIDATE-WRITE",
+      "priority": 759,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.backlog.task.candidate.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "worktree://phase12/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "deterministic_selection",
+        "selection_integrity",
+        "multi_agent_review",
+        "protected_path_gate",
+        "verified_backup"
+      ],
+      "reason": "A selected LOW-risk task may write only its exact non-executable output in the external Phase-12 candidate worktree."
+    },
+    {
+      "id": "P12-ALLOW-BACKLOG-COMPLETION",
+      "priority": 758,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.backlog.completion.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://backlog_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "verified_backup",
+        "multi_agent_review",
+        "deterministic_patch_replay",
+        "tests_pass",
+        "ff_only",
+        "normal_non_force_push",
+        "remote_race_guard"
+      ],
+      "reason": "A completed autonomous task may persist only after verified backup, full tests, fast-forward promotion and normal push."
     }
   ],
   "domain_authority": {
@@ -733,7 +811,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_11_BOUNDED_MULTI_AGENT_DAG_ORCHESTRATION",
+  "phase": "PHASE_12_REAL_BACKLOG_DRIVEN_LEVEL3_AUTONOMOUS_TASK_CYCLE",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -830,6 +908,23 @@
     "network_default": "DENY",
     "repository_write_during_dag": false,
     "signed_attestation_required": true,
+    "automatic_policy_change": false,
+    "automatic_registry_change": false,
+    "automatic_engine_activation": false
+  },
+  "backlog_driven_level3_cycle": {
+    "allowed_risk": "LOW_ONLY",
+    "max_tasks_per_invocation": 1,
+    "committed_backlog_required": true,
+    "deterministic_priority_selection_required": true,
+    "multi_agent_review_required": true,
+    "candidate_worktree_outside_main_required": true,
+    "full_regression_required": true,
+    "verified_backup_required": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "automatic_source_change": false,
+    "automatic_dependency_change": false,
     "automatic_policy_change": false,
     "automatic_registry_change": false,
     "automatic_engine_activation": false

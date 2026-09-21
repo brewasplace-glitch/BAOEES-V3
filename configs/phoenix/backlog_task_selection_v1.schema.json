@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/backlog_task_selection_v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "selection_id", "baseline_sha", "task_id", "task_sha256",
+    "eligible_task_count", "selection_sha256", "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "PHOENIX_BACKLOG_TASK_SELECTION_V1"},
+    "baseline_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "task_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "selection_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "automatic_engine_activation": {"const": false}
+  },
+  "additionalProperties": true
+}

@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -44,7 +44,14 @@
     "dag_cycle_gate_pass",
     "bounded_parallel_worker_proof",
     "deterministic_multi_agent_replay_pass",
-    "signed_multi_agent_dag_attestation"
+    "signed_multi_agent_dag_attestation",
+    "committed_backlog_integrity",
+    "deterministic_single_task_selection",
+    "signed_task_selection_receipt",
+    "multi_agent_task_review_pass",
+    "full_regression_before_candidate_commit",
+    "backup_gated_fast_forward_promotion",
+    "signed_level3_task_completion"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -83,7 +90,14 @@
     "phase11_shared_mutable_agent_state",
     "phase11_network_access",
     "phase11_nested_executor_creation",
-    "phase11_automatic_activation"
+    "phase11_automatic_activation",
+    "phase12_more_than_one_task_per_invocation",
+    "phase12_uncommitted_or_external_backlog_source",
+    "phase12_executable_or_protected_path_task",
+    "phase12_candidate_without_verified_backup",
+    "phase12_promotion_without_full_regression",
+    "phase12_force_push",
+    "phase12_automatic_source_dependency_policy_registry_or_engine_change"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -162,6 +176,23 @@
     "repository_write_during_execution": false,
     "signed_attestation_required": true,
     "automatic_policy_or_registry_change": false,
+    "automatic_activation": false
+  },
+  "backlog_driven_level3_contract": {
+    "low_risk_only": true,
+    "one_task_per_invocation": true,
+    "committed_backlog_only": true,
+    "deterministic_selection_required": true,
+    "selection_receipt_signed": true,
+    "multi_agent_review_required": true,
+    "candidate_worktree_outside_main_required": true,
+    "non_executable_lane_a_only": true,
+    "full_regression_required": true,
+    "verified_backup_required": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "completion_receipt_signed": true,
+    "automatic_source_dependency_policy_or_registry_change": false,
     "automatic_activation": false
   }
 }

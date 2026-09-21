@@ -126,14 +126,18 @@ class BoundedDagScheduler:
         max_active = 0
         active_lock = Lock()
         start = monotonic()
+        task_timeout = float(self.policy["max_task_seconds"])
 
         def invoke(task: AgentTaskSpec, deps: Mapping[str, AgentTaskResult]) -> AgentTaskResult:
             nonlocal active, max_active
+            task_start = monotonic()
             with active_lock:
                 active += 1
                 max_active = max(max_active, active)
             try:
                 result = runner(task, deps)
+                if monotonic() - task_start > task_timeout:
+                    raise TimeoutError(f"PHASE11_TASK_TIMEOUT:{task.task_id}")
                 if not isinstance(result, AgentTaskResult) or result.status != "PASS":
                     raise RuntimeError("PHASE11_AGENT_RESULT_DENY")
                 if result.task_id != task.task_id or result.agent_id != task.agent_id:
@@ -144,7 +148,6 @@ class BoundedDagScheduler:
                     active -= 1
 
         max_workers = int(self.policy["max_parallel_workers"])
-        task_timeout = float(self.policy["max_task_seconds"])
         total_timeout = float(self.policy["max_total_seconds"])
         for batch in batches:
             if monotonic() - start > total_timeout:

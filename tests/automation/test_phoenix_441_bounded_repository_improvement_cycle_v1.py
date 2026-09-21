@@ -358,7 +358,7 @@ class Phase10RepositoryCycleTests(unittest.TestCase):
             )
             target = candidate.path / "docs/automation/autonomous_generated/x.md"
             target.parent.mkdir(parents=True)
-            target.write_text("replay\n", encoding="utf-8")
+            target.write_text("replay\n", encoding="utf-8", newline="\n")
             classification = self.classifier.classify(manager.status_records(candidate))
             patch, _ = manager.stage_and_patch(candidate, classification.paths)
             first, second = manager.deterministic_replay(

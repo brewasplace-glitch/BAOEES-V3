@@ -1,6 +1,6 @@
 """PROJECT PHOENIX Autonomous Development Foundation v1.0.0."""
 
-__version__ = "1.3.0"
+__version__ = "1.4.0"
 
 from .models import RiskLevel, CycleMode, Task, Decision, Capability, LearningEvent
 from .policy import AutonomyPolicy, RiskClassifier
@@ -39,6 +39,8 @@ __all__ = [
     "AgentTaskSpec","AgentTaskResult","SpecializedAgentRegistry",
     "DagExecutionResult","BoundedDagScheduler",
     "BoundedMultiAgentDagService","build_parallel_dag_probe_source","phase11_fixture_tasks",
+    "BacklogTask","BacklogSelection","DeterministicBacklogSelector",
+    "BacklogDrivenLevel3CycleService","phase12_review_tasks",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -84,3 +86,7 @@ from .specialized_agents import AgentTaskSpec, AgentTaskResult, SpecializedAgent
 from .dag_scheduler import DagExecutionResult, BoundedDagScheduler
 
 from .multi_agent_orchestrator import BoundedMultiAgentDagService, build_parallel_dag_probe_source, phase11_fixture_tasks
+
+from .backlog_selector import BacklogTask, BacklogSelection, DeterministicBacklogSelector
+
+from .backlog_cycle import BacklogDrivenLevel3CycleService, phase12_review_tasks

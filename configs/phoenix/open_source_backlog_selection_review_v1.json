@@ -1,0 +1,25 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_BACKLOG_SELECTION_REVIEW_V1",
+  "review_date": "2026-09-20",
+  "status": "ACCEPTED_BOUNDED",
+  "primary": {
+    "name": "Python heapq",
+    "license": "PSF-2.0",
+    "url": "https://docs.python.org/3/library/heapq.html",
+    "decision": "ADOPT_DETERMINISTIC_SINGLE_TASK_PRIORITY_QUEUE"
+  },
+  "fallback": {
+    "name": "Python sqlite3 / SQLite",
+    "license": "PSF-2.0-and-Public-Domain-SQLite",
+    "url": "https://docs.python.org/3/library/sqlite3.html",
+    "decision": "INSPECTION_ONLY_FOR_FUTURE_MULTI_PRODUCER_BATCHES"
+  },
+  "repository_transaction": {
+    "name": "Native Git worktree and fast-forward merge",
+    "license": "GPL-2.0",
+    "url": "https://git-scm.com/docs/git-worktree",
+    "decision": "REUSE_PHASE10_PRIMARY"
+  },
+  "reason": "A single bounded task does not justify an external queue service. The committed backlog, heap priority key, signed selection receipt and Git transaction remain dependency-free and auditable.",
+  "automatic_dependency_install": false
+}

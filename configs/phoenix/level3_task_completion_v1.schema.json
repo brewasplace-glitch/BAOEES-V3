@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/level3_task_completion_v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "completion_id", "task_id", "baseline_sha", "promoted_commit",
+    "patch_sha256", "tests_pass", "repository_push_performed",
+    "completion_sha256", "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "PHOENIX_LEVEL3_TASK_COMPLETION_V1"},
+    "baseline_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "promoted_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tests_pass": {"const": true},
+    "repository_push_performed": {"const": true},
+    "automatic_engine_activation": {"const": false},
+    "completion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

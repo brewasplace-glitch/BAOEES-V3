@@ -151,10 +151,11 @@ class Phase11MultiAgentDagTests(unittest.TestCase):
         self.assertTrue(all(x["read_only"] and x["status"] == "ACTIVE" for x in agents))
 
     def test_05_versions_advance(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"], "2.8.0")
-        self.assertEqual(load("engine_registry_v1.json")["version"], "1.9.0")
-        self.assertEqual(load("capability_executor_registry_v1.json")["version"], "1.6.0")
-        self.assertEqual(load("future_engine_admission_contract_v1.json")["version"], "1.7.0")
+        version = lambda name: tuple(int(x) for x in load(name)["version"].split("."))
+        self.assertGreaterEqual(version("autonomy_policy_v2.json"), (2, 8, 0))
+        self.assertGreaterEqual(version("engine_registry_v1.json"), (1, 9, 0))
+        self.assertGreaterEqual(version("capability_executor_registry_v1.json"), (1, 6, 0))
+        self.assertGreaterEqual(version("future_engine_admission_contract_v1.json"), (1, 7, 0))
 
     def test_06_engine_is_gateway_bound(self):
         engine = next(x for x in load("engine_registry_v1.json")["engines"] if x["engine_id"] == "autonomy.multi_agent_dag")

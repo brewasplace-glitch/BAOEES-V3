@@ -207,6 +207,27 @@ class BoundedMultiAgentDagService:
     def execute_host(self, tasks: tuple[AgentTaskSpec, ...]) -> DagExecutionResult:
         return self.scheduler.execute(tasks, self.agents.execute)
 
+    def review_tasks(self, tasks: tuple[AgentTaskSpec, ...]) -> dict[str, Any]:
+        """Run a caller-supplied read-only DAG through host and live boundary."""
+        before = self._git_snapshot()
+        host = self.execute_host(tasks)
+        execution = self._execute_boundary(tasks, host)
+        after = self._git_snapshot()
+        if before != after:
+            raise RuntimeError("PHASE11_REPOSITORY_CHANGED_DURING_TASK_REVIEW")
+        return {
+            "schema": "PHOENIX_PHASE11_TASK_REVIEW_V1",
+            "status": "PASS",
+            "task_count": len(tasks),
+            "dag_sha256": host.dag_sha256,
+            "result_sha256": host.result_sha256,
+            "execution_batches": [list(x) for x in host.batches],
+            "parallel_overlap_proven": True,
+            "provider": execution["provider"],
+            "repository_write_performed": False,
+            "automatic_engine_activation": False,
+        }
+
     def _execute_boundary(self, tasks: tuple[AgentTaskSpec, ...], host: DagExecutionResult) -> dict[str, Any]:
         probe = self.provider.probe()
         if not (probe.available and probe.security_boundary and probe.execution_enabled):

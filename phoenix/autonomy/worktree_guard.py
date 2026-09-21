@@ -30,9 +30,22 @@ class CandidateWorktree:
 
 
 class GuardedWorktreeManager:
-    def __init__(self, repo_root: Path, branch: str = "project-phoenix"):
+    def __init__(
+        self,
+        repo_root: Path,
+        branch: str = "project-phoenix",
+        *,
+        candidate_branch_prefix: str = "auto/phase10-low-",
+        candidate_directory_prefix: str = "PROJECT-PHOENIX-PHASE10-",
+    ):
         self.repo_root = Path(repo_root).resolve()
         self.branch = str(branch)
+        self.candidate_branch_prefix = str(candidate_branch_prefix)
+        self.candidate_directory_prefix = str(candidate_directory_prefix)
+        if not self.candidate_branch_prefix.startswith("auto/"):
+            raise ValueError("candidate branch prefix must remain under auto/")
+        if "/" in self.candidate_directory_prefix or "\\" in self.candidate_directory_prefix:
+            raise ValueError("candidate directory prefix must be a basename prefix")
 
     def _run(
         self,
@@ -41,17 +54,19 @@ class GuardedWorktreeManager:
         *,
         check: bool = True,
         input_bytes: bytes | None = None,
+        force_lf: bool = False,
     ) -> subprocess.CompletedProcess[bytes]:
+        resolved_root = Path(root).resolve()
         command = [
             "git",
             "-c",
             "core.longpaths=true",
             "-c",
             "core.quotepath=false",
-            "-C",
-            str(Path(root).resolve()),
-            *[str(x) for x in args],
         ]
+        if force_lf or resolved_root != self.repo_root:
+            command.extend(("-c", "core.autocrlf=false", "-c", "core.eol=lf"))
+        command.extend(("-C", str(resolved_root), *[str(x) for x in args]))
         cp = subprocess.run(
             command,
             input=input_bytes,
@@ -63,8 +78,14 @@ class GuardedWorktreeManager:
             raise RuntimeError(f"{' '.join(command)} failed: {output}")
         return cp
 
-    def git(self, *args: str, root: Path | None = None, check: bool = True) -> str:
-        cp = self._run(root or self.repo_root, args, check=check)
+    def git(
+        self,
+        *args: str,
+        root: Path | None = None,
+        check: bool = True,
+        force_lf: bool = False,
+    ) -> str:
+        cp = self._run(root or self.repo_root, args, check=check, force_lf=force_lf)
         return cp.stdout.decode("utf-8", errors="strict").rstrip("\r\n")
 
     def git_bytes(
@@ -73,9 +94,14 @@ class GuardedWorktreeManager:
         root: Path | None = None,
         check: bool = True,
         input_bytes: bytes | None = None,
+        force_lf: bool = False,
     ) -> bytes:
         return self._run(
-            root or self.repo_root, args, check=check, input_bytes=input_bytes
+            root or self.repo_root,
+            args,
+            check=check,
+            input_bytes=input_bytes,
+            force_lf=force_lf,
         ).stdout
 
     def snapshot(self, *, fetch: bool = False) -> GuardedRepositorySnapshot:
@@ -140,10 +166,10 @@ class GuardedWorktreeManager:
         parent: Path | None = None,
     ) -> CandidateWorktree:
         safe = self._safe_cycle_id(cycle_id)
-        branch = f"auto/phase10-low-{safe}"
+        branch = f"{self.candidate_branch_prefix}{safe}"
         base_parent = Path(parent or self.repo_root.parent).resolve()
         base_parent.mkdir(parents=True, exist_ok=True)
-        candidate_path = (base_parent / f"PROJECT-PHOENIX-PHASE10-{safe}").resolve()
+        candidate_path = (base_parent / f"{self.candidate_directory_prefix}{safe}").resolve()
         try:
             candidate_path.relative_to(self.repo_root)
         except ValueError:
@@ -159,7 +185,10 @@ class GuardedWorktreeManager:
         )
         if branch_probe.returncode == 0:
             raise RuntimeError(f"candidate branch already exists: {branch}")
-        self.git("worktree", "add", "-b", branch, str(candidate_path), expected_head)
+        self.git(
+            "worktree", "add", "-b", branch, str(candidate_path), expected_head,
+            force_lf=True,
+        )
         actual = self.git("rev-parse", "HEAD", root=candidate_path)
         if actual != expected_head:
             self.cleanup(CandidateWorktree(cycle_id, branch, candidate_path, expected_head))
@@ -236,7 +265,10 @@ class GuardedWorktreeManager:
             for index in (1, 2):
                 replay = root / f"replay-{index}"
                 replay_paths.append(replay)
-                self.git("worktree", "add", "--detach", str(replay), candidate.baseline)
+                self.git(
+                    "worktree", "add", "--detach", str(replay), candidate.baseline,
+                    force_lf=True,
+                )
                 self.git_bytes(
                     "apply",
                     "--binary",

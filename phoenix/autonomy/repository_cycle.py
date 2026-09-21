@@ -316,7 +316,11 @@ class BoundedRepositoryImprovementCycleService:
                 / "phase10-proof.md"
             )
             lane_a_file.parent.mkdir(parents=True, exist_ok=True)
-            lane_a_file.write_text("phase10 deterministic fixture\n", encoding="utf-8")
+            lane_a_file.write_text(
+                "phase10 deterministic fixture\n",
+                encoding="utf-8",
+                newline="\n",
+            )
             lane_a_records = manager.status_records(lane_a_candidate)
             lane_a = self.classifier.classify(lane_a_records)
             patch_a, patch_a_sha = manager.stage_and_patch(
@@ -348,7 +352,11 @@ class BoundedRepositoryImprovementCycleService:
                 / "phase10_fixture.py"
             )
             source.parent.mkdir(parents=True, exist_ok=True)
-            source.write_text("VALUE = 'phase10'\n", encoding="utf-8")
+            source.write_text(
+                "VALUE = 'phase10'\n",
+                encoding="utf-8",
+                newline="\n",
+            )
             lane_b_records = manager.status_records(lane_b_candidate)
             lane_b = self.classifier.classify(lane_b_records)
             patch_b, patch_b_sha = manager.stage_and_patch(
