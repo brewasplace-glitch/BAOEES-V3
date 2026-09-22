@@ -331,6 +331,16 @@ class BacklogDrivenLevel3CycleService:
             metadata={"phase": "PHASE12_REAL_BACKLOG_LEVEL3"},
         ))
 
+    def _promotion_paths(
+        self,
+        expected_baseline: str,
+        candidate_branch: str,
+    ) -> tuple[str, ...]:
+        primary_paths, governance_paths = self.promoter._paths(
+            expected_baseline, candidate_branch
+        )
+        return tuple(primary_paths) + tuple(governance_paths)
+
     def run_cycle(
         self,
         expected_baseline: str,
@@ -413,7 +423,15 @@ class BacklogDrivenLevel3CycleService:
             )
             if selection.task.output_path not in commit_paths:
                 raise RuntimeError("PHASE12_PRIMARY_OUTPUT_MISSING_FROM_COMMIT")
-            permit = self._promotion_permit(commit_paths)
+            promotion_paths = self._promotion_paths(
+                expected_baseline, candidate.branch
+            )
+            if (
+                len(promotion_paths) != len(commit_paths)
+                or set(promotion_paths) != set(commit_paths)
+            ):
+                raise RuntimeError("PHASE12_PROMOTION_PATH_CLASSIFICATION_MISMATCH")
+            permit = self._promotion_permit(promotion_paths)
             promotion = self.promoter.promote(
                 candidate.branch,
                 expected_baseline,

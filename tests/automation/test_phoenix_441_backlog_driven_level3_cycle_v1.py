@@ -361,6 +361,21 @@ class Phase12BacklogDrivenLevel3Tests(unittest.TestCase):
             with mock.patch.dict(os.environ, {"GIT_CONFIG_GLOBAL": str(config)}):
                 git(repo, "add", "README.md")
                 service = self.service(repo, Path(td) / "runtime")
+                with mock.patch.object(
+                    service.promoter,
+                    "_paths",
+                    return_value=(
+                        ("docs/automation/autonomous_generated/phase12-proof.md",),
+                        ("bib/PHOENIX_AUTO_SYNC/BIB_BASELINE.md",),
+                    ),
+                ):
+                    self.assertEqual(
+                        service._promotion_paths(baseline, "candidate"),
+                        (
+                            "docs/automation/autonomous_generated/phase12-proof.md",
+                            "bib/PHOENIX_AUTO_SYNC/BIB_BASELINE.md",
+                        ),
+                    )
                 self.assertTrue(service.worktrees.snapshot().clean)
                 candidate = service.worktrees.create_candidate(
                     "crlf-proof", baseline, parent=Path(td) / "newline-proof"
