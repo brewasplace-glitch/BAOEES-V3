@@ -8996,6 +8996,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "d8c39b5a34707eae3dbff17e097360dc1a95acc8",
+      "path": "docs/automation/autonomous_generated/phase12-level3-operational-capability.md",
+      "sha256": "9ffc68015f2dcc522132a6a0ded4bf5d74262e883ec1b9e8ae3c9722a3f20528"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "343a27076bdc47d5e95cc9b45dab4c26cbc86d74",
       "path": "docs/automation/autonomous_generated/self_improvement/auto-bib-002.md",
       "sha256": "74791ebea6279f06b0baad411da419dc2d54eb692e300164fc9a78763727ff66"
@@ -28325,5 +28334,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "0d683d66bcc423d2cf50ee08574625855badaafc644836ebeda099a021c9a850"
+  "source_digest": "4205320ebe9ae35e3d10e7ed28fc72db2b1b91d976f93c8482c79dab421da7c9"
 }
