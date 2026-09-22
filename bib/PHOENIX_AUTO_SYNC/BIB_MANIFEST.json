@@ -9041,6 +9041,33 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "a6ae08814265c6aa8b71627f2859b743cad59053",
+      "path": "docs/automation/autonomous_generated/phase13-level4-governance-summary.md",
+      "sha256": "8789178a90e56bae17b19c63458b5d979add58b97757732a00edf23abdc79eae"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "73e31274220609c0169391194e835da17ca4bbc2",
+      "path": "docs/automation/autonomous_generated/phase13-level4-lessons-learned.md",
+      "sha256": "f4d8af53c939ef22732cf8b5d3fbc7eac8665643f236865c5839a77d32dadbee"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "bffec14166d98b916eebae812540292de1ad94d6",
+      "path": "docs/automation/autonomous_generated/phase13-level4-regression-evidence.md",
+      "sha256": "5703d64ab60a3eb2821f2195a8bc25419feb7276b3642158f735cc47ba642f99"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "343a27076bdc47d5e95cc9b45dab4c26cbc86d74",
       "path": "docs/automation/autonomous_generated/self_improvement/auto-bib-002.md",
       "sha256": "74791ebea6279f06b0baad411da419dc2d54eb692e300164fc9a78763727ff66"
@@ -28424,5 +28451,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "adff8e359e1d55ce3f4f495ba2c64e2a6b24cf000e6d6687a8f686d9f93b815b"
+  "source_digest": "8ade5198e7d04cc436bea261ccedafb16e03c598a97a23bde00cfc94f692df34"
 }
