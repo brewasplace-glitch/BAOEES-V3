@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "2.9.0",
+  "version": "3.0.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -765,6 +765,110 @@
         "remote_race_guard"
       ],
       "reason": "A completed autonomous task may persist only after verified backup, full tests, fast-forward promotion and normal push."
+    },
+    {
+      "id": "P13-ALLOW-BATCH-SELECTION",
+      "priority": 780,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.batch.selection.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://batch_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "exact_baseline",
+        "backlog_integrity",
+        "deterministic_batch_selection"
+      ],
+      "reason": "A deterministic bounded batch selection may persist only as an integrity-bound runtime receipt."
+    },
+    {
+      "id": "P13-ALLOW-BATCH-CANDIDATE-WRITE",
+      "priority": 779,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.batch.candidate.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "worktree://phase13/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "deterministic_batch_selection",
+        "selection_integrity",
+        "dependency_order_validation",
+        "multi_agent_review",
+        "protected_path_gate",
+        "verified_backup"
+      ],
+      "reason": "A three-task LOW-risk batch may write only its exact non-executable outputs in the external Phase-13 worktree."
+    },
+    {
+      "id": "P13-ALLOW-BATCH-REPAIR",
+      "priority": 778,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.batch.repair.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://batch_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "bounded_repair",
+        "new_hypothesis",
+        "content_only"
+      ],
+      "reason": "One deterministic content-only repair may persist as a signed runtime receipt."
+    },
+    {
+      "id": "P13-ALLOW-BATCH-COMPLETION",
+      "priority": 777,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.batch.completion.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://batch_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "verified_backup",
+        "multi_agent_review",
+        "bounded_repair",
+        "deterministic_patch_replay",
+        "tests_pass",
+        "ff_only",
+        "normal_non_force_push",
+        "remote_race_guard"
+      ],
+      "reason": "A batch completion may persist only after atomic validation, promotion and normal push."
     }
   ],
   "domain_authority": {
@@ -811,7 +915,7 @@
       "unknown_mutation": "DENY"
     }
   },
-  "phase": "PHASE_12_REAL_BACKLOG_DRIVEN_LEVEL3_AUTONOMOUS_TASK_CYCLE",
+  "phase": "PHASE_13_BOUNDED_LEVEL4_AUTONOMOUS_BATCH",
   "future_engine_contract": {
     "mutation_capable_engine_must_be_registered": true,
     "gateway_required": true,
@@ -921,6 +1025,23 @@
     "candidate_worktree_outside_main_required": true,
     "full_regression_required": true,
     "verified_backup_required": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "automatic_source_change": false,
+    "automatic_dependency_change": false,
+    "automatic_policy_change": false,
+    "automatic_registry_change": false,
+    "automatic_engine_activation": false
+  },
+  "bounded_level4_batch": {
+    "allowed_risk": "LOW_ONLY",
+    "min_tasks_per_batch": 3,
+    "max_tasks_per_batch": 3,
+    "max_self_repairs_per_batch": 1,
+    "transactional_candidate_required": true,
+    "partial_promotion": false,
+    "verified_backup_required": true,
+    "full_regression_required": true,
     "fast_forward_only": true,
     "normal_non_force_push_only": true,
     "automatic_source_change": false,

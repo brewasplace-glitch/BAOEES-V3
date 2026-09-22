@@ -1,12 +1,12 @@
 # PROJECT PHOENIX BIB CURRENT BASELINE
 
-- Branch: `auto/lowrisk-low-phx-l3-capability-evidence-001`
-- HEAD observed before containing commit: `94fc2bec8b10b4da4f50550697bc8022b89b6fce`
+- Branch: `project-phoenix`
+- HEAD observed before containing commit: `b412188ea0c29b4635e012e20d66501a93089ccb`
 - Snapshot mode: `git-index`
-- Knowledge source digest: `4205320ebe9ae35e3d10e7ed28fc72db2b1b91d976f93c8482c79dab421da7c9`
-- Source files fingerprinted: `3148`
-- Full-content knowledge files: `1088`
-- Search chunks: `1740`
+- Knowledge source digest: `adff8e359e1d55ce3f4f495ba2c64e2a6b24cf000e6d6687a8f686d9f93b815b`
+- Source files fingerprinted: `3158`
+- Full-content knowledge files: `1094`
+- Search chunks: `1746`
 - Primary: `sqlite_fts5`
 - Fallback: `git grep`
 

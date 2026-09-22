@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_action_default": "DENY_NO_REGISTERED_ADAPTER",
@@ -202,6 +202,22 @@
         "autonomy.backlog.selection.write",
         "autonomy.backlog.task.candidate.write",
         "autonomy.backlog.completion.write"
+      ],
+      "mutation_capable": true,
+      "gateway_required": true,
+      "plan_dispatchable": false,
+      "implementation": "internal.gateway_managed",
+      "priority": 100
+    },
+    {
+      "adapter_id": "builtin.batch.cycle.internal",
+      "status": "ACTIVE",
+      "engine_id": "autonomy.batch_cycle",
+      "actions": [
+        "autonomy.batch.selection.write",
+        "autonomy.batch.candidate.write",
+        "autonomy.batch.repair.write",
+        "autonomy.batch.completion.write"
       ],
       "mutation_capable": true,
       "gateway_required": true,

@@ -189,10 +189,10 @@ class Phase12BacklogDrivenLevel3Tests(unittest.TestCase):
         self.assertEqual(self.backlog["tasks"][0]["status"], "READY")
 
     def test_05_versions_advance(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"], "2.9.0")
-        self.assertEqual(load("engine_registry_v1.json")["version"], "2.0.0")
-        self.assertEqual(load("capability_executor_registry_v1.json")["version"], "1.7.0")
-        self.assertEqual(load("future_engine_admission_contract_v1.json")["version"], "1.8.0")
+        self.assertEqual(load("autonomy_policy_v2.json")["version"], "3.0.0")
+        self.assertEqual(load("engine_registry_v1.json")["version"], "2.1.0")
+        self.assertEqual(load("capability_executor_registry_v1.json")["version"], "1.8.0")
+        self.assertEqual(load("future_engine_admission_contract_v1.json")["version"], "1.9.0")
 
     def test_06_executor_registry_coverage(self):
         report = UniversalCapabilityExecutorRegistry.from_repo(ROOT).coverage_report()

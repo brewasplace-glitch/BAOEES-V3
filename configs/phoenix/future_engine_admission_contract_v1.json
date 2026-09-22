@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -51,7 +51,13 @@
     "multi_agent_task_review_pass",
     "full_regression_before_candidate_commit",
     "backup_gated_fast_forward_promotion",
-    "signed_level3_task_completion"
+    "signed_level3_task_completion",
+    "bounded_multi_task_transaction",
+    "deterministic_dependency_order",
+    "single_repair_budget",
+    "signed_repair_receipt",
+    "no_partial_batch_promotion",
+    "signed_batch_completion"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -97,7 +103,13 @@
     "phase12_candidate_without_verified_backup",
     "phase12_promotion_without_full_regression",
     "phase12_force_push",
-    "phase12_automatic_source_dependency_policy_registry_or_engine_change"
+    "phase12_automatic_source_dependency_policy_registry_or_engine_change",
+    "phase13_more_than_three_tasks_per_batch",
+    "phase13_partial_batch_promotion",
+    "phase13_more_than_one_repair",
+    "phase13_repair_of_security_policy_isolation_test_or_remote_failure",
+    "phase13_uncommitted_or_external_batch_source",
+    "phase13_automatic_source_dependency_policy_registry_or_engine_change"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -192,6 +204,21 @@
     "fast_forward_only": true,
     "normal_non_force_push_only": true,
     "completion_receipt_signed": true,
+    "automatic_source_dependency_policy_or_registry_change": false,
+    "automatic_activation": false
+  },
+  "bounded_level4_batch_contract": {
+    "low_risk_only": true,
+    "min_tasks_per_batch": 3,
+    "max_tasks_per_batch": 3,
+    "max_self_repairs_per_batch": 1,
+    "transactional_candidate_required": true,
+    "partial_promotion": false,
+    "full_regression_required": true,
+    "verified_backup_required": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "signed_selection_repair_and_completion": true,
     "automatic_source_dependency_policy_or_registry_change": false,
     "automatic_activation": false
   }

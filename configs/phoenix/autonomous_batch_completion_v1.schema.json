@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/autonomous_batch_completion_v1.schema.json",
+  "title": "Phoenix autonomous batch completion",
+  "type": "object",
+  "required": ["schema", "batch_id", "baseline_sha", "promoted_commit", "task_ids", "test_count", "status", "completion_sha256", "hmac_sha256"],
+  "properties": {
+    "schema": {"const": "PHOENIX_AUTONOMOUS_BATCH_COMPLETION_V1"},
+    "batch_id": {"type": "string", "pattern": "^L4BATCH-[A-F0-9]{16}$"},
+    "baseline_sha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "promoted_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "task_ids": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true},
+    "test_count": {"const": 380},
+    "status": {"const": "COMPLETED_AND_PROMOTED"},
+    "completion_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "PHOENIX_AUTONOMOUS_BATCH_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "tasks": [
+    {
+      "task_id": "PHX-L4-GOVERNANCE-SUMMARY-001",
+      "status": "READY",
+      "title": "Publish the bounded Level-4 governance summary",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.batch.documentation.generate",
+      "priority": 300,
+      "output_path": "docs/automation/autonomous_generated/phase13-level4-governance-summary.md",
+      "generator": "builtin.level4_batch_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": [],
+      "repair_probe": "NONE"
+    },
+    {
+      "task_id": "PHX-L4-REGRESSION-EVIDENCE-002",
+      "status": "READY",
+      "title": "Publish the governed batch regression evidence",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.batch.documentation.generate",
+      "priority": 200,
+      "output_path": "docs/automation/autonomous_generated/phase13-level4-regression-evidence.md",
+      "generator": "builtin.level4_batch_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-GOVERNANCE-SUMMARY-001"],
+      "repair_probe": "TRAILING_WHITESPACE_ON_FIRST_ATTEMPT"
+    },
+    {
+      "task_id": "PHX-L4-LESSONS-LEARNED-003",
+      "status": "READY",
+      "title": "Publish the bounded batch lessons learned",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.batch.documentation.generate",
+      "priority": 100,
+      "output_path": "docs/automation/autonomous_generated/phase13-level4-lessons-learned.md",
+      "generator": "builtin.level4_batch_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-REGRESSION-EVIDENCE-002"],
+      "repair_probe": "NONE"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -291,6 +291,30 @@
       ],
       "executor_adapter_ids": [
         "builtin.backlog.cycle.internal"
+      ]
+    },
+    {
+      "engine_id": "autonomy.batch_cycle",
+      "status": "ACTIVE",
+      "mutation_capable": true,
+      "gateway_required": true,
+      "allowed_actions": [
+        "autonomy.batch.selection.write",
+        "autonomy.batch.candidate.write",
+        "autonomy.batch.repair.write",
+        "autonomy.batch.completion.write"
+      ],
+      "allowed_domains": [
+        "orchestration",
+        "software",
+        "verification"
+      ],
+      "allowed_path_roots": [
+        "runtime://batch_cycle/",
+        "worktree://phase13/"
+      ],
+      "executor_adapter_ids": [
+        "builtin.batch.cycle.internal"
       ]
     }
   ]

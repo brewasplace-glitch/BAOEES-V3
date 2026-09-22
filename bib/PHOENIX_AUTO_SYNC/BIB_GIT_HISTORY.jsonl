@@ -1,3 +1,4 @@
+{"commit": "b412188ea0c29b4635e012e20d66501a93089ccb", "date": "2026-09-22T21:50:57+02:00", "subject": "chore(autonomy): low-risk candidate LOW-PHX-L3-CAPABILITY-EVIDENCE-001"}
 {"commit": "94fc2bec8b10b4da4f50550697bc8022b89b6fce", "date": "2026-09-22T21:43:35+02:00", "subject": "fix(autonomy): bind phase12 promotion permit paths"}
 {"commit": "0b7fa6e513c48852850d5a157b1619e92ed50b76", "date": "2026-09-22T01:17:54+02:00", "subject": "feat(autonomy): add real backlog-driven level-3 cycle v1"}
 {"commit": "2cb30068335537d1a591e3236aab6a4f487acbe3", "date": "2026-09-20T23:41:31+02:00", "subject": "feat(autonomy): add bounded multi-agent DAG orchestration v1"}
@@ -497,4 +498,3 @@
 {"commit": "ff37afc0eeff5535f7d7a47cce5d8d6f00dc1456", "date": "2026-06-26T19:01:25+02:00", "subject": "docs: add Project Phoenix BIB index and export plan v2.5"}
 {"commit": "3bea0c48fc505f526c4c22fa841f8008fac5fb9d", "date": "2026-06-26T18:50:43+02:00", "subject": "docs: add Project Phoenix BIB lessons and source evidence v2.4"}
 {"commit": "e6102f9577605cfdc6e514f9c9aad35e74c9f402", "date": "2026-06-26T18:43:52+02:00", "subject": "docs: add Project Phoenix BIB workflows and templates v2.3"}
-{"commit": "83aa24c18bcd03e6775e11f87c174e3c1cc1a48b", "date": "2026-06-26T18:35:39+02:00", "subject": "docs: add Project Phoenix BIB engine knowledge v2.2"}

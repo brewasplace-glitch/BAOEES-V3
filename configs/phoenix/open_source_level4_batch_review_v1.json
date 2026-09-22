@@ -1,0 +1,24 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_LEVEL4_BATCH_REVIEW_V1",
+  "version": "1.0.0",
+  "status": "ACCEPTED",
+  "primary": {
+    "name": "Python heapq",
+    "license": "PSF",
+    "use": "deterministic bounded priority selection",
+    "decision": "ADOPT_STANDARD_LIBRARY"
+  },
+  "bounded_concurrency": {
+    "name": "Python concurrent.futures",
+    "license": "PSF",
+    "use": "bounded independent verification only",
+    "decision": "ADOPT_STANDARD_LIBRARY_WHERE_INDEPENDENT"
+  },
+  "rejected_distributed_queue": {
+    "name": "Celery",
+    "reason": "Broker and external dependency requirements conflict with network-deny and dependency-install-deny runtime boundaries.",
+    "decision": "REJECT_FOR_PHASE13_RUNTIME"
+  },
+  "automatic_dependency_install": false,
+  "network_required": false
+}
