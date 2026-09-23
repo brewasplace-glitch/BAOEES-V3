@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_FUTURE_ENGINE_ADMISSION_CONTRACT_V1",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "scope": "ALL_FUTURE_ENGINES",
   "default_if_not_registered": "DENY",
   "requirements_for_mutation_capable_engine": [
@@ -57,7 +57,12 @@
     "single_repair_budget",
     "signed_repair_receipt",
     "no_partial_batch_promotion",
-    "signed_batch_completion"
+    "signed_batch_completion",
+    "bounded_multi_batch_campaign",
+    "atomic_hmac_bound_resume_state",
+    "completed_output_hash_revalidation",
+    "full_regression_per_campaign_batch",
+    "signed_campaign_completion"
   ],
   "prohibited_patterns": [
     "silent_policy_bypass",
@@ -109,7 +114,15 @@
     "phase13_more_than_one_repair",
     "phase13_repair_of_security_policy_isolation_test_or_remote_failure",
     "phase13_uncommitted_or_external_batch_source",
-    "phase13_automatic_source_dependency_policy_registry_or_engine_change"
+    "phase13_automatic_source_dependency_policy_registry_or_engine_change",
+    "phase14_more_than_two_batches_per_campaign",
+    "phase14_more_than_three_tasks_per_batch",
+    "phase14_resume_without_signed_atomic_state",
+    "phase14_resume_baseline_or_output_hash_mismatch",
+    "phase14_more_than_one_repair_per_batch",
+    "phase14_cross_batch_destructive_rollback",
+    "phase14_continuous_monitoring",
+    "phase14_automatic_source_dependency_policy_registry_or_engine_change"
   ],
   "executor_adapter_contract": {
     "all_active_engine_actions_require_registry_coverage": true,
@@ -220,6 +233,22 @@
     "normal_non_force_push_only": true,
     "signed_selection_repair_and_completion": true,
     "automatic_source_dependency_policy_or_registry_change": false,
+    "automatic_activation": false
+  },
+  "repeatable_level4_campaign_contract": {
+    "low_risk_only": true,
+    "max_batches_per_campaign": 2,
+    "tasks_per_batch": 3,
+    "max_repairs_per_batch": 1,
+    "committed_campaign_only": true,
+    "atomic_hmac_bound_resume_state_required": true,
+    "completed_output_hash_revalidation_required": true,
+    "verified_backup_before_each_batch": true,
+    "full_regression_before_each_batch_promotion": true,
+    "fast_forward_only": true,
+    "normal_non_force_push_only": true,
+    "cross_batch_destructive_rollback": false,
+    "continuous_monitoring": false,
     "automatic_activation": false
   }
 }

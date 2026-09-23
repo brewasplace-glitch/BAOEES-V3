@@ -1,3 +1,4 @@
+{"commit": "88ab4adf746e4d8640b019e06c0b5bb128e38175", "date": "2026-09-22T23:21:41+02:00", "subject": "chore(autonomy): low-risk candidate LOW-PHX-L4-BATCH-001"}
 {"commit": "5756d2b23934039bd3d64ff3befe74238a8c71da", "date": "2026-09-22T23:13:12+02:00", "subject": "feat(autonomy): add bounded level-4 batch v1"}
 {"commit": "b412188ea0c29b4635e012e20d66501a93089ccb", "date": "2026-09-22T21:50:57+02:00", "subject": "chore(autonomy): low-risk candidate LOW-PHX-L3-CAPABILITY-EVIDENCE-001"}
 {"commit": "94fc2bec8b10b4da4f50550697bc8022b89b6fce", "date": "2026-09-22T21:43:35+02:00", "subject": "fix(autonomy): bind phase12 promotion permit paths"}
@@ -497,4 +498,3 @@
 {"commit": "0077c6885ac08d9754b4b444d108f257ea284f42", "date": "2026-06-26T19:11:35+02:00", "subject": "docs: design Project Phoenix BIB export engine v2.7"}
 {"commit": "0c1d49ee7bca97c7bde07a2e92656d386d10b6b6", "date": "2026-06-26T19:06:32+02:00", "subject": "docs: expand Project Phoenix BIB master knowledge v2.6"}
 {"commit": "ff37afc0eeff5535f7d7a47cce5d8d6f00dc1456", "date": "2026-06-26T19:01:25+02:00", "subject": "docs: add Project Phoenix BIB index and export plan v2.5"}
-{"commit": "3bea0c48fc505f526c4c22fa841f8008fac5fb9d", "date": "2026-06-26T18:50:43+02:00", "subject": "docs: add Project Phoenix BIB lessons and source evidence v2.4"}

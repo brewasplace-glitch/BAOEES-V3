@@ -1,0 +1,92 @@
+{
+  "schema": "PHOENIX_AUTONOMOUS_CAMPAIGN_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "campaign_id": "PHX-L4-CAMPAIGN-001",
+  "tasks": [
+    {
+      "task_id": "PHX-L4-CAMPAIGN-PLAN-101",
+      "status": "READY",
+      "title": "Record bounded campaign plan evidence",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.campaign.documentation.generate",
+      "priority": 600,
+      "output_path": "docs/automation/autonomous_generated/phase14-campaign-plan.md",
+      "generator": "builtin.level4_campaign_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": [],
+      "repair_probe": "NONE"
+    },
+    {
+      "task_id": "PHX-L4-CROSS-BATCH-GATES-102",
+      "status": "READY",
+      "title": "Record cross-batch gate evidence",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.campaign.documentation.generate",
+      "priority": 590,
+      "output_path": "docs/automation/autonomous_generated/phase14-cross-batch-gates.md",
+      "generator": "builtin.level4_campaign_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-CAMPAIGN-PLAN-101"],
+      "repair_probe": "TRAILING_WHITESPACE_ON_FIRST_ATTEMPT"
+    },
+    {
+      "task_id": "PHX-L4-RESUME-EVIDENCE-103",
+      "status": "READY",
+      "title": "Record safe resume evidence",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.campaign.documentation.generate",
+      "priority": 580,
+      "output_path": "docs/automation/autonomous_generated/phase14-resume-evidence.md",
+      "generator": "builtin.level4_campaign_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-CROSS-BATCH-GATES-102"],
+      "repair_probe": "NONE"
+    },
+    {
+      "task_id": "PHX-L4-LESSON-APPLICATION-201",
+      "status": "READY",
+      "title": "Apply verified lessons to the next batch",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.campaign.documentation.generate",
+      "priority": 300,
+      "output_path": "docs/automation/autonomous_generated/phase14-lesson-application.md",
+      "generator": "builtin.level4_campaign_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-RESUME-EVIDENCE-103"],
+      "repair_probe": "NONE"
+    },
+    {
+      "task_id": "PHX-L4-CAMPAIGN-REGRESSION-202",
+      "status": "READY",
+      "title": "Record second-batch regression evidence",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.campaign.documentation.generate",
+      "priority": 290,
+      "output_path": "docs/automation/autonomous_generated/phase14-campaign-regression.md",
+      "generator": "builtin.level4_campaign_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-LESSON-APPLICATION-201"],
+      "repair_probe": "TRAILING_WHITESPACE_ON_FIRST_ATTEMPT"
+    },
+    {
+      "task_id": "PHX-L4-CAMPAIGN-COMPLETION-203",
+      "status": "READY",
+      "title": "Record bounded campaign completion evidence",
+      "risk": "LOW",
+      "task_type": "NON_EXECUTABLE_DOCUMENTATION_EVIDENCE",
+      "action": "autonomy.campaign.documentation.generate",
+      "priority": 280,
+      "output_path": "docs/automation/autonomous_generated/phase14-campaign-completion.md",
+      "generator": "builtin.level4_campaign_evidence_v1",
+      "promotion_lane": "LOW_NON_EXECUTABLE",
+      "depends_on": ["PHX-L4-CAMPAIGN-REGRESSION-202"],
+      "repair_probe": "NONE"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 """PROJECT PHOENIX Autonomous Development Foundation v1.0.0."""
 
-__version__ = "1.5.0"
+__version__ = "1.6.0"
 
 from .models import RiskLevel, CycleMode, Task, Decision, Capability, LearningEvent
 from .policy import AutonomyPolicy, RiskClassifier
@@ -43,6 +43,8 @@ __all__ = [
     "BacklogDrivenLevel3CycleService","phase12_review_tasks",
     "BatchTask","BatchSelection","DeterministicBatchSelector",
     "BoundedLevel4BatchService","phase13_review_tasks",
+    "CampaignTask","CampaignSelection","DeterministicCampaignSelector",
+    "SQLiteCampaignStateStore","RepeatableLevel4CampaignService","phase14_review_tasks",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -96,3 +98,7 @@ from .backlog_cycle import BacklogDrivenLevel3CycleService, phase12_review_tasks
 from .batch_selector import BatchTask, BatchSelection, DeterministicBatchSelector
 
 from .batch_cycle import BoundedLevel4BatchService, phase13_review_tasks
+
+from .campaign_selector import CampaignTask, CampaignSelection, DeterministicCampaignSelector
+
+from .campaign_cycle import SQLiteCampaignStateStore, RepeatableLevel4CampaignService, phase14_review_tasks

@@ -1,0 +1,25 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_LEVEL4_CAMPAIGN_REVIEW_V1",
+  "version": "1.0.0",
+  "reviewed_at": "2026-09-22",
+  "selected": {
+    "priority_scheduler": "python.heapq",
+    "resume_state": "python.sqlite3",
+    "reason": "Deterministic dependency-free selection and atomic local transactional checkpoints satisfy the offline fail-closed boundary."
+  },
+  "considered": [
+    {
+      "project": "APScheduler",
+      "decision": "REJECT_EXTERNAL_RUNTIME_DEPENDENCY",
+      "reason": "Persistent scheduling is useful, but Phase 14 is invocation-bounded and forbids automatic dependency installation or daemon scheduling."
+    },
+    {
+      "project": "Prefect",
+      "decision": "REJECT_EXTERNAL_ORCHESTRATION_STACK",
+      "reason": "Durable retries and state are useful, but the server or cloud orchestration surface exceeds the bounded offline campaign scope."
+    }
+  ],
+  "continuous_monitoring": false,
+  "automatic_dependency_install": false,
+  "automatic_engine_activation": false
+}

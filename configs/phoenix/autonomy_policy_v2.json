@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -869,6 +869,65 @@
         "remote_race_guard"
       ],
       "reason": "A batch completion may persist only after atomic validation, promotion and normal push."
+    },
+    {
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-RUNTIME",
+      "priority": 751,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.campaign.selection.write",
+          "autonomy.campaign.repair.write",
+          "autonomy.campaign.batch.completion.write",
+          "autonomy.campaign.state.write",
+          "autonomy.campaign.completion.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://campaign_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "verified_backup",
+        "signed_resume_state",
+        "deterministic_batch_selection",
+        "bounded_repair",
+        "tests_pass",
+        "fast_forward_only",
+        "normal_non_force_push"
+      ],
+      "reason": "Phase-14 campaign mutations are limited to two three-task LOW-risk batches with atomic signed resume state and full per-batch gates."
+    },
+    {
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-CANDIDATE",
+      "priority": 750,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.campaign.candidate.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "worktree://phase14/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "verified_backup",
+        "signed_resume_state",
+        "deterministic_batch_selection",
+        "dependency_order_validation",
+        "multi_agent_review",
+        "protected_path_gate"
+      ],
+      "reason": "A Phase-14 candidate may write only three selected non-executable outputs in its external worktree."
     }
   ],
   "domain_authority": {
@@ -1049,5 +1108,16 @@
     "automatic_policy_change": false,
     "automatic_registry_change": false,
     "automatic_engine_activation": false
+  },
+  "phase14_repeatable_level4_campaign_contract": {
+    "status": "ACTIVE_BOUNDED",
+    "max_batches_per_campaign": 2,
+    "tasks_per_batch": 3,
+    "max_repairs_per_batch": 1,
+    "resume_backend": "SQLITE_ATOMIC_HMAC_BOUND",
+    "full_regression_per_batch_required": true,
+    "cross_batch_destructive_rollback": false,
+    "continuous_monitoring": false,
+    "automatic_source_dependency_policy_registry_or_engine_change": false
   }
 }

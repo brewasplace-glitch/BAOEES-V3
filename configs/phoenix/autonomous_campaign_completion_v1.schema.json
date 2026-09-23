@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/autonomous_campaign_completion_v1.schema.json",
+  "title": "PROJECT PHOENIX Autonomous Campaign Completion V1",
+  "type": "object",
+  "required": [
+    "schema", "campaign_id", "start_baseline", "final_baseline",
+    "completed_batches", "completed_task_ids", "total_repairs",
+    "tests_per_batch", "status", "completion_sha256", "hmac_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "PHOENIX_AUTONOMOUS_CAMPAIGN_COMPLETION_V1"},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "start_baseline": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "final_baseline": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "completed_batches": {"const": 2},
+    "completed_task_ids": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true},
+    "total_repairs": {"const": 2},
+    "tests_per_batch": {"const": 424},
+    "status": {"const": "COMPLETED_BOUNDED_LEVEL4_CAMPAIGN"},
+    "completion_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": true
+}
