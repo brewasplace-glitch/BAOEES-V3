@@ -1,5 +1,11 @@
 # PROJECT PHOENIX 4.41 — Phase 14 Repeatable Level-4 Campaign v1.0
 
+FIX R5 separates the Phase-14 runtime gateway policy by mutation moment:
+atomic state, deterministic selection, bounded repair, verified batch
+completion and governed campaign completion. This prevents completion-only
+gates from blocking initial signed state creation while preserving fail-closed
+authorization for every runtime write.
+
 Phase 14 advances the proven Phase-13 Level-4 batch into one bounded campaign
 of exactly two sequential batches. Each batch contains exactly three committed
 LOW-risk non-executable documentation-evidence tasks and is independently

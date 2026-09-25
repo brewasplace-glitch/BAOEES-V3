@@ -14,6 +14,7 @@ from phoenix.autonomy import (
     RepeatableLevel4CampaignService,
     RuntimeProviderProbe,
     SQLiteCampaignStateStore,
+    UniversalAutonomyGateway,
     UniversalCapabilityExecutorRegistry,
 )
 from test_phoenix_441_backlog_driven_level3_cycle_v1 import (
@@ -22,7 +23,6 @@ from test_phoenix_441_backlog_driven_level3_cycle_v1 import (
     make_repository,
     run,
 )
-from test_phoenix_441_bounded_level4_autonomous_batch_v1 import StrictGateway
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -338,10 +338,14 @@ class Phase14RepeatableLevel4CampaignTests(unittest.TestCase):
             again = self.service(repo, runtime).finalize_campaign(second["promoted_commit"], persist=True, test_only=True)
             self.assertTrue(again["already_completed"])
 
-    def test_38_strict_gateway_campaign_passes(self):
+    def test_38_real_repository_gateway_campaign_passes(self):
         with TemporaryDirectory() as td:
-            root = Path(td); repo, runtime, _, second = self.two_batches(root, persist=True, gateway=StrictGateway())
-            result = self.service(repo, runtime, gateway=StrictGateway()).finalize_campaign(second["promoted_commit"], persist=True, test_only=True)
+            root = Path(td)
+            gateway = UniversalAutonomyGateway.from_repo(ROOT)
+            repo, runtime, _, second = self.two_batches(root, persist=True, gateway=gateway)
+            result = self.service(
+                repo, runtime, gateway=UniversalAutonomyGateway.from_repo(ROOT)
+            ).finalize_campaign(second["promoted_commit"], persist=True, test_only=True)
             self.assertEqual(result["status"], "PASS")
 
     def test_39_one_repair_per_batch(self):
@@ -359,7 +363,7 @@ class Phase14RepeatableLevel4CampaignTests(unittest.TestCase):
             self.assertEqual(manifest["files"][name]["sha256"], hashlib.sha256((CFG / name).read_bytes()).hexdigest())
 
     def test_41_versions_advance(self):
-        self.assertEqual(load("autonomy_policy_v2.json")["version"], "3.1.0")
+        self.assertEqual(load("autonomy_policy_v2.json")["version"], "3.1.1")
         self.assertEqual(load("engine_registry_v1.json")["version"], "2.2.0")
         self.assertEqual(load("capability_executor_registry_v1.json")["version"], "1.9.0")
         self.assertEqual(load("future_engine_admission_contract_v1.json")["version"], "2.0.0")

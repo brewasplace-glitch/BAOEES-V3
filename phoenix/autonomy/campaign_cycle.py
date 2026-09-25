@@ -737,7 +737,7 @@ class RepeatableLevel4CampaignService:
                 action="autonomy.campaign.batch.completion.write",
                 gates=(
                     "audit_log", "verified_backup", "signed_resume_state", "multi_agent_review",
-                    "bounded_repair", "deterministic_patch_replay", "tests_pass", "ff_only",
+                    "bounded_repair", "deterministic_patch_replay", "tests_pass", "fast_forward_only",
                     "normal_non_force_push", "remote_race_guard",
                 ), persist=persist,
             )

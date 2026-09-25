@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_AUTONOMY_POLICY_V2",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "effective_date": "2026-09-15",
   "north_star": {
     "id": "PHOENIX-NORTH-STAR",
@@ -871,16 +871,83 @@
       "reason": "A batch completion may persist only after atomic validation, promotion and normal push."
     },
     {
-      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-RUNTIME",
-      "priority": 751,
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-STATE",
+      "priority": 755,
       "effect": "ALLOW_WITH_GATES",
       "match": {
         "actions": [
-          "autonomy.campaign.selection.write",
-          "autonomy.campaign.repair.write",
-          "autonomy.campaign.batch.completion.write",
-          "autonomy.campaign.state.write",
-          "autonomy.campaign.completion.write"
+          "autonomy.campaign.state.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://campaign_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "signed_state",
+        "atomic_sqlite_transaction"
+      ],
+      "reason": "Phase-14 resume state may be written only as an atomic HMAC-bound SQLite transaction."
+    },
+    {
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-SELECTION",
+      "priority": 754,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.campaign.selection.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://campaign_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "exact_baseline",
+        "signed_resume_state",
+        "deterministic_batch_selection"
+      ],
+      "reason": "A Phase-14 selection receipt requires the exact baseline, deterministic selection and signed resume binding."
+    },
+    {
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-REPAIR",
+      "priority": 753,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.campaign.repair.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://campaign_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "bounded_repair",
+        "new_hypothesis",
+        "content_only"
+      ],
+      "reason": "A Phase-14 repair receipt is limited to one bounded deterministic content-only repair."
+    },
+    {
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-BATCH-COMPLETION",
+      "priority": 752,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.campaign.batch.completion.write"
         ],
         "risks": [
           "LOW"
@@ -894,13 +961,41 @@
         "audit_log",
         "verified_backup",
         "signed_resume_state",
-        "deterministic_batch_selection",
+        "multi_agent_review",
         "bounded_repair",
+        "deterministic_patch_replay",
         "tests_pass",
         "fast_forward_only",
-        "normal_non_force_push"
+        "normal_non_force_push",
+        "remote_race_guard"
       ],
-      "reason": "Phase-14 campaign mutations are limited to two three-task LOW-risk batches with atomic signed resume state and full per-batch gates."
+      "reason": "A Phase-14 batch completion may persist only after backup, review, repair, replay, tests and verified normal fast-forward push."
+    },
+    {
+      "id": "P14-ALLOW-LEVEL4-CAMPAIGN-COMPLETION",
+      "priority": 751,
+      "effect": "ALLOW_WITH_GATES",
+      "match": {
+        "actions": [
+          "autonomy.campaign.completion.write"
+        ],
+        "risks": [
+          "LOW"
+        ],
+        "mutating": true,
+        "path_all_under": [
+          "runtime://campaign_cycle/"
+        ]
+      },
+      "required_gates": [
+        "audit_log",
+        "two_batches_completed",
+        "six_tasks_completed",
+        "two_bounded_repairs",
+        "tests_pass_per_batch",
+        "clean_synced_repository"
+      ],
+      "reason": "Campaign completion requires two completed batches, six tasks, two bounded repairs, per-batch tests and a clean synchronized repository."
     },
     {
       "id": "P14-ALLOW-LEVEL4-CAMPAIGN-CANDIDATE",
