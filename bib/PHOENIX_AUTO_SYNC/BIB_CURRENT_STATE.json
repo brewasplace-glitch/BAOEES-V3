@@ -15,13 +15,13 @@
     "project_phoenix/intelligence/knowledge_graph",
     "project_phoenix/intelligence/pkb"
   ],
-  "branch": "project-phoenix",
-  "chunk_count": 1755,
-  "extracted_file_count": 1098,
+  "branch": "auto/lowrisk-low-campaign-001-batch-1",
+  "chunk_count": 1758,
+  "extracted_file_count": 1101,
   "fallback_backend": "git_grep_over_tracked_jsonl",
-  "full_content_file_count": 1103,
+  "full_content_file_count": 1106,
   "git_history_entries": 500,
-  "head_observed_before_commit": "ded23ee87fee6f99a46e71c51c4d8fe9bc2b92b8",
+  "head_observed_before_commit": "63a5c47e71f86081e3a195c943371e7791c9f98c",
   "managed_root": "bib/PHOENIX_AUTO_SYNC",
   "metadata_only_file_count": 5,
   "mode": "git-index",
@@ -29,7 +29,7 @@
   "release_status": "KNOWLEDGE_INDEX_ONLY_NO_PRODUCTION_RELEASE",
   "schema_version": "1.0",
   "secret_redactions": 0,
-  "source_digest": "55beda1d6397b6a2e5b4904c81ebd2736adb472b77d182d575329e552acb0276",
-  "source_file_count": 3171,
+  "source_digest": "d12d9bd709d5e115e28311cf5253a4c183f4ab986b6236f54f0a0a4c47e92daf",
+  "source_file_count": 3174,
   "source_metadata_file_count": 2068
 }

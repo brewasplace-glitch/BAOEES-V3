@@ -9104,6 +9104,33 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "8a989baf4fa8db6f632ac50972e225b1180921f1",
+      "path": "docs/automation/autonomous_generated/phase14-campaign-plan.md",
+      "sha256": "f52e9384a539231bc8a53b4fc530302c819c7ec4e5e51e9dcc0a116b81867a48"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "6b20da21004610b2596a41b49961616c1436a6e7",
+      "path": "docs/automation/autonomous_generated/phase14-cross-batch-gates.md",
+      "sha256": "073663ef85cd8b6ed2eb40ef1334f05a4ba5f3505ea1a0889684744d0be09ab4"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "587dd2d1792e8153819ff41b9c1821ae0f84d092",
+      "path": "docs/automation/autonomous_generated/phase14-resume-evidence.md",
+      "sha256": "56772c38ddc8042a5f681e117698d202bfc670fa414290bc69aedd4f1e0ac149"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "343a27076bdc47d5e95cc9b45dab4c26cbc86d74",
       "path": "docs/automation/autonomous_generated/self_improvement/auto-bib-002.md",
       "sha256": "74791ebea6279f06b0baad411da419dc2d54eb692e300164fc9a78763727ff66"
@@ -28541,5 +28568,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "55beda1d6397b6a2e5b4904c81ebd2736adb472b77d182d575329e552acb0276"
+  "source_digest": "d12d9bd709d5e115e28311cf5253a4c183f4ab986b6236f54f0a0a4c47e92daf"
 }
