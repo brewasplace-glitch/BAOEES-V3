@@ -1,9 +1,9 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
-  "policy_version": "3.1.0",
+  "policy_version": "3.1.1",
   "gateway_policy_version": "1.0.0",
   "engine_registry_version": "2.2.0",
   "files": {
@@ -12,7 +12,7 @@
       "required": true
     },
     "autonomy_policy_v2.json": {
-      "sha256": "e6ca033edfa0836f4642eb90ae351417972577a635baf74de298be3380e8b8da",
+      "sha256": "300495f233a3ea80a0bad13afd811efed10877e4ffce6149cd1ed854f3c2bd28",
       "required": true
     },
     "universal_gateway_policy_v1.json": {
@@ -124,7 +124,7 @@
       "required": true
     }
   },
-  "bundle_sha256": "a949803c48859f4accf993a7666be700b4b6240477011a27ab25838baa87bb7a",
+  "bundle_sha256": "3766d3751dc9ff360bfdf1269002711cb2d8d0fd8e474f4f7531a62468fce15e",
   "capability_executor_registry_version": "1.9.0",
   "future_engine_admission_contract_version": "2.0.0",
   "engine_onboarding_policy_version": "1.0.0",
