@@ -9104,6 +9104,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "2433218e480b8355336284ad0b1a8adc2817fbde",
+      "path": "docs/automation/autonomous_generated/phase14-campaign-completion.md",
+      "sha256": "f5422565355910f8b0ba875217ca3d5f7f6ecc540165617aec9f73e860118b76"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "8a989baf4fa8db6f632ac50972e225b1180921f1",
       "path": "docs/automation/autonomous_generated/phase14-campaign-plan.md",
       "sha256": "f52e9384a539231bc8a53b4fc530302c819c7ec4e5e51e9dcc0a116b81867a48"
@@ -9113,9 +9122,27 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "d1c708189efd93bd33799393c2676eb1e8f74a08",
+      "path": "docs/automation/autonomous_generated/phase14-campaign-regression.md",
+      "sha256": "cfdcbc017124d05b0aad3bb8b5fb87c259500cceedaef45fd738b2cdaea9fd2a"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "6b20da21004610b2596a41b49961616c1436a6e7",
       "path": "docs/automation/autonomous_generated/phase14-cross-batch-gates.md",
       "sha256": "073663ef85cd8b6ed2eb40ef1334f05a4ba5f3505ea1a0889684744d0be09ab4"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "9e8aea33b2ab23520338370ca997a4acd2b190a7",
+      "path": "docs/automation/autonomous_generated/phase14-lesson-application.md",
+      "sha256": "2b9fe5223330e406ac2e0294f7cadedd5fce69de97d6be85975e0f44549f0775"
     },
     {
       "chunks": 1,
@@ -28568,5 +28595,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "d12d9bd709d5e115e28311cf5253a4c183f4ab986b6236f54f0a0a4c47e92daf"
+  "source_digest": "aadaada95b88d669542d0f41d9dff2199516898cd78152a05df0fe9e4e9f081d"
 }
