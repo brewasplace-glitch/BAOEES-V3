@@ -1,0 +1,22 @@
+{
+  "schema": "PHOENIX_MONITORED_LEVEL5_PILOT_V1",
+  "version": "1.0.0",
+  "pilot_id": "PHX-L5-PILOT-001",
+  "entry_baseline": "49375c8e3be9c098d479b76e674b47e2df3f49d0",
+  "required_observations": 2,
+  "maximum_live_cycles": 0,
+  "dry_run_cycles": 1,
+  "promotion_enabled": false,
+  "success_criteria": [
+    "accepted_isolation_provider",
+    "clean_synchronized_baseline",
+    "signed_atomic_state",
+    "kill_switch_proof",
+    "deterministic_signal_digest",
+    "single_low_risk_task_selection",
+    "full_regression_gate",
+    "real_project_benchmark_gate",
+    "no_repository_mutation",
+    "no_push"
+  ]
+}

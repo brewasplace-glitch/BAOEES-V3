@@ -1,0 +1,13 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_LEVEL5_PILOT_REVIEW_V1",
+  "version": "1.0.0",
+  "selected": {
+    "scheduler": "python.stdlib.monotonic",
+    "state": "python.stdlib.atomic_json_hmac",
+    "selection": "python.stdlib.heapq",
+    "process_lock": "exclusive_create_lockfile"
+  },
+  "rejected_for_pilot": ["APScheduler", "Prefect", "Celery", "Temporal"],
+  "reason": "The monitored pilot requires no dependency installation, no network service and no persistent daemon activation.",
+  "automatic_dependency_install": false
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/continuous_development_state_v1.schema.json",
+  "title": "Phoenix Continuous Development State v1",
+  "type": "object",
+  "required": ["schema", "baseline", "cycle_count", "last_status", "state_sha256", "hmac_sha256"],
+  "properties": {
+    "schema": {"const": "PHOENIX_CONTINUOUS_DEVELOPMENT_STATE_V1"},
+    "baseline": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "cycle_count": {"type": "integer", "minimum": 0},
+    "last_status": {"enum": ["OBSERVED", "DRY_RUN_PASS", "PAUSED_KILL_SWITCH", "DENIED"]},
+    "state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hmac_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

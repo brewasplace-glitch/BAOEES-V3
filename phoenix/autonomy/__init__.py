@@ -45,6 +45,7 @@ __all__ = [
     "BoundedLevel4BatchService","phase13_review_tasks",
     "CampaignTask","CampaignSelection","DeterministicCampaignSelector",
     "SQLiteCampaignStateStore","RepeatableLevel4CampaignService","phase14_review_tasks",
+    "ContinuousObservation","AtomicHmacStateStore","ContinuousDevelopmentPilotService",
 ]
 
 from .promoter import LowRiskMainlinePromotionPolicy, LowRiskMainlinePromoter
@@ -102,3 +103,5 @@ from .batch_cycle import BoundedLevel4BatchService, phase13_review_tasks
 from .campaign_selector import CampaignTask, CampaignSelection, DeterministicCampaignSelector
 
 from .campaign_cycle import SQLiteCampaignStateStore, RepeatableLevel4CampaignService, phase14_review_tasks
+
+from .continuous_development import ContinuousObservation, AtomicHmacStateStore, ContinuousDevelopmentPilotService

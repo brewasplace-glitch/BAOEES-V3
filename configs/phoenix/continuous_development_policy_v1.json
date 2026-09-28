@@ -1,0 +1,71 @@
+{
+  "schema": "PHOENIX_CONTINUOUS_DEVELOPMENT_POLICY_V1",
+  "version": "1.0.0",
+  "mode": "MONITORED_LEVEL5_PILOT",
+  "monitoring_enabled": true,
+  "continuous_daemon_activation": false,
+  "automatic_engine_activation": false,
+  "network_access": "DENY_BY_DEFAULT",
+  "dependency_install": "DENY",
+  "force_push": "DENY",
+  "history_rewrite": "DENY",
+  "protected_path_mutation": "DENY",
+  "human_kill_switch": "REQUIRED",
+  "kill_switch_filename": "PHOENIX_LEVEL5_STOP",
+  "max_cycles_per_window": 1,
+  "max_tasks_per_cycle": 1,
+  "max_self_repairs_per_cycle": 1,
+  "minimum_cycle_interval_seconds": 3600,
+  "observation_window_seconds": 300,
+  "promotion": {
+    "pilot_automatic_promotion": false,
+    "normal_non_force_push": true,
+    "fast_forward_only": true,
+    "verified_backup_required": true,
+    "accepted_isolation_required": true,
+    "full_regression_required": true,
+    "real_project_benchmark_required": true,
+    "signed_state_required": true
+  },
+  "signals": [
+    "repository_sync",
+    "regression_health",
+    "real_project_benchmark",
+    "dependency_drift",
+    "performance_regression",
+    "backlog_low_risk_availability"
+  ],
+  "allowed_task_risk": ["LOW"],
+  "allowed_output_prefixes": ["docs/automation/autonomous_generated/"],
+  "state_backend": "ATOMIC_JSON_HMAC_BOUND",
+  "scheduler": {
+    "activation": "MANUAL_MONITORED_WINDOW_ONLY",
+    "persistent_os_task_install": false,
+    "overlap": "DENY",
+    "missed_run_policy": "OBSERVE_THEN_FAIL_CLOSED"
+  },
+  "regression": {
+    "command_profile": "PYTHON_UNITTEST_EXPLICIT_ALLOWLIST",
+    "expected_test_count": 456,
+    "test_files": [
+      "test_phoenix_441_autonomy_policy_north_star_v1.py",
+      "test_phoenix_441_universal_autonomy_gateway_v1.py",
+      "test_phoenix_441_autonomous_execution_planner_v1.py",
+      "test_phoenix_441_execution_orchestrator_approval_resume_v1.py",
+      "test_phoenix_441_universal_capability_executor_registry_v1.py",
+      "test_phoenix_441_autonomous_engine_onboarding_v1.py",
+      "test_phoenix_441_governed_engine_activation_v1.py",
+      "test_phoenix_441_adapter_synthesis_verification_v1.py",
+      "test_phoenix_441_bounded_level3_isolated_runtime_v1.py",
+      "test_phoenix_441_bounded_repository_improvement_cycle_v1.py",
+      "test_phoenix_441_bounded_multi_agent_dag_v1.py",
+      "test_phoenix_441_low_risk_mainline_promotion_v1.py",
+      "test_phoenix_441_low_risk_self_improvement_loop_v1.py",
+      "test_phoenix_441_backlog_driven_level3_cycle_v1.py",
+      "test_phoenix_441_bounded_level4_autonomous_batch_v1.py",
+      "test_phoenix_441_repeatable_level4_campaign_v1.py",
+      "test_phoenix_441_continuous_development_pilot_v1.py"
+    ],
+    "timeout_seconds_per_cycle": 3000
+  }
+}
