@@ -3,6 +3,7 @@
   "discovered_existing_bib_roots": [
     "bib",
     "knowledge",
+    "docs/knowledge",
     "outputs/bib",
     "outputs/knowledge",
     "phoenix/knowledge",

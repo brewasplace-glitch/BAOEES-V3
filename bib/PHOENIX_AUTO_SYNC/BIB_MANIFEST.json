@@ -11534,6 +11534,33 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "f766016793bdc00ff4c00240ad6c0b00af4e7e95",
+      "path": "docs/knowledge/reference_projects/lie_kwie_1145/PROJECT_PHOENIX_LIE_KWIE_BIB_INGESTION_RECEIPT_v1.json",
+      "sha256": "033ca64af12c7b47a7bba94c1ff37a3c5631093a0abe54bf655a48bb8eb716d1"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "101b98c7258a3841ccad163a35dbba3c4c642a92",
+      "path": "docs/knowledge/reference_projects/lie_kwie_1145/PROJECT_PHOENIX_LIE_KWIE_DESIGN_OUTPUT_STANDARD_v1.md",
+      "sha256": "c3c14599135658406e710632673c02d000d30507003b4b10627d3d637d611134"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "f1a17ff0da39f2e1fee3416aa35162f8848c7a3a",
+      "path": "docs/knowledge/reference_projects/lie_kwie_1145/PROJECT_PHOENIX_LIE_KWIE_TECHNICAL_REFERENCE_v1.json",
+      "sha256": "f8a0212ab913070179a89a21a6db7f6054661caf7fcd744d5bfe6cde70bf5918"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "b2d67ad718312a41d5251006910a63088e1898f5",
       "path": "docs/phoenix_core/PROJECT_PHOENIX_CORE_v1.md",
       "sha256": "ab27802f1cc9a3a40b5f5e5ff9c71a0dde73dfb79076e084cf573f4bb846222d"
@@ -28676,5 +28703,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "fb3e6abe7d9c33dfbf0426d5cbea31fbad33aa7ab1aef1fca2a8d19f40a1f7f0"
+  "source_digest": "5d6499a4807b779890a153fcc0489528fa3247ed0bcfd636857265b93e501cb7"
 }

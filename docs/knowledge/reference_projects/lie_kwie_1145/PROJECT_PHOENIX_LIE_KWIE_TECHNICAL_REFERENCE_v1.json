@@ -1,0 +1,132 @@
+{
+  "schema": "PHOENIX_TECHNICAL_REFERENCE_PROJECT_V1",
+  "reference_id": "PHX-REF-SR-PARAMARIBO-LIE-KWIE-1145",
+  "title": "Woonhuis hoek Jupiterstraat / Siriusstraat - technische referentieset",
+  "status": "REFERENCE_ONLY_REQUIRES_PROJECT_SPECIFIC_RECALCULATION",
+  "ingestion_date": "2026-09-28",
+  "project": {
+    "project_number": "1145",
+    "type": "woonhuis, twee bouwlagen",
+    "location": "hoek Jupiterstraat / Siriusstraat, Paramaribo, Suriname",
+    "plot": "perceel 156 (ABCDE)",
+    "plot_area_m2": 540.05,
+    "building_footprint_m2": 233.0,
+    "site_coverage_percent": 43.14,
+    "designer_on_drawings": "Alan Brewster",
+    "engineering_office": "Structuur+ N.V."
+  },
+  "source_documents": [
+    {
+      "name": "Constructierapport R. R. Lie Kwie",
+      "date": "2026-03-30",
+      "pages": 39,
+      "sha256": "a096d5f8a13305208e3ec5eaeaacaaf53f6eaf1f59369fbee22e70189692eaaf"
+    },
+    {
+      "name": "Bestektekeningen woning Ruiz Roger Lie-Kwie",
+      "date": "2026-06-05",
+      "pages": 27,
+      "sha256": "66f59a1e90cb7f48895a682037ec218454f430235231bef644f55747f7dce5a2"
+    }
+  ],
+  "document_set_pattern": [
+    "voorblad en tekeningenlijst",
+    "situatie",
+    "plattegrond begane grond",
+    "plattegrond verdieping",
+    "aanzichten",
+    "doorsneden A-A, B-B en C-C",
+    "rioleringsplan begane grond en verdieping",
+    "ringbalkenplan begane grond en verdieping",
+    "kapplan begane grond en verdieping",
+    "bouwkundige details",
+    "kozijnenstaat",
+    "constructietekeningen",
+    "funderingsplan",
+    "balkenplan en langsdoorsneden",
+    "kolommen en kolomdetails",
+    "trapconstructie",
+    "stalen spanten en spantdetails"
+  ],
+  "structural_system": {
+    "description": "Stalen kap op metselwerk; verdiepingsvloer op gewapend-betonbalken; balken op betonnen kolommen; kolommen naar schotel- en strokenfunderingen.",
+    "materials": {
+      "concrete": "C20/25",
+      "reinforcement": "FeB400",
+      "structural_steel": "S235"
+    },
+    "reference_period_years": 50,
+    "safety_class_reported": 2,
+    "climate_class_reported": 2,
+    "standards_reported": ["NEN 6702", "NEN 6720 / VBC 1995", "NEN 6770", "NEN 6772"]
+  },
+  "reported_loads": {
+    "wind_kN_m2": 0.45,
+    "roof_sheet_kN_m2": 0.1,
+    "steel_roof_kN_m2": 0.76,
+    "ceiling_kN_m2": 0.12,
+    "fixtures_kN_m2": 0.09,
+    "roof_total_without_steel_kN_m2": 0.31,
+    "roof_and_steel_kN_m2": 1.07,
+    "concrete_floor_kN_m2": 3.125,
+    "floor_finish_kN_m2": 1.0,
+    "masonry_on_floor_kN_m2": 2.5,
+    "floor_total_kN_m2": 4.57,
+    "beam_total_kN_m2": 7.695,
+    "perimeter_masonry_kN_m": 7.2,
+    "residential_imposed_kN_m2": 1.75,
+    "permanent_factor_favourable": 0.9,
+    "permanent_factor_unfavourable": 1.2,
+    "variable_factors_reported": [1.2, 1.5]
+  },
+  "reported_design_examples": {
+    "floor": {"thickness_mm": 125, "reinforcement": "R8-150 top and bottom mesh"},
+    "beams_mm": ["300x600", "250x600", "250x450", "150x600"],
+    "beam_shear_reinforcement_example": "R8-150",
+    "columns": [
+      {"section": "200x400 mm selected (calculation caption 150x400)", "reinforcement": "6R16", "reported_NEd_kN": 215},
+      {"section": "round 300 mm", "reinforcement": "8R16", "reported_NEd_kN": 473}
+    ],
+    "pad_footings": [
+      {"plan_m": "3.4x3.4", "thickness_mm": 250, "reinforcement": "R16-200"},
+      {"plan_m": "2.5x2.5", "thickness_mm": 250, "reinforcement": "R12-150"},
+      {"plan_m": "1.5x1.5", "thickness_mm": 200, "reinforcement": "R10-150"},
+      {"plan_m": "1.2x1.2", "thickness_mm": 200, "reinforcement": "R10-150"}
+    ],
+    "punching_reinforcement_example": "R10-150 hairpins",
+    "strip_footings": [
+      {"width_m": 0.7, "thickness_mm": 200, "reinforcement": "R10-150"},
+      {"width_m": 1.0, "thickness_mm": 200, "reinforcement": "R12-150"}
+    ],
+    "steel_truss_example": {"section": "SHS 50x50x3.0", "steel": "S235"}
+  },
+  "required_design_workflow": [
+    "define project, site, use, geometry and authority",
+    "select current applicable code set and consequence/safety class",
+    "establish material specifications and durability/exposure requirements",
+    "derive permanent, imposed, wind and other actions with combinations",
+    "build traceable analysis model with supports and load paths",
+    "check ULS and SLS for slabs, beams, columns, foundations and steelwork",
+    "check shear, punching, stability, slenderness, connections and detailing",
+    "coordinate architecture, structure, drainage, roof, openings and services",
+    "produce calculations, drawings, schedules, details and revision register",
+    "run independent professional review before construction release"
+  ],
+  "mandatory_reuse_rules": {
+    "use_as_default_geometry": false,
+    "use_as_default_reinforcement": false,
+    "use_as_default_foundation": false,
+    "use_as_default_loads": false,
+    "reuse_workflow_and_output_detail": true,
+    "project_specific_recalculation_required": true,
+    "soil_investigation_required_for_foundation": true,
+    "current_code_verification_required": true,
+    "professional_review_required": true
+  },
+  "quality_flags": [
+    "The report cites legacy NEN/TGB standards; applicability must be checked for every new project and jurisdiction.",
+    "The report states that verification of a timber roof structure is outside its scope.",
+    "Some captions, load-case labels and column dimensions contain apparent inconsistencies and must not be copied without review.",
+    "No value in this reference overrides geotechnical data, current regulations, manufacturer data or project-specific calculations."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "PHOENIX_BIB_REFERENCE_INGESTION_RECEIPT_V1",
+  "reference_id": "PHX-REF-SR-PARAMARIBO-LIE-KWIE-1145",
+  "prepared_at": "2026-09-28",
+  "source_pages": 66,
+  "knowledge_classes": [
+    "architectural_document_set",
+    "structural_design_workflow",
+    "load_definition_example",
+    "reinforced_concrete_design_example",
+    "foundation_design_example",
+    "steel_truss_design_example",
+    "drainage_and_detail_coordination",
+    "drawing_register_and_output_quality"
+  ],
+  "generalized_patterns": true,
+  "project_values_quarantined_as_reference_only": true,
+  "current_code_check_required": true,
+  "project_specific_recalculation_required": true,
+  "professional_release_required": true,
+  "target_baseline": "7caa47c56e52cf2a9d716fc796154070f219ffc8",
+  "status": "READY_FOR_GOVERNED_REPOSITORY_INGESTION"
+}
