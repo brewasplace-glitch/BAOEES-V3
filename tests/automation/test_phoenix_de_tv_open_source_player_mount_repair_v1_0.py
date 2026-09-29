@@ -25,7 +25,7 @@ class T(unittest.TestCase):
   self.assertIn("ensureMounted",self.js)
  def test_loaded_after_original_player_bridge(self):
   old="PROJECT_PHOENIX_de_tv_open_source_media_player_v1_0.js"
-  new="PROJECT_PHOENIX_de_tv_open_source_player_robust_mount_activation_repair_v1_0.js"
+  new="phoenix_detv_player_mount.js"
   self.assertIn(old,self.html);self.assertIn(new,self.html)
   self.assertGreater(self.html.index(new),self.html.index(old))
 if __name__=="__main__": unittest.main()

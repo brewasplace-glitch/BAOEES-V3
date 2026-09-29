@@ -35,7 +35,7 @@ class OfficialStartDeTvTests(unittest.TestCase):
         return app
 
     def test_01_start_screen_version(self) -> None:
-        self.assertIn("PROJECT PHOENIX 3.0.2", self.html)
+        self.assertIn("PROJECT PHOENIX 4.41", self.html)
         self.assertIn('START_SCREEN_VERSION = "3.0.2"', self.server_source)
 
     def test_02_de_tv_replaces_old_identity_panel(self) -> None:

@@ -165,13 +165,16 @@ def _wall_endpoints(wall:dict[str,Any])->tuple[tuple[float,float],tuple[float,fl
             raise ValueError(f"endpoint length {length} does not match length_m {declared}")
     return start,end,schema
 
-def _wall_height(wall:dict[str,Any],item:dict[str,Any])->tuple[float,str]:
+def _wall_height(wall:dict[str,Any],item:dict[str,Any],storey:dict[str,Any])->tuple[float,str]:
     if wall.get("height_m") is not None:
         height=_wall_geometry_number(wall["height_m"],"height_m")
         source="detailed_wall_height_m"
     elif item.get("height_m") is not None:
         height=_wall_geometry_number(item["height_m"],"height_m")
         source="v8_0_wall_height_m"
+    elif storey.get("height_m") is not None:
+        height=_wall_geometry_number(storey["height_m"],"storey.height_m")
+        source="architectural_storey_height_m"
     else:
         raise ValueError("wall geometry requires an explicit source height_m")
     if height<=0.0:
@@ -236,7 +239,7 @@ def build_v81_input(v80:dict[str,Any],architectural_model:dict[str,Any],detailed
         z,_=zinfo(sid)
         try:
             (x1,y1),(x2,y2),wall_geometry_schema=_wall_endpoints(wall)
-            h,wall_height_source=_wall_height(wall,item)
+            h,wall_height_source=_wall_height(wall,item,storeys.get(sid,{}))
         except ValueError as exc:
             raise ValueError(f"Wall geometry invalid for {item.get('structural_id')}: {exc}") from exc
         wall_geometry_schemas.add(wall_geometry_schema)

@@ -9,4 +9,6 @@ dependencies = [
     "pydantic",
     "python-docx",
     "reportlab",
+    "ezdxf>=1.4,<2",
+    "pillow>=10,<13",
 ]

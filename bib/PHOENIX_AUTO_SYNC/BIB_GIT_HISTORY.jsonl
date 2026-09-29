@@ -1,3 +1,4 @@
+{"commit": "983ef680466e50c0454bef5c92c9c90c6a756bd5", "date": "2026-09-28T23:15:39+02:00", "subject": "docs(knowledge): ingest Lie Kwie technical reference v1"}
 {"commit": "7caa47c56e52cf2a9d716fc796154070f219ffc8", "date": "2026-09-28T03:10:31+02:00", "subject": "feat(autonomy): add monitored level-5 development pilot v1"}
 {"commit": "49375c8e3be9c098d479b76e674b47e2df3f49d0", "date": "2026-09-27T23:26:07+02:00", "subject": "chore(autonomy): low-risk candidate LOW-PHX-L4-CAMPAIGN-001-BATCH-2"}
 {"commit": "a68384cb019d40b39f7605fc6c9fe3a363b75303", "date": "2026-09-27T23:15:35+02:00", "subject": "chore(autonomy): low-risk candidate LOW-PHX-L4-CAMPAIGN-001-BATCH-1"}
@@ -497,4 +498,3 @@
 {"commit": "25f9553b26c80de9ec6f7654492bde426774b0bc", "date": "2026-06-26T20:07:59+02:00", "subject": "feat: add Project Phoenix BIB QA QC engine v3.3"}
 {"commit": "b781d432893813d63b6f10de6ef8176ac6c3130d", "date": "2026-06-26T19:57:57+02:00", "subject": "feat: connect Project Phoenix BIB to launcher v3.2"}
 {"commit": "7f975d16b7f15256d63be196cde9e9615899461a", "date": "2026-06-26T19:52:29+02:00", "subject": "feat: connect Project Phoenix BIB to launcher v3.2"}
-{"commit": "6b326d8713153042b9615ed1ecb1fc89a0c57ebf", "date": "2026-06-26T19:45:44+02:00", "subject": "feat: add Project Phoenix BIB full export runner v3.1"}

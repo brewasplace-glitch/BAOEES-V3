@@ -176,6 +176,10 @@ def render_svg_resilient(path,layers=None):
         "dxfversion":str(doc.dxfversion),
     },ensure_ascii=False))
 
+def render_svg(path,layers=None):
+    """Backward-compatible public entry point for the resilient SVG renderer."""
+    return render_svg_resilient(path,layers)
+
 def _aci_color(index):
     palette={
         1:"#ff3b30",2:"#ffd60a",3:"#32d74b",4:"#64d2ff",

@@ -17258,7 +17258,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "2e304f48a5496815e83f9e49a191161eccd106c2",
+      "git_oid": "553f5fd6b2eee6898cfb034eda2267f812df69df",
       "path": "phoenix/autonomy/structural_session_chain.py",
       "sha256": null
     },
@@ -18482,7 +18482,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "a59be1f40b0146ac5ab413be03557c292efe8fef",
+      "git_oid": "79f863bf8133fba5f1e64382bf83aed2a2564a38",
       "path": "phoenix/detv_cad_bridge/server.py",
       "sha256": null
     },
@@ -21416,9 +21416,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "4fcba034801fba5c61ae7bb9690acb35b4f9c031",
+      "git_oid": "9c816fac4f18fb3a3df221c40afc624b88ea017d",
       "path": "pyproject.toml",
-      "sha256": "cca8db0d2b88b0d1ad9aca9f5a29c8fc4c5444556d9f1ec508809fd113095efc"
+      "sha256": "c37819dbaa5f775260ca8a1ed731ee09c91a36c10ee378667f4d88035e4d5bbc"
     },
     {
       "chunks": 1,
@@ -25124,7 +25124,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "035962f17a7417c421e8e8c35ae38a9f6976cf61",
+      "git_oid": "7c0a9ad62c2366f6e2e0f0dd9e63a10cd632ab98",
       "path": "tests/automation/test_phoenix_441_autonomous_development_foundation_v1.py",
       "sha256": null
     },
@@ -25907,7 +25907,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "ff936def5521687da9e029c839ddb981727b23a8",
+      "git_oid": "d6ff5175014bceca6f4c8494937876adcc49816f",
       "path": "tests/automation/test_phoenix_de_tv_open_source_player_mount_repair_v1_0.py",
       "sha256": null
     },
@@ -26186,7 +26186,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "53c39e49c8b06f82464a7875de29438f71452153",
+      "git_oid": "d1ed0209b1dbf7ff8b28d4c1138f314dac70b92f",
       "path": "tests/automation/test_phoenix_global_material_sourcing_certification_landed_cost_v1_0.py",
       "sha256": null
     },
@@ -26483,7 +26483,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "ea6779c113a64ce57e2bb444a217ae6982afee6a",
+      "git_oid": "16996a50070b60042a64a8838801784acdd4269f",
       "path": "tests/automation/test_phoenix_official_start_de_tv_v1_0.py",
       "sha256": null
     },
@@ -28703,5 +28703,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "5d6499a4807b779890a153fcc0489528fa3247ed0bcfd636857265b93e501cb7"
+  "source_digest": "fa69a49637230f4fe5dcb2c1208ad7df924b825eb0e7fbf12d21b79852fd8046"
 }

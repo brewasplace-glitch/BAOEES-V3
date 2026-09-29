@@ -48,7 +48,8 @@ class TestAutonomyFoundation(unittest.TestCase):
         reg=CapabilityRegistry()
         tasks=BacklogGenerator().generate(reg)
         ids={t.capability_id for t in tasks}
-        self.assertIn("AUTO-LOWRISK-002",ids)
+        self.assertEqual("ready",reg.get("AUTO-LOWRISK-002").status)
+        self.assertNotIn("AUTO-LOWRISK-002",ids)
         self.assertIn("AUTO-BIB-002",ids)
 
     def test_open_source_primary_and_fallback(self):

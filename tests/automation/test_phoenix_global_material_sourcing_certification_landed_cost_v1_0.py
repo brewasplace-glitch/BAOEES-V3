@@ -2,6 +2,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 from phoenix.autonomy.global_material_sourcing import build_global_material_sourcing_context
@@ -38,8 +39,8 @@ class GlobalMaterialSourcingTests(unittest.TestCase):
             "selected_product": None
         }]}
         catalog = {"metadata": {
-            "currency": "SRD", "availability_verified_date": "2026-08-04",
-            "price_date": "2026-08-04"
+            "currency": "SRD", "availability_verified_date": date.today().isoformat(),
+            "price_date": date.today().isoformat()
         }, "products": [
             {
                 "product_id": "CHEAP-EX-WORKS-EXPENSIVE-DELIVERED",
