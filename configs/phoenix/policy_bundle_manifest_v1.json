@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
   "policy_version": "3.1.1",
@@ -138,9 +138,17 @@
     "open_source_level5_pilot_review_v1.json": {
       "sha256": "31b4691f121c58e7e06a6b35660755ef686bb8816627b6ec52be6c7e29993fab",
       "required": true
+    },
+    "governed_continuous_level5_policy_v1.json": {
+      "sha256": "60fe74fda7cfe84da1993e54383e46ca5c362cfbf29df1b434005d9a3603c0cc",
+      "required": true
+    },
+    "continuous_health_record_v1.schema.json": {
+      "sha256": "e8a5ee1c27a28dbc96d8c0ed974227d6f1bf959e3de141cc216cdef42d2be55a",
+      "required": true
     }
   },
-  "bundle_sha256": "4f389a33b81e19dbd12e90d99cb63435ebffcfc21c8f4e7d4c035ac2070c8164",
+  "bundle_sha256": "39e568a43ca2764fd07c3545d14eeecfa741012df62c8bfc5b0bfc3b5a3953a0",
   "capability_executor_registry_version": "1.9.0",
   "future_engine_admission_contract_version": "2.0.0",
   "engine_onboarding_policy_version": "1.0.0",
@@ -160,5 +168,6 @@
   "autonomous_campaign_policy_version": "1.0.0",
   "autonomous_campaign_version": "1.0.0",
   "continuous_development_policy_version": "1.0.0",
-  "monitored_level5_pilot_version": "1.0.0"
+  "monitored_level5_pilot_version": "1.0.0",
+  "governed_continuous_level5_policy_version": "1.0.0"
 }

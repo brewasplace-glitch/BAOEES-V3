@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/continuous_health_record_v1.schema.json",
+  "title": "Phoenix governed continuous health record v1",
+  "type": "object",
+  "required": ["schema", "status", "baseline", "signals", "repository_mutation", "automatic_promotion"],
+  "properties": {
+    "schema": {"const": "PHOENIX_GOVERNED_LEVEL5_HEALTH_RECORD_V1"},
+    "status": {"enum": ["HEALTHY_NO_MUTATION", "PAUSED_KILL_SWITCH", "SKIPPED_INTERVAL", "SKIPPED_OVERLAP", "MISSED_WINDOW_FAIL_CLOSED"]},
+    "baseline": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "signals": {"type": "object"},
+    "repository_mutation": {"const": false},
+    "automatic_promotion": {"const": false},
+    "automatic_engine_activation": {"const": false}
+  },
+  "additionalProperties": true
+}

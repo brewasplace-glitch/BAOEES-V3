@@ -105,3 +105,5 @@ from .campaign_selector import CampaignTask, CampaignSelection, DeterministicCam
 from .campaign_cycle import SQLiteCampaignStateStore, RepeatableLevel4CampaignService, phase14_review_tasks
 
 from .continuous_development import ContinuousObservation, AtomicHmacStateStore, ContinuousDevelopmentPilotService
+
+from .governed_continuous_level5 import GovernedContinuousLevel5Service

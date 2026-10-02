@@ -282,10 +282,12 @@ class Phase11MultiAgentDagTests(unittest.TestCase):
 
     def test_29_task_timeout_fails_closed(self):
         policy = dict(self.policy)
-        policy["max_task_seconds"] = 0.001
+        # Keep a wide timing margin so this fail-closed assertion remains
+        # deterministic on Windows hosts with coarse or loaded schedulers.
+        policy["max_task_seconds"] = 0.01
         scheduler = BoundedDagScheduler(policy, self.registry)
         def runner(task, deps):
-            time.sleep(0.01)
+            time.sleep(0.25)
             return self.registry.execute(task, deps)
         with self.assertRaisesRegex(TimeoutError, "TASK_TIMEOUT"):
             scheduler.execute((phase11_fixture_tasks()[0],), runner)

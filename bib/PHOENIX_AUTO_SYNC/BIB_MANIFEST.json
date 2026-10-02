@@ -4208,6 +4208,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "fde03af10f90be4e38b3739aef58060693356b8d",
+      "path": "configs/phoenix/continuous_health_record_v1.schema.json",
+      "sha256": "e8a5ee1c27a28dbc96d8c0ed974227d6f1bf959e3de141cc216cdef42d2be55a"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "2055ff47de1daef119eb2ed5f263d6b659ed7e9d",
       "path": "configs/phoenix/contract_administration_engine_v1_0.json",
       "sha256": "e16e423a7590866749a2a16100fd3e39dd952891b59ccbe69eabb59bccc760a2"
@@ -4787,6 +4796,15 @@
       "git_oid": "72a6045aa617e14cbbcd693311b30adc31d4d7b9",
       "path": "configs/phoenix/goal_template_registry_v1.json",
       "sha256": "672a270760cc9c7ac0a163aa48c4b78c0543e07156e2e096eaef5d8e15f869b4"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "40510e8ecae3a8e4a6ca2f63065e7b3f134057ce",
+      "path": "configs/phoenix/governed_continuous_level5_policy_v1.json",
+      "sha256": "60fe74fda7cfe84da1993e54383e46ca5c362cfbf29df1b434005d9a3603c0cc"
     },
     {
       "chunks": 1,
@@ -5738,9 +5756,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "53db53e5e4ee5d4a44d805a275479bd50d05b2ed",
+      "git_oid": "27719f360e0870b54f931ef8c28eab4357d949d2",
       "path": "configs/phoenix/policy_bundle_manifest_v1.json",
-      "sha256": "236544d29cdd954ff3af588beb3cad9df4bd8bdd7b3d946b83d6cb236fc67cfc"
+      "sha256": "01384bd1691df4e3b39459d0e04258c3e4156c0793d4a2f3374390174940eb69"
     },
     {
       "chunks": 1,
@@ -9566,6 +9584,15 @@
       "git_oid": "c1c6ebb26fcde1c02a8db371415d06491b0f8947",
       "path": "docs/automation/PHOENIX_4_41_PHASE_15_OPEN_SOURCE_PILOT_REVIEW_2026_09_28.md",
       "sha256": "7c0e7a84739df27e6fdb77e2360fa6fd982fc67c30c712cbf3f13f7ce00dcb06"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "10d11ccccbd4df010eb8f6d1a988735be1c2f82f",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_16_GOVERNED_CONTINUOUS_LEVEL5_v1_0.md",
+      "sha256": "4a158032163b631c0f68ccf5fd7cf4ba4c6d4978f3e9bbdf01d54de2f9673b77"
     },
     {
       "chunks": 1,
@@ -16223,7 +16250,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "a2130808774c6e8460d873f1752892ef1cab4a3a",
+      "git_oid": "ea824a6d95d1e5cc87d42b36e8a00349816927de",
       "path": "phoenix/autonomy/__init__.py",
       "sha256": null
     },
@@ -16657,6 +16684,15 @@
       "git_mode": "100644",
       "git_oid": "9169021358b127e91923b57213f8522cfdb5c7ad",
       "path": "phoenix/autonomy/global_supplier_import_acquisition.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "4a9ee7fb77f431bdaadf5ee3d7437d954eab7542",
+      "path": "phoenix/autonomy/governed_continuous_level5.py",
       "sha256": null
     },
     {
@@ -22298,6 +22334,24 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "3b6cb113037d04689906a8c0da13eb5d4b03ad3c",
+      "path": "runners/PROJECT_PHOENIX_4_41_governed_continuous_level5_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "94df8e7b69473e5b6dce810cad3d43631f7a67bf",
+      "path": "runners/PROJECT_PHOENIX_4_41_governed_continuous_level5_window_v1.ps1",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "7b277d26b7961265cc80c5420297fe14db6b557e",
       "path": "runners/PROJECT_PHOENIX_4_41_governed_engine_activation_v1.ps1",
       "sha256": null
@@ -25187,7 +25241,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "83c9e50f5659713f6a6a0d758e8f8b857e34f2cb",
+      "git_oid": "adb05cc7dfa9694016bca39d9f455ec2617b93f8",
       "path": "tests/automation/test_phoenix_441_bounded_multi_agent_dag_v1.py",
       "sha256": null
     },
@@ -25234,6 +25288,15 @@
       "git_mode": "100644",
       "git_oid": "bf5937974babd32bf76f148a40e15c2c41d174d1",
       "path": "tests/automation/test_phoenix_441_execution_orchestrator_approval_resume_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "7897b4db11be4fec147bc8d8387875e7981ef528",
+      "path": "tests/automation/test_phoenix_441_governed_continuous_level5_v1.py",
       "sha256": null
     },
     {
@@ -28703,5 +28766,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "fa69a49637230f4fe5dcb2c1208ad7df924b825eb0e7fbf12d21b79852fd8046"
+  "source_digest": "9d86412fea8ca1da7bf568c606935a909c5827d4a74f4c2b34694615d54ca251"
 }
