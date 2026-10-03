@@ -1,0 +1,21 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_PHASE18_PROJECT_ORCHESTRATION_REVIEW_V1",
+  "version": "1.0.0",
+  "decision": "ADMIT_GOVERNED_EXISTING_BINDINGS",
+  "reviewed_bindings": [
+    "phoenix.orchestration.autonomous_project_delivery",
+    "phoenix.autonomy.multidisciplinary_engine_suite",
+    "phoenix.digital_twin_sync",
+    "phoenix.bim_coordination",
+    "phoenix.autonomy.drawing_production",
+    "phoenix.quantity_takeoff",
+    "phoenix.cost_estimation",
+    "phoenix.construction_planning",
+    "phoenix.permit_compliance",
+    "phoenix.production.real_drawings_reports"
+  ],
+  "external_backends_are_automatically_installed": false,
+  "professional_release_is_automated": false,
+  "repository_mutation_is_automatic": false,
+  "notes": "Phase 18 binds existing Phoenix capabilities into an evidence-gated project run; it does not claim that a plan is an executed calculation or produced drawing."
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/integrated_project_run_v1.schema.json",
+  "title": "Phoenix integrated project run",
+  "type": "object",
+  "required": ["schema", "project_id", "status", "stages", "discipline_plan", "professional_release", "result_sha256"],
+  "properties": {
+    "schema": {"const": "PHOENIX_INTEGRATED_PROJECT_RUN_V1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["HOLD_MISSING_PROJECT_INPUTS", "HOLD_MISSING_VERIFIED_INPUTS", "WAITING_FOR_EVIDENCE", "READY_FOR_PROFESSIONAL_REVIEW"]},
+    "professional_release": {"const": false},
+    "repository_mutation": {"const": false},
+    "stages": {"type": "array", "minItems": 15, "maxItems": 15},
+    "discipline_plan": {"type": "object"},
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

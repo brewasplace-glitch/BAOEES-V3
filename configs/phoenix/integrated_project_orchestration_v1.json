@@ -1,0 +1,31 @@
+{
+  "schema": "PHOENIX_INTEGRATED_PROJECT_ORCHESTRATION_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_GOVERNED",
+  "fail_closed": true,
+  "concept_variant_count": 5,
+  "multidisciplinary_engine_count": 14,
+  "shared_model": "PHOENIX_DIGITAL_TWIN",
+  "automatic_repository_mutation": false,
+  "automatic_engine_activation": false,
+  "automatic_professional_release": false,
+  "professional_release_required": true,
+  "evidence_sha256_required": true,
+  "stages": [
+    {"id":"project_intake","order":10,"dependencies":[],"required_evidence":["project_brief"],"outputs":["validated_project_brief","assumptions_log"],"module_bindings":["phoenix.autonomy.project_context","phoenix.orchestration.autonomous_project_delivery"]},
+    {"id":"site_and_regulatory_analysis","order":20,"dependencies":["project_intake"],"required_evidence":["location_evidence","applicable_rules"],"outputs":["site_analysis","regulatory_basis","source_register"],"module_bindings":["phoenix.qgis","phoenix.permit_compliance"]},
+    {"id":"five_design_variants","order":30,"dependencies":["site_and_regulatory_analysis"],"required_evidence":["five_variant_manifest"],"outputs":["five_design_variants","variant_scorecard"],"module_bindings":["phoenix.architecture.real_multivariant_design_engine_v1_0","phoenix.design.tropical_residential"]},
+    {"id":"governed_variant_selection","order":40,"dependencies":["five_design_variants"],"required_evidence":["variant_selection_record"],"outputs":["selected_variant","selection_rationale"],"module_bindings":["phoenix.orchestration.autonomous_project_delivery"]},
+    {"id":"multidisciplinary_design","order":50,"dependencies":["governed_variant_selection"],"required_evidence":["discipline_input_set"],"outputs":["fourteen_discipline_results"],"module_bindings":["phoenix.autonomy.multidisciplinary_engine_suite"]},
+    {"id":"digital_twin_coordination","order":60,"dependencies":["multidisciplinary_design"],"required_evidence":["coordination_manifest"],"outputs":["coordinated_bim","digital_twin","clash_report"],"module_bindings":["phoenix.digital_twin_sync","phoenix.bim_coordination","phoenix.model.central_geometric_project_model"]},
+    {"id":"calculation_verification","order":70,"dependencies":["digital_twin_coordination"],"required_evidence":["calculation_manifest"],"outputs":["verified_calculation_set","calculation_exceptions"],"module_bindings":["phoenix.structural_design","phoenix.adapters.open_source"]},
+    {"id":"drawing_production","order":80,"dependencies":["digital_twin_coordination","calculation_verification"],"required_evidence":["drawing_manifest"],"outputs":["plans","elevations","sections","details","discipline_drawings","3d_exports"],"module_bindings":["phoenix.autonomy.drawing_production","phoenix.architectural_drawing","phoenix.production.real_drawings_reports"]},
+    {"id":"quantity_takeoff","order":90,"dependencies":["drawing_production"],"required_evidence":["quantity_manifest"],"outputs":["quantities","material_schedule","bill_of_quantities"],"module_bindings":["phoenix.quantity_takeoff"]},
+    {"id":"cost_estimation","order":100,"dependencies":["quantity_takeoff"],"required_evidence":["cost_basis"],"outputs":["cost_estimate","life_cycle_cost","cost_uncertainty"],"module_bindings":["phoenix.cost_estimation","phoenix.cost_carbon"]},
+    {"id":"construction_planning","order":110,"dependencies":["quantity_takeoff","cost_estimation"],"required_evidence":["planning_basis"],"outputs":["construction_schedule","phasing","resource_plan"],"module_bindings":["phoenix.construction_planning"]},
+    {"id":"permit_documentation","order":120,"dependencies":["drawing_production","calculation_verification","site_and_regulatory_analysis"],"required_evidence":["permit_evidence_manifest"],"outputs":["permit_dossier","compliance_matrix","open_items"],"module_bindings":["phoenix.permit_compliance","phoenix.construction_documentation"]},
+    {"id":"integrated_reporting","order":130,"dependencies":["cost_estimation","construction_planning","permit_documentation"],"required_evidence":["report_manifest"],"outputs":["technical_reports","design_basis","decision_log","source_register"],"module_bindings":["phoenix.production.real_drawings_reports","phoenix.updater.report_writer"]},
+    {"id":"complete_project_dossier","order":140,"dependencies":["integrated_reporting"],"required_evidence":["dossier_manifest"],"outputs":["complete_project_dossier","project_zip","handover_index"],"module_bindings":["phoenix.autonomy.level_a_project_zip_artifact_bridge_v1_0","phoenix.commercial_delivery_orchestrator"]},
+    {"id":"professional_release","order":150,"dependencies":["complete_project_dossier"],"required_evidence":["professional_review_record"],"outputs":["release_candidate"],"module_bindings":["human.professional_review"]}
+  ]
+}

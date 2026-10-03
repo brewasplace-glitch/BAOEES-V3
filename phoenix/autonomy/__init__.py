@@ -109,3 +109,5 @@ from .continuous_development import ContinuousObservation, AtomicHmacStateStore,
 from .governed_continuous_level5 import GovernedContinuousLevel5Service
 
 from .multidisciplinary_engine_suite import DisciplineDescriptor, MultidisciplinaryEngineSuiteService
+
+from .integrated_project_orchestration import ProjectStageDescriptor, IntegratedProjectOrchestrationService
