@@ -1,3 +1,4 @@
+{"commit": "52ee515928a15aa2bcf00b68781525d475ff4d4b", "date": "2026-10-02T15:42:41+02:00", "subject": "feat(autonomy): add governed continuous level5 windows"}
 {"commit": "5396ad946905bb33f69fac97a839a3aa299cba17", "date": "2026-09-29T03:23:25+02:00", "subject": "fix(regression): repair eight known baseline failures"}
 {"commit": "983ef680466e50c0454bef5c92c9c90c6a756bd5", "date": "2026-09-28T23:15:39+02:00", "subject": "docs(knowledge): ingest Lie Kwie technical reference v1"}
 {"commit": "7caa47c56e52cf2a9d716fc796154070f219ffc8", "date": "2026-09-28T03:10:31+02:00", "subject": "feat(autonomy): add monitored level-5 development pilot v1"}
@@ -497,4 +498,3 @@
 {"commit": "7a7c6b5b42e6e4aa806b3aa226cd9768052c490f", "date": "2026-06-26T23:34:36+02:00", "subject": "feat: integrate BIB QA QC in full export runner v3.4"}
 {"commit": "ad88bee49efa3fae5483a263fcf77a26fc66f06e", "date": "2026-06-26T23:26:04+02:00", "subject": "feat: integrate BIB QA QC in full export runner v3.4"}
 {"commit": "25f9553b26c80de9ec6f7654492bde426774b0bc", "date": "2026-06-26T20:07:59+02:00", "subject": "feat: add Project Phoenix BIB QA QC engine v3.3"}
-{"commit": "b781d432893813d63b6f10de6ef8176ac6c3130d", "date": "2026-06-26T19:57:57+02:00", "subject": "feat: connect Project Phoenix BIB to launcher v3.2"}

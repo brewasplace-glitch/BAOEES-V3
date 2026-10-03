@@ -107,3 +107,5 @@ from .campaign_cycle import SQLiteCampaignStateStore, RepeatableLevel4CampaignSe
 from .continuous_development import ContinuousObservation, AtomicHmacStateStore, ContinuousDevelopmentPilotService
 
 from .governed_continuous_level5 import GovernedContinuousLevel5Service
+
+from .multidisciplinary_engine_suite import DisciplineDescriptor, MultidisciplinaryEngineSuiteService

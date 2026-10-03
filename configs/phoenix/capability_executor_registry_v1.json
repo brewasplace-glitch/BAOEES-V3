@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_CAPABILITY_EXECUTOR_REGISTRY_V1",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_action_default": "DENY_NO_REGISTERED_ADAPTER",
@@ -242,6 +242,62 @@
       "plan_dispatchable": false,
       "implementation": "internal.gateway_managed",
       "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.gis", "status": "ACTIVE", "engine_id": "engineering.gis", "actions": ["engineering.gis.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:GisDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.geotechnical", "status": "ACTIVE", "engine_id": "engineering.geotechnical", "actions": ["engineering.geotechnical.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:GeotechnicalDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.traffic", "status": "ACTIVE", "engine_id": "engineering.traffic", "actions": ["engineering.traffic.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:TrafficDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.bim", "status": "ACTIVE", "engine_id": "engineering.bim", "actions": ["engineering.bim.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:BimDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.structural_steel", "status": "ACTIVE", "engine_id": "engineering.structural_steel", "actions": ["engineering.structural_steel.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:StructuralSteelDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.concrete", "status": "ACTIVE", "engine_id": "engineering.concrete", "actions": ["engineering.concrete.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:ConcreteDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.hydraulics", "status": "ACTIVE", "engine_id": "engineering.hydraulics", "actions": ["engineering.hydraulics.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:HydraulicsDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.water_supply", "status": "ACTIVE", "engine_id": "engineering.water_supply", "actions": ["engineering.water_supply.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:WaterSupplyDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.sewer_design", "status": "ACTIVE", "engine_id": "engineering.sewer_design", "actions": ["engineering.sewer_design.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:SewerDesignDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.fire_safety", "status": "ACTIVE", "engine_id": "engineering.fire_safety", "actions": ["engineering.fire_safety.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:FireSafetyDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.climate_control", "status": "ACTIVE", "engine_id": "engineering.climate_control", "actions": ["engineering.climate_control.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:ClimateControlDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.electrical", "status": "ACTIVE", "engine_id": "engineering.electrical", "actions": ["engineering.electrical.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:ElectricalDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.road_design", "status": "ACTIVE", "engine_id": "engineering.road_design", "actions": ["engineering.road_design.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:RoadDesignDisciplineAdapter", "priority": 100
+    },
+    {
+      "adapter_id": "builtin.engineering.sustainability", "status": "ACTIVE", "engine_id": "engineering.sustainability", "actions": ["engineering.sustainability.design"],
+      "mutation_capable": false, "gateway_required": false, "plan_dispatchable": true, "implementation": "phoenix.autonomy.multidisciplinary_engine_suite:SustainabilityDisciplineAdapter", "priority": 100
     }
   ]
 }

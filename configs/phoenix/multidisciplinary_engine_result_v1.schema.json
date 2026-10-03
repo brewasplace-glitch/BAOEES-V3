@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/multidisciplinary_engine_result_v1.schema.json",
+  "title": "Phoenix multidisciplinary engine result",
+  "type": "object",
+  "required": ["schema", "project_id", "suite_version", "status", "engines", "automatic_engine_activation", "repository_mutation"],
+  "properties": {
+    "schema": {"const": "PHOENIX_MULTIDISCIPLINARY_ENGINE_RESULT_V1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "suite_version": {"const": "1.0.0"},
+    "status": {"enum": ["READY_FOR_GOVERNED_EXECUTION", "HOLD_MISSING_VERIFIED_INPUTS"]},
+    "engines": {"type": "array", "minItems": 14, "maxItems": 14},
+    "automatic_engine_activation": {"const": false},
+    "repository_mutation": {"const": false}
+  },
+  "additionalProperties": true
+}

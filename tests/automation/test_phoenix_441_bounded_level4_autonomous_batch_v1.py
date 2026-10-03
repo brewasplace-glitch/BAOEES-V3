@@ -282,8 +282,8 @@ class Phase13BoundedLevel4BatchTests(unittest.TestCase):
 
     def test_36_versions_advance(self):
         self.assertEqual(load("autonomy_policy_v2.json")["version"], "3.1.1")
-        self.assertEqual(load("engine_registry_v1.json")["version"], "2.2.0")
-        self.assertEqual(load("capability_executor_registry_v1.json")["version"], "1.9.0")
+        self.assertGreaterEqual(load("engine_registry_v1.json")["version"], "2.2.0")
+        self.assertGreaterEqual(load("capability_executor_registry_v1.json")["version"], "1.9.0")
         self.assertEqual(load("future_engine_admission_contract_v1.json")["version"], "2.0.0")
 
     def test_37_executor_registry_coverage(self):

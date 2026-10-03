@@ -1,0 +1,20 @@
+{
+  "schema": "PHOENIX_OPEN_SOURCE_ENGINE_SUITE_REVIEW_V1",
+  "version": "1.0.0",
+  "status": "REVIEWED_GOVERNED",
+  "primary_bindings": {
+    "climate_control": ["EnergyPlus", "OpenStudio", "NIST CONTAM", "OpenModelica/Modelica Buildings"],
+    "gis": ["QGIS"],
+    "bim": ["IfcOpenShell", "FreeCAD"],
+    "structural": ["OpenSees", "CalculiX"]
+  },
+  "rules": [
+    "official_or_explicitly_approved_sources_only",
+    "license_and_version_review_required",
+    "sha256_verification_required_before_registration",
+    "third_party_binaries_never_bundled",
+    "missing_engine_never_simulated",
+    "automatic_installation_and_activation_forbidden"
+  ],
+  "automatic_engine_activation": false
+}

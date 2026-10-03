@@ -17,6 +17,16 @@
       "official_source": "https://www.dhondt.de/",
       "windows_distribution_note": "The official project directs Windows users to third-party distributions; explicit project-leader source approval is required."
     },
+    "contam": {
+      "acceptance_arguments": ["-h"],
+      "approved_version": "3.4-compatible",
+      "artifact_names": ["contamx3.exe"],
+      "display_name": "NIST CONTAM",
+      "environment_variable": "CONTAM_EXE",
+      "executable_candidates": ["contamx3.exe"],
+      "installation_method": "official_or_explicitly_approved_distribution",
+      "official_source": "https://www.nist.gov/services-resources/software/contam"
+    },
     "energyplus": {
       "acceptance_arguments": [
         "--version"
@@ -32,6 +42,26 @@
       ],
       "installation_method": "official_installer_or_existing_registration",
       "official_source": "https://energyplus.net/"
+    },
+    "openmodelica": {
+      "acceptance_arguments": ["--version"],
+      "approved_version": "reviewed_current_stable",
+      "artifact_names": ["omc.exe"],
+      "display_name": "OpenModelica Compiler",
+      "environment_variable": "OPENMODELICA_EXE",
+      "executable_candidates": ["omc.exe"],
+      "installation_method": "official_installer_or_existing_registration",
+      "official_source": "https://openmodelica.org/download/download-windows/"
+    },
+    "openstudio": {
+      "acceptance_arguments": ["openstudio_version"],
+      "approved_version": "reviewed_current_stable",
+      "artifact_names": ["openstudio.exe"],
+      "display_name": "OpenStudio CLI",
+      "environment_variable": "OPENSTUDIO_EXE",
+      "executable_candidates": ["openstudio.exe"],
+      "installation_method": "official_installer_or_existing_registration",
+      "official_source": "https://openstudio.net/"
     },
     "freecad": {
       "acceptance_arguments": [
@@ -123,5 +153,5 @@
     "never_simulate_missing_engine": true,
     "verify_sha256_before_install_or_registration": true
   },
-  "schema_version": "phoenix.third-party-engine-registry/5.1.0"
+  "schema_version": "phoenix.third-party-engine-registry/5.2.0"
 }

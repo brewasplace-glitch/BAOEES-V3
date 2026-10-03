@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_ENGINE_REGISTRY_V1",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "status": "ACTIVE",
   "fail_closed": true,
   "future_engine_default": "DENY_UNTIL_REGISTERED",
@@ -343,6 +343,76 @@
       "executor_adapter_ids": [
         "builtin.campaign.cycle.internal"
       ]
+    },
+    {
+      "engine_id": "engineering.gis", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.gis.design"], "allowed_domains": ["engineering", "gis"],
+      "executor_adapter_ids": ["builtin.engineering.gis"]
+    },
+    {
+      "engine_id": "engineering.geotechnical", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.geotechnical.design"], "allowed_domains": ["engineering", "geotechnical"],
+      "executor_adapter_ids": ["builtin.engineering.geotechnical"]
+    },
+    {
+      "engine_id": "engineering.traffic", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.traffic.design"], "allowed_domains": ["engineering", "traffic"],
+      "executor_adapter_ids": ["builtin.engineering.traffic"]
+    },
+    {
+      "engine_id": "engineering.bim", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.bim.design"], "allowed_domains": ["engineering", "bim"],
+      "executor_adapter_ids": ["builtin.engineering.bim"]
+    },
+    {
+      "engine_id": "engineering.structural_steel", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.structural_steel.design"], "allowed_domains": ["engineering", "structural"],
+      "executor_adapter_ids": ["builtin.engineering.structural_steel"]
+    },
+    {
+      "engine_id": "engineering.concrete", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.concrete.design"], "allowed_domains": ["engineering", "structural"],
+      "executor_adapter_ids": ["builtin.engineering.concrete"]
+    },
+    {
+      "engine_id": "engineering.hydraulics", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.hydraulics.design"], "allowed_domains": ["engineering", "hydraulics"],
+      "executor_adapter_ids": ["builtin.engineering.hydraulics"]
+    },
+    {
+      "engine_id": "engineering.water_supply", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.water_supply.design"], "allowed_domains": ["engineering", "water"],
+      "executor_adapter_ids": ["builtin.engineering.water_supply"]
+    },
+    {
+      "engine_id": "engineering.sewer_design", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.sewer_design.design"], "allowed_domains": ["engineering", "sewer"],
+      "executor_adapter_ids": ["builtin.engineering.sewer_design"]
+    },
+    {
+      "engine_id": "engineering.fire_safety", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.fire_safety.design"], "allowed_domains": ["engineering", "fire_safety"],
+      "executor_adapter_ids": ["builtin.engineering.fire_safety"]
+    },
+    {
+      "engine_id": "engineering.climate_control", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.climate_control.design"], "allowed_domains": ["engineering", "climate", "energy"],
+      "executor_adapter_ids": ["builtin.engineering.climate_control"]
+    },
+    {
+      "engine_id": "engineering.electrical", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.electrical.design"], "allowed_domains": ["engineering", "electrical"],
+      "executor_adapter_ids": ["builtin.engineering.electrical"]
+    },
+    {
+      "engine_id": "engineering.road_design", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.road_design.design"], "allowed_domains": ["engineering", "road"],
+      "executor_adapter_ids": ["builtin.engineering.road_design"]
+    },
+    {
+      "engine_id": "engineering.sustainability", "status": "ACTIVE", "mutation_capable": false, "gateway_required": false,
+      "allowed_actions": ["engineering.sustainability.design"], "allowed_domains": ["engineering", "sustainability"],
+      "executor_adapter_ids": ["builtin.engineering.sustainability"]
     }
   ]
 }

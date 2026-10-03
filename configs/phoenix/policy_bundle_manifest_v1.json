@@ -1,11 +1,11 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "2.5.0",
+  "version": "3.0.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
   "policy_version": "3.1.1",
   "gateway_policy_version": "1.0.0",
-  "engine_registry_version": "2.2.0",
+  "engine_registry_version": "3.0.0",
   "files": {
     "north_star_v1.json": {
       "sha256": "71bfef9c31972000ba6779d8b8319becf6382a18e0a532a81a0a66df8706952e",
@@ -20,7 +20,7 @@
       "required": true
     },
     "engine_registry_v1.json": {
-      "sha256": "322ea0b911c514f916aab372086a3317fb650ea20d45382fb6ba7b7c956f448f",
+      "sha256": "1015cd301180f1274d886ff9b5765a013e6d12c5fe88721319e7c52220dafa35",
       "required": true
     },
     "future_engine_admission_contract_v1.json": {
@@ -40,7 +40,7 @@
       "required": true
     },
     "capability_executor_registry_v1.json": {
-      "sha256": "9c37e114c88007e9825ad0915ec4c34447ede0cc12aaeab1384ad1c607f6aaed",
+      "sha256": "4948f9433d4fc0a88a10c78825c5171d77cee933b0ec7d26b51a5b30d476a950",
       "required": true
     },
     "engine_onboarding_policy_v1.json": {
@@ -146,10 +146,22 @@
     "continuous_health_record_v1.schema.json": {
       "sha256": "e8a5ee1c27a28dbc96d8c0ed974227d6f1bf959e3de141cc216cdef42d2be55a",
       "required": true
+    },
+    "multidisciplinary_engine_suite_v1.json": {
+      "sha256": "4aae6a4a99a5bfc487b8d86a4253e2db71fb00a865062be1935e9229225b93f5",
+      "required": true
+    },
+    "multidisciplinary_engine_result_v1.schema.json": {
+      "sha256": "799ab48e2cb6f584e05241af93400f0eb20870d1aa8333564b08ad418fc9667d",
+      "required": true
+    },
+    "open_source_phase17_engine_suite_review_v1.json": {
+      "sha256": "1b2f119c189c775a9534cc915e534a968e7e913887b305484659be52da46c954",
+      "required": true
     }
   },
-  "bundle_sha256": "39e568a43ca2764fd07c3545d14eeecfa741012df62c8bfc5b0bfc3b5a3953a0",
-  "capability_executor_registry_version": "1.9.0",
+  "bundle_sha256": "70c84ebc75395f14e98c64dc525ef71cd66603e7b1a234ff6df295ef26aee3e4",
+  "capability_executor_registry_version": "2.0.0",
   "future_engine_admission_contract_version": "2.0.0",
   "engine_onboarding_policy_version": "1.0.0",
   "engine_activation_policy_version": "1.0.0",
@@ -169,5 +181,6 @@
   "autonomous_campaign_version": "1.0.0",
   "continuous_development_policy_version": "1.0.0",
   "monitored_level5_pilot_version": "1.0.0",
-  "governed_continuous_level5_policy_version": "1.0.0"
+  "governed_continuous_level5_policy_version": "1.0.0",
+  "multidisciplinary_engine_suite_version": "1.0.0"
 }
