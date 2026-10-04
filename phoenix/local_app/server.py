@@ -29,6 +29,7 @@ from .dashboard_adapter import DashboardAdapter
 from .workflow_registry import WorkflowRegistry
 from .architectural_orchestration_runtime import ArchitecturalOrchestrationRuntime
 from .capability_registry import StartCapabilityRegistry
+from .integrated_project_bridge import OfficialStartIntegratedProjectBridge
 from phoenix.autonomy.session_orchestrator import AutonomousProjectOrchestrator
 
 
@@ -44,6 +45,7 @@ class PhoenixLocalApplication:
         self.workflows = WorkflowRegistry(self.repository, config)
         self.architectural_orchestration = ArchitecturalOrchestrationRuntime(self.repository)
         self.start_capabilities = StartCapabilityRegistry(self.repository)
+        self.integrated_project_bridge = None
         autonomy_config = self.repository / "configs" / "phoenix" / "autonomous_project_orchestrator_v1_0.json"
         self.autonomy = (
             AutonomousProjectOrchestrator(self.repository, autonomy_config)
@@ -111,8 +113,33 @@ class PhoenixLocalApplication:
                 "pat_defect_004_modal_status_sync": True,
                 "legacy_pilot_autonomous_execution": False,
                 "visual_refresh_mode": "zero_idle_polling",
+                "integrated_project_orchestration_bridge": "1.0.0",
+                "integrated_project_stage_count": 15,
+                "integrated_project_discipline_count": 14,
             },
         }
+
+    def create_integrated_project_plan(self, body: dict[str, Any]) -> dict[str, Any]:
+        session = dict(body.get("session") or body)
+        session_id = str(session.get("session_id") or "").strip()
+        if session_id:
+            session_path = (
+                self.repository / "outputs" / "runtime" / "phoenix_start_v3_sessions"
+                / f"{session_id}.json"
+            )
+            if session_path.is_file():
+                stored = json.loads(session_path.read_text(encoding="utf-8-sig"))
+                stored.update({key: value for key, value in session.items() if value is not None})
+                session = stored
+        result = self._phase19_bridge().plan(session, persist=True)
+        payload = dict(result.payload)
+        payload["result_file"] = result.path.relative_to(self.repository).as_posix() if result.path else None
+        return payload
+
+    def _phase19_bridge(self) -> OfficialStartIntegratedProjectBridge:
+        if self.integrated_project_bridge is None:
+            self.integrated_project_bridge = OfficialStartIntegratedProjectBridge(self.repository)
+        return self.integrated_project_bridge
 
     def summary(self) -> dict[str, Any]:
         status = self.status()
@@ -945,6 +972,17 @@ class PhoenixLocalApplication:
                         self._json({"error": str(error)}, HTTPStatus.NOT_FOUND)
                 elif parsed.path == "/api/architectural-orchestration/status":
                     self._json(application.architectural_orchestration.describe())
+                elif parsed.path.startswith("/api/integrated-project/runs/"):
+                    run_id = parsed.path.rsplit("/", 1)[-1]
+                    try:
+                        result = application._phase19_bridge().get(run_id)
+                    except ValueError as error:
+                        self._json({"error": str(error)}, HTTPStatus.CONFLICT)
+                    else:
+                        if result is None:
+                            self._json({"error": "Geintegreerde projectrun niet gevonden."}, HTTPStatus.NOT_FOUND)
+                        else:
+                            self._json(result)
                 elif parsed.path.startswith("/api/architectural-orchestration/jobs/"):
                     job_id = parsed.path.rsplit("/", 1)[-1]
                     job = application.architectural_orchestration.get(job_id)
@@ -987,6 +1025,8 @@ class PhoenixLocalApplication:
                             self._json(application.open_tv_output(str(body.get("relative_path", ""))))
                         elif parsed.path == "/api/project-analysis/start":
                             self._json(application.create_analysis_session(body), HTTPStatus.CREATED)
+                        elif parsed.path == "/api/integrated-project/plan":
+                            self._json(application.create_integrated_project_plan(body), HTTPStatus.CREATED)
                         elif parsed.path == "/api/autonomous/start":
                             self._json(
                                 application.start_autonomous_session(str(body.get("session_id", ""))),

@@ -1,0 +1,22 @@
+{
+  "schema": "PHOENIX_START_SCREEN_INTEGRATED_PROJECT_BRIDGE_POLICY_V1",
+  "version": "1.0.0",
+  "status": "ACTIVE_GOVERNED",
+  "source_route": "/start-v3/",
+  "plan_route": "/api/integrated-project/plan",
+  "run_route": "/api/integrated-project/runs/{run_id}",
+  "phase18_contract": "PHOENIX_INTEGRATED_PROJECT_RUN_V1",
+  "stage_count": 15,
+  "discipline_count": 14,
+  "variant_count": 5,
+  "autonomy_mode_mapping": {
+    "manual": "LEVEL_0_MANUAL",
+    "guided": "LEVEL_2_SEMI_AUTONOMOUS",
+    "autonomous": "LEVEL_3_GOVERNED_AUTONOMOUS_TASK"
+  },
+  "fail_closed": true,
+  "no_output_fabrication": true,
+  "automatic_engine_activation": false,
+  "automatic_professional_release": false,
+  "professional_release_required": true
+}

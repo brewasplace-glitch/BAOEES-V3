@@ -1,6 +1,6 @@
 {
   "schema": "PHOENIX_POLICY_BUNDLE_MANIFEST_V1",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "north_star_id": "PHOENIX-NORTH-STAR",
   "north_star_version": "1.0.0",
   "policy_version": "3.1.1",
@@ -170,9 +170,17 @@
     "open_source_phase18_project_orchestration_review_v1.json": {
       "sha256": "c4e0c7f8ae09a8ad4c1a6e04f96ec3b6941a91beae630c49a5456f55ffa0980c",
       "required": true
+    },
+    "start_screen_integrated_project_bridge_v1.json": {
+      "sha256": "23afbf3b69d53b27b0e7bab655687b3c6195549d6ab6a13289400ad08ba18b0f",
+      "required": true
+    },
+    "start_screen_integrated_project_bridge_v1.schema.json": {
+      "sha256": "2a9c651d3690c476ac792f5ae80334c7ff1f454962d3de24daf23b90886cd33c",
+      "required": true
     }
   },
-  "bundle_sha256": "95a5a7dc83569f51387f76200188ebfed5094e667df42d5be75d856866ad98d5",
+  "bundle_sha256": "63f6314d3f3cbadeb23f4e3406f1a2dc30cbca25bbf1b4cc982d00a7653853dd",
   "capability_executor_registry_version": "2.0.0",
   "future_engine_admission_contract_version": "2.0.0",
   "engine_onboarding_policy_version": "1.0.0",
@@ -195,5 +203,6 @@
   "monitored_level5_pilot_version": "1.0.0",
   "governed_continuous_level5_policy_version": "1.0.0",
   "multidisciplinary_engine_suite_version": "1.0.0",
-  "integrated_project_orchestration_version": "1.0.0"
+  "integrated_project_orchestration_version": "1.0.0",
+  "start_screen_integrated_project_bridge_version": "1.0.0"
 }

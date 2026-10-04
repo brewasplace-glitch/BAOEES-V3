@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://project-phoenix.local/schemas/start_screen_integrated_project_bridge_v1.schema.json",
+  "title": "Phoenix Start Screen Integrated Project Bridge Result v1",
+  "type": "object",
+  "required": ["schema", "version", "run_id", "status", "autonomy_level", "stage_count", "stages", "discipline_plan", "orchestration_result_sha256"],
+  "properties": {
+    "schema": {"const": "PHOENIX_START_SCREEN_INTEGRATED_PROJECT_BRIDGE_V1"},
+    "version": {"const": "1.0.0"},
+    "run_id": {"type": "string", "pattern": "^P19-[A-F0-9]{16}$"},
+    "stage_count": {"const": 15},
+    "stages": {"type": "array", "minItems": 15, "maxItems": 15},
+    "professional_release": {"const": false},
+    "repository_mutation": {"const": false},
+    "automatic_engine_activation": {"const": false},
+    "no_output_fabrication": {"const": true},
+    "orchestration_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}
