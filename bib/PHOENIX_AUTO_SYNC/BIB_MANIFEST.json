@@ -9698,6 +9698,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "e8b95ec6e3929e74cda5f468bfedcfcb613223ab",
+      "path": "docs/automation/PHOENIX_4_41_PHASE_19_FIX_R4_LOCATION_EVIDENCE_FIVE_VARIANTS_v1_0.md",
+      "sha256": "44aa4b85c04bbedef2c72accb6fc54483c4a70574a5caf566554e3656924577c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "785edd07dc8ee72b4758bc419535f96256e7dc4c",
       "path": "docs/automation/PHOENIX_4_41_PHASE_19_OFFICIAL_START_INTEGRATED_PROJECT_BRIDGE_v1_0.md",
       "sha256": "1020386ebf2b3bf7b7a881cac29090005193c06507088fa7415276603a364b81"
@@ -19148,7 +19157,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "237f8b03e589404f8494cc7ee6c150100cde94ce",
+      "git_oid": "5be93e555fb51473743fd5cde841ce2d1f7c9997",
       "path": "phoenix/local_app/integrated_project_bridge.py",
       "sha256": null
     },
@@ -19175,7 +19184,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "a8e642d5594a202fbed7b79abd077aee39f8f455",
+      "git_oid": "604013f0e37a1c0077fcf88986e7d6f018321588",
       "path": "phoenix/local_app/server.py",
       "sha256": null
     },
@@ -19373,7 +19382,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "502744c6ecd20907a2289729eaa93d587524a789",
+      "git_oid": "327e02eea7282c4e29d641d8b23c28c20d16460f",
       "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_phase19_integrated_project_bridge_v1_0.js",
       "sha256": null
     },
@@ -25547,8 +25556,17 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "bd7452c68fec1af2bc5b23fbdde17d1cf87db827",
+      "git_oid": "6d22090b3e68134c4880fcc953b5a210fe06126f",
       "path": "tests/automation/test_phoenix_441_phase19_fix_r1_location_upload_resume_v1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "5af4e6f1fa7e3f1c61bbb6d3f0c0d08b42881a25",
+      "path": "tests/automation/test_phoenix_441_phase19_fix_r4_location_variant_trigger_v1.py",
       "sha256": null
     },
     {
@@ -28964,5 +28982,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "34b12747b9434bac4852a4bd0f2037fcaee1a5bc344daa7720ed42e3ed621c55"
+  "source_digest": "861da0182d6dd0edc6a684f6e03634ba26dc920ecd4187d2c063c808e223875b"
 }

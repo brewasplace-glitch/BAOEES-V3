@@ -113,7 +113,7 @@ class PhoenixLocalApplication:
                 "pat_defect_004_modal_status_sync": True,
                 "legacy_pilot_autonomous_execution": False,
                 "visual_refresh_mode": "zero_idle_polling",
-                "integrated_project_orchestration_bridge": "1.0.1",
+                "integrated_project_orchestration_bridge": "1.1.0",
                 "integrated_project_stage_count": 15,
                 "integrated_project_discipline_count": 14,
             },

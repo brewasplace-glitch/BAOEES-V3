@@ -71,6 +71,14 @@ class Phase19FixR1Tests(unittest.TestCase):
             "files": [{"name": "terrain.png", "size_bytes": 7}],
         }
         (folder / "upload_manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+        for relative in (
+            "configs/phoenix/jurisdictions/suriname/suriname_regulatory_use_policy_v1_0.json",
+            "configs/phoenix/jurisdictions/suriname/suriname_structural_rule_registry_v1_0.json",
+            "configs/phoenix/building_code_profiles/foundations/sr_foundation_v1_0.json",
+        ):
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("{}\n", encoding="utf-8")
         return batch_id
 
     def test_01_location_input_visible(self):
@@ -105,13 +113,16 @@ class Phase19FixR1Tests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "UPLOAD_BATCH_NOT_FOUND"):
                 self.bridge(Path(temporary)).validate_upload_batch("20261004T234700Z_deadbeef")
 
-    def test_10_upload_manifest_is_integrity_bound_not_verified(self):
+    def test_10_upload_files_are_integrity_verified_with_limited_scope(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             batch = self.upload(root)
             proof = self.bridge(root).validate_upload_batch(batch)
             self.assertEqual(proof["file_count"], 1)
-            self.assertFalse(proof["verified"])
+            self.assertTrue(proof["verified"])
+            self.assertFalse(proof["survey_verified"])
+            self.assertFalse(proof["cadastral_verified"])
+            self.assertEqual(len(proof["files"][0]["sha256"]), 64)
             self.assertEqual(len(proof["manifest_sha256"]), 64)
 
     def test_11_contract_binds_location_and_upload(self):
@@ -124,7 +135,7 @@ class Phase19FixR1Tests(unittest.TestCase):
             contract = self.bridge(root).build_contract(session)
             self.assertEqual(contract["location_reference"], "Perceel 314, Paramaribo")
             self.assertEqual(contract["start_screen_context"]["upload_batch"], batch)
-            self.assertFalse(contract["evidence"]["project_uploads"]["verified"])
+            self.assertTrue(contract["evidence"]["project_uploads"]["verified"])
 
     def test_12_safe_resume_updates_exact_prior_session(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -148,14 +159,14 @@ class Phase19FixR1Tests(unittest.TestCase):
             self.assertEqual(stored["location_reference"], "Perceel 314, Paramaribo")
             self.assertEqual(stored["upload_batch"], batch)
 
-    def test_13_non_hold_resume_denied(self):
+    def test_13_professional_review_status_resume_denied(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             bridge = self.bridge(root)
             bridge.output_root.mkdir(parents=True)
             run_id = "P19-0123456789ABCDEF"
             (bridge.output_root / f"{run_id}.json").write_text(
-                json.dumps({"status": "WAITING_FOR_EVIDENCE"}), encoding="utf-8"
+                json.dumps({"status": "READY_FOR_PROFESSIONAL_REVIEW"}), encoding="utf-8"
             )
             batch = self.upload(root)
             with self.assertRaisesRegex(ValueError, "RESUME_STATUS_DENY"):

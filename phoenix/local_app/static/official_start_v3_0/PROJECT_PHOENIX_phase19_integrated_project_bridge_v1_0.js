@@ -32,13 +32,16 @@
   }
 
   function stageTable(plan) {
+    const variants = plan.concept_package?.variant_files || [];
+    const fileLink = path => `/api/tv/file/${String(path).split("/").map(encodeURIComponent).join("/")}`;
     return `<div class="phx19-summary">
       <p><b>Run:</b> ${esc(plan.run_id)} · <b>Status:</b> ${esc(plan.status)}</p>
       <p><b>Autonomieniveau:</b> ${esc(plan.autonomy_level)} · <b>Disciplines:</b> ${esc(plan.discipline_plan?.engines?.length || 0)} · <b>Fasen:</b> ${esc(plan.stage_count)}</p>
       <p><b>Digital Twin:</b> ${esc(plan.shared_model)} · <b>Professionele vrijgave:</b> vereist, nog niet verleend</p>
       ${plan.missing_start_inputs?.length ? `<p class="warn"><b>Ontbrekende startinvoer:</b> ${plan.missing_start_inputs.map(esc).join(", ")}</p>` : ""}
       <h3>Varianten</h3>
-      <p>Contract: exact vijf varianten. Phoenix maakt geen fictieve varianten; status: ${esc(plan.stages?.find(x => x.stage_id === "five_design_variants")?.status || "WACHT")}. Selectie: ${esc(plan.selected_variant_id || "nog niet gekozen")}.</p>
+      <p>Contract: exact vijf varianten. Status: ${esc(plan.stages?.find(x => x.stage_id === "five_design_variants")?.status || "WACHT")}. Selectie: ${esc(plan.selected_variant_id || "nog niet gekozen")}.</p>
+      ${variants.length ? `<p><b>Conceptpakket:</b> vijf voorlopige varianten A–E zijn gegenereerd. ${variants.map(item => `<a target="_blank" rel="noopener" href="${fileLink(item.svg_path)}">Variant ${esc(item.variant_id)}</a>`).join(" · ")}</p>` : `<p>De vijf conceptvarianten worden bij veilig hervatten gegenereerd.</p>`}
       <h3>Geintegreerde projectvoortgang</h3>
       <div style="overflow:auto"><table style="width:100%;border-collapse:collapse">
         <thead><tr><th style="text-align:left">#</th><th style="text-align:left">Fase</th><th style="text-align:left">Status</th><th style="text-align:left">Ontbrekend bewijs</th></tr></thead>
@@ -47,7 +50,8 @@
           <td>${esc((row.missing_evidence || []).join(", ") || "—")}</td>
         </tr>`).join("")}</tbody>
       </table></div>
-      <p><b>Veiligheidsgrens:</b> geen output gefabriceerd, geen engine automatisch geactiveerd en geen professionele vrijgave uitgevoerd.</p>
+      ${plan.duplicate_run_reused ? `<p><b>Herhaald verzoek:</b> de bestaande run is hergebruikt; er is geen dubbele run aangemaakt.</p>` : ""}
+      <p><b>Veiligheidsgrens:</b> uploadbytes zijn gecontroleerd, maar landmeting, kadastrale grens, wettelijke toepasselijkheid en professionele vrijgave zijn niet geverifieerd.</p>
     </div>`;
   }
 
@@ -89,6 +93,18 @@
         location_reference: locationReference,
         upload_batch: uploadBatch,
       });
+      if ($("phase19ResumeRun")) $("phase19ResumeRun").value = plan.run_id;
+      if (!plan.concept_package && ["HOLD_MISSING_PROJECT_INPUTS", "HOLD_MISSING_VERIFIED_INPUTS", "WAITING_FOR_EVIDENCE", "WAITING_FOR_FIVE_VARIANTS"].includes(plan.status)) {
+        const resumed = await post("/api/integrated-project/resume", {
+          run_id: plan.run_id,
+          location_reference: locationReference,
+          upload_batch: uploadBatch,
+        });
+        window.PHOENIX_PHASE19_LATEST_PLAN = resumed;
+        if ($("phase19ResumeRun")) $("phase19ResumeRun").value = resumed.run_id;
+        show("VIJF CONCEPTVARIANTEN A–E GEREED", stageTable(resumed));
+        return;
+      }
       window.PHOENIX_PHASE19_LATEST_PLAN = plan;
       show("GEINTEGREERDE PROJECTORKESTRATIE", stageTable(plan));
     } catch (error) {
