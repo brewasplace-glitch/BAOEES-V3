@@ -113,7 +113,7 @@ class PhoenixLocalApplication:
                 "pat_defect_004_modal_status_sync": True,
                 "legacy_pilot_autonomous_execution": False,
                 "visual_refresh_mode": "zero_idle_polling",
-                "integrated_project_orchestration_bridge": "1.0.0",
+                "integrated_project_orchestration_bridge": "1.0.1",
                 "integrated_project_stage_count": 15,
                 "integrated_project_discipline_count": 14,
             },
@@ -132,6 +132,17 @@ class PhoenixLocalApplication:
                 stored.update({key: value for key, value in session.items() if value is not None})
                 session = stored
         result = self._phase19_bridge().plan(session, persist=True)
+        payload = dict(result.payload)
+        payload["result_file"] = result.path.relative_to(self.repository).as_posix() if result.path else None
+        return payload
+
+    def resume_integrated_project_plan(self, body: dict[str, Any]) -> dict[str, Any]:
+        run_id = str(body.get("run_id") or "").strip().upper()
+        updates = {
+            "location_reference": str(body.get("location_reference") or "").strip(),
+            "upload_batch": str(body.get("upload_batch") or "").strip(),
+        }
+        result = self._phase19_bridge().resume(run_id, updates, persist=True)
         payload = dict(result.payload)
         payload["result_file"] = result.path.relative_to(self.repository).as_posix() if result.path else None
         return payload
@@ -484,7 +495,10 @@ class PhoenixLocalApplication:
 
         brief = str(body.get("brief", "")).strip()
         selected_project = str(body.get("selected_project", "")).strip() or None
+        location_reference = str(body.get("location_reference", "")).strip()
         upload_batch = str(body.get("upload_batch", "")).strip() or None
+        if upload_batch:
+            self._phase19_bridge().validate_upload_batch(upload_batch)
         desired_outputs = body.get("desired_outputs")
         if desired_outputs is None:
             desired_outputs = self.default_desired_outputs()
@@ -518,6 +532,7 @@ class PhoenixLocalApplication:
             "project_mode": project_mode,
             "brief": brief,
             "selected_project": selected_project,
+            "location_reference": location_reference,
             "upload_batch": upload_batch,
             "desired_outputs": desired_outputs,
             "desired_output_ui_selection": requested_desired_outputs,
@@ -1027,6 +1042,8 @@ class PhoenixLocalApplication:
                             self._json(application.create_analysis_session(body), HTTPStatus.CREATED)
                         elif parsed.path == "/api/integrated-project/plan":
                             self._json(application.create_integrated_project_plan(body), HTTPStatus.CREATED)
+                        elif parsed.path == "/api/integrated-project/resume":
+                            self._json(application.resume_integrated_project_plan(body), HTTPStatus.CREATED)
                         elif parsed.path == "/api/autonomous/start":
                             self._json(
                                 application.start_autonomous_session(str(body.get("session_id", ""))),

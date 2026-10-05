@@ -75,6 +75,37 @@ class OfficialStartIntegratedProjectBridge:
             "sha256": hashlib.sha256(data).hexdigest(),
         }
 
+    @staticmethod
+    def _run_id(contract: Mapping[str, Any]) -> str:
+        return "P19-" + hashlib.sha256(
+            json.dumps(contract, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        ).hexdigest()[:16].upper()
+
+    def validate_upload_batch(self, batch_id: str) -> dict[str, Any]:
+        batch_id = self._clean(batch_id)
+        if not re.fullmatch(r"[0-9]{8}T[0-9]{6}Z_[a-f0-9]{8}", batch_id):
+            raise ValueError("PHASE19_UPLOAD_BATCH_ID_DENY")
+        manifest_path = (
+            self.repository / "inputs" / "runtime" / "official_start_v3_uploads"
+            / batch_id / "upload_manifest.json"
+        )
+        if not manifest_path.is_file():
+            raise ValueError("PHASE19_UPLOAD_BATCH_NOT_FOUND")
+        raw = manifest_path.read_bytes()
+        manifest = json.loads(raw.decode("utf-8-sig"))
+        if self._clean(manifest.get("batch_id")) != batch_id:
+            raise ValueError("PHASE19_UPLOAD_BATCH_MANIFEST_DENY")
+        files = manifest.get("files")
+        if not isinstance(files, list) or not files:
+            raise ValueError("PHASE19_UPLOAD_BATCH_EMPTY_DENY")
+        return {
+            "batch_id": batch_id,
+            "file_count": len(files),
+            "manifest_sha256": hashlib.sha256(raw).hexdigest(),
+            "verified": False,
+            "verification_status": "INTEGRITY_BOUND_NOT_TECHNICALLY_VERIFIED",
+        }
+
     def build_contract(self, session: Mapping[str, Any]) -> dict[str, Any]:
         if not isinstance(session, Mapping):
             raise ValueError("PHASE19_SESSION_OBJECT_REQUIRED")
@@ -102,6 +133,10 @@ class OfficialStartIntegratedProjectBridge:
                 )
             }
 
+        upload_batch = self._clean(session.get("upload_batch"))
+        if upload_batch:
+            evidence["project_uploads"] = self.validate_upload_batch(upload_batch)
+
         contract = {
             "project_id": self._project_id(session),
             "instruction": instruction,
@@ -110,7 +145,7 @@ class OfficialStartIntegratedProjectBridge:
             "design_variants": variants,
             "selected_variant_id": self._clean(session.get("selected_variant_id")) or None,
             "verified_inputs": session.get("verified_inputs", {}),
-            "evidence": session.get("evidence", evidence),
+            "evidence": session.get("evidence") or evidence,
             "start_screen_context": {
                 "session_id": self._clean(session.get("session_id")),
                 "project_type": self._clean(session.get("project_type")).upper(),
@@ -125,18 +160,18 @@ class OfficialStartIntegratedProjectBridge:
     def plan(self, session: Mapping[str, Any], *, persist: bool = True) -> StartScreenBridgeResult:
         contract = self.build_contract(session)
         orchestration = self.service.run(contract)
-        run_id = "P19-" + hashlib.sha256(
-            json.dumps(contract, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
-        ).hexdigest()[:16].upper()
+        run_id = self._run_id(contract)
         missing = []
         for key in ("instruction", "location_reference", "requested_outputs"):
             if contract.get(key) in (None, "", [], {}):
                 missing.append(key)
         payload = {
             "schema": "PHOENIX_START_SCREEN_INTEGRATED_PROJECT_BRIDGE_V1",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "run_id": run_id,
             "created_utc": datetime.now(timezone.utc).isoformat(),
+            "session_id": contract["start_screen_context"]["session_id"],
+            "upload_batch": contract["start_screen_context"]["upload_batch"],
             "status": orchestration["status"],
             "autonomy_level": contract["start_screen_context"]["autonomy_level"],
             "requested_outputs": list(contract["requested_outputs"]),
@@ -160,6 +195,55 @@ class OfficialStartIntegratedProjectBridge:
             path = self.output_root / f"{run_id}.json"
             path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         return StartScreenBridgeResult(run_id=run_id, path=path, payload=payload)
+
+    def _session_for_run(self, run_id: str) -> tuple[Path, dict[str, Any]]:
+        root = self.repository / "outputs" / "runtime" / "phoenix_start_v3_sessions"
+        for path in sorted(root.glob("PHX-*.json"), reverse=True):
+            session = json.loads(path.read_text(encoding="utf-8-sig"))
+            try:
+                contract = self.build_contract(session)
+            except (ValueError, TypeError):
+                continue
+            if self._run_id(contract) == run_id:
+                return path, session
+        raise ValueError("PHASE19_RESUME_SESSION_NOT_FOUND")
+
+    def resume(
+        self,
+        run_id: str,
+        updates: Mapping[str, Any],
+        *,
+        persist: bool = True,
+    ) -> StartScreenBridgeResult:
+        run_id = self._clean(run_id).upper()
+        previous = self.get(run_id)
+        if previous is None:
+            raise ValueError("PHASE19_RESUME_RUN_NOT_FOUND")
+        if previous.get("status") != "HOLD_MISSING_PROJECT_INPUTS":
+            raise ValueError("PHASE19_RESUME_STATUS_DENY")
+        location_reference = self._clean(updates.get("location_reference"))
+        upload_batch = self._clean(updates.get("upload_batch"))
+        if not location_reference:
+            raise ValueError("PHASE19_RESUME_LOCATION_REQUIRED")
+        self.validate_upload_batch(upload_batch)
+        session_path, session = self._session_for_run(run_id)
+        session["location_reference"] = location_reference
+        session["upload_batch"] = upload_batch
+        session["resumed_from_run_id"] = run_id
+        if persist:
+            session_path.write_text(
+                json.dumps(session, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+        result = self.plan(session, persist=persist)
+        result.payload["resumed_from_run_id"] = run_id
+        result.payload["safe_resume"] = True
+        if persist and result.path is not None:
+            result.path.write_text(
+                json.dumps(result.payload, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+        return result
 
     def get(self, run_id: str) -> dict[str, Any] | None:
         run_id = self._clean(run_id)

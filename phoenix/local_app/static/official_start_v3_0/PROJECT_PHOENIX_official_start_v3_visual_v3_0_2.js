@@ -443,6 +443,7 @@ $("filePicker").onchange = async e => {
       encoded.push({name: file.name, base64: btoa(binary)});
     }
     state.uploadBatch = await post("/api/uploads", {files: encoded});
+    window.PHOENIX_UPLOAD_BATCH = state.uploadBatch;
     $("uploadState").textContent = `Upload opgeslagen: batch ${state.uploadBatch.batch_id} · ${state.uploadBatch.file_count} bestand(en)`;
     toast("Upload werkelijk opgeslagen in Phoenix intake.");
   }catch(err){

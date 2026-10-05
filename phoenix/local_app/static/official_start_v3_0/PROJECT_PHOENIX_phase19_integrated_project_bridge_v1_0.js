@@ -57,16 +57,37 @@
     const original = button.textContent;
     button.textContent = "PROJECTORKESTRATIE STARTEN…";
     try {
+      const locationReference = ($("locationReference")?.value || "").trim();
+      const resumeRunId = ($("phase19ResumeRun")?.value || "").trim().toUpperCase();
+      const uploadBatch = window.PHOENIX_UPLOAD_BATCH?.batch_id || "";
+      if (!locationReference) throw new Error("Projectlocatie is verplicht.");
+      if (!uploadBatch) throw new Error("Upload eerst de project- of terreinbestanden.");
+      if (resumeRunId && !/^P19-[A-F0-9]{16}$/.test(resumeRunId)) {
+        throw new Error("De Phase-19 Run-ID heeft geen geldig formaat.");
+      }
+      if (resumeRunId) {
+        const resumed = await post("/api/integrated-project/resume", {
+          run_id: resumeRunId,
+          location_reference: locationReference,
+          upload_batch: uploadBatch,
+        });
+        window.PHOENIX_PHASE19_LATEST_PLAN = resumed;
+        show("GEINTEGREERDE PROJECTORKESTRATIE HERVAT", stageTable(resumed));
+        return;
+      }
       const session = await post("/api/project-analysis/start", {
         project_type: activeValue(".typecard", "type", "BOUW"),
         project_mode: activeValue(".modecard", "mode", "autonomous"),
         brief: $("brief")?.value || "",
         selected_project: $("projectSelect")?.value || "",
+        location_reference: locationReference,
+        upload_batch: uploadBatch,
         desired_outputs: selectedOutputs(),
       });
       const plan = await post("/api/integrated-project/plan", {
         session_id: session.session_id,
-        location_reference: "",
+        location_reference: locationReference,
+        upload_batch: uploadBatch,
       });
       window.PHOENIX_PHASE19_LATEST_PLAN = plan;
       show("GEINTEGREERDE PROJECTORKESTRATIE", stageTable(plan));
