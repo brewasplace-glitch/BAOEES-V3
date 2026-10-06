@@ -177,17 +177,17 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
       </div>
     </div>
     <nav class="nav" id="leftNav">
-      <button class="navbtn active" data-module="new_project"><span class="navicon">âÅ’‚</span>Nieuw Project</button>
+      <button class="navbtn active" data-module="new_project"><span class="navicon">&#x2795;</span>Nieuw Project</button>
       <button class="navbtn" data-module="projects"><span class="navicon">⛁</span>Projecten</button>
-      <button class="navbtn" data-module="digital_twin"><span class="navicon">âÅ’Ëœ</span>Digital Twin</button>
-      <button class="navbtn" data-module="ai_agents"><span class="navicon">âÅ“¦</span>AI Agents</button>
+      <button class="navbtn" data-module="digital_twin"><span class="navicon">&#x25C8;</span>Digital Twin</button>
+      <button class="navbtn" data-module="ai_agents"><span class="navicon">&#x2726;</span>AI Agents</button>
       <button class="navbtn" data-module="simulations"><span class="navicon">&#x25CF;</span>Simulaties</button>
-      <button class="navbtn" data-module="documents"><span class="navicon">âËœ°</span>Documenten</button>
+      <button class="navbtn" data-module="documents"><span class="navicon">&#x2630;</span>Documenten</button>
       <button class="navbtn" data-module="reports"><span class="navicon">▤</span>Rapporten</button>
-      <button class="navbtn" data-module="asset_management"><span class="navicon">âËœ·</span>Asset Management</button>
-      <button class="navbtn" data-module="dashboard"><span class="navicon">◫</span>Dashboard</button>
-      <button class="navbtn" data-module="settings"><span class="navicon">âÅ¡â„¢</span>Instellingen</button>
-      <button class="navbtn" id="resultsNav"><span class="navicon">âÅ““</span>Resultaten</button>
+      <button class="navbtn" data-module="asset_management"><span class="navicon">&#x2737;</span>Asset Management</button>
+      <button class="navbtn" data-module="dashboard"><span class="navicon">&#x25EB;</span>Dashboard</button>
+      <button class="navbtn" data-module="settings" id="phoenixManageNav"><span class="navicon">&#x2699;</span>Beheer</button>
+      <button class="navbtn" id="resultsNav"><span class="navicon">&#x2713;</span>Resultaten</button>
     </nav>
     <div class="sidecards">
       <div class="minicard">
@@ -237,12 +237,12 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
             <button class="typecard type-civiel" data-type="CIVIEL">
               <h3>CIVIEL</h3>
               <ul><li>Bruggen</li><li>Kademuren</li><li>Keerwanden</li><li>Waterbouwkundige constructies</li><li>Tunnels</li><li>Kunstwerken</li></ul>
-              <div class="icon">ðÅ¸Å’‰</div>
+              <div class="icon">&#x1F309;</div>
             </button>
             <button class="typecard type-infra" data-type="INFRA">
               <h3>INFRA</h3>
               <ul><li>Wegen</li><li>Parkeerterreinen</li><li>Rotondes</li><li>Verkeersknooppunten</li><li>Fietsinfrastructuur</li><li>Railinfrastructuur</li></ul>
-              <div class="icon">ðÅ¸›£</div>
+              <div class="icon">&#x1F6E3;</div>
             </button>
           </div>
         </div>
@@ -260,7 +260,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
           <div class="panel">
             <div class="sectionlabel"><div class="badge">3</div><div>SPRAAK INVOER PROJECTOMSCHRIJVING</div></div>
             <div class="speechbox">
-              <div class="bigmic">ðÅ¸Å½¤</div>
+              <div class="bigmic">&#x1F3A4;</div>
               <div class="big" style="margin-top:8px">Klik op de microfoon om te beginnen</div>
               <div style="text-align:center;color:#a8bfd9">Phoenix zet uw spraak automatisch om naar projectdefinitie, PvE, disciplines en vergunningstrategie.</div>
               <div style="text-align:center;margin-top:12px"><button class="toolbtn" id="speechBtn">SPRAAK STARTEN</button></div>
@@ -317,7 +317,7 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
       <aside class="sidepanel">
         <div class="tvpanel" id="phoenixTvPanel">
           <div class="tvhead">
-            <div class="tvtitle"><span class="screenicon"></span><span>DE TV</span></div>
+            <div class="tvtitle"><span class="screenicon"></span><span>DE TV</span><span class="tvtitle-context">&middot; DIGITAL TWIN / RESULTATEN</span></div>
             <div class="tvstatus" id="phoenixTvStatus">GEREED</div>
           </div>
           <div class="tvstage" id="phoenixTvStage">
@@ -329,12 +329,12 @@ pre{white-space:pre-wrap;word-break:break-word;background:#04111e;border:1px sol
             <button class="tvbtn" id="phoenixTvPrev">&#x2190; VORIGE</button>
             <button class="tvbtn" id="phoenixTvNext">VOLGENDE ▶</button>
             <button class="tvbtn" id="phoenixTvPlay">PRESENTATIE</button>
-            <button class="tvbtn" id="phoenixTvFullscreen">â›¶ VOL SCHERM</button>
+            <button class="tvbtn" id="phoenixTvFullscreen">&#x26F6; VOL SCHERM</button>
           </div>
           <div class="tvcommand">
             <input id="phoenixTvCommand" type="text" autocomplete="off" placeholder="Bijv. 'toon plattegronden'">
             <button id="phoenixTvCommandGo" title="Voer TV-commando uit">TOON</button>
-            <button id="phoenixTvMic" title="Spraakcommando voor DE TV">ðÅ¸Å½¤</button>
+            <button id="phoenixTvMic" title="Spraakcommando voor DE TV">&#x1F3A4;</button>
           </div>
           <div class="tvhint">PRESENTATIE-vinkjes vormen de playlist · tekst/spraak kan alle aangevinkte GEWENSTE OUTPUT oproepen.</div>
         </div>
@@ -674,8 +674,8 @@ window.PHOENIX_DESIRED_OUTPUTS=__PHOENIX_DESIRED_OUTPUTS__;
       $('phoenixTvCommand').value=text; executeCommand(text);
     });
     recognition.addEventListener('start',()=>{mic.textContent='●';setStatus('LUISTERT','ok');});
-    recognition.addEventListener('end',()=>{mic.textContent='ðÅ¸Å½¤';if(!TV.timer)setStatus('GEREED','ok');});
-    recognition.addEventListener('error',()=>{mic.textContent='ðÅ¸Å½¤';setStatus('SPRAAKFOUT','warn');});
+    recognition.addEventListener('end',()=>{mic.textContent='\uD83C\uDFA4';if(!TV.timer)setStatus('GEREED','ok');});
+    recognition.addEventListener('error',()=>{mic.textContent='\uD83C\uDFA4';setStatus('SPRAAKFOUT','warn');});
     mic.addEventListener('click',()=>{try{recognition.start();}catch(_){}});
     TV.recognition=recognition;
   }
@@ -739,6 +739,7 @@ window.PHOENIX_START_CAPABILITY_BOOTSTRAP=Object.freeze({
 <!-- PHOENIX_DETV_CAD_BRIDGE_BEGIN -->
 <script src="./phoenix_detv_cad_bridge.js?v=4.41-stable-cad"></script>
 <!-- PHOENIX_DETV_CAD_BRIDGE_END -->
+<script src="/start-v3/PROJECT_PHOENIX_startscreen_consolidation_v4_6_19.js?v=1.0.0"></script>
 <script src="./phoenix_start_v441_runtime_guard.js?v=1.0.1"></script>
 </body>
 </html>

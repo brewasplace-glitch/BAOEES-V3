@@ -146,7 +146,7 @@ class IntegratedProjectOrchestrationService:
             return [], None
         if len(variants) != 5 or len(ids) != 5 or any(not x for x in ids) or len(set(ids)) != 5:
             return ids, "PHASE18_EXACT_FIVE_UNIQUE_VARIANTS_REQUIRED"
-        selected = str(project.get("selected_variant_id", "")).strip()
+        selected = str(project.get("selected_variant_id") or "").strip()
         if selected and selected not in ids:
             return ids, "PHASE18_SELECTED_VARIANT_NOT_FOUND"
         return ids, None

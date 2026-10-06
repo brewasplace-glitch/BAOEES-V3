@@ -16817,7 +16817,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "fea39f99383f9f9cc49d6968bb79ae1a695c04dd",
+      "git_oid": "be1e49f72d867b7d36bada50255a3af550f69d2b",
       "path": "phoenix/autonomy/integrated_project_orchestration.py",
       "sha256": null
     },
@@ -19211,7 +19211,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "e9ec61a5e6b65856d206b08123ca2117be1494b7",
+      "git_oid": "58ef0d85b0e57756cc48991218da9cf6463ac230",
       "path": "phoenix/local_app/static/official_start_v3_0/index.html",
       "sha256": null
     },
@@ -19402,6 +19402,15 @@
       "git_mode": "100644",
       "git_oid": "c427b15646a9c7c9efe2c95e1bba98756465c5d5",
       "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_start_capability_registry_v1_0.js",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "0c37138ed3a014fe3813b96605d8dcdde944ea66",
+      "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_startscreen_consolidation_v4_6_19.js",
       "sha256": null
     },
     {
@@ -25655,6 +25664,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "61f5911a52496bf4b96f525f0cf69c42f3f17c3e",
+      "path": "tests/automation/test_phoenix_4619_startscreen_consolidation_r1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "bcc2ee1ba85f55db208b1f00dc8349f0f480e8b8",
       "path": "tests/automation/test_phoenix_advanced_global_stability_qualification_r9_1.py",
       "sha256": null
@@ -28982,5 +29000,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "861da0182d6dd0edc6a684f6e03634ba26dc920ecd4187d2c063c808e223875b"
+  "source_digest": "6f8b0d8da96476ab3639aa796fe867584f41e3385547b535590ad0ee552b3d97"
 }
