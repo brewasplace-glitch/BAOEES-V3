@@ -233,7 +233,22 @@ class OfficialStartIntegratedProjectBridge:
         location = self._location_reference(session)
         if not location:
             raise ValueError("PHASE19_R4_LOCATION_REQUIRED")
-        upload = self.validate_upload_batch(self._clean(session.get("upload_batch")))
+        upload_batch = self._clean(session.get("upload_batch"))
+        if upload_batch:
+            upload = self.validate_upload_batch(upload_batch)
+        else:
+            upload = {
+                "batch_id": None,
+                "file_count": 0,
+                "manifest_sha256": None,
+                "files": [],
+                "verified": False,
+                "verification_status": "MISSING_USER_UPLOADS",
+                "verification_scope": "USER_DECLARED_LOCATION_ONLY_NO_UPLOAD",
+                "survey_verified": False,
+                "cadastral_verified": False,
+                "professional_release_eligible": False,
+            }
         project, assumptions = self._concept_project(session, run_id)
         variants = generate_variants(project)
         if len(variants) != 5 or [x.variant_id for x in variants] != list("ABCDE"):
@@ -416,12 +431,35 @@ class OfficialStartIntegratedProjectBridge:
                     self._clean(session.get("session_file")) or "official-start-screen",
                 )
             }
+        if bool(upload.get("verified")):
+            location_evidence = self._evidence_artifact(
+                "phase19-r4-location-evidence",
+                "official-start-upload-batch",
+                upload,
+                verification_scope=upload["verification_scope"],
+                survey_verified=False,
+                cadastral_verified=False,
+                professional_review_required=True,
+            )
+        else:
+            location_payload = {
+                "location_reference": location,
+                "upload_status": "MISSING_USER_UPLOADS",
+            }
+            location_evidence = {
+                "artifact_id": "phase19-r4-location-evidence",
+                "source": "official-start-user-declared-location",
+                "verified": False,
+                "sha256": self._object_sha256(location_payload),
+                "verification_scope": "USER_DECLARED_LOCATION_ONLY_NO_UPLOAD",
+                "survey_verified": False,
+                "cadastral_verified": False,
+                "professional_review_required": True,
+                "missing_evidence": ["project_uploads", "survey", "cadastral_boundary"],
+            }
+
         evidence["site_and_regulatory_analysis"] = {
-            "location_evidence": self._evidence_artifact(
-                "phase19-r4-location-evidence", "official-start-upload-batch", upload,
-                verification_scope=upload["verification_scope"], survey_verified=False,
-                cadastral_verified=False, professional_review_required=True,
-            ),
+            "location_evidence": location_evidence,
             "applicable_rules": self._evidence_artifact(
                 "phase19-r4-preliminary-rule-basis", "phoenix-suriname-policy-bundle", rules_basis,
                 legal_applicability_verified=False, authority_confirmation_required=True,
@@ -529,9 +567,14 @@ class OfficialStartIntegratedProjectBridge:
         run_id = self._run_id(initial_contract)
 
         runtime_session = dict(session)
+        # PHOENIX_4_6_19_PHASE19_OPTIONAL_UPLOAD_REAL_VARIANTS_R3
+        # A user-declared project location is sufficient for concept authoring.
+        # Uploads strengthen evidence but are not a prerequisite for generating
+        # real A-E spatial concepts.
         location_ready = bool(self._location_reference(runtime_session))
-        upload_ready = bool(self._clean(runtime_session.get("upload_batch")))
-        if location_ready and upload_ready:
+        # persist=False is a side-effect-free planning probe. Real concept
+        # authoring belongs only to persistent/live runs (or explicit resume).
+        if persist and location_ready:
             # A fresh run always authors and binds its own current-run
             # concept package. Never inherit _phase19_r4_concept_package
             # from a previous run/session.
