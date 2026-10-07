@@ -564,7 +564,17 @@ class OfficialStartIntegratedProjectBridge:
             existing = self._existing_for_fingerprint(fingerprint)
             if existing is not None:
                 return existing
-        run_id = self._run_id(initial_contract)
+        # PHOENIX_4_6_19_PHASE19_CURRENT_RUN_IDENTITY_LOCK_R4
+        # A governed resume/replan must preserve the original Phase-19 run
+        # identity. Otherwise the modal can report a newly hashed run while
+        # concept artifacts still belong to the resumed run.
+        locked_run_id = self._clean(session.get("phase19_r4_source_run_id")).upper()
+        if force_replan and locked_run_id:
+            if not re.fullmatch(r"P19-[A-F0-9]{16}", locked_run_id):
+                raise ValueError("PHASE19_LOCKED_RUN_ID_DENY")
+            run_id = locked_run_id
+        else:
+            run_id = self._run_id(initial_contract)
 
         runtime_session = dict(session)
         # PHOENIX_4_6_19_PHASE19_OPTIONAL_UPLOAD_REAL_VARIANTS_R3
@@ -696,6 +706,9 @@ class OfficialStartIntegratedProjectBridge:
         session["_phase19_r4_concept_package"] = {
             "manifest_path": concept["manifest_path"],
             "variant_files": concept["variant_files"],
+            "real_spatial_manifest_path": concept["real_spatial_manifest_path"],
+            "variant_provider": "PHOENIX_TROPICAL_REAL_SPATIAL_LAYOUT_v1",
+            "source_run_id": run_id,
             "variant_count": 5,
             "variant_order": list("ABCDE"),
             "recommended_variant_id": concept["manifest"]["recommended_variant_id"],

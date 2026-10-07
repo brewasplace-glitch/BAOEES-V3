@@ -1,3 +1,4 @@
+{"commit": "8d563d9c96bf2bd91b17df2731290d96c55bed64", "date": "2026-10-08T00:32:06+02:00", "subject": "fix(phase19): allow real variants without upload safely"}
 {"commit": "8cee8957553b3750fc3a997f456b2017b7a01154", "date": "2026-10-07T22:53:09+02:00", "subject": "fix(phase19): bind fresh runs to current real variant package"}
 {"commit": "9e612e72a2f01663b34b90646767ca0f4ecd6e44", "date": "2026-10-07T21:53:11+02:00", "subject": "fix(phase19): restore real architectural A-E variant provider"}
 {"commit": "37188cd50cc9cfa46b965d29649a65e62c0b89df", "date": "2026-10-07T20:53:49+02:00", "subject": "style(startscreen): improve Phoenix infra icon contrast"}
@@ -497,4 +498,3 @@
 {"commit": "28e517865c5969b826bfe46caf5bc7527ed9a018", "date": "2026-06-27T16:02:45+02:00", "subject": "feat: connect central workflow outputs to launcher v4.7"}
 {"commit": "cf6f8890824e7300c9a836ca7a13a313eeead063", "date": "2026-06-27T15:50:25+02:00", "subject": "feat: connect evidence package to analyzer workflow v4.6"}
 {"commit": "a32ef913e64cc62c197750e9dd3058c0dee7038d", "date": "2026-06-27T15:26:55+02:00", "subject": "feat: add project package evidence workflow v4.5"}
-{"commit": "587567b83f343b915e3f7857094692d501938761", "date": "2026-06-27T14:49:52+02:00", "subject": "feat: connect project analyzer workflow to launcher v4.4"}
