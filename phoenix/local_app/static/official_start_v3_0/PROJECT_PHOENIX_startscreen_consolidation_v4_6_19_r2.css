@@ -95,3 +95,19 @@ body.phoenix-management-open #phoenix-material-mode-toolbar{
 .progressmeta.phoenix-r3-session-hidden[hidden],
 .progresstrack.phoenix-r3-session-hidden[hidden],
 #progressStep.phoenix-r3-session-hidden[hidden]{display:none!important}
+/* PHOENIX 4.6.19 R3.3 INFRA ICON CONTRAST FIX */
+.typecard.type-infra .icon{
+  color:#FFD36A!important;
+  opacity:1!important;
+  filter:brightness(1.35) contrast(1.15) drop-shadow(0 0 4px rgba(255,211,106,.28))!important;
+}
+.typecard.type-infra .icon svg,
+.typecard.type-infra .icon svg *{
+  fill:#FFD36A!important;
+  stroke:#FFD36A!important;
+  opacity:1!important;
+}
+.typecard.type-infra .icon img{
+  filter:brightness(1.45) contrast(1.18) saturate(1.05)!important;
+  opacity:1!important;
+}

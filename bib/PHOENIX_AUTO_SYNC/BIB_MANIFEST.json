@@ -19418,7 +19418,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "e34315cdb609204f58581fce5e93b50b9c5365b8",
+      "git_oid": "3ca91b00fb5c69936cdb017608d4a33f61a72e05",
       "path": "phoenix/local_app/static/official_start_v3_0/PROJECT_PHOENIX_startscreen_consolidation_v4_6_19_r2.css",
       "sha256": null
     },
@@ -25718,6 +25718,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "59ef4886e5617889a2eb91a29b74ec3129e46c7b",
+      "path": "tests/automation/test_phoenix_4619_startscreen_r3_3_infra_icon_contrast.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "bcc2ee1ba85f55db208b1f00dc8349f0f480e8b8",
       "path": "tests/automation/test_phoenix_advanced_global_stability_qualification_r9_1.py",
       "sha256": null
@@ -29045,5 +29054,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "0dfd575a89890930d1fed5afd38ee97a886019c50efe612d65c982bff411c9ed"
+  "source_digest": "c6cfdd784e61274d8de77a9d036a6b511de0074792c4947e9b64e4e0acad55d6"
 }
