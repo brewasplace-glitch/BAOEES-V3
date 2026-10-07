@@ -517,14 +517,48 @@ class OfficialStartIntegratedProjectBridge:
         persist: bool = True,
         force_replan: bool = False,
     ) -> StartScreenBridgeResult:
-        contract = self.build_contract(session)
-        fingerprint = self._request_fingerprint(contract)
+        # PHOENIX_4_6_19_PHASE19_FRESH_RUN_REAL_VARIANT_BINDING_R2
+        # Determine identity from the incoming user request first. Concept
+        # authoring must never change the request/run identity.
+        initial_contract = self.build_contract(session)
+        fingerprint = self._request_fingerprint(initial_contract)
         if persist and not force_replan:
             existing = self._existing_for_fingerprint(fingerprint)
             if existing is not None:
                 return existing
+        run_id = self._run_id(initial_contract)
+
+        runtime_session = dict(session)
+        location_ready = bool(self._location_reference(runtime_session))
+        upload_ready = bool(self._clean(runtime_session.get("upload_batch")))
+        if location_ready and upload_ready:
+            # A fresh run always authors and binds its own current-run
+            # concept package. Never inherit _phase19_r4_concept_package
+            # from a previous run/session.
+            runtime_session.pop("_phase19_r4_concept_package", None)
+            concept = self.prepare_concept_inputs(runtime_session, run_id)
+            runtime_session["design_variants"] = concept["design_variants"]
+            runtime_session["evidence"] = concept["evidence"]
+            runtime_session["phase19_r4_project"] = concept["project"]
+            runtime_session["phase19_r4_source_run_id"] = run_id
+            runtime_session["_phase19_r4_concept_package"] = {
+                "manifest_path": concept["manifest_path"],
+                "variant_files": concept["variant_files"],
+                "real_spatial_manifest_path": concept["real_spatial_manifest_path"],
+                "variant_provider": "PHOENIX_TROPICAL_REAL_SPATIAL_LAYOUT_v1",
+                "variant_count": 5,
+                "variant_order": list("ABCDE"),
+                "recommended_variant_id": concept["manifest"]["recommended_variant_id"],
+                "selection_status": "AWAITING_USER_SELECTION",
+                "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
+                "survey_verified": False,
+                "cadastral_verified": False,
+                "legal_applicability_verified": False,
+                "source_run_id": run_id,
+            }
+
+        contract = self.build_contract(runtime_session)
         orchestration = self.service.run(contract)
-        run_id = self._run_id(contract)
         missing = []
         for key in ("instruction", "location_reference", "requested_outputs"):
             if contract.get(key) in (None, "", [], {}):
@@ -555,9 +589,15 @@ class OfficialStartIntegratedProjectBridge:
             "no_output_fabrication": True,
             "orchestration_result_sha256": orchestration["result_sha256"],
         }
-        concept_package = session.get("_phase19_r4_concept_package")
+        concept_package = runtime_session.get("_phase19_r4_concept_package")
         if isinstance(concept_package, Mapping):
-            payload["concept_package"] = dict(concept_package)
+            concept_package = dict(concept_package)
+            source_run_id = self._clean(concept_package.get("source_run_id"))
+            if source_run_id and source_run_id != run_id:
+                raise RuntimeError(
+                    f"PHASE19_CONCEPT_PACKAGE_RUN_ID_DENY:{source_run_id}:{run_id}"
+                )
+            payload["concept_package"] = concept_package
         path = None
         if persist:
             self.output_root.mkdir(parents=True, exist_ok=True)

@@ -19157,7 +19157,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "c78573f63c4f7d6def68404fa510e78e56b59486",
+      "git_oid": "9f2ab286c20813b3117652f3a3994bef9117f9ad",
       "path": "phoenix/local_app/integrated_project_bridge.py",
       "sha256": null
     },
@@ -25673,6 +25673,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "18ebce97b4b9e77211814e63c88459ba5bf3226e",
+      "path": "tests/automation/test_phoenix_4619_phase19_fresh_run_real_variant_binding_r2.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "7deb50eaccd758c96da02d16829c0693798febd0",
       "path": "tests/automation/test_phoenix_4619_phase19_real_variant_provider_restore_r1.py",
       "sha256": null
@@ -29063,5 +29072,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "cba78f7a33e8009030cbe5875c77486789da9d0eef3dd600c413ba761d3d5003"
+  "source_digest": "ffc885e9310b0be0b7ecc4466653e49cafeabcbc853b895564d3a3b9af7e878f"
 }
