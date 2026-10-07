@@ -1,3 +1,4 @@
+{"commit": "62a37dfaf934c98545788c83f523d543b96589bf", "date": "2026-10-07T16:47:32+02:00", "subject": "fix(startscreen): complete Phoenix 4.6.19 R3.1 visual cleanup"}
 {"commit": "d9733efb1e82f2ce871a0f047350d50e16ed2826", "date": "2026-10-07T15:53:39+02:00", "subject": "refactor(startscreen): polish Phoenix 4.6.19 user UI"}
 {"commit": "5da55b81ac08e16e6577956093c9c1f297def8e9", "date": "2026-10-07T15:40:34+02:00", "subject": "feat(startscreen): simplify Phoenix 4.6.19 user flow"}
 {"commit": "7ef6229d17e3cf09244cb3f33cd2b39ce6dc9a96", "date": "2026-10-07T01:34:13+02:00", "subject": "fix(startscreen): consolidate Phoenix 4.6.19 user UI"}
@@ -497,4 +498,3 @@
 {"commit": "b92006a1fb6059fed64fdbd2fdde52710962bbba", "date": "2026-06-27T13:04:53+02:00", "subject": "feat: add project analyzer workflow v4.3"}
 {"commit": "c472d46cf61678305bc4f01a9722abe5b95536ae", "date": "2026-06-27T11:59:52+02:00", "subject": "feat: add project report DOCX PDF export engine v4.2"}
 {"commit": "2b3064c6a538b9c1f4a3a703e4ab6982774d6589", "date": "2026-06-27T11:00:09+02:00", "subject": "feat: add project report BIB engine v4.1"}
-{"commit": "18fb8a962b836eee06faf7289d083a2ae3e845a7", "date": "2026-06-27T00:56:34+02:00", "subject": "feat: add geo foundation BIB engine v4.0"}

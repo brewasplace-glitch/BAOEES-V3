@@ -213,5 +213,163 @@ new MutationObserver(()=>{
  r3MoveEngineeringControlsToManagement();
  r3HideAutonomousFlowDuplicate();
 }).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
-window.PHOENIX_STARTSCREEN_CONSOLIDATION=Object.freeze({version:"4.6.19-r3",revision:"4.6.19-r3.1",openManagement:()=>setManagement(true),closeManagement:()=>setManagement(false)});
+
+// PHOENIX_4_6_19_R3_2_LIVE_UI_ENFORCEMENT
+let r32UserOpenedOutputLevel=false;
+let r32ProjectRunStarted=false;
+let r32EnforceTimer=null;
+
+function r32GetOutputLevelPanel(){
+ const panels=Array.from(document.querySelectorAll(".panel"));
+ return panels.find(p=>String(p.textContent||"").includes("OUTPUTNIVEAU PROJECT"))||null;
+}
+
+function r32EnsureOutputLevelClosed(){
+ const panel=r32GetOutputLevelPanel();
+ const toggle=q("phoenixR3OutputLevelToggle");
+ if(!panel||!toggle)return;
+ if(!r32UserOpenedOutputLevel){
+  panel.hidden=true;
+  panel.classList.add("phoenix-r3-advanced-hidden");
+  panel.setAttribute("aria-hidden","true");
+  toggle.setAttribute("aria-expanded","false");
+  toggle.textContent="Uitvoeringsniveau: A - Professionele projectoutput";
+ }
+}
+
+function r32BindOutputLevelIntent(){
+ const toggle=q("phoenixR3OutputLevelToggle");
+ const panel=r32GetOutputLevelPanel();
+ if(!toggle||!panel||toggle.dataset.phxR32Bound==="1")return;
+ toggle.dataset.phxR32Bound="1";
+ toggle.addEventListener("click",()=>{
+  r32UserOpenedOutputLevel=!panel.hidden;
+ },false);
+}
+
+function r32NewProjectSelected(){
+ const project=q("projectSelect");
+ if(!project)return true;
+ const value=String(project.value||"").trim().toLowerCase();
+ const text=(project.options&&project.selectedIndex>=0)
+  ?String(project.options[project.selectedIndex].text||"").trim().toLowerCase()
+  :"";
+ return (
+  !value ||
+  value==="new" ||
+  text.includes("nieuw / geen bestaand project gekozen") ||
+  text.includes("geen bestaand project")
+ );
+}
+
+function r32GetSessionNodes(){
+ return {
+  meta:document.querySelector(".progressmeta"),
+  track:document.querySelector(".progresstrack"),
+  step:q("progressStep"),
+  progress:q("progressLabel"),
+  percent:q("progressPercent")
+ };
+}
+
+function r32LooksLikeStaleSession(nodes){
+ if(!nodes)return false;
+ const text=[
+  nodes.progress?nodes.progress.textContent:"",
+  nodes.step?nodes.step.textContent:"",
+  nodes.percent?nodes.percent.textContent:""
+ ].join(" ");
+ return (
+  text.includes("Phoenix Autonome Sessiestuurde Orchestrator") ||
+  text.includes("PHOENIX-PAT-003") ||
+  text.includes("Generic Sessieadapters") ||
+  text.includes("92%")
+ );
+}
+
+function r32HideStaleSessionIfNeeded(){
+ const nodes=r32GetSessionNodes();
+ if(!nodes.progress||!nodes.step)return;
+ const shouldHide=(
+  !r32ProjectRunStarted &&
+  r32NewProjectSelected() &&
+  r32LooksLikeStaleSession(nodes)
+ );
+ [nodes.meta,nodes.track,nodes.step].forEach(n=>{
+  if(!n)return;
+  if(shouldHide){
+   n.hidden=true;
+   n.classList.add("phoenix-r3-session-hidden");
+   n.setAttribute("aria-hidden","true");
+  }
+ });
+ if(shouldHide&&nodes.progress)nodes.progress.textContent="Geen actieve Phoenix-bewerking.";
+ if(shouldHide&&nodes.percent)nodes.percent.textContent="0%";
+}
+
+function r32BindProjectStart(){
+ const start=q("startBtn");
+ if(!start||start.dataset.phxR32Bound==="1")return;
+ start.dataset.phxR32Bound="1";
+ start.addEventListener("click",()=>{
+  r32ProjectRunStarted=true;
+  const nodes=r32GetSessionNodes();
+  [nodes.meta,nodes.track,nodes.step].forEach(n=>{
+   if(!n)return;
+   n.hidden=false;
+   n.classList.remove("phoenix-r3-session-hidden");
+   n.removeAttribute("aria-hidden");
+  });
+ },true);
+}
+
+function r32BindProjectSelection(){
+ const project=q("projectSelect");
+ if(!project||project.dataset.phxR32Bound==="1")return;
+ project.dataset.phxR32Bound="1";
+ project.addEventListener("change",()=>{
+  r32ProjectRunStarted=false;
+  setTimeout(r32Enforce,0);
+ },false);
+}
+
+function r32Enforce(){
+ r32BindOutputLevelIntent();
+ r32BindProjectStart();
+ r32BindProjectSelection();
+ r32EnsureOutputLevelClosed();
+ r32HideStaleSessionIfNeeded();
+ document.documentElement.setAttribute("data-phoenix-live-ui-enforcement","4.6.19-r3.2");
+}
+
+function r32ScheduleEnforce(){
+ if(r32EnforceTimer!==null)return;
+ r32EnforceTimer=window.setTimeout(()=>{
+  r32EnforceTimer=null;
+  r32Enforce();
+ },0);
+}
+
+if(document.readyState==="loading"){
+ document.addEventListener("DOMContentLoaded",()=>{
+  r32Enforce();
+  window.setTimeout(r32Enforce,100);
+  window.setTimeout(r32Enforce,500);
+ },{once:true});
+}else{
+ r32Enforce();
+ window.setTimeout(r32Enforce,100);
+ window.setTimeout(r32Enforce,500);
+}
+
+new MutationObserver(r32ScheduleEnforce).observe(document.documentElement,{
+ childList:true,
+ subtree:true,
+ characterData:true,
+ attributes:true,
+ attributeFilter:["hidden","class","aria-hidden","value"]
+});
+
+window.setInterval(r32Enforce,1500);
+window.PHOENIX_STARTSCREEN_CONSOLIDATION=Object.freeze({version:"4.6.19-r3",revision:"4.6.19-r3.1",liveEnforcement:"4.6.19-r3.2",openManagement:()=>setManagement(true),closeManagement:()=>setManagement(false)});
 })();

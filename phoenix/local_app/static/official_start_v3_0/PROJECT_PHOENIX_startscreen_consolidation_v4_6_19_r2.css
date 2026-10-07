@@ -90,3 +90,8 @@ body.phoenix-management-open #phoenix-material-mode-toolbar{
 #progressStep.phoenix-r3-session-hidden{
   display:none!important;
 }
+/* PHOENIX 4.6.19 R3.2 LIVE UI ENFORCEMENT */
+.panel.phoenix-r3-advanced-hidden[hidden]{display:none!important}
+.progressmeta.phoenix-r3-session-hidden[hidden],
+.progresstrack.phoenix-r3-session-hidden[hidden],
+#progressStep.phoenix-r3-session-hidden[hidden]{display:none!important}
