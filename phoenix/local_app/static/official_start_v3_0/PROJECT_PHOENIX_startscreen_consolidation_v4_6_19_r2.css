@@ -1,0 +1,18 @@
+#leftNav .navbtn[data-module="digital_twin"],
+#leftNav .navbtn[data-module="ai_agents"],
+#leftNav .navbtn[data-module="simulations"],
+#leftNav .navbtn[data-module="documents"],
+#leftNav .navbtn[data-module="reports"],
+#leftNav .navbtn[data-module="asset_management"],
+#leftNav .navbtn[data-module="dashboard"]{display:none!important}
+#phoenixModulesPanel[hidden],#phoenixWorkflowsPanel[hidden],#phoenix-start-capability-drawer[hidden]{display:none!important}
+.phoenix-r2-project-registry-hidden,.phoenix-r2-project-mode-hidden{display:none!important}
+.phoenix-r2-project-definition-wide{grid-template-columns:minmax(0,1fr)!important}
+body:not(.phoenix-management-open) #phoenixModulesPanel,
+body:not(.phoenix-management-open) #phoenixWorkflowsPanel,
+body:not(.phoenix-management-open) #phoenix-start-capability-drawer{display:none!important}
+body.phoenix-management-open #phoenixModulesPanel,
+body.phoenix-management-open #phoenixWorkflowsPanel,
+body.phoenix-management-open #phoenix-start-capability-drawer{display:block!important}
+.phoenix-r2-flow-banner{border:1px solid #17496f;border-radius:14px;padding:10px 12px;background:#061522;color:#cfe5ff;font-size:12px;line-height:1.45;margin-bottom:2px}
+.phoenix-r2-flow-banner strong{color:#fff}

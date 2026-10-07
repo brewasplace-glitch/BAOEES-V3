@@ -1,3 +1,4 @@
+{"commit": "7ef6229d17e3cf09244cb3f33cd2b39ce6dc9a96", "date": "2026-10-07T01:34:13+02:00", "subject": "fix(startscreen): consolidate Phoenix 4.6.19 user UI"}
 {"commit": "92116f7216eae2b8129a9660199eb6d3c765712a", "date": "2026-10-05T16:34:50+02:00", "subject": "Phase 19 FIX R4 location evidence and five variants"}
 {"commit": "b5980ccaa5c4380dddb16b3b9fb62dfbbc57fbbc", "date": "2026-10-05T12:19:25+02:00", "subject": "fix(start): bind Phase 19 location uploads and safe resume"}
 {"commit": "f7c3c1dee65ca750afbe0454eb9d616a96bb25f0", "date": "2026-10-04T03:56:37+02:00", "subject": "feat(ui): bridge official start to integrated project orchestration"}
@@ -497,4 +498,3 @@
 {"commit": "18fb8a962b836eee06faf7289d083a2ae3e845a7", "date": "2026-06-27T00:56:34+02:00", "subject": "feat: add geo foundation BIB engine v4.0"}
 {"commit": "fd36b8c750c86ae77ad48686eef88daf84a46593", "date": "2026-06-27T00:42:51+02:00", "subject": "feat: add AAIE BIB assumption loader v3.9"}
 {"commit": "4717654fa791443a964c77fb1ebbf0deff04df7e", "date": "2026-06-27T00:29:20+02:00", "subject": "feat: add project analyzer BIB context loader v3.8"}
-{"commit": "bf6638b6fa908237ce83d0777646d6ad148dbe1a", "date": "2026-06-27T00:15:38+02:00", "subject": "feat: add BIB project analyzer bridge v3.7"}
