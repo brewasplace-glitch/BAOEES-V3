@@ -78,3 +78,15 @@ body:not(.phoenix-management-open) .phoenix-r3-autonomous-flow-duplicate{
 body.phoenix-management-open #phoenix-material-mode-toolbar{
   display:flex!important;
 }
+/* PHOENIX 4.6.19 R3.1 VISUAL FIX */
+#phoenixR3OutputLevelToggle{
+  margin:0 0 10px 0;
+}
+.panel.phoenix-r3-advanced-hidden{
+  display:none!important;
+}
+.progressmeta.phoenix-r3-session-hidden,
+.progresstrack.phoenix-r3-session-hidden,
+#progressStep.phoenix-r3-session-hidden{
+  display:none!important;
+}

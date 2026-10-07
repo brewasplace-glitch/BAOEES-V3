@@ -86,22 +86,29 @@ function r3HideAutonomousFlowDuplicate(){
 function r3CollapseOutputLevel(){
  const panels=Array.from(document.querySelectorAll(".panel"));
  const panel=panels.find(p=>String(p.textContent||"").includes("OUTPUTNIVEAU PROJECT"));
- if(!panel||q("phoenixR3OutputLevelToggle"))return;
- const toggle=document.createElement("button");
- toggle.id="phoenixR3OutputLevelToggle";
- toggle.type="button";
- toggle.className="phoenix-r3-advanced-toggle";
- toggle.textContent="Uitvoeringsniveau: A - Professionele projectoutput (geavanceerde opties)";
- panel.parentElement.insertBefore(toggle,panel);
- panel.classList.add("phoenix-r3-advanced-hidden");
+ if(!panel)return;
+ let toggle=q("phoenixR3OutputLevelToggle");
+ if(!toggle){
+  toggle=document.createElement("button");
+  toggle.id="phoenixR3OutputLevelToggle";
+  toggle.type="button";
+  toggle.className="phoenix-r3-advanced-toggle";
+  toggle.textContent="Uitvoeringsniveau: A - Professionele projectoutput";
+  panel.parentElement.insertBefore(toggle,panel);
+  toggle.addEventListener("click",()=>{
+   const open=panel.hidden;
+   panel.hidden=!open;
+   panel.classList.toggle("phoenix-r3-advanced-hidden",!open);
+   toggle.setAttribute("aria-expanded",open?"true":"false");
+   toggle.textContent=open
+    ?"Uitvoeringsniveau verbergen"
+    :"Uitvoeringsniveau: A - Professionele projectoutput";
+  });
+ }
  panel.hidden=true;
+ panel.classList.add("phoenix-r3-advanced-hidden");
+ panel.setAttribute("aria-hidden","true");
  toggle.setAttribute("aria-expanded","false");
- toggle.addEventListener("click",()=>{
-  const open=panel.hidden;
-  panel.hidden=!open;
-  panel.classList.toggle("phoenix-r3-advanced-hidden",!open);
-  toggle.setAttribute("aria-expanded",open?"true":"false");
- });
 }
 function r3CollapseDesiredOutputs(){
  const groups=q("desiredOutputGroups");
@@ -142,17 +149,46 @@ function r3SuppressStaleSession(){
  const meta=document.querySelector(".progressmeta");
  const project=q("projectSelect");
  if(!start||!progress||!percent||!step)return;
- const stale=(String(progress.textContent||"").includes("Phoenix Autonome Sessiestuurde Orchestrator")||
-              String(step.textContent||"").includes("Generic Sessieadapters")||
-              String(step.textContent||"").includes("PHOENIX-PAT-003"));
- const noProject=!project||!String(project.value||"").trim();
- if(stale&&noProject){
-  [meta,track,step].forEach(n=>{if(n)n.classList.add("phoenix-r3-session-hidden")});
+
+ const projectValue=project?String(project.value||"").trim():"";
+ const projectText=project&&project.options&&project.selectedIndex>=0
+  ?String(project.options[project.selectedIndex].text||"").trim()
+  :"";
+
+ const newProjectSelected=(
+  !projectValue ||
+  projectValue.toLowerCase()==="new" ||
+  projectText.toLowerCase().includes("nieuw / geen bestaand project gekozen") ||
+  projectText.toLowerCase().includes("geen bestaand project")
+ );
+
+ const stale=(
+  String(progress.textContent||"").includes("Phoenix Autonome Sessiestuurde Orchestrator") ||
+  String(progress.textContent||"").includes("PHOENIX-PAT-003") ||
+  String(step.textContent||"").includes("Generic Sessieadapters") ||
+  String(step.textContent||"").includes("PHOENIX-PAT-003")
+ );
+
+ if(stale&&newProjectSelected){
+  [meta,track,step].forEach(n=>{
+   if(n){
+    n.classList.add("phoenix-r3-session-hidden");
+    n.hidden=true;
+    n.setAttribute("aria-hidden","true");
+   }
+  });
  }
- if(start.dataset.phxR3SessionBound!=="1"){
-  start.dataset.phxR3SessionBound="1";
+
+ if(start.dataset.phxR31SessionBound!=="1"){
+  start.dataset.phxR31SessionBound="1";
   start.addEventListener("click",()=>{
-   [meta,track,step].forEach(n=>{if(n)n.classList.remove("phoenix-r3-session-hidden")});
+   [meta,track,step].forEach(n=>{
+    if(n){
+     n.classList.remove("phoenix-r3-session-hidden");
+     n.hidden=false;
+     n.removeAttribute("aria-hidden");
+    }
+   });
   },true);
  }
 }
@@ -177,5 +213,5 @@ new MutationObserver(()=>{
  r3MoveEngineeringControlsToManagement();
  r3HideAutonomousFlowDuplicate();
 }).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
-window.PHOENIX_STARTSCREEN_CONSOLIDATION=Object.freeze({version:"4.6.19-r3",openManagement:()=>setManagement(true),closeManagement:()=>setManagement(false)});
+window.PHOENIX_STARTSCREEN_CONSOLIDATION=Object.freeze({version:"4.6.19-r3",revision:"4.6.19-r3.1",openManagement:()=>setManagement(true),closeManagement:()=>setManagement(false)});
 })();
