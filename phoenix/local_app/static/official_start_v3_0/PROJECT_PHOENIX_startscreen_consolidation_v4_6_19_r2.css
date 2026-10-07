@@ -16,3 +16,65 @@ body.phoenix-management-open #phoenixWorkflowsPanel,
 body.phoenix-management-open #phoenix-start-capability-drawer{display:block!important}
 .phoenix-r2-flow-banner{border:1px solid #17496f;border-radius:14px;padding:10px 12px;background:#061522;color:#cfe5ff;font-size:12px;line-height:1.45;margin-bottom:2px}
 .phoenix-r2-flow-banner strong{color:#fff}
+/* PHOENIX 4.6.19 R3 FINAL USER-UI POLISH */
+#phoenixTvPanel .tvtitle{
+  flex-wrap:nowrap!important;
+  white-space:nowrap!important;
+  font-size:12px!important;
+  letter-spacing:.035em!important;
+  gap:6px!important;
+}
+#phoenixTvPanel .tvtitle-context{
+  white-space:nowrap!important;
+  font-size:11px!important;
+  opacity:.92;
+}
+#phoenixProjectTypeActions:empty{
+  display:none!important;
+}
+body:not(.phoenix-management-open) #phoenix-material-mode-toolbar{
+  display:none!important;
+}
+.phoenix-r3-advanced-hidden{
+  display:none!important;
+}
+.phoenix-r3-advanced-toggle{
+  width:100%;
+  min-height:42px;
+  border:1px solid #234d70;
+  border-radius:12px;
+  background:#081b2d;
+  color:#dcecff;
+  font-weight:800;
+  text-align:left;
+  padding:10px 12px;
+  cursor:pointer;
+}
+.phoenix-r3-advanced-toggle:hover{
+  border-color:#25b6ff;
+}
+.phoenix-r3-output-collapsed{
+  display:none!important;
+}
+.phoenix-r3-output-toggle{
+  min-height:38px;
+  border:1px solid #295c8b;
+  border-radius:10px;
+  background:#0a2742;
+  color:#fff;
+  padding:8px 12px;
+  font-weight:800;
+  cursor:pointer;
+}
+#resultsBtn.phoenix-r3-duplicate-results{
+  display:none!important;
+}
+.phoenix-r3-session-hidden{
+  display:none!important;
+}
+body:not(.phoenix-management-open) .phoenix-r3-autonomous-flow-duplicate{
+  display:none!important;
+}
+body.phoenix-management-open #phoenix-material-mode-toolbar{
+  display:flex!important;
+}
