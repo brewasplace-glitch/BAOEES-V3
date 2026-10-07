@@ -15,7 +15,10 @@ from phoenix.design.tropical_residential.adapters import detect_open_source_stac
 from phoenix.design.tropical_residential.digital_twin import build_digital_twin_patch
 from phoenix.design.tropical_residential.engine import generate_variants, select_balanced
 from phoenix.design.tropical_residential.ifc_handoff import build_authoritative_ifc_contract
+from phoenix.design.tropical_residential.ifc_author import author_ifc4
 from phoenix.design.tropical_residential.output import write_package
+from phoenix.design.tropical_residential.real_output import write_layout_bundle
+from phoenix.design.tropical_residential.real_spatial import build_real_layout
 
 
 MODE_MAP = {
@@ -253,7 +256,113 @@ class OfficialStartIntegratedProjectBridge:
         recommended = select_balanced(variants)
         recommended_dict = next(x for x in variant_dicts if x["variant_id"] == recommended.variant_id)
         output_dir = self.output_root / run_id / "five_variants"
-        summary = write_package(
+
+        # PHOENIX_4_6_19_PHASE19_REAL_VARIANT_PROVIDER_RESTORE_R1
+        # Restore the proven real-spatial A-E authoring route as the primary
+        # Phase-19 variant provider. The foundation package is retained below
+        # only as a backward-compatible fallback artifact set.
+        real_spatial_root = output_dir / "real_spatial"
+        real_variant_files = []
+        topology_hashes = []
+        ifc_evidence = {}
+        for item in variant_dicts:
+            layout = build_real_layout(project, item)
+            validation = dict(layout.get("geometry_validation") or {})
+            if not bool(validation.get("valid")):
+                raise RuntimeError(
+                    f"PHASE19_REAL_SPATIAL_GEOMETRY_DENY:{item['variant_id']}:"
+                    f"{validation.get('warnings', [])}"
+                )
+            if len(layout.get("rooms") or []) <= 5:
+                raise RuntimeError(f"PHASE19_REAL_SPATIAL_ROOM_COUNT_DENY:{item['variant_id']}")
+            if len(layout.get("walls") or []) <= 4:
+                raise RuntimeError(f"PHASE19_REAL_SPATIAL_WALL_COUNT_DENY:{item['variant_id']}")
+            if len(layout.get("openings") or []) <= 2:
+                raise RuntimeError(f"PHASE19_REAL_SPATIAL_OPENING_COUNT_DENY:{item['variant_id']}")
+
+            bundle = write_layout_bundle(real_spatial_root / "variants", layout)
+            variant_dir = real_spatial_root / "variants" / f"variant_{item['variant_id']}"
+            ifc_path = variant_dir / f"variant_{item['variant_id']}.ifc"
+            try:
+                ifc_evidence[item["variant_id"]] = author_ifc4(project, layout, ifc_path)
+            except (ModuleNotFoundError, ImportError) as exc:
+                raise RuntimeError(
+                    f"PHASE19_REAL_SPATIAL_IFC_DEPENDENCY_DENY:{item['variant_id']}:{exc}"
+                ) from exc
+
+            topology_payload = {
+                "footprint": layout["footprint"],
+                "rooms": [
+                    {
+                        "storey_index": room["storey_index"],
+                        "room_id": room["room_id"],
+                        "zone": room["zone"],
+                        "x": round(float(room["x"]), 4),
+                        "y": round(float(room["y"]), 4),
+                        "width": round(float(room["width"]), 4),
+                        "depth": round(float(room["depth"]), 4),
+                    }
+                    for room in layout["rooms"]
+                ],
+                "openings": [
+                    {
+                        "storey_index": opening["storey_index"],
+                        "kind": opening["kind"],
+                        "host_wall_key": opening["host_wall_key"],
+                        "x": round(float(opening["x"]), 4),
+                        "y": round(float(opening["y"]), 4),
+                        "width_m": round(float(opening["width_m"]), 4),
+                    }
+                    for opening in layout["openings"]
+                ],
+            }
+            topology_sha256 = hashlib.sha256(
+                json.dumps(topology_payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+            topology_hashes.append(topology_sha256)
+
+            layout_json = Path(bundle["layout_json"])
+            storey_svgs = [Path(value) for value in bundle["svg_plans"]]
+            real_variant_files.append({
+                "variant_id": item["variant_id"],
+                "strategy": item["strategy"],
+                "provider": "PHOENIX_TROPICAL_REAL_SPATIAL_LAYOUT_v1",
+                "svg_path": storey_svgs[0].relative_to(self.repository).as_posix(),
+                "storey_svg_paths": [
+                    value.relative_to(self.repository).as_posix() for value in storey_svgs
+                ],
+                "json_path": layout_json.relative_to(self.repository).as_posix(),
+                "ifc_path": ifc_path.relative_to(self.repository).as_posix(),
+                "topology_sha256": topology_sha256,
+                "room_count": len(layout["rooms"]),
+                "wall_count": len(layout["walls"]),
+                "opening_count": len(layout["openings"]),
+            })
+
+        if len(set(topology_hashes)) != 5:
+            raise RuntimeError(
+                f"PHASE19_REAL_VARIANT_DISTINCTNESS_DENY:"
+                f"unique={len(set(topology_hashes))}:required=5"
+            )
+
+        real_spatial_manifest = {
+            "schema": "PHOENIX_PHASE19_REAL_SPATIAL_VARIANT_PROVIDER_V1",
+            "provider": "phoenix.design.tropical_residential.real_spatial",
+            "variant_count": 5,
+            "variant_order": list("ABCDE"),
+            "unique_topology_count": len(set(topology_hashes)),
+            "variant_files": real_variant_files,
+            "ifc_evidence": ifc_evidence,
+            "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
+        }
+        real_spatial_manifest_path = real_spatial_root / "real_spatial_manifest.json"
+        real_spatial_manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        real_spatial_manifest_path.write_text(
+            json.dumps(real_spatial_manifest, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        legacy_summary = write_package(
             output_dir,
             project,
             variant_dicts,
@@ -262,6 +371,12 @@ class OfficialStartIntegratedProjectBridge:
             build_digital_twin_patch(project, variant_dicts, recommended.variant_id),
             build_authoritative_ifc_contract(project, recommended_dict),
         )
+        summary = {
+            "primary_provider": "PHOENIX_TROPICAL_REAL_SPATIAL_LAYOUT_v1",
+            "real_spatial_manifest_path": real_spatial_manifest_path.relative_to(self.repository).as_posix(),
+            "unique_topology_count": len(set(topology_hashes)),
+            "legacy_foundation_package": legacy_summary,
+        }
         rules_files = [
             "configs/phoenix/jurisdictions/suriname/suriname_regulatory_use_policy_v1_0.json",
             "configs/phoenix/jurisdictions/suriname/suriname_structural_rule_registry_v1_0.json",
@@ -282,6 +397,9 @@ class OfficialStartIntegratedProjectBridge:
             "recommended_variant_id": recommended.variant_id,
             "selection_status": "AWAITING_USER_SELECTION",
             "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
+            "variant_provider": "PHOENIX_TROPICAL_REAL_SPATIAL_LAYOUT_v1",
+            "unique_topology_count": len(set(topology_hashes)),
+            "real_spatial_manifest_path": real_spatial_manifest_path.relative_to(self.repository).as_posix(),
             "project": project,
             "variants": variant_dicts,
             "summary": summary,
@@ -322,15 +440,8 @@ class OfficialStartIntegratedProjectBridge:
             "evidence": evidence,
             "manifest": manifest,
             "manifest_path": manifest_path.relative_to(self.repository).as_posix(),
-            "variant_files": [
-                {
-                    "variant_id": item["variant_id"],
-                    "strategy": item["strategy"],
-                    "svg_path": (output_dir / "variants" / f"variant_{item['variant_id']}.svg").relative_to(self.repository).as_posix(),
-                    "json_path": (output_dir / "variants" / f"variant_{item['variant_id']}.json").relative_to(self.repository).as_posix(),
-                }
-                for item in variant_dicts
-            ],
+            "variant_files": real_variant_files,
+            "real_spatial_manifest_path": real_spatial_manifest_path.relative_to(self.repository).as_posix(),
         }
 
     def build_contract(self, session: Mapping[str, Any]) -> dict[str, Any]:
