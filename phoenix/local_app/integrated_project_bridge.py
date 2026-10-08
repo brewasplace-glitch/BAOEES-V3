@@ -19,6 +19,11 @@ from phoenix.design.tropical_residential.ifc_author import author_ifc4
 from phoenix.design.tropical_residential.output import write_package
 from phoenix.design.tropical_residential.real_output import write_layout_bundle
 from phoenix.design.tropical_residential.real_spatial import build_real_layout
+from phoenix.design.tropical_residential.architectural_quality import (
+    evaluate_layout_quality,
+    evaluate_variant_set_quality,
+    write_quality_report,
+)
 
 
 MODE_MAP = {
@@ -277,9 +282,11 @@ class OfficialStartIntegratedProjectBridge:
         # Phase-19 variant provider. The foundation package is retained below
         # only as a backward-compatible fallback artifact set.
         real_spatial_root = output_dir / "real_spatial"
+        # PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R1
         real_variant_files = []
         topology_hashes = []
         ifc_evidence = {}
+        architectural_quality_rows = []
         for item in variant_dicts:
             layout = build_real_layout(project, item)
             validation = dict(layout.get("geometry_validation") or {})
@@ -294,6 +301,14 @@ class OfficialStartIntegratedProjectBridge:
                 raise RuntimeError(f"PHASE19_REAL_SPATIAL_WALL_COUNT_DENY:{item['variant_id']}")
             if len(layout.get("openings") or []) <= 2:
                 raise RuntimeError(f"PHASE19_REAL_SPATIAL_OPENING_COUNT_DENY:{item['variant_id']}")
+
+            architectural_quality = evaluate_layout_quality(layout, item)
+            architectural_quality_rows.append(architectural_quality)
+            if not architectural_quality["hard_pass"]:
+                raise RuntimeError(
+                    f"PHASE19_ARCHITECTURAL_QUALITY_DENY:{item['variant_id']}:"
+                    f"{architectural_quality['hard_failures']}"
+                )
 
             bundle = write_layout_bundle(real_spatial_root / "variants", layout)
             variant_dir = real_spatial_root / "variants" / f"variant_{item['variant_id']}"
@@ -352,6 +367,7 @@ class OfficialStartIntegratedProjectBridge:
                 "room_count": len(layout["rooms"]),
                 "wall_count": len(layout["walls"]),
                 "opening_count": len(layout["openings"]),
+                "architectural_quality": architectural_quality,
             })
 
         if len(set(topology_hashes)) != 5:
@@ -360,12 +376,25 @@ class OfficialStartIntegratedProjectBridge:
                 f"unique={len(set(topology_hashes))}:required=5"
             )
 
+        architectural_quality_report = evaluate_variant_set_quality(architectural_quality_rows)
+        if not architectural_quality_report["hard_pass"]:
+            raise RuntimeError(
+                "PHASE19_ARCHITECTURAL_VARIANT_SET_QUALITY_DENY:"
+                + ",".join(architectural_quality_report["hard_failures"])
+            )
+        architectural_quality_paths = write_quality_report(
+            real_spatial_root / "quality",
+            architectural_quality_report,
+        )
+
         real_spatial_manifest = {
             "schema": "PHOENIX_PHASE19_REAL_SPATIAL_VARIANT_PROVIDER_V1",
             "provider": "phoenix.design.tropical_residential.real_spatial",
             "variant_count": 5,
             "variant_order": list("ABCDE"),
             "unique_topology_count": len(set(topology_hashes)),
+            "architectural_quality": architectural_quality_report,
+            "architectural_quality_paths": architectural_quality_paths,
             "variant_files": real_variant_files,
             "ifc_evidence": ifc_evidence,
             "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
@@ -390,6 +419,8 @@ class OfficialStartIntegratedProjectBridge:
             "primary_provider": "PHOENIX_TROPICAL_REAL_SPATIAL_LAYOUT_v1",
             "real_spatial_manifest_path": real_spatial_manifest_path.relative_to(self.repository).as_posix(),
             "unique_topology_count": len(set(topology_hashes)),
+            "architectural_quality": architectural_quality_report,
+            "architectural_quality_paths": architectural_quality_paths,
             "legacy_foundation_package": legacy_summary,
         }
         rules_files = [
