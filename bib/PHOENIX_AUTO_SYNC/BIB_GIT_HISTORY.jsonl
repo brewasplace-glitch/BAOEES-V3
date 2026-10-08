@@ -1,3 +1,4 @@
+{"commit": "33384547e0bf5f6e435c52e8e4d1e0e20579abe6", "date": "2026-10-08T21:44:49+02:00", "subject": "feat(architecture): add spatial relationship quality R2"}
 {"commit": "d49c831d6bfa241ce461c512c9ae7ab43eaa5402", "date": "2026-10-08T19:43:41+02:00", "subject": "feat(architecture): add topology-aware variant quality gate R1"}
 {"commit": "263ec5a6fdc5972052b536a9decff714ce8b9e90", "date": "2026-10-08T01:30:37+02:00", "subject": "fix(phase19): lock resumed runs to current variant identity"}
 {"commit": "8d563d9c96bf2bd91b17df2731290d96c55bed64", "date": "2026-10-08T00:32:06+02:00", "subject": "fix(phase19): allow real variants without upload safely"}
@@ -497,4 +498,3 @@
 {"commit": "4ed0b9a29d7eb16a43d41c93fccd70499ab8ae7b", "date": "2026-06-27T17:05:37+02:00", "subject": "feat: show start project analysis in launcher v4.9"}
 {"commit": "760c7b02e490663205787ca61ac4d14e71cf005e", "date": "2026-06-27T16:54:09+02:00", "subject": "chore: refresh generated start analysis outputs v4.8"}
 {"commit": "a8130ebbb79d9c883f6450f85237356709f33acd", "date": "2026-06-27T16:17:02+02:00", "subject": "feat: add central start project analysis engine v4.8"}
-{"commit": "28e517865c5969b826bfe46caf5bc7527ed9a018", "date": "2026-06-27T16:02:45+02:00", "subject": "feat: connect central workflow outputs to launcher v4.7"}

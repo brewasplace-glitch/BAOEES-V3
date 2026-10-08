@@ -9041,6 +9041,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "7ac70134dce2fd0255f6b7137c5a4894f22a811f",
+      "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R3.md",
+      "sha256": "ce16e3112b1e2b6fa5858671bc601f2d53bcbd9639752436b384e726f9c4285c"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "98435293e688ccf88825b819edbbe70cf5bf2aba",
       "path": "docs/architecture/PHOENIX_REAL_PROJECT_EXECUTION_PIPELINE_v6_2_0.md",
       "sha256": "1bb4616ead551465311a8d947ed916410764a55923b9569bd83c177c29c58d6c"
@@ -18617,6 +18626,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "c0bb2d90b9371f49a206f3755ef8087b60d3d135",
+      "path": "phoenix/design/tropical_residential/strategy_topology.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "015339dea66ed62dd79739040c3ae066646b6d10",
       "path": "phoenix/design/tropical_residential/tool_discovery.py",
       "sha256": null
@@ -19193,7 +19211,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "ef759459b3196ba589ae22ac7cdd5892321266d1",
+      "git_oid": "1177cfc12176f86b9351a46c40c342770c463bce",
       "path": "phoenix/local_app/integrated_project_bridge.py",
       "sha256": null
     },
@@ -27302,6 +27320,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "6200d7785b99fc7e2f4ccf7bd072a6773c94d75f",
+      "path": "tests/automation/test_phoenix_real_architectural_quality_upgrade_r3.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "5ad2fc332f1d01fffaa21be4367e76dab97a433c",
       "path": "tests/automation/test_phoenix_real_project_e2e_environment_discovery_v1_1.py",
       "sha256": null
@@ -29144,5 +29171,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "f40d6387432f152657b257eeeacbdfa792aed1a42582d1422d85f1daa8bfd588"
+  "source_digest": "3896c05eb97d645dd54e024a9e1dedaf9bb035ff6e36e996c7a364b966ad7c58"
 }

@@ -29,6 +29,9 @@ from phoenix.design.tropical_residential.spatial_quality import (
     evaluate_variant_set_spatial_quality,
     write_spatial_quality_report,
 )
+from phoenix.design.tropical_residential.strategy_topology import (
+    apply_strategy_topology,
+)
 
 
 MODE_MAP = {
@@ -296,6 +299,8 @@ class OfficialStartIntegratedProjectBridge:
         spatial_quality_rows = []
         for item in variant_dicts:
             layout = build_real_layout(project, item)
+            # PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R3
+            layout = apply_strategy_topology(layout, item)
             validation = dict(layout.get("geometry_validation") or {})
             if not bool(validation.get("valid")):
                 raise RuntimeError(
