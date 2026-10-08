@@ -24,6 +24,11 @@ from phoenix.design.tropical_residential.architectural_quality import (
     evaluate_variant_set_quality,
     write_quality_report,
 )
+from phoenix.design.tropical_residential.spatial_quality import (
+    evaluate_spatial_relationships,
+    evaluate_variant_set_spatial_quality,
+    write_spatial_quality_report,
+)
 
 
 MODE_MAP = {
@@ -287,6 +292,8 @@ class OfficialStartIntegratedProjectBridge:
         topology_hashes = []
         ifc_evidence = {}
         architectural_quality_rows = []
+        # PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R2
+        spatial_quality_rows = []
         for item in variant_dicts:
             layout = build_real_layout(project, item)
             validation = dict(layout.get("geometry_validation") or {})
@@ -304,6 +311,8 @@ class OfficialStartIntegratedProjectBridge:
 
             architectural_quality = evaluate_layout_quality(layout, item)
             architectural_quality_rows.append(architectural_quality)
+            spatial_quality = evaluate_spatial_relationships(layout, item)
+            spatial_quality_rows.append(spatial_quality)
             if not architectural_quality["hard_pass"]:
                 raise RuntimeError(
                     f"PHASE19_ARCHITECTURAL_QUALITY_DENY:{item['variant_id']}:"
@@ -368,6 +377,7 @@ class OfficialStartIntegratedProjectBridge:
                 "wall_count": len(layout["walls"]),
                 "opening_count": len(layout["openings"]),
                 "architectural_quality": architectural_quality,
+                "spatial_quality": spatial_quality,
             })
 
         if len(set(topology_hashes)) != 5:
@@ -387,6 +397,17 @@ class OfficialStartIntegratedProjectBridge:
             architectural_quality_report,
         )
 
+        spatial_quality_report = evaluate_variant_set_spatial_quality(spatial_quality_rows)
+        if not spatial_quality_report["hard_pass"]:
+            raise RuntimeError(
+                "PHASE19_ARCHITECTURAL_SPATIAL_QUALITY_DENY:"
+                + ",".join(spatial_quality_report["hard_failures"])
+            )
+        spatial_quality_paths = write_spatial_quality_report(
+            real_spatial_root / "quality",
+            spatial_quality_report,
+        )
+
         real_spatial_manifest = {
             "schema": "PHOENIX_PHASE19_REAL_SPATIAL_VARIANT_PROVIDER_V1",
             "provider": "phoenix.design.tropical_residential.real_spatial",
@@ -395,6 +416,8 @@ class OfficialStartIntegratedProjectBridge:
             "unique_topology_count": len(set(topology_hashes)),
             "architectural_quality": architectural_quality_report,
             "architectural_quality_paths": architectural_quality_paths,
+            "spatial_quality": spatial_quality_report,
+            "spatial_quality_paths": spatial_quality_paths,
             "variant_files": real_variant_files,
             "ifc_evidence": ifc_evidence,
             "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
@@ -421,6 +444,8 @@ class OfficialStartIntegratedProjectBridge:
             "unique_topology_count": len(set(topology_hashes)),
             "architectural_quality": architectural_quality_report,
             "architectural_quality_paths": architectural_quality_paths,
+            "spatial_quality": spatial_quality_report,
+            "spatial_quality_paths": spatial_quality_paths,
             "legacy_foundation_package": legacy_summary,
         }
         rules_files = [
