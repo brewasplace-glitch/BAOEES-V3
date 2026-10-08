@@ -9050,6 +9050,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "cd44b6caef4b8ea63782214d4e064b07cc1a9e70",
+      "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R4.md",
+      "sha256": "b1730f4d053a8e65e37c8296239e9ffc880d7c4a0249a4ceba9f0888134b1fd9"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "98435293e688ccf88825b819edbbe70cf5bf2aba",
       "path": "docs/architecture/PHOENIX_REAL_PROJECT_EXECUTION_PIPELINE_v6_2_0.md",
       "sha256": "1bb4616ead551465311a8d947ed916410764a55923b9569bd83c177c29c58d6c"
@@ -18509,6 +18518,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "0ebc9c170762175268cdfc2654d26246d4ef5d6d",
+      "path": "phoenix/design/tropical_residential/geometry_topology.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "b9d8d99b4d43fa18fe13d03c4642a3c602deeb33",
       "path": "phoenix/design/tropical_residential/ifc_author.py",
       "sha256": null
@@ -18529,6 +18547,15 @@
       "git_mode": "100644",
       "git_oid": "df2d19aaa2da8fd8a76282ecac556c29b1f9abde",
       "path": "phoenix/design/tropical_residential/models.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "62c46709e60f39ba79e9e1b311245db3a5269ceb",
+      "path": "phoenix/design/tropical_residential/open_source_spatial_engine.py",
       "sha256": null
     },
     {
@@ -19211,7 +19238,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "1177cfc12176f86b9351a46c40c342770c463bce",
+      "git_oid": "7f5851a54de41bb437a774687bcff025178945d6",
       "path": "phoenix/local_app/integrated_project_bridge.py",
       "sha256": null
     },
@@ -27329,6 +27356,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "f9c74807a0056471d31da83f56d07d6bcc4aaf61",
+      "path": "tests/automation/test_phoenix_real_architectural_quality_upgrade_r4.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "5ad2fc332f1d01fffaa21be4367e76dab97a433c",
       "path": "tests/automation/test_phoenix_real_project_e2e_environment_discovery_v1_1.py",
       "sha256": null
@@ -29171,5 +29207,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "3896c05eb97d645dd54e024a9e1dedaf9bb035ff6e36e996c7a364b966ad7c58"
+  "source_digest": "ee8470886d7cf819aa05cc303c81113fc3a69e7780a04f2dae5525f25bd61b00"
 }
