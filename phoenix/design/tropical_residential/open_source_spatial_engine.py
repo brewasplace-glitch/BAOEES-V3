@@ -7,6 +7,7 @@ from typing import Any, Mapping
 from ortools.sat.python import cp_model
 import networkx as nx
 from shapely.geometry import box as shapely_box
+from .aec_topology_quality import analyze_aec_topology
 
 
 ENGINE_ID = "PHOENIX_OPEN_SOURCE_SPATIAL_SYNTHESIS_R4_FIX_R3"
@@ -92,47 +93,44 @@ def _pair_score(cat_a: str, cat_b: str, strategy: str) -> int:
     s = strategy.upper()
     score = 0
 
-    # Baseline architectural preferences.
+    # R5: route/privacy/wet-core-aware adjacency objective.
     if pair == frozenset(("PUBLIC", "CIRCULATION")):
-        score += 7
+        score += 12
     if pair == frozenset(("PRIVATE", "CIRCULATION")):
-        score += 6
+        score += 11
     if pair == frozenset(("WET", "CIRCULATION")):
-        score += 5
-    if pair == frozenset(("PUBLIC", "PRIVATE")):
-        score -= 6
+        score += 9
     if pair == frozenset(("WET", "WET")):
-        score += 5
+        score += 12
+    if pair == frozenset(("PUBLIC", "PRIVATE")):
+        score -= 18
 
-    # Strategy-specific bias.
     if s in {"LOW_COST", "B"}:
         if pair == frozenset(("WET", "WET")):
-            score += 8
+            score += 12
         if pair == frozenset(("WET", "CIRCULATION")):
-            score += 5
+            score += 8
     elif s in {"RESILIENCE", "C"}:
         if pair == frozenset(("WET", "WET")):
-            score += 10
-        if pair == frozenset(("PRIVATE", "PUBLIC")):
-            score -= 3
+            score += 16
+        if pair == frozenset(("PUBLIC", "PRIVATE")):
+            score -= 8
     elif s in {"INDOOR_OUTDOOR", "D"}:
         if pair == frozenset(("PUBLIC", "PUBLIC")):
-            score += 9
+            score += 12
         if pair == frozenset(("PUBLIC", "CIRCULATION")):
-            score += 4
+            score += 7
     elif s in {"PASSIVE_COOLING", "A"}:
         if pair == frozenset(("PUBLIC", "PRIVATE")):
-            score -= 4
+            score -= 10
         if pair == frozenset(("PUBLIC", "CIRCULATION")):
-            score += 3
-    else:  # BALANCED
+            score += 6
+    else:
         if pair == frozenset(("PUBLIC", "CIRCULATION")):
-            score += 5
+            score += 7
         if pair == frozenset(("PRIVATE", "CIRCULATION")):
-            score += 5
+            score += 7
     return score
-
-
 def _slot_edges(n: int, cols: int) -> list[tuple[int, int]]:
     edges = []
     for i in range(n):
@@ -430,4 +428,13 @@ def synthesize_with_open_source_engines(
         "release_status": "CONCEPT_GEOMETRY_SYNTHESIS_NOT_FOR_CONSTRUCTION",
     }
     result["open_source_spatial_engine"] = result["geometry_topology"]
+
+    # PHOENIX_OPEN_SOURCE_AEC_TOPOLOGY_R5
+    result["aec_topology_quality"] = analyze_aec_topology(result, variant)
+    if not result["aec_topology_quality"]["hard_pass"]:
+        raise RuntimeError(
+            "R5_AEC_TOPOLOGY_HARD_FAIL:"
+            + str(result["aec_topology_quality"]["metrics"])
+        )
+
     return result
