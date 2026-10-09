@@ -16988,7 +16988,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "262bf698ef2f4585a2646742348c51ebf5434288",
+      "git_oid": "c57894ee6944de836d01b37ce70c7ffb6f65eefc",
       "path": "phoenix/autonomy/local_material_supply_intelligence.py",
       "sha256": null
     },
@@ -17393,7 +17393,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "aecef517dd78a7ca9bef95ab32f527e9a4a3fc9a",
+      "git_oid": "7c3901d2e445caef3605b811c0c42c21d17fa7fc",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -27509,6 +27509,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "3f87dd62ed5a909011bffe8b6be605b3e66c1864",
+      "path": "tests/automation/test_phoenix_r9_explicit_roof_material_requirement_override.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "96a634958fc00b5b92553e67be3645a397233d09",
       "path": "tests/automation/test_phoenix_real_architectural_multivariant_design_engine_v1_0.py",
       "sha256": null
@@ -29414,5 +29423,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "c753598428ffc23de98fa9eb06be32dac17ff660353a9c514290c864a6aa95a9"
+  "source_digest": "a3b4e2b707e1f8af2f3dd81284721f3880c3a630caaa67c29aa7e475cffb0dc6"
 }

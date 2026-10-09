@@ -401,7 +401,7 @@ def run_architecture(ctx: dict[str, Any]) -> int:
         architectural_model=model_value,
         structural_profile=profile_value,
         project_context=context_result.context,
-        manifest=ctx.get("manifest") or {},
+        manifest={**(ctx.get("manifest") or {}), "_project_session_for_material_resolution": ctx.get("session") or {}},
         workspace=ctx["workspace"],
     )
     material_requirements_path=out/"local_material_requirements.json"

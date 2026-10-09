@@ -228,6 +228,76 @@ def _candidate_family(value: Any, *, element: str) -> str | None:
         return "structural_concrete"
     return None
 
+
+def _explicit_project_roof_material_override(
+    *,
+    structural_profile: dict[str,Any],
+    project_context: dict[str,Any],
+    manifest: dict[str,Any],
+) -> tuple[dict[str,Any],dict[str,Any]|None]:
+    import copy as _copy
+    import json as _json
+    import re as _re
+
+    payload={"project_context":project_context or {},"manifest":manifest or {}}
+    low=_json.dumps(payload,ensure_ascii=False,default=str).casefold()
+
+    roof_tokens=("roof","dak","roof_structure","dakconstructie","spant","spanten","truss","vakwerk","buisvakwerk")
+    metal_tokens=("metal","metaal","steel","staal","stalen","aluminium")
+    timber_tokens=("timber","wood","hout","houten")
+
+    explicit_metal=False
+    explicit_timber=False
+
+    for token in roof_tokens:
+        for match in _re.finditer(_re.escape(token),low):
+            lo=max(0,match.start()-120)
+            hi=min(len(low),match.end()+160)
+            window=low[lo:hi]
+
+            if any(x in window for x in metal_tokens):
+                explicit_metal=True
+
+            if any(x in window for x in timber_tokens):
+                if "hout waar nuttig" not in window and "wood where useful" not in window:
+                    explicit_timber=True
+
+    if explicit_metal and explicit_timber:
+        return structural_profile,{
+            "status":"CONFLICT",
+            "reason":"CONFLICTING_EXPLICIT_ROOF_MATERIAL_REQUIREMENTS",
+            "production_release":"LOCKED",
+        }
+
+    if not explicit_metal:
+        return structural_profile,None
+
+    resolved=_copy.deepcopy(structural_profile or {})
+    assumptions=resolved.setdefault("assumptions",{})
+    previous=assumptions.get("default_roof_material")
+
+    # Existing Phoenix family mapping recognizes "steel" and maps it to
+    # structural_steel_section. No grade/member size is inferred here.
+    assumptions["default_roof_material"]="steel_tube_truss_candidate"
+
+    resolution={
+        "status":"APPLIED",
+        "field":"default_roof_material",
+        "previous_value":previous,
+        "resolved_value":"steel_tube_truss_candidate",
+        "resolved_material_family":"structural_steel_section",
+        "basis":"EXPLICIT_PROJECT_ROOF_STRUCTURE_REQUIREMENT",
+        "member_size_inferred":False,
+        "steel_grade_inferred":False,
+        "connection_design_inferred":False,
+        "professional_review_required":True,
+        "production_release":"LOCKED",
+    }
+
+    resolved["project_material_requirement_resolution"]=resolution
+    return resolved,resolution
+
+
 def derive_material_requirements(
     *,
     project_id: str,
@@ -469,6 +539,11 @@ def build_local_material_supply_context(
         as_of=date.today()
 
     geography=_project_geo(project_context,manifest)
+    structural_profile,project_material_requirement_resolution=_explicit_project_roof_material_override(
+        structural_profile=structural_profile,
+        project_context=project_context,
+        manifest=manifest,
+    )
     requirements=derive_material_requirements(
         project_id=project_id,
         architectural_model=architectural_model,
