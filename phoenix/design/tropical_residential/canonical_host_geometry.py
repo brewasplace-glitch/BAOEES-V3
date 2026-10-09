@@ -321,12 +321,24 @@ def finalize_canonical_host_geometry(layout: Dict[str, Any]) -> Dict[str, Any]:
     layout["facades"] = facades
 
     roof = dict(layout.get("roof") or {})
+    pitch = float(roof.get("pitch_deg") or 0.0)
     roof["canonical_footprint"] = {
         "width_m": width,
         "depth_m": depth,
         "eave_overhang_m": float(roof.get("eave_overhang_m") or 0.0),
     }
     roof["geometry_source"] = "FINAL_POST_OPTIMIZATION_FOOTPRINT"
+    if abs(pitch) <= 1.0e-9:
+        roof["roof_type"] = "FLAT"
+        roof["architectural_form"] = "FLAT"
+        roof["architectural_pitch_deg"] = 0.0
+        roof["drainage_fall_model"] = "SEPARATE_FROM_ARCHITECTURAL_FORM"
+        roof["drainage_design_status"] = "UNRESOLVED_CONCEPT_INPUT_REQUIRED"
+        roof["representation_stage"] = "CANONICAL_FLAT_ROOF_IFC_VOLUME"
+    else:
+        roof.setdefault("roof_type", "PITCHED_UNSPECIFIED")
+        roof.setdefault("architectural_form", roof["roof_type"])
+        roof["architectural_pitch_deg"] = pitch
     layout["roof"] = roof
 
     qa = validate_canonical_host_geometry(layout)

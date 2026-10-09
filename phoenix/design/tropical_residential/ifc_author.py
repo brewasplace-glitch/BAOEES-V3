@@ -198,10 +198,16 @@ def author_ifc4(project: Dict[str, Any], layout: Dict[str, Any], output_path: Pa
         ifcopenshell.api.feature.add_filling(model, opening=opening, element=filler)
         ifcopenshell.api.spatial.assign_container(model, relating_structure=storeys[s], products=[filler])
 
-    # Simplified roof volume: authoritative metadata carries the intended tropical pitch.
+    # Canonical roof representation. Zero architectural pitch is an explicit flat roof.
+    roof_meta = layout["roof"]
+    roof_type = str(roof_meta.get("roof_type") or "").upper()
+    roof_pitch = float(roof_meta.get("architectural_pitch_deg", roof_meta.get("pitch_deg", 0.0)))
+    roof_name = "Flat Roof" if roof_type == "FLAT" or abs(roof_pitch) <= 1.0e-9 else f"Roof pitch {roof_pitch} deg"
     roof = ifcopenshell.api.root.create_entity(
-        model, ifc_class="IfcRoof", name=f"Tropical Roof pitch {layout['roof']['pitch_deg']} deg"
+        model, ifc_class="IfcRoof", name=roof_name
     )
+    if roof_type == "FLAT" or abs(roof_pitch) <= 1.0e-9:
+        roof.PredefinedType = "FLAT_ROOF"
     roof_rep = ifcopenshell.api.geometry.add_slab_representation(
         model, context=body, depth=0.20,
         polyline=[

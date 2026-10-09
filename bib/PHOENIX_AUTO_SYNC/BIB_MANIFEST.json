@@ -9059,6 +9059,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "7a5b8d490966b8dcf9b21f3601ff1df257a6b4e2",
+      "path": "docs/architecture/PHOENIX_R7_FLAT_ROOF_HARDENING.md",
+      "sha256": "8e16cd2f63b7f147112f31e88cd8052387b8014945b961b6e417e738fed2aad6"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "06e3c13e33b33b9030ad42d170b3ce96c14e12ef",
       "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R1.md",
       "sha256": "ecc3b56cf73ed7b871cdd35052d240453cd2d1f7b1c0b441f18da452ecb8680f"
@@ -18527,7 +18536,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "0d966f70cc8a6c462957f3d9c3644d9f9449ae1b",
+      "git_oid": "059bcc7a36a094266c3a2c13de6927ea56ccd1b7",
       "path": "phoenix/design/tropical_residential/blender_tropical_scene_script.py",
       "sha256": null
     },
@@ -18545,7 +18554,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "e89a48f13da66a4366966042a14bec319e31db78",
+      "git_oid": "68b6ba76fb343a956647ec3bd644a9be9ab99c39",
       "path": "phoenix/design/tropical_residential/canonical_host_geometry.py",
       "sha256": null
     },
@@ -18599,7 +18608,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "d5baaeebe67fd69dab29e32fdb9e818282109b33",
+      "git_oid": "37e5fc864b308a6a0255bca959fc6c8b871a9fb5",
       "path": "phoenix/design/tropical_residential/ifc_author.py",
       "sha256": null
     },
@@ -27401,6 +27410,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "87f3fb5edb41e070f0e02c4668d4eb1b3260b848",
+      "path": "tests/automation/test_phoenix_r7_flat_roof_hardening.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "f662d1171dcd14fe6d16496f03b7236f53a78b3b",
       "path": "tests/automation/test_phoenix_r8_2_1_runtime_chain_integrity.py",
       "sha256": null
@@ -29324,5 +29342,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "73565fa58996aed144caff961449d239831ec0e0268ac1d6a7d1b61c75e381ae"
+  "source_digest": "d85ee8130c2cbd00353b1b3b0d967f0ecf023002e99edadc8289dedc6145ef88"
 }

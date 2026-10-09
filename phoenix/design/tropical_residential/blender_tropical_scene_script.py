@@ -208,6 +208,21 @@ def mesh_object(name, vertices, faces, mat):
     return obj
 
 
+def flat_roof(fw, fd, z, overhang, mat):
+    x0, x1 = -overhang, fw + overhang
+    y0, y1 = -overhang, fd + overhang
+    t = 0.20
+    verts = [
+        (x0,y0,z),(x1,y0,z),(x1,y1,z),(x0,y1,z),
+        (x0,y0,z+t),(x1,y0,z+t),(x1,y1,z+t),(x0,y1,z+t),
+    ]
+    faces = [
+        (0,1,2,3),(4,7,6,5),
+        (0,4,5,1),(1,5,6,2),(2,6,7,3),(3,7,4,0),
+    ]
+    return mesh_object("Roof_Flat", verts, faces, mat)
+
+
 def gable_roof(fw, fd, z, overhang, pitch_deg, mat):
     x0, x1 = -overhang, fw + overhang
     y0, y1 = -overhang, fd + overhang
@@ -375,11 +390,11 @@ def build_scene(layout):
     )
 
     if layout["strategy"] == "RESILIENCE":
-        roof = hip_roof(fw,fd,total_h,ov,max(22.0,pitch),roof_mat)
+        roof = flat_roof(fw,fd,total_h,ov,roof_mat) if pitch <= 0.01 else hip_roof(fw,fd,total_h,ov,max(22.0,pitch),roof_mat)
     elif layout["strategy"] == "INDOOR_OUTDOOR":
-        roof = shed_roof(fw,fd,total_h,ov,max(12.0,min(pitch,24.0)),roof_mat)
+        roof = flat_roof(fw,fd,total_h,ov,roof_mat) if pitch <= 0.01 else shed_roof(fw,fd,total_h,ov,max(12.0,min(pitch,24.0)),roof_mat)
     else:
-        roof = gable_roof(fw,fd,total_h,ov,pitch,roof_mat)
+        roof = flat_roof(fw,fd,total_h,ov,roof_mat) if pitch <= 0.01 else gable_roof(fw,fd,total_h,ov,pitch,roof_mat)
 
     # External shading hoods for tropical solar/rain protection.
     if layout["strategy"] in {"PASSIVE_COOLING","INDOOR_OUTDOOR","BALANCED"}:

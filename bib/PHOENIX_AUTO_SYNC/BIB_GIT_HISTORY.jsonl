@@ -1,3 +1,4 @@
+{"commit": "be7ac55e50e2d01d13ca9b90311767e0c5c0bb28", "date": "2026-10-09T17:15:37+02:00", "subject": "fix(architecture): canonicalize host geometry after spatial optimization"}
 {"commit": "0e250fb2a58c1272ca0d37d50ff621a4a24d8d4b", "date": "2026-10-09T16:37:35+02:00", "subject": "feat(release): bind R6 canonical geometry to BB36 gate"}
 {"commit": "212d51c8968225696c26c07912b851d617258b6f", "date": "2026-10-09T15:15:53+02:00", "subject": "feat(bim): add canonical IFC geometry consistency gate R6"}
 {"commit": "7974f0be7be09eb43a70f4e0d5d24c940fd458a1", "date": "2026-10-09T12:11:55+02:00", "subject": "fix(architecture): restore semantic room categories and vertical topology"}
@@ -497,4 +498,3 @@
 {"commit": "808fd080c1164c1a56b8026901732d9d6d167c68", "date": "2026-06-30T16:35:55+02:00", "subject": "feat: add filled chat knowledge intake v5.5"}
 {"commit": "c975e989d20677ddf5c7b41e6ddbd980ce078f91", "date": "2026-06-28T00:57:56+02:00", "subject": "feat: add bib import wizard v5.4"}
 {"commit": "1e0599910f88d6bf7e646b399d30b72a4f9df48f", "date": "2026-06-27T23:56:45+02:00", "subject": "feat: improve project launcher dashboard v5.3"}
-{"commit": "9830a2c4a2f49dc9c6424601f4c749172eb0ac4b", "date": "2026-06-27T23:01:19+02:00", "subject": "feat: improve launcher home dashboard v5.2"}
