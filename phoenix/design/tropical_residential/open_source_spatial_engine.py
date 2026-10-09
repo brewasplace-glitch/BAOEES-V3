@@ -41,13 +41,13 @@ def _storey(room: Mapping[str, Any]) -> int:
 
 
 def _label(room: Mapping[str, Any]) -> str:
-    return str(
-        room.get("zone")
-        or room.get("name")
-        or room.get("room_name")
-        or room.get("room_id")
-        or "UNSPECIFIED"
-    ).upper()
+    parts = [
+        room.get("zone"),
+        room.get("name"),
+        room.get("room_name"),
+        room.get("room_id"),
+    ]
+    return " | ".join(str(v) for v in parts if v not in (None, "")).upper() or "UNSPECIFIED"
 
 
 def _category(room: Mapping[str, Any]) -> str:

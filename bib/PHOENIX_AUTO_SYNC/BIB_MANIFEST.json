@@ -9023,6 +9023,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "70efe5b59abde8a6aab53d0bacf3a1472a49eef1",
+      "path": "docs/architecture/PHOENIX_R5_FIX_R2_SEMANTIC_CLASSIFICATION_VERTICAL_CIRCULATION.md",
+      "sha256": "5d566aca53c22d6eea0fe2ed5a4e872b17b0ce2f40f463127e18ca768b832425"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "06e3c13e33b33b9030ad42d170b3ce96c14e12ef",
       "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R1.md",
       "sha256": "ecc3b56cf73ed7b871cdd35052d240453cd2d1f7b1c0b441f18da452ecb8680f"
@@ -18455,7 +18464,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "8955db7a3809dc5ee019cb3fb5cccac80f9525ec",
+      "git_oid": "f91248178a682346892311bf6f9d6f848ccb8fbb",
       "path": "phoenix/design/tropical_residential/aec_topology_quality.py",
       "sha256": null
     },
@@ -18572,7 +18581,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "f28c2082980f0492bcf2aca5c7f0aad559191f07",
+      "git_oid": "bc91915eca9c0d47c6f90e4527518dded20f3792",
       "path": "phoenix/design/tropical_residential/open_source_spatial_engine.py",
       "sha256": null
     },
@@ -27311,6 +27320,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "fa511cb87c735e52ca52d6548c5c494a7627dffd",
+      "path": "tests/automation/test_phoenix_r5_fix_r2_semantic_vertical.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "f662d1171dcd14fe6d16496f03b7236f53a78b3b",
       "path": "tests/automation/test_phoenix_r8_2_1_runtime_chain_integrity.py",
       "sha256": null
@@ -29234,5 +29252,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "8425623b89a568ec83c8902449700080312014f52129e6d30cb508b69e0d253b"
+  "source_digest": "b89818ecbe6fa3191ccb1ce75d3a69befd79fd6871b131ebabc4b220541b3675"
 }
