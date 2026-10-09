@@ -183,6 +183,12 @@ def acquire_global_supplier_import_evidence(*args, **kwargs):
                 _phoenix_bridge, args=args, kwargs=kwargs
             )
             if isinstance(_phoenix_enhanced, dict):
+                if _phoenix_enhanced.get("status"):
+                    _phoenix_base_result.status = str(_phoenix_enhanced.get("status"))
+                if isinstance(_phoenix_enhanced.get("blockers"), list):
+                    _phoenix_base_result.blockers = list(_phoenix_enhanced.get("blockers") or [])
+                if isinstance(_phoenix_enhanced.get("written_catalogs"), list):
+                    _phoenix_base_result.written_catalogs = list(_phoenix_enhanced.get("written_catalogs") or [])
                 for _phoenix_key in (
                     "structured_product_evidence_enabled",
                     "structured_product_evidence_register",

@@ -98,15 +98,46 @@ def _load_remote_json(url: str, timeout: float, maximum_bytes: int) -> dict[str,
         raise ValueError("Remote material/supply JSON root must be an object.")
     return value
 
-def _discover_catalogs(repository: Path, policy: dict[str,Any], project_id: str | None = None) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
+def _discover_catalogs(repository: Path, policy: dict[str,Any], project_id: str | None = None, workspace: Path | None = None) -> tuple[list[dict[str,Any]],list[dict[str,Any]]]:
     registry=_source_registry(repository)
     found=[]
     failures=[]
+    seen_paths=set()
+    if workspace is not None:
+        workspace_root=Path(workspace).resolve()
+        workspace_supply=workspace_root/"sources"/"material_supply"
+        if workspace_supply.is_dir():
+            for path in sorted(workspace_supply.rglob("*.json")):
+                try:
+                    resolved=path.resolve()
+                    if resolved in seen_paths:
+                        continue
+                    seen_paths.add(resolved)
+                    found.append({
+                        "source_id":"CURRENT_PROJECT_WORKSPACE_MATERIAL_SUPPLY",
+                        "source_kind":"project_workspace",
+                        "source_priority":1100,
+                        "source_max_age_days":30,
+                        "source_reference":path.relative_to(repository).as_posix() if path.is_relative_to(repository) else str(path),
+                        "catalog":_read_json(path),
+                    })
+                except Exception as exc:
+                    failures.append({
+                        "source_id":"CURRENT_PROJECT_WORKSPACE_MATERIAL_SUPPLY",
+                        "reference":str(path),
+                        "reason":"INVALID_MATERIAL_SUPPLY_CATALOG",
+                        "message":str(exc),
+                    })
+
     if project_id:
         runtime_root=repository/"projects"/"runtime"/project_id/"sources"/"material_supply"
         if runtime_root.is_dir():
             for path in sorted(runtime_root.rglob("*.json")):
                 try:
+                    resolved=path.resolve()
+                    if resolved in seen_paths:
+                        continue
+                    seen_paths.add(resolved)
                     found.append({
                         "source_id":"PROJECT_RUNTIME_MATERIAL_SUPPLY",
                         "source_kind":"project_runtime",
@@ -426,6 +457,7 @@ def build_local_material_supply_context(
     project_context: dict[str,Any],
     manifest: dict[str,Any],
     as_of_date: str | date | None = None,
+    workspace: Path | None = None,
 ) -> MaterialSupplyResult:
     repository=repository.resolve()
     policy=_policy(repository)
@@ -450,7 +482,7 @@ def build_local_material_supply_context(
             "message":"Projectland/gebiedsdeel is vereist voordat lokale materiaal- en productbeschikbaarheid kan worden bevestigd.",
         })
 
-    discovered,source_failures=_discover_catalogs(repository,policy,project_id)
+    discovered,source_failures=_discover_catalogs(repository,policy,project_id,workspace)
     products=[]
     rejections=list(source_failures)
     if geography["country_code"]:

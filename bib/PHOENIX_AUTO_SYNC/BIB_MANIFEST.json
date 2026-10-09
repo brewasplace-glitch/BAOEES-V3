@@ -16907,7 +16907,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "85daf25fc304268b605085638cf0f5325a4c8791",
+      "git_oid": "7c0890dbd77e32ee799e0c541be1020a24889263",
       "path": "phoenix/autonomy/global_supplier_import_acquisition.py",
       "sha256": null
     },
@@ -16988,7 +16988,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "105913997ed48807379d656759f7ceea6c1c9b3c",
+      "git_oid": "262bf698ef2f4585a2646742348c51ebf5434288",
       "path": "phoenix/autonomy/local_material_supply_intelligence.py",
       "sha256": null
     },
@@ -17393,7 +17393,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "393839d78e68db4fcc8e05afd05a5085805d590c",
+      "git_oid": "aecef517dd78a7ca9bef95ab32f527e9a4a3fc9a",
       "path": "phoenix/autonomy/session_adapters.py",
       "sha256": null
     },
@@ -27500,6 +27500,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "71289c9e287cdd96cccc5ec63ff760ebec67c1cf",
+      "path": "tests/automation/test_phoenix_r9_acquired_catalog_binding_fix_r2.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "96a634958fc00b5b92553e67be3645a397233d09",
       "path": "tests/automation/test_phoenix_real_architectural_multivariant_design_engine_v1_0.py",
       "sha256": null
@@ -29405,5 +29414,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "982ac34d9451f365d47b5ab18ea12721c46d99f09ab2a1f034dc6969c671437b"
+  "source_digest": "c753598428ffc23de98fa9eb06be32dac17ff660353a9c514290c864a6aa95a9"
 }
