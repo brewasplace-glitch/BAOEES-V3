@@ -9077,6 +9077,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "e4ce4eb573b12c3c77b2bb42a946da08121ffb6b",
+      "path": "docs/architecture/PHOENIX_R8_STRUCTURAL_INPUT_MATERIALIZER_FIX_R1.md",
+      "sha256": "d4f0f1c88fad25acc9cc4a870fdabdfc0b555e7c7b9df44de21d233f2a2706c1"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "06e3c13e33b33b9030ad42d170b3ce96c14e12ef",
       "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R1.md",
       "sha256": "ecc3b56cf73ed7b871cdd35052d240453cd2d1f7b1c0b441f18da452ecb8680f"
@@ -18572,7 +18581,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "512cc2117b785b85f0a1e94d8db5eb4cfd06f1da",
+      "git_oid": "0e770ec505780f720188526c0c31d8f0768a7312",
       "path": "phoenix/design/tropical_residential/canonical_output_manifest.py",
       "sha256": null
     },
@@ -18754,6 +18763,15 @@
       "git_mode": "100644",
       "git_oid": "c0bb2d90b9371f49a206f3755ef8087b60d3d135",
       "path": "phoenix/design/tropical_residential/strategy_topology.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "cb0efb759a343ffdf061f5d77f9f2d61767f1967",
+      "path": "phoenix/design/tropical_residential/structural_input_materializer.py",
       "sha256": null
     },
     {
@@ -27455,6 +27473,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "5cd36812e380da3f6ac7f59aba0044d48737d933",
+      "path": "tests/automation/test_phoenix_r8_structural_input_materializer.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "d1ad08fcede06c0786bb7cb847376f9a0ade04be",
       "path": "tests/automation/test_phoenix_r9_5_2_2_runtime_policy_path_literal_repair_v1_2.py",
       "sha256": null
@@ -29369,5 +29396,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "f842eae5d7d5915b0af5c74dc3ba5beb552a6bf11d76e6062f34964733f861a7"
+  "source_digest": "479a521f3ab0b4e078fb3a304abab6ecce83af4e2b0368a8980ed6ebb636de8e"
 }

@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
+from .structural_input_materializer import materialization_eligibility, materialize_structural_adapter_inputs
+
 SCHEMA = "PHOENIX_R8_CANONICAL_OUTPUT_MANIFEST_V1"
 HANDOFF_SCHEMA = "PHOENIX_R8_STRUCTURAL_HANDOFF_CONTRACT_V1"
 
@@ -107,6 +109,31 @@ def write_canonical_output_manifest(*, project: Mapping[str, Any], output_dir: P
         canonical_layout_json=canonical_layout,
         authoritative_ifc=authoritative_ifc,
     )
+    eligibility=materialization_eligibility(canonical_layout)
+    if eligibility["eligible"]:
+        structural_inputs=materialize_structural_adapter_inputs(
+            project_id=str(project["project_id"]),
+            recommended_variant_id=recommended_variant_id,
+            canonical_layout_json=canonical_layout,
+            authoritative_ifc=authoritative_ifc,
+            output_dir=output_dir / "structural_inputs",
+        )
+        handoff["materialized_architecture_adapter_outputs"]=structural_inputs["architecture_adapter_outputs"]
+        handoff["materialization_evidence"]=structural_inputs["evidence_path"]
+        handoff["handoff_status"]=structural_inputs["status"]
+        handoff["solver_execution_started"]=False
+    else:
+        structural_inputs={
+            "schema":"PHOENIX_R8_STRUCTURAL_INPUT_MATERIALIZATION_V1",
+            "status":"BLOCKED_INPUT",
+            "reasons":eligibility["reasons"],
+            "solver_execution_started":False,
+            "production_release":"LOCKED",
+            "for_construction":"LOCKED",
+        }
+        handoff["materialization_status"]="BLOCKED_INPUT"
+        handoff["materialization_blockers"]=eligibility["reasons"]
+
     handoff_path = output_dir / "structural_handoff_contract.json"
     handoff_path.write_text(json.dumps(handoff, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     manifest = {
@@ -122,6 +149,7 @@ def write_canonical_output_manifest(*, project: Mapping[str, Any], output_dir: P
         "freecad_handoff": dict(freecad_result),
         "blender_handoff": dict(blender_result),
         "structural_handoff_contract": _file_record(handoff_path),
+        "structural_input_materialization": structural_inputs,
         "governance": {
             "professional_approval": "NOT_AUTOMATIC",
             "code_compliance": "NOT_AUTOMATIC",
