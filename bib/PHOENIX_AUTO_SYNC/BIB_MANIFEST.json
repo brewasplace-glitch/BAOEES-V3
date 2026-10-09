@@ -9068,6 +9068,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "2f4ab55873e83e1a92f6731c0dc274268d4770b6",
+      "path": "docs/architecture/PHOENIX_R8_CANONICAL_OUTPUT_MANIFEST_AND_STRUCTURAL_HANDOFF.md",
+      "sha256": "7c835a4d324a3286ec66dbd5151e4c78f88ae0cc63e72e38d0c0922ef7d76e2b"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "06e3c13e33b33b9030ad42d170b3ce96c14e12ef",
       "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R1.md",
       "sha256": "ecc3b56cf73ed7b871cdd35052d240453cd2d1f7b1c0b441f18da452ecb8680f"
@@ -18563,6 +18572,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "512cc2117b785b85f0a1e94d8db5eb4cfd06f1da",
+      "path": "phoenix/design/tropical_residential/canonical_output_manifest.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "927bda9d79dd9d32dce1dac66c4e718cb6e83f15",
       "path": "phoenix/design/tropical_residential/cli.py",
       "sha256": null
@@ -18689,7 +18707,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b99bb352c9a963159f7b767e6b1393546f0ae8da",
+      "git_oid": "121fb8228f81f75890a16fa8713ce05c27f2b7d6",
       "path": "phoenix/design/tropical_residential/real_pipeline.py",
       "sha256": null
     },
@@ -27428,6 +27446,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "ac97d7a205a8e71f22ab3a2e444abfbd6525c9ba",
+      "path": "tests/automation/test_phoenix_r8_canonical_output_manifest_structural_handoff.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "d1ad08fcede06c0786bb7cb847376f9a0ade04be",
       "path": "tests/automation/test_phoenix_r9_5_2_2_runtime_policy_path_literal_repair_v1_2.py",
       "sha256": null
@@ -29342,5 +29369,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "d85ee8130c2cbd00353b1b3b0d967f0ecf023002e99edadc8289dedc6145ef88"
+  "source_digest": "f842eae5d7d5915b0af5c74dc3ba5beb552a6bf11d76e6062f34964733f861a7"
 }

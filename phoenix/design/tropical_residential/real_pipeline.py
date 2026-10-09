@@ -12,6 +12,7 @@ from .real_spatial import build_real_layout
 from .tool_discovery import discover_tools
 from .freecad_bridge import run_freecad_handoff
 from .blender_bridge import run_blender_handoff
+from .canonical_output_manifest import write_canonical_output_manifest
 
 
 def generate_real_spatial_ifc_package(
@@ -86,6 +87,18 @@ def generate_real_spatial_ifc_package(
     }
     write_json(output_dir/"real_spatial_digital_twin_patch.json",dt_patch)
 
+    r8_output_contract=write_canonical_output_manifest(
+        project=project,
+        output_dir=output_dir,
+        recommended_variant_id=rec_id,
+        layout_paths=layout_paths,
+        ifc_evidence=ifc_evidence,
+        authoritative_ifc=authoritative_ifc,
+        tools=tools,
+        freecad_result=freecad_result,
+        blender_result=blender_result,
+    )
+
     summary={
         "engine":"PROJECT_PHOENIX_TROPICAL_RESIDENTIAL_REAL_SPATIAL_LAYOUT_AUTHORITATIVE_IFC_v1_0",
         "project_id":project["project_id"],
@@ -96,6 +109,9 @@ def generate_real_spatial_ifc_package(
         "tools":tools,
         "freecad_handoff":freecad_result,
         "blender_handoff":blender_result,
+        "canonical_output_manifest":r8_output_contract["manifest_path"],
+        "structural_handoff_contract":r8_output_contract["structural_handoff_contract_path"],
+        "structural_handoff_status":r8_output_contract["structural_handoff_contract"]["handoff_status"],
         "release_status":"CONCEPT_ONLY_NOT_FOR_CONSTRUCTION"
     }
     write_json(output_dir/"real_spatial_summary.json",summary)
