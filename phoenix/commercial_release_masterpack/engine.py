@@ -536,6 +536,100 @@ class RealProjectValidationEngine:
         return report
 
 
+def _validate_r6_canonical_geometry_evidence(
+    report: Mapping[str, Any] | None,
+) -> dict[str, Any]:
+    # Technical release prerequisite only. Never professional approval.
+    issues: list[str] = []
+    data = dict(report or {})
+
+    if data.get("schema") != "PHOENIX_R6_RUNTIME_CANONICAL_GEOMETRY_QA_V1":
+        issues.append("schema")
+    if data.get("hard_pass") is not True:
+        issues.append("hard_pass")
+    if data.get("release_gate_candidate") is not True:
+        issues.append("release_gate_candidate")
+
+    baseline = str(data.get("baseline") or "").strip()
+    run_id = str(data.get("run_id") or "").strip()
+    if not baseline:
+        issues.append("baseline")
+    if not run_id:
+        issues.append("run_id")
+
+    variants = list(data.get("variants") or [])
+    ids = {
+        str(v.get("variant_id") or "").upper()
+        for v in variants
+        if isinstance(v, Mapping)
+    }
+    if ids != set("ABCDE") or len(variants) != 5:
+        issues.append("variant_set")
+
+    variant_failures: list[dict[str, Any]] = []
+    for variant in variants:
+        if not isinstance(variant, Mapping):
+            variant_failures.append({"variant_id": None, "reason": "variant_not_mapping"})
+            continue
+
+        vid = str(variant.get("variant_id") or "").upper()
+        result = variant.get("result") or {}
+        if not isinstance(result, Mapping):
+            variant_failures.append({"variant_id": vid, "reason": "result_not_mapping"})
+            continue
+
+        if result.get("hard_pass") is not True:
+            variant_failures.append({"variant_id": vid, "reason": "hard_pass"})
+            continue
+        if list(result.get("hard_failures") or []):
+            variant_failures.append({"variant_id": vid, "reason": "hard_failures"})
+            continue
+        if float(result.get("match_coverage") or 0.0) < 1.0:
+            variant_failures.append({"variant_id": vid, "reason": "match_coverage"})
+            continue
+
+        tolerance = float(result.get("tolerance_m") or 0.35)
+        for key in (
+            "max_center_difference_m",
+            "max_width_difference_m",
+            "max_depth_difference_m",
+        ):
+            if float(result.get(key) or 0.0) > tolerance:
+                variant_failures.append({"variant_id": vid, "reason": key})
+                break
+
+        ifc = result.get("ifc") or {}
+        if not isinstance(ifc, Mapping):
+            variant_failures.append({"variant_id": vid, "reason": "ifc_not_mapping"})
+            continue
+        if int(ifc.get("schema_error_count") or 0) != 0:
+            variant_failures.append({"variant_id": vid, "reason": "ifc_schema_errors"})
+            continue
+        if int(ifc.get("geometry_failure_count") or 0) != 0:
+            variant_failures.append({"variant_id": vid, "reason": "ifc_geometry_errors"})
+            continue
+        if int(ifc.get("geometric_space_count") or 0) < 1:
+            variant_failures.append({"variant_id": vid, "reason": "no_ifc_spaces"})
+            continue
+        if int(ifc.get("wall_count") or 0) < 1:
+            variant_failures.append({"variant_id": vid, "reason": "no_ifc_walls"})
+            continue
+
+    if variant_failures:
+        issues.append("variant_failures")
+
+    return {
+        "passed": not issues,
+        "issues": issues,
+        "variant_failures": variant_failures,
+        "baseline": baseline or None,
+        "run_id": run_id or None,
+        "release_semantics": "TECHNICAL_PREREQUISITE_ONLY",
+        "professional_approval": False,
+        "approved_for_construction": False,
+    }
+
+
 class CommercialReleaseEngine:
     """BB36 production-release gate; never bypasses BB35 evidence."""
 
@@ -551,7 +645,11 @@ class CommercialReleaseEngine:
         documentation_available: bool,
         support_plan_available: bool,
         release_requested: bool,
+        r6_canonical_geometry_report: Mapping[str, Any] | None = None,
     ) -> dict[str, Any]:
+        r6_gate = _validate_r6_canonical_geometry_evidence(
+            r6_canonical_geometry_report
+        )
         checks = {
             "release_candidate_passed": bool(
                 release_candidate_report.get("release_candidate_passed")
@@ -564,6 +662,7 @@ class CommercialReleaseEngine:
             "support_plan_available": bool(support_plan_available),
             "release_requested": bool(release_requested),
             "production_version": bool(re.fullmatch(r"\d+\.\d+\.\d+", version)),
+            "r6_canonical_geometry_passed": bool(r6_gate["passed"]),
         }
         failed = [name for name, passed in checks.items() if not passed]
         if failed:
@@ -590,6 +689,12 @@ class CommercialReleaseEngine:
                 for name in failed
             ],
             "blocking_issue_count": len(failed),
+            "r6_canonical_geometry_gate": r6_gate,
+            "release_semantics": {
+                "r6_is_technical_prerequisite_only": True,
+                "professional_approval_inferred": False,
+                "approved_for_construction_inferred": False,
+            },
         }
         report["release_fingerprint_sha256"] = _fingerprint(report)
         return report

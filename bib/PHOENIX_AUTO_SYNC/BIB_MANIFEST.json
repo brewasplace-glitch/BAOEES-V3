@@ -4118,9 +4118,9 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
-      "git_oid": "333a5e7858b2087fb227f6eead2775087a4207ed",
+      "git_oid": "db44ae8cb5d9835019b935c4eddb33056d9d652e",
       "path": "configs/phoenix/commercial_release_masterpack_v1_0.json",
-      "sha256": "28a467c9b9651bbc7c320602d80dae5d1acbf92f36c3a58dc1685c0342a305ee"
+      "sha256": "c439542017536d59a8947f97e1f1dd7e0d4509d90c1b86ed8072532e779fce98"
     },
     {
       "chunks": 1,
@@ -9035,6 +9035,15 @@
       "git_oid": "566a740b28a9074476ba77987882d5e36d672b0a",
       "path": "docs/architecture/PHOENIX_R6_BIM_IFC_CANONICAL_GEOMETRY_CONSISTENCY.md",
       "sha256": "eeb0a5fa88f01dea36a7f723092f02f5f16c2b2a3d3f26c3e75220a0b0c13c97"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
+      "git_oid": "42a68bfa2c755d54405685ad5d3d502193dcd283",
+      "path": "docs/architecture/PHOENIX_R6_RELEASE_GATE_BINDING.md",
+      "sha256": "17e2f44ec5f4c8ce899fcb443126544e0424d823f4f4261f8c821ac2422d94d2"
     },
     {
       "chunks": 1,
@@ -18140,7 +18149,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "bd3477d765a2a09fd658b6bdb839c8dff6aff515",
+      "git_oid": "a5992cd79b206b47164276e03c6135ad8d97147d",
       "path": "phoenix/commercial_release_masterpack/engine.py",
       "sha256": null
     },
@@ -27356,6 +27365,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "bb51a6f6fa73e13c63ee9c32bedb4c3cb330c796",
+      "path": "tests/automation/test_phoenix_r6_release_gate_binding_real_evidence.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "f662d1171dcd14fe6d16496f03b7236f53a78b3b",
       "path": "tests/automation/test_phoenix_r8_2_1_runtime_chain_integrity.py",
       "sha256": null
@@ -28427,7 +28445,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b70ffb577096f4b3afdccac2c025f2daf1994ff3",
+      "git_oid": "355eab148b39fd31c3fe1a9c16802064fea7f1a6",
       "path": "tests/commercial_release_masterpack/test_bb31_bb36_masterpack_v1_0.py",
       "sha256": null
     },
@@ -29279,5 +29297,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "2ee40b772ee22858731002f37eba8ef27addc3afae5d397462505ce09f28782c"
+  "source_digest": "8360be491d8a1bd6e0f6b2e6fda6c159f5a86d8567567fb67349922095bf1325"
 }

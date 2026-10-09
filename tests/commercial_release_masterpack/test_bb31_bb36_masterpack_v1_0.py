@@ -237,6 +237,37 @@ class MasterpackTests(unittest.TestCase):
         }], minimum_pilots=1)
         self.assertFalse(report["real_project_validation_passed"])
 
+    @staticmethod
+    def _r6_pass_report():
+        variants = []
+        for variant_id in "ABCDE":
+            variants.append({
+                "variant_id": variant_id,
+                "result": {
+                    "hard_pass": True,
+                    "hard_failures": [],
+                    "tolerance_m": 0.35,
+                    "match_coverage": 1.0,
+                    "max_center_difference_m": 0.0,
+                    "max_width_difference_m": 0.0,
+                    "max_depth_difference_m": 0.0,
+                    "ifc": {
+                        "schema_error_count": 0,
+                        "geometry_failure_count": 0,
+                        "geometric_space_count": 12,
+                        "wall_count": 27,
+                    },
+                },
+            })
+        return {
+            "schema": "PHOENIX_R6_RUNTIME_CANONICAL_GEOMETRY_QA_V1",
+            "baseline": "test-baseline",
+            "run_id": "test-r6-run",
+            "hard_pass": True,
+            "release_gate_candidate": True,
+            "variants": variants,
+        }
+
     def test_bb36_locked_without_validation(self):
         report = CommercialReleaseEngine().create_release(
             version="2.0.0",
@@ -258,8 +289,43 @@ class MasterpackTests(unittest.TestCase):
             documentation_available=True,
             support_plan_available=True,
             release_requested=True,
+            r6_canonical_geometry_report=self._r6_pass_report(),
         )
         self.assertTrue(report["production_release_ready"])
+        self.assertTrue(report["checks"]["r6_canonical_geometry_passed"])
+        self.assertFalse(report["release_semantics"]["professional_approval_inferred"])
+        self.assertFalse(report["release_semantics"]["approved_for_construction_inferred"])
+
+    def test_bb36_missing_r6_canonical_geometry_locks(self):
+        report = CommercialReleaseEngine().create_release(
+            version="2.0.0",
+            release_candidate_report={"release_candidate_passed": True},
+            validation_report={"real_project_validation_passed": True},
+            security_report={"security_passed": True},
+            documentation_available=True,
+            support_plan_available=True,
+            release_requested=True,
+        )
+        self.assertFalse(report["production_release_ready"])
+        self.assertIn("r6_canonical_geometry_passed", report["failed_checks"])
+        self.assertFalse(report["r6_canonical_geometry_gate"]["passed"])
+
+    def test_bb36_failed_r6_canonical_geometry_locks(self):
+        r6 = self._r6_pass_report()
+        r6["variants"][0]["result"]["max_center_difference_m"] = 1.0
+        report = CommercialReleaseEngine().create_release(
+            version="2.0.0",
+            release_candidate_report={"release_candidate_passed": True},
+            validation_report={"real_project_validation_passed": True},
+            security_report={"security_passed": True},
+            documentation_available=True,
+            support_plan_available=True,
+            release_requested=True,
+            r6_canonical_geometry_report=r6,
+        )
+        self.assertFalse(report["production_release_ready"])
+        self.assertIn("r6_canonical_geometry_passed", report["failed_checks"])
+        self.assertFalse(report["r6_canonical_geometry_gate"]["passed"])
 
     def test_masterpack_framework_can_install_while_release_locked(self):
         report = MasterpackOrchestrator().create_framework_report(

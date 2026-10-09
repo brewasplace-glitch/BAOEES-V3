@@ -28,7 +28,12 @@
     "clean_install_required": true,
     "reproducibility_required": true,
     "minimum_deliverable_quality_score": 80,
-    "production_release_locked_until_bb35": true
+    "production_release_locked_until_bb35": true,
+    "r6_canonical_geometry_evidence_required": true,
+    "r6_canonical_geometry_evidence_schema": "PHOENIX_R6_RUNTIME_CANONICAL_GEOMETRY_QA_V1",
+    "r6_is_technical_prerequisite_only": true,
+    "r6_may_not_infer_professional_approval": true,
+    "r6_may_not_infer_approved_for_construction": true
   },
   "security_policy": {
     "role_based_permissions": true,
