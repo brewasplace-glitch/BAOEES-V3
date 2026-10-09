@@ -9050,6 +9050,15 @@
       "classification": "full-content",
       "extraction": "utf-8-sig",
       "git_mode": "100644",
+      "git_oid": "1532022bd2b25d39072e17f448e3b923e5b5b023",
+      "path": "docs/architecture/PHOENIX_R7_CANONICAL_HOST_GEOMETRY_REPAIR.md",
+      "sha256": "9168ef4bb857735687c208783ed5622ca1987b9bc928fcda5856a4fe70172562"
+    },
+    {
+      "chunks": 1,
+      "classification": "full-content",
+      "extraction": "utf-8-sig",
+      "git_mode": "100644",
       "git_oid": "06e3c13e33b33b9030ad42d170b3ce96c14e12ef",
       "path": "docs/architecture/PHOENIX_REAL_ARCHITECTURAL_DESIGN_ENGINE_QUALITY_UPGRADE_R1.md",
       "sha256": "ecc3b56cf73ed7b871cdd35052d240453cd2d1f7b1c0b441f18da452ecb8680f"
@@ -18536,6 +18545,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "e89a48f13da66a4366966042a14bec319e31db78",
+      "path": "phoenix/design/tropical_residential/canonical_host_geometry.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "927bda9d79dd9d32dce1dac66c4e718cb6e83f15",
       "path": "phoenix/design/tropical_residential/cli.py",
       "sha256": null
@@ -18581,7 +18599,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "b9d8d99b4d43fa18fe13d03c4642a3c602deeb33",
+      "git_oid": "d5baaeebe67fd69dab29e32fdb9e818282109b33",
       "path": "phoenix/design/tropical_residential/ifc_author.py",
       "sha256": null
     },
@@ -18653,7 +18671,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "27b8968105dab018f4df6932833f20616c8f2ea9",
+      "git_oid": "df076ce2c877c815fbf5539167e494c532ca0d96",
       "path": "phoenix/design/tropical_residential/real_output.py",
       "sha256": null
     },
@@ -27374,6 +27392,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "9564d2c814bf911e186e903138cb93c8d19e5470",
+      "path": "tests/automation/test_phoenix_r7_canonical_host_geometry_repair.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "f662d1171dcd14fe6d16496f03b7236f53a78b3b",
       "path": "tests/automation/test_phoenix_r8_2_1_runtime_chain_integrity.py",
       "sha256": null
@@ -29297,5 +29324,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "8360be491d8a1bd6e0f6b2e6fda6c159f5a86d8567567fb67349922095bf1325"
+  "source_digest": "73565fa58996aed144caff961449d239831ec0e0268ac1d6a7d1b61c75e381ae"
 }

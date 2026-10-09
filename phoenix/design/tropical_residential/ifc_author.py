@@ -3,6 +3,7 @@ from __future__ import annotations
 import math
 from pathlib import Path
 from typing import Any, Dict
+from .canonical_host_geometry import finalize_canonical_host_geometry
 
 
 def _imports():
@@ -34,6 +35,7 @@ def _matrix(np, x: float, y: float, z: float, angle_deg: float = 0.0):
 
 
 def author_ifc4(project: Dict[str, Any], layout: Dict[str, Any], output_path: Path) -> Dict[str, Any]:
+    finalize_canonical_host_geometry(layout)
     np, ifcopenshell = _imports()
     import ifcopenshell.api.aggregate
     import ifcopenshell.api.context

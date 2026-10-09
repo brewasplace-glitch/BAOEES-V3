@@ -4,6 +4,7 @@ import html
 import json
 from pathlib import Path
 from typing import Any, Dict
+from .canonical_host_geometry import finalize_canonical_host_geometry
 
 
 def write_json(path: Path, obj: Any) -> None:
@@ -40,6 +41,7 @@ def write_storey_svg(path: Path, layout: Dict[str, Any], storey: int) -> None:
 
 
 def write_layout_bundle(root: Path, layout: Dict[str, Any]) -> Dict[str, Any]:
+    finalize_canonical_host_geometry(layout)
     vdir=root/f"variant_{layout['variant_id']}"
     vdir.mkdir(parents=True,exist_ok=True)
     layout_json=vdir/"real_spatial_layout.json"
