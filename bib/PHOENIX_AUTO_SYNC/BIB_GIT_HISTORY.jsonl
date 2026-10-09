@@ -1,3 +1,4 @@
+{"commit": "842e24574fd59aad66a1b81bb02c5080c3939050", "date": "2026-10-09T18:28:14+02:00", "subject": "fix(structural): gate R8 input materialization by layout eligibility"}
 {"commit": "dbda4fee72ed0d198b0df76481876ee668b71ade", "date": "2026-10-09T17:52:24+02:00", "subject": "feat(architecture): unify outputs and bind structural handoff R8"}
 {"commit": "7b488ee498a916179a8302d1a35dae9f6cff9a89", "date": "2026-10-09T17:35:36+02:00", "subject": "fix(architecture): preserve canonical flat roof across outputs"}
 {"commit": "be7ac55e50e2d01d13ca9b90311767e0c5c0bb28", "date": "2026-10-09T17:15:37+02:00", "subject": "fix(architecture): canonicalize host geometry after spatial optimization"}
@@ -497,4 +498,3 @@
 {"commit": "8692bc1297bcdbeca5beab953515dbbe487c4b59", "date": "2026-06-30T18:26:19+02:00", "subject": "feat: make aaie use bib knowledge before assumptions v5.8"}
 {"commit": "ab97481a2ce4258ff449d4df96a671ea3c8dd80a", "date": "2026-06-30T17:38:49+02:00", "subject": "feat: connect bib knowledge index to start analysis v5.7"}
 {"commit": "f699324efe8826b0ef4a4bf2c1ad764f25b9711b", "date": "2026-06-30T16:52:54+02:00", "subject": "feat: add bib intake reader v5.6"}
-{"commit": "808fd080c1164c1a56b8026901732d9d6d167c68", "date": "2026-06-30T16:35:55+02:00", "subject": "feat: add filled chat knowledge intake v5.5"}

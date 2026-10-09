@@ -169,10 +169,47 @@ _phoenix_structured_evidence_original_acquire_global_supplier_import_evidence = 
 def acquire_global_supplier_import_evidence(*args, **kwargs):
     _phoenix_base_result = _phoenix_structured_evidence_original_acquire_global_supplier_import_evidence(*args, **kwargs)
     try:
+        # Bridge the legacy AcquisitionResult dataclass to the mutable-dict
+        # contract used by structured_product_evidence_acquisition.
+        if isinstance(_phoenix_base_result, AcquisitionResult):
+            _phoenix_bridge = {
+                "status": _phoenix_base_result.status,
+                "register": _phoenix_base_result.register,
+                "request_register": _phoenix_base_result.request_register,
+                "written_catalogs": list(_phoenix_base_result.written_catalogs or []),
+                "blockers": list(_phoenix_base_result.blockers or []),
+            }
+            _phoenix_enhanced = _phoenix_structured_evidence_enhance(
+                _phoenix_bridge, args=args, kwargs=kwargs
+            )
+            if isinstance(_phoenix_enhanced, dict):
+                for _phoenix_key in (
+                    "structured_product_evidence_enabled",
+                    "structured_product_evidence_register",
+                    "global_import_evidence_acquisition_register",
+                    "discovered_enriched_candidate_count",
+                    "route_decisions",
+                    "structured_product_evidence",
+                    "structured_product_evidence_runtime_status",
+                    "structured_product_evidence_runtime_error",
+                    "automatic_ordering",
+                    "automatic_payment",
+                    "professional_review_required",
+                    "production_release",
+                ):
+                    if _phoenix_key in _phoenix_enhanced:
+                        _phoenix_base_result.register[_phoenix_key] = _phoenix_enhanced[_phoenix_key]
+            return _phoenix_base_result
+
         return _phoenix_structured_evidence_enhance(_phoenix_base_result, args=args, kwargs=kwargs)
     except Exception as _phoenix_structured_evidence_exc:
         # Fail-safe: never turn an acquisition error into a pass. Do not expose credentials or source bodies.
-        if isinstance(_phoenix_base_result, dict):
+        if isinstance(_phoenix_base_result, AcquisitionResult):
+            _phoenix_base_result.register["structured_product_evidence_enabled"] = True
+            _phoenix_base_result.register["structured_product_evidence_runtime_status"] = "BLOCKED"
+            _phoenix_base_result.register["structured_product_evidence_runtime_error"] = type(_phoenix_structured_evidence_exc).__name__
+            _phoenix_base_result.register["production_release"] = "LOCKED"
+        elif isinstance(_phoenix_base_result, dict):
             _phoenix_base_result["structured_product_evidence_enabled"] = True
             _phoenix_base_result["structured_product_evidence_runtime_status"] = "BLOCKED"
             _phoenix_base_result["structured_product_evidence_runtime_error"] = type(_phoenix_structured_evidence_exc).__name__

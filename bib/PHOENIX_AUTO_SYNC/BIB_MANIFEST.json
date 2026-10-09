@@ -16907,7 +16907,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "9169021358b127e91923b57213f8522cfdb5c7ad",
+      "git_oid": "85daf25fc304268b605085638cf0f5325a4c8791",
       "path": "phoenix/autonomy/global_supplier_import_acquisition.py",
       "sha256": null
     },
@@ -27896,6 +27896,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "381df2472b4a7529fdd964d40d1ad67faa06f689",
+      "path": "tests/automation/test_phoenix_structured_product_evidence_dataclass_bridge_r9.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "362c292e6d2a0c3daaaf1e730a9a6cc3f50bf967",
       "path": "tests/automation/test_phoenix_structured_product_evidence_integration_static_v1_0.py",
       "sha256": null
@@ -29396,5 +29405,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "479a521f3ab0b4e078fb3a304abab6ecce83af4e2b0368a8980ed6ebb636de8e"
+  "source_digest": "982ac34d9451f365d47b5ab18ea12721c46d99f09ab2a1f034dc6969c671437b"
 }
