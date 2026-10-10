@@ -471,11 +471,32 @@ def build_global_material_sourcing_context(
     all_supply = bool(selections) and all(bool(x.get("selected_product")) and bool(x.get("commercial_availability_confirmed")) for x in selections)
     all_structural_qualified = bool(structural_items) and all(str(x.get("engineering_qualification_status") or "").upper() in {"QUALIFIED", "ENGINEERING_QUALIFIED"} and isinstance(x.get("selected_product"), dict) and bool(x["selected_product"].get("engineering_material_id")) for x in structural_items)
     imported = [x for x in selections if x.get("procurement_route") == "INTERNATIONAL_IMPORT"]
-    import_landed_complete = all(isinstance(x.get("selected_product"), dict) and isinstance(x["selected_product"].get("landed_cost"), dict) and x["selected_product"]["landed_cost"].get("status") == "PASSED" for x in imported)
+    imported_landed_complete = bool(imported) and all(
+        isinstance(x.get("selected_product"), dict)
+        and isinstance(x["selected_product"].get("landed_cost"), dict)
+        and x["selected_product"]["landed_cost"].get("status") == "PASSED"
+        for x in imported
+    )
+    local_only_supply_complete = (not imported) and all_supply
+    import_landed_complete = imported_landed_complete or local_only_supply_complete
+
+    if imported:
+        landed_status = "PASSED" if imported_landed_complete else "BLOCKED"
+        landed_gate_reason = (
+            "SELECTED_IMPORTS_HAVE_COMPLETE_LANDED_COST_EVIDENCE"
+            if imported_landed_complete
+            else "SELECTED_IMPORTS_REQUIRE_COMPLETE_LANDED_COST_EVIDENCE"
+        )
+    elif all_supply:
+        landed_status = "PASSED"
+        landed_gate_reason = "NO_IMPORT_REQUIRED_ALL_SUPPLY_CONFIRMED_WITHOUT_INTERNATIONAL_IMPORT"
+    else:
+        landed_status = "BLOCKED"
+        landed_gate_reason = "NO_SELECTED_IMPORTS_WHILE_MATERIAL_SUPPLY_REQUIREMENTS_REMAIN_UNRESOLVED"
 
     structural_register = {"schema_version": "phoenix.structural-material-selection-register/1.0", "engine_version": VERSION, "project_id": project_id, "as_of_date": date.today().isoformat(), "destination": dest, "project_currency": project_currency, "status": "PASSED" if all_supply and all_structural_qualified and import_landed_complete else "BLOCKED", "all_requirements_supply_confirmed": all_supply, "all_requirements_commercially_available": all_supply, "all_structural_requirements_engineering_qualified": all_structural_qualified, "all_imported_selections_landed_cost_complete": import_landed_complete, "local_first_policy": True, "international_fallback_enabled": True, "european_certified_supply_priority": True, "international_discovery_priority": ["NL","BE","EU27","GLOBAL"], "cheapest_selection_basis": "LOWEST_COMPLETE_LANDED_COST_TO_PROJECT_DESTINATION_AMONG_TECHNICALLY_VALID_CERTIFIED_OPTIONS", "selections": selections, "automatic_ordering": False, "automatic_product_substitution": False, "professional_review_required": True, "production_release": "LOCKED"}
     sourcing_register = {"schema_version": "phoenix.global-material-sourcing-register/1.0", "engine_version": VERSION, "project_id": project_id, "status": structural_register["status"], "destination": dest, "project_currency": project_currency, "source_catalog_count": len(source_paths), "candidate_count": len(candidates), "configured_https_acquisition": remote, "supplier_import_acquisition": acquisition_summary, "implicit_web_search_used": False, "configured_https_json_sources_enabled": True, "selected_import_count": len(imported), "blocker_count": len(blockers), "blockers": blockers, "automatic_ordering": False, "professional_review_required": True, "production_release": "LOCKED"}
-    landed_register = {"schema_version": "phoenix.landed-cost-register/1.0", "project_id": project_id, "currency": project_currency, "destination": dest, "selected_imports": [{"requirement_id": x.get("requirement_id"), "product_id": (x.get("selected_product") or {}).get("product_id"), "supplier_name": (x.get("selected_product") or {}).get("supplier_name"), "landed_cost": (x.get("selected_product") or {}).get("landed_cost"), "source_reference": (x.get("selected_product") or {}).get("source_reference")} for x in imported], "status": "PASSED" if import_landed_complete else "BLOCKED", "tax_or_duty_fabrication": False, "freight_fabrication": False, "fx_fabrication": False}
+    landed_register = {"schema_version": "phoenix.landed-cost-register/1.0", "project_id": project_id, "currency": project_currency, "destination": dest, "selected_imports": [{"requirement_id": x.get("requirement_id"), "product_id": (x.get("selected_product") or {}).get("product_id"), "supplier_name": (x.get("selected_product") or {}).get("supplier_name"), "landed_cost": (x.get("selected_product") or {}).get("landed_cost"), "source_reference": (x.get("selected_product") or {}).get("source_reference")} for x in imported], "status": landed_status, "empty_import_pass_forbidden": True, "gate_guard_version": "R9_LANDED_COST_EMPTY_PASS_HARDENING_v1", "gate_reason": landed_gate_reason, "production_release": "LOCKED", "tax_or_duty_fabrication": False, "freight_fabrication": False, "fx_fabrication": False}
     candidate_comparison = {"schema_version": "phoenix.global-material-candidate-comparison/1.0", "project_id": project_id, "selection_rule": "CHEAPEST_COMPLETE_LANDED_COST_AFTER_CERTIFICATION_AND_ENGINEERING_QUALIFICATION; NL_BE_EU_DISCOVERY_PRIORITY_AND_EQUAL_COST_TIE_BREAK", "requirements": comparisons}
     if remote["failed"]: warnings.append("Een of meer geconfigureerde HTTPS-bronnen konden niet worden opgehaald; geen stilzwijgende vervanging toegepast.")
     return GlobalMaterialSourcingResult(structural_register["status"], sourcing_register, candidate_comparison, landed_register, structural_register, blockers, warnings)

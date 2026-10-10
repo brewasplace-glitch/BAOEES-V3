@@ -16898,7 +16898,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "ae9c650f11ea7e68a14f24302fc37dc328f1a464",
+      "git_oid": "201435602fbb84b8c15e31438aa33baf8a071dd4",
       "path": "phoenix/autonomy/global_material_sourcing.py",
       "sha256": null
     },
@@ -27518,6 +27518,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "08f31b2b4b0dff351da011e21f8a64a78d7af458",
+      "path": "tests/automation/test_phoenix_r9_landed_cost_empty_pass_hardening.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "96a634958fc00b5b92553e67be3645a397233d09",
       "path": "tests/automation/test_phoenix_real_architectural_multivariant_design_engine_v1_0.py",
       "sha256": null
@@ -29423,5 +29432,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "a3b4e2b707e1f8af2f3dd81284721f3880c3a630caaa67c29aa7e475cffb0dc6"
+  "source_digest": "a00c0a17b0c75ef0c13de5cdc0879f7f09ddde3cb17eb1397d6c11f2d091c099"
 }
