@@ -125,6 +125,28 @@ def _load_selections(workspace: Path) -> List[Dict[str, Any]]:
 
 
 def _query_plan(selection: Dict[str, Any], route: Dict[str, Any]) -> List[Dict[str, str]]:
+    # PHOENIX_R9_TARGETED_MISSING_FAMILY_QUERY_PLAN_FIX_R1
+    family = str(selection.get("material_family") or "").strip().lower()
+    if family == "masonry_unit":
+        return [
+            {"tier": "SURINAME_LOCAL_TECHNICAL_EVIDENCE", "query": "concrete masonry block manufacturer supplier Paramaribo Suriname compressive strength technical datasheet"},
+            {"tier": "SURINAME_LOCAL_TECHNICAL_EVIDENCE", "query": "loadbearing concrete block supplier Suriname product data compressive strength"},
+            {"tier": "NETHERLANDS", "query": "loadbearing concrete masonry block EN 771-3 declaration of performance compressive strength manufacturer Netherlands"},
+            {"tier": "BELGIUM", "query": "loadbearing concrete masonry block EN 771-3 declaration of performance compressive strength manufacturer Belgium"},
+            {"tier": "EU27", "query": "loadbearing aggregate concrete masonry unit EN 771-3 DoP CE supplier Europe"},
+        ]
+    if family == "structural_concrete":
+        return [
+            {"tier": "SURINAME_LOCAL_TECHNICAL_EVIDENCE", "query": "ready mix concrete supplier producer Paramaribo Suriname concrete class technical datasheet"},
+            {"tier": "SURINAME_LOCAL_TECHNICAL_EVIDENCE", "query": "ready-mix concrete manufacturer Suriname EN 206 certificate concrete class"},
+        ]
+    if family == "structural_steel_section":
+        return [
+            {"tier": "SURINAME_LOCAL", "query": "structural steel hollow section tube RHS SHS CHS supplier Suriname technical datasheet"},
+            {"tier": "NETHERLANDS", "query": "structural hollow section RHS SHS CHS EN 10210 EN 10219 manufacturer supplier Netherlands technical datasheet"},
+            {"tier": "BELGIUM", "query": "structural hollow section RHS SHS CHS EN 10210 EN 10219 manufacturer supplier Belgium technical datasheet"},
+            {"tier": "EU27", "query": "structural steel tube hollow section RHS SHS CHS EN 10210 EN 10219 declaration performance supplier Europe"},
+        ]
     family = str(selection.get("material_family") or "").lower()
     requirement_id = str(selection.get("requirement_id") or "UNKNOWN")
     selected = selection.get("selected_product") if isinstance(selection.get("selected_product"), dict) else {}
