@@ -566,8 +566,39 @@ def _adjust_blockers(base: Dict[str, Any], routes: List[Dict[str, Any]], candida
         base["status"] = "PASSED"
 
 
+def _resolve_selections_for_acquisition(
+    workspace: Path,
+    kwargs: Optional[Dict[str, Any]] = None,
+) -> List[Dict[str, Any]]:
+    call_kwargs = kwargs or {{}}
+    supplied = call_kwargs.get("local_selection_register")
+    if isinstance(supplied, dict):
+        rows = supplied.get("selections")
+        if isinstance(rows, list):
+            return [dict(x) for x in rows if isinstance(x, dict)]
+    return _load_selections(workspace)
+
+
+def _caller_repository_supports_structured_acquisition(
+    kwargs: Optional[Dict[str, Any]] = None,
+) -> bool:
+    call_kwargs = kwargs or {{}}
+    repository = call_kwargs.get("repository")
+    if repository is None:
+        return True
+    root = Path(repository).resolve()
+    registry = root / "configs" / "phoenix" / "global_supplier_discovery_provider_registry_v1_0.json"
+    return registry.is_file()
+
+
 def enhance_acquisition_result(base_result: Any, args: Sequence[Any] = (), kwargs: Optional[Dict[str, Any]] = None) -> Any:
     kwargs = kwargs or {}
+    if not _caller_repository_supports_structured_acquisition(kwargs):
+        base_result["structured_product_evidence"] = {
+            "status": "NOT_RUN",
+            "reason": "CALLER_REPOSITORY_PROVIDER_REGISTRY_NOT_CONFIGURED",
+        }
+        return base_result
     if not isinstance(base_result, dict):
         return base_result
 
@@ -583,7 +614,7 @@ def enhance_acquisition_result(base_result: Any, args: Sequence[Any] = (), kwarg
     audit_dir.mkdir(parents=True, exist_ok=True)
     evidence_dir.mkdir(parents=True, exist_ok=True)
 
-    selections = _load_selections(workspace)
+    selections = _resolve_selections_for_acquisition(workspace, kwargs)
     routes = decide_routes(selections)
     route_map = {str(r.get("requirement_id")): r for r in routes}
     provider_ok, env_name = _provider_enabled()

@@ -17546,7 +17546,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "a2fdebb0da2c25ad7138255fd0c44e06c84e5841",
+      "git_oid": "d792e5fe04f346e5683f88ee9e811251365448f7",
       "path": "phoenix/autonomy/structured_product_evidence_acquisition.py",
       "sha256": null
     },
@@ -27527,6 +27527,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4c2199628f7ce9c5a57a3479169f10a592fa0c1e",
+      "path": "tests/automation/test_phoenix_r9_structured_evidence_selection_binding_fix_r3.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "96a634958fc00b5b92553e67be3645a397233d09",
       "path": "tests/automation/test_phoenix_real_architectural_multivariant_design_engine_v1_0.py",
       "sha256": null
@@ -29432,5 +29441,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "a00c0a17b0c75ef0c13de5cdc0879f7f09ddde3cb17eb1397d6c11f2d091c099"
+  "source_digest": "8c0cca7a75ab19f364f3d05dd0ae0ad483cc5ed4db8e15353512a623f655e61b"
 }
