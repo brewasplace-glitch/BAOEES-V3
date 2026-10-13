@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
+from .r14_net_area import evaluate as evaluate_r14_net_area
+
 QUALITY_SCHEMA = "PHOENIX_REAL_ARCHITECTURAL_QUALITY_V1"
 
 def _f(value: Any, default: float = 0.0) -> float:
@@ -172,6 +174,7 @@ def evaluate_layout_quality(layout: Mapping[str, Any], variant: Mapping[str, Any
         "deductions":deductions,
         "metrics":{"room_count":len(rooms),"wall_count":len(walls),"opening_count":len(openings),"storey_count":len(storeys),"zone_diversity":len(zones),"minimum_room_area_m2":round(min_area,3),"total_room_area_m2":round(total,3),"overlap_ratio":round(overlap_ratio,5),"opening_per_room":round(open_per_room,4),"wall_per_room":round(wall_per_room,4)},
         "semantic_signature":_semantic_signature(layout),
+        "r14_net_area_diagnostic":evaluate_r14_net_area(layout),
         "release_status":"CONCEPT_QA_ONLY_NOT_FOR_CONSTRUCTION",
     }
 

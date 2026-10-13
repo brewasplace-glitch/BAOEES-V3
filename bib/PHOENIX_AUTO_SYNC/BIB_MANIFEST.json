@@ -18536,7 +18536,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "2075b71c082e3f47019fae5b494669e5d1828eb7",
+      "git_oid": "388931815e16b68ca123e1662bc9c58278e442bb",
       "path": "phoenix/design/tropical_residential/architectural_quality.py",
       "sha256": null
     },
@@ -18691,6 +18691,15 @@
       "git_mode": "100644",
       "git_oid": "ecf1bdc4b735ce1ccd400ae99c6c6f89cb995e37",
       "path": "phoenix/design/tropical_residential/project_orchestration_cli.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "744763b34f04743930337c806dc5af5fd8cbfd48",
+      "path": "phoenix/design/tropical_residential/r14_net_area.py",
       "sha256": null
     },
     {
@@ -27419,6 +27428,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "46a2e1fd92dc934f9b754e1253b9aa812cd48c8c",
+      "path": "tests/automation/test_phoenix_r14_net_area_runtime.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "fa511cb87c735e52ca52d6548c5c494a7627dffd",
       "path": "tests/automation/test_phoenix_r5_fix_r2_semantic_vertical.py",
       "sha256": null
@@ -29450,5 +29468,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "4cd06123e537297ee89bc57e62a08c655038a148927b2c3d4fde727c5972a9e0"
+  "source_digest": "e067c20aa022f8bfa062bf5e2d491d7aa185915c7e77356ad9a61a99e6e0201f"
 }
