@@ -228,6 +228,8 @@ def author_ifc4(project: Dict[str, Any], layout: Dict[str, Any], output_path: Pa
     model.write(str(output_path))
 
     reopened = ifcopenshell.open(str(output_path))
+    from .ifc_identity_manifest import write_manifest
+    identity_path, identity_data = write_manifest(reopened, layout, output_path)
     evidence = {
         "ifc_schema": reopened.schema,
         "ifc_file": str(output_path),
@@ -243,6 +245,9 @@ def author_ifc4(project: Dict[str, Any], layout: Dict[str, Any], output_path: Pa
         "IfcOpeningElement": len(reopened.by_type("IfcOpeningElement")),
         "IfcDoor": len(reopened.by_type("IfcDoor")),
         "IfcWindow": len(reopened.by_type("IfcWindow")),
+        "identity_manifest": str(identity_path),
+        "identity_wall_count": identity_data["wall_count"],
+        "identity_opening_count": identity_data["opening_count"],
         "release_status": "CONCEPT_ONLY_NOT_FOR_CONSTRUCTION",
     }
     return evidence

@@ -18635,7 +18635,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "37e5fc864b308a6a0255bca959fc6c8b871a9fb5",
+      "git_oid": "40a0f108430d2f85ab5729776c4a5112b2399030",
       "path": "phoenix/design/tropical_residential/ifc_author.py",
       "sha256": null
     },
@@ -18646,6 +18646,15 @@
       "git_mode": "100644",
       "git_oid": "4dd0cc8b7481e0922df86d1bc1f955d222ad4841",
       "path": "phoenix/design/tropical_residential/ifc_handoff.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "08d907a235b73a93678604564a1b3411f08fa0d3",
+      "path": "phoenix/design/tropical_residential/ifc_identity_manifest.py",
       "sha256": null
     },
     {
@@ -27437,6 +27446,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "2062941e30ae68535c3a77f03a7ed935e8742a61",
+      "path": "tests/automation/test_phoenix_r15_ifc_identity_manifest.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "fa511cb87c735e52ca52d6548c5c494a7627dffd",
       "path": "tests/automation/test_phoenix_r5_fix_r2_semantic_vertical.py",
       "sha256": null
@@ -29468,5 +29486,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "e067c20aa022f8bfa062bf5e2d491d7aa185915c7e77356ad9a61a99e6e0201f"
+  "source_digest": "e670d2e9439e129a851798f2a2b96c8167402906c483f8ad7a65c59e3707c2bc"
 }
