@@ -18635,7 +18635,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "40a0f108430d2f85ab5729776c4a5112b2399030",
+      "git_oid": "af5ccdce0f2048a978eb099e96b4f58e92ed8425",
       "path": "phoenix/design/tropical_residential/ifc_author.py",
       "sha256": null
     },
@@ -29486,5 +29486,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "e670d2e9439e129a851798f2a2b96c8167402906c483f8ad7a65c59e3707c2bc"
+  "source_digest": "1713fddacf141b8791dd087602cd5a9a430657fc886068c4a227c51eba28bd54"
 }

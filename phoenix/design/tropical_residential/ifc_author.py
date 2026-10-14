@@ -34,8 +34,31 @@ def _matrix(np, x: float, y: float, z: float, angle_deg: float = 0.0):
     return m
 
 
-def author_ifc4(project: Dict[str, Any], layout: Dict[str, Any], output_path: Path) -> Dict[str, Any]:
-    finalize_canonical_host_geometry(layout)
+def author_ifc4(project: Dict[str, Any], layout: Dict[str, Any], output_path: Path, *, geometry_mode: str = "derive") -> Dict[str, Any]:
+    # Default preserves the existing Phoenix R7 geometric finalization contract.
+    if geometry_mode == "derive":
+        finalize_canonical_host_geometry(layout)
+    elif geometry_mode == "preserve_validated_snapshot":
+        # Explicit opt-in. Only export a complete, unchanged, already-validated snapshot.
+        from .canonical_host_geometry import validate_canonical_host_geometry
+        from copy import deepcopy
+        import json
+        before = json.dumps(layout, sort_keys=True, default=str)
+        walls = list(layout.get("walls") or [])
+        openings = list(layout.get("openings") or [])
+        if not walls or not openings:
+            raise RuntimeError("R22_R5_SNAPSHOT_INCOMPLETE")
+        wall_ids = [str(w["wall_key"]) for w in walls]
+        opening_ids = [str(o["opening_id"]) for o in openings]
+        if len(wall_ids) != len(set(wall_ids)) or len(opening_ids) != len(set(opening_ids)):
+            raise RuntimeError("R22_R5_SNAPSHOT_DUPLICATE_IDENTITIES")
+        qa = validate_canonical_host_geometry(deepcopy(layout))
+        if not qa.get("hard_pass"):
+            raise RuntimeError("R22_R5_SNAPSHOT_QA_FAIL:" + str(qa.get("failures", [])[:3]))
+        if json.dumps(layout, sort_keys=True, default=str) != before:
+            raise RuntimeError("R22_R5_VALIDATION_MUTATED_LAYOUT")
+    else:
+        raise RuntimeError("R22_R5_UNSUPPORTED_GEOMETRY_MODE:" + str(geometry_mode))
     np, ifcopenshell = _imports()
     import ifcopenshell.api.aggregate
     import ifcopenshell.api.context
