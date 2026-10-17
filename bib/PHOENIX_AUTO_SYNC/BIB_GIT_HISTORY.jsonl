@@ -1,3 +1,4 @@
+{"commit": "56caf79047e56c76184207bd484750f0c7085cbf", "date": "2026-10-14T22:10:31+02:00", "subject": "fix(ifc): preserve validated snapshot geometry on opt-in export"}
 {"commit": "4c83d3e70df3424e1ad91ccf2a1d24f80b5b7a8e", "date": "2026-10-14T20:51:18+02:00", "subject": "feat(ifc): preserve canonical design IFC identity manifest"}
 {"commit": "a066390e33d332f1bc32442335fe5cb7a2184059", "date": "2026-10-14T01:29:04+02:00", "subject": "feat(architecture): add R14 net area diagnostic to active runtime"}
 {"commit": "5ce6654f6dfd204c36641e636efdc8d2a3b88bfe", "date": "2026-10-11T01:35:37+02:00", "subject": "fix(materials): target missing supplier evidence queries"}
@@ -497,4 +498,3 @@
 {"commit": "6e5a0b310a4f377be1572e61eb1a5fe27a213725", "date": "2026-07-03T11:38:26+02:00", "subject": "feat: connect Building Technical Engine to BAOEES Core"}
 {"commit": "81a8ebc7cba04a57379d6e4e6210a32f331ae353", "date": "2026-07-03T10:51:03+02:00", "subject": "feat: add Building Technical Engine v1"}
 {"commit": "eed5236d735a818085d604cbb88c86dbd5fdca14", "date": "2026-07-02T23:22:57+02:00", "subject": "feat: add auto repair engine and refresh project outputs"}
-{"commit": "5b41c3bf1d63d2c3ce13bb29fc7a5f66d8dd9283", "date": "2026-07-02T13:10:32+02:00", "subject": "feat: connect evidence and project package export v6.2"}
