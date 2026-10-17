@@ -16223,6 +16223,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "9969e3c9aa018c880d6c6ed34d3c0709e225affa",
+      "path": "phoenix/afoundation/geometry_quality.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "6a6ac0205ded7665262284560f2cce5d60ca8a50",
       "path": "phoenix/afoundation/integration.py",
       "sha256": null
@@ -25412,6 +25421,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "4be209812e04b21a3599daafcf7bcfb9cdd4e77a",
+      "path": "tests/automation/test_af_r3_geometry_quality.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "69040201a043bf52930f874f11d316c8b92ed5fa",
       "path": "tests/automation/test_architectural_compliance_fire_accessibility_building_physics_v6_7_0.py",
       "sha256": null
@@ -29504,5 +29522,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "1ae96ea08dae1d69cd9860571eaabafd3b6ea2a7279bff24604c1d0464acb183"
+  "source_digest": "74ab05b784d11b151deef5742e522e4c2bc9a311d2b677e059dcfd355f5a78c5"
 }
