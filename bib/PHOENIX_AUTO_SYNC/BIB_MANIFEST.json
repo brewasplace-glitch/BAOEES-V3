@@ -25403,7 +25403,7 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
-      "git_oid": "32b826e05ef0aa759d7f8861f5bafc23c2acf6bf",
+      "git_oid": "05f430ed2a684fadb3de1fac0d32efecc5288614",
       "path": "tests/automation/test_af_r2_integration.py",
       "sha256": null
     },
@@ -29504,5 +29504,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "92ea60bf7f4da6690d006347193346d1edcba9f42d39e641e05569b95b1f1370"
+  "source_digest": "1ae96ea08dae1d69cd9860571eaabafd3b6ea2a7279bff24604c1d0464acb183"
 }

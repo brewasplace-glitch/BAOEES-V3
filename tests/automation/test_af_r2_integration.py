@@ -3,7 +3,7 @@ import pathlib
 import subprocess
 import tempfile
 import unittest
-ROOT=pathlib.Path(__file__).resolve().parents[1]
+ROOT=pathlib.Path(__file__).resolve().parents[2]
 spec=importlib.util.spec_from_file_location('af_r2', ROOT/'phoenix/afoundation/integration.py')
 mod=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
