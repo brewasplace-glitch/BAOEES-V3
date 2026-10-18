@@ -16223,6 +16223,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "35c1a80577e3478d1473a5896e92bb079d86e913",
+      "path": "phoenix/afoundation/candidate_topology.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "9969e3c9aa018c880d6c6ed34d3c0709e225affa",
       "path": "phoenix/afoundation/geometry_quality.py",
       "sha256": null
@@ -25457,6 +25466,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "abaa71a7202167910b7b5b8520434191933d9f95",
+      "path": "tests/automation/test_af_r3_4_candidate_topology.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4be209812e04b21a3599daafcf7bcfb9cdd4e77a",
       "path": "tests/automation/test_af_r3_geometry_quality.py",
       "sha256": null
@@ -29558,5 +29576,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "52fa934c97bb0b543ee2e09ac7a8e03edbe8a62829cd54b89b97d12777e818f5"
+  "source_digest": "166036924ec1f1bf1c5069b5be94f3a7af1c285eede506f5de9bb4f60e4914a0"
 }
