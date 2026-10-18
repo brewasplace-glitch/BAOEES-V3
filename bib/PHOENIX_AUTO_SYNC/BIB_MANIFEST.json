@@ -16223,6 +16223,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "319351092dda6685c9cf6e01566506c9a29097ba",
+      "path": "phoenix/afoundation/cad_semantic_gate.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "35c1a80577e3478d1473a5896e92bb079d86e913",
       "path": "phoenix/afoundation/candidate_topology.py",
       "sha256": null
@@ -25511,6 +25520,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "ce11d32d742cf1ab4c0bde53889d479f99749ef5",
+      "path": "tests/automation/test_af_r3_7_cad_semantic_gate.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4be209812e04b21a3599daafcf7bcfb9cdd4e77a",
       "path": "tests/automation/test_af_r3_geometry_quality.py",
       "sha256": null
@@ -29612,5 +29630,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "c9281870efa5c78f22e967af3eb4ab3778273c0630ca1bc2242e85dee11c9845"
+  "source_digest": "13c50c06f23a78451d50ad372287e31fe10b6b42a79b98aac170ec52dd064b56"
 }

@@ -22,7 +22,7 @@
   "fallback_backend": "git_grep_over_tracked_jsonl",
   "full_content_file_count": 1146,
   "git_history_entries": 500,
-  "head_observed_before_commit": "0a77f176e33ef06c7f5f53b084372778fe945f53",
+  "head_observed_before_commit": "fa7d42e4ea711abfcaac0aad471b21359c33019e",
   "managed_root": "bib/PHOENIX_AUTO_SYNC",
   "metadata_only_file_count": 5,
   "mode": "git-index",
@@ -30,7 +30,7 @@
   "release_status": "KNOWLEDGE_INDEX_ONLY_NO_PRODUCTION_RELEASE",
   "schema_version": "1.0",
   "secret_redactions": 0,
-  "source_digest": "c9281870efa5c78f22e967af3eb4ab3778273c0630ca1bc2242e85dee11c9845",
-  "source_file_count": 3290,
-  "source_metadata_file_count": 2144
+  "source_digest": "13c50c06f23a78451d50ad372287e31fe10b6b42a79b98aac170ec52dd064b56",
+  "source_file_count": 3292,
+  "source_metadata_file_count": 2146
 }
