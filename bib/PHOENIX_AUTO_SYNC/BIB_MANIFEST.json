@@ -16241,6 +16241,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "ae2e9488ec43140672c4be3fd9d4602fdf872d58",
+      "path": "phoenix/afoundation/registration_bridge.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "942813b8d0137b557bbb04d127050c548dcaf29e",
       "path": "phoenix/afoundation/sketchup_measurement.py",
       "sha256": null
@@ -25439,6 +25448,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "0892b42696881c826c51017e4427969e6e77a09b",
+      "path": "tests/automation/test_af_r3_3_registration_bridge.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4be209812e04b21a3599daafcf7bcfb9cdd4e77a",
       "path": "tests/automation/test_af_r3_geometry_quality.py",
       "sha256": null
@@ -29540,5 +29558,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "fdb986a3a28808861e7b199bd34e497de771b7241f8adf0918f0b88877c9d63b"
+  "source_digest": "52fa934c97bb0b543ee2e09ac7a8e03edbe8a62829cd54b89b97d12777e818f5"
 }
