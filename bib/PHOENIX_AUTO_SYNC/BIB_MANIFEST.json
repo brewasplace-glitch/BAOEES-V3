@@ -16268,6 +16268,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "08cc32fe16aee14ae2890b633657c547ba212ef6",
+      "path": "phoenix/afoundation/source_bound_walls.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "95bbd9d6a7e04d8357b96a8db5e00be7622275c3",
       "path": "phoenix/ai_workflow/__init__.py",
       "sha256": null
@@ -25475,6 +25484,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "6fa601147943995f7e99b82390e0dd7e463a6650",
+      "path": "tests/automation/test_af_r3_5_source_bound_walls.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4be209812e04b21a3599daafcf7bcfb9cdd4e77a",
       "path": "tests/automation/test_af_r3_geometry_quality.py",
       "sha256": null
@@ -29576,5 +29594,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "166036924ec1f1bf1c5069b5be94f3a7af1c285eede506f5de9bb4f60e4914a0"
+  "source_digest": "00ba2b914e93e1937a5dd5accc89cd803fccb9d5d56abfbb34cf85edc18ddb84"
 }
