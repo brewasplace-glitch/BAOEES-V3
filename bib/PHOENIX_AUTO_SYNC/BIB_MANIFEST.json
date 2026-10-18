@@ -16241,6 +16241,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "942813b8d0137b557bbb04d127050c548dcaf29e",
+      "path": "phoenix/afoundation/sketchup_measurement.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "95bbd9d6a7e04d8357b96a8db5e00be7622275c3",
       "path": "phoenix/ai_workflow/__init__.py",
       "sha256": null
@@ -25421,6 +25430,15 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "ae181fb0ceabeb8dfc15c1a79ed2adbd42e674a2",
+      "path": "tests/automation/test_af_r3_2_sketchup_measurement.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "4be209812e04b21a3599daafcf7bcfb9cdd4e77a",
       "path": "tests/automation/test_af_r3_geometry_quality.py",
       "sha256": null
@@ -29522,5 +29540,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "74ab05b784d11b151deef5742e522e4c2bc9a311d2b677e059dcfd355f5a78c5"
+  "source_digest": "fdb986a3a28808861e7b199bd34e497de771b7241f8adf0918f0b88877c9d63b"
 }

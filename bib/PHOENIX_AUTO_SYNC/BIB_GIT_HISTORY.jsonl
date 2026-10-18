@@ -1,3 +1,4 @@
+{"commit": "68a5d80d7efbe767462f578b9cbfdf7b61451bac", "date": "2026-10-17T22:29:20+02:00", "subject": "feat(geometry): add AF-R3 source comparison quality engine"}
 {"commit": "0e2d197e8c074cf9da36565f0694974deab357fb", "date": "2026-10-17T22:20:54+02:00", "subject": "fix(autonomy): correct AF-R2 test repository root"}
 {"commit": "ddcaf981f0b2e978ed57cb4f46ca0f29076f4d46", "date": "2026-10-17T22:06:19+02:00", "subject": "feat(autonomy): add AF-R2 integration foundation"}
 {"commit": "56caf79047e56c76184207bd484750f0c7085cbf", "date": "2026-10-14T22:10:31+02:00", "subject": "fix(ifc): preserve validated snapshot geometry on opt-in export"}
@@ -497,4 +498,3 @@
 {"commit": "6e45035bf2835d52eb2b019e4d5d8fbd2a9d26ef", "date": "2026-07-04T01:36:35+02:00", "subject": "feat: add Element Load Engine v1"}
 {"commit": "308328ae80a398db769155b75a7475881da5ab2f", "date": "2026-07-03T23:59:48+02:00", "subject": "feat: connect Structural Load Engine to BAOEES Core"}
 {"commit": "51a132077cdaee3bee004f1e93e8f9acf5b09e17", "date": "2026-07-03T23:01:46+02:00", "subject": "feat: add Structural Load Engine v1"}
-{"commit": "6e5a0b310a4f377be1572e61eb1a5fe27a213725", "date": "2026-07-03T11:38:26+02:00", "subject": "feat: connect Building Technical Engine to BAOEES Core"}
