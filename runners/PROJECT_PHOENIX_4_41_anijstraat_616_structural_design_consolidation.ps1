@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$RepoRoot="C:\PROJECT-PHOENIX",
     [string]$SourcePdf="",
@@ -80,6 +80,7 @@ $ev=Find-VerifiedSolverEvidence
 if($ev){
     Write-Host "SOLVER_EVIDENCE_CANDIDATE=$($ev.Root)"
     Invoke-Python -PyArgs @($solverEngine,"--verify-output",$ev.Solver)
+Invoke-Python -PyArgs @($solverEngine,"--verify-selection-policy",$ev.Solver)
     $solverJson=$ev.Solver
     $derivJson=$ev.Derivation
     Write-Host "SOLVER_EVIDENCE_SOURCE=REUSED_LATEST_VERIFIED" -ForegroundColor Green
@@ -91,6 +92,7 @@ if($ev){
     $solverJson=Join-Path $rerun "solver_element_verification.json"
     $derivJson=Join-Path $rerun "_prerequisite_derivation\structural_derivation_load_model.json"
     Invoke-Python -PyArgs @($solverEngine,"--verify-output",$solverJson)
+Invoke-Python -PyArgs @($solverEngine,"--verify-selection-policy",$solverJson)
     Write-Host "SOLVER_EVIDENCE_SOURCE=REGENERATED_VERIFIED" -ForegroundColor Green
 }
 

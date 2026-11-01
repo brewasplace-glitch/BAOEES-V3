@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$RepoRoot = "C:\PROJECT-PHOENIX",
     [string]$SourcePdf = "",
@@ -150,6 +150,7 @@ $solverRoot=Find-LatestFolder -Pattern "PHOENIX_ANIJSTRAAT_616_SOLVER_ELEMENT_VE
 if(-not $solverRoot){Fail "Verified solver evidence folder not found in Downloads"}
 $solverJson=Join-Path $solverRoot "solver_element_verification.json"
 Invoke-Python -PyArgs @($solverEngine,"--verify-output",$solverJson)
+Invoke-Python -PyArgs @($solverEngine,"--verify-selection-policy",$solverJson)
 Write-Host "SOLVER_EVIDENCE=VERIFIED" -ForegroundColor Green
 
 $reportRoot=Find-LatestFolder -Pattern "PHOENIX_ANIJSTRAAT_616_3D_STRUCTURAL_MODEL_REPORT_*" -Files @(

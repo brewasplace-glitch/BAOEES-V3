@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$RepoRoot = "C:\PROJECT-PHOENIX",
     [string]$SourcePdf = "",
@@ -220,6 +220,7 @@ Invoke-Python -PyArgs @(
     "--verify-output",
     $solverJson
 )
+Invoke-Python -PyArgs @($solverEngine,"--verify-selection-policy",$solverJson)
 Write-Host "SOLVER_EVIDENCE=VERIFIED" -ForegroundColor Green
 
 Invoke-Python -PyArgs @(

@@ -16,6 +16,32 @@ STATUS = "PASS_REAL_OPEN_SOURCE_SOLVER_EXECUTED_PRELIMINARY_ELEMENT_VERIFICATION
 NEXT_STAGE = "PHOENIX_4.41_REAL_PROJECT_STRUCTURAL_DESIGN_CONSOLIDATION_AND_DRAWINGS"
 ENGINE_VERSION = "1.0.0"
 
+# Fixed Phoenix solver preference. Preserve order even when an earlier engine is blocked.
+SOLVER_PREFERENCE = ("OpenSees", "CalculiX", "PyNiteFEA")
+
+
+def choose_verified_solver(candidates):
+    """Select only a contract-compatible and numerically validated engine.
+
+    A discovery/import check or a successful different-model benchmark is NOT
+    an authorization to select an engine for the current problem.
+    """
+    trace = []
+    for name in SOLVER_PREFERENCE:
+        item = candidates.get(name, {})
+        accepted = (item.get("contract_compatible") is True
+                    and item.get("numerically_verified") is True
+                    and item.get("case_count", 0) > 0)
+        trace.append({"engine": name, "status": "SELECTED" if accepted else "SKIPPED",
+                      "reason": "VERIFIED_CURRENT_MODEL" if accepted else item.get("reason", "NO_CURRENT_MODEL_CONTRACT")})
+        if accepted:
+            for later in SOLVER_PREFERENCE[len(trace):]:
+                trace.append({"engine": later, "status": "NOT_EVALUATED_LOWER_PRIORITY",
+                              "reason": "HIGHER_PRIORITY_SELECTED"})
+            return name, trace
+    return None, trace
+
+
 
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
@@ -433,16 +459,27 @@ def verify_project(derivation_path: Path, config_path: Path, out: Path, ccx_exe:
         if pyn_check["crosscheck_status"] != "PASS":
             raise RuntimeError("PyNite operational solver cross-check failed")
 
-    if open_sees_pass_count == len(spans):
-        selected_engine = "OpenSeesPy"
-        selected_role = "PREFERRED_PRIMARY"
-        selected_cases = preferred_cases
-        preferred_status = "PASS"
-    else:
-        selected_engine = "PyNiteFEA"
-        selected_role = "PRIMARY_RUNTIME_FALLBACK_AFTER_OPENSEES_NATIVE_BLOCKER"
-        selected_cases = pynite_cases
-        preferred_status = "BLOCKED_NATIVE_RUNTIME_OR_FAILED"
+    # Only the current-model three-span crosschecks may authorize selection.
+    # CalculiX has a DIFFERENT ringbeam deck below; no equivalent current-model result contract.
+    # It may not be promoted using unrelated evidence.
+    candidates = {
+        "OpenSees": {"contract_compatible": True,
+                     "numerically_verified": open_sees_pass_count == len(spans),
+                     "case_count": len(spans),
+                     "reason": "OPEN_SEES_CURRENT_MODEL_CROSSCHECK_FAILED"},
+        "CalculiX": {"reason": "DIFFERENT_RINGBEAM_DECK_NO_EQUIVALENT_BEAM_RESULT_CONTRACT"},
+        "PyNiteFEA": {"contract_compatible": True,
+                      "numerically_verified": all(c["crosscheck_status"] == "PASS" for c in pynite_cases),
+                      "case_count": len(pynite_cases),
+                      "reason": "PYNITE_CURRENT_MODEL_CROSSCHECK_FAILED"},
+    }
+    choice, solver_selection_trace = choose_verified_solver(candidates)
+    if choice is None:
+        raise RuntimeError("HOLD_NO_SUITABLE_VERIFIED_ENGINE")
+    selected_engine = "OpenSeesPy" if choice == "OpenSees" else choice
+    selected_role = "PREFERRED_PRIMARY" if choice == "OpenSees" else "VERIFIED_FALLBACK_AFTER_HIGHER_PRIORITY_HOLD"
+    selected_cases = preferred_cases if choice == "OpenSees" else pynite_cases
+    preferred_status = "PASS" if choice == "OpenSees" else "BLOCKED_NATIVE_RUNTIME_OR_FAILED"
 
     # Column preliminary axial-only demand/capacity.
     col_cfg = cfg["column_proxy"]
@@ -520,6 +557,8 @@ def verify_project(derivation_path: Path, config_path: Path, out: Path, ccx_exe:
             "execution": preferred_status,
             "cases": preferred_cases,
         },
+        "solver_selection_policy": {"preference": list(SOLVER_PREFERENCE), "trace": solver_selection_trace,
+                                    "task_scope": "three_span_linear_elastic_beam_proxy_only"},
         "primary_solver": {
             "engine": selected_engine,
             "role": selected_role,
@@ -626,7 +665,7 @@ def report(r: Dict[str, Any]) -> str:
         "- Wind remains a sensitivity study, not a confirmed Suriname legal wind design.",
         "- Foundation bearing checks are gravity-only and do not replace settlement/geotechnical design.",
         "- RC verification uses explicit material/reinforcement proxies where the source drawings do not provide sufficient authority.",
-        "- CalculiX is an independent fallback; its deck is always retained, whether or not a local ccx executable is available.",
+        "- CalculiX is a cross-check deck, not an authorized fallback for this beam until a matching result contract is verified.",
         "",
         "**PRELIMINARY / NOT FOR CONSTRUCTION**",
         "",
@@ -669,6 +708,49 @@ def analytical_self_test() -> None:
     print("PHOENIX_4_41_SOLVER_ELEMENT_ANALYTICAL_SELF_TEST=PASS")
 
 
+def verify_selection_policy(path: Path) -> None:
+    """Fail closed: require an auditable choice from the exact current engine order.
+
+    This applies to new production-facing handoffs. Old output files without
+    selection provenance remain historical, not valid for new handoffs.
+    """
+    record = json.loads(path.read_text(encoding="utf-8-sig"))
+    policy = record.get("solver_selection_policy")
+    if not isinstance(policy, dict) or policy.get("preference") != list(SOLVER_PREFERENCE):
+        raise RuntimeError("HOLD_SOLVER_POLICY_MISSING_OR_DIFFERENT_ORDER")
+    trace = policy.get("trace")
+    if not isinstance(trace, list) or len(trace) != len(SOLVER_PREFERENCE):
+        raise RuntimeError("HOLD_SOLVER_SELECTION_TRACE_MISSING")
+    if [item.get("engine") for item in trace if isinstance(item, dict)] != list(SOLVER_PREFERENCE):
+        raise RuntimeError("HOLD_SOLVER_SELECTION_TRACE_ORDER")
+    selected = [item["engine"] for item in trace if item.get("status") == "SELECTED"]
+    if len(selected) != 1:
+        raise RuntimeError("HOLD_SOLVER_SELECTION_NOT_UNIQUE")
+    chosen = selected[0]
+    idx = list(SOLVER_PREFERENCE).index(chosen)
+    if any(item.get("status") != "SKIPPED" or not item.get("reason")
+           for item in trace[:idx]):
+        raise RuntimeError("HOLD_HIGHER_PRIORITY_NOT_REJECTED")
+    if any(item.get("status") != "NOT_EVALUATED_LOWER_PRIORITY"
+           for item in trace[idx+1:]):
+        raise RuntimeError("HOLD_LOWER_PRIORITY_TRACE_INVALID")
+    if trace[idx].get("reason") != "VERIFIED_CURRENT_MODEL":
+        raise RuntimeError("HOLD_SELECTED_ENGINE_UNVERIFIED")
+    primary = record.get("primary_solver", {})
+    expected_engine = "OpenSeesPy" if chosen == "OpenSees" else chosen
+    if primary.get("engine") != expected_engine or primary.get("execution") != "PASS":
+        raise RuntimeError("HOLD_PRIMARY_SOLVER_SELECTION_MISMATCH")
+    cases = primary.get("cases")
+    if not isinstance(cases, list) or not cases or any(
+        not isinstance(case, dict) or case.get("crosscheck_status") != "PASS" for case in cases
+    ):
+        raise RuntimeError("HOLD_PRIMARY_SOLVER_CASES_UNVERIFIED")
+    governance = record.get("governance", {})
+    if governance.get("for_construction_release") != "LOCKED":
+        raise RuntimeError("HOLD_RELEASE_GATE_NOT_LOCKED")
+    print("SOLVER_SELECTION_POLICY=PASS_EXACT_THREE_ENGINE_ORDER")
+
+
 def verify_output(path: Path) -> None:
     r = json.loads(path.read_text(encoding="utf-8"))
     assert r["status"] == STATUS
@@ -691,6 +773,7 @@ def main() -> int:
     ap.add_argument("--output", type=Path)
     ap.add_argument("--ccx-exe", default="")
     ap.add_argument("--verify-output", type=Path)
+    ap.add_argument("--verify-selection-policy", type=Path)
     ap.add_argument("--analytical-self-test", action="store_true")
     args = ap.parse_args()
 
@@ -699,6 +782,9 @@ def main() -> int:
         return 0
     if args.verify_output:
         verify_output(args.verify_output)
+        return 0
+    if args.verify_selection_policy:
+        verify_selection_policy(args.verify_selection_policy)
         return 0
     if not all([args.derivation, args.config, args.output]):
         ap.error("--derivation --config --output are required")

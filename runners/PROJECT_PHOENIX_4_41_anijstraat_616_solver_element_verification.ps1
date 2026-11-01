@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$RepoRoot = "C:\PROJECT-PHOENIX",
     [string]$SourcePdf = "",
@@ -141,7 +141,9 @@ if ($ccx) { $args += @("--ccx-exe",$ccx) }
 
 Invoke-Python -PyArgs $args
 Invoke-Python -PyArgs @($SolverEngine,"--verify-output",(Join-Path $OutputRoot "solver_element_verification.json"))
+Invoke-Python -PyArgs @($solverEngine,"--verify-selection-policy",(Join-Path $OutputRoot "solver_element_verification.json"))
 
+Invoke-Python -PyArgs @($SolverEngine,"--verify-selection-policy",(Join-Path $OutputRoot "solver_element_verification.json"))
 Write-Host "PHOENIX_4_41_ANIJSTRAAT_616_SOLVER_ELEMENT_VERIFICATION=PASS" -ForegroundColor Green
 Write-Host "NEXT_STAGE=PHOENIX_4.41_REAL_PROJECT_STRUCTURAL_DESIGN_CONSOLIDATION_AND_DRAWINGS"
 Write-Host "OUTPUT=$OutputRoot"
