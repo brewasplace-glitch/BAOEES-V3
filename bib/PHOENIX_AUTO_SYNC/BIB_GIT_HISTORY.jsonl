@@ -1,3 +1,4 @@
+{"commit": "50bef547ef660a5b48f5073bda0e10c885e2a640", "date": "2026-10-18T21:55:49+02:00", "subject": "feat(geometry): add AF-R3.7 CAD semantic evidence gate"}
 {"commit": "fa7d42e4ea711abfcaac0aad471b21359c33019e", "date": "2026-10-18T21:45:14+02:00", "subject": "feat(geometry): add AF-R3.6 source evidence disambiguation"}
 {"commit": "0a77f176e33ef06c7f5f53b084372778fe945f53", "date": "2026-10-18T21:36:48+02:00", "subject": "feat(geometry): add AF-R3.5 source-bound wall QA"}
 {"commit": "4138023062c2c392df164b76e38a141b559c84ea", "date": "2026-10-18T21:22:36+02:00", "subject": "feat(geometry): add AF-R3.4 candidate topology QA"}
@@ -497,4 +498,3 @@
 {"commit": "67c4bc57af69f62e55cfd3455cf679be47138218", "date": "2026-07-04T02:41:03+02:00", "subject": "feat: add Foundation Verification Engine v1"}
 {"commit": "1f79a35b78c60bd2c08724e3d986652fcb44b148", "date": "2026-07-04T02:33:03+02:00", "subject": "feat: connect Foundation Design Engine to BAOEES Core"}
 {"commit": "59dda29d9bbbfaf29c4b9778af81340a2a243764", "date": "2026-07-04T02:28:30+02:00", "subject": "feat: add Foundation Design Engine v1"}
-{"commit": "ff12aff24c7949de5df22291097a89d5b16c9c25", "date": "2026-07-04T02:21:49+02:00", "subject": "feat: connect Foundation Load Transfer Engine to BAOEES Core"}

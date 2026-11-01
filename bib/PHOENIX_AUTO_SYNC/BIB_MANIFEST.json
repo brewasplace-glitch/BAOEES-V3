@@ -19229,6 +19229,51 @@
       "classification": "source-metadata",
       "extraction": "metadata-only",
       "git_mode": "100644",
+      "git_oid": "83c8d0270f869298f6412763ca124e09c3e94a7d",
+      "path": "phoenix/experimental/ani616_structural/r8_auto.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "e927d80287b63f5b517b9c5f1994213c9269456a",
+      "path": "phoenix/experimental/ani616_structural/r9_auto.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "77098240b5b0fc77c6b9bc055eae2c190292536a",
+      "path": "phoenix/experimental/ani616_structural/rc_frame_r1.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "01f55c731e2742f2a59f707e5344e9df4a2ad81d",
+      "path": "phoenix/experimental/ani616_structural/rc_frame_r2.py",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
+      "git_oid": "7b5abd34ee72f9493db0a869ebed303e26594667",
+      "path": "phoenix/experimental/ani616_structural/README.md",
+      "sha256": null
+    },
+    {
+      "chunks": 0,
+      "classification": "source-metadata",
+      "extraction": "metadata-only",
+      "git_mode": "100644",
       "git_oid": "90ea059ae61215fd1ed5529c30582059cf63ee90",
       "path": "phoenix/governance/existing_capability_reuse_gate.py",
       "sha256": null
@@ -29630,5 +29675,5 @@
     }
   ],
   "schema_version": "1.0",
-  "source_digest": "13c50c06f23a78451d50ad372287e31fe10b6b42a79b98aac170ec52dd064b56"
+  "source_digest": "7cc6447920deb0b0e93ea42b0ac6f599d3d6dd4fafa5caef545a7a8c7967193f"
 }
